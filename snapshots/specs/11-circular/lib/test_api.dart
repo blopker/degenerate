@@ -11,6 +11,5 @@ export 'src/models/category.dart';
 export 'src/models/department.dart';
 export 'src/models/employee.dart';
 export 'src/models/file_system_node.dart';
-export 'src/models/file_system_node_kind.dart';
 
 export 'src/apis/default_api.dart';

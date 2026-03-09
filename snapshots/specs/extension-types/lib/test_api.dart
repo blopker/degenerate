@@ -7,10 +7,6 @@
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/test_api_api.dart';
 
-export 'src/models/active.dart';
-export 'src/models/ratio.dart';
-export 'src/models/score.dart';
-export 'src/models/timestamp.dart';
 export 'src/models/user.dart';
 export 'src/models/user_id.dart';
 

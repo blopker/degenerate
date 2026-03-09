@@ -556,9 +556,15 @@ void main() {
     });
 
     test('emits extension type files', () {
+      // UserId is referenced by both API and User — stays separate
       expect(files.keys, contains('lib/src/models/user_id.dart'));
-      expect(files.keys, contains('lib/src/models/timestamp.dart'));
-      expect(files.keys, contains('lib/src/models/score.dart'));
+      // Timestamp, Score are only referenced by User — inlined into user.dart
+      expect(files.keys, isNot(contains('lib/src/models/timestamp.dart')));
+      expect(files.keys, isNot(contains('lib/src/models/score.dart')));
+      // They should appear inside user.dart instead
+      final user = files['lib/src/models/user.dart']!;
+      expect(user, contains('extension type Timestamp'));
+      expect(user, contains('extension type const Score'));
     });
 
     test('User model references extension types with correct fromJson', () {

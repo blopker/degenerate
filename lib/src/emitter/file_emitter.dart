@@ -36,18 +36,72 @@ class FileEmitter {
       typeRegistry[name] = type;
     }
 
+    // ── Determine which small types can be inlined into their parent's file ──
+    // Build a map of type name → set of parent type names that reference it.
+    final referencedBy = <String, Set<String>>{};
+    for (final type in types) {
+      final parentName = _typeName(type);
+      if (parentName == null) continue;
+      final analysis = _analyzeModel(type);
+      analysis.referencedNames.remove(parentName); // exclude self
+      for (final refName in analysis.referencedNames) {
+        (referencedBy[refName] ??= {}).add(parentName);
+      }
+    }
+    // Also count API references — if an API directly uses a type, it stays separate.
+    final apiReferencedTypes = <String>{};
+    for (final api in apis) {
+      final analysis = _analyzeApi(api);
+      apiReferencedTypes.addAll(analysis.referencedTypes);
+    }
+
+    // A type is inlineable if it's a small type (enum/extension type),
+    // referenced by exactly one parent, and not directly used by any API.
+    final inlinedInto = <String, String>{}; // child → parent
+    final inlinedChildren = <String, List<IrType>>{}; // parent → children
+    for (final type in types) {
+      final name = _typeName(type);
+      if (name == null) continue;
+      if (type is! IrEnum && type is! IrExtensionType) continue;
+      final parents = referencedBy[name];
+      if (parents == null || parents.length != 1) continue;
+      if (apiReferencedTypes.contains(name)) continue;
+      final parent = parents.first;
+      inlinedInto[name] = parent;
+      (inlinedChildren[parent] ??= []).add(type);
+      // Redirect imports: anyone importing this type should import the parent's file
+      typeToFile[name] = typeToFile[parent]!;
+    }
+
     // Emit model files
     for (final type in types) {
       final name = _typeName(type);
       if (name == null) continue;
+      if (inlinedInto.containsKey(name)) continue; // emitted with parent
+
       final fileName = toSnakeCase(name);
       final header = _header(specFileName, specVersion);
-      final specs = _emitType(type, typeRegistry);
+
+      // Prepend inlined children before the parent type
+      final specs = <Spec>[];
+      final children = inlinedChildren[name];
+      if (children != null) {
+        for (final child in children) {
+          specs.addAll(_emitType(child, typeRegistry));
+        }
+      }
+      specs.addAll(_emitType(type, typeRegistry));
       if (specs.isEmpty) continue;
 
       // Single-pass analysis: collect imports and detect special types
       final modelAnalysis = _analyzeModel(type);
       modelAnalysis.referencedNames.remove(name); // Don't import self
+      // Remove inlined children from imports (they're in the same file)
+      if (children != null) {
+        for (final child in children) {
+          modelAnalysis.referencedNames.remove(_typeName(child));
+        }
+      }
 
       final sortedRefs =
           modelAnalysis.referencedNames
@@ -142,6 +196,7 @@ class FileEmitter {
       packageName: packageName,
       specFileName: specFileName,
       specVersion: specVersion,
+      inlinedTypes: inlinedInto.keys.toSet(),
     );
 
     // Emit pubspec.yaml
@@ -374,6 +429,7 @@ class FileEmitter {
     required String packageName,
     required String specFileName,
     required String specVersion,
+    Set<String> inlinedTypes = const {},
   }) {
     final buf = StringBuffer();
     buf.writeln('// dart format off');
@@ -391,8 +447,13 @@ class FileEmitter {
     }
     buf.writeln();
 
-    // Export model files (sorted for stable diffs, deduplicated)
-    final modelNames = types.map(_typeName).whereType<String>().toSet().toList()
+    // Export model files (sorted for stable diffs, deduplicated, excluding inlined)
+    final modelNames = types
+        .map(_typeName)
+        .whereType<String>()
+        .where((name) => !inlinedTypes.contains(name))
+        .toSet()
+        .toList()
       ..sort();
     for (final name in modelNames) {
       final fileName = toSnakeCase(name);
