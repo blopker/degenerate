@@ -310,10 +310,14 @@ String toSnakeCase(String input) {
     }
     buf.write(c.toLowerCase());
   }
+  var result = buf.toString();
   // Ensure the result doesn't start with a digit (for valid Dart file names)
-  final result = buf.toString();
   if (RegExp(r'^[0-9]').hasMatch(result)) {
-    return 'n$result';
+    result = 'n$result';
+  }
+  // Avoid _test suffix — dart test would pick up these files as test files.
+  if (result.endsWith('_test')) {
+    result = '${result}_';
   }
   return result;
 }

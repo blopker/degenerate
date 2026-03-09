@@ -8,7 +8,8 @@
       "Bash(wc:*)",
       "Bash(command dart:*)",
       "Bash(UPDATE_SNAPSHOTS=1 command dart:*)",
-      "Bash(UPDATE_SNAPSHOTS=1 dart test:*)"
+      "Bash(UPDATE_SNAPSHOTS=1 dart test:*)",
+      "mcp__kagi__kagi_search_fetch"
     ]
   }
 }

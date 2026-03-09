@@ -1,8 +1,28 @@
-import 'package:degenerate/src/emitter/emit_utils.dart' show enumValueName;
+import 'package:degenerate/src/emitter/emit_utils.dart'
+    show enumValueName, toSnakeCase;
 import 'package:degenerate/src/naming.dart';
 import 'package:test/test.dart';
 
 void main() {
+  group('toSnakeCase', () {
+    test('converts PascalCase to snake_case', () {
+      expect(toSnakeCase('PetStore'), 'pet_store');
+    });
+
+    test('avoids generating _test suffix', () {
+      // Schema names ending in "Test" should not produce files
+      // that dart test picks up as test files.
+      expect(toSnakeCase('ObservatoryPageTest'), isNot(endsWith('_test')));
+      expect(toSnakeCase('DexTargetedTest'), isNot(endsWith('_test')));
+      expect(toSnakeCase('MyTest'), isNot(endsWith('_test')));
+    });
+
+    test('does not mangle names without test suffix', () {
+      expect(toSnakeCase('TestResult'), 'test_result');
+      expect(toSnakeCase('LatestVersion'), 'latest_version');
+    });
+  });
+
   group('toPascalCase', () {
     test('converts snake_case', () {
       expect(toPascalCase('pet_store'), 'PetStore');

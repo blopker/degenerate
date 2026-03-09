@@ -1,8 +1,1 @@
-paths:
-  - test/emitter_test.dart
-  - test/generator_test.dart
-  - test/lowering_test.dart
-  - test/normalizer_test.dart
-  - test/parser_test.dart
-  - test/naming_test.dart
-  - test/snapshot_test.dart
+paths: [test/]

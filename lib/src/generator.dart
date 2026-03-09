@@ -17,6 +17,7 @@ class GeneratorConfig {
   final bool includeDeprecated;
   final bool verbose;
   final bool dryRun;
+  final bool clean;
 
   const GeneratorConfig({
     required this.inputPath,
@@ -26,6 +27,7 @@ class GeneratorConfig {
     this.includeDeprecated = false,
     this.verbose = false,
     this.dryRun = false,
+    this.clean = false,
   });
 }
 
@@ -169,7 +171,16 @@ class Generator {
 
     _log('Generated ${files.length} files');
 
-    // 7. Write to disk (unless dry run)
+    // 7. Clean output directory if requested
+    if (config.clean) {
+      final outputDir = Directory(config.outputDir);
+      if (outputDir.existsSync()) {
+        _log('Cleaning ${config.outputDir}...');
+        outputDir.deleteSync(recursive: true);
+      }
+    }
+
+    // 8. Write to disk (unless dry run)
     if (config.dryRun) {
       _log('Dry run — skipping file writes.');
       for (final filePath in files.keys.toList()..sort()) {

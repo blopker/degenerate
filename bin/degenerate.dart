@@ -41,6 +41,12 @@ ArgParser buildParser() {
       negatable: false,
     )
     ..addFlag(
+      'clean',
+      help: 'Remove output directory before generating.',
+      defaultsTo: false,
+      negatable: false,
+    )
+    ..addFlag(
       'verbose',
       abbr: 'v',
       help: 'Print IR and diagnostics.',
@@ -107,6 +113,7 @@ Future<void> main(List<String> arguments) async {
       packageName: results.option('name'),
       client: results.option('client') ?? 'http',
       includeDeprecated: results.flag('include-deprecated'),
+      clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
     );

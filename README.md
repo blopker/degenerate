@@ -21,7 +21,7 @@
 - **Full OpenAPI 3.0 and 3.1 support** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, and circular references
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
-- **Fast** — generates 14,580 files from the Cloudflare spec in ~6 seconds (AOT compiled), with parallel dart_style formatting across CPU cores
+- **Fast** — generates 14,580 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Modular output** — one file per model/enum/union, barrel file for convenient imports
 
 ## Installation
@@ -47,6 +47,7 @@ Options:
   -n, --name               Package name (default: inferred from spec title)
       --client             HTTP client adapter: http|none (default: http)
       --include-deprecated  Include deprecated operations
+      --clean              Remove output directory before generating
   -v, --verbose            Print IR and diagnostics
       --dry-run            Parse and validate without writing files
   -h, --help               Show help
@@ -61,6 +62,9 @@ degenerate -i petstore.yaml -o lib/src/api -n petstore
 
 # Generate from a JSON spec with verbose output
 degenerate -i kubernetes-api.json -o lib/src/k8s --verbose
+
+# Clean output directory before generating (removes stale files)
+degenerate -i spec.yaml -o lib/src/api --clean
 
 # Dry run to check for issues without writing files
 degenerate -i spec.yaml --dry-run
@@ -173,7 +177,7 @@ lib/src/
     type_lowerer.dart        OpenAPI schemas -> IR types
     operation_lowerer.dart   OpenAPI paths/ops -> IR operations
   emitter/
-    emit_utils.dart          Shared code gen utilities + parallel formatting
+    emit_utils.dart          Shared code gen utilities
     model_emitter.dart       IrObject -> final class
     enum_emitter.dart        IrEnum -> final class with static const instances
     sealed_union_emitter.dart  Unions -> sealed class hierarchies
@@ -181,7 +185,7 @@ lib/src/
     file_emitter.dart        Orchestrates all emitters
 ```
 
-The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Format** (dart_style, parallelized across isolates) -> **Write**.
+The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Write**. Generated files include `// dart format off` to prevent reformatting.
 
 ## Tested Specs
 

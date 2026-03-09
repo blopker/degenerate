@@ -12,8 +12,7 @@ final _updateSnapshots =
 
 final _fixturesDir =
     p.join(Directory.current.path, 'test', 'fixtures');
-final _snapshotsDir =
-    p.join(Directory.current.path, 'test', 'snapshots');
+final _snapshotsDir = p.join(Directory.current.path, 'snapshots');
 
 /// Whether a file path should be included in snapshot comparison.
 /// Excludes dart pub artifacts and other non-generated files.

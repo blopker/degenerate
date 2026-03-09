@@ -160,6 +160,69 @@ void main() {
       );
     });
 
+    test('clean removes existing output directory before generating', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      // Create a stale file in the output directory
+      final staleFile = File(p.join(tempDir.path, 'lib/src/models/stale.dart'));
+      staleFile.parent.createSync(recursive: true);
+      staleFile.writeAsStringSync('// stale file');
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        clean: true,
+      );
+
+      final generator = Generator(config);
+      await generator.generate();
+
+      // The stale file should be gone
+      expect(staleFile.existsSync(), isFalse,
+          reason: 'Stale file should be removed when clean is true');
+
+      // But generated files should exist
+      final petModel = File(p.join(tempDir.path, 'lib/src/models/pet.dart'));
+      expect(petModel.existsSync(), isTrue,
+          reason: 'Generated files should still be created');
+    });
+
+    test('without clean preserves existing files', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      // Create a stale file in the output directory
+      final staleFile = File(p.join(tempDir.path, 'lib/src/models/stale.dart'));
+      staleFile.parent.createSync(recursive: true);
+      staleFile.writeAsStringSync('// stale file');
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        // clean defaults to false
+      );
+
+      final generator = Generator(config);
+      await generator.generate();
+
+      // The stale file should still be there
+      expect(staleFile.existsSync(), isTrue,
+          reason: 'Stale file should be preserved when clean is false');
+    });
+
     test('infers package name from spec title', () async {
       final specPath = p.join(
         Directory.current.path,
