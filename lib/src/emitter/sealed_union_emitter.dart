@@ -1064,9 +1064,4 @@ class AnyOfEmitter {
       PrimitiveKind.bool => 'bool',
     };
   }
-
-  /// A type check expression for an extension type's JSON wire type.
-  static String _extensionTypeJsonCheck(IrPrimitive inner) {
-    return 'json is ${_extensionTypeJsonType(inner)}';
-  }
 }

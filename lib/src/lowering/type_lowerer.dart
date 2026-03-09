@@ -588,10 +588,8 @@ class TypeLowerer {
       return _lowerPrimitive(type, flattened);
     }
 
-    // Fallback: treat as dynamic (map to Object via string).
-    warnings.add(
-      'Schema "${name ?? "(anonymous)"}" has no type — falling back to String',
-    );
+    // Fallback: no explicit type — treat as String.
+    // Named schemas become extension types (e.g. `extension type IamUserInviteStatus(String value)`).
     return IrPrimitive(
       PrimitiveKind.string,
       description: description,
