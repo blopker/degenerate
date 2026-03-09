@@ -161,7 +161,8 @@ class Generator {
 
     // 6. Emit all files
     _log('Emitting Dart source files...');
-    final packageName = config.packageName ?? _inferPackageName(doc.title);
+    final packageName =
+        config.packageName ?? _existingPackageName(config.outputDir) ?? _inferPackageName(doc.title);
     final specFileName = p.basename(config.inputPath);
     final specVersion = doc.version;
 
@@ -356,6 +357,14 @@ class Generator {
       IrMap(:final values) => 'Map<String, ${_irTypeName(values)}>',
       IrTypeRef(:final name) => 'Ref($name)',
     };
+  }
+
+  /// Read the package name from an existing pubspec.yaml in the output directory.
+  static String? _existingPackageName(String outputDir) {
+    final pubspec = File(p.join(outputDir, 'pubspec.yaml'));
+    if (!pubspec.existsSync()) return null;
+    final match = RegExp(r'^name:\s*(\S+)').firstMatch(pubspec.readAsStringSync());
+    return match?.group(1);
   }
 
   /// Infer a valid Dart package name from the spec title.
