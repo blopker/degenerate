@@ -22,10 +22,11 @@
 - **Full OpenAPI 3.0 and 3.1 support** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, and circular references
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
-- **Fast** — generates 14,580 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Fast** — generates 12,700 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
 - **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
 - **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
-- **Modular output** — one file per model/enum/union, barrel file for convenient imports
+- **Modular output** — one file per model, small types inlined into their parent, barrel file for convenient imports
 
 ## Quick Start
 
@@ -87,6 +88,8 @@ Options:
   -i, --input              Path to OpenAPI spec (required)
   -o, --output             Output directory (default: lib/src/generated)
   -n, --name               Package name (default: inferred from spec title)
+  -t, --tag                Only include APIs matching these tags (repeatable)
+  -p, --path               Only include operations under these path prefixes (repeatable)
       --client             HTTP client adapter: http|none (default: http)
       --include-deprecated  Include deprecated operations
       --clean              Remove output directory before generating
@@ -102,6 +105,15 @@ Options:
 # Generate from a YAML spec
 degenerate -i petstore.yaml -o lib/src/api -n petstore
 
+# Only generate DNS-related APIs from a large spec
+degenerate -i cloudflare.yaml -o lib/src/api -t dns
+
+# Multiple tags
+degenerate -i cloudflare.yaml -o lib/src/api -t dns -t workers
+
+# Filter by path prefix
+degenerate -i cloudflare.yaml -o lib/src/api -p /zones
+
 # Generate from a JSON spec with verbose output
 degenerate -i kubernetes-api.json -o lib/src/k8s --verbose
 
@@ -114,6 +126,8 @@ degenerate -i spec.yaml --dry-run
 # Generate without HTTP client (bring your own ApiClient implementation)
 degenerate -i spec.yaml --client none
 ```
+
+Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.
 
 ## Packages
 
@@ -141,6 +155,7 @@ lib/
     models/
       pet.dart                 Data classes with fromJson/toJson/copyWith/==/hashCode
       pet_status.dart          Enum-like class with unknown value preservation
+      user_id.dart             Extension type for branded primitives
       shape.dart               Sealed class for discriminated unions
     apis/
       pets_api.dart            API client class with typed methods
@@ -148,6 +163,8 @@ lib/
       <package_name>_api.dart  Root SDK facade with lazy API group accessors
 pubspec.yaml                   Generated with correct dependencies
 ```
+
+Small types (extension types and enums) referenced by a single parent are automatically inlined into the parent's file to reduce file count.
 
 ### Data Classes
 
@@ -183,6 +200,26 @@ final class PetStatus {
 
   String toJson() => value;
   bool get isUnknown => !values.contains(this);
+}
+```
+
+### Extension Types (Branded Primitives)
+
+Named primitive schemas (e.g., `UserId` as a `string` with `format: uuid`) generate zero-cost Dart extension types:
+
+```dart
+extension type const UserId(String value) {
+  factory UserId.fromJson(String json) => UserId(json);
+  String toJson() => value;
+}
+```
+
+This provides compile-time type safety without runtime overhead — you can't accidentally pass a `String` where a `UserId` is expected. Types with formats like `date-time`, `uri`, and `int32` automatically parse/serialize:
+
+```dart
+extension type Timestamp(DateTime value) {
+  factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
+  String toJson() => value.toIso8601String();
 }
 ```
 
@@ -308,6 +345,7 @@ lib/src/
     emit_utils.dart          Shared code gen utilities
     model_emitter.dart       IrObject -> final class
     enum_emitter.dart        IrEnum -> final class with static const instances
+    extension_type_emitter.dart  IrExtensionType -> extension type
     sealed_union_emitter.dart  Unions -> sealed class hierarchies
     api_emitter.dart         IrApi -> API client class
     file_emitter.dart        Orchestrates all emitters
@@ -324,15 +362,15 @@ The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline 
 
 | Spec | Files | Status |
 |------|-------|--------|
-| Petstore (3.0) | 119 | 0 issues |
-| Twilio (35k lines) | 35,821 | 0 issues |
-| Shopify (50k lines) | 49,950 | 0 issues |
-| Kubernetes (39k lines, JSON) | 39,336 | 0 issues |
-| Totem Mobile (3.1) | ~4k | 0 issues |
-| OpenAI | 2,317 | 0 issues |
-| GitHub REST 3.1 | 6,401 | 0 issues |
-| Cloudflare | 14,580 | 0 issues |
-| Stripe (162k lines) | 10,768 | 0 issues |
+| Petstore (3.0) | 6 | 0 issues |
+| Twilio | 317 | 0 issues |
+| Shopify | 21 | 0 issues |
+| Kubernetes (JSON) | 250 | 0 issues |
+| Totem Mobile (3.1) | 61 | 0 issues |
+| OpenAI | 1,471 | 0 issues |
+| GitHub REST 3.1 | 3,852 | 0 issues |
+| Cloudflare | 12,700 | 0 issues |
+| Stripe | 6,939 | 0 issues |
 
 ## Limitations
 

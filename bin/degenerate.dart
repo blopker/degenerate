@@ -35,6 +35,20 @@ ArgParser buildParser() {
       defaultsTo: 'http',
       allowed: ['http', 'none'],
     )
+    ..addMultiOption(
+      'tag',
+      abbr: 't',
+      help: 'Only include API groups matching these tags (substring match).\n'
+          'Can be specified multiple times.',
+      valueHelp: 'pattern',
+    )
+    ..addMultiOption(
+      'path',
+      abbr: 'p',
+      help: 'Only include operations whose path starts with this prefix.\n'
+          'Can be specified multiple times.',
+      valueHelp: 'prefix',
+    )
     ..addFlag(
       'include-deprecated',
       help: 'Include deprecated operations.',
@@ -127,6 +141,8 @@ Future<void> main(List<String> arguments) async {
       packageName: results.option('name'),
       client: results.option('client') ?? 'http',
       includeDeprecated: results.flag('include-deprecated'),
+      tags: results.multiOption('tag'),
+      paths: results.multiOption('path'),
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
