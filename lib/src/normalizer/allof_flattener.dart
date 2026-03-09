@@ -6,20 +6,18 @@ class AllOfFlattener {
   /// If the `allOf` entry carries a `discriminator`, the schema is left as-is
   /// so downstream code can handle it as a union type.
   Map<String, dynamic> flatten(Map<String, dynamic> schema) {
-    if (!schema.containsKey('allOf')) return Map<String, dynamic>.from(schema);
+    if (!schema.containsKey('allOf')) return schema;
 
     // Don't flatten discriminated unions.
-    if (schema.containsKey('discriminator')) {
-      return Map<String, dynamic>.from(schema);
-    }
+    if (schema.containsKey('discriminator')) return schema;
 
     final allOf = schema['allOf'];
-    if (allOf is! List) return Map<String, dynamic>.from(schema);
+    if (allOf is! List) return schema;
 
     // Check sub-schemas for a discriminator as well.
     for (final sub in allOf) {
       if (sub is Map<String, dynamic> && sub.containsKey('discriminator')) {
-        return Map<String, dynamic>.from(schema);
+        return schema;
       }
     }
 

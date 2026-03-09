@@ -25,5 +25,9 @@ final class ApiConfig {
 abstract interface class Interceptor {
   Future<ApiRequest> onRequest(ApiRequest request);
   Future<ApiResponse> onResponse(ApiResponse response);
-  Future<ApiResponse> onError(Object error, StackTrace stack, ApiRequest request);
+  Future<ApiResponse> onError(
+    Object error,
+    StackTrace stack,
+    ApiRequest request,
+  );
 }

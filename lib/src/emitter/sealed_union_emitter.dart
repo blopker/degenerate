@@ -4,6 +4,9 @@ import '../ir/ir_types.dart';
 import '../naming.dart';
 import 'emit_utils.dart';
 
+/// Regex to strip angle brackets, commas, and whitespace from type names.
+final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
+
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {
   final IrDiscriminatedUnion union;
@@ -383,7 +386,7 @@ class DiscriminatedUnionEmitter {
   Class _buildRefVariant(String className, String discValue, IrType type) {
     final typeName = irTypeName(type);
     // Sanitize type names like "List<String>" by removing angle brackets
-    final safeTypeName = typeName.replaceAll(RegExp(r'[<>,\s]'), '');
+    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
     final fieldName = sanitizeDartName(toCamelCase(safeTypeName));
 
     return Class(
@@ -581,7 +584,7 @@ class UntaggedUnionEmitter {
         .where((v) => seenTypes.add(irTypeName(v)))
         .map((v) {
           final typeName = irTypeName(v);
-          final safeTypeName = typeName.replaceAll(RegExp(r'[<>,\s]'), '');
+          final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
           final className = '${union.name}${toPascalCase(safeTypeName)}';
           return '  final $typeName v => $className(v),';
         })
@@ -617,7 +620,7 @@ class UntaggedUnionEmitter {
       }
       final typeName = irTypeName(variant);
       if (!seenTypes.add(typeName)) continue;
-      final safeTypeName = typeName.replaceAll(RegExp(r'[<>,\s]'), '');
+      final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
       final className = '${union.name}${toPascalCase(safeTypeName)}';
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
@@ -659,7 +662,7 @@ class UntaggedUnionEmitter {
     final typeName = irTypeName(variant);
     // Sanitize type names like "List<String>" or "Map<String, int>"
     // by removing angle brackets and their contents for the class name.
-    final safeTypeName = typeName.replaceAll(RegExp(r'[<>,\s]'), '');
+    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
     final className = '${union.name}${toPascalCase(safeTypeName)}';
     return Class(
       (b) => b

@@ -10,6 +10,17 @@ sealed class IrType {
   final String? description;
   final bool isNullable;
   const IrType({this.description, this.isNullable = false});
+
+  /// The emittable type name, or `null` for anonymous types
+  /// (primitives, lists, maps, type refs).
+  String? get emittableName => switch (this) {
+    IrObject(:final name) => name,
+    IrEnum(:final name) => name,
+    IrDiscriminatedUnion(:final name) => name,
+    IrUntaggedUnion(:final name) => name,
+    IrAnyOf(:final name) => name,
+    _ => null,
+  };
 }
 
 final class IrPrimitive extends IrType {

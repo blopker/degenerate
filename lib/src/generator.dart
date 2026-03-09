@@ -228,15 +228,21 @@ class Generator {
   }
 
   /// Resolve type refs in all API operations.
+  ///
+  /// Uses `identical` checks to avoid rebuilding objects when nothing changed.
   static List<IrApi> _resolveApiTypeRefs(
     TypeLowerer typeLowerer,
     List<IrApi> apis,
   ) {
     return apis.map((api) {
+      var apiChanged = false;
       final ops = api.operations.map((op) {
+        var opChanged = false;
+
         final params = op.parameters.map((p) {
           final resolved = typeLowerer.resolveTypeRefs(p.type);
           if (identical(resolved, p.type)) return p;
+          opChanged = true;
           return IrParameter(
             p.name,
             p.dartName,
@@ -250,44 +256,65 @@ class Generator {
         IrRequestBody? reqBody;
         if (op.requestBody != null) {
           final rb = op.requestBody!;
+          var rbChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final entry in rb.content.entries) {
             final resolved = typeLowerer.resolveTypeRefs(entry.value.schema);
+            if (!identical(resolved, entry.value.schema)) rbChanged = true;
             newContent[entry.key] = IrMediaType(resolved);
           }
-          reqBody = IrRequestBody(newContent, isRequired: rb.isRequired);
+          if (rbChanged) {
+            opChanged = true;
+            reqBody = IrRequestBody(newContent, isRequired: rb.isRequired);
+          }
         }
 
         final responses = <int, IrResponse>{};
+        var respChanged = false;
         for (final entry in op.responses.entries) {
           final resp = entry.value;
+          var entryChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
             final resolved = typeLowerer.resolveTypeRefs(ce.value.schema);
+            if (!identical(resolved, ce.value.schema)) entryChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }
-          responses[entry.key] = IrResponse(
-            description: resp.description,
-            content: newContent,
-            headers: resp.headers,
-          );
+          if (entryChanged) {
+            respChanged = true;
+            responses[entry.key] = IrResponse(
+              description: resp.description,
+              content: newContent,
+              headers: resp.headers,
+            );
+          } else {
+            responses[entry.key] = resp;
+          }
         }
+        if (respChanged) opChanged = true;
 
         IrResponse? defaultResp;
         if (op.defaultResponse != null) {
           final resp = op.defaultResponse!;
+          var drChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
             final resolved = typeLowerer.resolveTypeRefs(ce.value.schema);
+            if (!identical(resolved, ce.value.schema)) drChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }
-          defaultResp = IrResponse(
-            description: resp.description,
-            content: newContent,
-            headers: resp.headers,
-          );
+          if (drChanged) {
+            opChanged = true;
+            defaultResp = IrResponse(
+              description: resp.description,
+              content: newContent,
+              headers: resp.headers,
+            );
+          }
         }
 
+        if (!opChanged) return op;
+        apiChanged = true;
         return IrOperation(
           op.operationId,
           op.dartMethodName,
@@ -302,21 +329,13 @@ class Generator {
           isDeprecated: op.isDeprecated,
         );
       }).toList();
+      if (!apiChanged) return api;
       return IrApi(api.name, ops);
     }).toList();
   }
 
   /// Extract the emittable type name (if any) for deduplication.
-  static String? _irTypeNameOf(IrType type) {
-    return switch (type) {
-      IrObject(:final name) => name,
-      IrEnum(:final name) => name,
-      IrDiscriminatedUnion(:final name) => name,
-      IrUntaggedUnion(:final name) => name,
-      IrAnyOf(:final name) => name,
-      _ => null,
-    };
-  }
+  static String? _irTypeNameOf(IrType type) => type.emittableName;
 
   String _irTypeName(IrType type) {
     return switch (type) {

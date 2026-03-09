@@ -86,29 +86,13 @@ class TypeLowerer {
     // Add any inline-generated types (e.g., named enums from inline enum fields)
     // that were registered during lowering but aren't in the results list.
     final resultNames = results
-        .map((r) {
-          return switch (r) {
-            IrObject(:final name) => name,
-            IrEnum(:final name) => name,
-            IrDiscriminatedUnion(:final name) => name,
-            IrUntaggedUnion(:final name) => name,
-            IrAnyOf(:final name) => name,
-            _ => null,
-          };
-        })
+        .map((r) => r.emittableName)
         .whereType<String>()
         .toSet();
 
     for (final entry in typeRegistry.entries) {
       final regType = entry.value;
-      final regName = switch (regType) {
-        IrEnum(:final name) => name,
-        IrObject(:final name) => name,
-        IrDiscriminatedUnion(:final name) => name,
-        IrUntaggedUnion(:final name) => name,
-        IrAnyOf(:final name) => name,
-        _ => null,
-      };
+      final regName = regType.emittableName;
       if (regName != null && resultNames.add(regName)) {
         results.add(regType);
       }

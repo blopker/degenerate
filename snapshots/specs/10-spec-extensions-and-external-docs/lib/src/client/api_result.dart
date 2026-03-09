@@ -14,7 +14,11 @@ final class ApiSuccess<T> extends ApiResult<T> {
   final int statusCode;
   final Map<String, String> headers;
 
-  const ApiSuccess(this.data, {required this.statusCode, this.headers = const {}});
+  const ApiSuccess(
+    this.data, {
+    required this.statusCode,
+    this.headers = const {},
+  });
 }
 
 final class ApiError<T> extends ApiResult<T> {

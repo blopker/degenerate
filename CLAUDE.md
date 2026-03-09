@@ -1,6 +1,6 @@
 # Development Process
 
-Use the gitignored outputs/ folder for experimenting and investigating outputs. Do not use /tmp/.
+Use the gitignored outputs/ folder for experimenting and investigating outputs. Do not use /tmp/. Use outputs/ for anything you'd want to use /tmp/ for. You can wipe out outputs/ any time you'd like.
 
 Popular openapi specs are in test/fixtures, we have committed snapshot outputs in test/snapshots.
 

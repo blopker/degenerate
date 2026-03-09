@@ -128,6 +128,17 @@ String sanitizeFieldName(String name) {
   return name;
 }
 
+// Pre-compiled regexps for hot naming paths.
+final _leadingPlusDigit = RegExp(r'^\+(\d)');
+final _leadingMinusDigit = RegExp(r'^-(\d)');
+final _leadingTrailingSeparators = RegExp(r"^[\s_\-./']+'|[\s_\-./']+$");
+final _segmentSplitter = RegExp(r"[_\-.\s/']+");
+final _versionSegment = RegExp(r'^v\d+$');
+final _invalidIdentChars = RegExp(r'[^a-zA-Z0-9_$]');
+final _startsWithDigit = RegExp(r'^[0-9]');
+final _pathTemplateParam = RegExp(r'\{[^}]*\}');
+final _trailingSeparators = RegExp(r'[_\-.\s]+$');
+
 /// Splits an identifier into word segments.
 ///
 /// Handles:
@@ -139,19 +150,16 @@ List<String> _splitWords(String input) {
   // Replace leading +/- before digits with words.
   // Prevents collisions like +1 and -1 both becoming $1.
   var preprocessed = input
-      .replaceAllMapped(RegExp(r'^\+(\d)'), (m) => 'plus${m[1]}')
-      .replaceAllMapped(RegExp(r'^-(\d)'), (m) => 'minus${m[1]}');
+      .replaceAllMapped(_leadingPlusDigit, (m) => 'plus${m[1]}')
+      .replaceAllMapped(_leadingMinusDigit, (m) => 'minus${m[1]}');
   // Strip leading/trailing separators
-  final cleaned = preprocessed.replaceAll(
-    RegExp(r"^[\s_\-./']+'|[\s_\-./']+$"),
-    '',
-  );
+  final cleaned = preprocessed.replaceAll(_leadingTrailingSeparators, '');
   if (cleaned.isEmpty) return [];
 
   final words = <String>[];
 
   // First, split on explicit separators (underscore, hyphen, dot, space, slash, apostrophe)
-  final segments = cleaned.split(RegExp(r"[_\-.\s/']+"));
+  final segments = cleaned.split(_segmentSplitter);
 
   for (final segment in segments) {
     if (segment.isEmpty) continue;
@@ -198,7 +206,7 @@ bool _isLetter(String c) => c.toLowerCase() != c.toUpperCase();
 bool _isVersionOrPathSegment(String word) {
   final lower = word.toLowerCase();
   if (lower == 'api') return true;
-  if (RegExp(r'^v\d+$').hasMatch(lower)) return true;
+  if (_versionSegment.hasMatch(lower)) return true;
   return false;
 }
 
@@ -280,12 +288,12 @@ String sanitizeDartName(String input) {
   if (input.isEmpty) return r'$empty';
 
   // Remove characters that are not valid in Dart identifiers
-  var result = input.replaceAll(RegExp(r'[^a-zA-Z0-9_$]'), '');
+  var result = input.replaceAll(_invalidIdentChars, '');
 
   if (result.isEmpty) return r'$empty';
 
   // Prefix with $ if starts with a digit
-  if (RegExp(r'^[0-9]').hasMatch(result)) {
+  if (_startsWithDigit.hasMatch(result)) {
     result = '\$$result';
   }
 
@@ -321,7 +329,7 @@ String operationMethodName(String operationId) {
   if (operationId.isEmpty) return operationId;
 
   // Remove path template parameters like {petId}
-  var cleaned = operationId.replaceAll(RegExp(r'\{[^}]*\}'), '');
+  var cleaned = operationId.replaceAll(_pathTemplateParam, '');
 
   // Remove leading HTTP method patterns followed by separators or slashes
   // but keep the method word itself as part of the name
@@ -329,12 +337,12 @@ String operationMethodName(String operationId) {
   cleaned = cleaned.replaceAll('/', '_');
 
   // Clean up any trailing separators
-  cleaned = cleaned.replaceAll(RegExp(r'[_\-.\s]+$'), '');
+  cleaned = cleaned.replaceAll(_trailingSeparators, '');
 
   // Deduplicate consecutive repeated multi-word segments.
   // e.g. "mobile_api_mobile_api_get_spaces" → "mobile_api_get_spaces"
   final segments = cleaned
-      .split(RegExp(r'[_\-.\s]+'))
+      .split(_segmentSplitter)
       .where((s) => s.isNotEmpty)
       .toList();
   final deduped = <String>[];

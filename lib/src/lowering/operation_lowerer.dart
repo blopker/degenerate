@@ -88,6 +88,8 @@ class OperationLowerer {
   /// should be merged with operation-level parameters.
   /// The current operation ID being lowered. Used for name hints.
   String? _currentOperationId;
+  /// Cached PascalCase of [_currentOperationId] to avoid recomputing.
+  String? _currentOpPascal;
 
   IrOperation lowerOperation(
     String path,
@@ -97,6 +99,7 @@ class OperationLowerer {
   }) {
     final operationId = op['operationId'] as String? ?? '${method}_$path';
     _currentOperationId = operationId;
+    _currentOpPascal = toPascalCase(operationId);
     _usedParamNames.clear();
     final dartMethod = sanitizeDartName(operationMethodName(operationId));
     final httpMethod = _parseHttpMethod(method);
@@ -191,7 +194,7 @@ class OperationLowerer {
     String? paramNameHint;
     if (_currentOperationId != null) {
       paramNameHint =
-          '${toPascalCase(_currentOperationId!)}${toPascalCase(name)}';
+          '${_currentOpPascal!}${toPascalCase(name)}';
     }
     final type = schemaMap != null
         ? typeLowerer.lowerInlineSchema(schemaMap, nameHint: paramNameHint)
@@ -290,7 +293,7 @@ class OperationLowerer {
       // Generate a name hint for inline request body schemas.
       String? bodyNameHint;
       if (_currentOperationId != null) {
-        bodyNameHint = '${toPascalCase(_currentOperationId!)}Request';
+        bodyNameHint = '${_currentOpPascal!}Request';
       }
       final irSchema = typeLowerer.lowerInlineSchema(
         schemaMap,
@@ -328,12 +331,12 @@ class OperationLowerer {
         // Generate a name hint for inline schemas based on the operation
         String? nameHint;
         if (_currentOperationId != null) {
-          nameHint = '${toPascalCase(_currentOperationId!)}Response';
+          nameHint = '${_currentOpPascal!}Response';
           if (statusCode != null &&
               statusCode != '200' &&
               statusCode != '201') {
             nameHint =
-                '${toPascalCase(_currentOperationId!)}Response$statusCode';
+                '${_currentOpPascal!}Response$statusCode';
           }
         }
 
