@@ -4,6 +4,7 @@ test:
 	dart test
 	dart analyze lib
 	dart analyze snapshots/specs
+	dart analyze example
 
 # test_unit:
 	# todo

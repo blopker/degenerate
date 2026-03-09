@@ -133,7 +133,12 @@ final class IrAnyOf extends IrType {
 final class IrExtensionType extends IrType {
   final String name;
   final IrPrimitive inner;
-  const IrExtensionType(this.name, this.inner, {super.description, super.isNullable});
+  const IrExtensionType(
+    this.name,
+    this.inner, {
+    super.description,
+    super.isNullable,
+  });
 }
 
 /// A reference to a named type (resolved during IR construction).

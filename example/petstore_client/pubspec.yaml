@@ -1,4 +1,4 @@
-name: petstore_client
+name: swagger_petstore_openapi_30
 description: Generated API client.
 version: 1.0.0
 publish_to: none

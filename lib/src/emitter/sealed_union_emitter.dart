@@ -932,9 +932,7 @@ class AnyOfEmitter {
         !allObjectLike &&
         fields.any(
           (f) =>
-              f.type is IrObject ||
-              f.type is IrTypeRef ||
-              _isUnionType(f.type),
+              f.type is IrObject || f.type is IrTypeRef || _isUnionType(f.type),
         );
     final prelude = needsMap
         ? 'final map = json is Map<String, dynamic> ? json : null;\n'
