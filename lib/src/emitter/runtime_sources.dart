@@ -37,7 +37,12 @@ final class ApiRequest {
 
   /// Resolve this request against a base URL.
   Uri resolveUri(Uri baseUrl) {
-    final resolved = baseUrl.resolve(path);
+    // Concatenate the base path with the request path (don't use Uri.resolve,
+    // which treats leading "/" as absolute from the host).
+    var basePath = baseUrl.path;
+    if (basePath.endsWith('/')) basePath = basePath.substring(0, basePath.length - 1);
+    final fullPath = '$basePath$path';
+    final resolved = baseUrl.replace(path: fullPath);
     if (queryParameters.isEmpty) return resolved;
     final existing = resolved.queryParameters;
     return resolved.replace(

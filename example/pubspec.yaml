@@ -1,0 +1,11 @@
+name: petstore_example
+description: Example CLI app using generated petstore client.
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  petstore_client:
+    path: petstore_client
+  http: ^1.2.0
