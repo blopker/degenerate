@@ -108,21 +108,29 @@ Future<void> main(List<String> arguments) async {
       exit(1);
     }
 
-    // Locate the packages/ directory relative to this script
+    // Compute relative path from output dir to the runtime package.
     final scriptDir = p.dirname(Platform.script.toFilePath());
     final generatorRoot = p.dirname(scriptDir);
-    final packagesDir = p.join(generatorRoot, 'packages');
+    final runtimeDir = Directory(
+      p.join(generatorRoot, 'packages', 'degenerate_runtime'),
+    );
+
+    final outputDir = results.option('output') ?? 'lib/src/generated';
+    final runtimePath = _relativePath(
+      from: p.absolute(outputDir),
+      to: runtimeDir.path,
+    );
 
     final config = GeneratorConfig(
       inputPath: input,
-      outputDir: results.option('output') ?? 'lib/src/generated',
+      outputDir: outputDir,
       packageName: results.option('name'),
       client: results.option('client') ?? 'http',
       includeDeprecated: results.flag('include-deprecated'),
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
-      runtimePackagePath: packagesDir,
+      runtimePath: runtimePath,
     );
 
     final generator = Generator(config);
@@ -135,5 +143,20 @@ Future<void> main(List<String> arguments) async {
   } on GeneratorException catch (e) {
     stderr.writeln('Error: ${e.message}');
     exit(1);
+  }
+}
+
+/// Compute a relative path, resolving symlinks so it works on macOS
+/// where /var is a symlink to /private/var.
+String _relativePath({required String from, required String to}) {
+  try {
+    final fromDir = Directory(from);
+    if (!fromDir.existsSync()) fromDir.createSync(recursive: true);
+    final resolvedFrom = fromDir.resolveSymbolicLinksSync();
+    final resolvedTo = Directory(to).resolveSymbolicLinksSync();
+    return p.relative(resolvedTo, from: resolvedFrom);
+  } catch (_) {
+    // Fallback to simple relative if symlink resolution fails
+    return p.relative(p.absolute(to), from: p.absolute(from));
   }
 }

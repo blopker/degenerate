@@ -1,7 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 
 import '../ir/ir_types.dart';
-import '../naming.dart' show toCamelCase, toPascalCase;
+import '../naming.dart' show sanitizeFieldName, toPascalCase;
 import 'api_emitter.dart';
 import 'emit_utils.dart';
 import 'enum_emitter.dart';
@@ -90,10 +90,11 @@ class FileEmitter {
       final analysis = _analyzeApi(api);
 
       // Derive imports directly from referenced types using pre-built lookup
-      final sortedApiRefs = analysis.referencedTypes
-          .where((n) => typeToFile.containsKey(n))
-          .toList()
-        ..sort();
+      final sortedApiRefs =
+          analysis.referencedTypes
+              .where((n) => typeToFile.containsKey(n))
+              .toList()
+            ..sort();
       final modelImports = sortedApiRefs
           .map((n) => Directive.import('../models/${typeToFile[n]}.dart'))
           .toList();
@@ -110,7 +111,11 @@ class FileEmitter {
           ..directives.addAll(
             needsTypedData ? [Directive.import('dart:typed_data')] : [],
           )
-          ..directives.add(Directive.import('package:degenerate_runtime/degenerate_runtime.dart'))
+          ..directives.add(
+            Directive.import(
+              'package:degenerate_runtime/degenerate_runtime.dart',
+            ),
+          )
           ..directives.addAll(modelImports)
           ..body.addAll(specs),
       );
@@ -437,7 +442,9 @@ class FileEmitter {
     // Lazy-initialized API accessors
     for (final api in apis) {
       final fieldName = _facadeFieldName(api.name);
-      buf.writeln('  late final ${api.name} $fieldName = ${api.name}(_config);');
+      buf.writeln(
+        '  late final ${api.name} $fieldName = ${api.name}(_config);',
+      );
     }
 
     buf.writeln('}');
@@ -451,8 +458,9 @@ class FileEmitter {
     final stripped = apiClassName.endsWith('Api') && apiClassName.length > 3
         ? apiClassName.substring(0, apiClassName.length - 3)
         : apiClassName;
-    // Convert to camelCase (first char lowercase)
-    return stripped[0].toLowerCase() + stripped.substring(1);
+    // Convert to camelCase (first char lowercase), sanitize reserved words
+    final camel = stripped[0].toLowerCase() + stripped.substring(1);
+    return sanitizeFieldName(camel);
   }
 
   String _emitPubspec({

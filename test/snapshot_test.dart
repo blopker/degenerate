@@ -50,7 +50,7 @@ void _snapshotTests(String groupName, List<File> specFiles) {
             inputPath: specFile.path,
             outputDir: tempDir.path,
             packageName: 'test_api',
-            runtimePackagePath: p.join(Directory.current.path, 'packages'),
+            runtimePath: '../../../packages/degenerate_runtime',
           );
 
           final generator = Generator(config);

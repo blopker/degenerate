@@ -5,7 +5,16 @@ import 'package:test/test.dart';
 
 import 'package:degenerate/src/generator.dart';
 
-final _packagesDir = p.join(Directory.current.path, 'packages');
+/// Compute the runtime path relative to [outputDir], resolving symlinks.
+String _runtimePathFor(String outputDir) {
+  final outDir = Directory(p.absolute(outputDir));
+  if (!outDir.existsSync()) outDir.createSync(recursive: true);
+  final resolvedOut = outDir.resolveSymbolicLinksSync();
+  final resolvedRuntime = Directory(
+    p.join(Directory.current.path, 'packages', 'degenerate_runtime'),
+  ).resolveSymbolicLinksSync();
+  return p.relative(resolvedRuntime, from: resolvedOut);
+}
 
 void main() {
   group('Generator end-to-end', () {
@@ -37,7 +46,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         verbose: true,
-        runtimePackagePath: _packagesDir,
+        runtimePath: _runtimePathFor(tempDir.path),
       );
 
       final generator = Generator(config);
@@ -137,7 +146,7 @@ void main() {
         outputDir: outputDir,
         packageName: 'petstore_api',
         dryRun: true,
-        runtimePackagePath: _packagesDir,
+        runtimePath: 'packages/degenerate_runtime',
       );
 
       final generator = Generator(config);
@@ -180,7 +189,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         clean: true,
-        runtimePackagePath: _packagesDir,
+        runtimePath: _runtimePathFor(tempDir.path),
       );
 
       final generator = Generator(config);
@@ -215,7 +224,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         // clean defaults to false
-        runtimePackagePath: _packagesDir,
+        runtimePath: _runtimePathFor(tempDir.path),
       );
 
       final generator = Generator(config);
@@ -239,7 +248,7 @@ void main() {
       final config = GeneratorConfig(
         inputPath: specPath,
         outputDir: tempDir.path,
-        runtimePackagePath: _packagesDir,
+        runtimePath: _runtimePathFor(tempDir.path),
       );
 
       final generator = Generator(config);

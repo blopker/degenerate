@@ -19,9 +19,10 @@ class GeneratorConfig {
   final bool dryRun;
   final bool clean;
 
-  /// Path to the directory containing the degenerate_runtime package.
-  /// Defaults to 'packages' relative to the generator root.
-  final String runtimePackagePath;
+  /// Path to the degenerate_runtime package as it should appear in the
+  /// generated pubspec.yaml `dependencies` section.
+  /// Example: `../../packages/degenerate_runtime`
+  final String runtimePath;
 
   const GeneratorConfig({
     required this.inputPath,
@@ -32,7 +33,7 @@ class GeneratorConfig {
     this.verbose = false,
     this.dryRun = false,
     this.clean = false,
-    this.runtimePackagePath = 'packages',
+    this.runtimePath = 'packages/degenerate_runtime',
   });
 }
 
@@ -164,11 +165,6 @@ class Generator {
     final specFileName = p.basename(config.inputPath);
     final specVersion = doc.version;
 
-    // Resolve the absolute path to the runtime package.
-    final runtimePath = p.absolute(
-      p.join(config.runtimePackagePath, 'degenerate_runtime'),
-    );
-
     final fileEmitter = FileEmitter();
     final files = fileEmitter.emitAll(
       types: irTypes,
@@ -176,7 +172,7 @@ class Generator {
       packageName: packageName,
       specFileName: specFileName,
       specVersion: specVersion,
-      runtimePath: runtimePath,
+      runtimePath: config.runtimePath,
     );
 
     _log('Generated ${files.length} files');

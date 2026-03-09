@@ -88,6 +88,7 @@ class OperationLowerer {
   /// should be merged with operation-level parameters.
   /// The current operation ID being lowered. Used for name hints.
   String? _currentOperationId;
+
   /// Cached PascalCase of [_currentOperationId] to avoid recomputing.
   String? _currentOpPascal;
 
@@ -193,8 +194,7 @@ class OperationLowerer {
     // Generate a name hint for inline parameter schemas.
     String? paramNameHint;
     if (_currentOperationId != null) {
-      paramNameHint =
-          '${_currentOpPascal!}${toPascalCase(name)}';
+      paramNameHint = '${_currentOpPascal!}${toPascalCase(name)}';
     }
     final type = schemaMap != null
         ? typeLowerer.lowerInlineSchema(schemaMap, nameHint: paramNameHint)
@@ -335,8 +335,7 @@ class OperationLowerer {
           if (statusCode != null &&
               statusCode != '200' &&
               statusCode != '201') {
-            nameHint =
-                '${_currentOpPascal!}Response$statusCode';
+            nameHint = '${_currentOpPascal!}Response$statusCode';
           }
         }
 

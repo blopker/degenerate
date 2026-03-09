@@ -16,14 +16,14 @@ import '../apis/rooms_api.dart';
 ///
 /// ```dart
 /// final sdk = TestApi(ApiConfig(client: myClient));
-/// sdk.default.totemApiMobileApiRegisterFcmToken();
+/// sdk.$default.totemApiMobileApiRegisterFcmToken();
 /// ```
 final class TestApi {
   final ApiConfig _config;
 
   TestApi(this._config);
 
-  late final DefaultApi default = DefaultApi(_config);
+  late final DefaultApi $default = DefaultApi(_config);
   late final UsersApi users = UsersApi(_config);
   late final SpacesApi spaces = SpacesApi(_config);
   late final BlogApi blog = BlogApi(_config);

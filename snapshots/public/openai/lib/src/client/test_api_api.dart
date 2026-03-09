@@ -56,7 +56,7 @@ final class TestApi {
   late final BatchApi batch = BatchApi(_config);
   late final ChatApi chat = ChatApi(_config);
   late final CompletionsApi completions = CompletionsApi(_config);
-  late final DefaultApi default = DefaultApi(_config);
+  late final DefaultApi $default = DefaultApi(_config);
   late final ConversationsApi conversations = ConversationsApi(_config);
   late final EmbeddingsApi embeddings = EmbeddingsApi(_config);
   late final EvalsApi evals = EvalsApi(_config);

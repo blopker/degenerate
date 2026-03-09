@@ -11,12 +11,12 @@ import '../apis/default_api.dart';
 ///
 /// ```dart
 /// final sdk = TestApi(ApiConfig(client: myClient));
-/// sdk.default.getDocs();
+/// sdk.$default.getDocs();
 /// ```
 final class TestApi {
   final ApiConfig _config;
 
   TestApi(this._config);
 
-  late final DefaultApi default = DefaultApi(_config);
+  late final DefaultApi $default = DefaultApi(_config);
 }
