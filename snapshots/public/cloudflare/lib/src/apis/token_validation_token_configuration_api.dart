@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all token validation configurations for this zone
 ///
 /// `GET /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigList({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigList({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// Create a new Token Validation configuration
 ///
 /// `POST /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigCreate({required String zoneId, required TokenValidationConfigCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCreate({required String zoneId, required TokenValidationConfigCreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a single Token Configuration
 ///
 /// `GET /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigGet({required String zoneId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigGet({required String zoneId, required String configId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Edit fields of an existing Token Configuration
 ///
 /// `PATCH /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigEdit({required String zoneId, required String configId, required TokenValidationConfigEditRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigEdit({required String zoneId, required String configId, required TokenValidationConfigEditRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigDelete({required String zoneId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigDelete({required String zoneId, required String configId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
-Future<ApiResult<ResponseCommon6>> tokenValidationConfigCredentialsUpdate({required String zoneId, required String configId, required ShieldCredentials body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCredentialsUpdate({required String zoneId, required String configId, required ShieldCredentials body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/token_validation/config/${Uri.encodeComponent(configId)}/credentials',
   headers: {..._config.defaultHeaders
@@ -129,7 +129,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -152,6 +152,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -162,7 +163,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

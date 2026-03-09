@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-01
 ///
 /// `GET /admin/api/2020-01/countries.json`
-Future<ApiResult<void>> deprecated202001GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries.json',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-2020-01
 ///
 /// `POST /admin/api/2020-01/countries.json`
-Future<ApiResult<void>> deprecated202001CreateCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/countries.json',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-01
 ///
 /// `GET /admin/api/2020-01/countries/count.json`
-Future<ApiResult<void>> deprecated202001GetCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -77,7 +77,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-01
 ///
 /// `GET /admin/api/2020-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202001GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -119,7 +119,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -136,7 +136,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-04
 ///
 /// `GET /admin/api/2020-04/countries.json`
-Future<ApiResult<void>> deprecated202004GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries.json',
   headers: {..._config.defaultHeaders
@@ -160,7 +160,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-2020-04
 ///
 /// `POST /admin/api/2020-04/countries.json`
-Future<ApiResult<void>> deprecated202004CreateCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/countries.json',
   headers: {..._config.defaultHeaders
@@ -179,7 +179,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-04
 ///
 /// `GET /admin/api/2020-04/countries/count.json`
-Future<ApiResult<void>> deprecated202004GetCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-04
 ///
 /// `GET /admin/api/2020-04/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202004GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -219,7 +219,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -238,7 +238,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -255,7 +255,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-07
 ///
 /// `GET /admin/api/2020-07/countries.json`
-Future<ApiResult<void>> deprecated202007GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries.json',
   headers: {..._config.defaultHeaders
@@ -279,7 +279,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-2020-07
 ///
 /// `POST /admin/api/2020-07/countries.json`
-Future<ApiResult<void>> deprecated202007CreateCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/countries.json',
   headers: {..._config.defaultHeaders
@@ -298,7 +298,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-07
 ///
 /// `GET /admin/api/2020-07/countries/count.json`
-Future<ApiResult<void>> deprecated202007GetCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -315,7 +315,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-07
 ///
 /// `GET /admin/api/2020-07/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202007GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -338,7 +338,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -357,7 +357,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -374,7 +374,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-10
 ///
 /// `GET /admin/api/2020-10/countries.json`
-Future<ApiResult<void>> getCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries.json',
   headers: {..._config.defaultHeaders
@@ -398,7 +398,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-2020-10
 ///
 /// `POST /admin/api/2020-10/countries.json`
-Future<ApiResult<void>> createCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/countries.json',
   headers: {..._config.defaultHeaders
@@ -417,7 +417,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-10
 ///
 /// `GET /admin/api/2020-10/countries/count.json`
-Future<ApiResult<void>> getCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -434,7 +434,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-10
 ///
 /// `GET /admin/api/2020-10/countries/{country_id}.json`
-Future<ApiResult<void>> getCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -457,7 +457,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/countries/{country_id}.json`
-Future<ApiResult<void>> updateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -476,7 +476,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/countries/{country_id}.json`
-Future<ApiResult<void>> deleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -493,7 +493,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2021-01
 ///
 /// `GET /admin/api/2021-01/countries.json`
-Future<ApiResult<void>> deprecated202101GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries.json',
   headers: {..._config.defaultHeaders
@@ -517,7 +517,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-2021-01
 ///
 /// `POST /admin/api/2021-01/countries.json`
-Future<ApiResult<void>> deprecated202101CreateCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/countries.json',
   headers: {..._config.defaultHeaders
@@ -536,7 +536,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2021-01
 ///
 /// `GET /admin/api/2021-01/countries/count.json`
-Future<ApiResult<void>> deprecated202101GetCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -553,7 +553,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2021-01
 ///
 /// `GET /admin/api/2021-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202101GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -576,7 +576,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -595,7 +595,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/countries/{country_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -612,7 +612,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-unstable
 ///
 /// `GET /admin/api/unstable/countries.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountries({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries.json',
   headers: {..._config.defaultHeaders
@@ -636,7 +636,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#create-unstable
 ///
 /// `POST /admin/api/unstable/countries.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCountries({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCountries({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/countries.json',
   headers: {..._config.defaultHeaders
@@ -655,7 +655,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-unstable
 ///
 /// `GET /admin/api/unstable/countries/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountriesCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries/count.json',
   headers: {..._config.defaultHeaders
@@ -672,7 +672,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-unstable
 ///
 /// `GET /admin/api/unstable/countries/{country_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryId({required String countryId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -695,7 +695,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#update-unstable
 ///
 /// `PUT /admin/api/unstable/countries/{country_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCountriesParamCountryId({required String countryId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -714,7 +714,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/countries/{country_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCountriesParamCountryId({required String countryId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}.json',
   headers: {..._config.defaultHeaders
@@ -731,7 +731,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-01
 ///
 /// `GET /admin/api/2020-01/currencies.json`
-Future<ApiResult<void>> deprecated202001GetCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/currencies.json',
   headers: {..._config.defaultHeaders
@@ -748,7 +748,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-04
 ///
 /// `GET /admin/api/2020-04/currencies.json`
-Future<ApiResult<void>> deprecated202004GetCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/currencies.json',
   headers: {..._config.defaultHeaders
@@ -765,7 +765,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-07
 ///
 /// `GET /admin/api/2020-07/currencies.json`
-Future<ApiResult<void>> deprecated202007GetCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/currencies.json',
   headers: {..._config.defaultHeaders
@@ -782,7 +782,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-10
 ///
 /// `GET /admin/api/2020-10/currencies.json`
-Future<ApiResult<void>> getCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/currencies.json',
   headers: {..._config.defaultHeaders
@@ -799,7 +799,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2021-01
 ///
 /// `GET /admin/api/2021-01/currencies.json`
-Future<ApiResult<void>> deprecated202101GetCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/currencies.json',
   headers: {..._config.defaultHeaders
@@ -816,7 +816,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-unstable
 ///
 /// `GET /admin/api/unstable/currencies.json`
-Future<ApiResult<void>> deprecatedUnstableGetCurrencies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCurrencies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/currencies.json',
   headers: {..._config.defaultHeaders
@@ -833,7 +833,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-01
 ///
 /// `GET /admin/api/2020-01/policies.json`
-Future<ApiResult<void>> deprecated202001GetPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/policies.json',
   headers: {..._config.defaultHeaders
@@ -850,7 +850,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-04
 ///
 /// `GET /admin/api/2020-04/policies.json`
-Future<ApiResult<void>> deprecated202004GetPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/policies.json',
   headers: {..._config.defaultHeaders
@@ -867,7 +867,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-07
 ///
 /// `GET /admin/api/2020-07/policies.json`
-Future<ApiResult<void>> deprecated202007GetPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/policies.json',
   headers: {..._config.defaultHeaders
@@ -884,7 +884,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-10
 ///
 /// `GET /admin/api/2020-10/policies.json`
-Future<ApiResult<void>> getPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/policies.json',
   headers: {..._config.defaultHeaders
@@ -901,7 +901,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2021-01
 ///
 /// `GET /admin/api/2021-01/policies.json`
-Future<ApiResult<void>> deprecated202101GetPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/policies.json',
   headers: {..._config.defaultHeaders
@@ -918,7 +918,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-unstable
 ///
 /// `GET /admin/api/unstable/policies.json`
-Future<ApiResult<void>> deprecatedUnstableGetPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/policies.json',
   headers: {..._config.defaultHeaders
@@ -935,7 +935,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-01
 ///
 /// `GET /admin/api/2020-01/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> deprecated202001GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -956,7 +956,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-01
 ///
 /// `GET /admin/api/2020-01/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> deprecated202001GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -973,7 +973,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-01
 ///
 /// `GET /admin/api/2020-01/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202001GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -996,7 +996,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1015,7 +1015,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-04
 ///
 /// `GET /admin/api/2020-04/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> deprecated202004GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -1036,7 +1036,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-04
 ///
 /// `GET /admin/api/2020-04/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> deprecated202004GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -1053,7 +1053,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-04
 ///
 /// `GET /admin/api/2020-04/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202004GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1076,7 +1076,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1095,7 +1095,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-07
 ///
 /// `GET /admin/api/2020-07/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> deprecated202007GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -1116,7 +1116,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-07
 ///
 /// `GET /admin/api/2020-07/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> deprecated202007GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -1133,7 +1133,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-07
 ///
 /// `GET /admin/api/2020-07/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202007GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1156,7 +1156,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1175,7 +1175,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-10
 ///
 /// `GET /admin/api/2020-10/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> getCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -1196,7 +1196,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-10
 ///
 /// `GET /admin/api/2020-10/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> getCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -1213,7 +1213,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-10
 ///
 /// `GET /admin/api/2020-10/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> getCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1236,7 +1236,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> updateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1255,7 +1255,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2021-01
 ///
 /// `GET /admin/api/2021-01/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> deprecated202101GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -1276,7 +1276,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2021-01
 ///
 /// `GET /admin/api/2021-01/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> deprecated202101GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -1293,7 +1293,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2021-01
 ///
 /// `GET /admin/api/2021-01/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202101GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1316,7 +1316,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1335,7 +1335,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-unstable
 ///
 /// `GET /admin/api/unstable/countries/{country_id}/provinces.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryIdProvinces({required String countryId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}/provinces.json',
   headers: {..._config.defaultHeaders
@@ -1356,7 +1356,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-unstable
 ///
 /// `GET /admin/api/unstable/countries/{country_id}/provinces/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryIdProvincesCount({required String countryId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}/provinces/count.json',
   headers: {..._config.defaultHeaders
@@ -1373,7 +1373,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-unstable
 ///
 /// `GET /admin/api/unstable/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1396,7 +1396,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#update-unstable
 ///
 /// `PUT /admin/api/unstable/countries/{country_id}/provinces/{province_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/countries/${Uri.encodeComponent(countryId)}/provinces/${Uri.encodeComponent(provinceId)}.json',
   headers: {..._config.defaultHeaders
@@ -1415,7 +1415,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shipping_zones.json`
-Future<ApiResult<void>> deprecated202001GetShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1435,7 +1435,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shipping_zones.json`
-Future<ApiResult<void>> deprecated202004GetShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1455,7 +1455,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-07
 ///
 /// `GET /admin/api/2020-07/shipping_zones.json`
-Future<ApiResult<void>> deprecated202007GetShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1475,7 +1475,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-10
 ///
 /// `GET /admin/api/2020-10/shipping_zones.json`
-Future<ApiResult<void>> getShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1495,7 +1495,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2021-01
 ///
 /// `GET /admin/api/2021-01/shipping_zones.json`
-Future<ApiResult<void>> deprecated202101GetShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1515,7 +1515,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-unstable
 ///
 /// `GET /admin/api/unstable/shipping_zones.json`
-Future<ApiResult<void>> deprecatedUnstableGetShippingZones({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetShippingZones({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/shipping_zones.json',
   headers: {..._config.defaultHeaders
@@ -1535,7 +1535,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-01
 ///
 /// `GET /admin/api/2020-01/shop.json`
-Future<ApiResult<void>> deprecated202001GetShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shop.json',
   headers: {..._config.defaultHeaders
@@ -1555,7 +1555,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-04
 ///
 /// `GET /admin/api/2020-04/shop.json`
-Future<ApiResult<void>> deprecated202004GetShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shop.json',
   headers: {..._config.defaultHeaders
@@ -1575,7 +1575,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-07
 ///
 /// `GET /admin/api/2020-07/shop.json`
-Future<ApiResult<void>> deprecated202007GetShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/shop.json',
   headers: {..._config.defaultHeaders
@@ -1595,7 +1595,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-10
 ///
 /// `GET /admin/api/2020-10/shop.json`
-Future<ApiResult<void>> getShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/shop.json',
   headers: {..._config.defaultHeaders
@@ -1615,7 +1615,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2021-01
 ///
 /// `GET /admin/api/2021-01/shop.json`
-Future<ApiResult<void>> deprecated202101GetShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/shop.json',
   headers: {..._config.defaultHeaders
@@ -1635,7 +1635,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-unstable
 ///
 /// `GET /admin/api/unstable/shop.json`
-Future<ApiResult<void>> deprecatedUnstableGetShop({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetShop({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/shop.json',
   headers: {..._config.defaultHeaders
@@ -1651,7 +1651,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -1674,6 +1674,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -1684,7 +1685,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

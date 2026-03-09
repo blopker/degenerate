@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List recently generated videos for the current project.
 ///
 /// `GET /videos`
-Future<ApiResult<VideoListResource>> listVideos({int? limit, OrderEnum? order, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<VideoListResource, Never>> listVideos({int? limit, OrderEnum? order, String? after, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/videos',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Create a new video generation job from a prompt and optional reference assets.
 ///
 /// `POST /videos`
-Future<ApiResult<VideoResource>> createVideo({CreateVideoBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<VideoResource, Never>> createVideo({CreateVideoBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/videos',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Fetch the latest metadata for a generated video.
 ///
 /// `GET /videos/{video_id}`
-Future<ApiResult<VideoResource>> getVideo({required String videoId}) async  { final request = ApiRequest(
+Future<ApiResult<VideoResource, Never>> getVideo({required String videoId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/videos/${Uri.encodeComponent(videoId)}',
   headers: {..._config.defaultHeaders
@@ -73,7 +73,7 @@ return _execute(
 /// Permanently delete a completed or failed video and its stored assets.
 ///
 /// `DELETE /videos/{video_id}`
-Future<ApiResult<DeletedVideoResource>> deleteVideo({required String videoId}) async  { final request = ApiRequest(
+Future<ApiResult<DeletedVideoResource, Never>> deleteVideo({required String videoId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/videos/${Uri.encodeComponent(videoId)}',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Streams the rendered video content for the specified video job.
 ///
 /// `GET /videos/{video_id}/content`
-Future<ApiResult<String>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/videos/${Uri.encodeComponent(videoId)}/content',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 /// Create a remix of a completed video using a refreshed prompt.
 ///
 /// `POST /videos/{video_id}/remix`
-Future<ApiResult<VideoResource>> createVideoRemix({required String videoId, CreateVideoRemixBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<VideoResource, Never>> createVideoRemix({required String videoId, CreateVideoRemixBody? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/videos/${Uri.encodeComponent(videoId)}/remix',
   headers: {..._config.defaultHeaders
@@ -129,7 +129,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -152,6 +152,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -162,7 +163,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Sites associated with an account. Use connectorid query param to return sites where connectorid matches either site.ConnectorID or site.SecondaryConnectorID.
 ///
 /// `GET /accounts/{account_id}/magic/sites`
-Future<ApiResult<ResponseCommon48>> magicSitesListSites({required String accountId, String? connectorid, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesListSites({required String accountId, String? connectorid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Creates a new Site
 ///
 /// `POST /accounts/{account_id}/magic/sites`
-Future<ApiResult<ResponseCommon48>> magicSitesCreateSite({required String accountId, required MagicSitesAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesCreateSite({required String accountId, required MagicSitesAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Get a specific Site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48>> magicSitesSiteDetails({required String siteId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesSiteDetails({required String siteId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// Update a specific Site.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48>> magicSitesUpdateSite({required String siteId, required String accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesUpdateSite({required String siteId, required String accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Patch a specific Site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48>> magicSitesPatchSite({required String siteId, required String accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesPatchSite({required String siteId, required String accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Remove a specific Site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48>> magicSitesDeleteSite({required String siteId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesDeleteSite({required String siteId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -136,7 +136,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -159,6 +159,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -169,7 +170,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

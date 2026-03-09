@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch all Zero Trust lists for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/lists`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsListZeroTrustLists({required String accountId, ZeroTrustGatewaySchemasType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsListZeroTrustLists({required String accountId, ZeroTrustGatewaySchemasType? type, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Creates a new Zero Trust list.
 ///
 /// `POST /accounts/{account_id}/gateway/lists`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsCreateZeroTrustList({required String accountId, required ZeroTrustListsCreateZeroTrustListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsCreateZeroTrustList({required String accountId, required ZeroTrustListsCreateZeroTrustListRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Fetch a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsZeroTrustListDetails({required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListDetails({required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// Updates a configured Zero Trust list. Skips updating list items if not included in the payload. A non empty list items will overwrite the existing list.
 ///
 /// `PUT /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsUpdateZeroTrustList({required String listId, required String accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsUpdateZeroTrustList({required String listId, required String accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Appends or removes an item from a configured Zero Trust list.
 ///
 /// `PATCH /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsPatchZeroTrustList({required String listId, required String accountId, required ZeroTrustListsPatchZeroTrustListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsPatchZeroTrustList({required String listId, required String accountId, required ZeroTrustListsPatchZeroTrustListRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Deletes a Zero Trust list.
 ///
 /// `DELETE /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsDeleteZeroTrustList({required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsDeleteZeroTrustList({required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -140,7 +140,7 @@ return _execute(
 /// Fetch all items in a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon82>> zeroTrustListsZeroTrustListItems({required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListItems({required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/lists/${Uri.encodeComponent(listId)}/items',
   headers: {..._config.defaultHeaders
@@ -155,7 +155,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -178,6 +178,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -188,7 +189,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

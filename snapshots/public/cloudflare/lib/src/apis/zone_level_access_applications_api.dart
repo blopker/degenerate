@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Access Applications in a zone.
 ///
 /// `GET /zones/{zone_id}/access/apps`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsListAccessApplications({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsListAccessApplications({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Adds a new application to Access.
 ///
 /// `POST /zones/{zone_id}/access/apps`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsAddABookmarkApplication({required String zoneId, required AccessApps body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsAddABookmarkApplication({required String zoneId, required AccessApps body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches information about an Access application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates an Access application.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required String zoneId, required AccessApps body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required String zoneId, required AccessApps body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes an application from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<AccessSchemasEmptyResponse>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<AccessSchemasEmptyResponse, Never>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}/revoke_tokens',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Updates application settings.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required String zoneId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required String zoneId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// Updates application settings.
 ///
 /// `PATCH /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required String zoneId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required String zoneId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: {..._config.defaultHeaders
@@ -177,7 +177,7 @@ return _execute(
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId.toString())}/user_policy_checks',
   headers: {..._config.defaultHeaders
@@ -192,7 +192,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -215,6 +215,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -225,7 +226,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

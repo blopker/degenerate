@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists additional audio tracks on a video. Note this API will not return information for audio attached to the video upload.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/audio`
-Future<ApiResult<ResponseCommon66>> listAudioTracks({required String accountId, required String identifier, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> listAudioTracks({required String accountId, required String identifier, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/audio',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Edits additional audio tracks on a video. Editing the default status of an audio track to `true` will mark all other audio tracks on the video default status to `false`.
 ///
 /// `PATCH /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66>> editAudioTracks({required String accountId, required String identifier, required String audioIdentifier, required StreamEditAudioTrack body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> editAudioTracks({required String accountId, required String identifier, required String audioIdentifier, required StreamEditAudioTrack body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/audio/${Uri.encodeComponent(audioIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Deletes additional audio tracks on a video. Deleting a default audio track is not allowed. You must assign another audio track as default prior to deletion.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66>> deleteAudioTracks({required String accountId, required String identifier, required String audioIdentifier, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> deleteAudioTracks({required String accountId, required String identifier, required String audioIdentifier, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/audio/${Uri.encodeComponent(audioIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Adds an additional audio track to a video using the provided audio track URL.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/audio/copy`
-Future<ApiResult<ResponseCommon66>> addAudioTrack({required String accountId, required String identifier, required StreamCopyAudioTrack body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> addAudioTrack({required String accountId, required String identifier, required StreamCopyAudioTrack body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/audio/copy',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -116,6 +116,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -126,7 +127,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

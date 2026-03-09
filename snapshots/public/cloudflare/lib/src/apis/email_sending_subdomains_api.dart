@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all sending-enabled subdomains for the zone.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains`
-Future<ApiResult<ResponseCommon30>> emailSendingSubdomainsListSendingSubdomains({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsListSendingSubdomains({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/sending/subdomains',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled.
 ///
 /// `POST /zones/{zone_id}/email/sending/subdomains`
-Future<ApiResult<ResponseCommon30>> emailSendingSubdomainsCreateSendingSubdomain({required String zoneId, required EmailCreateSendingSubdomainProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsCreateSendingSubdomain({required String zoneId, required EmailCreateSendingSubdomainProperties body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/sending/subdomains',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Gets information for a specific sending subdomain.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains/{subdomain_id}`
-Future<ApiResult<ResponseCommon30>> emailSendingSubdomainsGetSendingSubdomain({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsGetSendingSubdomain({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/sending/subdomains/${Uri.encodeComponent(subdomainId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Disables sending on a subdomain and removes its DNS records. If routing is still active on the subdomain, only sending is disabled.
 ///
 /// `DELETE /zones/{zone_id}/email/sending/subdomains/{subdomain_id}`
-Future<ApiResult<ResponseCommon30>> emailSendingSubdomainsDeleteSendingSubdomain({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsDeleteSendingSubdomain({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/sending/subdomains/${Uri.encodeComponent(subdomainId)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Returns the expected DNS records for a sending subdomain.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns`
-Future<ApiResult<ResponseCommon30>> emailSendingSubdomainsGetSendingSubdomainDns({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsGetSendingSubdomainDns({required String subdomainId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/sending/subdomains/${Uri.encodeComponent(subdomainId)}/dns',
   headers: {..._config.defaultHeaders
@@ -110,7 +110,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -133,6 +133,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -143,7 +144,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

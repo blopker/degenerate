@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List existing interconnects
 ///
 /// `GET /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnectList>> listInterconnects({required String accountId, String? site, String? type, int? cursor, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required String accountId, String? site, String? type, int? cursor, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// Create a new interconnect
 ///
 /// `POST /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnect>> createInterconnect({required String accountId, required NscInterconnectCreate body, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnect, Never>> createInterconnect({required String accountId, required NscInterconnectCreate body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get information about an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<NscInterconnect>> getInterconnect({required String icon, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects/${Uri.encodeComponent(icon)}',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Delete an interconnect object
 ///
 /// `DELETE /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<void>> deleteInterconnect({required String icon, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteInterconnect({required String icon, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects/${Uri.encodeComponent(icon)}',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Generate the Letter of Authorization (LOA) for a given interconnect
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/loa`
-Future<ApiResult<void>> getInterconnectLoa({required String icon, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects/${Uri.encodeComponent(icon)}/loa',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Get the current status of an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/status`
-Future<ApiResult<NscStatusInfo>> getInterconnectStatus({required String icon, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String icon, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/interconnects/${Uri.encodeComponent(icon)}/status',
   headers: {..._config.defaultHeaders
@@ -119,7 +119,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -142,6 +142,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -152,7 +153,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

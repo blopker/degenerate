@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets all the data the botnet tracking database has for a given ASN registered to user account for given date. If no date is given, it will return results for the previous day.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report`
-Future<ApiResult<ResponseCommon28>> botnetThreatFeedGetDayReport({required String accountId, required int asnId, DateTime? date, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetDayReport({required String accountId, required int asnId, DateTime? date, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/day_report',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Gets all the data the botnet threat feed tracking database has for a given ASN registered to user account.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report`
-Future<ApiResult<ResponseCommon28>> botnetThreatFeedGetFullReport({required String accountId, required int asnId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetFullReport({required String accountId, required int asnId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/full_report',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// Gets a list of all ASNs registered for a user for the DDoS Botnet Feed API.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/configs/asn`
-Future<ApiResult<ResponseCommon28>> botnetThreatFeedListAsn({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedListAsn({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/botnet_feed/configs/asn',
   headers: {..._config.defaultHeaders
@@ -77,7 +77,7 @@ return _execute(
 /// Delete an ASN from botnet threat feed for a given user.
 ///
 /// `DELETE /accounts/{account_id}/botnet_feed/configs/asn/{asn_id}`
-Future<ApiResult<ResponseCommon28>> botnetThreatFeedDeleteAsn({required String accountId, required int asnId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedDeleteAsn({required String accountId, required int asnId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/botnet_feed/configs/asn/${Uri.encodeComponent(asnId.toString())}',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -115,6 +115,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -125,7 +126,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

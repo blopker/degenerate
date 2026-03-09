@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters subnets in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetsList({required String accountId, String? name, String? comment, String? network, String? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, double? perPage, double? page, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetsList({required String accountId, String? name, String? comment, String? network, String? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, double? perPage, double? page, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Updates the Cloudflare Source subnet of the given address family
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetUpdateCloudflareSource({required String accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateCloudflareSource({required String accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent(addressFamily.toString())}',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/zerotrust/subnets/warp`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetCreateWarp({required String accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetCreateWarp({required String accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets/warp',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Get a WARP IP assignment subnet.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetGetWarp({required String accountId, required String subnetId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetGetWarp({required String accountId, required String subnetId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId)}',
   headers: {..._config.defaultHeaders
@@ -124,7 +124,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetUpdateWarp({required String accountId, required String subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateWarp({required String accountId, required String subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId)}',
   headers: {..._config.defaultHeaders
@@ -145,7 +145,7 @@ return _execute(
 /// Delete a WARP IP assignment subnet. This operation is idempotent - deleting an already-deleted or non-existent subnet will return success with a null result.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69>> zeroTrustNetworksSubnetDeleteWarp({required String accountId, required String subnetId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetDeleteWarp({required String accountId, required String subnetId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId)}',
   headers: {..._config.defaultHeaders
@@ -160,7 +160,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -183,6 +183,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -193,7 +194,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets a list of users for an account.
 ///
 /// `GET /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetUsers({required String accountId, String? name, String? email, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUsers({required String accountId, String? name, String? email, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Creates a new user.
 ///
 /// `POST /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersCreateUser({required String accountId, required ZeroTrustUsersCreateUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersCreateUser({required String accountId, required ZeroTrustUsersCreateUserRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Gets a specific user for an account.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetUser({required String userId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUser({required String userId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Updates a specific user's name for an account. Requires the user's current email as confirmation (email cannot be changed).
 ///
 /// `PUT /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersUpdateUser({required String userId, required String accountId, required ZeroTrustUsersUpdateUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersUpdateUser({required String userId, required String accountId, required ZeroTrustUsersUpdateUserRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Deletes a specific user for an account. This will also revoke any active seats and tokens for the user.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersDeleteUser({required String userId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteUser({required String userId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 /// Get active sessions for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetActiveSessions({required String userId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSessions({required String userId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}/active_sessions',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// Get an active session for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetActiveSession({required String userId, required String accountId, required String nonce, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSession({required String userId, required String accountId, required String nonce, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}/active_sessions/${Uri.encodeComponent(nonce)}',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 /// Get all failed login attempts for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/failed_logins`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetFailedLogins({required String userId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetFailedLogins({required String userId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}/failed_logins',
   headers: {..._config.defaultHeaders
@@ -180,7 +180,7 @@ return _execute(
 /// Get last seen identity for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/last_seen_identity`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersGetLastSeenIdentity({required String userId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetLastSeenIdentity({required String userId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}/last_seen_identity',
   headers: {..._config.defaultHeaders
@@ -199,7 +199,7 @@ return _execute(
 /// Deletes a specific MFA device for a user. This action is only available if MFA is turned on for the organization.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}`
-Future<ApiResult<ResponseCommon3>> zeroTrustUsersDeleteMfaAuthenticator({required String userId, required String accountId, required String authenticatorId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteMfaAuthenticator({required String userId, required String accountId, required String authenticatorId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/users/${Uri.encodeComponent(userId)}/mfa_authenticators/${Uri.encodeComponent(authenticatorId)}',
   headers: {..._config.defaultHeaders
@@ -214,7 +214,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -237,6 +237,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -247,7 +248,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

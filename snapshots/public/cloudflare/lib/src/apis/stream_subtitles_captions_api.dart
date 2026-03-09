@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists the available captions or subtitles for a specific video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions`
-Future<ApiResult<ResponseCommon66>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Lists the captions or subtitles for provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions/${Uri.encodeComponent(language)}',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.
 ///
 /// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required String language, required String identifier, required String accountId, required StreamCaptionBasicUpload body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required String language, required String identifier, required String accountId, required StreamCaptionBasicUpload body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions/${Uri.encodeComponent(language)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Removes the captions or subtitles from a video.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions/${Uri.encodeComponent(language)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Generate captions or subtitles for provided language via AI.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/captions/{language}/generate`
-Future<ApiResult<ResponseCommon66>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions/${Uri.encodeComponent(language)}/generate',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Return WebVTT captions for a provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
-Future<ApiResult<void>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required String language, required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/captions/${Uri.encodeComponent(language)}/vtt',
   headers: {..._config.defaultHeaders
@@ -127,7 +127,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -150,6 +150,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -160,7 +161,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

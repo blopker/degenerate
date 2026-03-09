@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List your organization's batches.
 ///
 /// `GET /batches`
-Future<ApiResult<ListBatchesResponse>> listBatches({String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/batches',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates and executes a batch from an uploaded file of requests
 ///
 /// `POST /batches`
-Future<ApiResult<Batch>> createBatch({required CreateBatchRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> createBatch({required CreateBatchRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/batches',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Retrieves a batch.
 ///
 /// `GET /batches/{batch_id}`
-Future<ApiResult<Batch>> retrieveBatch({required String batchId}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> retrieveBatch({required String batchId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/batches/${Uri.encodeComponent(batchId)}',
   headers: {..._config.defaultHeaders
@@ -72,7 +72,7 @@ return _execute(
 /// Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.
 ///
 /// `POST /batches/{batch_id}/cancel`
-Future<ApiResult<Batch>> cancelBatch({required String batchId}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> cancelBatch({required String batchId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/batches/${Uri.encodeComponent(batchId)}/cancel',
   headers: {..._config.defaultHeaders
@@ -87,7 +87,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -110,6 +110,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -120,7 +121,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

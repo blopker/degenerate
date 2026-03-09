@@ -14,7 +14,7 @@ final ApiConfig _config;
 
 ///
 /// `GET /v2/1-clicks`
-Future<ApiResult<void>> getV21Clicks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV21Clicks() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/1-clicks',
   headers: {..._config.defaultHeaders
@@ -28,7 +28,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/1-clicks/kubernetes`
-Future<ApiResult<void>> postV21ClicksKubernetes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV21ClicksKubernetes() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/1-clicks/kubernetes',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/account`
-Future<ApiResult<void>> getV2Account() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Account() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/account',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/account/keys`
-Future<ApiResult<void>> getV2AccountKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AccountKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/account/keys',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/account/keys`
-Future<ApiResult<void>> postV2AccountKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AccountKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/account/keys',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/account/keys/{ssh_key_identifier}`
-Future<ApiResult<void>> getV2AccountKeys2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AccountKeys2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/account/keys/{ssh_key_identifier}',
   headers: {..._config.defaultHeaders
@@ -98,7 +98,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/account/keys/{ssh_key_identifier}`
-Future<ApiResult<void>> putV2AccountKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2AccountKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/account/keys/{ssh_key_identifier}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/account/keys/{ssh_key_identifier}`
-Future<ApiResult<void>> deleteV2AccountKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2AccountKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/account/keys/{ssh_key_identifier}',
   headers: {..._config.defaultHeaders
@@ -126,7 +126,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/actions`
-Future<ApiResult<void>> getV2Actions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Actions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/actions',
   headers: {..._config.defaultHeaders
@@ -140,7 +140,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/actions/{action_id}`
-Future<ApiResult<void>> getV2Actions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Actions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/add-ons/apps`
-Future<ApiResult<void>> getV2AddOnsApps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AddOnsApps() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/add-ons/apps',
   headers: {..._config.defaultHeaders
@@ -168,7 +168,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/add-ons/apps/{app_slug}/metadata`
-Future<ApiResult<void>> getV2AddOnsAppsMetadata() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AddOnsAppsMetadata() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/add-ons/apps/{app_slug}/metadata',
   headers: {..._config.defaultHeaders
@@ -182,7 +182,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/add-ons/saas`
-Future<ApiResult<void>> getV2AddOnsSaas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AddOnsSaas() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/add-ons/saas',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/add-ons/saas`
-Future<ApiResult<void>> postV2AddOnsSaas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AddOnsSaas() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/add-ons/saas',
   headers: {..._config.defaultHeaders
@@ -210,7 +210,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/add-ons/saas/{resource_uuid}`
-Future<ApiResult<void>> getV2AddOnsSaas2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AddOnsSaas2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/add-ons/saas/{resource_uuid}',
   headers: {..._config.defaultHeaders
@@ -224,7 +224,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/add-ons/saas/{resource_uuid}`
-Future<ApiResult<void>> patchV2AddOnsSaas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2AddOnsSaas() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/add-ons/saas/{resource_uuid}',
   headers: {..._config.defaultHeaders
@@ -238,7 +238,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/add-ons/saas/{resource_uuid}`
-Future<ApiResult<void>> deleteV2AddOnsSaas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2AddOnsSaas() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/add-ons/saas/{resource_uuid}',
   headers: {..._config.defaultHeaders
@@ -252,7 +252,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/add-ons/saas/{resource_uuid}/plan`
-Future<ApiResult<void>> patchV2AddOnsSaasPlan() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2AddOnsSaasPlan() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/add-ons/saas/{resource_uuid}/plan',
   headers: {..._config.defaultHeaders
@@ -266,7 +266,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps`
-Future<ApiResult<void>> getV2Apps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Apps() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps',
   headers: {..._config.defaultHeaders
@@ -280,7 +280,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps`
-Future<ApiResult<void>> postV2Apps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Apps() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps',
   headers: {..._config.defaultHeaders
@@ -294,7 +294,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{id}`
-Future<ApiResult<void>> getV2Apps2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Apps2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{id}',
   headers: {..._config.defaultHeaders
@@ -308,7 +308,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/apps/{id}`
-Future<ApiResult<void>> putV2Apps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2Apps() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/apps/{id}',
   headers: {..._config.defaultHeaders
@@ -322,7 +322,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/apps/{id}`
-Future<ApiResult<void>> deleteV2Apps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Apps() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/apps/{id}',
   headers: {..._config.defaultHeaders
@@ -336,7 +336,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/restart`
-Future<ApiResult<void>> postV2AppsRestart() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsRestart() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/restart',
   headers: {..._config.defaultHeaders
@@ -350,7 +350,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/components/{component_name}/logs`
-Future<ApiResult<void>> getV2AppsComponentsLogs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsComponentsLogs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/components/{component_name}/logs',
   headers: {..._config.defaultHeaders
@@ -364,7 +364,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/components/{component_name}/exec`
-Future<ApiResult<void>> getV2AppsComponentsExec() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsComponentsExec() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/components/{component_name}/exec',
   headers: {..._config.defaultHeaders
@@ -378,7 +378,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/instances`
-Future<ApiResult<void>> getV2AppsInstances() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsInstances() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/instances',
   headers: {..._config.defaultHeaders
@@ -392,7 +392,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/deployments`
-Future<ApiResult<void>> getV2AppsDeployments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsDeployments() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/deployments',
   headers: {..._config.defaultHeaders
@@ -406,7 +406,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/deployments`
-Future<ApiResult<void>> postV2AppsDeployments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsDeployments() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/deployments',
   headers: {..._config.defaultHeaders
@@ -420,7 +420,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/deployments/{deployment_id}`
-Future<ApiResult<void>> getV2AppsDeployments2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsDeployments2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/deployments/{deployment_id}',
   headers: {..._config.defaultHeaders
@@ -434,7 +434,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/deployments/{deployment_id}/cancel`
-Future<ApiResult<void>> postV2AppsDeploymentsCancel() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsDeploymentsCancel() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/deployments/{deployment_id}/cancel',
   headers: {..._config.defaultHeaders
@@ -448,7 +448,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/logs`
-Future<ApiResult<void>> getV2AppsDeploymentsComponentsLogs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsDeploymentsComponentsLogs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/logs',
   headers: {..._config.defaultHeaders
@@ -462,7 +462,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/deployments/{deployment_id}/logs`
-Future<ApiResult<void>> getV2AppsDeploymentsLogs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsDeploymentsLogs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/deployments/{deployment_id}/logs',
   headers: {..._config.defaultHeaders
@@ -476,7 +476,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/exec`
-Future<ApiResult<void>> getV2AppsDeploymentsComponentsExec() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsDeploymentsComponentsExec() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/exec',
   headers: {..._config.defaultHeaders
@@ -490,7 +490,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/logs`
-Future<ApiResult<void>> getV2AppsLogs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsLogs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/logs',
   headers: {..._config.defaultHeaders
@@ -504,7 +504,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/job-invocations`
-Future<ApiResult<void>> getV2AppsJobInvocations() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsJobInvocations() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/job-invocations',
   headers: {..._config.defaultHeaders
@@ -518,7 +518,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/job-invocations/{job_invocation_id}`
-Future<ApiResult<void>> getV2AppsJobInvocations2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsJobInvocations2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/job-invocations/{job_invocation_id}',
   headers: {..._config.defaultHeaders
@@ -532,7 +532,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/job-invocations/{job_invocation_id}/cancel`
-Future<ApiResult<void>> postV2AppsJobInvocationsCancel() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsJobInvocationsCancel() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/job-invocations/{job_invocation_id}/cancel',
   headers: {..._config.defaultHeaders
@@ -546,7 +546,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/jobs/{job_name}/invocations/{job_invocation_id}/logs`
-Future<ApiResult<void>> getV2AppsJobsInvocationsLogs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsJobsInvocationsLogs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/jobs/{job_name}/invocations/{job_invocation_id}/logs',
   headers: {..._config.defaultHeaders
@@ -560,7 +560,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/tiers/instance_sizes`
-Future<ApiResult<void>> getV2AppsTiersInstanceSizes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsTiersInstanceSizes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/tiers/instance_sizes',
   headers: {..._config.defaultHeaders
@@ -574,7 +574,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/tiers/instance_sizes/{slug}`
-Future<ApiResult<void>> getV2AppsTiersInstanceSizes2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsTiersInstanceSizes2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/tiers/instance_sizes/{slug}',
   headers: {..._config.defaultHeaders
@@ -588,7 +588,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/regions`
-Future<ApiResult<void>> getV2AppsRegions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsRegions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/regions',
   headers: {..._config.defaultHeaders
@@ -602,7 +602,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/propose`
-Future<ApiResult<void>> postV2AppsPropose() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsPropose() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/propose',
   headers: {..._config.defaultHeaders
@@ -616,7 +616,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/alerts`
-Future<ApiResult<void>> getV2AppsAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsAlerts() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/alerts',
   headers: {..._config.defaultHeaders
@@ -630,7 +630,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/alerts/{alert_id}/destinations`
-Future<ApiResult<void>> postV2AppsAlertsDestinations() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsAlertsDestinations() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/alerts/{alert_id}/destinations',
   headers: {..._config.defaultHeaders
@@ -644,7 +644,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/rollback`
-Future<ApiResult<void>> postV2AppsRollback() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsRollback() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/rollback',
   headers: {..._config.defaultHeaders
@@ -658,7 +658,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/rollback/validate`
-Future<ApiResult<void>> postV2AppsRollbackValidate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsRollbackValidate() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/rollback/validate',
   headers: {..._config.defaultHeaders
@@ -672,7 +672,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/rollback/commit`
-Future<ApiResult<void>> postV2AppsRollbackCommit() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsRollbackCommit() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/rollback/commit',
   headers: {..._config.defaultHeaders
@@ -686,7 +686,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/{app_id}/rollback/revert`
-Future<ApiResult<void>> postV2AppsRollbackRevert() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsRollbackRevert() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/{app_id}/rollback/revert',
   headers: {..._config.defaultHeaders
@@ -700,7 +700,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/metrics/bandwidth_daily`
-Future<ApiResult<void>> getV2AppsMetricsBandwidthDaily() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsMetricsBandwidthDaily() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/metrics/bandwidth_daily',
   headers: {..._config.defaultHeaders
@@ -714,7 +714,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/apps/metrics/bandwidth_daily`
-Future<ApiResult<void>> postV2AppsMetricsBandwidthDaily() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2AppsMetricsBandwidthDaily() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/apps/metrics/bandwidth_daily',
   headers: {..._config.defaultHeaders
@@ -728,7 +728,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/apps/{app_id}/health`
-Future<ApiResult<void>> getV2AppsHealth() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2AppsHealth() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/apps/{app_id}/health',
   headers: {..._config.defaultHeaders
@@ -742,7 +742,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/cdn/endpoints`
-Future<ApiResult<void>> getV2CdnEndpoints() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CdnEndpoints() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/cdn/endpoints',
   headers: {..._config.defaultHeaders
@@ -756,7 +756,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/cdn/endpoints`
-Future<ApiResult<void>> postV2CdnEndpoints() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2CdnEndpoints() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/cdn/endpoints',
   headers: {..._config.defaultHeaders
@@ -770,7 +770,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/cdn/endpoints/{cdn_id}`
-Future<ApiResult<void>> getV2CdnEndpoints2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CdnEndpoints2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/cdn/endpoints/{cdn_id}',
   headers: {..._config.defaultHeaders
@@ -784,7 +784,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/cdn/endpoints/{cdn_id}`
-Future<ApiResult<void>> putV2CdnEndpoints() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2CdnEndpoints() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/cdn/endpoints/{cdn_id}',
   headers: {..._config.defaultHeaders
@@ -798,7 +798,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/cdn/endpoints/{cdn_id}`
-Future<ApiResult<void>> deleteV2CdnEndpoints() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2CdnEndpoints() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/cdn/endpoints/{cdn_id}',
   headers: {..._config.defaultHeaders
@@ -812,7 +812,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/cdn/endpoints/{cdn_id}/cache`
-Future<ApiResult<void>> deleteV2CdnEndpointsCache() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2CdnEndpointsCache() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/cdn/endpoints/{cdn_id}/cache',
   headers: {..._config.defaultHeaders
@@ -826,7 +826,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/certificates`
-Future<ApiResult<void>> getV2Certificates() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Certificates() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/certificates',
   headers: {..._config.defaultHeaders
@@ -840,7 +840,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/certificates`
-Future<ApiResult<void>> postV2Certificates() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Certificates() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/certificates',
   headers: {..._config.defaultHeaders
@@ -854,7 +854,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/certificates/{certificate_id}`
-Future<ApiResult<void>> getV2Certificates2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Certificates2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/certificates/{certificate_id}',
   headers: {..._config.defaultHeaders
@@ -868,7 +868,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/certificates/{certificate_id}`
-Future<ApiResult<void>> deleteV2Certificates() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Certificates() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/certificates/{certificate_id}',
   headers: {..._config.defaultHeaders
@@ -882,7 +882,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/balance`
-Future<ApiResult<void>> getV2CustomersMyBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/balance',
   headers: {..._config.defaultHeaders
@@ -896,7 +896,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/billing_history`
-Future<ApiResult<void>> getV2CustomersMyBillingHistory() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyBillingHistory() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/billing_history',
   headers: {..._config.defaultHeaders
@@ -910,7 +910,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/invoices`
-Future<ApiResult<void>> getV2CustomersMyInvoices() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyInvoices() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/invoices',
   headers: {..._config.defaultHeaders
@@ -924,7 +924,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/invoices/{invoice_uuid}`
-Future<ApiResult<void>> getV2CustomersMyInvoices2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyInvoices2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/invoices/{invoice_uuid}',
   headers: {..._config.defaultHeaders
@@ -938,7 +938,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/invoices/{invoice_uuid}/csv`
-Future<ApiResult<void>> getV2CustomersMyInvoicesCsv() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyInvoicesCsv() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/invoices/{invoice_uuid}/csv',
   headers: {..._config.defaultHeaders
@@ -952,7 +952,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/invoices/{invoice_uuid}/pdf`
-Future<ApiResult<void>> getV2CustomersMyInvoicesPdf() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyInvoicesPdf() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/invoices/{invoice_uuid}/pdf',
   headers: {..._config.defaultHeaders
@@ -966,7 +966,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/customers/my/invoices/{invoice_uuid}/summary`
-Future<ApiResult<void>> getV2CustomersMyInvoicesSummary() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2CustomersMyInvoicesSummary() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/customers/my/invoices/{invoice_uuid}/summary',
   headers: {..._config.defaultHeaders
@@ -980,7 +980,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/billing/{account_urn}/insights/{start_date}/{end_date}`
-Future<ApiResult<void>> getV2BillingInsights() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2BillingInsights() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/billing/{account_urn}/insights/{start_date}/{end_date}',
   headers: {..._config.defaultHeaders
@@ -994,7 +994,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/options`
-Future<ApiResult<void>> getV2DatabasesOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesOptions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/options',
   headers: {..._config.defaultHeaders
@@ -1008,7 +1008,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases`
-Future<ApiResult<void>> getV2Databases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Databases() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases',
   headers: {..._config.defaultHeaders
@@ -1022,7 +1022,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases`
-Future<ApiResult<void>> postV2Databases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Databases() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases',
   headers: {..._config.defaultHeaders
@@ -1036,7 +1036,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}`
-Future<ApiResult<void>> getV2Databases2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Databases2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}',
   headers: {..._config.defaultHeaders
@@ -1050,7 +1050,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}`
-Future<ApiResult<void>> deleteV2Databases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Databases() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}',
   headers: {..._config.defaultHeaders
@@ -1064,7 +1064,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/config`
-Future<ApiResult<void>> getV2DatabasesConfig() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesConfig() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/config',
   headers: {..._config.defaultHeaders
@@ -1078,7 +1078,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/databases/{database_cluster_uuid}/config`
-Future<ApiResult<void>> patchV2DatabasesConfig() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2DatabasesConfig() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/databases/{database_cluster_uuid}/config',
   headers: {..._config.defaultHeaders
@@ -1092,7 +1092,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/ca`
-Future<ApiResult<void>> getV2DatabasesCa() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesCa() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/ca',
   headers: {..._config.defaultHeaders
@@ -1106,7 +1106,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/online-migration`
-Future<ApiResult<void>> getV2DatabasesOnlineMigration() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesOnlineMigration() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/online-migration',
   headers: {..._config.defaultHeaders
@@ -1120,7 +1120,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/online-migration`
-Future<ApiResult<void>> putV2DatabasesOnlineMigration() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesOnlineMigration() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/online-migration',
   headers: {..._config.defaultHeaders
@@ -1134,7 +1134,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/online-migration/{migration_id}`
-Future<ApiResult<void>> deleteV2DatabasesOnlineMigration() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesOnlineMigration() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/online-migration/{migration_id}',
   headers: {..._config.defaultHeaders
@@ -1148,7 +1148,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/migrate`
-Future<ApiResult<void>> putV2DatabasesMigrate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesMigrate() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/migrate',
   headers: {..._config.defaultHeaders
@@ -1162,7 +1162,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/resize`
-Future<ApiResult<void>> putV2DatabasesResize() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesResize() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/resize',
   headers: {..._config.defaultHeaders
@@ -1176,7 +1176,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/firewall`
-Future<ApiResult<void>> getV2DatabasesFirewall() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesFirewall() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/firewall',
   headers: {..._config.defaultHeaders
@@ -1190,7 +1190,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/firewall`
-Future<ApiResult<void>> putV2DatabasesFirewall() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesFirewall() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/firewall',
   headers: {..._config.defaultHeaders
@@ -1204,7 +1204,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/maintenance`
-Future<ApiResult<void>> putV2DatabasesMaintenance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesMaintenance() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/maintenance',
   headers: {..._config.defaultHeaders
@@ -1218,7 +1218,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/install_update`
-Future<ApiResult<void>> putV2DatabasesInstallUpdate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesInstallUpdate() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/install_update',
   headers: {..._config.defaultHeaders
@@ -1232,7 +1232,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/backups`
-Future<ApiResult<void>> getV2DatabasesBackups() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesBackups() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/backups',
   headers: {..._config.defaultHeaders
@@ -1246,7 +1246,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/replicas`
-Future<ApiResult<void>> getV2DatabasesReplicas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesReplicas() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/replicas',
   headers: {..._config.defaultHeaders
@@ -1260,7 +1260,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/replicas`
-Future<ApiResult<void>> postV2DatabasesReplicas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesReplicas() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/replicas',
   headers: {..._config.defaultHeaders
@@ -1274,7 +1274,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/events`
-Future<ApiResult<void>> getV2DatabasesEvents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesEvents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/events',
   headers: {..._config.defaultHeaders
@@ -1288,7 +1288,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/replicas/{replica_name}`
-Future<ApiResult<void>> getV2DatabasesReplicas2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesReplicas2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/replicas/{replica_name}',
   headers: {..._config.defaultHeaders
@@ -1302,7 +1302,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/replicas/{replica_name}`
-Future<ApiResult<void>> deleteV2DatabasesReplicas() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesReplicas() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/replicas/{replica_name}',
   headers: {..._config.defaultHeaders
@@ -1316,7 +1316,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/replicas/{replica_name}/promote`
-Future<ApiResult<void>> putV2DatabasesReplicasPromote() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesReplicasPromote() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/replicas/{replica_name}/promote',
   headers: {..._config.defaultHeaders
@@ -1330,7 +1330,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/users`
-Future<ApiResult<void>> getV2DatabasesUsers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesUsers() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/users',
   headers: {..._config.defaultHeaders
@@ -1344,7 +1344,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/users`
-Future<ApiResult<void>> postV2DatabasesUsers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesUsers() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/users',
   headers: {..._config.defaultHeaders
@@ -1358,7 +1358,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/users/{username}`
-Future<ApiResult<void>> getV2DatabasesUsers2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesUsers2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/users/{username}',
   headers: {..._config.defaultHeaders
@@ -1372,7 +1372,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/users/{username}`
-Future<ApiResult<void>> putV2DatabasesUsers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesUsers() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/users/{username}',
   headers: {..._config.defaultHeaders
@@ -1386,7 +1386,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/users/{username}`
-Future<ApiResult<void>> deleteV2DatabasesUsers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesUsers() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/users/{username}',
   headers: {..._config.defaultHeaders
@@ -1400,7 +1400,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/users/{username}/reset_auth`
-Future<ApiResult<void>> postV2DatabasesUsersResetAuth() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesUsersResetAuth() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/users/{username}/reset_auth',
   headers: {..._config.defaultHeaders
@@ -1414,7 +1414,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/dbs`
-Future<ApiResult<void>> getV2DatabasesDbs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesDbs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/dbs',
   headers: {..._config.defaultHeaders
@@ -1428,7 +1428,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/dbs`
-Future<ApiResult<void>> postV2DatabasesDbs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesDbs() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/dbs',
   headers: {..._config.defaultHeaders
@@ -1442,7 +1442,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/dbs/{database_name}`
-Future<ApiResult<void>> getV2DatabasesDbs2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesDbs2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/dbs/{database_name}',
   headers: {..._config.defaultHeaders
@@ -1456,7 +1456,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/dbs/{database_name}`
-Future<ApiResult<void>> deleteV2DatabasesDbs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesDbs() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/dbs/{database_name}',
   headers: {..._config.defaultHeaders
@@ -1470,7 +1470,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/pools`
-Future<ApiResult<void>> getV2DatabasesPools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesPools() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/pools',
   headers: {..._config.defaultHeaders
@@ -1484,7 +1484,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/pools`
-Future<ApiResult<void>> postV2DatabasesPools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesPools() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/pools',
   headers: {..._config.defaultHeaders
@@ -1498,7 +1498,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/pools/{pool_name}`
-Future<ApiResult<void>> getV2DatabasesPools2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesPools2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/pools/{pool_name}',
   headers: {..._config.defaultHeaders
@@ -1512,7 +1512,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/pools/{pool_name}`
-Future<ApiResult<void>> putV2DatabasesPools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesPools() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/pools/{pool_name}',
   headers: {..._config.defaultHeaders
@@ -1526,7 +1526,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/pools/{pool_name}`
-Future<ApiResult<void>> deleteV2DatabasesPools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesPools() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/pools/{pool_name}',
   headers: {..._config.defaultHeaders
@@ -1540,7 +1540,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/eviction_policy`
-Future<ApiResult<void>> getV2DatabasesEvictionPolicy() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesEvictionPolicy() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/eviction_policy',
   headers: {..._config.defaultHeaders
@@ -1554,7 +1554,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/eviction_policy`
-Future<ApiResult<void>> putV2DatabasesEvictionPolicy() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesEvictionPolicy() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/eviction_policy',
   headers: {..._config.defaultHeaders
@@ -1568,7 +1568,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/sql_mode`
-Future<ApiResult<void>> getV2DatabasesSqlMode() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSqlMode() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/sql_mode',
   headers: {..._config.defaultHeaders
@@ -1582,7 +1582,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/sql_mode`
-Future<ApiResult<void>> putV2DatabasesSqlMode() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesSqlMode() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/sql_mode',
   headers: {..._config.defaultHeaders
@@ -1596,7 +1596,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/upgrade`
-Future<ApiResult<void>> putV2DatabasesUpgrade() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesUpgrade() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/upgrade',
   headers: {..._config.defaultHeaders
@@ -1610,7 +1610,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/autoscale`
-Future<ApiResult<void>> getV2DatabasesAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesAutoscale() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/autoscale',
   headers: {..._config.defaultHeaders
@@ -1624,7 +1624,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/autoscale`
-Future<ApiResult<void>> putV2DatabasesAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesAutoscale() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/autoscale',
   headers: {..._config.defaultHeaders
@@ -1638,7 +1638,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/topics`
-Future<ApiResult<void>> getV2DatabasesTopics() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesTopics() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/topics',
   headers: {..._config.defaultHeaders
@@ -1652,7 +1652,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/topics`
-Future<ApiResult<void>> postV2DatabasesTopics() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesTopics() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/topics',
   headers: {..._config.defaultHeaders
@@ -1666,7 +1666,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/topics/{topic_name}`
-Future<ApiResult<void>> getV2DatabasesTopics2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesTopics2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/topics/{topic_name}',
   headers: {..._config.defaultHeaders
@@ -1680,7 +1680,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/topics/{topic_name}`
-Future<ApiResult<void>> putV2DatabasesTopics() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesTopics() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/topics/{topic_name}',
   headers: {..._config.defaultHeaders
@@ -1694,7 +1694,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/topics/{topic_name}`
-Future<ApiResult<void>> deleteV2DatabasesTopics() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesTopics() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/topics/{topic_name}',
   headers: {..._config.defaultHeaders
@@ -1708,7 +1708,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/logsink`
-Future<ApiResult<void>> getV2DatabasesLogsink() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesLogsink() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/logsink',
   headers: {..._config.defaultHeaders
@@ -1722,7 +1722,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/logsink`
-Future<ApiResult<void>> postV2DatabasesLogsink() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesLogsink() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/logsink',
   headers: {..._config.defaultHeaders
@@ -1736,7 +1736,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/logsink/{logsink_id}`
-Future<ApiResult<void>> getV2DatabasesLogsink2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesLogsink2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}',
   headers: {..._config.defaultHeaders
@@ -1750,7 +1750,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/logsink/{logsink_id}`
-Future<ApiResult<void>> putV2DatabasesLogsink() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesLogsink() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}',
   headers: {..._config.defaultHeaders
@@ -1764,7 +1764,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/logsink/{logsink_id}`
-Future<ApiResult<void>> deleteV2DatabasesLogsink() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesLogsink() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}',
   headers: {..._config.defaultHeaders
@@ -1778,7 +1778,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/schema-registry`
-Future<ApiResult<void>> getV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry',
   headers: {..._config.defaultHeaders
@@ -1792,7 +1792,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/databases/{database_cluster_uuid}/schema-registry`
-Future<ApiResult<void>> postV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry',
   headers: {..._config.defaultHeaders
@@ -1806,7 +1806,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}`
-Future<ApiResult<void>> getV2DatabasesSchemaRegistry2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSchemaRegistry2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}',
   headers: {..._config.defaultHeaders
@@ -1820,7 +1820,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}`
-Future<ApiResult<void>> deleteV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesSchemaRegistry() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}',
   headers: {..._config.defaultHeaders
@@ -1834,7 +1834,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}/versions/{version}`
-Future<ApiResult<void>> getV2DatabasesSchemaRegistryVersions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSchemaRegistryVersions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}/versions/{version}',
   headers: {..._config.defaultHeaders
@@ -1848,7 +1848,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/schema-registry/config`
-Future<ApiResult<void>> getV2DatabasesSchemaRegistryConfig() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSchemaRegistryConfig() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/config',
   headers: {..._config.defaultHeaders
@@ -1862,7 +1862,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/schema-registry/config`
-Future<ApiResult<void>> putV2DatabasesSchemaRegistryConfig() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesSchemaRegistryConfig() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/config',
   headers: {..._config.defaultHeaders
@@ -1876,7 +1876,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}`
-Future<ApiResult<void>> getV2DatabasesSchemaRegistryConfig2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesSchemaRegistryConfig2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}',
   headers: {..._config.defaultHeaders
@@ -1890,7 +1890,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}`
-Future<ApiResult<void>> putV2DatabasesSchemaRegistryConfig2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesSchemaRegistryConfig2() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}',
   headers: {..._config.defaultHeaders
@@ -1904,7 +1904,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/metrics/credentials`
-Future<ApiResult<void>> getV2DatabasesMetricsCredentials() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesMetricsCredentials() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/metrics/credentials',
   headers: {..._config.defaultHeaders
@@ -1918,7 +1918,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/databases/metrics/credentials`
-Future<ApiResult<void>> putV2DatabasesMetricsCredentials() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DatabasesMetricsCredentials() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/databases/metrics/credentials',
   headers: {..._config.defaultHeaders
@@ -1932,7 +1932,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/databases/{database_cluster_uuid}/indexes`
-Future<ApiResult<void>> getV2DatabasesIndexes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DatabasesIndexes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/databases/{database_cluster_uuid}/indexes',
   headers: {..._config.defaultHeaders
@@ -1946,7 +1946,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/databases/{database_cluster_uuid}/indexes/{index_name}`
-Future<ApiResult<void>> deleteV2DatabasesIndexes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DatabasesIndexes() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/databases/{database_cluster_uuid}/indexes/{index_name}',
   headers: {..._config.defaultHeaders
@@ -1960,7 +1960,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/domains`
-Future<ApiResult<void>> getV2Domains() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Domains() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/domains',
   headers: {..._config.defaultHeaders
@@ -1974,7 +1974,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/domains`
-Future<ApiResult<void>> postV2Domains() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Domains() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/domains',
   headers: {..._config.defaultHeaders
@@ -1988,7 +1988,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/domains/{domain_name}`
-Future<ApiResult<void>> getV2Domains2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Domains2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/domains/{domain_name}',
   headers: {..._config.defaultHeaders
@@ -2002,7 +2002,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/domains/{domain_name}`
-Future<ApiResult<void>> deleteV2Domains() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Domains() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/domains/{domain_name}',
   headers: {..._config.defaultHeaders
@@ -2016,7 +2016,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/domains/{domain_name}/records`
-Future<ApiResult<void>> getV2DomainsRecords() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DomainsRecords() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/domains/{domain_name}/records',
   headers: {..._config.defaultHeaders
@@ -2030,7 +2030,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/domains/{domain_name}/records`
-Future<ApiResult<void>> postV2DomainsRecords() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DomainsRecords() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/domains/{domain_name}/records',
   headers: {..._config.defaultHeaders
@@ -2044,7 +2044,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/domains/{domain_name}/records/{domain_record_id}`
-Future<ApiResult<void>> getV2DomainsRecords2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DomainsRecords2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/domains/{domain_name}/records/{domain_record_id}',
   headers: {..._config.defaultHeaders
@@ -2058,7 +2058,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/domains/{domain_name}/records/{domain_record_id}`
-Future<ApiResult<void>> putV2DomainsRecords() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DomainsRecords() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/domains/{domain_name}/records/{domain_record_id}',
   headers: {..._config.defaultHeaders
@@ -2072,7 +2072,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/domains/{domain_name}/records/{domain_record_id}`
-Future<ApiResult<void>> patchV2DomainsRecords() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2DomainsRecords() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/domains/{domain_name}/records/{domain_record_id}',
   headers: {..._config.defaultHeaders
@@ -2086,7 +2086,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/domains/{domain_name}/records/{domain_record_id}`
-Future<ApiResult<void>> deleteV2DomainsRecords() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DomainsRecords() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/domains/{domain_name}/records/{domain_record_id}',
   headers: {..._config.defaultHeaders
@@ -2100,7 +2100,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets`
-Future<ApiResult<void>> getV2Droplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Droplets() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets',
   headers: {..._config.defaultHeaders
@@ -2114,7 +2114,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/droplets`
-Future<ApiResult<void>> postV2Droplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Droplets() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/droplets',
   headers: {..._config.defaultHeaders
@@ -2128,7 +2128,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets`
-Future<ApiResult<void>> deleteV2Droplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Droplets() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets',
   headers: {..._config.defaultHeaders
@@ -2142,7 +2142,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}`
-Future<ApiResult<void>> getV2Droplets2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Droplets2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}',
   headers: {..._config.defaultHeaders
@@ -2156,7 +2156,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets/{droplet_id}`
-Future<ApiResult<void>> deleteV2Droplets2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Droplets2() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets/{droplet_id}',
   headers: {..._config.defaultHeaders
@@ -2170,7 +2170,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/backups`
-Future<ApiResult<void>> getV2DropletsBackups() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsBackups() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/backups',
   headers: {..._config.defaultHeaders
@@ -2184,7 +2184,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/backups/policy`
-Future<ApiResult<void>> getV2DropletsBackupsPolicy() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsBackupsPolicy() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/backups/policy',
   headers: {..._config.defaultHeaders
@@ -2198,7 +2198,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/backups/policies`
-Future<ApiResult<void>> getV2DropletsBackupsPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsBackupsPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/backups/policies',
   headers: {..._config.defaultHeaders
@@ -2212,7 +2212,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/backups/supported_policies`
-Future<ApiResult<void>> getV2DropletsBackupsSupportedPolicies() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsBackupsSupportedPolicies() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/backups/supported_policies',
   headers: {..._config.defaultHeaders
@@ -2226,7 +2226,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/snapshots`
-Future<ApiResult<void>> getV2DropletsSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsSnapshots() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/snapshots',
   headers: {..._config.defaultHeaders
@@ -2240,7 +2240,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/actions`
-Future<ApiResult<void>> getV2DropletsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsActions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/actions',
   headers: {..._config.defaultHeaders
@@ -2254,7 +2254,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/droplets/{droplet_id}/actions`
-Future<ApiResult<void>> postV2DropletsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DropletsActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/droplets/{droplet_id}/actions',
   headers: {..._config.defaultHeaders
@@ -2268,7 +2268,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/droplets/actions`
-Future<ApiResult<void>> postV2DropletsActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DropletsActions2() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/droplets/actions',
   headers: {..._config.defaultHeaders
@@ -2282,7 +2282,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/actions/{action_id}`
-Future<ApiResult<void>> getV2DropletsActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsActions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -2296,7 +2296,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/kernels`
-Future<ApiResult<void>> getV2DropletsKernels() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsKernels() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/kernels',
   headers: {..._config.defaultHeaders
@@ -2310,7 +2310,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/firewalls`
-Future<ApiResult<void>> getV2DropletsFirewalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsFirewalls() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/firewalls',
   headers: {..._config.defaultHeaders
@@ -2324,7 +2324,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/neighbors`
-Future<ApiResult<void>> getV2DropletsNeighbors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsNeighbors() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/neighbors',
   headers: {..._config.defaultHeaders
@@ -2338,7 +2338,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/destroy_with_associated_resources`
-Future<ApiResult<void>> getV2DropletsDestroyWithAssociatedResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsDestroyWithAssociatedResources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/destroy_with_associated_resources',
   headers: {..._config.defaultHeaders
@@ -2352,7 +2352,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets/{droplet_id}/destroy_with_associated_resources/selective`
-Future<ApiResult<void>> deleteV2DropletsDestroyWithAssociatedResourcesSelective() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DropletsDestroyWithAssociatedResourcesSelective() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets/{droplet_id}/destroy_with_associated_resources/selective',
   headers: {..._config.defaultHeaders
@@ -2366,7 +2366,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets/{droplet_id}/destroy_with_associated_resources/dangerous`
-Future<ApiResult<void>> deleteV2DropletsDestroyWithAssociatedResourcesDangerous() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DropletsDestroyWithAssociatedResourcesDangerous() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets/{droplet_id}/destroy_with_associated_resources/dangerous',
   headers: {..._config.defaultHeaders
@@ -2380,7 +2380,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/{droplet_id}/destroy_with_associated_resources/status`
-Future<ApiResult<void>> getV2DropletsDestroyWithAssociatedResourcesStatus() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsDestroyWithAssociatedResourcesStatus() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/{droplet_id}/destroy_with_associated_resources/status',
   headers: {..._config.defaultHeaders
@@ -2394,7 +2394,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/droplets/{droplet_id}/destroy_with_associated_resources/retry`
-Future<ApiResult<void>> postV2DropletsDestroyWithAssociatedResourcesRetry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DropletsDestroyWithAssociatedResourcesRetry() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/droplets/{droplet_id}/destroy_with_associated_resources/retry',
   headers: {..._config.defaultHeaders
@@ -2408,7 +2408,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/autoscale`
-Future<ApiResult<void>> getV2DropletsAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsAutoscale() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/autoscale',
   headers: {..._config.defaultHeaders
@@ -2422,7 +2422,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/droplets/autoscale`
-Future<ApiResult<void>> postV2DropletsAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2DropletsAutoscale() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/droplets/autoscale',
   headers: {..._config.defaultHeaders
@@ -2436,7 +2436,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/autoscale/{autoscale_pool_id}`
-Future<ApiResult<void>> getV2DropletsAutoscale2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsAutoscale2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}',
   headers: {..._config.defaultHeaders
@@ -2450,7 +2450,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/droplets/autoscale/{autoscale_pool_id}`
-Future<ApiResult<void>> putV2DropletsAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2DropletsAutoscale() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}',
   headers: {..._config.defaultHeaders
@@ -2464,7 +2464,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets/autoscale/{autoscale_pool_id}`
-Future<ApiResult<void>> deleteV2DropletsAutoscale() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DropletsAutoscale() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}',
   headers: {..._config.defaultHeaders
@@ -2478,7 +2478,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/droplets/autoscale/{autoscale_pool_id}/dangerous`
-Future<ApiResult<void>> deleteV2DropletsAutoscaleDangerous() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2DropletsAutoscaleDangerous() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}/dangerous',
   headers: {..._config.defaultHeaders
@@ -2492,7 +2492,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/autoscale/{autoscale_pool_id}/members`
-Future<ApiResult<void>> getV2DropletsAutoscaleMembers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsAutoscaleMembers() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}/members',
   headers: {..._config.defaultHeaders
@@ -2506,7 +2506,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/droplets/autoscale/{autoscale_pool_id}/history`
-Future<ApiResult<void>> getV2DropletsAutoscaleHistory() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2DropletsAutoscaleHistory() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/droplets/autoscale/{autoscale_pool_id}/history',
   headers: {..._config.defaultHeaders
@@ -2520,7 +2520,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/firewalls`
-Future<ApiResult<void>> getV2Firewalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Firewalls() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/firewalls',
   headers: {..._config.defaultHeaders
@@ -2534,7 +2534,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/firewalls`
-Future<ApiResult<void>> postV2Firewalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Firewalls() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/firewalls',
   headers: {..._config.defaultHeaders
@@ -2548,7 +2548,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/firewalls/{firewall_id}`
-Future<ApiResult<void>> getV2Firewalls2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Firewalls2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/firewalls/{firewall_id}',
   headers: {..._config.defaultHeaders
@@ -2562,7 +2562,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/firewalls/{firewall_id}`
-Future<ApiResult<void>> putV2Firewalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2Firewalls() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/firewalls/{firewall_id}',
   headers: {..._config.defaultHeaders
@@ -2576,7 +2576,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/firewalls/{firewall_id}`
-Future<ApiResult<void>> deleteV2Firewalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Firewalls() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/firewalls/{firewall_id}',
   headers: {..._config.defaultHeaders
@@ -2590,7 +2590,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/firewalls/{firewall_id}/droplets`
-Future<ApiResult<void>> postV2FirewallsDroplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FirewallsDroplets() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/firewalls/{firewall_id}/droplets',
   headers: {..._config.defaultHeaders
@@ -2604,7 +2604,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/firewalls/{firewall_id}/droplets`
-Future<ApiResult<void>> deleteV2FirewallsDroplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FirewallsDroplets() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/firewalls/{firewall_id}/droplets',
   headers: {..._config.defaultHeaders
@@ -2618,7 +2618,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/firewalls/{firewall_id}/tags`
-Future<ApiResult<void>> postV2FirewallsTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FirewallsTags() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/firewalls/{firewall_id}/tags',
   headers: {..._config.defaultHeaders
@@ -2632,7 +2632,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/firewalls/{firewall_id}/tags`
-Future<ApiResult<void>> deleteV2FirewallsTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FirewallsTags() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/firewalls/{firewall_id}/tags',
   headers: {..._config.defaultHeaders
@@ -2646,7 +2646,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/firewalls/{firewall_id}/rules`
-Future<ApiResult<void>> postV2FirewallsRules() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FirewallsRules() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/firewalls/{firewall_id}/rules',
   headers: {..._config.defaultHeaders
@@ -2660,7 +2660,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/firewalls/{firewall_id}/rules`
-Future<ApiResult<void>> deleteV2FirewallsRules() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FirewallsRules() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/firewalls/{firewall_id}/rules',
   headers: {..._config.defaultHeaders
@@ -2674,7 +2674,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/floating_ips`
-Future<ApiResult<void>> getV2FloatingIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FloatingIps() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/floating_ips',
   headers: {..._config.defaultHeaders
@@ -2688,7 +2688,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/floating_ips`
-Future<ApiResult<void>> postV2FloatingIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FloatingIps() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/floating_ips',
   headers: {..._config.defaultHeaders
@@ -2702,7 +2702,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/floating_ips/{floating_ip}`
-Future<ApiResult<void>> getV2FloatingIps2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FloatingIps2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/floating_ips/{floating_ip}',
   headers: {..._config.defaultHeaders
@@ -2716,7 +2716,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/floating_ips/{floating_ip}`
-Future<ApiResult<void>> deleteV2FloatingIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FloatingIps() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/floating_ips/{floating_ip}',
   headers: {..._config.defaultHeaders
@@ -2730,7 +2730,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/floating_ips/{floating_ip}/actions`
-Future<ApiResult<void>> getV2FloatingIpsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FloatingIpsActions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/floating_ips/{floating_ip}/actions',
   headers: {..._config.defaultHeaders
@@ -2744,7 +2744,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/floating_ips/{floating_ip}/actions`
-Future<ApiResult<void>> postV2FloatingIpsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FloatingIpsActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/floating_ips/{floating_ip}/actions',
   headers: {..._config.defaultHeaders
@@ -2758,7 +2758,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/floating_ips/{floating_ip}/actions/{action_id}`
-Future<ApiResult<void>> getV2FloatingIpsActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FloatingIpsActions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/floating_ips/{floating_ip}/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -2772,7 +2772,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/functions/namespaces`
-Future<ApiResult<void>> getV2FunctionsNamespaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FunctionsNamespaces() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/functions/namespaces',
   headers: {..._config.defaultHeaders
@@ -2786,7 +2786,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/functions/namespaces`
-Future<ApiResult<void>> postV2FunctionsNamespaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FunctionsNamespaces() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/functions/namespaces',
   headers: {..._config.defaultHeaders
@@ -2800,7 +2800,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/functions/namespaces/{namespace_id}`
-Future<ApiResult<void>> getV2FunctionsNamespaces2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FunctionsNamespaces2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/functions/namespaces/{namespace_id}',
   headers: {..._config.defaultHeaders
@@ -2814,7 +2814,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/functions/namespaces/{namespace_id}`
-Future<ApiResult<void>> deleteV2FunctionsNamespaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FunctionsNamespaces() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/functions/namespaces/{namespace_id}',
   headers: {..._config.defaultHeaders
@@ -2828,7 +2828,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/functions/namespaces/{namespace_id}/triggers`
-Future<ApiResult<void>> getV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/functions/namespaces/{namespace_id}/triggers',
   headers: {..._config.defaultHeaders
@@ -2842,7 +2842,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/functions/namespaces/{namespace_id}/triggers`
-Future<ApiResult<void>> postV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/functions/namespaces/{namespace_id}/triggers',
   headers: {..._config.defaultHeaders
@@ -2856,7 +2856,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}`
-Future<ApiResult<void>> getV2FunctionsNamespacesTriggers2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2FunctionsNamespacesTriggers2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}',
   headers: {..._config.defaultHeaders
@@ -2870,7 +2870,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}`
-Future<ApiResult<void>> putV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}',
   headers: {..._config.defaultHeaders
@@ -2884,7 +2884,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}`
-Future<ApiResult<void>> deleteV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2FunctionsNamespacesTriggers() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}',
   headers: {..._config.defaultHeaders
@@ -2898,7 +2898,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/images`
-Future<ApiResult<void>> getV2Images() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Images() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/images',
   headers: {..._config.defaultHeaders
@@ -2912,7 +2912,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/images`
-Future<ApiResult<void>> postV2Images() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Images() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/images',
   headers: {..._config.defaultHeaders
@@ -2926,7 +2926,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/images/{image_id}`
-Future<ApiResult<void>> getV2Images2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Images2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/images/{image_id}',
   headers: {..._config.defaultHeaders
@@ -2940,7 +2940,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/images/{image_id}`
-Future<ApiResult<void>> putV2Images() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2Images() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/images/{image_id}',
   headers: {..._config.defaultHeaders
@@ -2954,7 +2954,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/images/{image_id}`
-Future<ApiResult<void>> deleteV2Images() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Images() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/images/{image_id}',
   headers: {..._config.defaultHeaders
@@ -2968,7 +2968,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/images/{image_id}/actions`
-Future<ApiResult<void>> getV2ImagesActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ImagesActions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/images/{image_id}/actions',
   headers: {..._config.defaultHeaders
@@ -2982,7 +2982,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/images/{image_id}/actions`
-Future<ApiResult<void>> postV2ImagesActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ImagesActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/images/{image_id}/actions',
   headers: {..._config.defaultHeaders
@@ -2996,7 +2996,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/images/{image_id}/actions/{action_id}`
-Future<ApiResult<void>> getV2ImagesActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ImagesActions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/images/{image_id}/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -3010,7 +3010,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters`
-Future<ApiResult<void>> getV2KubernetesClusters() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClusters() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters',
   headers: {..._config.defaultHeaders
@@ -3024,7 +3024,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/clusters`
-Future<ApiResult<void>> postV2KubernetesClusters() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesClusters() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/clusters',
   headers: {..._config.defaultHeaders
@@ -3038,7 +3038,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}`
-Future<ApiResult<void>> getV2KubernetesClusters2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClusters2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}',
   headers: {..._config.defaultHeaders
@@ -3052,7 +3052,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/kubernetes/clusters/{cluster_id}`
-Future<ApiResult<void>> putV2KubernetesClusters() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2KubernetesClusters() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/kubernetes/clusters/{cluster_id}',
   headers: {..._config.defaultHeaders
@@ -3066,7 +3066,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/clusters/{cluster_id}`
-Future<ApiResult<void>> deleteV2KubernetesClusters() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesClusters() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/clusters/{cluster_id}',
   headers: {..._config.defaultHeaders
@@ -3080,7 +3080,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources`
-Future<ApiResult<void>> getV2KubernetesClustersDestroyWithAssociatedResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersDestroyWithAssociatedResources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources',
   headers: {..._config.defaultHeaders
@@ -3094,7 +3094,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/selective`
-Future<ApiResult<void>> deleteV2KubernetesClustersDestroyWithAssociatedResourcesSelective() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesClustersDestroyWithAssociatedResourcesSelective() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/selective',
   headers: {..._config.defaultHeaders
@@ -3108,7 +3108,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/dangerous`
-Future<ApiResult<void>> deleteV2KubernetesClustersDestroyWithAssociatedResourcesDangerous() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesClustersDestroyWithAssociatedResourcesDangerous() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/dangerous',
   headers: {..._config.defaultHeaders
@@ -3122,7 +3122,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/kubeconfig`
-Future<ApiResult<void>> getV2KubernetesClustersKubeconfig() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersKubeconfig() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/kubeconfig',
   headers: {..._config.defaultHeaders
@@ -3136,7 +3136,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/credentials`
-Future<ApiResult<void>> getV2KubernetesClustersCredentials() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersCredentials() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/credentials',
   headers: {..._config.defaultHeaders
@@ -3150,7 +3150,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/upgrades`
-Future<ApiResult<void>> getV2KubernetesClustersUpgrades() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersUpgrades() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/upgrades',
   headers: {..._config.defaultHeaders
@@ -3164,7 +3164,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/clusters/{cluster_id}/upgrade`
-Future<ApiResult<void>> postV2KubernetesClustersUpgrade() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesClustersUpgrade() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/clusters/{cluster_id}/upgrade',
   headers: {..._config.defaultHeaders
@@ -3178,7 +3178,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/node_pools`
-Future<ApiResult<void>> getV2KubernetesClustersNodePools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersNodePools() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools',
   headers: {..._config.defaultHeaders
@@ -3192,7 +3192,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/clusters/{cluster_id}/node_pools`
-Future<ApiResult<void>> postV2KubernetesClustersNodePools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesClustersNodePools() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools',
   headers: {..._config.defaultHeaders
@@ -3206,7 +3206,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}`
-Future<ApiResult<void>> getV2KubernetesClustersNodePools2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersNodePools2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}',
   headers: {..._config.defaultHeaders
@@ -3220,7 +3220,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}`
-Future<ApiResult<void>> putV2KubernetesClustersNodePools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2KubernetesClustersNodePools() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}',
   headers: {..._config.defaultHeaders
@@ -3234,7 +3234,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}`
-Future<ApiResult<void>> deleteV2KubernetesClustersNodePools() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesClustersNodePools() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}',
   headers: {..._config.defaultHeaders
@@ -3248,7 +3248,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/nodes/{node_id}`
-Future<ApiResult<void>> deleteV2KubernetesClustersNodePoolsNodes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesClustersNodePoolsNodes() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/nodes/{node_id}',
   headers: {..._config.defaultHeaders
@@ -3262,7 +3262,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/recycle`
-Future<ApiResult<void>> postV2KubernetesClustersNodePoolsRecycle() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesClustersNodePoolsRecycle() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/recycle',
   headers: {..._config.defaultHeaders
@@ -3276,7 +3276,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/user`
-Future<ApiResult<void>> getV2KubernetesClustersUser() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersUser() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/user',
   headers: {..._config.defaultHeaders
@@ -3290,7 +3290,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/options`
-Future<ApiResult<void>> getV2KubernetesOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesOptions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/options',
   headers: {..._config.defaultHeaders
@@ -3304,7 +3304,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/clusterlint`
-Future<ApiResult<void>> getV2KubernetesClustersClusterlint() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersClusterlint() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/clusterlint',
   headers: {..._config.defaultHeaders
@@ -3318,7 +3318,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/clusters/{cluster_id}/clusterlint`
-Future<ApiResult<void>> postV2KubernetesClustersClusterlint() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesClustersClusterlint() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/clusters/{cluster_id}/clusterlint',
   headers: {..._config.defaultHeaders
@@ -3332,7 +3332,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/registry`
-Future<ApiResult<void>> postV2KubernetesRegistry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesRegistry() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/registry',
   headers: {..._config.defaultHeaders
@@ -3346,7 +3346,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/registry`
-Future<ApiResult<void>> deleteV2KubernetesRegistry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesRegistry() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/registry',
   headers: {..._config.defaultHeaders
@@ -3360,7 +3360,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/kubernetes/registries`
-Future<ApiResult<void>> postV2KubernetesRegistries() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2KubernetesRegistries() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/kubernetes/registries',
   headers: {..._config.defaultHeaders
@@ -3374,7 +3374,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/kubernetes/registries`
-Future<ApiResult<void>> deleteV2KubernetesRegistries() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2KubernetesRegistries() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/kubernetes/registries',
   headers: {..._config.defaultHeaders
@@ -3388,7 +3388,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/kubernetes/clusters/{cluster_id}/status_messages`
-Future<ApiResult<void>> getV2KubernetesClustersStatusMessages() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2KubernetesClustersStatusMessages() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/kubernetes/clusters/{cluster_id}/status_messages',
   headers: {..._config.defaultHeaders
@@ -3402,7 +3402,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/load_balancers`
-Future<ApiResult<void>> getV2LoadBalancers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2LoadBalancers() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/load_balancers',
   headers: {..._config.defaultHeaders
@@ -3416,7 +3416,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/load_balancers`
-Future<ApiResult<void>> postV2LoadBalancers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2LoadBalancers() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/load_balancers',
   headers: {..._config.defaultHeaders
@@ -3430,7 +3430,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/load_balancers/{lb_id}`
-Future<ApiResult<void>> getV2LoadBalancers2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2LoadBalancers2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/load_balancers/{lb_id}',
   headers: {..._config.defaultHeaders
@@ -3444,7 +3444,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/load_balancers/{lb_id}`
-Future<ApiResult<void>> putV2LoadBalancers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2LoadBalancers() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/load_balancers/{lb_id}',
   headers: {..._config.defaultHeaders
@@ -3458,7 +3458,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/load_balancers/{lb_id}`
-Future<ApiResult<void>> deleteV2LoadBalancers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2LoadBalancers() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/load_balancers/{lb_id}',
   headers: {..._config.defaultHeaders
@@ -3472,7 +3472,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/load_balancers/{lb_id}/cache`
-Future<ApiResult<void>> deleteV2LoadBalancersCache() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2LoadBalancersCache() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/load_balancers/{lb_id}/cache',
   headers: {..._config.defaultHeaders
@@ -3486,7 +3486,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/load_balancers/{lb_id}/droplets`
-Future<ApiResult<void>> postV2LoadBalancersDroplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2LoadBalancersDroplets() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/load_balancers/{lb_id}/droplets',
   headers: {..._config.defaultHeaders
@@ -3500,7 +3500,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/load_balancers/{lb_id}/droplets`
-Future<ApiResult<void>> deleteV2LoadBalancersDroplets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2LoadBalancersDroplets() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/load_balancers/{lb_id}/droplets',
   headers: {..._config.defaultHeaders
@@ -3514,7 +3514,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/load_balancers/{lb_id}/forwarding_rules`
-Future<ApiResult<void>> postV2LoadBalancersForwardingRules() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2LoadBalancersForwardingRules() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/load_balancers/{lb_id}/forwarding_rules',
   headers: {..._config.defaultHeaders
@@ -3528,7 +3528,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/load_balancers/{lb_id}/forwarding_rules`
-Future<ApiResult<void>> deleteV2LoadBalancersForwardingRules() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2LoadBalancersForwardingRules() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/load_balancers/{lb_id}/forwarding_rules',
   headers: {..._config.defaultHeaders
@@ -3542,7 +3542,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/alerts`
-Future<ApiResult<void>> getV2MonitoringAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringAlerts() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/alerts',
   headers: {..._config.defaultHeaders
@@ -3556,7 +3556,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/monitoring/alerts`
-Future<ApiResult<void>> postV2MonitoringAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2MonitoringAlerts() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/monitoring/alerts',
   headers: {..._config.defaultHeaders
@@ -3570,7 +3570,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/alerts/{alert_uuid}`
-Future<ApiResult<void>> getV2MonitoringAlerts2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringAlerts2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/alerts/{alert_uuid}',
   headers: {..._config.defaultHeaders
@@ -3584,7 +3584,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/monitoring/alerts/{alert_uuid}`
-Future<ApiResult<void>> putV2MonitoringAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2MonitoringAlerts() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/monitoring/alerts/{alert_uuid}',
   headers: {..._config.defaultHeaders
@@ -3598,7 +3598,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/monitoring/alerts/{alert_uuid}`
-Future<ApiResult<void>> deleteV2MonitoringAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2MonitoringAlerts() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/monitoring/alerts/{alert_uuid}',
   headers: {..._config.defaultHeaders
@@ -3612,7 +3612,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/bandwidth`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletBandwidth() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletBandwidth() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/bandwidth',
   headers: {..._config.defaultHeaders
@@ -3626,7 +3626,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/cpu`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletCpu() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletCpu() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/cpu',
   headers: {..._config.defaultHeaders
@@ -3640,7 +3640,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/filesystem_free`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletFilesystemFree() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletFilesystemFree() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/filesystem_free',
   headers: {..._config.defaultHeaders
@@ -3654,7 +3654,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/filesystem_size`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletFilesystemSize() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletFilesystemSize() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/filesystem_size',
   headers: {..._config.defaultHeaders
@@ -3668,7 +3668,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/load_1`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletLoad1() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletLoad1() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/load_1',
   headers: {..._config.defaultHeaders
@@ -3682,7 +3682,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/load_5`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletLoad5() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletLoad5() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/load_5',
   headers: {..._config.defaultHeaders
@@ -3696,7 +3696,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/load_15`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletLoad15() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletLoad15() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/load_15',
   headers: {..._config.defaultHeaders
@@ -3710,7 +3710,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/memory_cached`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletMemoryCached() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletMemoryCached() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/memory_cached',
   headers: {..._config.defaultHeaders
@@ -3724,7 +3724,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/memory_free`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletMemoryFree() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletMemoryFree() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/memory_free',
   headers: {..._config.defaultHeaders
@@ -3738,7 +3738,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/memory_total`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletMemoryTotal() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletMemoryTotal() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/memory_total',
   headers: {..._config.defaultHeaders
@@ -3752,7 +3752,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet/memory_available`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletMemoryAvailable() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletMemoryAvailable() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet/memory_available',
   headers: {..._config.defaultHeaders
@@ -3766,7 +3766,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/apps/memory_percentage`
-Future<ApiResult<void>> getV2MonitoringMetricsAppsMemoryPercentage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsAppsMemoryPercentage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/apps/memory_percentage',
   headers: {..._config.defaultHeaders
@@ -3780,7 +3780,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/apps/cpu_percentage`
-Future<ApiResult<void>> getV2MonitoringMetricsAppsCpuPercentage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsAppsCpuPercentage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/apps/cpu_percentage',
   headers: {..._config.defaultHeaders
@@ -3794,7 +3794,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/apps/restart_count`
-Future<ApiResult<void>> getV2MonitoringMetricsAppsRestartCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsAppsRestartCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/apps/restart_count',
   headers: {..._config.defaultHeaders
@@ -3808,7 +3808,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_connections_current`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendConnectionsCurrent() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendConnectionsCurrent() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_connections_current',
   headers: {..._config.defaultHeaders
@@ -3822,7 +3822,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_connections_limit`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendConnectionsLimit() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendConnectionsLimit() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_connections_limit',
   headers: {..._config.defaultHeaders
@@ -3836,7 +3836,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_cpu_utilization`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendCpuUtilization() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendCpuUtilization() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_cpu_utilization',
   headers: {..._config.defaultHeaders
@@ -3850,7 +3850,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_bytes`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendFirewallDroppedBytes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendFirewallDroppedBytes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_bytes',
   headers: {..._config.defaultHeaders
@@ -3864,7 +3864,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_packets`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendFirewallDroppedPackets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendFirewallDroppedPackets() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_packets',
   headers: {..._config.defaultHeaders
@@ -3878,7 +3878,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_http_responses`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendHttpResponses() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendHttpResponses() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_http_responses',
   headers: {..._config.defaultHeaders
@@ -3892,7 +3892,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_http_requests_per_second`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendHttpRequestsPerSecond() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendHttpRequestsPerSecond() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_http_requests_per_second',
   headers: {..._config.defaultHeaders
@@ -3906,7 +3906,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_network_throughput_http`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputHttp() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputHttp() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_network_throughput_http',
   headers: {..._config.defaultHeaders
@@ -3920,7 +3920,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_network_throughput_udp`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputUdp() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputUdp() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_network_throughput_udp',
   headers: {..._config.defaultHeaders
@@ -3934,7 +3934,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_network_throughput_tcp`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputTcp() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendNetworkThroughputTcp() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_network_throughput_tcp',
   headers: {..._config.defaultHeaders
@@ -3948,7 +3948,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_nlb_tcp_network_throughput`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendNlbTcpNetworkThroughput() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendNlbTcpNetworkThroughput() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_nlb_tcp_network_throughput',
   headers: {..._config.defaultHeaders
@@ -3962,7 +3962,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_nlb_udp_network_throughput`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendNlbUdpNetworkThroughput() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendNlbUdpNetworkThroughput() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_nlb_udp_network_throughput',
   headers: {..._config.defaultHeaders
@@ -3976,7 +3976,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_tls_connections_current`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsCurrent() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsCurrent() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_tls_connections_current',
   headers: {..._config.defaultHeaders
@@ -3990,7 +3990,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_tls_connections_limit`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsLimit() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsLimit() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_tls_connections_limit',
   headers: {..._config.defaultHeaders
@@ -4004,7 +4004,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/frontend_tls_connections_exceeding_rate_limit`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsExceedingRateLimit() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerFrontendTlsConnectionsExceedingRateLimit() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/frontend_tls_connections_exceeding_rate_limit',
   headers: {..._config.defaultHeaders
@@ -4018,7 +4018,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_session_duration_avg`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDurationAvg() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDurationAvg() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_avg',
   headers: {..._config.defaultHeaders
@@ -4032,7 +4032,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_session_duration_50p`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDuration50p() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDuration50p() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_50p',
   headers: {..._config.defaultHeaders
@@ -4046,7 +4046,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_session_duration_95p`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDuration95p() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpSessionDuration95p() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_95p',
   headers: {..._config.defaultHeaders
@@ -4060,7 +4060,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_response_time_avg`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTimeAvg() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTimeAvg() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_response_time_avg',
   headers: {..._config.defaultHeaders
@@ -4074,7 +4074,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_response_time_50p`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime50p() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime50p() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_response_time_50p',
   headers: {..._config.defaultHeaders
@@ -4088,7 +4088,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_response_time_95p`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime95p() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime95p() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_response_time_95p',
   headers: {..._config.defaultHeaders
@@ -4102,7 +4102,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_response_time_99p`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime99p() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponseTime99p() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_response_time_99p',
   headers: {..._config.defaultHeaders
@@ -4116,7 +4116,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_queue_size`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsQueueSize() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsQueueSize() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_queue_size',
   headers: {..._config.defaultHeaders
@@ -4130,7 +4130,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_http_responses`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponses() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHttpResponses() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_http_responses',
   headers: {..._config.defaultHeaders
@@ -4144,7 +4144,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_connections`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsConnections() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsConnections() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_connections',
   headers: {..._config.defaultHeaders
@@ -4158,7 +4158,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_health_checks`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsHealthChecks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsHealthChecks() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_health_checks',
   headers: {..._config.defaultHeaders
@@ -4172,7 +4172,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/load_balancer/droplets_downtime`
-Future<ApiResult<void>> getV2MonitoringMetricsLoadBalancerDropletsDowntime() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsLoadBalancerDropletsDowntime() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/load_balancer/droplets_downtime',
   headers: {..._config.defaultHeaders
@@ -4186,7 +4186,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/current_instances`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleCurrentInstances() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleCurrentInstances() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/current_instances',
   headers: {..._config.defaultHeaders
@@ -4200,7 +4200,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/target_instances`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleTargetInstances() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleTargetInstances() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/target_instances',
   headers: {..._config.defaultHeaders
@@ -4214,7 +4214,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/current_cpu_utilization`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleCurrentCpuUtilization() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleCurrentCpuUtilization() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/current_cpu_utilization',
   headers: {..._config.defaultHeaders
@@ -4228,7 +4228,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/target_cpu_utilization`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleTargetCpuUtilization() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleTargetCpuUtilization() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/target_cpu_utilization',
   headers: {..._config.defaultHeaders
@@ -4242,7 +4242,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/current_memory_utilization`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleCurrentMemoryUtilization() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleCurrentMemoryUtilization() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/current_memory_utilization',
   headers: {..._config.defaultHeaders
@@ -4256,7 +4256,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/droplet_autoscale/target_memory_utilization`
-Future<ApiResult<void>> getV2MonitoringMetricsDropletAutoscaleTargetMemoryUtilization() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDropletAutoscaleTargetMemoryUtilization() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/droplet_autoscale/target_memory_utilization',
   headers: {..._config.defaultHeaders
@@ -4270,7 +4270,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/cpu_usage`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlCpuUsage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlCpuUsage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/cpu_usage',
   headers: {..._config.defaultHeaders
@@ -4284,7 +4284,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/load`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlLoad() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlLoad() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/load',
   headers: {..._config.defaultHeaders
@@ -4298,7 +4298,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/memory_usage`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlMemoryUsage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlMemoryUsage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/memory_usage',
   headers: {..._config.defaultHeaders
@@ -4312,7 +4312,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/disk_usage`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlDiskUsage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlDiskUsage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/disk_usage',
   headers: {..._config.defaultHeaders
@@ -4326,7 +4326,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/threads_connected`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlThreadsConnected() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlThreadsConnected() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/threads_connected',
   headers: {..._config.defaultHeaders
@@ -4340,7 +4340,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/threads_created_rate`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlThreadsCreatedRate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlThreadsCreatedRate() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/threads_created_rate',
   headers: {..._config.defaultHeaders
@@ -4354,7 +4354,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/threads_active`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlThreadsActive() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlThreadsActive() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/threads_active',
   headers: {..._config.defaultHeaders
@@ -4368,7 +4368,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/index_vs_sequential_reads`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlIndexVsSequentialReads() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlIndexVsSequentialReads() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/index_vs_sequential_reads',
   headers: {..._config.defaultHeaders
@@ -4382,7 +4382,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/op_rates`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlOpRates() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlOpRates() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/op_rates',
   headers: {..._config.defaultHeaders
@@ -4396,7 +4396,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/schema_throughput`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlSchemaThroughput() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlSchemaThroughput() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/schema_throughput',
   headers: {..._config.defaultHeaders
@@ -4410,7 +4410,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/metrics/database/mysql/schema_latency`
-Future<ApiResult<void>> getV2MonitoringMetricsDatabaseMysqlSchemaLatency() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringMetricsDatabaseMysqlSchemaLatency() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/metrics/database/mysql/schema_latency',
   headers: {..._config.defaultHeaders
@@ -4424,7 +4424,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/sinks/destinations`
-Future<ApiResult<void>> getV2MonitoringSinksDestinations() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringSinksDestinations() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/sinks/destinations',
   headers: {..._config.defaultHeaders
@@ -4438,7 +4438,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/monitoring/sinks/destinations`
-Future<ApiResult<void>> postV2MonitoringSinksDestinations() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2MonitoringSinksDestinations() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/monitoring/sinks/destinations',
   headers: {..._config.defaultHeaders
@@ -4452,7 +4452,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/sinks/destinations/{destination_uuid}`
-Future<ApiResult<void>> getV2MonitoringSinksDestinations2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringSinksDestinations2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/sinks/destinations/{destination_uuid}',
   headers: {..._config.defaultHeaders
@@ -4466,7 +4466,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/monitoring/sinks/destinations/{destination_uuid}`
-Future<ApiResult<void>> postV2MonitoringSinksDestinations2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2MonitoringSinksDestinations2() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/monitoring/sinks/destinations/{destination_uuid}',
   headers: {..._config.defaultHeaders
@@ -4480,7 +4480,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/monitoring/sinks/destinations/{destination_uuid}`
-Future<ApiResult<void>> deleteV2MonitoringSinksDestinations() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2MonitoringSinksDestinations() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/monitoring/sinks/destinations/{destination_uuid}',
   headers: {..._config.defaultHeaders
@@ -4494,7 +4494,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/sinks`
-Future<ApiResult<void>> getV2MonitoringSinks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringSinks() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/sinks',
   headers: {..._config.defaultHeaders
@@ -4508,7 +4508,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/monitoring/sinks`
-Future<ApiResult<void>> postV2MonitoringSinks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2MonitoringSinks() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/monitoring/sinks',
   headers: {..._config.defaultHeaders
@@ -4522,7 +4522,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/monitoring/sinks/{sink_uuid}`
-Future<ApiResult<void>> getV2MonitoringSinks2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2MonitoringSinks2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/monitoring/sinks/{sink_uuid}',
   headers: {..._config.defaultHeaders
@@ -4536,7 +4536,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/monitoring/sinks/{sink_uuid}`
-Future<ApiResult<void>> deleteV2MonitoringSinks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2MonitoringSinks() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/monitoring/sinks/{sink_uuid}',
   headers: {..._config.defaultHeaders
@@ -4550,7 +4550,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/nfs`
-Future<ApiResult<void>> getV2Nfs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Nfs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/nfs',
   headers: {..._config.defaultHeaders
@@ -4564,7 +4564,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/nfs`
-Future<ApiResult<void>> postV2Nfs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Nfs() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/nfs',
   headers: {..._config.defaultHeaders
@@ -4578,7 +4578,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/nfs/{nfs_id}`
-Future<ApiResult<void>> getV2Nfs2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Nfs2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/nfs/{nfs_id}',
   headers: {..._config.defaultHeaders
@@ -4592,7 +4592,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/nfs/{nfs_id}`
-Future<ApiResult<void>> deleteV2Nfs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Nfs() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/nfs/{nfs_id}',
   headers: {..._config.defaultHeaders
@@ -4606,7 +4606,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/nfs/{nfs_id}/actions`
-Future<ApiResult<void>> postV2NfsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2NfsActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/nfs/{nfs_id}/actions',
   headers: {..._config.defaultHeaders
@@ -4620,7 +4620,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/nfs/snapshots`
-Future<ApiResult<void>> getV2NfsSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2NfsSnapshots() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/nfs/snapshots',
   headers: {..._config.defaultHeaders
@@ -4634,7 +4634,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/nfs/snapshots/{nfs_snapshot_id}`
-Future<ApiResult<void>> getV2NfsSnapshots2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2NfsSnapshots2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/nfs/snapshots/{nfs_snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -4648,7 +4648,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/nfs/snapshots/{nfs_snapshot_id}`
-Future<ApiResult<void>> deleteV2NfsSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2NfsSnapshots() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/nfs/snapshots/{nfs_snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -4662,7 +4662,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/partner_network_connect/attachments`
-Future<ApiResult<void>> getV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/partner_network_connect/attachments',
   headers: {..._config.defaultHeaders
@@ -4676,7 +4676,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/partner_network_connect/attachments`
-Future<ApiResult<void>> postV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/partner_network_connect/attachments',
   headers: {..._config.defaultHeaders
@@ -4690,7 +4690,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/partner_network_connect/attachments/{pa_id}`
-Future<ApiResult<void>> getV2PartnerNetworkConnectAttachments2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2PartnerNetworkConnectAttachments2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/partner_network_connect/attachments/{pa_id}',
   headers: {..._config.defaultHeaders
@@ -4704,7 +4704,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/partner_network_connect/attachments/{pa_id}`
-Future<ApiResult<void>> patchV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/partner_network_connect/attachments/{pa_id}',
   headers: {..._config.defaultHeaders
@@ -4718,7 +4718,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/partner_network_connect/attachments/{pa_id}`
-Future<ApiResult<void>> deleteV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2PartnerNetworkConnectAttachments() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/partner_network_connect/attachments/{pa_id}',
   headers: {..._config.defaultHeaders
@@ -4732,7 +4732,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/partner_network_connect/attachments/{pa_id}/bgp_auth_key`
-Future<ApiResult<void>> getV2PartnerNetworkConnectAttachmentsBgpAuthKey() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2PartnerNetworkConnectAttachmentsBgpAuthKey() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/partner_network_connect/attachments/{pa_id}/bgp_auth_key',
   headers: {..._config.defaultHeaders
@@ -4746,7 +4746,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/partner_network_connect/attachments/{pa_id}/remote_routes`
-Future<ApiResult<void>> getV2PartnerNetworkConnectAttachmentsRemoteRoutes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2PartnerNetworkConnectAttachmentsRemoteRoutes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/partner_network_connect/attachments/{pa_id}/remote_routes',
   headers: {..._config.defaultHeaders
@@ -4760,7 +4760,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/partner_network_connect/attachments/{pa_id}/service_key`
-Future<ApiResult<void>> getV2PartnerNetworkConnectAttachmentsServiceKey() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2PartnerNetworkConnectAttachmentsServiceKey() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/partner_network_connect/attachments/{pa_id}/service_key',
   headers: {..._config.defaultHeaders
@@ -4774,7 +4774,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/partner_network_connect/attachments/{pa_id}/service_key`
-Future<ApiResult<void>> postV2PartnerNetworkConnectAttachmentsServiceKey() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2PartnerNetworkConnectAttachmentsServiceKey() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/partner_network_connect/attachments/{pa_id}/service_key',
   headers: {..._config.defaultHeaders
@@ -4788,7 +4788,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/projects`
-Future<ApiResult<void>> getV2Projects() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Projects() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/projects',
   headers: {..._config.defaultHeaders
@@ -4802,7 +4802,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/projects`
-Future<ApiResult<void>> postV2Projects() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Projects() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/projects',
   headers: {..._config.defaultHeaders
@@ -4816,7 +4816,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/projects/default`
-Future<ApiResult<void>> getV2ProjectsDefault() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ProjectsDefault() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/projects/default',
   headers: {..._config.defaultHeaders
@@ -4830,7 +4830,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/projects/default`
-Future<ApiResult<void>> putV2ProjectsDefault() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2ProjectsDefault() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/projects/default',
   headers: {..._config.defaultHeaders
@@ -4844,7 +4844,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/projects/default`
-Future<ApiResult<void>> patchV2ProjectsDefault() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2ProjectsDefault() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/projects/default',
   headers: {..._config.defaultHeaders
@@ -4858,7 +4858,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/projects/{project_id}`
-Future<ApiResult<void>> getV2Projects2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Projects2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/projects/{project_id}',
   headers: {..._config.defaultHeaders
@@ -4872,7 +4872,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/projects/{project_id}`
-Future<ApiResult<void>> putV2Projects() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2Projects() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/projects/{project_id}',
   headers: {..._config.defaultHeaders
@@ -4886,7 +4886,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/projects/{project_id}`
-Future<ApiResult<void>> patchV2Projects() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2Projects() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/projects/{project_id}',
   headers: {..._config.defaultHeaders
@@ -4900,7 +4900,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/projects/{project_id}`
-Future<ApiResult<void>> deleteV2Projects() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Projects() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/projects/{project_id}',
   headers: {..._config.defaultHeaders
@@ -4914,7 +4914,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/projects/{project_id}/resources`
-Future<ApiResult<void>> getV2ProjectsResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ProjectsResources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/projects/{project_id}/resources',
   headers: {..._config.defaultHeaders
@@ -4928,7 +4928,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/projects/{project_id}/resources`
-Future<ApiResult<void>> postV2ProjectsResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ProjectsResources() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/projects/{project_id}/resources',
   headers: {..._config.defaultHeaders
@@ -4942,7 +4942,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/projects/default/resources`
-Future<ApiResult<void>> getV2ProjectsDefaultResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ProjectsDefaultResources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/projects/default/resources',
   headers: {..._config.defaultHeaders
@@ -4956,7 +4956,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/projects/default/resources`
-Future<ApiResult<void>> postV2ProjectsDefaultResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ProjectsDefaultResources() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/projects/default/resources',
   headers: {..._config.defaultHeaders
@@ -4970,7 +4970,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/regions`
-Future<ApiResult<void>> getV2Regions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Regions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/regions',
   headers: {..._config.defaultHeaders
@@ -4984,7 +4984,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries`
-Future<ApiResult<void>> getV2Registries() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Registries() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries',
   headers: {..._config.defaultHeaders
@@ -4998,7 +4998,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registries`
-Future<ApiResult<void>> postV2Registries() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Registries() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registries',
   headers: {..._config.defaultHeaders
@@ -5012,7 +5012,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}`
-Future<ApiResult<void>> getV2Registries2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Registries2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}',
   headers: {..._config.defaultHeaders
@@ -5026,7 +5026,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registries/{registry_name}`
-Future<ApiResult<void>> deleteV2Registries() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Registries() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registries/{registry_name}',
   headers: {..._config.defaultHeaders
@@ -5040,7 +5040,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/docker-credentials`
-Future<ApiResult<void>> getV2RegistriesDockerCredentials() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesDockerCredentials() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/docker-credentials',
   headers: {..._config.defaultHeaders
@@ -5054,7 +5054,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/subscription`
-Future<ApiResult<void>> getV2RegistriesSubscription() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesSubscription() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/subscription',
   headers: {..._config.defaultHeaders
@@ -5068,7 +5068,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registries/subscription`
-Future<ApiResult<void>> postV2RegistriesSubscription() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistriesSubscription() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registries/subscription',
   headers: {..._config.defaultHeaders
@@ -5082,7 +5082,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/options`
-Future<ApiResult<void>> getV2RegistriesOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesOptions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/options',
   headers: {..._config.defaultHeaders
@@ -5096,7 +5096,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/garbage-collection`
-Future<ApiResult<void>> getV2RegistriesGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesGarbageCollection() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/garbage-collection',
   headers: {..._config.defaultHeaders
@@ -5110,7 +5110,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registries/{registry_name}/garbage-collection`
-Future<ApiResult<void>> postV2RegistriesGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistriesGarbageCollection() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registries/{registry_name}/garbage-collection',
   headers: {..._config.defaultHeaders
@@ -5124,7 +5124,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/garbage-collections`
-Future<ApiResult<void>> getV2RegistriesGarbageCollections() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesGarbageCollections() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/garbage-collections',
   headers: {..._config.defaultHeaders
@@ -5138,7 +5138,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/registries/{registry_name}/garbage-collection/{garbage_collection_uuid}`
-Future<ApiResult<void>> putV2RegistriesGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2RegistriesGarbageCollection() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/registries/{registry_name}/garbage-collection/{garbage_collection_uuid}',
   headers: {..._config.defaultHeaders
@@ -5152,7 +5152,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/repositoriesV2`
-Future<ApiResult<void>> getV2RegistriesRepositoriesV2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesRepositoriesV2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/repositoriesV2',
   headers: {..._config.defaultHeaders
@@ -5166,7 +5166,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registries/{registry_name}/repositories/{repository_name}`
-Future<ApiResult<void>> deleteV2RegistriesRepositories() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2RegistriesRepositories() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registries/{registry_name}/repositories/{repository_name}',
   headers: {..._config.defaultHeaders
@@ -5180,7 +5180,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/repositories/{repository_name}/tags`
-Future<ApiResult<void>> getV2RegistriesRepositoriesTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesRepositoriesTags() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/repositories/{repository_name}/tags',
   headers: {..._config.defaultHeaders
@@ -5194,7 +5194,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registries/{registry_name}/repositories/{repository_name}/tags/{repository_tag}`
-Future<ApiResult<void>> deleteV2RegistriesRepositoriesTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2RegistriesRepositoriesTags() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registries/{registry_name}/repositories/{repository_name}/tags/{repository_tag}',
   headers: {..._config.defaultHeaders
@@ -5208,7 +5208,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registries/{registry_name}/repositories/{repository_name}/digests`
-Future<ApiResult<void>> getV2RegistriesRepositoriesDigests() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistriesRepositoriesDigests() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registries/{registry_name}/repositories/{repository_name}/digests',
   headers: {..._config.defaultHeaders
@@ -5222,7 +5222,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registries/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}`
-Future<ApiResult<void>> deleteV2RegistriesRepositoriesDigests() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2RegistriesRepositoriesDigests() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registries/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}',
   headers: {..._config.defaultHeaders
@@ -5236,7 +5236,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registries/validate-name`
-Future<ApiResult<void>> postV2RegistriesValidateName() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistriesValidateName() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registries/validate-name',
   headers: {..._config.defaultHeaders
@@ -5250,7 +5250,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry`
-Future<ApiResult<void>> getV2Registry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Registry() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry',
   headers: {..._config.defaultHeaders
@@ -5264,7 +5264,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registry`
-Future<ApiResult<void>> postV2Registry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Registry() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registry',
   headers: {..._config.defaultHeaders
@@ -5278,7 +5278,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registry`
-Future<ApiResult<void>> deleteV2Registry() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Registry() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registry',
   headers: {..._config.defaultHeaders
@@ -5292,7 +5292,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/subscription`
-Future<ApiResult<void>> getV2RegistrySubscription() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistrySubscription() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/subscription',
   headers: {..._config.defaultHeaders
@@ -5306,7 +5306,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registry/subscription`
-Future<ApiResult<void>> postV2RegistrySubscription() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistrySubscription() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registry/subscription',
   headers: {..._config.defaultHeaders
@@ -5320,7 +5320,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/docker-credentials`
-Future<ApiResult<void>> getV2RegistryDockerCredentials() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryDockerCredentials() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/docker-credentials',
   headers: {..._config.defaultHeaders
@@ -5334,7 +5334,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registry/validate-name`
-Future<ApiResult<void>> postV2RegistryValidateName() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistryValidateName() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registry/validate-name',
   headers: {..._config.defaultHeaders
@@ -5348,7 +5348,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/repositories`
-Future<ApiResult<void>> getV2RegistryRepositories() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryRepositories() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/repositories',
   headers: {..._config.defaultHeaders
@@ -5362,7 +5362,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/repositoriesV2`
-Future<ApiResult<void>> getV2RegistryRepositoriesV2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryRepositoriesV2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/repositoriesV2',
   headers: {..._config.defaultHeaders
@@ -5376,7 +5376,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/repositories/{repository_name}/tags`
-Future<ApiResult<void>> getV2RegistryRepositoriesTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryRepositoriesTags() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/repositories/{repository_name}/tags',
   headers: {..._config.defaultHeaders
@@ -5390,7 +5390,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registry/{registry_name}/repositories/{repository_name}/tags/{repository_tag}`
-Future<ApiResult<void>> deleteV2RegistryRepositoriesTags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2RegistryRepositoriesTags() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registry/{registry_name}/repositories/{repository_name}/tags/{repository_tag}',
   headers: {..._config.defaultHeaders
@@ -5404,7 +5404,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/repositories/{repository_name}/digests`
-Future<ApiResult<void>> getV2RegistryRepositoriesDigests() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryRepositoriesDigests() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/repositories/{repository_name}/digests',
   headers: {..._config.defaultHeaders
@@ -5418,7 +5418,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/registry/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}`
-Future<ApiResult<void>> deleteV2RegistryRepositoriesDigests() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2RegistryRepositoriesDigests() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/registry/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}',
   headers: {..._config.defaultHeaders
@@ -5432,7 +5432,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/garbage-collection`
-Future<ApiResult<void>> getV2RegistryGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryGarbageCollection() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/garbage-collection',
   headers: {..._config.defaultHeaders
@@ -5446,7 +5446,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/registry/{registry_name}/garbage-collection`
-Future<ApiResult<void>> postV2RegistryGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2RegistryGarbageCollection() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/registry/{registry_name}/garbage-collection',
   headers: {..._config.defaultHeaders
@@ -5460,7 +5460,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/{registry_name}/garbage-collections`
-Future<ApiResult<void>> getV2RegistryGarbageCollections() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryGarbageCollections() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/{registry_name}/garbage-collections',
   headers: {..._config.defaultHeaders
@@ -5474,7 +5474,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/registry/{registry_name}/garbage-collection/{garbage_collection_uuid}`
-Future<ApiResult<void>> putV2RegistryGarbageCollection() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2RegistryGarbageCollection() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/registry/{registry_name}/garbage-collection/{garbage_collection_uuid}',
   headers: {..._config.defaultHeaders
@@ -5488,7 +5488,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/registry/options`
-Future<ApiResult<void>> getV2RegistryOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2RegistryOptions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/registry/options',
   headers: {..._config.defaultHeaders
@@ -5502,7 +5502,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reports/droplet_neighbors_ids`
-Future<ApiResult<void>> getV2ReportsDropletNeighborsIds() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReportsDropletNeighborsIds() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reports/droplet_neighbors_ids',
   headers: {..._config.defaultHeaders
@@ -5516,7 +5516,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ips`
-Future<ApiResult<void>> getV2ReservedIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIps() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ips',
   headers: {..._config.defaultHeaders
@@ -5530,7 +5530,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/reserved_ips`
-Future<ApiResult<void>> postV2ReservedIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ReservedIps() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/reserved_ips',
   headers: {..._config.defaultHeaders
@@ -5544,7 +5544,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ips/{reserved_ip}`
-Future<ApiResult<void>> getV2ReservedIps2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIps2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ips/{reserved_ip}',
   headers: {..._config.defaultHeaders
@@ -5558,7 +5558,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/reserved_ips/{reserved_ip}`
-Future<ApiResult<void>> deleteV2ReservedIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2ReservedIps() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/reserved_ips/{reserved_ip}',
   headers: {..._config.defaultHeaders
@@ -5572,7 +5572,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ips/{reserved_ip}/actions`
-Future<ApiResult<void>> getV2ReservedIpsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIpsActions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ips/{reserved_ip}/actions',
   headers: {..._config.defaultHeaders
@@ -5586,7 +5586,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/reserved_ips/{reserved_ip}/actions`
-Future<ApiResult<void>> postV2ReservedIpsActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ReservedIpsActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/reserved_ips/{reserved_ip}/actions',
   headers: {..._config.defaultHeaders
@@ -5600,7 +5600,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ips/{reserved_ip}/actions/{action_id}`
-Future<ApiResult<void>> getV2ReservedIpsActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIpsActions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ips/{reserved_ip}/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -5614,7 +5614,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ipv6`
-Future<ApiResult<void>> getV2ReservedIpv6() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIpv6() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ipv6',
   headers: {..._config.defaultHeaders
@@ -5628,7 +5628,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/reserved_ipv6`
-Future<ApiResult<void>> postV2ReservedIpv6() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ReservedIpv6() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/reserved_ipv6',
   headers: {..._config.defaultHeaders
@@ -5642,7 +5642,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/reserved_ipv6/{reserved_ipv6}`
-Future<ApiResult<void>> getV2ReservedIpv62() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ReservedIpv62() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/reserved_ipv6/{reserved_ipv6}',
   headers: {..._config.defaultHeaders
@@ -5656,7 +5656,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/reserved_ipv6/{reserved_ipv6}`
-Future<ApiResult<void>> deleteV2ReservedIpv6() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2ReservedIpv6() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/reserved_ipv6/{reserved_ipv6}',
   headers: {..._config.defaultHeaders
@@ -5670,7 +5670,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/reserved_ipv6/{reserved_ipv6}/actions`
-Future<ApiResult<void>> postV2ReservedIpv6Actions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ReservedIpv6Actions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/reserved_ipv6/{reserved_ipv6}/actions',
   headers: {..._config.defaultHeaders
@@ -5684,7 +5684,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/byoip_prefixes`
-Future<ApiResult<void>> getV2ByoipPrefixes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ByoipPrefixes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/byoip_prefixes',
   headers: {..._config.defaultHeaders
@@ -5698,7 +5698,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/byoip_prefixes`
-Future<ApiResult<void>> postV2ByoipPrefixes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2ByoipPrefixes() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/byoip_prefixes',
   headers: {..._config.defaultHeaders
@@ -5712,7 +5712,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/byoip_prefixes/{byoip_prefix_uuid}`
-Future<ApiResult<void>> getV2ByoipPrefixes2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ByoipPrefixes2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/byoip_prefixes/{byoip_prefix_uuid}',
   headers: {..._config.defaultHeaders
@@ -5726,7 +5726,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/byoip_prefixes/{byoip_prefix_uuid}`
-Future<ApiResult<void>> patchV2ByoipPrefixes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2ByoipPrefixes() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/byoip_prefixes/{byoip_prefix_uuid}',
   headers: {..._config.defaultHeaders
@@ -5740,7 +5740,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/byoip_prefixes/{byoip_prefix_uuid}`
-Future<ApiResult<void>> deleteV2ByoipPrefixes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2ByoipPrefixes() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/byoip_prefixes/{byoip_prefix_uuid}',
   headers: {..._config.defaultHeaders
@@ -5754,7 +5754,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/byoip_prefixes/{byoip_prefix_uuid}/ips`
-Future<ApiResult<void>> getV2ByoipPrefixesIps() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2ByoipPrefixesIps() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/byoip_prefixes/{byoip_prefix_uuid}/ips',
   headers: {..._config.defaultHeaders
@@ -5768,7 +5768,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/sizes`
-Future<ApiResult<void>> getV2Sizes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Sizes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/sizes',
   headers: {..._config.defaultHeaders
@@ -5782,7 +5782,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/snapshots`
-Future<ApiResult<void>> getV2Snapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Snapshots() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/snapshots',
   headers: {..._config.defaultHeaders
@@ -5796,7 +5796,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/snapshots/{snapshot_id}`
-Future<ApiResult<void>> getV2Snapshots2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Snapshots2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/snapshots/{snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -5810,7 +5810,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/snapshots/{snapshot_id}`
-Future<ApiResult<void>> deleteV2Snapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Snapshots() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/snapshots/{snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -5824,7 +5824,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/spaces/keys`
-Future<ApiResult<void>> getV2SpacesKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2SpacesKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/spaces/keys',
   headers: {..._config.defaultHeaders
@@ -5838,7 +5838,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/spaces/keys`
-Future<ApiResult<void>> postV2SpacesKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2SpacesKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/spaces/keys',
   headers: {..._config.defaultHeaders
@@ -5852,7 +5852,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/spaces/keys/{access_key}`
-Future<ApiResult<void>> getV2SpacesKeys2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2SpacesKeys2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/spaces/keys/{access_key}',
   headers: {..._config.defaultHeaders
@@ -5866,7 +5866,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/spaces/keys/{access_key}`
-Future<ApiResult<void>> putV2SpacesKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2SpacesKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/spaces/keys/{access_key}',
   headers: {..._config.defaultHeaders
@@ -5880,7 +5880,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/spaces/keys/{access_key}`
-Future<ApiResult<void>> patchV2SpacesKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2SpacesKeys() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/spaces/keys/{access_key}',
   headers: {..._config.defaultHeaders
@@ -5894,7 +5894,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/spaces/keys/{access_key}`
-Future<ApiResult<void>> deleteV2SpacesKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2SpacesKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/spaces/keys/{access_key}',
   headers: {..._config.defaultHeaders
@@ -5908,7 +5908,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/tags`
-Future<ApiResult<void>> getV2Tags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Tags() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/tags',
   headers: {..._config.defaultHeaders
@@ -5922,7 +5922,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/tags`
-Future<ApiResult<void>> postV2Tags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Tags() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/tags',
   headers: {..._config.defaultHeaders
@@ -5936,7 +5936,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/tags/{tag_id}`
-Future<ApiResult<void>> getV2Tags2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Tags2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/tags/{tag_id}',
   headers: {..._config.defaultHeaders
@@ -5950,7 +5950,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/tags/{tag_id}`
-Future<ApiResult<void>> deleteV2Tags() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Tags() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/tags/{tag_id}',
   headers: {..._config.defaultHeaders
@@ -5964,7 +5964,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/tags/{tag_id}/resources`
-Future<ApiResult<void>> postV2TagsResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2TagsResources() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/tags/{tag_id}/resources',
   headers: {..._config.defaultHeaders
@@ -5978,7 +5978,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/tags/{tag_id}/resources`
-Future<ApiResult<void>> deleteV2TagsResources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2TagsResources() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/tags/{tag_id}/resources',
   headers: {..._config.defaultHeaders
@@ -5992,7 +5992,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes`
-Future<ApiResult<void>> getV2Volumes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Volumes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes',
   headers: {..._config.defaultHeaders
@@ -6006,7 +6006,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/volumes`
-Future<ApiResult<void>> postV2Volumes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Volumes() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/volumes',
   headers: {..._config.defaultHeaders
@@ -6020,7 +6020,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/volumes`
-Future<ApiResult<void>> deleteV2Volumes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Volumes() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/volumes',
   headers: {..._config.defaultHeaders
@@ -6034,7 +6034,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/volumes/actions`
-Future<ApiResult<void>> postV2VolumesActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VolumesActions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/volumes/actions',
   headers: {..._config.defaultHeaders
@@ -6048,7 +6048,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes/snapshots/{snapshot_id}`
-Future<ApiResult<void>> getV2VolumesSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VolumesSnapshots() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes/snapshots/{snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -6062,7 +6062,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/volumes/snapshots/{snapshot_id}`
-Future<ApiResult<void>> deleteV2VolumesSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2VolumesSnapshots() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/volumes/snapshots/{snapshot_id}',
   headers: {..._config.defaultHeaders
@@ -6076,7 +6076,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes/{volume_id}`
-Future<ApiResult<void>> getV2Volumes2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Volumes2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes/{volume_id}',
   headers: {..._config.defaultHeaders
@@ -6090,7 +6090,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/volumes/{volume_id}`
-Future<ApiResult<void>> deleteV2Volumes2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Volumes2() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/volumes/{volume_id}',
   headers: {..._config.defaultHeaders
@@ -6104,7 +6104,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes/{volume_id}/actions`
-Future<ApiResult<void>> getV2VolumesActions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VolumesActions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes/{volume_id}/actions',
   headers: {..._config.defaultHeaders
@@ -6118,7 +6118,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/volumes/{volume_id}/actions`
-Future<ApiResult<void>> postV2VolumesActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VolumesActions2() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/volumes/{volume_id}/actions',
   headers: {..._config.defaultHeaders
@@ -6132,7 +6132,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes/{volume_id}/actions/{action_id}`
-Future<ApiResult<void>> getV2VolumesActions2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VolumesActions2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes/{volume_id}/actions/{action_id}',
   headers: {..._config.defaultHeaders
@@ -6146,7 +6146,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/volumes/{volume_id}/snapshots`
-Future<ApiResult<void>> getV2VolumesSnapshots2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VolumesSnapshots2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/volumes/{volume_id}/snapshots',
   headers: {..._config.defaultHeaders
@@ -6160,7 +6160,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/volumes/{volume_id}/snapshots`
-Future<ApiResult<void>> postV2VolumesSnapshots() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VolumesSnapshots() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/volumes/{volume_id}/snapshots',
   headers: {..._config.defaultHeaders
@@ -6174,7 +6174,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpcs`
-Future<ApiResult<void>> getV2Vpcs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Vpcs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpcs',
   headers: {..._config.defaultHeaders
@@ -6188,7 +6188,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/vpcs`
-Future<ApiResult<void>> postV2Vpcs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2Vpcs() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/vpcs',
   headers: {..._config.defaultHeaders
@@ -6202,7 +6202,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpcs/{vpc_id}`
-Future<ApiResult<void>> getV2Vpcs2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2Vpcs2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpcs/{vpc_id}',
   headers: {..._config.defaultHeaders
@@ -6216,7 +6216,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/vpcs/{vpc_id}`
-Future<ApiResult<void>> putV2Vpcs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2Vpcs() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/vpcs/{vpc_id}',
   headers: {..._config.defaultHeaders
@@ -6230,7 +6230,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/vpcs/{vpc_id}`
-Future<ApiResult<void>> patchV2Vpcs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2Vpcs() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/vpcs/{vpc_id}',
   headers: {..._config.defaultHeaders
@@ -6244,7 +6244,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/vpcs/{vpc_id}`
-Future<ApiResult<void>> deleteV2Vpcs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2Vpcs() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/vpcs/{vpc_id}',
   headers: {..._config.defaultHeaders
@@ -6258,7 +6258,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpcs/{vpc_id}/members`
-Future<ApiResult<void>> getV2VpcsMembers() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcsMembers() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpcs/{vpc_id}/members',
   headers: {..._config.defaultHeaders
@@ -6272,7 +6272,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpcs/{vpc_id}/peerings`
-Future<ApiResult<void>> getV2VpcsPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcsPeerings() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpcs/{vpc_id}/peerings',
   headers: {..._config.defaultHeaders
@@ -6286,7 +6286,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/vpcs/{vpc_id}/peerings`
-Future<ApiResult<void>> postV2VpcsPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VpcsPeerings() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/vpcs/{vpc_id}/peerings',
   headers: {..._config.defaultHeaders
@@ -6300,7 +6300,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/vpcs/{vpc_id}/peerings/{vpc_peering_id}`
-Future<ApiResult<void>> patchV2VpcsPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2VpcsPeerings() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/vpcs/{vpc_id}/peerings/{vpc_peering_id}',
   headers: {..._config.defaultHeaders
@@ -6314,7 +6314,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpc_peerings`
-Future<ApiResult<void>> getV2VpcPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcPeerings() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpc_peerings',
   headers: {..._config.defaultHeaders
@@ -6328,7 +6328,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/vpc_peerings`
-Future<ApiResult<void>> postV2VpcPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VpcPeerings() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/vpc_peerings',
   headers: {..._config.defaultHeaders
@@ -6342,7 +6342,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpc_peerings/{vpc_peering_id}`
-Future<ApiResult<void>> getV2VpcPeerings2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcPeerings2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpc_peerings/{vpc_peering_id}',
   headers: {..._config.defaultHeaders
@@ -6356,7 +6356,7 @@ return _execute(
  } 
 ///
 /// `PATCH /v2/vpc_peerings/{vpc_peering_id}`
-Future<ApiResult<void>> patchV2VpcPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> patchV2VpcPeerings() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/v2/vpc_peerings/{vpc_peering_id}',
   headers: {..._config.defaultHeaders
@@ -6370,7 +6370,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/vpc_peerings/{vpc_peering_id}`
-Future<ApiResult<void>> deleteV2VpcPeerings() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2VpcPeerings() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/vpc_peerings/{vpc_peering_id}',
   headers: {..._config.defaultHeaders
@@ -6384,7 +6384,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpc_nat_gateways`
-Future<ApiResult<void>> getV2VpcNatGateways() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcNatGateways() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpc_nat_gateways',
   headers: {..._config.defaultHeaders
@@ -6398,7 +6398,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/vpc_nat_gateways`
-Future<ApiResult<void>> postV2VpcNatGateways() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2VpcNatGateways() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/vpc_nat_gateways',
   headers: {..._config.defaultHeaders
@@ -6412,7 +6412,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/vpc_nat_gateways/{id}`
-Future<ApiResult<void>> getV2VpcNatGateways2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2VpcNatGateways2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/vpc_nat_gateways/{id}',
   headers: {..._config.defaultHeaders
@@ -6426,7 +6426,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/vpc_nat_gateways/{id}`
-Future<ApiResult<void>> putV2VpcNatGateways() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2VpcNatGateways() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/vpc_nat_gateways/{id}',
   headers: {..._config.defaultHeaders
@@ -6440,7 +6440,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/vpc_nat_gateways/{id}`
-Future<ApiResult<void>> deleteV2VpcNatGateways() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2VpcNatGateways() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/vpc_nat_gateways/{id}',
   headers: {..._config.defaultHeaders
@@ -6454,7 +6454,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/uptime/checks`
-Future<ApiResult<void>> getV2UptimeChecks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2UptimeChecks() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/uptime/checks',
   headers: {..._config.defaultHeaders
@@ -6468,7 +6468,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/uptime/checks`
-Future<ApiResult<void>> postV2UptimeChecks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2UptimeChecks() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/uptime/checks',
   headers: {..._config.defaultHeaders
@@ -6482,7 +6482,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/uptime/checks/{check_id}`
-Future<ApiResult<void>> getV2UptimeChecks2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2UptimeChecks2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/uptime/checks/{check_id}',
   headers: {..._config.defaultHeaders
@@ -6496,7 +6496,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/uptime/checks/{check_id}`
-Future<ApiResult<void>> putV2UptimeChecks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2UptimeChecks() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/uptime/checks/{check_id}',
   headers: {..._config.defaultHeaders
@@ -6510,7 +6510,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/uptime/checks/{check_id}`
-Future<ApiResult<void>> deleteV2UptimeChecks() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2UptimeChecks() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/uptime/checks/{check_id}',
   headers: {..._config.defaultHeaders
@@ -6524,7 +6524,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/uptime/checks/{check_id}/state`
-Future<ApiResult<void>> getV2UptimeChecksState() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2UptimeChecksState() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/uptime/checks/{check_id}/state',
   headers: {..._config.defaultHeaders
@@ -6538,7 +6538,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/uptime/checks/{check_id}/alerts`
-Future<ApiResult<void>> getV2UptimeChecksAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2UptimeChecksAlerts() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/uptime/checks/{check_id}/alerts',
   headers: {..._config.defaultHeaders
@@ -6552,7 +6552,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/uptime/checks/{check_id}/alerts`
-Future<ApiResult<void>> postV2UptimeChecksAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2UptimeChecksAlerts() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/uptime/checks/{check_id}/alerts',
   headers: {..._config.defaultHeaders
@@ -6566,7 +6566,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/uptime/checks/{check_id}/alerts/{alert_id}`
-Future<ApiResult<void>> getV2UptimeChecksAlerts2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2UptimeChecksAlerts2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/uptime/checks/{check_id}/alerts/{alert_id}',
   headers: {..._config.defaultHeaders
@@ -6580,7 +6580,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/uptime/checks/{check_id}/alerts/{alert_id}`
-Future<ApiResult<void>> putV2UptimeChecksAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2UptimeChecksAlerts() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/uptime/checks/{check_id}/alerts/{alert_id}',
   headers: {..._config.defaultHeaders
@@ -6594,7 +6594,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/uptime/checks/{check_id}/alerts/{alert_id}`
-Future<ApiResult<void>> deleteV2UptimeChecksAlerts() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2UptimeChecksAlerts() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/uptime/checks/{check_id}/alerts/{alert_id}',
   headers: {..._config.defaultHeaders
@@ -6608,7 +6608,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents`
-Future<ApiResult<void>> getV2GenAiAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents',
   headers: {..._config.defaultHeaders
@@ -6622,7 +6622,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents`
-Future<ApiResult<void>> postV2GenAiAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgents() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents',
   headers: {..._config.defaultHeaders
@@ -6636,7 +6636,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents/{agent_uuid}/api_keys`
-Future<ApiResult<void>> getV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents/{agent_uuid}/api_keys',
   headers: {..._config.defaultHeaders
@@ -6650,7 +6650,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{agent_uuid}/api_keys`
-Future<ApiResult<void>> postV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{agent_uuid}/api_keys',
   headers: {..._config.defaultHeaders
@@ -6664,7 +6664,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}`
-Future<ApiResult<void>> putV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -6678,7 +6678,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgentsApiKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -6692,7 +6692,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}/regenerate`
-Future<ApiResult<void>> putV2GenAiAgentsApiKeysRegenerate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsApiKeysRegenerate() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}/regenerate',
   headers: {..._config.defaultHeaders
@@ -6706,7 +6706,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{agent_uuid}/functions`
-Future<ApiResult<void>> postV2GenAiAgentsFunctions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsFunctions() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{agent_uuid}/functions',
   headers: {..._config.defaultHeaders
@@ -6720,7 +6720,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}`
-Future<ApiResult<void>> putV2GenAiAgentsFunctions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsFunctions() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}',
   headers: {..._config.defaultHeaders
@@ -6734,7 +6734,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgentsFunctions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgentsFunctions() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}',
   headers: {..._config.defaultHeaders
@@ -6748,7 +6748,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{agent_uuid}/guardrails`
-Future<ApiResult<void>> postV2GenAiAgentsGuardrails() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsGuardrails() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{agent_uuid}/guardrails',
   headers: {..._config.defaultHeaders
@@ -6762,7 +6762,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{agent_uuid}/guardrails/{guardrail_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgentsGuardrails() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgentsGuardrails() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{agent_uuid}/guardrails/{guardrail_uuid}',
   headers: {..._config.defaultHeaders
@@ -6776,7 +6776,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{agent_uuid}/knowledge_bases`
-Future<ApiResult<void>> postV2GenAiAgentsKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsKnowledgeBases() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{agent_uuid}/knowledge_bases',
   headers: {..._config.defaultHeaders
@@ -6790,7 +6790,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}`
-Future<ApiResult<void>> postV2GenAiAgentsKnowledgeBases2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsKnowledgeBases2() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}',
   headers: {..._config.defaultHeaders
@@ -6804,7 +6804,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgentsKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgentsKnowledgeBases() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}',
   headers: {..._config.defaultHeaders
@@ -6818,7 +6818,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}`
-Future<ApiResult<void>> postV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}',
   headers: {..._config.defaultHeaders
@@ -6832,7 +6832,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}`
-Future<ApiResult<void>> putV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}',
   headers: {..._config.defaultHeaders
@@ -6846,7 +6846,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}',
   headers: {..._config.defaultHeaders
@@ -6860,7 +6860,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents/{uuid}`
-Future<ApiResult<void>> getV2GenAiAgents2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgents2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents/{uuid}',
   headers: {..._config.defaultHeaders
@@ -6874,7 +6874,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{uuid}`
-Future<ApiResult<void>> putV2GenAiAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgents() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{uuid}',
   headers: {..._config.defaultHeaders
@@ -6888,7 +6888,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/agents/{uuid}`
-Future<ApiResult<void>> deleteV2GenAiAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAgents() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/agents/{uuid}',
   headers: {..._config.defaultHeaders
@@ -6902,7 +6902,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents/{uuid}/child_agents`
-Future<ApiResult<void>> getV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgentsChildAgents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents/{uuid}/child_agents',
   headers: {..._config.defaultHeaders
@@ -6916,7 +6916,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{uuid}/deployment_visibility`
-Future<ApiResult<void>> putV2GenAiAgentsDeploymentVisibility() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsDeploymentVisibility() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{uuid}/deployment_visibility',
   headers: {..._config.defaultHeaders
@@ -6930,7 +6930,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents/{uuid}/usage`
-Future<ApiResult<void>> getV2GenAiAgentsUsage() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgentsUsage() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents/{uuid}/usage',
   headers: {..._config.defaultHeaders
@@ -6944,7 +6944,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/agents/{uuid}/versions`
-Future<ApiResult<void>> getV2GenAiAgentsVersions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAgentsVersions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/agents/{uuid}/versions',
   headers: {..._config.defaultHeaders
@@ -6958,7 +6958,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/agents/{uuid}/versions`
-Future<ApiResult<void>> putV2GenAiAgentsVersions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAgentsVersions() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/agents/{uuid}/versions',
   headers: {..._config.defaultHeaders
@@ -6972,7 +6972,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/anthropic/keys`
-Future<ApiResult<void>> getV2GenAiAnthropicKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAnthropicKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/anthropic/keys',
   headers: {..._config.defaultHeaders
@@ -6986,7 +6986,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/anthropic/keys`
-Future<ApiResult<void>> postV2GenAiAnthropicKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiAnthropicKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/anthropic/keys',
   headers: {..._config.defaultHeaders
@@ -7000,7 +7000,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/anthropic/keys/{api_key_uuid}`
-Future<ApiResult<void>> getV2GenAiAnthropicKeys2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAnthropicKeys2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/anthropic/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7014,7 +7014,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/anthropic/keys/{api_key_uuid}`
-Future<ApiResult<void>> putV2GenAiAnthropicKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiAnthropicKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/anthropic/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7028,7 +7028,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/anthropic/keys/{api_key_uuid}`
-Future<ApiResult<void>> deleteV2GenAiAnthropicKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiAnthropicKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/anthropic/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7042,7 +7042,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/anthropic/keys/{uuid}/agents`
-Future<ApiResult<void>> getV2GenAiAnthropicKeysAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiAnthropicKeysAgents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/anthropic/keys/{uuid}/agents',
   headers: {..._config.defaultHeaders
@@ -7056,7 +7056,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/evaluation_datasets`
-Future<ApiResult<void>> postV2GenAiEvaluationDatasets() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiEvaluationDatasets() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/evaluation_datasets',
   headers: {..._config.defaultHeaders
@@ -7070,7 +7070,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/evaluation_datasets/file_upload_presigned_urls`
-Future<ApiResult<void>> postV2GenAiEvaluationDatasetsFileUploadPresignedUrls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiEvaluationDatasetsFileUploadPresignedUrls() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/evaluation_datasets/file_upload_presigned_urls',
   headers: {..._config.defaultHeaders
@@ -7084,7 +7084,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_metrics`
-Future<ApiResult<void>> getV2GenAiEvaluationMetrics() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationMetrics() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_metrics',
   headers: {..._config.defaultHeaders
@@ -7098,7 +7098,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/evaluation_runs`
-Future<ApiResult<void>> postV2GenAiEvaluationRuns() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiEvaluationRuns() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/evaluation_runs',
   headers: {..._config.defaultHeaders
@@ -7112,7 +7112,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_runs/{evaluation_run_uuid}`
-Future<ApiResult<void>> getV2GenAiEvaluationRuns() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationRuns() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}',
   headers: {..._config.defaultHeaders
@@ -7126,7 +7126,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results`
-Future<ApiResult<void>> getV2GenAiEvaluationRunsResults() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationRunsResults() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results',
   headers: {..._config.defaultHeaders
@@ -7140,7 +7140,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results/{prompt_id}`
-Future<ApiResult<void>> getV2GenAiEvaluationRunsResults2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationRunsResults2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results/{prompt_id}',
   headers: {..._config.defaultHeaders
@@ -7154,7 +7154,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_test_cases`
-Future<ApiResult<void>> getV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_test_cases',
   headers: {..._config.defaultHeaders
@@ -7168,7 +7168,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/evaluation_test_cases`
-Future<ApiResult<void>> postV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/evaluation_test_cases',
   headers: {..._config.defaultHeaders
@@ -7182,7 +7182,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_test_cases/{evaluation_test_case_uuid}/evaluation_runs`
-Future<ApiResult<void>> getV2GenAiEvaluationTestCasesEvaluationRuns() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationTestCasesEvaluationRuns() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_test_cases/{evaluation_test_case_uuid}/evaluation_runs',
   headers: {..._config.defaultHeaders
@@ -7196,7 +7196,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/evaluation_test_cases/{test_case_uuid}`
-Future<ApiResult<void>> getV2GenAiEvaluationTestCases2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiEvaluationTestCases2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/evaluation_test_cases/{test_case_uuid}',
   headers: {..._config.defaultHeaders
@@ -7210,7 +7210,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/evaluation_test_cases/{test_case_uuid}`
-Future<ApiResult<void>> putV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiEvaluationTestCases() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/evaluation_test_cases/{test_case_uuid}',
   headers: {..._config.defaultHeaders
@@ -7224,7 +7224,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/indexing_jobs`
-Future<ApiResult<void>> getV2GenAiIndexingJobs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiIndexingJobs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/indexing_jobs',
   headers: {..._config.defaultHeaders
@@ -7238,7 +7238,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/indexing_jobs`
-Future<ApiResult<void>> postV2GenAiIndexingJobs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiIndexingJobs() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/indexing_jobs',
   headers: {..._config.defaultHeaders
@@ -7252,7 +7252,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/indexing_jobs/{indexing_job_uuid}/data_sources`
-Future<ApiResult<void>> getV2GenAiIndexingJobsDataSources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiIndexingJobsDataSources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/data_sources',
   headers: {..._config.defaultHeaders
@@ -7266,7 +7266,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/indexing_jobs/{indexing_job_uuid}/details_signed_url`
-Future<ApiResult<void>> getV2GenAiIndexingJobsDetailsSignedUrl() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiIndexingJobsDetailsSignedUrl() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/details_signed_url',
   headers: {..._config.defaultHeaders
@@ -7280,7 +7280,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/indexing_jobs/{uuid}`
-Future<ApiResult<void>> getV2GenAiIndexingJobs2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiIndexingJobs2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/indexing_jobs/{uuid}',
   headers: {..._config.defaultHeaders
@@ -7294,7 +7294,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/indexing_jobs/{uuid}/cancel`
-Future<ApiResult<void>> putV2GenAiIndexingJobsCancel() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiIndexingJobsCancel() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/indexing_jobs/{uuid}/cancel',
   headers: {..._config.defaultHeaders
@@ -7308,7 +7308,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/knowledge_bases`
-Future<ApiResult<void>> getV2GenAiKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiKnowledgeBases() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/knowledge_bases',
   headers: {..._config.defaultHeaders
@@ -7322,7 +7322,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/knowledge_bases`
-Future<ApiResult<void>> postV2GenAiKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiKnowledgeBases() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/knowledge_bases',
   headers: {..._config.defaultHeaders
@@ -7336,7 +7336,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/knowledge_bases/data_sources/file_upload_presigned_urls`
-Future<ApiResult<void>> postV2GenAiKnowledgeBasesDataSourcesFileUploadPresignedUrls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiKnowledgeBasesDataSourcesFileUploadPresignedUrls() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/knowledge_bases/data_sources/file_upload_presigned_urls',
   headers: {..._config.defaultHeaders
@@ -7350,7 +7350,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources`
-Future<ApiResult<void>> getV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources',
   headers: {..._config.defaultHeaders
@@ -7364,7 +7364,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources`
-Future<ApiResult<void>> postV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources',
   headers: {..._config.defaultHeaders
@@ -7378,7 +7378,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}`
-Future<ApiResult<void>> putV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}',
   headers: {..._config.defaultHeaders
@@ -7392,7 +7392,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}`
-Future<ApiResult<void>> deleteV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiKnowledgeBasesDataSources() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}',
   headers: {..._config.defaultHeaders
@@ -7406,7 +7406,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/indexing_jobs`
-Future<ApiResult<void>> getV2GenAiKnowledgeBasesIndexingJobs() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiKnowledgeBasesIndexingJobs() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/indexing_jobs',
   headers: {..._config.defaultHeaders
@@ -7420,7 +7420,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/knowledge_bases/{uuid}`
-Future<ApiResult<void>> getV2GenAiKnowledgeBases2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiKnowledgeBases2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/knowledge_bases/{uuid}',
   headers: {..._config.defaultHeaders
@@ -7434,7 +7434,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/knowledge_bases/{uuid}`
-Future<ApiResult<void>> putV2GenAiKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiKnowledgeBases() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/knowledge_bases/{uuid}',
   headers: {..._config.defaultHeaders
@@ -7448,7 +7448,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/knowledge_bases/{uuid}`
-Future<ApiResult<void>> deleteV2GenAiKnowledgeBases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiKnowledgeBases() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/knowledge_bases/{uuid}',
   headers: {..._config.defaultHeaders
@@ -7462,7 +7462,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/models`
-Future<ApiResult<void>> getV2GenAiModels() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiModels() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/models',
   headers: {..._config.defaultHeaders
@@ -7476,7 +7476,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/models/api_keys`
-Future<ApiResult<void>> getV2GenAiModelsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiModelsApiKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/models/api_keys',
   headers: {..._config.defaultHeaders
@@ -7490,7 +7490,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/models/api_keys`
-Future<ApiResult<void>> postV2GenAiModelsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiModelsApiKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/models/api_keys',
   headers: {..._config.defaultHeaders
@@ -7504,7 +7504,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/models/api_keys/{api_key_uuid}`
-Future<ApiResult<void>> putV2GenAiModelsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiModelsApiKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/models/api_keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7518,7 +7518,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/models/api_keys/{api_key_uuid}`
-Future<ApiResult<void>> deleteV2GenAiModelsApiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiModelsApiKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/models/api_keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7532,7 +7532,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/models/api_keys/{api_key_uuid}/regenerate`
-Future<ApiResult<void>> putV2GenAiModelsApiKeysRegenerate() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiModelsApiKeysRegenerate() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/models/api_keys/{api_key_uuid}/regenerate',
   headers: {..._config.defaultHeaders
@@ -7546,7 +7546,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/oauth2/dropbox/tokens`
-Future<ApiResult<void>> postV2GenAiOauth2DropboxTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiOauth2DropboxTokens() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/oauth2/dropbox/tokens',
   headers: {..._config.defaultHeaders
@@ -7560,7 +7560,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/oauth2/url`
-Future<ApiResult<void>> getV2GenAiOauth2Url() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiOauth2Url() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/oauth2/url',
   headers: {..._config.defaultHeaders
@@ -7574,7 +7574,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/openai/keys`
-Future<ApiResult<void>> getV2GenAiOpenaiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiOpenaiKeys() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/openai/keys',
   headers: {..._config.defaultHeaders
@@ -7588,7 +7588,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/openai/keys`
-Future<ApiResult<void>> postV2GenAiOpenaiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiOpenaiKeys() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/openai/keys',
   headers: {..._config.defaultHeaders
@@ -7602,7 +7602,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/openai/keys/{api_key_uuid}`
-Future<ApiResult<void>> getV2GenAiOpenaiKeys2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiOpenaiKeys2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/openai/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7616,7 +7616,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/openai/keys/{api_key_uuid}`
-Future<ApiResult<void>> putV2GenAiOpenaiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiOpenaiKeys() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/openai/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7630,7 +7630,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/openai/keys/{api_key_uuid}`
-Future<ApiResult<void>> deleteV2GenAiOpenaiKeys() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiOpenaiKeys() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/openai/keys/{api_key_uuid}',
   headers: {..._config.defaultHeaders
@@ -7644,7 +7644,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/openai/keys/{uuid}/agents`
-Future<ApiResult<void>> getV2GenAiOpenaiKeysAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiOpenaiKeysAgents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/openai/keys/{uuid}/agents',
   headers: {..._config.defaultHeaders
@@ -7658,7 +7658,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/regions`
-Future<ApiResult<void>> getV2GenAiRegions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiRegions() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/regions',
   headers: {..._config.defaultHeaders
@@ -7672,7 +7672,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/scheduled-indexing`
-Future<ApiResult<void>> postV2GenAiScheduledIndexing() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiScheduledIndexing() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/scheduled-indexing',
   headers: {..._config.defaultHeaders
@@ -7686,7 +7686,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/scheduled-indexing/knowledge-base/{knowledge_base_uuid}`
-Future<ApiResult<void>> getV2GenAiScheduledIndexingKnowledgeBase() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiScheduledIndexingKnowledgeBase() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/scheduled-indexing/knowledge-base/{knowledge_base_uuid}',
   headers: {..._config.defaultHeaders
@@ -7700,7 +7700,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/scheduled-indexing/{uuid}`
-Future<ApiResult<void>> deleteV2GenAiScheduledIndexing() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiScheduledIndexing() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/scheduled-indexing/{uuid}',
   headers: {..._config.defaultHeaders
@@ -7714,7 +7714,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/workspaces`
-Future<ApiResult<void>> getV2GenAiWorkspaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiWorkspaces() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/workspaces',
   headers: {..._config.defaultHeaders
@@ -7728,7 +7728,7 @@ return _execute(
  } 
 ///
 /// `POST /v2/gen-ai/workspaces`
-Future<ApiResult<void>> postV2GenAiWorkspaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postV2GenAiWorkspaces() async  { final request = ApiRequest(
   method: 'POST',
   path: '/v2/gen-ai/workspaces',
   headers: {..._config.defaultHeaders
@@ -7742,7 +7742,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/workspaces/{workspace_uuid}`
-Future<ApiResult<void>> getV2GenAiWorkspaces2() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiWorkspaces2() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}',
   headers: {..._config.defaultHeaders
@@ -7756,7 +7756,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/workspaces/{workspace_uuid}`
-Future<ApiResult<void>> putV2GenAiWorkspaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiWorkspaces() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}',
   headers: {..._config.defaultHeaders
@@ -7770,7 +7770,7 @@ return _execute(
  } 
 ///
 /// `DELETE /v2/gen-ai/workspaces/{workspace_uuid}`
-Future<ApiResult<void>> deleteV2GenAiWorkspaces() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV2GenAiWorkspaces() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}',
   headers: {..._config.defaultHeaders
@@ -7784,7 +7784,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/workspaces/{workspace_uuid}/agents`
-Future<ApiResult<void>> getV2GenAiWorkspacesAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiWorkspacesAgents() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}/agents',
   headers: {..._config.defaultHeaders
@@ -7798,7 +7798,7 @@ return _execute(
  } 
 ///
 /// `PUT /v2/gen-ai/workspaces/{workspace_uuid}/agents`
-Future<ApiResult<void>> putV2GenAiWorkspacesAgents() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> putV2GenAiWorkspacesAgents() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}/agents',
   headers: {..._config.defaultHeaders
@@ -7812,7 +7812,7 @@ return _execute(
  } 
 ///
 /// `GET /v2/gen-ai/workspaces/{workspace_uuid}/evaluation_test_cases`
-Future<ApiResult<void>> getV2GenAiWorkspacesEvaluationTestCases() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getV2GenAiWorkspacesEvaluationTestCases() async  { final request = ApiRequest(
   method: 'GET',
   path: '/v2/gen-ai/workspaces/{workspace_uuid}/evaluation_test_cases',
   headers: {..._config.defaultHeaders
@@ -7825,7 +7825,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -7848,6 +7848,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -7858,7 +7859,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

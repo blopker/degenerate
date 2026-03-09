@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get SSL Verification Info for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/verification`
-Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection>> sslVerificationDetails({required String zoneId, String? retry, }) async  { final request = ApiRequest(
+Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required String zoneId, String? retry, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/verification',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
 ///
 /// `PATCH /zones/{zone_id}/ssl/verification/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68>> sslVerificationEditSslCertificatePackValidationMethod({required String certificatePackId, required String zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> sslVerificationEditSslCertificatePackValidationMethod({required String certificatePackId, required String zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/verification/${Uri.encodeComponent(certificatePackId)}',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -79,6 +79,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -89,7 +90,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

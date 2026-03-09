@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches a list of managed networks for an account.
 ///
 /// `GET /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67>> deviceManagedNetworksListDeviceManagedNetworks({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksListDeviceManagedNetworks({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/networks',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new device managed network.
 ///
 /// `POST /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67>> deviceManagedNetworksCreateDeviceManagedNetwork({required String accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksCreateDeviceManagedNetwork({required String accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/networks',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches details for a single managed network.
 ///
 /// `GET /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67>> deviceManagedNetworksDeviceManagedNetworkDetails({required String networkId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeviceManagedNetworkDetails({required String networkId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/networks/${Uri.encodeComponent(networkId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates a configured device managed network.
 ///
 /// `PUT /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67>> deviceManagedNetworksUpdateDeviceManagedNetwork({required String networkId, required String accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksUpdateDeviceManagedNetwork({required String networkId, required String accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/networks/${Uri.encodeComponent(networkId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes a device managed network and fetches a list of the remaining device managed networks for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67>> deviceManagedNetworksDeleteDeviceManagedNetwork({required String networkId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeleteDeviceManagedNetwork({required String networkId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/networks/${Uri.encodeComponent(networkId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

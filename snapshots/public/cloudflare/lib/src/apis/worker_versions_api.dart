@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List of Worker Versions. The first version in the list is the latest version.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<ResponseCommon80>> workerVersionsListVersions({required String accountId, required String scriptName, bool? deployable, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsListVersions({required String accountId, required String scriptName, bool? deployable, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/versions',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Upload a Worker Version without deploying to Cloudflare's network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<ResponseCommon80>> workerVersionsUploadVersion({required String accountId, required String scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsUploadVersion({required String accountId, required String scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/versions',
   headers: {..._config.defaultHeaders
@@ -65,7 +65,7 @@ return _execute(
 /// Retrieves detailed information about a specific version of a Workers script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80>> workerVersionsGetVersionDetail({required String accountId, required String scriptName, required String versionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsGetVersionDetail({required String accountId, required String scriptName, required String versionId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/versions/${Uri.encodeComponent(versionId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -103,6 +103,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -113,7 +114,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

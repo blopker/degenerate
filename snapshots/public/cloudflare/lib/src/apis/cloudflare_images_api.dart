@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /accounts/{account_id}/images/v1`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesUploadAnImageViaUrl({required String accountId, required ImagesImageBasicUpload body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUploadAnImageViaUrl({required String accountId, required ImagesImageBasicUpload body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Fetch details for a single image.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesImageDetails({required String imageId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesImageDetails({required String imageId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/${Uri.encodeComponent(imageId)}',
   headers: {..._config.defaultHeaders
@@ -59,7 +59,7 @@ return _execute(
 /// Update image access control. On access control change, all copies of the image are purged from cache.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesUpdateImage({required String imageId, required String accountId, required ImagesImagePatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUpdateImage({required String imageId, required String accountId, required ImagesImagePatchRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/${Uri.encodeComponent(imageId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Delete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesDeleteImage({required String imageId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesDeleteImage({required String imageId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/${Uri.encodeComponent(imageId)}',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Fetch base image. For most images this will be the originally uploaded file. For larger images it can be a near-lossless version of the original.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}/blob`
-Future<ApiResult<void>> cloudflareImagesBaseImage({required String imageId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> cloudflareImagesBaseImage({required String imageId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/${Uri.encodeComponent(imageId)}/blob',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.
 ///
 /// `GET /accounts/{account_id}/images/v1/stats`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesUsageStatistics({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUsageStatistics({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/stats',
   headers: {..._config.defaultHeaders
@@ -175,7 +175,7 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesListImagesV2({required String accountId, String? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, ResponseCommon36>> cloudflareImagesListImagesV2({required String accountId, String? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v2',
   headers: {..._config.defaultHeaders
@@ -194,6 +194,9 @@ return _execute(
   onSuccess: (response) {
     return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Create authenticated direct upload URL V2
@@ -201,7 +204,7 @@ return _execute(
 /// Direct uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required String accountId, required ImagesImageDirectUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required String accountId, required ImagesImageDirectUploadRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v2/direct_upload',
   headers: {..._config.defaultHeaders
@@ -218,7 +221,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -241,6 +244,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -251,7 +255,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

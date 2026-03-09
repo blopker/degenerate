@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get Universal SSL Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<ResponseCommon68>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/universal/settings',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Patch Universal SSL Settings for a Zone.
 ///
 /// `PATCH /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<ResponseCommon68>> universalSslSettingsForAZoneEditUniversalSslSettings({required String zoneId, required TlsCertificatesAndHostnamesUniversal body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneEditUniversalSslSettings({required String zoneId, required TlsCertificatesAndHostnamesUniversal body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/universal/settings',
   headers: {..._config.defaultHeaders
@@ -53,7 +53,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -76,6 +76,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -86,7 +87,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

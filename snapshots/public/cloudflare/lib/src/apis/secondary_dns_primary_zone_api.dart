@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get primary zone configuration for outgoing zone transfers.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create primary zone configuration for outgoing zone transfers.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required String zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required String zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Update primary zone configuration for outgoing zone transfers.
 ///
 /// `PUT /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required String zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required String zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Delete primary zone configuration for outgoing zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required String zoneId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Disable outgoing zone transfers for primary zone and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/disable`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing/disable',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Enable outgoing zone transfers for primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/enable`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing/enable',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Notifies the secondary nameserver(s) and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/force_notify`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneForceDnsNotify({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneForceDnsNotify({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing/force_notify',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 /// Get primary zone transfer status.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing/status`
-Future<ApiResult<ResponseCommon58>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/secondary_dns/outgoing/status',
   headers: {..._config.defaultHeaders
@@ -169,7 +169,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -192,6 +192,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -202,7 +203,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

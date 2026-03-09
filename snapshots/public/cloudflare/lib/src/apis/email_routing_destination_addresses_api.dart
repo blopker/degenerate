@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists existing destination addresses.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<ResponseCommon30>> emailRoutingDestinationAddressesListDestinationAddresses({required String accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required String accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email/routing/addresses',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Create a destination address to forward your emails to. Destination addresses need to be verified before they can be used.
 ///
 /// `POST /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<ResponseCommon30>> emailRoutingDestinationAddressesCreateADestinationAddress({required String accountId, required EmailCreateDestinationAddressProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesCreateADestinationAddress({required String accountId, required EmailCreateDestinationAddressProperties body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email/routing/addresses',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Gets information for a specific destination email already created.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<ResponseCommon30>> emailRoutingDestinationAddressesGetADestinationAddress({required String destinationAddressIdentifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesGetADestinationAddress({required String destinationAddressIdentifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Deletes a specific destination address.
 ///
 /// `DELETE /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<ResponseCommon30>> emailRoutingDestinationAddressesDeleteDestinationAddress({required String destinationAddressIdentifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesDeleteDestinationAddress({required String destinationAddressIdentifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -120,6 +120,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -130,7 +131,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

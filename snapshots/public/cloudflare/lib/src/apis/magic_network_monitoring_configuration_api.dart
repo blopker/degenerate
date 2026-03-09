@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists default sampling, router IPs and warp devices for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationListAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationListAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new network monitoring configuration.
 ///
 /// `POST /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required String accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required String accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Update an existing network monitoring configuration, requires the entire configuration to be updated at once.
 ///
 /// `PUT /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required String accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required String accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Update fields in an existing network monitoring configuration.
 ///
 /// `PATCH /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required String accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required String accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Delete an existing network monitoring configuration.
 ///
 /// `DELETE /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Lists default sampling, router IPs, warp devices, and rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config/full`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/config/full',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List Endpoint Health Checks.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45>> diagnosticsEndpointHealthcheckList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/diagnostics/endpoint-healthchecks',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create Endpoint Health Check.
 ///
 /// `POST /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45>> diagnosticsEndpointHealthcheckCreate({required String accountId, required MagicTransitEndpointHealthCheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckCreate({required String accountId, required MagicTransitEndpointHealthCheck body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/diagnostics/endpoint-healthchecks',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a single Endpoint Health Check.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45>> diagnosticsEndpointHealthcheckGet({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckGet({required String accountId, required String id, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a Endpoint Health Check.
 ///
 /// `PUT /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45>> diagnosticsEndpointHealthcheckUpdate({required String accountId, required String id, required MagicTransitEndpointHealthCheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckUpdate({required String accountId, required String id, required MagicTransitEndpointHealthCheck body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete Endpoint Health Check.
 ///
 /// `DELETE /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45>> diagnosticsEndpointHealthcheckDelete({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckDelete({required String accountId, required String id, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

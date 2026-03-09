@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieves a collection of Accounts belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts.json`
-Future<ApiResult<ListAccountResponse>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts.json',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Create a new Twilio Subaccount from the account making the request
 ///
 /// `POST /2010-04-01/Accounts.json`
-Future<ApiResult<Account>> createAccount({CreateAccountRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> createAccount({CreateAccountRequest? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts.json',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// Fetch the account specified by the provided Account Sid
 ///
 /// `GET /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account>> fetchAccount({required String sid}) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> fetchAccount({required String sid}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -75,7 +75,7 @@ return _execute(
 /// Modify the properties of a given Account
 ///
 /// `POST /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account>> updateAccount({required String sid, UpdateAccountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> updateAccount({required String sid, UpdateAccountRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -115,6 +115,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -125,7 +126,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

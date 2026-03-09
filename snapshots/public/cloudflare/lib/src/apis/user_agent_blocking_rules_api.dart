@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches User Agent Blocking rules in a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31>> userAgentBlockingRulesListUserAgentBlockingRules({required String zoneId, double? page, String? description, double? perPage, String? userAgent, bool? paused, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required String zoneId, double? page, String? description, double? perPage, String? userAgent, bool? paused, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/ua_rules',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Creates a new User Agent Blocking rule in a zone.
 ///
 /// `POST /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required String zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required String zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/ua_rules',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Fetches the details of a User Agent Blocking rule.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31>> userAgentBlockingRulesGetAUserAgentBlockingRule({required String uaRuleId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesGetAUserAgentBlockingRule({required String uaRuleId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId)}',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Updates an existing User Agent Blocking rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required String uaRuleId, required String zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required String uaRuleId, required String zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Deletes an existing User Agent Blocking rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required String uaRuleId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required String uaRuleId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId)}',
   headers: {..._config.defaultHeaders
@@ -119,7 +119,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -142,6 +142,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -152,7 +153,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

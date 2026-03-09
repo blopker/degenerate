@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List Zero Trust Gateway locations for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/locations',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new Zero Trust Gateway location.
 ///
 /// `POST /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required String accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required String accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/locations',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a single Zero Trust Gateway location.
 ///
 /// `GET /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required String locationId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required String locationId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/locations/${Uri.encodeComponent(locationId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a configured Zero Trust Gateway location.
 ///
 /// `PUT /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required String locationId, required String accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required String locationId, required String accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/locations/${Uri.encodeComponent(locationId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete a configured Zero Trust Gateway location.
 ///
 /// `DELETE /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required String locationId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required String locationId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/locations/${Uri.encodeComponent(locationId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

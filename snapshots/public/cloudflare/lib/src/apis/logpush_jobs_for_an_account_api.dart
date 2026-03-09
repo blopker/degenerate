@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.
 ///
 /// `GET /accounts/{account_id}/logpush/datasets/{dataset_id}/fields`
-Future<ApiResult<ResponseCommon44>> getAccountsAccountIdLogpushDatasetsDatasetIdFields({required LogpushDataset datasetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> getAccountsAccountIdLogpushDatasetsDatasetIdFields({required LogpushDataset datasetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/fields',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Lists Logpush jobs for an account for a dataset.
 ///
 /// `GET /accounts/{account_id}/logpush/datasets/{dataset_id}/jobs`
-Future<ApiResult<ResponseCommon44>> getAccountsAccountIdLogpushDatasetsDatasetIdJobs({required LogpushDataset datasetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> getAccountsAccountIdLogpushDatasetsDatasetIdJobs({required LogpushDataset datasetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/jobs',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Lists Logpush jobs for an account.
 ///
 /// `GET /accounts/{account_id}/logpush/jobs`
-Future<ApiResult<ResponseCommon44>> getAccountsAccountIdLogpushJobs({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> getAccountsAccountIdLogpushJobs({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/jobs',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Creates a new Logpush job for an account.
 ///
 /// `POST /accounts/{account_id}/logpush/jobs`
-Future<ApiResult<ResponseCommon44>> postAccountsAccountIdLogpushJobs({required String accountId, required PostAccountsAccountIdLogpushJobsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> postAccountsAccountIdLogpushJobs({required String accountId, required PostAccountsAccountIdLogpushJobsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/jobs',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Gets the details of a Logpush job.
 ///
 /// `GET /accounts/{account_id}/logpush/jobs/{job_id}`
-Future<ApiResult<ResponseCommon44>> getAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> getAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Updates a Logpush job.
 ///
 /// `PUT /accounts/{account_id}/logpush/jobs/{job_id}`
-Future<ApiResult<ResponseCommon44>> putAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, required PutAccountsAccountIdLogpushJobsJobIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> putAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, required PutAccountsAccountIdLogpushJobsJobIdRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Deletes a Logpush job.
 ///
 /// `DELETE /accounts/{account_id}/logpush/jobs/{job_id}`
-Future<ApiResult<ResponseCommon44>> deleteAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> deleteAccountsAccountIdLogpushJobsJobId({required int jobId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 /// Gets a new ownership challenge sent to your destination.
 ///
 /// `POST /accounts/{account_id}/logpush/ownership`
-Future<ApiResult<ResponseCommon44>> postAccountsAccountIdLogpushOwnership({required String accountId, required PostAccountsAccountIdLogpushOwnershipRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> postAccountsAccountIdLogpushOwnership({required String accountId, required PostAccountsAccountIdLogpushOwnershipRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/ownership',
   headers: {..._config.defaultHeaders
@@ -175,7 +175,7 @@ return _execute(
 /// Validates ownership challenge of the destination.
 ///
 /// `POST /accounts/{account_id}/logpush/ownership/validate`
-Future<ApiResult<ResponseCommon44>> postAccountsAccountIdLogpushOwnershipValidate({required String accountId, required PostAccountsAccountIdLogpushOwnershipValidateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> postAccountsAccountIdLogpushOwnershipValidate({required String accountId, required PostAccountsAccountIdLogpushOwnershipValidateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/ownership/validate',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// Validates destination.
 ///
 /// `POST /accounts/{account_id}/logpush/validate/destination`
-Future<ApiResult<ResponseCommon44>> deleteAccountsAccountIdLogpushValidateDestination({required String accountId, required DeleteAccountsAccountIdLogpushValidateDestinationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> deleteAccountsAccountIdLogpushValidateDestination({required String accountId, required DeleteAccountsAccountIdLogpushValidateDestinationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/validate/destination',
   headers: {..._config.defaultHeaders
@@ -217,7 +217,7 @@ return _execute(
 /// Checks if there is an existing job with a destination.
 ///
 /// `POST /accounts/{account_id}/logpush/validate/destination/exists`
-Future<ApiResult<ResponseCommon44>> deleteAccountsAccountIdLogpushValidateDestinationExists({required String accountId, required DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> deleteAccountsAccountIdLogpushValidateDestinationExists({required String accountId, required DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/validate/destination/exists',
   headers: {..._config.defaultHeaders
@@ -238,7 +238,7 @@ return _execute(
 /// Validates logpull origin with logpull_options.
 ///
 /// `POST /accounts/{account_id}/logpush/validate/origin`
-Future<ApiResult<ResponseCommon44>> postAccountsAccountIdLogpushValidateOrigin({required String accountId, required PostAccountsAccountIdLogpushValidateOriginRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> postAccountsAccountIdLogpushValidateOrigin({required String accountId, required PostAccountsAccountIdLogpushValidateOriginRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logpush/validate/origin',
   headers: {..._config.defaultHeaders
@@ -255,7 +255,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -278,6 +278,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -288,7 +289,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

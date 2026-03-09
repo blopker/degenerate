@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List all risk score integrations for the account.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Create new risk score integration.
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// Get risk score integration by id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Overwrite the reference_id, tenant_url, and active values with the ones provided.
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Delete a risk score integration.
 ///
 /// `DELETE /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// Get risk score integration by reference id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}`
-Future<ApiResult<ResponseCommon20>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/reference_id/${Uri.encodeComponent(referenceId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -144,6 +144,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -154,7 +155,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

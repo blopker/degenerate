@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists the number of secrets used in the account.
 ///
 /// `GET /accounts/{account_id}/secrets_store/quota`
-Future<ApiResult<ResponseCommon59>> secretsStoreQuota({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreQuota({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/quota',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Lists all the stores in an account
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<ResponseCommon59>> secretsStoreList({required String accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreList({required String accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Creates a store in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<ResponseCommon59>> secretsStoreCreate({required String accountId, required List<SecretsStoreCreateStoreObject> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreCreate({required String accountId, required List<SecretsStoreCreateStoreObject> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Returns details of a single store
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreGetStoreById({required String accountId, required String storeId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreGetStoreById({required String accountId, required String storeId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Deletes a single store
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreDeleteById({required String accountId, required String storeId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreDeleteById({required String accountId, required String storeId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// Lists all store secrets
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreSecretsList({required String accountId, required String storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSecretsList({required String accountId, required String storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -147,7 +147,7 @@ return _execute(
 /// Creates a secret in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreSecretCreate({required String accountId, required String storeId, required List<SecretsStoreCreateSecretObject> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSecretCreate({required String accountId, required String storeId, required List<SecretsStoreCreateSecretObject> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -168,7 +168,7 @@ return _execute(
 /// Deletes one or more secrets
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreDeleteBulk({required String accountId, required String storeId, required List<SecretsStoreDeleteSecretObject> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreDeleteBulk({required String accountId, required String storeId, required List<SecretsStoreDeleteSecretObject> body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -189,7 +189,7 @@ return _execute(
 /// Returns details of a single secret
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreGetById({required String accountId, required String storeId, required String secretId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreGetById({required String accountId, required String storeId, required String secretId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -208,7 +208,7 @@ return _execute(
 /// Updates a single secret
 ///
 /// `PATCH /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStorePatchById({required String accountId, required String storeId, required String secretId, required SecretsStorePatchSecretObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStorePatchById({required String accountId, required String storeId, required String secretId, required SecretsStorePatchSecretObject body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -229,7 +229,7 @@ return _execute(
 /// Deletes a single secret
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSecretDeleteById({required String accountId, required String storeId, required String secretId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSecretDeleteById({required String accountId, required String storeId, required String secretId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -248,7 +248,7 @@ return _execute(
 /// Duplicates the secret, keeping the value
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<ResponseCommon59>> secretsStoreDuplicateById({required String accountId, required String storeId, required String secretId, required SecretsStoreDuplicateSecretObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreDuplicateById({required String accountId, required String storeId, required String secretId, required SecretsStoreDuplicateSecretObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secrets_store/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}/duplicate',
   headers: {..._config.defaultHeaders
@@ -271,7 +271,7 @@ return _execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemList({required String accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemList({required String accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores',
   headers: {..._config.defaultHeaders
@@ -299,7 +299,7 @@ return _execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemCreate({required String accountTag, required SecretsStoreCreateStoreObjectSystem body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemCreate({required String accountTag, required SecretsStoreCreateStoreObjectSystem body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores',
   headers: {..._config.defaultHeaders
@@ -322,7 +322,7 @@ return _execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemGetStoreById({required String accountTag, required String storeId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemGetStoreById({required String accountTag, required String storeId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}',
   headers: {..._config.defaultHeaders
@@ -343,7 +343,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemDeleteById({required String accountTag, required String storeId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemDeleteById({required String accountTag, required String storeId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}',
   headers: {..._config.defaultHeaders
@@ -364,7 +364,7 @@ return _execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemSecretsList({required String accountTag, required String storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemSecretsList({required String accountTag, required String storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -393,7 +393,7 @@ return _execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemSecretCreate({required String accountTag, required String storeId, required List<SecretsStoreCreateSecretObject> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemSecretCreate({required String accountTag, required String storeId, required List<SecretsStoreCreateSecretObject> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -416,7 +416,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemDeleteBulk({required String accountTag, required String storeId, required List<SecretsStoreDeleteSecretObject> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemDeleteBulk({required String accountTag, required String storeId, required List<SecretsStoreDeleteSecretObject> body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets',
   headers: {..._config.defaultHeaders
@@ -439,7 +439,7 @@ return _execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemGetById({required String accountTag, required String storeId, required String secretId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemGetById({required String accountTag, required String storeId, required String secretId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -460,7 +460,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemPatchById({required String accountTag, required String storeId, required String secretId, required SecretsStorePatchSecretObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemPatchById({required String accountTag, required String storeId, required String secretId, required SecretsStorePatchSecretObject body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -483,7 +483,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemSecretDeleteById({required String accountTag, required String storeId, required String secretId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemSecretDeleteById({required String accountTag, required String storeId, required String secretId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}',
   headers: {..._config.defaultHeaders
@@ -504,7 +504,7 @@ return _execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<ResponseCommon59>> secretsStoreSystemDuplicateById({required String accountTag, required String storeId, required String secretId, required SecretsStoreDuplicateSecretObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemDuplicateById({required String accountTag, required String storeId, required String secretId, required SecretsStoreDuplicateSecretObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/system/accounts/${Uri.encodeComponent(accountTag)}/stores/${Uri.encodeComponent(storeId)}/secrets/${Uri.encodeComponent(secretId)}/duplicate',
   headers: {..._config.defaultHeaders
@@ -521,7 +521,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -544,6 +544,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -554,7 +555,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

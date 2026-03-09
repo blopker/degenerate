@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured monitors for a user.
 ///
 /// `GET /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsListMonitors() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitors() async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a configured monitor.
 ///
 /// `POST /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/monitors',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// List a single configured monitor for a user.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsMonitorDetails({required String monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsMonitorDetails({required String monitorId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Modify a configured monitor.
 ///
 /// `PUT /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsUpdateMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsUpdateMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Apply changes to an existing monitor, overwriting the supplied properties.
 ///
 /// `PATCH /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsPatchMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPatchMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Delete a configured monitor.
 ///
 /// `DELETE /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsDeleteMonitor({required String monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsDeleteMonitor({required String monitorId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Preview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /user/load_balancers/monitors/{monitor_id}/preview`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsPreviewMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewMonitor({required String monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}/preview',
   headers: {..._config.defaultHeaders
@@ -158,7 +158,7 @@ return _execute(
 /// Get the list of resources that reference the provided monitor.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}/references`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsListMonitorReferences({required String monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitorReferences({required String monitorId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId)}/references',
   headers: {..._config.defaultHeaders
@@ -177,7 +177,7 @@ return _execute(
 /// Get the result of a previous preview operation using the provided preview_id.
 ///
 /// `GET /user/load_balancers/preview/{preview_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerMonitorsPreviewResult({required String previewId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewResult({required String previewId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/preview/${Uri.encodeComponent(previewId)}',
   headers: {..._config.defaultHeaders
@@ -192,7 +192,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -215,6 +215,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -225,7 +226,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

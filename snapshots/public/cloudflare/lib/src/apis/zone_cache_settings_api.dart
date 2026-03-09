@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
 ///
 /// `GET /zones/{zone_id}/cache/cache_reserve`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetCacheReserveSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetCacheReserveSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/cache_reserve',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
 ///
 /// `PATCH /zones/{zone_id}/cache/cache_reserve`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeCacheReserveSetting({required String zoneId, required ZoneCacheSettingsChangeCacheReserveSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeCacheReserveSetting({required String zoneId, required ZoneCacheSettingsChangeCacheReserveSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/cache_reserve',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `GET /zones/{zone_id}/cache/cache_reserve_clear`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetCacheReserveClear({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetCacheReserveClear({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/cache_reserve_clear',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `POST /zones/{zone_id}/cache/cache_reserve_clear`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsStartCacheReserveClear({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsStartCacheReserveClear({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/cache_reserve_clear',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
 ///
 /// `GET /zones/{zone_id}/cache/regional_tiered_cache`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetRegionalTieredCacheSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetRegionalTieredCacheSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/regional_tiered_cache',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
 ///
 /// `PATCH /zones/{zone_id}/cache/regional_tiered_cache`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeRegionalTieredCacheSetting({required String zoneId, required ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeRegionalTieredCacheSetting({required String zoneId, required ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/regional_tiered_cache',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `GET /zones/{zone_id}/cache/variants`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetVariantsSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetVariantsSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/variants',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `PATCH /zones/{zone_id}/cache/variants`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeVariantsSetting({required String zoneId, required ZoneCacheSettingsChangeVariantsSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeVariantsSetting({required String zoneId, required ZoneCacheSettingsChangeVariantsSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/variants',
   headers: {..._config.defaultHeaders
@@ -175,7 +175,7 @@ return _execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `DELETE /zones/{zone_id}/cache/variants`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsDeleteVariantsSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsDeleteVariantsSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/variants',
   headers: {..._config.defaultHeaders
@@ -190,7 +190,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -213,6 +213,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -223,7 +224,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

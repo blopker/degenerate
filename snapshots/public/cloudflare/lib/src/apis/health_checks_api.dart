@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured health checks.
 ///
 /// `GET /zones/{zone_id}/healthchecks`
-Future<ApiResult<ResponseCommon33>> healthChecksListHealthChecks({required String zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksListHealthChecks({required String zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a new health check.
 ///
 /// `POST /zones/{zone_id}/healthchecks`
-Future<ApiResult<ResponseCommon33>> healthChecksCreateHealthCheck({required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksCreateHealthCheck({required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetch a single configured health check.
 ///
 /// `GET /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksHealthCheckDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksHealthCheckDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Update a configured health check.
 ///
 /// `PUT /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksUpdateHealthCheck({required String healthcheckId, required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksUpdateHealthCheck({required String healthcheckId, required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Patch a configured health check.
 ///
 /// `PATCH /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksPatchHealthCheck({required String healthcheckId, required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksPatchHealthCheck({required String healthcheckId, required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksDeleteHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksDeleteHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// Create a new preview health check.
 ///
 /// `POST /zones/{zone_id}/healthchecks/preview`
-Future<ApiResult<ResponseCommon33>> healthChecksCreatePreviewHealthCheck({required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksCreatePreviewHealthCheck({required String zoneId, required HealthchecksQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/preview',
   headers: {..._config.defaultHeaders
@@ -162,7 +162,7 @@ return _execute(
 /// Fetch a single configured health check preview.
 ///
 /// `GET /zones/{zone_id}/healthchecks/preview/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksHealthCheckPreviewDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksHealthCheckPreviewDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/preview/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -181,7 +181,7 @@ return _execute(
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/healthchecks/preview/{healthcheck_id}`
-Future<ApiResult<ResponseCommon33>> healthChecksDeletePreviewHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon33, Never>> healthChecksDeletePreviewHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/healthchecks/preview/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -200,7 +200,7 @@ return _execute(
 /// List configured health checks.
 ///
 /// `GET /zones/{zone_id}/smart_shield/healthchecks`
-Future<ApiResult<ResponseCommon62>> smartShieldListHealthChecks({required String zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldListHealthChecks({required String zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks',
   headers: {..._config.defaultHeaders
@@ -223,7 +223,7 @@ return _execute(
 /// Create a new health check.
 ///
 /// `POST /zones/{zone_id}/smart_shield/healthchecks`
-Future<ApiResult<ResponseCommon62>> smartShieldCreateHealthCheck({required String zoneId, required SmartshieldQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldCreateHealthCheck({required String zoneId, required SmartshieldQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks',
   headers: {..._config.defaultHeaders
@@ -244,7 +244,7 @@ return _execute(
 /// Fetch a single configured health check.
 ///
 /// `GET /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon62>> smartShieldHealthCheckDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldHealthCheckDetails({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -263,7 +263,7 @@ return _execute(
 /// Update a configured health check.
 ///
 /// `PUT /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon62>> smartShieldUpdateHealthCheck({required String healthcheckId, required String zoneId, required ResponseCommon62 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldUpdateHealthCheck({required String healthcheckId, required String zoneId, required ResponseCommon62 body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -284,7 +284,7 @@ return _execute(
 /// Patch a configured health check.
 ///
 /// `PATCH /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon62>> smartShieldPatchHealthCheck({required String healthcheckId, required String zoneId, required SmartshieldQueryHealthcheck body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldPatchHealthCheck({required String healthcheckId, required String zoneId, required SmartshieldQueryHealthcheck body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -305,7 +305,7 @@ return _execute(
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<ResponseCommon62>> smartShieldDeleteHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldDeleteHealthCheck({required String healthcheckId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId)}',
   headers: {..._config.defaultHeaders
@@ -320,7 +320,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -343,6 +343,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -353,7 +354,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

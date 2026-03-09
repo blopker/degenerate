@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Apps associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseArray>> magicAccountAppsListApps({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseArray, Never>> magicAccountAppsListApps({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/apps',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new App for an account
 ///
 /// `POST /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseObject>> magicAccountAppsAddApp({required String accountId, required MagicAppAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsAddApp({required String accountId, required MagicAppAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/apps',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PUT /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject>> magicAccountAppsUpdateApp({required String accountId, required String accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsUpdateApp({required String accountId, required String accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/apps/${Uri.encodeComponent(accountAppId)}',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PATCH /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject>> magicAccountAppsPatchApp({required String accountId, required String accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsPatchApp({required String accountId, required String accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/apps/${Uri.encodeComponent(accountAppId)}',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Deletes specific Account App.
 ///
 /// `DELETE /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject>> magicAccountAppsDeleteApp({required String accountId, required String accountAppId, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsDeleteApp({required String accountId, required String accountAppId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/apps/${Uri.encodeComponent(accountAppId)}',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -137,6 +137,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -147,7 +148,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

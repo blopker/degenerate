@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19>> deviceDexTestDetails({required String accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDetails({required String accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/devices/dex_tests',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19>> deviceDexTestCreateDeviceDexTest({required String accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestCreateDeviceDexTest({required String accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/devices/dex_tests',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19>> deviceDexTestGetDeviceDexTest({required String accountId, required String dexTestId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestGetDeviceDexTest({required String accountId, required String dexTestId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19>> deviceDexTestUpdateDeviceDexTest({required String accountId, required String dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestUpdateDeviceDexTest({required String accountId, required String dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19>> deviceDexTestDeleteDeviceDexTest({required String accountId, required String dexTestId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDeleteDeviceDexTest({required String accountId, required String dexTestId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -141,6 +141,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -151,7 +152,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

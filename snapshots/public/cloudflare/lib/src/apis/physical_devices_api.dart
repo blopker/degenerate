@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists WARP devices.
 ///
 /// `GET /accounts/{account_id}/devices/physical-devices`
-Future<ApiResult<ListDevicesResponse>> listDevices({required String accountId, String? cursor, ListDevicesSortBy? sortBy, ListDevicesSortOrder? sortOrder, String? lastSeenUserEmail, String? seenAfter, String? seenBefore, int? perPage, String? search, ListDevicesActiveRegistrations? activeRegistrations, List<String>? id, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ListDevicesResponse, Never>> listDevices({required String accountId, String? cursor, ListDevicesSortBy? sortBy, ListDevicesSortOrder? sortOrder, String? lastSeenUserEmail, String? seenAfter, String? seenBefore, int? perPage, String? search, ListDevicesActiveRegistrations? activeRegistrations, List<String>? id, String? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Fetches a single WARP device.
 ///
 /// `GET /accounts/{account_id}/devices/physical-devices/{device_id}`
-Future<ApiResult<GetDeviceResponse>> getDevice({required String deviceId, required String accountId, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<GetDeviceResponse, Never>> getDevice({required String deviceId, required String accountId, String? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices/${Uri.encodeComponent(deviceId)}',
   headers: {..._config.defaultHeaders
@@ -71,7 +71,7 @@ return _execute(
 /// Deletes a WARP device.
 ///
 /// `DELETE /accounts/{account_id}/devices/physical-devices/{device_id}`
-Future<ApiResult<DeleteDeviceResponse>> deleteDevice({required String deviceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteDeviceResponse, Never>> deleteDevice({required String deviceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices/${Uri.encodeComponent(deviceId)}',
   headers: {..._config.defaultHeaders
@@ -90,7 +90,7 @@ return _execute(
 /// Revokes all WARP registrations associated with the specified device.
 ///
 /// `POST /accounts/{account_id}/devices/physical-devices/{device_id}/revoke`
-Future<ApiResult<RevokeDeviceResponse>> revokeDevice({required String accountId, required String deviceId, }) async  { final request = ApiRequest(
+Future<ApiResult<RevokeDeviceResponse, Never>> revokeDevice({required String accountId, required String deviceId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices/${Uri.encodeComponent(deviceId)}/revoke',
   headers: {..._config.defaultHeaders
@@ -109,7 +109,7 @@ return _execute(
 /// Deletes a list of WARP registrations.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations`
-Future<ApiResult<DeleteRegistrationsResponse>> deleteRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteRegistrationsResponse, Never>> deleteRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations',
   headers: {..._config.defaultHeaders
@@ -127,7 +127,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -150,6 +150,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -160,7 +161,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

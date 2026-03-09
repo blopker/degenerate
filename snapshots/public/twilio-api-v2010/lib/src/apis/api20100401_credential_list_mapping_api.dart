@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Read multiple CredentialListMapping resources from an account.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json`
-Future<ApiResult<ListSipCredentialListMappingResponse>> listSipCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipCredentialListMappingResponse, Never>> listSipCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings.json',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Create a CredentialListMapping resource for an account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipCredentialListMapping>> createSipCredentialListMapping({required String accountSid, required String domainSid, CreateSipCredentialListMappingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> createSipCredentialListMapping({required String accountSid, required String domainSid, CreateSipCredentialListMappingRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings.json',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Fetch a single CredentialListMapping resource from an account.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipCredentialListMapping>> fetchSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> fetchSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -73,7 +73,7 @@ return _execute(
 /// Delete a CredentialListMapping resource from an account.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json`
-Future<ApiResult<void>> deleteSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -86,7 +86,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -109,6 +109,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -119,7 +120,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

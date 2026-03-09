@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Zero Trust Gateway PAC files for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayPacfilesList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayPacfilesList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/pacfiles',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new Zero Trust Gateway PAC file.
 ///
 /// `POST /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayPacfilesCreatePacfile({required String accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayPacfilesCreatePacfile({required String accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/pacfiles',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a single Zero Trust Gateway PAC file.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayPacfilesDetails({required String pacfileId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayPacfilesDetails({required String pacfileId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/pacfiles/${Uri.encodeComponent(pacfileId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a configured Zero Trust Gateway PAC file.
 ///
 /// `PUT /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayPacfilesUpdate({required String pacfileId, required String accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayPacfilesUpdate({required String pacfileId, required String accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/pacfiles/${Uri.encodeComponent(pacfileId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete a configured Zero Trust Gateway PAC file.
 ///
 /// `DELETE /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustGatewayPacfilesDelete({required String pacfileId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayPacfilesDelete({required String pacfileId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/pacfiles/${Uri.encodeComponent(pacfileId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

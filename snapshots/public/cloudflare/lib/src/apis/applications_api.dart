@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get applications with different filters.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Create application.
 ///
 /// `POST /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Get application by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5>> getApplicationById({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> getApplicationById({required String accountId, required String id, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications/${Uri.encodeComponent(id)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Update application version.
 ///
 /// `PATCH /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications/${Uri.encodeComponent(id)}',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -122,6 +122,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -132,7 +133,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

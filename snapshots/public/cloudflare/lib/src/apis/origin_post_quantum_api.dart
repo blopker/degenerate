@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `GET /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/origin_post_quantum_encryption',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `PUT /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required String zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required String zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/cache/origin_post_quantum_encryption',
   headers: {..._config.defaultHeaders
@@ -53,7 +53,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -76,6 +76,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -86,7 +87,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

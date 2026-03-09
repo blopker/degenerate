@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /zones`
-Future<ApiResult<ResponseCommon85>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon85, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones',
   headers: {..._config.defaultHeaders
@@ -47,7 +47,7 @@ return _execute(
 /// Create Zone
 ///
 /// `POST /zones`
-Future<ApiResult<ResponseCommon85>> zonesPost({required ZonesPostRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon85, Never>> zonesPost({required ZonesPostRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Zone Details
 ///
 /// `GET /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85>> zones0Get({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon85, Never>> zones0Get({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// Edits a zone. Only one zone property can be changed at a time.
 ///
 /// `PATCH /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85>> zones0Patch({required String zoneId, required Zones0PatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon85, Never>> zones0Patch({required String zoneId, required Zones0PatchRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85>> zones0Delete({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon85, Never>> zones0Delete({required String zoneId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}',
   headers: {..._config.defaultHeaders
@@ -127,7 +127,7 @@ return _execute(
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<ResponseCommon83>> putZonesZoneIdActivationCheck({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon83, Never>> putZonesZoneIdActivationCheck({required String zoneId}) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/activation_check',
   headers: {..._config.defaultHeaders
@@ -186,7 +186,7 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleId>> zonePurge({required String zoneId, required ZonePurgeRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingleId, Never>> zonePurge({required String zoneId, required ZonePurgeRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/purge_cache',
   headers: {..._config.defaultHeaders
@@ -203,7 +203,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -226,6 +226,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -236,7 +237,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

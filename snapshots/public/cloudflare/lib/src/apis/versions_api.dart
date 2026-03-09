@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80>> listWorkerVersions({required String accountId, required String workerId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required String accountId, required String workerId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80>> createWorkerVersion({required String accountId, required String workerId, bool? deploy, required WorkersVersion body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required String accountId, required String workerId, bool? deploy, required WorkersVersion body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80>> getWorkerVersion({required String accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required String accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
   headers: {..._config.defaultHeaders
@@ -86,7 +86,7 @@ return _execute(
 /// Delete a version.
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80>> deleteWorkerVersion({required String accountId, required String workerId, required String versionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> deleteWorkerVersion({required String accountId, required String workerId, required String versionId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -124,6 +124,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -134,7 +135,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

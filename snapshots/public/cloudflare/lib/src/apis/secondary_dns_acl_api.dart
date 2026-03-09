@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List ACLs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<ResponseCommon58>> secondaryDnsAclListAcLs({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclListAcLs({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/acls',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create ACL.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<ResponseCommon58>> secondaryDnsAclCreateAcl({required String accountId, required SecondaryDnsAclCreateAclRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclCreateAcl({required String accountId, required SecondaryDnsAclCreateAclRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/acls',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get ACL.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsAclAclDetails({required String aclId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclAclDetails({required String aclId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/acls/${Uri.encodeComponent(aclId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Modify ACL.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsAclUpdateAcl({required String aclId, required String accountId, required SecondaryDnsAcl body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclUpdateAcl({required String aclId, required String accountId, required SecondaryDnsAcl body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/acls/${Uri.encodeComponent(aclId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete ACL.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsAclDeleteAcl({required String aclId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclDeleteAcl({required String aclId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/acls/${Uri.encodeComponent(aclId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

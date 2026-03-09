@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all access tokens you created.
 ///
 /// `GET /user/tokens`
-Future<ApiResult<ResponseCommon35>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<ResponseCommon35>> userApiTokensCreateToken({required IamCreatePayload body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensCreateToken({required IamCreatePayload body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/tokens',
   headers: {..._config.defaultHeaders
@@ -62,7 +62,7 @@ return _execute(
 /// Get information about a specific token.
 ///
 /// `GET /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35>> userApiTokensTokenDetails({required String tokenId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensTokenDetails({required String tokenId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/${Uri.encodeComponent(tokenId)}',
   headers: {..._config.defaultHeaders
@@ -81,7 +81,7 @@ return _execute(
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35>> userApiTokensUpdateToken({required String tokenId, required IamTokenBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensUpdateToken({required String tokenId, required IamTokenBase body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/user/tokens/${Uri.encodeComponent(tokenId)}',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// Destroy a token.
 ///
 /// `DELETE /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35>> userApiTokensDeleteToken({required String tokenId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensDeleteToken({required String tokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/user/tokens/${Uri.encodeComponent(tokenId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Roll the token secret.
 ///
 /// `PUT /user/tokens/{token_id}/value`
-Future<ApiResult<ResponseCommon35>> userApiTokensRollToken({required String tokenId, required Map<String,String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensRollToken({required String tokenId, required Map<String,String> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/user/tokens/${Uri.encodeComponent(tokenId)}/value',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// Find all available permission groups for API Tokens
 ///
 /// `GET /user/tokens/permission_groups`
-Future<ApiResult<ResponseCommon35>> permissionGroupsListPermissionGroups({String? name, String? scope, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/permission_groups',
   headers: {..._config.defaultHeaders
@@ -165,7 +165,7 @@ return _execute(
 /// Test whether a token works.
 ///
 /// `GET /user/tokens/verify`
-Future<ApiResult<ResponseCommon35>> userApiTokensVerifyToken() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensVerifyToken() async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/verify',
   headers: {..._config.defaultHeaders
@@ -180,7 +180,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -203,6 +203,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -213,7 +214,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

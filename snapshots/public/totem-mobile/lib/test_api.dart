@@ -7,6 +7,7 @@
 export 'src/client/api_client.dart';
 export 'src/client/api_config.dart';
 export 'src/client/api_result.dart';
+export 'src/client/test_api_api.dart';
 
 export 'src/models/accept_stick_event.dart';
 export 'src/models/active_detail.dart';

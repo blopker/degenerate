@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Lists the organization roles assigned to a group within the organization.
 ///
 /// `GET /organization/groups/{group_id}/roles`
-Future<ApiResult<RoleListResource>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<RoleListResource, Never>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/roles',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Assigns an organization role to a group within the organization.
 ///
 /// `POST /organization/groups/{group_id}/roles`
-Future<ApiResult<GroupRoleAssignment>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupRoleAssignment, Never>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/roles',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Unassigns an organization role from a group within the organization.
 ///
 /// `DELETE /organization/groups/{group_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource>> unassignGroupRole({required String groupId, required String roleId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignGroupRole({required String groupId, required String roleId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/roles/${Uri.encodeComponent(roleId)}',
   headers: {..._config.defaultHeaders
@@ -71,7 +71,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -94,6 +94,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -104,7 +105,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all account shares.
 ///
 /// `GET /accounts/{account_id}/shares`
-Future<ApiResult<ResponseCommon55>> sharesList({required String accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> sharesList({required String accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares',
   headers: {..._config.defaultHeaders
@@ -48,7 +48,7 @@ return _execute(
 /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
 ///
 /// `POST /accounts/{account_id}/shares`
-Future<ApiResult<ResponseCommon55>> shareCreate({required String accountId, required ResourceSharingCreateShareRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareCreate({required String accountId, required ResourceSharingCreateShareRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares',
   headers: {..._config.defaultHeaders
@@ -69,7 +69,7 @@ return _execute(
 /// Fetches share by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55>> sharesGetById({required String accountId, required String shareId, bool? includeResources, bool? includeRecipientCounts, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> sharesGetById({required String accountId, required String shareId, bool? includeResources, bool? includeRecipientCounts, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Updating is not immediate, an updated share object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55>> shareUpdate({required String accountId, required String shareId, required ResourceSharingUpdateShareRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareUpdate({required String accountId, required String shareId, required ResourceSharingUpdateShareRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}',
   headers: {..._config.defaultHeaders
@@ -113,7 +113,7 @@ return _execute(
 /// Deletion is not immediate, an updated share object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55>> shareDelete({required String accountId, required String shareId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareDelete({required String accountId, required String shareId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}',
   headers: {..._config.defaultHeaders
@@ -132,7 +132,7 @@ return _execute(
 /// List share recipients by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResponseCommon55>> shareRecipientsList({required String accountId, required String shareId, bool? includeResources, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareRecipientsList({required String accountId, required String shareId, bool? includeResources, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/recipients',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// Adds a recipient to a resource share, granting them access to the shared resources.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResponseCommon55>> shareRecipientCreate({required String accountId, required String shareId, required ResourceSharingCreateShareRecipientRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareRecipientCreate({required String accountId, required String shareId, required ResourceSharingCreateShareRecipientRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/recipients',
   headers: {..._config.defaultHeaders
@@ -177,7 +177,7 @@ return _execute(
 /// Changes a share's recipients to match the given list. Returns an error if the share targets an organization.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<void>> shareRecipientsUpdate({required String accountId, required String shareId, required List<ResourceSharingCreateShareRecipientRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> shareRecipientsUpdate({required String accountId, required String shareId, required List<ResourceSharingCreateShareRecipientRequest> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/recipients',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// Get share recipient by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55>> shareRecipientsGetById({required String accountId, required String shareId, required String recipientId, bool? includeResources, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareRecipientsGetById({required String accountId, required String shareId, required String recipientId, bool? includeResources, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/recipients/${Uri.encodeComponent(recipientId)}',
   headers: {..._config.defaultHeaders
@@ -218,7 +218,7 @@ return _execute(
 /// Deletion is not immediate, an updated share recipient object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55>> shareRecipientDelete({required String accountId, required String shareId, required String recipientId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareRecipientDelete({required String accountId, required String shareId, required String recipientId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/recipients/${Uri.encodeComponent(recipientId)}',
   headers: {..._config.defaultHeaders
@@ -237,7 +237,7 @@ return _execute(
 /// List share resources by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResponseCommon55>> shareResourcesList({required String accountId, required String shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareResourcesList({required String accountId, required String shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/resources',
   headers: {..._config.defaultHeaders
@@ -262,7 +262,7 @@ return _execute(
 /// Adds a resource to an existing share, making it available to share recipients.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResponseCommon55>> shareResourceCreate({required String accountId, required String shareId, required ResourceSharingCreateShareResourceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareResourceCreate({required String accountId, required String shareId, required ResourceSharingCreateShareResourceRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/resources',
   headers: {..._config.defaultHeaders
@@ -283,7 +283,7 @@ return _execute(
 /// Get share resource by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55>> shareResourcesGetById({required String accountId, required String shareId, required String resourceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareResourcesGetById({required String accountId, required String shareId, required String resourceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/resources/${Uri.encodeComponent(resourceId)}',
   headers: {..._config.defaultHeaders
@@ -302,7 +302,7 @@ return _execute(
 /// Update is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55>> shareResourceUpdate({required String accountId, required String shareId, required String resourceId, required ResourceSharingUpdateShareResourceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareResourceUpdate({required String accountId, required String shareId, required String resourceId, required ResourceSharingUpdateShareResourceRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/resources/${Uri.encodeComponent(resourceId)}',
   headers: {..._config.defaultHeaders
@@ -323,7 +323,7 @@ return _execute(
 /// Deletion is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55>> shareResourceDelete({required String accountId, required String shareId, required String resourceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> shareResourceDelete({required String accountId, required String shareId, required String resourceId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/shares/${Uri.encodeComponent(shareId)}/resources/${Uri.encodeComponent(resourceId)}',
   headers: {..._config.defaultHeaders
@@ -342,7 +342,7 @@ return _execute(
 /// Lists all organization shares.
 ///
 /// `GET /organizations/{organization_id}/shares`
-Future<ApiResult<ResponseCommon55>> organizationSharesList({required String organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon55, Never>> organizationSharesList({required String organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/shares',
   headers: {..._config.defaultHeaders
@@ -367,7 +367,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -390,6 +390,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -400,7 +401,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

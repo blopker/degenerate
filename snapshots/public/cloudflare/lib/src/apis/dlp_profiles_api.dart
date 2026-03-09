@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all DLP profiles in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles`
-Future<ApiResult<ResponseCommon20>> dlpProfilesListAllProfiles({required String accountId, bool? all, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesListAllProfiles({required String accountId, bool? all, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Fetches a DLP profile by ID.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesGetDlpProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetDlpProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// Lists all DLP custom profiles in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/custom`
-Future<ApiResult<ResponseCommon20>> dlpProfilesListAllCustomProfiles({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesListAllCustomProfiles({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/custom',
   headers: {..._config.defaultHeaders
@@ -77,7 +77,7 @@ return _execute(
 /// Creates a DLP custom profile.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/custom`
-Future<ApiResult<ResponseCommon20>> dlpProfilesCreateCustomProfiles({required String accountId, required DlpNewCustomProfile body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreateCustomProfiles({required String accountId, required DlpNewCustomProfile body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/custom',
   headers: {..._config.defaultHeaders
@@ -98,7 +98,7 @@ return _execute(
 /// Fetches a custom DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesGetCustomProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetCustomProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/custom/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -117,7 +117,7 @@ return _execute(
 /// Updates a DLP custom profile.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesUpdateCustomProfile({required String accountId, required String profileId, required DlpCustomProfileUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdateCustomProfile({required String accountId, required String profileId, required DlpCustomProfileUpdate body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/custom/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -138,7 +138,7 @@ return _execute(
 /// Deletes a DLP custom profile.
 ///
 /// `DELETE /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesDeleteCustomProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesDeleteCustomProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/custom/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -157,7 +157,7 @@ return _execute(
 /// Creates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/predefined`
-Future<ApiResult<ResponseCommon20>> dlpProfilesCreatePredefinedProfile({required String accountId, required DlpPredefinedProfileUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreatePredefinedProfile({required String accountId, required DlpPredefinedProfileUpdate body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined',
   headers: {..._config.defaultHeaders
@@ -178,7 +178,7 @@ return _execute(
 /// Fetches a predefined DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesGetPredefinedProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetPredefinedProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -197,7 +197,7 @@ return _execute(
 /// Updates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesUpdatePredefinedProfile({required String accountId, required String profileId, required DlpPredefinedProfileUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdatePredefinedProfile({required String accountId, required String profileId, required DlpPredefinedProfileUpdate body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -218,7 +218,7 @@ return _execute(
 /// This is a no-op as predefined profiles can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20>> dlpProfilesDeletePredefinedProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesDeletePredefinedProfile({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}',
   headers: {..._config.defaultHeaders
@@ -239,7 +239,7 @@ return _execute(
 /// Fetches a predefined DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20>> dlpProfilesGetPredefinedProfileConfig({required String accountId, required String profileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetPredefinedProfileConfig({required String accountId, required String profileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}/config',
   headers: {..._config.defaultHeaders
@@ -260,7 +260,7 @@ return _execute(
 /// Creates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20>> dlpProfilesCreatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}/config',
   headers: {..._config.defaultHeaders
@@ -283,7 +283,7 @@ return _execute(
 /// Updates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20>> dlpProfilesUpdatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/profiles/predefined/${Uri.encodeComponent(profileId)}/config',
   headers: {..._config.defaultHeaders
@@ -300,7 +300,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -323,6 +323,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -333,7 +334,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

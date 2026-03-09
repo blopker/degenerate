@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// pointing to a polling endpoint where results can be retrieved once ready.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate`
-Future<ApiResult<ResponseCommon29>> emailSecurityInvestigate({required String accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityInvestigate({required String accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate',
   headers: {..._config.defaultHeaders
@@ -59,7 +59,7 @@ return _execute(
 /// metadata, and security scan results.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetMessage({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetMessage({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Returns detection details such as threat categories and sender information for non-benign messages.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/detections`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetMessageDetections({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetMessageDetections({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/detections',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Moves a single email message to a different folder or changes its quarantine status.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/{postfix_id}/move`
-Future<ApiResult<ResponseCommon29>> emailSecurityPostMessageMove({required String accountId, required String postfixId, required EmailSecurityPostMessageMoveRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityPostMessageMove({required String accountId, required String postfixId, required EmailSecurityPostMessageMoveRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/move',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Returns a preview of the message body as a base64 encoded PNG image for non-benign messages.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/preview`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetMessagePreview({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetMessagePreview({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/preview',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Returns the raw eml of any non-benign message.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/raw`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetMessageRaw({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetMessageRaw({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/raw',
   headers: {..._config.defaultHeaders
@@ -157,7 +157,7 @@ return _execute(
 /// based on new analysis.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/{postfix_id}/reclassify`
-Future<ApiResult<ResponseCommon29>> emailSecurityPostReclassify({required String accountId, required String postfixId, required EmailSecurityPostReclassifyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityPostReclassify({required String accountId, required String postfixId, required EmailSecurityPostReclassifyRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/reclassify',
   headers: {..._config.defaultHeaders
@@ -179,7 +179,7 @@ return _execute(
 /// security processing.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/trace`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetMessageTrace({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetMessageTrace({required String accountId, required String postfixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/${Uri.encodeComponent(postfixId)}/trace',
   headers: {..._config.defaultHeaders
@@ -198,7 +198,7 @@ return _execute(
 /// Maximum batch size: 1000 messages per request
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/move`
-Future<ApiResult<ResponseCommon29>> emailSecurityPostBulkMessageMove({required String accountId, required EmailSecurityPostBulkMessageMoveRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityPostBulkMessageMove({required String accountId, required EmailSecurityPostBulkMessageMoveRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/move',
   headers: {..._config.defaultHeaders
@@ -220,7 +220,7 @@ return _execute(
 /// embedded content.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/preview`
-Future<ApiResult<ResponseCommon29>> emailSecurityPostPreview({required String accountId, required EmailSecurityPostPreviewRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityPostPreview({required String accountId, required EmailSecurityPostPreviewRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/preview',
   headers: {..._config.defaultHeaders
@@ -241,7 +241,7 @@ return _execute(
 /// Releases a quarantined email message, allowing it to be delivered to the recipient.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/release`
-Future<ApiResult<ResponseCommon29>> emailSecurityPostRelease({required String accountId, required List<String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityPostRelease({required String accountId, required List<String> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/investigate/release',
   headers: {..._config.defaultHeaders
@@ -263,7 +263,7 @@ return _execute(
 /// detected.
 ///
 /// `GET /accounts/{account_id}/email-security/phishguard/reports`
-Future<ApiResult<ResponseCommon29>> emailSecurityGetPhishguardReports({required String accountId, String? fromDate, String? toDate, DateTime? start, DateTime? end, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetPhishguardReports({required String accountId, String? fromDate, String? toDate, DateTime? start, DateTime? end, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/phishguard/reports',
   headers: {..._config.defaultHeaders
@@ -288,7 +288,7 @@ return _execute(
 /// This endpoint returns information for submissions to made to reclassify emails.
 ///
 /// `GET /accounts/{account_id}/email-security/submissions`
-Future<ApiResult<ResponseCommon29>> emailSecuritySubmissions({required String accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecuritySubmissions({required String accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/email-security/submissions',
   headers: {..._config.defaultHeaders
@@ -317,7 +317,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -340,6 +340,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -350,7 +351,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List of Worker Deployments. The first deployment in the list is the latest deployment actively serving traffic.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80>> workerDeploymentsListDeployments({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsListDeployments({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/deployments',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Deployments configure how [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions) are deployed to traffic. A deployment can consist of one or two versions of a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80>> workerDeploymentsCreateDeployment({required String accountId, required String scriptName, bool? force, required WorkersDeployment body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsCreateDeployment({required String accountId, required String scriptName, bool? force, required WorkersDeployment body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/deployments',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Get information about a Worker Deployment.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80>> workerDeploymentsGetDeployment({required String accountId, required String scriptName, required String deploymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsGetDeployment({required String accountId, required String scriptName, required String deploymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/deployments/${Uri.encodeComponent(deploymentId)}',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// Delete a Worker Deployment. The latest deployment, which is actively serving traffic, cannot be deleted. All other deployments can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80>> workerDeploymentsDeleteDeployment({required String accountId, required String scriptName, required String deploymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsDeleteDeployment({required String accountId, required String scriptName, required String deploymentId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/deployments/${Uri.encodeComponent(deploymentId)}',
   headers: {..._config.defaultHeaders
@@ -94,7 +94,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -117,6 +117,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -127,7 +128,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

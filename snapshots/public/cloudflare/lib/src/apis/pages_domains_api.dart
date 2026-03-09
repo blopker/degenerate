@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch a list of all domains associated with a Pages project.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<ResponseCommon51>> pagesDomainsGetDomains({required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomains({required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}/domains',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Add a new domain for the Pages project.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<ResponseCommon51>> pagesDomainsAddDomain({required String projectName, required String accountId, required PagesDomainsAddDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsAddDomain({required String projectName, required String accountId, required PagesDomainsAddDomainRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}/domains',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetch a single domain.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51>> pagesDomainsGetDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}/domains/${Uri.encodeComponent(domainName)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Retry the validation status of a single domain.
 ///
 /// `PATCH /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51>> pagesDomainsPatchDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsPatchDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}/domains/${Uri.encodeComponent(domainName)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Delete a Pages project's domain.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51>> pagesDomainsDeleteDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsDeleteDomain({required String domainName, required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}/domains/${Uri.encodeComponent(domainName)}',
   headers: {..._config.defaultHeaders
@@ -110,7 +110,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -133,6 +133,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -143,7 +144,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

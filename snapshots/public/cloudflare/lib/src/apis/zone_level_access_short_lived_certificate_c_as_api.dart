@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches a short-lived certificate CA and its public key.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/ca',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Generates a new short-lived certificate CA and public key.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/ca',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Deletes a short-lived certificate CA.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/ca',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Lists short-lived certificate CAs and their public keys.
 ///
 /// `GET /zones/{zone_id}/access/apps/ca`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAs({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAs({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/ca',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -112,6 +112,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -122,7 +123,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

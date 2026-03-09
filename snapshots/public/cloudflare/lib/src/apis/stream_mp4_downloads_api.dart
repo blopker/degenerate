@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists the downloads created for a video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66>> streamMP4DownloadsListDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsListDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/downloads',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a download for a video when a video is ready to view. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66>> streamMP4DownloadsCreateDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsCreateDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/downloads',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Delete the downloads for a video. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66>> streamMP4DownloadsDeleteDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsDeleteDownloads({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/downloads',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Creates a download for a video of specified type. For backwards-compatibility, POST requests to /downloads will enable the default download.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<ResponseCommon66>> streamDownloadsCreateTypeSpecificDownloads({required String identifier, required String accountId, required StreamDownloadType downloadType, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamDownloadsCreateTypeSpecificDownloads({required String identifier, required String accountId, required StreamDownloadType downloadType, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/downloads/${Uri.encodeComponent(downloadType.toString())}',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 /// Delete specific type of download. For backwards-compatibility, DELETE requests to /downloads will delete the default download.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<ResponseCommon66>> streamDownloadsDeleteTypeSpecificDownloads({required String identifier, required String accountId, required StreamDownloadType downloadType, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamDownloadsDeleteTypeSpecificDownloads({required String identifier, required String accountId, required StreamDownloadType downloadType, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/downloads/${Uri.encodeComponent(downloadType.toString())}',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -131,6 +131,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -141,7 +142,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

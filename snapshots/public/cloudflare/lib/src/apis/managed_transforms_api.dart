@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsResponse>> listManagedTransforms({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listManagedTransforms({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/managed_headers',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsResponse>> updateManagedTransforms({required String zoneId, required RulesetsManagedTransforms body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateManagedTransforms({required String zoneId, required RulesetsManagedTransforms body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/managed_headers',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void>> deleteManagedTransforms({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteManagedTransforms({required String zoneId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/managed_headers',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -93,6 +93,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -103,7 +104,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

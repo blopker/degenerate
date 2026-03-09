@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
 ///
 /// `GET /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86>> zones0HoldGet({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldGet({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hold',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname.
 ///
 /// `POST /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86>> zones0HoldPost({required String zoneId, bool? includeSubdomains, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required String zoneId, bool? includeSubdomains, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hold',
   headers: {..._config.defaultHeaders
@@ -59,7 +59,7 @@ return _execute(
 /// The hold is enabled if the `hold_after` date-time value is in the past.
 ///
 /// `PATCH /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86>> zones0HoldPatch({required String zoneId, required Zones0HoldPatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPatch({required String zoneId, required Zones0HoldPatchRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hold',
   headers: {..._config.defaultHeaders
@@ -81,7 +81,7 @@ return _execute(
 /// creation and activation of zones with this zone's hostname.
 ///
 /// `DELETE /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86>> zones0HoldDelete({required String zoneId, String? holdAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required String zoneId, String? holdAfter, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hold',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -122,6 +122,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -132,7 +133,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

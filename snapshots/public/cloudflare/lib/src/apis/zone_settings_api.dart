@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch a single zone setting by name
 ///
 /// `GET /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88>> zoneSettingsGetSingleSetting({required String zoneId, required String settingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon88, Never>> zoneSettingsGetSingleSetting({required String zoneId, required String settingId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/${Uri.encodeComponent(settingId)}',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Updates a single zone setting by the identifier
 ///
 /// `PATCH /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88>> zoneSettingsEditSingleSetting({required String zoneId, required String settingId, required ZonesZoneSettingsSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon88, Never>> zoneSettingsEditSingleSetting({required String zoneId, required String settingId, required ZonesZoneSettingsSingleRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/${Uri.encodeComponent(settingId)}',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `GET /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetAegisSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetAegisSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/aegis',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `PATCH /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeAegisSetting({required String zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeAegisSetting({required String zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/aegis',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65>> zoneSettingsGetFontsSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetFontsSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/fonts',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65>> zoneSettingsChangeFontsSetting({required String zoneId, required ZoneSettingsChangeFontsSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeFontsSetting({required String zoneId, required ZoneSettingsChangeFontsSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/fonts',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `GET /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/origin_h2_max_streams',
   headers: {..._config.defaultHeaders
@@ -160,7 +160,7 @@ return _execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required String zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required String zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/origin_h2_max_streams',
   headers: {..._config.defaultHeaders
@@ -181,7 +181,7 @@ return _execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `GET /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/origin_max_http_version',
   headers: {..._config.defaultHeaders
@@ -200,7 +200,7 @@ return _execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required String zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required String zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/origin_max_http_version',
   headers: {..._config.defaultHeaders
@@ -223,7 +223,7 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65>> zoneSettingsGetSpeedBrainSetting({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetSpeedBrainSetting({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/speed_brain',
   headers: {..._config.defaultHeaders
@@ -244,7 +244,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65>> zoneSettingsChangeSpeedBrainSetting({required String zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeSpeedBrainSetting({required String zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/speed_brain',
   headers: {..._config.defaultHeaders
@@ -261,7 +261,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -284,6 +284,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -294,7 +295,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

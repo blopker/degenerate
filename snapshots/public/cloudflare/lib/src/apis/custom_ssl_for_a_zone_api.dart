@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List, search, and filter all of your custom SSL certificates. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 ///
 /// `GET /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneListSslConfigurations({required String zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required String zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Upload a new SSL certificate for a zone.
 ///
 /// `POST /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneCreateSslConfiguration({required String zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneCreateSslConfiguration({required String zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.
 ///
 /// `GET /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneSslConfigurationDetails({required String customCertificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneSslConfigurationDetails({required String customCertificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates/${Uri.encodeComponent(customCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Upload a new private key and/or PEM/CRT for the SSL certificate. Note: PATCHing a configuration for sni_custom certificates will result in a new resource id being returned, and the previous one being deleted.
 ///
 /// `PATCH /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneEditSslConfiguration({required String customCertificateId, required String zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneEditSslConfiguration({required String customCertificateId, required String zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates/${Uri.encodeComponent(customCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Remove a SSL certificate from a zone.
 ///
 /// `DELETE /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneDeleteSslConfiguration({required String customCertificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneDeleteSslConfiguration({required String customCertificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates/${Uri.encodeComponent(customCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// If a zone has multiple SSL certificates, you can set the order in which they should be used during a request. The higher priority will break ties across overlapping 'legacy_custom' certificates.
 ///
 /// `PUT /zones/{zone_id}/custom_certificates/prioritize`
-Future<ApiResult<ResponseCommon68>> customSslForAZoneRePrioritizeSslCertificates({required String zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneRePrioritizeSslCertificates({required String zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/custom_certificates/prioritize',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -162,6 +162,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -172,7 +173,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

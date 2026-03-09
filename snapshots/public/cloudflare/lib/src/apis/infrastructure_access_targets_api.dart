@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// together.
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37>> infraTargetsList({required String accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required String accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Create new target
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37>> infraTargetsPost({required String accountId, required InfraTargetsPostRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required String accountId, required InfraTargetsPostRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Get target
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37>> infraTargetsGet({required String accountId, required String targetId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required String accountId, required String targetId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets/${Uri.encodeComponent(targetId)}',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 /// Update target
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37>> infraTargetsPut({required String accountId, required String targetId, required InfraTargetsPutRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required String accountId, required String targetId, required InfraTargetsPutRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets/${Uri.encodeComponent(targetId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 /// Delete target
 ///
 /// `DELETE /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<void>> infraTargetsDelete({required String accountId, required String targetId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> infraTargetsDelete({required String accountId, required String targetId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets/${Uri.encodeComponent(targetId)}',
   headers: {..._config.defaultHeaders
@@ -129,7 +129,7 @@ return _execute(
 /// Adds one or more targets.
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/batch`
-Future<ApiResult<ResponseCommon37>> infraTargetsPutBatch({required String accountId, required List<InfraTargetsPutBatchRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required String accountId, required List<InfraTargetsPutBatchRequest> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets/batch',
   headers: {..._config.defaultHeaders
@@ -150,7 +150,7 @@ return _execute(
 /// Removes one or more targets.
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets/batch_delete`
-Future<ApiResult<void>> infraTargetsDeleteBatchPost({required String accountId, required InfraTargetsDeleteBatchPostRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> infraTargetsDeleteBatchPost({required String accountId, required InfraTargetsDeleteBatchPostRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/infrastructure/targets/batch_delete',
   headers: {..._config.defaultHeaders
@@ -165,7 +165,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -188,6 +188,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -198,7 +199,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

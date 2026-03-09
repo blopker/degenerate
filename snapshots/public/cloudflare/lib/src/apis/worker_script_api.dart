@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/assets/upload`
-Future<ApiResult<ResponseCommon80>> workerAssetsUpload({required String accountId, required bool base64, required Map<String,String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required String accountId, required bool base64, required Map<String,String> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/assets/upload',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Fetch a list of uploaded workers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts`
-Future<ApiResult<ResponseCommon80>> workerScriptListWorkers({required String accountId, String? tags, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptListWorkers({required String accountId, String? tags, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Search for Workers in an account.
 ///
 /// `GET /accounts/{account_id}/workers/scripts-search`
-Future<ApiResult<ResponseCommon80>> workerScriptSearchWorkers({required String accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSearchWorkers({required String accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts-search',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Fetch raw script content for your worker. Note this is the original script content, not JSON encoded.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<void>> workerScriptDownloadWorker({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerScriptDownloadWorker({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80>> workerScriptUploadWorkerModule({required String accountId, required String scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({required String accountId, required String scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -130,7 +130,7 @@ return _execute(
 /// Delete your worker. This call has no response body on a successful delete.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80>> workerScriptDeleteWorker({required String accountId, required String scriptName, bool? force, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteWorker({required String accountId, required String scriptName, bool? force, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 /// Start uploading a collection of assets for use in a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/assets-upload-session`
-Future<ApiResult<ResponseCommon80>> workerScriptUpdateCreateAssetsUploadSession({required String accountId, required String scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateCreateAssetsUploadSession({required String accountId, required String scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/assets-upload-session',
   headers: {..._config.defaultHeaders
@@ -173,7 +173,7 @@ return _execute(
 /// Put script content without touching config or metadata.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
-Future<ApiResult<ResponseCommon80>> workerScriptPutContent({required String accountId, required String scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required String accountId, required String scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/content',
   headers: {..._config.defaultHeaders
@@ -194,7 +194,7 @@ return _execute(
 /// Fetch script content only.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/content/v2`
-Future<ApiResult<void>> workerScriptGetContent({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerScriptGetContent({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/content/v2',
   headers: {..._config.defaultHeaders
@@ -211,7 +211,7 @@ return _execute(
 /// Get script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Includes Logpush and Tail Consumers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80>> workerScriptSettingsGetSettings({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsGetSettings({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/script-settings',
   headers: {..._config.defaultHeaders
@@ -230,7 +230,7 @@ return _execute(
 /// Patch script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Including but not limited to Logpush and Tail Consumers.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80>> workerScriptSettingsPatchSettings({required String accountId, required String scriptName, required WorkersScriptSettingsItem body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsPatchSettings({required String accountId, required String scriptName, required WorkersScriptSettingsItem body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/script-settings',
   headers: {..._config.defaultHeaders
@@ -251,7 +251,7 @@ return _execute(
 /// List secrets bound to a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80>> workerListScriptSecrets({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerListScriptSecrets({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/secrets',
   headers: {..._config.defaultHeaders
@@ -270,7 +270,7 @@ return _execute(
 /// Add a secret to a script.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80>> workerPutScriptSecret({required String accountId, required String scriptName, required WorkersSecret body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerPutScriptSecret({required String accountId, required String scriptName, required WorkersSecret body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/secrets',
   headers: {..._config.defaultHeaders
@@ -291,7 +291,7 @@ return _execute(
 /// Get a given secret binding (value omitted) on a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80>> workerGetScriptSecret({required String accountId, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerGetScriptSecret({required String accountId, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/secrets/${Uri.encodeComponent(secretName)}',
   headers: {..._config.defaultHeaders
@@ -313,7 +313,7 @@ return _execute(
 /// Remove a secret from a script.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80>> workerDeleteScriptSecret({required String accountId, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeleteScriptSecret({required String accountId, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/secrets/${Uri.encodeComponent(secretName)}',
   headers: {..._config.defaultHeaders
@@ -335,7 +335,7 @@ return _execute(
 /// Get metadata and config, such as bindings or usage model.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80>> workerScriptGetSettings({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSettings({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/settings',
   headers: {..._config.defaultHeaders
@@ -354,7 +354,7 @@ return _execute(
 /// Patch metadata or config, such as bindings or usage model.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80>> workerScriptPatchSettings({required String accountId, required String scriptName, required WorkerScriptPatchSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required String accountId, required String scriptName, required WorkerScriptPatchSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/settings',
   headers: {..._config.defaultHeaders
@@ -375,7 +375,7 @@ return _execute(
 /// Get if the Worker is available on the workers.dev subdomain.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80>> workerScriptGetSubdomain({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSubdomain({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/subdomain',
   headers: {..._config.defaultHeaders
@@ -394,7 +394,7 @@ return _execute(
 /// Enable or disable the Worker on the workers.dev subdomain.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80>> workerScriptPostSubdomain({required String accountId, required String scriptName, required WorkerScriptPostSubdomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPostSubdomain({required String accountId, required String scriptName, required WorkerScriptPostSubdomainRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/subdomain',
   headers: {..._config.defaultHeaders
@@ -415,7 +415,7 @@ return _execute(
 /// Disable all workers.dev subdomains for a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80>> workerScriptDeleteSubdomain({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteSubdomain({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/subdomain',
   headers: {..._config.defaultHeaders
@@ -434,7 +434,7 @@ return _execute(
 /// Fetches the Usage Model for a given Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80>> workerScriptFetchUsageModel({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptFetchUsageModel({required String accountId, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/usage-model',
   headers: {..._config.defaultHeaders
@@ -453,7 +453,7 @@ return _execute(
 /// Updates the Usage Model for a given Worker. Requires a Workers Paid subscription.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80>> workerScriptUpdateUsageModel({required String accountId, required String scriptName, required WorkerScriptUpdateUsageModelRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateUsageModel({required String accountId, required String scriptName, required WorkerScriptUpdateUsageModelRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/scripts/${Uri.encodeComponent(scriptName)}/usage-model',
   headers: {..._config.defaultHeaders
@@ -470,7 +470,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -493,6 +493,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -503,7 +504,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

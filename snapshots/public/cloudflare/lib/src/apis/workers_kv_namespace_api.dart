@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns the namespaces owned by an account.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceListNamespaces({required String accountId, double? page, double? perPage, WorkersKvNamespaceListNamespacesOrder? order, WorkersKvNamespaceListNamespacesDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceListNamespaces({required String accountId, double? page, double? perPage, WorkersKvNamespaceListNamespacesOrder? order, WorkersKvNamespaceListNamespacesDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Creates a namespace under the given title. A `400` is returned if the account already owns a namespace with this title. A namespace must be explicitly deleted to be replaced.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceCreateANamespace({required String accountId, required WorkersKvCreateRenameNamespaceBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceCreateANamespace({required String accountId, required WorkersKvCreateRenameNamespaceBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Get the namespace corresponding to the given ID.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceGetANamespace({required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceGetANamespace({required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Modifies a namespace's title.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceRenameANamespace({required String namespaceId, required String accountId, required WorkersKvCreateRenameNamespaceBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceRenameANamespace({required String namespaceId, required String accountId, required WorkersKvCreateRenameNamespaceBody body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Deletes the namespace corresponding to the given ID.
 ///
 /// `DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceRemoveANamespace({required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceRemoveANamespace({required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// Write multiple keys and values at once. Body should be an array of up to 10,000 key-value pairs to be stored, along with optional expiration information. Existing values and expirations will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored. The entire request size must be 100 megabytes or less.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceWriteMultipleKeyValuePairs({required String namespaceId, required String accountId, required List<WorkersKvBulkWrite2> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceWriteMultipleKeyValuePairs({required String namespaceId, required String accountId, required List<WorkersKvBulkWrite2> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/bulk',
   headers: {..._config.defaultHeaders
@@ -143,7 +143,7 @@ return _execute(
 /// Remove multiple KV pairs from the namespace. Body should be an array of up to 10,000 keys to be removed.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/delete`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceDeleteMultipleKeyValuePairs({required String namespaceId, required String accountId, required List<String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceDeleteMultipleKeyValuePairs({required String namespaceId, required String accountId, required List<String> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/bulk/delete',
   headers: {..._config.defaultHeaders
@@ -164,7 +164,7 @@ return _execute(
 /// Retrieve up to 100 KV pairs from the namespace. Keys must contain text-based values. JSON values can optionally be parsed instead of being returned as a string value. Metadata can be included if `withMetadata` is true.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/get`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceGetMultipleKeyValuePairs({required String namespaceId, required String accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceGetMultipleKeyValuePairs({required String namespaceId, required String accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/bulk/get',
   headers: {..._config.defaultHeaders
@@ -185,7 +185,7 @@ return _execute(
 /// Lists a namespace's keys.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/keys`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceListANamespaceSKeys({required String namespaceId, required String accountId, double? limit, String? prefix, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceListANamespaceSKeys({required String namespaceId, required String accountId, double? limit, String? prefix, String? cursor, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/keys',
   headers: {..._config.defaultHeaders
@@ -209,7 +209,7 @@ return _execute(
 /// Returns the metadata associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/metadata/{key_name}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceReadTheMetadataForAKey({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceReadTheMetadataForAKey({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/metadata/${Uri.encodeComponent(keyName)}',
   headers: {..._config.defaultHeaders
@@ -228,7 +228,7 @@ return _execute(
 /// Returns the value associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. If the KV-pair is set to expire at some point, the expiration time as measured in seconds since the UNIX epoch will be returned in the `expiration` response header.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<void>> workersKvNamespaceReadKeyValuePair({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workersKvNamespaceReadKeyValuePair({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/values/${Uri.encodeComponent(keyName)}',
   headers: {..._config.defaultHeaders
@@ -245,7 +245,7 @@ return _execute(
 /// Write a value identified by a key. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. Body should be the value to be stored. If JSON metadata to be associated with the key/value pair is needed, use `multipart/form-data` content type for your PUT request (see dropdown below in `REQUEST BODY SCHEMA`). Existing values, expirations, and metadata will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceWriteKeyValuePairWithMetadata({required String keyName, required String namespaceId, required String accountId, double? expiration, double? expirationTtl, required WorkersKvValue body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required String keyName, required String namespaceId, required String accountId, double? expiration, double? expirationTtl, required WorkersKvValue body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/values/${Uri.encodeComponent(keyName)}',
   headers: {..._config.defaultHeaders
@@ -270,7 +270,7 @@ return _execute(
 /// Remove a KV pair from the namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
 ///
 /// `DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<ResponseCommon79>> workersKvNamespaceDeleteKeyValuePair({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceDeleteKeyValuePair({required String keyName, required String namespaceId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId)}/values/${Uri.encodeComponent(keyName)}',
   headers: {..._config.defaultHeaders
@@ -285,7 +285,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -308,6 +308,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -318,7 +319,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

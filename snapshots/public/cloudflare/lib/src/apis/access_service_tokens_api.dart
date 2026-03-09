@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all service tokens.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensListServiceTokens({required String accountId, String? name, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensListServiceTokens({required String accountId, String? name, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to rotate the Client Secret or create a new service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensCreateAServiceToken({required String accountId, required AccessServiceTokensCreateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensCreateAServiceToken({required String accountId, required AccessServiceTokensCreateAServiceTokenRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Fetches a single service token.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensGetAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensGetAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Updates a configured service token.
 ///
 /// `PUT /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensUpdateAServiceToken({required String serviceTokenId, required String accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensUpdateAServiceToken({required String serviceTokenId, required String accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Deletes a service token.
 ///
 /// `DELETE /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensDeleteAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensDeleteAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// Refreshes the expiration of a service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/refresh`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensRefreshAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRefreshAServiceToken({required String serviceTokenId, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}/refresh',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// Generates a new Client Secret for a service token and revokes the old one.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/rotate`
-Future<ApiResult<ResponseCommon3>> accessServiceTokensRotateAServiceToken({required String serviceTokenId, required String accountId, AccessServiceTokensRotateAServiceTokenRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRotateAServiceToken({required String serviceTokenId, required String accountId, AccessServiceTokensRotateAServiceTokenRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}/rotate',
   headers: {..._config.defaultHeaders
@@ -158,7 +158,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -181,6 +181,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -191,7 +192,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/tender_transactions.json`
-Future<ApiResult<void>> deprecated202001GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-04
 ///
 /// `GET /admin/api/2020-04/tender_transactions.json`
-Future<ApiResult<void>> deprecated202004GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-07
 ///
 /// `GET /admin/api/2020-07/tender_transactions.json`
-Future<ApiResult<void>> deprecated202007GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-10
 ///
 /// `GET /admin/api/2020-10/tender_transactions.json`
-Future<ApiResult<void>> getTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -117,7 +117,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2021-01
 ///
 /// `GET /admin/api/2021-01/tender_transactions.json`
-Future<ApiResult<void>> deprecated202101GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-unstable
 ///
 /// `GET /admin/api/unstable/tender_transactions.json`
-Future<ApiResult<void>> deprecatedUnstableGetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/tender_transactions.json',
   headers: {..._config.defaultHeaders
@@ -163,7 +163,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -186,6 +186,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -196,7 +197,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

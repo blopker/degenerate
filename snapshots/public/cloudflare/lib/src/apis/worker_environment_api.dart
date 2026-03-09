@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<void>> workerEnvironmentGetScriptContent({required String accountId, required String serviceName, required String environmentName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerEnvironmentGetScriptContent({required String accountId, required String serviceName, required String environmentName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/services/${Uri.encodeComponent(serviceName)}/environments/${Uri.encodeComponent(environmentName)}/content',
   headers: {..._config.defaultHeaders
@@ -34,7 +34,7 @@ return _execute(
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<ResponseCommon80>> workerEnvironmentPutScriptContent({required String accountId, required String serviceName, required String environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required String accountId, required String serviceName, required String environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/services/${Uri.encodeComponent(serviceName)}/environments/${Uri.encodeComponent(environmentName)}/content',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80>> workerScriptEnvironmentGetSettings({required String accountId, required String serviceName, required String environmentName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required String accountId, required String serviceName, required String environmentName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/services/${Uri.encodeComponent(serviceName)}/environments/${Uri.encodeComponent(environmentName)}/settings',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80>> workerScriptEnvironmentPatchSettings({required String accountId, required String serviceName, required String environmentName, required ResponseCommon80 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required String accountId, required String serviceName, required String environmentName, required ResponseCommon80 body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/services/${Uri.encodeComponent(serviceName)}/environments/${Uri.encodeComponent(environmentName)}/settings',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -114,6 +114,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -124,7 +125,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

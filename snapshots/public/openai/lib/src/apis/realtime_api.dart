@@ -16,7 +16,7 @@ final ApiConfig _config;
 /// to complete the peer connection.
 ///
 /// `POST /realtime/calls`
-Future<ApiResult<void>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls',
   headers: {..._config.defaultHeaders
@@ -34,7 +34,7 @@ return _execute(
 /// handle it.
 ///
 /// `POST /realtime/calls/{call_id}/accept`
-Future<ApiResult<void>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/accept',
   headers: {..._config.defaultHeaders
@@ -52,7 +52,7 @@ return _execute(
 /// WebRTC.
 ///
 /// `POST /realtime/calls/{call_id}/hangup`
-Future<ApiResult<void>> hangupRealtimeCall({required String callId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/hangup',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// Transfer an active SIP call to a new destination using the SIP REFER verb.
 ///
 /// `POST /realtime/calls/{call_id}/refer`
-Future<ApiResult<void>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/refer',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 /// Decline an incoming SIP call by returning a SIP status code to the caller.
 ///
 /// `POST /realtime/calls/{call_id}/reject`
-Future<ApiResult<void>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/reject',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/client_secrets`
-Future<ApiResult<RealtimeCreateClientSecretResponse>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/client_secrets',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/sessions`
-Future<ApiResult<RealtimeSessionCreateResponse>> createRealtimeSession({required RealtimeSessionCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/sessions',
   headers: {..._config.defaultHeaders
@@ -170,7 +170,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/transcription_sessions`
-Future<ApiResult<RealtimeTranscriptionSessionCreateResponse>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/transcription_sessions',
   headers: {..._config.defaultHeaders
@@ -187,7 +187,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -210,6 +210,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -220,7 +221,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

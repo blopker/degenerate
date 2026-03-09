@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all snippets belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets`
-Future<ApiResult<SnippetsResponse>> listZoneSnippets({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> listZoneSnippets({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Fetches a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse>> getZoneSnippet({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> getZoneSnippet({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/${Uri.encodeComponent(snippetName)}',
   headers: {..._config.defaultHeaders
@@ -59,7 +59,7 @@ return _execute(
 /// Creates or updates a snippet belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse>> updateZoneSnippet({required String zoneId, required String snippetName, required UpdateZoneSnippetRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippet({required String zoneId, required String snippetName, required UpdateZoneSnippetRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/${Uri.encodeComponent(snippetName)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Deletes a snippet belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse>> deleteZoneSnippet({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippet({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/${Uri.encodeComponent(snippetName)}',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Fetches the content of a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}/content`
-Future<ApiResult<void>> getZoneSnippetContent({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getZoneSnippetContent({required String zoneId, required String snippetName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/${Uri.encodeComponent(snippetName)}/content',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Fetches all snippet rules belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse>> listZoneSnippetRules({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> listZoneSnippetRules({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/snippet_rules',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Updates all snippet rules belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse>> updateZoneSnippetRules({required String zoneId, required UpdateZoneSnippetRulesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippetRules({required String zoneId, required UpdateZoneSnippetRulesRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/snippet_rules',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// Deletes all snippet rules belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse>> deleteZoneSnippetRules({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippetRules({required String zoneId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/snippets/snippet_rules',
   headers: {..._config.defaultHeaders
@@ -171,7 +171,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -194,6 +194,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -204,7 +205,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -27,7 +27,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
   final typeLowerer = TypeLowerer();
   final types = typeLowerer.lowerSchemas(doc.schemas);
 
-  final opLowerer = OperationLowerer(typeLowerer);
+  final opLowerer = OperationLowerer(typeLowerer, doc: doc);
   final apis = opLowerer.lowerPaths(doc.paths);
 
   return (types: types, apis: apis, typeLowerer: typeLowerer);
@@ -316,6 +316,25 @@ void main() {
       expect(source, contains('ApiException'));
     });
 
+    test('_execute passes onError callback for typed error parsing', () {
+      expect(source, contains('onError'));
+    });
+
+    test('operations pass error deserializer when error schema exists', () {
+      // Petstore has default error responses with Error schema.
+      // The generated code should try to parse errors as ErrorModel.
+      expect(source, contains('ErrorModel.fromJson'));
+    });
+
+    test('interceptor-recovered errors also use typed error parsing', () {
+      // When an interceptor recovers a non-2xx response, the typed
+      // onError callback should be applied to it too.
+      expect(
+        source,
+        contains('error: onError != null ? onError(recovered) : null'),
+      );
+    });
+
     test('is valid Dart (formats without error)', () {
       expect(() => _formatOrFail(source), returnsNormally);
     });
@@ -386,6 +405,48 @@ void main() {
           );
         }
       }
+    });
+
+    test('produces root SDK facade', () {
+      final barrel = files['lib/petstore_client.dart']!;
+      expect(barrel, contains("export 'src/client/petstore_client_api.dart'"));
+      final sdkFile = files['lib/src/client/petstore_client_api.dart'];
+      expect(sdkFile, isNotNull,
+          reason: 'Should generate root SDK facade file');
+      expect(sdkFile, contains('class PetstoreClientApi'));
+      expect(sdkFile, contains('PetsApi'));
+    });
+
+    test('root SDK facade doc example uses real method name', () {
+      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      // Example should reference an actual generated method, not "listAll"
+      expect(sdkFile, isNot(contains('listAll')));
+    });
+
+    test('root SDK facade field names drop redundant Api suffix', () {
+      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      // "petsApi" is redundant — should just be "pets"
+      expect(sdkFile, contains('late final PetsApi pets = '));
+    });
+
+    test('ApiResult has typed error parameter', () {
+      final resultSource = files['lib/src/client/api_result.dart']!;
+      // ApiResult should have two type params: <T, E>
+      expect(resultSource, contains('ApiResult<T, E>'));
+      expect(resultSource, contains('ApiError<T, E>'));
+      // E? error instead of Object? error
+      expect(resultSource, contains('final E? error'));
+    });
+
+    test('operations return ApiResult with typed error', () {
+      final apiSource = files['lib/src/apis/pets_api.dart']!;
+      // Should use ApiResult<List<Pet>, ErrorModel> not just ApiResult<List<Pet>>
+      expect(apiSource, contains('ApiResult<List<Pet>, ErrorModel>'));
+    });
+
+    test('api_config.dart includes BaseInterceptor', () {
+      final configSource = files['lib/src/client/api_config.dart']!;
+      expect(configSource, contains('class BaseInterceptor'));
     });
   });
 }

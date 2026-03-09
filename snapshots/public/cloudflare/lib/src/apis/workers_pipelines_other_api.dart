@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List/Filter Pipelines in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse>> getV4AccountsByAccountIdPipelinesV1Pipelines({required String accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesResponse, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required String accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/pipelines',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a new Pipeline.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse2>> postV4AccountsByAccountIdPipelinesV1Pipelines({required String accountId, PipelinesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required String accountId, PipelinesRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/pipelines',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Get Pipelines Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<PipelinesByPipelineIdResponse>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required String accountId, required String pipelineId, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesByPipelineIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required String accountId, required String pipelineId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<void>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required String accountId, required String pipelineId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required String accountId, required String pipelineId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// List/Filter Sinks in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse>> getV4AccountsByAccountIdPipelinesV1Sinks({required String accountId, String? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksResponse, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required String accountId, String? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/sinks',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Create a new Sink.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse2>> postV4AccountsByAccountIdPipelinesV1Sinks({required String accountId, SinksRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required String accountId, SinksRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/sinks',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// Get Sink Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<SinksBySinkIdResponse>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required String accountId, required String sinkId, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksBySinkIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required String accountId, required String sinkId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId)}',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<void>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required String accountId, required String sinkId, String? force, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required String accountId, required String sinkId, String? force, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId)}',
   headers: {..._config.defaultHeaders
@@ -181,7 +181,7 @@ return _execute(
 /// List/Filter Streams in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse>> getV4AccountsByAccountIdPipelinesV1Streams({required String accountId, String? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsResponse, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required String accountId, String? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/streams',
   headers: {..._config.defaultHeaders
@@ -205,7 +205,7 @@ return _execute(
 /// Create a new Stream.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse2>> postV4AccountsByAccountIdPipelinesV1Streams({required String accountId, StreamsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required String accountId, StreamsRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/streams',
   headers: {..._config.defaultHeaders
@@ -226,7 +226,7 @@ return _execute(
 /// Get Stream Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsByStreamIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/streams/${Uri.encodeComponent(streamId)}',
   headers: {..._config.defaultHeaders
@@ -245,7 +245,7 @@ return _execute(
 /// Update a Stream.
 ///
 /// `PATCH /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse2>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, StreamsByStreamIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsByStreamIdResponse2, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, StreamsByStreamIdRequest? body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/streams/${Uri.encodeComponent(streamId)}',
   headers: {..._config.defaultHeaders
@@ -266,7 +266,7 @@ return _execute(
 /// Delete Stream in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<void>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, String? force, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required String accountId, required String streamId, String? force, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/streams/${Uri.encodeComponent(streamId)}',
   headers: {..._config.defaultHeaders
@@ -286,7 +286,7 @@ return _execute(
 /// Validate Arroyo SQL.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/validate_sql`
-Future<ApiResult<ValidateSqlResponse>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required String accountId, ValidateSqlRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ValidateSqlResponse, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required String accountId, ValidateSqlRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pipelines/v1/validate_sql',
   headers: {..._config.defaultHeaders
@@ -303,7 +303,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -326,6 +326,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -336,7 +337,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

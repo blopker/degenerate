@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. To list certificates issued by the Cloudflare managed CA, use the [List Client Certificates endpoint](/api/resources/client_certificates/methods/list/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<ResponseCommon68>> mTlsCertificateManagementListMTlsCertificates({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificates({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mtls_certificates',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Upload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. To create certificates issued by the Cloudflare managed CA, use the [Create Client Certificate endpoint](/api/resources/client_certificates/methods/create/).
 ///
 /// `POST /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<ResponseCommon68>> mTlsCertificateManagementUploadMTlsCertificate({required String accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementUploadMTlsCertificate({required String accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mtls_certificates',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a single mTLS certificate uploaded to your account. To get a certificate issued by the Cloudflare managed CA, use the [Client Certificate Details endpoint](/api/resources/client_certificates/methods/get/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<ResponseCommon68>> mTlsCertificateManagementGetMTlsCertificate({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementGetMTlsCertificate({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Deletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services.
 ///
 /// `DELETE /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<ResponseCommon68>> mTlsCertificateManagementDeleteMTlsCertificate({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementDeleteMTlsCertificate({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Lists all active associations between the certificate and Cloudflare services.
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations`
-Future<ApiResult<ResponseCommon68>> mTlsCertificateManagementListMTlsCertificateAssociations({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificateAssociations({required String mtlsCertificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId)}/associations',
   headers: {..._config.defaultHeaders
@@ -110,7 +110,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -133,6 +133,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -143,7 +144,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

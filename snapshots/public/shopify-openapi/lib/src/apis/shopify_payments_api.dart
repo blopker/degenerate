@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/balance.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -34,7 +34,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/balance.json`
-Future<ApiResult<void>> deprecated202004GetShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-07
 ///
 /// `GET /admin/api/2020-07/shopify_payments/balance.json`
-Future<ApiResult<void>> deprecated202007GetShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -68,7 +68,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-10
 ///
 /// `GET /admin/api/2020-10/shopify_payments/balance.json`
-Future<ApiResult<void>> getShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2021-01
 ///
 /// `GET /admin/api/2021-01/shopify_payments/balance.json`
-Future<ApiResult<void>> deprecated202101GetShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-unstable
 ///
 /// `GET /admin/api/unstable/shopify_payments/balance.json`
-Future<ApiResult<void>> deprecatedUnstableGetShopifyPaymentsBalance() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsBalance() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/shopify_payments/balance.json',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/disputes.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/disputes.json',
   headers: {..._config.defaultHeaders
@@ -143,7 +143,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#show-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/disputes/{dispute_id}.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsDisputesParamDisputeId({required String disputeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputesParamDisputeId({required String disputeId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/disputes/${Uri.encodeComponent(disputeId)}.json',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/disputes.json`
-Future<ApiResult<void>> deprecated202004GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shopify_payments/disputes.json',
   headers: {..._config.defaultHeaders
@@ -185,7 +185,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/payouts.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -210,7 +210,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -228,7 +228,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/payouts.json`
-Future<ApiResult<void>> deprecated202004GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -253,7 +253,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> deprecated202004GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -271,7 +271,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-07
 ///
 /// `GET /admin/api/2020-07/shopify_payments/payouts.json`
-Future<ApiResult<void>> deprecated202007GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -296,7 +296,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-07
 ///
 /// `GET /admin/api/2020-07/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> deprecated202007GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -314,7 +314,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-10
 ///
 /// `GET /admin/api/2020-10/shopify_payments/payouts.json`
-Future<ApiResult<void>> getShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -339,7 +339,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-10
 ///
 /// `GET /admin/api/2020-10/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> getShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -357,7 +357,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2021-01
 ///
 /// `GET /admin/api/2021-01/shopify_payments/payouts.json`
-Future<ApiResult<void>> deprecated202101GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -382,7 +382,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2021-01
 ///
 /// `GET /admin/api/2021-01/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> deprecated202101GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -400,7 +400,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-unstable
 ///
 /// `GET /admin/api/unstable/shopify_payments/payouts.json`
-Future<ApiResult<void>> deprecatedUnstableGetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/shopify_payments/payouts.json',
   headers: {..._config.defaultHeaders
@@ -425,7 +425,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-unstable
 ///
 /// `GET /admin/api/unstable/shopify_payments/payouts/{payout_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayoutsParamPayoutId({required String payoutId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/shopify_payments/payouts/${Uri.encodeComponent(payoutId)}.json',
   headers: {..._config.defaultHeaders
@@ -444,7 +444,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/balance/transactions.json`
-Future<ApiResult<void>> deprecated202001GetShopifyPaymentsBalanceTransactions({String? sinceId, String? lastId, String? test, String? payoutId, String? payoutStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalanceTransactions({String? sinceId, String? lastId, String? test, String? payoutId, String? payoutStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/shopify_payments/balance/transactions.json',
   headers: {..._config.defaultHeaders
@@ -464,7 +464,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -487,6 +487,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -497,7 +498,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

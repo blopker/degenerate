@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all the presets belonging to an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitPagingResponse>> getPresets({required String accountId, required String appId, double? perPage, double? pageNo, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required String accountId, required String appId, double? perPage, double? pageNo, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/presets',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Creates a preset belonging to the current App
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitGenericSuccessResponse>> postPresets({required String accountId, required String appId, required RealtimekitPreset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> postPresets({required String accountId, required String appId, required RealtimekitPreset body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/presets',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetches details of a preset using the provided preset ID
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse>> getPresetsPresetId({required String accountId, required String appId, required String presetId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getPresetsPresetId({required String accountId, required String appId, required String presetId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/presets/${Uri.encodeComponent(presetId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Update a preset by the provided preset ID
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse>> patchPresetsPresetId({required String accountId, required String appId, required String presetId, required RealtimekitUpdatePreset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> patchPresetsPresetId({required String accountId, required String appId, required String presetId, required RealtimekitUpdatePreset body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/presets/${Uri.encodeComponent(presetId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Deletes a preset using the provided preset ID
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse>> deletePresetsPresetId({required String accountId, required String appId, required String presetId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> deletePresetsPresetId({required String accountId, required String appId, required String presetId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/presets/${Uri.encodeComponent(presetId)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -139,6 +139,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -149,7 +150,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

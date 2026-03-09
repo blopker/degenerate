@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// For a given zone, list all active certificate packs.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs`
-Future<ApiResult<ResponseCommon68>> certificatePacksListCertificatePacks({required String zoneId, double? page, double? perPage, String? status, String? deploy, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks({required String zoneId, double? page, double? perPage, String? status, String? deploy, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// For a given zone, get a certificate pack.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68>> certificatePacksGetCertificatePack({required String certificatePackId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksGetCertificatePack({required String certificatePackId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId)}',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// For a given zone, restart validation or add cloudflare branding for an advanced certificate pack.  The former is only a validation operation for a Certificate Pack in a validation_timed_out status.
 ///
 /// `PATCH /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required String certificatePackId, required String zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required String certificatePackId, required String zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// For a given zone, delete an advanced certificate pack.
 ///
 /// `DELETE /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required String certificatePackId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required String certificatePackId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// For a given zone, order an advanced certificate pack.
 ///
 /// `POST /zones/{zone_id}/ssl/certificate_packs/order`
-Future<ApiResult<ResponseCommon68>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required String zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required String zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs/order',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// For a given zone, list certificate pack quotas.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/quota`
-Future<ApiResult<ResponseCommon68>> certificatePacksGetCertificatePackQuotas({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksGetCertificatePackQuotas({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/ssl/certificate_packs/quota',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -160,6 +160,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -170,7 +171,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

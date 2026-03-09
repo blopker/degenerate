@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists WARP registrations.
 ///
 /// `GET /accounts/{account_id}/devices/registrations`
-Future<ApiResult<ListRegistrationsResponse>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations',
   headers: {..._config.defaultHeaders
@@ -50,7 +50,7 @@ return _execute(
 /// Fetches a single WARP registration.
 ///
 /// `GET /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<GetRegistrationResponse>> getRegistration({required String registrationId, required String accountId, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/${Uri.encodeComponent(registrationId)}',
   headers: {..._config.defaultHeaders
@@ -72,7 +72,7 @@ return _execute(
 /// Deletes a WARP registration.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<DeleteRegistrationResponse>> deleteRegistration({required String registrationId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/${Uri.encodeComponent(registrationId)}',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 /// Revokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/revoke`
-Future<ApiResult<RevokeRegistrationsResponse>> revokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
+Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/revoke',
   headers: {..._config.defaultHeaders
@@ -113,7 +113,7 @@ return _execute(
 /// Unrevokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/unrevoke`
-Future<ApiResult<UnrevokeRegistrationsResponse>> unrevokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
+Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/unrevoke',
   headers: {..._config.defaultHeaders
@@ -131,7 +131,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -154,6 +154,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -164,7 +165,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

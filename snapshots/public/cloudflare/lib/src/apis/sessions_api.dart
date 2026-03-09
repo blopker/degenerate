@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns details of all sessions of an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions`
-Future<ApiResult<GetSessionsResponse>> getSessions({required String accountId, required String appId, double? pageNo, double? perPage, GetSessionsSortBy? sortBy, GetSessionsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, String? participants, GetSessionsStatus? status, String? search, String? associatedId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionsResponse, Never>> getSessions({required String accountId, required String appId, double? pageNo, double? perPage, GetSessionsSortBy? sortBy, GetSessionsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, String? participants, GetSessionsStatus? status, String? search, String? associatedId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions',
   headers: {..._config.defaultHeaders
@@ -48,7 +48,7 @@ return _execute(
 /// Returns data of the given session ID including recording details.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}`
-Future<ApiResult<GetSessionDetailsResponse>> getSessionDetails({required String accountId, required String appId, required String sessionId, bool? includeBreakoutRooms, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionDetailsResponse, Never>> getSessionDetails({required String accountId, required String appId, required String sessionId, bool? includeBreakoutRooms, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}',
   headers: {..._config.defaultHeaders
@@ -71,7 +71,7 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/chat`
-Future<ApiResult<GetSessionChatResponse>> getSessionChat({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionChatResponse, Never>> getSessionChat({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/chat',
   headers: {..._config.defaultHeaders
@@ -90,7 +90,7 @@ return _execute(
 /// Returns a list of participants for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants`
-Future<ApiResult<GetSessionParticipantsResponse>> getSessionParticipants({required String accountId, required String appId, required String sessionId, String? search, double? pageNo, double? perPage, GetSessionParticipantsSortOrder? sortOrder, GetSessionParticipantsSortBy? sortBy, bool? includePeerEvents, GetSessionParticipantsView? view, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionParticipantsResponse, Never>> getSessionParticipants({required String accountId, required String appId, required String sessionId, String? search, double? pageNo, double? perPage, GetSessionParticipantsSortOrder? sortOrder, GetSessionParticipantsSortBy? sortBy, bool? includePeerEvents, GetSessionParticipantsView? view, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/participants',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Returns details of the given participant ID along with call statistics for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants/{participant_id}`
-Future<ApiResult<GetParticipantDetailsResponse>> getParticipantDetails({required String accountId, required String appId, required String participantId, required String sessionId, GetParticipantDetailsFilters? filters, bool? includePeerEvents, }) async  { final request = ApiRequest(
+Future<ApiResult<GetParticipantDetailsResponse, Never>> getParticipantDetails({required String accountId, required String appId, required String participantId, required String sessionId, GetParticipantDetailsFilters? filters, bool? includePeerEvents, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// Returns a Summary URL to download the Summary of Transcripts for the session ID as plain text.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary`
-Future<ApiResult<GetSessionSummaryResponse>> getSessionSummary({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionSummaryResponse, Never>> getSessionSummary({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/summary',
   headers: {..._config.defaultHeaders
@@ -160,7 +160,7 @@ return _execute(
 /// Trigger Summary generation of Transcripts for the session ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary`
-Future<ApiResult<void>> postSessionsSessionIdSummary({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> postSessionsSessionIdSummary({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/summary',
   headers: {..._config.defaultHeaders
@@ -177,7 +177,7 @@ return _execute(
 /// Returns a URL to download the transcript for the session ID in CSV format.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/transcript`
-Future<ApiResult<GetSessionTranscriptResponse>> getSessionTranscript({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSessionTranscriptResponse, Never>> getSessionTranscript({required String accountId, required String appId, required String sessionId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/${Uri.encodeComponent(sessionId)}/transcript',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// Returns details of the given peer ID along with call statistics for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/peer-report/{peer_id}`
-Future<ApiResult<GetParticipantDataFromPeerIdResponse>> getParticipantDataFromPeerId({required String accountId, required String appId, required String peerId, GetParticipantDataFromPeerIdFilters? filters, }) async  { final request = ApiRequest(
+Future<ApiResult<GetParticipantDataFromPeerIdResponse, Never>> getParticipantDataFromPeerId({required String accountId, required String appId, required String peerId, GetParticipantDataFromPeerIdFilters? filters, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/${Uri.encodeComponent(appId)}/sessions/peer-report/${Uri.encodeComponent(peerId)}',
   headers: {..._config.defaultHeaders
@@ -214,7 +214,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -237,6 +237,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -247,7 +248,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

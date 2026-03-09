@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /chat/completions`
-Future<ApiResult<ChatCompletionList>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions',
   headers: {..._config.defaultHeaders
@@ -59,7 +59,7 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse>> createChatCompletion({required ModelResponseProperties body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/chat/completions',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse>> getChatCompletion({required String completionId}) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /chat/completions/{completion_id}`
-Future<ApiResult<ChatCompletionDeleted>> deleteChatCompletion({required String completionId}) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}/messages`
-Future<ApiResult<ChatCompletionMessageList>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}/messages',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -184,6 +184,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -194,7 +195,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

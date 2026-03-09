@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get Custom Origin Trust Store for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68>> customOriginTrustStoreListDetails({required String zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreListDetails({required String zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/acm/custom_trust_store',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Add Custom Origin Trust Store for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68>> customOriginTrustStoreCreate({required String zoneId, required CustomOriginTrustStoreCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreCreate({required String zoneId, required CustomOriginTrustStoreCreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/acm/custom_trust_store',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68>> customOriginTrustStoreDetails({required String customOriginTrustStoreId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDetails({required String customOriginTrustStoreId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
 ///
 /// `DELETE /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68>> customOriginTrustStoreDelete({required String customOriginTrustStoreId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDelete({required String customOriginTrustStoreId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -120,6 +120,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -130,7 +131,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

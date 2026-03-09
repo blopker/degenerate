@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all Access applications in an account.
 ///
 /// `GET /accounts/{account_id}/access/apps`
-Future<ApiResult<ResponseCommon3>> accessApplicationsListAccessApplications({required String accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsListAccessApplications({required String accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps',
   headers: {..._config.defaultHeaders
@@ -46,7 +46,7 @@ return _execute(
 /// Adds a new application to Access.
 ///
 /// `POST /accounts/{account_id}/access/apps`
-Future<ApiResult<ResponseCommon3>> accessApplicationsAddAnApplication({required String accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsAddAnApplication({required String accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// Fetches information about an Access application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -86,7 +86,7 @@ return _execute(
 /// Updates an Access application.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required String accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required String accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -107,7 +107,7 @@ return _execute(
 /// Deletes an application from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: {..._config.defaultHeaders
@@ -126,7 +126,7 @@ return _execute(
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<AccessSchemasEmptyResponse>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AccessSchemasEmptyResponse, Never>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}/revoke_tokens',
   headers: {..._config.defaultHeaders
@@ -145,7 +145,7 @@ return _execute(
 /// Updates Access application settings.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required String accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required String accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: {..._config.defaultHeaders
@@ -166,7 +166,7 @@ return _execute(
 /// Updates Access application settings.
 ///
 /// `PATCH /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required String accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required String accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: {..._config.defaultHeaders
@@ -187,7 +187,7 @@ return _execute(
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<ResponseCommon3>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId.toString())}/user_policy_checks',
   headers: {..._config.defaultHeaders
@@ -202,7 +202,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -225,6 +225,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -235,7 +236,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

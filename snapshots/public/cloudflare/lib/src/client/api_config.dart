@@ -31,3 +31,37 @@ abstract interface class Interceptor {
     ApiRequest request,
   );
 }
+
+/// Base interceptor with no-op defaults.
+///
+/// Extend this to only override the hooks you need:
+/// ```dart
+/// class AuthInterceptor extends BaseInterceptor {
+///   @override
+///   Future<ApiRequest> onRequest(ApiRequest request) async {
+///     return ApiRequest(
+///       method: request.method,
+///       path: request.path,
+///       headers: {...request.headers, 'Authorization': 'Bearer $token'},
+///       queryParameters: request.queryParameters,
+///       body: request.body,
+///     );
+///   }
+/// }
+/// ```
+class BaseInterceptor implements Interceptor {
+  const BaseInterceptor();
+
+  @override
+  Future<ApiRequest> onRequest(ApiRequest request) async => request;
+
+  @override
+  Future<ApiResponse> onResponse(ApiResponse response) async => response;
+
+  @override
+  Future<ApiResponse> onError(
+    Object error,
+    StackTrace stack,
+    ApiRequest request,
+  ) async => throw error;
+}

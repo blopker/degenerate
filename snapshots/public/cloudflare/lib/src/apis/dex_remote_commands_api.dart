@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters
 ///
 /// `GET /accounts/{account_id}/dex/commands`
-Future<ApiResult<ResponseCommon19>> getCommands({required String accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> getCommands({required String accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/commands',
   headers: {..._config.defaultHeaders
@@ -46,7 +46,7 @@ return _execute(
 /// Initiate commands for up to 10 devices per account
 ///
 /// `POST /accounts/{account_id}/dex/commands`
-Future<ApiResult<ResponseCommon19>> postCommands({required String accountId, required PostCommandsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> postCommands({required String accountId, required PostCommandsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/commands',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// Downloads artifacts for an executed command. Bulk downloads are not supported
 ///
 /// `GET /accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}`
-Future<ApiResult<void>> getCommandsCommandIdDownloadsFilename({required String accountId, required String commandId, required String filename, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCommandsCommandIdDownloadsFilename({required String accountId, required String commandId, required String filename, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/commands/${Uri.encodeComponent(commandId)}/downloads/${Uri.encodeComponent(filename)}',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 /// List devices with WARP client support for remote captures which have been connected in the last 1 hour.
 ///
 /// `GET /accounts/{account_id}/dex/commands/devices`
-Future<ApiResult<ResponseCommon19>> getCommandsEligibleDevices({required String accountId, required double page, required double perPage, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> getCommandsEligibleDevices({required String accountId, required double page, required double perPage, String? search, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/commands/devices',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 /// Retrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset
 ///
 /// `GET /accounts/{account_id}/dex/commands/quota`
-Future<ApiResult<ResponseCommon19>> getCommandsQuota({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> getCommandsQuota({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/commands/quota',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -146,6 +146,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -156,7 +157,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

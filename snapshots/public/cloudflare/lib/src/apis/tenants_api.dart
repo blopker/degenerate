@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a Tenant by Tenant ID.
 ///
 /// `GET /tenants/{tenant_id}`
-Future<ApiResult<TenantsRetrieveTenantResponse>> tenantsRetrieveTenant({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsRetrieveTenantResponse, Never>> tenantsRetrieveTenant({required String tenantId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// List of account types available for the Tenant to provision accounts.
 ///
 /// `GET /tenants/{tenant_id}/account_types`
-Future<ApiResult<TenantsValidAccountTypesResponse>> tenantsValidAccountTypes({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsValidAccountTypesResponse, Never>> tenantsValidAccountTypes({required String tenantId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/account_types',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// List of accounts for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/accounts`
-Future<ApiResult<TenantsListAccountsResponse>> tenantsListAccounts({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListAccountsResponse, Never>> tenantsListAccounts({required String tenantId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/accounts',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// List of innate entitlements available for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/entitlements`
-Future<ApiResult<TenantsListEntitlementsResponse>> tenantsListEntitlements({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListEntitlementsResponse, Never>> tenantsListEntitlements({required String tenantId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/entitlements',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 /// List of active members (Cloudflare users) for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/memberships`
-Future<ApiResult<TenantsListMembershipsResponse>> tenantsListMemberships({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListMembershipsResponse, Never>> tenantsListMemberships({required String tenantId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/memberships',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -131,6 +131,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -141,7 +142,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

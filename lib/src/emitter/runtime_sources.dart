@@ -93,15 +93,51 @@ abstract interface class Interceptor {
     ApiRequest request,
   );
 }
+
+/// Base interceptor with no-op defaults.
+///
+/// Extend this to only override the hooks you need:
+/// ```dart
+/// class AuthInterceptor extends BaseInterceptor {
+///   @override
+///   Future<ApiRequest> onRequest(ApiRequest request) async {
+///     return ApiRequest(
+///       method: request.method,
+///       path: request.path,
+///       headers: {...request.headers, 'Authorization': 'Bearer $token'},
+///       queryParameters: request.queryParameters,
+///       body: request.body,
+///     );
+///   }
+/// }
+/// ```
+class BaseInterceptor implements Interceptor {
+  const BaseInterceptor();
+
+  @override
+  Future<ApiRequest> onRequest(ApiRequest request) async => request;
+
+  @override
+  Future<ApiResponse> onResponse(ApiResponse response) async => response;
+
+  @override
+  Future<ApiResponse> onError(
+    Object error,
+    StackTrace stack,
+    ApiRequest request,
+  ) async => throw error;
+}
 ''';
 
 const apiResultSource = r'''
 /// The result of an API operation.
-sealed class ApiResult<T> {
+///
+/// [T] is the success data type, [E] is the typed error schema (if any).
+sealed class ApiResult<T, E> {
   const ApiResult();
 }
 
-final class ApiSuccess<T> extends ApiResult<T> {
+final class ApiSuccess<T, E> extends ApiResult<T, E> {
   final T data;
   final int statusCode;
   final Map<String, String> headers;
@@ -113,9 +149,9 @@ final class ApiSuccess<T> extends ApiResult<T> {
   });
 }
 
-final class ApiError<T> extends ApiResult<T> {
+final class ApiError<T, E> extends ApiResult<T, E> {
   final int statusCode;
-  final Object? error;
+  final E? error;
   final String? rawBody;
   final Map<String, String> headers;
 
@@ -128,7 +164,7 @@ final class ApiError<T> extends ApiResult<T> {
 }
 
 /// Network-level failure (DNS, timeout, connection refused).
-final class ApiException<T> extends ApiResult<T> {
+final class ApiException<T, E> extends ApiResult<T, E> {
   final Object exception;
   final StackTrace stackTrace;
 

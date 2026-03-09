@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingTranscription>> fetchRecordingTranscription({required String accountSid, required String recordingSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountRecordingRecordingTranscription, Never>> fetchRecordingTranscription({required String accountSid, required String recordingSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(recordingSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<void>> deleteRecordingTranscription({required String accountSid, required String recordingSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteRecordingTranscription({required String accountSid, required String recordingSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(recordingSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -47,7 +47,7 @@ return _execute(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.json`
-Future<ApiResult<ListRecordingTranscriptionResponse>> listRecordingTranscription({required String accountSid, required String recordingSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListRecordingTranscriptionResponse, Never>> listRecordingTranscription({required String accountSid, required String recordingSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(recordingSid)}/Transcriptions.json',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -90,6 +90,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -100,7 +101,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

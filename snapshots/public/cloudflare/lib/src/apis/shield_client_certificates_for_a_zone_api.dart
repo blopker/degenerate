@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Hostname Associations
 ///
 /// `GET /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneListHostnameAssociations({required String zoneId, String? mtlsCertificateId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListHostnameAssociations({required String zoneId, String? mtlsCertificateId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/certificate_authorities/hostname_associations',
   headers: {..._config.defaultHeaders
@@ -35,7 +35,7 @@ return _execute(
 /// Replace Hostname Associations
 ///
 /// `PUT /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZonePutHostnameAssociations({required String zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZonePutHostnameAssociations({required String zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/certificate_authorities/hostname_associations',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// List all of your Zone's API Shield mTLS Client Certificates by Status and/or using Pagination
 ///
 /// `GET /zones/{zone_id}/client_certificates`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneListClientCertificates({required String zoneId, String? status, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListClientCertificates({required String zoneId, String? status, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/client_certificates',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Create a new API Shield mTLS Client Certificate
 ///
 /// `POST /zones/{zone_id}/client_certificates`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneCreateClientCertificate({required String zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneCreateClientCertificate({required String zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/client_certificates',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Get Details for a single mTLS API Shield Client Certificate
 ///
 /// `GET /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneClientCertificateDetails({required String zoneId, required String clientCertificateId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneClientCertificateDetails({required String zoneId, required String clientCertificateId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/client_certificates/${Uri.encodeComponent(clientCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// If a API Shield mTLS Client Certificate is in a pending_revocation state, you may reactivate it with this endpoint.
 ///
 /// `PATCH /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneEditClientCertificate({required String zoneId, required String clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneEditClientCertificate({required String zoneId, required String clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/client_certificates/${Uri.encodeComponent(clientCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -143,7 +143,7 @@ return _execute(
 /// Set a API Shield mTLS Client Certificate to pending_revocation status for processing to revoked status.
 ///
 /// `DELETE /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68>> clientCertificateForAZoneDeleteClientCertificate({required String zoneId, required String clientCertificateId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneDeleteClientCertificate({required String zoneId, required String clientCertificateId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/client_certificates/${Uri.encodeComponent(clientCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -158,7 +158,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -181,6 +181,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -191,7 +192,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

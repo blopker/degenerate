@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists the video ID and creation date and time when a signing key was created.
 ///
 /// `GET /accounts/{account_id}/stream/keys`
-Future<ApiResult<ResponseCommon66>> streamSigningKeysListSigningKeys({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSigningKeysListSigningKeys({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/keys',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates an RSA private key in PEM and JWK formats. Key files are only displayed once after creation. Keys are created, used, and deleted independently of videos, and every key can sign any video.
 ///
 /// `POST /accounts/{account_id}/stream/keys`
-Future<ApiResult<ResponseCommon66>> streamSigningKeysCreateSigningKeys({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSigningKeysCreateSigningKeys({required String accountId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/keys',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Deletes signing keys and revokes all signed URLs generated with the key.
 ///
 /// `DELETE /accounts/{account_id}/stream/keys/{identifier}`
-Future<ApiResult<ResponseCommon66>> streamSigningKeysDeleteSigningKeys({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSigningKeysDeleteSigningKeys({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/keys/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -93,6 +93,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -103,7 +104,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all service tokens.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessServiceTokensListServiceTokens({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensListServiceTokens({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/service_tokens',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to create a new service token.
 ///
 /// `POST /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessServiceTokensCreateAServiceToken({required String zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required String zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/service_tokens',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a single service token.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessServiceTokensGetAServiceToken({required String serviceTokenId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensGetAServiceToken({required String serviceTokenId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates a configured service token.
 ///
 /// `PUT /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessServiceTokensUpdateAServiceToken({required String serviceTokenId, required String zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensUpdateAServiceToken({required String serviceTokenId, required String zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes a service token.
 ///
 /// `DELETE /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessServiceTokensDeleteAServiceToken({required String serviceTokenId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensDeleteAServiceToken({required String serviceTokenId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/service_tokens/${Uri.encodeComponent(serviceTokenId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

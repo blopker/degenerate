@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Returns a list of files.
 ///
 /// `GET /files`
-Future<ApiResult<ListFilesResponse>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/files',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// 
 ///
 /// `POST /files`
-Future<ApiResult<OpenAiFile>> createFile({required CreateFileRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/files',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Returns information about a specific file.
 ///
 /// `GET /files/{file_id}`
-Future<ApiResult<OpenAiFile>> retrieveFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 /// Delete a file and remove it from all vector stores.
 ///
 /// `DELETE /files/{file_id}`
-Future<ApiResult<DeleteFileResponse>> deleteFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/files/${Uri.encodeComponent(fileId)}',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 /// Returns the contents of the specified file.
 ///
 /// `GET /files/{file_id}/content`
-Future<ApiResult<String>> downloadFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> downloadFile({required String fileId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}/content',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -146,6 +146,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -156,7 +157,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

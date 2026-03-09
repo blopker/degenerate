@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List resources in the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources`
-Future<ApiResult<McnResponseCollection>> resourcesCatalogList({required String accountId, String? providerId, List<McnResourceType>? resourceType, List<String>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required String accountId, String? providerId, List<McnResourceType>? resourceType, List<String>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/resources',
   headers: {..._config.defaultHeaders
@@ -44,6 +44,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Read Resource
@@ -51,7 +54,7 @@ return _execute(
 /// Read an resource from the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
-Future<ApiResult<McnResponse>> resourcesCatalogRead({required String accountId, required String resourceId, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required String accountId, required String resourceId, bool? v2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/resources/${Uri.encodeComponent(resourceId)}',
   headers: {..._config.defaultHeaders
@@ -66,6 +69,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Export Resources
@@ -73,7 +79,7 @@ return _execute(
 /// Export resources in the Resource Catalog as a JSON file (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/export`
-Future<ApiResult<void>> resourcesCatalogExport({required String accountId, String? providerId, List<McnResourceType>? resourceType, List<String>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<void, McnResponse>> resourcesCatalogExport({required String accountId, String? providerId, List<McnResourceType>? resourceType, List<String>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/resources/export',
   headers: {..._config.defaultHeaders
@@ -94,6 +100,9 @@ Future<ApiResult<void>> resourcesCatalogExport({required String accountId, Strin
 return _execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Preview Rego Query
@@ -101,7 +110,7 @@ return _execute(
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/resources/policy-preview`
-Future<ApiResult<McnResponse>> resourcesCatalogPolicyPreview({required String accountId, required McnResourcesCatalogPolicyPreviewRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogPolicyPreview({required String accountId, required McnResourcesCatalogPolicyPreviewRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/resources/policy-preview',
   headers: {..._config.defaultHeaders
@@ -115,10 +124,13 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -141,6 +153,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -151,7 +164,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

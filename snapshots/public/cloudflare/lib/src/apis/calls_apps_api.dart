@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11>> callsAppsList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/calls/apps',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.
 ///
 /// `POST /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11>> callsAppsCreateANewApp({required String accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required String accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/calls/apps',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11>> callsAppsRetrieveAppDetails({required String appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required String appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/calls/apps/${Uri.encodeComponent(appId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11>> callsAppsUpdateAppDetails({required String appId, required String accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required String appId, required String accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/calls/apps/${Uri.encodeComponent(appId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes an app from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11>> callsAppsDeleteApp({required String appId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required String appId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/calls/apps/${Uri.encodeComponent(appId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

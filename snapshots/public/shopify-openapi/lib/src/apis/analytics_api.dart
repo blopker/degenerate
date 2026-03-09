@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-01
 ///
 /// `GET /admin/api/2020-01/reports.json`
-Future<ApiResult<void>> deprecated202001GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/reports.json',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-01
 ///
 /// `POST /admin/api/2020-01/reports.json`
-Future<ApiResult<void>> deprecated202001CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/reports.json',
   headers: {..._config.defaultHeaders
@@ -65,7 +65,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-01
 ///
 /// `GET /admin/api/2020-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202001GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-04
 ///
 /// `GET /admin/api/2020-04/reports.json`
-Future<ApiResult<void>> deprecated202004GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/reports.json',
   headers: {..._config.defaultHeaders
@@ -146,7 +146,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-04
 ///
 /// `POST /admin/api/2020-04/reports.json`
-Future<ApiResult<void>> deprecated202004CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/reports.json',
   headers: {..._config.defaultHeaders
@@ -169,7 +169,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-04
 ///
 /// `GET /admin/api/2020-04/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202004GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -189,7 +189,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -208,7 +208,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -225,7 +225,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-07
 ///
 /// `GET /admin/api/2020-07/reports.json`
-Future<ApiResult<void>> deprecated202007GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/reports.json',
   headers: {..._config.defaultHeaders
@@ -250,7 +250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-07
 ///
 /// `POST /admin/api/2020-07/reports.json`
-Future<ApiResult<void>> deprecated202007CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/reports.json',
   headers: {..._config.defaultHeaders
@@ -273,7 +273,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-07
 ///
 /// `GET /admin/api/2020-07/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202007GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -293,7 +293,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -312,7 +312,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -329,7 +329,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-10
 ///
 /// `GET /admin/api/2020-10/reports.json`
-Future<ApiResult<void>> getReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/reports.json',
   headers: {..._config.defaultHeaders
@@ -354,7 +354,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-10
 ///
 /// `POST /admin/api/2020-10/reports.json`
-Future<ApiResult<void>> createReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/reports.json',
   headers: {..._config.defaultHeaders
@@ -377,7 +377,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-10
 ///
 /// `GET /admin/api/2020-10/reports/{report_id}.json`
-Future<ApiResult<void>> getReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -397,7 +397,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/reports/{report_id}.json`
-Future<ApiResult<void>> updateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -416,7 +416,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/reports/{report_id}.json`
-Future<ApiResult<void>> deleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -433,7 +433,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2021-01
 ///
 /// `GET /admin/api/2021-01/reports.json`
-Future<ApiResult<void>> deprecated202101GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/reports.json',
   headers: {..._config.defaultHeaders
@@ -458,7 +458,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2021-01
 ///
 /// `POST /admin/api/2021-01/reports.json`
-Future<ApiResult<void>> deprecated202101CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/reports.json',
   headers: {..._config.defaultHeaders
@@ -481,7 +481,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2021-01
 ///
 /// `GET /admin/api/2021-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202101GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -501,7 +501,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -520,7 +520,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/reports/{report_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -537,7 +537,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-unstable
 ///
 /// `GET /admin/api/unstable/reports.json`
-Future<ApiResult<void>> deprecatedUnstableGetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/reports.json',
   headers: {..._config.defaultHeaders
@@ -562,7 +562,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-unstable
 ///
 /// `POST /admin/api/unstable/reports.json`
-Future<ApiResult<void>> deprecatedUnstableCreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateReports({String? name, String? shopifyQl, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/reports.json',
   headers: {..._config.defaultHeaders
@@ -585,7 +585,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-unstable
 ///
 /// `GET /admin/api/unstable/reports/{report_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetReportsParamReportId({required String reportId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -605,7 +605,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-unstable
 ///
 /// `PUT /admin/api/unstable/reports/{report_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateReportsParamReportId({required String reportId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -624,7 +624,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/reports/{report_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteReportsParamReportId({required String reportId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/reports/${Uri.encodeComponent(reportId)}.json',
   headers: {..._config.defaultHeaders
@@ -637,7 +637,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -660,6 +660,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -670,7 +671,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

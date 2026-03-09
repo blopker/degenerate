@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations`
-Future<ApiResult<OrganizationListOrganizationsResponse>> organizationListOrganizations({List<String>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationListOrganizationsResponse, Never>> organizationListOrganizations({List<String>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations`
-Future<ApiResult<OrganizationsCreateUserOrganizationResponse>> organizationsCreateUserOrganization({required Organization body}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsCreateUserOrganizationResponse, Never>> organizationsCreateUserOrganization({required Organization body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organizations',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}`
-Future<ApiResult<OrganizationsRetrieveResponse>> organizationsRetrieve({required String organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsRetrieveResponse, Never>> organizationsRetrieve({required String organizationId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}`
-Future<ApiResult<OrganizationsModifyResponse>> organizationsModify({required String organizationId, required Organization body, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsModifyResponse, Never>> organizationsModify({required String organizationId, required Organization body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/organizations/${Uri.encodeComponent(organizationId)}',
   headers: {..._config.defaultHeaders
@@ -111,7 +111,7 @@ return _execute(
 /// It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}`
-Future<ApiResult<OrganizationsDeleteResponse>> organizationsDelete({required String organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsDeleteResponse, Never>> organizationsDelete({required String organizationId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(organizationId)}',
   headers: {..._config.defaultHeaders
@@ -130,7 +130,7 @@ return _execute(
 /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/accounts`
-Future<ApiResult<OrganizationsGetAccountsResponse>> organizationsGetAccounts({required String organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required String organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/accounts',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 /// Get an organizations profile if it exists. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/profile`
-Future<ApiResult<ProfileResponse>> organizationsGetProfile({required String organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<ProfileResponse, Never>> organizationsGetProfile({required String organizationId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/profile',
   headers: {..._config.defaultHeaders
@@ -180,7 +180,7 @@ return _execute(
 /// Modify organization profile. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}/profile`
-Future<ApiResult<void>> organizationsModifyProfile({required String organizationId, required Profile body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> organizationsModifyProfile({required String organizationId, required Profile body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/profile',
   headers: {..._config.defaultHeaders
@@ -195,7 +195,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -218,6 +218,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -228,7 +229,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

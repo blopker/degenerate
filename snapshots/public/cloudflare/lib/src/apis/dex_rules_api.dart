@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List DEX Rules
 ///
 /// `GET /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19>> listDexRules({required String accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> listDexRules({required String accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/rules',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Create a DEX Rule
 ///
 /// `POST /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19>> createDexRule({required String accountId, required DigitalExperienceMonitoringCreateRuleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> createDexRule({required String accountId, required DigitalExperienceMonitoringCreateRuleBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/rules',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Get details for a DEX Rule
 ///
 /// `GET /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19>> getDexRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> getDexRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -77,7 +77,7 @@ return _execute(
 /// Update a DEX Rule
 ///
 /// `PATCH /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19>> updateDexRule({required String accountId, required String ruleId, required DigitalExperienceMonitoringPatchRuleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> updateDexRule({required String accountId, required String ruleId, required DigitalExperienceMonitoringPatchRuleBody body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -96,7 +96,7 @@ return _execute(
 /// Delete a DEX Rule
 ///
 /// `DELETE /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19>> deleteDexRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deleteDexRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dex/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -111,7 +111,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -134,6 +134,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -144,7 +145,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

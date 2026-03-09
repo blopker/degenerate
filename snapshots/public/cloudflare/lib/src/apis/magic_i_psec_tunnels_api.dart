@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists IPsec tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsListIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsCreateIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsCreateIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Update multiple IPsec tunnels associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, required String body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required String accountId, bool? xMagicNewHcTarget, required String body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Lists details for a specific IPsec tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsListIpsecTunnelDetails({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnelDetails({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Updates a specific IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsUpdateIpsecTunnel({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateIpsecTunnel({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Disables and removes a specific static IPsec Tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsDeleteIpsecTunnel({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsDeleteIpsecTunnel({required String ipsecTunnelId, required String accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId)}',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Generates a Pre Shared Key for a specific IPsec tunnel used in the IKE session. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes. After a PSK is generated, the PSK is immediately persisted to Cloudflare's edge and cannot be retrieved later. Note the PSK in a safe place.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}/psk_generate`
-Future<ApiResult<ResponseCommon48>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required String ipsecTunnelId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required String ipsecTunnelId, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId)}/psk_generate',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -175,6 +175,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -185,7 +186,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

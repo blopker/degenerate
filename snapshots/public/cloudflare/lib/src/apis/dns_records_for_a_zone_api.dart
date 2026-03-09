@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List, search, sort, and filter a zones' DNS records.
 ///
 /// `GET /zones/{zone_id}/dns_records`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneListDnsRecords({required String zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, bool? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, String? search, DnsRecordsTagMatch? tagMatch, double? page, double? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneListDnsRecords({required String zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, bool? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, String? search, DnsRecordsTagMatch? tagMatch, double? page, double? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneCreateDnsRecord({required String zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneCreateDnsRecord({required String zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// DNS Record Details
 ///
 /// `GET /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneDnsRecordDetails({required String dnsRecordId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneDnsRecordDetails({required String dnsRecordId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/${Uri.encodeComponent(dnsRecordId)}',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneUpdateDnsRecord({required String dnsRecordId, required String zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneUpdateDnsRecord({required String dnsRecordId, required String zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/${Uri.encodeComponent(dnsRecordId)}',
   headers: {..._config.defaultHeaders
@@ -151,7 +151,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZonePatchDnsRecord({required String dnsRecordId, required String zoneId, required DnsRecordsDnsRecordPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZonePatchDnsRecord({required String dnsRecordId, required String zoneId, required DnsRecordsDnsRecordPatch body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/${Uri.encodeComponent(dnsRecordId)}',
   headers: {..._config.defaultHeaders
@@ -170,7 +170,7 @@ return _execute(
 /// Delete DNS Record
 ///
 /// `DELETE /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponse>> dnsRecordsForAZoneDeleteDnsRecord({required String dnsRecordId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponse, Never>> dnsRecordsForAZoneDeleteDnsRecord({required String dnsRecordId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/${Uri.encodeComponent(dnsRecordId)}',
   headers: {..._config.defaultHeaders
@@ -199,7 +199,7 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/batch`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneBatchDnsRecords({required String zoneId, required DnsRecordsDnsRequestBatchObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneBatchDnsRecords({required String zoneId, required DnsRecordsDnsRequestBatchObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/batch',
   headers: {..._config.defaultHeaders
@@ -222,7 +222,7 @@ return _execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `GET /zones/{zone_id}/dns_records/export`
-Future<ApiResult<void>> dnsRecordsForAZoneExportDnsRecords({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dnsRecordsForAZoneExportDnsRecords({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/export',
   headers: {..._config.defaultHeaders
@@ -241,7 +241,7 @@ return _execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `POST /zones/{zone_id}/dns_records/import`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneImportDnsRecords({required String zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneImportDnsRecords({required String zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/import',
   headers: {..._config.defaultHeaders
@@ -263,7 +263,7 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneReviewDnsScan({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneReviewDnsScan({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/scan/review',
   headers: {..._config.defaultHeaders
@@ -283,7 +283,7 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneApplyDnsScanResults({required String zoneId, required DnsRecordsDnsRequestReviewScanObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneApplyDnsScanResults({required String zoneId, required DnsRecordsDnsRequestReviewScanObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/scan/review',
   headers: {..._config.defaultHeaders
@@ -304,7 +304,7 @@ return _execute(
 /// Initiates an asynchronous scan for common DNS records on your domain. Note that this **does not** automatically add records to your zone. The scan runs in the background, and results can be reviewed later using the `/scan/review` endpoints. Useful if you haven't updated your nameservers yet.
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/trigger`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneTriggerDnsScan({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneTriggerDnsScan({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/scan/trigger',
   headers: {..._config.defaultHeaders
@@ -323,7 +323,7 @@ return _execute(
 /// Get the current DNS record usage for a zone, including the number of records and the quota limit.
 ///
 /// `GET /zones/{zone_id}/dns_records/usage`
-Future<ApiResult<ResponseCommon25>> dnsRecordsForAZoneGetUsage({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneGetUsage({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/dns_records/usage',
   headers: {..._config.defaultHeaders
@@ -338,7 +338,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -361,6 +361,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -371,7 +372,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

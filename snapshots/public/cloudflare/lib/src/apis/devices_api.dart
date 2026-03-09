@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches a list of the device settings profiles for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policies`
-Future<ApiResult<ResponseCommon67>> devicesListDeviceSettingsPolicies({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesListDeviceSettingsPolicies({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policies',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Fetches the default device settings profile for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67>> devicesGetDefaultDeviceSettingsPolicy({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetDefaultDeviceSettingsPolicy({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Creates a device settings profile to be applied to certain devices matching the criteria.
 ///
 /// `POST /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67>> devicesCreateDeviceSettingsPolicy({required String accountId, required DevicesCreateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesCreateDeviceSettingsPolicy({required String accountId, required DevicesCreateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates the default device settings profile for an account.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67>> devicesUpdateDefaultDeviceSettingsPolicy({required String accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDefaultDeviceSettingsPolicy({required String accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Fetches a device settings profile by ID.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67>> devicesGetDeviceSettingsPolicyById({required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetDeviceSettingsPolicyById({required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Updates a configured device settings profile.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67>> devicesUpdateDeviceSettingsPolicy({required String policyId, required String accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDeviceSettingsPolicy({required String policyId, required String accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Deletes a device settings profile and fetches a list of the remaining profiles for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67>> devicesDeleteDeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesDeleteDeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// Fetches the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<ResponseCommon67>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/exclude',
   headers: {..._config.defaultHeaders
@@ -175,7 +175,7 @@ return _execute(
 /// Sets the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<ResponseCommon67>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/exclude',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<ResponseCommon67>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/fallback_domains',
   headers: {..._config.defaultHeaders
@@ -215,7 +215,7 @@ return _execute(
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead. This will only apply to the specified device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<ResponseCommon67>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/fallback_domains',
   headers: {..._config.defaultHeaders
@@ -236,7 +236,7 @@ return _execute(
 /// Fetches the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<ResponseCommon67>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/include',
   headers: {..._config.defaultHeaders
@@ -255,7 +255,7 @@ return _execute(
 /// Sets the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<ResponseCommon67>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required String policyId, required String accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/${Uri.encodeComponent(policyId)}/include',
   headers: {..._config.defaultHeaders
@@ -276,7 +276,7 @@ return _execute(
 /// Fetches the list of routes excluded from the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<ResponseCommon67>> devicesGetSplitTunnelExcludeList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/exclude',
   headers: {..._config.defaultHeaders
@@ -295,7 +295,7 @@ return _execute(
 /// Sets the list of routes excluded from the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<ResponseCommon67>> devicesSetSplitTunnelExcludeList({required String accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeList({required String accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/exclude',
   headers: {..._config.defaultHeaders
@@ -316,7 +316,7 @@ return _execute(
 /// Fetches a list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<ResponseCommon67>> devicesGetLocalDomainFallbackList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/fallback_domains',
   headers: {..._config.defaultHeaders
@@ -335,7 +335,7 @@ return _execute(
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<ResponseCommon67>> devicesSetLocalDomainFallbackList({required String accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackList({required String accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/fallback_domains',
   headers: {..._config.defaultHeaders
@@ -356,7 +356,7 @@ return _execute(
 /// Fetches the list of routes included in the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<ResponseCommon67>> devicesGetSplitTunnelIncludeList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/include',
   headers: {..._config.defaultHeaders
@@ -375,7 +375,7 @@ return _execute(
 /// Sets the list of routes included in the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<ResponseCommon67>> devicesSetSplitTunnelIncludeList({required String accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeList({required String accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/policy/include',
   headers: {..._config.defaultHeaders
@@ -396,7 +396,7 @@ return _execute(
 /// Fetches device certificate provisioning.
 ///
 /// `GET /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<ResponseCommon67>> devicesGetPolicyCertificates({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetPolicyCertificates({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/devices/policy/certificates',
   headers: {..._config.defaultHeaders
@@ -415,7 +415,7 @@ return _execute(
 /// Enable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. This facilitates device posture without a WARP session.
 ///
 /// `PATCH /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<ResponseCommon67>> devicesUpdatePolicyCertificates({required String zoneId, required TeamsDevicesDevicesPolicyCertificates body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdatePolicyCertificates({required String zoneId, required TeamsDevicesDevicesPolicyCertificates body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/devices/policy/certificates',
   headers: {..._config.defaultHeaders
@@ -432,7 +432,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -455,6 +455,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -465,7 +466,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all mTLS certificates.
 ///
 /// `GET /zones/{zone_id}/access/certificates`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /zones/{zone_id}/access/certificates`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required String zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required String zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required String certificateId, required String zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required String certificateId, required String zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// List all mTLS hostname settings for this zone.
 ///
 /// `GET /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates/settings',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required String zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required String zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/certificates/settings',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -175,6 +175,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -185,7 +186,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

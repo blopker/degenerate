@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Depending on what is rendered in the Markdown, you may need to provide additional token scopes for labels, such as `issues:read` or `pull_requests:read`.
 ///
 /// `POST /markdown`
-Future<ApiResult<void>> markdownRender({required MarkdownRenderRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> markdownRender({required MarkdownRenderRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/markdown',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.
 ///
 /// `POST /markdown/raw`
-Future<ApiResult<void>> markdownRenderRaw({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> markdownRenderRaw({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/markdown/raw',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -74,6 +74,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -84,7 +85,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

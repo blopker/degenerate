@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Regional Services regions available for use by this account.
 ///
 /// `GET /accounts/{account_id}/addressing/regional_hostnames/regions`
-Future<ApiResult<ResponseCommon21>> dlsAccountRegionalHostnamesAccountListRegions({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListRegions({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/regional_hostnames/regions',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// List all Regional Hostnames within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21>> dlsAccountRegionalHostnamesAccountListHostnames({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListHostnames({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/addressing/regional_hostnames',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Create a new Regional Hostname entry. Cloudflare will only use data centers that are physically located within the chosen region to decrypt and service HTTPS traffic. Learn more about [Regional Services](https://developers.cloudflare.com/data-localization/regional-services/get-started/).
 ///
 /// `POST /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21>> dlsAccountRegionalHostnamesAccountCreateHostname({required String zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountCreateHostname({required String zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/addressing/regional_hostnames',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Fetch the configuration for a specific Regional Hostname, within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<DlsAccountRegionalHostnamesAccountFetchHostnameResponse>> dlsAccountRegionalHostnamesAccountFetchHostname({required String zoneId, required String hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<DlsAccountRegionalHostnamesAccountFetchHostnameResponse, Never>> dlsAccountRegionalHostnamesAccountFetchHostname({required String zoneId, required String hostname, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/addressing/regional_hostnames/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Update the configuration for a specific Regional Hostname. Only the region_key of a hostname is mutable.
 ///
 /// `PATCH /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21>> dlsAccountRegionalHostnamesAccountPatchHostname({required String zoneId, required String hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountPatchHostname({required String zoneId, required String hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/addressing/regional_hostnames/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Delete the region configuration for a specific Regional Hostname.
 ///
 /// `DELETE /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21>> dlsAccountRegionalHostnamesAccountDeleteHostname({required String zoneId, required String hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountDeleteHostname({required String zoneId, required String hostname, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/addressing/regional_hostnames/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -131,7 +131,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -154,6 +154,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -164,7 +165,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

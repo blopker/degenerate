@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of IpAccessControlLists that belong to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json`
-Future<ApiResult<ListSipIpAccessControlListResponse>> listSipIpAccessControlList({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipIpAccessControlListResponse, Never>> listSipIpAccessControlList({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists.json',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Create a new IpAccessControlList resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json`
-Future<ApiResult<AccountSipSipIpAccessControlList>> createSipIpAccessControlList({required String accountSid, CreateSipIpAccessControlListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> createSipIpAccessControlList({required String accountSid, CreateSipIpAccessControlListRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists.json',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Fetch a specific instance of an IpAccessControlList
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlList>> fetchSipIpAccessControlList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> fetchSipIpAccessControlList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -73,7 +73,7 @@ return _execute(
 /// Rename an IpAccessControlList
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlList>> updateSipIpAccessControlList({required String accountSid, required String sid, UpdateSipIpAccessControlListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> updateSipIpAccessControlList({required String accountSid, required String sid, UpdateSipIpAccessControlListRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Delete an IpAccessControlList from the requested account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<void>> deleteSipIpAccessControlList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipIpAccessControlList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -105,7 +105,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -128,6 +128,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -138,7 +139,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

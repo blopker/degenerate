@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
-Future<ApiResult<ResponseCommon63>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required String zoneId, String? appId, String? coloName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required String zoneId, String? appId, String? coloName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/spectrum/analytics/aggregate/current',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<ResponseCommon63>> spectrumAnalyticsByTimeGetAnalyticsByTime({required String zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, DateTime? until, List<SpectrumAnalyticsMetrics2>? metrics, String? filters, DateTime? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required String zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, DateTime? until, List<SpectrumAnalyticsMetrics2>? metrics, String? filters, DateTime? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/spectrum/analytics/events/bytime',
   headers: {..._config.defaultHeaders
@@ -68,7 +68,7 @@ return _execute(
 /// Retrieves a list of summarised aggregate metrics over a given time period.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/summary`
-Future<ApiResult<ResponseCommon63>> spectrumAnalyticsSummaryGetAnalyticsSummary({required String zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, DateTime? until, List<SpectrumAnalyticsMetrics2>? metrics, String? filters, DateTime? since, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required String zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, DateTime? until, List<SpectrumAnalyticsMetrics2>? metrics, String? filters, DateTime? since, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/spectrum/analytics/events/summary',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -114,6 +114,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -124,7 +125,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-01
 ///
 /// `GET /admin/api/2020-01/application_charges.json`
-Future<ApiResult<void>> deprecated202001GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-01
 ///
 /// `POST /admin/api/2020-01/application_charges.json`
-Future<ApiResult<void>> deprecated202001CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-01
 ///
 /// `GET /admin/api/2020-01/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> deprecated202001GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#activate-2020-01
 ///
 /// `POST /admin/api/2020-01/application_charges/{application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202001CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/application_charges/${Uri.encodeComponent(applicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-04
 ///
 /// `GET /admin/api/2020-04/application_charges.json`
-Future<ApiResult<void>> deprecated202004GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-04
 ///
 /// `POST /admin/api/2020-04/application_charges.json`
-Future<ApiResult<void>> deprecated202004CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-04
 ///
 /// `GET /admin/api/2020-04/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> deprecated202004GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -166,7 +166,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#activate-2020-04
 ///
 /// `POST /admin/api/2020-04/application_charges/{application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202004CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/application_charges/${Uri.encodeComponent(applicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -185,7 +185,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-07
 ///
 /// `GET /admin/api/2020-07/application_charges.json`
-Future<ApiResult<void>> deprecated202007GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -206,7 +206,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-07
 ///
 /// `POST /admin/api/2020-07/application_charges.json`
-Future<ApiResult<void>> deprecated202007CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -225,7 +225,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-07
 ///
 /// `GET /admin/api/2020-07/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> deprecated202007GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -250,7 +250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#activate-2020-07
 ///
 /// `POST /admin/api/2020-07/application_charges/{application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202007CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/application_charges/${Uri.encodeComponent(applicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -269,7 +269,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-10
 ///
 /// `GET /admin/api/2020-10/application_charges.json`
-Future<ApiResult<void>> getApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -290,7 +290,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-10
 ///
 /// `POST /admin/api/2020-10/application_charges.json`
-Future<ApiResult<void>> createApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -309,7 +309,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-10
 ///
 /// `GET /admin/api/2020-10/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> getApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -334,7 +334,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#activate-2020-10
 ///
 /// `POST /admin/api/2020-10/application_charges/{application_charge_id}/activate.json`
-Future<ApiResult<void>> createApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createApplicationChargesParamApplicationChargeIdActivate({required String applicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/application_charges/${Uri.encodeComponent(applicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -353,7 +353,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2021-01
 ///
 /// `GET /admin/api/2021-01/application_charges.json`
-Future<ApiResult<void>> deprecated202101GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -374,7 +374,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2021-01
 ///
 /// `POST /admin/api/2021-01/application_charges.json`
-Future<ApiResult<void>> deprecated202101CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -393,7 +393,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2021-01
 ///
 /// `GET /admin/api/2021-01/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> deprecated202101GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -413,7 +413,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-unstable
 ///
 /// `GET /admin/api/unstable/application_charges.json`
-Future<ApiResult<void>> deprecatedUnstableGetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -434,7 +434,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-unstable
 ///
 /// `POST /admin/api/unstable/application_charges.json`
-Future<ApiResult<void>> deprecatedUnstableCreateApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/application_charges.json',
   headers: {..._config.defaultHeaders
@@ -453,7 +453,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-unstable
 ///
 /// `GET /admin/api/unstable/application_charges/{application_charge_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationChargesParamApplicationChargeId({required String applicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/application_charges/${Uri.encodeComponent(applicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -473,7 +473,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-01
 ///
 /// `GET /admin/api/2020-01/application_credits.json`
-Future<ApiResult<void>> deprecated202001GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -493,7 +493,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-01
 ///
 /// `POST /admin/api/2020-01/application_credits.json`
-Future<ApiResult<void>> deprecated202001CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -512,7 +512,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-01
 ///
 /// `GET /admin/api/2020-01/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> deprecated202001GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -532,7 +532,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-04
 ///
 /// `GET /admin/api/2020-04/application_credits.json`
-Future<ApiResult<void>> deprecated202004GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -552,7 +552,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-04
 ///
 /// `POST /admin/api/2020-04/application_credits.json`
-Future<ApiResult<void>> deprecated202004CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -571,7 +571,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-04
 ///
 /// `GET /admin/api/2020-04/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> deprecated202004GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -591,7 +591,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-07
 ///
 /// `GET /admin/api/2020-07/application_credits.json`
-Future<ApiResult<void>> deprecated202007GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -611,7 +611,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-07
 ///
 /// `POST /admin/api/2020-07/application_credits.json`
-Future<ApiResult<void>> deprecated202007CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -630,7 +630,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-07
 ///
 /// `GET /admin/api/2020-07/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> deprecated202007GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -650,7 +650,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-10
 ///
 /// `GET /admin/api/2020-10/application_credits.json`
-Future<ApiResult<void>> getApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -670,7 +670,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-10
 ///
 /// `POST /admin/api/2020-10/application_credits.json`
-Future<ApiResult<void>> createApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -689,7 +689,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-10
 ///
 /// `GET /admin/api/2020-10/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> getApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -709,7 +709,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2021-01
 ///
 /// `GET /admin/api/2021-01/application_credits.json`
-Future<ApiResult<void>> deprecated202101GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -729,7 +729,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2021-01
 ///
 /// `POST /admin/api/2021-01/application_credits.json`
-Future<ApiResult<void>> deprecated202101CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -748,7 +748,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2021-01
 ///
 /// `GET /admin/api/2021-01/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> deprecated202101GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -768,7 +768,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-unstable
 ///
 /// `GET /admin/api/unstable/application_credits.json`
-Future<ApiResult<void>> deprecatedUnstableGetApplicationCredits({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCredits({String? fields}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -788,7 +788,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-unstable
 ///
 /// `POST /admin/api/unstable/application_credits.json`
-Future<ApiResult<void>> deprecatedUnstableCreateApplicationCredits({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateApplicationCredits({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/application_credits.json',
   headers: {..._config.defaultHeaders
@@ -807,7 +807,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-unstable
 ///
 /// `GET /admin/api/unstable/application_credits/{application_credit_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/application_credits/${Uri.encodeComponent(applicationCreditId)}.json',
   headers: {..._config.defaultHeaders
@@ -827,7 +827,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-01
 ///
 /// `GET /admin/api/2020-01/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202001GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -848,7 +848,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-01
 ///
 /// `POST /admin/api/2020-01/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202001CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -867,7 +867,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-01
 ///
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -887,7 +887,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -909,7 +909,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#activate-2020-01
 ///
 /// `POST /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202001CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -928,7 +928,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-01
 ///
 /// `PUT /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> deprecated202001UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -948,7 +948,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-04
 ///
 /// `GET /admin/api/2020-04/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202004GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -969,7 +969,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-04
 ///
 /// `POST /admin/api/2020-04/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202004CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -988,7 +988,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-04
 ///
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1008,7 +1008,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1030,7 +1030,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#activate-2020-04
 ///
 /// `POST /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202004CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -1049,7 +1049,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-04
 ///
 /// `PUT /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> deprecated202004UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -1069,7 +1069,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-07
 ///
 /// `GET /admin/api/2020-07/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202007GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1090,7 +1090,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-07
 ///
 /// `POST /admin/api/2020-07/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202007CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1109,7 +1109,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-07
 ///
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1129,7 +1129,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1151,7 +1151,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#activate-2020-07
 ///
 /// `POST /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/activate.json`
-Future<ApiResult<void>> deprecated202007CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -1170,7 +1170,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-07
 ///
 /// `PUT /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> deprecated202007UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -1190,7 +1190,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-10
 ///
 /// `GET /admin/api/2020-10/recurring_application_charges.json`
-Future<ApiResult<void>> getRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1211,7 +1211,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-10
 ///
 /// `POST /admin/api/2020-10/recurring_application_charges.json`
-Future<ApiResult<void>> createRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1230,7 +1230,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-10
 ///
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> getRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1250,7 +1250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1272,7 +1272,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#activate-2020-10
 ///
 /// `POST /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/activate.json`
-Future<ApiResult<void>> createRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createRecurringApplicationChargesParamRecurringApplicationChargeIdActivate({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/activate.json',
   headers: {..._config.defaultHeaders
@@ -1291,7 +1291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-10
 ///
 /// `PUT /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> updateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -1311,7 +1311,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2021-01
 ///
 /// `GET /admin/api/2021-01/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202101GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1332,7 +1332,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2021-01
 ///
 /// `POST /admin/api/2021-01/recurring_application_charges.json`
-Future<ApiResult<void>> deprecated202101CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1351,7 +1351,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2021-01
 ///
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1371,7 +1371,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1388,7 +1388,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2021-01
 ///
 /// `PUT /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> deprecated202101UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -1408,7 +1408,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-unstable
 ///
 /// `GET /admin/api/unstable/recurring_application_charges.json`
-Future<ApiResult<void>> deprecatedUnstableGetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationCharges({String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1429,7 +1429,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-unstable
 ///
 /// `POST /admin/api/unstable/recurring_application_charges.json`
-Future<ApiResult<void>> deprecatedUnstableCreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateRecurringApplicationCharges({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/recurring_application_charges.json',
   headers: {..._config.defaultHeaders
@@ -1448,7 +1448,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-unstable
 ///
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1468,7 +1468,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1485,7 +1485,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-unstable
 ///
 /// `PUT /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/customize.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/customize.json',
   headers: {..._config.defaultHeaders
@@ -1505,7 +1505,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-01
 ///
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1525,7 +1525,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-01
 ///
 /// `POST /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202001CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1544,7 +1544,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-01
 ///
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1564,7 +1564,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-04
 ///
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1584,7 +1584,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-04
 ///
 /// `POST /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202004CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1603,7 +1603,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-04
 ///
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1623,7 +1623,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-07
 ///
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1643,7 +1643,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-07
 ///
 /// `POST /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202007CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1662,7 +1662,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-07
 ///
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1682,7 +1682,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-10
 ///
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1702,7 +1702,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-10
 ///
 /// `POST /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> createRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1721,7 +1721,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-10
 ///
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1741,7 +1741,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2021-01
 ///
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1761,7 +1761,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2021-01
 ///
 /// `POST /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecated202101CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1780,7 +1780,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2021-01
 ///
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1800,7 +1800,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-unstable
 ///
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1820,7 +1820,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-unstable
 ///
 /// `POST /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
-Future<ApiResult<void>> deprecatedUnstableCreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges.json',
   headers: {..._config.defaultHeaders
@@ -1839,7 +1839,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-unstable
 ///
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/recurring_application_charges/${Uri.encodeComponent(recurringApplicationChargeId)}/usage_charges/${Uri.encodeComponent(usageChargeId)}.json',
   headers: {..._config.defaultHeaders
@@ -1855,7 +1855,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -1878,6 +1878,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -1888,7 +1889,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

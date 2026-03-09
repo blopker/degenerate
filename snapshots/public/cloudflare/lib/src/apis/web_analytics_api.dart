@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Creates a new Web Analytics site.
 ///
 /// `POST /accounts/{account_id}/rum/site_info`
-Future<ApiResult<ResponseCommon57>> webAnalyticsCreateSite({required String accountId, required RumCreateSiteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateSite({required String accountId, required RumCreateSiteRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/site_info',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// Retrieves a Web Analytics site.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57>> webAnalyticsGetSite({required String accountId, required String siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetSite({required String accountId, required String siteId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/site_info/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Updates an existing Web Analytics site.
 ///
 /// `PUT /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57>> webAnalyticsUpdateSite({required String accountId, required String siteId, required RumUpdateSiteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateSite({required String accountId, required String siteId, required RumUpdateSiteRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/site_info/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Deletes an existing Web Analytics site.
 ///
 /// `DELETE /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57>> webAnalyticsDeleteSite({required String accountId, required String siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteSite({required String accountId, required String siteId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/site_info/${Uri.encodeComponent(siteId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Lists all Web Analytics sites of an account.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/list`
-Future<ApiResult<ResponseCommon57>> webAnalyticsListSites({required String accountId, double? perPage, double? page, RumOrderBy? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListSites({required String accountId, double? perPage, double? page, RumOrderBy? orderBy, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/site_info/list',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Creates a new rule in a Web Analytics ruleset.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rule`
-Future<ApiResult<ResponseCommon57>> webAnalyticsCreateRule({required String accountId, required String rulesetId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateRule({required String accountId, required String rulesetId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/v2/${Uri.encodeComponent(rulesetId)}/rule',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// Updates a rule in a Web Analytics ruleset.
 ///
 /// `PUT /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57>> webAnalyticsUpdateRule({required String accountId, required String rulesetId, required String ruleId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateRule({required String accountId, required String rulesetId, required String ruleId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/v2/${Uri.encodeComponent(rulesetId)}/rule/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -163,7 +163,7 @@ return _execute(
 /// Deletes an existing rule from a Web Analytics ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57>> webAnalyticsDeleteRule({required String accountId, required String rulesetId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteRule({required String accountId, required String rulesetId, required String ruleId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/v2/${Uri.encodeComponent(rulesetId)}/rule/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -182,7 +182,7 @@ return _execute(
 /// Lists all the rules in a Web Analytics ruleset.
 ///
 /// `GET /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57>> webAnalyticsListRules({required String accountId, required String rulesetId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListRules({required String accountId, required String rulesetId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/v2/${Uri.encodeComponent(rulesetId)}/rules',
   headers: {..._config.defaultHeaders
@@ -201,7 +201,7 @@ return _execute(
 /// Modifies one or more rules in a Web Analytics ruleset with a single request.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57>> webAnalyticsModifyRules({required String accountId, required String rulesetId, required RumModifyRulesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsModifyRules({required String accountId, required String rulesetId, required RumModifyRulesRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rum/v2/${Uri.encodeComponent(rulesetId)}/rules',
   headers: {..._config.defaultHeaders
@@ -222,7 +222,7 @@ return _execute(
 /// Retrieves RUM status for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57>> webAnalyticsGetRumStatus({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetRumStatus({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/rum',
   headers: {..._config.defaultHeaders
@@ -241,7 +241,7 @@ return _execute(
 /// Toggles RUM on/off for an existing zone.
 ///
 /// `PATCH /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57>> webAnalyticsToggleRum({required String zoneId, required RumToggleRumRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsToggleRum({required String zoneId, required RumToggleRumRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/rum',
   headers: {..._config.defaultHeaders
@@ -258,7 +258,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -281,6 +281,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -291,7 +292,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

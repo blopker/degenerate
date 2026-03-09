@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns a list of Hyperdrives.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34>> listHyperdrive({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> listHyperdrive({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates and returns a new Hyperdrive configuration.
 ///
 /// `POST /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34>> createHyperdrive({required String accountId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> createHyperdrive({required String accountId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Returns the specified Hyperdrive configuration.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34>> getHyperdrive({required String accountId, required String hyperdriveId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> getHyperdrive({required String accountId, required String hyperdriveId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates and returns the specified Hyperdrive configuration.
 ///
 /// `PUT /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34>> updateHyperdrive({required String accountId, required String hyperdriveId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> updateHyperdrive({required String accountId, required String hyperdriveId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Patches and returns the specified Hyperdrive configuration. Custom caching settings are not kept if caching is disabled.
 ///
 /// `PATCH /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34>> patchHyperdrive({required String accountId, required String hyperdriveId, required HyperdriveHyperdriveConfigPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required String accountId, required String hyperdriveId, required HyperdriveHyperdriveConfigPatch body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Deletes the specified Hyperdrive.
 ///
 /// `DELETE /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34>> deleteHyperdrive({required String accountId, required String hyperdriveId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> deleteHyperdrive({required String accountId, required String hyperdriveId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

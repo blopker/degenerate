@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Get mapping
 ///
 /// `GET /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerGetAccountMapping({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetAccountMapping({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/account_mapping',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Create mapping
 ///
 /// `POST /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/account_mapping',
   headers: {..._config.defaultHeaders
@@ -53,7 +53,7 @@ return _execute(
 /// Lists all email scanner rules for an account.
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerListAllRules({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerListAllRules({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Create email scanner rule
 ///
 /// `POST /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Update email scanner rule priorities
 ///
 /// `PATCH /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 /// Get an email scanner rule
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerGetRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -125,7 +125,7 @@ return _execute(
 /// Update email scanner rule
 ///
 /// `PUT /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -144,7 +144,7 @@ return _execute(
 /// Delete email scanner rule
 ///
 /// `DELETE /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -159,7 +159,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -182,6 +182,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -192,7 +193,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

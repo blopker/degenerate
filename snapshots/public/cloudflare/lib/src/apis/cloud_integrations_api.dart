@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List Cloud Integrations (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse>> providersList({required String accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersList({required String accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers',
   headers: {..._config.defaultHeaders
@@ -35,6 +35,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Create Cloud Integration
@@ -42,7 +45,7 @@ return _execute(
 /// Create a new Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse>> providersCreate({required String accountId, String? forwarded, required McnCreateProviderRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersCreate({required String accountId, String? forwarded, required McnCreateProviderRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers',
   headers: {..._config.defaultHeaders
@@ -56,6 +59,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Read Cloud Integration
@@ -63,7 +69,7 @@ return _execute(
 /// Read a Cloud Integration (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse>> providersRead({required String accountId, required String providerId, bool? status, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersRead({required String accountId, required String providerId, bool? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}',
   headers: {..._config.defaultHeaders
@@ -78,6 +84,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Update Cloud Integration
@@ -85,7 +94,7 @@ return _execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse>> providersUpdate({required String accountId, required String providerId, required McnUpdateProviderRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersUpdate({required String accountId, required String providerId, required McnUpdateProviderRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}',
   headers: {..._config.defaultHeaders
@@ -99,6 +108,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Patch Cloud Integration
@@ -106,7 +118,7 @@ return _execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse>> providersPatch({required String accountId, required String providerId, required McnUpdateProviderRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersPatch({required String accountId, required String providerId, required McnUpdateProviderRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}',
   headers: {..._config.defaultHeaders
@@ -120,6 +132,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Delete Cloud Integration
@@ -127,7 +142,7 @@ return _execute(
 /// Delete a Cloud Integration (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse>> providersDelete({required String accountId, required String providerId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersDelete({required String accountId, required String providerId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}',
   headers: {..._config.defaultHeaders
@@ -139,6 +154,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Run Discovery
@@ -146,7 +164,7 @@ return _execute(
 /// Run discovery for a Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/{provider_id}/discover`
-Future<ApiResult<McnResponse>> providersDiscover({required String accountId, required String providerId, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersDiscover({required String accountId, required String providerId, bool? v2, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}/discover',
   headers: {..._config.defaultHeaders
@@ -161,6 +179,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Get Cloud Integration Setup Config
@@ -168,7 +189,7 @@ return _execute(
 /// Get initial configuration to complete Cloud Integration setup (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}/initial_setup`
-Future<ApiResult<McnResponse>> providersInitialSetup({required String accountId, required String providerId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersInitialSetup({required String accountId, required String providerId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/${Uri.encodeComponent(providerId)}/initial_setup',
   headers: {..._config.defaultHeaders
@@ -180,6 +201,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Run Discovery for All Integrations
@@ -187,7 +211,7 @@ return _execute(
 /// Run discovery for all Cloud Integrations in an account (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/discover`
-Future<ApiResult<McnResponse>> providersDiscoverAll({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> providersDiscoverAll({required String accountId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/providers/discover',
   headers: {..._config.defaultHeaders
@@ -199,10 +223,13 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -225,6 +252,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -235,7 +263,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

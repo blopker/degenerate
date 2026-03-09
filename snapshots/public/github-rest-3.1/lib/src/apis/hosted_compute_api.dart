@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations`
-Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations',
   headers: {..._config.defaultHeaders
@@ -44,7 +44,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/settings/network-configurations`
-Future<ApiResult<NetworkConfiguration>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
   headers: {..._config.defaultHeaders
@@ -88,7 +88,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
   headers: {..._config.defaultHeaders
@@ -111,7 +111,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<void>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
   headers: {..._config.defaultHeaders
@@ -130,7 +130,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-settings/{network_settings_id}`
-Future<ApiResult<NetworkSettings>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkSettings, Never>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-settings/${Uri.encodeComponent(networkSettingsId)}',
   headers: {..._config.defaultHeaders
@@ -145,7 +145,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -168,6 +168,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -178,7 +179,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

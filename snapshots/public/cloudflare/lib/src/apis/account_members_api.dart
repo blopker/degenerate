@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all members of an account.
 ///
 /// `GET /accounts/{account_id}/members`
-Future<ApiResult<ResponseCommon35>> accountMembersListMembers({required String accountId, String? order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersListMembers({required String accountId, String? order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/members',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Add a user to the list of members for this account.
 ///
 /// `POST /accounts/{account_id}/members`
-Future<ApiResult<ResponseCommon35>> accountMembersAddMember({required String accountId, required AccountMembersAddMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersAddMember({required String accountId, required AccountMembersAddMemberRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/members',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Get information about a specific member of an account.
 ///
 /// `GET /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35>> accountMembersMemberDetails({required String memberId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersMemberDetails({required String memberId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/members/${Uri.encodeComponent(memberId)}',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Modify an account member.
 ///
 /// `PUT /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35>> accountMembersUpdateMember({required String memberId, required String accountId, required AccountMembersUpdateMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersUpdateMember({required String memberId, required String accountId, required AccountMembersUpdateMemberRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/members/${Uri.encodeComponent(memberId)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Remove a member from an account.
 ///
 /// `DELETE /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35>> accountMembersRemoveMember({required String memberId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersRemoveMember({required String memberId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/members/${Uri.encodeComponent(memberId)}',
   headers: {..._config.defaultHeaders
@@ -119,7 +119,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -142,6 +142,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -152,7 +153,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

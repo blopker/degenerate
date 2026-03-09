@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/count.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/count.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/count.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/count.json`
-Future<ApiResult<void>> getCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -117,7 +117,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/count.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/count.json',
   headers: {..._config.defaultHeaders
@@ -167,7 +167,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders.json`
-Future<ApiResult<void>> deprecated202001GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders.json',
   headers: {..._config.defaultHeaders
@@ -223,7 +223,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders.json`
-Future<ApiResult<void>> deprecated202001CreateOrders({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrders({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders.json',
   headers: {..._config.defaultHeaders
@@ -242,7 +242,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202001GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -262,7 +262,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -281,7 +281,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -298,7 +298,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/count.json`
-Future<ApiResult<void>> deprecated202001GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/count.json',
   headers: {..._config.defaultHeaders
@@ -324,7 +324,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/close.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/close.json',
   headers: {..._config.defaultHeaders
@@ -343,7 +343,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/open.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/open.json',
   headers: {..._config.defaultHeaders
@@ -365,7 +365,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/cancel.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/cancel.json',
   headers: {..._config.defaultHeaders
@@ -392,7 +392,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders.json`
-Future<ApiResult<void>> deprecated202004GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders.json',
   headers: {..._config.defaultHeaders
@@ -448,7 +448,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders.json`
-Future<ApiResult<void>> deprecated202004CreateOrders({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrders({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders.json',
   headers: {..._config.defaultHeaders
@@ -467,7 +467,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202004GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -487,7 +487,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -506,7 +506,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
   headers: {..._config.defaultHeaders
@@ -523,7 +523,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/count.json`
-Future<ApiResult<void>> deprecated202004GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/count.json',
   headers: {..._config.defaultHeaders
@@ -549,7 +549,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/close.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/close.json',
   headers: {..._config.defaultHeaders
@@ -568,7 +568,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/open.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/open.json',
   headers: {..._config.defaultHeaders
@@ -590,7 +590,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/cancel.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/cancel.json',
   headers: {..._config.defaultHeaders
@@ -617,7 +617,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders.json`
-Future<ApiResult<void>> deprecated202007GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders.json',
   headers: {..._config.defaultHeaders
@@ -650,7 +650,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -667,7 +667,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -686,7 +686,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -707,7 +707,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -730,7 +730,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -747,7 +747,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -764,7 +764,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -783,7 +783,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -804,7 +804,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -827,7 +827,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -844,7 +844,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -861,7 +861,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -880,7 +880,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -901,7 +901,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -924,7 +924,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -941,7 +941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void>> getOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -958,7 +958,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void>> createOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -977,7 +977,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -998,7 +998,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1021,7 +1021,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1038,7 +1038,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -1055,7 +1055,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -1074,7 +1074,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1095,7 +1095,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1118,7 +1118,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1135,7 +1135,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -1152,7 +1152,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks.json',
   headers: {..._config.defaultHeaders
@@ -1171,7 +1171,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1192,7 +1192,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-unstable
 ///
 /// `PUT /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1215,7 +1215,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
   headers: {..._config.defaultHeaders
@@ -1232,7 +1232,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1261,7 +1261,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1290,7 +1290,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1320,7 +1320,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1344,7 +1344,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1373,7 +1373,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1402,7 +1402,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1432,7 +1432,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1456,7 +1456,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1485,7 +1485,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1514,7 +1514,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1544,7 +1544,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1568,7 +1568,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> getOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1597,7 +1597,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> createOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1626,7 +1626,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1656,7 +1656,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> createOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1680,7 +1680,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1709,7 +1709,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1738,7 +1738,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1768,7 +1768,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1792,7 +1792,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1821,7 +1821,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds.json',
   headers: {..._config.defaultHeaders
@@ -1850,7 +1850,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
   headers: {..._config.defaultHeaders
@@ -1880,7 +1880,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
   headers: {..._config.defaultHeaders
@@ -1900,7 +1900,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -1923,6 +1923,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -1933,7 +1934,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

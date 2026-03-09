@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Site WANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<ResponseCommon48>> magicSiteWansListWans({required String accountId, required String siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansListWans({required String accountId, required String siteId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new Site WAN.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<ResponseCommon48>> magicSiteWansCreateWan({required String accountId, required String siteId, required MagicWansAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansCreateWan({required String accountId, required String siteId, required MagicWansAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a specific Site WAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteWansWanDetails({required String siteId, required String accountId, required String wanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansWanDetails({required String siteId, required String accountId, required String wanId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans/${Uri.encodeComponent(wanId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a specific Site WAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteWansUpdateWan({required String siteId, required String accountId, required String wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansUpdateWan({required String siteId, required String accountId, required String wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans/${Uri.encodeComponent(wanId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Patch a specific Site WAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteWansPatchWan({required String siteId, required String accountId, required String wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansPatchWan({required String siteId, required String accountId, required String wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans/${Uri.encodeComponent(wanId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Remove a specific Site WAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteWansDeleteWan({required String siteId, required String accountId, required String wanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansDeleteWan({required String siteId, required String accountId, required String wanId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/wans/${Uri.encodeComponent(wanId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

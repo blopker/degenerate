@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches Page Rules in a zone.
 ///
 /// `GET /zones/{zone_id}/pagerules`
-Future<ApiResult<ResponseCommon87>> pageRulesListPageRules({required String zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesListPageRules({required String zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Creates a new Page Rule.
 ///
 /// `POST /zones/{zone_id}/pagerules`
-Future<ApiResult<ResponseCommon87>> pageRulesCreateAPageRule({required String zoneId, required PageRulesCreateAPageRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesCreateAPageRule({required String zoneId, required PageRulesCreateAPageRuleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Fetches the details of a Page Rule.
 ///
 /// `GET /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseCommon87>> pageRulesGetAPageRule({required String pageruleId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesGetAPageRule({required String pageruleId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules/${Uri.encodeComponent(pageruleId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Replaces the configuration of an existing Page Rule. The configuration of the updated Page Rule will exactly match the data passed in the API request.
 ///
 /// `PUT /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseCommon87>> pageRulesUpdateAPageRule({required String pageruleId, required String zoneId, required PageRulesUpdateAPageRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesUpdateAPageRule({required String pageruleId, required String zoneId, required PageRulesUpdateAPageRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules/${Uri.encodeComponent(pageruleId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Updates one or more fields of an existing Page Rule.
 ///
 /// `PATCH /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseCommon87>> pageRulesEditAPageRule({required String pageruleId, required String zoneId, required PageRulesEditAPageRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesEditAPageRule({required String pageruleId, required String zoneId, required PageRulesEditAPageRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules/${Uri.encodeComponent(pageruleId)}',
   headers: {..._config.defaultHeaders
@@ -124,7 +124,7 @@ return _execute(
 /// Deletes an existing Page Rule.
 ///
 /// `DELETE /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseCommon87>> pageRulesDeleteAPageRule({required String pageruleId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon87, Never>> pageRulesDeleteAPageRule({required String pageruleId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pagerules/${Uri.encodeComponent(pageruleId)}',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -162,6 +162,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -172,7 +173,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// If the system is enabled, the response will include next_scheduled_scan, representing the next time this zone will be scanned and the zone's ssl/tls encryption mode is potentially upgraded by the system. If the system is disabled, next_scheduled_scan will not be present in the response body.
 ///
 /// `GET /zones/{zone_id}/settings/ssl_automatic_mode`
-Future<ApiResult<ResponseSingleId2>> sslDetectorAutomaticModeGetEnrollment({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModeGetEnrollment({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/ssl_automatic_mode',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// The automatic system is enabled when this endpoint is hit with value in the request body is set to "auto", and disabled when the request body value is set to "custom".
 ///
 /// `PATCH /zones/{zone_id}/settings/ssl_automatic_mode`
-Future<ApiResult<ResponseSingleId2>> sslDetectorAutomaticModePatchEnrollment({required String zoneId, required CacheSchemasPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModePatchEnrollment({required String zoneId, required CacheSchemasPatch body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/settings/ssl_automatic_mode',
   headers: {..._config.defaultHeaders
@@ -53,7 +53,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -76,6 +76,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -86,7 +87,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ResponseCommon6>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/api_gateway/discovery',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required String zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required String zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/api_gateway/discovery/operations',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6>> apiShieldApiPatchDiscoveredOperations({required String zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required String zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/api_gateway/discovery/operations',
   headers: {..._config.defaultHeaders
@@ -88,7 +88,7 @@ return _execute(
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6>> apiShieldApiPatchDiscoveredOperation({required String zoneId, required String operationId, required PatchDiscoveredOperationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required String zoneId, required String operationId, required PatchDiscoveredOperationRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/api_gateway/discovery/operations/${Uri.encodeComponent(operationId)}',
   headers: {..._config.defaultHeaders
@@ -105,7 +105,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -128,6 +128,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -138,7 +139,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

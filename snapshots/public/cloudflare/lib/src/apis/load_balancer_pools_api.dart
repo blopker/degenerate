@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured pools.
 ///
 /// `GET /user/load_balancers/pools`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsListPools({String? monitor}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsListPools({String? monitor}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/pools',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// Create a new pool.
 ///
 /// `POST /user/load_balancers/pools`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsCreatePool({required LoadBalancerPoolsCreatePoolRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsCreatePool({required LoadBalancerPoolsCreatePoolRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/pools',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Apply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.
 ///
 /// `PATCH /user/load_balancers/pools`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsPatchPools({required LoadBalancerPoolsPatchPoolsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsPatchPools({required LoadBalancerPoolsPatchPoolsRequest body}) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/user/load_balancers/pools',
   headers: {..._config.defaultHeaders
@@ -81,7 +81,7 @@ return _execute(
 /// Fetch a single configured pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsPoolDetails({required String poolId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsPoolDetails({required String poolId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Modify a configured pool.
 ///
 /// `PUT /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsUpdatePool({required String poolId, required LoadBalancerPoolsUpdatePoolRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsUpdatePool({required String poolId, required LoadBalancerPoolsUpdatePoolRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Apply changes to an existing pool, overwriting the supplied properties.
 ///
 /// `PATCH /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsPatchPool({required String poolId, required LoadBalancerPoolsPatchPoolRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsPatchPool({required String poolId, required LoadBalancerPoolsPatchPoolRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}',
   headers: {..._config.defaultHeaders
@@ -142,7 +142,7 @@ return _execute(
 /// Delete a configured pool.
 ///
 /// `DELETE /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsDeletePool({required String poolId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsDeletePool({required String poolId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}',
   headers: {..._config.defaultHeaders
@@ -161,7 +161,7 @@ return _execute(
 /// Fetch the latest pool health status for a single pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}/health`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsPoolHealthDetails({required String poolId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsPoolHealthDetails({required String poolId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}/health',
   headers: {..._config.defaultHeaders
@@ -180,7 +180,7 @@ return _execute(
 /// Preview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /user/load_balancers/pools/{pool_id}/preview`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsPreviewPool({required String poolId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsPreviewPool({required String poolId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}/preview',
   headers: {..._config.defaultHeaders
@@ -201,7 +201,7 @@ return _execute(
 /// Get the list of resources that reference the provided pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}/references`
-Future<ApiResult<ResponseCommon42>> loadBalancerPoolsListPoolReferences({required String poolId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsListPoolReferences({required String poolId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId)}/references',
   headers: {..._config.defaultHeaders
@@ -216,7 +216,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -239,6 +239,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -249,7 +250,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

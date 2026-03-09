@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Connectors
 ///
 /// `GET /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse>> mconnConnectorList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors',
   headers: {..._config.defaultHeaders
@@ -27,12 +27,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Add a connector to your account
 ///
 /// `POST /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse>> mconnConnectorCreate({required String accountId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorCreate({required String accountId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors',
   headers: {..._config.defaultHeaders
@@ -46,12 +49,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Fetch Connector
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse>> mconnConnectorFetch({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorFetch({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}',
   headers: {..._config.defaultHeaders
@@ -63,12 +69,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Replace Connector or Re-provision License Key
 ///
 /// `PUT /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse>> mconnConnectorReplace({required String accountId, required String connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorReplace({required String accountId, required String connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}',
   headers: {..._config.defaultHeaders
@@ -82,12 +91,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Edit Connector to update specific properties or Re-provision License Key
 ///
 /// `PATCH /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse>> mconnConnectorUpdate({required String accountId, required String connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorUpdate({required String accountId, required String connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}',
   headers: {..._config.defaultHeaders
@@ -101,12 +113,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Remove a connector from your account
 ///
 /// `DELETE /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse>> mconnConnectorDelete({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorDelete({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}',
   headers: {..._config.defaultHeaders
@@ -118,12 +133,15 @@ return _execute(
   onSuccess: (response) {
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// List Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetryEventsList({required String accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsList({required String accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events',
   headers: {..._config.defaultHeaders
@@ -142,12 +160,15 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Get Event
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetryEventsGet({required String accountId, required String connectorId, required double eventT, required double eventN, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsGet({required String accountId, required String connectorId, required double eventT, required double eventN, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/${Uri.encodeComponent(eventT.toString())}.${Uri.encodeComponent(eventN.toString())}',
   headers: {..._config.defaultHeaders
@@ -159,12 +180,15 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Get latest Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/latest',
   headers: {..._config.defaultHeaders
@@ -176,12 +200,15 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// List Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required String accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required String accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots',
   headers: {..._config.defaultHeaders
@@ -199,12 +226,15 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Get Snapshot
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required String accountId, required String connectorId, required double snapshotT, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required String accountId, required String connectorId, required double snapshotT, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/${Uri.encodeComponent(snapshotT.toString())}',
   headers: {..._config.defaultHeaders
@@ -216,12 +246,15 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Get latest Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest`
-Future<ApiResult<MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required String accountId, required String connectorId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/latest',
   headers: {..._config.defaultHeaders
@@ -233,10 +266,13 @@ return _execute(
   onSuccess: (response) {
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -259,6 +295,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -269,7 +306,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

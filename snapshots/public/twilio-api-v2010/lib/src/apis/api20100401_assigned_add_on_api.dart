@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Fetch an instance of an Add-on installation currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Remove the assignment of an Add-on installation from the Number specified.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<void>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -47,7 +47,7 @@ return _execute(
 /// Retrieve a list of Add-on installations currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse, Never>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns.json',
   headers: {..._config.defaultHeaders
@@ -69,7 +69,7 @@ return _execute(
 /// Assign an Add-on installation to the Number specified.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns.json',
   headers: {..._config.defaultHeaders
@@ -86,7 +86,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -109,6 +109,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -119,7 +120,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

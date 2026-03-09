@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/access/accessscope#index-2020-10
 ///
 /// `GET /admin/oauth/access_scopes.json`
-Future<ApiResult<void>> getAdminOauthAccessScopes() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getAdminOauthAccessScopes() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/oauth/access_scopes.json',
   headers: {..._config.defaultHeaders
@@ -34,7 +34,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-01
 ///
 /// `GET /admin/api/2020-01/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202001GetStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-01
 ///
 /// `POST /admin/api/2020-01/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202001CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -87,7 +87,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-04
 ///
 /// `GET /admin/api/2020-04/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202004GetStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-04
 ///
 /// `POST /admin/api/2020-04/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202004CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -140,7 +140,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-07
 ///
 /// `GET /admin/api/2020-07/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202007GetStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -157,7 +157,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-07
 ///
 /// `POST /admin/api/2020-07/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202007CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -176,7 +176,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -193,7 +193,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-10
 ///
 /// `GET /admin/api/2020-10/storefront_access_tokens.json`
-Future<ApiResult<void>> getStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -210,7 +210,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-10
 ///
 /// `POST /admin/api/2020-10/storefront_access_tokens.json`
-Future<ApiResult<void>> createStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -229,7 +229,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -246,7 +246,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2021-01
 ///
 /// `GET /admin/api/2021-01/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202101GetStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -263,7 +263,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2021-01
 ///
 /// `POST /admin/api/2021-01/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecated202101CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -282,7 +282,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -299,7 +299,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-unstable
 ///
 /// `GET /admin/api/unstable/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecatedUnstableGetStorefrontAccessTokens() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetStorefrontAccessTokens() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -316,7 +316,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-unstable
 ///
 /// `POST /admin/api/unstable/storefront_access_tokens.json`
-Future<ApiResult<void>> deprecatedUnstableCreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateStorefrontAccessTokens({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/storefront_access_tokens.json',
   headers: {..._config.defaultHeaders
@@ -335,7 +335,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/storefront_access_tokens/{storefront_access_token_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteStorefrontAccessTokensParamStorefrontAccessTokenId({required String storefrontAccessTokenId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/storefront_access_tokens/${Uri.encodeComponent(storefrontAccessTokenId)}.json',
   headers: {..._config.defaultHeaders
@@ -348,7 +348,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -371,6 +371,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -381,7 +382,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

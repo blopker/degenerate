@@ -7,6 +7,7 @@
 export 'src/client/api_client.dart';
 export 'src/client/api_config.dart';
 export 'src/client/api_result.dart';
+export 'src/client/test_api_api.dart';
 
 export 'src/models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';
 export 'src/models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';

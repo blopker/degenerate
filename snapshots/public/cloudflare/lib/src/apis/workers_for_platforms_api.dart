@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch a list of Workers for Platforms namespaces.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new Workers for Platforms namespace.
 ///
 /// `POST /accounts/{account_id}/workers/dispatch/namespaces`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerCreate({required String accountId, required NamespaceWorkerCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerCreate({required String accountId, required NamespaceWorkerCreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerGetNamespace({required String accountId, required String dispatchNamespace, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetNamespace({required String accountId, required String dispatchNamespace, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPutNamespace({required String accountId, required String dispatchNamespace, required NamespaceWorkerPutNamespaceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutNamespace({required String accountId, required String dispatchNamespace, required NamespaceWorkerPutNamespaceRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Patch a Workers for Platforms namespace. Omitted fields are left unchanged.
 ///
 /// `PATCH /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPatchNamespace({required String accountId, required String dispatchNamespace, required NamespaceWorkerPatchNamespaceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPatchNamespace({required String accountId, required String dispatchNamespace, required NamespaceWorkerPatchNamespaceRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Delete a Workers for Platforms namespace.
 ///
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerDeleteNamespace({required String accountId, required String dispatchNamespace, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerDeleteNamespace({required String accountId, required String dispatchNamespace, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Fetch a list of scripts uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerListScripts({required String accountId, required String dispatchNamespace, String? tags, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerListScripts({required String accountId, required String dispatchNamespace, String? tags, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts',
   headers: {..._config.defaultHeaders
@@ -159,7 +159,7 @@ return _execute(
 /// Delete multiple scripts from a Workers for Platforms namespace based on optional tag filters.
 ///
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts`
-Future<ApiResult<WorkersNamespaceScriptDeleteBulkResponse>> namespaceWorkerDeleteScripts({required String accountId, required String dispatchNamespace, String? tags, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersNamespaceScriptDeleteBulkResponse, Never>> namespaceWorkerDeleteScripts({required String accountId, required String dispatchNamespace, String? tags, int? limit, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts',
   headers: {..._config.defaultHeaders
@@ -182,7 +182,7 @@ return _execute(
 /// Fetch information about a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerScriptWorkerDetails({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptWorkerDetails({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -201,7 +201,7 @@ return _execute(
 /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerScriptUploadWorkerModule({required String accountId, required String dispatchNamespace, required String scriptName, NamespaceWorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptUploadWorkerModule({required String accountId, required String dispatchNamespace, required String scriptName, NamespaceWorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -225,7 +225,7 @@ return _execute(
 /// Delete a worker from a Workers for Platforms namespace. This call has no response body on a successful delete.
 ///
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerScriptDeleteWorker({required String accountId, required String dispatchNamespace, required String scriptName, bool? force, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptDeleteWorker({required String accountId, required String dispatchNamespace, required String scriptName, bool? force, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}',
   headers: {..._config.defaultHeaders
@@ -247,7 +247,7 @@ return _execute(
 /// Start uploading a collection of assets for use in a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerScriptUpdateCreateAssetsUploadSession({required String accountId, required String dispatchNamespace, required String scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptUpdateCreateAssetsUploadSession({required String accountId, required String dispatchNamespace, required String scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/assets-upload-session',
   headers: {..._config.defaultHeaders
@@ -268,7 +268,7 @@ return _execute(
 /// Fetch script bindings from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/bindings`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerGetScriptBindings({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetScriptBindings({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/bindings',
   headers: {..._config.defaultHeaders
@@ -287,7 +287,7 @@ return _execute(
 /// Fetch script content from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content`
-Future<ApiResult<void>> namespaceWorkerGetScriptContent({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> namespaceWorkerGetScriptContent({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/content',
   headers: {..._config.defaultHeaders
@@ -304,7 +304,7 @@ return _execute(
 /// Put script content for a script uploaded to a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPutScriptContent({required String accountId, required String dispatchNamespace, required String scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required NamespaceWorkerPutScriptContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptContent({required String accountId, required String dispatchNamespace, required String scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required NamespaceWorkerPutScriptContentRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/content',
   headers: {..._config.defaultHeaders
@@ -325,7 +325,7 @@ return _execute(
 /// List secrets bound to a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerListScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerListScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/secrets',
   headers: {..._config.defaultHeaders
@@ -344,7 +344,7 @@ return _execute(
 /// Add a secret to a script uploaded to a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPutScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, required WorkersSecret body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, required WorkersSecret body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/secrets',
   headers: {..._config.defaultHeaders
@@ -365,7 +365,7 @@ return _execute(
 /// Get a given secret binding (value omitted) on a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerGetScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetScriptSecrets({required String accountId, required String dispatchNamespace, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/secrets/${Uri.encodeComponent(secretName)}',
   headers: {..._config.defaultHeaders
@@ -387,7 +387,7 @@ return _execute(
 /// Remove a secret from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerDeleteScriptSecret({required String accountId, required String dispatchNamespace, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerDeleteScriptSecret({required String accountId, required String dispatchNamespace, required String scriptName, required String secretName, bool? urlEncoded, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/secrets/${Uri.encodeComponent(secretName)}',
   headers: {..._config.defaultHeaders
@@ -409,7 +409,7 @@ return _execute(
 /// Get script settings from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerGetScriptSettings({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetScriptSettings({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/settings',
   headers: {..._config.defaultHeaders
@@ -428,7 +428,7 @@ return _execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPatchScriptSettings({required String accountId, required String dispatchNamespace, required String scriptName, required NamespaceWorkerPatchScriptSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPatchScriptSettings({required String accountId, required String dispatchNamespace, required String scriptName, required NamespaceWorkerPatchScriptSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/settings',
   headers: {..._config.defaultHeaders
@@ -449,7 +449,7 @@ return _execute(
 /// Fetch tags from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerGetScriptTags({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetScriptTags({required String accountId, required String dispatchNamespace, required String scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/tags',
   headers: {..._config.defaultHeaders
@@ -468,7 +468,7 @@ return _execute(
 /// Put script tags for a script uploaded to a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPutScriptTags({required String accountId, required String dispatchNamespace, required String scriptName, required List<String>? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptTags({required String accountId, required String dispatchNamespace, required String scriptName, required List<String>? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/tags',
   headers: {..._config.defaultHeaders
@@ -489,7 +489,7 @@ return _execute(
 /// Put a single tag on a script uploaded to a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerPutScriptTag({required String accountId, required String dispatchNamespace, required String scriptName, required String tag, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptTag({required String accountId, required String dispatchNamespace, required String scriptName, required String tag, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/tags/${Uri.encodeComponent(tag)}',
   headers: {..._config.defaultHeaders
@@ -508,7 +508,7 @@ return _execute(
 /// Delete script tag for a script uploaded to a Workers for Platforms namespace.
 ///
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}`
-Future<ApiResult<ResponseCommon80>> namespaceWorkerDeleteScriptTag({required String accountId, required String dispatchNamespace, required String scriptName, required String tag, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerDeleteScriptTag({required String accountId, required String dispatchNamespace, required String scriptName, required String tag, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace)}/scripts/${Uri.encodeComponent(scriptName)}/tags/${Uri.encodeComponent(tag)}',
   headers: {..._config.defaultHeaders
@@ -523,7 +523,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -546,6 +546,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -556,7 +557,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

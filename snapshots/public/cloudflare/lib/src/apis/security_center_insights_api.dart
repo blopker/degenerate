@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieves Security Center Issues Types
 ///
 /// `GET /accounts/{account_id}/intel/attack-surface-report/issue-types`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterIssueTypes({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterIssueTypes({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/intel/attack-surface-report/issue-types',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Retrieves Security Center Insights
 ///
 /// `GET /accounts/{account_id}/security-center/insights`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterInsights({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsights({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Returns the full context payload for an insight. This endpoint is used for insights with large payloads that are not included inline in the list response.
 ///
 /// `GET /accounts/{account_id}/security-center/insights/{issue_id}/context`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterInsightContext({required String accountId, required String issueId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightContext({required String accountId, required String issueId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights/${Uri.encodeComponent(issueId)}/context',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Archives Security Center Insight
 ///
 /// `PUT /accounts/{account_id}/security-center/insights/{issue_id}/dismiss`
-Future<ApiResult<ResponseCommon61>> archiveSecurityCenterInsight({required String accountId, required String issueId, required ArchiveSecurityCenterInsightRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> archiveSecurityCenterInsight({required String accountId, required String issueId, required ArchiveSecurityCenterInsightRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// Retrieves Security Center Insight Counts by Class
 ///
 /// `GET /accounts/{account_id}/security-center/insights/class`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterInsightCountsByClass({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsByClass({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights/class',
   headers: {..._config.defaultHeaders
@@ -132,7 +132,7 @@ return _execute(
 /// Retrieves Security Center Insight Counts by Severity
 ///
 /// `GET /accounts/{account_id}/security-center/insights/severity`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterInsightCountsBySeverity({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsBySeverity({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights/severity',
   headers: {..._config.defaultHeaders
@@ -162,7 +162,7 @@ return _execute(
 /// Retrieves Security Center Insight Counts by Type
 ///
 /// `GET /accounts/{account_id}/security-center/insights/type`
-Future<ApiResult<ResponseCommon61>> getSecurityCenterInsightCountsByType({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsByType({required String accountId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/security-center/insights/type',
   headers: {..._config.defaultHeaders
@@ -192,7 +192,7 @@ return _execute(
 /// Retrieves Zone Security Center Insights
 ///
 /// `GET /zones/{zone_id}/security-center/insights`
-Future<ApiResult<ResponseCommon61>> getZoneSecurityCenterInsights({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsights({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/security-center/insights',
   headers: {..._config.defaultHeaders
@@ -224,7 +224,7 @@ return _execute(
 /// Archives Zone Security Center Insight
 ///
 /// `PUT /zones/{zone_id}/security-center/insights/{issue_id}/dismiss`
-Future<ApiResult<ResponseCommon61>> archiveZoneSecurityCenterInsight({required String zoneId, required String issueId, required ArchiveZoneSecurityCenterInsightRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> archiveZoneSecurityCenterInsight({required String zoneId, required String issueId, required ArchiveZoneSecurityCenterInsightRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
   headers: {..._config.defaultHeaders
@@ -243,7 +243,7 @@ return _execute(
 /// Retrieves Zone Security Center Insight Counts by Class
 ///
 /// `GET /zones/{zone_id}/security-center/insights/class`
-Future<ApiResult<ResponseCommon61>> getZoneSecurityCenterInsightCountsByClass({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsByClass({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/security-center/insights/class',
   headers: {..._config.defaultHeaders
@@ -273,7 +273,7 @@ return _execute(
 /// Retrieves Zone Security Center Insight Counts by Severity
 ///
 /// `GET /zones/{zone_id}/security-center/insights/severity`
-Future<ApiResult<ResponseCommon61>> getZoneSecurityCenterInsightCountsBySeverity({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsBySeverity({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/security-center/insights/severity',
   headers: {..._config.defaultHeaders
@@ -303,7 +303,7 @@ return _execute(
 /// Retrieves Zone Security Center Insight Counts by Type
 ///
 /// `GET /zones/{zone_id}/security-center/insights/type`
-Future<ApiResult<ResponseCommon61>> getZoneSecurityCenterInsightCountsByType({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsByType({required String zoneId, bool? dismissed, List<String>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<String>? subject, List<String>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<String>? subjectneq, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/security-center/insights/type',
   headers: {..._config.defaultHeaders
@@ -331,7 +331,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -354,6 +354,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -364,7 +365,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

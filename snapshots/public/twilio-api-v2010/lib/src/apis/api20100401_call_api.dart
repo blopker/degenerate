@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieves a collection of calls made to and from your account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<ListCallResponse>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
   headers: {..._config.defaultHeaders
@@ -47,7 +47,7 @@ return _execute(
 /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<AccountCall>> createCall({required String accountSid, CreateCallRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Fetch the call specified by the provided Call SID
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall>> fetchCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Initiates a call redirect or terminates a call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<void>> deleteCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -115,7 +115,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -138,6 +138,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -148,7 +149,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

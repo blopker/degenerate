@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Disable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/disable`
-Future<ApiResult<ResponseCommon75>> wafContentScanningDisable({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDisable({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/disable',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Enable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/enable`
-Future<ApiResult<ResponseCommon75>> wafContentScanningEnable({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningEnable({required String zoneId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/enable',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Get a list of existing custom scan expressions for Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<ResponseCommon75>> wafContentScanningListCustomScanExpressions({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningListCustomScanExpressions({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/payloads',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// Add custom scan expressions for Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<ResponseCommon75>> wafContentScanningAddCustomScanExpressions({required String zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningAddCustomScanExpressions({required String zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/payloads',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Delete a Content Scan Custom Expression.
 ///
 /// `DELETE /zones/{zone_id}/content-upload-scan/payloads/{expression_id}`
-Future<ApiResult<ResponseCommon75>> wafContentScanningDeleteCustomScanExpressions({required String zoneId, required String expressionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDeleteCustomScanExpressions({required String zoneId, required String expressionId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/payloads/${Uri.encodeComponent(expressionId)}',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Retrieve the current status of Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<ResponseCommon75>> wafContentScanningGetStatus({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningGetStatus({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/settings',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 /// Update the Content Scanning status.
 ///
 /// `PUT /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<ResponseCommon75>> wafContentScanningUpdateSettings({required String zoneId, required WafContentScanningUpdateSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningUpdateSettings({required String zoneId, required WafContentScanningUpdateSettingsRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/content-upload-scan/settings',
   headers: {..._config.defaultHeaders
@@ -150,7 +150,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -173,6 +173,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -183,7 +184,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

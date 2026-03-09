@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List uploaded certificates for this organization.
 ///
 /// `GET /organization/certificates`
-Future<ApiResult<ListCertificatesResponse>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/certificates',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates`
-Future<ApiResult<Certificate>> uploadCertificate({required UploadCertificateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> uploadCertificate({required UploadCertificateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates',
   headers: {..._config.defaultHeaders
@@ -62,7 +62,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/activate`
-Future<ApiResult<ListCertificatesResponse>> activateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> activateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/activate',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/deactivate',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// 
 ///
 /// `GET /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -127,7 +127,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -149,7 +149,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/certificates/{certificate_id}`
-Future<ApiResult<DeleteCertificateResponse>> deleteCertificate({required String certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCertificateResponse, Never>> deleteCertificate({required String certificateId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -166,7 +166,7 @@ return _execute(
 /// List certificates for this project.
 ///
 /// `GET /organization/projects/{project_id}/certificates`
-Future<ApiResult<ListCertificatesResponse>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates',
   headers: {..._config.defaultHeaders
@@ -191,7 +191,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/activate`
-Future<ApiResult<ListCertificatesResponse>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates/activate',
   headers: {..._config.defaultHeaders
@@ -212,7 +212,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates/deactivate',
   headers: {..._config.defaultHeaders
@@ -229,7 +229,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -252,6 +252,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -262,7 +263,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

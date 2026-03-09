@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Associate a hostname to a certificate and enable, disable or invalidate the association. If disabled, client certificate will not be sent to the hostname even if activated at the zone level. 100 maximum associations on a single certificate are allowed. Note: Use a null value for parameter *enabled* to invalidate the association.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/hostnames`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required String zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required String zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// Retrieves the client certificate authentication status for a specific hostname, showing whether authenticated origin pulls are enabled.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/{hostname}`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required String hostname, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required String hostname, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullListCertificates({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullListCertificates({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames/certificates',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Upload a certificate to be used for client authentication on a hostname. 10 hostname certificates per zone are allowed.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required String zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required String zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames/certificates',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Get the certificate by ID to be used for client authentication on a hostname.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required String certificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

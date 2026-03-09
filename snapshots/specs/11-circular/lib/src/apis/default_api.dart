@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List employees (A references B, B references A)
 ///
 /// `GET /employees`
-Future<ApiResult<List<Employee>>> listEmployees() async  { final request = ApiRequest(
+Future<ApiResult<List<Employee>, Never>> listEmployees() async  { final request = ApiRequest(
   method: 'GET',
   path: '/employees',
   headers: {..._config.defaultHeaders
@@ -33,7 +33,7 @@ return _execute(
 /// List departments (B references A)
 ///
 /// `GET /departments`
-Future<ApiResult<List<Department>>> listDepartments() async  { final request = ApiRequest(
+Future<ApiResult<List<Department>, Never>> listDepartments() async  { final request = ApiRequest(
   method: 'GET',
   path: '/departments',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// List categories (self-referencing tree)
 ///
 /// `GET /categories`
-Future<ApiResult<List<Category>>> listCategories() async  { final request = ApiRequest(
+Future<ApiResult<List<Category>, Never>> listCategories() async  { final request = ApiRequest(
   method: 'GET',
   path: '/categories',
   headers: {..._config.defaultHeaders
@@ -69,7 +69,7 @@ return _execute(
 /// Get filesystem tree (self-referencing with union)
 ///
 /// `GET /filesystem`
-Future<ApiResult<FileSystemNode>> getFilesystem() async  { final request = ApiRequest(
+Future<ApiResult<FileSystemNode, Never>> getFilesystem() async  { final request = ApiRequest(
   method: 'GET',
   path: '/filesystem',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -107,6 +107,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -117,7 +118,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

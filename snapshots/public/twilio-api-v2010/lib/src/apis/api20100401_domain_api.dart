@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of domains belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<ListSipDomainResponse>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipDomainResponse, Never>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Create a new Domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<AccountSipSipDomain>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Fetch an instance of a Domain
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain>> fetchSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> fetchSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -73,7 +73,7 @@ return _execute(
 /// Update the attributes of a domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Delete an instance of a Domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<void>> deleteSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -105,7 +105,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -128,6 +128,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -138,7 +139,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

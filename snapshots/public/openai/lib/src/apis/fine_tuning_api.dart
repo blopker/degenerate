@@ -16,7 +16,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /fine_tuning/alpha/graders/run`
-Future<ApiResult<RunGraderResponse>> runGrader({required RunGraderRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RunGraderResponse, Never>> runGrader({required RunGraderRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/alpha/graders/run',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/alpha/graders/validate`
-Future<ApiResult<ValidateGraderResponse>> validateGrader({required ValidateGraderRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ValidateGraderResponse, Never>> validateGrader({required ValidateGraderRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/alpha/graders/validate',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions`
-Future<ApiResult<ListFineTuningCheckpointPermissionResponse>> listFineTuningCheckpointPermissions({required String fineTunedModelCheckpoint, String? projectId, String? after, int? limit, ListFineTuningCheckpointPermissionsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> listFineTuningCheckpointPermissions({required String fineTunedModelCheckpoint, String? projectId, String? after, int? limit, ListFineTuningCheckpointPermissionsOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/checkpoints/${Uri.encodeComponent(fineTunedModelCheckpoint)}/permissions',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions`
-Future<ApiResult<ListFineTuningCheckpointPermissionResponse>> createFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required CreateFineTuningCheckpointPermissionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> createFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required CreateFineTuningCheckpointPermissionRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/checkpoints/${Uri.encodeComponent(fineTunedModelCheckpoint)}/permissions',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions/{permission_id}`
-Future<ApiResult<DeleteFineTuningCheckpointPermissionResponse>> deleteFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required String permissionId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteFineTuningCheckpointPermissionResponse, Never>> deleteFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required String permissionId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/fine_tuning/checkpoints/${Uri.encodeComponent(fineTunedModelCheckpoint)}/permissions/${Uri.encodeComponent(permissionId)}',
   headers: {..._config.defaultHeaders
@@ -124,7 +124,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs`
-Future<ApiResult<ListPaginatedFineTuningJobsResponse>> listPaginatedFineTuningJobs({String? after, int? limit, Map<String,String>? metadata, }) async  { final request = ApiRequest(
+Future<ApiResult<ListPaginatedFineTuningJobsResponse, Never>> listPaginatedFineTuningJobs({String? after, int? limit, Map<String,String>? metadata, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/jobs',
   headers: {..._config.defaultHeaders
@@ -151,7 +151,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs`
-Future<ApiResult<FineTuningJob>> createFineTuningJob({required CreateFineTuningJobRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<FineTuningJob, Never>> createFineTuningJob({required CreateFineTuningJobRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs',
   headers: {..._config.defaultHeaders
@@ -173,7 +173,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}`
-Future<ApiResult<FineTuningJob>> retrieveFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
+Future<ApiResult<FineTuningJob, Never>> retrieveFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}',
   headers: {..._config.defaultHeaders
@@ -191,7 +191,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel`
-Future<ApiResult<FineTuningJob>> cancelFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
+Future<ApiResult<FineTuningJob, Never>> cancelFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/cancel',
   headers: {..._config.defaultHeaders
@@ -209,7 +209,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints`
-Future<ApiResult<ListFineTuningJobCheckpointsResponse>> listFineTuningJobCheckpoints({required String fineTuningJobId, String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFineTuningJobCheckpointsResponse, Never>> listFineTuningJobCheckpoints({required String fineTuningJobId, String? after, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/checkpoints',
   headers: {..._config.defaultHeaders
@@ -231,7 +231,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/events`
-Future<ApiResult<ListFineTuningJobEventsResponse>> listFineTuningEvents({required String fineTuningJobId, String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFineTuningJobEventsResponse, Never>> listFineTuningEvents({required String fineTuningJobId, String? after, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/events',
   headers: {..._config.defaultHeaders
@@ -253,7 +253,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/pause`
-Future<ApiResult<FineTuningJob>> pauseFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
+Future<ApiResult<FineTuningJob, Never>> pauseFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/pause',
   headers: {..._config.defaultHeaders
@@ -271,7 +271,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/resume`
-Future<ApiResult<FineTuningJob>> resumeFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
+Future<ApiResult<FineTuningJob, Never>> resumeFineTuningJob({required String fineTuningJobId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/resume',
   headers: {..._config.defaultHeaders
@@ -286,7 +286,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -309,6 +309,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -319,7 +320,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

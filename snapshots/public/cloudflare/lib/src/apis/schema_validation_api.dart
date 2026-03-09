@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all OpenAPI schemas uploaded to API Shield with pagination support.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ResponseCommon6>> schemaValidationListSchemasPaginated({required String zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemasPaginated({required String zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Uploads a new OpenAPI schema for API Shield schema validation. The schema defines expected request/response formats for API endpoints.
 ///
 /// `POST /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ResponseCommon6>> schemaValidationCreateSchema({required String zoneId, required SchemaValidationCreateSchemaRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationCreateSchema({required String zoneId, required SchemaValidationCreateSchemaRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6>> schemaValidationGetSchema({required String zoneId, required String schemaId, bool? omitSource, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSchema({required String zoneId, required String schemaId, bool? omitSource, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas/${Uri.encodeComponent(schemaId)}',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// Modifies an existing OpenAPI schema in API Shield, updating the validation rules for associated API operations.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6>> schemaValidationEditSchema({required String zoneId, required String schemaId, required SchemaValidationEditSchemaRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSchema({required String zoneId, required String schemaId, required SchemaValidationEditSchemaRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas/${Uri.encodeComponent(schemaId)}',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,7 @@ return _execute(
 /// Permanently removes an uploaded OpenAPI schema from API Shield. Operations using this schema will lose their validation rules.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6>> schemaValidationDeleteSchema({required String zoneId, required String schemaId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeleteSchema({required String zoneId, required String schemaId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas/${Uri.encodeComponent(schemaId)}',
   headers: {..._config.defaultHeaders
@@ -125,7 +125,7 @@ return _execute(
 /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}/operations`
-Future<ApiResult<ResponseCommon6>> schemaValidationExtractOperationsFromSchema({required String zoneId, required String schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationExtractOperationsFromSchema({required String zoneId, required String schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas/${Uri.encodeComponent(schemaId)}/operations',
   headers: {..._config.defaultHeaders
@@ -153,7 +153,7 @@ return _execute(
 /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/hosts`
-Future<ApiResult<ResponseCommon6>> schemaValidationListSchemaHosts({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemaHosts({required String zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/schema_validation/schemas/hosts',
   headers: {..._config.defaultHeaders
@@ -172,7 +172,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -195,6 +195,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -205,7 +206,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

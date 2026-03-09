@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Get All Credential Lists
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json`
-Future<ApiResult<ListSipCredentialListResponse>> listSipCredentialList({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipCredentialListResponse, Never>> listSipCredentialList({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists.json',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Create a Credential List
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json`
-Future<ApiResult<AccountSipSipCredentialList>> createSipCredentialList({required String accountSid, CreateSipCredentialListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipCredentialList, Never>> createSipCredentialList({required String accountSid, CreateSipCredentialListRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists.json',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Get a Credential List
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
-Future<ApiResult<AccountSipSipCredentialList>> fetchSipCredentialList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipCredentialList, Never>> fetchSipCredentialList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -73,7 +73,7 @@ return _execute(
 /// Update a Credential List
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
-Future<ApiResult<AccountSipSipCredentialList>> updateSipCredentialList({required String accountSid, required String sid, UpdateSipCredentialListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipCredentialList, Never>> updateSipCredentialList({required String accountSid, required String sid, UpdateSipCredentialListRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Delete a Credential List
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
-Future<ApiResult<void>> deleteSipCredentialList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipCredentialList({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -105,7 +105,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -128,6 +128,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -138,7 +139,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

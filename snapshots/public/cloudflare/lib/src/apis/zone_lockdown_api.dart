@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches Zone Lockdown rules. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<ResponseCommon31>> zoneLockdownListZoneLockdownRules({required String zoneId, double? page, String? description, DateTime? modifiedOn, String? ip, double? priority, String? uriSearch, String? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownListZoneLockdownRules({required String zoneId, double? page, String? description, DateTime? modifiedOn, String? ip, double? priority, String? uriSearch, String? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/lockdowns',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Creates a new Zone Lockdown rule.
 ///
 /// `POST /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<ResponseCommon31>> zoneLockdownCreateAZoneLockdownRule({required String zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownCreateAZoneLockdownRule({required String zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/lockdowns',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Fetches the details of a Zone Lockdown rule.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ResponseCommon31>> zoneLockdownGetAZoneLockdownRule({required String lockDownsId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownGetAZoneLockdownRule({required String lockDownsId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId)}',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 /// Updates an existing Zone Lockdown rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ResponseCommon31>> zoneLockdownUpdateAZoneLockdownRule({required String lockDownsId, required String zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownUpdateAZoneLockdownRule({required String lockDownsId, required String zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId)}',
   headers: {..._config.defaultHeaders
@@ -110,7 +110,7 @@ return _execute(
 /// Deletes an existing Zone Lockdown rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponse>> zoneLockdownDeleteAZoneLockdownRule({required String lockDownsId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponse, Never>> zoneLockdownDeleteAZoneLockdownRule({required String lockDownsId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId)}',
   headers: {..._config.defaultHeaders
@@ -125,7 +125,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -148,6 +148,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -158,7 +159,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

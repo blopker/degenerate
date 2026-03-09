@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all turnstile widgets of an account.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetsList({required String accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetsList({required String accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Lists challenge widgets.
 ///
 /// `POST /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetCreate({required String accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetCreate({required String accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets',
   headers: {..._config.defaultHeaders
@@ -71,7 +71,7 @@ return _execute(
 /// Show a single challenge widget configuration.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetGet({required String accountId, required String sitekey, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetGet({required String accountId, required String sitekey, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets/${Uri.encodeComponent(sitekey)}',
   headers: {..._config.defaultHeaders
@@ -90,7 +90,7 @@ return _execute(
 /// Update the configuration of a widget.
 ///
 /// `PUT /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetUpdate({required String accountId, required String sitekey, required AccountsTurnstileWidgetUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetUpdate({required String accountId, required String sitekey, required AccountsTurnstileWidgetUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets/${Uri.encodeComponent(sitekey)}',
   headers: {..._config.defaultHeaders
@@ -111,7 +111,7 @@ return _execute(
 /// Destroy a Turnstile Widget.
 ///
 /// `DELETE /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetDelete({required String accountId, required String sitekey, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetDelete({required String accountId, required String sitekey, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets/${Uri.encodeComponent(sitekey)}',
   headers: {..._config.defaultHeaders
@@ -134,7 +134,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret`
-Future<ApiResult<ResponseCommon71>> accountsTurnstileWidgetRotateSecret({required String accountId, required String sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetRotateSecret({required String accountId, required String sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/challenges/widgets/${Uri.encodeComponent(sitekey)}/rotate_secret',
   headers: {..._config.defaultHeaders
@@ -151,7 +151,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -174,6 +174,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -184,7 +185,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

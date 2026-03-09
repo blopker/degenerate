@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Keyless SSL configurations for a given zone.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<ResponseCommon68>> keylessSslForAZoneListKeylessSslConfigurations({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneListKeylessSslConfigurations({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/keyless_certificates',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.
 ///
 /// `POST /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<ResponseCommon68>> keylessSslForAZoneCreateKeylessSslConfiguration({required String zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneCreateKeylessSslConfiguration({required String zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/keyless_certificates',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get details for one Keyless SSL configuration.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68>> keylessSslForAZoneGetKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneGetKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.
 ///
 /// `PATCH /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68>> keylessSslForAZoneEditKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneEditKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
 ///
 /// `DELETE /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68>> keylessSslForAZoneDeleteKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneDeleteKeylessSslConfiguration({required String keylessCertificateId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

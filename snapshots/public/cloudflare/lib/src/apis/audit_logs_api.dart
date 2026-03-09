@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets a list of audit logs for an account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /accounts/{account_id}/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection>> auditLogsGetAccountAuditLogs({required String accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetAccountAuditLogsSince? since, AuditLogsGetAccountAuditLogsBefore? before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
+Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetAccountAuditLogs({required String accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetAccountAuditLogsSince? since, AuditLogsGetAccountAuditLogsBefore? before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/audit_logs',
   headers: {..._config.defaultHeaders
@@ -50,7 +50,7 @@ return _execute(
 /// Gets a list of audit logs for an account. <br />  <br /> This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  <br /> `<ul>` `<li>`Audit logs are available only for the past 30 days. <br /></li> `<li>`Error handling is not yet implemented.  <br /> </li> </ul>
 ///
 /// `GET /accounts/{account_id}/logs/audit`
-Future<ApiResult<ResponseCollection2>> auditLogsV2GetAccountAuditLogs({required String accountId, List<String>? accountName, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? rawUri, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, required String since, required String before, GetAccountAuditLogsDirection? direction, double? limit, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCollection2, Never>> auditLogsV2GetAccountAuditLogs({required String accountId, List<String>? accountName, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? rawUri, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, required String since, required String before, GetAccountAuditLogsDirection? direction, double? limit, String? cursor, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logs/audit',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /user/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetUserAuditLogsSince? since, AuditLogsGetUserAuditLogsBefore? before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
+Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetUserAuditLogsSince? since, AuditLogsGetUserAuditLogsBefore? before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/audit_logs',
   headers: {..._config.defaultHeaders
@@ -149,7 +149,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -172,6 +172,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -182,7 +183,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

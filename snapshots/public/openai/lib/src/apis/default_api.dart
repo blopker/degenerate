@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists containers.
 ///
 /// `GET /containers`
-Future<ApiResult<ContainerListResource>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/containers',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Creates a container.
 ///
 /// `POST /containers`
-Future<ApiResult<ContainerResource>> createContainer({CreateContainerBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<ContainerResource, Never>> createContainer({CreateContainerBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/containers',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Retrieves a container.
 ///
 /// `GET /containers/{container_id}`
-Future<ApiResult<ContainerResource>> retrieveContainer({required String containerId}) async  { final request = ApiRequest(
+Future<ApiResult<ContainerResource, Never>> retrieveContainer({required String containerId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/containers/${Uri.encodeComponent(containerId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Delete a container.
 ///
 /// `DELETE /containers/{container_id}`
-Future<ApiResult<void>> deleteContainer({required String containerId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteContainer({required String containerId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/containers/${Uri.encodeComponent(containerId)}',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Lists container files.
 ///
 /// `GET /containers/{container_id}/files`
-Future<ApiResult<ContainerFileListResource>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/containers/${Uri.encodeComponent(containerId)}/files',
   headers: {..._config.defaultHeaders
@@ -127,7 +127,7 @@ return _execute(
 /// 
 ///
 /// `POST /containers/{container_id}/files`
-Future<ApiResult<ContainerFileResource>> createContainerFile({required String containerId, required CreateContainerFileBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ContainerFileResource, Never>> createContainerFile({required String containerId, required CreateContainerFileBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/containers/${Uri.encodeComponent(containerId)}/files',
   headers: {..._config.defaultHeaders
@@ -148,7 +148,7 @@ return _execute(
 /// Retrieves a container file.
 ///
 /// `GET /containers/{container_id}/files/{file_id}`
-Future<ApiResult<ContainerFileResource>> retrieveContainerFile({required String containerId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<ContainerFileResource, Never>> retrieveContainerFile({required String containerId, required String fileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/containers/${Uri.encodeComponent(containerId)}/files/${Uri.encodeComponent(fileId)}',
   headers: {..._config.defaultHeaders
@@ -167,7 +167,7 @@ return _execute(
 /// Delete a container file.
 ///
 /// `DELETE /containers/{container_id}/files/{file_id}`
-Future<ApiResult<void>> deleteContainerFile({required String containerId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteContainerFile({required String containerId, required String fileId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/containers/${Uri.encodeComponent(containerId)}/files/${Uri.encodeComponent(fileId)}',
   headers: {..._config.defaultHeaders
@@ -184,7 +184,7 @@ return _execute(
 /// Retrieves a container file content.
 ///
 /// `GET /containers/{container_id}/files/{file_id}/content`
-Future<ApiResult<void>> retrieveContainerFileContent({required String containerId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> retrieveContainerFileContent({required String containerId, required String fileId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/containers/${Uri.encodeComponent(containerId)}/files/${Uri.encodeComponent(fileId)}/content',
   headers: {..._config.defaultHeaders
@@ -201,7 +201,7 @@ return _execute(
 /// Retrieve a paginated list of organization admin API keys.
 ///
 /// `GET /organization/admin_api_keys`
-Future<ApiResult<KeyList>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/admin_api_keys',
   headers: {..._config.defaultHeaders
@@ -225,7 +225,7 @@ return _execute(
 /// Create a new admin-level API key for the organization.
 ///
 /// `POST /organization/admin_api_keys`
-Future<ApiResult<Key>> adminApiKeysCreate({required KeysCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Key, Never>> adminApiKeysCreate({required KeysCreateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/admin_api_keys',
   headers: {..._config.defaultHeaders
@@ -246,7 +246,7 @@ return _execute(
 /// Get details for a specific organization API key by its ID.
 ///
 /// `GET /organization/admin_api_keys/{key_id}`
-Future<ApiResult<Key>> adminApiKeysGet({required String keyId}) async  { final request = ApiRequest(
+Future<ApiResult<Key, Never>> adminApiKeysGet({required String keyId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/admin_api_keys/${Uri.encodeComponent(keyId)}',
   headers: {..._config.defaultHeaders
@@ -265,7 +265,7 @@ return _execute(
 /// Delete the specified admin API key.
 ///
 /// `DELETE /organization/admin_api_keys/{key_id}`
-Future<ApiResult<KeysDeleteResponse>> adminApiKeysDelete({required String keyId}) async  { final request = ApiRequest(
+Future<ApiResult<KeysDeleteResponse, Never>> adminApiKeysDelete({required String keyId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/admin_api_keys/${Uri.encodeComponent(keyId)}',
   headers: {..._config.defaultHeaders
@@ -284,7 +284,7 @@ return _execute(
 /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.
 ///
 /// `POST /responses/input_tokens`
-Future<ApiResult<TokenCountsResource>> getinputtokencounts({TokenCountsBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<TokenCountsResource, Never>> getinputtokencounts({TokenCountsBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/responses/input_tokens',
   headers: {..._config.defaultHeaders
@@ -305,7 +305,7 @@ return _execute(
 /// Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).
 ///
 /// `POST /responses/compact`
-Future<ApiResult<CompactResource>> compactconversation({CompactResponseMethodPublicBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<CompactResource, Never>> compactconversation({CompactResponseMethodPublicBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/responses/compact',
   headers: {..._config.defaultHeaders
@@ -326,7 +326,7 @@ return _execute(
 /// Cancelling prevents new requests from using the issued client secret.
 ///
 /// `POST /chatkit/sessions/{session_id}/cancel`
-Future<ApiResult<ChatSessionResource>> cancelChatSessionMethod({required String sessionId}) async  { final request = ApiRequest(
+Future<ApiResult<ChatSessionResource, Never>> cancelChatSessionMethod({required String sessionId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/chatkit/sessions/${Uri.encodeComponent(sessionId)}/cancel',
   headers: {..._config.defaultHeaders
@@ -343,7 +343,7 @@ return _execute(
 /// Create a ChatKit session.
 ///
 /// `POST /chatkit/sessions`
-Future<ApiResult<ChatSessionResource>> createChatSessionMethod({CreateChatSessionBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<ChatSessionResource, Never>> createChatSessionMethod({CreateChatSessionBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/chatkit/sessions',
   headers: {..._config.defaultHeaders
@@ -362,7 +362,7 @@ return _execute(
 /// List items that belong to a ChatKit thread.
 ///
 /// `GET /chatkit/threads/{thread_id}/items`
-Future<ApiResult<ThreadItemListResource>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, }) async  { final request = ApiRequest(
+Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chatkit/threads/${Uri.encodeComponent(threadId)}/items',
   headers: {..._config.defaultHeaders
@@ -385,7 +385,7 @@ return _execute(
 /// Retrieve a ChatKit thread by its identifier.
 ///
 /// `GET /chatkit/threads/{thread_id}`
-Future<ApiResult<ThreadResource>> getThreadMethod({required String threadId}) async  { final request = ApiRequest(
+Future<ApiResult<ThreadResource, Never>> getThreadMethod({required String threadId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chatkit/threads/${Uri.encodeComponent(threadId)}',
   headers: {..._config.defaultHeaders
@@ -402,7 +402,7 @@ return _execute(
 /// Delete a ChatKit thread along with its items and stored attachments.
 ///
 /// `DELETE /chatkit/threads/{thread_id}`
-Future<ApiResult<DeletedThreadResource>> deleteThreadMethod({required String threadId}) async  { final request = ApiRequest(
+Future<ApiResult<DeletedThreadResource, Never>> deleteThreadMethod({required String threadId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/chatkit/threads/${Uri.encodeComponent(threadId)}',
   headers: {..._config.defaultHeaders
@@ -419,7 +419,7 @@ return _execute(
 /// List ChatKit threads with optional pagination and user filters.
 ///
 /// `GET /chatkit/threads`
-Future<ApiResult<ThreadListResource>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, }) async  { final request = ApiRequest(
+Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/chatkit/threads',
   headers: {..._config.defaultHeaders
@@ -441,7 +441,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -464,6 +464,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -474,7 +475,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

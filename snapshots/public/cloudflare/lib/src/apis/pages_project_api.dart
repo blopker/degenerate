@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch a list of all user projects.
 ///
 /// `GET /accounts/{account_id}/pages/projects`
-Future<ApiResult<ResponseCommon51>> pagesProjectGetProjects({required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesProjectGetProjects({required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a new project.
 ///
 /// `POST /accounts/{account_id}/pages/projects`
-Future<ApiResult<ResponseCommon51>> pagesProjectCreateProject({required String accountId, required PagesProjectCreateProjectRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesProjectCreateProject({required String accountId, required PagesProjectCreateProjectRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetch a project by name.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51>> pagesProjectGetProject({required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesProjectGetProject({required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Set new attributes for an existing project. Modify environment variables. To delete an environment variable, set the key to null.
 ///
 /// `PATCH /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51>> pagesProjectUpdateProject({required String projectName, required String accountId, required PagesProjectUpdateProjectRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesProjectUpdateProject({required String projectName, required String accountId, required PagesProjectUpdateProjectRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Delete a project by name.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51>> pagesProjectDeleteProject({required String projectName, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesProjectDeleteProject({required String projectName, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pages/projects/${Uri.encodeComponent(projectName)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -139,6 +139,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -149,7 +150,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

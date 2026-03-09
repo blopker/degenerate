@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Site LANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<ResponseCommon48>> magicSiteLansListLans({required String accountId, required String siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansListLans({required String accountId, required String siteId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new Site LAN. If the site is in high availability mode, static_addressing is required along with secondary and virtual address.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<ResponseCommon48>> magicSiteLansCreateLan({required String accountId, required String siteId, required MagicLansAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansCreateLan({required String accountId, required String siteId, required MagicLansAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a specific Site LAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteLansLanDetails({required String siteId, required String accountId, required String lanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansLanDetails({required String siteId, required String accountId, required String lanId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans/${Uri.encodeComponent(lanId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a specific Site LAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteLansUpdateLan({required String siteId, required String accountId, required String lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansUpdateLan({required String siteId, required String accountId, required String lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans/${Uri.encodeComponent(lanId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Patch a specific Site LAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteLansPatchLan({required String siteId, required String accountId, required String lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansPatchLan({required String siteId, required String accountId, required String lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans/${Uri.encodeComponent(lanId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Remove a specific Site LAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48>> magicSiteLansDeleteLan({required String siteId, required String accountId, required String lanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansDeleteLan({required String siteId, required String accountId, required String lanId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/sites/${Uri.encodeComponent(siteId)}/lans/${Uri.encodeComponent(lanId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

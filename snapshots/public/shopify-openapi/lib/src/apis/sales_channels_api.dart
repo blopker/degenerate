@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts.json`
-Future<ApiResult<void>> deprecated202001CreateCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts.json`
-Future<ApiResult<void>> deprecated202004CreateCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts.json`
-Future<ApiResult<void>> deprecated202007CreateCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts.json`
-Future<ApiResult<void>> createCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts.json`
-Future<ApiResult<void>> deprecated202101CreateCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-unstable
 ///
 /// `POST /admin/api/unstable/checkouts.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCheckouts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckouts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/checkouts.json',
   headers: {..._config.defaultHeaders
@@ -131,7 +131,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/complete.json`
-Future<ApiResult<void>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -150,7 +150,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -167,7 +167,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202001UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -188,7 +188,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -205,7 +205,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/complete.json`
-Future<ApiResult<void>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -224,7 +224,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -241,7 +241,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202004UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -262,7 +262,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -279,7 +279,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/complete.json`
-Future<ApiResult<void>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -298,7 +298,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -315,7 +315,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202007UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -336,7 +336,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -353,7 +353,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/complete.json`
-Future<ApiResult<void>> createCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -372,7 +372,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}.json`
-Future<ApiResult<void>> getCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -389,7 +389,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/checkouts/{token}.json`
-Future<ApiResult<void>> updateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -410,7 +410,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> getCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -427,7 +427,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/complete.json`
-Future<ApiResult<void>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -446,7 +446,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -463,7 +463,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/checkouts/{token}.json`
-Future<ApiResult<void>> deprecated202101UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -484,7 +484,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -501,7 +501,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/complete.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/complete.json',
   headers: {..._config.defaultHeaders
@@ -520,7 +520,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamToken({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -537,7 +537,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-unstable
 ///
 /// `PUT /admin/api/unstable/checkouts/{token}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}.json',
   headers: {..._config.defaultHeaders
@@ -558,7 +558,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenShippingRates({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/shipping_rates.json',
   headers: {..._config.defaultHeaders
@@ -575,7 +575,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings.json`
-Future<ApiResult<void>> deprecated202001GetCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -595,7 +595,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -615,7 +615,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202001GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -632,7 +632,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -651,7 +651,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -668,7 +668,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings.json`
-Future<ApiResult<void>> deprecated202004GetCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -688,7 +688,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -708,7 +708,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202004GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -725,7 +725,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -744,7 +744,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -761,7 +761,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings.json`
-Future<ApiResult<void>> deprecated202007GetCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -781,7 +781,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -801,7 +801,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202007GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -818,7 +818,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -837,7 +837,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -854,7 +854,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings.json`
-Future<ApiResult<void>> getCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -874,7 +874,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -894,7 +894,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> getCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -911,7 +911,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-10
 ///
 /// `PUT /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -930,7 +930,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -947,7 +947,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings.json`
-Future<ApiResult<void>> deprecated202101GetCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -967,7 +967,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -987,7 +987,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202101GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1004,7 +1004,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2021-01
 ///
 /// `PUT /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1023,7 +1023,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1040,7 +1040,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectionListings({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collection_listings.json',
   headers: {..._config.defaultHeaders
@@ -1060,7 +1060,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collection_listings/${Uri.encodeComponent(collectionListingId)}/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -1080,7 +1080,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1097,7 +1097,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-unstable
 ///
 /// `PUT /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1116,7 +1116,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectionListingsParamCollectionListingId({required String collectionListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/collection_listings/${Uri.encodeComponent(collectionListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1133,7 +1133,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1150,7 +1150,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1175,7 +1175,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1192,7 +1192,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> deprecated202001GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1209,7 +1209,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1226,7 +1226,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1251,7 +1251,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1268,7 +1268,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> deprecated202004GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1285,7 +1285,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1302,7 +1302,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1327,7 +1327,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1344,7 +1344,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> deprecated202007GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1361,7 +1361,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments.json`
-Future<ApiResult<void>> getCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1378,7 +1378,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/payments.json`
-Future<ApiResult<void>> createCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1403,7 +1403,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> getCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1420,7 +1420,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> getCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1437,7 +1437,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1454,7 +1454,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1479,7 +1479,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1496,7 +1496,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> deprecated202101GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1513,7 +1513,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPayments({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1530,7 +1530,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/payments.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/payments.json',
   headers: {..._config.defaultHeaders
@@ -1555,7 +1555,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/payments/${Uri.encodeComponent(paymentId)}.json',
   headers: {..._config.defaultHeaders
@@ -1572,7 +1572,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsCount({required String token}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/${Uri.encodeComponent(token)}/payments/count.json',
   headers: {..._config.defaultHeaders
@@ -1589,7 +1589,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings.json`
-Future<ApiResult<void>> deprecated202001GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/product_listings.json',
   headers: {..._config.defaultHeaders
@@ -1613,7 +1613,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/product_ids.json`
-Future<ApiResult<void>> deprecated202001GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/product_listings/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -1633,7 +1633,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/count.json`
-Future<ApiResult<void>> deprecated202001GetProductListingsCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/product_listings/count.json',
   headers: {..._config.defaultHeaders
@@ -1650,7 +1650,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202001GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1667,7 +1667,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1686,7 +1686,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1703,7 +1703,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings.json`
-Future<ApiResult<void>> deprecated202004GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/product_listings.json',
   headers: {..._config.defaultHeaders
@@ -1727,7 +1727,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/product_ids.json`
-Future<ApiResult<void>> deprecated202004GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/product_listings/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -1747,7 +1747,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/count.json`
-Future<ApiResult<void>> deprecated202004GetProductListingsCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/product_listings/count.json',
   headers: {..._config.defaultHeaders
@@ -1764,7 +1764,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202004GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1781,7 +1781,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1800,7 +1800,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1817,7 +1817,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings.json`
-Future<ApiResult<void>> deprecated202007GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/product_listings.json',
   headers: {..._config.defaultHeaders
@@ -1841,7 +1841,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/product_ids.json`
-Future<ApiResult<void>> deprecated202007GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({String? limit}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/product_listings/product_ids.json',
   headers: {..._config.defaultHeaders
@@ -1861,7 +1861,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/count.json`
-Future<ApiResult<void>> deprecated202007GetProductListingsCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsCount() async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/product_listings/count.json',
   headers: {..._config.defaultHeaders
@@ -1878,7 +1878,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202007GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1895,7 +1895,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1914,7 +1914,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteProductListingsParamProductListingId({required String productListingId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/product_listings/${Uri.encodeComponent(productListingId)}.json',
   headers: {..._config.defaultHeaders
@@ -1927,7 +1927,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -1950,6 +1950,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -1960,7 +1961,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured load balancers.
 ///
 /// `GET /zones/{zone_id}/load_balancers`
-Future<ApiResult<ResponseCommon42>> loadBalancersListLoadBalancers({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersListLoadBalancers({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new load balancer.
 ///
 /// `POST /zones/{zone_id}/load_balancers`
-Future<ApiResult<ResponseCommon42>> loadBalancersCreateLoadBalancer({required String zoneId, required LoadBalancersCreateLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersCreateLoadBalancer({required String zoneId, required LoadBalancersCreateLoadBalancerRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetch a single configured load balancer.
 ///
 /// `GET /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancersLoadBalancerDetails({required String zoneId, required String loadBalancerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersLoadBalancerDetails({required String zoneId, required String loadBalancerId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers/${Uri.encodeComponent(loadBalancerId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a configured load balancer.
 ///
 /// `PUT /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancersUpdateLoadBalancer({required String zoneId, required String loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersUpdateLoadBalancer({required String zoneId, required String loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers/${Uri.encodeComponent(loadBalancerId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Apply changes to an existing load balancer, overwriting the supplied properties.
 ///
 /// `PATCH /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancersPatchLoadBalancer({required String zoneId, required String loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersPatchLoadBalancer({required String zoneId, required String loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers/${Uri.encodeComponent(loadBalancerId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Delete a configured load balancer.
 ///
 /// `DELETE /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42>> loadBalancersDeleteLoadBalancer({required String zoneId, required String loadBalancerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersDeleteLoadBalancer({required String zoneId, required String loadBalancerId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/load_balancers/${Uri.encodeComponent(loadBalancerId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

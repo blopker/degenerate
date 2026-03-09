@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Magic static routes.
 ///
 /// `GET /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesListRoutes({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesListRoutes({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesCreateRoutes({required String accountId, required MagicCreateRouteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesCreateRoutes({required String accountId, required MagicCreateRouteRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Update multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.
 ///
 /// `PUT /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesUpdateManyRoutes({required String accountId, required MagicRouteUpdateManyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateManyRoutes({required String accountId, required MagicRouteUpdateManyRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Delete multiple Magic static routes.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesDeleteManyRoutes({required String accountId, required MagicRouteDeleteManyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteManyRoutes({required String accountId, required MagicRouteDeleteManyRequest body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes',
   headers: {..._config.defaultHeaders
@@ -99,7 +99,7 @@ return _execute(
 /// Get a specific Magic static route.
 ///
 /// `GET /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesRouteDetails({required String routeId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesRouteDetails({required String routeId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Update a specific Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesUpdateRoute({required String routeId, required String accountId, required MagicRouteAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateRoute({required String routeId, required String accountId, required MagicRouteAddSingleRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,7 @@ return _execute(
 /// Disable and remove a specific Magic static route.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48>> magicStaticRoutesDeleteRoute({required String routeId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteRoute({required String routeId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -177,6 +177,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -187,7 +188,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

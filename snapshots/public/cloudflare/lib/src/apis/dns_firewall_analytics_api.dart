@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report`
-Future<ApiResult<ResponseCommon22>> dnsFirewallAnalyticsTable({required String dnsFirewallId, required String accountId, String? metrics, String? dimensions, DateTime? since, DateTime? until, int? limit, String? sort, String? filters, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon22, Never>> dnsFirewallAnalyticsTable({required String dnsFirewallId, required String accountId, String? metrics, String? dimensions, DateTime? since, DateTime? until, int? limit, String? sort, String? filters, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}/dns_analytics/report',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime`
-Future<ApiResult<ResponseCommon22>> dnsFirewallAnalyticsByTime({required String dnsFirewallId, required String accountId, String? metrics, String? dimensions, DateTime? since, DateTime? until, int? limit, String? sort, String? filters, DnsAnalyticsTimeDelta? timeDelta, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon22, Never>> dnsFirewallAnalyticsByTime({required String dnsFirewallId, required String accountId, String? metrics, String? dimensions, DateTime? since, DateTime? until, int? limit, String? sort, String? filters, DnsAnalyticsTimeDelta? timeDelta, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}/dns_analytics/report/bytime',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -97,6 +97,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -107,7 +108,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

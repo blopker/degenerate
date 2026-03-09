@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Lists the roles configured for the organization.
 ///
 /// `GET /organization/roles`
-Future<ApiResult<PublicRoleListResource>> listRoles({int? limit, String? after, ListRolesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<PublicRoleListResource, Never>> listRoles({int? limit, String? after, ListRolesOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organization/roles',
   headers: {..._config.defaultHeaders
@@ -37,7 +37,7 @@ return _execute(
 /// Creates a custom role for the organization.
 ///
 /// `POST /organization/roles`
-Future<ApiResult<Role>> createRole({required PublicCreateOrganizationRoleBody body}) async  { final request = ApiRequest(
+Future<ApiResult<Role, Never>> createRole({required PublicCreateOrganizationRoleBody body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/roles',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
 /// Updates an existing organization role.
 ///
 /// `POST /organization/roles/{role_id}`
-Future<ApiResult<Role>> updateRole({required String roleId, required PublicUpdateOrganizationRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<Role, Never>> updateRole({required String roleId, required PublicUpdateOrganizationRoleBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organization/roles/${Uri.encodeComponent(roleId)}',
   headers: {..._config.defaultHeaders
@@ -75,7 +75,7 @@ return _execute(
 /// Deletes a custom role from the organization.
 ///
 /// `DELETE /organization/roles/{role_id}`
-Future<ApiResult<RoleDeletedResource>> deleteRole({required String roleId}) async  { final request = ApiRequest(
+Future<ApiResult<RoleDeletedResource, Never>> deleteRole({required String roleId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/roles/${Uri.encodeComponent(roleId)}',
   headers: {..._config.defaultHeaders
@@ -92,7 +92,7 @@ return _execute(
 /// Lists the roles configured for a project.
 ///
 /// `GET /projects/{project_id}/roles`
-Future<ApiResult<PublicRoleListResource>> listProjectRoles({required String projectId, int? limit, String? after, ListProjectRolesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<PublicRoleListResource, Never>> listProjectRoles({required String projectId, int? limit, String? after, ListProjectRolesOrder? order, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/projects/${Uri.encodeComponent(projectId)}/roles',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Creates a custom role for a project.
 ///
 /// `POST /projects/{project_id}/roles`
-Future<ApiResult<Role>> createProjectRole({required String projectId, required PublicCreateOrganizationRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<Role, Never>> createProjectRole({required String projectId, required PublicCreateOrganizationRoleBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/projects/${Uri.encodeComponent(projectId)}/roles',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 /// Updates an existing project role.
 ///
 /// `POST /projects/{project_id}/roles/{role_id}`
-Future<ApiResult<Role>> updateProjectRole({required String projectId, required String roleId, required PublicUpdateOrganizationRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<Role, Never>> updateProjectRole({required String projectId, required String roleId, required PublicUpdateOrganizationRoleBody body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/projects/${Uri.encodeComponent(projectId)}/roles/${Uri.encodeComponent(roleId)}',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 /// Deletes a custom role from a project.
 ///
 /// `DELETE /projects/{project_id}/roles/{role_id}`
-Future<ApiResult<RoleDeletedResource>> deleteProjectRole({required String projectId, required String roleId, }) async  { final request = ApiRequest(
+Future<ApiResult<RoleDeletedResource, Never>> deleteProjectRole({required String projectId, required String roleId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/projects/${Uri.encodeComponent(projectId)}/roles/${Uri.encodeComponent(roleId)}',
   headers: {..._config.defaultHeaders
@@ -167,7 +167,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -190,6 +190,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -200,7 +201,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

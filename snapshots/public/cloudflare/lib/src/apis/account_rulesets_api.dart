@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all rulesets at the account level.
 ///
 /// `GET /accounts/{account_id}/rulesets`
-Future<ApiResult<RulesetsResponse>> listAccountRulesets({required String accountId, String? cursor, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listAccountRulesets({required String accountId, String? cursor, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Creates a ruleset at the account level.
 ///
 /// `POST /accounts/{account_id}/rulesets`
-Future<ApiResult<RulesetsResponse>> createAccountRuleset({required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> createAccountRuleset({required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetches the latest version of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<RulesetsResponse>> getAccountRuleset({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getAccountRuleset({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Updates an account ruleset, creating a new version.
 ///
 /// `PUT /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<RulesetsResponse>> updateAccountRuleset({required String rulesetId, required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateAccountRuleset({required String rulesetId, required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Deletes all versions of an existing account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<void>> deleteAccountRuleset({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteAccountRuleset({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Adds a new rule to an account ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.
 ///
 /// `POST /accounts/{account_id}/rulesets/{ruleset_id}/rules`
-Future<ApiResult<RulesetsResponse>> createAccountRulesetRule({required String rulesetId, required String accountId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> createAccountRulesetRule({required String rulesetId, required String accountId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/rules',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,7 @@ return _execute(
 /// Updates an existing rule in an account ruleset.
 ///
 /// `PATCH /accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<RulesetsResponse>> updateAccountRulesetRule({required String ruleId, required String rulesetId, required String accountId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateAccountRulesetRule({required String ruleId, required String rulesetId, required String accountId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -160,7 +160,7 @@ return _execute(
 /// Deletes an existing rule from an account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<RulesetsResponse>> deleteAccountRulesetRule({required String ruleId, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> deleteAccountRulesetRule({required String ruleId, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -179,7 +179,7 @@ return _execute(
 /// Fetches the versions of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<RulesetsResponse>> listAccountRulesetVersions({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listAccountRulesetVersions({required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/versions',
   headers: {..._config.defaultHeaders
@@ -198,7 +198,7 @@ return _execute(
 /// Fetches a specific version of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<RulesetsResponse>> getAccountRulesetVersion({required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getAccountRulesetVersion({required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/versions/${Uri.encodeComponent(rulesetVersion)}',
   headers: {..._config.defaultHeaders
@@ -217,7 +217,7 @@ return _execute(
 /// Deletes an existing version of an account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<void>> deleteAccountRulesetVersion({required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteAccountRulesetVersion({required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/versions/${Uri.encodeComponent(rulesetVersion)}',
   headers: {..._config.defaultHeaders
@@ -234,7 +234,7 @@ return _execute(
 /// Fetches the rules of a managed account ruleset version for a given tag.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}`
-Future<ApiResult<RulesetsResponse>> listAccountRulesetVersionRulesByTag({required String ruleTag, required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listAccountRulesetVersionRulesByTag({required String ruleTag, required String rulesetVersion, required String rulesetId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/${Uri.encodeComponent(rulesetId)}/versions/${Uri.encodeComponent(rulesetVersion)}/by_tag/${Uri.encodeComponent(ruleTag)}',
   headers: {..._config.defaultHeaders
@@ -253,7 +253,7 @@ return _execute(
 /// Fetches the latest version of the account entry point ruleset for a given phase.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<RulesetsResponse>> getAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
   headers: {..._config.defaultHeaders
@@ -272,7 +272,7 @@ return _execute(
 /// Updates an account entry point ruleset, creating a new version.
 ///
 /// `PUT /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<RulesetsResponse>> updateAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required String accountId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
   headers: {..._config.defaultHeaders
@@ -293,7 +293,7 @@ return _execute(
 /// Fetches the versions of an account entry point ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<RulesetsResponse>> listAccountEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listAccountEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions',
   headers: {..._config.defaultHeaders
@@ -312,7 +312,7 @@ return _execute(
 /// Fetches a specific version of an account entry point ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}`
-Future<ApiResult<RulesetsResponse>> getAccountEntrypointRulesetVersion({required String rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getAccountEntrypointRulesetVersion({required String rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion)}',
   headers: {..._config.defaultHeaders
@@ -327,7 +327,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -350,6 +350,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -360,7 +361,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

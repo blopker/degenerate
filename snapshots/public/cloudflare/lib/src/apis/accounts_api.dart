@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all accounts you have ownership or verified access to.
 ///
 /// `GET /accounts`
-Future<ApiResult<ResponseCommon35>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
 /// Create an account (only available for tenant admins at this time)
 ///
 /// `POST /accounts`
-Future<ApiResult<ResponseCommon35>> accountCreation({required IamCreateAccount body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Get information about a specific account that you are a member of.
 ///
 /// `GET /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35>> accountsAccountDetails({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Update an existing account.
 ///
 /// `PUT /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35>> accountsUpdateAccount({required String accountId, required IamAccount body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required String accountId, required IamAccount body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}',
   headers: {..._config.defaultHeaders
@@ -103,7 +103,7 @@ return _execute(
 /// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
 ///
 /// `DELETE /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35>> accountDeletion({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// Move an account within an organization hierarchy or an account outside an organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /accounts/{account_id}/move`
-Future<ApiResult<AccountsMoveAccountsResponse>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/move',
   headers: {..._config.defaultHeaders
@@ -148,7 +148,7 @@ return _execute(
 /// account.
 ///
 /// `GET /accounts/{account_id}/organizations`
-Future<ApiResult<AccountsListAccountOrganizationsResponse>> accountsListAccountOrganizations({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/organizations',
   headers: {..._config.defaultHeaders
@@ -165,7 +165,7 @@ return _execute(
 /// Get account profile
 ///
 /// `GET /accounts/{account_id}/profile`
-Future<ApiResult<AccountsGetAccountProfileResponse>> accountsGetAccountProfile({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
   headers: {..._config.defaultHeaders
@@ -182,7 +182,7 @@ return _execute(
 /// Modify account profile
 ///
 /// `PUT /accounts/{account_id}/profile`
-Future<ApiResult<void>> accountsModifyAccountProfile({required String accountId, required Profile body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
   headers: {..._config.defaultHeaders
@@ -201,7 +201,7 @@ return _execute(
 /// Batch move a collection of accounts to a specific organization. ⚠️ Not implemented.
 ///
 /// `POST /accounts/move`
-Future<ApiResult<AccountsBatchMoveAccountsResponse>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/move',
   headers: {..._config.defaultHeaders
@@ -218,7 +218,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -241,6 +241,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -251,7 +252,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

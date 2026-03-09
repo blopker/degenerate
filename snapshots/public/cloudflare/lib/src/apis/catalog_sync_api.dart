@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List Catalog Syncs (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnResponse>> catalogSyncsList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsList({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs',
   headers: {..._config.defaultHeaders
@@ -29,6 +29,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Create Catalog Sync
@@ -36,7 +39,7 @@ return _execute(
 /// Create a new Catalog Sync (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnResponse>> catalogSyncsCreate({required String accountId, String? forwarded, required McnCreateCatalogSyncRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsCreate({required String accountId, String? forwarded, required McnCreateCatalogSyncRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs',
   headers: {..._config.defaultHeaders
@@ -50,6 +53,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Read Catalog Sync
@@ -57,7 +63,7 @@ return _execute(
 /// Read a Catalog Sync (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse>> catalogSyncsRead({required String accountId, required String syncId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRead({required String accountId, required String syncId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId)}',
   headers: {..._config.defaultHeaders
@@ -69,6 +75,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Update Catalog Sync
@@ -76,7 +85,7 @@ return _execute(
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse>> catalogSyncsUpdate({required String accountId, required String syncId, required McnUpdateCatalogSyncRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsUpdate({required String accountId, required String syncId, required McnUpdateCatalogSyncRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId)}',
   headers: {..._config.defaultHeaders
@@ -90,6 +99,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Patch Catalog Sync
@@ -97,7 +109,7 @@ return _execute(
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse>> catalogSyncsPatch({required String accountId, required String syncId, required McnUpdateCatalogSyncRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPatch({required String accountId, required String syncId, required McnUpdateCatalogSyncRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId)}',
   headers: {..._config.defaultHeaders
@@ -111,6 +123,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Delete Catalog Sync
@@ -118,7 +133,7 @@ return _execute(
 /// Delete a Catalog Sync (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse>> catalogSyncsDelete({required String accountId, required String syncId, bool? deleteDestination, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsDelete({required String accountId, required String syncId, bool? deleteDestination, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId)}',
   headers: {..._config.defaultHeaders
@@ -133,6 +148,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Run Catalog Sync
@@ -140,7 +158,7 @@ return _execute(
 /// Refresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh`
-Future<ApiResult<McnResponse>> catalogSyncsRefresh({required String accountId, required String syncId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRefresh({required String accountId, required String syncId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId)}/refresh',
   headers: {..._config.defaultHeaders
@@ -152,6 +170,9 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// List Prebuilt Policies
@@ -159,7 +180,7 @@ return _execute(
 /// List prebuilt catalog sync policies (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies`
-Future<ApiResult<McnResponse>> catalogSyncsPrebuiltPoliciesList({required String accountId, McnCatalogSyncDestinationType? destinationType, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPrebuiltPoliciesList({required String accountId, McnCatalogSyncDestinationType? destinationType, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/magic/cloud/catalog-syncs/prebuilt-policies',
   headers: {..._config.defaultHeaders
@@ -174,10 +195,13 @@ return _execute(
   onSuccess: (response) {
     return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -200,6 +224,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -210,7 +235,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

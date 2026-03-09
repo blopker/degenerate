@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all configured identity providers.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersListAccessIdentityProviders({required String accountId, String? scimEnabled, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListAccessIdentityProviders({required String accountId, String? scimEnabled, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersAddAnAccessIdentityProvider({required String accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersAddAnAccessIdentityProvider({required String accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers',
   headers: {..._config.defaultHeaders
@@ -62,7 +62,7 @@ return _execute(
 /// Fetches a configured identity provider.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersGetAnAccessIdentityProvider({required String identityProviderId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersGetAnAccessIdentityProvider({required String identityProviderId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -81,7 +81,7 @@ return _execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required String identityProviderId, required String accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required String identityProviderId, required String accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required String identityProviderId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required String identityProviderId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Lists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersListScimGroupResources({required String identityProviderId, required String accountId, String? cfResourceId, String? idpResourceId, String? name, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimGroupResources({required String identityProviderId, required String accountId, String? cfResourceId, String? idpResourceId, String? name, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}/scim/groups',
   headers: {..._config.defaultHeaders
@@ -147,7 +147,7 @@ return _execute(
 /// Lists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users`
-Future<ApiResult<ResponseCommon3>> accessIdentityProvidersListScimUserResources({required String identityProviderId, required String accountId, String? cfResourceId, String? idpResourceId, String? username, String? email, String? name, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimUserResources({required String identityProviderId, required String accountId, String? cfResourceId, String? idpResourceId, String? username, String? email, String? name, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}/scim/users',
   headers: {..._config.defaultHeaders
@@ -171,7 +171,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -194,6 +194,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -204,7 +205,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

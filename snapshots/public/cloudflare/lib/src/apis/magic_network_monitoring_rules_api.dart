@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists network monitoring rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesListRules({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesListRules({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create network monitoring rules for account. Currently only supports creating a single rule per API request.
 ///
 /// `POST /accounts/{account_id}/mnm/rules`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesCreateRules({required String accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesCreateRules({required String accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Update network monitoring rules for account.
 ///
 /// `PUT /accounts/{account_id}/mnm/rules`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesUpdateRules({required String accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesUpdateRules({required String accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// List a single network monitoring rule for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesGetRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesGetRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Update a network monitoring rule for account.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesUpdateRule({required String ruleId, required String accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesUpdateRule({required String ruleId, required String accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -118,7 +118,7 @@ return _execute(
 /// Delete a network monitoring rule for account.
 ///
 /// `DELETE /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesDeleteRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesDeleteRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Update advertisement for rule.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}/advertisement`
-Future<ApiResult<ResponseCommon46>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required String ruleId, required String accountId, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/mnm/rules/${Uri.encodeComponent(ruleId)}/advertisement',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -175,6 +175,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -185,7 +186,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

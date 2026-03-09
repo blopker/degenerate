@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all Access groups.
 ///
 /// `GET /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessGroupsListAccessGroups({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsListAccessGroups({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/groups',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new Access group.
 ///
 /// `POST /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessGroupsCreateAnAccessGroup({required String zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsCreateAnAccessGroup({required String zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/groups',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a single Access group.
 ///
 /// `GET /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessGroupsGetAnAccessGroup({required String groupId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsGetAnAccessGroup({required String groupId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/groups/${Uri.encodeComponent(groupId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates a configured Access group.
 ///
 /// `PUT /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessGroupsUpdateAnAccessGroup({required String groupId, required String zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsUpdateAnAccessGroup({required String groupId, required String zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/groups/${Uri.encodeComponent(groupId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes an Access group.
 ///
 /// `DELETE /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessGroupsDeleteAnAccessGroup({required String groupId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsDeleteAnAccessGroup({required String groupId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/groups/${Uri.encodeComponent(groupId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

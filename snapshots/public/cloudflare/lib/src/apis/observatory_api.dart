@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves quota for all plans, as well as the current zone quota.
 ///
 /// `GET /zones/{zone_id}/speed_api/availabilities`
-Future<ApiResult<ResponseCommon49>> speedGetAvailabilities({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedGetAvailabilities({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/availabilities',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Lists all webpages which have been tested.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages`
-Future<ApiResult<ResponseCommon49>> speedListPages({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedListPages({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Test history (list of tests) for a specific webpage.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49>> speedListTestHistory({required String zoneId, required String url, int? page, int? perPage, ObservatoryRegion? region, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedListTestHistory({required String zoneId, required String url, int? page, int? perPage, ObservatoryRegion? region, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages/${Uri.encodeComponent(url)}/tests',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// Starts a test for a specific webpage, in a specific region.
 ///
 /// `POST /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49>> speedCreateTest({required String zoneId, required String url, SpeedCreateTestRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedCreateTest({required String zoneId, required String url, SpeedCreateTestRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages/${Uri.encodeComponent(url)}/tests',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Deletes all tests for a specific webpage from a specific region. Deleted tests are still counted as part of the quota.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49>> speedDeleteTests({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedDeleteTests({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages/${Uri.encodeComponent(url)}/tests',
   headers: {..._config.defaultHeaders
@@ -122,7 +122,7 @@ return _execute(
 /// Retrieves the result of a specific test.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests/{test_id}`
-Future<ApiResult<ResponseCommon49>> speedGetTest({required String zoneId, required String url, required String testId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedGetTest({required String zoneId, required String url, required String testId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages/${Uri.encodeComponent(url)}/tests/${Uri.encodeComponent(testId)}',
   headers: {..._config.defaultHeaders
@@ -141,7 +141,7 @@ return _execute(
 /// Lists the core web vital metrics trend over time for a specific page.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/trend`
-Future<ApiResult<ResponseCommon49>> speedListPageTrend({required String zoneId, required String url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required DateTime start, DateTime? end, required String tz, required String metrics, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedListPageTrend({required String zoneId, required String url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required DateTime start, DateTime? end, required String tz, required String metrics, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/pages/${Uri.encodeComponent(url)}/trend',
   headers: {..._config.defaultHeaders
@@ -168,7 +168,7 @@ return _execute(
 /// Retrieves the test schedule for a page in a specific region.
 ///
 /// `GET /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49>> speedGetScheduledTest({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedGetScheduledTest({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/schedule/${Uri.encodeComponent(url)}',
   headers: {..._config.defaultHeaders
@@ -190,7 +190,7 @@ return _execute(
 /// Creates a scheduled test for a page.
 ///
 /// `POST /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49>> speedCreateScheduledTest({required String zoneId, required String url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedCreateScheduledTest({required String zoneId, required String url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/schedule/${Uri.encodeComponent(url)}',
   headers: {..._config.defaultHeaders
@@ -213,7 +213,7 @@ return _execute(
 /// Deletes a scheduled test for a page.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49>> speedDeleteTestSchedule({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon49, Never>> speedDeleteTestSchedule({required String zoneId, required String url, ObservatoryRegion? region, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/speed_api/schedule/${Uri.encodeComponent(url)}',
   headers: {..._config.defaultHeaders
@@ -231,7 +231,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -254,6 +254,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -264,7 +265,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

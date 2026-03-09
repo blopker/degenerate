@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns a list of D1 databases.
 ///
 /// `GET /accounts/{account_id}/d1/database`
-Future<ApiResult<ResponseCommon18>> d1ListDatabases({required String accountId, String? name, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required String accountId, String? name, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Returns the created D1 database.
 ///
 /// `POST /accounts/{account_id}/d1/database`
-Future<ApiResult<ResponseCommon18>> d1CreateDatabase({required String accountId, required D1CreateDatabaseRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1CreateDatabase({required String accountId, required D1CreateDatabaseRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database',
   headers: {..._config.defaultHeaders
@@ -62,7 +62,7 @@ return _execute(
 /// Returns the specified D1 database.
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18>> d1GetDatabase({required String accountId, required D1GetDatabaseDatabaseId databaseId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1GetDatabase({required String accountId, required D1GetDatabaseDatabaseId databaseId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
   headers: {..._config.defaultHeaders
@@ -81,7 +81,7 @@ return _execute(
 /// Updates the specified D1 database.
 ///
 /// `PUT /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18>> d1UpdateDatabase({required String accountId, required String databaseId, required D1DatabaseUpdateRequestBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1UpdateDatabase({required String accountId, required String databaseId, required D1DatabaseUpdateRequestBody body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 /// Updates partially the specified D1 database.
 ///
 /// `PATCH /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18>> d1UpdatePartialDatabase({required String accountId, required String databaseId, required D1DatabaseUpdatePartialRequestBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1UpdatePartialDatabase({required String accountId, required String databaseId, required D1DatabaseUpdatePartialRequestBody body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,7 @@ return _execute(
 /// Deletes the specified D1 database.
 ///
 /// `DELETE /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18>> d1DeleteDatabase({required String accountId, required String databaseId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1DeleteDatabase({required String accountId, required String databaseId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}',
   headers: {..._config.defaultHeaders
@@ -145,7 +145,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/export`
-Future<ApiResult<ResponseCommon18>> d1ExportDatabase({required String accountId, required String databaseId, required D1ExportDatabaseRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1ExportDatabase({required String accountId, required String databaseId, required D1ExportDatabaseRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/export',
   headers: {..._config.defaultHeaders
@@ -168,7 +168,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/import`
-Future<ApiResult<ResponseCommon18>> d1ImportDatabase({required String accountId, required String databaseId, required D1ImportDatabaseRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1ImportDatabase({required String accountId, required String databaseId, required D1ImportDatabaseRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/import',
   headers: {..._config.defaultHeaders
@@ -189,7 +189,7 @@ return _execute(
 /// Returns the query result as an object.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/query`
-Future<ApiResult<ResponseCommon18>> d1QueryDatabase({required String accountId, required String databaseId, required D1BatchQuery body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1QueryDatabase({required String accountId, required String databaseId, required D1BatchQuery body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/query',
   headers: {..._config.defaultHeaders
@@ -210,7 +210,7 @@ return _execute(
 /// Returns the query result rows as arrays rather than objects. This is a performance-optimized version of the /query endpoint.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/raw`
-Future<ApiResult<ResponseCommon18>> d1RawDatabaseQuery({required String accountId, required String databaseId, required D1BatchQuery body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1RawDatabaseQuery({required String accountId, required String databaseId, required D1BatchQuery body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/raw',
   headers: {..._config.defaultHeaders
@@ -233,7 +233,7 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
-Future<ApiResult<ResponseCommon18>> d1TimeTravelGetBookmark({required String accountId, required String databaseId, DateTime? timestamp, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelGetBookmark({required String accountId, required String databaseId, DateTime? timestamp, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/time_travel/bookmark',
   headers: {..._config.defaultHeaders
@@ -256,7 +256,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
-Future<ApiResult<ResponseCommon18>> d1TimeTravelRestore({required String accountId, required String databaseId, String? bookmark, DateTime? timestamp, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelRestore({required String accountId, required String databaseId, String? bookmark, DateTime? timestamp, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/d1/database/${Uri.encodeComponent(databaseId)}/time_travel/restore',
   headers: {..._config.defaultHeaders
@@ -275,7 +275,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -298,6 +298,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -308,7 +309,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

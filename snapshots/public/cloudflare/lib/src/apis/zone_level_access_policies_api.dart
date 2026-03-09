@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Access policies configured for an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessPoliciesListAccessPolicies({required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesListAccessPolicies({required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/policies',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new Access policy for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required String appId, required String zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required String appId, required String zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/policies',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a single Access policy.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessPoliciesGetAnAccessPolicy({required String policyId, required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesGetAnAccessPolicy({required String policyId, required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Update a configured Access policy.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required String policyId, required String appId, required String zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required String policyId, required String appId, required String zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete an Access policy.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required String policyId, required String appId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required String policyId, required String appId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

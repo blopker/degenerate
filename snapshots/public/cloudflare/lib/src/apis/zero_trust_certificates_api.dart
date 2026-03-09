@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all Zero Trust certificates for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/certificates`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesListZeroTrustCertificates({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesListZeroTrustCertificates({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new Zero Trust certificate.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesCreateZeroTrustCertificate({required String accountId, ZeroTrustGatewayGenerateCertRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesCreateZeroTrustCertificate({required String accountId, ZeroTrustGatewayGenerateCertRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get a single Zero Trust certificate.
 ///
 /// `GET /accounts/{account_id}/gateway/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesZeroTrustCertificateDetails({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesZeroTrustCertificateDetails({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Delete a gateway-managed Zero Trust certificate. You must deactivate the certificate from the edge (inactive) before deleting it.
 ///
 /// `DELETE /accounts/{account_id}/gateway/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesDeleteZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesDeleteZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Bind a single Zero Trust certificate to the edge.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates/{certificate_id}/activate`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesActivateZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesActivateZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates/${Uri.encodeComponent(certificateId)}/activate',
   headers: {..._config.defaultHeaders
@@ -114,7 +114,7 @@ return _execute(
 /// Unbind a single Zero Trust certificate from the edge.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates/{certificate_id}/deactivate`
-Future<ApiResult<ResponseCommon82>> zeroTrustCertificatesDeactivateZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustCertificatesDeactivateZeroTrustCertificate({required String certificateId, required String accountId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/certificates/${Uri.encodeComponent(certificateId)}/deactivate',
   headers: {..._config.defaultHeaders
@@ -129,7 +129,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -152,6 +152,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -162,7 +163,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

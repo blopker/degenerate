@@ -14,7 +14,7 @@ final ApiConfig _config;
 
 ///
 /// `GET /verbs`
-Future<ApiResult<void>> verbsGet() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsGet() async  { final request = ApiRequest(
   method: 'GET',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -28,7 +28,7 @@ return _execute(
  } 
 ///
 /// `POST /verbs`
-Future<ApiResult<void>> verbsPost() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPost() async  { final request = ApiRequest(
   method: 'POST',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -42,7 +42,7 @@ return _execute(
  } 
 ///
 /// `PUT /verbs`
-Future<ApiResult<void>> verbsPut() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPut() async  { final request = ApiRequest(
   method: 'PUT',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -56,7 +56,7 @@ return _execute(
  } 
 ///
 /// `PATCH /verbs`
-Future<ApiResult<void>> verbsPatch() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPatch() async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
  } 
 ///
 /// `DELETE /verbs`
-Future<ApiResult<void>> verbsDelete() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsDelete() async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
  } 
 ///
 /// `HEAD /verbs`
-Future<ApiResult<void>> verbsHead() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsHead() async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -98,7 +98,7 @@ return _execute(
  } 
 ///
 /// `OPTIONS /verbs`
-Future<ApiResult<void>> verbsOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsOptions() async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
  } 
 ///
 /// `TRACE /verbs`
-Future<ApiResult<void>> verbsTrace() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsTrace() async  { final request = ApiRequest(
   method: 'TRACE',
   path: '/verbs',
   headers: {..._config.defaultHeaders
@@ -125,7 +125,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -148,6 +148,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -158,7 +159,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get information about the settings for your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing`
-Future<ApiResult<ResponseCommon30>> emailRoutingSettingsGetEmailRoutingSettings({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsGetEmailRoutingSettings({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/routing',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Show the DNS records needed to configure your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse>> emailRoutingSettingsEmailRoutingDnsSettings({required String zoneId, String? subdomain, }) async  { final request = ApiRequest(
+Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required String zoneId, String? subdomain, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/routing/dns',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// Enable you Email Routing zone. Add and lock the necessary MX and SPF records.
 ///
 /// `POST /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<ResponseCommon30>> emailRoutingSettingsEnableEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsEnableEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/routing/dns',
   headers: {..._config.defaultHeaders
@@ -79,7 +79,7 @@ return _execute(
 /// Unlock MX Records previously locked by Email Routing.
 ///
 /// `PATCH /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<ResponseCommon30>> emailRoutingSettingsUnlockEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsUnlockEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/routing/dns',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// Disable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.
 ///
 /// `DELETE /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse>> emailRoutingSettingsDisableEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse, Never>> emailRoutingSettingsDisableEmailRoutingDns({required String zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/email/routing/dns',
   headers: {..._config.defaultHeaders
@@ -117,7 +117,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -140,6 +140,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -150,7 +151,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

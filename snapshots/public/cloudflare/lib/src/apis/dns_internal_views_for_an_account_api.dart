@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List DNS Internal Views for an Account
 ///
 /// `GET /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26>> dnsViewsForAnAccountListInternalDnsViews({required String accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, double? page, double? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required String accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, double? page, double? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_settings/views',
   headers: {..._config.defaultHeaders
@@ -50,7 +50,7 @@ return _execute(
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26>> dnsViewsForAnAccountCreateInternalDnsViews({required String accountId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required String accountId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_settings/views',
   headers: {..._config.defaultHeaders
@@ -71,7 +71,7 @@ return _execute(
 /// Get DNS Internal View
 ///
 /// `GET /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26>> dnsViewsForAnAccountGetInternalDnsView({required String accountId, required String viewId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountGetInternalDnsView({required String accountId, required String viewId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_settings/views/${Uri.encodeComponent(viewId)}',
   headers: {..._config.defaultHeaders
@@ -90,7 +90,7 @@ return _execute(
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26>> dnsViewsForAnAccountUpdateInternalDnsView({required String accountId, required String viewId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required String accountId, required String viewId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_settings/views/${Uri.encodeComponent(viewId)}',
   headers: {..._config.defaultHeaders
@@ -111,7 +111,7 @@ return _execute(
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse>> dnsViewsForAnAccountDeleteInternalDnsView({required String accountId, required String viewId, }) async  { final request = ApiRequest(
+Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required String accountId, required String viewId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_settings/views/${Uri.encodeComponent(viewId)}',
   headers: {..._config.defaultHeaders
@@ -126,7 +126,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -149,6 +149,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -159,7 +160,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

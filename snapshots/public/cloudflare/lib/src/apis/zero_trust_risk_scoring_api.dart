@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Get risk event/score information for a specific user
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/{user_id}`
-Future<ApiResult<ResponseCommon20>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Clear the risk score for a particular user
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/{user_id}/reset`
-Future<ApiResult<ResponseCommon20>> dlpRiskScoreResetPost({required String accountId, required String userId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreResetPost({required String accountId, required String userId, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}/reset',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Get all behaviors and associated configuration
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20>> dlpRiskScoreBehaviorsGet({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsGet({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Update configuration for risk behaviors
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// Get risk score info for all users in the account
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/summary`
-Future<ApiResult<ResponseCommon20>> dlpRiskScoreSummaryGet({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGet({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/summary',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -123,6 +123,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -133,7 +134,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

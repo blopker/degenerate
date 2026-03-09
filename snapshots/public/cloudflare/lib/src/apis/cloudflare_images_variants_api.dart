@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists existing variants.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesVariantsListVariants({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsListVariants({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/variants',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Specify variants that allow you to resize images for different use cases.
 ///
 /// `POST /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesVariantsCreateAVariant({required String accountId, required ImagesImageVariantDefinition body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsCreateAVariant({required String accountId, required ImagesImageVariantDefinition body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/variants',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetch details for a single variant.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesVariantsVariantDetails({required String variantId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsVariantDetails({required String variantId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/variants/${Uri.encodeComponent(variantId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updating a variant purges the cache for all images associated with the variant.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesVariantsUpdateAVariant({required String variantId, required String accountId, required ImagesImageVariantPatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsUpdateAVariant({required String variantId, required String accountId, required ImagesImageVariantPatchRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/variants/${Uri.encodeComponent(variantId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deleting a variant purges the cache for all images associated with the variant.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36>> cloudflareImagesVariantsDeleteAVariant({required String variantId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsDeleteAVariant({required String variantId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/images/v1/variants/${Uri.encodeComponent(variantId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

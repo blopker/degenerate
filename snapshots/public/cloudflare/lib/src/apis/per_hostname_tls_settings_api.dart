@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List the requested TLS setting for the hostnames under this zone.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}`
-Future<ApiResult<ResponseCommon68>> perHostnameTlsSettingsList({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsList({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Get the requested TLS setting for the hostname.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68>> perHostnameTlsSettingsGet({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsGet({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Update the tls setting value for the hostname.
 ///
 /// `PUT /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68>> perHostnameTlsSettingsPut({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, required PerHostnameTlsSettingsPutRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsPut({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, required PerHostnameTlsSettingsPutRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Delete the tls setting value for the hostname.
 ///
 /// `DELETE /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68>> perHostnameTlsSettingsDelete({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsDelete({required String zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required String hostname, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname)}',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -114,6 +114,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -124,7 +125,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List TSIGs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<ResponseCommon58>> secondaryDnsTsigListTsiGs({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigListTsiGs({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/tsigs',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create TSIG.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<ResponseCommon58>> secondaryDnsTsigCreateTsig({required String accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigCreateTsig({required String accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/tsigs',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Get TSIG.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsTsigTsigDetails({required String tsigId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigTsigDetails({required String tsigId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Modify TSIG.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsTsigUpdateTsig({required String tsigId, required String accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigUpdateTsig({required String tsigId, required String accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Delete TSIG.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58>> secondaryDnsTsigDeleteTsig({required String tsigId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigDeleteTsig({required String tsigId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-01
 ///
 /// `GET /admin/api/2020-01/collects.json`
-Future<ApiResult<void>> deprecated202001GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collects.json',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-01
 ///
 /// `POST /admin/api/2020-01/collects.json`
-Future<ApiResult<void>> deprecated202001CreateCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/collects.json',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202001GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-01
 ///
 /// `GET /admin/api/2020-01/collects/count.json`
-Future<ApiResult<void>> deprecated202001GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -115,7 +115,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-04
 ///
 /// `GET /admin/api/2020-04/collects.json`
-Future<ApiResult<void>> deprecated202004GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collects.json',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-04
 ///
 /// `POST /admin/api/2020-04/collects.json`
-Future<ApiResult<void>> deprecated202004CreateCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/collects.json',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202004GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -176,7 +176,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -193,7 +193,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-04
 ///
 /// `GET /admin/api/2020-04/collects/count.json`
-Future<ApiResult<void>> deprecated202004GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -213,7 +213,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-07
 ///
 /// `GET /admin/api/2020-07/collects.json`
-Future<ApiResult<void>> deprecated202007GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collects.json',
   headers: {..._config.defaultHeaders
@@ -235,7 +235,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-07
 ///
 /// `POST /admin/api/2020-07/collects.json`
-Future<ApiResult<void>> deprecated202007CreateCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/collects.json',
   headers: {..._config.defaultHeaders
@@ -254,7 +254,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202007GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -274,7 +274,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -291,7 +291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-07
 ///
 /// `GET /admin/api/2020-07/collects/count.json`
-Future<ApiResult<void>> deprecated202007GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -311,7 +311,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-10
 ///
 /// `GET /admin/api/2020-10/collects.json`
-Future<ApiResult<void>> getCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collects.json',
   headers: {..._config.defaultHeaders
@@ -333,7 +333,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-10
 ///
 /// `POST /admin/api/2020-10/collects.json`
-Future<ApiResult<void>> createCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/collects.json',
   headers: {..._config.defaultHeaders
@@ -352,7 +352,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collects/{collect_id}.json`
-Future<ApiResult<void>> getCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -372,7 +372,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/collects/{collect_id}.json`
-Future<ApiResult<void>> deleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -389,7 +389,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-10
 ///
 /// `GET /admin/api/2020-10/collects/count.json`
-Future<ApiResult<void>> getCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -409,7 +409,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2021-01
 ///
 /// `GET /admin/api/2021-01/collects.json`
-Future<ApiResult<void>> deprecated202101GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collects.json',
   headers: {..._config.defaultHeaders
@@ -431,7 +431,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2021-01
 ///
 /// `POST /admin/api/2021-01/collects.json`
-Future<ApiResult<void>> deprecated202101CreateCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/collects.json',
   headers: {..._config.defaultHeaders
@@ -450,7 +450,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202101GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -470,7 +470,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -487,7 +487,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2021-01
 ///
 /// `GET /admin/api/2021-01/collects/count.json`
-Future<ApiResult<void>> deprecated202101GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -507,7 +507,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-unstable
 ///
 /// `GET /admin/api/unstable/collects.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollects({String? limit, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collects.json',
   headers: {..._config.defaultHeaders
@@ -529,7 +529,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-unstable
 ///
 /// `POST /admin/api/unstable/collects.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCollects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCollects({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/collects.json',
   headers: {..._config.defaultHeaders
@@ -548,7 +548,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-unstable
 ///
 /// `GET /admin/api/unstable/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsParamCollectId({required String collectId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -568,7 +568,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/collects/{collect_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectsParamCollectId({required String collectId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/collects/${Uri.encodeComponent(collectId)}.json',
   headers: {..._config.defaultHeaders
@@ -585,7 +585,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-unstable
 ///
 /// `GET /admin/api/unstable/collects/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsCount({int? collectionId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collects/count.json',
   headers: {..._config.defaultHeaders
@@ -605,7 +605,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collections/{collection_id}.json`
-Future<ApiResult<void>> deprecated202001GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -625,7 +625,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-01
 ///
 /// `GET /admin/api/2020-01/collections/{collection_id}/products.json`
-Future<ApiResult<void>> deprecated202001GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -645,7 +645,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collections/{collection_id}.json`
-Future<ApiResult<void>> deprecated202004GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -665,7 +665,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-04
 ///
 /// `GET /admin/api/2020-04/collections/{collection_id}/products.json`
-Future<ApiResult<void>> deprecated202004GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -685,7 +685,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collections/{collection_id}.json`
-Future<ApiResult<void>> deprecated202007GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -705,7 +705,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-07
 ///
 /// `GET /admin/api/2020-07/collections/{collection_id}/products.json`
-Future<ApiResult<void>> deprecated202007GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -725,7 +725,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collections/{collection_id}.json`
-Future<ApiResult<void>> getCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -745,7 +745,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-10
 ///
 /// `GET /admin/api/2020-10/collections/{collection_id}/products.json`
-Future<ApiResult<void>> getCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -765,7 +765,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collections/{collection_id}.json`
-Future<ApiResult<void>> deprecated202101GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -785,7 +785,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2021-01
 ///
 /// `GET /admin/api/2021-01/collections/{collection_id}/products.json`
-Future<ApiResult<void>> deprecated202101GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -805,7 +805,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-unstable
 ///
 /// `GET /admin/api/unstable/collections/{collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionId({required String collectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collections/${Uri.encodeComponent(collectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -825,7 +825,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-unstable
 ///
 /// `GET /admin/api/unstable/collections/{collection_id}/products.json`
-Future<ApiResult<void>> deprecatedUnstableGetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionIdProducts({required String collectionId, String? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/collections/${Uri.encodeComponent(collectionId)}/products.json',
   headers: {..._config.defaultHeaders
@@ -845,7 +845,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections.json`
-Future<ApiResult<void>> deprecated202001GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -876,7 +876,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-01
 ///
 /// `POST /admin/api/2020-01/custom_collections.json`
-Future<ApiResult<void>> deprecated202001CreateCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -895,7 +895,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections/count.json`
-Future<ApiResult<void>> deprecated202001GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -921,7 +921,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202001GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -941,7 +941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -960,7 +960,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -977,7 +977,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections.json`
-Future<ApiResult<void>> deprecated202004GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1008,7 +1008,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-04
 ///
 /// `POST /admin/api/2020-04/custom_collections.json`
-Future<ApiResult<void>> deprecated202004CreateCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1027,7 +1027,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections/count.json`
-Future<ApiResult<void>> deprecated202004GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -1053,7 +1053,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202004GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1073,7 +1073,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1092,7 +1092,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1109,7 +1109,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections.json`
-Future<ApiResult<void>> deprecated202007GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1140,7 +1140,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-07
 ///
 /// `POST /admin/api/2020-07/custom_collections.json`
-Future<ApiResult<void>> deprecated202007CreateCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1159,7 +1159,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections/count.json`
-Future<ApiResult<void>> deprecated202007GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -1185,7 +1185,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202007GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1205,7 +1205,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1224,7 +1224,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1241,7 +1241,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections.json`
-Future<ApiResult<void>> getCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1272,7 +1272,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-10
 ///
 /// `POST /admin/api/2020-10/custom_collections.json`
-Future<ApiResult<void>> createCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1291,7 +1291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections/count.json`
-Future<ApiResult<void>> getCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -1317,7 +1317,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> getCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1337,7 +1337,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> updateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1356,7 +1356,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1373,7 +1373,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections.json`
-Future<ApiResult<void>> deprecated202101GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1404,7 +1404,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2021-01
 ///
 /// `POST /admin/api/2021-01/custom_collections.json`
-Future<ApiResult<void>> deprecated202101CreateCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1423,7 +1423,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections/count.json`
-Future<ApiResult<void>> deprecated202101GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -1449,7 +1449,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202101GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1469,7 +1469,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1488,7 +1488,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1505,7 +1505,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections.json`
-Future<ApiResult<void>> deprecatedUnstableGetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1536,7 +1536,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-unstable
 ///
 /// `POST /admin/api/unstable/custom_collections.json`
-Future<ApiResult<void>> deprecatedUnstableCreateCustomCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/custom_collections.json',
   headers: {..._config.defaultHeaders
@@ -1555,7 +1555,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/custom_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -1581,7 +1581,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1601,7 +1601,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-unstable
 ///
 /// `PUT /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1620,7 +1620,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/custom_collections/${Uri.encodeComponent(customCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -1637,7 +1637,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-01
 ///
 /// `GET /admin/api/2020-01/products.json`
-Future<ApiResult<void>> deprecated202001GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products.json',
   headers: {..._config.defaultHeaders
@@ -1678,7 +1678,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-01
 ///
 /// `POST /admin/api/2020-01/products.json`
-Future<ApiResult<void>> deprecated202001CreateProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/products.json',
   headers: {..._config.defaultHeaders
@@ -1697,7 +1697,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-01
 ///
 /// `GET /admin/api/2020-01/products/count.json`
-Future<ApiResult<void>> deprecated202001GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products/count.json',
   headers: {..._config.defaultHeaders
@@ -1726,7 +1726,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202001GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1750,7 +1750,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1769,7 +1769,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1786,7 +1786,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-04
 ///
 /// `GET /admin/api/2020-04/products.json`
-Future<ApiResult<void>> deprecated202004GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products.json',
   headers: {..._config.defaultHeaders
@@ -1827,7 +1827,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-04
 ///
 /// `POST /admin/api/2020-04/products.json`
-Future<ApiResult<void>> deprecated202004CreateProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/products.json',
   headers: {..._config.defaultHeaders
@@ -1846,7 +1846,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-04
 ///
 /// `GET /admin/api/2020-04/products/count.json`
-Future<ApiResult<void>> deprecated202004GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products/count.json',
   headers: {..._config.defaultHeaders
@@ -1875,7 +1875,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202004GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1899,7 +1899,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1918,7 +1918,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -1935,7 +1935,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-07
 ///
 /// `GET /admin/api/2020-07/products.json`
-Future<ApiResult<void>> deprecated202007GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products.json',
   headers: {..._config.defaultHeaders
@@ -1976,7 +1976,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-07
 ///
 /// `POST /admin/api/2020-07/products.json`
-Future<ApiResult<void>> deprecated202007CreateProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/products.json',
   headers: {..._config.defaultHeaders
@@ -1995,7 +1995,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-07
 ///
 /// `GET /admin/api/2020-07/products/count.json`
-Future<ApiResult<void>> deprecated202007GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products/count.json',
   headers: {..._config.defaultHeaders
@@ -2024,7 +2024,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202007GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2048,7 +2048,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2067,7 +2067,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2084,7 +2084,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-10
 ///
 /// `GET /admin/api/2020-10/products.json`
-Future<ApiResult<void>> getProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products.json',
   headers: {..._config.defaultHeaders
@@ -2125,7 +2125,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-10
 ///
 /// `POST /admin/api/2020-10/products.json`
-Future<ApiResult<void>> createProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/products.json',
   headers: {..._config.defaultHeaders
@@ -2144,7 +2144,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-10
 ///
 /// `GET /admin/api/2020-10/products/count.json`
-Future<ApiResult<void>> getProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products/count.json',
   headers: {..._config.defaultHeaders
@@ -2173,7 +2173,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void>> getProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2197,7 +2197,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void>> updateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2216,7 +2216,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void>> deleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2233,7 +2233,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2021-01
 ///
 /// `GET /admin/api/2021-01/products.json`
-Future<ApiResult<void>> deprecated202101GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products.json',
   headers: {..._config.defaultHeaders
@@ -2274,7 +2274,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2021-01
 ///
 /// `POST /admin/api/2021-01/products.json`
-Future<ApiResult<void>> deprecated202101CreateProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/products.json',
   headers: {..._config.defaultHeaders
@@ -2293,7 +2293,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2021-01
 ///
 /// `GET /admin/api/2021-01/products/count.json`
-Future<ApiResult<void>> deprecated202101GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products/count.json',
   headers: {..._config.defaultHeaders
@@ -2322,7 +2322,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202101GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2346,7 +2346,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2365,7 +2365,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2382,7 +2382,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-unstable
 ///
 /// `GET /admin/api/unstable/products.json`
-Future<ApiResult<void>> deprecatedUnstableGetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProducts({String? ids, String? limit, String? sinceId, String? title, String? vendor, String? handle, String? productType, String? status, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, String? presentmentCurrencies, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products.json',
   headers: {..._config.defaultHeaders
@@ -2423,7 +2423,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-unstable
 ///
 /// `POST /admin/api/unstable/products.json`
-Future<ApiResult<void>> deprecatedUnstableCreateProducts({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateProducts({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/products.json',
   headers: {..._config.defaultHeaders
@@ -2442,7 +2442,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-unstable
 ///
 /// `GET /admin/api/unstable/products/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsCount({String? vendor, String? productType, String? collectionId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products/count.json',
   headers: {..._config.defaultHeaders
@@ -2471,7 +2471,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductId({required String productId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2495,7 +2495,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-unstable
 ///
 /// `PUT /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductId({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2514,7 +2514,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductId({required String productId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}.json',
   headers: {..._config.defaultHeaders
@@ -2531,7 +2531,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202001GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2552,7 +2552,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-01
 ///
 /// `POST /admin/api/2020-01/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202001CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2571,7 +2571,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images/count.json`
-Future<ApiResult<void>> deprecated202001GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -2591,7 +2591,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202001GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2611,7 +2611,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2630,7 +2630,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2647,7 +2647,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202004GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2668,7 +2668,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-04
 ///
 /// `POST /admin/api/2020-04/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202004CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2687,7 +2687,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images/count.json`
-Future<ApiResult<void>> deprecated202004GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -2707,7 +2707,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202004GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2727,7 +2727,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2746,7 +2746,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2763,7 +2763,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202007GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2784,7 +2784,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-07
 ///
 /// `POST /admin/api/2020-07/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202007CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2803,7 +2803,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images/count.json`
-Future<ApiResult<void>> deprecated202007GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -2823,7 +2823,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202007GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2843,7 +2843,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2862,7 +2862,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2879,7 +2879,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images.json`
-Future<ApiResult<void>> getProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2900,7 +2900,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-10
 ///
 /// `POST /admin/api/2020-10/products/{product_id}/images.json`
-Future<ApiResult<void>> createProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -2919,7 +2919,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images/count.json`
-Future<ApiResult<void>> getProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -2939,7 +2939,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> getProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2959,7 +2959,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> updateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2978,7 +2978,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -2995,7 +2995,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202101GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -3016,7 +3016,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2021-01
 ///
 /// `POST /admin/api/2021-01/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecated202101CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -3035,7 +3035,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images/count.json`
-Future<ApiResult<void>> deprecated202101GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -3055,7 +3055,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202101GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3075,7 +3075,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3094,7 +3094,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3111,7 +3111,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecatedUnstableGetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImages({required String productId, String? sinceId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -3132,7 +3132,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-unstable
 ///
 /// `POST /admin/api/unstable/products/{product_id}/images.json`
-Future<ApiResult<void>> deprecatedUnstableCreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateProductsParamProductIdImages({required String productId, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images.json',
   headers: {..._config.defaultHeaders
@@ -3151,7 +3151,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesCount({required String productId, String? sinceId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images/count.json',
   headers: {..._config.defaultHeaders
@@ -3171,7 +3171,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3191,7 +3191,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-unstable
 ///
 /// `PUT /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3210,7 +3210,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/products/${Uri.encodeComponent(productId)}/images/${Uri.encodeComponent(imageId)}.json',
   headers: {..._config.defaultHeaders
@@ -3227,7 +3227,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections.json`
-Future<ApiResult<void>> deprecated202001GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3258,7 +3258,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-01
 ///
 /// `POST /admin/api/2020-01/smart_collections.json`
-Future<ApiResult<void>> deprecated202001CreateSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3277,7 +3277,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections/count.json`
-Future<ApiResult<void>> deprecated202001GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -3303,7 +3303,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202001GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3323,7 +3323,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3342,7 +3342,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3359,7 +3359,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-01
 ///
 /// `PUT /admin/api/2020-01/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> deprecated202001UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -3383,7 +3383,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections.json`
-Future<ApiResult<void>> deprecated202004GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3414,7 +3414,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-04
 ///
 /// `POST /admin/api/2020-04/smart_collections.json`
-Future<ApiResult<void>> deprecated202004CreateSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3433,7 +3433,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections/count.json`
-Future<ApiResult<void>> deprecated202004GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -3459,7 +3459,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202004GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3479,7 +3479,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3498,7 +3498,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3515,7 +3515,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-04
 ///
 /// `PUT /admin/api/2020-04/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> deprecated202004UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -3539,7 +3539,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections.json`
-Future<ApiResult<void>> deprecated202007GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3570,7 +3570,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-07
 ///
 /// `POST /admin/api/2020-07/smart_collections.json`
-Future<ApiResult<void>> deprecated202007CreateSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3589,7 +3589,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections/count.json`
-Future<ApiResult<void>> deprecated202007GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -3615,7 +3615,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202007GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3635,7 +3635,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3654,7 +3654,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3671,7 +3671,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-07
 ///
 /// `PUT /admin/api/2020-07/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> deprecated202007UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -3695,7 +3695,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections.json`
-Future<ApiResult<void>> getSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3726,7 +3726,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-10
 ///
 /// `POST /admin/api/2020-10/smart_collections.json`
-Future<ApiResult<void>> createSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3745,7 +3745,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections/count.json`
-Future<ApiResult<void>> getSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -3771,7 +3771,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> getSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3791,7 +3791,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> updateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3810,7 +3810,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3827,7 +3827,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-10
 ///
 /// `PUT /admin/api/2020-10/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> updateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -3851,7 +3851,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections.json`
-Future<ApiResult<void>> deprecated202101GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3882,7 +3882,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2021-01
 ///
 /// `POST /admin/api/2021-01/smart_collections.json`
-Future<ApiResult<void>> deprecated202101CreateSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -3901,7 +3901,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections/count.json`
-Future<ApiResult<void>> deprecated202101GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -3927,7 +3927,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202101GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3947,7 +3947,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3966,7 +3966,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -3983,7 +3983,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2021-01
 ///
 /// `PUT /admin/api/2021-01/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> deprecated202101UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -4007,7 +4007,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections.json`
-Future<ApiResult<void>> deprecatedUnstableGetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollections({String? limit, String? ids, String? sinceId, String? title, String? productId, String? handle, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -4038,7 +4038,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-unstable
 ///
 /// `POST /admin/api/unstable/smart_collections.json`
-Future<ApiResult<void>> deprecatedUnstableCreateSmartCollections({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateSmartCollections({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/smart_collections.json',
   headers: {..._config.defaultHeaders
@@ -4057,7 +4057,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsCount({String? title, String? productId, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/smart_collections/count.json',
   headers: {..._config.defaultHeaders
@@ -4083,7 +4083,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -4103,7 +4103,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-unstable
 ///
 /// `PUT /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -4122,7 +4122,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/smart_collections/${Uri.encodeComponent(smartCollectionId)}.json',
   headers: {..._config.defaultHeaders
@@ -4139,7 +4139,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-unstable
 ///
 /// `PUT /admin/api/unstable/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, String? products, String? sortOrder, int? products2, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/smart_collections/${Uri.encodeComponent(smartCollectionId)}/order.json',
   headers: {..._config.defaultHeaders
@@ -4159,7 +4159,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -4182,6 +4182,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -4192,7 +4193,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

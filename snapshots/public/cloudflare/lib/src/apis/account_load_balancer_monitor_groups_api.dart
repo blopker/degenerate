@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured monitor groups.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsListMonitorGroups({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerMonitorGroupsListMonitorGroups({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Create a new monitor group.
 ///
 /// `POST /accounts/{account_id}/load_balancers/monitor_groups`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, ResponseCommon42>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups',
   headers: {..._config.defaultHeaders
@@ -50,6 +50,9 @@ return _execute(
   onSuccess: (response) {
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Monitor Group Details
@@ -57,7 +60,7 @@ return _execute(
 /// Fetch a single configured monitor group.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsMonitorGroupDetails({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerMonitorGroupsMonitorGroupDetails({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +79,7 @@ return _execute(
 /// Modify a configured monitor group.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required String monitorGroupId, required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, ResponseCommon42>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required String monitorGroupId, required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId)}',
   headers: {..._config.defaultHeaders
@@ -90,6 +93,9 @@ return _execute(
   onSuccess: (response) {
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Patch Monitor Group
@@ -97,7 +103,7 @@ return _execute(
 /// Apply changes to an existing monitor group, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required String monitorGroupId, required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, ResponseCommon42>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required String monitorGroupId, required String accountId, required LoadBalancingMonitorGroup body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId)}',
   headers: {..._config.defaultHeaders
@@ -111,6 +117,9 @@ return _execute(
   onSuccess: (response) {
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// Delete Monitor Group
@@ -118,7 +127,7 @@ return _execute(
 /// Delete a configured monitor group.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, ResponseCommon42>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId)}',
   headers: {..._config.defaultHeaders
@@ -130,6 +139,9 @@ return _execute(
   onSuccess: (response) {
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+  },
 );
  } 
 /// List Monitor Group References
@@ -137,7 +149,7 @@ return _execute(
 /// Get the list of resources that reference the provided monitor group.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}/references`
-Future<ApiResult<ResponseCommon42>> accountLoadBalancerMonitorGroupsListMonitorGroupReferences({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerMonitorGroupsListMonitorGroupReferences({required String monitorGroupId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId)}/references',
   headers: {..._config.defaultHeaders
@@ -152,7 +164,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -175,6 +187,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -185,7 +198,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

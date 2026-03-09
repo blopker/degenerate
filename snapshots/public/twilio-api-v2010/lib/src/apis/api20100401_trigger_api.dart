@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Fetch and instance of a usage-trigger
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger>> fetchUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Update an instance of a usage trigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<void>> deleteUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Retrieve a list of usage-triggers belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<ListUsageTriggerResponse>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
   headers: {..._config.defaultHeaders
@@ -91,7 +91,7 @@ return _execute(
 /// Create a new UsageTrigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<AccountUsageUsageTrigger>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -131,6 +131,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -141,7 +142,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

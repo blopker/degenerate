@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Scan Configs
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13>> getConfigFetch({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> getConfigFetch({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<ResponseCommon13>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<DeleteDeleteScansResponse>> deleteDeleteScans({required String accountId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -87,7 +87,7 @@ return _execute(
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
-Future<ApiResult<GetGetOpenPortsResponse>> getGetOpenPorts({required String accountId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/results/${Uri.encodeComponent(configId)}',
   headers: {..._config.defaultHeaders
@@ -102,7 +102,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -125,6 +125,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -135,7 +136,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

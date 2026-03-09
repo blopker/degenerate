@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns a list of Vectorize Indexes
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes`
-Future<ApiResult<ResponseCommon72>> vectorizeListVectorizeIndexes({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectorizeIndexes({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates and returns a new Vectorize Index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes`
-Future<ApiResult<ResponseCommon72>> vectorizeCreateVectorizeIndex({required String accountId, required VectorizeCreateIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateVectorizeIndex({required String accountId, required VectorizeCreateIndexRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Returns the specified Vectorize Index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}`
-Future<ApiResult<ResponseCommon72>> vectorizeGetVectorizeIndex({required String accountId, required String indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorizeIndex({required String accountId, required String indexName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Deletes the specified Vectorize Index.
 ///
 /// `DELETE /accounts/{account_id}/vectorize/v2/indexes/{index_name}`
-Future<ApiResult<ResponseCommon72>> vectorizeDeleteVectorizeIndex({required String accountId, required String indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorizeIndex({required String accountId, required String indexName, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}',
   headers: {..._config.defaultHeaders
@@ -95,7 +95,7 @@ return _execute(
 /// Delete a set of vectors from an index by their vector identifiers.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/delete_by_ids`
-Future<ApiResult<ResponseCommon72>> vectorizeDeleteVectorsById({required String accountId, required String indexName, required VectorizeIndexDeleteVectorsByIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorsById({required String accountId, required String indexName, required VectorizeIndexDeleteVectorsByIdRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/delete_by_ids',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Get a set of vectors from an index by their vector identifiers.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/get_by_ids`
-Future<ApiResult<ResponseCommon72>> vectorizeGetVectorsById({required String accountId, required String indexName, required VectorizeIndexGetVectorsByIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorsById({required String accountId, required String indexName, required VectorizeIndexGetVectorsByIdRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/get_by_ids',
   headers: {..._config.defaultHeaders
@@ -137,7 +137,7 @@ return _execute(
 /// Get information about a vectorize index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/info`
-Future<ApiResult<ResponseCommon72>> vectorizeIndexInfo({required String accountId, required String indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeIndexInfo({required String accountId, required String indexName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/info',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 /// Inserts vectors into the specified index and returns a mutation id corresponding to the vectors enqueued for insertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert`
-Future<ApiResult<ResponseCommon72>> vectorizeInsertVector({required String accountId, required String indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeInsertVector({required String accountId, required String indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/insert',
   headers: {..._config.defaultHeaders
@@ -180,7 +180,7 @@ return _execute(
 /// Returns a paginated list of vector identifiers from the specified index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/list`
-Future<ApiResult<ResponseCommon72>> vectorizeListVectors({required String accountId, required String indexName, int? count, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectors({required String accountId, required String indexName, int? count, String? cursor, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/list',
   headers: {..._config.defaultHeaders
@@ -203,7 +203,7 @@ return _execute(
 /// Enable metadata filtering based on metadata property. Limited to 10 properties.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/create`
-Future<ApiResult<ResponseCommon72>> vectorizeCreateMetadataIndex({required String accountId, required String indexName, required VectorizeCreateMetadataIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateMetadataIndex({required String accountId, required String indexName, required VectorizeCreateMetadataIndexRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/metadata_index/create',
   headers: {..._config.defaultHeaders
@@ -224,7 +224,7 @@ return _execute(
 /// Allow Vectorize to delete the specified metadata index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/delete`
-Future<ApiResult<ResponseCommon72>> vectorizeDeleteMetadataIndex({required String accountId, required String indexName, required VectorizeDeleteMetadataIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteMetadataIndex({required String accountId, required String indexName, required VectorizeDeleteMetadataIndexRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/metadata_index/delete',
   headers: {..._config.defaultHeaders
@@ -245,7 +245,7 @@ return _execute(
 /// List Metadata Indexes for the specified Vectorize Index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/list`
-Future<ApiResult<ResponseCommon72>> vectorizeListMetadataIndexes({required String accountId, required String indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListMetadataIndexes({required String accountId, required String indexName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/metadata_index/list',
   headers: {..._config.defaultHeaders
@@ -264,7 +264,7 @@ return _execute(
 /// Finds vectors closest to a given vector in an index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/query`
-Future<ApiResult<ResponseCommon72>> vectorizeQueryVector({required String accountId, required String indexName, required Request body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeQueryVector({required String accountId, required String indexName, required Request body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/query',
   headers: {..._config.defaultHeaders
@@ -285,7 +285,7 @@ return _execute(
 /// Upserts vectors into the specified index, creating them if they do not exist and returns a mutation id corresponding to the vectors enqueued for upsertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert`
-Future<ApiResult<ResponseCommon72>> vectorizeUpsertVector({required String accountId, required String indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeUpsertVector({required String accountId, required String indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/vectorize/v2/indexes/${Uri.encodeComponent(indexName)}/upsert',
   headers: {..._config.defaultHeaders
@@ -305,7 +305,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -328,6 +328,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -338,7 +339,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

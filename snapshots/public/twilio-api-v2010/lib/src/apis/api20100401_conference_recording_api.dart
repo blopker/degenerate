@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of recordings belonging to the call used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings.json`
-Future<ApiResult<ListConferenceRecordingResponse>> listConferenceRecording({required String accountSid, required String conferenceSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListConferenceRecordingResponse, Never>> listConferenceRecording({required String accountSid, required String conferenceSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings.json',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Fetch an instance of a recording for a call
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountConferenceConferenceRecording>> fetchConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceConferenceRecording, Never>> fetchConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: To use `Twilio.CURRENT`, pass it as recording sid.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountConferenceConferenceRecording>> updateConferenceRecording({required String accountSid, required String conferenceSid, required String sid, UpdateConferenceRecordingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceConferenceRecording, Never>> updateConferenceRecording({required String accountSid, required String conferenceSid, required String sid, UpdateConferenceRecordingRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<void>> deleteConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
@@ -89,7 +89,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -112,6 +112,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -122,7 +123,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

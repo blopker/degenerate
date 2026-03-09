@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members`
-Future<ApiResult<MembersListResponse>> membersList({required String organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersListResponse, Never>> membersList({required String organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/members',
   headers: {..._config.defaultHeaders
@@ -45,7 +45,7 @@ return _execute(
 /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations/{organization_id}/members`
-Future<ApiResult<MembersCreateResponse>> membersCreate({required String organizationId, required CreateMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required String organizationId, required CreateMemberRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/members',
   headers: {..._config.defaultHeaders
@@ -66,7 +66,7 @@ return _execute(
 /// Retrieve a single membership from an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<MembersRetrieveResponse>> membersRetrieve({required String organizationId, required String memberId, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required String organizationId, required String memberId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/members/${Uri.encodeComponent(memberId)}',
   headers: {..._config.defaultHeaders
@@ -85,7 +85,7 @@ return _execute(
 /// Delete a membership to a particular Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<void>> membersDelete({required String organizationId, required String memberId, required MembersDeleteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> membersDelete({required String organizationId, required String memberId, required MembersDeleteRequest body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/members/${Uri.encodeComponent(memberId)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Batch create multiple memberships that grant access to a specific Organization.
 ///
 /// `POST /organizations/{organization_id}/members:batchCreate`
-Future<ApiResult<MembersBatchCreateResponse>> membersBatchCreate({required String organizationId, required BatchCreateMembersRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required String organizationId, required BatchCreateMembersRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/organizations/${Uri.encodeComponent(organizationId)}/members:batchCreate',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -144,6 +144,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -154,7 +155,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -136,8 +136,10 @@ class ApiEmitter {
 
     // Determine return type from success response
     final returnType = _successResponseType(op);
+    final errorType = _errorResponseType(op);
     final returnTypeStr = returnType != null ? irTypeName(returnType) : 'void';
-    final futureType = 'Future<ApiResult<$returnTypeStr>>';
+    final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
+    final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
 
     // Build method body
     final bodyCode = _buildOperationBody(
@@ -248,6 +250,7 @@ class ApiEmitter {
     buf.writeln();
 
     // Build onSuccess callback
+    final errorType = _errorResponseType(op);
     if (returnType != null) {
       final deserialize = _buildDeserializeExpr(returnType);
       buf.writeln('return _execute(');
@@ -255,13 +258,18 @@ class ApiEmitter {
       buf.writeln('  onSuccess: (response) {');
       buf.writeln('    $deserialize');
       buf.writeln('  },');
-      buf.writeln(');');
     } else {
       buf.writeln('return _execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
-      buf.writeln(');');
     }
+    if (errorType != null) {
+      final errorDeserialize = _buildErrorDeserializeExpr(errorType);
+      buf.writeln('  onError: (response) {');
+      buf.writeln('    $errorDeserialize');
+      buf.writeln('  },');
+    }
+    buf.writeln(');');
 
     return buf.toString();
   }
@@ -305,9 +313,9 @@ class ApiEmitter {
     return Method(
       (m) => m
         ..name = '_execute'
-        ..types.add(refer('T'))
+        ..types.addAll([refer('T'), refer('E')])
         ..modifier = MethodModifier.async
-        ..returns = refer('Future<ApiResult<T>>')
+        ..returns = refer('Future<ApiResult<T, E>>')
         ..requiredParameters.add(
           Parameter(
             (p) => p
@@ -322,6 +330,14 @@ class ApiEmitter {
               ..named = true
               ..required = true
               ..type = refer('T Function(ApiResponse)'),
+          ),
+        )
+        ..optionalParameters.add(
+          Parameter(
+            (p) => p
+              ..name = 'onError'
+              ..named = true
+              ..type = refer('E? Function(ApiResponse)?'),
           ),
         )
         ..docs.add(
@@ -351,6 +367,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -361,7 +378,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }
@@ -391,6 +408,36 @@ try {
       IrAnyOf() ||
       IrEnum() => true,
       _ => false,
+    };
+  }
+
+  /// Find the error response type for an operation.
+  ///
+  /// Checks non-2xx status codes and the default response for a JSON schema.
+  IrType? _errorResponseType(IrOperation op) {
+    // Check for a default error response first (most common pattern)
+    if (op.defaultResponse != null) {
+      final json = op.defaultResponse!.content['application/json'];
+      if (json != null) return json.schema;
+    }
+    // Check for specific error status codes
+    for (final entry in op.responses.entries) {
+      if (entry.key >= 400) {
+        final json = entry.value.content['application/json'];
+        if (json != null) return json.schema;
+      }
+    }
+    return null;
+  }
+
+  String _buildErrorDeserializeExpr(IrType errorType) {
+    return switch (errorType) {
+      IrObject(:final name) =>
+        'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+      IrTypeRef(:final name) =>
+        'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+      _ =>
+        'try { return ${irTypeName(errorType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
     };
   }
 

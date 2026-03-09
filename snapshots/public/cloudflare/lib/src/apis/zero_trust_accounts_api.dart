@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Describes the current device settings for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon67>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/settings',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Updates the current device settings for a Zero Trust account.
 ///
 /// `PUT /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon67>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required String accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required String accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/settings',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Patches the current device settings for a Zero Trust account.
 ///
 /// `PATCH /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon67>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required String accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required String accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/settings',
   headers: {..._config.defaultHeaders
@@ -78,7 +78,7 @@ return _execute(
 /// Resets the current device settings for a Zero Trust account.
 ///
 /// `DELETE /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon67>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/settings',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Retrieve information about the current Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/gateway`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsGetZeroTrustAccountInformation({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsGetZeroTrustAccountInformation({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Create a Zero Trust account for an existing Cloudflare account.
 ///
 /// `POST /accounts/{account_id}/gateway`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsCreateZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsCreateZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 /// Retrieve the current Zero Trust account configuration.
 ///
 /// `GET /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsGetZeroTrustAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsGetZeroTrustAccountConfiguration({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/configuration',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 /// Update the current Zero Trust account configuration.
 ///
 /// `PUT /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required String accountId, required ZeroTrustGatewayGatewayAccountSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required String accountId, required ZeroTrustGatewayGatewayAccountSettings body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/configuration',
   headers: {..._config.defaultHeaders
@@ -175,7 +175,7 @@ return _execute(
 /// Update (PATCH) a single subcollection of settings such as `antivirus`, `tls_decrypt`, `activity_log`, `block_page`, `browser_isolation`, `fips`, `body_scanning`, or `certificate` without updating the entire configuration object. This endpoint returns an error if any settings collection lacks proper configuration.
 ///
 /// `PATCH /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required String accountId, required ZeroTrustGatewayGatewayAccountSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required String accountId, required ZeroTrustGatewayGatewayAccountSettings body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/configuration',
   headers: {..._config.defaultHeaders
@@ -196,7 +196,7 @@ return _execute(
 /// Retrieve the current logging settings for the Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/gateway/logging`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccount({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/logging',
   headers: {..._config.defaultHeaders
@@ -215,7 +215,7 @@ return _execute(
 /// Update logging settings for the current Zero Trust account.
 ///
 /// `PUT /accounts/{account_id}/gateway/logging`
-Future<ApiResult<ResponseCommon82>> zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccount({required String accountId, required ZeroTrustGatewayGatewayAccountLoggingSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccount({required String accountId, required ZeroTrustGatewayGatewayAccountLoggingSettings body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/gateway/logging',
   headers: {..._config.defaultHeaders
@@ -232,7 +232,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -255,6 +255,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -265,7 +266,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

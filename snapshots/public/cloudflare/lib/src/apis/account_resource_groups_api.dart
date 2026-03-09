@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all the resource groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35>> accountResourceGroupList({required String accountId, String? id, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required String accountId, String? id, String? name, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/iam/resource_groups',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a new Resource Group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35>> accountResourceGroupCreate({required String accountId, required IamRequestCreateResourceGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupCreate({required String accountId, required IamRequestCreateResourceGroup body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/iam/resource_groups',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Get information about a specific resource group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35>> accountResourceGroupDetails({required String accountId, required String resourceGroupId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDetails({required String accountId, required String resourceGroupId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Modify an existing resource group.
 ///
 /// `PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35>> accountResourceGroupUpdate({required String accountId, required String resourceGroupId, required IamRequestUpdateResourceGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupUpdate({required String accountId, required String resourceGroupId, required IamRequestUpdateResourceGroup body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Remove a resource group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35>> accountResourceGroupDelete({required String accountId, required String resourceGroupId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDelete({required String accountId, required String resourceGroupId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -139,6 +139,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -149,7 +150,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

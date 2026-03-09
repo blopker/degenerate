@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches IP Access rules of the user. You can filter the results using several optional parameters.
 ///
 /// `GET /user/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/user/firewall/access_rules/rules',
   headers: {..._config.defaultHeaders
@@ -49,7 +49,7 @@ return _execute(
 /// Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /user/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/user/firewall/access_rules/rules',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31>> ipAccessRulesForAUserUpdateAnIpAccessRule({required String ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserUpdateAnIpAccessRule({required String ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -93,7 +93,7 @@ return _execute(
 /// Note: Deleting a user-level rule will affect all zones owned by the user.
 ///
 /// `DELETE /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31>> ipAccessRulesForAUserDeleteAnIpAccessRule({required String ruleId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserDeleteAnIpAccessRule({required String ruleId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId)}',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -131,6 +131,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -141,7 +142,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

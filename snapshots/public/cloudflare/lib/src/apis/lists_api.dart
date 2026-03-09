@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all lists in the account.
 ///
 /// `GET /accounts/{account_id}/rules/lists`
-Future<ApiResult<ResponseCommon41>> listsGetLists({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsGetLists({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a new list of the specified kind.
 ///
 /// `POST /accounts/{account_id}/rules/lists`
-Future<ApiResult<ResponseCommon41>> listsCreateAList({required String accountId, required ListsCreateAListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsCreateAList({required String accountId, required ListsCreateAListRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches the details of a list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41>> listsGetAList({required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsGetAList({required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates the description of a list.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41>> listsUpdateAList({required String listId, required String accountId, required ListsUpdateAListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsUpdateAList({required String listId, required String accountId, required ListsUpdateAListRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes a specific list and all its items.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41>> listsDeleteAList({required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsDeleteAList({required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Fetches all the items in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41>> listsGetListItems({required String listId, required String accountId, String? cursor, int? perPage, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsGetListItems({required String listId, required String accountId, String? cursor, int? perPage, String? search, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}/items',
   headers: {..._config.defaultHeaders
@@ -144,7 +144,7 @@ return _execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `POST /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41>> listsCreateListItems({required String listId, required String accountId, required List<ListsItemsUpdateRequestCollection2> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsCreateListItems({required String listId, required String accountId, required List<ListsItemsUpdateRequestCollection2> body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}/items',
   headers: {..._config.defaultHeaders
@@ -169,7 +169,7 @@ return _execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41>> listsUpdateAllListItems({required String listId, required String accountId, required List<ListsItemsUpdateRequestCollection2> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsUpdateAllListItems({required String listId, required String accountId, required List<ListsItemsUpdateRequestCollection2> body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}/items',
   headers: {..._config.defaultHeaders
@@ -194,7 +194,7 @@ return _execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41>> listsDeleteListItems({required String listId, required String accountId, required ListsDeleteListItemsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsDeleteListItems({required String listId, required String accountId, required ListsDeleteListItemsRequest body, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}/items',
   headers: {..._config.defaultHeaders
@@ -215,7 +215,7 @@ return _execute(
 /// Fetches a list item in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items/{item_id}`
-Future<ApiResult<ResponseCommon41>> listsGetAListItem({required String itemId, required String listId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsGetAListItem({required String itemId, required String listId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/${Uri.encodeComponent(listId)}/items/${Uri.encodeComponent(itemId)}',
   headers: {..._config.defaultHeaders
@@ -236,7 +236,7 @@ return _execute(
 /// The `status` property can have one of the following values: `pending`, `running`, `completed`, or `failed`. If the status is `failed`, the `error` property will contain a message describing the error.
 ///
 /// `GET /accounts/{account_id}/rules/lists/bulk_operations/{operation_id}`
-Future<ApiResult<ResponseCommon41>> listsGetBulkOperationStatus({required String operationId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon41, Never>> listsGetBulkOperationStatus({required String operationId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/rules/lists/bulk_operations/${Uri.encodeComponent(operationId)}',
   headers: {..._config.defaultHeaders
@@ -251,7 +251,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -274,6 +274,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -284,7 +285,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<void>> createSpeech({required CreateSpeechRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createSpeech({required CreateSpeechRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/speech',
   headers: {..._config.defaultHeaders
@@ -39,7 +39,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<CreateTranscriptionResponse>> createTranscription({required CreateTranscriptionRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/transcriptions',
   headers: {..._config.defaultHeaders
@@ -58,7 +58,7 @@ return _execute(
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
-Future<ApiResult<CreateTranslationResponse>> createTranslation({required CreateTranslationRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/translations',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents`
-Future<ApiResult<VoiceConsentListResource>> listVoiceConsents({String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/audio/voice_consents',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents`
-Future<ApiResult<VoiceConsentResource>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/voice_consents',
   headers: {..._config.defaultHeaders
@@ -132,7 +132,7 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource>> getVoiceConsent({required String consentId}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: {..._config.defaultHeaders
@@ -154,7 +154,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: {..._config.defaultHeaders
@@ -178,7 +178,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentDeletedResource>> deleteVoiceConsent({required String consentId}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: {..._config.defaultHeaders
@@ -200,7 +200,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voices`
-Future<ApiResult<VoiceResource>> createVoice({required CreateVoiceRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/audio/voices',
   headers: {..._config.defaultHeaders
@@ -217,7 +217,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -240,6 +240,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -250,7 +251,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

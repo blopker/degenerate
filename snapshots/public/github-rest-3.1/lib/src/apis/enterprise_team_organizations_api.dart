@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get all organizations assigned to an enterprise team
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
-Future<ApiResult<List<OrganizationSimple>>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations',
   headers: {..._config.defaultHeaders
@@ -41,7 +41,7 @@ return _execute(
 /// Assign an enterprise team to multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add`
-Future<ApiResult<List<OrganizationSimple>>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/add',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// Unassign an enterprise team from multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove`
-Future<ApiResult<void>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/remove',
   headers: {..._config.defaultHeaders
@@ -82,7 +82,7 @@ return _execute(
 /// Check if an enterprise team is assigned to an organization
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Assign an enterprise team to an organization.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// Unassign an enterprise team from an organization.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<void>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -156,6 +156,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -166,7 +167,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

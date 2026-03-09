@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns a Workers subdomain for an account.
 ///
 /// `GET /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<ResponseCommon80>> workerSubdomainGetSubdomain({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerSubdomainGetSubdomain({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/subdomain',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a Workers subdomain for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<ResponseCommon80>> workerSubdomainCreateSubdomain({required String accountId, required WorkersSchemasSubdomain body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerSubdomainCreateSubdomain({required String accountId, required WorkersSchemasSubdomain body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/subdomain',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Deletes a Workers subdomain for an account.
 ///
 /// `DELETE /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<void>> workerSubdomainDeleteSubdomain({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerSubdomainDeleteSubdomain({required String accountId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/subdomain',
   headers: {..._config.defaultHeaders
@@ -70,7 +70,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -93,6 +93,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -103,7 +104,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

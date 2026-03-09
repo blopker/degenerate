@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List all items for a conversation with the given ID.
 ///
 /// `GET /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items',
   headers: {..._config.defaultHeaders
@@ -38,7 +38,7 @@ return _execute(
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items',
   headers: {..._config.defaultHeaders
@@ -60,7 +60,7 @@ return _execute(
 /// Get a single item from a conversation with the given IDs.
 ///
 /// `GET /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationItem>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items/${Uri.encodeComponent(itemId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Delete an item from a conversation with the given IDs.
 ///
 /// `DELETE /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationResource>> deleteConversationItem({required String conversationId, required String itemId, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items/${Uri.encodeComponent(itemId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Create a conversation.
 ///
 /// `POST /conversations`
-Future<ApiResult<ConversationResource>> createConversation({CreateConversationBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/conversations',
   headers: {..._config.defaultHeaders
@@ -116,7 +116,7 @@ return _execute(
 /// Get a conversation
 ///
 /// `GET /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource>> getConversation({required String conversationId}) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
   headers: {..._config.defaultHeaders
@@ -133,7 +133,7 @@ return _execute(
 /// Update a conversation
 ///
 /// `POST /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource>> updateConversation({required String conversationId, UpdateConversationBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
   headers: {..._config.defaultHeaders
@@ -152,7 +152,7 @@ return _execute(
 /// Delete a conversation. Items in the conversation will not be deleted.
 ///
 /// `DELETE /conversations/{conversation_id}`
-Future<ApiResult<DeletedConversationResource>> deleteConversation({required String conversationId}) async  { final request = ApiRequest(
+Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
   headers: {..._config.defaultHeaders
@@ -167,7 +167,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -190,6 +190,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -200,7 +201,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

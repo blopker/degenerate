@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Access policies configured for an application. Returns both exclusively scoped and reusable policies used by the application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3>> accessPoliciesListAccessAppPolicies({required String appId, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesListAccessAppPolicies({required String appId, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Creates a policy applying exclusive to a single application that defines the users or groups who can reach it. We recommend creating a reusable policy instead and subsequently referencing its ID in the application's 'policies' array.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3>> accessPoliciesCreateAnAccessPolicy({required String appId, required String accountId, required AccessBasePolicyReq body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesCreateAnAccessPolicy({required String appId, required String accountId, required AccessBasePolicyReq body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetches a single Access policy configured for an application. Returns both exclusively owned and reusable policies used by the application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> accessPoliciesGetAnAccessPolicy({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesGetAnAccessPolicy({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Updates an Access policy specific to an application. To update a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> accessPoliciesUpdateAnAccessPolicy({required String appId, required String policyId, required String accountId, required AccessBasePolicyReq body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesUpdateAnAccessPolicy({required String appId, required String policyId, required String accountId, required AccessBasePolicyReq body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Deletes an Access policy specific to an application. To delete a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3>> accessPoliciesDeleteAnAccessPolicy({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesDeleteAnAccessPolicy({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// Converts an application-scoped policy to a reusable policy. The policy will no longer be exclusively scoped to the application. Further updates to the policy should go through the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}/make_reusable`
-Future<ApiResult<ResponseCommon3>> accessPoliciesConvertReusable({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesConvertReusable({required String appId, required String policyId, required String accountId, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/apps/${Uri.encodeComponent(appId)}/policies/${Uri.encodeComponent(policyId)}/make_reusable',
   headers: {..._config.defaultHeaders
@@ -135,7 +135,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -158,6 +158,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -168,7 +169,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters virtual networks in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<ResponseCommon69>> tunnelVirtualNetworkListVirtualNetworks({required String accountId, String? id, String? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkListVirtualNetworks({required String accountId, String? id, String? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/teamnet/virtual_networks',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Adds a new virtual network to an account.
 ///
 /// `POST /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<ResponseCommon69>> tunnelVirtualNetworkCreateAVirtualNetwork({required String accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkCreateAVirtualNetwork({required String accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/teamnet/virtual_networks',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Get a virtual network.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69>> tunnelVirtualNetworkGet({required String accountId, required String virtualNetworkId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkGet({required String accountId, required String virtualNetworkId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId)}',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Updates an existing virtual network.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69>> tunnelVirtualNetworkUpdate({required String accountId, required String virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkUpdate({required String accountId, required String virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// Deletes an existing virtual network.
 ///
 /// `DELETE /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69>> tunnelVirtualNetworkDelete({required String virtualNetworkId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkDelete({required String virtualNetworkId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId)}',
   headers: {..._config.defaultHeaders
@@ -119,7 +119,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -142,6 +142,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -152,7 +153,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

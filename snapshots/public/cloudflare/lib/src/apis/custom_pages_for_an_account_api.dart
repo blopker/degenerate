@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all the custom pages at the account level.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages`
-Future<ApiResult<ResponseCommon17>> customPagesForAnAccountListCustomPages({required String accountIdentifier}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountListCustomPages({required String accountIdentifier}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier)}/custom_pages',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Fetches the details of a custom page.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<ResponseCommon17>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required String accountIdentifier, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required String accountIdentifier, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier)}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,7 @@ return _execute(
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<ResponseCommon17>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required String accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required String accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier)}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
   headers: {..._config.defaultHeaders
@@ -72,7 +72,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -95,6 +95,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -105,7 +106,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

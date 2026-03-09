@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-01
 ///
 /// `GET /admin/api/2020-01/events.json`
-Future<ApiResult<void>> deprecated202001GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/events.json',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-01
 ///
 /// `GET /admin/api/2020-01/events/{event_id}.json`
-Future<ApiResult<void>> deprecated202001GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -63,7 +63,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-01
 ///
 /// `GET /admin/api/2020-01/events/count.json`
-Future<ApiResult<void>> deprecated202001GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/events/count.json',
   headers: {..._config.defaultHeaders
@@ -84,7 +84,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-04
 ///
 /// `GET /admin/api/2020-04/events.json`
-Future<ApiResult<void>> deprecated202004GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/events.json',
   headers: {..._config.defaultHeaders
@@ -110,7 +110,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-04
 ///
 /// `GET /admin/api/2020-04/events/{event_id}.json`
-Future<ApiResult<void>> deprecated202004GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -130,7 +130,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-04
 ///
 /// `GET /admin/api/2020-04/events/count.json`
-Future<ApiResult<void>> deprecated202004GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/events/count.json',
   headers: {..._config.defaultHeaders
@@ -151,7 +151,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-07
 ///
 /// `GET /admin/api/2020-07/events.json`
-Future<ApiResult<void>> deprecated202007GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/events.json',
   headers: {..._config.defaultHeaders
@@ -177,7 +177,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-07
 ///
 /// `GET /admin/api/2020-07/events/{event_id}.json`
-Future<ApiResult<void>> deprecated202007GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -197,7 +197,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-07
 ///
 /// `GET /admin/api/2020-07/events/count.json`
-Future<ApiResult<void>> deprecated202007GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/events/count.json',
   headers: {..._config.defaultHeaders
@@ -218,7 +218,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-10
 ///
 /// `GET /admin/api/2020-10/events.json`
-Future<ApiResult<void>> getEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/events.json',
   headers: {..._config.defaultHeaders
@@ -244,7 +244,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-10
 ///
 /// `GET /admin/api/2020-10/events/{event_id}.json`
-Future<ApiResult<void>> getEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -264,7 +264,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-10
 ///
 /// `GET /admin/api/2020-10/events/count.json`
-Future<ApiResult<void>> getEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/events/count.json',
   headers: {..._config.defaultHeaders
@@ -285,7 +285,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2021-01
 ///
 /// `GET /admin/api/2021-01/events.json`
-Future<ApiResult<void>> deprecated202101GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/events.json',
   headers: {..._config.defaultHeaders
@@ -311,7 +311,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2021-01
 ///
 /// `GET /admin/api/2021-01/events/{event_id}.json`
-Future<ApiResult<void>> deprecated202101GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -331,7 +331,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2021-01
 ///
 /// `GET /admin/api/2021-01/events/count.json`
-Future<ApiResult<void>> deprecated202101GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/events/count.json',
   headers: {..._config.defaultHeaders
@@ -352,7 +352,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-unstable
 ///
 /// `GET /admin/api/unstable/events.json`
-Future<ApiResult<void>> deprecatedUnstableGetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetEvents({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? filter, String? verb, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/events.json',
   headers: {..._config.defaultHeaders
@@ -378,7 +378,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-unstable
 ///
 /// `GET /admin/api/unstable/events/{event_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetEventsParamEventId({required String eventId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/events/${Uri.encodeComponent(eventId)}.json',
   headers: {..._config.defaultHeaders
@@ -398,7 +398,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-unstable
 ///
 /// `GET /admin/api/unstable/events/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetEventsCount({String? createdAtMin, String? createdAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/events/count.json',
   headers: {..._config.defaultHeaders
@@ -419,7 +419,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks.json`
-Future<ApiResult<void>> deprecated202001GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -447,7 +447,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-01
 ///
 /// `POST /admin/api/2020-01/webhooks.json`
-Future<ApiResult<void>> deprecated202001CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -469,7 +469,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks/count.json`
-Future<ApiResult<void>> deprecated202001GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -490,7 +490,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202001GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -510,7 +510,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202001UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -529,7 +529,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202001DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -546,7 +546,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks.json`
-Future<ApiResult<void>> deprecated202004GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -574,7 +574,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-04
 ///
 /// `POST /admin/api/2020-04/webhooks.json`
-Future<ApiResult<void>> deprecated202004CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -596,7 +596,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks/count.json`
-Future<ApiResult<void>> deprecated202004GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -617,7 +617,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202004GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -637,7 +637,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202004UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -656,7 +656,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202004DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -673,7 +673,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks.json`
-Future<ApiResult<void>> deprecated202007GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -701,7 +701,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-07
 ///
 /// `POST /admin/api/2020-07/webhooks.json`
-Future<ApiResult<void>> deprecated202007CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -723,7 +723,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks/count.json`
-Future<ApiResult<void>> deprecated202007GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -744,7 +744,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202007GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -764,7 +764,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202007UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -783,7 +783,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202007DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -800,7 +800,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks.json`
-Future<ApiResult<void>> getWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -828,7 +828,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-10
 ///
 /// `POST /admin/api/2020-10/webhooks.json`
-Future<ApiResult<void>> createWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -850,7 +850,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks/count.json`
-Future<ApiResult<void>> getWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -871,7 +871,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> getWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -891,7 +891,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> updateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -910,7 +910,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -927,7 +927,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks.json`
-Future<ApiResult<void>> deprecated202101GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -955,7 +955,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2021-01
 ///
 /// `POST /admin/api/2021-01/webhooks.json`
-Future<ApiResult<void>> deprecated202101CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -977,7 +977,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks/count.json`
-Future<ApiResult<void>> deprecated202101GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -998,7 +998,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202101GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1018,7 +1018,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202101UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1037,7 +1037,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecated202101DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1054,7 +1054,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-unstable
 ///
 /// `GET /admin/api/unstable/webhooks.json`
-Future<ApiResult<void>> deprecatedUnstableGetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooks({String? address, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? topic, String? updatedAtMin, String? updatedAtMax, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -1082,7 +1082,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-unstable
 ///
 /// `POST /admin/api/unstable/webhooks.json`
-Future<ApiResult<void>> deprecatedUnstableCreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateWebhooks({String? format, String? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/webhooks.json',
   headers: {..._config.defaultHeaders
@@ -1104,7 +1104,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-unstable
 ///
 /// `GET /admin/api/unstable/webhooks/count.json`
-Future<ApiResult<void>> deprecatedUnstableGetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksCount({String? address, String? topic, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/webhooks/count.json',
   headers: {..._config.defaultHeaders
@@ -1125,7 +1125,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-unstable
 ///
 /// `GET /admin/api/unstable/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecatedUnstableGetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksParamWebhookId({required String webhookId, String? fields, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1145,7 +1145,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-unstable
 ///
 /// `PUT /admin/api/unstable/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecatedUnstableUpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateWebhooksParamWebhookId({required String webhookId, String? body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1164,7 +1164,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/webhooks/{webhook_id}.json`
-Future<ApiResult<void>> deprecatedUnstableDeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteWebhooksParamWebhookId({required String webhookId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/webhooks/${Uri.encodeComponent(webhookId)}.json',
   headers: {..._config.defaultHeaders
@@ -1177,7 +1177,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -1200,6 +1200,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -1210,7 +1211,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

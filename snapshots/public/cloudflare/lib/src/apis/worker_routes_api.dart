@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns routes for a zone.
 ///
 /// `GET /zones/{zone_id}/workers/routes`
-Future<ApiResult<ResponseCommon80>> workerRoutesListRoutes({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerRoutesListRoutes({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/workers/routes',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Creates a route that maps a URL pattern to a Worker.
 ///
 /// `POST /zones/{zone_id}/workers/routes`
-Future<ApiResult<ResponseCommon80>> workerRoutesCreateRoute({required String zoneId, required WorkersRoute body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerRoutesCreateRoute({required String zoneId, required WorkersRoute body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/workers/routes',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Returns information about a route, including URL pattern and Worker.
 ///
 /// `GET /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<ResponseCommon80>> workerRoutesGetRoute({required String routeId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerRoutesGetRoute({required String routeId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/workers/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates the URL pattern or Worker associated with a route.
 ///
 /// `PUT /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<ResponseCommon80>> workerRoutesUpdateRoute({required String routeId, required String zoneId, required WorkersRoute body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerRoutesUpdateRoute({required String routeId, required String zoneId, required WorkersRoute body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/workers/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes a route.
 ///
 /// `DELETE /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<ResponseCommon80>> workerRoutesDeleteRoute({required String routeId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerRoutesDeleteRoute({required String routeId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/workers/routes/${Uri.encodeComponent(routeId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

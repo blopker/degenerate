@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List DNS Firewall clusters for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall`
-Future<ApiResult<ResponseCommon24>> dnsFirewallListDnsFirewallClusters({required String accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallListDnsFirewallClusters({required String accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// Create a DNS Firewall cluster
 ///
 /// `POST /accounts/{account_id}/dns_firewall`
-Future<ApiResult<ResponseCommon24>> dnsFirewallCreateDnsFirewallCluster({required String accountId, required DnsFirewallDnsFirewallCluster body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallCreateDnsFirewallCluster({required String accountId, required DnsFirewallDnsFirewallCluster body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Show a single DNS Firewall cluster for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<ResponseCommon24>> dnsFirewallClusterDetails({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallClusterDetails({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Modify the configuration of a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<ResponseCommon24>> dnsFirewallUpdateDnsFirewallCluster({required String dnsFirewallId, required String accountId, required DnsFirewallDnsFirewallCluster body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallUpdateDnsFirewallCluster({required String dnsFirewallId, required String accountId, required DnsFirewallDnsFirewallCluster body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}',
   headers: {..._config.defaultHeaders
@@ -101,7 +101,7 @@ return _execute(
 /// Delete a DNS Firewall cluster
 ///
 /// `DELETE /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<ResponseCommon24>> dnsFirewallDeleteDnsFirewallCluster({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallDeleteDnsFirewallCluster({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}',
   headers: {..._config.defaultHeaders
@@ -120,7 +120,7 @@ return _execute(
 /// Show reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<ResponseCommon24>> dnsFirewallShowDnsFirewallClusterReverseDns({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallShowDnsFirewallClusterReverseDns({required String dnsFirewallId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}/reverse_dns',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,7 @@ return _execute(
 /// Update reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<ResponseCommon24>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required String dnsFirewallId, required String accountId, required DnsFirewallDnsFirewallReverseDns body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon24, Never>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required String dnsFirewallId, required String accountId, required DnsFirewallDnsFirewallReverseDns body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dns_firewall/${Uri.encodeComponent(dnsFirewallId)}/reverse_dns',
   headers: {..._config.defaultHeaders
@@ -156,7 +156,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -179,6 +179,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -189,7 +190,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

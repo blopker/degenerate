@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Web3 Hostnames
 ///
 /// `GET /zones/{zone_id}/web3/hostnames`
-Future<ApiResult<ResponseCommon78>> web3HostnameListWeb3Hostnames({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameListWeb3Hostnames({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames',
   headers: {..._config.defaultHeaders
@@ -32,7 +32,7 @@ return _execute(
 /// Create Web3 Hostname
 ///
 /// `POST /zones/{zone_id}/web3/hostnames`
-Future<ApiResult<ResponseCommon78>> web3HostnameCreateWeb3Hostname({required String zoneId, required Web3CreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameCreateWeb3Hostname({required String zoneId, required Web3CreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,7 @@ return _execute(
 /// Web3 Hostname Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameDetails({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameDetails({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -68,7 +68,7 @@ return _execute(
 /// Edit Web3 Hostname
 ///
 /// `PATCH /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameEditWeb3Hostname({required String identifier, required String zoneId, required Web3ModifyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameEditWeb3Hostname({required String identifier, required String zoneId, required Web3ModifyRequest body, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -87,7 +87,7 @@ return _execute(
 /// Delete Web3 Hostname
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameDeleteWeb3Hostname({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameDeleteWeb3Hostname({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -104,7 +104,7 @@ return _execute(
 /// IPFS Universal Path Gateway Content List Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
-Future<ApiResult<ResponseCommon78>> web3HostnameIpfsUniversalPathGatewayContentListDetails({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameIpfsUniversalPathGatewayContentListDetails({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list',
   headers: {..._config.defaultHeaders
@@ -121,7 +121,7 @@ return _execute(
 /// Update IPFS Universal Path Gateway Content List
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
-Future<ApiResult<ResponseCommon78>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required String identifier, required String zoneId, required Web3ContentListUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required String identifier, required String zoneId, required Web3ContentListUpdateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list',
   headers: {..._config.defaultHeaders
@@ -140,7 +140,7 @@ return _execute(
 /// List IPFS Universal Path Gateway Content List Entries
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
-Future<ApiResult<ResponseCommon78>> web3HostnameListIpfsUniversalPathGatewayContentListEntries({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameListIpfsUniversalPathGatewayContentListEntries({required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list/entries',
   headers: {..._config.defaultHeaders
@@ -157,7 +157,7 @@ return _execute(
 /// Create IPFS Universal Path Gateway Content List Entry
 ///
 /// `POST /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
-Future<ApiResult<ResponseCommon78>> web3HostnameCreateIpfsUniversalPathGatewayContentListEntry({required String identifier, required String zoneId, required Web3ContentListEntryCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameCreateIpfsUniversalPathGatewayContentListEntry({required String identifier, required String zoneId, required Web3ContentListEntryCreateRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list/entries',
   headers: {..._config.defaultHeaders
@@ -176,7 +176,7 @@ return _execute(
 /// IPFS Universal Path Gateway Content List Entry Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameIpfsUniversalPathGatewayContentListEntryDetails({required String contentListEntryIdentifier, required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameIpfsUniversalPathGatewayContentListEntryDetails({required String contentListEntryIdentifier, required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -193,7 +193,7 @@ return _execute(
 /// Edit IPFS Universal Path Gateway Content List Entry
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameEditIpfsUniversalPathGatewayContentListEntry({required String contentListEntryIdentifier, required String identifier, required String zoneId, required Web3ContentListEntryCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameEditIpfsUniversalPathGatewayContentListEntry({required String contentListEntryIdentifier, required String identifier, required String zoneId, required Web3ContentListEntryCreateRequest body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -212,7 +212,7 @@ return _execute(
 /// Delete IPFS Universal Path Gateway Content List Entry
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78>> web3HostnameDeleteIpfsUniversalPathGatewayContentListEntry({required String contentListEntryIdentifier, required String identifier, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon78, Never>> web3HostnameDeleteIpfsUniversalPathGatewayContentListEntry({required String contentListEntryIdentifier, required String identifier, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/web3/hostnames/${Uri.encodeComponent(identifier)}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier)}',
   headers: {..._config.defaultHeaders
@@ -227,7 +227,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -250,6 +250,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -260,7 +261,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

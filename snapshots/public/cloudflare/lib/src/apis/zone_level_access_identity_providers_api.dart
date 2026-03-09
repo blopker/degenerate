@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all configured identity providers.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required String zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/identity_providers',
   headers: {..._config.defaultHeaders
@@ -36,7 +36,7 @@ return _execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required String zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required String zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/identity_providers',
   headers: {..._config.defaultHeaders
@@ -57,7 +57,7 @@ return _execute(
 /// Fetches a configured identity provider.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required String identityProviderId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required String identityProviderId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -76,7 +76,7 @@ return _execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required String identityProviderId, required String zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required String identityProviderId, required String zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -97,7 +97,7 @@ return _execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required String identityProviderId, required String zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required String identityProviderId, required String zoneId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId)}/access/identity_providers/${Uri.encodeComponent(identityProviderId)}',
   headers: {..._config.defaultHeaders
@@ -112,7 +112,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -135,6 +135,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -145,7 +146,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

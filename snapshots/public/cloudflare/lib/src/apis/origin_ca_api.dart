@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates`
-Future<ApiResult<ResponseCommon68>> originCaListCertificates({required String zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required String zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/certificates',
   headers: {..._config.defaultHeaders
@@ -43,7 +43,7 @@ return _execute(
 /// Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `POST /certificates`
-Future<ApiResult<ResponseCommon68>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/certificates',
   headers: {..._config.defaultHeaders
@@ -64,7 +64,7 @@ return _execute(
 /// Get an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68>> originCaGetCertificate({required String certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaGetCertificate({required String certificateId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -83,7 +83,7 @@ return _execute(
 /// Revoke an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `DELETE /certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse>> originCaRevokeCertificate({required String certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse, Never>> originCaRevokeCertificate({required String certificateId}) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/certificates/${Uri.encodeComponent(certificateId)}',
   headers: {..._config.defaultHeaders
@@ -98,7 +98,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -121,6 +121,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -131,7 +132,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

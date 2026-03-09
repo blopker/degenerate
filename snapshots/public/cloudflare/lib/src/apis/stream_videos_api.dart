@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
 ///
 /// `GET /accounts/{account_id}/stream`
-Future<ApiResult<ResponseCommon66>> streamVideosListVideos({required String accountId, StreamMediaState? status, String? creator, String? type, bool? asc, String? videoName, String? search, DateTime? start, DateTime? end, bool? includeCounts, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosListVideos({required String accountId, StreamMediaState? status, String? creator, String? type, bool? asc, String? videoName, String? search, DateTime? start, DateTime? end, bool? includeCounts, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream',
   headers: {..._config.defaultHeaders
@@ -47,7 +47,7 @@ return _execute(
 /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
 ///
 /// `POST /accounts/{account_id}/stream`
-Future<ApiResult<void>> streamVideosInitiateVideoUploadsUsingTus({required String accountId, bool? directUser, required StreamTusResumable tusResumable, String? uploadCreator, required int uploadLength, String? uploadMetadata, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required String accountId, bool? directUser, required StreamTusResumable tusResumable, String? uploadCreator, required int uploadLength, String? uploadMetadata, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream',
   headers: {..._config.defaultHeaders
@@ -67,7 +67,7 @@ return _execute(
 /// Fetches details for a single video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66>> streamVideosRetrieveVideoDetails({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosRetrieveVideoDetails({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -86,7 +86,7 @@ return _execute(
 /// Edit details for a single video.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66>> streamVideosUpdateVideoDetails({required String identifier, required String accountId, required StreamVideoUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUpdateVideoDetails({required String identifier, required String accountId, required StreamVideoUpdate body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -107,7 +107,7 @@ return _execute(
 /// Deletes a video and its copies from Cloudflare Stream.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<void>> streamVideosDeleteVideo({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamVideosDeleteVideo({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}',
   headers: {..._config.defaultHeaders
@@ -124,7 +124,7 @@ return _execute(
 /// Fetches an HTML code snippet to embed a video in a web page delivered through Cloudflare. On success, returns an HTML fragment for use on web pages to display a video. On failure, returns a JSON response body.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/embed`
-Future<ApiResult<String>> streamVideosRetreieveEmbedCodeHtml({required String identifier, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> streamVideosRetreieveEmbedCodeHtml({required String identifier, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/embed',
   headers: {..._config.defaultHeaders
@@ -143,7 +143,7 @@ return _execute(
 /// Creates a signed URL token for a video. If a body is not provided in the request, a token is created with default values.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/token`
-Future<ApiResult<ResponseCommon66>> streamVideosCreateSignedUrlTokensForVideos({required String identifier, required String accountId, required StreamSignedTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosCreateSignedUrlTokensForVideos({required String identifier, required String accountId, required StreamSignedTokenRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/${Uri.encodeComponent(identifier)}/token',
   headers: {..._config.defaultHeaders
@@ -164,7 +164,7 @@ return _execute(
 /// Uploads a video to Stream from a provided URL.
 ///
 /// `POST /accounts/{account_id}/stream/copy`
-Future<ApiResult<ResponseCommon66>> streamVideosUploadVideosFromAUrl({required String accountId, String? uploadCreator, required StreamVideoCopyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosFromAUrl({required String accountId, String? uploadCreator, required StreamVideoCopyRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/copy',
   headers: {..._config.defaultHeaders
@@ -185,7 +185,7 @@ return _execute(
 /// Creates a direct upload that allows video uploads without an API key.
 ///
 /// `POST /accounts/{account_id}/stream/direct_upload`
-Future<ApiResult<ResponseCommon66>> streamVideosUploadVideosViaDirectUploadUrLs({required String accountId, String? uploadCreator, required StreamDirectUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required String accountId, String? uploadCreator, required StreamDirectUploadRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/direct_upload',
   headers: {..._config.defaultHeaders
@@ -206,7 +206,7 @@ return _execute(
 /// Returns information about an account's storage use.
 ///
 /// `GET /accounts/{account_id}/stream/storage-usage`
-Future<ApiResult<ResponseCommon66>> streamVideosStorageUsage({required String accountId, String? creator, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosStorageUsage({required String accountId, String? creator, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/stream/storage-usage',
   headers: {..._config.defaultHeaders
@@ -224,7 +224,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -247,6 +247,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -257,7 +258,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }

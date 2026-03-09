@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4>> ipAddressManagementServiceBindingsListServiceBindings({required String accountId, required String prefixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServiceBindings({required String accountId, required String prefixId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/prefixes/${Uri.encodeComponent(prefixId)}/bindings',
   headers: {..._config.defaultHeaders
@@ -40,7 +40,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4>> ipAddressManagementServiceBindingsCreateServiceBinding({required String accountId, required String prefixId, AddressingCreateBindingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsCreateServiceBinding({required String accountId, required String prefixId, AddressingCreateBindingRequest? body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/prefixes/${Uri.encodeComponent(prefixId)}/bindings',
   headers: {..._config.defaultHeaders
@@ -61,7 +61,7 @@ return _execute(
 /// Fetch a single Service Binding
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4>> ipAddressManagementServiceBindingsGetServiceBinding({required String accountId, required String prefixId, required String bindingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsGetServiceBinding({required String accountId, required String prefixId, required String bindingId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/prefixes/${Uri.encodeComponent(prefixId)}/bindings/${Uri.encodeComponent(bindingId)}',
   headers: {..._config.defaultHeaders
@@ -80,7 +80,7 @@ return _execute(
 /// Delete a Service Binding
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4>> ipAddressManagementServiceBindingsDeleteServiceBinding({required String accountId, required String prefixId, required String bindingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDeleteServiceBinding({required String accountId, required String prefixId, required String bindingId, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/prefixes/${Uri.encodeComponent(prefixId)}/bindings/${Uri.encodeComponent(bindingId)}',
   headers: {..._config.defaultHeaders
@@ -100,7 +100,7 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/services`
-Future<ApiResult<ResponseCommon4>> ipAddressManagementServiceBindingsListServices({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServices({required String accountId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/addressing/services',
   headers: {..._config.defaultHeaders
@@ -115,7 +115,7 @@ return _execute(
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T>> _execute<T>(ApiRequest request, {required T Function(ApiResponse) onSuccess, }) async  { var req = request;
+Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { var req = request;
 try {
   for (final interceptor in _config.interceptors) {
     req = await interceptor.onRequest(req);
@@ -138,6 +138,7 @@ try {
   }
   return ApiError(
     statusCode: response.statusCode,
+    error: onError != null ? onError(response) : null,
     rawBody: response.body,
     headers: response.headers,
   );
@@ -148,7 +149,7 @@ try {
       if (recovered.isSuccessful) {
         return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
       }
-      return ApiError(statusCode: recovered.statusCode, rawBody: recovered.body, headers: recovered.headers);
+      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
     } catch (_) {
       // Interceptor couldn't handle it, continue to next or fall through
     }
