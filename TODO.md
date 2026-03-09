@@ -28,7 +28,7 @@
 | OpenAI | 2,317 | 0 issues |
 | GitHub REST 3.1 | 6,401 | 0 issues |
 | Cloudflare | 14,580 | 0 issues |
-| Stripe (162k lines) | 162,324 | Not attempted |
+| Stripe (162k lines) | 10,768 | 0 issues |
 | DigitalOcean | 2,682 | Skipped — uses external $ref files |
 
 ---
@@ -36,12 +36,12 @@
 ## Remaining Features
 
 ### High Priority
-- [ ] **Error response deserialization** — default/error responses define error models (e.g., Petstore `Error`) but generated code returns `rawBody: String?` instead of a typed error. Should deserialize error bodies when the response schema is known.
+- [x] **Error response deserialization** — already implemented. Operations return `ApiResult<T, E>` where `E` is the typed error model (or `Never` if no error schema). Error bodies are deserialized via `onError` callback with try-catch fallback.
 - [ ] **Extension types for branded primitives** — named schemas that are just primitives with `format` (e.g., `UserId: string+uuid`) should generate `extension type const UserId(String value)`.
 
 ### Medium Priority
 - [ ] **Determinism test** — run generator twice on same input, assert byte-identical output
-- [ ] **Try Stripe spec** — 162k lines, heavy `anyOf` usage, vendor extensions
+- [x] **Try Stripe spec** — 162k lines, 10,768 files, 0 issues
 
 ### Low Priority
 - [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested)

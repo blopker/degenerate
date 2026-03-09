@@ -332,6 +332,7 @@ The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline 
 | OpenAI | 2,317 | 0 issues |
 | GitHub REST 3.1 | 6,401 | 0 issues |
 | Cloudflare | 14,580 | 0 issues |
+| Stripe (162k lines) | 10,768 | 0 issues |
 
 ## Limitations
 
