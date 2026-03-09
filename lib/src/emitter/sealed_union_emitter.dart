@@ -846,11 +846,7 @@ class AnyOfEmitter {
     for (final v in anyOf.variants) {
       final typeName = irTypeName(v);
       if (!seenTypeNames.add(typeName)) continue;
-      var fieldName = sanitizeDartName(toCamelCase(typeName));
-      // Escape field names that would shadow dart:core types (e.g., double, bool, String)
-      if (dartCoreTypeNames.contains(fieldName)) {
-        fieldName = '\$$fieldName';
-      }
+      var fieldName = sanitizeFieldName(toCamelCase(typeName));
       fieldName = deduplicateName(fieldName, seenFieldNames);
       seenFieldNames.add(fieldName);
       variantFields.add((name: fieldName, type: v, typeName: typeName));

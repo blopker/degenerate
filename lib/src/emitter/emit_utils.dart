@@ -247,29 +247,12 @@ String escapeDartString(String value) {
       .replaceAll(r'$', r'\$');
 }
 
-/// Reserved names that would shadow identifiers in the enum context.
-const enumReservedNames = {
-  'json',
-  'value',
-  'values',
-  'index',
-  'name',
-  'identical',
-  'other',
-  'hashCode',
-  'toString',
-  'runtimeType',
-  'noSuchMethod',
-  'override',
-};
-
 /// Convert an enum string value to a valid Dart enum constant name.
 String enumValueName(String value) {
   var name = toCamelCase(value);
-  name = sanitizeDartName(name);
-  // Escape names that shadow enum-internal identifiers or Dart core types
-  // (which would break type annotations in the enum body like `bool get isUnknown`).
-  if (enumReservedNames.contains(name) || dartCoreTypeNames.contains(name)) {
+  name = sanitizeFieldName(name);
+  // Also escape enum-internal reserved names (value, values, json, etc.)
+  if (enumReservedNames.contains(name)) {
     name = '\$$name';
   }
   return name;

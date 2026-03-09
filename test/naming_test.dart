@@ -1,3 +1,4 @@
+import 'package:degenerate/src/emitter/emit_utils.dart' show enumValueName;
 import 'package:degenerate/src/naming.dart';
 import 'package:test/test.dart';
 
@@ -177,6 +178,61 @@ void main() {
 
     test('deduplicates multi-word repeated segments', () {
       expect(operationMethodName('foo_bar_foo_bar_baz'), 'fooBarBaz');
+    });
+  });
+
+  group('enumValueName', () {
+    test('converts simple values to camelCase', () {
+      expect(enumValueName('available'), 'available');
+      expect(enumValueName('in_progress'), 'inProgress');
+    });
+
+    test('escapes Dart reserved words with \$ prefix', () {
+      expect(enumValueName('class'), r'$class');
+      expect(enumValueName('return'), r'$return');
+      expect(enumValueName('on'), r'$on');
+    });
+
+    test('escapes enum-internal reserved names with \$ prefix', () {
+      expect(enumValueName('value'), r'$value');
+      expect(enumValueName('values'), r'$values');
+      expect(enumValueName('override'), r'$override');
+      expect(enumValueName('hashCode'), r'$hashCode');
+      expect(enumValueName('toString'), r'$toString');
+      expect(enumValueName('identical'), r'$identical');
+      expect(enumValueName('json'), r'$json');
+    });
+
+    test('escapes dart:core type names with \$ prefix', () {
+      // camelCase enum values match lowercase core types
+      expect(enumValueName('bool'), r'$bool');
+      expect(enumValueName('int'), r'$int');
+      expect(enumValueName('double'), r'$double');
+      expect(enumValueName('num'), r'$num');
+      // 'string' doesn't shadow 'String' (case-sensitive)
+      expect(enumValueName('string'), 'string');
+    });
+
+    test('handles values starting with digits', () {
+      expect(enumValueName('1xx'), r'$1xx');
+      expect(enumValueName('+1'), 'plus1');
+    });
+  });
+
+  group('sanitizeFieldName', () {
+    test('escapes dart:core type names with \$ prefix', () {
+      expect(sanitizeFieldName('double'), r'$double');
+      expect(sanitizeFieldName('bool'), r'$bool');
+      expect(sanitizeFieldName('String'), r'$String');
+    });
+
+    test('passes through normal names', () {
+      expect(sanitizeFieldName('myField'), 'myField');
+      expect(sanitizeFieldName('data'), 'data');
+    });
+
+    test('escapes Dart reserved words', () {
+      expect(sanitizeFieldName('class'), r'$class');
     });
   });
 

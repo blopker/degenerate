@@ -98,6 +98,36 @@ const dartCoreTypeNames = <String>{
   'Never',
 };
 
+/// Names that would shadow identifiers used inside generated enum/class bodies.
+///
+/// These include constructor parameters (`json`, `value`), static members
+/// (`values`, `index`, `name`), and inherited Object members that we override
+/// (`hashCode`, `toString`, `runtimeType`, `noSuchMethod`, `identical`, `override`).
+const enumReservedNames = <String>{
+  'json',
+  'value',
+  'values',
+  'index',
+  'name',
+  'identical',
+  'other',
+  'hashCode',
+  'toString',
+  'runtimeType',
+  'noSuchMethod',
+  'override',
+};
+
+/// Sanitize a field/variable name: handles reserved words and dart:core type
+/// name collisions. Uses `$` prefix for consistency with [sanitizeDartName].
+String sanitizeFieldName(String name) {
+  name = sanitizeDartName(name);
+  if (dartCoreTypeNames.contains(name)) {
+    name = '\$$name';
+  }
+  return name;
+}
+
 /// Splits an identifier into word segments.
 ///
 /// Handles:
