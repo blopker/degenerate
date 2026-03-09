@@ -1,0 +1,40 @@
+// GENERATED CODE — DO NOT MODIFY BY HAND
+
+/// The result of an API operation.
+sealed class ApiResult<T> {
+  const ApiResult();
+}
+
+final class ApiSuccess<T> extends ApiResult<T> {
+  final T data;
+  final int statusCode;
+  final Map<String, String> headers;
+
+  const ApiSuccess(
+    this.data, {
+    required this.statusCode,
+    this.headers = const {},
+  });
+}
+
+final class ApiError<T> extends ApiResult<T> {
+  final int statusCode;
+  final Object? error;
+  final String? rawBody;
+  final Map<String, String> headers;
+
+  const ApiError({
+    required this.statusCode,
+    this.error,
+    this.rawBody,
+    this.headers = const {},
+  });
+}
+
+/// Network-level failure (DNS, timeout, connection refused).
+final class ApiException<T> extends ApiResult<T> {
+  final Object exception;
+  final StackTrace stackTrace;
+
+  const ApiException(this.exception, this.stackTrace);
+}

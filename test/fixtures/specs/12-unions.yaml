@@ -1,0 +1,453 @@
+openapi: "3.0.3"
+info:
+  title: Union Types Test Fixture
+  description: >
+    A spec designed to exercise all union type patterns, composition,
+    nullability combos, nested objects, maps, and arrays of complex objects.
+  version: "1.0.0"
+
+servers:
+  - url: https://api.example.com/v1
+
+paths:
+  /shapes:
+    get:
+      operationId: listShapes
+      summary: List all shapes
+      responses:
+        "200":
+          description: A list of shapes (discriminated union)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Shape"
+    post:
+      operationId: createShape
+      summary: Create a shape
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Shape"
+      responses:
+        "201":
+          description: Shape created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shape"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /orders:
+    post:
+      operationId: createOrder
+      summary: Create an order with nested items
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "201":
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "400":
+          description: Bad request returns PetOrError
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PetOrError"
+
+  /notifications:
+    post:
+      operationId: sendNotification
+      summary: Send a notification via email and/or SMS (anyOf)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Notification"
+      responses:
+        "200":
+          description: Notification sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  status:
+                    $ref: "#/components/schemas/NotificationStatus"
+
+  /pets:
+    get:
+      operationId: listPets
+      summary: List pets with extended info
+      parameters:
+        - name: status
+          in: query
+          schema:
+            $ref: "#/components/schemas/PetStatus"
+        - name: identifier
+          in: query
+          description: A string or int identifier (untagged union primitive)
+          schema:
+            $ref: "#/components/schemas/StringOrInt"
+      responses:
+        "200":
+          description: A list of extended pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ExtendedPet"
+
+  /pets/{petId}/metadata:
+    get:
+      operationId: getPetMetadata
+      summary: Get key-value metadata for a pet
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Metadata map
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Metadata"
+
+components:
+  schemas:
+    # ---------------------------------------------------------------
+    # 1. Discriminated union (oneOf + discriminator)
+    # ---------------------------------------------------------------
+    Shape:
+      oneOf:
+        - $ref: "#/components/schemas/Circle"
+        - $ref: "#/components/schemas/Rectangle"
+        - $ref: "#/components/schemas/Triangle"
+      discriminator:
+        propertyName: type
+        mapping:
+          circle: "#/components/schemas/Circle"
+          rectangle: "#/components/schemas/Rectangle"
+          triangle: "#/components/schemas/Triangle"
+
+    Circle:
+      type: object
+      required:
+        - type
+        - radius
+      properties:
+        type:
+          type: string
+          enum:
+            - circle
+        radius:
+          type: number
+          format: double
+        color:
+          type: string
+
+    Rectangle:
+      type: object
+      required:
+        - type
+        - width
+        - height
+      properties:
+        type:
+          type: string
+          enum:
+            - rectangle
+        width:
+          type: number
+          format: double
+        height:
+          type: number
+          format: double
+        color:
+          type: string
+
+    Triangle:
+      type: object
+      required:
+        - type
+        - base
+        - height
+      properties:
+        type:
+          type: string
+          enum:
+            - triangle
+        base:
+          type: number
+          format: double
+        height:
+          type: number
+          format: double
+        angles:
+          type: array
+          items:
+            type: number
+          minItems: 3
+          maxItems: 3
+
+    # ---------------------------------------------------------------
+    # 2. Untagged union with primitives (oneOf, no discriminator)
+    # ---------------------------------------------------------------
+    StringOrInt:
+      oneOf:
+        - type: string
+        - type: integer
+
+    # ---------------------------------------------------------------
+    # 3. Untagged union with objects (oneOf, no discriminator)
+    # ---------------------------------------------------------------
+    PetOrError:
+      oneOf:
+        - $ref: "#/components/schemas/Pet"
+        - $ref: "#/components/schemas/Error"
+
+    Pet:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          $ref: "#/components/schemas/PetStatus"
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: string
+
+    # ---------------------------------------------------------------
+    # 4. anyOf composite
+    # ---------------------------------------------------------------
+    Notification:
+      anyOf:
+        - $ref: "#/components/schemas/EmailDetails"
+        - $ref: "#/components/schemas/SmsDetails"
+
+    EmailDetails:
+      type: object
+      required:
+        - emailAddress
+        - subject
+      properties:
+        emailAddress:
+          type: string
+          format: email
+        subject:
+          type: string
+        body:
+          type: string
+
+    SmsDetails:
+      type: object
+      required:
+        - phoneNumber
+      properties:
+        phoneNumber:
+          type: string
+        message:
+          type: string
+
+    # ---------------------------------------------------------------
+    # 5. Enum from string
+    # ---------------------------------------------------------------
+    PetStatus:
+      type: string
+      enum:
+        - active
+        - inactive
+        - suspended
+
+    NotificationStatus:
+      type: string
+      enum:
+        - queued
+        - sent
+        - failed
+
+    # ---------------------------------------------------------------
+    # 6. allOf composition
+    # ---------------------------------------------------------------
+    ExtendedPet:
+      allOf:
+        - $ref: "#/components/schemas/Pet"
+        - type: object
+          properties:
+            breed:
+              type: string
+            vaccinated:
+              type: boolean
+            weight:
+              type: number
+              format: double
+            owner:
+              $ref: "#/components/schemas/Owner"
+
+    Owner:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+
+    # ---------------------------------------------------------------
+    # 7. Nullable fields and optional fields — all 4 combos
+    # ---------------------------------------------------------------
+    NullabilityCombos:
+      type: object
+      required:
+        - requiredNonNullable
+        - requiredNullable
+      properties:
+        # required + non-nullable
+        requiredNonNullable:
+          type: string
+        # required + nullable
+        requiredNullable:
+          type: string
+          nullable: true
+        # optional + non-nullable
+        optionalNonNullable:
+          type: string
+        # optional + nullable
+        optionalNullable:
+          type: string
+          nullable: true
+
+    # ---------------------------------------------------------------
+    # 8. Nested objects
+    # ---------------------------------------------------------------
+    Order:
+      type: object
+      required:
+        - id
+        - items
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+            - pending
+            - confirmed
+            - shipped
+            - delivered
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/OrderItem"
+        shippingAddress:
+          $ref: "#/components/schemas/Address"
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        nullabilitySample:
+          $ref: "#/components/schemas/NullabilityCombos"
+
+    OrderItem:
+      type: object
+      required:
+        - productId
+        - quantity
+      properties:
+        productId:
+          type: string
+        quantity:
+          type: integer
+          minimum: 1
+        unitPrice:
+          type: number
+          format: double
+        notes:
+          type: string
+          nullable: true
+
+    Address:
+      type: object
+      required:
+        - street
+        - city
+        - country
+      properties:
+        street:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+          nullable: true
+        postalCode:
+          type: string
+        country:
+          type: string
+
+    # ---------------------------------------------------------------
+    # 9. Map type (additionalProperties)
+    # ---------------------------------------------------------------
+    Metadata:
+      type: object
+      additionalProperties:
+        type: string
+
+    # ---------------------------------------------------------------
+    # 10. Array of complex objects (used throughout, but explicit)
+    # ---------------------------------------------------------------
+    ShapeCollection:
+      type: object
+      required:
+        - name
+        - shapes
+      properties:
+        name:
+          type: string
+        shapes:
+          type: array
+          items:
+            $ref: "#/components/schemas/Shape"
+        tags:
+          type: array
+          items:
+            type: string

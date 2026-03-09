@@ -1,0 +1,100 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Security API",
+    "version": "1.0.0"
+  },
+  "security": [
+    {
+      "ApiKeyAuth": []
+    },
+    {
+      "OAuth2Auth": [
+        "read:items"
+      ]
+    }
+  ],
+  "paths": {
+    "/secure": {
+      "get": {
+        "operationId": "secureRead",
+        "security": [
+          {
+            "HttpBearer": []
+          },
+          {
+            "MutualTLS": []
+          },
+          {
+            "OpenId": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authorized"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "x-api-key",
+        "in": "header"
+      },
+      "HttpBasic": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "HttpBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "MutualTLS": {
+        "type": "mutualTLS"
+      },
+      "OAuth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://auth.example.com/authorize",
+            "scopes": {
+              "read:items": "Read items"
+            }
+          },
+          "password": {
+            "tokenUrl": "https://auth.example.com/token",
+            "scopes": {
+              "write:items": "Write items"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://auth.example.com/token",
+            "scopes": {
+              "admin": "Admin access"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://auth.example.com/authorize",
+            "tokenUrl": "https://auth.example.com/token",
+            "refreshUrl": "https://auth.example.com/refresh",
+            "scopes": {
+              "read:items": "Read items",
+              "write:items": "Write items"
+            }
+          }
+        }
+      },
+      "OpenId": {
+        "type": "openIdConnect",
+        "openIdConnectUrl": "https://auth.example.com/.well-known/openid-configuration"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Extensions API",
+    "description": "Demonstrates spec extensions and reference object siblings.",
+    "version": "1.0.0",
+    "x-info-extension": {
+      "team": "platform"
+    }
+  },
+  "x-root-extension": {
+    "enabled": true
+  },
+  "paths": {
+    "/docs": {
+      "get": {
+        "operationId": "getDocs",
+        "x-operation-extension": "custom-value",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Doc",
+                  "summary": "Reference with siblings",
+                  "description": "OpenAPI 3.1 allows summary and description beside $ref in a Reference Object."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Additional docs",
+    "url": "https://example.com/more"
+  },
+  "components": {
+    "schemas": {
+      "Doc": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

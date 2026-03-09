@@ -1,0 +1,87 @@
+{
+  "openapi": "3.1.1",
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "info": {
+    "title": "Root Surface API",
+    "summary": "Covers root metadata objects",
+    "description": "A small spec focused on root-level OpenAPI objects.",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "API Support",
+      "url": "https://example.com/support",
+      "email": "support@example.com"
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "identifier": "Apache-2.0"
+    },
+    "version": "2026.1"
+  },
+  "servers": [
+    {
+      "url": "https://{env}.example.com:{port}/{basePath}",
+      "description": "Templated server",
+      "variables": {
+        "env": {
+          "enum": [
+            "api",
+            "staging"
+          ],
+          "default": "api"
+        },
+        "port": {
+          "default": "443"
+        },
+        "basePath": {
+          "default": "v1",
+          "description": "Versioned base path"
+        }
+      }
+    }
+  ],
+  "security": [
+    {},
+    {
+      "apiKeyAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "status",
+      "description": "Status operations",
+      "externalDocs": {
+        "description": "Tag docs",
+        "url": "https://example.com/docs/tags/status"
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "API handbook",
+    "url": "https://example.com/docs"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Get service status",
+        "operationId": "getStatus",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "name": "x-api-key",
+        "in": "header"
+      }
+    }
+  }
+}

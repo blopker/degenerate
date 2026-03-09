@@ -1,0 +1,219 @@
+{
+  "openapi": "3.1.1",
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "info": {
+    "title": "Schema Surface API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/shapes": {
+      "post": {
+        "operationId": "createShape",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shape"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shape"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BaseEntity": {
+        "$id": "https://example.com/schemas/base-entity",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "Shape": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntity"
+          },
+          {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Circle"
+              },
+              {
+                "$ref": "#/components/schemas/Rectangle"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "circle": "#/components/schemas/Circle",
+                "rectangle": "#/components/schemas/Rectangle"
+              }
+            }
+          }
+        ],
+        "externalDocs": {
+          "url": "https://example.com/docs/shapes"
+        }
+      },
+      "Circle": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "const": "circle"
+          },
+          "radius": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "color": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "writeOnly": true
+          }
+        },
+        "required": [
+          "kind",
+          "radius"
+        ],
+        "examples": [
+          {
+            "kind": "circle",
+            "radius": 3.5
+          }
+        ]
+      },
+      "Rectangle": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "const": "rectangle"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "meta": {
+            "$dynamicRef": "#meta"
+          }
+        },
+        "$defs": {
+          "meta": {
+            "$dynamicAnchor": "meta",
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string"
+              }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "required": [
+          "kind",
+          "width",
+          "height"
+        ],
+        "if": {
+          "properties": {
+            "width": {
+              "minimum": 100
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "isLarge": {
+              "const": true
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "isLarge": {
+              "const": false
+            }
+          }
+        }
+      },
+      "StringTuple": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "items": false,
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "Container": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "contentMediaType": "application/json",
+            "contentEncoding": "base64"
+          },
+          "tags": {
+            "type": "array",
+            "contains": {
+              "const": "required"
+            },
+            "minContains": 1
+          }
+        },
+        "dependentSchemas": {
+          "payload": {
+            "required": [
+              "tags"
+            ]
+          }
+        },
+        "not": {
+          "required": [
+            "forbidden"
+          ]
+        },
+        "deprecated": false,
+        "xml": {
+          "name": "container",
+          "namespace": "https://example.com/xml",
+          "prefix": "ex",
+          "attribute": false,
+          "wrapped": false
+        }
+      }
+    }
+  }
+}

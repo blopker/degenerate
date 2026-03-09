@@ -1,0 +1,92 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Webhooks API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "healthy"
+          }
+        }
+      }
+    },
+    "/empty": {}
+  },
+  "webhooks": {
+    "orderCreated": {
+      "post": {
+        "operationId": "orderCreatedWebhook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderCreated"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Receiver processed event"
+          }
+        }
+      }
+    },
+    "invoicePaid": {
+      "$ref": "#/components/pathItems/InvoicePaidWebhook"
+    }
+  },
+  "components": {
+    "schemas": {
+      "OrderCreated": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "amount"
+        ]
+      },
+      "InvoicePaid": {
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pathItems": {
+      "InvoicePaidWebhook": {
+        "post": {
+          "operationId": "invoicePaidWebhook",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoicePaid"
+                }
+              }
+            }
+          },
+          "responses": {
+            "202": {
+              "description": "Accepted"
+            }
+          }
+        }
+      }
+    }
+  }
+}

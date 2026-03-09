@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "HTTP Methods API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/verbs": {
+      "summary": "All methods path",
+      "description": "Exercises every Path Item operation field",
+      "get": {
+        "operationId": "verbsGet",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "operationId": "verbsPut",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "verbsPost",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "verbsDelete",
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          }
+        }
+      },
+      "options": {
+        "operationId": "verbsOptions",
+        "responses": {
+          "200": {
+            "description": "Options"
+          }
+        }
+      },
+      "head": {
+        "operationId": "verbsHead",
+        "responses": {
+          "200": {
+            "description": "Headers only"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "verbsPatch",
+        "responses": {
+          "200": {
+            "description": "Patched"
+          }
+        }
+      },
+      "trace": {
+        "operationId": "verbsTrace",
+        "responses": {
+          "200": {
+            "description": "Trace"
+          }
+        }
+      }
+    }
+  }
+}

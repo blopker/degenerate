@@ -1,0 +1,143 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Operations and Inputs API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/items/{itemId}": {
+      "summary": "Path-level summary",
+      "description": "Path-level description",
+      "servers": [
+        {
+          "url": "https://api.example.com/v1"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "itemId",
+          "in": "path",
+          "required": true,
+          "description": "Item identifier",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "X-Trace-Id",
+          "in": "header",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Read item",
+        "description": "Returns one item",
+        "operationId": "getItem",
+        "externalDocs": {
+          "url": "https://example.com/docs/get-item"
+        },
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "allowReserved": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item found"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patchItem",
+        "deprecated": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "photo": {
+                    "type": "string",
+                    "contentEncoding": "base64",
+                    "contentMediaType": "image/png"
+                  }
+                }
+              },
+              "example": {
+                "name": "updated",
+                "photo": "iVBORw0KGgoAAAANSUhEUgAA"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "avatar": {
+                    "contentMediaType": "image/png"
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "contentType": "text/plain; charset=utf-8"
+                },
+                "avatar": {
+                  "contentType": "image/png",
+                  "headers": {
+                    "X-Part": {
+                      "description": "Part-specific header",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "items"
+    }
+  ]
+}

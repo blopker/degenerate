@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dart:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(/Users/blopker/code/degenerate/test/fixtures/petstore.yaml:*)",
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(command dart:*)",
+      "Bash(UPDATE_SNAPSHOTS=1 command dart:*)",
+      "Bash(UPDATE_SNAPSHOTS=1 dart test:*)"
+    ]
+  }
+}
