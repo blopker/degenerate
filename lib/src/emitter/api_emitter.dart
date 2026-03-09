@@ -344,19 +344,17 @@ class ApiEmitter {
           '/// Shared execution pipeline: interceptors -> send -> deserialize.',
         )
         ..body = const Code('''
-var req = request;
 try {
-  for (final interceptor in _config.interceptors) {
-    req = await interceptor.onRequest(req);
-  }
+  final chain = buildInterceptorChain(
+    interceptors: _config.interceptors,
+    terminal: (req) async {
+      return _config.timeout != null
+          ? await _config.client.send(req).timeout(_config.timeout!)
+          : await _config.client.send(req);
+    },
+  );
 
-  var response = _config.timeout != null
-      ? await _config.client.send(req).timeout(_config.timeout!)
-      : await _config.client.send(req);
-
-  for (final interceptor in _config.interceptors) {
-    response = await interceptor.onResponse(response);
-  }
+  final response = await chain(request);
 
   if (response.isSuccessful) {
     return ApiSuccess(
@@ -372,17 +370,6 @@ try {
     headers: response.headers,
   );
 } catch (e, st) {
-  for (final interceptor in _config.interceptors) {
-    try {
-      final recovered = await interceptor.onError(e, st, req);
-      if (recovered.isSuccessful) {
-        return ApiSuccess(onSuccess(recovered), statusCode: recovered.statusCode, headers: recovered.headers);
-      }
-      return ApiError(statusCode: recovered.statusCode, error: onError != null ? onError(recovered) : null, rawBody: recovered.body, headers: recovered.headers);
-    } catch (_) {
-      // Interceptor couldn't handle it, continue to next or fall through
-    }
-  }
   return ApiException(e, st);
 }
 '''),

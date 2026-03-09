@@ -17,8 +17,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
-  http:
+  degenerate_http:
     dependency: "direct main"
+    description:
+      path: "../packages/degenerate_http"
+      relative: true
+    source: path
+    version: "0.1.0"
+  degenerate_runtime:
+    dependency: transitive
+    description:
+      path: "../packages/degenerate_runtime"
+      relative: true
+    source: path
+    version: "0.1.0"
+  http:
+    dependency: transitive
     description:
       name: http
       sha256: "87721a4a50b19c7f1d49001e51409bddc46303966ce89a65af4f4e6004896412"

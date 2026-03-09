@@ -8,4 +8,5 @@ environment:
 
 dependencies:
   collection: ^1.18.0
-  http: ^1.2.0
+  degenerate_runtime:
+    path: /Users/blopker/code/degenerate/packages/degenerate_runtime

@@ -5,6 +5,8 @@ import 'package:test/test.dart';
 
 import 'package:degenerate/src/generator.dart';
 
+final _packagesDir = p.join(Directory.current.path, 'packages');
+
 void main() {
   group('Generator end-to-end', () {
     late Directory tempDir;
@@ -35,6 +37,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         verbose: true,
+        runtimePackagePath: _packagesDir,
       );
 
       final generator = Generator(config);
@@ -45,9 +48,6 @@ void main() {
         'lib/src/models/pet.dart',
         'lib/src/models/error_model.dart',
         'lib/src/apis/pets_api.dart',
-        'lib/src/client/api_client.dart',
-        'lib/src/client/api_config.dart',
-        'lib/src/client/api_result.dart',
         'lib/petstore_api.dart',
         'pubspec.yaml',
       ];
@@ -137,6 +137,7 @@ void main() {
         outputDir: outputDir,
         packageName: 'petstore_api',
         dryRun: true,
+        runtimePackagePath: _packagesDir,
       );
 
       final generator = Generator(config);
@@ -179,6 +180,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         clean: true,
+        runtimePackagePath: _packagesDir,
       );
 
       final generator = Generator(config);
@@ -213,6 +215,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         // clean defaults to false
+        runtimePackagePath: _packagesDir,
       );
 
       final generator = Generator(config);
@@ -236,6 +239,7 @@ void main() {
       final config = GeneratorConfig(
         inputPath: specPath,
         outputDir: tempDir.path,
+        runtimePackagePath: _packagesDir,
       );
 
       final generator = Generator(config);

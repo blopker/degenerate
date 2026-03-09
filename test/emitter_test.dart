@@ -326,13 +326,8 @@ void main() {
       expect(source, contains('ErrorModel.fromJson'));
     });
 
-    test('interceptor-recovered errors also use typed error parsing', () {
-      // When an interceptor recovers a non-2xx response, the typed
-      // onError callback should be applied to it too.
-      expect(
-        source,
-        contains('error: onError != null ? onError(recovered) : null'),
-      );
+    test('_execute uses middleware chain', () {
+      expect(source, contains('buildInterceptorChain'));
     });
 
     test('is valid Dart (formats without error)', () {
@@ -364,17 +359,17 @@ void main() {
       expect(files.keys, contains('lib/src/apis/pets_api.dart'));
     });
 
-    test('produces client runtime files', () {
-      expect(files.keys, contains('lib/src/client/api_client.dart'));
-      expect(files.keys, contains('lib/src/client/api_config.dart'));
-      expect(files.keys, contains('lib/src/client/api_result.dart'));
+    test('does not emit runtime files (uses degenerate_runtime)', () {
+      expect(files.keys, isNot(contains('lib/src/client/api_client.dart')));
+      expect(files.keys, isNot(contains('lib/src/client/api_config.dart')));
+      expect(files.keys, isNot(contains('lib/src/client/api_result.dart')));
     });
 
     test('produces barrel file', () {
       expect(files.keys, contains('lib/petstore_client.dart'));
       final barrel = files['lib/petstore_client.dart']!;
       expect(barrel, contains("export 'src/models/pet.dart'"));
-      expect(barrel, contains("export 'src/client/api_client.dart'"));
+      expect(barrel, contains("export 'package:degenerate_runtime/degenerate_runtime.dart'"));
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
     });
 
@@ -384,6 +379,7 @@ void main() {
       expect(pubspec, contains('name: petstore_client'));
       expect(pubspec, contains('sdk: ^3.8.0'));
       expect(pubspec, contains('collection:'));
+      expect(pubspec, contains('degenerate_runtime:'));
     });
 
     test('all model files contain header comment', () {
@@ -429,24 +425,19 @@ void main() {
       expect(sdkFile, contains('late final PetsApi pets = '));
     });
 
-    test('ApiResult has typed error parameter', () {
-      final resultSource = files['lib/src/client/api_result.dart']!;
-      // ApiResult should have two type params: <T, E>
-      expect(resultSource, contains('ApiResult<T, E>'));
-      expect(resultSource, contains('ApiError<T, E>'));
-      // E? error instead of Object? error
-      expect(resultSource, contains('final E? error'));
-    });
-
     test('operations return ApiResult with typed error', () {
       final apiSource = files['lib/src/apis/pets_api.dart']!;
-      // Should use ApiResult<List<Pet>, ErrorModel> not just ApiResult<List<Pet>>
       expect(apiSource, contains('ApiResult<List<Pet>, ErrorModel>'));
     });
 
-    test('api_config.dart includes BaseInterceptor', () {
-      final configSource = files['lib/src/client/api_config.dart']!;
-      expect(configSource, contains('class BaseInterceptor'));
+    test('API files import degenerate_runtime', () {
+      final apiSource = files['lib/src/apis/pets_api.dart']!;
+      expect(apiSource, contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"));
+    });
+
+    test('SDK facade imports degenerate_runtime', () {
+      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      expect(sdkFile, contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"));
     });
   });
 }

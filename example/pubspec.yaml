@@ -8,4 +8,5 @@ environment:
 dependencies:
   petstore_client:
     path: petstore_client
-  http: ^1.2.0
+  degenerate_http:
+    path: ../packages/degenerate_http

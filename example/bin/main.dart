@@ -1,49 +1,5 @@
-import 'package:http/http.dart' as http;
+import 'package:degenerate_http/degenerate_http.dart';
 import 'package:petstore_client/petstore_client.dart';
-
-/// Simple [ApiClient] backed by `package:http`.
-final class HttpApiClient implements ApiClient {
-  final http.Client _inner;
-  @override
-  final Uri baseUrl;
-
-  HttpApiClient({required this.baseUrl, http.Client? inner})
-      : _inner = inner ?? http.Client();
-
-  @override
-  Future<ApiResponse> send(ApiRequest request) async {
-    final uri = request.resolveUri(baseUrl);
-    final httpRequest = http.Request(request.method, uri)
-      ..headers.addAll(request.headers);
-    if (request.body != null) {
-      httpRequest.body = request.body as String;
-    }
-    final streamed = await _inner.send(httpRequest);
-    return ApiResponse(
-      statusCode: streamed.statusCode,
-      headers: streamed.headers,
-      body: await streamed.stream.bytesToString(),
-    );
-  }
-
-  @override
-  Future<void> close() async => _inner.close();
-}
-
-/// Logging interceptor that prints requests and responses.
-class LoggingInterceptor extends BaseInterceptor {
-  @override
-  Future<ApiRequest> onRequest(ApiRequest request) async {
-    print('--> ${request.method} ${request.path}');
-    return request;
-  }
-
-  @override
-  Future<ApiResponse> onResponse(ApiResponse response) async {
-    print('<-- ${response.statusCode} (${response.body.length} bytes)');
-    return response;
-  }
-}
 
 void main() async {
   final client = HttpApiClient(
@@ -53,7 +9,10 @@ void main() async {
   final sdk = PetstoreClientApi(
     ApiConfig(
       client: client,
-      interceptors: [LoggingInterceptor()],
+      interceptors: [
+        LoggingInterceptor(),
+        RetryInterceptor(maxRetries: 2, initialDelay: Duration(seconds: 1)),
+      ],
       timeout: Duration(seconds: 10),
     ),
   );
@@ -88,7 +47,6 @@ void main() async {
         print('  Category: ${data.category?.name ?? "none"}');
         print('  Status: ${data.status}');
         print('  Photos: ${data.photoUrls}');
-        // Demonstrate toJson round-trip
         print('  toJson: ${data.toJson()}');
       case ApiError(:final statusCode, :final rawBody):
         print('Not found ($statusCode): $rawBody');

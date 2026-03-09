@@ -1,0 +1,11 @@
+name: degenerate_runtime
+description: Core runtime interfaces and middleware for degenerate-generated API clients.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6

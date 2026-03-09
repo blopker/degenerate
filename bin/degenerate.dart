@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
+import 'package:path/path.dart' as p;
 
 import 'package:degenerate/src/generator.dart';
 
@@ -107,6 +108,11 @@ Future<void> main(List<String> arguments) async {
       exit(1);
     }
 
+    // Locate the packages/ directory relative to this script
+    final scriptDir = p.dirname(Platform.script.toFilePath());
+    final generatorRoot = p.dirname(scriptDir);
+    final packagesDir = p.join(generatorRoot, 'packages');
+
     final config = GeneratorConfig(
       inputPath: input,
       outputDir: results.option('output') ?? 'lib/src/generated',
@@ -116,6 +122,7 @@ Future<void> main(List<String> arguments) async {
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
+      runtimePackagePath: packagesDir,
     );
 
     final generator = Generator(config);

@@ -19,6 +19,10 @@ class GeneratorConfig {
   final bool dryRun;
   final bool clean;
 
+  /// Path to the directory containing the degenerate_runtime package.
+  /// Defaults to 'packages' relative to the generator root.
+  final String runtimePackagePath;
+
   const GeneratorConfig({
     required this.inputPath,
     this.outputDir = 'lib/src/generated',
@@ -28,6 +32,7 @@ class GeneratorConfig {
     this.verbose = false,
     this.dryRun = false,
     this.clean = false,
+    this.runtimePackagePath = 'packages',
   });
 }
 
@@ -159,6 +164,11 @@ class Generator {
     final specFileName = p.basename(config.inputPath);
     final specVersion = doc.version;
 
+    // Resolve the absolute path to the runtime package.
+    final runtimePath = p.absolute(
+      p.join(config.runtimePackagePath, 'degenerate_runtime'),
+    );
+
     final fileEmitter = FileEmitter();
     final files = fileEmitter.emitAll(
       types: irTypes,
@@ -166,7 +176,7 @@ class Generator {
       packageName: packageName,
       specFileName: specFileName,
       specVersion: specVersion,
-      includeHttpClient: config.client != 'none',
+      runtimePath: runtimePath,
     );
 
     _log('Generated ${files.length} files');
