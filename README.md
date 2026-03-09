@@ -4,13 +4,14 @@
   <p><strong>A fast, opinionated OpenAPI 3.x to Dart code generator.</strong></p>
   <p>
     <a href="#features">Features</a> &middot;
-    <a href="#installation">Installation</a> &middot;
+    <a href="#quick-start">Quick Start</a> &middot;
     <a href="#usage">Usage</a> &middot;
+    <a href="#middleware">Middleware</a> &middot;
     <a href="#tested-specs">Tested Specs</a>
   </p>
   <p>
     Generates type-safe Dart clients from OpenAPI specs with full <code>dart analyze</code> compliance,<br>
-    forward-compatible enums and unions, and zero runtime dependencies beyond <code>package:http</code>.
+    forward-compatible enums and unions, and an OkHttp-style middleware chain.
   </p>
 </div>
 
@@ -22,19 +23,60 @@
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
 - **Fast** — generates 14,580 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
+- **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
 - **Modular output** — one file per model/enum/union, barrel file for convenient imports
 
-## Installation
+## Quick Start
 
 ```bash
-dart pub global activate --source path .
+# Generate a client from a spec
+dart run bin/degenerate.dart -i petstore.yaml -o my_client -n petstore
+
+# Install dependencies in the generated package
+cd my_client && dart pub get
 ```
 
-Or run directly:
+Then use the generated client:
 
-```bash
-dart run bin/degenerate.dart --input spec.yaml --output lib/src/generated
+```dart
+import 'package:degenerate_http/degenerate_http.dart';
+import 'package:petstore/petstore.dart';
+
+void main() async {
+  final client = HttpApiClient(
+    baseUrl: Uri.parse('https://petstore3.swagger.io/api/v3'),
+  );
+
+  final sdk = PetstoreApi(
+    ApiConfig(
+      client: client,
+      interceptors: [
+        LoggingInterceptor(),
+        RetryInterceptor(maxRetries: 2),
+      ],
+      timeout: Duration(seconds: 10),
+    ),
+  );
+
+  final result = await sdk.pet.findPetsByStatus(
+    status: FindPetsByStatusStatus.available,
+  );
+
+  switch (result) {
+    case ApiSuccess(:final data):
+      print('Found ${data.length} pets');
+    case ApiError(:final statusCode, :final rawBody):
+      print('Error $statusCode: $rawBody');
+    case ApiException(:final exception):
+      print('Network error: $exception');
+  }
+
+  await client.close();
+}
 ```
+
+See [`example/`](example/) for a full working example against the live Petstore API.
 
 ## Usage
 
@@ -73,6 +115,23 @@ degenerate -i spec.yaml --dry-run
 degenerate -i spec.yaml --client none
 ```
 
+## Packages
+
+The runtime is split into separate packages so generated code has no opinion on which HTTP client you use:
+
+| Package | Purpose | Dependencies |
+|---------|---------|-------------|
+| `degenerate_runtime` | Core interfaces (`ApiClient`, `ApiConfig`, `ApiResult`), middleware chain, built-in interceptors | None |
+| `degenerate_http` | `HttpApiClient` adapter using `package:http` | `http`, `degenerate_runtime` |
+| `degenerate_dio` | `DioApiClient` adapter using `package:dio` | `dio`, `degenerate_runtime` |
+
+The adapter packages re-export `degenerate_runtime`, so you only need a single import:
+
+```dart
+// This gives you HttpApiClient + all runtime types (ApiConfig, ApiResult, interceptors, etc.)
+import 'package:degenerate_http/degenerate_http.dart';
+```
+
 ## Generated Output
 
 ```
@@ -86,9 +145,7 @@ lib/
     apis/
       pets_api.dart            API client class with typed methods
     client/
-      api_client.dart          Abstract ApiClient interface
-      api_config.dart          Configuration (interceptors, headers, timeout)
-      api_result.dart          Sealed ApiResult<T> (ApiSuccess | ApiError | ApiException)
+      <package_name>_api.dart  Root SDK facade with lazy API group accessors
 pubspec.yaml                   Generated with correct dependencies
 ```
 
@@ -147,19 +204,90 @@ sealed class Shape {
 
 ### API Client
 
-Each tag in the spec generates an API class:
+Each tag in the spec generates an API class. The root SDK facade provides lazy accessors for each group:
 
 ```dart
-final api = PetsApi(ApiConfig(client: myHttpClient));
-final result = await api.listPets(limit: 10);
+final sdk = PetstoreApi(ApiConfig(client: myHttpClient));
+
+// Access API groups via the SDK facade
+final result = await sdk.pet.getPetById(petId: 1);
 switch (result) {
   case ApiSuccess(:final data):
-    print('Got ${data.length} pets');
+    print('Found: ${data.name}');
   case ApiError(:final statusCode):
     print('Error: $statusCode');
   case ApiException(:final exception):
     print('Network error: $exception');
 }
+```
+
+## Middleware
+
+Interceptors use an OkHttp-style chain where each interceptor receives the request and a `next` handler. This enables retry, auth refresh, logging, and any custom logic:
+
+```dart
+abstract interface class Interceptor {
+  Future<ApiResponse> intercept(ApiRequest request, Handler next);
+}
+```
+
+### Built-in Interceptors
+
+**RetryInterceptor** — exponential backoff on 429 and 5xx:
+
+```dart
+RetryInterceptor(
+  maxRetries: 3,
+  initialDelay: Duration(seconds: 1),
+  retryWhen: (response) => response.statusCode >= 500,  // custom condition
+)
+```
+
+**AuthInterceptor** — adds auth headers with optional token refresh on 401:
+
+```dart
+AuthInterceptor(
+  getToken: () async => myTokenStore.accessToken,
+  refreshToken: () async {
+    await myTokenStore.refresh();
+    return myTokenStore.accessToken;
+  },
+  scheme: 'Bearer',  // default
+)
+```
+
+**LoggingInterceptor** — logs requests and responses:
+
+```dart
+LoggingInterceptor()  // prints to stdout by default
+LoggingInterceptor(logger: myLogger.info)  // custom logger
+```
+
+### Custom Interceptors
+
+```dart
+class TimingInterceptor implements Interceptor {
+  @override
+  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+    final sw = Stopwatch()..start();
+    final response = await next(request);
+    print('${request.method} ${request.path} took ${sw.elapsedMilliseconds}ms');
+    return response;
+  }
+}
+```
+
+Interceptors execute in order — the first interceptor in the list is the outermost wrapper:
+
+```dart
+ApiConfig(
+  client: client,
+  interceptors: [
+    LoggingInterceptor(),    // 1. logs the request
+    AuthInterceptor(...),    // 2. adds auth header
+    RetryInterceptor(...),   // 3. retries on failure (retries include auth)
+  ],
+)
 ```
 
 ## Architecture
@@ -183,6 +311,11 @@ lib/src/
     sealed_union_emitter.dart  Unions -> sealed class hierarchies
     api_emitter.dart         IrApi -> API client class
     file_emitter.dart        Orchestrates all emitters
+
+packages/
+  degenerate_runtime/        Core interfaces, middleware chain, interceptors
+  degenerate_http/           package:http adapter
+  degenerate_dio/            package:dio adapter
 ```
 
 The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Write**. Generated files include `// dart format off` to prevent reformatting.
@@ -191,21 +324,19 @@ The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline 
 
 | Spec | Files | Status |
 |------|-------|--------|
-| Petstore (3.0) | 119 | ✅ 0 issues |
-| Twilio (35k lines) | 35,821 | ✅ 0 issues |
-| Shopify (50k lines) | 49,950 | ✅ 0 issues |
-| Kubernetes (39k lines, JSON) | 39,336 | ✅ 0 issues |
-| Totem Mobile (3.1) | ~4k | ✅ 0 issues |
-| OpenAI | 2,317 | ✅ 0 issues |
-| GitHub REST 3.1 | 6,401 | ✅ 0 issues |
-| Cloudflare | 14,580 | ✅ 0 issues |
+| Petstore (3.0) | 119 | 0 issues |
+| Twilio (35k lines) | 35,821 | 0 issues |
+| Shopify (50k lines) | 49,950 | 0 issues |
+| Kubernetes (39k lines, JSON) | 39,336 | 0 issues |
+| Totem Mobile (3.1) | ~4k | 0 issues |
+| OpenAI | 2,317 | 0 issues |
+| GitHub REST 3.1 | 6,401 | 0 issues |
+| Cloudflare | 14,580 | 0 issues |
 
 ## Limitations
 
 - **Swagger 2.0** is not supported; only OpenAPI 3.0 and 3.1
 - **External `$ref` files** (e.g., `$ref: './other.yaml'`) are not resolved
-- No concrete `HttpApiClient` adapter is emitted yet — you must implement `ApiClient` yourself (or wait for the next release)
-- `--client dio` is not yet implemented; use `--client http` or `--client none` with your own adapter
 
 ## License
 

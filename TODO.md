@@ -1,68 +1,51 @@
 # Degenerate — OpenAPI → Dart Code Generator TODO
 
-## Current State (2026-03-08)
+## Current State (2026-03-09)
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **125 unit tests** all passing, `dart analyze lib/` clean on generator source
-- **CLI**: `--input`, `--output`, `--name`, `--client http|none`, `--include-deprecated`, `--verbose`, `--dry-run`
+- **185 unit tests** all passing, `dart analyze lib/` clean on generator source
+- **CLI**: `--input`, `--output`, `--name`, `--client http|none`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
+- **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
+- **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
 - **OpenAPI 3.1 support**: nullable `anyOf: [Type, {type: null}]` pattern handled correctly
 - **Parallel formatting**: dart_style formatting runs across all CPU cores via isolates (~2.4x speedup on large specs)
+- **Example app**: working Petstore CLI example hitting the live petstore3 server
 - **README** with full documentation
 
 ### Spec Scorecard (dart analyze on generated output)
 
 | Spec | Files | Status |
 |------|-------|--------|
-| Petstore OAI (3.0) | 119 | ✅ 0 issues |
-| Unions (custom fixture) | 453 | ✅ 0 issues |
-| Circular refs (custom fixture) | 157 | ✅ 0 issues |
-| Twilio (35k lines) | 35,821 | ✅ 0 issues |
-| Shopify (50k lines) | 49,950 | ✅ 0 issues |
-| Kubernetes (39k lines, JSON) | 39,336 | ✅ 0 issues |
-| Totem Mobile (3.1) | ~4k | ✅ 0 issues |
-| OpenAI | 2,317 | ✅ 0 issues |
-| GitHub REST 3.1 | 6,401 | ✅ 0 issues |
-| Cloudflare | 14,580 | ✅ 0 issues |
-| Stripe (162k lines) | 162,324 | ⏳ Not attempted |
-| DigitalOcean | 2,682 | ⚠️ Skipped — uses external $ref files |
-
----
-
-## Next Priority
-
-### 1. Emit concrete HttpApiClient adapter
-- Spec section 5 says to emit `http_api_client.dart` with the `package:http` adapter
-- Currently only the abstract `ApiClient` interface is emitted — users can't actually make HTTP calls without writing their own adapter
-- Should be emitted when `--client http` (the default)
-- **This is the #1 blocker for real-world usage**
-
-### 2. Error response deserialization
-- Default/error responses define error models (e.g., Petstore `Error`) but generated code returns `rawBody: String?` instead of a typed error
-- Should deserialize error bodies when the response schema is known
-- This is important for real-world API clients
-
-### 3. Extension types for branded primitives
-- Named schemas that are just primitives with `format` (e.g., `UserId: string+uuid`) should generate `extension type const UserId(String value)`.
+| Petstore OAI (3.0) | 119 | 0 issues |
+| Unions (custom fixture) | 453 | 0 issues |
+| Circular refs (custom fixture) | 157 | 0 issues |
+| Twilio (35k lines) | 35,821 | 0 issues |
+| Shopify (50k lines) | 49,950 | 0 issues |
+| Kubernetes (39k lines, JSON) | 39,336 | 0 issues |
+| Totem Mobile (3.1) | ~4k | 0 issues |
+| OpenAI | 2,317 | 0 issues |
+| GitHub REST 3.1 | 6,401 | 0 issues |
+| Cloudflare | 14,580 | 0 issues |
+| Stripe (162k lines) | 162,324 | Not attempted |
+| DigitalOcean | 2,682 | Skipped — uses external $ref files |
 
 ---
 
 ## Remaining Features
 
 ### High Priority
-- [ ] **Emit concrete HttpApiClient adapter** (see above)
-- [ ] **Error response deserialization** (see above)
-- [ ] **Extension types for branded primitives** (see above)
+- [ ] **Error response deserialization** — default/error responses define error models (e.g., Petstore `Error`) but generated code returns `rawBody: String?` instead of a typed error. Should deserialize error bodies when the response schema is known.
+- [ ] **Extension types for branded primitives** — named schemas that are just primitives with `format` (e.g., `UserId: string+uuid`) should generate `extension type const UserId(String value)`.
 
 ### Medium Priority
 - [ ] **Determinism test** — run generator twice on same input, assert byte-identical output
-- [ ] **Remove phantom `http` dep** — generated `pubspec.yaml` always includes `http: ^1.2.0` even when `--client none`
 - [ ] **Try Stripe spec** — 162k lines, heavy `anyOf` usage, vendor extensions
 
 ### Low Priority
-- [ ] **`--client=dio` adapter** — emit Dio adapter
 - [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested)
+- [ ] **External `$ref` files** — resolve `$ref: './other.yaml'` across files
 
 ---
 
@@ -87,6 +70,23 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 7 (2026-03-09) — Runtime package split + middleware
+
+- Designed and implemented OkHttp-style middleware chain (`intercept(request, next)`) replacing 3-hook interceptor pattern
+- Extracted runtime types into `packages/degenerate_runtime` (zero deps)
+- Created `packages/degenerate_http` (package:http adapter) and `packages/degenerate_dio` (package:dio adapter)
+- Adapter packages re-export `degenerate_runtime` so users only need one import
+- Built-in interceptors: `RetryInterceptor` (exp backoff on 429/5xx), `AuthInterceptor` (token refresh on 401), `LoggingInterceptor`
+- `ApiRequest.copyWith` with sentinel pattern for nullable `body`/`contentType` fields
+- Fixed `resolveUri` to concatenate base path instead of using `Uri.resolve()` (preserves paths like `/api/v3`)
+- Fixed `default` reserved word in SDK facade field names via `sanitizeFieldName`
+- Generated pubspec uses relative paths to runtime package (with symlink resolution for macOS `/var` → `/private/var`)
+- Created `example/` with Petstore CLI app hitting live petstore3 server
+- Updated generated code to depend on `degenerate_runtime` package instead of emitting runtime files inline
+- Deleted `lib/src/emitter/runtime_sources.dart` and `lib/src/runtime/` directory
+- 29 runtime package tests + updated generator/emitter/snapshot tests → 185 total tests passing
+- Updated README with Quick Start, Packages, Middleware sections
 
 ### Session 6 (2026-03-08) — Profiling + parallel formatting
 - Profiled full pipeline on Cloudflare (14,580 files): dart_style formatting was 76% of runtime
@@ -156,6 +156,14 @@ lib/src/
     sealed_union_emitter.dart  Discriminated/untagged/anyOf unions → sealed classes with $Unknown
     api_emitter.dart         IrApi → API client class with operation methods
     file_emitter.dart        Orchestrates all emitters, produces file structure
+
+packages/
+  degenerate_runtime/        Core interfaces (ApiClient, ApiConfig, ApiResult), middleware chain, interceptors
+  degenerate_http/           HttpApiClient adapter (package:http)
+  degenerate_dio/            DioApiClient adapter (package:dio)
+
+example/                     Petstore CLI app using generated client + degenerate_http
+
 test/
   fixtures/                  OpenAPI spec files for testing
   snapshots/                 Committed golden output (petstore, unions, circular, + public specs)
