@@ -231,11 +231,25 @@ class TypeLowerer {
     final dartName = _nameMapping[name] ?? _uniqueTypeName(name);
     _nameMapping[name] = dartName;
     final discProp = _discriminatorProperties[name];
-    final irType = _lowerSchemaImpl(
+    var irType = _lowerSchemaImpl(
       dartName,
       schema,
       discriminatorProperty: discProp,
     );
+    // Wrap named primitives as extension types so they get their own emitted file.
+    // Strip nullability from the inner primitive — nullability is handled at the
+    // field/parameter level (PartialImages? rather than PartialImages(int?)).
+    if (irType is IrPrimitive) {
+      final inner = irType.isNullable
+          ? IrPrimitive(irType.kind, format: irType.format)
+          : irType;
+      irType = IrExtensionType(
+        dartName,
+        inner,
+        description: irType.description,
+        isNullable: irType.isNullable,
+      );
+    }
     typeRegistry[dartName] = irType;
     return irType;
   }
@@ -392,6 +406,21 @@ class TypeLowerer {
           resolved is IrUntaggedUnion ||
           resolved is IrAnyOf) {
         return current; // keep the ref — these get their own emitted files
+      }
+      // Extension types are emittable but resolve like enums — the
+      // IrExtensionType node itself carries the fromJson/toJson semantics
+      // that buildFromJsonCode needs (unlike objects/unions which all use
+      // the same Map<String, dynamic> fromJson pattern).
+      if (resolved is IrExtensionType) {
+        if (nullable && !resolved.isNullable) {
+          return IrExtensionType(
+            resolved.name,
+            resolved.inner,
+            description: resolved.description,
+            isNullable: true,
+          );
+        }
+        return resolved;
       }
       // For non-emittable types (IrEnum, IrList, IrMap, IrPrimitive, IrTypeRef),
       // resolve to the actual type.
@@ -1002,6 +1031,12 @@ class TypeLowerer {
       IrAnyOf t => IrAnyOf(
         t.name,
         t.variants,
+        description: t.description,
+        isNullable: true,
+      ),
+      IrExtensionType t => IrExtensionType(
+        t.name,
+        t.inner,
         description: t.description,
         isNullable: true,
       ),

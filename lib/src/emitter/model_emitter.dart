@@ -166,6 +166,7 @@ class ModelEmitter {
       IrDiscriminatedUnion() => '${f.name}${_q}toJson()',
       IrUntaggedUnion() => '${f.name}${_q}toJson()',
       IrAnyOf() => '${f.name}${_q}toJson()',
+      IrExtensionType() => '${f.name}${_q}toJson()',
     };
   }
 

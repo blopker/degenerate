@@ -80,6 +80,19 @@ void _snapshotTests(String groupName, List<File> specFiles) {
               outFile.parent.createSync(recursive: true);
               outFile.writeAsStringSync(entry.value);
             }
+            // Run dart pub get so the snapshot is ready for testing
+            final pubGet = await Process.run(
+              'dart',
+              ['pub', 'get'],
+              workingDirectory: snapshotDir,
+            );
+            if (pubGet.exitCode != 0) {
+              fail(
+                'dart pub get failed for $specName:\n'
+                'stdout: ${pubGet.stdout}\n'
+                'stderr: ${pubGet.stderr}',
+              );
+            }
             // ignore: avoid_print
             print('  Updated ${generated.length} snapshot files for $specName');
           } else {

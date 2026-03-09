@@ -19,6 +19,7 @@ sealed class IrType {
     IrDiscriminatedUnion(:final name) => name,
     IrUntaggedUnion(:final name) => name,
     IrAnyOf(:final name) => name,
+    IrExtensionType(:final name) => name,
     _ => null,
   };
 }
@@ -123,6 +124,16 @@ final class IrAnyOf extends IrType {
     super.description,
     super.isNullable,
   });
+}
+
+/// A named wrapper around a primitive type, emitted as a Dart extension type.
+///
+/// Example: `UserId: {type: string, format: uuid}` →
+/// `extension type const UserId(String value) { ... }`
+final class IrExtensionType extends IrType {
+  final String name;
+  final IrPrimitive inner;
+  const IrExtensionType(this.name, this.inner, {super.description, super.isNullable});
 }
 
 /// A reference to a named type (resolved during IR construction).

@@ -288,6 +288,8 @@ class ApiEmitter {
         PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
         _ => 'return jsonDecode(response.body);',
       },
+      IrExtensionType() =>
+        'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
       IrTypeRef(:final name) =>
         'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
       IrObject(:final name) =>

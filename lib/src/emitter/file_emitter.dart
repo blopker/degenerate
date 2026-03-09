@@ -5,6 +5,7 @@ import '../naming.dart' show sanitizeFieldName, toPascalCase;
 import 'api_emitter.dart';
 import 'emit_utils.dart';
 import 'enum_emitter.dart';
+import 'extension_type_emitter.dart';
 import 'model_emitter.dart';
 import 'sealed_union_emitter.dart';
 
@@ -156,6 +157,7 @@ class FileEmitter {
     return switch (type) {
       IrObject() => ModelEmitter(type).emit(),
       IrEnum() => EnumEmitter(type).emit(),
+      IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
@@ -259,6 +261,8 @@ class FileEmitter {
         names.add(name);
       case IrAnyOf(:final name):
         names.add(name);
+      case IrExtensionType(:final name):
+        names.add(name);
       case IrList(:final items):
         _collectTopLevelTypeName(items, names);
       case IrMap(:final values):
@@ -331,6 +335,12 @@ class FileEmitter {
             needsTypedData = true;
             needsConvert = true;
           }
+        }
+      case IrExtensionType(:final name, :final inner):
+        names.add(name);
+        if (isBytesType(inner)) {
+          needsTypedData = true;
+          needsConvert = true;
         }
       case IrList(:final items):
         _collectTopLevelTypeName(items, names);

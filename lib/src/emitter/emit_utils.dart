@@ -45,6 +45,7 @@ Reference irTypeToReference(
     IrDiscriminatedUnion(:final name) => _maybeNullable(refer(name), nullable),
     IrUntaggedUnion(:final name) => _maybeNullable(refer(name), nullable),
     IrAnyOf(:final name) => _maybeNullable(refer(name), nullable),
+    IrExtensionType(:final name) => _maybeNullable(refer(name), nullable),
   };
 }
 
@@ -102,6 +103,7 @@ String irTypeName(IrType type) {
     IrDiscriminatedUnion(:final name) => name,
     IrUntaggedUnion(:final name) => name,
     IrAnyOf(:final name) => name,
+    IrExtensionType(:final name) => name,
   };
 }
 
@@ -175,6 +177,10 @@ String buildFromJsonCode(
       '$nullCheck$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})$nullElse',
     IrAnyOf(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
+    IrExtensionType(:final name, :final inner) when isOptional =>
+      '$accessor != null ? $name.fromJson(${_extensionTypeJsonCast(inner, accessor)}) : null',
+    IrExtensionType(:final name, :final inner) =>
+      '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
   };
 }
 
@@ -206,6 +212,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     IrDiscriminatedUnion() => '$accessor$q.toJson()',
     IrUntaggedUnion() => '$accessor$q.toJson()',
     IrAnyOf() => '$accessor$q.toJson()',
+    IrExtensionType() => '$accessor$q.toJson()',
   };
 }
 
@@ -224,12 +231,31 @@ bool listItemNeedsToJson(IrType type) {
     IrTypeRef() ||
     IrDiscriminatedUnion() ||
     IrUntaggedUnion() ||
-    IrAnyOf() => true,
+    IrAnyOf() ||
+    IrExtensionType() => true,
     IrList() || IrMap() => true,
   };
 }
 
 bool mapValueNeedsToJson(IrType type) => listItemNeedsToJson(type);
+
+/// Cast an accessor to the JSON wire type for an extension type's fromJson.
+///
+/// For most primitives the JSON type matches the Dart type, so a simple cast
+/// suffices. For types like DateTime/Uri the JSON wire type is String.
+String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
+  final jsonType = switch (inner.kind) {
+    PrimitiveKind.dateTime => 'String',
+    PrimitiveKind.uri => 'String',
+    PrimitiveKind.bigInt => 'String',
+    PrimitiveKind.duration => 'num',
+    PrimitiveKind.bytes => 'String',
+    PrimitiveKind.int => 'num',
+    PrimitiveKind.double => 'num',
+    _ => irTypeName(inner),
+  };
+  return '$accessor as $jsonType';
+}
 
 /// Check whether an [IrType] represents a list (used for equality checks).
 bool isListType(IrType type) => type is IrList;

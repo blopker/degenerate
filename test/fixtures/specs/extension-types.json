@@ -1,0 +1,70 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Extension Types Test",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/users/{userId}": {
+      "get": {
+        "operationId": "getUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": { "$ref": "#/components/schemas/UserId" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/User" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserId": {
+        "type": "string",
+        "format": "uuid",
+        "description": "A unique user identifier."
+      },
+      "Timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "An ISO 8601 timestamp."
+      },
+      "Score": {
+        "type": "integer",
+        "format": "int32",
+        "description": "A numeric score."
+      },
+      "Ratio": {
+        "type": "number",
+        "format": "double"
+      },
+      "Active": {
+        "type": "boolean"
+      },
+      "User": {
+        "type": "object",
+        "required": ["id", "name", "createdAt"],
+        "properties": {
+          "id": { "$ref": "#/components/schemas/UserId" },
+          "name": { "type": "string" },
+          "createdAt": { "$ref": "#/components/schemas/Timestamp" },
+          "score": { "$ref": "#/components/schemas/Score" },
+          "ratio": { "$ref": "#/components/schemas/Ratio" },
+          "active": { "$ref": "#/components/schemas/Active" }
+        }
+      }
+    }
+  }
+}

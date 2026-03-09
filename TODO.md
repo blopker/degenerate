@@ -37,7 +37,7 @@
 
 ### High Priority
 - [x] **Error response deserialization** — already implemented. Operations return `ApiResult<T, E>` where `E` is the typed error model (or `Never` if no error schema). Error bodies are deserialized via `onError` callback with try-catch fallback.
-- [ ] **Extension types for branded primitives** — named schemas that are just primitives with `format` (e.g., `UserId: string+uuid`) should generate `extension type const UserId(String value)`.
+- [x] **Extension types for branded primitives** — named schemas that are just primitives generate Dart extension types (e.g., `extension type const UserId(String value)`). Handles all primitive kinds including DateTime, Uri, BigInt with proper fromJson/toJson serialization.
 
 ### Medium Priority
 - [ ] **Determinism test** — run generator twice on same input, assert byte-identical output

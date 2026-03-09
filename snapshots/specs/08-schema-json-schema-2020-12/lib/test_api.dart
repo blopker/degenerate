@@ -11,5 +11,6 @@ export 'src/models/base_entity.dart';
 export 'src/models/circle.dart';
 export 'src/models/container.dart';
 export 'src/models/rectangle.dart';
+export 'src/models/shape.dart';
 
 export 'src/apis/default_api.dart';

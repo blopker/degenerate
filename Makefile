@@ -1,5 +1,9 @@
+.PHONY: *
+
 test:
 	dart test
+	dart analyze lib
+	dart analyze snapshots/specs
 
 # test_unit:
 	# todo

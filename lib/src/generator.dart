@@ -350,6 +350,7 @@ class Generator {
       IrDiscriminatedUnion(:final name) => 'DiscriminatedUnion($name)',
       IrUntaggedUnion(:final name) => 'UntaggedUnion($name)',
       IrAnyOf(:final name) => 'AnyOf($name)',
+      IrExtensionType(:final name) => 'ExtensionType($name)',
       IrPrimitive(:final kind) => 'Primitive($kind)',
       IrList(:final items) => 'List<${_irTypeName(items)}>',
       IrMap(:final values) => 'Map<String, ${_irTypeName(values)}>',

@@ -13,6 +13,7 @@ import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/file_emitter.dart';
 
 /// Full pipeline helper: parse YAML -> lower types -> lower operations.
@@ -438,6 +439,154 @@ void main() {
     test('SDK facade imports degenerate_runtime', () {
       final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
       expect(sdkFile, contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"));
+    });
+  });
+
+  // ─── Extension type emission ──────────────────────────────────
+
+  group('ExtensionTypeEmitter', () {
+    test('emits string extension type', () {
+      final type = IrExtensionType(
+        'UserId',
+        const IrPrimitive(PrimitiveKind.string),
+        description: 'A unique user identifier.',
+      );
+      final specs = ExtensionTypeEmitter(type).emit();
+      final source = emitRaw(Library((b) => b.body.addAll(specs)));
+
+      expect(source, contains('extension type const UserId(String value)'));
+      expect(source, contains('factory UserId.fromJson(String json)'));
+      expect(source, contains('UserId(json)'));
+      expect(source, contains('String toJson()'));
+      expect(source, contains('=> value'));
+      expect(source, contains('A unique user identifier.'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits DateTime extension type with parsing', () {
+      final type = IrExtensionType(
+        'Timestamp',
+        const IrPrimitive(PrimitiveKind.dateTime),
+      );
+      final specs = ExtensionTypeEmitter(type).emit();
+      final source = emitRaw(Library((b) => b.body.addAll(specs)));
+
+      // DateTime wraps DateTime, but fromJson takes String and parses
+      expect(source, contains('extension type Timestamp(DateTime value)'));
+      expect(source, isNot(contains('const Timestamp'))); // DateTime can't be const
+      expect(source, contains('factory Timestamp.fromJson(String json)'));
+      expect(source, contains('DateTime.parse(json)'));
+      expect(source, contains('String toJson()'));
+      expect(source, contains('value.toIso8601String()'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits int extension type with num fromJson', () {
+      final type = IrExtensionType(
+        'Score',
+        const IrPrimitive(PrimitiveKind.int),
+      );
+      final specs = ExtensionTypeEmitter(type).emit();
+      final source = emitRaw(Library((b) => b.body.addAll(specs)));
+
+      expect(source, contains('extension type const Score(int value)'));
+      expect(source, contains('factory Score.fromJson(num json)'));
+      expect(source, contains('json.toInt()'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits Uri extension type with parsing', () {
+      final type = IrExtensionType(
+        'WebUrl',
+        const IrPrimitive(PrimitiveKind.uri),
+      );
+      final specs = ExtensionTypeEmitter(type).emit();
+      final source = emitRaw(Library((b) => b.body.addAll(specs)));
+
+      expect(source, contains('extension type WebUrl(Uri value)'));
+      expect(source, contains('factory WebUrl.fromJson(String json)'));
+      expect(source, contains('Uri.parse(json)'));
+      expect(source, contains('value.toString()'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits bool extension type', () {
+      final type = IrExtensionType(
+        'Active',
+        const IrPrimitive(PrimitiveKind.bool),
+      );
+      final specs = ExtensionTypeEmitter(type).emit();
+      final source = emitRaw(Library((b) => b.body.addAll(specs)));
+
+      expect(source, contains('extension type const Active(bool value)'));
+      expect(source, contains('factory Active.fromJson(bool json)'));
+      expect(source, contains('Active(json)'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  // ─── Extension type full pipeline ──────────────────────────────
+
+  group('Extension type pipeline', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      final jsonContent =
+          File('test/fixtures/specs/extension-types.json').readAsStringSync();
+      final doc = OpenApiDocument.parseJson(jsonContent);
+
+      final tl = TypeLowerer();
+      final irTypes = tl.lowerSchemas(doc.schemas);
+
+      final opLowerer = OperationLowerer(tl, doc: doc);
+      final irApis = opLowerer.lowerPaths(doc.paths);
+
+      // Resolve type refs
+      for (var i = 0; i < irTypes.length; i++) {
+        irTypes[i] = tl.resolveTypeRefs(irTypes[i]);
+      }
+
+      files = FileEmitter().emitAll(
+        types: irTypes,
+        apis: irApis,
+        packageName: 'ext_test',
+        specFileName: 'extension-types.json',
+        specVersion: '3.1.0',
+      );
+    });
+
+    test('emits extension type files', () {
+      expect(files.keys, contains('lib/src/models/user_id.dart'));
+      expect(files.keys, contains('lib/src/models/timestamp.dart'));
+      expect(files.keys, contains('lib/src/models/score.dart'));
+    });
+
+    test('User model references extension types with correct fromJson', () {
+      final user = files['lib/src/models/user.dart']!;
+      expect(user, contains('final UserId id'));
+      expect(user, contains('final Timestamp createdAt'));
+      expect(user, contains('UserId.fromJson'));
+      expect(user, contains('Timestamp.fromJson'));
+      // Should NOT cast to Map<String, dynamic> for extension types
+      expect(user, isNot(contains('UserId.fromJson(json[\'id\'] as Map')));
+    });
+
+    test('API deserializes extension type parameters correctly', () {
+      final api = files['lib/src/apis/default_api.dart']!;
+      // userId path param should be present
+      expect(api, contains('userId'));
+    });
+
+    test('all emitted Dart is syntactically valid', () {
+      for (final entry in files.entries) {
+        if (entry.key.endsWith('.dart')) {
+          expect(
+            () => _formatOrFail(entry.value),
+            returnsNormally,
+            reason: 'File ${entry.key} should be valid Dart',
+          );
+        }
+      }
     });
   });
 }
