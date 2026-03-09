@@ -1,8 +1,4 @@
-import 'dart:io' show Platform;
-import 'dart:isolate';
-
 import 'package:code_builder/code_builder.dart';
-import 'package:dart_style/dart_style.dart';
 
 import '../ir/ir_types.dart';
 import '../naming.dart';
@@ -15,71 +11,6 @@ final _dartEmitter = DartEmitter(
 /// Emit a [Library] to raw (unformatted) Dart source.
 String emitRaw(Library library) {
   return library.accept(_dartEmitter).toString();
-}
-
-/// Emit and format a [Library] in one step (convenience for tests/single files).
-String emitAndFormat(Library library) {
-  final formatter = DartFormatter(
-    languageVersion: DartFormatter.latestLanguageVersion,
-  );
-  return formatter.format(emitRaw(library));
-}
-
-/// Format all files in parallel using isolates.
-///
-/// Takes a map of file path -> raw Dart source and returns the same map
-/// with values formatted by dart_style. Files that fail to format are
-/// kept as-is.
-Future<Map<String, String>> formatAllParallel(
-  Map<String, String> files, {
-  int? concurrency,
-}) async {
-  concurrency ??= Platform.numberOfProcessors.clamp(1, 16);
-  // Only format .dart files; pass through everything else unchanged.
-  final dartEntries = <MapEntry<String, String>>[];
-  final result = <String, String>{};
-  for (final entry in files.entries) {
-    if (entry.key.endsWith('.dart')) {
-      dartEntries.add(entry);
-    } else {
-      result[entry.key] = entry.value;
-    }
-  }
-  if (dartEntries.isEmpty) return files;
-  final entries = dartEntries;
-  final chunkSize = (entries.length / concurrency).ceil();
-  final chunks = <List<MapEntry<String, String>>>[];
-  for (var i = 0; i < entries.length; i += chunkSize) {
-    final end = (i + chunkSize).clamp(0, entries.length);
-    chunks.add(entries.sublist(i, end));
-  }
-
-  final futures = chunks.map((chunk) {
-    final map = {for (final e in chunk) e.key: e.value};
-    return Isolate.run(() => _formatChunk(map));
-  });
-
-  final formatted = await Future.wait(futures);
-  for (final chunk in formatted) {
-    result.addAll(chunk);
-  }
-  return result;
-}
-
-/// Format a chunk of files (runs in an isolate).
-Map<String, String> _formatChunk(Map<String, String> files) {
-  final formatter = DartFormatter(
-    languageVersion: DartFormatter.latestLanguageVersion,
-  );
-  final result = <String, String>{};
-  for (final entry in files.entries) {
-    try {
-      result[entry.key] = formatter.format(entry.value);
-    } catch (_) {
-      result[entry.key] = entry.value; // keep raw on failure
-    }
-  }
-  return result;
 }
 
 /// Build a type [Reference] from an [IrType].

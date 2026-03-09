@@ -62,7 +62,7 @@ void main() {
         final pet = typeLowerer.typeRegistry['Pet']! as IrObject;
         final specs = ModelEmitter(pet).emit();
         final library = Library((b) => b..body.addAll(specs));
-        source = emitAndFormat(library);
+        source = emitRaw(library);
       });
 
       test('emits final class', () {
@@ -133,7 +133,7 @@ void main() {
         final error = typeLowerer.typeRegistry['ErrorModel']! as IrObject;
         final specs = ModelEmitter(error).emit();
         final library = Library((b) => b..body.addAll(specs));
-        source = emitAndFormat(library);
+        source = emitRaw(library);
       });
 
       test('emits final class ErrorModel (avoids shadowing dart:core Error)', () {
@@ -163,7 +163,7 @@ void main() {
       final irEnum = IrEnum('Status', ['active', 'inactive', 'suspended']);
       final specs = EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(source, contains('final class Status'));
       expect(source, contains('final String value;'));
@@ -179,7 +179,7 @@ void main() {
       final irEnum = IrEnum('Color', ['red', 'green', 'blue']);
       final specs = EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(() => _formatOrFail(source), returnsNormally);
     });
@@ -212,7 +212,7 @@ void main() {
 
       final specs = DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(source, contains('sealed class Shape'));
       expect(source, contains('final class ShapeCircle extends Shape'));
@@ -233,7 +233,7 @@ void main() {
 
       final specs = DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(() => _formatOrFail(source), returnsNormally);
     });
@@ -250,7 +250,7 @@ void main() {
 
       final specs = UntaggedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(source, contains('sealed class StringOrInt'));
       expect(source, contains('StringOrIntString'));
@@ -265,7 +265,7 @@ void main() {
 
       final specs = UntaggedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
-      final source = emitAndFormat(library);
+      final source = emitRaw(library);
 
       expect(() => _formatOrFail(source), returnsNormally);
     });
@@ -282,7 +282,7 @@ void main() {
         ..directives.add(Directive.import('dart:convert'))
         ..body.addAll(specs)
       );
-      source = emitAndFormat(library);
+      source = emitRaw(library);
     });
 
     test('emits PetsApi class', () {

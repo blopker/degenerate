@@ -6,7 +6,6 @@ import 'parser/openapi_document.dart';
 
 import 'lowering/type_lowerer.dart';
 import 'lowering/operation_lowerer.dart';
-import 'emitter/emit_utils.dart' show formatAllParallel;
 import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
 
@@ -159,7 +158,7 @@ class Generator {
     final specVersion = doc.version;
 
     final fileEmitter = FileEmitter();
-    var files = fileEmitter.emitAll(
+    final files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
       packageName: packageName,
@@ -169,10 +168,6 @@ class Generator {
     );
 
     _log('Generated ${files.length} files');
-
-    // 6b. Format all Dart files in parallel
-    _log('Formatting...');
-    files = await formatAllParallel(files);
 
     // 7. Write to disk (unless dry run)
     if (config.dryRun) {
