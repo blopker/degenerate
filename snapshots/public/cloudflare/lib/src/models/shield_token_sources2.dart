@@ -7,8 +7,8 @@
 import 'shield_cookie.dart';import 'shield_header.dart';final class ShieldTokenSources2 {const ShieldTokenSources2({this.shieldHeader, this.shieldCookie, });
 
 factory ShieldTokenSources2.fromJson(Object? json) { return ShieldTokenSources2(
-  shieldHeader: map != null && ShieldHeader.canParse(map) ? ShieldHeader.fromJson(map) : null,
-  shieldCookie: map != null && ShieldCookie.canParse(map) ? ShieldCookie.fromJson(map) : null,
+  shieldHeader: json is String ? ShieldHeader.fromJson(json) : null,
+  shieldCookie: json is String ? ShieldCookie.fromJson(json) : null,
 ); }
 
 final ShieldHeader? shieldHeader;
@@ -18,7 +18,7 @@ final ShieldCookie? shieldCookie;
 /// At least one variant must be present.
 bool get isValid { return shieldHeader != null || shieldCookie != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?shieldHeader?.toJson(),
-  ...?shieldCookie?.toJson(),
+  if (shieldHeader != null) 'shieldHeader': shieldHeader!.toJson(),
+  if (shieldCookie != null) 'shieldCookie': shieldCookie!.toJson(),
 }; } 
  }

@@ -7,7 +7,7 @@
 import 'inline_object1811.dart';import 'organization_id.dart';final class OrganizationListOrganizationsParentId {const OrganizationListOrganizationsParentId({this.organizationId, this.inlineObject1811, });
 
 factory OrganizationListOrganizationsParentId.fromJson(Object? json) { return OrganizationListOrganizationsParentId(
-  organizationId: map != null && OrganizationId.canParse(map) ? OrganizationId.fromJson(map) : null,
+  organizationId: json is String ? OrganizationId.fromJson(json) : null,
   inlineObject1811: json is String ? InlineObject1811.fromJson(json) : null,
 ); }
 
@@ -18,7 +18,7 @@ final InlineObject1811? inlineObject1811;
 /// At least one variant must be present.
 bool get isValid { return organizationId != null || inlineObject1811 != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?organizationId?.toJson(),
+  if (organizationId != null) 'organizationId': organizationId!.toJson(),
   if (inlineObject1811 != null) 'inlineObject1811': inlineObject1811!.toJson(),
 }; } 
  }

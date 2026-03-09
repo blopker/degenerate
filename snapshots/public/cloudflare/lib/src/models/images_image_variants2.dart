@@ -7,9 +7,9 @@
 import 'images_image_hero_url.dart';import 'images_image_original_url.dart';import 'images_image_thumbnail_url.dart';final class ImagesImageVariants2 {const ImagesImageVariants2({this.imagesImageThumbnailUrl, this.imagesImageHeroUrl, this.imagesImageOriginalUrl, });
 
 factory ImagesImageVariants2.fromJson(Object? json) { return ImagesImageVariants2(
-  imagesImageThumbnailUrl: map != null && ImagesImageThumbnailUrl.canParse(map) ? ImagesImageThumbnailUrl.fromJson(map) : null,
-  imagesImageHeroUrl: map != null && ImagesImageHeroUrl.canParse(map) ? ImagesImageHeroUrl.fromJson(map) : null,
-  imagesImageOriginalUrl: map != null && ImagesImageOriginalUrl.canParse(map) ? ImagesImageOriginalUrl.fromJson(map) : null,
+  imagesImageThumbnailUrl: json is String ? ImagesImageThumbnailUrl.fromJson(json) : null,
+  imagesImageHeroUrl: json is String ? ImagesImageHeroUrl.fromJson(json) : null,
+  imagesImageOriginalUrl: json is String ? ImagesImageOriginalUrl.fromJson(json) : null,
 ); }
 
 final ImagesImageThumbnailUrl? imagesImageThumbnailUrl;
@@ -21,8 +21,8 @@ final ImagesImageOriginalUrl? imagesImageOriginalUrl;
 /// At least one variant must be present.
 bool get isValid { return imagesImageThumbnailUrl != null || imagesImageHeroUrl != null || imagesImageOriginalUrl != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?imagesImageThumbnailUrl?.toJson(),
-  ...?imagesImageHeroUrl?.toJson(),
-  ...?imagesImageOriginalUrl?.toJson(),
+  if (imagesImageThumbnailUrl != null) 'imagesImageThumbnailUrl': imagesImageThumbnailUrl!.toJson(),
+  if (imagesImageHeroUrl != null) 'imagesImageHeroUrl': imagesImageHeroUrl!.toJson(),
+  if (imagesImageOriginalUrl != null) 'imagesImageOriginalUrl': imagesImageOriginalUrl!.toJson(),
 }; } 
  }

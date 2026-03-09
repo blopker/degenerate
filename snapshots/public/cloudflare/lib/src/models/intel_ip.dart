@@ -7,8 +7,8 @@
 import 'intel_ipv4.dart';import 'intel_ipv6.dart';final class IntelIp {const IntelIp({this.intelIpv4, this.intelIpv6, });
 
 factory IntelIp.fromJson(Object? json) { return IntelIp(
-  intelIpv4: map != null && IntelIpv4.canParse(map) ? IntelIpv4.fromJson(map) : null,
-  intelIpv6: map != null && IntelIpv6.canParse(map) ? IntelIpv6.fromJson(map) : null,
+  intelIpv4: json is String ? IntelIpv4.fromJson(json) : null,
+  intelIpv6: json is String ? IntelIpv6.fromJson(json) : null,
 ); }
 
 final IntelIpv4? intelIpv4;
@@ -18,7 +18,7 @@ final IntelIpv6? intelIpv6;
 /// At least one variant must be present.
 bool get isValid { return intelIpv4 != null || intelIpv6 != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?intelIpv4?.toJson(),
-  ...?intelIpv6?.toJson(),
+  if (intelIpv4 != null) 'intelIpv4': intelIpv4!.toJson(),
+  if (intelIpv6 != null) 'intelIpv6': intelIpv6!.toJson(),
 }; } 
  }

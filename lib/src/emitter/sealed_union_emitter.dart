@@ -932,7 +932,9 @@ class AnyOfEmitter {
         !allObjectLike &&
         fields.any(
           (f) =>
-              f.type is IrObject || f.type is IrTypeRef || _isUnionType(f.type),
+              f.type is IrObject ||
+              f.type is IrTypeRef ||
+              _isUnionType(f.type),
         );
     final prelude = needsMap
         ? 'final map = json is Map<String, dynamic> ? json : null;\n'
@@ -947,6 +949,12 @@ class AnyOfEmitter {
           // Enums don't have canParse — they deserialize from a string value.
           if (f.type is IrEnum) {
             return '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,';
+          }
+          // Extension types wrap a primitive — deserialize like primitives.
+          if (f.type is IrExtensionType) {
+            final ext = f.type as IrExtensionType;
+            final jsonType = _extensionTypeJsonType(ext.inner);
+            return '  ${f.name}: json is $jsonType ? ${f.typeName}.fromJson(json) : null,';
           }
           // Lists/maps don't have canParse/fromJson as static methods.
           if (f.type is IrList || f.type is IrMap) {
@@ -1018,6 +1026,10 @@ class AnyOfEmitter {
           if (f.type is IrEnum) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }
+          // Extension types wrap a primitive — toJson returns a primitive, not a Map.
+          if (f.type is IrExtensionType) {
+            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+          }
           if (f.type is IrList || f.type is IrMap) {
             return "  '${f.name}': ?${f.name},";
           }
@@ -1035,5 +1047,26 @@ class AnyOfEmitter {
         ..returns = refer('Map<String, dynamic>')
         ..body = Code('return {\n$spreads\n};'),
     );
+  }
+
+  /// The JSON wire type for an extension type's inner primitive.
+  static String _extensionTypeJsonType(IrPrimitive inner) {
+    return switch (inner.kind) {
+      PrimitiveKind.dateTime ||
+      PrimitiveKind.uri ||
+      PrimitiveKind.bigInt ||
+      PrimitiveKind.bytes ||
+      PrimitiveKind.string => 'String',
+      PrimitiveKind.int ||
+      PrimitiveKind.double ||
+      PrimitiveKind.duration ||
+      PrimitiveKind.num => 'num',
+      PrimitiveKind.bool => 'bool',
+    };
+  }
+
+  /// A type check expression for an extension type's JSON wire type.
+  static String _extensionTypeJsonCheck(IrPrimitive inner) {
+    return 'json is ${_extensionTypeJsonType(inner)}';
   }
 }

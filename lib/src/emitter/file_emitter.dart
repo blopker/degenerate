@@ -425,9 +425,14 @@ class FileEmitter {
     buf.writeln('// OpenAPI spec version: $specVersion');
     buf.writeln();
     buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
+    // Deduplicate imports — multiple tags can resolve to the same API class name.
+    final seenImports = <String>{};
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
-      buf.writeln("import '../apis/$fileName.dart';");
+      final importLine = "'../apis/$fileName.dart'";
+      if (seenImports.add(importLine)) {
+        buf.writeln("import $importLine;");
+      }
     }
     buf.writeln();
     buf.writeln('/// Root SDK client providing access to all API groups.');
@@ -449,9 +454,11 @@ class FileEmitter {
     buf.writeln('  $className(this._config);');
     buf.writeln();
 
-    // Lazy-initialized API accessors
+    // Lazy-initialized API accessors — deduplicate field names.
+    final seenFields = <String>{};
     for (final api in apis) {
       final fieldName = _facadeFieldName(api.name);
+      if (!seenFields.add(fieldName)) continue;
       buf.writeln(
         '  late final ${api.name} $fieldName = ${api.name}(_config);',
       );
