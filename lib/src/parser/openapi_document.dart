@@ -57,10 +57,21 @@ class OpenApiDocument {
     return s.cast<Map<String, dynamic>>();
   }
 
+  /// Cache for resolved `$ref` pointers.
+  final _refCache = <String, dynamic>{};
+
   /// Resolve a JSON pointer reference like `#/components/schemas/Pet`.
   ///
+  /// Results are memoized so repeated lookups for the same ref are O(1).
   /// Returns `null` if the path cannot be resolved.
   dynamic resolveRef(String ref) {
+    if (_refCache.containsKey(ref)) return _refCache[ref];
+    final result = _resolveRefUncached(ref);
+    _refCache[ref] = result;
+    return result;
+  }
+
+  dynamic _resolveRefUncached(String ref) {
     if (!ref.startsWith('#/')) return null;
     final segments = ref.substring(2).split('/');
     dynamic current = root;

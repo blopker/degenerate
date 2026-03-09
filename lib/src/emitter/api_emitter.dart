@@ -57,10 +57,25 @@ class ApiEmitter {
   Method _buildOperation(IrOperation op) {
     final params = <Parameter>[];
 
+    // Pre-partition parameters by location (avoids repeated linear scans)
+    final pathParams = <IrParameter>[];
+    final queryParams = <IrParameter>[];
+    final headerParams = <IrParameter>[];
+    for (final p in op.parameters) {
+      switch (p.location) {
+        case ParameterLocation.path:
+          pathParams.add(p);
+        case ParameterLocation.query:
+          queryParams.add(p);
+        case ParameterLocation.header:
+          headerParams.add(p);
+        case ParameterLocation.cookie:
+          break;
+      }
+    }
+
     // Path parameters (always required, never nullable — they're part of the URL)
-    for (final p in op.parameters.where(
-      (p) => p.location == ParameterLocation.path,
-    )) {
+    for (final p in pathParams) {
       params.add(
         Parameter(
           (pb) => pb
@@ -73,9 +88,7 @@ class ApiEmitter {
     }
 
     // Query parameters
-    for (final p in op.parameters.where(
-      (p) => p.location == ParameterLocation.query,
-    )) {
+    for (final p in queryParams) {
       params.add(
         Parameter(
           (pb) => pb
@@ -88,9 +101,7 @@ class ApiEmitter {
     }
 
     // Header parameters
-    for (final p in op.parameters.where(
-      (p) => p.location == ParameterLocation.header,
-    )) {
+    for (final p in headerParams) {
       params.add(
         Parameter(
           (pb) => pb
@@ -129,7 +140,13 @@ class ApiEmitter {
     final futureType = 'Future<ApiResult<$returnTypeStr>>';
 
     // Build method body
-    final bodyCode = _buildOperationBody(op, returnType, bodyType: bodyType);
+    final bodyCode = _buildOperationBody(
+      op,
+      returnType,
+      bodyType: bodyType,
+      pathParams: pathParams,
+      queryParams: queryParams,
+    );
 
     final docs = <String>[];
     if (op.summary != null) {
@@ -161,23 +178,22 @@ class ApiEmitter {
     );
   }
 
+  static final _pathParamPattern = RegExp(r'\{([^}]+)\}');
+
   String _buildOperationBody(
     IrOperation op,
     IrType? returnType, {
     IrType? bodyType,
+    required List<IrParameter> pathParams,
+    required List<IrParameter> queryParams,
   }) {
     final buf = StringBuffer();
     final httpMethod = op.method.name.toUpperCase();
 
     // Build path with parameter interpolation (URL-encoded)
-    final pathParams = {
-      for (final p in op.parameters.where(
-        (p) => p.location == ParameterLocation.path,
-      ))
-        p.name: p,
-    };
-    final path = op.path.replaceAllMapped(RegExp(r'\{([^}]+)\}'), (m) {
-      final p = pathParams[m[1]];
+    final pathParamsByName = {for (final p in pathParams) p.name: p};
+    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
+      final p = pathParamsByName[m[1]];
       if (p == null) return m[0]!;
       final type = p.type;
       final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
@@ -186,11 +202,6 @@ class ApiEmitter {
           : 'Uri.encodeComponent(${p.dartName}.toString())';
       return '\${$encodeExpr}';
     });
-
-    // Query parameters
-    final queryParams = op.parameters
-        .where((p) => p.location == ParameterLocation.query)
-        .toList();
 
     buf.writeln('final request = ApiRequest(');
     buf.writeln("  method: '$httpMethod',");

@@ -37,12 +37,13 @@ final class ApiRequest {
   /// Resolve this request against a base URL.
   Uri resolveUri(Uri baseUrl) {
     final resolved = baseUrl.resolve(path);
-    return queryParameters.isEmpty
-        ? resolved
-        : resolved.replace(queryParameters: {
-            ...resolved.queryParameters,
-            ...queryParameters,
-          });
+    if (queryParameters.isEmpty) return resolved;
+    final existing = resolved.queryParameters;
+    return resolved.replace(
+      queryParameters: existing.isEmpty
+          ? queryParameters
+          : {...existing, ...queryParameters},
+    );
   }
 }
 

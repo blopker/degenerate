@@ -44,24 +44,22 @@ class FileEmitter {
       final specs = _emitType(type, typeRegistry);
       if (specs.isEmpty) continue;
 
-      // Collect referenced type names for imports
-      final referencedNames = <String>{};
-      _collectTypeNames(type, referencedNames);
-      referencedNames.remove(name); // Don't import self
+      // Single-pass analysis: collect imports and detect special types
+      final modelAnalysis = _analyzeModel(type);
+      modelAnalysis.referencedNames.remove(name); // Don't import self
 
       final sortedRefs =
-          referencedNames.where((n) => typeToFile.containsKey(n)).toList()
+          modelAnalysis.referencedNames
+              .where((n) => typeToFile.containsKey(n))
+              .toList()
             ..sort();
       final modelImports = sortedRefs
-          .map((n) => Directive.import('${toSnakeCase(n)}.dart'))
+          .map((n) => Directive.import('${typeToFile[n]}.dart'))
           .toList();
 
-      // Check if any field uses List type (needs collection import for ListEquality)
-      final needsCollection = _typeUsesListField(type);
-      final needsTypedData = _typeUsesBytesField(type);
-      // dart:convert is only needed when the model actually calls base64Encode/base64Decode
-      // (IrObject with bytes fields). Union types just reference Uint8List without encoding.
-      final needsConvert = _typeNeedsBase64(type);
+      final needsCollection = modelAnalysis.needsCollection;
+      final needsTypedData = modelAnalysis.needsTypedData;
+      final needsConvert = modelAnalysis.needsConvert;
 
       final library = Library((b) {
         b.comments.addAll(header);
@@ -91,17 +89,13 @@ class FileEmitter {
 
       final analysis = _analyzeApi(api);
 
-      // Only import model files for types that are actually referenced
-      final sortedApiRefs =
-          types
-              .where((t) => _typeName(t) != null)
-              .where((t) => analysis.referencedTypes.contains(_typeName(t)))
-              .map((t) => _typeName(t)!)
-              .toSet()
-              .toList()
-            ..sort();
+      // Derive imports directly from referenced types using pre-built lookup
+      final sortedApiRefs = analysis.referencedTypes
+          .where((n) => typeToFile.containsKey(n))
+          .toList()
+        ..sort();
       final modelImports = sortedApiRefs
-          .map((n) => Directive.import('../models/${toSnakeCase(n)}.dart'))
+          .map((n) => Directive.import('../models/${typeToFile[n]}.dart'))
           .toList();
 
       final needsConvert = analysis.needsConvert;
@@ -247,37 +241,69 @@ class FileEmitter {
     }
   }
 
-  /// Collect the direct (shallow) type names referenced by a type.
-  ///
-  /// Only collects the immediate field types for objects, variant types for
-  /// unions, and item/value types for lists/maps. Does NOT recurse into
-  /// the fields of referenced types — those transitive imports are handled
-  /// by each model file's own imports.
-  void _collectTypeNames(IrType type, Set<String> names) {
+  /// Single-pass model analysis: collects referenced type names and detects
+  /// whether dart:collection, dart:typed_data, and dart:convert are needed.
+  ({
+    Set<String> referencedNames,
+    bool needsCollection,
+    bool needsTypedData,
+    bool needsConvert,
+  })
+  _analyzeModel(IrType type) {
+    final names = <String>{};
+    var needsCollection = false;
+    var needsTypedData = false;
+    var needsConvert = false;
+
+    bool isBytesType(IrType t) => switch (t) {
+      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+      IrList(:final items) => isBytesType(items),
+      IrMap(:final values) => isBytesType(values),
+      _ => false,
+    };
+
+    void checkField(IrType fieldType) {
+      _collectTopLevelTypeName(fieldType, names);
+      if (isListType(fieldType)) needsCollection = true;
+      if (isBytesType(fieldType)) needsTypedData = true;
+    }
+
     switch (type) {
-      case IrObject(:final name):
+      case IrObject(:final name, :final fields):
         names.add(name);
-        for (final field in type.fields) {
-          _collectTopLevelTypeName(field.type, names);
+        for (final field in fields) {
+          checkField(field.type);
+          if (isBytesType(field.type)) needsConvert = true;
         }
       case IrEnum(:final name):
         names.add(name);
       case IrTypeRef(:final name):
         names.add(name);
-      case IrDiscriminatedUnion(:final name):
+      case IrDiscriminatedUnion(:final name, :final mapping):
         names.add(name);
-        for (final variant in type.mapping.values) {
+        for (final variant in mapping.values) {
           _collectTopLevelTypeName(variant, names);
+          if (variant is IrObject) {
+            for (final f in variant.fields) {
+              if (isListType(f.type)) needsCollection = true;
+            }
+          }
+          if (isBytesType(variant)) needsTypedData = true;
         }
-      case IrUntaggedUnion(:final name):
+      case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
-        for (final variant in type.variants) {
+        for (final variant in variants) {
           _collectTopLevelTypeName(variant, names);
+          if (isBytesType(variant)) needsTypedData = true;
         }
-      case IrAnyOf(:final name):
+      case IrAnyOf(:final name, :final variants):
         names.add(name);
-        for (final variant in type.variants) {
+        for (final variant in variants) {
           _collectTopLevelTypeName(variant, names);
+          if (isBytesType(variant)) {
+            needsTypedData = true;
+            needsConvert = true;
+          }
         }
       case IrList(:final items):
         _collectTopLevelTypeName(items, names);
@@ -286,66 +312,13 @@ class FileEmitter {
       case IrPrimitive():
         break;
     }
-  }
 
-  /// Check if a type has any List-typed fields (needs ListEquality import).
-  bool _typeUsesListField(IrType type) {
-    switch (type) {
-      case IrObject(:final fields):
-        return fields.any((f) => isListType(f.type));
-      case IrDiscriminatedUnion(:final mapping):
-        // Check if any variant (when inlined as object) has list fields
-        for (final variant in mapping.values) {
-          if (variant is IrObject &&
-              variant.fields.any((f) => isListType(f.type))) {
-            return true;
-          }
-        }
-        return false;
-      default:
-        return false;
-    }
-  }
-
-  /// Check if any operation in an API uses bytes types (needs dart:typed_data).
-  /// Whether this type needs dart:convert (base64Encode/base64Decode).
-  /// IrObject models with bytes fields call base64 in fromJson/toJson.
-  /// AnyOf/UntaggedUnion with bytes variants call base64Decode in fromJson.
-  bool _typeNeedsBase64(IrType type) {
-    bool isBytesType(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isBytesType(items),
-      IrMap(:final values) => isBytesType(values),
-      _ => false,
-    };
-    return switch (type) {
-      IrObject(:final fields) => fields.any((f) => isBytesType(f.type)),
-      // AnyOf fromJson calls base64Decode for bytes variants.
-      IrAnyOf(:final variants) => variants.any(isBytesType),
-      // UntaggedUnion uses type switch for primitives (no base64 calls).
-      _ => false,
-    };
-  }
-
-  bool _typeUsesBytesField(IrType type) {
-    bool hasBytesType(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => hasBytesType(items),
-      IrMap(:final values) => hasBytesType(values),
-      _ => false,
-    };
-    switch (type) {
-      case IrObject(:final fields):
-        return fields.any((f) => hasBytesType(f.type));
-      case IrUntaggedUnion(:final variants):
-        return variants.any(hasBytesType);
-      case IrAnyOf(:final variants):
-        return variants.any(hasBytesType);
-      case IrDiscriminatedUnion(:final mapping):
-        return mapping.values.any(hasBytesType);
-      default:
-        return false;
-    }
+    return (
+      referencedNames: names,
+      needsCollection: needsCollection,
+      needsTypedData: needsTypedData,
+      needsConvert: needsConvert,
+    );
   }
 
   List<String> _header(String specFileName, String specVersion) {
