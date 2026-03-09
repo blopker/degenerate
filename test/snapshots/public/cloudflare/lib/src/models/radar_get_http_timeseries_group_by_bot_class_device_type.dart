@@ -9,7 +9,7 @@ final class RadarGetHttpTimeseriesGroupByBotClassDeviceType {const RadarGetHttpT
 factory RadarGetHttpTimeseriesGroupByBotClassDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByBotClassDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTimeseriesGroupByBotClassDeviceType desktop = RadarGetH
 
 static const RadarGetHttpTimeseriesGroupByBotClassDeviceType mobile = RadarGetHttpTimeseriesGroupByBotClassDeviceType._('MOBILE');
 
-static const RadarGetHttpTimeseriesGroupByBotClassDeviceType other$ = RadarGetHttpTimeseriesGroupByBotClassDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesGroupByBotClassDeviceType $other = RadarGetHttpTimeseriesGroupByBotClassDeviceType._('OTHER');
 
-static const List<RadarGetHttpTimeseriesGroupByBotClassDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTimeseriesGroupByBotClassDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

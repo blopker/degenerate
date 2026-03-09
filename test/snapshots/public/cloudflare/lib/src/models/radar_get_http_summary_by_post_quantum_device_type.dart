@@ -9,7 +9,7 @@ final class RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummar
 factory RadarGetHttpSummaryByPostQuantumDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpSummaryByPostQuantumDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpSummaryByPostQuantumDeviceType desktop = RadarGetHttpSu
 
 static const RadarGetHttpSummaryByPostQuantumDeviceType mobile = RadarGetHttpSummaryByPostQuantumDeviceType._('MOBILE');
 
-static const RadarGetHttpSummaryByPostQuantumDeviceType other$ = RadarGetHttpSummaryByPostQuantumDeviceType._('OTHER');
+static const RadarGetHttpSummaryByPostQuantumDeviceType $other = RadarGetHttpSummaryByPostQuantumDeviceType._('OTHER');
 
-static const List<RadarGetHttpSummaryByPostQuantumDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpSummaryByPostQuantumDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

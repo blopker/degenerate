@@ -8,16 +8,16 @@
 final class RadarGetDnsTopLocationsFormat {const RadarGetDnsTopLocationsFormat._(this.value);
 
 factory RadarGetDnsTopLocationsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTopLocationsFormat._(json),
 }; }
 
-static const RadarGetDnsTopLocationsFormat json$ = RadarGetDnsTopLocationsFormat._('JSON');
+static const RadarGetDnsTopLocationsFormat $json = RadarGetDnsTopLocationsFormat._('JSON');
 
 static const RadarGetDnsTopLocationsFormat csv = RadarGetDnsTopLocationsFormat._('CSV');
 
-static const List<RadarGetDnsTopLocationsFormat> values = [json$, csv];
+static const List<RadarGetDnsTopLocationsFormat> values = [$json, csv];
 
 final String value;
 

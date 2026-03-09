@@ -8,16 +8,16 @@
 final class RadarGetHttpTopAsesByIpVersionFormat {const RadarGetHttpTopAsesByIpVersionFormat._(this.value);
 
 factory RadarGetHttpTopAsesByIpVersionFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopAsesByIpVersionFormat._(json),
 }; }
 
-static const RadarGetHttpTopAsesByIpVersionFormat json$ = RadarGetHttpTopAsesByIpVersionFormat._('JSON');
+static const RadarGetHttpTopAsesByIpVersionFormat $json = RadarGetHttpTopAsesByIpVersionFormat._('JSON');
 
 static const RadarGetHttpTopAsesByIpVersionFormat csv = RadarGetHttpTopAsesByIpVersionFormat._('CSV');
 
-static const List<RadarGetHttpTopAsesByIpVersionFormat> values = [json$, csv];
+static const List<RadarGetHttpTopAsesByIpVersionFormat> values = [$json, csv];
 
 final String value;
 

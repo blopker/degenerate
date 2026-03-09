@@ -9,7 +9,7 @@ final class RadarGetAiBotsTimeseriesGroupContentType {const RadarGetAiBotsTimese
 factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) { return switch (json) {
   'HTML' => html,
   'IMAGES' => images,
-  'JSON' => json$,
+  'JSON' => $json,
   'JAVASCRIPT' => javascript,
   'CSS' => css,
   'PLAIN_TEXT' => plainText,
@@ -22,7 +22,7 @@ factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) { return 
   'DOCUMENTS' => documents,
   'BINARY' => binary,
   'SERIALIZATION' => serialization,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetAiBotsTimeseriesGroupContentType._(json),
 }; }
 
@@ -30,7 +30,7 @@ static const RadarGetAiBotsTimeseriesGroupContentType html = RadarGetAiBotsTimes
 
 static const RadarGetAiBotsTimeseriesGroupContentType images = RadarGetAiBotsTimeseriesGroupContentType._('IMAGES');
 
-static const RadarGetAiBotsTimeseriesGroupContentType json$ = RadarGetAiBotsTimeseriesGroupContentType._('JSON');
+static const RadarGetAiBotsTimeseriesGroupContentType $json = RadarGetAiBotsTimeseriesGroupContentType._('JSON');
 
 static const RadarGetAiBotsTimeseriesGroupContentType javascript = RadarGetAiBotsTimeseriesGroupContentType._('JAVASCRIPT');
 
@@ -56,9 +56,9 @@ static const RadarGetAiBotsTimeseriesGroupContentType binary = RadarGetAiBotsTim
 
 static const RadarGetAiBotsTimeseriesGroupContentType serialization = RadarGetAiBotsTimeseriesGroupContentType._('SERIALIZATION');
 
-static const RadarGetAiBotsTimeseriesGroupContentType other$ = RadarGetAiBotsTimeseriesGroupContentType._('OTHER');
+static const RadarGetAiBotsTimeseriesGroupContentType $other = RadarGetAiBotsTimeseriesGroupContentType._('OTHER');
 
-static const List<RadarGetAiBotsTimeseriesGroupContentType> values = [html, images, json$, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, other$];
+static const List<RadarGetAiBotsTimeseriesGroupContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
 
 final String value;
 

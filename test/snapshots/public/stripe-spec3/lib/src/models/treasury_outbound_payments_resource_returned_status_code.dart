@@ -17,7 +17,7 @@ factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json)
   'invalid_account_number' => invalidAccountNumber,
   'invalid_currency' => invalidCurrency,
   'no_account' => noAccount,
-  'other' => other$,
+  'other' => $other,
   _ => TreasuryOutboundPaymentsResourceReturnedStatusCode._(json),
 }; }
 
@@ -39,9 +39,9 @@ static const TreasuryOutboundPaymentsResourceReturnedStatusCode invalidCurrency 
 
 static const TreasuryOutboundPaymentsResourceReturnedStatusCode noAccount = TreasuryOutboundPaymentsResourceReturnedStatusCode._('no_account');
 
-static const TreasuryOutboundPaymentsResourceReturnedStatusCode other$ = TreasuryOutboundPaymentsResourceReturnedStatusCode._('other');
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode $other = TreasuryOutboundPaymentsResourceReturnedStatusCode._('other');
 
-static const List<TreasuryOutboundPaymentsResourceReturnedStatusCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, other$];
+static const List<TreasuryOutboundPaymentsResourceReturnedStatusCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
 
 final String value;
 

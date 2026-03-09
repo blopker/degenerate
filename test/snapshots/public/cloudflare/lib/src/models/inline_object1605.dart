@@ -7,13 +7,13 @@
 final class InlineObject1605 {const InlineObject1605._(this.value);
 
 factory InlineObject1605.fromJson(String json) { return switch (json) {
-  'other' => other$,
+  'other' => $other,
   _ => InlineObject1605._(json),
 }; }
 
-static const InlineObject1605 other$ = InlineObject1605._('other');
+static const InlineObject1605 $other = InlineObject1605._('other');
 
-static const List<InlineObject1605> values = [other$];
+static const List<InlineObject1605> values = [$other];
 
 final String value;
 

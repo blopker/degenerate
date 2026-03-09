@@ -8,16 +8,16 @@
 final class RadarGetHttpTopAsesByBrowserFamilyFormat {const RadarGetHttpTopAsesByBrowserFamilyFormat._(this.value);
 
 factory RadarGetHttpTopAsesByBrowserFamilyFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopAsesByBrowserFamilyFormat._(json),
 }; }
 
-static const RadarGetHttpTopAsesByBrowserFamilyFormat json$ = RadarGetHttpTopAsesByBrowserFamilyFormat._('JSON');
+static const RadarGetHttpTopAsesByBrowserFamilyFormat $json = RadarGetHttpTopAsesByBrowserFamilyFormat._('JSON');
 
 static const RadarGetHttpTopAsesByBrowserFamilyFormat csv = RadarGetHttpTopAsesByBrowserFamilyFormat._('CSV');
 
-static const List<RadarGetHttpTopAsesByBrowserFamilyFormat> values = [json$, csv];
+static const List<RadarGetHttpTopAsesByBrowserFamilyFormat> values = [$json, csv];
 
 final String value;
 

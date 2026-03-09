@@ -8,13 +8,13 @@
 final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._(this.value);
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   _ => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._(json),
 }; }
 
-static const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat json$ = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._('json');
+static const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat $json = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._('json');
 
-static const List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat> values = [json$];
+static const List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat> values = [$json];
 
 final String value;
 

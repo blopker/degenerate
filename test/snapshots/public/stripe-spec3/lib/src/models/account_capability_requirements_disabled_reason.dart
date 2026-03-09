@@ -8,7 +8,7 @@
 final class AccountCapabilityRequirementsDisabledReason {const AccountCapabilityRequirementsDisabledReason._(this.value);
 
 factory AccountCapabilityRequirementsDisabledReason.fromJson(String json) { return switch (json) {
-  'other' => other$,
+  'other' => $other,
   'paused.inactivity' => pausedInactivity,
   'pending.onboarding' => pendingOnboarding,
   'pending.review' => pendingReview,
@@ -21,7 +21,7 @@ factory AccountCapabilityRequirementsDisabledReason.fromJson(String json) { retu
   _ => AccountCapabilityRequirementsDisabledReason._(json),
 }; }
 
-static const AccountCapabilityRequirementsDisabledReason other$ = AccountCapabilityRequirementsDisabledReason._('other');
+static const AccountCapabilityRequirementsDisabledReason $other = AccountCapabilityRequirementsDisabledReason._('other');
 
 static const AccountCapabilityRequirementsDisabledReason pausedInactivity = AccountCapabilityRequirementsDisabledReason._('paused.inactivity');
 
@@ -41,7 +41,7 @@ static const AccountCapabilityRequirementsDisabledReason rejectedUnsupportedBusi
 
 static const AccountCapabilityRequirementsDisabledReason requirementsFieldsNeeded = AccountCapabilityRequirementsDisabledReason._('requirements.fields_needed');
 
-static const List<AccountCapabilityRequirementsDisabledReason> values = [other$, pausedInactivity, pendingOnboarding, pendingReview, platformDisabled, platformPaused, rejectedInactivity, rejectedOther, rejectedUnsupportedBusiness, requirementsFieldsNeeded];
+static const List<AccountCapabilityRequirementsDisabledReason> values = [$other, pausedInactivity, pendingOnboarding, pendingReview, platformDisabled, platformPaused, rejectedInactivity, rejectedOther, rejectedUnsupportedBusiness, requirementsFieldsNeeded];
 
 final String value;
 

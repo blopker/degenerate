@@ -10,7 +10,7 @@ factory AssistantObjectToolResourcesCodeInterpreter.fromJson(Map<String, dynamic
   fileIds: json.containsKey('file_ids') ? (json['file_ids'] as List<dynamic>).map((e) => e as String).toList() : const [],
 ); }
 
-/// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.
+/// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.`
 /// 
 final List<String> fileIds;
 

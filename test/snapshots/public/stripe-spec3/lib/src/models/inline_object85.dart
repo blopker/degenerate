@@ -9,7 +9,7 @@ final class InlineObject85 {const InlineObject85._(this.value);
 factory InlineObject85.fromJson(String json) { return switch (json) {
   'address' => address,
   'email' => email,
-  'name' => name$,
+  'name' => $name,
   'phone' => phone,
   'shipping' => shipping,
   'tax_id' => taxId,
@@ -20,7 +20,7 @@ static const InlineObject85 address = InlineObject85._('address');
 
 static const InlineObject85 email = InlineObject85._('email');
 
-static const InlineObject85 name$ = InlineObject85._('name');
+static const InlineObject85 $name = InlineObject85._('name');
 
 static const InlineObject85 phone = InlineObject85._('phone');
 
@@ -28,7 +28,7 @@ static const InlineObject85 shipping = InlineObject85._('shipping');
 
 static const InlineObject85 taxId = InlineObject85._('tax_id');
 
-static const List<InlineObject85> values = [address, email, name$, phone, shipping, taxId];
+static const List<InlineObject85> values = [address, email, $name, phone, shipping, taxId];
 
 final String value;
 

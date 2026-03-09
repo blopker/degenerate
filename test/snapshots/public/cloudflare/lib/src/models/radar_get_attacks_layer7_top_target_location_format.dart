@@ -8,16 +8,16 @@
 final class RadarGetAttacksLayer7TopTargetLocationFormat {const RadarGetAttacksLayer7TopTargetLocationFormat._(this.value);
 
 factory RadarGetAttacksLayer7TopTargetLocationFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer7TopTargetLocationFormat._(json),
 }; }
 
-static const RadarGetAttacksLayer7TopTargetLocationFormat json$ = RadarGetAttacksLayer7TopTargetLocationFormat._('JSON');
+static const RadarGetAttacksLayer7TopTargetLocationFormat $json = RadarGetAttacksLayer7TopTargetLocationFormat._('JSON');
 
 static const RadarGetAttacksLayer7TopTargetLocationFormat csv = RadarGetAttacksLayer7TopTargetLocationFormat._('CSV');
 
-static const List<RadarGetAttacksLayer7TopTargetLocationFormat> values = [json$, csv];
+static const List<RadarGetAttacksLayer7TopTargetLocationFormat> values = [$json, csv];
 
 final String value;
 

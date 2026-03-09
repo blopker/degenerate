@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7SummaryByIpVersionHttpMethod.fromJson(String json) 
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod rpcOutData = Rada
 
 static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod rpcInData = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod json$ = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('JSON');
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod $json = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod cook = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod track = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7SummaryByIpVersionHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7SummaryByIpVersionHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

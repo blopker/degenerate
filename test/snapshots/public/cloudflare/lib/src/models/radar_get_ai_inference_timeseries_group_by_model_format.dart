@@ -8,16 +8,16 @@
 final class RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat._(this.value);
 
 factory RadarGetAiInferenceTimeseriesGroupByModelFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiInferenceTimeseriesGroupByModelFormat._(json),
 }; }
 
-static const RadarGetAiInferenceTimeseriesGroupByModelFormat json$ = RadarGetAiInferenceTimeseriesGroupByModelFormat._('JSON');
+static const RadarGetAiInferenceTimeseriesGroupByModelFormat $json = RadarGetAiInferenceTimeseriesGroupByModelFormat._('JSON');
 
 static const RadarGetAiInferenceTimeseriesGroupByModelFormat csv = RadarGetAiInferenceTimeseriesGroupByModelFormat._('CSV');
 
-static const List<RadarGetAiInferenceTimeseriesGroupByModelFormat> values = [json$, csv];
+static const List<RadarGetAiInferenceTimeseriesGroupByModelFormat> values = [$json, csv];
 
 final String value;
 

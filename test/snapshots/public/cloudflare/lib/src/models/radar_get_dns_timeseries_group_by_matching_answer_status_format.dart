@@ -8,16 +8,16 @@
 final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat._(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat json$ = RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat._('JSON');
+static const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat $json = RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat._('JSON');
 
 static const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat csv = RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat._('CSV');
 
-static const List<RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat> values = [json$, csv];
+static const List<RadarGetDnsTimeseriesGroupByMatchingAnswerStatusFormat> values = [$json, csv];
 
 final String value;
 

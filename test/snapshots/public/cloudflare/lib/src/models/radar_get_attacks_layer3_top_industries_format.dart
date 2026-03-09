@@ -8,16 +8,16 @@
 final class RadarGetAttacksLayer3TopIndustriesFormat {const RadarGetAttacksLayer3TopIndustriesFormat._(this.value);
 
 factory RadarGetAttacksLayer3TopIndustriesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer3TopIndustriesFormat._(json),
 }; }
 
-static const RadarGetAttacksLayer3TopIndustriesFormat json$ = RadarGetAttacksLayer3TopIndustriesFormat._('JSON');
+static const RadarGetAttacksLayer3TopIndustriesFormat $json = RadarGetAttacksLayer3TopIndustriesFormat._('JSON');
 
 static const RadarGetAttacksLayer3TopIndustriesFormat csv = RadarGetAttacksLayer3TopIndustriesFormat._('CSV');
 
-static const List<RadarGetAttacksLayer3TopIndustriesFormat> values = [json$, csv];
+static const List<RadarGetAttacksLayer3TopIndustriesFormat> values = [$json, csv];
 
 final String value;
 

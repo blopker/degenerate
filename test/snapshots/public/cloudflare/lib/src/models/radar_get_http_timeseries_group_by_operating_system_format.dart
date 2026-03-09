@@ -8,16 +8,16 @@
 final class RadarGetHttpTimeseriesGroupByOperatingSystemFormat {const RadarGetHttpTimeseriesGroupByOperatingSystemFormat._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTimeseriesGroupByOperatingSystemFormat._(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByOperatingSystemFormat json$ = RadarGetHttpTimeseriesGroupByOperatingSystemFormat._('JSON');
+static const RadarGetHttpTimeseriesGroupByOperatingSystemFormat $json = RadarGetHttpTimeseriesGroupByOperatingSystemFormat._('JSON');
 
 static const RadarGetHttpTimeseriesGroupByOperatingSystemFormat csv = RadarGetHttpTimeseriesGroupByOperatingSystemFormat._('CSV');
 
-static const List<RadarGetHttpTimeseriesGroupByOperatingSystemFormat> values = [json$, csv];
+static const List<RadarGetHttpTimeseriesGroupByOperatingSystemFormat> values = [$json, csv];
 
 final String value;
 

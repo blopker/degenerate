@@ -8,13 +8,13 @@
 final class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType._(this.value);
 
 factory OtherChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
-  'other' => other$,
+  'other' => $other,
   _ => OtherChunkingStrategyResponseParamType._(json),
 }; }
 
-static const OtherChunkingStrategyResponseParamType other$ = OtherChunkingStrategyResponseParamType._('other');
+static const OtherChunkingStrategyResponseParamType $other = OtherChunkingStrategyResponseParamType._('other');
 
-static const List<OtherChunkingStrategyResponseParamType> values = [other$];
+static const List<OtherChunkingStrategyResponseParamType> values = [$other];
 
 final String value;
 

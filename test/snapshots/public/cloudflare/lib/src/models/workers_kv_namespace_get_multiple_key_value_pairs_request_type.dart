@@ -9,15 +9,15 @@ final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const Workers
 
 factory WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(String json) { return switch (json) {
   'text' => text,
-  'json' => json$,
+  'json' => $json,
   _ => WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(json),
 }; }
 
 static const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType text = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._('text');
 
-static const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType json$ = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._('json');
+static const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType $json = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._('json');
 
-static const List<WorkersKvNamespaceGetMultipleKeyValuePairsRequestType> values = [text, json$];
+static const List<WorkersKvNamespaceGetMultipleKeyValuePairsRequestType> values = [text, $json];
 
 final String value;
 

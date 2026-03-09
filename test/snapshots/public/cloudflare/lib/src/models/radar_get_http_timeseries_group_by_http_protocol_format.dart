@@ -8,16 +8,16 @@
 final class RadarGetHttpTimeseriesGroupByHttpProtocolFormat {const RadarGetHttpTimeseriesGroupByHttpProtocolFormat._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByHttpProtocolFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTimeseriesGroupByHttpProtocolFormat._(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByHttpProtocolFormat json$ = RadarGetHttpTimeseriesGroupByHttpProtocolFormat._('JSON');
+static const RadarGetHttpTimeseriesGroupByHttpProtocolFormat $json = RadarGetHttpTimeseriesGroupByHttpProtocolFormat._('JSON');
 
 static const RadarGetHttpTimeseriesGroupByHttpProtocolFormat csv = RadarGetHttpTimeseriesGroupByHttpProtocolFormat._('CSV');
 
-static const List<RadarGetHttpTimeseriesGroupByHttpProtocolFormat> values = [json$, csv];
+static const List<RadarGetHttpTimeseriesGroupByHttpProtocolFormat> values = [$json, csv];
 
 final String value;
 

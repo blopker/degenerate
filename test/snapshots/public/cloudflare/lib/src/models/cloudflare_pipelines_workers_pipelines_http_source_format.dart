@@ -8,13 +8,13 @@
 final class CloudflarePipelinesWorkersPipelinesHttpSourceFormat {const CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesHttpSourceFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   _ => CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(json),
 }; }
 
-static const CloudflarePipelinesWorkersPipelinesHttpSourceFormat json$ = CloudflarePipelinesWorkersPipelinesHttpSourceFormat._('json');
+static const CloudflarePipelinesWorkersPipelinesHttpSourceFormat $json = CloudflarePipelinesWorkersPipelinesHttpSourceFormat._('json');
 
-static const List<CloudflarePipelinesWorkersPipelinesHttpSourceFormat> values = [json$];
+static const List<CloudflarePipelinesWorkersPipelinesHttpSourceFormat> values = [$json];
 
 final String value;
 

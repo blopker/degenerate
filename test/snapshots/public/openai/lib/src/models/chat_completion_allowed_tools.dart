@@ -25,12 +25,12 @@ final ChatCompletionAllowedToolsMode mode;
 /// A list of tool definitions that the model should be allowed to call.
 /// 
 /// For the Chat Completions API, the list of tool definitions might look like:
-/// ```json
+/// ```json`
 /// [
 ///   { "type": "function", "function": { "name": "get_weather" } },
 ///   { "type": "function", "function": { "name": "get_time" } }
 /// ]
-/// ```
+/// ````
 /// 
 final List<Map<String,String>> tools;
 

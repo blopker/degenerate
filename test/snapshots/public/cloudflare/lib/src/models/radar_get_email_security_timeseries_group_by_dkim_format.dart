@@ -8,16 +8,16 @@
 final class RadarGetEmailSecurityTimeseriesGroupByDkimFormat {const RadarGetEmailSecurityTimeseriesGroupByDkimFormat._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTimeseriesGroupByDkimFormat._(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimFormat json$ = RadarGetEmailSecurityTimeseriesGroupByDkimFormat._('JSON');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimFormat $json = RadarGetEmailSecurityTimeseriesGroupByDkimFormat._('JSON');
 
 static const RadarGetEmailSecurityTimeseriesGroupByDkimFormat csv = RadarGetEmailSecurityTimeseriesGroupByDkimFormat._('CSV');
 
-static const List<RadarGetEmailSecurityTimeseriesGroupByDkimFormat> values = [json$, csv];
+static const List<RadarGetEmailSecurityTimeseriesGroupByDkimFormat> values = [$json, csv];
 
 final String value;
 

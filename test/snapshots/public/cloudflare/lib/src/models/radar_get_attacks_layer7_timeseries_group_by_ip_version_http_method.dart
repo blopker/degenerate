@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod.fromJson(Strin
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod rpcOutDat
 
 static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod rpcInData = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod json$ = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod $json = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod cook = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod track = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

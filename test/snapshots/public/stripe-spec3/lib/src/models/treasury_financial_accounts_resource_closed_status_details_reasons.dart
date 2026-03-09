@@ -9,7 +9,7 @@ final class TreasuryFinancialAccountsResourceClosedStatusDetailsReasons {const T
 factory TreasuryFinancialAccountsResourceClosedStatusDetailsReasons.fromJson(String json) { return switch (json) {
   'account_rejected' => accountRejected,
   'closed_by_platform' => closedByPlatform,
-  'other' => other$,
+  'other' => $other,
   _ => TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons account
 
 static const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons closedByPlatform = TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._('closed_by_platform');
 
-static const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons other$ = TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._('other');
+static const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons $other = TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._('other');
 
-static const List<TreasuryFinancialAccountsResourceClosedStatusDetailsReasons> values = [accountRejected, closedByPlatform, other$];
+static const List<TreasuryFinancialAccountsResourceClosedStatusDetailsReasons> values = [accountRejected, closedByPlatform, $other];
 
 final String value;
 

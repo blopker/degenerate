@@ -8,16 +8,16 @@
 final class RadarGetHttpSummaryByOperatingSystemFormat {const RadarGetHttpSummaryByOperatingSystemFormat._(this.value);
 
 factory RadarGetHttpSummaryByOperatingSystemFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpSummaryByOperatingSystemFormat._(json),
 }; }
 
-static const RadarGetHttpSummaryByOperatingSystemFormat json$ = RadarGetHttpSummaryByOperatingSystemFormat._('JSON');
+static const RadarGetHttpSummaryByOperatingSystemFormat $json = RadarGetHttpSummaryByOperatingSystemFormat._('JSON');
 
 static const RadarGetHttpSummaryByOperatingSystemFormat csv = RadarGetHttpSummaryByOperatingSystemFormat._('CSV');
 
-static const List<RadarGetHttpSummaryByOperatingSystemFormat> values = [json$, csv];
+static const List<RadarGetHttpSummaryByOperatingSystemFormat> values = [$json, csv];
 
 final String value;
 

@@ -10,7 +10,7 @@ final class AccountFutureRequirementsDisabledReason {const AccountFutureRequirem
 factory AccountFutureRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
   'listed' => listed,
-  'other' => other$,
+  'other' => $other,
   'platform_paused' => platformPaused,
   'rejected.fraud' => rejectedFraud,
   'rejected.incomplete_verification' => rejectedIncompleteVerification,
@@ -30,7 +30,7 @@ static const AccountFutureRequirementsDisabledReason actionRequiredRequestedCapa
 
 static const AccountFutureRequirementsDisabledReason listed = AccountFutureRequirementsDisabledReason._('listed');
 
-static const AccountFutureRequirementsDisabledReason other$ = AccountFutureRequirementsDisabledReason._('other');
+static const AccountFutureRequirementsDisabledReason $other = AccountFutureRequirementsDisabledReason._('other');
 
 static const AccountFutureRequirementsDisabledReason platformPaused = AccountFutureRequirementsDisabledReason._('platform_paused');
 
@@ -56,7 +56,7 @@ static const AccountFutureRequirementsDisabledReason requirementsPendingVerifica
 
 static const AccountFutureRequirementsDisabledReason underReview = AccountFutureRequirementsDisabledReason._('under_review');
 
-static const List<AccountFutureRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, other$, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
+static const List<AccountFutureRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, $other, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
 
 final String value;
 

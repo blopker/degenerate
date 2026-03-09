@@ -433,7 +433,7 @@ return _execute(
  } 
 /// Create a custom waiting room page preview
 ///
-/// Creates a waiting room page preview. Upload a custom waiting room page for preview. You will receive a preview URL in the form `http://waitingrooms.dev/preview/`<uuid>``. You can use the following query parameters to change the state of the preview:
+/// Creates a waiting room page preview. Upload a custom waiting room page for preview. You will receive a preview URL in the form `http://waitingrooms.dev/preview/<uuid>`. You can use the following query parameters to change the state of the preview:
 /// 1. `force_queue`: Boolean indicating if all users will be queued in the waiting room and no one will be let into the origin website (also known as queueAll).
 /// 2. `queue_is_full`: Boolean indicating if the waiting room's queue is currently full and not accepting new users at the moment.
 /// 3. `queueing_method`: The queueing method currently used by the waiting room.
@@ -447,10 +447,10 @@ return _execute(
 /// 	- **started** indicates that an event has started (between `event_start_time` and `event_end_time`).
 /// 5. `shuffle_at_event_start`: Boolean indicating if the event will shuffle users in the prequeue when it starts. This can only be set to **true** if an event is active (`event` is not **none**).
 /// 
-/// For example, you can make a request to `http://waitingrooms.dev/preview/`<uuid>`?force_queue=false&queue_is_full=false&queueing_method=random&event=started&shuffle_at_event_start=true`
+/// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?force_queue=false&queue_is_full=false&queueing_method=random&event=started&shuffle_at_event_start=true`
 /// 6. `waitTime`: Non-zero, positive integer indicating the estimated wait time in minutes. The default value is 10 minutes.
 /// 
-/// For example, you can make a request to `http://waitingrooms.dev/preview/`<uuid>`?waitTime=50` to configure the estimated wait time as 50 minutes.
+/// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
 Future<ApiResult<Map<String, String>>> waitingRoomCreateACustomWaitingRoomPagePreview({required String zoneId, required WaitingroomQueryPreview body, }) async  { final request = ApiRequest(

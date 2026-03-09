@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TopVerticalsHttpMethod.fromJson(String json) { retu
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TopVerticalsHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TopVerticalsHttpMethod rpcOutData = RadarGetAt
 
 static const RadarGetAttacksLayer7TopVerticalsHttpMethod rpcInData = RadarGetAttacksLayer7TopVerticalsHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TopVerticalsHttpMethod json$ = RadarGetAttacksLayer7TopVerticalsHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TopVerticalsHttpMethod $json = RadarGetAttacksLayer7TopVerticalsHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TopVerticalsHttpMethod cook = RadarGetAttacksLayer7TopVerticalsHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TopVerticalsHttpMethod track = RadarGetAttacksLayer7TopVerticalsHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TopVerticalsHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TopVerticalsHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

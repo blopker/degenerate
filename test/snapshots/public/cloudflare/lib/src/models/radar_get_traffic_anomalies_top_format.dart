@@ -8,16 +8,16 @@
 final class RadarGetTrafficAnomaliesTopFormat {const RadarGetTrafficAnomaliesTopFormat._(this.value);
 
 factory RadarGetTrafficAnomaliesTopFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetTrafficAnomaliesTopFormat._(json),
 }; }
 
-static const RadarGetTrafficAnomaliesTopFormat json$ = RadarGetTrafficAnomaliesTopFormat._('JSON');
+static const RadarGetTrafficAnomaliesTopFormat $json = RadarGetTrafficAnomaliesTopFormat._('JSON');
 
 static const RadarGetTrafficAnomaliesTopFormat csv = RadarGetTrafficAnomaliesTopFormat._('CSV');
 
-static const List<RadarGetTrafficAnomaliesTopFormat> values = [json$, csv];
+static const List<RadarGetTrafficAnomaliesTopFormat> values = [$json, csv];
 
 final String value;
 

@@ -45,7 +45,7 @@ return _execute(
 /// If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations.
 /// Copy and paste the example body to remove old zone configurations based on your current plan.
 /// #### Clean up configuration for Bot Fight Mode plan
-/// ```json
+/// ```json`
 /// {
 ///   "sbfm_likely_automated": "allow",
 ///   "sbfm_definitely_automated": "allow",
@@ -54,23 +54,23 @@ return _execute(
 ///   "optimize_wordpress": false,
 ///   "suppress_session_score": false
 /// }
-/// ```
+/// ````
 /// #### Clean up configuration for SBFM Pro plan
-/// ```json
+/// ```json`
 /// {
 ///   "sbfm_likely_automated": "allow",
 ///   "fight_mode": false
 /// }
-/// ```
+/// ````
 /// #### Clean up configuration for SBFM Biz plan
-/// ```json
+/// ```json`
 /// {
 ///   "fight_mode": false
 /// }
-/// ```
+/// ````
 /// #### Clean up configuration for BM Enterprise Subscription plan
 /// It is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.
-/// ```json
+/// ```json`
 /// {
 ///   "sbfm_likely_automated": "allow",
 ///   "sbfm_definitely_automated": "allow",
@@ -79,7 +79,7 @@ return _execute(
 ///   "optimize_wordpress": false,
 ///   "fight_mode": false
 /// }
-/// ```
+/// ````
 /// 
 ///
 /// `PUT /zones/{zone_id}/bot_management`

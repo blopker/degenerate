@@ -7,19 +7,19 @@
 final class EmailSecurityListDisplayNamesOrder {const EmailSecurityListDisplayNamesOrder._(this.value);
 
 factory EmailSecurityListDisplayNamesOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   'email' => email,
   'created_at' => createdAt,
   _ => EmailSecurityListDisplayNamesOrder._(json),
 }; }
 
-static const EmailSecurityListDisplayNamesOrder name$ = EmailSecurityListDisplayNamesOrder._('name');
+static const EmailSecurityListDisplayNamesOrder $name = EmailSecurityListDisplayNamesOrder._('name');
 
 static const EmailSecurityListDisplayNamesOrder email = EmailSecurityListDisplayNamesOrder._('email');
 
 static const EmailSecurityListDisplayNamesOrder createdAt = EmailSecurityListDisplayNamesOrder._('created_at');
 
-static const List<EmailSecurityListDisplayNamesOrder> values = [name$, email, createdAt];
+static const List<EmailSecurityListDisplayNamesOrder> values = [$name, email, createdAt];
 
 final String value;
 

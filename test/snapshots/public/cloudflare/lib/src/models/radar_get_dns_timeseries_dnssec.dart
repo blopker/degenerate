@@ -10,7 +10,7 @@ factory RadarGetDnsTimeseriesDnssec.fromJson(String json) { return switch (json)
   'INVALID' => invalid,
   'INSECURE' => insecure,
   'SECURE' => secure,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetDnsTimeseriesDnssec._(json),
 }; }
 
@@ -20,9 +20,9 @@ static const RadarGetDnsTimeseriesDnssec insecure = RadarGetDnsTimeseriesDnssec.
 
 static const RadarGetDnsTimeseriesDnssec secure = RadarGetDnsTimeseriesDnssec._('SECURE');
 
-static const RadarGetDnsTimeseriesDnssec other$ = RadarGetDnsTimeseriesDnssec._('OTHER');
+static const RadarGetDnsTimeseriesDnssec $other = RadarGetDnsTimeseriesDnssec._('OTHER');
 
-static const List<RadarGetDnsTimeseriesDnssec> values = [invalid, insecure, secure, other$];
+static const List<RadarGetDnsTimeseriesDnssec> values = [invalid, insecure, secure, $other];
 
 final String value;
 

@@ -13,7 +13,7 @@ factory PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(String json) { 
   'merchandise_not_as_described' => merchandiseNotAsDescribed,
   'no_valid_authorization' => noValidAuthorization,
   'not_received' => notReceived,
-  'other' => other$,
+  'other' => $other,
   'service_not_as_described' => serviceNotAsDescribed,
   _ => PostIssuingDisputesDisputeRequestEvidenceReason._(json),
 }; }
@@ -30,11 +30,11 @@ static const PostIssuingDisputesDisputeRequestEvidenceReason noValidAuthorizatio
 
 static const PostIssuingDisputesDisputeRequestEvidenceReason notReceived = PostIssuingDisputesDisputeRequestEvidenceReason._('not_received');
 
-static const PostIssuingDisputesDisputeRequestEvidenceReason other$ = PostIssuingDisputesDisputeRequestEvidenceReason._('other');
+static const PostIssuingDisputesDisputeRequestEvidenceReason $other = PostIssuingDisputesDisputeRequestEvidenceReason._('other');
 
 static const PostIssuingDisputesDisputeRequestEvidenceReason serviceNotAsDescribed = PostIssuingDisputesDisputeRequestEvidenceReason._('service_not_as_described');
 
-static const List<PostIssuingDisputesDisputeRequestEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other$, serviceNotAsDescribed];
+static const List<PostIssuingDisputesDisputeRequestEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, $other, serviceNotAsDescribed];
 
 final String value;
 

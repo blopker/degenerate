@@ -8,16 +8,16 @@
 final class RadarGetEmailSecuritySummaryByThreatCategoryFormat {const RadarGetEmailSecuritySummaryByThreatCategoryFormat._(this.value);
 
 factory RadarGetEmailSecuritySummaryByThreatCategoryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecuritySummaryByThreatCategoryFormat._(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByThreatCategoryFormat json$ = RadarGetEmailSecuritySummaryByThreatCategoryFormat._('JSON');
+static const RadarGetEmailSecuritySummaryByThreatCategoryFormat $json = RadarGetEmailSecuritySummaryByThreatCategoryFormat._('JSON');
 
 static const RadarGetEmailSecuritySummaryByThreatCategoryFormat csv = RadarGetEmailSecuritySummaryByThreatCategoryFormat._('CSV');
 
-static const List<RadarGetEmailSecuritySummaryByThreatCategoryFormat> values = [json$, csv];
+static const List<RadarGetEmailSecuritySummaryByThreatCategoryFormat> values = [$json, csv];
 
 final String value;
 

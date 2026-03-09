@@ -9,7 +9,7 @@ final class RadarGetHttpSummaryByBotClassDeviceType {const RadarGetHttpSummaryBy
 factory RadarGetHttpSummaryByBotClassDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpSummaryByBotClassDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpSummaryByBotClassDeviceType desktop = RadarGetHttpSumma
 
 static const RadarGetHttpSummaryByBotClassDeviceType mobile = RadarGetHttpSummaryByBotClassDeviceType._('MOBILE');
 
-static const RadarGetHttpSummaryByBotClassDeviceType other$ = RadarGetHttpSummaryByBotClassDeviceType._('OTHER');
+static const RadarGetHttpSummaryByBotClassDeviceType $other = RadarGetHttpSummaryByBotClassDeviceType._('OTHER');
 
-static const List<RadarGetHttpSummaryByBotClassDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpSummaryByBotClassDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

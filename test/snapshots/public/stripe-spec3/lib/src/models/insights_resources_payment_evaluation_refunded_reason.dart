@@ -10,7 +10,7 @@ final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsReso
 factory InsightsResourcesPaymentEvaluationRefundedReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
-  'other' => other$,
+  'other' => $other,
   'requested_by_customer' => requestedByCustomer,
   _ => InsightsResourcesPaymentEvaluationRefundedReason._(json),
 }; }
@@ -19,11 +19,11 @@ static const InsightsResourcesPaymentEvaluationRefundedReason duplicate = Insigh
 
 static const InsightsResourcesPaymentEvaluationRefundedReason fraudulent = InsightsResourcesPaymentEvaluationRefundedReason._('fraudulent');
 
-static const InsightsResourcesPaymentEvaluationRefundedReason other$ = InsightsResourcesPaymentEvaluationRefundedReason._('other');
+static const InsightsResourcesPaymentEvaluationRefundedReason $other = InsightsResourcesPaymentEvaluationRefundedReason._('other');
 
 static const InsightsResourcesPaymentEvaluationRefundedReason requestedByCustomer = InsightsResourcesPaymentEvaluationRefundedReason._('requested_by_customer');
 
-static const List<InsightsResourcesPaymentEvaluationRefundedReason> values = [duplicate, fraudulent, other$, requestedByCustomer];
+static const List<InsightsResourcesPaymentEvaluationRefundedReason> values = [duplicate, fraudulent, $other, requestedByCustomer];
 
 final String value;
 

@@ -44,7 +44,7 @@ factory InlineObject999.fromJson(Map<String, dynamic> json) { return InlineObjec
 /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 final double? actionTimeout;
 
-/// Adds a ``<script>`` tag into the page with the desired URL or content.
+/// Adds a `<script>` tag into the page with the desired URL or content.
 final List<InlineObject999AddScriptTag>? addScriptTag;
 
 /// Adds a `<link rel="stylesheet">` tag into the page with the desired URL or a `<style type="text/css">` tag with the content.
@@ -73,7 +73,7 @@ final String? emulateMediaType;
 /// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
 final InlineObject999GotoOptions? gotoOptions;
 
-/// Set the content of the page, eg: ``<h1>`Hello World!!</h1>`. Either `html` or `url` must be set.
+/// Set the content of the page, eg: `<h1>Hello World!!</h1>`. Either `html` or `url` must be set.
 final String html;
 
 final String? prompt;

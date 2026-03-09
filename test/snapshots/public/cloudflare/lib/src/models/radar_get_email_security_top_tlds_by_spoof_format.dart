@@ -8,16 +8,16 @@
 final class RadarGetEmailSecurityTopTldsBySpoofFormat {const RadarGetEmailSecurityTopTldsBySpoofFormat._(this.value);
 
 factory RadarGetEmailSecurityTopTldsBySpoofFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTopTldsBySpoofFormat._(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsBySpoofFormat json$ = RadarGetEmailSecurityTopTldsBySpoofFormat._('JSON');
+static const RadarGetEmailSecurityTopTldsBySpoofFormat $json = RadarGetEmailSecurityTopTldsBySpoofFormat._('JSON');
 
 static const RadarGetEmailSecurityTopTldsBySpoofFormat csv = RadarGetEmailSecurityTopTldsBySpoofFormat._('CSV');
 
-static const List<RadarGetEmailSecurityTopTldsBySpoofFormat> values = [json$, csv];
+static const List<RadarGetEmailSecurityTopTldsBySpoofFormat> values = [$json, csv];
 
 final String value;
 

@@ -11,7 +11,7 @@ factory PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
-  'other' => other$,
+  'other' => $other,
   'switched_service' => switchedService,
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
@@ -27,7 +27,7 @@ static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFee
 
 static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback missingFeatures = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('missing_features');
 
-static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback other$ = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('other');
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback $other = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('other');
 
 static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback switchedService = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('switched_service');
 
@@ -37,7 +37,7 @@ static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFee
 
 static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback unused = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('unused');
 
-static const List<PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback> values = [$empty, customerService, lowQuality, missingFeatures, other$, switchedService, tooComplex, tooExpensive, unused];
+static const List<PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback> values = [$empty, customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 final String value;
 

@@ -7,16 +7,16 @@
 final class SharesListOrder {const SharesListOrder._(this.value);
 
 factory SharesListOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   'created' => created,
   _ => SharesListOrder._(json),
 }; }
 
-static const SharesListOrder name$ = SharesListOrder._('name');
+static const SharesListOrder $name = SharesListOrder._('name');
 
 static const SharesListOrder created = SharesListOrder._('created');
 
-static const List<SharesListOrder> values = [name$, created];
+static const List<SharesListOrder> values = [$name, created];
 
 final String value;
 

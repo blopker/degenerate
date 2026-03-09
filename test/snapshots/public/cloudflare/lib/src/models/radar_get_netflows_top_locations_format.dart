@@ -8,16 +8,16 @@
 final class RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat._(this.value);
 
 factory RadarGetNetflowsTopLocationsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetNetflowsTopLocationsFormat._(json),
 }; }
 
-static const RadarGetNetflowsTopLocationsFormat json$ = RadarGetNetflowsTopLocationsFormat._('JSON');
+static const RadarGetNetflowsTopLocationsFormat $json = RadarGetNetflowsTopLocationsFormat._('JSON');
 
 static const RadarGetNetflowsTopLocationsFormat csv = RadarGetNetflowsTopLocationsFormat._('CSV');
 
-static const List<RadarGetNetflowsTopLocationsFormat> values = [json$, csv];
+static const List<RadarGetNetflowsTopLocationsFormat> values = [$json, csv];
 
 final String value;
 

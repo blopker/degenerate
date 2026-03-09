@@ -8,13 +8,13 @@
 final class R2ListBucketsOrder {const R2ListBucketsOrder._(this.value);
 
 factory R2ListBucketsOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   _ => R2ListBucketsOrder._(json),
 }; }
 
-static const R2ListBucketsOrder name$ = R2ListBucketsOrder._('name');
+static const R2ListBucketsOrder $name = R2ListBucketsOrder._('name');
 
-static const List<R2ListBucketsOrder> values = [name$];
+static const List<R2ListBucketsOrder> values = [$name];
 
 final String value;
 

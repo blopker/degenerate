@@ -12,7 +12,7 @@ factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectR
   'network_name' => networkName,
   'non_binary_image' => nonBinaryImage,
   'non_fiat_currency' => nonFiatCurrency,
-  'other' => other$,
+  'other' => $other,
   'other_entity' => otherEntity,
   'promotional_material' => promotionalMaterial,
   _ => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._(json),
@@ -28,13 +28,13 @@ static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRe
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo nonFiatCurrency = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('non_fiat_currency');
 
-static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo other$ = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('other');
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo $other = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('other');
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo otherEntity = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('other_entity');
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo promotionalMaterial = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('promotional_material');
 
-static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo> values = [geographicLocation, inappropriate, networkName, nonBinaryImage, nonFiatCurrency, other$, otherEntity, promotionalMaterial];
+static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo> values = [geographicLocation, inappropriate, networkName, nonBinaryImage, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
 
 final String value;
 

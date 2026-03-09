@@ -8,16 +8,16 @@
 final class RadarGetDnsTimeseriesGroupFormat {const RadarGetDnsTimeseriesGroupFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupFormat._(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupFormat json$ = RadarGetDnsTimeseriesGroupFormat._('JSON');
+static const RadarGetDnsTimeseriesGroupFormat $json = RadarGetDnsTimeseriesGroupFormat._('JSON');
 
 static const RadarGetDnsTimeseriesGroupFormat csv = RadarGetDnsTimeseriesGroupFormat._('CSV');
 
-static const List<RadarGetDnsTimeseriesGroupFormat> values = [json$, csv];
+static const List<RadarGetDnsTimeseriesGroupFormat> values = [$json, csv];
 
 final String value;
 

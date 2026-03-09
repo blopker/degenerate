@@ -9,7 +9,7 @@ final class InlineObject773TransactionPurpose {const InlineObject773TransactionP
 factory InlineObject773TransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
   'goods' => goods,
-  'other' => other$,
+  'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
   _ => InlineObject773TransactionPurpose._(json),
@@ -19,13 +19,13 @@ static const InlineObject773TransactionPurpose $empty = InlineObject773Transacti
 
 static const InlineObject773TransactionPurpose goods = InlineObject773TransactionPurpose._('goods');
 
-static const InlineObject773TransactionPurpose other$ = InlineObject773TransactionPurpose._('other');
+static const InlineObject773TransactionPurpose $other = InlineObject773TransactionPurpose._('other');
 
 static const InlineObject773TransactionPurpose services = InlineObject773TransactionPurpose._('services');
 
 static const InlineObject773TransactionPurpose unspecified = InlineObject773TransactionPurpose._('unspecified');
 
-static const List<InlineObject773TransactionPurpose> values = [$empty, goods, other$, services, unspecified];
+static const List<InlineObject773TransactionPurpose> values = [$empty, goods, $other, services, unspecified];
 
 final String value;
 

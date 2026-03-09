@@ -8,16 +8,16 @@
 final class RadarGetBgpRoutesAsnsFormat {const RadarGetBgpRoutesAsnsFormat._(this.value);
 
 factory RadarGetBgpRoutesAsnsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpRoutesAsnsFormat._(json),
 }; }
 
-static const RadarGetBgpRoutesAsnsFormat json$ = RadarGetBgpRoutesAsnsFormat._('JSON');
+static const RadarGetBgpRoutesAsnsFormat $json = RadarGetBgpRoutesAsnsFormat._('JSON');
 
 static const RadarGetBgpRoutesAsnsFormat csv = RadarGetBgpRoutesAsnsFormat._('CSV');
 
-static const List<RadarGetBgpRoutesAsnsFormat> values = [json$, csv];
+static const List<RadarGetBgpRoutesAsnsFormat> values = [$json, csv];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetHttpTopLocationsByOperatingSystemFormat {const RadarGetHttpTopLocationsByOperatingSystemFormat._(this.value);
 
 factory RadarGetHttpTopLocationsByOperatingSystemFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopLocationsByOperatingSystemFormat._(json),
 }; }
 
-static const RadarGetHttpTopLocationsByOperatingSystemFormat json$ = RadarGetHttpTopLocationsByOperatingSystemFormat._('JSON');
+static const RadarGetHttpTopLocationsByOperatingSystemFormat $json = RadarGetHttpTopLocationsByOperatingSystemFormat._('JSON');
 
 static const RadarGetHttpTopLocationsByOperatingSystemFormat csv = RadarGetHttpTopLocationsByOperatingSystemFormat._('CSV');
 
-static const List<RadarGetHttpTopLocationsByOperatingSystemFormat> values = [json$, csv];
+static const List<RadarGetHttpTopLocationsByOperatingSystemFormat> values = [$json, csv];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetBgpRpkiAspaSnapshotFormat {const RadarGetBgpRpkiAspaSnapshotFormat._(this.value);
 
 factory RadarGetBgpRpkiAspaSnapshotFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpRpkiAspaSnapshotFormat._(json),
 }; }
 
-static const RadarGetBgpRpkiAspaSnapshotFormat json$ = RadarGetBgpRpkiAspaSnapshotFormat._('JSON');
+static const RadarGetBgpRpkiAspaSnapshotFormat $json = RadarGetBgpRpkiAspaSnapshotFormat._('JSON');
 
 static const RadarGetBgpRpkiAspaSnapshotFormat csv = RadarGetBgpRpkiAspaSnapshotFormat._('CSV');
 
-static const List<RadarGetBgpRpkiAspaSnapshotFormat> values = [json$, csv];
+static const List<RadarGetBgpRpkiAspaSnapshotFormat> values = [$json, csv];
 
 final String value;
 

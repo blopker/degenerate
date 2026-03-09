@@ -10,7 +10,7 @@ factory ListWorkersOrderBy.fromJson(String json) { return switch (json) {
   'deployed_on' => deployedOn,
   'updated_on' => updatedOn,
   'created_on' => createdOn,
-  'name' => name$,
+  'name' => $name,
   _ => ListWorkersOrderBy._(json),
 }; }
 
@@ -20,9 +20,9 @@ static const ListWorkersOrderBy updatedOn = ListWorkersOrderBy._('updated_on');
 
 static const ListWorkersOrderBy createdOn = ListWorkersOrderBy._('created_on');
 
-static const ListWorkersOrderBy name$ = ListWorkersOrderBy._('name');
+static const ListWorkersOrderBy $name = ListWorkersOrderBy._('name');
 
-static const List<ListWorkersOrderBy> values = [deployedOn, updatedOn, createdOn, name$];
+static const List<ListWorkersOrderBy> values = [deployedOn, updatedOn, createdOn, $name];
 
 final String value;
 

@@ -10,7 +10,7 @@ factory InlineObject88.fromJson(String json) { return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
-  'other' => other$,
+  'other' => $other,
   'switched_service' => switchedService,
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
@@ -24,7 +24,7 @@ static const InlineObject88 lowQuality = InlineObject88._('low_quality');
 
 static const InlineObject88 missingFeatures = InlineObject88._('missing_features');
 
-static const InlineObject88 other$ = InlineObject88._('other');
+static const InlineObject88 $other = InlineObject88._('other');
 
 static const InlineObject88 switchedService = InlineObject88._('switched_service');
 
@@ -34,7 +34,7 @@ static const InlineObject88 tooExpensive = InlineObject88._('too_expensive');
 
 static const InlineObject88 unused = InlineObject88._('unused');
 
-static const List<InlineObject88> values = [customerService, lowQuality, missingFeatures, other$, switchedService, tooComplex, tooExpensive, unused];
+static const List<InlineObject88> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 final String value;
 

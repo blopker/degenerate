@@ -8,16 +8,16 @@
 final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat._(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat json$ = RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat._('JSON');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat $json = RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat._('JSON');
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat csv = RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat._('CSV');
 
-static const List<RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat> values = [json$, csv];
+static const List<RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedFormat> values = [$json, csv];
 
 final String value;
 

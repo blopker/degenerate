@@ -7,16 +7,16 @@
 final class GetEventListGetFormat {const GetEventListGetFormat._(this.value);
 
 factory GetEventListGetFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'stix2' => stix2,
   _ => GetEventListGetFormat._(json),
 }; }
 
-static const GetEventListGetFormat json$ = GetEventListGetFormat._('json');
+static const GetEventListGetFormat $json = GetEventListGetFormat._('json');
 
 static const GetEventListGetFormat stix2 = GetEventListGetFormat._('stix2');
 
-static const List<GetEventListGetFormat> values = [json$, stix2];
+static const List<GetEventListGetFormat> values = [$json, stix2];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetQualityIndexSummaryFormat {const RadarGetQualityIndexSummaryFormat._(this.value);
 
 factory RadarGetQualityIndexSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetQualityIndexSummaryFormat._(json),
 }; }
 
-static const RadarGetQualityIndexSummaryFormat json$ = RadarGetQualityIndexSummaryFormat._('JSON');
+static const RadarGetQualityIndexSummaryFormat $json = RadarGetQualityIndexSummaryFormat._('JSON');
 
 static const RadarGetQualityIndexSummaryFormat csv = RadarGetQualityIndexSummaryFormat._('CSV');
 
-static const List<RadarGetQualityIndexSummaryFormat> values = [json$, csv];
+static const List<RadarGetQualityIndexSummaryFormat> values = [$json, csv];
 
 final String value;
 

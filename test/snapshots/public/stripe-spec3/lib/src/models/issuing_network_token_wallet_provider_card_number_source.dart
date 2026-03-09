@@ -11,7 +11,7 @@ factory IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(String json) 
   'app' => app,
   'manual' => manual,
   'on_file' => onFile,
-  'other' => other$,
+  'other' => $other,
   _ => IssuingNetworkTokenWalletProviderCardNumberSource._(json),
 }; }
 
@@ -21,9 +21,9 @@ static const IssuingNetworkTokenWalletProviderCardNumberSource manual = IssuingN
 
 static const IssuingNetworkTokenWalletProviderCardNumberSource onFile = IssuingNetworkTokenWalletProviderCardNumberSource._('on_file');
 
-static const IssuingNetworkTokenWalletProviderCardNumberSource other$ = IssuingNetworkTokenWalletProviderCardNumberSource._('other');
+static const IssuingNetworkTokenWalletProviderCardNumberSource $other = IssuingNetworkTokenWalletProviderCardNumberSource._('other');
 
-static const List<IssuingNetworkTokenWalletProviderCardNumberSource> values = [app, manual, onFile, other$];
+static const List<IssuingNetworkTokenWalletProviderCardNumberSource> values = [app, manual, onFile, $other];
 
 final String value;
 

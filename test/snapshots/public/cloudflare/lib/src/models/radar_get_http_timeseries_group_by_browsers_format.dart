@@ -8,16 +8,16 @@
 final class RadarGetHttpTimeseriesGroupByBrowsersFormat {const RadarGetHttpTimeseriesGroupByBrowsersFormat._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByBrowsersFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTimeseriesGroupByBrowsersFormat._(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByBrowsersFormat json$ = RadarGetHttpTimeseriesGroupByBrowsersFormat._('JSON');
+static const RadarGetHttpTimeseriesGroupByBrowsersFormat $json = RadarGetHttpTimeseriesGroupByBrowsersFormat._('JSON');
 
 static const RadarGetHttpTimeseriesGroupByBrowsersFormat csv = RadarGetHttpTimeseriesGroupByBrowsersFormat._('CSV');
 
-static const List<RadarGetHttpTimeseriesGroupByBrowsersFormat> values = [json$, csv];
+static const List<RadarGetHttpTimeseriesGroupByBrowsersFormat> values = [$json, csv];
 
 final String value;
 

@@ -9,7 +9,7 @@ final class RadarGetHttpSummaryByIpVersionDeviceType {const RadarGetHttpSummaryB
 factory RadarGetHttpSummaryByIpVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpSummaryByIpVersionDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpSummaryByIpVersionDeviceType desktop = RadarGetHttpSumm
 
 static const RadarGetHttpSummaryByIpVersionDeviceType mobile = RadarGetHttpSummaryByIpVersionDeviceType._('MOBILE');
 
-static const RadarGetHttpSummaryByIpVersionDeviceType other$ = RadarGetHttpSummaryByIpVersionDeviceType._('OTHER');
+static const RadarGetHttpSummaryByIpVersionDeviceType $other = RadarGetHttpSummaryByIpVersionDeviceType._('OTHER');
 
-static const List<RadarGetHttpSummaryByIpVersionDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpSummaryByIpVersionDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

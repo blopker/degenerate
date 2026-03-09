@@ -8,13 +8,13 @@
 final class WafPackagesListWafPackagesOrder {const WafPackagesListWafPackagesOrder._(this.value);
 
 factory WafPackagesListWafPackagesOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   _ => WafPackagesListWafPackagesOrder._(json),
 }; }
 
-static const WafPackagesListWafPackagesOrder name$ = WafPackagesListWafPackagesOrder._('name');
+static const WafPackagesListWafPackagesOrder $name = WafPackagesListWafPackagesOrder._('name');
 
-static const List<WafPackagesListWafPackagesOrder> values = [name$];
+static const List<WafPackagesListWafPackagesOrder> values = [$name];
 
 final String value;
 

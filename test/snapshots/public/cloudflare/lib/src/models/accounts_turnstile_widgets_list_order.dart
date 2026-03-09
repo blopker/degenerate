@@ -10,7 +10,7 @@ final class AccountsTurnstileWidgetsListOrder {const AccountsTurnstileWidgetsLis
 factory AccountsTurnstileWidgetsListOrder.fromJson(String json) { return switch (json) {
   'id' => id,
   'sitekey' => sitekey,
-  'name' => name$,
+  'name' => $name,
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
   _ => AccountsTurnstileWidgetsListOrder._(json),
@@ -20,13 +20,13 @@ static const AccountsTurnstileWidgetsListOrder id = AccountsTurnstileWidgetsList
 
 static const AccountsTurnstileWidgetsListOrder sitekey = AccountsTurnstileWidgetsListOrder._('sitekey');
 
-static const AccountsTurnstileWidgetsListOrder name$ = AccountsTurnstileWidgetsListOrder._('name');
+static const AccountsTurnstileWidgetsListOrder $name = AccountsTurnstileWidgetsListOrder._('name');
 
 static const AccountsTurnstileWidgetsListOrder createdOn = AccountsTurnstileWidgetsListOrder._('created_on');
 
 static const AccountsTurnstileWidgetsListOrder modifiedOn = AccountsTurnstileWidgetsListOrder._('modified_on');
 
-static const List<AccountsTurnstileWidgetsListOrder> values = [id, sitekey, name$, createdOn, modifiedOn];
+static const List<AccountsTurnstileWidgetsListOrder> values = [id, sitekey, $name, createdOn, modifiedOn];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetNetflowsSummaryDeprecatedFormat {const RadarGetNetflowsSummaryDeprecatedFormat._(this.value);
 
 factory RadarGetNetflowsSummaryDeprecatedFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetNetflowsSummaryDeprecatedFormat._(json),
 }; }
 
-static const RadarGetNetflowsSummaryDeprecatedFormat json$ = RadarGetNetflowsSummaryDeprecatedFormat._('JSON');
+static const RadarGetNetflowsSummaryDeprecatedFormat $json = RadarGetNetflowsSummaryDeprecatedFormat._('JSON');
 
 static const RadarGetNetflowsSummaryDeprecatedFormat csv = RadarGetNetflowsSummaryDeprecatedFormat._('CSV');
 
-static const List<RadarGetNetflowsSummaryDeprecatedFormat> values = [json$, csv];
+static const List<RadarGetNetflowsSummaryDeprecatedFormat> values = [$json, csv];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class GetIndicatorListFormat {const GetIndicatorListFormat._(this.value);
 
 factory GetIndicatorListFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'stix2' => stix2,
   _ => GetIndicatorListFormat._(json),
 }; }
 
-static const GetIndicatorListFormat json$ = GetIndicatorListFormat._('json');
+static const GetIndicatorListFormat $json = GetIndicatorListFormat._('json');
 
 static const GetIndicatorListFormat stix2 = GetIndicatorListFormat._('stix2');
 
-static const List<GetIndicatorListFormat> values = [json$, stix2];
+static const List<GetIndicatorListFormat> values = [$json, stix2];
 
 final String value;
 

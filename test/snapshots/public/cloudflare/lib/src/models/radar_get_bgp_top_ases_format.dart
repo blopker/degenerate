@@ -8,16 +8,16 @@
 final class RadarGetBgpTopAsesFormat {const RadarGetBgpTopAsesFormat._(this.value);
 
 factory RadarGetBgpTopAsesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpTopAsesFormat._(json),
 }; }
 
-static const RadarGetBgpTopAsesFormat json$ = RadarGetBgpTopAsesFormat._('JSON');
+static const RadarGetBgpTopAsesFormat $json = RadarGetBgpTopAsesFormat._('JSON');
 
 static const RadarGetBgpTopAsesFormat csv = RadarGetBgpTopAsesFormat._('CSV');
 
-static const List<RadarGetBgpTopAsesFormat> values = [json$, csv];
+static const List<RadarGetBgpTopAsesFormat> values = [$json, csv];
 
 final String value;
 

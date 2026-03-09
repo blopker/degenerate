@@ -8,16 +8,16 @@
 final class RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat {const RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat._(this.value);
 
 factory RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat._(json),
 }; }
 
-static const RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat json$ = RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat._('JSON');
+static const RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat $json = RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat._('JSON');
 
 static const RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat csv = RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat._('CSV');
 
-static const List<RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat> values = [json$, csv];
+static const List<RadarGetVerifiedBotsTopCategoriesByHttpRequestsFormat> values = [$json, csv];
 
 final String value;
 

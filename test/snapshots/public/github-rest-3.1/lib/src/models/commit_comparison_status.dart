@@ -10,7 +10,7 @@ factory CommitComparisonStatus.fromJson(String json) { return switch (json) {
   'diverged' => diverged,
   'ahead' => ahead,
   'behind' => behind,
-  'identical' => identical$,
+  'identical' => $identical,
   _ => CommitComparisonStatus._(json),
 }; }
 
@@ -20,9 +20,9 @@ static const CommitComparisonStatus ahead = CommitComparisonStatus._('ahead');
 
 static const CommitComparisonStatus behind = CommitComparisonStatus._('behind');
 
-static const CommitComparisonStatus identical$ = CommitComparisonStatus._('identical');
+static const CommitComparisonStatus $identical = CommitComparisonStatus._('identical');
 
-static const List<CommitComparisonStatus> values = [diverged, ahead, behind, identical$];
+static const List<CommitComparisonStatus> values = [diverged, ahead, behind, $identical];
 
 final String value;
 

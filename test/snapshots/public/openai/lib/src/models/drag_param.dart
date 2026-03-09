@@ -16,12 +16,12 @@ factory DragParam.fromJson(Map<String, dynamic> json) { return DragParam(
 final String type;
 
 /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array of objects, eg
-/// ```
+/// ````
 /// [
 ///   { x: 100, y: 200 },
 ///   { x: 200, y: 300 }
 /// ]
-/// ```
+/// ````
 final List<CoordParam> path;
 
 Map<String, dynamic> toJson() { return {

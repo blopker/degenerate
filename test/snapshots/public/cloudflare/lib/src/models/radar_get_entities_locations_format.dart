@@ -8,16 +8,16 @@
 final class RadarGetEntitiesLocationsFormat {const RadarGetEntitiesLocationsFormat._(this.value);
 
 factory RadarGetEntitiesLocationsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEntitiesLocationsFormat._(json),
 }; }
 
-static const RadarGetEntitiesLocationsFormat json$ = RadarGetEntitiesLocationsFormat._('JSON');
+static const RadarGetEntitiesLocationsFormat $json = RadarGetEntitiesLocationsFormat._('JSON');
 
 static const RadarGetEntitiesLocationsFormat csv = RadarGetEntitiesLocationsFormat._('CSV');
 
-static const List<RadarGetEntitiesLocationsFormat> values = [json$, csv];
+static const List<RadarGetEntitiesLocationsFormat> values = [$json, csv];
 
 final String value;
 

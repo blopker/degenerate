@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupHttpMethod.fromJson(String json) { r
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TimeseriesGroupHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod rpcOutData = RadarGe
 
 static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod rpcInData = RadarGetAttacksLayer7TimeseriesGroupHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod json$ = RadarGetAttacksLayer7TimeseriesGroupHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod $json = RadarGetAttacksLayer7TimeseriesGroupHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod cook = RadarGetAttacksLayer7TimeseriesGroupHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TimeseriesGroupHttpMethod track = RadarGetAttacksLayer7TimeseriesGroupHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TimeseriesGroupHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TimeseriesGroupHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

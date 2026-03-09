@@ -8,16 +8,16 @@
 final class RadarGetQualitySpeedHistogramFormat {const RadarGetQualitySpeedHistogramFormat._(this.value);
 
 factory RadarGetQualitySpeedHistogramFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetQualitySpeedHistogramFormat._(json),
 }; }
 
-static const RadarGetQualitySpeedHistogramFormat json$ = RadarGetQualitySpeedHistogramFormat._('JSON');
+static const RadarGetQualitySpeedHistogramFormat $json = RadarGetQualitySpeedHistogramFormat._('JSON');
 
 static const RadarGetQualitySpeedHistogramFormat csv = RadarGetQualitySpeedHistogramFormat._('CSV');
 
-static const List<RadarGetQualitySpeedHistogramFormat> values = [json$, csv];
+static const List<RadarGetQualitySpeedHistogramFormat> values = [$json, csv];
 
 final String value;
 

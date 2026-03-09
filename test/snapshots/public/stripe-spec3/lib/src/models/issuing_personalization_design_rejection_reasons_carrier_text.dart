@@ -11,7 +11,7 @@ factory IssuingPersonalizationDesignRejectionReasonsCarrierText.fromJson(String 
   'inappropriate' => inappropriate,
   'network_name' => networkName,
   'non_fiat_currency' => nonFiatCurrency,
-  'other' => other$,
+  'other' => $other,
   'other_entity' => otherEntity,
   'promotional_material' => promotionalMaterial,
   _ => IssuingPersonalizationDesignRejectionReasonsCarrierText._(json),
@@ -25,13 +25,13 @@ static const IssuingPersonalizationDesignRejectionReasonsCarrierText networkName
 
 static const IssuingPersonalizationDesignRejectionReasonsCarrierText nonFiatCurrency = IssuingPersonalizationDesignRejectionReasonsCarrierText._('non_fiat_currency');
 
-static const IssuingPersonalizationDesignRejectionReasonsCarrierText other$ = IssuingPersonalizationDesignRejectionReasonsCarrierText._('other');
+static const IssuingPersonalizationDesignRejectionReasonsCarrierText $other = IssuingPersonalizationDesignRejectionReasonsCarrierText._('other');
 
 static const IssuingPersonalizationDesignRejectionReasonsCarrierText otherEntity = IssuingPersonalizationDesignRejectionReasonsCarrierText._('other_entity');
 
 static const IssuingPersonalizationDesignRejectionReasonsCarrierText promotionalMaterial = IssuingPersonalizationDesignRejectionReasonsCarrierText._('promotional_material');
 
-static const List<IssuingPersonalizationDesignRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, other$, otherEntity, promotionalMaterial];
+static const List<IssuingPersonalizationDesignRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
 
 final String value;
 

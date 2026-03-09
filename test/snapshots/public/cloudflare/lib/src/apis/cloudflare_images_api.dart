@@ -137,7 +137,7 @@ return _execute(
 /// 
 /// **Metadata Filtering (Optional):**
 /// 
-/// You can optionally filter images by custom metadata fields using the `meta.`<field>`[`<operator>`]=`<value>`` syntax.
+/// You can optionally filter images by custom metadata fields using the `meta.<field>[<operator>]=<value>` syntax.
 /// 
 /// **Supported Operators:**
 /// - `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match
@@ -150,7 +150,7 @@ return _execute(
 /// - Supports string, number, and boolean value types
 /// 
 /// **Examples:**
-/// ```
+/// ````
 /// # List all images
 /// /images/v2
 /// 
@@ -171,7 +171,7 @@ return _execute(
 /// 
 /// # Multiple metadata filters (AND logic)
 /// /images/v2?meta.status[eq]=active&meta.priority[eq:number]=5
-/// ```
+/// ````
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`

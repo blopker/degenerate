@@ -8,16 +8,16 @@
 final class RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat._(this.value);
 
 factory RadarGetGeolocationDetailsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetGeolocationDetailsFormat._(json),
 }; }
 
-static const RadarGetGeolocationDetailsFormat json$ = RadarGetGeolocationDetailsFormat._('JSON');
+static const RadarGetGeolocationDetailsFormat $json = RadarGetGeolocationDetailsFormat._('JSON');
 
 static const RadarGetGeolocationDetailsFormat csv = RadarGetGeolocationDetailsFormat._('CSV');
 
-static const List<RadarGetGeolocationDetailsFormat> values = [json$, csv];
+static const List<RadarGetGeolocationDetailsFormat> values = [$json, csv];
 
 final String value;
 

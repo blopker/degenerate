@@ -12,7 +12,7 @@ factory InvoiceMandateOptionsPaytoPurpose.fromJson(String json) { return switch 
   'government' => government,
   'loan' => loan,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'pension' => pension,
   'personal' => personal,
   'retail' => retail,
@@ -30,7 +30,7 @@ static const InvoiceMandateOptionsPaytoPurpose loan = InvoiceMandateOptionsPayto
 
 static const InvoiceMandateOptionsPaytoPurpose mortgage = InvoiceMandateOptionsPaytoPurpose._('mortgage');
 
-static const InvoiceMandateOptionsPaytoPurpose other$ = InvoiceMandateOptionsPaytoPurpose._('other');
+static const InvoiceMandateOptionsPaytoPurpose $other = InvoiceMandateOptionsPaytoPurpose._('other');
 
 static const InvoiceMandateOptionsPaytoPurpose pension = InvoiceMandateOptionsPaytoPurpose._('pension');
 
@@ -44,7 +44,7 @@ static const InvoiceMandateOptionsPaytoPurpose tax = InvoiceMandateOptionsPaytoP
 
 static const InvoiceMandateOptionsPaytoPurpose utility = InvoiceMandateOptionsPaytoPurpose._('utility');
 
-static const List<InvoiceMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, other$, pension, personal, retail, salary, tax, utility];
+static const List<InvoiceMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 final String value;
 

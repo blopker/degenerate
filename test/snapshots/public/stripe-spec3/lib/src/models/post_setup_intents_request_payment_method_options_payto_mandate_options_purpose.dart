@@ -12,7 +12,7 @@ factory PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fr
   'government' => government,
   'loan' => loan,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'pension' => pension,
   'personal' => personal,
   'retail' => retail,
@@ -32,7 +32,7 @@ static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpo
 
 static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose mortgage = PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('mortgage');
 
-static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose other$ = PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('other');
+static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose $other = PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('other');
 
 static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose pension = PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('pension');
 
@@ -46,7 +46,7 @@ static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpo
 
 static const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose utility = PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('utility');
 
-static const List<PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose> values = [$empty, dependantSupport, government, loan, mortgage, other$, pension, personal, retail, salary, tax, utility];
+static const List<PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose> values = [$empty, dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 final String value;
 

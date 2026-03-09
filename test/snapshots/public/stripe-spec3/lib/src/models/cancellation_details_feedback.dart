@@ -11,7 +11,7 @@ factory CancellationDetailsFeedback.fromJson(String json) { return switch (json)
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
-  'other' => other$,
+  'other' => $other,
   'switched_service' => switchedService,
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
@@ -25,7 +25,7 @@ static const CancellationDetailsFeedback lowQuality = CancellationDetailsFeedbac
 
 static const CancellationDetailsFeedback missingFeatures = CancellationDetailsFeedback._('missing_features');
 
-static const CancellationDetailsFeedback other$ = CancellationDetailsFeedback._('other');
+static const CancellationDetailsFeedback $other = CancellationDetailsFeedback._('other');
 
 static const CancellationDetailsFeedback switchedService = CancellationDetailsFeedback._('switched_service');
 
@@ -35,7 +35,7 @@ static const CancellationDetailsFeedback tooExpensive = CancellationDetailsFeedb
 
 static const CancellationDetailsFeedback unused = CancellationDetailsFeedback._('unused');
 
-static const List<CancellationDetailsFeedback> values = [customerService, lowQuality, missingFeatures, other$, switchedService, tooComplex, tooExpensive, unused];
+static const List<CancellationDetailsFeedback> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 final String value;
 

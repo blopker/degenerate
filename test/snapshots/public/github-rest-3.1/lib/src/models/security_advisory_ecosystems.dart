@@ -19,7 +19,7 @@ factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) 
   'erlang' => erlang,
   'actions' => actions,
   'pub' => pub,
-  'other' => other$,
+  'other' => $other,
   'swift' => swift,
   _ => SecurityAdvisoryEcosystems._(json),
 }; }
@@ -46,11 +46,11 @@ static const SecurityAdvisoryEcosystems actions = SecurityAdvisoryEcosystems._('
 
 static const SecurityAdvisoryEcosystems pub = SecurityAdvisoryEcosystems._('pub');
 
-static const SecurityAdvisoryEcosystems other$ = SecurityAdvisoryEcosystems._('other');
+static const SecurityAdvisoryEcosystems $other = SecurityAdvisoryEcosystems._('other');
 
 static const SecurityAdvisoryEcosystems swift = SecurityAdvisoryEcosystems._('swift');
 
-static const List<SecurityAdvisoryEcosystems> values = [rubygems, npm, pip, maven, nuget, composer, go, rust, erlang, actions, pub, other$, swift];
+static const List<SecurityAdvisoryEcosystems> values = [rubygems, npm, pip, maven, nuget, composer, go, rust, erlang, actions, pub, $other, swift];
 
 final String value;
 

@@ -12,7 +12,7 @@ factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) { retu
   'debit_reversal' => debitReversal,
   'inbound_transfer' => inboundTransfer,
   'issuing_authorization' => issuingAuthorization,
-  'other' => other$,
+  'other' => $other,
   'outbound_payment' => outboundPayment,
   'outbound_transfer' => outboundTransfer,
   'received_credit' => receivedCredit,
@@ -28,7 +28,7 @@ static const TreasuryTransactionsResourceFlowDetailsType inboundTransfer = Treas
 
 static const TreasuryTransactionsResourceFlowDetailsType issuingAuthorization = TreasuryTransactionsResourceFlowDetailsType._('issuing_authorization');
 
-static const TreasuryTransactionsResourceFlowDetailsType other$ = TreasuryTransactionsResourceFlowDetailsType._('other');
+static const TreasuryTransactionsResourceFlowDetailsType $other = TreasuryTransactionsResourceFlowDetailsType._('other');
 
 static const TreasuryTransactionsResourceFlowDetailsType outboundPayment = TreasuryTransactionsResourceFlowDetailsType._('outbound_payment');
 
@@ -38,7 +38,7 @@ static const TreasuryTransactionsResourceFlowDetailsType receivedCredit = Treasu
 
 static const TreasuryTransactionsResourceFlowDetailsType receivedDebit = TreasuryTransactionsResourceFlowDetailsType._('received_debit');
 
-static const List<TreasuryTransactionsResourceFlowDetailsType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, other$, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
+static const List<TreasuryTransactionsResourceFlowDetailsType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, $other, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
 
 final String value;
 

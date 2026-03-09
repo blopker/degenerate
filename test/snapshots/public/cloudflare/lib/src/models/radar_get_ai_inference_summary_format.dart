@@ -8,16 +8,16 @@
 final class RadarGetAiInferenceSummaryFormat {const RadarGetAiInferenceSummaryFormat._(this.value);
 
 factory RadarGetAiInferenceSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiInferenceSummaryFormat._(json),
 }; }
 
-static const RadarGetAiInferenceSummaryFormat json$ = RadarGetAiInferenceSummaryFormat._('JSON');
+static const RadarGetAiInferenceSummaryFormat $json = RadarGetAiInferenceSummaryFormat._('JSON');
 
 static const RadarGetAiInferenceSummaryFormat csv = RadarGetAiInferenceSummaryFormat._('CSV');
 
-static const List<RadarGetAiInferenceSummaryFormat> values = [json$, csv];
+static const List<RadarGetAiInferenceSummaryFormat> values = [$json, csv];
 
 final String value;
 

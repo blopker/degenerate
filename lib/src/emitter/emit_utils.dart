@@ -260,6 +260,7 @@ const enumReservedNames = {
   'toString',
   'runtimeType',
   'noSuchMethod',
+  'override',
 };
 
 /// Convert an enum string value to a valid Dart enum constant name.
@@ -269,7 +270,7 @@ String enumValueName(String value) {
   // Escape names that shadow enum-internal identifiers or Dart core types
   // (which would break type annotations in the enum body like `bool get isUnknown`).
   if (enumReservedNames.contains(name) || dartCoreTypeNames.contains(name)) {
-    name = '$name\$';
+    name = '\$$name';
   }
   return name;
 }
@@ -281,8 +282,23 @@ String escapeNameForString(String name) => name.replaceAll(r'$', r'\$');
 
 /// Escape angle brackets in doc comments to prevent unintended HTML interpretation.
 /// Wraps `<content>` in backticks: `<content>` → `` `<content>` ``.
+/// Skips content already inside backtick-delimited code spans.
 String escapeDocComment(String line) {
-  return line.replaceAllMapped(RegExp(r'<(\w+)>'), (m) => '`<${m[1]}>`');
+  // Split on backtick boundaries, alternating between prose and code spans.
+  final parts = line.split('`');
+  final buf = StringBuffer();
+  for (var i = 0; i < parts.length; i++) {
+    if (i.isOdd) {
+      // Inside backticks — pass through unchanged.
+      buf.write('`${parts[i]}`');
+    } else {
+      // Outside backticks — escape bare <word> tags.
+      buf.write(
+        parts[i].replaceAllMapped(RegExp(r'<(\w+)>'), (m) => '`<${m[1]}>`'),
+      );
+    }
+  }
+  return buf.toString();
 }
 
 /// Format a description string as `///` doc comment lines.

@@ -9,7 +9,7 @@ final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHt
 factory RadarGetHttpTimeseriesGroupByPostQuantumDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByPostQuantumDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType desktop = RadarG
 
 static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType mobile = RadarGetHttpTimeseriesGroupByPostQuantumDeviceType._('MOBILE');
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType other$ = RadarGetHttpTimeseriesGroupByPostQuantumDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType $other = RadarGetHttpTimeseriesGroupByPostQuantumDeviceType._('OTHER');
 
-static const List<RadarGetHttpTimeseriesGroupByPostQuantumDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTimeseriesGroupByPostQuantumDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

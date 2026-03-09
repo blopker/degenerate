@@ -8,16 +8,16 @@
 final class RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat {const RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat._(json),
 }; }
 
-static const RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat json$ = RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat._('JSON');
+static const RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat $json = RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat._('JSON');
 
 static const RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat csv = RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat._('CSV');
 
-static const List<RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat> values = [json$, csv];
+static const List<RadarGetDnsAs112TimeseriesGroupByQueryTypeFormat> values = [$json, csv];
 
 final String value;
 

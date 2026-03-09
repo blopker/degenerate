@@ -19,7 +19,7 @@ factory PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode.f
   'invalid_account_number' => invalidAccountNumber,
   'invalid_currency' => invalidCurrency,
   'no_account' => noAccount,
-  'other' => other$,
+  'other' => $other,
   _ => PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._(json),
 }; }
 
@@ -47,9 +47,9 @@ static const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsC
 
 static const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode noAccount = PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._('no_account');
 
-static const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode other$ = PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._('other');
+static const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode $other = PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._('other');
 
-static const List<PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, debitNotAuthorized, incorrectAccountHolderAddress, incorrectAccountHolderName, incorrectAccountHolderTaxId, insufficientFunds, invalidAccountNumber, invalidCurrency, noAccount, other$];
+static const List<PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, debitNotAuthorized, incorrectAccountHolderAddress, incorrectAccountHolderName, incorrectAccountHolderTaxId, insufficientFunds, invalidAccountNumber, invalidCurrency, noAccount, $other];
 
 final String value;
 

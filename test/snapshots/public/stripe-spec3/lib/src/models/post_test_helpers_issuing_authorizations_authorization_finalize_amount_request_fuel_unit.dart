@@ -12,7 +12,7 @@ factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFu
   'kilogram' => kilogram,
   'kilowatt_hour' => kilowattHour,
   'liter' => liter,
-  'other' => other$,
+  'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._(json),
@@ -28,13 +28,13 @@ static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequ
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit liter = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._('liter');
 
-static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit other$ = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._('other');
+static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit $other = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._('other');
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit pound = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._('pound');
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit usGallon = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit._('us_gallon');
 
-static const List<PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, other$, pound, usGallon];
+static const List<PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetRobotsTxtTopUserAgentsByDirectiveFormat {const RadarGetRobotsTxtTopUserAgentsByDirectiveFormat._(this.value);
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetRobotsTxtTopUserAgentsByDirectiveFormat._(json),
 }; }
 
-static const RadarGetRobotsTxtTopUserAgentsByDirectiveFormat json$ = RadarGetRobotsTxtTopUserAgentsByDirectiveFormat._('JSON');
+static const RadarGetRobotsTxtTopUserAgentsByDirectiveFormat $json = RadarGetRobotsTxtTopUserAgentsByDirectiveFormat._('JSON');
 
 static const RadarGetRobotsTxtTopUserAgentsByDirectiveFormat csv = RadarGetRobotsTxtTopUserAgentsByDirectiveFormat._('CSV');
 
-static const List<RadarGetRobotsTxtTopUserAgentsByDirectiveFormat> values = [json$, csv];
+static const List<RadarGetRobotsTxtTopUserAgentsByDirectiveFormat> values = [$json, csv];
 
 final String value;
 

@@ -9,7 +9,7 @@ final class RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesC
 factory RadarGetAiBotsTimeseriesContentType.fromJson(String json) { return switch (json) {
   'HTML' => html,
   'IMAGES' => images,
-  'JSON' => json$,
+  'JSON' => $json,
   'JAVASCRIPT' => javascript,
   'CSS' => css,
   'PLAIN_TEXT' => plainText,
@@ -22,7 +22,7 @@ factory RadarGetAiBotsTimeseriesContentType.fromJson(String json) { return switc
   'DOCUMENTS' => documents,
   'BINARY' => binary,
   'SERIALIZATION' => serialization,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetAiBotsTimeseriesContentType._(json),
 }; }
 
@@ -30,7 +30,7 @@ static const RadarGetAiBotsTimeseriesContentType html = RadarGetAiBotsTimeseries
 
 static const RadarGetAiBotsTimeseriesContentType images = RadarGetAiBotsTimeseriesContentType._('IMAGES');
 
-static const RadarGetAiBotsTimeseriesContentType json$ = RadarGetAiBotsTimeseriesContentType._('JSON');
+static const RadarGetAiBotsTimeseriesContentType $json = RadarGetAiBotsTimeseriesContentType._('JSON');
 
 static const RadarGetAiBotsTimeseriesContentType javascript = RadarGetAiBotsTimeseriesContentType._('JAVASCRIPT');
 
@@ -56,9 +56,9 @@ static const RadarGetAiBotsTimeseriesContentType binary = RadarGetAiBotsTimeseri
 
 static const RadarGetAiBotsTimeseriesContentType serialization = RadarGetAiBotsTimeseriesContentType._('SERIALIZATION');
 
-static const RadarGetAiBotsTimeseriesContentType other$ = RadarGetAiBotsTimeseriesContentType._('OTHER');
+static const RadarGetAiBotsTimeseriesContentType $other = RadarGetAiBotsTimeseriesContentType._('OTHER');
 
-static const List<RadarGetAiBotsTimeseriesContentType> values = [html, images, json$, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, other$];
+static const List<RadarGetAiBotsTimeseriesContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetHttpSummaryByBotClassFormat {const RadarGetHttpSummaryByBotClassFormat._(this.value);
 
 factory RadarGetHttpSummaryByBotClassFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpSummaryByBotClassFormat._(json),
 }; }
 
-static const RadarGetHttpSummaryByBotClassFormat json$ = RadarGetHttpSummaryByBotClassFormat._('JSON');
+static const RadarGetHttpSummaryByBotClassFormat $json = RadarGetHttpSummaryByBotClassFormat._('JSON');
 
 static const RadarGetHttpSummaryByBotClassFormat csv = RadarGetHttpSummaryByBotClassFormat._('CSV');
 
-static const List<RadarGetHttpSummaryByBotClassFormat> values = [json$, csv];
+static const List<RadarGetHttpSummaryByBotClassFormat> values = [$json, csv];
 
 final String value;
 

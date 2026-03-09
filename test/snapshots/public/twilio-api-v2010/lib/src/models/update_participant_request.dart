@@ -27,13 +27,13 @@ final bool? muted;
 /// Whether the participant should be on hold. Can be: `true` or `false`. `true` puts the participant on hold, and `false` lets them rejoin the conference.
 final bool? hold;
 
-/// The URL we call using the `hold_method` for music that plays when the participant is on hold. The URL may return an MP3 file, a WAV file, or a TwiML document that contains ``<Play>``, ``<Say>``, ``<Pause>``, or ``<Redirect>`` verbs.
+/// The URL we call using the `hold_method` for music that plays when the participant is on hold. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `<Play>`, `<Say>`, `<Pause>`, or `<Redirect>` verbs.
 final Uri? holdUrl;
 
 /// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
 final UpdateParticipantRequestHoldMethod? holdMethod;
 
-/// The URL we call using the `announce_method` for an announcement to the participant. The URL may return an MP3 file, a WAV file, or a TwiML document that contains ``<Play>``, ``<Say>``, ``<Pause>``, or ``<Redirect>`` verbs.
+/// The URL we call using the `announce_method` for an announcement to the participant. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `<Play>`, `<Say>`, `<Pause>`, or `<Redirect>` verbs.
 final Uri? announceUrl;
 
 /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.

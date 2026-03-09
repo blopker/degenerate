@@ -8,16 +8,16 @@
 final class RadarGetHttpTopLocationsByBrowserFamilyFormat {const RadarGetHttpTopLocationsByBrowserFamilyFormat._(this.value);
 
 factory RadarGetHttpTopLocationsByBrowserFamilyFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopLocationsByBrowserFamilyFormat._(json),
 }; }
 
-static const RadarGetHttpTopLocationsByBrowserFamilyFormat json$ = RadarGetHttpTopLocationsByBrowserFamilyFormat._('JSON');
+static const RadarGetHttpTopLocationsByBrowserFamilyFormat $json = RadarGetHttpTopLocationsByBrowserFamilyFormat._('JSON');
 
 static const RadarGetHttpTopLocationsByBrowserFamilyFormat csv = RadarGetHttpTopLocationsByBrowserFamilyFormat._('CSV');
 
-static const List<RadarGetHttpTopLocationsByBrowserFamilyFormat> values = [json$, csv];
+static const List<RadarGetHttpTopLocationsByBrowserFamilyFormat> values = [$json, csv];
 
 final String value;
 

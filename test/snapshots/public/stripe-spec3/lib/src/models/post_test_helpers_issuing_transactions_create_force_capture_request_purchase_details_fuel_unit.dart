@@ -12,7 +12,7 @@ factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetai
   'kilogram' => kilogram,
   'kilowatt_hour' => kilowattHour,
   'liter' => liter,
-  'other' => other$,
+  'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._(json),
@@ -28,13 +28,13 @@ static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchase
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit liter = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._('liter');
 
-static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit other$ = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._('other');
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit $other = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._('other');
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit pound = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._('pound');
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit usGallon = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._('us_gallon');
 
-static const List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, other$, pound, usGallon];
+static const List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 final String value;
 

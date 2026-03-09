@@ -7,16 +7,16 @@
 final class AigConfigUpdateGatewayResponseResultOtelContentType {const AigConfigUpdateGatewayResponseResultOtelContentType._(this.value);
 
 factory AigConfigUpdateGatewayResponseResultOtelContentType.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'protobuf' => protobuf,
   _ => AigConfigUpdateGatewayResponseResultOtelContentType._(json),
 }; }
 
-static const AigConfigUpdateGatewayResponseResultOtelContentType json$ = AigConfigUpdateGatewayResponseResultOtelContentType._('json');
+static const AigConfigUpdateGatewayResponseResultOtelContentType $json = AigConfigUpdateGatewayResponseResultOtelContentType._('json');
 
 static const AigConfigUpdateGatewayResponseResultOtelContentType protobuf = AigConfigUpdateGatewayResponseResultOtelContentType._('protobuf');
 
-static const List<AigConfigUpdateGatewayResponseResultOtelContentType> values = [json$, protobuf];
+static const List<AigConfigUpdateGatewayResponseResultOtelContentType> values = [$json, protobuf];
 
 final String value;
 

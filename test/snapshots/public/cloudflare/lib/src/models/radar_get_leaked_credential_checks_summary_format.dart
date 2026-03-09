@@ -8,16 +8,16 @@
 final class RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat._(this.value);
 
 factory RadarGetLeakedCredentialChecksSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetLeakedCredentialChecksSummaryFormat._(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksSummaryFormat json$ = RadarGetLeakedCredentialChecksSummaryFormat._('JSON');
+static const RadarGetLeakedCredentialChecksSummaryFormat $json = RadarGetLeakedCredentialChecksSummaryFormat._('JSON');
 
 static const RadarGetLeakedCredentialChecksSummaryFormat csv = RadarGetLeakedCredentialChecksSummaryFormat._('CSV');
 
-static const List<RadarGetLeakedCredentialChecksSummaryFormat> values = [json$, csv];
+static const List<RadarGetLeakedCredentialChecksSummaryFormat> values = [$json, csv];
 
 final String value;
 

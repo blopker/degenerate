@@ -8,16 +8,16 @@
 final class RadarGetReportsDatasetsFormat {const RadarGetReportsDatasetsFormat._(this.value);
 
 factory RadarGetReportsDatasetsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetReportsDatasetsFormat._(json),
 }; }
 
-static const RadarGetReportsDatasetsFormat json$ = RadarGetReportsDatasetsFormat._('JSON');
+static const RadarGetReportsDatasetsFormat $json = RadarGetReportsDatasetsFormat._('JSON');
 
 static const RadarGetReportsDatasetsFormat csv = RadarGetReportsDatasetsFormat._('CSV');
 
-static const List<RadarGetReportsDatasetsFormat> values = [json$, csv];
+static const List<RadarGetReportsDatasetsFormat> values = [$json, csv];
 
 final String value;
 

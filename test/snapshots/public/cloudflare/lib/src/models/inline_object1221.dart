@@ -39,7 +39,7 @@ factory InlineObject1221.fromJson(Map<String, dynamic> json) { return InlineObje
 /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 final double? actionTimeout;
 
-/// Adds a ``<script>`` tag into the page with the desired URL or content.
+/// Adds a `<script>` tag into the page with the desired URL or content.
 final List<InlineObject1221AddScriptTag>? addScriptTag;
 
 /// Adds a `<link rel="stylesheet">` tag into the page with the desired URL or a `<style type="text/css">` tag with the content.

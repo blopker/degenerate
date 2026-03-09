@@ -8,16 +8,16 @@
 final class RadarGetRankingTopInternetServicesFormat {const RadarGetRankingTopInternetServicesFormat._(this.value);
 
 factory RadarGetRankingTopInternetServicesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetRankingTopInternetServicesFormat._(json),
 }; }
 
-static const RadarGetRankingTopInternetServicesFormat json$ = RadarGetRankingTopInternetServicesFormat._('JSON');
+static const RadarGetRankingTopInternetServicesFormat $json = RadarGetRankingTopInternetServicesFormat._('JSON');
 
 static const RadarGetRankingTopInternetServicesFormat csv = RadarGetRankingTopInternetServicesFormat._('CSV');
 
-static const List<RadarGetRankingTopInternetServicesFormat> values = [json$, csv];
+static const List<RadarGetRankingTopInternetServicesFormat> values = [$json, csv];
 
 final String value;
 

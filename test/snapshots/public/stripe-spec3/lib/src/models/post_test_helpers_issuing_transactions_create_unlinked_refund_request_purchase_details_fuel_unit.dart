@@ -12,7 +12,7 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDet
   'kilogram' => kilogram,
   'kilowatt_hour' => kilowattHour,
   'liter' => liter,
-  'other' => other$,
+  'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._(json),
@@ -28,13 +28,13 @@ static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurcha
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit liter = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('liter');
 
-static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit other$ = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('other');
+static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit $other = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('other');
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit pound = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('pound');
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit usGallon = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('us_gallon');
 
-static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, other$, pound, usGallon];
+static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 final String value;
 

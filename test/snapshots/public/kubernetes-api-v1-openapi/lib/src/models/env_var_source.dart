@@ -28,7 +28,7 @@ factory EnvVarSource.fromJson(Map<String, dynamic> json) { return EnvVarSource(
 /// Selects a key of a ConfigMap.
 final ConfigMapKeySelector? configMapKeyRef;
 
-/// Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['`<KEY>`']`, `metadata.annotations['`<KEY>`']`, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.
+/// Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.
 final ObjectFieldSelector? fieldRef;
 
 /// FileKeyRef selects a key of the env file. Requires the EnvFiles feature gate to be enabled.

@@ -11,7 +11,7 @@ factory FinancialConnectionsAccountCategory.fromJson(String json) { return switc
   'cash' => cash,
   'credit' => credit,
   'investment' => investment,
-  'other' => other$,
+  'other' => $other,
   _ => FinancialConnectionsAccountCategory._(json),
 }; }
 
@@ -21,9 +21,9 @@ static const FinancialConnectionsAccountCategory credit = FinancialConnectionsAc
 
 static const FinancialConnectionsAccountCategory investment = FinancialConnectionsAccountCategory._('investment');
 
-static const FinancialConnectionsAccountCategory other$ = FinancialConnectionsAccountCategory._('other');
+static const FinancialConnectionsAccountCategory $other = FinancialConnectionsAccountCategory._('other');
 
-static const List<FinancialConnectionsAccountCategory> values = [cash, credit, investment, other$];
+static const List<FinancialConnectionsAccountCategory> values = [cash, credit, investment, $other];
 
 final String value;
 

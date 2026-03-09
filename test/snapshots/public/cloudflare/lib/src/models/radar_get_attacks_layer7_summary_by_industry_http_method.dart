@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7SummaryByIndustryHttpMethod.fromJson(String json) {
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7SummaryByIndustryHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod rpcOutData = Radar
 
 static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod rpcInData = RadarGetAttacksLayer7SummaryByIndustryHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod json$ = RadarGetAttacksLayer7SummaryByIndustryHttpMethod._('JSON');
+static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod $json = RadarGetAttacksLayer7SummaryByIndustryHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod cook = RadarGetAttacksLayer7SummaryByIndustryHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7SummaryByIndustryHttpMethod track = RadarGetAttacksLayer7SummaryByIndustryHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7SummaryByIndustryHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7SummaryByIndustryHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

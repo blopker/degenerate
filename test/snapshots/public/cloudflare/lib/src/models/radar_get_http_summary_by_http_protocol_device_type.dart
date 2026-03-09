@@ -9,7 +9,7 @@ final class RadarGetHttpSummaryByHttpProtocolDeviceType {const RadarGetHttpSumma
 factory RadarGetHttpSummaryByHttpProtocolDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpSummaryByHttpProtocolDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpSummaryByHttpProtocolDeviceType desktop = RadarGetHttpS
 
 static const RadarGetHttpSummaryByHttpProtocolDeviceType mobile = RadarGetHttpSummaryByHttpProtocolDeviceType._('MOBILE');
 
-static const RadarGetHttpSummaryByHttpProtocolDeviceType other$ = RadarGetHttpSummaryByHttpProtocolDeviceType._('OTHER');
+static const RadarGetHttpSummaryByHttpProtocolDeviceType $other = RadarGetHttpSummaryByHttpProtocolDeviceType._('OTHER');
 
-static const List<RadarGetHttpSummaryByHttpProtocolDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpSummaryByHttpProtocolDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

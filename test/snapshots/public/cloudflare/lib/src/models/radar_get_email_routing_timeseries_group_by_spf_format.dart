@@ -8,16 +8,16 @@
 final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(this.value);
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat json$ = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('JSON');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat $json = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('JSON');
 
 static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat csv = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('CSV');
 
-static const List<RadarGetEmailRoutingTimeseriesGroupBySpfFormat> values = [json$, csv];
+static const List<RadarGetEmailRoutingTimeseriesGroupBySpfFormat> values = [$json, csv];
 
 final String value;
 

@@ -11,10 +11,10 @@ factory InlineObject999CustomAi.fromJson(Map<String, dynamic> json) { return Inl
   model: json['model'] as String,
 ); }
 
-/// Authorization token for the AI model: `Bearer `<token>``.
+/// Authorization token for the AI model: `Bearer <token>`.
 final String authorization;
 
-/// AI model to use for the request. Must be formed as ``<provider>`/`<model_name>``, e.g. `workers-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
+/// AI model to use for the request. Must be formed as `<provider>/<model_name>`, e.g. `workers-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
 final String model;
 
 Map<String, dynamic> toJson() { return {

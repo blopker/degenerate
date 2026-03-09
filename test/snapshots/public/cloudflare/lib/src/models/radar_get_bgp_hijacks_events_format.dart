@@ -8,16 +8,16 @@
 final class RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat._(this.value);
 
 factory RadarGetBgpHijacksEventsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpHijacksEventsFormat._(json),
 }; }
 
-static const RadarGetBgpHijacksEventsFormat json$ = RadarGetBgpHijacksEventsFormat._('JSON');
+static const RadarGetBgpHijacksEventsFormat $json = RadarGetBgpHijacksEventsFormat._('JSON');
 
 static const RadarGetBgpHijacksEventsFormat csv = RadarGetBgpHijacksEventsFormat._('CSV');
 
-static const List<RadarGetBgpHijacksEventsFormat> values = [json$, csv];
+static const List<RadarGetBgpHijacksEventsFormat> values = [$json, csv];
 
 final String value;
 

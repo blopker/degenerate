@@ -11,7 +11,7 @@ factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellati
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
-  'other' => other$,
+  'other' => $other,
   'switched_service' => switchedService,
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
@@ -27,7 +27,7 @@ static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCance
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback missingFeatures = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('missing_features');
 
-static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback other$ = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('other');
+static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback $other = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('other');
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback switchedService = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('switched_service');
 
@@ -37,7 +37,7 @@ static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCance
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback unused = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('unused');
 
-static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback> values = [$empty, customerService, lowQuality, missingFeatures, other$, switchedService, tooComplex, tooExpensive, unused];
+static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback> values = [$empty, customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 final String value;
 

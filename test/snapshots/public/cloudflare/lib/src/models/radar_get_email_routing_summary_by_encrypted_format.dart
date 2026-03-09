@@ -8,16 +8,16 @@
 final class RadarGetEmailRoutingSummaryByEncryptedFormat {const RadarGetEmailRoutingSummaryByEncryptedFormat._(this.value);
 
 factory RadarGetEmailRoutingSummaryByEncryptedFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingSummaryByEncryptedFormat._(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryByEncryptedFormat json$ = RadarGetEmailRoutingSummaryByEncryptedFormat._('JSON');
+static const RadarGetEmailRoutingSummaryByEncryptedFormat $json = RadarGetEmailRoutingSummaryByEncryptedFormat._('JSON');
 
 static const RadarGetEmailRoutingSummaryByEncryptedFormat csv = RadarGetEmailRoutingSummaryByEncryptedFormat._('CSV');
 
-static const List<RadarGetEmailRoutingSummaryByEncryptedFormat> values = [json$, csv];
+static const List<RadarGetEmailRoutingSummaryByEncryptedFormat> values = [$json, csv];
 
 final String value;
 

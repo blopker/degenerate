@@ -9,7 +9,7 @@ final class RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAs
 factory RadarGetHttpTopAsesByHttpRequestsDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTopAsesByHttpRequestsDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTopAsesByHttpRequestsDeviceType desktop = RadarGetHttpT
 
 static const RadarGetHttpTopAsesByHttpRequestsDeviceType mobile = RadarGetHttpTopAsesByHttpRequestsDeviceType._('MOBILE');
 
-static const RadarGetHttpTopAsesByHttpRequestsDeviceType other$ = RadarGetHttpTopAsesByHttpRequestsDeviceType._('OTHER');
+static const RadarGetHttpTopAsesByHttpRequestsDeviceType $other = RadarGetHttpTopAsesByHttpRequestsDeviceType._('OTHER');
 
-static const List<RadarGetHttpTopAsesByHttpRequestsDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTopAsesByHttpRequestsDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

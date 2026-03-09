@@ -9,7 +9,7 @@ final class RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType {const RadarG
 factory RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType desktop = Ra
 
 static const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType mobile = RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._('MOBILE');
 
-static const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType other$ = RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType $other = RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._('OTHER');
 
-static const List<RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

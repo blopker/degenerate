@@ -8,16 +8,16 @@
 final class RadarGetBgpRouteLeakEventsFormat {const RadarGetBgpRouteLeakEventsFormat._(this.value);
 
 factory RadarGetBgpRouteLeakEventsFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpRouteLeakEventsFormat._(json),
 }; }
 
-static const RadarGetBgpRouteLeakEventsFormat json$ = RadarGetBgpRouteLeakEventsFormat._('JSON');
+static const RadarGetBgpRouteLeakEventsFormat $json = RadarGetBgpRouteLeakEventsFormat._('JSON');
 
 static const RadarGetBgpRouteLeakEventsFormat csv = RadarGetBgpRouteLeakEventsFormat._('CSV');
 
-static const List<RadarGetBgpRouteLeakEventsFormat> values = [json$, csv];
+static const List<RadarGetBgpRouteLeakEventsFormat> values = [$json, csv];
 
 final String value;
 

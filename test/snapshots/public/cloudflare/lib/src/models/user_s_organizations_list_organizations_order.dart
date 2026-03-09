@@ -9,18 +9,18 @@ final class UserSOrganizationsListOrganizationsOrder {const UserSOrganizationsLi
 
 factory UserSOrganizationsListOrganizationsOrder.fromJson(String json) { return switch (json) {
   'id' => id,
-  'name' => name$,
+  'name' => $name,
   'status' => status,
   _ => UserSOrganizationsListOrganizationsOrder._(json),
 }; }
 
 static const UserSOrganizationsListOrganizationsOrder id = UserSOrganizationsListOrganizationsOrder._('id');
 
-static const UserSOrganizationsListOrganizationsOrder name$ = UserSOrganizationsListOrganizationsOrder._('name');
+static const UserSOrganizationsListOrganizationsOrder $name = UserSOrganizationsListOrganizationsOrder._('name');
 
 static const UserSOrganizationsListOrganizationsOrder status = UserSOrganizationsListOrganizationsOrder._('status');
 
-static const List<UserSOrganizationsListOrganizationsOrder> values = [id, name$, status];
+static const List<UserSOrganizationsListOrganizationsOrder> values = [id, $name, status];
 
 final String value;
 

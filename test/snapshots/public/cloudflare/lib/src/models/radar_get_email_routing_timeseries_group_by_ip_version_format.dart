@@ -8,16 +8,16 @@
 final class RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat {const RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat._(this.value);
 
 factory RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat._(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat json$ = RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat._('JSON');
+static const RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat $json = RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat._('JSON');
 
 static const RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat csv = RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat._('CSV');
 
-static const List<RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat> values = [json$, csv];
+static const List<RadarGetEmailRoutingTimeseriesGroupByIpVersionFormat> values = [$json, csv];
 
 final String value;
 

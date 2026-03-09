@@ -9,7 +9,7 @@ final class DnsRecordsOrder {const DnsRecordsOrder._(this.value);
 
 factory DnsRecordsOrder.fromJson(String json) { return switch (json) {
   'type' => type,
-  'name' => name$,
+  'name' => $name,
   'content' => content,
   'ttl' => ttl,
   'proxied' => proxied,
@@ -18,7 +18,7 @@ factory DnsRecordsOrder.fromJson(String json) { return switch (json) {
 
 static const DnsRecordsOrder type = DnsRecordsOrder._('type');
 
-static const DnsRecordsOrder name$ = DnsRecordsOrder._('name');
+static const DnsRecordsOrder $name = DnsRecordsOrder._('name');
 
 static const DnsRecordsOrder content = DnsRecordsOrder._('content');
 
@@ -26,7 +26,7 @@ static const DnsRecordsOrder ttl = DnsRecordsOrder._('ttl');
 
 static const DnsRecordsOrder proxied = DnsRecordsOrder._('proxied');
 
-static const List<DnsRecordsOrder> values = [type, name$, content, ttl, proxied];
+static const List<DnsRecordsOrder> values = [type, $name, content, ttl, proxied];
 
 final String value;
 

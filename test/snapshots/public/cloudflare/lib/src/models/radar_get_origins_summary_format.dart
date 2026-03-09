@@ -8,16 +8,16 @@
 final class RadarGetOriginsSummaryFormat {const RadarGetOriginsSummaryFormat._(this.value);
 
 factory RadarGetOriginsSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetOriginsSummaryFormat._(json),
 }; }
 
-static const RadarGetOriginsSummaryFormat json$ = RadarGetOriginsSummaryFormat._('JSON');
+static const RadarGetOriginsSummaryFormat $json = RadarGetOriginsSummaryFormat._('JSON');
 
 static const RadarGetOriginsSummaryFormat csv = RadarGetOriginsSummaryFormat._('CSV');
 
-static const List<RadarGetOriginsSummaryFormat> values = [json$, csv];
+static const List<RadarGetOriginsSummaryFormat> values = [$json, csv];
 
 final String value;
 

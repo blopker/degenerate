@@ -9,7 +9,7 @@ final class RadarGetHttpTopLocationsByBrowserFamilyDeviceType {const RadarGetHtt
 factory RadarGetHttpTopLocationsByBrowserFamilyDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTopLocationsByBrowserFamilyDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTopLocationsByBrowserFamilyDeviceType desktop = RadarGe
 
 static const RadarGetHttpTopLocationsByBrowserFamilyDeviceType mobile = RadarGetHttpTopLocationsByBrowserFamilyDeviceType._('MOBILE');
 
-static const RadarGetHttpTopLocationsByBrowserFamilyDeviceType other$ = RadarGetHttpTopLocationsByBrowserFamilyDeviceType._('OTHER');
+static const RadarGetHttpTopLocationsByBrowserFamilyDeviceType $other = RadarGetHttpTopLocationsByBrowserFamilyDeviceType._('OTHER');
 
-static const List<RadarGetHttpTopLocationsByBrowserFamilyDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTopLocationsByBrowserFamilyDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

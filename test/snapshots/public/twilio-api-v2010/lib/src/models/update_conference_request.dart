@@ -14,7 +14,7 @@ factory UpdateConferenceRequest.fromJson(Map<String, dynamic> json) { return Upd
 
 final ConferenceEnumUpdateStatus? status;
 
-/// The URL we should call to announce something into the conference. The URL may return an MP3 file, a WAV file, or a TwiML document that contains ``<Play>``, ``<Say>``, ``<Pause>``, or ``<Redirect>`` verbs.
+/// The URL we should call to announce something into the conference. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `<Play>`, `<Say>`, `<Pause>`, or `<Redirect>` verbs.
 final Uri? announceUrl;
 
 /// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`

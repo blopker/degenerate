@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TimeseriesHttpMethod.fromJson(String json) { return
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TimeseriesHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TimeseriesHttpMethod rpcOutData = RadarGetAtta
 
 static const RadarGetAttacksLayer7TimeseriesHttpMethod rpcInData = RadarGetAttacksLayer7TimeseriesHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TimeseriesHttpMethod json$ = RadarGetAttacksLayer7TimeseriesHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TimeseriesHttpMethod $json = RadarGetAttacksLayer7TimeseriesHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TimeseriesHttpMethod cook = RadarGetAttacksLayer7TimeseriesHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TimeseriesHttpMethod track = RadarGetAttacksLayer7TimeseriesHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TimeseriesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TimeseriesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

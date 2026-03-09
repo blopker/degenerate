@@ -13,7 +13,7 @@ factory IssuingAuthorizationFuelDataUnit.fromJson(String json) { return switch (
   'kilogram' => kilogram,
   'kilowatt_hour' => kilowattHour,
   'liter' => liter,
-  'other' => other$,
+  'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => IssuingAuthorizationFuelDataUnit._(json),
@@ -29,13 +29,13 @@ static const IssuingAuthorizationFuelDataUnit kilowattHour = IssuingAuthorizatio
 
 static const IssuingAuthorizationFuelDataUnit liter = IssuingAuthorizationFuelDataUnit._('liter');
 
-static const IssuingAuthorizationFuelDataUnit other$ = IssuingAuthorizationFuelDataUnit._('other');
+static const IssuingAuthorizationFuelDataUnit $other = IssuingAuthorizationFuelDataUnit._('other');
 
 static const IssuingAuthorizationFuelDataUnit pound = IssuingAuthorizationFuelDataUnit._('pound');
 
 static const IssuingAuthorizationFuelDataUnit usGallon = IssuingAuthorizationFuelDataUnit._('us_gallon');
 
-static const List<IssuingAuthorizationFuelDataUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, other$, pound, usGallon];
+static const List<IssuingAuthorizationFuelDataUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 final String value;
 

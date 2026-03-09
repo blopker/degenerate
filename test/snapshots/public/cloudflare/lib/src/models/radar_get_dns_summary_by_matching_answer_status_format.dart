@@ -8,16 +8,16 @@
 final class RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat._(this.value);
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsSummaryByMatchingAnswerStatusFormat._(json),
 }; }
 
-static const RadarGetDnsSummaryByMatchingAnswerStatusFormat json$ = RadarGetDnsSummaryByMatchingAnswerStatusFormat._('JSON');
+static const RadarGetDnsSummaryByMatchingAnswerStatusFormat $json = RadarGetDnsSummaryByMatchingAnswerStatusFormat._('JSON');
 
 static const RadarGetDnsSummaryByMatchingAnswerStatusFormat csv = RadarGetDnsSummaryByMatchingAnswerStatusFormat._('CSV');
 
-static const List<RadarGetDnsSummaryByMatchingAnswerStatusFormat> values = [json$, csv];
+static const List<RadarGetDnsSummaryByMatchingAnswerStatusFormat> values = [$json, csv];
 
 final String value;
 

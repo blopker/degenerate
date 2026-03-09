@@ -12,7 +12,7 @@ factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(Str
   'government' => government,
   'loan' => loan,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'pension' => pension,
   'personal' => personal,
   'retail' => retail,
@@ -30,7 +30,7 @@ static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose loan = 
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose mortgage = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('mortgage');
 
-static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose other$ = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose $other = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('other');
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose pension = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('pension');
 
@@ -44,7 +44,7 @@ static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose tax = P
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose utility = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('utility');
 
-static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, other$, pension, personal, retail, salary, tax, utility];
+static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 final String value;
 

@@ -17,7 +17,7 @@ factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String jso
   'insufficient_funds' => insufficientFunds,
   'invalid_account' => invalidAccount,
   'lost_card' => lostCard,
-  'other' => other$,
+  'other' => $other,
   'processing_error' => processingError,
   'reported_stolen' => reportedStolen,
   'try_again_later' => tryAgainLater,
@@ -42,7 +42,7 @@ static const InsightsResourcesPaymentEvaluationRejectedCardReason invalidAccount
 
 static const InsightsResourcesPaymentEvaluationRejectedCardReason lostCard = InsightsResourcesPaymentEvaluationRejectedCardReason._('lost_card');
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason other$ = InsightsResourcesPaymentEvaluationRejectedCardReason._('other');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason $other = InsightsResourcesPaymentEvaluationRejectedCardReason._('other');
 
 static const InsightsResourcesPaymentEvaluationRejectedCardReason processingError = InsightsResourcesPaymentEvaluationRejectedCardReason._('processing_error');
 
@@ -50,7 +50,7 @@ static const InsightsResourcesPaymentEvaluationRejectedCardReason reportedStolen
 
 static const InsightsResourcesPaymentEvaluationRejectedCardReason tryAgainLater = InsightsResourcesPaymentEvaluationRejectedCardReason._('try_again_later');
 
-static const List<InsightsResourcesPaymentEvaluationRejectedCardReason> values = [authenticationFailed, doNotHonor, expired, incorrectCvc, incorrectNumber, incorrectPostalCode, insufficientFunds, invalidAccount, lostCard, other$, processingError, reportedStolen, tryAgainLater];
+static const List<InsightsResourcesPaymentEvaluationRejectedCardReason> values = [authenticationFailed, doNotHonor, expired, incorrectCvc, incorrectNumber, incorrectPostalCode, insufficientFunds, invalidAccount, lostCard, $other, processingError, reportedStolen, tryAgainLater];
 
 final String value;
 

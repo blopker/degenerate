@@ -8,16 +8,16 @@
 final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._(this.value);
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._(json),
 }; }
 
-static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat json$ = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._('JSON');
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat $json = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._('JSON');
 
 static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat csv = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._('CSV');
 
-static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat> values = [json$, csv];
+static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat> values = [$json, csv];
 
 final String value;
 

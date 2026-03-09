@@ -8,16 +8,16 @@
 final class RadarGetOriginPostQuantumSummaryFormat {const RadarGetOriginPostQuantumSummaryFormat._(this.value);
 
 factory RadarGetOriginPostQuantumSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetOriginPostQuantumSummaryFormat._(json),
 }; }
 
-static const RadarGetOriginPostQuantumSummaryFormat json$ = RadarGetOriginPostQuantumSummaryFormat._('JSON');
+static const RadarGetOriginPostQuantumSummaryFormat $json = RadarGetOriginPostQuantumSummaryFormat._('JSON');
 
 static const RadarGetOriginPostQuantumSummaryFormat csv = RadarGetOriginPostQuantumSummaryFormat._('CSV');
 
-static const List<RadarGetOriginPostQuantumSummaryFormat> values = [json$, csv];
+static const List<RadarGetOriginPostQuantumSummaryFormat> values = [$json, csv];
 
 final String value;
 

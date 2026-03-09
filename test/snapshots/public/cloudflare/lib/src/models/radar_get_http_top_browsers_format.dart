@@ -8,16 +8,16 @@
 final class RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat._(this.value);
 
 factory RadarGetHttpTopBrowsersFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopBrowsersFormat._(json),
 }; }
 
-static const RadarGetHttpTopBrowsersFormat json$ = RadarGetHttpTopBrowsersFormat._('JSON');
+static const RadarGetHttpTopBrowsersFormat $json = RadarGetHttpTopBrowsersFormat._('JSON');
 
 static const RadarGetHttpTopBrowsersFormat csv = RadarGetHttpTopBrowsersFormat._('CSV');
 
-static const List<RadarGetHttpTopBrowsersFormat> values = [json$, csv];
+static const List<RadarGetHttpTopBrowsersFormat> values = [$json, csv];
 
 final String value;
 

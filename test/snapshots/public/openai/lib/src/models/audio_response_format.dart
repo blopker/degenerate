@@ -9,7 +9,7 @@
 final class AudioResponseFormat {const AudioResponseFormat._(this.value);
 
 factory AudioResponseFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'text' => text,
   'srt' => srt,
   'verbose_json' => verboseJson,
@@ -18,7 +18,7 @@ factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   _ => AudioResponseFormat._(json),
 }; }
 
-static const AudioResponseFormat json$ = AudioResponseFormat._('json');
+static const AudioResponseFormat $json = AudioResponseFormat._('json');
 
 static const AudioResponseFormat text = AudioResponseFormat._('text');
 
@@ -30,7 +30,7 @@ static const AudioResponseFormat vtt = AudioResponseFormat._('vtt');
 
 static const AudioResponseFormat diarizedJson = AudioResponseFormat._('diarized_json');
 
-static const List<AudioResponseFormat> values = [json$, text, srt, verboseJson, vtt, diarizedJson];
+static const List<AudioResponseFormat> values = [$json, text, srt, verboseJson, vtt, diarizedJson];
 
 final String value;
 

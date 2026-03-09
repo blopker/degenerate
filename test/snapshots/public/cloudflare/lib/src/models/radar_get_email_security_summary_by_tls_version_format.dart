@@ -8,16 +8,16 @@
 final class RadarGetEmailSecuritySummaryByTlsVersionFormat {const RadarGetEmailSecuritySummaryByTlsVersionFormat._(this.value);
 
 factory RadarGetEmailSecuritySummaryByTlsVersionFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecuritySummaryByTlsVersionFormat._(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByTlsVersionFormat json$ = RadarGetEmailSecuritySummaryByTlsVersionFormat._('JSON');
+static const RadarGetEmailSecuritySummaryByTlsVersionFormat $json = RadarGetEmailSecuritySummaryByTlsVersionFormat._('JSON');
 
 static const RadarGetEmailSecuritySummaryByTlsVersionFormat csv = RadarGetEmailSecuritySummaryByTlsVersionFormat._('CSV');
 
-static const List<RadarGetEmailSecuritySummaryByTlsVersionFormat> values = [json$, csv];
+static const List<RadarGetEmailSecuritySummaryByTlsVersionFormat> values = [$json, csv];
 
 final String value;
 

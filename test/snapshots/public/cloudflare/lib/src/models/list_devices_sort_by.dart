@@ -7,7 +7,7 @@
 final class ListDevicesSortBy {const ListDevicesSortBy._(this.value);
 
 factory ListDevicesSortBy.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   'id' => id,
   'client_version' => clientVersion,
   'last_seen_user.email' => lastSeenUserEmail,
@@ -17,7 +17,7 @@ factory ListDevicesSortBy.fromJson(String json) { return switch (json) {
   _ => ListDevicesSortBy._(json),
 }; }
 
-static const ListDevicesSortBy name$ = ListDevicesSortBy._('name');
+static const ListDevicesSortBy $name = ListDevicesSortBy._('name');
 
 static const ListDevicesSortBy id = ListDevicesSortBy._('id');
 
@@ -31,7 +31,7 @@ static const ListDevicesSortBy activeRegistrations = ListDevicesSortBy._('active
 
 static const ListDevicesSortBy createdAt = ListDevicesSortBy._('created_at');
 
-static const List<ListDevicesSortBy> values = [name$, id, clientVersion, lastSeenUserEmail, lastSeenAt, activeRegistrations, createdAt];
+static const List<ListDevicesSortBy> values = [$name, id, clientVersion, lastSeenUserEmail, lastSeenAt, activeRegistrations, createdAt];
 
 final String value;
 

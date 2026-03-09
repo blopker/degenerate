@@ -8,7 +8,7 @@ final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseD
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
-  'other' => other$,
+  'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
@@ -17,7 +17,7 @@ factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetai
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType diesel = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._('diesel');
 
-static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType other$ = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._('other');
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType $other = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._('other');
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType unleadedPlus = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._('unleaded_plus');
 
@@ -25,7 +25,7 @@ static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchase
 
 static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType unleadedSuper = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._('unleaded_super');
 
-static const List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType> values = [diesel, other$, unleadedPlus, unleadedRegular, unleadedSuper];
+static const List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 final String value;
 

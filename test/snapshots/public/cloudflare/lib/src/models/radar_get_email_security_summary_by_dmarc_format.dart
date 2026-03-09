@@ -8,16 +8,16 @@
 final class RadarGetEmailSecuritySummaryByDmarcFormat {const RadarGetEmailSecuritySummaryByDmarcFormat._(this.value);
 
 factory RadarGetEmailSecuritySummaryByDmarcFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecuritySummaryByDmarcFormat._(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByDmarcFormat json$ = RadarGetEmailSecuritySummaryByDmarcFormat._('JSON');
+static const RadarGetEmailSecuritySummaryByDmarcFormat $json = RadarGetEmailSecuritySummaryByDmarcFormat._('JSON');
 
 static const RadarGetEmailSecuritySummaryByDmarcFormat csv = RadarGetEmailSecuritySummaryByDmarcFormat._('CSV');
 
-static const List<RadarGetEmailSecuritySummaryByDmarcFormat> values = [json$, csv];
+static const List<RadarGetEmailSecuritySummaryByDmarcFormat> values = [$json, csv];
 
 final String value;
 

@@ -8,16 +8,16 @@
 final class RadarGetHttpTimeseriesGroupByPostQuantumFormat {const RadarGetHttpTimeseriesGroupByPostQuantumFormat._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTimeseriesGroupByPostQuantumFormat._(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumFormat json$ = RadarGetHttpTimeseriesGroupByPostQuantumFormat._('JSON');
+static const RadarGetHttpTimeseriesGroupByPostQuantumFormat $json = RadarGetHttpTimeseriesGroupByPostQuantumFormat._('JSON');
 
 static const RadarGetHttpTimeseriesGroupByPostQuantumFormat csv = RadarGetHttpTimeseriesGroupByPostQuantumFormat._('CSV');
 
-static const List<RadarGetHttpTimeseriesGroupByPostQuantumFormat> values = [json$, csv];
+static const List<RadarGetHttpTimeseriesGroupByPostQuantumFormat> values = [$json, csv];
 
 final String value;
 

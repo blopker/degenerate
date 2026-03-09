@@ -8,16 +8,16 @@
 final class RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat._(this.value);
 
 factory RadarGetAnnotationsOutagesTopFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAnnotationsOutagesTopFormat._(json),
 }; }
 
-static const RadarGetAnnotationsOutagesTopFormat json$ = RadarGetAnnotationsOutagesTopFormat._('JSON');
+static const RadarGetAnnotationsOutagesTopFormat $json = RadarGetAnnotationsOutagesTopFormat._('JSON');
 
 static const RadarGetAnnotationsOutagesTopFormat csv = RadarGetAnnotationsOutagesTopFormat._('CSV');
 
-static const List<RadarGetAnnotationsOutagesTopFormat> values = [json$, csv];
+static const List<RadarGetAnnotationsOutagesTopFormat> values = [$json, csv];
 
 final String value;
 

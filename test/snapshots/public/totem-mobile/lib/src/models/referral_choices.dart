@@ -15,7 +15,7 @@ factory ReferralChoices.fromJson(String json) { return switch (json) {
   'blog' => blog,
   'newsletter' => newsletter,
   'dream' => dream,
-  'other' => other$,
+  'other' => $other,
   _ => ReferralChoices._(json),
 }; }
 
@@ -35,9 +35,9 @@ static const ReferralChoices newsletter = ReferralChoices._('newsletter');
 
 static const ReferralChoices dream = ReferralChoices._('dream');
 
-static const ReferralChoices other$ = ReferralChoices._('other');
+static const ReferralChoices $other = ReferralChoices._('other');
 
-static const List<ReferralChoices> values = [$default, search, social, keeper, pamphlet, blog, newsletter, dream, other$];
+static const List<ReferralChoices> values = [$default, search, social, keeper, pamphlet, blog, newsletter, dream, $other];
 
 final String value;
 

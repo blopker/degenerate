@@ -9,7 +9,7 @@
 final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
 
 factory CreateTranslationRequestResponseFormat.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'text' => text,
   'srt' => srt,
   'verbose_json' => verboseJson,
@@ -17,7 +17,7 @@ factory CreateTranslationRequestResponseFormat.fromJson(String json) { return sw
   _ => CreateTranslationRequestResponseFormat._(json),
 }; }
 
-static const CreateTranslationRequestResponseFormat json$ = CreateTranslationRequestResponseFormat._('json');
+static const CreateTranslationRequestResponseFormat $json = CreateTranslationRequestResponseFormat._('json');
 
 static const CreateTranslationRequestResponseFormat text = CreateTranslationRequestResponseFormat._('text');
 
@@ -27,7 +27,7 @@ static const CreateTranslationRequestResponseFormat verboseJson = CreateTranslat
 
 static const CreateTranslationRequestResponseFormat vtt = CreateTranslationRequestResponseFormat._('vtt');
 
-static const List<CreateTranslationRequestResponseFormat> values = [json$, text, srt, verboseJson, vtt];
+static const List<CreateTranslationRequestResponseFormat> values = [$json, text, srt, verboseJson, vtt];
 
 final String value;
 

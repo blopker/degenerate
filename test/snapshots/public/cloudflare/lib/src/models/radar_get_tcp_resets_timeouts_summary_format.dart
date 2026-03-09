@@ -8,16 +8,16 @@
 final class RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat._(this.value);
 
 factory RadarGetTcpResetsTimeoutsSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetTcpResetsTimeoutsSummaryFormat._(json),
 }; }
 
-static const RadarGetTcpResetsTimeoutsSummaryFormat json$ = RadarGetTcpResetsTimeoutsSummaryFormat._('JSON');
+static const RadarGetTcpResetsTimeoutsSummaryFormat $json = RadarGetTcpResetsTimeoutsSummaryFormat._('JSON');
 
 static const RadarGetTcpResetsTimeoutsSummaryFormat csv = RadarGetTcpResetsTimeoutsSummaryFormat._('CSV');
 
-static const List<RadarGetTcpResetsTimeoutsSummaryFormat> values = [json$, csv];
+static const List<RadarGetTcpResetsTimeoutsSummaryFormat> values = [$json, csv];
 
 final String value;
 

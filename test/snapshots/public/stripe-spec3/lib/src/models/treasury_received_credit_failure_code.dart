@@ -11,7 +11,7 @@ factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch 
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'international_transaction' => internationalTransaction,
-  'other' => other$,
+  'other' => $other,
   _ => TreasuryReceivedCreditFailureCode._(json),
 }; }
 
@@ -21,9 +21,9 @@ static const TreasuryReceivedCreditFailureCode accountFrozen = TreasuryReceivedC
 
 static const TreasuryReceivedCreditFailureCode internationalTransaction = TreasuryReceivedCreditFailureCode._('international_transaction');
 
-static const TreasuryReceivedCreditFailureCode other$ = TreasuryReceivedCreditFailureCode._('other');
+static const TreasuryReceivedCreditFailureCode $other = TreasuryReceivedCreditFailureCode._('other');
 
-static const List<TreasuryReceivedCreditFailureCode> values = [accountClosed, accountFrozen, internationalTransaction, other$];
+static const List<TreasuryReceivedCreditFailureCode> values = [accountClosed, accountFrozen, internationalTransaction, $other];
 
 final String value;
 

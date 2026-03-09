@@ -8,16 +8,16 @@
 final class RadarGetSearchGlobalFormat {const RadarGetSearchGlobalFormat._(this.value);
 
 factory RadarGetSearchGlobalFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetSearchGlobalFormat._(json),
 }; }
 
-static const RadarGetSearchGlobalFormat json$ = RadarGetSearchGlobalFormat._('JSON');
+static const RadarGetSearchGlobalFormat $json = RadarGetSearchGlobalFormat._('JSON');
 
 static const RadarGetSearchGlobalFormat csv = RadarGetSearchGlobalFormat._('CSV');
 
-static const List<RadarGetSearchGlobalFormat> values = [json$, csv];
+static const List<RadarGetSearchGlobalFormat> values = [$json, csv];
 
 final String value;
 

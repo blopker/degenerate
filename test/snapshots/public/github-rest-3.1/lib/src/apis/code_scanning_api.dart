@@ -323,9 +323,9 @@ return _execute(
 /// When you list the analyses for a repository,
 /// one or more will be identified as deletable in the response:
 /// 
-/// ```
+/// ````
 /// "deletable": true
-/// ```
+/// ````
 /// 
 /// An analysis is deletable when it's the most recent in a set of analyses.
 /// Typically, a repository will have multiple sets of analyses
@@ -339,9 +339,9 @@ return _execute(
 /// If you attempt to delete an analysis that is not the most recent in a set,
 /// you'll get a 400 response with the message:
 /// 
-/// ```
+/// ````
 /// Analysis specified is not deletable.
-/// ```
+/// ````
 /// 
 /// The response from a successful `DELETE` operation provides you with
 /// two alternative URLs for deleting the next analysis in the set:
@@ -589,9 +589,9 @@ return _execute(
 /// 
 /// You must compress the SARIF-formatted analysis data that you want to upload, using `gzip`, and then encode it as a Base64 format string. For example:
 /// 
-/// ```
+/// ````
 /// gzip -c analysis-data.sarif | base64 -w0
-/// ```
+/// ````
 /// 
 /// SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
 /// To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries. For more information, see "[SARIF results exceed one or more limits](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif/results-exceed-limit)."

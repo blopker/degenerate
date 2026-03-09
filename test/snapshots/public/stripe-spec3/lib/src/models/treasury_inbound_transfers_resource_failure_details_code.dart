@@ -20,7 +20,7 @@ factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json)
   'invalid_account_number' => invalidAccountNumber,
   'invalid_currency' => invalidCurrency,
   'no_account' => noAccount,
-  'other' => other$,
+  'other' => $other,
   _ => TreasuryInboundTransfersResourceFailureDetailsCode._(json),
 }; }
 
@@ -48,9 +48,9 @@ static const TreasuryInboundTransfersResourceFailureDetailsCode invalidCurrency 
 
 static const TreasuryInboundTransfersResourceFailureDetailsCode noAccount = TreasuryInboundTransfersResourceFailureDetailsCode._('no_account');
 
-static const TreasuryInboundTransfersResourceFailureDetailsCode other$ = TreasuryInboundTransfersResourceFailureDetailsCode._('other');
+static const TreasuryInboundTransfersResourceFailureDetailsCode $other = TreasuryInboundTransfersResourceFailureDetailsCode._('other');
 
-static const List<TreasuryInboundTransfersResourceFailureDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, debitNotAuthorized, incorrectAccountHolderAddress, incorrectAccountHolderName, incorrectAccountHolderTaxId, insufficientFunds, invalidAccountNumber, invalidCurrency, noAccount, other$];
+static const List<TreasuryInboundTransfersResourceFailureDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, debitNotAuthorized, incorrectAccountHolderAddress, incorrectAccountHolderName, incorrectAccountHolderTaxId, insufficientFunds, invalidAccountNumber, invalidCurrency, noAccount, $other];
 
 final String value;
 

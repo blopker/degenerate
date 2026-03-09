@@ -10,7 +10,7 @@ factory ZonesAlwaysUseHttps.fromJson(Map<String, dynamic> json) { return ZonesAl
   id: json['id'] != null ? ZonesAlwaysUseHttpsId.fromJson(json['id'] as String) : null,
 ); }
 
-/// If enabled, any `http://`` URL is converted to `https://` through a
+/// If enabled, any `http://`` URL is converted to `https://` through a`
 /// 301 redirect.
 /// 
 final ZonesAlwaysUseHttpsId? id;

@@ -9,7 +9,7 @@ final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {co
 
 factory PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose.fromJson(String json) { return switch (json) {
   'goods' => goods,
-  'other' => other$,
+  'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
   _ => PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._(json),
@@ -17,13 +17,13 @@ factory PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose.fromJso
 
 static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose goods = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('goods');
 
-static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose other$ = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose $other = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('other');
 
 static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose services = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('services');
 
 static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('unspecified');
 
-static const List<PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose> values = [goods, other$, services, unspecified];
+static const List<PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose> values = [goods, $other, services, unspecified];
 
 final String value;
 

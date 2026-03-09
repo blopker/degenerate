@@ -8,16 +8,16 @@
 final class RadarGetAiBotsSummaryByUserAgentFormat {const RadarGetAiBotsSummaryByUserAgentFormat._(this.value);
 
 factory RadarGetAiBotsSummaryByUserAgentFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiBotsSummaryByUserAgentFormat._(json),
 }; }
 
-static const RadarGetAiBotsSummaryByUserAgentFormat json$ = RadarGetAiBotsSummaryByUserAgentFormat._('JSON');
+static const RadarGetAiBotsSummaryByUserAgentFormat $json = RadarGetAiBotsSummaryByUserAgentFormat._('JSON');
 
 static const RadarGetAiBotsSummaryByUserAgentFormat csv = RadarGetAiBotsSummaryByUserAgentFormat._('CSV');
 
-static const List<RadarGetAiBotsSummaryByUserAgentFormat> values = [json$, csv];
+static const List<RadarGetAiBotsSummaryByUserAgentFormat> values = [$json, csv];
 
 final String value;
 

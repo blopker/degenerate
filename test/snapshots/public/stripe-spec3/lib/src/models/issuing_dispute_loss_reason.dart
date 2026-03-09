@@ -19,7 +19,7 @@ factory IssuingDisputeLossReason.fromJson(String json) { return switch (json) {
   'merchandise_delivered_or_shipped' => merchandiseDeliveredOrShipped,
   'merchandise_or_service_as_described' => merchandiseOrServiceAsDescribed,
   'not_cancelled' => notCancelled,
-  'other' => other$,
+  'other' => $other,
   'refund_issued' => refundIssued,
   'submitted_beyond_allowable_time_limit' => submittedBeyondAllowableTimeLimit,
   'transaction_3ds_required' => transaction3dsRequired,
@@ -53,7 +53,7 @@ static const IssuingDisputeLossReason merchandiseOrServiceAsDescribed = IssuingD
 
 static const IssuingDisputeLossReason notCancelled = IssuingDisputeLossReason._('not_cancelled');
 
-static const IssuingDisputeLossReason other$ = IssuingDisputeLossReason._('other');
+static const IssuingDisputeLossReason $other = IssuingDisputeLossReason._('other');
 
 static const IssuingDisputeLossReason refundIssued = IssuingDisputeLossReason._('refund_issued');
 
@@ -71,7 +71,7 @@ static const IssuingDisputeLossReason transactionQualifiesForVisaEasyPaymentServ
 
 static const IssuingDisputeLossReason transactionUnattended = IssuingDisputeLossReason._('transaction_unattended');
 
-static const List<IssuingDisputeLossReason> values = [cardholderAuthenticationIssuerLiability, eci5TokenTransactionWithTavv, excessDisputesInTimeframe, hasNotMetTheMinimumDisputeAmountRequirements, invalidDuplicateDispute, invalidIncorrectAmountDispute, invalidNoAuthorization, invalidUseOfDisputes, merchandiseDeliveredOrShipped, merchandiseOrServiceAsDescribed, notCancelled, other$, refundIssued, submittedBeyondAllowableTimeLimit, transaction3dsRequired, transactionApprovedAfterPriorFraudDispute, transactionAuthorized, transactionElectronicallyRead, transactionQualifiesForVisaEasyPaymentService, transactionUnattended];
+static const List<IssuingDisputeLossReason> values = [cardholderAuthenticationIssuerLiability, eci5TokenTransactionWithTavv, excessDisputesInTimeframe, hasNotMetTheMinimumDisputeAmountRequirements, invalidDuplicateDispute, invalidIncorrectAmountDispute, invalidNoAuthorization, invalidUseOfDisputes, merchandiseDeliveredOrShipped, merchandiseOrServiceAsDescribed, notCancelled, $other, refundIssued, submittedBeyondAllowableTimeLimit, transaction3dsRequired, transactionApprovedAfterPriorFraudDispute, transactionAuthorized, transactionElectronicallyRead, transactionQualifiesForVisaEasyPaymentService, transactionUnattended];
 
 final String value;
 

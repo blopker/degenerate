@@ -8,16 +8,16 @@
 final class RadarGetAiInferenceSummaryByTaskFormat {const RadarGetAiInferenceSummaryByTaskFormat._(this.value);
 
 factory RadarGetAiInferenceSummaryByTaskFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiInferenceSummaryByTaskFormat._(json),
 }; }
 
-static const RadarGetAiInferenceSummaryByTaskFormat json$ = RadarGetAiInferenceSummaryByTaskFormat._('JSON');
+static const RadarGetAiInferenceSummaryByTaskFormat $json = RadarGetAiInferenceSummaryByTaskFormat._('JSON');
 
 static const RadarGetAiInferenceSummaryByTaskFormat csv = RadarGetAiInferenceSummaryByTaskFormat._('CSV');
 
-static const List<RadarGetAiInferenceSummaryByTaskFormat> values = [json$, csv];
+static const List<RadarGetAiInferenceSummaryByTaskFormat> values = [$json, csv];
 
 final String value;
 

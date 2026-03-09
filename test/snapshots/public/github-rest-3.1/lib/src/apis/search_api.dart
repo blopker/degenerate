@@ -30,8 +30,8 @@ final ApiConfig _config;
 /// 
 /// *   Only the _default branch_ is considered. In most cases, this will be the `master` branch.
 /// *   Only files smaller than 384 KB are searchable.
-/// *   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing
-/// language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.
+/// *   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing`
+/// language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.`
 /// 
 /// This endpoint requires you to authenticate and limits you to 10 requests per minute.
 ///

@@ -8,16 +8,16 @@
 final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat json$ = RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._('JSON');
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat $json = RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._('JSON');
 
 static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat csv = RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._('CSV');
 
-static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat> values = [json$, csv];
+static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat> values = [$json, csv];
 
 final String value;
 

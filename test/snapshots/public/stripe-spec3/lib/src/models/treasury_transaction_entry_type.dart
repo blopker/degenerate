@@ -15,7 +15,7 @@ factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json
   'inbound_transfer_return' => inboundTransferReturn,
   'issuing_authorization_hold' => issuingAuthorizationHold,
   'issuing_authorization_release' => issuingAuthorizationRelease,
-  'other' => other$,
+  'other' => $other,
   'outbound_payment' => outboundPayment,
   'outbound_payment_cancellation' => outboundPaymentCancellation,
   'outbound_payment_failure' => outboundPaymentFailure,
@@ -45,7 +45,7 @@ static const TreasuryTransactionEntryType issuingAuthorizationHold = TreasuryTra
 
 static const TreasuryTransactionEntryType issuingAuthorizationRelease = TreasuryTransactionEntryType._('issuing_authorization_release');
 
-static const TreasuryTransactionEntryType other$ = TreasuryTransactionEntryType._('other');
+static const TreasuryTransactionEntryType $other = TreasuryTransactionEntryType._('other');
 
 static const TreasuryTransactionEntryType outboundPayment = TreasuryTransactionEntryType._('outbound_payment');
 
@@ -71,7 +71,7 @@ static const TreasuryTransactionEntryType receivedCredit = TreasuryTransactionEn
 
 static const TreasuryTransactionEntryType receivedDebit = TreasuryTransactionEntryType._('received_debit');
 
-static const List<TreasuryTransactionEntryType> values = [creditReversal, creditReversalPosting, debitReversal, inboundTransfer, inboundTransferReturn, issuingAuthorizationHold, issuingAuthorizationRelease, other$, outboundPayment, outboundPaymentCancellation, outboundPaymentFailure, outboundPaymentPosting, outboundPaymentReturn, outboundTransfer, outboundTransferCancellation, outboundTransferFailure, outboundTransferPosting, outboundTransferReturn, receivedCredit, receivedDebit];
+static const List<TreasuryTransactionEntryType> values = [creditReversal, creditReversalPosting, debitReversal, inboundTransfer, inboundTransferReturn, issuingAuthorizationHold, issuingAuthorizationRelease, $other, outboundPayment, outboundPaymentCancellation, outboundPaymentFailure, outboundPaymentPosting, outboundPaymentReturn, outboundTransfer, outboundTransferCancellation, outboundTransferFailure, outboundTransferPosting, outboundTransferReturn, receivedCredit, receivedDebit];
 
 final String value;
 

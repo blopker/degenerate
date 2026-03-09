@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TopIndustriesHttpMethod.fromJson(String json) { ret
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TopIndustriesHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TopIndustriesHttpMethod rpcOutData = RadarGetA
 
 static const RadarGetAttacksLayer7TopIndustriesHttpMethod rpcInData = RadarGetAttacksLayer7TopIndustriesHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TopIndustriesHttpMethod json$ = RadarGetAttacksLayer7TopIndustriesHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod $json = RadarGetAttacksLayer7TopIndustriesHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TopIndustriesHttpMethod cook = RadarGetAttacksLayer7TopIndustriesHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TopIndustriesHttpMethod track = RadarGetAttacksLayer7TopIndustriesHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TopIndustriesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TopIndustriesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

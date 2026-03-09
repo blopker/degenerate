@@ -8,16 +8,16 @@
 final class RadarGetCrawlersTimeseriesGroupFormat {const RadarGetCrawlersTimeseriesGroupFormat._(this.value);
 
 factory RadarGetCrawlersTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetCrawlersTimeseriesGroupFormat._(json),
 }; }
 
-static const RadarGetCrawlersTimeseriesGroupFormat json$ = RadarGetCrawlersTimeseriesGroupFormat._('JSON');
+static const RadarGetCrawlersTimeseriesGroupFormat $json = RadarGetCrawlersTimeseriesGroupFormat._('JSON');
 
 static const RadarGetCrawlersTimeseriesGroupFormat csv = RadarGetCrawlersTimeseriesGroupFormat._('CSV');
 
-static const List<RadarGetCrawlersTimeseriesGroupFormat> values = [json$, csv];
+static const List<RadarGetCrawlersTimeseriesGroupFormat> values = [$json, csv];
 
 final String value;
 

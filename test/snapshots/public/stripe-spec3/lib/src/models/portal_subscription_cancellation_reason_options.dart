@@ -10,7 +10,7 @@ factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { retu
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
-  'other' => other$,
+  'other' => $other,
   'switched_service' => switchedService,
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
@@ -24,7 +24,7 @@ static const PortalSubscriptionCancellationReasonOptions lowQuality = PortalSubs
 
 static const PortalSubscriptionCancellationReasonOptions missingFeatures = PortalSubscriptionCancellationReasonOptions._('missing_features');
 
-static const PortalSubscriptionCancellationReasonOptions other$ = PortalSubscriptionCancellationReasonOptions._('other');
+static const PortalSubscriptionCancellationReasonOptions $other = PortalSubscriptionCancellationReasonOptions._('other');
 
 static const PortalSubscriptionCancellationReasonOptions switchedService = PortalSubscriptionCancellationReasonOptions._('switched_service');
 
@@ -34,7 +34,7 @@ static const PortalSubscriptionCancellationReasonOptions tooExpensive = PortalSu
 
 static const PortalSubscriptionCancellationReasonOptions unused = PortalSubscriptionCancellationReasonOptions._('unused');
 
-static const List<PortalSubscriptionCancellationReasonOptions> values = [customerService, lowQuality, missingFeatures, other$, switchedService, tooComplex, tooExpensive, unused];
+static const List<PortalSubscriptionCancellationReasonOptions> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 final String value;
 

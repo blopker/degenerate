@@ -8,16 +8,16 @@
 final class RadarGetCertificateAuthoritiesFormat {const RadarGetCertificateAuthoritiesFormat._(this.value);
 
 factory RadarGetCertificateAuthoritiesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetCertificateAuthoritiesFormat._(json),
 }; }
 
-static const RadarGetCertificateAuthoritiesFormat json$ = RadarGetCertificateAuthoritiesFormat._('JSON');
+static const RadarGetCertificateAuthoritiesFormat $json = RadarGetCertificateAuthoritiesFormat._('JSON');
 
 static const RadarGetCertificateAuthoritiesFormat csv = RadarGetCertificateAuthoritiesFormat._('CSV');
 
-static const List<RadarGetCertificateAuthoritiesFormat> values = [json$, csv];
+static const List<RadarGetCertificateAuthoritiesFormat> values = [$json, csv];
 
 final String value;
 

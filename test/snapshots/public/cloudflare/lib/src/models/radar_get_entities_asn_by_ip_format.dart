@@ -8,16 +8,16 @@
 final class RadarGetEntitiesAsnByIpFormat {const RadarGetEntitiesAsnByIpFormat._(this.value);
 
 factory RadarGetEntitiesAsnByIpFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEntitiesAsnByIpFormat._(json),
 }; }
 
-static const RadarGetEntitiesAsnByIpFormat json$ = RadarGetEntitiesAsnByIpFormat._('JSON');
+static const RadarGetEntitiesAsnByIpFormat $json = RadarGetEntitiesAsnByIpFormat._('JSON');
 
 static const RadarGetEntitiesAsnByIpFormat csv = RadarGetEntitiesAsnByIpFormat._('CSV');
 
-static const List<RadarGetEntitiesAsnByIpFormat> values = [json$, csv];
+static const List<RadarGetEntitiesAsnByIpFormat> values = [$json, csv];
 
 final String value;
 

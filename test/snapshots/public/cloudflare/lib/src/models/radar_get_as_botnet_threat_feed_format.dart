@@ -8,16 +8,16 @@
 final class RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat._(this.value);
 
 factory RadarGetAsBotnetThreatFeedFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAsBotnetThreatFeedFormat._(json),
 }; }
 
-static const RadarGetAsBotnetThreatFeedFormat json$ = RadarGetAsBotnetThreatFeedFormat._('JSON');
+static const RadarGetAsBotnetThreatFeedFormat $json = RadarGetAsBotnetThreatFeedFormat._('JSON');
 
 static const RadarGetAsBotnetThreatFeedFormat csv = RadarGetAsBotnetThreatFeedFormat._('CSV');
 
-static const List<RadarGetAsBotnetThreatFeedFormat> values = [json$, csv];
+static const List<RadarGetAsBotnetThreatFeedFormat> values = [$json, csv];
 
 final String value;
 

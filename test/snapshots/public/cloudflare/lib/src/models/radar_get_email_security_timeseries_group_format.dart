@@ -8,16 +8,16 @@
 final class RadarGetEmailSecurityTimeseriesGroupFormat {const RadarGetEmailSecurityTimeseriesGroupFormat._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTimeseriesGroupFormat._(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupFormat json$ = RadarGetEmailSecurityTimeseriesGroupFormat._('JSON');
+static const RadarGetEmailSecurityTimeseriesGroupFormat $json = RadarGetEmailSecurityTimeseriesGroupFormat._('JSON');
 
 static const RadarGetEmailSecurityTimeseriesGroupFormat csv = RadarGetEmailSecurityTimeseriesGroupFormat._('CSV');
 
-static const List<RadarGetEmailSecurityTimeseriesGroupFormat> values = [json$, csv];
+static const List<RadarGetEmailSecurityTimeseriesGroupFormat> values = [$json, csv];
 
 final String value;
 

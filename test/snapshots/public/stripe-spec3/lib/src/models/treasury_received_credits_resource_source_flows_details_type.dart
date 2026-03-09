@@ -9,7 +9,7 @@ final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const Treasur
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
-  'other' => other$,
+  'other' => $other,
   'outbound_payment' => outboundPayment,
   'outbound_transfer' => outboundTransfer,
   'payout' => payout,
@@ -18,7 +18,7 @@ factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String js
 
 static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType creditReversal = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('credit_reversal');
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType other$ = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('other');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType $other = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('other');
 
 static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundPayment = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('outbound_payment');
 
@@ -26,7 +26,7 @@ static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundTrans
 
 static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType payout = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('payout');
 
-static const List<TreasuryReceivedCreditsResourceSourceFlowsDetailsType> values = [creditReversal, other$, outboundPayment, outboundTransfer, payout];
+static const List<TreasuryReceivedCreditsResourceSourceFlowsDetailsType> values = [creditReversal, $other, outboundPayment, outboundTransfer, payout];
 
 final String value;
 

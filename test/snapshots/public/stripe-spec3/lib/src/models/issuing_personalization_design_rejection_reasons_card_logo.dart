@@ -12,7 +12,7 @@ factory IssuingPersonalizationDesignRejectionReasonsCardLogo.fromJson(String jso
   'network_name' => networkName,
   'non_binary_image' => nonBinaryImage,
   'non_fiat_currency' => nonFiatCurrency,
-  'other' => other$,
+  'other' => $other,
   'other_entity' => otherEntity,
   'promotional_material' => promotionalMaterial,
   _ => IssuingPersonalizationDesignRejectionReasonsCardLogo._(json),
@@ -28,13 +28,13 @@ static const IssuingPersonalizationDesignRejectionReasonsCardLogo nonBinaryImage
 
 static const IssuingPersonalizationDesignRejectionReasonsCardLogo nonFiatCurrency = IssuingPersonalizationDesignRejectionReasonsCardLogo._('non_fiat_currency');
 
-static const IssuingPersonalizationDesignRejectionReasonsCardLogo other$ = IssuingPersonalizationDesignRejectionReasonsCardLogo._('other');
+static const IssuingPersonalizationDesignRejectionReasonsCardLogo $other = IssuingPersonalizationDesignRejectionReasonsCardLogo._('other');
 
 static const IssuingPersonalizationDesignRejectionReasonsCardLogo otherEntity = IssuingPersonalizationDesignRejectionReasonsCardLogo._('other_entity');
 
 static const IssuingPersonalizationDesignRejectionReasonsCardLogo promotionalMaterial = IssuingPersonalizationDesignRejectionReasonsCardLogo._('promotional_material');
 
-static const List<IssuingPersonalizationDesignRejectionReasonsCardLogo> values = [geographicLocation, inappropriate, networkName, nonBinaryImage, nonFiatCurrency, other$, otherEntity, promotionalMaterial];
+static const List<IssuingPersonalizationDesignRejectionReasonsCardLogo> values = [geographicLocation, inappropriate, networkName, nonBinaryImage, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
 
 final String value;
 

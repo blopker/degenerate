@@ -8,7 +8,7 @@
 final class ZonesGetOrder {const ZonesGetOrder._(this.value);
 
 factory ZonesGetOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   'status' => status,
   'account.id' => accountId,
   'account.name' => accountName,
@@ -16,7 +16,7 @@ factory ZonesGetOrder.fromJson(String json) { return switch (json) {
   _ => ZonesGetOrder._(json),
 }; }
 
-static const ZonesGetOrder name$ = ZonesGetOrder._('name');
+static const ZonesGetOrder $name = ZonesGetOrder._('name');
 
 static const ZonesGetOrder status = ZonesGetOrder._('status');
 
@@ -26,7 +26,7 @@ static const ZonesGetOrder accountName = ZonesGetOrder._('account.name');
 
 static const ZonesGetOrder planId = ZonesGetOrder._('plan.id');
 
-static const List<ZonesGetOrder> values = [name$, status, accountId, accountName, planId];
+static const List<ZonesGetOrder> values = [$name, status, accountId, accountName, planId];
 
 final String value;
 

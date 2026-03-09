@@ -9,7 +9,7 @@ final class RadarGetHttpTimeseriesDeviceType {const RadarGetHttpTimeseriesDevice
 factory RadarGetHttpTimeseriesDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTimeseriesDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTimeseriesDeviceType desktop = RadarGetHttpTimeseriesDe
 
 static const RadarGetHttpTimeseriesDeviceType mobile = RadarGetHttpTimeseriesDeviceType._('MOBILE');
 
-static const RadarGetHttpTimeseriesDeviceType other$ = RadarGetHttpTimeseriesDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesDeviceType $other = RadarGetHttpTimeseriesDeviceType._('OTHER');
 
-static const List<RadarGetHttpTimeseriesDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTimeseriesDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

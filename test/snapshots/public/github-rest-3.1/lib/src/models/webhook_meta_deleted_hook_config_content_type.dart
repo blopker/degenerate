@@ -7,16 +7,16 @@
 final class WebhookMetaDeletedHookConfigContentType {const WebhookMetaDeletedHookConfigContentType._(this.value);
 
 factory WebhookMetaDeletedHookConfigContentType.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'form' => form,
   _ => WebhookMetaDeletedHookConfigContentType._(json),
 }; }
 
-static const WebhookMetaDeletedHookConfigContentType json$ = WebhookMetaDeletedHookConfigContentType._('json');
+static const WebhookMetaDeletedHookConfigContentType $json = WebhookMetaDeletedHookConfigContentType._('json');
 
 static const WebhookMetaDeletedHookConfigContentType form = WebhookMetaDeletedHookConfigContentType._('form');
 
-static const List<WebhookMetaDeletedHookConfigContentType> values = [json$, form];
+static const List<WebhookMetaDeletedHookConfigContentType> values = [$json, form];
 
 final String value;
 

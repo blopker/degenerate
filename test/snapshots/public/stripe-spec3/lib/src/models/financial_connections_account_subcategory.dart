@@ -25,7 +25,7 @@ factory FinancialConnectionsAccountSubcategory.fromJson(String json) { return sw
   'credit_card' => creditCard,
   'line_of_credit' => lineOfCredit,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'savings' => savings,
   _ => FinancialConnectionsAccountSubcategory._(json),
 }; }
@@ -38,11 +38,11 @@ static const FinancialConnectionsAccountSubcategory lineOfCredit = FinancialConn
 
 static const FinancialConnectionsAccountSubcategory mortgage = FinancialConnectionsAccountSubcategory._('mortgage');
 
-static const FinancialConnectionsAccountSubcategory other$ = FinancialConnectionsAccountSubcategory._('other');
+static const FinancialConnectionsAccountSubcategory $other = FinancialConnectionsAccountSubcategory._('other');
 
 static const FinancialConnectionsAccountSubcategory savings = FinancialConnectionsAccountSubcategory._('savings');
 
-static const List<FinancialConnectionsAccountSubcategory> values = [checking, creditCard, lineOfCredit, mortgage, other$, savings];
+static const List<FinancialConnectionsAccountSubcategory> values = [checking, creditCard, lineOfCredit, mortgage, $other, savings];
 
 final String value;
 

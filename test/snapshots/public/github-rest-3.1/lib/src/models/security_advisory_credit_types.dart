@@ -17,7 +17,7 @@ factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json)
   'remediation_verifier' => remediationVerifier,
   'tool' => tool,
   'sponsor' => sponsor,
-  'other' => other$,
+  'other' => $other,
   _ => SecurityAdvisoryCreditTypes._(json),
 }; }
 
@@ -39,9 +39,9 @@ static const SecurityAdvisoryCreditTypes tool = SecurityAdvisoryCreditTypes._('t
 
 static const SecurityAdvisoryCreditTypes sponsor = SecurityAdvisoryCreditTypes._('sponsor');
 
-static const SecurityAdvisoryCreditTypes other$ = SecurityAdvisoryCreditTypes._('other');
+static const SecurityAdvisoryCreditTypes $other = SecurityAdvisoryCreditTypes._('other');
 
-static const List<SecurityAdvisoryCreditTypes> values = [analyst, finder, reporter, coordinator, remediationDeveloper, remediationReviewer, remediationVerifier, tool, sponsor, other$];
+static const List<SecurityAdvisoryCreditTypes> values = [analyst, finder, reporter, coordinator, remediationDeveloper, remediationReviewer, remediationVerifier, tool, sponsor, $other];
 
 final String value;
 

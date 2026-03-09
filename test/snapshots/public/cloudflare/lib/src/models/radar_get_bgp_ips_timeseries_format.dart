@@ -8,16 +8,16 @@
 final class RadarGetBgpIpsTimeseriesFormat {const RadarGetBgpIpsTimeseriesFormat._(this.value);
 
 factory RadarGetBgpIpsTimeseriesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpIpsTimeseriesFormat._(json),
 }; }
 
-static const RadarGetBgpIpsTimeseriesFormat json$ = RadarGetBgpIpsTimeseriesFormat._('JSON');
+static const RadarGetBgpIpsTimeseriesFormat $json = RadarGetBgpIpsTimeseriesFormat._('JSON');
 
 static const RadarGetBgpIpsTimeseriesFormat csv = RadarGetBgpIpsTimeseriesFormat._('CSV');
 
-static const List<RadarGetBgpIpsTimeseriesFormat> values = [json$, csv];
+static const List<RadarGetBgpIpsTimeseriesFormat> values = [$json, csv];
 
 final String value;
 

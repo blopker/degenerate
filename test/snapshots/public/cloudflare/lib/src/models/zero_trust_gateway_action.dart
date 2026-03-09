@@ -18,7 +18,7 @@ factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
   'ytrestricted' => ytrestricted,
   'isolate' => isolate,
   'noisolate' => noisolate,
-  'override' => override,
+  'override' => $override,
   'l4_override' => l4Override,
   'egress' => egress,
   'resolve' => resolve,
@@ -47,7 +47,7 @@ static const ZeroTrustGatewayAction isolate = ZeroTrustGatewayAction._('isolate'
 
 static const ZeroTrustGatewayAction noisolate = ZeroTrustGatewayAction._('noisolate');
 
-static const ZeroTrustGatewayAction override = ZeroTrustGatewayAction._('override');
+static const ZeroTrustGatewayAction $override = ZeroTrustGatewayAction._('override');
 
 static const ZeroTrustGatewayAction l4Override = ZeroTrustGatewayAction._('l4_override');
 
@@ -59,7 +59,7 @@ static const ZeroTrustGatewayAction quarantine = ZeroTrustGatewayAction._('quara
 
 static const ZeroTrustGatewayAction redirect = ZeroTrustGatewayAction._('redirect');
 
-static const List<ZeroTrustGatewayAction> values = [$on, off, allow, block, scan, noscan, safesearch, ytrestricted, isolate, noisolate, override, l4Override, egress, resolve, quarantine, redirect];
+static const List<ZeroTrustGatewayAction> values = [$on, off, allow, block, scan, noscan, safesearch, ytrestricted, isolate, noisolate, $override, l4Override, egress, resolve, quarantine, redirect];
 
 final String value;
 

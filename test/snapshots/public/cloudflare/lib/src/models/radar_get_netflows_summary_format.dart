@@ -8,16 +8,16 @@
 final class RadarGetNetflowsSummaryFormat {const RadarGetNetflowsSummaryFormat._(this.value);
 
 factory RadarGetNetflowsSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetNetflowsSummaryFormat._(json),
 }; }
 
-static const RadarGetNetflowsSummaryFormat json$ = RadarGetNetflowsSummaryFormat._('JSON');
+static const RadarGetNetflowsSummaryFormat $json = RadarGetNetflowsSummaryFormat._('JSON');
 
 static const RadarGetNetflowsSummaryFormat csv = RadarGetNetflowsSummaryFormat._('CSV');
 
-static const List<RadarGetNetflowsSummaryFormat> values = [json$, csv];
+static const List<RadarGetNetflowsSummaryFormat> values = [$json, csv];
 
 final String value;
 

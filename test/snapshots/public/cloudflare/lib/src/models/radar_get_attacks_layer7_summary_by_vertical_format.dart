@@ -8,16 +8,16 @@
 final class RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByVerticalFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer7SummaryByVerticalFormat._(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByVerticalFormat json$ = RadarGetAttacksLayer7SummaryByVerticalFormat._('JSON');
+static const RadarGetAttacksLayer7SummaryByVerticalFormat $json = RadarGetAttacksLayer7SummaryByVerticalFormat._('JSON');
 
 static const RadarGetAttacksLayer7SummaryByVerticalFormat csv = RadarGetAttacksLayer7SummaryByVerticalFormat._('CSV');
 
-static const List<RadarGetAttacksLayer7SummaryByVerticalFormat> values = [json$, csv];
+static const List<RadarGetAttacksLayer7SummaryByVerticalFormat> values = [$json, csv];
 
 final String value;
 

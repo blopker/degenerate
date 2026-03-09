@@ -10,7 +10,7 @@ final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType
 factory InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType.fromJson(String json) { return switch (json) {
   'made_with_lost_card' => madeWithLostCard,
   'made_with_stolen_card' => madeWithStolenCard,
-  'other' => other$,
+  'other' => $other,
   'unauthorized_use_of_card' => unauthorizedUseOfCard,
   _ => InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._(json),
 }; }
@@ -19,11 +19,11 @@ static const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudTyp
 
 static const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType madeWithStolenCard = InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._('made_with_stolen_card');
 
-static const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType other$ = InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._('other');
+static const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType $other = InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._('other');
 
 static const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType unauthorizedUseOfCard = InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._('unauthorized_use_of_card');
 
-static const List<InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType> values = [madeWithLostCard, madeWithStolenCard, other$, unauthorizedUseOfCard];
+static const List<InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType> values = [madeWithLostCard, madeWithStolenCard, $other, unauthorizedUseOfCard];
 
 final String value;
 

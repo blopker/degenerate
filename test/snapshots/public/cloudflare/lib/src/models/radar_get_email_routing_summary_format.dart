@@ -8,16 +8,16 @@
 final class RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat._(this.value);
 
 factory RadarGetEmailRoutingSummaryFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingSummaryFormat._(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryFormat json$ = RadarGetEmailRoutingSummaryFormat._('JSON');
+static const RadarGetEmailRoutingSummaryFormat $json = RadarGetEmailRoutingSummaryFormat._('JSON');
 
 static const RadarGetEmailRoutingSummaryFormat csv = RadarGetEmailRoutingSummaryFormat._('CSV');
 
-static const List<RadarGetEmailRoutingSummaryFormat> values = [json$, csv];
+static const List<RadarGetEmailRoutingSummaryFormat> values = [$json, csv];
 
 final String value;
 

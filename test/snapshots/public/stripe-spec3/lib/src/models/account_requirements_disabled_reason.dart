@@ -10,7 +10,7 @@ final class AccountRequirementsDisabledReason {const AccountRequirementsDisabled
 factory AccountRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
   'listed' => listed,
-  'other' => other$,
+  'other' => $other,
   'platform_paused' => platformPaused,
   'rejected.fraud' => rejectedFraud,
   'rejected.incomplete_verification' => rejectedIncompleteVerification,
@@ -30,7 +30,7 @@ static const AccountRequirementsDisabledReason actionRequiredRequestedCapabiliti
 
 static const AccountRequirementsDisabledReason listed = AccountRequirementsDisabledReason._('listed');
 
-static const AccountRequirementsDisabledReason other$ = AccountRequirementsDisabledReason._('other');
+static const AccountRequirementsDisabledReason $other = AccountRequirementsDisabledReason._('other');
 
 static const AccountRequirementsDisabledReason platformPaused = AccountRequirementsDisabledReason._('platform_paused');
 
@@ -56,7 +56,7 @@ static const AccountRequirementsDisabledReason requirementsPendingVerification =
 
 static const AccountRequirementsDisabledReason underReview = AccountRequirementsDisabledReason._('under_review');
 
-static const List<AccountRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, other$, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
+static const List<AccountRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, $other, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
 
 final String value;
 

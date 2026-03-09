@@ -8,16 +8,16 @@
 final class RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat {const RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat._(this.value);
 
 factory RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat._(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat json$ = RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat._('JSON');
+static const RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat $json = RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat._('JSON');
 
 static const RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat csv = RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat._('CSV');
 
-static const List<RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat> values = [json$, csv];
+static const List<RadarGetAttacksLayer7TimeseriesGroupByVerticalFormat> values = [$json, csv];
 
 final String value;
 

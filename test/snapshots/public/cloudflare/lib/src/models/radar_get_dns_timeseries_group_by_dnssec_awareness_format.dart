@@ -8,16 +8,16 @@
 final class RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat {const RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat._(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat json$ = RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat._('JSON');
+static const RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat $json = RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat._('JSON');
 
 static const RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat csv = RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat._('CSV');
 
-static const List<RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat> values = [json$, csv];
+static const List<RadarGetDnsTimeseriesGroupByDnssecAwarenessFormat> values = [$json, csv];
 
 final String value;
 

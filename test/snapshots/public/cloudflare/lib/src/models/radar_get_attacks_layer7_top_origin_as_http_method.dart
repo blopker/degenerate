@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7TopOriginAsHttpMethod.fromJson(String json) { retur
   'XMSENUMATTS' => xmsenumatts,
   'RPC_OUT_DATA' => rpcOutData,
   'RPC_IN_DATA' => rpcInData,
-  'JSON' => json$,
+  'JSON' => $json,
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TopOriginAsHttpMethod._(json),
@@ -142,13 +142,13 @@ static const RadarGetAttacksLayer7TopOriginAsHttpMethod rpcOutData = RadarGetAtt
 
 static const RadarGetAttacksLayer7TopOriginAsHttpMethod rpcInData = RadarGetAttacksLayer7TopOriginAsHttpMethod._('RPC_IN_DATA');
 
-static const RadarGetAttacksLayer7TopOriginAsHttpMethod json$ = RadarGetAttacksLayer7TopOriginAsHttpMethod._('JSON');
+static const RadarGetAttacksLayer7TopOriginAsHttpMethod $json = RadarGetAttacksLayer7TopOriginAsHttpMethod._('JSON');
 
 static const RadarGetAttacksLayer7TopOriginAsHttpMethod cook = RadarGetAttacksLayer7TopOriginAsHttpMethod._('COOK');
 
 static const RadarGetAttacksLayer7TopOriginAsHttpMethod track = RadarGetAttacksLayer7TopOriginAsHttpMethod._('TRACK');
 
-static const List<RadarGetAttacksLayer7TopOriginAsHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, json$, cook, track];
+static const List<RadarGetAttacksLayer7TopOriginAsHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 final String value;
 

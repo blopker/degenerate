@@ -8,16 +8,16 @@
 final class RadarGetEmailRoutingSummaryByDkimFormat {const RadarGetEmailRoutingSummaryByDkimFormat._(this.value);
 
 factory RadarGetEmailRoutingSummaryByDkimFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingSummaryByDkimFormat._(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryByDkimFormat json$ = RadarGetEmailRoutingSummaryByDkimFormat._('JSON');
+static const RadarGetEmailRoutingSummaryByDkimFormat $json = RadarGetEmailRoutingSummaryByDkimFormat._('JSON');
 
 static const RadarGetEmailRoutingSummaryByDkimFormat csv = RadarGetEmailRoutingSummaryByDkimFormat._('CSV');
 
-static const List<RadarGetEmailRoutingSummaryByDkimFormat> values = [json$, csv];
+static const List<RadarGetEmailRoutingSummaryByDkimFormat> values = [$json, csv];
 
 final String value;
 

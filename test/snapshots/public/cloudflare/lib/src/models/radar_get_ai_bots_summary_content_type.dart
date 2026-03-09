@@ -9,7 +9,7 @@ final class RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContent
 factory RadarGetAiBotsSummaryContentType.fromJson(String json) { return switch (json) {
   'HTML' => html,
   'IMAGES' => images,
-  'JSON' => json$,
+  'JSON' => $json,
   'JAVASCRIPT' => javascript,
   'CSS' => css,
   'PLAIN_TEXT' => plainText,
@@ -22,7 +22,7 @@ factory RadarGetAiBotsSummaryContentType.fromJson(String json) { return switch (
   'DOCUMENTS' => documents,
   'BINARY' => binary,
   'SERIALIZATION' => serialization,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetAiBotsSummaryContentType._(json),
 }; }
 
@@ -30,7 +30,7 @@ static const RadarGetAiBotsSummaryContentType html = RadarGetAiBotsSummaryConten
 
 static const RadarGetAiBotsSummaryContentType images = RadarGetAiBotsSummaryContentType._('IMAGES');
 
-static const RadarGetAiBotsSummaryContentType json$ = RadarGetAiBotsSummaryContentType._('JSON');
+static const RadarGetAiBotsSummaryContentType $json = RadarGetAiBotsSummaryContentType._('JSON');
 
 static const RadarGetAiBotsSummaryContentType javascript = RadarGetAiBotsSummaryContentType._('JAVASCRIPT');
 
@@ -56,9 +56,9 @@ static const RadarGetAiBotsSummaryContentType binary = RadarGetAiBotsSummaryCont
 
 static const RadarGetAiBotsSummaryContentType serialization = RadarGetAiBotsSummaryContentType._('SERIALIZATION');
 
-static const RadarGetAiBotsSummaryContentType other$ = RadarGetAiBotsSummaryContentType._('OTHER');
+static const RadarGetAiBotsSummaryContentType $other = RadarGetAiBotsSummaryContentType._('OTHER');
 
-static const List<RadarGetAiBotsSummaryContentType> values = [html, images, json$, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, other$];
+static const List<RadarGetAiBotsSummaryContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
 
 final String value;
 

@@ -12,7 +12,7 @@ factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpos
   'government' => government,
   'loan' => loan,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'pension' => pension,
   'personal' => personal,
   'retail' => retail,
@@ -32,7 +32,7 @@ static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsP
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose mortgage = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('mortgage');
 
-static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose other$ = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('other');
+static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose $other = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('other');
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose pension = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('pension');
 
@@ -46,7 +46,7 @@ static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsP
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose utility = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('utility');
 
-static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose> values = [$empty, dependantSupport, government, loan, mortgage, other$, pension, personal, retail, salary, tax, utility];
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose> values = [$empty, dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 final String value;
 

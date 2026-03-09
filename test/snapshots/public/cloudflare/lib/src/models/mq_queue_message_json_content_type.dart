@@ -7,13 +7,13 @@
 final class MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType._(this.value);
 
 factory MqQueueMessageJsonContentType.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   _ => MqQueueMessageJsonContentType._(json),
 }; }
 
-static const MqQueueMessageJsonContentType json$ = MqQueueMessageJsonContentType._('json');
+static const MqQueueMessageJsonContentType $json = MqQueueMessageJsonContentType._('json');
 
-static const List<MqQueueMessageJsonContentType> values = [json$];
+static const List<MqQueueMessageJsonContentType> values = [$json];
 
 final String value;
 

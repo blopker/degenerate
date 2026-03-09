@@ -11,7 +11,7 @@ factory InlineObject393MandateOptionsPurpose.fromJson(String json) { return swit
   'government' => government,
   'loan' => loan,
   'mortgage' => mortgage,
-  'other' => other$,
+  'other' => $other,
   'pension' => pension,
   'personal' => personal,
   'retail' => retail,
@@ -29,7 +29,7 @@ static const InlineObject393MandateOptionsPurpose loan = InlineObject393MandateO
 
 static const InlineObject393MandateOptionsPurpose mortgage = InlineObject393MandateOptionsPurpose._('mortgage');
 
-static const InlineObject393MandateOptionsPurpose other$ = InlineObject393MandateOptionsPurpose._('other');
+static const InlineObject393MandateOptionsPurpose $other = InlineObject393MandateOptionsPurpose._('other');
 
 static const InlineObject393MandateOptionsPurpose pension = InlineObject393MandateOptionsPurpose._('pension');
 
@@ -43,7 +43,7 @@ static const InlineObject393MandateOptionsPurpose tax = InlineObject393MandateOp
 
 static const InlineObject393MandateOptionsPurpose utility = InlineObject393MandateOptionsPurpose._('utility');
 
-static const List<InlineObject393MandateOptionsPurpose> values = [dependantSupport, government, loan, mortgage, other$, pension, personal, retail, salary, tax, utility];
+static const List<InlineObject393MandateOptionsPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 final String value;
 

@@ -12,7 +12,7 @@ factory TreasuryReceivedDebitFailureCode.fromJson(String json) { return switch (
   'account_frozen' => accountFrozen,
   'insufficient_funds' => insufficientFunds,
   'international_transaction' => internationalTransaction,
-  'other' => other$,
+  'other' => $other,
   _ => TreasuryReceivedDebitFailureCode._(json),
 }; }
 
@@ -24,9 +24,9 @@ static const TreasuryReceivedDebitFailureCode insufficientFunds = TreasuryReceiv
 
 static const TreasuryReceivedDebitFailureCode internationalTransaction = TreasuryReceivedDebitFailureCode._('international_transaction');
 
-static const TreasuryReceivedDebitFailureCode other$ = TreasuryReceivedDebitFailureCode._('other');
+static const TreasuryReceivedDebitFailureCode $other = TreasuryReceivedDebitFailureCode._('other');
 
-static const List<TreasuryReceivedDebitFailureCode> values = [accountClosed, accountFrozen, insufficientFunds, internationalTransaction, other$];
+static const List<TreasuryReceivedDebitFailureCode> values = [accountClosed, accountFrozen, insufficientFunds, internationalTransaction, $other];
 
 final String value;
 

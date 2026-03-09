@@ -9,7 +9,7 @@ final class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelData
 
 factory IssuingAuthorizationFuelDataType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
-  'other' => other$,
+  'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
@@ -18,7 +18,7 @@ factory IssuingAuthorizationFuelDataType.fromJson(String json) { return switch (
 
 static const IssuingAuthorizationFuelDataType diesel = IssuingAuthorizationFuelDataType._('diesel');
 
-static const IssuingAuthorizationFuelDataType other$ = IssuingAuthorizationFuelDataType._('other');
+static const IssuingAuthorizationFuelDataType $other = IssuingAuthorizationFuelDataType._('other');
 
 static const IssuingAuthorizationFuelDataType unleadedPlus = IssuingAuthorizationFuelDataType._('unleaded_plus');
 
@@ -26,7 +26,7 @@ static const IssuingAuthorizationFuelDataType unleadedRegular = IssuingAuthoriza
 
 static const IssuingAuthorizationFuelDataType unleadedSuper = IssuingAuthorizationFuelDataType._('unleaded_super');
 
-static const List<IssuingAuthorizationFuelDataType> values = [diesel, other$, unleadedPlus, unleadedRegular, unleadedSuper];
+static const List<IssuingAuthorizationFuelDataType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 final String value;
 

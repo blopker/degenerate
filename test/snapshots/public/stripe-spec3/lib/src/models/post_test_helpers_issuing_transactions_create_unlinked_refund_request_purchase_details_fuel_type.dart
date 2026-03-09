@@ -8,7 +8,7 @@ final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchas
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
-  'other' => other$,
+  'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
@@ -17,7 +17,7 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDet
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType diesel = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('diesel');
 
-static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType other$ = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('other');
+static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType $other = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('other');
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType unleadedPlus = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('unleaded_plus');
 
@@ -25,7 +25,7 @@ static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurcha
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType unleadedSuper = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('unleaded_super');
 
-static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType> values = [diesel, other$, unleadedPlus, unleadedRegular, unleadedSuper];
+static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 final String value;
 

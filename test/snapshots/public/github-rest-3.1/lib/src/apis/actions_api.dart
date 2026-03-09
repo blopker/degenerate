@@ -1413,9 +1413,9 @@ return _execute(
 /// 
 /// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:
 /// 
-/// ```
+/// ````
 /// ./config.sh --url https://github.com/octo-org --token TOKEN
-/// ```
+/// ````
 /// 
 /// Authenticated users must have admin access to the organization to use this endpoint.
 /// 
@@ -1442,9 +1442,9 @@ return _execute(
 /// 
 /// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:
 /// 
-/// ```
+/// ````
 /// ./config.sh remove --token TOKEN
-/// ```
+/// ````
 /// 
 /// Authenticated users must have admin access to the organization to use this endpoint.
 /// 
@@ -2898,9 +2898,9 @@ return _execute(
 /// 
 /// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:
 /// 
-/// ```
+/// ````
 /// ./config.sh --url https://github.com/octo-org --token TOKEN
-/// ```
+/// ````
 /// 
 /// Authenticated users must have admin access to the repository to use this endpoint.
 /// 
@@ -2927,9 +2927,9 @@ return _execute(
 /// 
 /// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:
 /// 
-/// ```
+/// ````
 /// ./config.sh remove --token TOKEN
-/// ```
+/// ````
 /// 
 /// Authenticated users must have admin access to the repository to use this endpoint.
 /// 

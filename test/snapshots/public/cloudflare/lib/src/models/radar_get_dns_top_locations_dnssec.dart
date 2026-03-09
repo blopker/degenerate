@@ -10,7 +10,7 @@ factory RadarGetDnsTopLocationsDnssec.fromJson(String json) { return switch (jso
   'INVALID' => invalid,
   'INSECURE' => insecure,
   'SECURE' => secure,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetDnsTopLocationsDnssec._(json),
 }; }
 
@@ -20,9 +20,9 @@ static const RadarGetDnsTopLocationsDnssec insecure = RadarGetDnsTopLocationsDns
 
 static const RadarGetDnsTopLocationsDnssec secure = RadarGetDnsTopLocationsDnssec._('SECURE');
 
-static const RadarGetDnsTopLocationsDnssec other$ = RadarGetDnsTopLocationsDnssec._('OTHER');
+static const RadarGetDnsTopLocationsDnssec $other = RadarGetDnsTopLocationsDnssec._('OTHER');
 
-static const List<RadarGetDnsTopLocationsDnssec> values = [invalid, insecure, secure, other$];
+static const List<RadarGetDnsTopLocationsDnssec> values = [invalid, insecure, secure, $other];
 
 final String value;
 

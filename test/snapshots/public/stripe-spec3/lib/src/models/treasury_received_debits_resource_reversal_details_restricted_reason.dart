@@ -11,7 +11,7 @@ factory TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason.fromJson(S
   'already_reversed' => alreadyReversed,
   'deadline_passed' => deadlinePassed,
   'network_restricted' => networkRestricted,
-  'other' => other$,
+  'other' => $other,
   'source_flow_restricted' => sourceFlowRestricted,
   _ => TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason._(json),
 }; }
@@ -22,11 +22,11 @@ static const TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason deadl
 
 static const TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason networkRestricted = TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason._('network_restricted');
 
-static const TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason other$ = TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason._('other');
+static const TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason $other = TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason._('other');
 
 static const TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason sourceFlowRestricted = TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason._('source_flow_restricted');
 
-static const List<TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason> values = [alreadyReversed, deadlinePassed, networkRestricted, other$, sourceFlowRestricted];
+static const List<TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason> values = [alreadyReversed, deadlinePassed, networkRestricted, $other, sourceFlowRestricted];
 
 final String value;
 

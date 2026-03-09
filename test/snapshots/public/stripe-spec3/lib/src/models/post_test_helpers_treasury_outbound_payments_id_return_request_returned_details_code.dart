@@ -16,7 +16,7 @@ factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCod
   'invalid_account_number' => invalidAccountNumber,
   'invalid_currency' => invalidCurrency,
   'no_account' => noAccount,
-  'other' => other$,
+  'other' => $other,
   _ => PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(json),
 }; }
 
@@ -38,9 +38,9 @@ static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetai
 
 static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode noAccount = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('no_account');
 
-static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode other$ = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('other');
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode $other = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('other');
 
-static const List<PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, other$];
+static const List<PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
 
 final String value;
 

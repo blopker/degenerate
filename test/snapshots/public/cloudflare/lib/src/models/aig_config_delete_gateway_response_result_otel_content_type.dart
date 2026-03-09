@@ -7,16 +7,16 @@
 final class AigConfigDeleteGatewayResponseResultOtelContentType {const AigConfigDeleteGatewayResponseResultOtelContentType._(this.value);
 
 factory AigConfigDeleteGatewayResponseResultOtelContentType.fromJson(String json) { return switch (json) {
-  'json' => json$,
+  'json' => $json,
   'protobuf' => protobuf,
   _ => AigConfigDeleteGatewayResponseResultOtelContentType._(json),
 }; }
 
-static const AigConfigDeleteGatewayResponseResultOtelContentType json$ = AigConfigDeleteGatewayResponseResultOtelContentType._('json');
+static const AigConfigDeleteGatewayResponseResultOtelContentType $json = AigConfigDeleteGatewayResponseResultOtelContentType._('json');
 
 static const AigConfigDeleteGatewayResponseResultOtelContentType protobuf = AigConfigDeleteGatewayResponseResultOtelContentType._('protobuf');
 
-static const List<AigConfigDeleteGatewayResponseResultOtelContentType> values = [json$, protobuf];
+static const List<AigConfigDeleteGatewayResponseResultOtelContentType> values = [$json, protobuf];
 
 final String value;
 

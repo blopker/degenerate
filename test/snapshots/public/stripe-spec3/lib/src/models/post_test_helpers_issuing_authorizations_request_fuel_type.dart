@@ -8,7 +8,7 @@ final class PostTestHelpersIssuingAuthorizationsRequestFuelType {const PostTestH
 
 factory PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
-  'other' => other$,
+  'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
@@ -17,7 +17,7 @@ factory PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(String json
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelType diesel = PostTestHelpersIssuingAuthorizationsRequestFuelType._('diesel');
 
-static const PostTestHelpersIssuingAuthorizationsRequestFuelType other$ = PostTestHelpersIssuingAuthorizationsRequestFuelType._('other');
+static const PostTestHelpersIssuingAuthorizationsRequestFuelType $other = PostTestHelpersIssuingAuthorizationsRequestFuelType._('other');
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelType unleadedPlus = PostTestHelpersIssuingAuthorizationsRequestFuelType._('unleaded_plus');
 
@@ -25,7 +25,7 @@ static const PostTestHelpersIssuingAuthorizationsRequestFuelType unleadedRegular
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelType unleadedSuper = PostTestHelpersIssuingAuthorizationsRequestFuelType._('unleaded_super');
 
-static const List<PostTestHelpersIssuingAuthorizationsRequestFuelType> values = [diesel, other$, unleadedPlus, unleadedRegular, unleadedSuper];
+static const List<PostTestHelpersIssuingAuthorizationsRequestFuelType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 final String value;
 

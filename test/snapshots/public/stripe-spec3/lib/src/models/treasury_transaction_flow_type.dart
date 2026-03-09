@@ -12,7 +12,7 @@ factory TreasuryTransactionFlowType.fromJson(String json) { return switch (json)
   'debit_reversal' => debitReversal,
   'inbound_transfer' => inboundTransfer,
   'issuing_authorization' => issuingAuthorization,
-  'other' => other$,
+  'other' => $other,
   'outbound_payment' => outboundPayment,
   'outbound_transfer' => outboundTransfer,
   'received_credit' => receivedCredit,
@@ -28,7 +28,7 @@ static const TreasuryTransactionFlowType inboundTransfer = TreasuryTransactionFl
 
 static const TreasuryTransactionFlowType issuingAuthorization = TreasuryTransactionFlowType._('issuing_authorization');
 
-static const TreasuryTransactionFlowType other$ = TreasuryTransactionFlowType._('other');
+static const TreasuryTransactionFlowType $other = TreasuryTransactionFlowType._('other');
 
 static const TreasuryTransactionFlowType outboundPayment = TreasuryTransactionFlowType._('outbound_payment');
 
@@ -38,7 +38,7 @@ static const TreasuryTransactionFlowType receivedCredit = TreasuryTransactionFlo
 
 static const TreasuryTransactionFlowType receivedDebit = TreasuryTransactionFlowType._('received_debit');
 
-static const List<TreasuryTransactionFlowType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, other$, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
+static const List<TreasuryTransactionFlowType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, $other, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
 
 final String value;
 

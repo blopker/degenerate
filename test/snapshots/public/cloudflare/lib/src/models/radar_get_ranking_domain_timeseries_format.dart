@@ -8,16 +8,16 @@
 final class RadarGetRankingDomainTimeseriesFormat {const RadarGetRankingDomainTimeseriesFormat._(this.value);
 
 factory RadarGetRankingDomainTimeseriesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetRankingDomainTimeseriesFormat._(json),
 }; }
 
-static const RadarGetRankingDomainTimeseriesFormat json$ = RadarGetRankingDomainTimeseriesFormat._('JSON');
+static const RadarGetRankingDomainTimeseriesFormat $json = RadarGetRankingDomainTimeseriesFormat._('JSON');
 
 static const RadarGetRankingDomainTimeseriesFormat csv = RadarGetRankingDomainTimeseriesFormat._('CSV');
 
-static const List<RadarGetRankingDomainTimeseriesFormat> values = [json$, csv];
+static const List<RadarGetRankingDomainTimeseriesFormat> values = [$json, csv];
 
 final String value;
 

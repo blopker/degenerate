@@ -9,7 +9,7 @@ final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowe
 factory PortalCustomerUpdateAllowedUpdates.fromJson(String json) { return switch (json) {
   'address' => address,
   'email' => email,
-  'name' => name$,
+  'name' => $name,
   'phone' => phone,
   'shipping' => shipping,
   'tax_id' => taxId,
@@ -20,7 +20,7 @@ static const PortalCustomerUpdateAllowedUpdates address = PortalCustomerUpdateAl
 
 static const PortalCustomerUpdateAllowedUpdates email = PortalCustomerUpdateAllowedUpdates._('email');
 
-static const PortalCustomerUpdateAllowedUpdates name$ = PortalCustomerUpdateAllowedUpdates._('name');
+static const PortalCustomerUpdateAllowedUpdates $name = PortalCustomerUpdateAllowedUpdates._('name');
 
 static const PortalCustomerUpdateAllowedUpdates phone = PortalCustomerUpdateAllowedUpdates._('phone');
 
@@ -28,7 +28,7 @@ static const PortalCustomerUpdateAllowedUpdates shipping = PortalCustomerUpdateA
 
 static const PortalCustomerUpdateAllowedUpdates taxId = PortalCustomerUpdateAllowedUpdates._('tax_id');
 
-static const List<PortalCustomerUpdateAllowedUpdates> values = [address, email, name$, phone, shipping, taxId];
+static const List<PortalCustomerUpdateAllowedUpdates> values = [address, email, $name, phone, shipping, taxId];
 
 final String value;
 

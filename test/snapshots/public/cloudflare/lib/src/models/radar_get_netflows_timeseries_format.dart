@@ -8,16 +8,16 @@
 final class RadarGetNetflowsTimeseriesFormat {const RadarGetNetflowsTimeseriesFormat._(this.value);
 
 factory RadarGetNetflowsTimeseriesFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetNetflowsTimeseriesFormat._(json),
 }; }
 
-static const RadarGetNetflowsTimeseriesFormat json$ = RadarGetNetflowsTimeseriesFormat._('JSON');
+static const RadarGetNetflowsTimeseriesFormat $json = RadarGetNetflowsTimeseriesFormat._('JSON');
 
 static const RadarGetNetflowsTimeseriesFormat csv = RadarGetNetflowsTimeseriesFormat._('CSV');
 
-static const List<RadarGetNetflowsTimeseriesFormat> values = [json$, csv];
+static const List<RadarGetNetflowsTimeseriesFormat> values = [$json, csv];
 
 final String value;
 

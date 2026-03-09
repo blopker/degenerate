@@ -8,19 +8,19 @@
 final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);
 
 factory IssuingNetworkTokenDeviceType.fromJson(String json) { return switch (json) {
-  'other' => other$,
+  'other' => $other,
   'phone' => phone,
   'watch' => watch,
   _ => IssuingNetworkTokenDeviceType._(json),
 }; }
 
-static const IssuingNetworkTokenDeviceType other$ = IssuingNetworkTokenDeviceType._('other');
+static const IssuingNetworkTokenDeviceType $other = IssuingNetworkTokenDeviceType._('other');
 
 static const IssuingNetworkTokenDeviceType phone = IssuingNetworkTokenDeviceType._('phone');
 
 static const IssuingNetworkTokenDeviceType watch = IssuingNetworkTokenDeviceType._('watch');
 
-static const List<IssuingNetworkTokenDeviceType> values = [other$, phone, watch];
+static const List<IssuingNetworkTokenDeviceType> values = [$other, phone, watch];
 
 final String value;
 

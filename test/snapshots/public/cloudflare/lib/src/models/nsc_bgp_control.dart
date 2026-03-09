@@ -28,7 +28,7 @@ final List<String> extraPrefixes;
 /// character:
 /// 
 /// * ASCII alphanumerics: `[a-zA-Z0-9]`
-/// * Special characters in the set `'!@#$%^&*()+[]{}<>/.,;:_-~`= \|`
+/// * Special characters in the set `'!@#$%^&*()+[]{}<>/.,;:_-~`= \|``
 /// 
 /// In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A),
 /// quotation mark (`"`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed

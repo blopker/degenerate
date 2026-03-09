@@ -11,7 +11,7 @@ factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String 
   'authentication_required' => authenticationRequired,
   'blocked_for_fraud' => blockedForFraud,
   'invalid_payment' => invalidPayment,
-  'other' => other$,
+  'other' => $other,
   _ => InsightsResourcesPaymentEvaluationMerchantBlockedReason._(json),
 }; }
 
@@ -21,9 +21,9 @@ static const InsightsResourcesPaymentEvaluationMerchantBlockedReason blockedForF
 
 static const InsightsResourcesPaymentEvaluationMerchantBlockedReason invalidPayment = InsightsResourcesPaymentEvaluationMerchantBlockedReason._('invalid_payment');
 
-static const InsightsResourcesPaymentEvaluationMerchantBlockedReason other$ = InsightsResourcesPaymentEvaluationMerchantBlockedReason._('other');
+static const InsightsResourcesPaymentEvaluationMerchantBlockedReason $other = InsightsResourcesPaymentEvaluationMerchantBlockedReason._('other');
 
-static const List<InsightsResourcesPaymentEvaluationMerchantBlockedReason> values = [authenticationRequired, blockedForFraud, invalidPayment, other$];
+static const List<InsightsResourcesPaymentEvaluationMerchantBlockedReason> values = [authenticationRequired, blockedForFraud, invalidPayment, $other];
 
 final String value;
 

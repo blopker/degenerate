@@ -9,7 +9,7 @@ final class RadarGetHttpTimeseriesGroupByIpVersionDeviceType {const RadarGetHttp
 factory RadarGetHttpTimeseriesGroupByIpVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  'OTHER' => other$,
+  'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByIpVersionDeviceType._(json),
 }; }
 
@@ -17,9 +17,9 @@ static const RadarGetHttpTimeseriesGroupByIpVersionDeviceType desktop = RadarGet
 
 static const RadarGetHttpTimeseriesGroupByIpVersionDeviceType mobile = RadarGetHttpTimeseriesGroupByIpVersionDeviceType._('MOBILE');
 
-static const RadarGetHttpTimeseriesGroupByIpVersionDeviceType other$ = RadarGetHttpTimeseriesGroupByIpVersionDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesGroupByIpVersionDeviceType $other = RadarGetHttpTimeseriesGroupByIpVersionDeviceType._('OTHER');
 
-static const List<RadarGetHttpTimeseriesGroupByIpVersionDeviceType> values = [desktop, mobile, other$];
+static const List<RadarGetHttpTimeseriesGroupByIpVersionDeviceType> values = [desktop, mobile, $other];
 
 final String value;
 

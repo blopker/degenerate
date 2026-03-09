@@ -8,16 +8,16 @@
 final class RadarGetDnsSummaryByCacheHitStatusFormat {const RadarGetDnsSummaryByCacheHitStatusFormat._(this.value);
 
 factory RadarGetDnsSummaryByCacheHitStatusFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsSummaryByCacheHitStatusFormat._(json),
 }; }
 
-static const RadarGetDnsSummaryByCacheHitStatusFormat json$ = RadarGetDnsSummaryByCacheHitStatusFormat._('JSON');
+static const RadarGetDnsSummaryByCacheHitStatusFormat $json = RadarGetDnsSummaryByCacheHitStatusFormat._('JSON');
 
 static const RadarGetDnsSummaryByCacheHitStatusFormat csv = RadarGetDnsSummaryByCacheHitStatusFormat._('CSV');
 
-static const List<RadarGetDnsSummaryByCacheHitStatusFormat> values = [json$, csv];
+static const List<RadarGetDnsSummaryByCacheHitStatusFormat> values = [$json, csv];
 
 final String value;
 

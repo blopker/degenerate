@@ -7,13 +7,13 @@
 final class BoolAllocationType {const BoolAllocationType._(this.value);
 
 factory BoolAllocationType.fromJson(String json) { return switch (json) {
-  'bool' => bool$,
+  'bool' => $bool,
   _ => BoolAllocationType._(json),
 }; }
 
-static const BoolAllocationType bool$ = BoolAllocationType._('bool');
+static const BoolAllocationType $bool = BoolAllocationType._('bool');
 
-static const List<BoolAllocationType> values = [bool$];
+static const List<BoolAllocationType> values = [$bool];
 
 final String value;
 

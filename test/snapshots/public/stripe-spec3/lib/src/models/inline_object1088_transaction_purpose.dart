@@ -9,7 +9,7 @@ final class InlineObject1088TransactionPurpose {const InlineObject1088Transactio
 factory InlineObject1088TransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
   'goods' => goods,
-  'other' => other$,
+  'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
   _ => InlineObject1088TransactionPurpose._(json),
@@ -19,13 +19,13 @@ static const InlineObject1088TransactionPurpose $empty = InlineObject1088Transac
 
 static const InlineObject1088TransactionPurpose goods = InlineObject1088TransactionPurpose._('goods');
 
-static const InlineObject1088TransactionPurpose other$ = InlineObject1088TransactionPurpose._('other');
+static const InlineObject1088TransactionPurpose $other = InlineObject1088TransactionPurpose._('other');
 
 static const InlineObject1088TransactionPurpose services = InlineObject1088TransactionPurpose._('services');
 
 static const InlineObject1088TransactionPurpose unspecified = InlineObject1088TransactionPurpose._('unspecified');
 
-static const List<InlineObject1088TransactionPurpose> values = [$empty, goods, other$, services, unspecified];
+static const List<InlineObject1088TransactionPurpose> values = [$empty, goods, $other, services, unspecified];
 
 final String value;
 

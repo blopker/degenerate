@@ -12,7 +12,7 @@ factory PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(String json
   'kilogram' => kilogram,
   'kilowatt_hour' => kilowattHour,
   'liter' => liter,
-  'other' => other$,
+  'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingAuthorizationsRequestFuelUnit._(json),
@@ -28,13 +28,13 @@ static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit kilowattHour = 
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit liter = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('liter');
 
-static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit other$ = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('other');
+static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit $other = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('other');
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit pound = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('pound');
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit usGallon = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('us_gallon');
 
-static const List<PostTestHelpersIssuingAuthorizationsRequestFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, other$, pound, usGallon];
+static const List<PostTestHelpersIssuingAuthorizationsRequestFuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 final String value;
 

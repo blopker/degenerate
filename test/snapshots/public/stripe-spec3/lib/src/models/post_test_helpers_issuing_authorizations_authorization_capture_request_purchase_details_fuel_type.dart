@@ -8,7 +8,7 @@ final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurch
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
-  'other' => other$,
+  'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
@@ -17,7 +17,7 @@ factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseD
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType diesel = PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._('diesel');
 
-static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType other$ = PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._('other');
+static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType $other = PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._('other');
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType unleadedPlus = PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._('unleaded_plus');
 
@@ -25,7 +25,7 @@ static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurc
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType unleadedSuper = PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._('unleaded_super');
 
-static const List<PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType> values = [diesel, other$, unleadedPlus, unleadedRegular, unleadedSuper];
+static const List<PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 final String value;
 

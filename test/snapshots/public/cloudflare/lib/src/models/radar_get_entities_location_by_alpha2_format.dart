@@ -8,16 +8,16 @@
 final class RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format._(this.value);
 
 factory RadarGetEntitiesLocationByAlpha2Format.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEntitiesLocationByAlpha2Format._(json),
 }; }
 
-static const RadarGetEntitiesLocationByAlpha2Format json$ = RadarGetEntitiesLocationByAlpha2Format._('JSON');
+static const RadarGetEntitiesLocationByAlpha2Format $json = RadarGetEntitiesLocationByAlpha2Format._('JSON');
 
 static const RadarGetEntitiesLocationByAlpha2Format csv = RadarGetEntitiesLocationByAlpha2Format._('CSV');
 
-static const List<RadarGetEntitiesLocationByAlpha2Format> values = [json$, csv];
+static const List<RadarGetEntitiesLocationByAlpha2Format> values = [$json, csv];
 
 final String value;
 

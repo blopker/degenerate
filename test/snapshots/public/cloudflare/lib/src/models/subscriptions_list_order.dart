@@ -8,7 +8,7 @@ final class SubscriptionsListOrder {const SubscriptionsListOrder._(this.value);
 
 factory SubscriptionsListOrder.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
-  'name' => name$,
+  'name' => $name,
   'enabled' => enabled,
   'source' => source,
   _ => SubscriptionsListOrder._(json),
@@ -16,13 +16,13 @@ factory SubscriptionsListOrder.fromJson(String json) { return switch (json) {
 
 static const SubscriptionsListOrder createdAt = SubscriptionsListOrder._('created_at');
 
-static const SubscriptionsListOrder name$ = SubscriptionsListOrder._('name');
+static const SubscriptionsListOrder $name = SubscriptionsListOrder._('name');
 
 static const SubscriptionsListOrder enabled = SubscriptionsListOrder._('enabled');
 
 static const SubscriptionsListOrder source = SubscriptionsListOrder._('source');
 
-static const List<SubscriptionsListOrder> values = [createdAt, name$, enabled, source];
+static const List<SubscriptionsListOrder> values = [createdAt, $name, enabled, source];
 
 final String value;
 

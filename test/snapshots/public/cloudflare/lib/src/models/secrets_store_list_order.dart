@@ -7,7 +7,7 @@
 final class SecretsStoreListOrder {const SecretsStoreListOrder._(this.value);
 
 factory SecretsStoreListOrder.fromJson(String json) { return switch (json) {
-  'name' => name$,
+  'name' => $name,
   'comment' => comment,
   'created' => created,
   'modified' => modified,
@@ -15,7 +15,7 @@ factory SecretsStoreListOrder.fromJson(String json) { return switch (json) {
   _ => SecretsStoreListOrder._(json),
 }; }
 
-static const SecretsStoreListOrder name$ = SecretsStoreListOrder._('name');
+static const SecretsStoreListOrder $name = SecretsStoreListOrder._('name');
 
 static const SecretsStoreListOrder comment = SecretsStoreListOrder._('comment');
 
@@ -25,7 +25,7 @@ static const SecretsStoreListOrder modified = SecretsStoreListOrder._('modified'
 
 static const SecretsStoreListOrder status = SecretsStoreListOrder._('status');
 
-static const List<SecretsStoreListOrder> values = [name$, comment, created, modified, status];
+static const List<SecretsStoreListOrder> values = [$name, comment, created, modified, status];
 
 final String value;
 

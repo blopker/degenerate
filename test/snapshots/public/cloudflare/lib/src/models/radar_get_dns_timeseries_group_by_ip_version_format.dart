@@ -8,16 +8,16 @@
 final class RadarGetDnsTimeseriesGroupByIpVersionFormat {const RadarGetDnsTimeseriesGroupByIpVersionFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByIpVersionFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupByIpVersionFormat._(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByIpVersionFormat json$ = RadarGetDnsTimeseriesGroupByIpVersionFormat._('JSON');
+static const RadarGetDnsTimeseriesGroupByIpVersionFormat $json = RadarGetDnsTimeseriesGroupByIpVersionFormat._('JSON');
 
 static const RadarGetDnsTimeseriesGroupByIpVersionFormat csv = RadarGetDnsTimeseriesGroupByIpVersionFormat._('CSV');
 
-static const List<RadarGetDnsTimeseriesGroupByIpVersionFormat> values = [json$, csv];
+static const List<RadarGetDnsTimeseriesGroupByIpVersionFormat> values = [$json, csv];
 
 final String value;
 

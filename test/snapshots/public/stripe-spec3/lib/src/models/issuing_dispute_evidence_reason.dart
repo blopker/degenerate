@@ -14,7 +14,7 @@ factory IssuingDisputeEvidenceReason.fromJson(String json) { return switch (json
   'merchandise_not_as_described' => merchandiseNotAsDescribed,
   'no_valid_authorization' => noValidAuthorization,
   'not_received' => notReceived,
-  'other' => other$,
+  'other' => $other,
   'service_not_as_described' => serviceNotAsDescribed,
   _ => IssuingDisputeEvidenceReason._(json),
 }; }
@@ -31,11 +31,11 @@ static const IssuingDisputeEvidenceReason noValidAuthorization = IssuingDisputeE
 
 static const IssuingDisputeEvidenceReason notReceived = IssuingDisputeEvidenceReason._('not_received');
 
-static const IssuingDisputeEvidenceReason other$ = IssuingDisputeEvidenceReason._('other');
+static const IssuingDisputeEvidenceReason $other = IssuingDisputeEvidenceReason._('other');
 
 static const IssuingDisputeEvidenceReason serviceNotAsDescribed = IssuingDisputeEvidenceReason._('service_not_as_described');
 
-static const List<IssuingDisputeEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other$, serviceNotAsDescribed];
+static const List<IssuingDisputeEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, $other, serviceNotAsDescribed];
 
 final String value;
 

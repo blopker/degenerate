@@ -8,16 +8,16 @@
 final class RadarGetHttpSummaryByDeviceTypeFormat {const RadarGetHttpSummaryByDeviceTypeFormat._(this.value);
 
 factory RadarGetHttpSummaryByDeviceTypeFormat.fromJson(String json) { return switch (json) {
-  'JSON' => json$,
+  'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpSummaryByDeviceTypeFormat._(json),
 }; }
 
-static const RadarGetHttpSummaryByDeviceTypeFormat json$ = RadarGetHttpSummaryByDeviceTypeFormat._('JSON');
+static const RadarGetHttpSummaryByDeviceTypeFormat $json = RadarGetHttpSummaryByDeviceTypeFormat._('JSON');
 
 static const RadarGetHttpSummaryByDeviceTypeFormat csv = RadarGetHttpSummaryByDeviceTypeFormat._('CSV');
 
-static const List<RadarGetHttpSummaryByDeviceTypeFormat> values = [json$, csv];
+static const List<RadarGetHttpSummaryByDeviceTypeFormat> values = [$json, csv];
 
 final String value;
 

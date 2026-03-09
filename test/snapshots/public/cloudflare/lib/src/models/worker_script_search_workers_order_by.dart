@@ -10,7 +10,7 @@ final class WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrd
 factory WorkerScriptSearchWorkersOrderBy.fromJson(String json) { return switch (json) {
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
-  'name' => name$,
+  'name' => $name,
   _ => WorkerScriptSearchWorkersOrderBy._(json),
 }; }
 
@@ -18,9 +18,9 @@ static const WorkerScriptSearchWorkersOrderBy createdOn = WorkerScriptSearchWork
 
 static const WorkerScriptSearchWorkersOrderBy modifiedOn = WorkerScriptSearchWorkersOrderBy._('modified_on');
 
-static const WorkerScriptSearchWorkersOrderBy name$ = WorkerScriptSearchWorkersOrderBy._('name');
+static const WorkerScriptSearchWorkersOrderBy $name = WorkerScriptSearchWorkersOrderBy._('name');
 
-static const List<WorkerScriptSearchWorkersOrderBy> values = [createdOn, modifiedOn, name$];
+static const List<WorkerScriptSearchWorkersOrderBy> values = [createdOn, modifiedOn, $name];
 
 final String value;
 

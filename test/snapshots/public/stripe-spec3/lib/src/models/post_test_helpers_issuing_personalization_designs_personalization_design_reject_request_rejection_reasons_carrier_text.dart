@@ -11,7 +11,7 @@ factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectR
   'inappropriate' => inappropriate,
   'network_name' => networkName,
   'non_fiat_currency' => nonFiatCurrency,
-  'other' => other$,
+  'other' => $other,
   'other_entity' => otherEntity,
   'promotional_material' => promotionalMaterial,
   _ => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._(json),
@@ -25,13 +25,13 @@ static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRe
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText nonFiatCurrency = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('non_fiat_currency');
 
-static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText other$ = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('other');
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText $other = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('other');
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText otherEntity = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('other_entity');
 
 static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText promotionalMaterial = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('promotional_material');
 
-static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, other$, otherEntity, promotionalMaterial];
+static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
 
 final String value;
 
