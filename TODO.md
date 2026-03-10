@@ -4,8 +4,8 @@
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **185 unit tests** all passing, `dart analyze lib/` clean on generator source
-- **CLI**: `--input`, `--output`, `--name`, `--client http|none`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
+- **230+ unit tests** all passing, **19 wire tests** passing, `dart analyze` clean on all source directories
+- **CLI**: `--input`, `--output`, `--name`, `--client http|none`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
@@ -29,23 +29,61 @@
 | GitHub REST 3.1 | 6,401 | 0 issues |
 | Cloudflare | 14,580 | 0 issues |
 | Stripe (162k lines) | 10,768 | 0 issues |
-| DigitalOcean | 2,682 | Skipped — uses external $ref files |
+| DigitalOcean | — | Fails (external `$ref` — tested) |
+
+---
+
+## Completed (Session 8)
+- [x] **External `$ref` handling** — now throws `UnsupportedError` for all non-local refs (any ref not starting with `#/`). DigitalOcean snapshot deleted; explicit failure test added.
+- [x] **Header parameters emitted** — header params now written into `ApiRequest.headers` with required/optional handling.
+- [x] **2xx success detection expanded** — checks all 2xx status codes, not just 200-204.
+- [x] **Primitive/enum/collection error deserialization** — type-aware deserialization for string, int, double, bool, enum, list, map error schemas.
+- [x] **`outputs/**` excluded from analyzer** — added to `analysis_options.yaml`.
+- [x] **Wire tests** — created test infrastructure under `test/wire/` with RecordingClient-based behavioral tests for fixtures 03 and 05.
+- [x] **RecordingClient in runtime** — moved to `packages/degenerate_runtime/lib/src/testing/` with separate `testing.dart` entrypoint.
+- [x] **Makefile updated** — discovers and runs wire tests via `find`, runs `dart analyze` on all source directories.
+
+## Previously Completed
+- [x] **Error response deserialization** — `ApiResult<T, E>` with typed error model and try-catch fallback.
+- [x] **Extension types for branded primitives** — named primitives generate Dart extension types.
+- [x] **Try Stripe spec** — 162k lines, 10,768 files, 0 issues.
 
 ---
 
 ## Remaining Features
 
-### High Priority
-- [x] **Error response deserialization** — already implemented. Operations return `ApiResult<T, E>` where `E` is the typed error model (or `Never` if no error schema). Error bodies are deserialized via `onError` callback with try-catch fallback.
-- [x] **Extension types for branded primitives** — named schemas that are just primitives generate Dart extension types (e.g., `extension type const UserId(String value)`). Handles all primitive kinds including DateTime, Uri, BigInt with proper fromJson/toJson serialization.
+### P0: Correctness Blockers
 
-### Medium Priority
-- [ ] **Determinism test** — run generator twice on same input, assert byte-identical output
-- [x] **Try Stripe spec** — 162k lines, 10,768 files, 0 issues
+- [ ] **Non-JSON request bodies always JSON-encoded** — regardless of media type, emitter always sets `Content-Type: application/json` and uses `jsonEncode()`. Breaks `multipart/form-data`, `application/x-www-form-urlencoded`, `text/plain`, and binary payloads. Need to carry chosen media type through IR and emit transport-specific serialization. *(review.md #4, review2.md 1d)*
+- [ ] **Non-JSON success/error responses discarded** — response typing only recognizes `application/json`. Should also handle `application/*+json`, `application/problem+json`, `text/plain`, and binary. *(review.md #5, review2.md #2)*
+- [ ] **Query serialization ignores style/explode/allowReserved** — array/object query params use `.toString()` instead of spec-defined serialization styles (`form`, `simple`, `label`, `matrix`, `deepObject`, `pipeDelimited`, `spaceDelimited`). IR should carry serialization metadata. *(review2.md 1c)*
+- [ ] **HTTP adapter only supports string bodies** — `HttpApiClient.send()` casts `request.body` to `String`. Blocks raw bytes, multipart, streamed uploads, and form submission even if generation improves. Body model and transport model need to evolve together. *(review2.md 1e)*
 
-### Low Priority
-- [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested)
-- [ ] **External `$ref` files** — resolve `$ref: './other.yaml'` across files
+### P1: Important Capability Gaps
+
+- [ ] **Cookie parameters dropped** — recognized during partitioning but explicitly ignored (`break`). Need to either synthesize a `Cookie` header or add first-class cookie support in `ApiRequest`. *(review.md #3, review2.md 1b)*
+- [ ] **Security schemes don't drive codegen** — runtime has `AuthInterceptor`, but generator doesn't emit typed auth surfaces from `securitySchemes`. Should support API key (header/query/cookie), bearer/basic, and per-operation security requirements. Fixture 06 exists but isn't wired up. *(review2.md #3, #6)*
+- [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
+- [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. *(review2.md 5a/5b/5c)*
+- [ ] **`--client` flag is a no-op** — CLI exposes `--client http|none` but nothing changes in generated output. Either wire it up or remove it. *(review.md #7, review2.md 7c)*
+
+### P2: Polish and Trust
+
+- [ ] **CI workflow** — add GitHub Actions for tests, analyze, and snapshot validation. *(review2.md 7d)*
+- [ ] **Determinism test** — run generator twice on same input, assert byte-identical output. *(review2.md #10)*
+- [ ] **README claims too broad** — "full OpenAPI 3.x support" is premature. Better: "strong support for JSON-oriented OpenAPI 3.x specs." *(review2.md 7a)*
+- [ ] **Formatting story inconsistent** — emitted files use `// dart format off` markers, but pipeline docs describe dart_style parallel formatting. Reconcile. *(review2.md 7b)*
+- [ ] **Spec-derived base URL helper** — parser reads `servers` but generator doesn't use them. Emit a generated constant for the first server URL. *(review2.md #13)*
+- [ ] **Retry interceptor improvements** — add jitter, idempotency gating, `Retry-After` header handling. Current implementation is useful but operationally naive. *(review2.md #6)*
+- [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested).
+
+### Architectural Suggestions (from review2.md)
+
+These are cross-cutting improvements that would make multiple P0/P1 items easier to implement:
+
+- [ ] **Parameter serialization layer** — IR should preserve `style`, `explode`, `allowReserved`, and parameter location. Emit or runtime-dispatch through a serializer that handles all OpenAPI serialization styles.
+- [ ] **Request-body preparation layer** — lower operation body to a prepared transport shape (`BodyKind.json`, `.text`, `.bytes`, `.formUrlEncoded`, `.multipart`) with per-type serialization and content-type logic.
+- [ ] **Response decoding layer** — instead of hardcoding `application/json`, emit decode strategies: `jsonObject`, `jsonArray`, `jsonScalar`, `text`, `bytes`, `void`.
 
 ---
 
@@ -70,6 +108,20 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 8 (2026-03-09) — Review-driven bug fixes + wire tests
+
+- Fixed external `$ref` handling: throws `UnsupportedError` for all non-local refs; deleted DigitalOcean snapshot; explicit failure test
+- Fixed header parameter emission into `ApiRequest.headers`
+- Expanded 2xx success detection to all 2xx status codes
+- Fixed primitive/enum/collection error deserialization (type-aware switch)
+- Added operation-level `$ref` resolution in `OperationLowerer.lowerPaths()`
+- Created wire test infrastructure under `test/wire/` using Dart 3.11 workspaces
+- Moved `RecordingClient` to `degenerate_runtime` with separate `testing.dart` entrypoint
+- Added `--workspace` CLI flag to emit `resolution: workspace` in generated pubspec
+- Excluded `outputs/**` from analyzer
+- Updated Makefile to discover and run wire tests
+- 230+ root tests, 19 wire tests, analyzer clean
 
 ### Session 7 (2026-03-09) — Runtime package split + middleware
 
@@ -159,6 +211,7 @@ lib/src/
 
 packages/
   degenerate_runtime/        Core interfaces (ApiClient, ApiConfig, ApiResult), middleware chain, interceptors
+    lib/testing.dart         Separate entrypoint: re-exports runtime + RecordingClient for user tests
   degenerate_http/           HttpApiClient adapter (package:http)
   degenerate_dio/            DioApiClient adapter (package:dio)
 
@@ -167,7 +220,9 @@ example/                     Petstore CLI app using generated client + degenerat
 test/
   fixtures/                  OpenAPI spec files for testing
   snapshots/                 Committed golden output (petstore, unions, circular, + public specs)
+  wire/                      Behavioral wire tests per fixture (Dart workspace packages)
 scratch/                     Ephemeral test builds (.gitignored)
+outputs/                     Experimenting/investigation (.gitignored)
 ```
 
 ## Test Fixtures Available
