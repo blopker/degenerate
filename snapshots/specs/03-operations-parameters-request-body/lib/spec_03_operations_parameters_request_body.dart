@@ -7,6 +7,7 @@
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/spec_03_operations_parameters_request_body_api.dart';
 
+export 'src/models/get_item_filter.dart';
 export 'src/models/patch_item_request.dart';
 export 'src/models/patch_item_request2.dart';
 

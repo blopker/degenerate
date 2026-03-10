@@ -59,6 +59,57 @@ void main() {
       },
     );
 
+    test('serializes pipeDelimited arrays into single query values', () async {
+      await api.getItem(itemId: 'x', tagsPipe: ['name', 'status']);
+
+      expect(
+        client.lastRequest!.queryParameters['tagsPipe'],
+        equals('name|status'),
+      );
+      final uri = client.lastRequest!.resolveUri(client.baseUrl);
+      expect(
+        uri.toString(),
+        equals('http://localhost/items/x?tagsPipe=name%7Cstatus'),
+      );
+    });
+
+    test('serializes spaceDelimited arrays into single query values', () async {
+      await api.getItem(itemId: 'x', tagsSpace: ['name', 'status']);
+
+      expect(
+        client.lastRequest!.queryParameters['tagsSpace'],
+        equals('name status'),
+      );
+      final uri = client.lastRequest!.resolveUri(client.baseUrl);
+      expect(
+        uri.toString(),
+        equals('http://localhost/items/x?tagsSpace=name+status'),
+      );
+    });
+
+    test('serializes deepObject params into bracketed query keys', () async {
+      await api.getItem(
+        itemId: 'x',
+        filter: const GetItemFilter(status: 'active', limit: 10),
+      );
+
+      expect(
+        client.lastRequest!.queryParameters['filter[status]'],
+        equals('active'),
+      );
+      expect(
+        client.lastRequest!.queryParameters['filter[limit]'],
+        equals('10'),
+      );
+      final uri = client.lastRequest!.resolveUri(client.baseUrl);
+      expect(
+        uri.toString(),
+        equals(
+          'http://localhost/items/x?filter%5Bstatus%5D=active&filter%5Blimit%5D=10',
+        ),
+      );
+    });
+
     test('omits query parameters when not provided', () async {
       await api.getItem(itemId: 'x');
 

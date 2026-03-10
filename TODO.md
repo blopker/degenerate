@@ -56,7 +56,7 @@
 
 - [x] **Non-JSON request bodies** — emitter now preserves chosen media type, emits `text/plain` raw body writes, binary `application/octet-stream` byte uploads, and `application/*+json` JSON encoding. Unsupported non-JSON complex types emit `UnsupportedError` + generator warning. *(review.md #4, review2.md 1d)*
 - [x] **Non-JSON success/error responses** — response typing handles `application/json`, `application/*+json` (e.g. `application/problem+json`), `text/plain`, and binary (`Uint8List` via `response.bodyBytes`). Generator warns on unsupported non-JSON complex schemas. *(review.md #5, review2.md #2)*
-- [ ] **Query serialization style/explode/allowReserved** — IR now carries `style`, `explode`, `allowReserved` on `IrParameter`. Emitter handles high-impact cases: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited arrays (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params), allowReserved passthrough. Runtime supports duplicate query keys via `ApiQueryParameter` + `queryParametersList`. Remaining: non-exploded form/simple variants, path/header/cookie style application, wire tests. *(review2.md 1c)*
+- [ ] **Query serialization style/explode/allowReserved** — IR now carries `style`, `explode`, `allowReserved` on `IrParameter`. Emitter handles high-impact cases: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited arrays (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params), allowReserved passthrough. Runtime supports duplicate query keys via `ApiQueryParameter` + `queryParametersList`. Wire tests cover pipeDelimited, spaceDelimited, deepObject, and allowReserved through generated code. Remaining: non-exploded form/simple variants, path/header/cookie style application. *(review2.md 1c)*
 - [x] **HTTP/Dio adapters support binary bodies and responses** — `HttpApiClient` and `DioApiClient` accept both `String` and `List<int>` request bodies. `ApiResponse` carries `bodyBytes: Uint8List` alongside text `body`, with zero-copy when caller provides `Uint8List`. *(review2.md 1e)*
 
 ### P1: Important Capability Gaps
@@ -134,6 +134,7 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - Identity map elision: string arrays emit `tag.join('|')` instead of `tag.map((item) => item).join('|')`
 - New tests: exploded form arrays, pipeDelimited arrays, spaceDelimited arrays, deepObject objects, non-exploded form objects, allowReserved passthrough, duplicate query param URI building
 - Wire tests for spec-03: repeated/reserved query serialization validated through generated code, allowReserved reserved-char passthrough verified at URI level
+- Expanded spec-03 fixture with pipeDelimited, spaceDelimited, and deepObject query params; wire tests verify pipe joining, space joining, and bracketed key serialization through generated code and URI encoding
 - Fixed optional headers to always use `if (x != null)` guard instead of broken `?` null-aware element syntax
 - Fixed redundant `!` null-assert in guarded query serialization — generated code now uses Dart type promotion
 - All tests passing, analyzer clean on all touched files

@@ -57,6 +57,48 @@
             }
           },
           {
+            "name": "tagsPipe",
+            "in": "query",
+            "style": "pipeDelimited",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "tagsSpace",
+            "in": "query",
+            "style": "spaceDelimited",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "object",
+              "required": ["status", "limit"],
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "limit": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          {
             "name": "session",
             "in": "cookie",
             "required": false,
