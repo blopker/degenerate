@@ -38,13 +38,25 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/stream/watermarks`
 Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from StreamWatermarkBasicUpload');,
+  body: [
+    ApiMultipartField.text('file', body.file),
+    if (body.name case final _name?)
+      ApiMultipartField.text('name', _name.toJson()),
+    if (body.opacity case final _opacity?)
+      ApiMultipartField.text('opacity', _opacity.toJson()),
+    if (body.padding case final _padding?)
+      ApiMultipartField.text('padding', _padding.toJson()),
+    if (body.position case final _position?)
+      ApiMultipartField.text('position', _position.toJson()),
+    if (body.scale case final _scale?)
+      ApiMultipartField.text('scale', _scale.toJson()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

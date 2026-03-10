@@ -22,7 +22,6 @@ final queryParametersList = <ApiQueryParameter>[];
 queryParameters['base64'] = base64.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
@@ -198,7 +197,6 @@ return _execute(
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
 
@@ -206,7 +204,12 @@ final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPutContentRequest');,
+  body: [
+    if (body.files case final _files?)
+      ApiMultipartField.text('files', _files.toString()),
+    ApiMultipartField.text('metadata', body.metadata.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
@@ -398,13 +401,16 @@ return _execute(
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/settings`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPatchSettingsRequest');,
+  body: [
+    if (body.settings case final _settings?)
+      ApiMultipartField.text('settings', _settings.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

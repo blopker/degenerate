@@ -17,17 +17,41 @@ final class DioApiClient implements ApiClient {
     final uri = request.resolveUri(baseUrl);
     final headers = request.resolvedHeaders();
     try {
+      final Object? data;
+      if (request.body is List<ApiMultipartField>) {
+        final fields = request.body as List<ApiMultipartField>;
+        final formData = dio.FormData();
+        for (final field in fields) {
+          switch (field) {
+            case ApiMultipartTextField():
+              formData.fields.add(MapEntry(field.name, field.value));
+            case ApiMultipartFileField():
+              formData.files.add(MapEntry(
+                field.name,
+                dio.MultipartFile.fromBytes(
+                  field.bytes,
+                  filename: field.filename ?? field.name,
+                ),
+              ));
+          }
+        }
+        data = formData;
+      } else {
+        data = request.body;
+      }
       final response = await _inner.requestUri<List<int>>(
         uri,
         options: dio.Options(
           method: request.method,
           headers: headers.isNotEmpty ? headers : null,
-          contentType: request.contentType,
+          contentType: request.body is List<ApiMultipartField>
+              ? null
+              : request.contentType,
           responseType: dio.ResponseType.bytes,
           // Let us handle status codes ourselves.
           validateStatus: (_) => true,
         ),
-        data: request.body,
+        data: data,
       );
       final bytes = response.data ?? const <int>[];
       return ApiResponse(

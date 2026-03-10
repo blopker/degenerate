@@ -92,13 +92,15 @@ return _execute(
 ///
 /// `PUT /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
 Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DlpDocumentFingerprintsUploadRequest');,
+  body: [
+    ApiMultipartField.file('file', body.file),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

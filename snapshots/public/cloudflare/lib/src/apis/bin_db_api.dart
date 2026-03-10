@@ -16,13 +16,15 @@ final ApiConfig _config;
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/binary`
 Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/binary',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PostBinDbPostRequest');,
+  body: [
+    ApiMultipartField.file('file', body.file),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

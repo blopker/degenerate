@@ -109,13 +109,15 @@ return _execute(
 ///
 /// `POST /uploads/{upload_id}/parts`
 Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, required AddUploadPartRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/uploads/${Uri.encodeComponent(uploadId)}/parts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from AddUploadPartRequest');,
+  body: [
+    ApiMultipartField.file('data', body.data),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

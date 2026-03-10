@@ -255,13 +255,16 @@ return _execute(
 ///
 /// `POST /zones/{zone_id}/dns_records/import`
 Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneImportDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/import',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DnsRecordsForAZoneImportDnsRecordsRequest');,
+  body: [
+    ApiMultipartField.text('file', body.file),
+    ApiMultipartField.text('proxied', body.proxied),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

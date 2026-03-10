@@ -50,7 +50,6 @@ final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
@@ -58,7 +57,12 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerVersionsUploadVersionRequest');,
+  body: [
+    if (body.files case final _files?)
+      ApiMultipartField.text('files', _files.toString()),
+    ApiMultipartField.text('metadata', body.metadata.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

@@ -72,13 +72,15 @@ return _execute(
 ///
 /// `POST /api/mobile/protected/users/update_image`
 Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/users/update_image',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from UpdateCurrentUserImageRequest');,
+  body: [
+    ApiMultipartField.file('profile_image', body.profileImage),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

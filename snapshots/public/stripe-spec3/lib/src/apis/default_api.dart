@@ -5869,13 +5869,20 @@ return _execute(
 ///
 /// `POST /v1/files`
 Future<ApiResult<File, ErrorModel>> postFiles({required PostFilesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/v1/files',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PostFilesRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      ApiMultipartField.text('expand', _expand.toString()),
+    ApiMultipartField.file('file', body.file),
+    if (body.fileLinkData case final _fileLinkData?)
+      ApiMultipartField.text('file_link_data', _fileLinkData.toString()),
+    ApiMultipartField.text('purpose', body.purpose.toJson()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

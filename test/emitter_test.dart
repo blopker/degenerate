@@ -1321,6 +1321,53 @@ void main() {
       expect(source, contains('return null;'));
     });
 
+    test('emits multipart/form-data body from object schema', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'uploadFile',
+          'uploadFile',
+          HttpMethod.post,
+          '/upload',
+          requestBody: IrRequestBody({
+            'multipart/form-data': IrMediaType(
+              IrObject(
+                'UploadRequest',
+                [
+                  IrField(
+                    'file',
+                    'file',
+                    IrPrimitive(PrimitiveKind.bytes),
+                    isRequired: true,
+                  ),
+                  IrField(
+                    'description',
+                    'description',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: false,
+                  ),
+                ],
+                requiredFields: ['file'],
+              ),
+            ),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      // Should NOT throw UnsupportedError
+      expect(source, isNot(contains('UnsupportedError')));
+      // Should build multipart fields
+      expect(source, contains('ApiMultipartField'));
+      expect(source, contains("contentType: 'multipart/form-data'"));
+    });
+
     test('throws for unsupported text request object bodies', () {
       final api = IrApi('TestApi', [
         IrOperation(

@@ -81,7 +81,7 @@ These are cross-cutting improvements that would make multiple P0/P1 items easier
 Items from review3.md added where they don't duplicate existing entries:
 
 - [x] **Parameter serialization layer** — IR preserves `style`, `explode`, `allowReserved` on `IrParameter`. Emitter generates style-aware query serialization. Runtime `ApiQueryParameter` supports repeated keys and reserved-char passthrough.
-- [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw). Shared `media_type_utils.dart` handles media-type normalization and preference selection. Multipart/form not yet supported.
+- [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw), multipart/form-data (`List<ApiMultipartField>`). Shared `media_type_utils.dart` handles media-type normalization and preference selection. HTTP and Dio adapters convert multipart fields to platform-specific types.
 - [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
 - [ ] **Migrate serialization helpers to `code_builder` Expressions** — `buildFromJsonCode`/`buildToJsonCode` return raw strings mixed with AST construction. Refactoring to return `code_builder` `Expression` objects would enable automatic import tracking and eliminate string-templating edge cases. High effort, low urgency. *(review3.md #3)*
 - [ ] **Split `TypeLowerer` into normalizer + mapper** — `TypeLowerer` handles ref resolution, allOf flattening, name canonicalization, *and* IR mapping in one class with multipass resolution. Separating into `SchemaNormalizer` (produces a fully resolved graph) and `IrMapper` (purely translates to `IrType`) would simplify cycle handling and make the pipeline more testable. *(review3.md #4)*
@@ -109,6 +109,19 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 10 (2026-03-10) — Multipart/form-data, base URL, retry improvements, serialization cleanup
+
+- Multipart/form-data support end-to-end: runtime `ApiMultipartField` sealed class, HTTP and Dio adapter support, emitter generates `List<ApiMultipartField>` from object schema fields
+- Type registry: `ApiEmitter` receives `typeRegistry` to resolve `IrTypeRef` to `IrObject` fields for multipart body generation
+- Null-guard correctness: uses `case final x?` pattern for nullable public field promotion; skips guard for non-nullable fields with defaults
+- Content-Type header skipped for multipart requests (adapters set it automatically with boundary)
+- Spec-derived base URL: SDK facade emits `static const defaultBaseUrl` from `servers[0].url`
+- Retry interceptor improvements: jittered exponential backoff, `Retry-After` header parsing (seconds + HTTP-date), idempotency-based method gating, deterministic test hooks
+- Reduced string duplication in `buildFromJsonCode` (extracted `_buildFromJsonNonNull` + `_simpleCastFromJson`) and `buildToJsonCode` (consolidated identical arms)
+- Consolidated duplicated `_toHeaderString`/`_toQueryString` into `_toStringExpr` in api_emitter
+- Runtime multipart tests, emitter multipart tests, all snapshots updated
+- Removed `--client` CLI flag (now handled by adapter packages)
 
 ### Session 9 (2026-03-10) — Non-JSON media types, binary responses, query serialization
 

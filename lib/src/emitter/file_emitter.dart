@@ -146,7 +146,7 @@ class FileEmitter {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final header = _header(specFileName, specVersion);
-      final apiEmitter = ApiEmitter(api);
+      final apiEmitter = ApiEmitter(api, typeRegistry: typeRegistry);
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 

@@ -24,6 +24,7 @@
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
 - **Fast** — generates 12,700 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
+- **Multi-format request/response** — JSON, text, binary, and multipart/form-data bodies with media-type-aware serialization
 - **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
 - **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
 - **Modular output** — one file per model, small types inlined into their parent, barrel file for convenient imports

@@ -20,13 +20,25 @@ final ApiConfig _config;
 ///
 /// `POST /accounts/{account_id}/images/v1`
 Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from ImagesImageBasicUpload');,
+  body: [
+    if (body.creator case final _creator?)
+      ApiMultipartField.text('creator', _creator),
+    if (body.file case final _file?)
+      ApiMultipartField.file('file', _file),
+    if (body.id case final _id?)
+      ApiMultipartField.text('id', _id),
+    if (body.metadata case final _metadata?)
+      ApiMultipartField.text('metadata', _metadata.toString()),
+    ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
+    if (body.url case final _url?)
+      ApiMultipartField.text('url', _url),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
@@ -217,13 +229,22 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
 Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2/direct_upload',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from ImagesImageDirectUploadRequest');,
+  body: [
+    if (body.creator case final _creator?)
+      ApiMultipartField.text('creator', _creator),
+    ApiMultipartField.text('expiry', body.expiry.toIso8601String()),
+    if (body.id case final _id?)
+      ApiMultipartField.text('id', _id),
+    if (body.metadata case final _metadata?)
+      ApiMultipartField.text('metadata', _metadata.toString()),
+    ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

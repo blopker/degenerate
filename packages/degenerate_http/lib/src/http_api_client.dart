@@ -20,6 +20,31 @@ final class HttpApiClient implements ApiClient {
     if (request.contentType != null) {
       httpRequest.headers['content-type'] = request.contentType!;
     }
+    if (request.body is List<ApiMultipartField>) {
+      final fields = request.body as List<ApiMultipartField>;
+      final multipart = http.MultipartRequest(request.method, uri)
+        ..headers.addAll(request.resolvedHeaders());
+      for (final field in fields) {
+        switch (field) {
+          case ApiMultipartTextField():
+            multipart.fields[field.name] = field.value;
+          case ApiMultipartFileField():
+            multipart.files.add(http.MultipartFile.fromBytes(
+              field.name,
+              field.bytes,
+              filename: field.filename ?? field.name,
+            ));
+        }
+      }
+      final streamed = await _inner.send(multipart);
+      final bytes = await streamed.stream.toBytes();
+      return ApiResponse(
+        statusCode: streamed.statusCode,
+        headers: streamed.headers,
+        body: utf8.decode(bytes, allowMalformed: true),
+        bodyBytes: bytes,
+      );
+    }
     if (request.body != null) {
       final body = request.body;
       if (body is String) {
@@ -28,7 +53,7 @@ final class HttpApiClient implements ApiClient {
         httpRequest.bodyBytes = body;
       } else {
         throw UnsupportedError(
-          'HttpApiClient only supports String and List<int> request bodies.',
+          'HttpApiClient only supports String, List<int>, and List<ApiMultipartField> request bodies.',
         );
       }
     }

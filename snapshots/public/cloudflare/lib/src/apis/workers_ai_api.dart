@@ -152,13 +152,15 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/ai/tomarkdown`
 Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiPostToMarkdownRequest');,
+  body: [
+    ApiMultipartField.text('files', body.files.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

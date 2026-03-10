@@ -142,13 +142,16 @@ return _execute(
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/{feed_id}/snapshot`
 Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdateIndicatorFeedDataRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/snapshot',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CustomIndicatorFeedsUpdateIndicatorFeedDataRequest');,
+  body: [
+    if (body.source case final _source?)
+      ApiMultipartField.text('source', _source),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

@@ -43,13 +43,34 @@ return _execute(
 ///
 /// `POST /audio/transcriptions`
 Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/audio/transcriptions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateTranscriptionRequest');,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('model', body.model.toString()),
+    if (body.language case final _language?)
+      ApiMultipartField.text('language', _language),
+    if (body.prompt case final _prompt?)
+      ApiMultipartField.text('prompt', _prompt),
+    if (body.responseFormat case final _responseFormat?)
+      ApiMultipartField.text('response_format', _responseFormat.toJson()),
+    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.include case final _include?)
+      ApiMultipartField.text('include', _include.toString()),
+    ApiMultipartField.text('timestamp_granularities', body.timestampGranularities.toString()),
+    if (body.stream case final _stream?)
+      ApiMultipartField.text('stream', _stream.toString()),
+    if (body.chunkingStrategy case final _chunkingStrategy?)
+      ApiMultipartField.text('chunking_strategy', _chunkingStrategy.toString()),
+    if (body.knownSpeakerNames case final _knownSpeakerNames?)
+      ApiMultipartField.text('known_speaker_names', _knownSpeakerNames.toString()),
+    if (body.knownSpeakerReferences case final _knownSpeakerReferences?)
+      ApiMultipartField.text('known_speaker_references', _knownSpeakerReferences.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
@@ -63,13 +84,20 @@ return _execute(
 ///
 /// `POST /audio/translations`
 Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/audio/translations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateTranslationRequest');,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('model', body.model.toString()),
+    if (body.prompt case final _prompt?)
+      ApiMultipartField.text('prompt', _prompt),
+    ApiMultipartField.text('response_format', body.responseFormat.toJson()),
+    ApiMultipartField.text('temperature', body.temperature.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
@@ -118,13 +146,17 @@ return _execute(
 ///
 /// `POST /audio/voice_consents`
 Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/audio/voice_consents',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateVoiceConsentRequest');,
+  body: [
+    ApiMultipartField.text('name', body.name),
+    ApiMultipartField.file('recording', body.recording),
+    ApiMultipartField.text('language', body.language),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
@@ -214,13 +246,17 @@ return _execute(
 ///
 /// `POST /audio/voices`
 Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/audio/voices',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateVoiceRequest');,
+  body: [
+    ApiMultipartField.text('name', body.name),
+    ApiMultipartField.file('audio_sample', body.audioSample),
+    ApiMultipartField.text('consent', body.consent),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

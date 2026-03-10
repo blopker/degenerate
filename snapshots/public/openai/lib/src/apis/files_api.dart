@@ -60,13 +60,18 @@ return _execute(
 ///
 /// `POST /files`
 Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/files',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateFileRequest');,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('purpose', body.purpose.toJson()),
+    if (body.expiresAfter case final _expiresAfter?)
+      ApiMultipartField.text('expires_after', _expiresAfter.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

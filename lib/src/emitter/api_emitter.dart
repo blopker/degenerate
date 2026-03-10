@@ -10,7 +10,8 @@ import 'media_type_utils.dart';
 /// returning `Future<ApiResult<T>>`.
 class ApiEmitter {
   final IrApi api;
-  const ApiEmitter(this.api);
+  final Map<String, IrType> typeRegistry;
+  const ApiEmitter(this.api, {this.typeRegistry = const {}});
 
   List<Spec> emit() {
     return [
@@ -59,6 +60,8 @@ class ApiEmitter {
 
       if (requestBodyContent != null &&
           !isJsonLikeMediaType(requestBodyContent.$1) &&
+          !(isMultipartMediaType(requestBodyContent.$1) &&
+              _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
           !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
         warnings.add(
           'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1} with type ${irTypeName(requestBodyContent.$2.schema)}.',
@@ -300,7 +303,8 @@ class ApiEmitter {
     }
 
     buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
-    if (requestBodyContent case (final mediaType, _)) {
+    if (requestBodyContent case (final mediaType, _)
+        when !isMultipartMediaType(mediaType)) {
       buf.writeln("headers['Content-Type'] = '$mediaType';");
     }
     for (final p in headerParams) {
@@ -332,7 +336,15 @@ class ApiEmitter {
       buf.writeln('  cookies: cookies,');
     }
 
-    if (bodyType != null) {
+    final multipartFields = bodyType != null &&
+            isMultipartMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
+    if (multipartFields != null) {
+      _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
+      buf.writeln("  contentType: 'multipart/form-data',");
+    } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
       buf.writeln(
         '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
@@ -892,6 +904,85 @@ try {
       },
       IrEnum() || IrExtensionType() => true,
       _ => false,
+    };
+  }
+
+  /// Resolve an IrType to its object fields, following type refs.
+  List<IrField>? _resolveObjectFields(IrType type) {
+    return switch (type) {
+      IrObject(:final fields) => fields,
+      IrTypeRef(:final name) => switch (typeRegistry[name]) {
+        IrObject(:final fields) => fields,
+        _ => null,
+      },
+      _ => null,
+    };
+  }
+
+  /// Write multipart body construction code.
+  ///
+  /// Generates a `List<ApiMultipartField>` from object fields:
+  /// - `PrimitiveKind.bytes` → `ApiMultipartField.file(name, value)`
+  /// - Everything else → `ApiMultipartField.text(name, value.toString())`
+  void _writeMultipartBody(
+    StringBuffer buf,
+    List<IrField> fields,
+    bool isRequired,
+  ) {
+    buf.writeln('  body: [');
+    for (final f in fields) {
+      final fieldAccessor = 'body.${f.name}';
+      final isBytes = f.type is IrPrimitive &&
+          (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
+      // Emit null guard only when the Dart field type is actually nullable.
+      // Fields with defaults are non-nullable even if not required.
+      final isNullable =
+          (!f.isRequired && f.defaultValue == null) || f.type.isNullable;
+
+      if (isNullable) {
+        // Use a case-pattern variable to enable type promotion on nullable public fields.
+        final localVar = '_${f.name}';
+        buf.writeln('    if ($fieldAccessor case final $localVar?)');
+        buf.write('  ');
+        _writeMultipartFieldExpr(buf, f, localVar, isBytes);
+      } else {
+        _writeMultipartFieldExpr(buf, f, fieldAccessor, isBytes);
+      }
+    }
+    buf.writeln('  ],');
+  }
+
+  void _writeMultipartFieldExpr(
+    StringBuffer buf,
+    IrField f,
+    String accessor,
+    bool isBytes,
+  ) {
+    if (isBytes) {
+      buf.writeln("    ApiMultipartField.file('${f.originalName}', $accessor),");
+    } else {
+      final valueExpr = _multipartFieldValueExpr(f.type, accessor);
+      buf.writeln("    ApiMultipartField.text('${f.originalName}', $valueExpr),");
+    }
+  }
+
+  /// Get the string expression for a multipart text field value.
+  String _multipartFieldValueExpr(IrType type, String accessor) {
+    return switch (type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object || PrimitiveKind.string => accessor,
+        PrimitiveKind.bool ||
+        PrimitiveKind.int ||
+        PrimitiveKind.double ||
+        PrimitiveKind.num => '$accessor.toString()',
+        PrimitiveKind.dateTime => '$accessor.toIso8601String()',
+        PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor.toString()',
+        PrimitiveKind.duration => '$accessor.inMilliseconds.toString()',
+        PrimitiveKind.bytes => accessor, // handled separately as file
+      },
+      IrEnum() => '$accessor.toJson()',
+      IrExtensionType() => '$accessor.toJson()',
+      _ => '$accessor.toString()',
     };
   }
 }

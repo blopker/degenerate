@@ -58,13 +58,15 @@ return _execute(
 ///
 /// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
 Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from StreamCaptionBasicUpload');,
+  body: [
+    ApiMultipartField.text('file', body.file),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

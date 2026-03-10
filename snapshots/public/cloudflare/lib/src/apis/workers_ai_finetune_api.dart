@@ -60,13 +60,18 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
 Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/${Uri.encodeComponent(finetuneId)}/finetune-assets',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiUploadFinetuneAssetRequest');,
+  body: [
+    if (body.file case final _file?)
+      ApiMultipartField.file('file', _file),
+    if (body.fileName case final _fileName?)
+      ApiMultipartField.text('file_name', _fileName),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

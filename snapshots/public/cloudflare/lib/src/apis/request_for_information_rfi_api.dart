@@ -170,13 +170,16 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new`
 Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/new',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CloudforceOneRequestsRequestAssetEdit');,
+  body: [
+    if (body.source case final _source?)
+      ApiMultipartField.text('source', _source.toJson()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

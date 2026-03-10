@@ -18,13 +18,15 @@ final ApiConfig _config;
 ///
 /// `POST /accounts/{account_id}/addressing/loa_documents`
 Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUploadLoaDocument({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUploadLoaDocumentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/loa_documents',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from IpAddressManagementPrefixesUploadLoaDocumentRequest');,
+  body: [
+    ApiMultipartField.text('loa_document', body.loaDocument),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

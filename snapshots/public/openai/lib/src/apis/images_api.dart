@@ -65,13 +65,25 @@ return _execute(
 ///
 /// `POST /images/variations`
 Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/images/variations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateImageVariationRequest');,
+  body: [
+    ApiMultipartField.file('image', body.image),
+    if (body.model case final _model?)
+      ApiMultipartField.text('model', _model.toString()),
+    if (body.n case final _n?)
+      ApiMultipartField.text('n', _n.toString()),
+    if (body.responseFormat case final _responseFormat?)
+      ApiMultipartField.text('response_format', _responseFormat.toJson()),
+    if (body.size case final _size?)
+      ApiMultipartField.text('size', _size.toJson()),
+    if (body.user case final _user?)
+      ApiMultipartField.text('user', _user),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

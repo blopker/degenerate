@@ -17,13 +17,17 @@ final ApiConfig _config;
 ///
 /// `POST /realtime/calls`
 Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from RealtimeCallCreateRequest');,
+  body: [
+    ApiMultipartField.text('sdp', body.sdp),
+    if (body.session case final _session?)
+      ApiMultipartField.text('session', _session.toString()),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(

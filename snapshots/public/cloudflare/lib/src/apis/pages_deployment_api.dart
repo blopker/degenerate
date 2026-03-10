@@ -46,13 +46,40 @@ return _execute(
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments`
 Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentCreateDeployment({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDeploymentCreateDeploymentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = 'multipart/form-data';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PagesDeploymentCreateDeploymentRequest');,
+  body: [
+    if (body.headers case final _headers?)
+      ApiMultipartField.file('_headers', _headers),
+    if (body.redirects case final _redirects?)
+      ApiMultipartField.file('_redirects', _redirects),
+    if (body.routesJson case final _routesJson?)
+      ApiMultipartField.file('_routes.json', _routesJson),
+    if (body.workerBundle case final _workerBundle?)
+      ApiMultipartField.file('_worker.bundle', _workerBundle),
+    if (body.workerJs case final _workerJs?)
+      ApiMultipartField.file('_worker.js', _workerJs),
+    if (body.branch case final _branch?)
+      ApiMultipartField.text('branch', _branch),
+    if (body.commitDirty case final _commitDirty?)
+      ApiMultipartField.text('commit_dirty', _commitDirty.toJson()),
+    if (body.commitHash case final _commitHash?)
+      ApiMultipartField.text('commit_hash', _commitHash),
+    if (body.commitMessage case final _commitMessage?)
+      ApiMultipartField.text('commit_message', _commitMessage),
+    if (body.functionsFilepathRoutingConfigJson case final _functionsFilepathRoutingConfigJson?)
+      ApiMultipartField.file('functions-filepath-routing-config.json', _functionsFilepathRoutingConfigJson),
+    if (body.manifest case final _manifest?)
+      ApiMultipartField.text('manifest', _manifest),
+    if (body.pagesBuildOutputDir case final _pagesBuildOutputDir?)
+      ApiMultipartField.text('pages_build_output_dir', _pagesBuildOutputDir),
+    if (body.wranglerConfigHash case final _wranglerConfigHash?)
+      ApiMultipartField.text('wrangler_config_hash', _wranglerConfigHash),
+  ],
+  contentType: 'multipart/form-data',
 );
 
 return _execute(
