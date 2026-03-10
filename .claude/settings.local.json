@@ -11,7 +11,9 @@
       "Bash(UPDATE_SNAPSHOTS=1 dart test:*)",
       "mcp__kagi__kagi_search_fetch",
       "mcp__kagi__kagi_summarizer",
-      "WebFetch(domain:dart.dev)"
+      "WebFetch(domain:dart.dev)",
+      "Bash(command make:*)",
+      "Bash(git status:*)"
     ]
   }
 }
