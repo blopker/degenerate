@@ -31,6 +31,9 @@ final class DioApiClient implements ApiClient {
                 dio.MultipartFile.fromBytes(
                   field.bytes,
                   filename: field.filename ?? field.name,
+                  contentType: field.contentType != null
+                      ? dio.DioMediaType.parse(field.contentType!)
+                      : null,
                 ),
               ));
           }

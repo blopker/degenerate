@@ -33,6 +33,9 @@ final class HttpApiClient implements ApiClient {
               field.name,
               field.bytes,
               filename: field.filename ?? field.name,
+              contentType: field.contentType != null
+                  ? http.MediaType.parse(field.contentType!)
+                  : null,
             ));
         }
       }

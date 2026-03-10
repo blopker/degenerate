@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:degenerate_http/degenerate_http.dart';
 import 'package:http/http.dart' as http;
@@ -69,6 +70,45 @@ void main() {
       );
 
       expect(response.bodyBytes, [0, 255, 1]);
+    });
+
+    test('sends multipart file with contentType', () async {
+      http.BaseRequest? capturedRequest;
+      final inner = MockClient.streaming((request, _) async {
+        capturedRequest = request;
+        return http.StreamedResponse(Stream.empty(), 200);
+      });
+
+      final client = HttpApiClient(
+        baseUrl: Uri.parse('https://api.example.com'),
+        inner: inner,
+      );
+
+      await client.send(
+        ApiRequest(
+          method: 'POST',
+          path: '/upload',
+          body: <ApiMultipartField>[
+            ApiMultipartField.text('name', 'photo.png'),
+            ApiMultipartField.file(
+              'file',
+              Uint8List.fromList([1, 2, 3]),
+              filename: 'photo.png',
+              contentType: 'image/png',
+            ),
+          ],
+        ),
+      );
+
+      expect(capturedRequest, isA<http.MultipartRequest>());
+      final multipart = capturedRequest! as http.MultipartRequest;
+      expect(multipart.fields['name'], 'photo.png');
+      expect(multipart.files, hasLength(1));
+      expect(multipart.files.first.filename, 'photo.png');
+      expect(
+        multipart.files.first.contentType.toString(),
+        'image/png',
+      );
     });
 
     test('sends cookies as Cookie header', () async {
