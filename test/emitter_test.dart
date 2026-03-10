@@ -9,6 +9,7 @@ import 'package:degenerate/src/lowering/type_lowerer.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
@@ -1922,6 +1923,62 @@ void main() {
           );
         }
       }
+    });
+  });
+
+  group('preferredContent', () {
+    test('prefers JSON over other types', () {
+      final result = preferredContent({
+        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/json': IrMediaType(IrTypeRef('Item')),
+      });
+      expect(result!.$1, equals('application/json'));
+    });
+
+    test('prefers multipart over octet-stream', () {
+      final result = preferredContent({
+        'application/octet-stream': IrMediaType(IrTypeRef('Value')),
+        'multipart/form-data': IrMediaType(
+          IrObject('Request', [
+            IrField('value', 'value', IrTypeRef('Value'), isRequired: true),
+          ], requiredFields: ['value']),
+        ),
+      });
+      expect(result!.$1, equals('multipart/form-data'));
+    });
+
+    test('prefers form-urlencoded over octet-stream', () {
+      final result = preferredContent({
+        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/x-www-form-urlencoded': IrMediaType(
+          IrObject('Request', [], requiredFields: []),
+        ),
+      });
+      expect(result!.$1, equals('application/x-www-form-urlencoded'));
+    });
+
+    test('prefers text/plain over multipart', () {
+      final result = preferredContent({
+        'multipart/form-data': IrMediaType(IrTypeRef('Item')),
+        'text/plain': IrMediaType(IrPrimitive(PrimitiveKind.string)),
+      });
+      expect(result!.$1, equals('text/plain'));
+    });
+
+    test('prefers octet-stream over unknown types', () {
+      final result = preferredContent({
+        'image/png': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+      });
+      expect(result!.$1, equals('application/octet-stream'));
+    });
+
+    test('falls back to first entry for unknown types', () {
+      final result = preferredContent({
+        'image/png': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'video/mp4': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+      });
+      expect(result!.$1, equals('image/png'));
     });
   });
 }

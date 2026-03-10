@@ -15,6 +15,10 @@ bool isJsonLikeMediaType(String mediaType) {
       (normalized.startsWith('application/') && normalized.endsWith('+json'));
 }
 
+/// Selects the best content type from a map of media types.
+///
+/// Preference order: JSON > text/plain > multipart/form-data >
+/// form-urlencoded > application/octet-stream > first entry.
 (String, IrMediaType)? preferredContent(Map<String, IrMediaType> content) {
   if (content.isEmpty) return null;
   for (final entry in content.entries) {
@@ -24,6 +28,15 @@ bool isJsonLikeMediaType(String mediaType) {
     if (normalizeMediaType(entry.key) == _textPlainMediaType) {
       return (entry.key, entry.value);
     }
+  }
+  for (final entry in content.entries) {
+    if (isMultipartMediaType(entry.key)) return (entry.key, entry.value);
+  }
+  for (final entry in content.entries) {
+    if (isFormUrlencodedMediaType(entry.key)) return (entry.key, entry.value);
+  }
+  for (final entry in content.entries) {
+    if (isOctetStreamMediaType(entry.key)) return (entry.key, entry.value);
   }
   final first = content.entries.first;
   return (first.key, first.value);
@@ -35,4 +48,8 @@ bool isMultipartMediaType(String mediaType) {
 
 bool isFormUrlencodedMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == _formUrlencodedMediaType;
+}
+
+bool isOctetStreamMediaType(String mediaType) {
+  return normalizeMediaType(mediaType) == 'application/octet-stream';
 }
