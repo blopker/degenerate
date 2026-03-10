@@ -42,9 +42,9 @@ Future<ApiResult<AccountApplication, Never>> createApplication({required String 
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateApplicationRequest');,
 );
 
 return _execute(
@@ -78,9 +78,9 @@ Future<ApiResult<AccountApplication, Never>> updateApplication({required String 
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateApplicationRequest');,
 );
 
 return _execute(

@@ -165,9 +165,9 @@ Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetNew({require
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/new',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CloudforceOneRequestsRequestAssetEdit');,
 );
 
 return _execute(

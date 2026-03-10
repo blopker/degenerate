@@ -45,9 +45,9 @@ Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentCreateDeployment({requ
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PagesDeploymentCreateDeploymentRequest');,
 );
 
 return _execute(

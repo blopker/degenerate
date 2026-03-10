@@ -45,12 +45,12 @@ Future<ApiResult<ResponseCommon80, Never>> workerVersionsUploadVersion({required
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/versions',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
   queryParameters: {
     if (bindingsInherit != null) 'bindings_inherit': bindingsInherit.toJson(),
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerVersionsUploadVersionRequest');,
 );
 
 return _execute(

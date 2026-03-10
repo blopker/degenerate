@@ -160,12 +160,12 @@ Future<ApiResult<ResponseCommon72, Never>> vectorizeInsertVector({required Vecto
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/insert',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-ndjson'
   },
   queryParameters: {
     if (unparsableBehavior != null) 'unparsable-behavior': unparsableBehavior.toJson(),
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
@@ -289,12 +289,12 @@ Future<ApiResult<ResponseCommon72, Never>> vectorizeUpsertVector({required Vecto
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/upsert',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-ndjson'
   },
   queryParameters: {
     if (unparsableBehavior != null) 'unparsable-behavior': unparsableBehavior.toJson(),
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(

@@ -109,9 +109,9 @@ Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, re
   method: 'POST',
   path: '/uploads/${Uri.encodeComponent(uploadId)}/parts',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from AddUploadPartRequest');,
 );
 
 return _execute(

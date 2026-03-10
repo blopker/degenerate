@@ -63,9 +63,9 @@ Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippet({required SnippetsZ
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from UpdateZoneSnippetRequest');,
 );
 
 return _execute(
@@ -99,7 +99,7 @@ return _execute(
 /// Fetches the content of a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}/content`
-Future<ApiResult<void, Never>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, List<Uint8List>>, Never>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}/content',
   headers: {..._config.defaultHeaders
@@ -108,7 +108,10 @@ Future<ApiResult<void, Never>> getZoneSnippetContent({required SnippetsZoneId zo
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    // TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, List<Uint8List>>
+throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, List<Uint8List>>');
+  },
 );
  } 
 /// List zone snippet rules

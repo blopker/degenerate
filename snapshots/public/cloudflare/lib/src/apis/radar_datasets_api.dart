@@ -46,7 +46,7 @@ return _execute(
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
 ///
 /// `GET /radar/datasets/{alias}`
-Future<ApiResult<void, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias}) async  { final request = ApiRequest(
+Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/radar/datasets/${Uri.encodeComponent(alias)}',
   headers: {..._config.defaultHeaders
@@ -55,7 +55,9 @@ Future<ApiResult<void, RadarGetReportsDatasetDownloadResponse400>> radarGetRepor
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
   onError: (response) {
     try { return RadarGetReportsDatasetDownloadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
   },

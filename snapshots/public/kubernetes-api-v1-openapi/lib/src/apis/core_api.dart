@@ -245,7 +245,7 @@ Future<ApiResult<Namespace, Never>> createCoreV1Namespace({String? pretty, Strin
   method: 'POST',
   path: '/api/v1/namespaces',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -253,7 +253,7 @@ Future<ApiResult<Namespace, Never>> createCoreV1Namespace({String? pretty, Strin
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
 );
 
 return _execute(
@@ -271,7 +271,7 @@ Future<ApiResult<Binding, Never>> createCoreV1NamespacedBinding({required String
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/bindings',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'dryRun': ?dryRun,
@@ -279,7 +279,7 @@ Future<ApiResult<Binding, Never>> createCoreV1NamespacedBinding({required String
     'fieldValidation': ?fieldValidation,
     'pretty': ?pretty,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Binding');,
 );
 
 return _execute(
@@ -328,7 +328,7 @@ Future<ApiResult<ConfigMap, Never>> createCoreV1NamespacedConfigMap({required St
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/configmaps',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -336,7 +336,7 @@ Future<ApiResult<ConfigMap, Never>> createCoreV1NamespacedConfigMap({required St
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ConfigMap');,
 );
 
 return _execute(
@@ -354,7 +354,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedConfigMap({requ
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/configmaps',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -372,7 +372,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedConfigMap({requ
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -411,7 +411,7 @@ Future<ApiResult<ConfigMap, Never>> replaceCoreV1NamespacedConfigMap({required S
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/configmaps/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -419,7 +419,7 @@ Future<ApiResult<ConfigMap, Never>> replaceCoreV1NamespacedConfigMap({required S
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ConfigMap');,
 );
 
 return _execute(
@@ -437,7 +437,7 @@ Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required Str
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/configmaps/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -464,7 +464,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedConfigMap({required Strin
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/configmaps/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -474,7 +474,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedConfigMap({required Strin
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -523,7 +523,7 @@ Future<ApiResult<Endpoints, Never>> createCoreV1NamespacedEndpoints({required St
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/endpoints',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -531,7 +531,7 @@ Future<ApiResult<Endpoints, Never>> createCoreV1NamespacedEndpoints({required St
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Endpoints');,
 );
 
 return _execute(
@@ -549,7 +549,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEndpoints({requ
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/endpoints',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -567,7 +567,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEndpoints({requ
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -606,7 +606,7 @@ Future<ApiResult<Endpoints, Never>> replaceCoreV1NamespacedEndpoints({required S
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/endpoints/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -614,7 +614,7 @@ Future<ApiResult<Endpoints, Never>> replaceCoreV1NamespacedEndpoints({required S
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Endpoints');,
 );
 
 return _execute(
@@ -632,7 +632,7 @@ Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required Str
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/endpoints/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -659,7 +659,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEndpoints({required Strin
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/endpoints/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -669,7 +669,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEndpoints({required Strin
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -718,7 +718,7 @@ Future<ApiResult<Event, Never>> createCoreV1NamespacedEvent({required String nam
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/events',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -726,7 +726,7 @@ Future<ApiResult<Event, Never>> createCoreV1NamespacedEvent({required String nam
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Event');,
 );
 
 return _execute(
@@ -744,7 +744,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEvent({required
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/events',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -762,7 +762,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEvent({required
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -801,7 +801,7 @@ Future<ApiResult<Event, Never>> replaceCoreV1NamespacedEvent({required String na
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/events/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -809,7 +809,7 @@ Future<ApiResult<Event, Never>> replaceCoreV1NamespacedEvent({required String na
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Event');,
 );
 
 return _execute(
@@ -827,7 +827,7 @@ Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/events/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -854,7 +854,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEvent({required String na
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/events/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -864,7 +864,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEvent({required String na
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -913,7 +913,7 @@ Future<ApiResult<LimitRange, Never>> createCoreV1NamespacedLimitRange({required 
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/limitranges',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -921,7 +921,7 @@ Future<ApiResult<LimitRange, Never>> createCoreV1NamespacedLimitRange({required 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from LimitRange');,
 );
 
 return _execute(
@@ -939,7 +939,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedLimitRange({req
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/limitranges',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -957,7 +957,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedLimitRange({req
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -996,7 +996,7 @@ Future<ApiResult<LimitRange, Never>> replaceCoreV1NamespacedLimitRange({required
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/limitranges/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1004,7 +1004,7 @@ Future<ApiResult<LimitRange, Never>> replaceCoreV1NamespacedLimitRange({required
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from LimitRange');,
 );
 
 return _execute(
@@ -1022,7 +1022,7 @@ Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required S
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/limitranges/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1049,7 +1049,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedLimitRange({required Stri
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/limitranges/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1059,7 +1059,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedLimitRange({required Stri
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -1108,7 +1108,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> createCoreV1NamespacedPersistent
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1116,7 +1116,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> createCoreV1NamespacedPersistent
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
 );
 
 return _execute(
@@ -1134,7 +1134,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPersistentVolum
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1152,7 +1152,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPersistentVolum
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -1191,7 +1191,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersisten
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1199,7 +1199,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersisten
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
 );
 
 return _execute(
@@ -1217,7 +1217,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentV
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1244,7 +1244,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> deleteCoreV1NamespacedPersistent
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1254,7 +1254,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> deleteCoreV1NamespacedPersistent
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -1293,7 +1293,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersisten
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1301,7 +1301,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersisten
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
 );
 
 return _execute(
@@ -1319,7 +1319,7 @@ Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentV
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/persistentvolumeclaims/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1377,7 +1377,7 @@ Future<ApiResult<Pod, Never>> createCoreV1NamespacedPod({required String namespa
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1385,7 +1385,7 @@ Future<ApiResult<Pod, Never>> createCoreV1NamespacedPod({required String namespa
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
 );
 
 return _execute(
@@ -1403,7 +1403,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPod({required S
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1421,7 +1421,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPod({required S
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -1460,7 +1460,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPod({required String name, 
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1468,7 +1468,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPod({required String name, 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
 );
 
 return _execute(
@@ -1486,7 +1486,7 @@ Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, re
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1513,7 +1513,7 @@ Future<ApiResult<Pod, Never>> deleteCoreV1NamespacedPod({required String name, r
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1523,7 +1523,7 @@ Future<ApiResult<Pod, Never>> deleteCoreV1NamespacedPod({required String name, r
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -1537,7 +1537,7 @@ return _execute(
 /// connect GET requests to attach of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/attach`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/attach',
   headers: {..._config.defaultHeaders
@@ -1553,14 +1553,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodAttach({required Str
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to attach of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/attach`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/attach',
   headers: {..._config.defaultHeaders
@@ -1576,7 +1578,9 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodAttach({required St
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
@@ -1587,7 +1591,7 @@ Future<ApiResult<Binding, Never>> createCoreV1NamespacedPodBinding({required Str
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/binding',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'dryRun': ?dryRun,
@@ -1595,7 +1599,7 @@ Future<ApiResult<Binding, Never>> createCoreV1NamespacedPodBinding({required Str
     'fieldValidation': ?fieldValidation,
     'pretty': ?pretty,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Binding');,
 );
 
 return _execute(
@@ -1634,7 +1638,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodEphemeralcontainers({req
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/ephemeralcontainers',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1642,7 +1646,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodEphemeralcontainers({req
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
 );
 
 return _execute(
@@ -1660,7 +1664,7 @@ Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({requi
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/ephemeralcontainers',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -1687,7 +1691,7 @@ Future<ApiResult<Eviction, Never>> createCoreV1NamespacedPodEviction({required S
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/eviction',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'dryRun': ?dryRun,
@@ -1695,7 +1699,7 @@ Future<ApiResult<Eviction, Never>> createCoreV1NamespacedPodEviction({required S
     'fieldValidation': ?fieldValidation,
     'pretty': ?pretty,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Eviction');,
 );
 
 return _execute(
@@ -1709,7 +1713,7 @@ return _execute(
 /// connect GET requests to exec of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/exec`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/exec',
   headers: {..._config.defaultHeaders
@@ -1726,14 +1730,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodExec({required Strin
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to exec of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/exec`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/exec',
   headers: {..._config.defaultHeaders
@@ -1750,7 +1756,9 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodExec({required Stri
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
@@ -1787,7 +1795,7 @@ return _execute(
 /// connect GET requests to portforward of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/portforward`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodPortforward({required String name, required String namespace, int? ports, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodPortforward({required String name, required String namespace, int? ports, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/portforward',
   headers: {..._config.defaultHeaders
@@ -1799,14 +1807,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodPortforward({require
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to portforward of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/portforward`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodPortforward({required String name, required String namespace, int? ports, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodPortforward({required String name, required String namespace, int? ports, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/portforward',
   headers: {..._config.defaultHeaders
@@ -1818,14 +1828,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodPortforward({requir
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1837,14 +1849,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodProxy({required Stri
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1856,14 +1870,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodProxy({required Str
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PutNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1875,14 +1891,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNamespacedPodProxy({required Stri
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1894,14 +1912,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedPodProxy({required St
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1913,14 +1933,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedPodProxy({required S
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1932,14 +1954,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedPodProxy({required Str
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -1951,14 +1975,16 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedPodProxy({required 
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -1970,14 +1996,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedPodProxyWithPath({requi
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -1989,14 +2017,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedPodProxyWithPath({requ
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PutNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -2008,14 +2038,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNamespacedPodProxyWithPath({requi
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -2027,14 +2059,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({req
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -2046,14 +2080,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({re
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -2065,14 +2101,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({requ
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -2084,7 +2122,9 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({r
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
@@ -2116,7 +2156,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodResize({required String 
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/resize',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2124,7 +2164,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodResize({required String 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
 );
 
 return _execute(
@@ -2142,7 +2182,7 @@ Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String na
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/resize',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2190,7 +2230,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodStatus({required String 
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2198,7 +2238,7 @@ Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodStatus({required String 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
 );
 
 return _execute(
@@ -2216,7 +2256,7 @@ Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String na
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/pods/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2274,7 +2314,7 @@ Future<ApiResult<PodTemplate, Never>> createCoreV1NamespacedPodTemplate({require
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/podtemplates',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2282,7 +2322,7 @@ Future<ApiResult<PodTemplate, Never>> createCoreV1NamespacedPodTemplate({require
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PodTemplate');,
 );
 
 return _execute(
@@ -2300,7 +2340,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPodTemplate({re
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/podtemplates',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2318,7 +2358,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPodTemplate({re
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2357,7 +2397,7 @@ Future<ApiResult<PodTemplate, Never>> replaceCoreV1NamespacedPodTemplate({requir
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/podtemplates/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2365,7 +2405,7 @@ Future<ApiResult<PodTemplate, Never>> replaceCoreV1NamespacedPodTemplate({requir
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PodTemplate');,
 );
 
 return _execute(
@@ -2383,7 +2423,7 @@ Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/podtemplates/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2410,7 +2450,7 @@ Future<ApiResult<PodTemplate, Never>> deleteCoreV1NamespacedPodTemplate({require
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/podtemplates/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2420,7 +2460,7 @@ Future<ApiResult<PodTemplate, Never>> deleteCoreV1NamespacedPodTemplate({require
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2469,7 +2509,7 @@ Future<ApiResult<ReplicationController, Never>> createCoreV1NamespacedReplicatio
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2477,7 +2517,7 @@ Future<ApiResult<ReplicationController, Never>> createCoreV1NamespacedReplicatio
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
 );
 
 return _execute(
@@ -2495,7 +2535,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedReplicationCont
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2513,7 +2553,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedReplicationCont
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2552,7 +2592,7 @@ Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicati
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2560,7 +2600,7 @@ Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicati
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
 );
 
 return _execute(
@@ -2578,7 +2618,7 @@ Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplication
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2605,7 +2645,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedReplicationController({re
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2615,7 +2655,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedReplicationController({re
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2654,7 +2694,7 @@ Future<ApiResult<Scale, Never>> replaceCoreV1NamespacedReplicationControllerScal
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}/scale',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2662,7 +2702,7 @@ Future<ApiResult<Scale, Never>> replaceCoreV1NamespacedReplicationControllerScal
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Scale');,
 );
 
 return _execute(
@@ -2680,7 +2720,7 @@ Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale(
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}/scale',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2728,7 +2768,7 @@ Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicati
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2736,7 +2776,7 @@ Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicati
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
 );
 
 return _execute(
@@ -2754,7 +2794,7 @@ Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplication
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/replicationcontrollers/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2812,7 +2852,7 @@ Future<ApiResult<ResourceQuota, Never>> createCoreV1NamespacedResourceQuota({req
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2820,7 +2860,7 @@ Future<ApiResult<ResourceQuota, Never>> createCoreV1NamespacedResourceQuota({req
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
 );
 
 return _execute(
@@ -2838,7 +2878,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedResourceQuota({
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2856,7 +2896,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedResourceQuota({
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2895,7 +2935,7 @@ Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuota({re
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2903,7 +2943,7 @@ Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuota({re
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
 );
 
 return _execute(
@@ -2921,7 +2961,7 @@ Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({requ
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2948,7 +2988,7 @@ Future<ApiResult<ResourceQuota, Never>> deleteCoreV1NamespacedResourceQuota({req
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -2958,7 +2998,7 @@ Future<ApiResult<ResourceQuota, Never>> deleteCoreV1NamespacedResourceQuota({req
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -2997,7 +3037,7 @@ Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuotaStat
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3005,7 +3045,7 @@ Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuotaStat
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
 );
 
 return _execute(
@@ -3023,7 +3063,7 @@ Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/resourcequotas/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3081,7 +3121,7 @@ Future<ApiResult<Secret, Never>> createCoreV1NamespacedSecret({required String n
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/secrets',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3089,7 +3129,7 @@ Future<ApiResult<Secret, Never>> createCoreV1NamespacedSecret({required String n
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Secret');,
 );
 
 return _execute(
@@ -3107,7 +3147,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedSecret({require
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/secrets',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3125,7 +3165,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedSecret({require
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3164,7 +3204,7 @@ Future<ApiResult<Secret, Never>> replaceCoreV1NamespacedSecret({required String 
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/secrets/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3172,7 +3212,7 @@ Future<ApiResult<Secret, Never>> replaceCoreV1NamespacedSecret({required String 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Secret');,
 );
 
 return _execute(
@@ -3190,7 +3230,7 @@ Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String na
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/secrets/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3217,7 +3257,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedSecret({required String n
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/secrets/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3227,7 +3267,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1NamespacedSecret({required String n
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3276,7 +3316,7 @@ Future<ApiResult<ServiceAccount, Never>> createCoreV1NamespacedServiceAccount({r
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3284,7 +3324,7 @@ Future<ApiResult<ServiceAccount, Never>> createCoreV1NamespacedServiceAccount({r
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ServiceAccount');,
 );
 
 return _execute(
@@ -3302,7 +3342,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedServiceAccount(
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3320,7 +3360,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedServiceAccount(
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3359,7 +3399,7 @@ Future<ApiResult<ServiceAccount, Never>> replaceCoreV1NamespacedServiceAccount({
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3367,7 +3407,7 @@ Future<ApiResult<ServiceAccount, Never>> replaceCoreV1NamespacedServiceAccount({
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ServiceAccount');,
 );
 
 return _execute(
@@ -3385,7 +3425,7 @@ Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({re
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3412,7 +3452,7 @@ Future<ApiResult<ServiceAccount, Never>> deleteCoreV1NamespacedServiceAccount({r
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3422,7 +3462,7 @@ Future<ApiResult<ServiceAccount, Never>> deleteCoreV1NamespacedServiceAccount({r
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3440,7 +3480,7 @@ Future<ApiResult<TokenRequest, Never>> createCoreV1NamespacedServiceAccountToken
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/serviceaccounts/${Uri.encodeComponent(name)}/token',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'dryRun': ?dryRun,
@@ -3448,7 +3488,7 @@ Future<ApiResult<TokenRequest, Never>> createCoreV1NamespacedServiceAccountToken
     'fieldValidation': ?fieldValidation,
     'pretty': ?pretty,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from TokenRequest');,
 );
 
 return _execute(
@@ -3497,7 +3537,7 @@ Future<ApiResult<Service, Never>> createCoreV1NamespacedService({required String
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3505,7 +3545,7 @@ Future<ApiResult<Service, Never>> createCoreV1NamespacedService({required String
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
 );
 
 return _execute(
@@ -3523,7 +3563,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedService({requir
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3541,7 +3581,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedService({requir
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3580,7 +3620,7 @@ Future<ApiResult<Service, Never>> replaceCoreV1NamespacedService({required Strin
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3588,7 +3628,7 @@ Future<ApiResult<Service, Never>> replaceCoreV1NamespacedService({required Strin
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
 );
 
 return _execute(
@@ -3606,7 +3646,7 @@ Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String 
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3633,7 +3673,7 @@ Future<ApiResult<Service, Never>> deleteCoreV1NamespacedService({required String
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3643,7 +3683,7 @@ Future<ApiResult<Service, Never>> deleteCoreV1NamespacedService({required String
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -3657,7 +3697,7 @@ return _execute(
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3669,14 +3709,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedServiceProxy({required 
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3688,14 +3730,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedServiceProxy({required
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PutNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3707,14 +3751,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNamespacedServiceProxy({required 
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3726,14 +3772,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedServiceProxy({require
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3745,14 +3793,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedServiceProxy({requir
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3764,14 +3814,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedServiceProxy({required
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxy({required String name, required String namespace, String? path, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -3783,14 +3835,16 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedServiceProxy({requi
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3802,14 +3856,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({r
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3821,14 +3877,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3840,14 +3898,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({r
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3859,14 +3919,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath(
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3878,14 +3940,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3897,14 +3961,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -3916,7 +3982,9 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPat
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
@@ -3948,7 +4016,7 @@ Future<ApiResult<Service, Never>> replaceCoreV1NamespacedServiceStatus({required
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -3956,7 +4024,7 @@ Future<ApiResult<Service, Never>> replaceCoreV1NamespacedServiceStatus({required
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
 );
 
 return _execute(
@@ -3974,7 +4042,7 @@ Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required S
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(namespace)}/services/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4022,7 +4090,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1Namespace({required String name
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4030,7 +4098,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1Namespace({required String name
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
 );
 
 return _execute(
@@ -4048,7 +4116,7 @@ Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, 
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4075,7 +4143,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1Namespace({required String name, St
   method: 'DELETE',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4085,7 +4153,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1Namespace({required String name, St
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -4103,7 +4171,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceFinalize({required Str
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}/finalize',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'dryRun': ?dryRun,
@@ -4111,7 +4179,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceFinalize({required Str
     'fieldValidation': ?fieldValidation,
     'pretty': ?pretty,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
 );
 
 return _execute(
@@ -4150,7 +4218,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceStatus({required Strin
   method: 'PUT',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4158,7 +4226,7 @@ Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceStatus({required Strin
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
 );
 
 return _execute(
@@ -4176,7 +4244,7 @@ Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String 
   method: 'PATCH',
   path: '/api/v1/namespaces/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4234,7 +4302,7 @@ Future<ApiResult<Node, Never>> createCoreV1Node({String? pretty, String? dryRun,
   method: 'POST',
   path: '/api/v1/nodes',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4242,7 +4310,7 @@ Future<ApiResult<Node, Never>> createCoreV1Node({String? pretty, String? dryRun,
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
 );
 
 return _execute(
@@ -4260,7 +4328,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNode({String? pretty, Str
   method: 'DELETE',
   path: '/api/v1/nodes',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4278,7 +4346,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionNode({String? pretty, Str
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -4317,7 +4385,7 @@ Future<ApiResult<Node, Never>> replaceCoreV1Node({required String name, String? 
   method: 'PUT',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4325,7 +4393,7 @@ Future<ApiResult<Node, Never>> replaceCoreV1Node({required String name, String? 
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
 );
 
 return _execute(
@@ -4343,7 +4411,7 @@ Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, String? pr
   method: 'PATCH',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4370,7 +4438,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1Node({required String name, String?
   method: 'DELETE',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4380,7 +4448,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1Node({required String name, String?
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -4394,7 +4462,7 @@ return _execute(
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1GetNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4406,14 +4474,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNodeProxy({required String name, 
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PostNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4425,14 +4495,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNodeProxy({required String name,
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PutNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4444,14 +4516,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNodeProxy({required String name, 
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1PatchNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4463,14 +4537,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNodeProxy({required String name
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4482,14 +4558,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNodeProxy({required String nam
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1HeadNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4501,14 +4579,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNodeProxy({required String name,
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxy({required String name, String? path, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy',
   headers: {..._config.defaultHeaders
@@ -4520,14 +4600,16 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNodeProxy({required String na
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1GetNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1GetNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4539,14 +4621,16 @@ Future<ApiResult<void, Never>> connectCoreV1GetNodeProxyWithPath({required Strin
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PostNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PostNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4558,14 +4642,16 @@ Future<ApiResult<void, Never>> connectCoreV1PostNodeProxyWithPath({required Stri
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PutNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PutNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PUT',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4577,14 +4663,16 @@ Future<ApiResult<void, Never>> connectCoreV1PutNodeProxyWithPath({required Strin
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1PatchNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'PATCH',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4596,14 +4684,16 @@ Future<ApiResult<void, Never>> connectCoreV1PatchNodeProxyWithPath({required Str
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1DeleteNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'DELETE',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4615,14 +4705,16 @@ Future<ApiResult<void, Never>> connectCoreV1DeleteNodeProxyWithPath({required St
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1HeadNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'HEAD',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4634,14 +4726,16 @@ Future<ApiResult<void, Never>> connectCoreV1HeadNodeProxyWithPath({required Stri
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<void, Never>> connectCoreV1OptionsNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxyWithPath({required String name, required String path, String? path2, }) async  { final request = ApiRequest(
   method: 'OPTIONS',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/proxy/${Uri.encodeComponent(path)}',
   headers: {..._config.defaultHeaders
@@ -4653,7 +4747,9 @@ Future<ApiResult<void, Never>> connectCoreV1OptionsNodeProxyWithPath({required S
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 ///
@@ -4685,7 +4781,7 @@ Future<ApiResult<Node, Never>> replaceCoreV1NodeStatus({required String name, St
   method: 'PUT',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4693,7 +4789,7 @@ Future<ApiResult<Node, Never>> replaceCoreV1NodeStatus({required String name, St
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
 );
 
 return _execute(
@@ -4711,7 +4807,7 @@ Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, Stri
   method: 'PATCH',
   path: '/api/v1/nodes/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4800,7 +4896,7 @@ Future<ApiResult<PersistentVolume, Never>> createCoreV1PersistentVolume({String?
   method: 'POST',
   path: '/api/v1/persistentvolumes',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4808,7 +4904,7 @@ Future<ApiResult<PersistentVolume, Never>> createCoreV1PersistentVolume({String?
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
 );
 
 return _execute(
@@ -4826,7 +4922,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionPersistentVolume({String?
   method: 'DELETE',
   path: '/api/v1/persistentvolumes',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4844,7 +4940,7 @@ Future<ApiResult<Status, Never>> deleteCoreV1CollectionPersistentVolume({String?
     if (sendInitialEvents != null) 'sendInitialEvents': sendInitialEvents.toString(),
     if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds.toString(),
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -4883,7 +4979,7 @@ Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolume({requir
   method: 'PUT',
   path: '/api/v1/persistentvolumes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4891,7 +4987,7 @@ Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolume({requir
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
 );
 
 return _execute(
@@ -4909,7 +5005,7 @@ Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required
   method: 'PATCH',
   path: '/api/v1/persistentvolumes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4936,7 +5032,7 @@ Future<ApiResult<PersistentVolume, Never>> deleteCoreV1PersistentVolume({require
   method: 'DELETE',
   path: '/api/v1/persistentvolumes/${Uri.encodeComponent(name)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4946,7 +5042,7 @@ Future<ApiResult<PersistentVolume, Never>> deleteCoreV1PersistentVolume({require
     if (orphanDependents != null) 'orphanDependents': orphanDependents.toString(),
     'propagationPolicy': ?propagationPolicy,
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
 );
 
 return _execute(
@@ -4985,7 +5081,7 @@ Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolumeStatus({
   method: 'PUT',
   path: '/api/v1/persistentvolumes/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': '*/*'
   },
   queryParameters: {
     'pretty': ?pretty,
@@ -4993,7 +5089,7 @@ Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolumeStatus({
     'fieldManager': ?fieldManager,
     'fieldValidation': ?fieldValidation,
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
 );
 
 return _execute(
@@ -5011,7 +5107,7 @@ Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({re
   method: 'PATCH',
   path: '/api/v1/persistentvolumes/${Uri.encodeComponent(name)}/status',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/json-patch+json'
   },
   queryParameters: {
     'pretty': ?pretty,

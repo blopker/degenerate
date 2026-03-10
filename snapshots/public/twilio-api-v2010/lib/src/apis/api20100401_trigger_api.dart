@@ -36,9 +36,9 @@ Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required 
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateUsageTriggerRequest');,
 );
 
 return _execute(
@@ -95,9 +95,9 @@ Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required 
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateUsageTriggerRequest');,
 );
 
 return _execute(

@@ -4285,13 +4285,13 @@ Future<ApiResult<ReleaseAsset, Never>> reposUploadReleaseAsset({required String 
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/releases/${Uri.encodeComponent(releaseId.toString())}/assets',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
   queryParameters: {
     'name': name,
     'label': ?label,
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(

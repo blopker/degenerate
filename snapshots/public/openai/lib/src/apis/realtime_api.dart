@@ -16,18 +16,20 @@ final ApiConfig _config;
 /// to complete the peer connection.
 ///
 /// `POST /realtime/calls`
-Future<ApiResult<void, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from RealtimeCallCreateRequest');,
 );
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Accept an incoming SIP call and configure the realtime session that will

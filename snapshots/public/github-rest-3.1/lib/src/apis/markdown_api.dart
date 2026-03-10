@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Depending on what is rendered in the Markdown, you may need to provide additional token scopes for labels, such as `issues:read` or `pull_requests:read`.
 ///
 /// `POST /markdown`
-Future<ApiResult<void, Never>> markdownRender({required MarkdownRenderRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> markdownRender({required MarkdownRenderRequest body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/markdown',
   headers: {..._config.defaultHeaders
@@ -28,7 +28,9 @@ Future<ApiResult<void, Never>> markdownRender({required MarkdownRenderRequest bo
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Render a Markdown document in raw mode
@@ -36,18 +38,20 @@ return _execute(
 /// You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.
 ///
 /// `POST /markdown/raw`
-Future<ApiResult<void, Never>> markdownRenderRaw({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> markdownRenderRaw({String? body}) async  { final request = ApiRequest(
   method: 'POST',
   path: '/markdown/raw',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'text/plain'
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.

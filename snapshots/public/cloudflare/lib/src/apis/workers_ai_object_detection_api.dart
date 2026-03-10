@@ -21,13 +21,13 @@ Future<ApiResult<Map<String, String>, WorkersAiPostRunCfFacebookNonomniDetrResne
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/facebook/nonomni-detr-resnet-50',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
   queryParameters: {
     'queueRequest': ?queueRequest,
     'tags': ?tags,
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(

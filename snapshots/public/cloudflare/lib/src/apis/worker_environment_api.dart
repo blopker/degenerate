@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<void, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
   headers: {..._config.defaultHeaders
@@ -26,7 +26,9 @@ Future<ApiResult<void, Never>> workerEnvironmentGetScriptContent({required Worke
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Put script content
@@ -38,11 +40,11 @@ Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({re
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
     , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
     , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerEnvironmentPutScriptContentRequest');,
 );
 
 return _execute(

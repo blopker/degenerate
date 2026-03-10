@@ -19,9 +19,9 @@ Future<ApiResult<AccountMessageMessageFeedback, Never>> createMessageFeedback({r
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Feedback.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateMessageFeedbackRequest');,
 );
 
 return _execute(

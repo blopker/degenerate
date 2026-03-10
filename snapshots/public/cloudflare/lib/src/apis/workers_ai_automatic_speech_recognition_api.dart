@@ -137,13 +137,13 @@ Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperResponse400
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openai/whisper',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
   queryParameters: {
     'queueRequest': ?queueRequest,
     'tags': ?tags,
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
@@ -193,13 +193,13 @@ Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperTinyEnRespo
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openai/whisper-tiny-en',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
   queryParameters: {
     'queueRequest': ?queueRequest,
     'tags': ?tags,
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(

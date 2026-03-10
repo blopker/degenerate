@@ -222,7 +222,7 @@ return _execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `GET /zones/{zone_id}/dns_records/export`
-Future<ApiResult<void, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/export',
   headers: {..._config.defaultHeaders
@@ -231,7 +231,9 @@ Future<ApiResult<void, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsR
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Import DNS Records
@@ -245,9 +247,9 @@ Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneImportDnsRecords({r
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/import',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DnsRecordsForAZoneImportDnsRecordsRequest');,
 );
 
 return _execute(

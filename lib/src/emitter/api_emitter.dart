@@ -2,6 +2,7 @@ import 'package:code_builder/code_builder.dart';
 
 import '../ir/ir_types.dart';
 import 'emit_utils.dart';
+import 'media_type_utils.dart';
 
 /// Emits an API client class from an [IrApi].
 ///
@@ -116,9 +117,10 @@ class ApiEmitter {
     // Request body (skip for GET/HEAD — bodies are not standard for these methods)
     final isBodyAllowed =
         op.method != HttpMethod.get && op.method != HttpMethod.head;
-    final bodyType = op.requestBody != null && isBodyAllowed
-        ? _requestBodyType(op.requestBody!)
+    final requestBodyContent = op.requestBody != null && isBodyAllowed
+        ? _preferredRequestBodyContent(op.requestBody!)
         : null;
+    final bodyType = requestBodyContent?.$2.schema;
     if (bodyType != null) {
       params.add(
         Parameter(
@@ -135,8 +137,10 @@ class ApiEmitter {
     }
 
     // Determine return type from success response
-    final returnType = _successResponseType(op);
-    final errorType = _errorResponseType(op);
+    final successResponseContent = _successResponseContent(op);
+    final returnType = successResponseContent?.$2.schema;
+    final errorResponseContent = _errorResponseContent(op);
+    final errorType = errorResponseContent?.$2.schema;
     final returnTypeStr = returnType != null ? irTypeName(returnType) : 'void';
     final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
     final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
@@ -145,6 +149,9 @@ class ApiEmitter {
     final bodyCode = _buildOperationBody(
       op,
       returnType,
+      successResponseContent: successResponseContent,
+      errorResponseContent: errorResponseContent,
+      requestBodyContent: requestBodyContent,
       bodyType: bodyType,
       pathParams: pathParams,
       queryParams: queryParams,
@@ -186,6 +193,9 @@ class ApiEmitter {
   String _buildOperationBody(
     IrOperation op,
     IrType? returnType, {
+    (String, IrMediaType)? successResponseContent,
+    (String, IrMediaType)? errorResponseContent,
+    (String, IrMediaType)? requestBodyContent,
     IrType? bodyType,
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
@@ -211,8 +221,8 @@ class ApiEmitter {
     buf.writeln("  method: '$httpMethod',");
     buf.writeln("  path: '$path',");
     buf.writeln('  headers: {..._config.defaultHeaders');
-    if (bodyType != null) {
-      buf.writeln("    , 'Content-Type': 'application/json'");
+    if (requestBodyContent case (final mediaType, _)) {
+      buf.writeln("    , 'Content-Type': '$mediaType'");
     }
     for (final p in headerParams) {
       final sanitizedName = p.name
@@ -253,22 +263,21 @@ class ApiEmitter {
     }
 
     if (bodyType != null) {
-      final isBodyOptional = !op.requestBody!.isRequired;
-      final isBodyNullable = isBodyOptional || bodyType.isNullable;
-      final nullAware = isBodyNullable ? '?' : '';
-      final toJsonCall = _requestBodyNeedsToJson(op.requestBody!)
-          ? '$nullAware.toJson()'
-          : '';
-      buf.writeln('  body: jsonEncode(body$toJsonCall),');
+      final requestBody = requestBodyContent!;
+      buf.writeln(
+        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
+      );
     }
 
     buf.writeln(');');
     buf.writeln();
 
     // Build onSuccess callback
-    final errorType = _errorResponseType(op);
     if (returnType != null) {
-      final deserialize = _buildDeserializeExpr(returnType);
+      final deserialize = _buildDeserializeExpr(
+        successResponseContent!.$1,
+        returnType,
+      );
       buf.writeln('return _execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
@@ -279,8 +288,11 @@ class ApiEmitter {
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
-    if (errorType != null) {
-      final errorDeserialize = _buildErrorDeserializeExpr(errorType);
+    if (errorResponseContent != null) {
+      final errorDeserialize = _buildErrorDeserializeExpr(
+        errorResponseContent.$1,
+        errorResponseContent.$2.schema,
+      );
       buf.writeln('  onError: (response) {');
       buf.writeln('    $errorDeserialize');
       buf.writeln('  },');
@@ -290,28 +302,47 @@ class ApiEmitter {
     return buf.toString();
   }
 
-  String _buildDeserializeExpr(IrType returnType) {
+  String _buildDeserializeExpr(String mediaType, IrType returnType) {
+    if (isJsonLikeMediaType(mediaType)) {
+      return switch (returnType) {
+        IrList(:final items) =>
+          'final json = jsonDecode(response.body) as List<dynamic>;\n'
+              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
+        IrMap(:final values) =>
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
+        IrPrimitive(:final kind) => switch (kind) {
+          PrimitiveKind.string => 'return response.body;',
+          PrimitiveKind.int => 'return int.parse(response.body);',
+          PrimitiveKind.double => 'return double.parse(response.body);',
+          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
+          _ => 'return jsonDecode(response.body);',
+        },
+        IrExtensionType() =>
+          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+        IrTypeRef(:final name) =>
+          'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+        IrObject(:final name) =>
+          'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+        _ =>
+          'return ${irTypeName(returnType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+      };
+    }
+
+    final unsupportedMessage =
+        'Cannot decode $mediaType response into ${irTypeName(returnType)}';
     return switch (returnType) {
-      IrList(:final items) =>
-        'final json = jsonDecode(response.body) as List<dynamic>;\n'
-            '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
-      IrMap(:final values) =>
-        'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-        _ => 'return jsonDecode(response.body);',
+        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
+        _ => "throw UnsupportedError('$unsupportedMessage');",
       },
+      IrEnum(:final name) => 'return $name.fromJson(response.body);',
       IrExtensionType() =>
-        'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
-      IrTypeRef(:final name) =>
-        'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
-      IrObject(:final name) =>
-        'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+        'return ${buildFromJsonCode(returnType, 'response.body')};',
       _ =>
-        'return ${irTypeName(returnType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+        "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
   }
 
@@ -406,17 +437,10 @@ try {
     );
   }
 
-  IrType? _requestBodyType(IrRequestBody body) {
-    final jsonContent = body.content['application/json'];
-    if (jsonContent != null) return jsonContent.schema;
-    // Try first available content type
-    if (body.content.isNotEmpty) return body.content.values.first.schema;
-    return null;
-  }
+  (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
+      preferredContent(body.content);
 
-  bool _requestBodyNeedsToJson(IrRequestBody body) {
-    final type = _requestBodyType(body);
-    if (type == null) return false;
+  bool _typeNeedsToJson(IrType type) {
     return switch (type) {
       IrObject() ||
       IrTypeRef() ||
@@ -428,26 +452,55 @@ try {
     };
   }
 
-  /// Find the error response type for an operation.
-  ///
-  /// Checks non-2xx status codes and the default response for a JSON schema.
-  IrType? _errorResponseType(IrOperation op) {
+  (String, IrMediaType)? _errorResponseContent(IrOperation op) {
     // Check for a default error response first (most common pattern)
     if (op.defaultResponse != null) {
-      final json = op.defaultResponse!.content['application/json'];
-      if (json != null) return json.schema;
+      final content = preferredContent(op.defaultResponse!.content);
+      if (content != null) return content;
     }
     // Check for specific error status codes
     for (final entry in op.responses.entries) {
       if (entry.key >= 400) {
-        final json = entry.value.content['application/json'];
-        if (json != null) return json.schema;
+        final content = preferredContent(entry.value.content);
+        if (content != null) return content;
       }
     }
     return null;
   }
 
-  String _buildErrorDeserializeExpr(IrType errorType) {
+  String _buildErrorDeserializeExpr(String mediaType, IrType errorType) {
+    if (isJsonLikeMediaType(mediaType)) {
+      return switch (errorType) {
+        IrPrimitive(:final kind) => switch (kind) {
+          PrimitiveKind.string =>
+            'try { return response.body; } catch (_) { return null; }',
+          PrimitiveKind.int =>
+            'try { return int.parse(response.body); } catch (_) { return null; }',
+          PrimitiveKind.double =>
+            'try { return double.parse(response.body); } catch (_) { return null; }',
+          PrimitiveKind.bool =>
+            'try { return jsonDecode(response.body) as bool; } catch (_) { return null; }',
+          _ =>
+            'try { return jsonDecode(response.body); } catch (_) { return null; }',
+        },
+        IrEnum(:final name) =>
+          'try { return $name.fromJson(jsonDecode(response.body) as String); } catch (_) { return null; }',
+        IrList(:final items) =>
+          'try { final json = jsonDecode(response.body) as List<dynamic>;\n'
+              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList(); } catch (_) { return null; }',
+        IrMap(:final values) =>
+          'try { return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')})); } catch (_) { return null; }',
+        IrObject(:final name) =>
+          'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+        IrTypeRef(:final name) =>
+          'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+        _ =>
+          'try { return ${irTypeName(errorType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+      };
+    }
+
+    final unsupportedMessage =
+        'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.string =>
@@ -457,47 +510,66 @@ try {
         PrimitiveKind.double =>
           'try { return double.parse(response.body); } catch (_) { return null; }',
         PrimitiveKind.bool =>
-          'try { return jsonDecode(response.body) as bool; } catch (_) { return null; }',
-        _ =>
-          'try { return jsonDecode(response.body); } catch (_) { return null; }',
+          "try { return response.body.toLowerCase() == 'true'; } catch (_) { return null; }",
+        _ => 'return null;',
       },
       IrEnum(:final name) =>
-        'try { return $name.fromJson(jsonDecode(response.body) as String); } catch (_) { return null; }',
-      IrList(:final items) =>
-        'try { final json = jsonDecode(response.body) as List<dynamic>;\n'
-        '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList(); } catch (_) { return null; }',
-      IrMap(:final values) =>
-        'try { return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')})); } catch (_) { return null; }',
-      IrObject(:final name) =>
-        'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
-      IrTypeRef(:final name) =>
-        'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+        'try { return $name.fromJson(response.body); } catch (_) { return null; }',
       _ =>
-        'try { return ${irTypeName(errorType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+        '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;',
     };
   }
 
-  IrType? _successResponseType(IrOperation op) {
+  (String, IrMediaType)? _successResponseContent(IrOperation op) {
     // Find the first 2xx response with content.
     // Check common codes first, then any other 2xx code.
     final priorityCodes = [200, 201, 202, 203, 204];
     for (final code in priorityCodes) {
       final resp = op.responses[code];
       if (resp != null) {
-        final jsonContent = resp.content['application/json'];
-        if (jsonContent != null) return jsonContent.schema;
+        final content = preferredContent(resp.content);
+        if (content != null) return content;
         // 201/204 with no content means void
         if (resp.content.isEmpty) return null;
       }
     }
     // Check remaining 2xx codes (206, 207, etc.)
     for (final entry in op.responses.entries) {
-      if (entry.key >= 200 && entry.key < 300 && !priorityCodes.contains(entry.key)) {
-        final jsonContent = entry.value.content['application/json'];
-        if (jsonContent != null) return jsonContent.schema;
+      if (entry.key >= 200 &&
+          entry.key < 300 &&
+          !priorityCodes.contains(entry.key)) {
+        final content = preferredContent(entry.value.content);
+        if (content != null) return content;
         if (entry.value.content.isEmpty) return null;
       }
     }
     return null;
+  }
+
+  String _buildRequestBodyExpr(
+    String mediaType,
+    IrType bodyType,
+    bool isRequired,
+  ) {
+    if (isJsonLikeMediaType(mediaType)) {
+      final nullAware = (!isRequired || bodyType.isNullable) ? '?' : '';
+      final toJsonCall = _typeNeedsToJson(bodyType)
+          ? '$nullAware.toJson()'
+          : '';
+      return 'jsonEncode(body$toJsonCall)';
+    }
+
+    final unsupportedMessage =
+        'Cannot encode non-JSON $mediaType request body from ${irTypeName(bodyType)}';
+    return switch (bodyType) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string => 'body',
+        PrimitiveKind.bytes => 'body',
+        _ => buildToJsonCode(bodyType, 'body'),
+      },
+      IrEnum() => 'body.toJson()',
+      IrExtensionType() => 'body.toJson()',
+      _ => "throw UnsupportedError('$unsupportedMessage');",
+    };
   }
 }

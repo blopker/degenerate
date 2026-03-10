@@ -41,9 +41,9 @@ Future<ApiResult<AccountSipSipCredentialList, Never>> createSipCredentialList({r
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipCredentialListRequest');,
 );
 
 return _execute(
@@ -77,9 +77,9 @@ Future<ApiResult<AccountSipSipCredentialList, Never>> updateSipCredentialList({r
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipCredentialListRequest');,
 );
 
 return _execute(

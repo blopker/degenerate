@@ -59,9 +59,9 @@ Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptions
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from StreamCaptionBasicUpload');,
 );
 
 return _execute(
@@ -114,7 +114,7 @@ return _execute(
 /// Return WebVTT captions for a provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
-Future<ApiResult<void, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/vtt',
   headers: {..._config.defaultHeaders
@@ -123,7 +123,9 @@ Future<ApiResult<void, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({r
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.

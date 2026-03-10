@@ -66,9 +66,9 @@ Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateIm
   method: 'POST',
   path: '/images/variations',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateImageVariationRequest');,
 );
 
 return _execute(

@@ -228,7 +228,7 @@ return _execute(
 /// Returns the value associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. If the KV-pair is set to expire at some point, the expiration time as measured in seconds since the UNIX epoch will be returned in the `expiration` response header.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<void, Never>> workersKvNamespaceReadKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersKvValue, Never>> workersKvNamespaceReadKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/values/${Uri.encodeComponent(keyName.toString())}',
   headers: {..._config.defaultHeaders
@@ -237,7 +237,10 @@ Future<ApiResult<void, Never>> workersKvNamespaceReadKeyValuePair({required Work
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    // TODO: Unsupported non-JSON response schema Cannot decode application/octet-stream response into WorkersKvValue
+throw UnsupportedError('Cannot decode application/octet-stream response into WorkersKvValue');
+  },
 );
  } 
 /// Write key-value pair with optional metadata
@@ -249,13 +252,13 @@ Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceWriteKeyValuePairWi
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/values/${Uri.encodeComponent(keyName.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
   queryParameters: {
     if (expiration != null) 'expiration': expiration.toString(),
     if (expirationTtl != null) 'expiration_ttl': expirationTtl.toString(),
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/octet-stream request body from WorkersKvValue');,
 );
 
 return _execute(

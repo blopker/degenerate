@@ -168,14 +168,16 @@ class Generator {
 
     // Filter by tags (case-insensitive, ignores spaces/punctuation)
     if (config.tags.isNotEmpty) {
-      final normalize = (String s) =>
+      String normalize(String s) =>
           s.toLowerCase().replaceAll(RegExp(r'[\s_\-]+'), '');
       final normalTags = config.tags.map(normalize).toList();
       irApis = irApis.where((api) {
         final apiNorm = normalize(api.name);
         return normalTags.any((t) => apiNorm.contains(t));
       }).toList();
-      _log('  Filtered to ${irApis.length} API groups matching tags: ${config.tags}');
+      _log(
+        '  Filtered to ${irApis.length} API groups matching tags: ${config.tags}',
+      );
     }
 
     // Filter by path prefixes
@@ -190,7 +192,9 @@ class Generator {
         }
       }
       irApis = filtered;
-      _log('  Filtered to ${irApis.length} API groups matching paths: ${config.paths}');
+      _log(
+        '  Filtered to ${irApis.length} API groups matching paths: ${config.paths}',
+      );
     }
 
     // Tree-shake types: only emit types reachable from the remaining APIs
@@ -214,7 +218,9 @@ class Generator {
     // 6. Emit all files
     _log('Emitting Dart source files...');
     final packageName =
-        config.packageName ?? _existingPackageName(config.outputDir) ?? _inferPackageName(doc.title);
+        config.packageName ??
+        _existingPackageName(config.outputDir) ??
+        _inferPackageName(doc.title);
     final specFileName = p.basename(config.inputPath);
     final specVersion = doc.version;
 
@@ -515,7 +521,9 @@ class Generator {
   static String? _existingPackageName(String outputDir) {
     final pubspec = File(p.join(outputDir, 'pubspec.yaml'));
     if (!pubspec.existsSync()) return null;
-    final match = RegExp(r'^name:\s*(\S+)').firstMatch(pubspec.readAsStringSync());
+    final match = RegExp(
+      r'^name:\s*(\S+)',
+    ).firstMatch(pubspec.readAsStringSync());
     return match?.group(1);
   }
 

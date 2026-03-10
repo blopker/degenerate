@@ -91,9 +91,9 @@ Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpload({requir
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DlpDocumentFingerprintsUploadRequest');,
 );
 
 return _execute(

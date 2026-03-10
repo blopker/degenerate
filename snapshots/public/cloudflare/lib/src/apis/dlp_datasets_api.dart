@@ -130,9 +130,9 @@ Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadVersion({required St
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/upload/${Uri.encodeComponent(version.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
@@ -175,9 +175,9 @@ Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadDatasetColumn({requi
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/versions/${Uri.encodeComponent(version.toString())}/entries/${Uri.encodeComponent(entryId)}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/octet-stream'
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(

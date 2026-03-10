@@ -97,7 +97,7 @@ return _execute(
 /// Retrieves the raw data entries in a custom threat indicator feed.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/{feed_id}/data`
-Future<ApiResult<void, Never>> customIndicatorFeedsGetIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> customIndicatorFeedsGetIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/data',
   headers: {..._config.defaultHeaders
@@ -106,7 +106,9 @@ Future<ApiResult<void, Never>> customIndicatorFeedsGetIndicatorFeedData({require
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Download indicator feed data
@@ -137,9 +139,9 @@ Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFe
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/snapshot',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CustomIndicatorFeedsUpdateIndicatorFeedDataRequest');,
 );
 
 return _execute(

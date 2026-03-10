@@ -42,7 +42,7 @@ return _execute(
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/dom/{scan_id}`
-Future<ApiResult<void, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/dom/${Uri.encodeComponent(scanId)}',
   headers: {..._config.defaultHeaders
@@ -51,7 +51,9 @@ Future<ApiResult<void, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2(
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
   onError: (response) {
     try { return UrlscannerGetScanDomResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
   },
@@ -84,7 +86,7 @@ return _execute(
 /// Returns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/responses/{response_id}`
-Future<ApiResult<void, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/responses/${Uri.encodeComponent(responseId)}',
   headers: {..._config.defaultHeaders
@@ -93,7 +95,9 @@ Future<ApiResult<void, UrlscannerGetResponseResponse400>> urlscannerGetResponseV
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
   onError: (response) {
     try { return UrlscannerGetResponseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
   },
@@ -150,7 +154,7 @@ return _execute(
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
-Future<ApiResult<void, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/screenshots/${Uri.encodeComponent(scanId)}.png',
   headers: {..._config.defaultHeaders
@@ -162,7 +166,9 @@ Future<ApiResult<void, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetSc
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
   onError: (response) {
     try { return UrlscannerGetScanScreenshotResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
   },

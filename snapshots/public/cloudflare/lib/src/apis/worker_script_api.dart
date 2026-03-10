@@ -21,12 +21,12 @@ Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required WorkersI
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/assets/upload',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
   queryParameters: {
     'base64': base64.toString(),
   },
-  body: jsonEncode(body),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');,
 );
 
 return _execute(
@@ -89,7 +89,7 @@ return _execute(
 /// Fetch raw script content for your worker. Note this is the original script content, not JSON encoded.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<void, Never>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}',
   headers: {..._config.defaultHeaders
@@ -98,7 +98,9 @@ Future<ApiResult<void, Never>> workerScriptDownloadWorker({required WorkersIdent
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Upload Worker Module
@@ -110,12 +112,12 @@ Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({requi
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/javascript'
   },
   queryParameters: {
     if (bindingsInherit != null) 'bindings_inherit': bindingsInherit.toJson(),
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
@@ -177,11 +179,11 @@ Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required Work
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
     , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
     , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPutContentRequest');,
 );
 
 return _execute(
@@ -196,7 +198,7 @@ return _execute(
 /// Fetch script content only.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/content/v2`
-Future<ApiResult<void, Never>> workerScriptGetContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerScriptGetContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content/v2',
   headers: {..._config.defaultHeaders
@@ -205,7 +207,9 @@ Future<ApiResult<void, Never>> workerScriptGetContent({required WorkersIdentifie
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Get Script Settings
@@ -360,9 +364,9 @@ Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required W
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPatchSettingsRequest');,
 );
 
 return _execute(

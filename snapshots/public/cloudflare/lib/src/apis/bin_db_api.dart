@@ -19,9 +19,9 @@ Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/binary',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PostBinDbPostRequest');,
 );
 
 return _execute(

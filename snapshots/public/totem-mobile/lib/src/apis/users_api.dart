@@ -72,9 +72,9 @@ Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({requir
   method: 'POST',
   path: '/api/mobile/protected/users/update_image',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from UpdateCurrentUserImageRequest');,
 );
 
 return _execute(

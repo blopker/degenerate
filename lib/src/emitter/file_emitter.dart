@@ -6,6 +6,7 @@ import 'api_emitter.dart';
 import 'emit_utils.dart';
 import 'enum_emitter.dart';
 import 'extension_type_emitter.dart';
+import 'media_type_utils.dart';
 import 'model_emitter.dart';
 import 'sealed_union_emitter.dart';
 
@@ -257,10 +258,9 @@ class FileEmitter {
       if (isBodyAllowed &&
           op.requestBody != null &&
           op.requestBody!.content.isNotEmpty) {
-        needsConvert = true;
-        final json = op.requestBody!.content['application/json'];
-        final schema =
-            json?.schema ?? op.requestBody!.content.values.first.schema;
+        final bodyContent = preferredContent(op.requestBody!.content)!;
+        if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
+        final schema = bodyContent.$2.schema;
         _collectTopLevelTypeName(schema, names);
         if (isBytesType(schema)) needsTypedData = true;
       }
@@ -268,29 +268,29 @@ class FileEmitter {
       for (final code in [200, 201, 202, 203, 204]) {
         final resp = op.responses[code];
         if (resp != null) {
-          if (resp.content.isNotEmpty) needsConvert = true;
-          final json = resp.content['application/json'];
-          if (json != null) {
-            _collectTopLevelTypeName(json.schema, names);
-            if (isBytesType(json.schema)) needsTypedData = true;
+          final content = preferredContent(resp.content);
+          if (content != null) {
+            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
+            _collectTopLevelTypeName(content.$2.schema, names);
+            if (isBytesType(content.$2.schema)) needsTypedData = true;
             break;
           }
         }
       }
       // Collect types from error responses (default and 4xx/5xx)
       if (op.defaultResponse != null) {
-        final json = op.defaultResponse!.content['application/json'];
-        if (json != null) {
-          needsConvert = true;
-          _collectTopLevelTypeName(json.schema, names);
+        final content = preferredContent(op.defaultResponse!.content);
+        if (content != null) {
+          if (isJsonLikeMediaType(content.$1)) needsConvert = true;
+          _collectTopLevelTypeName(content.$2.schema, names);
         }
       }
       for (final entry in op.responses.entries) {
         if (entry.key >= 400) {
-          final json = entry.value.content['application/json'];
-          if (json != null) {
-            needsConvert = true;
-            _collectTopLevelTypeName(json.schema, names);
+          final content = preferredContent(entry.value.content);
+          if (content != null) {
+            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
+            _collectTopLevelTypeName(content.$2.schema, names);
           }
         }
       }
@@ -450,13 +450,14 @@ class FileEmitter {
     buf.writeln();
 
     // Export model files (sorted for stable diffs, deduplicated, excluding inlined)
-    final modelNames = types
-        .map(_typeName)
-        .whereType<String>()
-        .where((name) => !inlinedTypes.contains(name))
-        .toSet()
-        .toList()
-      ..sort();
+    final modelNames =
+        types
+            .map(_typeName)
+            .whereType<String>()
+            .where((name) => !inlinedTypes.contains(name))
+            .toSet()
+            .toList()
+          ..sort();
     for (final name in modelNames) {
       final fileName = toSnakeCase(name);
       buf.writeln("export 'src/models/$fileName.dart';");

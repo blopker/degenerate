@@ -95,14 +95,14 @@ Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required S
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logos',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
   queryParameters: {
     'tag': ?tag,
     'match_type': ?matchType,
     if (threshold != null) 'threshold': threshold.toString(),
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from ImageFile');,
 );
 
 return _execute(

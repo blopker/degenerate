@@ -36,9 +36,9 @@ Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateIncomingPhoneNumberRequest');,
 );
 
 return _execute(
@@ -96,9 +96,9 @@ Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateIncomingPhoneNumberRequest');,
 );
 
 return _execute(

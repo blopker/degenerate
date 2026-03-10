@@ -125,7 +125,7 @@ return _execute(
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
-Future<ApiResult<void, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, }) async  { final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/pdf',
   headers: {..._config.defaultHeaders
@@ -139,7 +139,9 @@ Future<ApiResult<void, BrapiPostPdfResponse400>> brapiPostPdf({required String a
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
   onError: (response) {
     try { return BrapiPostPdfResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
   },

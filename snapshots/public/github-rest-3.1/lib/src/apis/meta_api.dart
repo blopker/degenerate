@@ -62,7 +62,7 @@ return _execute(
 /// Get the octocat as ASCII art
 ///
 /// `GET /octocat`
-Future<ApiResult<void, Never>> metaGetOctocat({String? s}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> metaGetOctocat({String? s}) async  { final request = ApiRequest(
   method: 'GET',
   path: '/octocat',
   headers: {..._config.defaultHeaders
@@ -74,7 +74,9 @@ Future<ApiResult<void, Never>> metaGetOctocat({String? s}) async  { final reques
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Get all API versions
@@ -105,7 +107,7 @@ return _execute(
 /// Get a random sentence from the Zen of GitHub
 ///
 /// `GET /zen`
-Future<ApiResult<void, Never>> metaGetZen() async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> metaGetZen() async  { final request = ApiRequest(
   method: 'GET',
   path: '/zen',
   headers: {..._config.defaultHeaders
@@ -114,7 +116,9 @@ Future<ApiResult<void, Never>> metaGetZen() async  { final request = ApiRequest(
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.

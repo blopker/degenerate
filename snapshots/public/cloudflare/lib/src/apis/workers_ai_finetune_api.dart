@@ -61,9 +61,9 @@ Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAs
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/${Uri.encodeComponent(finetuneId)}/finetune-assets',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiUploadFinetuneAssetRequest');,
 );
 
 return _execute(

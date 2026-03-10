@@ -144,9 +144,9 @@ Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownRespons
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiPostToMarkdownRequest');,
 );
 
 return _execute(

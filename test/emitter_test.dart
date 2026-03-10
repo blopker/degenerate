@@ -17,12 +17,11 @@ import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/file_emitter.dart';
 
 /// Full pipeline helper: parse YAML -> lower types -> lower operations.
-({
-  List<IrType> types,
-  List<IrApi> apis,
-  TypeLowerer typeLowerer,
-}) _lowerPetstore() {
-  final yamlContent = File('test/fixtures/public/petstore-v3.0-oai.yaml').readAsStringSync();
+({List<IrType> types, List<IrApi> apis, TypeLowerer typeLowerer})
+_lowerPetstore() {
+  final yamlContent = File(
+    'test/fixtures/public/petstore-v3.0-oai.yaml',
+  ).readAsStringSync();
   final doc = OpenApiDocument.parseYaml(yamlContent);
 
   final typeLowerer = TypeLowerer();
@@ -137,9 +136,12 @@ void main() {
         source = emitRaw(library);
       });
 
-      test('emits final class ErrorModel (avoids shadowing dart:core Error)', () {
-        expect(source, contains('final class ErrorModel'));
-      });
+      test(
+        'emits final class ErrorModel (avoids shadowing dart:core Error)',
+        () {
+          expect(source, contains('final class ErrorModel'));
+        },
+      );
 
       test('has code and message fields', () {
         expect(source, contains('final int code;'));
@@ -190,26 +192,50 @@ void main() {
 
   group('DiscriminatedUnionEmitter', () {
     test('emits sealed class with variant subclasses', () {
-      final union = IrDiscriminatedUnion(
-        'Shape',
-        'type',
-        {
-          'circle': IrObject('Circle', [
-            IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
-                isRequired: true),
-            IrField('radius', 'radius', IrPrimitive(PrimitiveKind.double),
-                isRequired: true),
-          ], requiredFields: ['type', 'radius']),
-          'rectangle': IrObject('Rectangle', [
-            IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
-                isRequired: true),
-            IrField('width', 'width', IrPrimitive(PrimitiveKind.double),
-                isRequired: true),
-            IrField('height', 'height', IrPrimitive(PrimitiveKind.double),
-                isRequired: true),
-          ], requiredFields: ['type', 'width', 'height']),
-        },
-      );
+      final union = IrDiscriminatedUnion('Shape', 'type', {
+        'circle': IrObject(
+          'Circle',
+          [
+            IrField(
+              'type',
+              'type',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'radius',
+              'radius',
+              IrPrimitive(PrimitiveKind.double),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['type', 'radius'],
+        ),
+        'rectangle': IrObject(
+          'Rectangle',
+          [
+            IrField(
+              'type',
+              'type',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'width',
+              'width',
+              IrPrimitive(PrimitiveKind.double),
+              isRequired: true,
+            ),
+            IrField(
+              'height',
+              'height',
+              IrPrimitive(PrimitiveKind.double),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['type', 'width', 'height'],
+        ),
+      });
 
       final specs = DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
@@ -224,12 +250,24 @@ void main() {
 
     test('discriminated union is valid Dart', () {
       final union = IrDiscriminatedUnion('Animal', 'kind', {
-        'dog': IrObject('Dog', [
-          IrField('kind', 'kind', IrPrimitive(PrimitiveKind.string),
-              isRequired: true),
-          IrField('breed', 'breed', IrPrimitive(PrimitiveKind.string),
-              isRequired: true),
-        ], requiredFields: ['kind', 'breed']),
+        'dog': IrObject(
+          'Dog',
+          [
+            IrField(
+              'kind',
+              'kind',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'breed',
+              'breed',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['kind', 'breed'],
+        ),
       });
 
       final specs = DiscriminatedUnionEmitter(union).emit();
@@ -279,9 +317,10 @@ void main() {
 
     setUp(() {
       final specs = ApiEmitter(apis.first).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs)
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
       );
       source = emitRaw(library);
     });
@@ -370,7 +409,10 @@ void main() {
       expect(files.keys, contains('lib/petstore_client.dart'));
       final barrel = files['lib/petstore_client.dart']!;
       expect(barrel, contains("export 'src/models/pet.dart'"));
-      expect(barrel, contains("export 'package:degenerate_runtime/degenerate_runtime.dart'"));
+      expect(
+        barrel,
+        contains("export 'package:degenerate_runtime/degenerate_runtime.dart'"),
+      );
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
     });
 
@@ -408,8 +450,11 @@ void main() {
       final barrel = files['lib/petstore_client.dart']!;
       expect(barrel, contains("export 'src/client/petstore_client_api.dart'"));
       final sdkFile = files['lib/src/client/petstore_client_api.dart'];
-      expect(sdkFile, isNotNull,
-          reason: 'Should generate root SDK facade file');
+      expect(
+        sdkFile,
+        isNotNull,
+        reason: 'Should generate root SDK facade file',
+      );
       expect(sdkFile, contains('class PetstoreClientApi'));
       expect(sdkFile, contains('PetsApi'));
     });
@@ -433,12 +478,18 @@ void main() {
 
     test('API files import degenerate_runtime', () {
       final apiSource = files['lib/src/apis/pets_api.dart']!;
-      expect(apiSource, contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"));
+      expect(
+        apiSource,
+        contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"),
+      );
     });
 
     test('SDK facade imports degenerate_runtime', () {
       final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
-      expect(sdkFile, contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"));
+      expect(
+        sdkFile,
+        contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"),
+      );
     });
   });
 
@@ -482,9 +533,11 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       source = emitRaw(library);
     });
 
@@ -497,10 +550,13 @@ void main() {
       expect(source, contains("'X-Api-Key': xApiKey"));
     });
 
-    test('optional header params are conditionally written into request headers', () {
-      expect(source, contains('xRequestId'));
-      expect(source, contains("'X-Request-Id'"));
-    });
+    test(
+      'optional header params are conditionally written into request headers',
+      () {
+        expect(source, contains('xRequestId'));
+        expect(source, contains("'X-Request-Id'"));
+      },
+    );
 
     test('is valid Dart', () {
       expect(() => _formatOrFail(source), returnsNormally);
@@ -510,43 +566,48 @@ void main() {
   // ─── Cookie parameter warning ─────────────────────────────────
 
   group('ApiEmitter - cookie parameters', () {
-    test('cookie params are excluded from method signature with TODO comment', () {
-      final api = IrApi('TestApi', [
-        IrOperation(
-          'getWithCookie',
-          'getWithCookie',
-          HttpMethod.get,
-          '/test',
-          parameters: [
-            IrParameter(
-              'session_id',
-              'sessionId',
-              ParameterLocation.cookie,
-              IrPrimitive(PrimitiveKind.string),
-              isRequired: true,
-            ),
-          ],
-          responses: {
-            200: IrResponse(
-              content: {
-                'application/json': IrMediaType(
-                  IrPrimitive(PrimitiveKind.string),
-                ),
-              },
-            ),
-          },
-        ),
-      ]);
-      final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
-      final source = emitRaw(library);
+    test(
+      'cookie params are excluded from method signature with TODO comment',
+      () {
+        final api = IrApi('TestApi', [
+          IrOperation(
+            'getWithCookie',
+            'getWithCookie',
+            HttpMethod.get,
+            '/test',
+            parameters: [
+              IrParameter(
+                'session_id',
+                'sessionId',
+                ParameterLocation.cookie,
+                IrPrimitive(PrimitiveKind.string),
+                isRequired: true,
+              ),
+            ],
+            responses: {
+              200: IrResponse(
+                content: {
+                  'application/json': IrMediaType(
+                    IrPrimitive(PrimitiveKind.string),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]);
+        final specs = ApiEmitter(api).emit();
+        final library = Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(specs),
+        );
+        final source = emitRaw(library);
 
-      // Cookie params should NOT appear in method signature
-      expect(source, isNot(contains('sessionId')));
-      expect(() => _formatOrFail(source), returnsNormally);
-    });
+        // Cookie params should NOT appear in method signature
+        expect(source, isNot(contains('sessionId')));
+        expect(() => _formatOrFail(source), returnsNormally);
+      },
+    );
   });
 
   // ─── Error deserialization for non-object types ────────────────
@@ -578,9 +639,11 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       // Should NOT generate String.fromJson (doesn't exist)
@@ -606,17 +669,17 @@ void main() {
           },
           defaultResponse: IrResponse(
             content: {
-              'application/json': IrMediaType(
-                IrPrimitive(PrimitiveKind.int),
-              ),
+              'application/json': IrMediaType(IrPrimitive(PrimitiveKind.int)),
             },
           ),
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       expect(source, isNot(contains('int.fromJson')));
@@ -649,9 +712,11 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       expect(source, isNot(contains('List<String>.fromJson')));
@@ -684,14 +749,23 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       expect(source, contains('ErrorCode.fromJson'));
       // Should NOT cast to Map<String, dynamic> for enum
-      expect(source, isNot(contains('ErrorCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>)')));
+      expect(
+        source,
+        isNot(
+          contains(
+            'ErrorCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>)',
+          ),
+        ),
+      );
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });
@@ -718,9 +792,11 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       // Should return String, not void
@@ -738,9 +814,18 @@ void main() {
             207: IrResponse(
               content: {
                 'application/json': IrMediaType(
-                  IrObject('MultiStatusResponse', [
-                    IrField('status', 'status', IrPrimitive(PrimitiveKind.string), isRequired: true),
-                  ], requiredFields: ['status']),
+                  IrObject(
+                    'MultiStatusResponse',
+                    [
+                      IrField(
+                        'status',
+                        'status',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['status'],
+                  ),
                 ),
               },
             ),
@@ -748,12 +833,282 @@ void main() {
         ),
       ]);
       final specs = ApiEmitter(api).emit();
-      final library = Library((b) => b
-        ..directives.add(Directive.import('dart:convert'))
-        ..body.addAll(specs));
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
       final source = emitRaw(library);
 
       expect(source, contains('ApiResult<MultiStatusResponse,'));
+    });
+
+    test('handles text/plain success responses', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getPlainText',
+          'getPlainText',
+          HttpMethod.get,
+          '/test',
+          responses: {
+            200: IrResponse(
+              content: {
+                'text/plain': IrMediaType(IrPrimitive(PrimitiveKind.string)),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('ApiResult<String,'));
+      expect(source, contains('return response.body;'));
+    });
+  });
+
+  group('ApiEmitter - non-JSON media types', () {
+    test('emits text/plain request bodies without jsonEncode', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'sendPlainText',
+          'sendPlainText',
+          HttpMethod.post,
+          '/test',
+          requestBody: IrRequestBody({
+            'text/plain': IrMediaType(IrPrimitive(PrimitiveKind.string)),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains("'Content-Type': 'text/plain'"));
+      expect(source, contains('body: body,'));
+      expect(source, isNot(contains('body: jsonEncode(body')));
+    });
+
+    test('detects application/problem+json error responses', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getTest',
+          'getTest',
+          HttpMethod.get,
+          '/test',
+          responses: {
+            200: IrResponse(),
+            400: IrResponse(
+              content: {
+                'application/problem+json': IrMediaType(
+                  IrObject(
+                    'ProblemDetails',
+                    [
+                      IrField(
+                        'title',
+                        'title',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['title'],
+                  ),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('ApiResult<void, ProblemDetails>'));
+      expect(source, contains('ProblemDetails.fromJson'));
+    });
+
+    test('treats JSON media types with parameters as JSON-like', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getProblem',
+          'getProblem',
+          HttpMethod.get,
+          '/test',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json; charset=utf-8': IrMediaType(
+                  IrObject(
+                    'Payload',
+                    [
+                      IrField(
+                        'title',
+                        'title',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['title'],
+                  ),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('Payload.fromJson(jsonDecode(response.body)'));
+    });
+
+    test('emits TODO and throw for unsupported text response objects', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getTextObject',
+          'getTextObject',
+          HttpMethod.get,
+          '/test',
+          responses: {
+            200: IrResponse(
+              content: {
+                'text/plain': IrMediaType(
+                  IrObject(
+                    'PlainObject',
+                    [
+                      IrField(
+                        'value',
+                        'value',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['value'],
+                  ),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('// TODO: Unsupported non-JSON response schema'));
+      expect(
+        source,
+        contains(
+          "throw UnsupportedError('Cannot decode text/plain response into PlainObject')",
+        ),
+      );
+    });
+
+    test('emits TODO for unsupported text error objects', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getError',
+          'getError',
+          HttpMethod.get,
+          '/test',
+          responses: {
+            400: IrResponse(
+              content: {
+                'text/plain': IrMediaType(
+                  IrObject(
+                    'PlainError',
+                    [
+                      IrField(
+                        'message',
+                        'message',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['message'],
+                  ),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('// TODO: Unsupported non-JSON error schema'));
+      expect(source, contains('return null;'));
+    });
+
+    test('throws for unsupported text request object bodies', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'sendObject',
+          'sendObject',
+          HttpMethod.post,
+          '/test',
+          requestBody: IrRequestBody({
+            'text/plain': IrMediaType(
+              IrObject(
+                'PlainRequest',
+                [
+                  IrField(
+                    'value',
+                    'value',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                ],
+                requiredFields: ['value'],
+              ),
+            ),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(
+        source,
+        contains(
+          "throw UnsupportedError('Cannot encode non-JSON text/plain request body from PlainRequest')",
+        ),
+      );
+      expect(source, isNot(contains('body: body,')));
     });
   });
 
@@ -788,7 +1143,10 @@ void main() {
 
       // DateTime wraps DateTime, but fromJson takes String and parses
       expect(source, contains('extension type Timestamp(DateTime value)'));
-      expect(source, isNot(contains('const Timestamp'))); // DateTime can't be const
+      expect(
+        source,
+        isNot(contains('const Timestamp')),
+      ); // DateTime can't be const
       expect(source, contains('factory Timestamp.fromJson(String json)'));
       expect(source, contains('DateTime.parse(json)'));
       expect(source, contains('String toJson()'));
@@ -846,8 +1204,9 @@ void main() {
     late Map<String, String> files;
 
     setUpAll(() {
-      final jsonContent =
-          File('test/fixtures/specs/extension-types.json').readAsStringSync();
+      final jsonContent = File(
+        'test/fixtures/specs/extension-types.json',
+      ).readAsStringSync();
       final doc = OpenApiDocument.parseJson(jsonContent);
 
       final tl = TypeLowerer();

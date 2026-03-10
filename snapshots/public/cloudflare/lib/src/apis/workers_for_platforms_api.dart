@@ -205,12 +205,12 @@ Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptUploadWorkerModu
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/javascript'
   },
   queryParameters: {
     if (bindingsInherit != null) 'bindings_inherit': bindingsInherit.toJson(),
   },
-  body: jsonEncode(body),
+  body: body,
 );
 
 return _execute(
@@ -287,7 +287,7 @@ return _execute(
 /// Fetch script content from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content`
-Future<ApiResult<void, Never>> namespaceWorkerGetScriptContent({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> namespaceWorkerGetScriptContent({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: {..._config.defaultHeaders
@@ -296,7 +296,9 @@ Future<ApiResult<void, Never>> namespaceWorkerGetScriptContent({required Workers
 
 return _execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return response.body;
+  },
 );
  } 
 /// Put Script Content
@@ -308,11 +310,11 @@ Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptContent({requ
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
     , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
     , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from NamespaceWorkerPutScriptContentRequest');,
 );
 
 return _execute(
@@ -434,9 +436,9 @@ Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPatchScriptSettings({r
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'multipart/form-data'
   },
-  body: jsonEncode(body.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from NamespaceWorkerPatchScriptSettingsRequest');,
 );
 
 return _execute(

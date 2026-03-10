@@ -41,9 +41,9 @@ Future<ApiResult<AccountSipSipIpAccessControlList, Never>> createSipIpAccessCont
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipIpAccessControlListRequest');,
 );
 
 return _execute(
@@ -77,9 +77,9 @@ Future<ApiResult<AccountSipSipIpAccessControlList, Never>> updateSipIpAccessCont
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
+    , 'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: jsonEncode(body?.toJson()),
+  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipIpAccessControlListRequest');,
 );
 
 return _execute(
