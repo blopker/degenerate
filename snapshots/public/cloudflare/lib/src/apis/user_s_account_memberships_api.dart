@@ -40,7 +40,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return UserSAccountMembershipsListMembershipsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UserSAccountMembershipsListMembershipsResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 

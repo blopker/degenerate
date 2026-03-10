@@ -287,7 +287,7 @@ class ApiEmitter {
       );
       for (final p in cookieParams) {
         final sanitizedName = _sanitizeParameterName(p.name);
-        final cookieValue = _toHeaderString(p);
+        final cookieValue = _toStringExpr(p);
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
@@ -308,7 +308,7 @@ class ApiEmitter {
           .replaceAll('\n', '')
           .replaceAll('\r', '')
           .trim();
-      final headerValue = _toHeaderString(p);
+      final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
@@ -381,7 +381,6 @@ class ApiEmitter {
         IrMap(:final values) =>
           'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
         IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.object => 'return jsonDecode(response.body);',
           PrimitiveKind.string => 'return response.body;',
           PrimitiveKind.int => 'return int.parse(response.body);',
           PrimitiveKind.double => 'return double.parse(response.body);',
@@ -392,12 +391,9 @@ class ApiEmitter {
         },
         IrExtensionType() =>
           'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
-        IrTypeRef(:final name) =>
-          'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
-        IrObject(:final name) =>
-          'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+        // All named types with .fromJson(Map)
         _ =>
-          'return ${irTypeName(returnType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -405,8 +401,7 @@ class ApiEmitter {
         'Cannot decode $mediaType response into ${irTypeName(returnType)}';
     return switch (returnType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => 'return response.body;',
-        PrimitiveKind.string => 'return response.body;',
+        PrimitiveKind.object || PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
@@ -421,25 +416,12 @@ class ApiEmitter {
     };
   }
 
-  String _toHeaderString(IrParameter p) {
+  /// Convert a parameter to its string representation for headers/query values.
+  String _toStringExpr(IrParameter p) {
     final type = p.type;
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => p.dartName,
-        PrimitiveKind.string => p.dartName,
-        _ => '${p.dartName}.toString()',
-      },
-      IrEnum() => '${p.dartName}.toJson()',
-      _ => '${p.dartName}.toString()',
-    };
-  }
-
-  String _toQueryString(IrParameter p) {
-    final type = p.type;
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => p.dartName,
-        PrimitiveKind.string => p.dartName,
+        PrimitiveKind.object || PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
       IrEnum() => '${p.dartName}.toJson()',
@@ -483,7 +465,7 @@ class ApiEmitter {
 
   void _writeSimpleQueryMapEntry(StringBuffer buf, IrParameter p) {
     final sanitizedName = _sanitizeParameterName(p.name);
-    final queryValue = _toQueryString(p);
+    final queryValue = _toStringExpr(p);
     if (p.isRequired) {
       buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
     } else {
@@ -774,8 +756,6 @@ try {
     if (isJsonLikeMediaType(mediaType)) {
       return switch (errorType) {
         IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.object =>
-            'try { return jsonDecode(response.body); } catch (_) { return null; }',
           PrimitiveKind.string =>
             'try { return response.body; } catch (_) { return null; }',
           PrimitiveKind.int =>
@@ -796,12 +776,9 @@ try {
               '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList(); } catch (_) { return null; }',
         IrMap(:final values) =>
           'try { return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')})); } catch (_) { return null; }',
-        IrObject(:final name) =>
-          'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
-        IrTypeRef(:final name) =>
-          'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+        // All named types with .fromJson(Map)
         _ =>
-          'try { return ${irTypeName(errorType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
+          'try { return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')}; } catch (_) { return null; }',
       };
     }
 
@@ -809,9 +786,7 @@ try {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object =>
-          'try { return response.body; } catch (_) { return null; }',
-        PrimitiveKind.string =>
+        PrimitiveKind.object || PrimitiveKind.string =>
           'try { return response.body; } catch (_) { return null; }',
         PrimitiveKind.int =>
           'try { return int.parse(response.body); } catch (_) { return null; }',

@@ -55,7 +55,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return CreateTranscriptionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CreateTranscriptionResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -75,7 +75,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return CreateTranslationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CreateTranslationResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 

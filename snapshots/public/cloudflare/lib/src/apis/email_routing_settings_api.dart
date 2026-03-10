@@ -54,7 +54,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return EmailRoutingSettingsEmailRoutingDnsSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRoutingSettingsEmailRoutingDnsSettingsResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -120,7 +120,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return EmailRoutingSettingsDisableEmailRoutingDnsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRoutingSettingsDisableEmailRoutingDnsResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 

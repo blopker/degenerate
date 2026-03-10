@@ -105,7 +105,7 @@ return _execute(
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return OrgsUpdateResponse422.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    try { return OrgsUpdateResponse422.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
   },
 );
  } 
