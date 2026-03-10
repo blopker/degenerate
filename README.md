@@ -19,12 +19,12 @@
 
 ## Features
 
-- **Full OpenAPI 3.0 and 3.1 support** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution
+- **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution — [file a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
-- **Fast** — generates 12,700 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Fast** — generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
-- **Multi-format request/response** — JSON, text, binary, and multipart/form-data bodies with media-type-aware serialization
+- **Multi-format request/response** — JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
 - **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
 - **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
 - **Modular output** — one file per model, small types inlined into their parent, barrel file for convenient imports
@@ -100,6 +100,7 @@ Options:
   -p, --path               Only include operations under these path prefixes (repeatable)
       --include-deprecated  Include deprecated operations
       --clean              Remove output directory before generating
+      --workspace          Add resolution: workspace to generated pubspec (for monorepos)
   -v, --verbose            Print IR and diagnostics
       --dry-run            Parse and validate without writing files
   -h, --help               Show help
@@ -349,6 +350,7 @@ lib/src/
     operation_lowerer.dart   OpenAPI paths/ops -> IR operations
   emitter/
     emit_utils.dart          Shared code gen utilities
+    media_type_utils.dart    Media type detection and preference logic
     model_emitter.dart       IrObject -> final class
     enum_emitter.dart        IrEnum -> final class with static const instances
     extension_type_emitter.dart  IrExtensionType -> extension type
@@ -366,17 +368,17 @@ The pipeline is: **Parse** (YAML/JSON) -> **Inline** (resolve external `$ref` fi
 
 ## Tested Specs
 
-| Spec | Files | Status |
-|------|-------|--------|
-| Petstore (3.0) | 6 | 0 issues |
-| Twilio | 317 | 0 issues |
-| Shopify | 21 | 0 issues |
-| Kubernetes (JSON) | 250 | 0 issues |
-| Totem Mobile (3.1) | 61 | 0 issues |
-| OpenAI | 1,471 | 0 issues |
-| GitHub REST 3.1 | 3,852 | 0 issues |
-| Cloudflare | 12,700 | 0 issues |
-| Stripe | 6,939 | 0 issues |
+| Spec | Status |
+|------|--------|
+| Petstore (3.0) | 0 issues |
+| Twilio | 0 issues |
+| Shopify | 0 issues |
+| Kubernetes (JSON) | 0 issues |
+| Totem Mobile (3.1) | 0 issues |
+| OpenAI | 0 issues |
+| GitHub REST 3.1 | 0 issues |
+| Cloudflare | 0 issues |
+| Stripe | 0 issues |
 
 ## Limitations
 
