@@ -12,10 +12,15 @@ dependencies:
   args: ^2.7.0
   yaml: ^3.1.0
   code_builder: ^4.10.0
-  dart_style: ^3.0.0
   path: ^1.9.0
   collection: ^1.19.0
 
+workspace:
+  - packages/*
+  - snapshots/specs/*
+  - test/wire/*
+
 dev_dependencies:
+  dart_style: ^3.0.0
   lints: ^6.0.0
   test: ^1.25.6

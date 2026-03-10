@@ -14,6 +14,14 @@ final _fixturesDir =
     p.join(Directory.current.path, 'test', 'fixtures');
 final _snapshotsDir = p.join(Directory.current.path, 'snapshots');
 
+/// Convert a spec filename to a valid Dart package name.
+/// e.g. '03-operations-parameters-request-body' → 'spec_03_operations_parameters_request_body'
+String _packageNameFromSpec(String groupName, String specName) {
+  final prefix = groupName == 'specs' ? 'spec' : 'pub';
+  final sanitized = specName.replaceAll(RegExp(r'[^a-zA-Z0-9]'), '_').toLowerCase();
+  return '${prefix}_$sanitized';
+}
+
 /// Whether a file path should be included in snapshot comparison.
 /// Excludes dart pub artifacts and other non-generated files.
 bool _isSnapshotFile(String relativePath) {
@@ -37,7 +45,7 @@ List<File> _specFiles(String dirPath) {
     ..sort((a, b) => p.basename(a.path).compareTo(p.basename(b.path)));
 }
 
-void _snapshotTests(String groupName, List<File> specFiles) {
+void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = false}) {
   group(groupName, () {
     for (final specFile in specFiles) {
       final specName = p.basenameWithoutExtension(specFile.path);
@@ -46,11 +54,13 @@ void _snapshotTests(String groupName, List<File> specFiles) {
         final tempDir =
             Directory.systemTemp.createTempSync('degenerate_snap_');
         try {
+          final packageName = _packageNameFromSpec(groupName, specName);
           final config = GeneratorConfig(
             inputPath: specFile.path,
             outputDir: tempDir.path,
-            packageName: 'test_api',
+            packageName: packageName,
             runtimePath: '../../../packages/degenerate_runtime',
+            workspace: workspace,
           );
 
           final generator = Generator(config);
@@ -146,7 +156,7 @@ void _snapshotTests(String groupName, List<File> specFiles) {
 const _externalRefSpecs = {'digitalocean-v2'};
 
 void main() {
-  _snapshotTests('specs', _specFiles(p.join(_fixturesDir, 'specs')));
+  _snapshotTests('specs', _specFiles(p.join(_fixturesDir, 'specs')), workspace: true);
   _snapshotTests(
     'public',
     _specFiles(p.join(_fixturesDir, 'public'))

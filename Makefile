@@ -2,9 +2,14 @@
 
 test:
 	dart test
+	@for dir in $$(find test/wire -name pubspec.yaml -exec dirname {} \;); do \
+		echo "Running wire tests in $$dir..."; \
+		(cd $$dir && dart test) || exit 1; \
+	done
 	dart analyze lib
 	dart analyze snapshots/specs
 	dart analyze example
+	dart analyze test
 
 # test_unit:
 	# todo

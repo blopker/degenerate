@@ -1,7 +1,8 @@
-name: test_api
+name: spec_02_root_info_servers_tags
 description: Generated API client.
 version: 1.0.0
 publish_to: none
+resolution: workspace
 
 environment:
   sdk: ^3.8.0

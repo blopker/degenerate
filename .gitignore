@@ -5,5 +5,5 @@
 # Ephemeral test build outputs
 outputs/
 
-review.md
+review*.md
 scratch/

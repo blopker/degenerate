@@ -1,0 +1,15 @@
+name: wire_03_operations
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  spec_03_operations_parameters_request_body:
+    path: ../../../snapshots/specs/03-operations-parameters-request-body
+  degenerate_runtime:
+    path: ../../../packages/degenerate_runtime
+
+dev_dependencies:
+  test: ^1.25.6

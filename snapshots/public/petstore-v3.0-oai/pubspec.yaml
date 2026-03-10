@@ -1,4 +1,4 @@
-name: test_api
+name: pub_petstore_v3_0_oai
 description: Generated API client.
 version: 1.0.0
 publish_to: none

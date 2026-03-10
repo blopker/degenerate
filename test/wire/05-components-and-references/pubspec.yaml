@@ -1,0 +1,15 @@
+name: wire_05_components
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  spec_05_components_and_references:
+    path: ../../../snapshots/specs/05-components-and-references
+  degenerate_runtime:
+    path: ../../../packages/degenerate_runtime
+
+dev_dependencies:
+  test: ^1.25.6

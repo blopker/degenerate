@@ -32,6 +32,9 @@ class GeneratorConfig {
   /// these prefixes.
   final List<String> paths;
 
+  /// Whether to add `resolution: workspace` to the generated pubspec.yaml.
+  final bool workspace;
+
   const GeneratorConfig({
     required this.inputPath,
     this.outputDir = 'lib/src/generated',
@@ -44,6 +47,7 @@ class GeneratorConfig {
     this.runtimePath = 'packages/degenerate_runtime',
     this.tags = const [],
     this.paths = const [],
+    this.workspace = false,
   });
 }
 
@@ -222,6 +226,7 @@ class Generator {
       specFileName: specFileName,
       specVersion: specVersion,
       runtimePath: config.runtimePath,
+      workspace: config.workspace,
     );
 
     _log('Generated ${files.length} files');

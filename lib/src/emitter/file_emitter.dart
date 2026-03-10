@@ -23,6 +23,7 @@ class FileEmitter {
     required String specFileName,
     required String specVersion,
     String runtimePath = 'degenerate_runtime',
+    bool workspace = false,
   }) {
     final files = <String, String>{};
 
@@ -203,6 +204,7 @@ class FileEmitter {
     files['pubspec.yaml'] = _emitPubspec(
       packageName: packageName,
       runtimePath: runtimePath,
+      workspace: workspace,
     );
 
     return files;
@@ -544,12 +546,16 @@ class FileEmitter {
   String _emitPubspec({
     required String packageName,
     required String runtimePath,
+    bool workspace = false,
   }) {
     final buf = StringBuffer();
     buf.writeln('name: $packageName');
     buf.writeln('description: Generated API client.');
     buf.writeln('version: 1.0.0');
     buf.writeln('publish_to: none');
+    if (workspace) {
+      buf.writeln('resolution: workspace');
+    }
     buf.writeln();
     buf.writeln('environment:');
     buf.writeln('  sdk: ^3.8.0');

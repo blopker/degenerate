@@ -75,6 +75,13 @@ ArgParser buildParser() {
       negatable: false,
     )
     ..addFlag(
+      'workspace',
+      help: 'Add resolution: workspace to the generated pubspec.yaml\n'
+          'for use in a Dart workspace (monorepo).',
+      defaultsTo: false,
+      negatable: false,
+    )
+    ..addFlag(
       'help',
       abbr: 'h',
       help: 'Show this help.',
@@ -147,6 +154,7 @@ Future<void> main(List<String> arguments) async {
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
       runtimePath: runtimePath,
+      workspace: results.flag('workspace'),
     );
 
     final generator = Generator(config);
