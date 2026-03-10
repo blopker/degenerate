@@ -2,6 +2,9 @@ name: degenerate
 description: OpenAPI to Dart client code generator.
 version: 0.0.1
 
+executables:
+  degenerate: degenerate
+
 environment:
   sdk: ^3.11.1
 

@@ -30,12 +30,15 @@
 
 ## Quick Start
 
+```yaml
+# Add to your pubspec.yaml
+dev_dependencies:
+  degenerate: ^0.1.0
+```
+
 ```bash
 # Generate a client from a spec
-dart run bin/degenerate.dart -i petstore.yaml -o my_client -n petstore
-
-# Install dependencies in the generated package
-cd my_client && dart pub get
+dart run degenerate -i petstore.yaml -o lib/src/generated -n petstore
 ```
 
 Then use the generated client:
@@ -82,7 +85,7 @@ See [`example/`](example/) for a full working example against the live Petstore 
 ## Usage
 
 ```
-degenerate [options]
+dart run degenerate [options]
 
 Options:
   -i, --input              Path to OpenAPI spec (required)
@@ -103,28 +106,28 @@ Options:
 
 ```bash
 # Generate from a YAML spec
-degenerate -i petstore.yaml -o lib/src/api -n petstore
+dart run degenerate -i petstore.yaml -o lib/src/api -n petstore
 
 # Only generate DNS-related APIs from a large spec
-degenerate -i cloudflare.yaml -o lib/src/api -t dns
+dart run degenerate -i cloudflare.yaml -o lib/src/api -t dns
 
 # Multiple tags
-degenerate -i cloudflare.yaml -o lib/src/api -t dns -t workers
+dart run degenerate -i cloudflare.yaml -o lib/src/api -t dns -t workers
 
 # Filter by path prefix
-degenerate -i cloudflare.yaml -o lib/src/api -p /zones
+dart run degenerate -i cloudflare.yaml -o lib/src/api -p /zones
 
 # Generate from a JSON spec with verbose output
-degenerate -i kubernetes-api.json -o lib/src/k8s --verbose
+dart run degenerate -i kubernetes-api.json -o lib/src/k8s --verbose
 
 # Clean output directory before generating (removes stale files)
-degenerate -i spec.yaml -o lib/src/api --clean
+dart run degenerate -i spec.yaml -o lib/src/api --clean
 
 # Dry run to check for issues without writing files
-degenerate -i spec.yaml --dry-run
+dart run degenerate -i spec.yaml --dry-run
 
 # Generate without HTTP client (bring your own ApiClient implementation)
-degenerate -i spec.yaml --client none
+dart run degenerate -i spec.yaml --client none
 ```
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.
