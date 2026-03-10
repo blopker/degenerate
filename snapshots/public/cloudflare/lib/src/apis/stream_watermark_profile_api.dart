@@ -45,16 +45,16 @@ final request = ApiRequest(
   headers: headers,
   body: [
     ApiMultipartField.text('file', body.file),
-    if (body.name case final _name?)
-      ApiMultipartField.text('name', _name.toJson()),
-    if (body.opacity case final _opacity?)
-      ApiMultipartField.text('opacity', _opacity.toJson()),
-    if (body.padding case final _padding?)
-      ApiMultipartField.text('padding', _padding.toJson()),
-    if (body.position case final _position?)
-      ApiMultipartField.text('position', _position.toJson()),
-    if (body.scale case final _scale?)
-      ApiMultipartField.text('scale', _scale.toJson()),
+    if (body.name case final name$?)
+      ApiMultipartField.text('name', name$.toJson()),
+    if (body.opacity case final opacity$?)
+      ApiMultipartField.text('opacity', opacity$.toJson()),
+    if (body.padding case final padding$?)
+      ApiMultipartField.text('padding', padding$.toJson()),
+    if (body.position case final position$?)
+      ApiMultipartField.text('position', position$.toJson()),
+    if (body.scale case final scale$?)
+      ApiMultipartField.text('scale', scale$.toJson()),
   ],
   contentType: 'multipart/form-data',
 );

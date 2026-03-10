@@ -71,8 +71,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
-    if (body.pauseBehavior case final _pauseBehavior?)
-      'PauseBehavior=${Uri.encodeQueryComponent(_pauseBehavior)}',
+    if (body.pauseBehavior case final pauseBehavior$?)
+      'PauseBehavior=${Uri.encodeQueryComponent(pauseBehavior$)}',
   ].join('&'),
 );
 

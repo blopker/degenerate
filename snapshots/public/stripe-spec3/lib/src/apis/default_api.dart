@@ -57,16 +57,16 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'account=${Uri.encodeQueryComponent(body.account)}',
-    if (body.collect case final _collect?)
-      'collect=${Uri.encodeQueryComponent(_collect.toJson())}',
-    if (body.collectionOptions case final _collectionOptions?)
-      'collection_options=${Uri.encodeQueryComponent(_collectionOptions.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.refreshUrl case final _refreshUrl?)
-      'refresh_url=${Uri.encodeQueryComponent(_refreshUrl)}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.collect case final collect$?)
+      'collect=${Uri.encodeQueryComponent(collect$.toJson())}',
+    if (body.collectionOptions case final collectionOptions$?)
+      'collection_options=${Uri.encodeQueryComponent(collectionOptions$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.refreshUrl case final refreshUrl$?)
+      'refresh_url=${Uri.encodeQueryComponent(refreshUrl$)}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
   ].join('&'),
 );
@@ -96,8 +96,8 @@ final request = ApiRequest(
   body: [
     'account=${Uri.encodeQueryComponent(body.account)}',
     'components=${Uri.encodeQueryComponent(body.components.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -165,44 +165,44 @@ final request = ApiRequest(
   path: '/v1/accounts',
   headers: headers,
   body: [
-    if (body.accountToken case final _accountToken?)
-      'account_token=${Uri.encodeQueryComponent(_accountToken)}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.businessProfile case final _businessProfile?)
-      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
-    if (body.businessType case final _businessType?)
-      'business_type=${Uri.encodeQueryComponent(_businessType.toJson())}',
-    if (body.capabilities case final _capabilities?)
-      'capabilities=${Uri.encodeQueryComponent(_capabilities.toString())}',
-    if (body.company case final _company?)
-      'company=${Uri.encodeQueryComponent(_company.toString())}',
-    if (body.controller case final _controller?)
-      'controller=${Uri.encodeQueryComponent(_controller.toString())}',
-    if (body.country case final _country?)
-      'country=${Uri.encodeQueryComponent(_country)}',
-    if (body.defaultCurrency case final _defaultCurrency?)
-      'default_currency=${Uri.encodeQueryComponent(_defaultCurrency)}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.externalAccount case final _externalAccount?)
-      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
-    if (body.groups case final _groups?)
-      'groups=${Uri.encodeQueryComponent(_groups.toString())}',
-    if (body.individual case final _individual?)
-      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.settings case final _settings?)
-      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
-    if (body.tosAcceptance case final _tosAcceptance?)
-      'tos_acceptance=${Uri.encodeQueryComponent(_tosAcceptance.toString())}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.accountToken case final accountToken$?)
+      'account_token=${Uri.encodeQueryComponent(accountToken$)}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.businessProfile case final businessProfile$?)
+      'business_profile=${Uri.encodeQueryComponent(businessProfile$.toString())}',
+    if (body.businessType case final businessType$?)
+      'business_type=${Uri.encodeQueryComponent(businessType$.toJson())}',
+    if (body.capabilities case final capabilities$?)
+      'capabilities=${Uri.encodeQueryComponent(capabilities$.toString())}',
+    if (body.company case final company$?)
+      'company=${Uri.encodeQueryComponent(company$.toString())}',
+    if (body.controller case final controller$?)
+      'controller=${Uri.encodeQueryComponent(controller$.toString())}',
+    if (body.country case final country$?)
+      'country=${Uri.encodeQueryComponent(country$)}',
+    if (body.defaultCurrency case final defaultCurrency$?)
+      'default_currency=${Uri.encodeQueryComponent(defaultCurrency$)}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.externalAccount case final externalAccount$?)
+      'external_account=${Uri.encodeQueryComponent(externalAccount$)}',
+    if (body.groups case final groups$?)
+      'groups=${Uri.encodeQueryComponent(groups$.toString())}',
+    if (body.individual case final individual$?)
+      'individual=${Uri.encodeQueryComponent(individual$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.settings case final settings$?)
+      'settings=${Uri.encodeQueryComponent(settings$.toString())}',
+    if (body.tosAcceptance case final tosAcceptance$?)
+      'tos_acceptance=${Uri.encodeQueryComponent(tosAcceptance$.toString())}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
   ].join('&'),
 );
 
@@ -272,36 +272,36 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
   body: [
-    if (body.accountToken case final _accountToken?)
-      'account_token=${Uri.encodeQueryComponent(_accountToken)}',
-    if (body.businessProfile case final _businessProfile?)
-      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
-    if (body.businessType case final _businessType?)
-      'business_type=${Uri.encodeQueryComponent(_businessType.toJson())}',
-    if (body.capabilities case final _capabilities?)
-      'capabilities=${Uri.encodeQueryComponent(_capabilities.toString())}',
-    if (body.company case final _company?)
-      'company=${Uri.encodeQueryComponent(_company.toString())}',
-    if (body.defaultCurrency case final _defaultCurrency?)
-      'default_currency=${Uri.encodeQueryComponent(_defaultCurrency)}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.externalAccount case final _externalAccount?)
-      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
-    if (body.groups case final _groups?)
-      'groups=${Uri.encodeQueryComponent(_groups.toString())}',
-    if (body.individual case final _individual?)
-      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.settings case final _settings?)
-      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
-    if (body.tosAcceptance case final _tosAcceptance?)
-      'tos_acceptance=${Uri.encodeQueryComponent(_tosAcceptance.toString())}',
+    if (body.accountToken case final accountToken$?)
+      'account_token=${Uri.encodeQueryComponent(accountToken$)}',
+    if (body.businessProfile case final businessProfile$?)
+      'business_profile=${Uri.encodeQueryComponent(businessProfile$.toString())}',
+    if (body.businessType case final businessType$?)
+      'business_type=${Uri.encodeQueryComponent(businessType$.toJson())}',
+    if (body.capabilities case final capabilities$?)
+      'capabilities=${Uri.encodeQueryComponent(capabilities$.toString())}',
+    if (body.company case final company$?)
+      'company=${Uri.encodeQueryComponent(company$.toString())}',
+    if (body.defaultCurrency case final defaultCurrency$?)
+      'default_currency=${Uri.encodeQueryComponent(defaultCurrency$)}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.externalAccount case final externalAccount$?)
+      'external_account=${Uri.encodeQueryComponent(externalAccount$)}',
+    if (body.groups case final groups$?)
+      'groups=${Uri.encodeQueryComponent(groups$.toString())}',
+    if (body.individual case final individual$?)
+      'individual=${Uri.encodeQueryComponent(individual$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.settings case final settings$?)
+      'settings=${Uri.encodeQueryComponent(settings$.toString())}',
+    if (body.tosAcceptance case final tosAcceptance$?)
+      'tos_acceptance=${Uri.encodeQueryComponent(tosAcceptance$.toString())}',
   ].join('&'),
 );
 
@@ -360,16 +360,16 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts',
   headers: headers,
   body: [
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.defaultForCurrency case final _defaultForCurrency?)
-      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.externalAccount case final _externalAccount?)
-      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.defaultForCurrency case final defaultForCurrency$?)
+      'default_for_currency=${Uri.encodeQueryComponent(defaultForCurrency$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.externalAccount case final externalAccount$?)
+      'external_account=${Uri.encodeQueryComponent(externalAccount$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -433,38 +433,38 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.accountType case final _accountType?)
-      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.defaultForCurrency case final _defaultForCurrency?)
-      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.accountType case final accountType$?)
+      'account_type=${Uri.encodeQueryComponent(accountType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.defaultForCurrency case final defaultForCurrency$?)
+      'default_for_currency=${Uri.encodeQueryComponent(defaultForCurrency$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -579,10 +579,10 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.requested case final _requested?)
-      'requested=${Uri.encodeQueryComponent(_requested.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.requested case final requested$?)
+      'requested=${Uri.encodeQueryComponent(requested$.toString())}',
   ].join('&'),
 );
 
@@ -644,16 +644,16 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
   headers: headers,
   body: [
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.defaultForCurrency case final _defaultForCurrency?)
-      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.externalAccount case final _externalAccount?)
-      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.defaultForCurrency case final defaultForCurrency$?)
+      'default_for_currency=${Uri.encodeQueryComponent(defaultForCurrency$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.externalAccount case final externalAccount$?)
+      'external_account=${Uri.encodeQueryComponent(externalAccount$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -717,38 +717,38 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.accountType case final _accountType?)
-      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.defaultForCurrency case final _defaultForCurrency?)
-      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.accountType case final accountType$?)
+      'account_type=${Uri.encodeQueryComponent(accountType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.defaultForCurrency case final defaultForCurrency$?)
+      'default_for_currency=${Uri.encodeQueryComponent(defaultForCurrency$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -803,8 +803,8 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/login_links',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -873,64 +873,64 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
   headers: headers,
   body: [
-    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
-      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.dob case final _dob?)
-      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.firstName case final _firstName?)
-      'first_name=${Uri.encodeQueryComponent(_firstName)}',
-    if (body.firstNameKana case final _firstNameKana?)
-      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
-    if (body.firstNameKanji case final _firstNameKanji?)
-      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
-    if (body.fullNameAliases case final _fullNameAliases?)
-      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
-    if (body.gender case final _gender?)
-      'gender=${Uri.encodeQueryComponent(_gender)}',
-    if (body.idNumber case final _idNumber?)
-      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
-    if (body.idNumberSecondary case final _idNumberSecondary?)
-      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
-    if (body.lastName case final _lastName?)
-      'last_name=${Uri.encodeQueryComponent(_lastName)}',
-    if (body.lastNameKana case final _lastNameKana?)
-      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
-    if (body.lastNameKanji case final _lastNameKanji?)
-      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
-    if (body.maidenName case final _maidenName?)
-      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nationality case final _nationality?)
-      'nationality=${Uri.encodeQueryComponent(_nationality)}',
-    if (body.personToken case final _personToken?)
-      'person_token=${Uri.encodeQueryComponent(_personToken)}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.politicalExposure case final _politicalExposure?)
-      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
-    if (body.registeredAddress case final _registeredAddress?)
-      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
-    if (body.relationship case final _relationship?)
-      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
-    if (body.ssnLast4 case final _ssnLast4?)
-      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
-    if (body.usCfpbData case final _usCfpbData?)
-      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
-    if (body.verification case final _verification?)
-      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+    if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.dob case final dob$?)
+      'dob=${Uri.encodeQueryComponent(dob$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.firstName case final firstName$?)
+      'first_name=${Uri.encodeQueryComponent(firstName$)}',
+    if (body.firstNameKana case final firstNameKana$?)
+      'first_name_kana=${Uri.encodeQueryComponent(firstNameKana$)}',
+    if (body.firstNameKanji case final firstNameKanji$?)
+      'first_name_kanji=${Uri.encodeQueryComponent(firstNameKanji$)}',
+    if (body.fullNameAliases case final fullNameAliases$?)
+      'full_name_aliases=${Uri.encodeQueryComponent(fullNameAliases$.toString())}',
+    if (body.gender case final gender$?)
+      'gender=${Uri.encodeQueryComponent(gender$)}',
+    if (body.idNumber case final idNumber$?)
+      'id_number=${Uri.encodeQueryComponent(idNumber$)}',
+    if (body.idNumberSecondary case final idNumberSecondary$?)
+      'id_number_secondary=${Uri.encodeQueryComponent(idNumberSecondary$)}',
+    if (body.lastName case final lastName$?)
+      'last_name=${Uri.encodeQueryComponent(lastName$)}',
+    if (body.lastNameKana case final lastNameKana$?)
+      'last_name_kana=${Uri.encodeQueryComponent(lastNameKana$)}',
+    if (body.lastNameKanji case final lastNameKanji$?)
+      'last_name_kanji=${Uri.encodeQueryComponent(lastNameKanji$)}',
+    if (body.maidenName case final maidenName$?)
+      'maiden_name=${Uri.encodeQueryComponent(maidenName$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nationality case final nationality$?)
+      'nationality=${Uri.encodeQueryComponent(nationality$)}',
+    if (body.personToken case final personToken$?)
+      'person_token=${Uri.encodeQueryComponent(personToken$)}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.politicalExposure case final politicalExposure$?)
+      'political_exposure=${Uri.encodeQueryComponent(politicalExposure$.toJson())}',
+    if (body.registeredAddress case final registeredAddress$?)
+      'registered_address=${Uri.encodeQueryComponent(registeredAddress$.toString())}',
+    if (body.relationship case final relationship$?)
+      'relationship=${Uri.encodeQueryComponent(relationship$.toString())}',
+    if (body.ssnLast4 case final ssnLast4$?)
+      'ssn_last_4=${Uri.encodeQueryComponent(ssnLast4$)}',
+    if (body.usCfpbData case final usCfpbData$?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(usCfpbData$.toString())}',
+    if (body.verification case final verification$?)
+      'verification=${Uri.encodeQueryComponent(verification$.toString())}',
   ].join('&'),
 );
 
@@ -988,64 +988,64 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
   body: [
-    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
-      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.dob case final _dob?)
-      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.firstName case final _firstName?)
-      'first_name=${Uri.encodeQueryComponent(_firstName)}',
-    if (body.firstNameKana case final _firstNameKana?)
-      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
-    if (body.firstNameKanji case final _firstNameKanji?)
-      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
-    if (body.fullNameAliases case final _fullNameAliases?)
-      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
-    if (body.gender case final _gender?)
-      'gender=${Uri.encodeQueryComponent(_gender)}',
-    if (body.idNumber case final _idNumber?)
-      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
-    if (body.idNumberSecondary case final _idNumberSecondary?)
-      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
-    if (body.lastName case final _lastName?)
-      'last_name=${Uri.encodeQueryComponent(_lastName)}',
-    if (body.lastNameKana case final _lastNameKana?)
-      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
-    if (body.lastNameKanji case final _lastNameKanji?)
-      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
-    if (body.maidenName case final _maidenName?)
-      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nationality case final _nationality?)
-      'nationality=${Uri.encodeQueryComponent(_nationality)}',
-    if (body.personToken case final _personToken?)
-      'person_token=${Uri.encodeQueryComponent(_personToken)}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.politicalExposure case final _politicalExposure?)
-      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
-    if (body.registeredAddress case final _registeredAddress?)
-      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
-    if (body.relationship case final _relationship?)
-      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
-    if (body.ssnLast4 case final _ssnLast4?)
-      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
-    if (body.usCfpbData case final _usCfpbData?)
-      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
-    if (body.verification case final _verification?)
-      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+    if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.dob case final dob$?)
+      'dob=${Uri.encodeQueryComponent(dob$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.firstName case final firstName$?)
+      'first_name=${Uri.encodeQueryComponent(firstName$)}',
+    if (body.firstNameKana case final firstNameKana$?)
+      'first_name_kana=${Uri.encodeQueryComponent(firstNameKana$)}',
+    if (body.firstNameKanji case final firstNameKanji$?)
+      'first_name_kanji=${Uri.encodeQueryComponent(firstNameKanji$)}',
+    if (body.fullNameAliases case final fullNameAliases$?)
+      'full_name_aliases=${Uri.encodeQueryComponent(fullNameAliases$.toString())}',
+    if (body.gender case final gender$?)
+      'gender=${Uri.encodeQueryComponent(gender$)}',
+    if (body.idNumber case final idNumber$?)
+      'id_number=${Uri.encodeQueryComponent(idNumber$)}',
+    if (body.idNumberSecondary case final idNumberSecondary$?)
+      'id_number_secondary=${Uri.encodeQueryComponent(idNumberSecondary$)}',
+    if (body.lastName case final lastName$?)
+      'last_name=${Uri.encodeQueryComponent(lastName$)}',
+    if (body.lastNameKana case final lastNameKana$?)
+      'last_name_kana=${Uri.encodeQueryComponent(lastNameKana$)}',
+    if (body.lastNameKanji case final lastNameKanji$?)
+      'last_name_kanji=${Uri.encodeQueryComponent(lastNameKanji$)}',
+    if (body.maidenName case final maidenName$?)
+      'maiden_name=${Uri.encodeQueryComponent(maidenName$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nationality case final nationality$?)
+      'nationality=${Uri.encodeQueryComponent(nationality$)}',
+    if (body.personToken case final personToken$?)
+      'person_token=${Uri.encodeQueryComponent(personToken$)}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.politicalExposure case final politicalExposure$?)
+      'political_exposure=${Uri.encodeQueryComponent(politicalExposure$.toJson())}',
+    if (body.registeredAddress case final registeredAddress$?)
+      'registered_address=${Uri.encodeQueryComponent(registeredAddress$.toString())}',
+    if (body.relationship case final relationship$?)
+      'relationship=${Uri.encodeQueryComponent(relationship$.toString())}',
+    if (body.ssnLast4 case final ssnLast4$?)
+      'ssn_last_4=${Uri.encodeQueryComponent(ssnLast4$)}',
+    if (body.usCfpbData case final usCfpbData$?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(usCfpbData$.toString())}',
+    if (body.verification case final verification$?)
+      'verification=${Uri.encodeQueryComponent(verification$.toString())}',
   ].join('&'),
 );
 
@@ -1140,64 +1140,64 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
   headers: headers,
   body: [
-    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
-      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.dob case final _dob?)
-      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.firstName case final _firstName?)
-      'first_name=${Uri.encodeQueryComponent(_firstName)}',
-    if (body.firstNameKana case final _firstNameKana?)
-      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
-    if (body.firstNameKanji case final _firstNameKanji?)
-      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
-    if (body.fullNameAliases case final _fullNameAliases?)
-      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
-    if (body.gender case final _gender?)
-      'gender=${Uri.encodeQueryComponent(_gender)}',
-    if (body.idNumber case final _idNumber?)
-      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
-    if (body.idNumberSecondary case final _idNumberSecondary?)
-      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
-    if (body.lastName case final _lastName?)
-      'last_name=${Uri.encodeQueryComponent(_lastName)}',
-    if (body.lastNameKana case final _lastNameKana?)
-      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
-    if (body.lastNameKanji case final _lastNameKanji?)
-      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
-    if (body.maidenName case final _maidenName?)
-      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nationality case final _nationality?)
-      'nationality=${Uri.encodeQueryComponent(_nationality)}',
-    if (body.personToken case final _personToken?)
-      'person_token=${Uri.encodeQueryComponent(_personToken)}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.politicalExposure case final _politicalExposure?)
-      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
-    if (body.registeredAddress case final _registeredAddress?)
-      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
-    if (body.relationship case final _relationship?)
-      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
-    if (body.ssnLast4 case final _ssnLast4?)
-      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
-    if (body.usCfpbData case final _usCfpbData?)
-      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
-    if (body.verification case final _verification?)
-      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+    if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.dob case final dob$?)
+      'dob=${Uri.encodeQueryComponent(dob$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.firstName case final firstName$?)
+      'first_name=${Uri.encodeQueryComponent(firstName$)}',
+    if (body.firstNameKana case final firstNameKana$?)
+      'first_name_kana=${Uri.encodeQueryComponent(firstNameKana$)}',
+    if (body.firstNameKanji case final firstNameKanji$?)
+      'first_name_kanji=${Uri.encodeQueryComponent(firstNameKanji$)}',
+    if (body.fullNameAliases case final fullNameAliases$?)
+      'full_name_aliases=${Uri.encodeQueryComponent(fullNameAliases$.toString())}',
+    if (body.gender case final gender$?)
+      'gender=${Uri.encodeQueryComponent(gender$)}',
+    if (body.idNumber case final idNumber$?)
+      'id_number=${Uri.encodeQueryComponent(idNumber$)}',
+    if (body.idNumberSecondary case final idNumberSecondary$?)
+      'id_number_secondary=${Uri.encodeQueryComponent(idNumberSecondary$)}',
+    if (body.lastName case final lastName$?)
+      'last_name=${Uri.encodeQueryComponent(lastName$)}',
+    if (body.lastNameKana case final lastNameKana$?)
+      'last_name_kana=${Uri.encodeQueryComponent(lastNameKana$)}',
+    if (body.lastNameKanji case final lastNameKanji$?)
+      'last_name_kanji=${Uri.encodeQueryComponent(lastNameKanji$)}',
+    if (body.maidenName case final maidenName$?)
+      'maiden_name=${Uri.encodeQueryComponent(maidenName$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nationality case final nationality$?)
+      'nationality=${Uri.encodeQueryComponent(nationality$)}',
+    if (body.personToken case final personToken$?)
+      'person_token=${Uri.encodeQueryComponent(personToken$)}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.politicalExposure case final politicalExposure$?)
+      'political_exposure=${Uri.encodeQueryComponent(politicalExposure$.toJson())}',
+    if (body.registeredAddress case final registeredAddress$?)
+      'registered_address=${Uri.encodeQueryComponent(registeredAddress$.toString())}',
+    if (body.relationship case final relationship$?)
+      'relationship=${Uri.encodeQueryComponent(relationship$.toString())}',
+    if (body.ssnLast4 case final ssnLast4$?)
+      'ssn_last_4=${Uri.encodeQueryComponent(ssnLast4$)}',
+    if (body.usCfpbData case final usCfpbData$?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(usCfpbData$.toString())}',
+    if (body.verification case final verification$?)
+      'verification=${Uri.encodeQueryComponent(verification$.toString())}',
   ].join('&'),
 );
 
@@ -1255,64 +1255,64 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
   body: [
-    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
-      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.dob case final _dob?)
-      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.firstName case final _firstName?)
-      'first_name=${Uri.encodeQueryComponent(_firstName)}',
-    if (body.firstNameKana case final _firstNameKana?)
-      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
-    if (body.firstNameKanji case final _firstNameKanji?)
-      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
-    if (body.fullNameAliases case final _fullNameAliases?)
-      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
-    if (body.gender case final _gender?)
-      'gender=${Uri.encodeQueryComponent(_gender)}',
-    if (body.idNumber case final _idNumber?)
-      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
-    if (body.idNumberSecondary case final _idNumberSecondary?)
-      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
-    if (body.lastName case final _lastName?)
-      'last_name=${Uri.encodeQueryComponent(_lastName)}',
-    if (body.lastNameKana case final _lastNameKana?)
-      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
-    if (body.lastNameKanji case final _lastNameKanji?)
-      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
-    if (body.maidenName case final _maidenName?)
-      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nationality case final _nationality?)
-      'nationality=${Uri.encodeQueryComponent(_nationality)}',
-    if (body.personToken case final _personToken?)
-      'person_token=${Uri.encodeQueryComponent(_personToken)}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.politicalExposure case final _politicalExposure?)
-      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
-    if (body.registeredAddress case final _registeredAddress?)
-      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
-    if (body.relationship case final _relationship?)
-      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
-    if (body.ssnLast4 case final _ssnLast4?)
-      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
-    if (body.usCfpbData case final _usCfpbData?)
-      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
-    if (body.verification case final _verification?)
-      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+    if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.dob case final dob$?)
+      'dob=${Uri.encodeQueryComponent(dob$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.firstName case final firstName$?)
+      'first_name=${Uri.encodeQueryComponent(firstName$)}',
+    if (body.firstNameKana case final firstNameKana$?)
+      'first_name_kana=${Uri.encodeQueryComponent(firstNameKana$)}',
+    if (body.firstNameKanji case final firstNameKanji$?)
+      'first_name_kanji=${Uri.encodeQueryComponent(firstNameKanji$)}',
+    if (body.fullNameAliases case final fullNameAliases$?)
+      'full_name_aliases=${Uri.encodeQueryComponent(fullNameAliases$.toString())}',
+    if (body.gender case final gender$?)
+      'gender=${Uri.encodeQueryComponent(gender$)}',
+    if (body.idNumber case final idNumber$?)
+      'id_number=${Uri.encodeQueryComponent(idNumber$)}',
+    if (body.idNumberSecondary case final idNumberSecondary$?)
+      'id_number_secondary=${Uri.encodeQueryComponent(idNumberSecondary$)}',
+    if (body.lastName case final lastName$?)
+      'last_name=${Uri.encodeQueryComponent(lastName$)}',
+    if (body.lastNameKana case final lastNameKana$?)
+      'last_name_kana=${Uri.encodeQueryComponent(lastNameKana$)}',
+    if (body.lastNameKanji case final lastNameKanji$?)
+      'last_name_kanji=${Uri.encodeQueryComponent(lastNameKanji$)}',
+    if (body.maidenName case final maidenName$?)
+      'maiden_name=${Uri.encodeQueryComponent(maidenName$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nationality case final nationality$?)
+      'nationality=${Uri.encodeQueryComponent(nationality$)}',
+    if (body.personToken case final personToken$?)
+      'person_token=${Uri.encodeQueryComponent(personToken$)}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.politicalExposure case final politicalExposure$?)
+      'political_exposure=${Uri.encodeQueryComponent(politicalExposure$.toJson())}',
+    if (body.registeredAddress case final registeredAddress$?)
+      'registered_address=${Uri.encodeQueryComponent(registeredAddress$.toString())}',
+    if (body.relationship case final relationship$?)
+      'relationship=${Uri.encodeQueryComponent(relationship$.toString())}',
+    if (body.ssnLast4 case final ssnLast4$?)
+      'ssn_last_4=${Uri.encodeQueryComponent(ssnLast4$)}',
+    if (body.usCfpbData case final usCfpbData$?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(usCfpbData$.toString())}',
+    if (body.verification case final verification$?)
+      'verification=${Uri.encodeQueryComponent(verification$.toString())}',
   ].join('&'),
 );
 
@@ -1367,8 +1367,8 @@ final request = ApiRequest(
   path: '/v1/accounts/${Uri.encodeComponent(account)}/reject',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'reason=${Uri.encodeQueryComponent(body.reason)}',
   ].join('&'),
 );
@@ -1430,8 +1430,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -1584,10 +1584,10 @@ final request = ApiRequest(
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -1644,12 +1644,12 @@ final request = ApiRequest(
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refund',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.directive case final _directive?)
-      'directive=${Uri.encodeQueryComponent(_directive)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.directive case final directive$?)
+      'directive=${Uri.encodeQueryComponent(directive$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -1718,12 +1718,12 @@ final request = ApiRequest(
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -1786,10 +1786,10 @@ final request = ApiRequest(
   path: '/v1/apps/secrets',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
     'payload=${Uri.encodeQueryComponent(body.payload)}',
     'scope=${Uri.encodeQueryComponent(body.scope.toString())}',
@@ -1819,8 +1819,8 @@ final request = ApiRequest(
   path: '/v1/apps/secrets/delete',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
     'scope=${Uri.encodeQueryComponent(body.scope.toString())}',
   ].join('&'),
@@ -2024,10 +2024,10 @@ final request = ApiRequest(
   path: '/v1/balance_settings',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.payments case final _payments?)
-      'payments=${Uri.encodeQueryComponent(_payments.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.payments case final payments$?)
+      'payments=${Uri.encodeQueryComponent(payments$.toString())}',
   ].join('&'),
 );
 
@@ -2167,11 +2167,11 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'alert_type=${Uri.encodeQueryComponent(body.alertType.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'title=${Uri.encodeQueryComponent(body.title)}',
-    if (body.usageThreshold case final _usageThreshold?)
-      'usage_threshold=${Uri.encodeQueryComponent(_usageThreshold.toString())}',
+    if (body.usageThreshold case final usageThreshold$?)
+      'usage_threshold=${Uri.encodeQueryComponent(usageThreshold$.toString())}',
   ].join('&'),
 );
 
@@ -2229,8 +2229,8 @@ final request = ApiRequest(
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/activate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2257,8 +2257,8 @@ final request = ApiRequest(
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/archive',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2285,8 +2285,8 @@ final request = ApiRequest(
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2455,24 +2455,24 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'applicability_config=${Uri.encodeQueryComponent(body.applicabilityConfig.toString())}',
-    if (body.category case final _category?)
-      'category=${Uri.encodeQueryComponent(_category.toJson())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.effectiveAt case final _effectiveAt?)
-      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.priority case final _priority?)
-      'priority=${Uri.encodeQueryComponent(_priority.toString())}',
+    if (body.category case final category$?)
+      'category=${Uri.encodeQueryComponent(category$.toJson())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.effectiveAt case final effectiveAt$?)
+      'effective_at=${Uri.encodeQueryComponent(effectiveAt$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.priority case final priority$?)
+      'priority=${Uri.encodeQueryComponent(priority$.toString())}',
   ].join('&'),
 );
 
@@ -2530,12 +2530,12 @@ final request = ApiRequest(
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -2562,8 +2562,8 @@ final request = ApiRequest(
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/expire',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2590,8 +2590,8 @@ final request = ApiRequest(
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/void',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2618,11 +2618,11 @@ final request = ApiRequest(
   path: '/v1/billing/meter_event_adjustments',
   headers: headers,
   body: [
-    if (body.cancel case final _cancel?)
-      'cancel=${Uri.encodeQueryComponent(_cancel.toString())}',
+    if (body.cancel case final cancel$?)
+      'cancel=${Uri.encodeQueryComponent(cancel$.toString())}',
     'event_name=${Uri.encodeQueryComponent(body.eventName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
   ].join('&'),
 );
@@ -2651,13 +2651,13 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'event_name=${Uri.encodeQueryComponent(body.eventName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.identifier case final _identifier?)
-      'identifier=${Uri.encodeQueryComponent(_identifier)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.identifier case final identifier$?)
+      'identifier=${Uri.encodeQueryComponent(identifier$)}',
     'payload=${Uri.encodeQueryComponent(body.payload.toString())}',
-    if (body.timestamp case final _timestamp?)
-      'timestamp=${Uri.encodeQueryComponent(_timestamp.toString())}',
+    if (body.timestamp case final timestamp$?)
+      'timestamp=${Uri.encodeQueryComponent(timestamp$.toString())}',
   ].join('&'),
 );
 
@@ -2719,17 +2719,17 @@ final request = ApiRequest(
   path: '/v1/billing/meters',
   headers: headers,
   body: [
-    if (body.customerMapping case final _customerMapping?)
-      'customer_mapping=${Uri.encodeQueryComponent(_customerMapping.toString())}',
+    if (body.customerMapping case final customerMapping$?)
+      'customer_mapping=${Uri.encodeQueryComponent(customerMapping$.toString())}',
     'default_aggregation=${Uri.encodeQueryComponent(body.defaultAggregation.toString())}',
     'display_name=${Uri.encodeQueryComponent(body.displayName)}',
     'event_name=${Uri.encodeQueryComponent(body.eventName)}',
-    if (body.eventTimeWindow case final _eventTimeWindow?)
-      'event_time_window=${Uri.encodeQueryComponent(_eventTimeWindow.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.valueSettings case final _valueSettings?)
-      'value_settings=${Uri.encodeQueryComponent(_valueSettings.toString())}',
+    if (body.eventTimeWindow case final eventTimeWindow$?)
+      'event_time_window=${Uri.encodeQueryComponent(eventTimeWindow$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.valueSettings case final valueSettings$?)
+      'value_settings=${Uri.encodeQueryComponent(valueSettings$.toString())}',
   ].join('&'),
 );
 
@@ -2787,10 +2787,10 @@ final request = ApiRequest(
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.displayName case final _displayName?)
-      'display_name=${Uri.encodeQueryComponent(_displayName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.displayName case final displayName$?)
+      'display_name=${Uri.encodeQueryComponent(displayName$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2817,8 +2817,8 @@ final request = ApiRequest(
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2883,8 +2883,8 @@ final request = ApiRequest(
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/reactivate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -2947,19 +2947,19 @@ final request = ApiRequest(
   path: '/v1/billing_portal/configurations',
   headers: headers,
   body: [
-    if (body.businessProfile case final _businessProfile?)
-      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
-    if (body.defaultReturnUrl case final _defaultReturnUrl?)
-      'default_return_url=${Uri.encodeQueryComponent(_defaultReturnUrl.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.businessProfile case final businessProfile$?)
+      'business_profile=${Uri.encodeQueryComponent(businessProfile$.toString())}',
+    if (body.defaultReturnUrl case final defaultReturnUrl$?)
+      'default_return_url=${Uri.encodeQueryComponent(defaultReturnUrl$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
-    if (body.loginPage case final _loginPage?)
-      'login_page=${Uri.encodeQueryComponent(_loginPage.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name.toString())}',
+    if (body.loginPage case final loginPage$?)
+      'login_page=${Uri.encodeQueryComponent(loginPage$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$.toString())}',
   ].join('&'),
 );
 
@@ -3017,22 +3017,22 @@ final request = ApiRequest(
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.businessProfile case final _businessProfile?)
-      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
-    if (body.defaultReturnUrl case final _defaultReturnUrl?)
-      'default_return_url=${Uri.encodeQueryComponent(_defaultReturnUrl.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.features case final _features?)
-      'features=${Uri.encodeQueryComponent(_features.toString())}',
-    if (body.loginPage case final _loginPage?)
-      'login_page=${Uri.encodeQueryComponent(_loginPage.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.businessProfile case final businessProfile$?)
+      'business_profile=${Uri.encodeQueryComponent(businessProfile$.toString())}',
+    if (body.defaultReturnUrl case final defaultReturnUrl$?)
+      'default_return_url=${Uri.encodeQueryComponent(defaultReturnUrl$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.features case final features$?)
+      'features=${Uri.encodeQueryComponent(features$.toString())}',
+    if (body.loginPage case final loginPage$?)
+      'login_page=${Uri.encodeQueryComponent(loginPage$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$.toString())}',
   ].join('&'),
 );
 
@@ -3059,22 +3059,22 @@ final request = ApiRequest(
   path: '/v1/billing_portal/sessions',
   headers: headers,
   body: [
-    if (body.configuration case final _configuration?)
-      'configuration=${Uri.encodeQueryComponent(_configuration)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.flowData case final _flowData?)
-      'flow_data=${Uri.encodeQueryComponent(_flowData.toString())}',
-    if (body.locale case final _locale?)
-      'locale=${Uri.encodeQueryComponent(_locale.toJson())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.configuration case final configuration$?)
+      'configuration=${Uri.encodeQueryComponent(configuration$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.flowData case final flowData$?)
+      'flow_data=${Uri.encodeQueryComponent(flowData$.toString())}',
+    if (body.locale case final locale$?)
+      'locale=${Uri.encodeQueryComponent(locale$.toJson())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
   ].join('&'),
 );
 
@@ -3142,46 +3142,46 @@ final request = ApiRequest(
   path: '/v1/charges',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.applicationFee case final _applicationFee?)
-      'application_fee=${Uri.encodeQueryComponent(_applicationFee.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.capture case final _capture?)
-      'capture=${Uri.encodeQueryComponent(_capture.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.destination case final _destination?)
-      'destination=${Uri.encodeQueryComponent(_destination.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.radarOptions case final _radarOptions?)
-      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
-      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.applicationFee case final applicationFee$?)
+      'application_fee=${Uri.encodeQueryComponent(applicationFee$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.capture case final capture$?)
+      'capture=${Uri.encodeQueryComponent(capture$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.destination case final destination$?)
+      'destination=${Uri.encodeQueryComponent(destination$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.radarOptions case final radarOptions$?)
+      'radar_options=${Uri.encodeQueryComponent(radarOptions$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$)}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.statementDescriptorSuffix case final statementDescriptorSuffix$?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(statementDescriptorSuffix$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -3276,22 +3276,22 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
   headers: headers,
   body: [
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fraudDetails case final _fraudDetails?)
-      'fraud_details=${Uri.encodeQueryComponent(_fraudDetails.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fraudDetails case final fraudDetails$?)
+      'fraud_details=${Uri.encodeQueryComponent(fraudDetails$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$)}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -3322,24 +3322,24 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/capture',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.applicationFee case final _applicationFee?)
-      'application_fee=${Uri.encodeQueryComponent(_applicationFee.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
-      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.applicationFee case final applicationFee$?)
+      'application_fee=${Uri.encodeQueryComponent(applicationFee$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$)}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.statementDescriptorSuffix case final statementDescriptorSuffix$?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(statementDescriptorSuffix$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -3395,14 +3395,14 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
   headers: headers,
   body: [
-    if (body.evidence case final _evidence?)
-      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.submit case final _submit?)
-      'submit=${Uri.encodeQueryComponent(_submit.toString())}',
+    if (body.evidence case final evidence$?)
+      'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.submit case final submit$?)
+      'submit=${Uri.encodeQueryComponent(submit$.toString())}',
   ].join('&'),
 );
 
@@ -3428,8 +3428,8 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute/close',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -3466,22 +3466,22 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refund',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.instructionsEmail case final _instructionsEmail?)
-      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.reason case final _reason?)
-      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
-    if (body.reverseTransfer case final _reverseTransfer?)
-      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.instructionsEmail case final instructionsEmail$?)
+      'instructions_email=${Uri.encodeQueryComponent(instructionsEmail$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.reason case final reason$?)
+      'reason=${Uri.encodeQueryComponent(reason$.toJson())}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
+    if (body.reverseTransfer case final reverseTransfer$?)
+      'reverse_transfer=${Uri.encodeQueryComponent(reverseTransfer$.toString())}',
   ].join('&'),
 );
 
@@ -3552,28 +3552,28 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.instructionsEmail case final _instructionsEmail?)
-      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.origin case final _origin?)
-      'origin=${Uri.encodeQueryComponent(_origin.toJson())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.reason case final _reason?)
-      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
-    if (body.reverseTransfer case final _reverseTransfer?)
-      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.instructionsEmail case final instructionsEmail$?)
+      'instructions_email=${Uri.encodeQueryComponent(instructionsEmail$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.origin case final origin$?)
+      'origin=${Uri.encodeQueryComponent(origin$.toJson())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.reason case final reason$?)
+      'reason=${Uri.encodeQueryComponent(reason$.toJson())}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
+    if (body.reverseTransfer case final reverseTransfer$?)
+      'reverse_transfer=${Uri.encodeQueryComponent(reverseTransfer$.toString())}',
   ].join('&'),
 );
 
@@ -3629,10 +3629,10 @@ final request = ApiRequest(
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -3705,104 +3705,104 @@ final request = ApiRequest(
   path: '/v1/checkout/sessions',
   headers: headers,
   body: [
-    if (body.adaptivePricing case final _adaptivePricing?)
-      'adaptive_pricing=${Uri.encodeQueryComponent(_adaptivePricing.toString())}',
-    if (body.afterExpiration case final _afterExpiration?)
-      'after_expiration=${Uri.encodeQueryComponent(_afterExpiration.toString())}',
-    if (body.allowPromotionCodes case final _allowPromotionCodes?)
-      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.billingAddressCollection case final _billingAddressCollection?)
-      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
-    if (body.brandingSettings case final _brandingSettings?)
-      'branding_settings=${Uri.encodeQueryComponent(_brandingSettings.toString())}',
-    if (body.cancelUrl case final _cancelUrl?)
-      'cancel_url=${Uri.encodeQueryComponent(_cancelUrl)}',
-    if (body.clientReferenceId case final _clientReferenceId?)
-      'client_reference_id=${Uri.encodeQueryComponent(_clientReferenceId)}',
-    if (body.consentCollection case final _consentCollection?)
-      'consent_collection=${Uri.encodeQueryComponent(_consentCollection.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customFields case final _customFields?)
-      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
-    if (body.customText case final _customText?)
-      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.customerCreation case final _customerCreation?)
-      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
-    if (body.customerEmail case final _customerEmail?)
-      'customer_email=${Uri.encodeQueryComponent(_customerEmail)}',
-    if (body.customerUpdate case final _customerUpdate?)
-      'customer_update=${Uri.encodeQueryComponent(_customerUpdate.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.invoiceCreation case final _invoiceCreation?)
-      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.locale case final _locale?)
-      'locale=${Uri.encodeQueryComponent(_locale.toJson())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.mode case final _mode?)
-      'mode=${Uri.encodeQueryComponent(_mode.toJson())}',
-    if (body.nameCollection case final _nameCollection?)
-      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
-    if (body.optionalItems case final _optionalItems?)
-      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
-    if (body.originContext case final _originContext?)
-      'origin_context=${Uri.encodeQueryComponent(_originContext.toJson())}',
-    if (body.paymentIntentData case final _paymentIntentData?)
-      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
-    if (body.paymentMethodCollection case final _paymentMethodCollection?)
-      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
-    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
-      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.permissions case final _permissions?)
-      'permissions=${Uri.encodeQueryComponent(_permissions.toString())}',
-    if (body.phoneNumberCollection case final _phoneNumberCollection?)
-      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
-    if (body.redirectOnCompletion case final _redirectOnCompletion?)
-      'redirect_on_completion=${Uri.encodeQueryComponent(_redirectOnCompletion.toJson())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.savedPaymentMethodOptions case final _savedPaymentMethodOptions?)
-      'saved_payment_method_options=${Uri.encodeQueryComponent(_savedPaymentMethodOptions.toString())}',
-    if (body.setupIntentData case final _setupIntentData?)
-      'setup_intent_data=${Uri.encodeQueryComponent(_setupIntentData.toString())}',
-    if (body.shippingAddressCollection case final _shippingAddressCollection?)
-      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
-    if (body.shippingOptions case final _shippingOptions?)
-      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
-    if (body.submitType case final _submitType?)
-      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
-    if (body.subscriptionData case final _subscriptionData?)
-      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
-    if (body.successUrl case final _successUrl?)
-      'success_url=${Uri.encodeQueryComponent(_successUrl)}',
-    if (body.taxIdCollection case final _taxIdCollection?)
-      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
-    if (body.uiMode case final _uiMode?)
-      'ui_mode=${Uri.encodeQueryComponent(_uiMode.toJson())}',
-    if (body.walletOptions case final _walletOptions?)
-      'wallet_options=${Uri.encodeQueryComponent(_walletOptions.toString())}',
+    if (body.adaptivePricing case final adaptivePricing$?)
+      'adaptive_pricing=${Uri.encodeQueryComponent(adaptivePricing$.toString())}',
+    if (body.afterExpiration case final afterExpiration$?)
+      'after_expiration=${Uri.encodeQueryComponent(afterExpiration$.toString())}',
+    if (body.allowPromotionCodes case final allowPromotionCodes$?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(allowPromotionCodes$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.billingAddressCollection case final billingAddressCollection$?)
+      'billing_address_collection=${Uri.encodeQueryComponent(billingAddressCollection$.toJson())}',
+    if (body.brandingSettings case final brandingSettings$?)
+      'branding_settings=${Uri.encodeQueryComponent(brandingSettings$.toString())}',
+    if (body.cancelUrl case final cancelUrl$?)
+      'cancel_url=${Uri.encodeQueryComponent(cancelUrl$)}',
+    if (body.clientReferenceId case final clientReferenceId$?)
+      'client_reference_id=${Uri.encodeQueryComponent(clientReferenceId$)}',
+    if (body.consentCollection case final consentCollection$?)
+      'consent_collection=${Uri.encodeQueryComponent(consentCollection$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customFields case final customFields$?)
+      'custom_fields=${Uri.encodeQueryComponent(customFields$.toString())}',
+    if (body.customText case final customText$?)
+      'custom_text=${Uri.encodeQueryComponent(customText$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.customerCreation case final customerCreation$?)
+      'customer_creation=${Uri.encodeQueryComponent(customerCreation$.toJson())}',
+    if (body.customerEmail case final customerEmail$?)
+      'customer_email=${Uri.encodeQueryComponent(customerEmail$)}',
+    if (body.customerUpdate case final customerUpdate$?)
+      'customer_update=${Uri.encodeQueryComponent(customerUpdate$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.invoiceCreation case final invoiceCreation$?)
+      'invoice_creation=${Uri.encodeQueryComponent(invoiceCreation$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.locale case final locale$?)
+      'locale=${Uri.encodeQueryComponent(locale$.toJson())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.mode case final mode$?)
+      'mode=${Uri.encodeQueryComponent(mode$.toJson())}',
+    if (body.nameCollection case final nameCollection$?)
+      'name_collection=${Uri.encodeQueryComponent(nameCollection$.toString())}',
+    if (body.optionalItems case final optionalItems$?)
+      'optional_items=${Uri.encodeQueryComponent(optionalItems$.toString())}',
+    if (body.originContext case final originContext$?)
+      'origin_context=${Uri.encodeQueryComponent(originContext$.toJson())}',
+    if (body.paymentIntentData case final paymentIntentData$?)
+      'payment_intent_data=${Uri.encodeQueryComponent(paymentIntentData$.toString())}',
+    if (body.paymentMethodCollection case final paymentMethodCollection$?)
+      'payment_method_collection=${Uri.encodeQueryComponent(paymentMethodCollection$.toJson())}',
+    if (body.paymentMethodConfiguration case final paymentMethodConfiguration$?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(paymentMethodConfiguration$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.permissions case final permissions$?)
+      'permissions=${Uri.encodeQueryComponent(permissions$.toString())}',
+    if (body.phoneNumberCollection case final phoneNumberCollection$?)
+      'phone_number_collection=${Uri.encodeQueryComponent(phoneNumberCollection$.toString())}',
+    if (body.redirectOnCompletion case final redirectOnCompletion$?)
+      'redirect_on_completion=${Uri.encodeQueryComponent(redirectOnCompletion$.toJson())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.savedPaymentMethodOptions case final savedPaymentMethodOptions$?)
+      'saved_payment_method_options=${Uri.encodeQueryComponent(savedPaymentMethodOptions$.toString())}',
+    if (body.setupIntentData case final setupIntentData$?)
+      'setup_intent_data=${Uri.encodeQueryComponent(setupIntentData$.toString())}',
+    if (body.shippingAddressCollection case final shippingAddressCollection$?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(shippingAddressCollection$.toString())}',
+    if (body.shippingOptions case final shippingOptions$?)
+      'shipping_options=${Uri.encodeQueryComponent(shippingOptions$.toString())}',
+    if (body.submitType case final submitType$?)
+      'submit_type=${Uri.encodeQueryComponent(submitType$.toJson())}',
+    if (body.subscriptionData case final subscriptionData$?)
+      'subscription_data=${Uri.encodeQueryComponent(subscriptionData$.toString())}',
+    if (body.successUrl case final successUrl$?)
+      'success_url=${Uri.encodeQueryComponent(successUrl$)}',
+    if (body.taxIdCollection case final taxIdCollection$?)
+      'tax_id_collection=${Uri.encodeQueryComponent(taxIdCollection$.toString())}',
+    if (body.uiMode case final uiMode$?)
+      'ui_mode=${Uri.encodeQueryComponent(uiMode$.toJson())}',
+    if (body.walletOptions case final walletOptions$?)
+      'wallet_options=${Uri.encodeQueryComponent(walletOptions$.toString())}',
   ].join('&'),
 );
 
@@ -3862,16 +3862,16 @@ final request = ApiRequest(
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
   headers: headers,
   body: [
-    if (body.collectedInformation case final _collectedInformation?)
-      'collected_information=${Uri.encodeQueryComponent(_collectedInformation.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.shippingOptions case final _shippingOptions?)
-      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
+    if (body.collectedInformation case final collectedInformation$?)
+      'collected_information=${Uri.encodeQueryComponent(collectedInformation$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.shippingOptions case final shippingOptions$?)
+      'shipping_options=${Uri.encodeQueryComponent(shippingOptions$.toString())}',
   ].join('&'),
 );
 
@@ -3900,8 +3900,8 @@ final request = ApiRequest(
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/expire',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -3998,18 +3998,18 @@ final request = ApiRequest(
   path: '/v1/climate/orders',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.beneficiary case final _beneficiary?)
-      'beneficiary=${Uri.encodeQueryComponent(_beneficiary.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.metricTons case final _metricTons?)
-      'metric_tons=${Uri.encodeQueryComponent(_metricTons)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.beneficiary case final beneficiary$?)
+      'beneficiary=${Uri.encodeQueryComponent(beneficiary$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.metricTons case final metricTons$?)
+      'metric_tons=${Uri.encodeQueryComponent(metricTons$)}',
     'product=${Uri.encodeQueryComponent(body.product)}',
   ].join('&'),
 );
@@ -4068,12 +4068,12 @@ final request = ApiRequest(
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
   headers: headers,
   body: [
-    if (body.beneficiary case final _beneficiary?)
-      'beneficiary=${Uri.encodeQueryComponent(_beneficiary.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.beneficiary case final beneficiary$?)
+      'beneficiary=${Uri.encodeQueryComponent(beneficiary$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -4103,8 +4103,8 @@ final request = ApiRequest(
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -4396,32 +4396,32 @@ final request = ApiRequest(
   path: '/v1/coupons',
   headers: headers,
   body: [
-    if (body.amountOff case final _amountOff?)
-      'amount_off=${Uri.encodeQueryComponent(_amountOff.toString())}',
-    if (body.appliesTo case final _appliesTo?)
-      'applies_to=${Uri.encodeQueryComponent(_appliesTo.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.currencyOptions case final _currencyOptions?)
-      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
-    if (body.duration case final _duration?)
-      'duration=${Uri.encodeQueryComponent(_duration.toJson())}',
-    if (body.durationInMonths case final _durationInMonths?)
-      'duration_in_months=${Uri.encodeQueryComponent(_durationInMonths.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.id case final _id?)
-      'id=${Uri.encodeQueryComponent(_id)}',
-    if (body.maxRedemptions case final _maxRedemptions?)
-      'max_redemptions=${Uri.encodeQueryComponent(_maxRedemptions.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.percentOff case final _percentOff?)
-      'percent_off=${Uri.encodeQueryComponent(_percentOff.toString())}',
-    if (body.redeemBy case final _redeemBy?)
-      'redeem_by=${Uri.encodeQueryComponent(_redeemBy.toString())}',
+    if (body.amountOff case final amountOff$?)
+      'amount_off=${Uri.encodeQueryComponent(amountOff$.toString())}',
+    if (body.appliesTo case final appliesTo$?)
+      'applies_to=${Uri.encodeQueryComponent(appliesTo$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.currencyOptions case final currencyOptions$?)
+      'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
+    if (body.duration case final duration$?)
+      'duration=${Uri.encodeQueryComponent(duration$.toJson())}',
+    if (body.durationInMonths case final durationInMonths$?)
+      'duration_in_months=${Uri.encodeQueryComponent(durationInMonths$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.id case final id$?)
+      'id=${Uri.encodeQueryComponent(id$)}',
+    if (body.maxRedemptions case final maxRedemptions$?)
+      'max_redemptions=${Uri.encodeQueryComponent(maxRedemptions$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.percentOff case final percentOff$?)
+      'percent_off=${Uri.encodeQueryComponent(percentOff$.toString())}',
+    if (body.redeemBy case final redeemBy$?)
+      'redeem_by=${Uri.encodeQueryComponent(redeemBy$.toString())}',
   ].join('&'),
 );
 
@@ -4479,14 +4479,14 @@ final request = ApiRequest(
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
   body: [
-    if (body.currencyOptions case final _currencyOptions?)
-      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.currencyOptions case final currencyOptions$?)
+      'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -4591,33 +4591,33 @@ final request = ApiRequest(
   path: '/v1/credit_notes',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.creditAmount case final _creditAmount?)
-      'credit_amount=${Uri.encodeQueryComponent(_creditAmount.toString())}',
-    if (body.effectiveAt case final _effectiveAt?)
-      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
-    if (body.emailType case final _emailType?)
-      'email_type=${Uri.encodeQueryComponent(_emailType.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.creditAmount case final creditAmount$?)
+      'credit_amount=${Uri.encodeQueryComponent(creditAmount$.toString())}',
+    if (body.effectiveAt case final effectiveAt$?)
+      'effective_at=${Uri.encodeQueryComponent(effectiveAt$.toString())}',
+    if (body.emailType case final emailType$?)
+      'email_type=${Uri.encodeQueryComponent(emailType$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'invoice=${Uri.encodeQueryComponent(body.invoice)}',
-    if (body.lines case final _lines?)
-      'lines=${Uri.encodeQueryComponent(_lines.toString())}',
-    if (body.memo case final _memo?)
-      'memo=${Uri.encodeQueryComponent(_memo)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.outOfBandAmount case final _outOfBandAmount?)
-      'out_of_band_amount=${Uri.encodeQueryComponent(_outOfBandAmount.toString())}',
-    if (body.reason case final _reason?)
-      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
-    if (body.refundAmount case final _refundAmount?)
-      'refund_amount=${Uri.encodeQueryComponent(_refundAmount.toString())}',
-    if (body.refunds case final _refunds?)
-      'refunds=${Uri.encodeQueryComponent(_refunds.toString())}',
-    if (body.shippingCost case final _shippingCost?)
-      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+    if (body.lines case final lines$?)
+      'lines=${Uri.encodeQueryComponent(lines$.toString())}',
+    if (body.memo case final memo$?)
+      'memo=${Uri.encodeQueryComponent(memo$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.outOfBandAmount case final outOfBandAmount$?)
+      'out_of_band_amount=${Uri.encodeQueryComponent(outOfBandAmount$.toString())}',
+    if (body.reason case final reason$?)
+      'reason=${Uri.encodeQueryComponent(reason$.toJson())}',
+    if (body.refundAmount case final refundAmount$?)
+      'refund_amount=${Uri.encodeQueryComponent(refundAmount$.toString())}',
+    if (body.refunds case final refunds$?)
+      'refunds=${Uri.encodeQueryComponent(refunds$.toString())}',
+    if (body.shippingCost case final shippingCost$?)
+      'shipping_cost=${Uri.encodeQueryComponent(shippingCost$.toString())}',
   ].join('&'),
 );
 
@@ -4820,12 +4820,12 @@ final request = ApiRequest(
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.memo case final _memo?)
-      'memo=${Uri.encodeQueryComponent(_memo)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.memo case final memo$?)
+      'memo=${Uri.encodeQueryComponent(memo$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -4852,8 +4852,8 @@ final request = ApiRequest(
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}/void',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -4881,12 +4881,12 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'components=${Uri.encodeQueryComponent(body.components.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -4952,50 +4952,50 @@ final request = ApiRequest(
   path: '/v1/customers',
   headers: headers,
   body: [
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.balance case final _balance?)
-      'balance=${Uri.encodeQueryComponent(_balance.toString())}',
-    if (body.businessName case final _businessName?)
-      'business_name=${Uri.encodeQueryComponent(_businessName.toString())}',
-    if (body.cashBalance case final _cashBalance?)
-      'cash_balance=${Uri.encodeQueryComponent(_cashBalance.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.individualName case final _individualName?)
-      'individual_name=${Uri.encodeQueryComponent(_individualName.toString())}',
-    if (body.invoicePrefix case final _invoicePrefix?)
-      'invoice_prefix=${Uri.encodeQueryComponent(_invoicePrefix)}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.nextInvoiceSequence case final _nextInvoiceSequence?)
-      'next_invoice_sequence=${Uri.encodeQueryComponent(_nextInvoiceSequence.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.preferredLocales case final _preferredLocales?)
-      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
-    if (body.tax case final _tax?)
-      'tax=${Uri.encodeQueryComponent(_tax.toString())}',
-    if (body.taxExempt case final _taxExempt?)
-      'tax_exempt=${Uri.encodeQueryComponent(_taxExempt.toJson())}',
-    if (body.taxIdData case final _taxIdData?)
-      'tax_id_data=${Uri.encodeQueryComponent(_taxIdData.toString())}',
-    if (body.testClock case final _testClock?)
-      'test_clock=${Uri.encodeQueryComponent(_testClock)}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.balance case final balance$?)
+      'balance=${Uri.encodeQueryComponent(balance$.toString())}',
+    if (body.businessName case final businessName$?)
+      'business_name=${Uri.encodeQueryComponent(businessName$.toString())}',
+    if (body.cashBalance case final cashBalance$?)
+      'cash_balance=${Uri.encodeQueryComponent(cashBalance$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.individualName case final individualName$?)
+      'individual_name=${Uri.encodeQueryComponent(individualName$.toString())}',
+    if (body.invoicePrefix case final invoicePrefix$?)
+      'invoice_prefix=${Uri.encodeQueryComponent(invoicePrefix$)}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.nextInvoiceSequence case final nextInvoiceSequence$?)
+      'next_invoice_sequence=${Uri.encodeQueryComponent(nextInvoiceSequence$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.preferredLocales case final preferredLocales$?)
+      'preferred_locales=${Uri.encodeQueryComponent(preferredLocales$.toString())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
+    if (body.tax case final tax$?)
+      'tax=${Uri.encodeQueryComponent(tax$.toString())}',
+    if (body.taxExempt case final taxExempt$?)
+      'tax_exempt=${Uri.encodeQueryComponent(taxExempt$.toJson())}',
+    if (body.taxIdData case final taxIdData$?)
+      'tax_id_data=${Uri.encodeQueryComponent(taxIdData$.toString())}',
+    if (body.testClock case final testClock$?)
+      'test_clock=${Uri.encodeQueryComponent(testClock$)}',
   ].join('&'),
 );
 
@@ -5092,56 +5092,56 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
   body: [
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.balance case final _balance?)
-      'balance=${Uri.encodeQueryComponent(_balance.toString())}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.businessName case final _businessName?)
-      'business_name=${Uri.encodeQueryComponent(_businessName.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.cashBalance case final _cashBalance?)
-      'cash_balance=${Uri.encodeQueryComponent(_cashBalance.toString())}',
-    if (body.defaultAlipayAccount case final _defaultAlipayAccount?)
-      'default_alipay_account=${Uri.encodeQueryComponent(_defaultAlipayAccount)}',
-    if (body.defaultBankAccount case final _defaultBankAccount?)
-      'default_bank_account=${Uri.encodeQueryComponent(_defaultBankAccount)}',
-    if (body.defaultCard case final _defaultCard?)
-      'default_card=${Uri.encodeQueryComponent(_defaultCard)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.individualName case final _individualName?)
-      'individual_name=${Uri.encodeQueryComponent(_individualName.toString())}',
-    if (body.invoicePrefix case final _invoicePrefix?)
-      'invoice_prefix=${Uri.encodeQueryComponent(_invoicePrefix)}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.nextInvoiceSequence case final _nextInvoiceSequence?)
-      'next_invoice_sequence=${Uri.encodeQueryComponent(_nextInvoiceSequence.toString())}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
-    if (body.preferredLocales case final _preferredLocales?)
-      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
-    if (body.tax case final _tax?)
-      'tax=${Uri.encodeQueryComponent(_tax.toString())}',
-    if (body.taxExempt case final _taxExempt?)
-      'tax_exempt=${Uri.encodeQueryComponent(_taxExempt.toJson())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.balance case final balance$?)
+      'balance=${Uri.encodeQueryComponent(balance$.toString())}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.businessName case final businessName$?)
+      'business_name=${Uri.encodeQueryComponent(businessName$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.cashBalance case final cashBalance$?)
+      'cash_balance=${Uri.encodeQueryComponent(cashBalance$.toString())}',
+    if (body.defaultAlipayAccount case final defaultAlipayAccount$?)
+      'default_alipay_account=${Uri.encodeQueryComponent(defaultAlipayAccount$)}',
+    if (body.defaultBankAccount case final defaultBankAccount$?)
+      'default_bank_account=${Uri.encodeQueryComponent(defaultBankAccount$)}',
+    if (body.defaultCard case final defaultCard$?)
+      'default_card=${Uri.encodeQueryComponent(defaultCard$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.individualName case final individualName$?)
+      'individual_name=${Uri.encodeQueryComponent(individualName$.toString())}',
+    if (body.invoicePrefix case final invoicePrefix$?)
+      'invoice_prefix=${Uri.encodeQueryComponent(invoicePrefix$)}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.nextInvoiceSequence case final nextInvoiceSequence$?)
+      'next_invoice_sequence=${Uri.encodeQueryComponent(nextInvoiceSequence$.toString())}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
+    if (body.preferredLocales case final preferredLocales$?)
+      'preferred_locales=${Uri.encodeQueryComponent(preferredLocales$.toString())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
+    if (body.tax case final tax$?)
+      'tax=${Uri.encodeQueryComponent(tax$.toString())}',
+    if (body.taxExempt case final taxExempt$?)
+      'tax_exempt=${Uri.encodeQueryComponent(taxExempt$.toJson())}',
   ].join('&'),
 );
 
@@ -5234,12 +5234,12 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -5297,12 +5297,12 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
   body: [
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -5333,18 +5333,18 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts',
   headers: headers,
   body: [
-    if (body.alipayAccount case final _alipayAccount?)
-      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.alipayAccount case final alipayAccount$?)
+      'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
   ].join('&'),
 );
 
@@ -5370,34 +5370,34 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
   ].join('&'),
 );
 
@@ -5424,8 +5424,8 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -5452,10 +5452,10 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}/verify',
   headers: headers,
   body: [
-    if (body.amounts case final _amounts?)
-      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amounts case final amounts$?)
+      'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -5486,18 +5486,18 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards',
   headers: headers,
   body: [
-    if (body.alipayAccount case final _alipayAccount?)
-      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.alipayAccount case final alipayAccount$?)
+      'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
   ].join('&'),
 );
 
@@ -5523,34 +5523,34 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
   ].join('&'),
 );
 
@@ -5577,8 +5577,8 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -5636,10 +5636,10 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.settings case final _settings?)
-      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.settings case final settings$?)
+      'settings=${Uri.encodeQueryComponent(settings$.toString())}',
   ].join('&'),
 );
 
@@ -5791,8 +5791,8 @@ final request = ApiRequest(
   body: [
     'bank_transfer=${Uri.encodeQueryComponent(body.bankTransfer.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'funding_type=${Uri.encodeQueryComponent(body.fundingType.toJson())}',
   ].join('&'),
 );
@@ -5925,18 +5925,18 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
   headers: headers,
   body: [
-    if (body.alipayAccount case final _alipayAccount?)
-      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.alipayAccount case final alipayAccount$?)
+      'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
   ].join('&'),
 );
 
@@ -5992,34 +5992,34 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
   ].join('&'),
 );
 
@@ -6046,8 +6046,8 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -6074,10 +6074,10 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}/verify',
   headers: headers,
   body: [
-    if (body.amounts case final _amounts?)
-      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amounts case final amounts$?)
+      'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -6138,64 +6138,64 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
   headers: headers,
   body: [
-    if (body.addInvoiceItems case final _addInvoiceItems?)
-      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.backdateStartDate case final _backdateStartDate?)
-      'backdate_start_date=${Uri.encodeQueryComponent(_backdateStartDate.toString())}',
-    if (body.billingCycleAnchor case final _billingCycleAnchor?)
-      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toString())}',
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.cancelAt case final _cancelAt?)
-      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
-    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
-      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.items case final _items?)
-      'items=${Uri.encodeQueryComponent(_items.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
-      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.trialEnd case final _trialEnd?)
-      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
-    if (body.trialFromPlan case final _trialFromPlan?)
-      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
-    if (body.trialPeriodDays case final _trialPeriodDays?)
-      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
-    if (body.trialSettings case final _trialSettings?)
-      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+    if (body.addInvoiceItems case final addInvoiceItems$?)
+      'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.backdateStartDate case final backdateStartDate$?)
+      'backdate_start_date=${Uri.encodeQueryComponent(backdateStartDate$.toString())}',
+    if (body.billingCycleAnchor case final billingCycleAnchor$?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toString())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.cancelAt case final cancelAt$?)
+      'cancel_at=${Uri.encodeQueryComponent(cancelAt$.toString())}',
+    if (body.cancelAtPeriodEnd case final cancelAtPeriodEnd$?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(cancelAtPeriodEnd$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$)}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.items case final items$?)
+      'items=${Uri.encodeQueryComponent(items$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.pendingInvoiceItemInterval case final pendingInvoiceItemInterval$?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(pendingInvoiceItemInterval$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.trialEnd case final trialEnd$?)
+      'trial_end=${Uri.encodeQueryComponent(trialEnd$.toString())}',
+    if (body.trialFromPlan case final trialFromPlan$?)
+      'trial_from_plan=${Uri.encodeQueryComponent(trialFromPlan$.toString())}',
+    if (body.trialPeriodDays case final trialPeriodDays$?)
+      'trial_period_days=${Uri.encodeQueryComponent(trialPeriodDays$.toString())}',
+    if (body.trialSettings case final trialSettings$?)
+      'trial_settings=${Uri.encodeQueryComponent(trialSettings$.toString())}',
   ].join('&'),
 );
 
@@ -6253,64 +6253,64 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
   body: [
-    if (body.addInvoiceItems case final _addInvoiceItems?)
-      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.billingCycleAnchor case final _billingCycleAnchor?)
-      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.cancelAt case final _cancelAt?)
-      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
-    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
-      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
-    if (body.cancellationDetails case final _cancellationDetails?)
-      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.items case final _items?)
-      'items=${Uri.encodeQueryComponent(_items.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.pauseCollection case final _pauseCollection?)
-      'pause_collection=${Uri.encodeQueryComponent(_pauseCollection.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
-      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.trialEnd case final _trialEnd?)
-      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
-    if (body.trialFromPlan case final _trialFromPlan?)
-      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
-    if (body.trialSettings case final _trialSettings?)
-      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+    if (body.addInvoiceItems case final addInvoiceItems$?)
+      'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.billingCycleAnchor case final billingCycleAnchor$?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toJson())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.cancelAt case final cancelAt$?)
+      'cancel_at=${Uri.encodeQueryComponent(cancelAt$.toString())}',
+    if (body.cancelAtPeriodEnd case final cancelAtPeriodEnd$?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(cancelAtPeriodEnd$.toString())}',
+    if (body.cancellationDetails case final cancellationDetails$?)
+      'cancellation_details=${Uri.encodeQueryComponent(cancellationDetails$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$.toString())}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.items case final items$?)
+      'items=${Uri.encodeQueryComponent(items$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.pauseCollection case final pauseCollection$?)
+      'pause_collection=${Uri.encodeQueryComponent(pauseCollection$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.pendingInvoiceItemInterval case final pendingInvoiceItemInterval$?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(pendingInvoiceItemInterval$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.trialEnd case final trialEnd$?)
+      'trial_end=${Uri.encodeQueryComponent(trialEnd$.toString())}',
+    if (body.trialFromPlan case final trialFromPlan$?)
+      'trial_from_plan=${Uri.encodeQueryComponent(trialFromPlan$.toString())}',
+    if (body.trialSettings case final trialSettings$?)
+      'trial_settings=${Uri.encodeQueryComponent(trialSettings$.toString())}',
   ].join('&'),
 );
 
@@ -6341,12 +6341,12 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceNow case final _invoiceNow?)
-      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
-    if (body.prorate case final _prorate?)
-      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceNow case final invoiceNow$?)
+      'invoice_now=${Uri.encodeQueryComponent(invoiceNow$.toString())}',
+    if (body.prorate case final prorate$?)
+      'prorate=${Uri.encodeQueryComponent(prorate$.toString())}',
   ].join('&'),
 );
 
@@ -6463,8 +6463,8 @@ final request = ApiRequest(
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
     'value=${Uri.encodeQueryComponent(body.value)}',
   ].join('&'),
@@ -6622,14 +6622,14 @@ final request = ApiRequest(
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
   body: [
-    if (body.evidence case final _evidence?)
-      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.submit case final _submit?)
-      'submit=${Uri.encodeQueryComponent(_submit.toString())}',
+    if (body.evidence case final evidence$?)
+      'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.submit case final submit$?)
+      'submit=${Uri.encodeQueryComponent(submit$.toString())}',
   ].join('&'),
 );
 
@@ -6658,8 +6658,8 @@ final request = ApiRequest(
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}/close',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -6788,11 +6788,11 @@ final request = ApiRequest(
   path: '/v1/entitlements/features',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'lookup_key=${Uri.encodeQueryComponent(body.lookupKey)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
   ].join('&'),
 );
@@ -6851,14 +6851,14 @@ final request = ApiRequest(
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -6885,16 +6885,16 @@ final request = ApiRequest(
   path: '/v1/ephemeral_keys',
   headers: headers,
   body: [
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.issuingCard case final _issuingCard?)
-      'issuing_card=${Uri.encodeQueryComponent(_issuingCard)}',
-    if (body.nonce case final _nonce?)
-      'nonce=${Uri.encodeQueryComponent(_nonce)}',
-    if (body.verificationSession case final _verificationSession?)
-      'verification_session=${Uri.encodeQueryComponent(_verificationSession)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.issuingCard case final issuingCard$?)
+      'issuing_card=${Uri.encodeQueryComponent(issuingCard$)}',
+    if (body.nonce case final nonce$?)
+      'nonce=${Uri.encodeQueryComponent(nonce$)}',
+    if (body.verificationSession case final verificationSession$?)
+      'verification_session=${Uri.encodeQueryComponent(verificationSession$)}',
   ].join('&'),
 );
 
@@ -6921,8 +6921,8 @@ final request = ApiRequest(
   path: '/v1/ephemeral_keys/${Uri.encodeComponent(key)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -7097,38 +7097,38 @@ final request = ApiRequest(
   path: '/v1/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.accountHolderName case final _accountHolderName?)
-      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
-    if (body.accountHolderType case final _accountHolderType?)
-      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
-    if (body.accountType case final _accountType?)
-      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
-    if (body.addressCity case final _addressCity?)
-      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
-    if (body.addressCountry case final _addressCountry?)
-      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
-    if (body.addressLine1 case final _addressLine1?)
-      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
-    if (body.addressLine2 case final _addressLine2?)
-      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
-    if (body.addressState case final _addressState?)
-      'address_state=${Uri.encodeQueryComponent(_addressState)}',
-    if (body.addressZip case final _addressZip?)
-      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
-    if (body.defaultForCurrency case final _defaultForCurrency?)
-      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
-    if (body.documents case final _documents?)
-      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.accountHolderName case final accountHolderName$?)
+      'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
+    if (body.accountHolderType case final accountHolderType$?)
+      'account_holder_type=${Uri.encodeQueryComponent(accountHolderType$.toJson())}',
+    if (body.accountType case final accountType$?)
+      'account_type=${Uri.encodeQueryComponent(accountType$.toJson())}',
+    if (body.addressCity case final addressCity$?)
+      'address_city=${Uri.encodeQueryComponent(addressCity$)}',
+    if (body.addressCountry case final addressCountry$?)
+      'address_country=${Uri.encodeQueryComponent(addressCountry$)}',
+    if (body.addressLine1 case final addressLine1$?)
+      'address_line1=${Uri.encodeQueryComponent(addressLine1$)}',
+    if (body.addressLine2 case final addressLine2$?)
+      'address_line2=${Uri.encodeQueryComponent(addressLine2$)}',
+    if (body.addressState case final addressState$?)
+      'address_state=${Uri.encodeQueryComponent(addressState$)}',
+    if (body.addressZip case final addressZip$?)
+      'address_zip=${Uri.encodeQueryComponent(addressZip$)}',
+    if (body.defaultForCurrency case final defaultForCurrency$?)
+      'default_for_currency=${Uri.encodeQueryComponent(defaultForCurrency$.toString())}',
+    if (body.documents case final documents$?)
+      'documents=${Uri.encodeQueryComponent(documents$.toString())}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$)}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -7194,13 +7194,13 @@ final request = ApiRequest(
   path: '/v1/file_links',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
     'file=${Uri.encodeQueryComponent(body.file)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -7258,12 +7258,12 @@ final request = ApiRequest(
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -7329,11 +7329,11 @@ final request = ApiRequest(
   path: '/v1/files',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      ApiMultipartField.text('expand', _expand.toString()),
+    if (body.expand case final expand$?)
+      ApiMultipartField.text('expand', expand$.toString()),
     ApiMultipartField.file('file', body.file),
-    if (body.fileLinkData case final _fileLinkData?)
-      ApiMultipartField.text('file_link_data', _fileLinkData.toString()),
+    if (body.fileLinkData case final fileLinkData$?)
+      ApiMultipartField.text('file_link_data', fileLinkData$.toString()),
     ApiMultipartField.text('purpose', body.purpose.toJson()),
   ],
   contentType: 'multipart/form-data',
@@ -7464,8 +7464,8 @@ final request = ApiRequest(
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -7527,8 +7527,8 @@ final request = ApiRequest(
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
   ].join('&'),
 );
@@ -7556,8 +7556,8 @@ final request = ApiRequest(
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/subscribe',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
   ].join('&'),
 );
@@ -7585,8 +7585,8 @@ final request = ApiRequest(
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/unsubscribe',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
   ].join('&'),
 );
@@ -7615,15 +7615,15 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.filters case final _filters?)
-      'filters=${Uri.encodeQueryComponent(_filters.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.filters case final filters$?)
+      'filters=${Uri.encodeQueryComponent(filters$.toString())}',
     'permissions=${Uri.encodeQueryComponent(body.permissions.toString())}',
-    if (body.prefetch case final _prefetch?)
-      'prefetch=${Uri.encodeQueryComponent(_prefetch.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.prefetch case final prefetch$?)
+      'prefetch=${Uri.encodeQueryComponent(prefetch$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
   ].join('&'),
 );
 
@@ -7793,14 +7793,14 @@ final request = ApiRequest(
   path: '/v1/forwarding/requests',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'payment_method=${Uri.encodeQueryComponent(body.paymentMethod)}',
     'replacements=${Uri.encodeQueryComponent(body.replacements.toString())}',
-    if (body.request case final _request?)
-      'request=${Uri.encodeQueryComponent(_request.toString())}',
+    if (body.request case final request$?)
+      'request=${Uri.encodeQueryComponent(request$.toString())}',
     'url=${Uri.encodeQueryComponent(body.url)}',
   ].join('&'),
 );
@@ -7977,28 +7977,28 @@ final request = ApiRequest(
   path: '/v1/identity/verification_sessions',
   headers: headers,
   body: [
-    if (body.clientReferenceId case final _clientReferenceId?)
-      'client_reference_id=${Uri.encodeQueryComponent(_clientReferenceId)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.options case final _options?)
-      'options=${Uri.encodeQueryComponent(_options.toString())}',
-    if (body.providedDetails case final _providedDetails?)
-      'provided_details=${Uri.encodeQueryComponent(_providedDetails.toString())}',
-    if (body.relatedCustomer case final _relatedCustomer?)
-      'related_customer=${Uri.encodeQueryComponent(_relatedCustomer)}',
-    if (body.relatedCustomerAccount case final _relatedCustomerAccount?)
-      'related_customer_account=${Uri.encodeQueryComponent(_relatedCustomerAccount)}',
-    if (body.relatedPerson case final _relatedPerson?)
-      'related_person=${Uri.encodeQueryComponent(_relatedPerson.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
-    if (body.verificationFlow case final _verificationFlow?)
-      'verification_flow=${Uri.encodeQueryComponent(_verificationFlow)}',
+    if (body.clientReferenceId case final clientReferenceId$?)
+      'client_reference_id=${Uri.encodeQueryComponent(clientReferenceId$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.options case final options$?)
+      'options=${Uri.encodeQueryComponent(options$.toString())}',
+    if (body.providedDetails case final providedDetails$?)
+      'provided_details=${Uri.encodeQueryComponent(providedDetails$.toString())}',
+    if (body.relatedCustomer case final relatedCustomer$?)
+      'related_customer=${Uri.encodeQueryComponent(relatedCustomer$)}',
+    if (body.relatedCustomerAccount case final relatedCustomerAccount$?)
+      'related_customer_account=${Uri.encodeQueryComponent(relatedCustomerAccount$)}',
+    if (body.relatedPerson case final relatedPerson$?)
+      'related_person=${Uri.encodeQueryComponent(relatedPerson$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
+    if (body.verificationFlow case final verificationFlow$?)
+      'verification_flow=${Uri.encodeQueryComponent(verificationFlow$)}',
   ].join('&'),
 );
 
@@ -8062,16 +8062,16 @@ final request = ApiRequest(
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.options case final _options?)
-      'options=${Uri.encodeQueryComponent(_options.toString())}',
-    if (body.providedDetails case final _providedDetails?)
-      'provided_details=${Uri.encodeQueryComponent(_providedDetails.toString())}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.options case final options$?)
+      'options=${Uri.encodeQueryComponent(options$.toString())}',
+    if (body.providedDetails case final providedDetails$?)
+      'provided_details=${Uri.encodeQueryComponent(providedDetails$.toString())}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
   ].join('&'),
 );
 
@@ -8100,8 +8100,8 @@ final request = ApiRequest(
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -8146,8 +8146,8 @@ final request = ApiRequest(
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/redact',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -8316,8 +8316,8 @@ final request = ApiRequest(
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/archive',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -8344,8 +8344,8 @@ final request = ApiRequest(
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/unarchive',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -8413,44 +8413,44 @@ final request = ApiRequest(
   path: '/v1/invoiceitems',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discountable case final _discountable?)
-      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoice case final _invoice?)
-      'invoice=${Uri.encodeQueryComponent(_invoice)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.period case final _period?)
-      'period=${Uri.encodeQueryComponent(_period.toString())}',
-    if (body.priceData case final _priceData?)
-      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
-    if (body.pricing case final _pricing?)
-      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
-    if (body.quantity case final _quantity?)
-      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
-    if (body.subscription case final _subscription?)
-      'subscription=${Uri.encodeQueryComponent(_subscription)}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
-    if (body.taxCode case final _taxCode?)
-      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
-    if (body.taxRates case final _taxRates?)
-      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
-    if (body.unitAmountDecimal case final _unitAmountDecimal?)
-      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discountable case final discountable$?)
+      'discountable=${Uri.encodeQueryComponent(discountable$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoice case final invoice$?)
+      'invoice=${Uri.encodeQueryComponent(invoice$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.period case final period$?)
+      'period=${Uri.encodeQueryComponent(period$.toString())}',
+    if (body.priceData case final priceData$?)
+      'price_data=${Uri.encodeQueryComponent(priceData$.toString())}',
+    if (body.pricing case final pricing$?)
+      'pricing=${Uri.encodeQueryComponent(pricing$.toString())}',
+    if (body.quantity case final quantity$?)
+      'quantity=${Uri.encodeQueryComponent(quantity$.toString())}',
+    if (body.subscription case final subscription$?)
+      'subscription=${Uri.encodeQueryComponent(subscription$)}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
+    if (body.taxCode case final taxCode$?)
+      'tax_code=${Uri.encodeQueryComponent(taxCode$.toString())}',
+    if (body.taxRates case final taxRates$?)
+      'tax_rates=${Uri.encodeQueryComponent(taxRates$.toString())}',
+    if (body.unitAmountDecimal case final unitAmountDecimal$?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(unitAmountDecimal$)}',
   ].join('&'),
 );
 
@@ -8508,34 +8508,34 @@ final request = ApiRequest(
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discountable case final _discountable?)
-      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.period case final _period?)
-      'period=${Uri.encodeQueryComponent(_period.toString())}',
-    if (body.priceData case final _priceData?)
-      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
-    if (body.pricing case final _pricing?)
-      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
-    if (body.quantity case final _quantity?)
-      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
-    if (body.taxCode case final _taxCode?)
-      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
-    if (body.taxRates case final _taxRates?)
-      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
-    if (body.unitAmountDecimal case final _unitAmountDecimal?)
-      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discountable case final discountable$?)
+      'discountable=${Uri.encodeQueryComponent(discountable$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.period case final period$?)
+      'period=${Uri.encodeQueryComponent(period$.toString())}',
+    if (body.priceData case final priceData$?)
+      'price_data=${Uri.encodeQueryComponent(priceData$.toString())}',
+    if (body.pricing case final pricing$?)
+      'pricing=${Uri.encodeQueryComponent(pricing$.toString())}',
+    if (body.quantity case final quantity$?)
+      'quantity=${Uri.encodeQueryComponent(quantity$.toString())}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
+    if (body.taxCode case final taxCode$?)
+      'tax_code=${Uri.encodeQueryComponent(taxCode$.toString())}',
+    if (body.taxRates case final taxRates$?)
+      'tax_rates=${Uri.encodeQueryComponent(taxRates$.toString())}',
+    if (body.unitAmountDecimal case final unitAmountDecimal$?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(unitAmountDecimal$)}',
   ].join('&'),
 );
 
@@ -8633,72 +8633,72 @@ final request = ApiRequest(
   path: '/v1/invoices',
   headers: headers,
   body: [
-    if (body.accountTaxIds case final _accountTaxIds?)
-      'account_tax_ids=${Uri.encodeQueryComponent(_accountTaxIds.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.autoAdvance case final _autoAdvance?)
-      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.automaticallyFinalizesAt case final _automaticallyFinalizesAt?)
-      'automatically_finalizes_at=${Uri.encodeQueryComponent(_automaticallyFinalizesAt.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customFields case final _customFields?)
-      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.dueDate case final _dueDate?)
-      'due_date=${Uri.encodeQueryComponent(_dueDate.toString())}',
-    if (body.effectiveAt case final _effectiveAt?)
-      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.footer case final _footer?)
-      'footer=${Uri.encodeQueryComponent(_footer)}',
-    if (body.fromInvoice case final _fromInvoice?)
-      'from_invoice=${Uri.encodeQueryComponent(_fromInvoice.toString())}',
-    if (body.issuer case final _issuer?)
-      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.number case final _number?)
-      'number=${Uri.encodeQueryComponent(_number)}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.pendingInvoiceItemsBehavior case final _pendingInvoiceItemsBehavior?)
-      'pending_invoice_items_behavior=${Uri.encodeQueryComponent(_pendingInvoiceItemsBehavior.toJson())}',
-    if (body.rendering case final _rendering?)
-      'rendering=${Uri.encodeQueryComponent(_rendering.toString())}',
-    if (body.shippingCost case final _shippingCost?)
-      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
-    if (body.shippingDetails case final _shippingDetails?)
-      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.subscription case final _subscription?)
-      'subscription=${Uri.encodeQueryComponent(_subscription)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.accountTaxIds case final accountTaxIds$?)
+      'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.autoAdvance case final autoAdvance$?)
+      'auto_advance=${Uri.encodeQueryComponent(autoAdvance$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.automaticallyFinalizesAt case final automaticallyFinalizesAt$?)
+      'automatically_finalizes_at=${Uri.encodeQueryComponent(automaticallyFinalizesAt$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customFields case final customFields$?)
+      'custom_fields=${Uri.encodeQueryComponent(customFields$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$)}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.dueDate case final dueDate$?)
+      'due_date=${Uri.encodeQueryComponent(dueDate$.toString())}',
+    if (body.effectiveAt case final effectiveAt$?)
+      'effective_at=${Uri.encodeQueryComponent(effectiveAt$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.footer case final footer$?)
+      'footer=${Uri.encodeQueryComponent(footer$)}',
+    if (body.fromInvoice case final fromInvoice$?)
+      'from_invoice=${Uri.encodeQueryComponent(fromInvoice$.toString())}',
+    if (body.issuer case final issuer$?)
+      'issuer=${Uri.encodeQueryComponent(issuer$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.number case final number$?)
+      'number=${Uri.encodeQueryComponent(number$)}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.pendingInvoiceItemsBehavior case final pendingInvoiceItemsBehavior$?)
+      'pending_invoice_items_behavior=${Uri.encodeQueryComponent(pendingInvoiceItemsBehavior$.toJson())}',
+    if (body.rendering case final rendering$?)
+      'rendering=${Uri.encodeQueryComponent(rendering$.toString())}',
+    if (body.shippingCost case final shippingCost$?)
+      'shipping_cost=${Uri.encodeQueryComponent(shippingCost$.toString())}',
+    if (body.shippingDetails case final shippingDetails$?)
+      'shipping_details=${Uri.encodeQueryComponent(shippingDetails$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.subscription case final subscription$?)
+      'subscription=${Uri.encodeQueryComponent(subscription$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -8733,36 +8733,36 @@ final request = ApiRequest(
   path: '/v1/invoices/create_preview',
   headers: headers,
   body: [
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.customerDetails case final _customerDetails?)
-      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceItems case final _invoiceItems?)
-      'invoice_items=${Uri.encodeQueryComponent(_invoiceItems.toString())}',
-    if (body.issuer case final _issuer?)
-      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.previewMode case final _previewMode?)
-      'preview_mode=${Uri.encodeQueryComponent(_previewMode.toJson())}',
-    if (body.schedule case final _schedule?)
-      'schedule=${Uri.encodeQueryComponent(_schedule)}',
-    if (body.scheduleDetails case final _scheduleDetails?)
-      'schedule_details=${Uri.encodeQueryComponent(_scheduleDetails.toString())}',
-    if (body.subscription case final _subscription?)
-      'subscription=${Uri.encodeQueryComponent(_subscription)}',
-    if (body.subscriptionDetails case final _subscriptionDetails?)
-      'subscription_details=${Uri.encodeQueryComponent(_subscriptionDetails.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.customerDetails case final customerDetails$?)
+      'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceItems case final invoiceItems$?)
+      'invoice_items=${Uri.encodeQueryComponent(invoiceItems$.toString())}',
+    if (body.issuer case final issuer$?)
+      'issuer=${Uri.encodeQueryComponent(issuer$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.previewMode case final previewMode$?)
+      'preview_mode=${Uri.encodeQueryComponent(previewMode$.toJson())}',
+    if (body.schedule case final schedule$?)
+      'schedule=${Uri.encodeQueryComponent(schedule$)}',
+    if (body.scheduleDetails case final scheduleDetails$?)
+      'schedule_details=${Uri.encodeQueryComponent(scheduleDetails$.toString())}',
+    if (body.subscription case final subscription$?)
+      'subscription=${Uri.encodeQueryComponent(subscription$)}',
+    if (body.subscriptionDetails case final subscriptionDetails$?)
+      'subscription_details=${Uri.encodeQueryComponent(subscriptionDetails$.toString())}',
   ].join('&'),
 );
 
@@ -8862,60 +8862,60 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
   body: [
-    if (body.accountTaxIds case final _accountTaxIds?)
-      'account_tax_ids=${Uri.encodeQueryComponent(_accountTaxIds.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.autoAdvance case final _autoAdvance?)
-      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.automaticallyFinalizesAt case final _automaticallyFinalizesAt?)
-      'automatically_finalizes_at=${Uri.encodeQueryComponent(_automaticallyFinalizesAt.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.customFields case final _customFields?)
-      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.dueDate case final _dueDate?)
-      'due_date=${Uri.encodeQueryComponent(_dueDate.toString())}',
-    if (body.effectiveAt case final _effectiveAt?)
-      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.footer case final _footer?)
-      'footer=${Uri.encodeQueryComponent(_footer)}',
-    if (body.issuer case final _issuer?)
-      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.number case final _number?)
-      'number=${Uri.encodeQueryComponent(_number.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.rendering case final _rendering?)
-      'rendering=${Uri.encodeQueryComponent(_rendering.toString())}',
-    if (body.shippingCost case final _shippingCost?)
-      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
-    if (body.shippingDetails case final _shippingDetails?)
-      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.accountTaxIds case final accountTaxIds$?)
+      'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.autoAdvance case final autoAdvance$?)
+      'auto_advance=${Uri.encodeQueryComponent(autoAdvance$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.automaticallyFinalizesAt case final automaticallyFinalizesAt$?)
+      'automatically_finalizes_at=${Uri.encodeQueryComponent(automaticallyFinalizesAt$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.customFields case final customFields$?)
+      'custom_fields=${Uri.encodeQueryComponent(customFields$.toString())}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$.toString())}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.dueDate case final dueDate$?)
+      'due_date=${Uri.encodeQueryComponent(dueDate$.toString())}',
+    if (body.effectiveAt case final effectiveAt$?)
+      'effective_at=${Uri.encodeQueryComponent(effectiveAt$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.footer case final footer$?)
+      'footer=${Uri.encodeQueryComponent(footer$)}',
+    if (body.issuer case final issuer$?)
+      'issuer=${Uri.encodeQueryComponent(issuer$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.number case final number$?)
+      'number=${Uri.encodeQueryComponent(number$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.rendering case final rendering$?)
+      'rendering=${Uri.encodeQueryComponent(rendering$.toString())}',
+    if (body.shippingCost case final shippingCost$?)
+      'shipping_cost=${Uri.encodeQueryComponent(shippingCost$.toString())}',
+    if (body.shippingDetails case final shippingDetails$?)
+      'shipping_details=${Uri.encodeQueryComponent(shippingDetails$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -8968,10 +8968,10 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/add_lines',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceMetadata case final _invoiceMetadata?)
-      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceMetadata case final invoiceMetadata$?)
+      'invoice_metadata=${Uri.encodeQueryComponent(invoiceMetadata$.toString())}',
     'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
   ].join('&'),
 );
@@ -9008,12 +9008,12 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/attach_payment',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.paymentRecord case final _paymentRecord?)
-      'payment_record=${Uri.encodeQueryComponent(_paymentRecord)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.paymentRecord case final paymentRecord$?)
+      'payment_record=${Uri.encodeQueryComponent(paymentRecord$)}',
   ].join('&'),
 );
 
@@ -9040,10 +9040,10 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/finalize',
   headers: headers,
   body: [
-    if (body.autoAdvance case final _autoAdvance?)
-      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.autoAdvance case final autoAdvance$?)
+      'auto_advance=${Uri.encodeQueryComponent(autoAdvance$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -9107,30 +9107,30 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines/${Uri.encodeComponent(lineItemId)}',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discountable case final _discountable?)
-      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.period case final _period?)
-      'period=${Uri.encodeQueryComponent(_period.toString())}',
-    if (body.priceData case final _priceData?)
-      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
-    if (body.pricing case final _pricing?)
-      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
-    if (body.quantity case final _quantity?)
-      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
-    if (body.taxAmounts case final _taxAmounts?)
-      'tax_amounts=${Uri.encodeQueryComponent(_taxAmounts.toString())}',
-    if (body.taxRates case final _taxRates?)
-      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discountable case final discountable$?)
+      'discountable=${Uri.encodeQueryComponent(discountable$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.period case final period$?)
+      'period=${Uri.encodeQueryComponent(period$.toString())}',
+    if (body.priceData case final priceData$?)
+      'price_data=${Uri.encodeQueryComponent(priceData$.toString())}',
+    if (body.pricing case final pricing$?)
+      'pricing=${Uri.encodeQueryComponent(pricing$.toString())}',
+    if (body.quantity case final quantity$?)
+      'quantity=${Uri.encodeQueryComponent(quantity$.toString())}',
+    if (body.taxAmounts case final taxAmounts$?)
+      'tax_amounts=${Uri.encodeQueryComponent(taxAmounts$.toString())}',
+    if (body.taxRates case final taxRates$?)
+      'tax_rates=${Uri.encodeQueryComponent(taxRates$.toString())}',
   ].join('&'),
 );
 
@@ -9157,8 +9157,8 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/mark_uncollectible',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -9185,20 +9185,20 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/pay',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.forgive case final _forgive?)
-      'forgive=${Uri.encodeQueryComponent(_forgive.toString())}',
-    if (body.mandate case final _mandate?)
-      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.paidOutOfBand case final _paidOutOfBand?)
-      'paid_out_of_band=${Uri.encodeQueryComponent(_paidOutOfBand.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.forgive case final forgive$?)
+      'forgive=${Uri.encodeQueryComponent(forgive$.toString())}',
+    if (body.mandate case final mandate$?)
+      'mandate=${Uri.encodeQueryComponent(mandate$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.paidOutOfBand case final paidOutOfBand$?)
+      'paid_out_of_band=${Uri.encodeQueryComponent(paidOutOfBand$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
   ].join('&'),
 );
 
@@ -9225,10 +9225,10 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/remove_lines',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceMetadata case final _invoiceMetadata?)
-      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceMetadata case final invoiceMetadata$?)
+      'invoice_metadata=${Uri.encodeQueryComponent(invoiceMetadata$.toString())}',
     'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
   ].join('&'),
 );
@@ -9258,8 +9258,8 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/send',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -9286,10 +9286,10 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/update_lines',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceMetadata case final _invoiceMetadata?)
-      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceMetadata case final invoiceMetadata$?)
+      'invoice_metadata=${Uri.encodeQueryComponent(invoiceMetadata$.toString())}',
     'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
   ].join('&'),
 );
@@ -9319,8 +9319,8 @@ final request = ApiRequest(
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/void',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -9418,10 +9418,10 @@ final request = ApiRequest(
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -9490,27 +9490,27 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'billing=${Uri.encodeQueryComponent(body.billing.toString())}',
-    if (body.company case final _company?)
-      'company=${Uri.encodeQueryComponent(_company.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.individual case final _individual?)
-      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.company case final company$?)
+      'company=${Uri.encodeQueryComponent(company$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.individual case final individual$?)
+      'individual=${Uri.encodeQueryComponent(individual$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
-    if (body.phoneNumber case final _phoneNumber?)
-      'phone_number=${Uri.encodeQueryComponent(_phoneNumber)}',
-    if (body.preferredLocales case final _preferredLocales?)
-      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
-    if (body.spendingControls case final _spendingControls?)
-      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
-    if (body.status case final _status?)
-      'status=${Uri.encodeQueryComponent(_status.toJson())}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.phoneNumber case final phoneNumber$?)
+      'phone_number=${Uri.encodeQueryComponent(phoneNumber$)}',
+    if (body.preferredLocales case final preferredLocales$?)
+      'preferred_locales=${Uri.encodeQueryComponent(preferredLocales$.toString())}',
+    if (body.spendingControls case final spendingControls$?)
+      'spending_controls=${Uri.encodeQueryComponent(spendingControls$.toString())}',
+    if (body.status case final status$?)
+      'status=${Uri.encodeQueryComponent(status$.toJson())}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
   ].join('&'),
 );
 
@@ -9568,26 +9568,26 @@ final request = ApiRequest(
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
   headers: headers,
   body: [
-    if (body.billing case final _billing?)
-      'billing=${Uri.encodeQueryComponent(_billing.toString())}',
-    if (body.company case final _company?)
-      'company=${Uri.encodeQueryComponent(_company.toString())}',
-    if (body.email case final _email?)
-      'email=${Uri.encodeQueryComponent(_email)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.individual case final _individual?)
-      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.phoneNumber case final _phoneNumber?)
-      'phone_number=${Uri.encodeQueryComponent(_phoneNumber)}',
-    if (body.preferredLocales case final _preferredLocales?)
-      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
-    if (body.spendingControls case final _spendingControls?)
-      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
-    if (body.status case final _status?)
-      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.billing case final billing$?)
+      'billing=${Uri.encodeQueryComponent(billing$.toString())}',
+    if (body.company case final company$?)
+      'company=${Uri.encodeQueryComponent(company$.toString())}',
+    if (body.email case final email$?)
+      'email=${Uri.encodeQueryComponent(email$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.individual case final individual$?)
+      'individual=${Uri.encodeQueryComponent(individual$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.phoneNumber case final phoneNumber$?)
+      'phone_number=${Uri.encodeQueryComponent(phoneNumber$)}',
+    if (body.preferredLocales case final preferredLocales$?)
+      'preferred_locales=${Uri.encodeQueryComponent(preferredLocales$.toString())}',
+    if (body.spendingControls case final spendingControls$?)
+      'spending_controls=${Uri.encodeQueryComponent(spendingControls$.toString())}',
+    if (body.status case final status$?)
+      'status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
 );
 
@@ -9658,35 +9658,35 @@ final request = ApiRequest(
   path: '/v1/issuing/cards',
   headers: headers,
   body: [
-    if (body.cardholder case final _cardholder?)
-      'cardholder=${Uri.encodeQueryComponent(_cardholder)}',
+    if (body.cardholder case final cardholder$?)
+      'cardholder=${Uri.encodeQueryComponent(cardholder$)}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.expMonth case final _expMonth?)
-      'exp_month=${Uri.encodeQueryComponent(_expMonth.toString())}',
-    if (body.expYear case final _expYear?)
-      'exp_year=${Uri.encodeQueryComponent(_expYear.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.financialAccount case final _financialAccount?)
-      'financial_account=${Uri.encodeQueryComponent(_financialAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.personalizationDesign case final _personalizationDesign?)
-      'personalization_design=${Uri.encodeQueryComponent(_personalizationDesign)}',
-    if (body.pin case final _pin?)
-      'pin=${Uri.encodeQueryComponent(_pin.toString())}',
-    if (body.replacementFor case final _replacementFor?)
-      'replacement_for=${Uri.encodeQueryComponent(_replacementFor)}',
-    if (body.replacementReason case final _replacementReason?)
-      'replacement_reason=${Uri.encodeQueryComponent(_replacementReason.toJson())}',
-    if (body.secondLine case final _secondLine?)
-      'second_line=${Uri.encodeQueryComponent(_secondLine.toString())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.spendingControls case final _spendingControls?)
-      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
-    if (body.status case final _status?)
-      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.expMonth case final expMonth$?)
+      'exp_month=${Uri.encodeQueryComponent(expMonth$.toString())}',
+    if (body.expYear case final expYear$?)
+      'exp_year=${Uri.encodeQueryComponent(expYear$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.financialAccount case final financialAccount$?)
+      'financial_account=${Uri.encodeQueryComponent(financialAccount$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.personalizationDesign case final personalizationDesign$?)
+      'personalization_design=${Uri.encodeQueryComponent(personalizationDesign$)}',
+    if (body.pin case final pin$?)
+      'pin=${Uri.encodeQueryComponent(pin$.toString())}',
+    if (body.replacementFor case final replacementFor$?)
+      'replacement_for=${Uri.encodeQueryComponent(replacementFor$)}',
+    if (body.replacementReason case final replacementReason$?)
+      'replacement_reason=${Uri.encodeQueryComponent(replacementReason$.toJson())}',
+    if (body.secondLine case final secondLine$?)
+      'second_line=${Uri.encodeQueryComponent(secondLine$.toString())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.spendingControls case final spendingControls$?)
+      'spending_controls=${Uri.encodeQueryComponent(spendingControls$.toString())}',
+    if (body.status case final status$?)
+      'status=${Uri.encodeQueryComponent(status$.toJson())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
   ].join('&'),
 );
@@ -9745,22 +9745,22 @@ final request = ApiRequest(
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
   headers: headers,
   body: [
-    if (body.cancellationReason case final _cancellationReason?)
-      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.personalizationDesign case final _personalizationDesign?)
-      'personalization_design=${Uri.encodeQueryComponent(_personalizationDesign)}',
-    if (body.pin case final _pin?)
-      'pin=${Uri.encodeQueryComponent(_pin.toString())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.spendingControls case final _spendingControls?)
-      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
-    if (body.status case final _status?)
-      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.cancellationReason case final cancellationReason$?)
+      'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.personalizationDesign case final personalizationDesign$?)
+      'personalization_design=${Uri.encodeQueryComponent(personalizationDesign$)}',
+    if (body.pin case final pin$?)
+      'pin=${Uri.encodeQueryComponent(pin$.toString())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.spendingControls case final spendingControls$?)
+      'spending_controls=${Uri.encodeQueryComponent(spendingControls$.toString())}',
+    if (body.status case final status$?)
+      'status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
 );
 
@@ -9826,18 +9826,18 @@ final request = ApiRequest(
   path: '/v1/issuing/disputes',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.evidence case final _evidence?)
-      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.transaction case final _transaction?)
-      'transaction=${Uri.encodeQueryComponent(_transaction)}',
-    if (body.treasury case final _treasury?)
-      'treasury=${Uri.encodeQueryComponent(_treasury.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.evidence case final evidence$?)
+      'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.transaction case final transaction$?)
+      'transaction=${Uri.encodeQueryComponent(transaction$)}',
+    if (body.treasury case final treasury$?)
+      'treasury=${Uri.encodeQueryComponent(treasury$.toString())}',
   ].join('&'),
 );
 
@@ -9895,14 +9895,14 @@ final request = ApiRequest(
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.evidence case final _evidence?)
-      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.evidence case final evidence$?)
+      'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -9929,10 +9929,10 @@ final request = ApiRequest(
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}/submit',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -10001,23 +10001,23 @@ final request = ApiRequest(
   path: '/v1/issuing/personalization_designs',
   headers: headers,
   body: [
-    if (body.cardLogo case final _cardLogo?)
-      'card_logo=${Uri.encodeQueryComponent(_cardLogo)}',
-    if (body.carrierText case final _carrierText?)
-      'carrier_text=${Uri.encodeQueryComponent(_carrierText.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.lookupKey case final _lookupKey?)
-      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.cardLogo case final cardLogo$?)
+      'card_logo=${Uri.encodeQueryComponent(cardLogo$)}',
+    if (body.carrierText case final carrierText$?)
+      'carrier_text=${Uri.encodeQueryComponent(carrierText$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.lookupKey case final lookupKey$?)
+      'lookup_key=${Uri.encodeQueryComponent(lookupKey$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
     'physical_bundle=${Uri.encodeQueryComponent(body.physicalBundle)}',
-    if (body.preferences case final _preferences?)
-      'preferences=${Uri.encodeQueryComponent(_preferences.toString())}',
-    if (body.transferLookupKey case final _transferLookupKey?)
-      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+    if (body.preferences case final preferences$?)
+      'preferences=${Uri.encodeQueryComponent(preferences$.toString())}',
+    if (body.transferLookupKey case final transferLookupKey$?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(transferLookupKey$.toString())}',
   ].join('&'),
 );
 
@@ -10075,24 +10075,24 @@ final request = ApiRequest(
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
   headers: headers,
   body: [
-    if (body.cardLogo case final _cardLogo?)
-      'card_logo=${Uri.encodeQueryComponent(_cardLogo.toString())}',
-    if (body.carrierText case final _carrierText?)
-      'carrier_text=${Uri.encodeQueryComponent(_carrierText.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.lookupKey case final _lookupKey?)
-      'lookup_key=${Uri.encodeQueryComponent(_lookupKey.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name.toString())}',
-    if (body.physicalBundle case final _physicalBundle?)
-      'physical_bundle=${Uri.encodeQueryComponent(_physicalBundle)}',
-    if (body.preferences case final _preferences?)
-      'preferences=${Uri.encodeQueryComponent(_preferences.toString())}',
-    if (body.transferLookupKey case final _transferLookupKey?)
-      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+    if (body.cardLogo case final cardLogo$?)
+      'card_logo=${Uri.encodeQueryComponent(cardLogo$.toString())}',
+    if (body.carrierText case final carrierText$?)
+      'carrier_text=${Uri.encodeQueryComponent(carrierText$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.lookupKey case final lookupKey$?)
+      'lookup_key=${Uri.encodeQueryComponent(lookupKey$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$.toString())}',
+    if (body.physicalBundle case final physicalBundle$?)
+      'physical_bundle=${Uri.encodeQueryComponent(physicalBundle$)}',
+    if (body.preferences case final preferences$?)
+      'preferences=${Uri.encodeQueryComponent(preferences$.toString())}',
+    if (body.transferLookupKey case final transferLookupKey$?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(transferLookupKey$.toString())}',
   ].join('&'),
 );
 
@@ -10217,10 +10217,10 @@ final request = ApiRequest(
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -10317,8 +10317,8 @@ final request = ApiRequest(
   path: '/v1/issuing/tokens/${Uri.encodeComponent(token)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'status=${Uri.encodeQueryComponent(body.status.toJson())}',
   ].join('&'),
 );
@@ -10417,10 +10417,10 @@ final request = ApiRequest(
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -10448,15 +10448,15 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.filters case final _filters?)
-      'filters=${Uri.encodeQueryComponent(_filters.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.filters case final filters$?)
+      'filters=${Uri.encodeQueryComponent(filters$.toString())}',
     'permissions=${Uri.encodeQueryComponent(body.permissions.toString())}',
-    if (body.prefetch case final _prefetch?)
-      'prefetch=${Uri.encodeQueryComponent(_prefetch.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.prefetch case final prefetch$?)
+      'prefetch=${Uri.encodeQueryComponent(prefetch$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
   ].join('&'),
 );
 
@@ -10585,8 +10585,8 @@ final request = ApiRequest(
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -10648,8 +10648,8 @@ final request = ApiRequest(
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
   ].join('&'),
 );
@@ -10822,77 +10822,77 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.automaticPaymentMethods case final _automaticPaymentMethods?)
-      'automatic_payment_methods=${Uri.encodeQueryComponent(_automaticPaymentMethods.toString())}',
-    if (body.captureMethod case final _captureMethod?)
-      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
-    if (body.confirm case final _confirm?)
-      'confirm=${Uri.encodeQueryComponent(_confirm.toString())}',
-    if (body.confirmationMethod case final _confirmationMethod?)
-      'confirmation_method=${Uri.encodeQueryComponent(_confirmationMethod.toJson())}',
-    if (body.confirmationToken case final _confirmationToken?)
-      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.automaticPaymentMethods case final automaticPaymentMethods$?)
+      'automatic_payment_methods=${Uri.encodeQueryComponent(automaticPaymentMethods$.toString())}',
+    if (body.captureMethod case final captureMethod$?)
+      'capture_method=${Uri.encodeQueryComponent(captureMethod$.toJson())}',
+    if (body.confirm case final confirm$?)
+      'confirm=${Uri.encodeQueryComponent(confirm$.toString())}',
+    if (body.confirmationMethod case final confirmationMethod$?)
+      'confirmation_method=${Uri.encodeQueryComponent(confirmationMethod$.toJson())}',
+    if (body.confirmationToken case final confirmationToken$?)
+      'confirmation_token=${Uri.encodeQueryComponent(confirmationToken$)}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.errorOnRequiresAction case final _errorOnRequiresAction?)
-      'error_on_requires_action=${Uri.encodeQueryComponent(_errorOnRequiresAction.toString())}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.hooks case final _hooks?)
-      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
-    if (body.mandate case final _mandate?)
-      'mandate=${Uri.encodeQueryComponent(_mandate)}',
-    if (body.mandateData case final _mandateData?)
-      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.paymentDetails case final _paymentDetails?)
-      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
-      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.radarOptions case final _radarOptions?)
-      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.setupFutureUsage case final _setupFutureUsage?)
-      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
-      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
-    if (body.useStripeSdk case final _useStripeSdk?)
-      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.errorOnRequiresAction case final errorOnRequiresAction$?)
+      'error_on_requires_action=${Uri.encodeQueryComponent(errorOnRequiresAction$.toString())}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.hooks case final hooks$?)
+      'hooks=${Uri.encodeQueryComponent(hooks$.toString())}',
+    if (body.mandate case final mandate$?)
+      'mandate=${Uri.encodeQueryComponent(mandate$)}',
+    if (body.mandateData case final mandateData$?)
+      'mandate_data=${Uri.encodeQueryComponent(mandateData$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.paymentDetails case final paymentDetails$?)
+      'payment_details=${Uri.encodeQueryComponent(paymentDetails$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodConfiguration case final paymentMethodConfiguration$?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(paymentMethodConfiguration$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.radarOptions case final radarOptions$?)
+      'radar_options=${Uri.encodeQueryComponent(radarOptions$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$)}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.setupFutureUsage case final setupFutureUsage$?)
+      'setup_future_usage=${Uri.encodeQueryComponent(setupFutureUsage$.toJson())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.statementDescriptorSuffix case final statementDescriptorSuffix$?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(statementDescriptorSuffix$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
+    if (body.useStripeSdk case final useStripeSdk$?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(useStripeSdk$.toString())}',
   ].join('&'),
 );
 
@@ -10998,56 +10998,56 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.captureMethod case final _captureMethod?)
-      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.hooks case final _hooks?)
-      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentDetails case final _paymentDetails?)
-      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
-      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail.toString())}',
-    if (body.setupFutureUsage case final _setupFutureUsage?)
-      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
-      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.captureMethod case final captureMethod$?)
+      'capture_method=${Uri.encodeQueryComponent(captureMethod$.toJson())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.hooks case final hooks$?)
+      'hooks=${Uri.encodeQueryComponent(hooks$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentDetails case final paymentDetails$?)
+      'payment_details=${Uri.encodeQueryComponent(paymentDetails$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodConfiguration case final paymentMethodConfiguration$?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(paymentMethodConfiguration$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$.toString())}',
+    if (body.setupFutureUsage case final setupFutureUsage$?)
+      'setup_future_usage=${Uri.encodeQueryComponent(setupFutureUsage$.toJson())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.statementDescriptorSuffix case final statementDescriptorSuffix$?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(statementDescriptorSuffix$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -11108,12 +11108,12 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/apply_customer_balance',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -11144,10 +11144,10 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
   body: [
-    if (body.cancellationReason case final _cancellationReason?)
-      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.cancellationReason case final cancellationReason$?)
+      'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -11178,28 +11178,28 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/capture',
   headers: headers,
   body: [
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.amountToCapture case final _amountToCapture?)
-      'amount_to_capture=${Uri.encodeQueryComponent(_amountToCapture.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.finalCapture case final _finalCapture?)
-      'final_capture=${Uri.encodeQueryComponent(_finalCapture.toString())}',
-    if (body.hooks case final _hooks?)
-      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentDetails case final _paymentDetails?)
-      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
-      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.amountToCapture case final amountToCapture$?)
+      'amount_to_capture=${Uri.encodeQueryComponent(amountToCapture$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.finalCapture case final finalCapture$?)
+      'final_capture=${Uri.encodeQueryComponent(finalCapture$.toString())}',
+    if (body.hooks case final hooks$?)
+      'hooks=${Uri.encodeQueryComponent(hooks$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentDetails case final paymentDetails$?)
+      'payment_details=${Uri.encodeQueryComponent(paymentDetails$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.statementDescriptorSuffix case final statementDescriptorSuffix$?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(statementDescriptorSuffix$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -11255,50 +11255,50 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
   body: [
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.captureMethod case final _captureMethod?)
-      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
-    if (body.clientSecret case final _clientSecret?)
-      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
-    if (body.confirmationToken case final _confirmationToken?)
-      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
-    if (body.errorOnRequiresAction case final _errorOnRequiresAction?)
-      'error_on_requires_action=${Uri.encodeQueryComponent(_errorOnRequiresAction.toString())}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.hooks case final _hooks?)
-      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
-    if (body.mandate case final _mandate?)
-      'mandate=${Uri.encodeQueryComponent(_mandate)}',
-    if (body.mandateData case final _mandateData?)
-      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.paymentDetails case final _paymentDetails?)
-      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.radarOptions case final _radarOptions?)
-      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
-    if (body.receiptEmail case final _receiptEmail?)
-      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.setupFutureUsage case final _setupFutureUsage?)
-      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
-    if (body.useStripeSdk case final _useStripeSdk?)
-      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.captureMethod case final captureMethod$?)
+      'capture_method=${Uri.encodeQueryComponent(captureMethod$.toJson())}',
+    if (body.clientSecret case final clientSecret$?)
+      'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
+    if (body.confirmationToken case final confirmationToken$?)
+      'confirmation_token=${Uri.encodeQueryComponent(confirmationToken$)}',
+    if (body.errorOnRequiresAction case final errorOnRequiresAction$?)
+      'error_on_requires_action=${Uri.encodeQueryComponent(errorOnRequiresAction$.toString())}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.hooks case final hooks$?)
+      'hooks=${Uri.encodeQueryComponent(hooks$.toString())}',
+    if (body.mandate case final mandate$?)
+      'mandate=${Uri.encodeQueryComponent(mandate$)}',
+    if (body.mandateData case final mandateData$?)
+      'mandate_data=${Uri.encodeQueryComponent(mandateData$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.paymentDetails case final paymentDetails$?)
+      'payment_details=${Uri.encodeQueryComponent(paymentDetails$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.radarOptions case final radarOptions$?)
+      'radar_options=${Uri.encodeQueryComponent(radarOptions$.toString())}',
+    if (body.receiptEmail case final receiptEmail$?)
+      'receipt_email=${Uri.encodeQueryComponent(receiptEmail$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.setupFutureUsage case final setupFutureUsage$?)
+      'setup_future_usage=${Uri.encodeQueryComponent(setupFutureUsage$.toJson())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
+    if (body.useStripeSdk case final useStripeSdk$?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(useStripeSdk$.toString())}',
   ].join('&'),
 );
 
@@ -11349,24 +11349,24 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.hooks case final _hooks?)
-      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentDetails case final _paymentDetails?)
-      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.hooks case final hooks$?)
+      'hooks=${Uri.encodeQueryComponent(hooks$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentDetails case final paymentDetails$?)
+      'payment_details=${Uri.encodeQueryComponent(paymentDetails$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -11393,14 +11393,14 @@ final request = ApiRequest(
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
   body: [
-    if (body.amounts case final _amounts?)
-      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
-    if (body.clientSecret case final _clientSecret?)
-      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
-    if (body.descriptorCode case final _descriptorCode?)
-      'descriptor_code=${Uri.encodeQueryComponent(_descriptorCode)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amounts case final amounts$?)
+      'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
+    if (body.clientSecret case final clientSecret$?)
+      'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
+    if (body.descriptorCode case final descriptorCode$?)
+      'descriptor_code=${Uri.encodeQueryComponent(descriptorCode$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -11462,65 +11462,65 @@ final request = ApiRequest(
   path: '/v1/payment_links',
   headers: headers,
   body: [
-    if (body.afterCompletion case final _afterCompletion?)
-      'after_completion=${Uri.encodeQueryComponent(_afterCompletion.toString())}',
-    if (body.allowPromotionCodes case final _allowPromotionCodes?)
-      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.billingAddressCollection case final _billingAddressCollection?)
-      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
-    if (body.consentCollection case final _consentCollection?)
-      'consent_collection=${Uri.encodeQueryComponent(_consentCollection.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customFields case final _customFields?)
-      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
-    if (body.customText case final _customText?)
-      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
-    if (body.customerCreation case final _customerCreation?)
-      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.inactiveMessage case final _inactiveMessage?)
-      'inactive_message=${Uri.encodeQueryComponent(_inactiveMessage)}',
-    if (body.invoiceCreation case final _invoiceCreation?)
-      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
+    if (body.afterCompletion case final afterCompletion$?)
+      'after_completion=${Uri.encodeQueryComponent(afterCompletion$.toString())}',
+    if (body.allowPromotionCodes case final allowPromotionCodes$?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(allowPromotionCodes$.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.billingAddressCollection case final billingAddressCollection$?)
+      'billing_address_collection=${Uri.encodeQueryComponent(billingAddressCollection$.toJson())}',
+    if (body.consentCollection case final consentCollection$?)
+      'consent_collection=${Uri.encodeQueryComponent(consentCollection$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customFields case final customFields$?)
+      'custom_fields=${Uri.encodeQueryComponent(customFields$.toString())}',
+    if (body.customText case final customText$?)
+      'custom_text=${Uri.encodeQueryComponent(customText$.toString())}',
+    if (body.customerCreation case final customerCreation$?)
+      'customer_creation=${Uri.encodeQueryComponent(customerCreation$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.inactiveMessage case final inactiveMessage$?)
+      'inactive_message=${Uri.encodeQueryComponent(inactiveMessage$)}',
+    if (body.invoiceCreation case final invoiceCreation$?)
+      'invoice_creation=${Uri.encodeQueryComponent(invoiceCreation$.toString())}',
     'line_items=${Uri.encodeQueryComponent(body.lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nameCollection case final _nameCollection?)
-      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.optionalItems case final _optionalItems?)
-      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
-    if (body.paymentIntentData case final _paymentIntentData?)
-      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
-    if (body.paymentMethodCollection case final _paymentMethodCollection?)
-      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.phoneNumberCollection case final _phoneNumberCollection?)
-      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
-    if (body.restrictions case final _restrictions?)
-      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
-    if (body.shippingAddressCollection case final _shippingAddressCollection?)
-      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
-    if (body.shippingOptions case final _shippingOptions?)
-      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
-    if (body.submitType case final _submitType?)
-      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
-    if (body.subscriptionData case final _subscriptionData?)
-      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
-    if (body.taxIdCollection case final _taxIdCollection?)
-      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nameCollection case final nameCollection$?)
+      'name_collection=${Uri.encodeQueryComponent(nameCollection$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.optionalItems case final optionalItems$?)
+      'optional_items=${Uri.encodeQueryComponent(optionalItems$.toString())}',
+    if (body.paymentIntentData case final paymentIntentData$?)
+      'payment_intent_data=${Uri.encodeQueryComponent(paymentIntentData$.toString())}',
+    if (body.paymentMethodCollection case final paymentMethodCollection$?)
+      'payment_method_collection=${Uri.encodeQueryComponent(paymentMethodCollection$.toJson())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.phoneNumberCollection case final phoneNumberCollection$?)
+      'phone_number_collection=${Uri.encodeQueryComponent(phoneNumberCollection$.toString())}',
+    if (body.restrictions case final restrictions$?)
+      'restrictions=${Uri.encodeQueryComponent(restrictions$.toString())}',
+    if (body.shippingAddressCollection case final shippingAddressCollection$?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(shippingAddressCollection$.toString())}',
+    if (body.shippingOptions case final shippingOptions$?)
+      'shipping_options=${Uri.encodeQueryComponent(shippingOptions$.toString())}',
+    if (body.submitType case final submitType$?)
+      'submit_type=${Uri.encodeQueryComponent(submitType$.toJson())}',
+    if (body.subscriptionData case final subscriptionData$?)
+      'subscription_data=${Uri.encodeQueryComponent(subscriptionData$.toString())}',
+    if (body.taxIdCollection case final taxIdCollection$?)
+      'tax_id_collection=${Uri.encodeQueryComponent(taxIdCollection$.toString())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -11578,54 +11578,54 @@ final request = ApiRequest(
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.afterCompletion case final _afterCompletion?)
-      'after_completion=${Uri.encodeQueryComponent(_afterCompletion.toString())}',
-    if (body.allowPromotionCodes case final _allowPromotionCodes?)
-      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.billingAddressCollection case final _billingAddressCollection?)
-      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
-    if (body.customFields case final _customFields?)
-      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
-    if (body.customText case final _customText?)
-      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
-    if (body.customerCreation case final _customerCreation?)
-      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.inactiveMessage case final _inactiveMessage?)
-      'inactive_message=${Uri.encodeQueryComponent(_inactiveMessage.toString())}',
-    if (body.invoiceCreation case final _invoiceCreation?)
-      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nameCollection case final _nameCollection?)
-      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
-    if (body.optionalItems case final _optionalItems?)
-      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
-    if (body.paymentIntentData case final _paymentIntentData?)
-      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
-    if (body.paymentMethodCollection case final _paymentMethodCollection?)
-      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.phoneNumberCollection case final _phoneNumberCollection?)
-      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
-    if (body.restrictions case final _restrictions?)
-      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
-    if (body.shippingAddressCollection case final _shippingAddressCollection?)
-      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
-    if (body.submitType case final _submitType?)
-      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
-    if (body.subscriptionData case final _subscriptionData?)
-      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
-    if (body.taxIdCollection case final _taxIdCollection?)
-      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.afterCompletion case final afterCompletion$?)
+      'after_completion=${Uri.encodeQueryComponent(afterCompletion$.toString())}',
+    if (body.allowPromotionCodes case final allowPromotionCodes$?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(allowPromotionCodes$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.billingAddressCollection case final billingAddressCollection$?)
+      'billing_address_collection=${Uri.encodeQueryComponent(billingAddressCollection$.toJson())}',
+    if (body.customFields case final customFields$?)
+      'custom_fields=${Uri.encodeQueryComponent(customFields$.toString())}',
+    if (body.customText case final customText$?)
+      'custom_text=${Uri.encodeQueryComponent(customText$.toString())}',
+    if (body.customerCreation case final customerCreation$?)
+      'customer_creation=${Uri.encodeQueryComponent(customerCreation$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.inactiveMessage case final inactiveMessage$?)
+      'inactive_message=${Uri.encodeQueryComponent(inactiveMessage$.toString())}',
+    if (body.invoiceCreation case final invoiceCreation$?)
+      'invoice_creation=${Uri.encodeQueryComponent(invoiceCreation$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nameCollection case final nameCollection$?)
+      'name_collection=${Uri.encodeQueryComponent(nameCollection$.toString())}',
+    if (body.optionalItems case final optionalItems$?)
+      'optional_items=${Uri.encodeQueryComponent(optionalItems$.toString())}',
+    if (body.paymentIntentData case final paymentIntentData$?)
+      'payment_intent_data=${Uri.encodeQueryComponent(paymentIntentData$.toString())}',
+    if (body.paymentMethodCollection case final paymentMethodCollection$?)
+      'payment_method_collection=${Uri.encodeQueryComponent(paymentMethodCollection$.toJson())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.phoneNumberCollection case final phoneNumberCollection$?)
+      'phone_number_collection=${Uri.encodeQueryComponent(phoneNumberCollection$.toString())}',
+    if (body.restrictions case final restrictions$?)
+      'restrictions=${Uri.encodeQueryComponent(restrictions$.toString())}',
+    if (body.shippingAddressCollection case final shippingAddressCollection$?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(shippingAddressCollection$.toString())}',
+    if (body.submitType case final submitType$?)
+      'submit_type=${Uri.encodeQueryComponent(submitType$.toJson())}',
+    if (body.subscriptionData case final subscriptionData$?)
+      'subscription_data=${Uri.encodeQueryComponent(subscriptionData$.toString())}',
+    if (body.taxIdCollection case final taxIdCollection$?)
+      'tax_id_collection=${Uri.encodeQueryComponent(taxIdCollection$.toString())}',
   ].join('&'),
 );
 
@@ -11723,124 +11723,124 @@ final request = ApiRequest(
   path: '/v1/payment_method_configurations',
   headers: headers,
   body: [
-    if (body.acssDebit case final _acssDebit?)
-      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
-    if (body.affirm case final _affirm?)
-      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
-    if (body.afterpayClearpay case final _afterpayClearpay?)
-      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
-    if (body.alipay case final _alipay?)
-      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
-    if (body.alma case final _alma?)
-      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
-    if (body.amazonPay case final _amazonPay?)
-      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
-    if (body.applePay case final _applePay?)
-      'apple_pay=${Uri.encodeQueryComponent(_applePay.toString())}',
-    if (body.applePayLater case final _applePayLater?)
-      'apple_pay_later=${Uri.encodeQueryComponent(_applePayLater.toString())}',
-    if (body.auBecsDebit case final _auBecsDebit?)
-      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
-    if (body.bacsDebit case final _bacsDebit?)
-      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
-    if (body.bancontact case final _bancontact?)
-      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
-    if (body.billie case final _billie?)
-      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
-    if (body.blik case final _blik?)
-      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
-    if (body.boleto case final _boleto?)
-      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.cartesBancaires case final _cartesBancaires?)
-      'cartes_bancaires=${Uri.encodeQueryComponent(_cartesBancaires.toString())}',
-    if (body.cashapp case final _cashapp?)
-      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
-    if (body.crypto case final _crypto?)
-      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
-    if (body.customerBalance case final _customerBalance?)
-      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
-    if (body.eps case final _eps?)
-      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fpx case final _fpx?)
-      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
-    if (body.frMealVoucherConecs case final _frMealVoucherConecs?)
-      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(_frMealVoucherConecs.toString())}',
-    if (body.giropay case final _giropay?)
-      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
-    if (body.googlePay case final _googlePay?)
-      'google_pay=${Uri.encodeQueryComponent(_googlePay.toString())}',
-    if (body.grabpay case final _grabpay?)
-      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
-    if (body.ideal case final _ideal?)
-      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
-    if (body.jcb case final _jcb?)
-      'jcb=${Uri.encodeQueryComponent(_jcb.toString())}',
-    if (body.kakaoPay case final _kakaoPay?)
-      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
-    if (body.klarna case final _klarna?)
-      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
-    if (body.konbini case final _konbini?)
-      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
-    if (body.krCard case final _krCard?)
-      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
-    if (body.link case final _link?)
-      'link=${Uri.encodeQueryComponent(_link.toString())}',
-    if (body.mbWay case final _mbWay?)
-      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
-    if (body.mobilepay case final _mobilepay?)
-      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
-    if (body.multibanco case final _multibanco?)
-      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.naverPay case final _naverPay?)
-      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
-    if (body.nzBankAccount case final _nzBankAccount?)
-      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
-    if (body.oxxo case final _oxxo?)
-      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
-    if (body.p24 case final _p24?)
-      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
-    if (body.parent case final _parent?)
-      'parent=${Uri.encodeQueryComponent(_parent)}',
-    if (body.payByBank case final _payByBank?)
-      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
-    if (body.payco case final _payco?)
-      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
-    if (body.paynow case final _paynow?)
-      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
-    if (body.paypal case final _paypal?)
-      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
-    if (body.payto case final _payto?)
-      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
-    if (body.pix case final _pix?)
-      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
-    if (body.promptpay case final _promptpay?)
-      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
-    if (body.revolutPay case final _revolutPay?)
-      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
-    if (body.samsungPay case final _samsungPay?)
-      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
-    if (body.satispay case final _satispay?)
-      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
-    if (body.sepaDebit case final _sepaDebit?)
-      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
-    if (body.sofort case final _sofort?)
-      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
-    if (body.swish case final _swish?)
-      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
-    if (body.twint case final _twint?)
-      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
-    if (body.usBankAccount case final _usBankAccount?)
-      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
-    if (body.wechatPay case final _wechatPay?)
-      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
-    if (body.zip case final _zip?)
-      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+    if (body.acssDebit case final acssDebit$?)
+      'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
+    if (body.affirm case final affirm$?)
+      'affirm=${Uri.encodeQueryComponent(affirm$.toString())}',
+    if (body.afterpayClearpay case final afterpayClearpay$?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(afterpayClearpay$.toString())}',
+    if (body.alipay case final alipay$?)
+      'alipay=${Uri.encodeQueryComponent(alipay$.toString())}',
+    if (body.alma case final alma$?)
+      'alma=${Uri.encodeQueryComponent(alma$.toString())}',
+    if (body.amazonPay case final amazonPay$?)
+      'amazon_pay=${Uri.encodeQueryComponent(amazonPay$.toString())}',
+    if (body.applePay case final applePay$?)
+      'apple_pay=${Uri.encodeQueryComponent(applePay$.toString())}',
+    if (body.applePayLater case final applePayLater$?)
+      'apple_pay_later=${Uri.encodeQueryComponent(applePayLater$.toString())}',
+    if (body.auBecsDebit case final auBecsDebit$?)
+      'au_becs_debit=${Uri.encodeQueryComponent(auBecsDebit$.toString())}',
+    if (body.bacsDebit case final bacsDebit$?)
+      'bacs_debit=${Uri.encodeQueryComponent(bacsDebit$.toString())}',
+    if (body.bancontact case final bancontact$?)
+      'bancontact=${Uri.encodeQueryComponent(bancontact$.toString())}',
+    if (body.billie case final billie$?)
+      'billie=${Uri.encodeQueryComponent(billie$.toString())}',
+    if (body.blik case final blik$?)
+      'blik=${Uri.encodeQueryComponent(blik$.toString())}',
+    if (body.boleto case final boleto$?)
+      'boleto=${Uri.encodeQueryComponent(boleto$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.cartesBancaires case final cartesBancaires$?)
+      'cartes_bancaires=${Uri.encodeQueryComponent(cartesBancaires$.toString())}',
+    if (body.cashapp case final cashapp$?)
+      'cashapp=${Uri.encodeQueryComponent(cashapp$.toString())}',
+    if (body.crypto case final crypto$?)
+      'crypto=${Uri.encodeQueryComponent(crypto$.toString())}',
+    if (body.customerBalance case final customerBalance$?)
+      'customer_balance=${Uri.encodeQueryComponent(customerBalance$.toString())}',
+    if (body.eps case final eps$?)
+      'eps=${Uri.encodeQueryComponent(eps$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fpx case final fpx$?)
+      'fpx=${Uri.encodeQueryComponent(fpx$.toString())}',
+    if (body.frMealVoucherConecs case final frMealVoucherConecs$?)
+      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(frMealVoucherConecs$.toString())}',
+    if (body.giropay case final giropay$?)
+      'giropay=${Uri.encodeQueryComponent(giropay$.toString())}',
+    if (body.googlePay case final googlePay$?)
+      'google_pay=${Uri.encodeQueryComponent(googlePay$.toString())}',
+    if (body.grabpay case final grabpay$?)
+      'grabpay=${Uri.encodeQueryComponent(grabpay$.toString())}',
+    if (body.ideal case final ideal$?)
+      'ideal=${Uri.encodeQueryComponent(ideal$.toString())}',
+    if (body.jcb case final jcb$?)
+      'jcb=${Uri.encodeQueryComponent(jcb$.toString())}',
+    if (body.kakaoPay case final kakaoPay$?)
+      'kakao_pay=${Uri.encodeQueryComponent(kakaoPay$.toString())}',
+    if (body.klarna case final klarna$?)
+      'klarna=${Uri.encodeQueryComponent(klarna$.toString())}',
+    if (body.konbini case final konbini$?)
+      'konbini=${Uri.encodeQueryComponent(konbini$.toString())}',
+    if (body.krCard case final krCard$?)
+      'kr_card=${Uri.encodeQueryComponent(krCard$.toString())}',
+    if (body.link case final link$?)
+      'link=${Uri.encodeQueryComponent(link$.toString())}',
+    if (body.mbWay case final mbWay$?)
+      'mb_way=${Uri.encodeQueryComponent(mbWay$.toString())}',
+    if (body.mobilepay case final mobilepay$?)
+      'mobilepay=${Uri.encodeQueryComponent(mobilepay$.toString())}',
+    if (body.multibanco case final multibanco$?)
+      'multibanco=${Uri.encodeQueryComponent(multibanco$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.naverPay case final naverPay$?)
+      'naver_pay=${Uri.encodeQueryComponent(naverPay$.toString())}',
+    if (body.nzBankAccount case final nzBankAccount$?)
+      'nz_bank_account=${Uri.encodeQueryComponent(nzBankAccount$.toString())}',
+    if (body.oxxo case final oxxo$?)
+      'oxxo=${Uri.encodeQueryComponent(oxxo$.toString())}',
+    if (body.p24 case final p24$?)
+      'p24=${Uri.encodeQueryComponent(p24$.toString())}',
+    if (body.parent case final parent$?)
+      'parent=${Uri.encodeQueryComponent(parent$)}',
+    if (body.payByBank case final payByBank$?)
+      'pay_by_bank=${Uri.encodeQueryComponent(payByBank$.toString())}',
+    if (body.payco case final payco$?)
+      'payco=${Uri.encodeQueryComponent(payco$.toString())}',
+    if (body.paynow case final paynow$?)
+      'paynow=${Uri.encodeQueryComponent(paynow$.toString())}',
+    if (body.paypal case final paypal$?)
+      'paypal=${Uri.encodeQueryComponent(paypal$.toString())}',
+    if (body.payto case final payto$?)
+      'payto=${Uri.encodeQueryComponent(payto$.toString())}',
+    if (body.pix case final pix$?)
+      'pix=${Uri.encodeQueryComponent(pix$.toString())}',
+    if (body.promptpay case final promptpay$?)
+      'promptpay=${Uri.encodeQueryComponent(promptpay$.toString())}',
+    if (body.revolutPay case final revolutPay$?)
+      'revolut_pay=${Uri.encodeQueryComponent(revolutPay$.toString())}',
+    if (body.samsungPay case final samsungPay$?)
+      'samsung_pay=${Uri.encodeQueryComponent(samsungPay$.toString())}',
+    if (body.satispay case final satispay$?)
+      'satispay=${Uri.encodeQueryComponent(satispay$.toString())}',
+    if (body.sepaDebit case final sepaDebit$?)
+      'sepa_debit=${Uri.encodeQueryComponent(sepaDebit$.toString())}',
+    if (body.sofort case final sofort$?)
+      'sofort=${Uri.encodeQueryComponent(sofort$.toString())}',
+    if (body.swish case final swish$?)
+      'swish=${Uri.encodeQueryComponent(swish$.toString())}',
+    if (body.twint case final twint$?)
+      'twint=${Uri.encodeQueryComponent(twint$.toString())}',
+    if (body.usBankAccount case final usBankAccount$?)
+      'us_bank_account=${Uri.encodeQueryComponent(usBankAccount$.toString())}',
+    if (body.wechatPay case final wechatPay$?)
+      'wechat_pay=${Uri.encodeQueryComponent(wechatPay$.toString())}',
+    if (body.zip case final zip$?)
+      'zip=${Uri.encodeQueryComponent(zip$.toString())}',
   ].join('&'),
 );
 
@@ -11898,124 +11898,124 @@ final request = ApiRequest(
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
   body: [
-    if (body.acssDebit case final _acssDebit?)
-      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.affirm case final _affirm?)
-      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
-    if (body.afterpayClearpay case final _afterpayClearpay?)
-      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
-    if (body.alipay case final _alipay?)
-      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
-    if (body.alma case final _alma?)
-      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
-    if (body.amazonPay case final _amazonPay?)
-      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
-    if (body.applePay case final _applePay?)
-      'apple_pay=${Uri.encodeQueryComponent(_applePay.toString())}',
-    if (body.applePayLater case final _applePayLater?)
-      'apple_pay_later=${Uri.encodeQueryComponent(_applePayLater.toString())}',
-    if (body.auBecsDebit case final _auBecsDebit?)
-      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
-    if (body.bacsDebit case final _bacsDebit?)
-      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
-    if (body.bancontact case final _bancontact?)
-      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
-    if (body.billie case final _billie?)
-      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
-    if (body.blik case final _blik?)
-      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
-    if (body.boleto case final _boleto?)
-      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.cartesBancaires case final _cartesBancaires?)
-      'cartes_bancaires=${Uri.encodeQueryComponent(_cartesBancaires.toString())}',
-    if (body.cashapp case final _cashapp?)
-      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
-    if (body.crypto case final _crypto?)
-      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
-    if (body.customerBalance case final _customerBalance?)
-      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
-    if (body.eps case final _eps?)
-      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fpx case final _fpx?)
-      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
-    if (body.frMealVoucherConecs case final _frMealVoucherConecs?)
-      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(_frMealVoucherConecs.toString())}',
-    if (body.giropay case final _giropay?)
-      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
-    if (body.googlePay case final _googlePay?)
-      'google_pay=${Uri.encodeQueryComponent(_googlePay.toString())}',
-    if (body.grabpay case final _grabpay?)
-      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
-    if (body.ideal case final _ideal?)
-      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
-    if (body.jcb case final _jcb?)
-      'jcb=${Uri.encodeQueryComponent(_jcb.toString())}',
-    if (body.kakaoPay case final _kakaoPay?)
-      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
-    if (body.klarna case final _klarna?)
-      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
-    if (body.konbini case final _konbini?)
-      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
-    if (body.krCard case final _krCard?)
-      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
-    if (body.link case final _link?)
-      'link=${Uri.encodeQueryComponent(_link.toString())}',
-    if (body.mbWay case final _mbWay?)
-      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
-    if (body.mobilepay case final _mobilepay?)
-      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
-    if (body.multibanco case final _multibanco?)
-      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.naverPay case final _naverPay?)
-      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
-    if (body.nzBankAccount case final _nzBankAccount?)
-      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
-    if (body.oxxo case final _oxxo?)
-      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
-    if (body.p24 case final _p24?)
-      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
-    if (body.payByBank case final _payByBank?)
-      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
-    if (body.payco case final _payco?)
-      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
-    if (body.paynow case final _paynow?)
-      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
-    if (body.paypal case final _paypal?)
-      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
-    if (body.payto case final _payto?)
-      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
-    if (body.pix case final _pix?)
-      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
-    if (body.promptpay case final _promptpay?)
-      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
-    if (body.revolutPay case final _revolutPay?)
-      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
-    if (body.samsungPay case final _samsungPay?)
-      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
-    if (body.satispay case final _satispay?)
-      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
-    if (body.sepaDebit case final _sepaDebit?)
-      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
-    if (body.sofort case final _sofort?)
-      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
-    if (body.swish case final _swish?)
-      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
-    if (body.twint case final _twint?)
-      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
-    if (body.usBankAccount case final _usBankAccount?)
-      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
-    if (body.wechatPay case final _wechatPay?)
-      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
-    if (body.zip case final _zip?)
-      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+    if (body.acssDebit case final acssDebit$?)
+      'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.affirm case final affirm$?)
+      'affirm=${Uri.encodeQueryComponent(affirm$.toString())}',
+    if (body.afterpayClearpay case final afterpayClearpay$?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(afterpayClearpay$.toString())}',
+    if (body.alipay case final alipay$?)
+      'alipay=${Uri.encodeQueryComponent(alipay$.toString())}',
+    if (body.alma case final alma$?)
+      'alma=${Uri.encodeQueryComponent(alma$.toString())}',
+    if (body.amazonPay case final amazonPay$?)
+      'amazon_pay=${Uri.encodeQueryComponent(amazonPay$.toString())}',
+    if (body.applePay case final applePay$?)
+      'apple_pay=${Uri.encodeQueryComponent(applePay$.toString())}',
+    if (body.applePayLater case final applePayLater$?)
+      'apple_pay_later=${Uri.encodeQueryComponent(applePayLater$.toString())}',
+    if (body.auBecsDebit case final auBecsDebit$?)
+      'au_becs_debit=${Uri.encodeQueryComponent(auBecsDebit$.toString())}',
+    if (body.bacsDebit case final bacsDebit$?)
+      'bacs_debit=${Uri.encodeQueryComponent(bacsDebit$.toString())}',
+    if (body.bancontact case final bancontact$?)
+      'bancontact=${Uri.encodeQueryComponent(bancontact$.toString())}',
+    if (body.billie case final billie$?)
+      'billie=${Uri.encodeQueryComponent(billie$.toString())}',
+    if (body.blik case final blik$?)
+      'blik=${Uri.encodeQueryComponent(blik$.toString())}',
+    if (body.boleto case final boleto$?)
+      'boleto=${Uri.encodeQueryComponent(boleto$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.cartesBancaires case final cartesBancaires$?)
+      'cartes_bancaires=${Uri.encodeQueryComponent(cartesBancaires$.toString())}',
+    if (body.cashapp case final cashapp$?)
+      'cashapp=${Uri.encodeQueryComponent(cashapp$.toString())}',
+    if (body.crypto case final crypto$?)
+      'crypto=${Uri.encodeQueryComponent(crypto$.toString())}',
+    if (body.customerBalance case final customerBalance$?)
+      'customer_balance=${Uri.encodeQueryComponent(customerBalance$.toString())}',
+    if (body.eps case final eps$?)
+      'eps=${Uri.encodeQueryComponent(eps$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fpx case final fpx$?)
+      'fpx=${Uri.encodeQueryComponent(fpx$.toString())}',
+    if (body.frMealVoucherConecs case final frMealVoucherConecs$?)
+      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(frMealVoucherConecs$.toString())}',
+    if (body.giropay case final giropay$?)
+      'giropay=${Uri.encodeQueryComponent(giropay$.toString())}',
+    if (body.googlePay case final googlePay$?)
+      'google_pay=${Uri.encodeQueryComponent(googlePay$.toString())}',
+    if (body.grabpay case final grabpay$?)
+      'grabpay=${Uri.encodeQueryComponent(grabpay$.toString())}',
+    if (body.ideal case final ideal$?)
+      'ideal=${Uri.encodeQueryComponent(ideal$.toString())}',
+    if (body.jcb case final jcb$?)
+      'jcb=${Uri.encodeQueryComponent(jcb$.toString())}',
+    if (body.kakaoPay case final kakaoPay$?)
+      'kakao_pay=${Uri.encodeQueryComponent(kakaoPay$.toString())}',
+    if (body.klarna case final klarna$?)
+      'klarna=${Uri.encodeQueryComponent(klarna$.toString())}',
+    if (body.konbini case final konbini$?)
+      'konbini=${Uri.encodeQueryComponent(konbini$.toString())}',
+    if (body.krCard case final krCard$?)
+      'kr_card=${Uri.encodeQueryComponent(krCard$.toString())}',
+    if (body.link case final link$?)
+      'link=${Uri.encodeQueryComponent(link$.toString())}',
+    if (body.mbWay case final mbWay$?)
+      'mb_way=${Uri.encodeQueryComponent(mbWay$.toString())}',
+    if (body.mobilepay case final mobilepay$?)
+      'mobilepay=${Uri.encodeQueryComponent(mobilepay$.toString())}',
+    if (body.multibanco case final multibanco$?)
+      'multibanco=${Uri.encodeQueryComponent(multibanco$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.naverPay case final naverPay$?)
+      'naver_pay=${Uri.encodeQueryComponent(naverPay$.toString())}',
+    if (body.nzBankAccount case final nzBankAccount$?)
+      'nz_bank_account=${Uri.encodeQueryComponent(nzBankAccount$.toString())}',
+    if (body.oxxo case final oxxo$?)
+      'oxxo=${Uri.encodeQueryComponent(oxxo$.toString())}',
+    if (body.p24 case final p24$?)
+      'p24=${Uri.encodeQueryComponent(p24$.toString())}',
+    if (body.payByBank case final payByBank$?)
+      'pay_by_bank=${Uri.encodeQueryComponent(payByBank$.toString())}',
+    if (body.payco case final payco$?)
+      'payco=${Uri.encodeQueryComponent(payco$.toString())}',
+    if (body.paynow case final paynow$?)
+      'paynow=${Uri.encodeQueryComponent(paynow$.toString())}',
+    if (body.paypal case final paypal$?)
+      'paypal=${Uri.encodeQueryComponent(paypal$.toString())}',
+    if (body.payto case final payto$?)
+      'payto=${Uri.encodeQueryComponent(payto$.toString())}',
+    if (body.pix case final pix$?)
+      'pix=${Uri.encodeQueryComponent(pix$.toString())}',
+    if (body.promptpay case final promptpay$?)
+      'promptpay=${Uri.encodeQueryComponent(promptpay$.toString())}',
+    if (body.revolutPay case final revolutPay$?)
+      'revolut_pay=${Uri.encodeQueryComponent(revolutPay$.toString())}',
+    if (body.samsungPay case final samsungPay$?)
+      'samsung_pay=${Uri.encodeQueryComponent(samsungPay$.toString())}',
+    if (body.satispay case final satispay$?)
+      'satispay=${Uri.encodeQueryComponent(satispay$.toString())}',
+    if (body.sepaDebit case final sepaDebit$?)
+      'sepa_debit=${Uri.encodeQueryComponent(sepaDebit$.toString())}',
+    if (body.sofort case final sofort$?)
+      'sofort=${Uri.encodeQueryComponent(sofort$.toString())}',
+    if (body.swish case final swish$?)
+      'swish=${Uri.encodeQueryComponent(swish$.toString())}',
+    if (body.twint case final twint$?)
+      'twint=${Uri.encodeQueryComponent(twint$.toString())}',
+    if (body.usBankAccount case final usBankAccount$?)
+      'us_bank_account=${Uri.encodeQueryComponent(usBankAccount$.toString())}',
+    if (body.wechatPay case final wechatPay$?)
+      'wechat_pay=${Uri.encodeQueryComponent(wechatPay$.toString())}',
+    if (body.zip case final zip$?)
+      'zip=${Uri.encodeQueryComponent(zip$.toString())}',
   ].join('&'),
 );
 
@@ -12079,10 +12079,10 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
-    if (body.enabled case final _enabled?)
-      'enabled=${Uri.encodeQueryComponent(_enabled.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.enabled case final enabled$?)
+      'enabled=${Uri.encodeQueryComponent(enabled$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -12140,10 +12140,10 @@ final request = ApiRequest(
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
   headers: headers,
   body: [
-    if (body.enabled case final _enabled?)
-      'enabled=${Uri.encodeQueryComponent(_enabled.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.enabled case final enabled$?)
+      'enabled=${Uri.encodeQueryComponent(enabled$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -12175,8 +12175,8 @@ final request = ApiRequest(
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}/validate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -12243,126 +12243,126 @@ final request = ApiRequest(
   path: '/v1/payment_methods',
   headers: headers,
   body: [
-    if (body.acssDebit case final _acssDebit?)
-      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
-    if (body.affirm case final _affirm?)
-      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
-    if (body.afterpayClearpay case final _afterpayClearpay?)
-      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
-    if (body.alipay case final _alipay?)
-      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
-    if (body.allowRedisplay case final _allowRedisplay?)
-      'allow_redisplay=${Uri.encodeQueryComponent(_allowRedisplay.toJson())}',
-    if (body.alma case final _alma?)
-      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
-    if (body.amazonPay case final _amazonPay?)
-      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
-    if (body.auBecsDebit case final _auBecsDebit?)
-      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
-    if (body.bacsDebit case final _bacsDebit?)
-      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
-    if (body.bancontact case final _bancontact?)
-      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
-    if (body.billie case final _billie?)
-      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
-    if (body.billingDetails case final _billingDetails?)
-      'billing_details=${Uri.encodeQueryComponent(_billingDetails.toString())}',
-    if (body.blik case final _blik?)
-      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
-    if (body.boleto case final _boleto?)
-      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.cashapp case final _cashapp?)
-      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
-    if (body.crypto case final _crypto?)
-      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
-    if (body.custom case final _custom?)
-      'custom=${Uri.encodeQueryComponent(_custom.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerBalance case final _customerBalance?)
-      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
-    if (body.eps case final _eps?)
-      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fpx case final _fpx?)
-      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
-    if (body.giropay case final _giropay?)
-      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
-    if (body.grabpay case final _grabpay?)
-      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
-    if (body.ideal case final _ideal?)
-      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
-    if (body.interacPresent case final _interacPresent?)
-      'interac_present=${Uri.encodeQueryComponent(_interacPresent.toString())}',
-    if (body.kakaoPay case final _kakaoPay?)
-      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
-    if (body.klarna case final _klarna?)
-      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
-    if (body.konbini case final _konbini?)
-      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
-    if (body.krCard case final _krCard?)
-      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
-    if (body.link case final _link?)
-      'link=${Uri.encodeQueryComponent(_link.toString())}',
-    if (body.mbWay case final _mbWay?)
-      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.mobilepay case final _mobilepay?)
-      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
-    if (body.multibanco case final _multibanco?)
-      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
-    if (body.naverPay case final _naverPay?)
-      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
-    if (body.nzBankAccount case final _nzBankAccount?)
-      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
-    if (body.oxxo case final _oxxo?)
-      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
-    if (body.p24 case final _p24?)
-      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
-    if (body.payByBank case final _payByBank?)
-      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
-    if (body.payco case final _payco?)
-      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paynow case final _paynow?)
-      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
-    if (body.paypal case final _paypal?)
-      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
-    if (body.payto case final _payto?)
-      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
-    if (body.pix case final _pix?)
-      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
-    if (body.promptpay case final _promptpay?)
-      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
-    if (body.radarOptions case final _radarOptions?)
-      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
-    if (body.revolutPay case final _revolutPay?)
-      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
-    if (body.samsungPay case final _samsungPay?)
-      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
-    if (body.satispay case final _satispay?)
-      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
-    if (body.sepaDebit case final _sepaDebit?)
-      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
-    if (body.sofort case final _sofort?)
-      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
-    if (body.swish case final _swish?)
-      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
-    if (body.twint case final _twint?)
-      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
-    if (body.usBankAccount case final _usBankAccount?)
-      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
-    if (body.wechatPay case final _wechatPay?)
-      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
-    if (body.zip case final _zip?)
-      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+    if (body.acssDebit case final acssDebit$?)
+      'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
+    if (body.affirm case final affirm$?)
+      'affirm=${Uri.encodeQueryComponent(affirm$.toString())}',
+    if (body.afterpayClearpay case final afterpayClearpay$?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(afterpayClearpay$.toString())}',
+    if (body.alipay case final alipay$?)
+      'alipay=${Uri.encodeQueryComponent(alipay$.toString())}',
+    if (body.allowRedisplay case final allowRedisplay$?)
+      'allow_redisplay=${Uri.encodeQueryComponent(allowRedisplay$.toJson())}',
+    if (body.alma case final alma$?)
+      'alma=${Uri.encodeQueryComponent(alma$.toString())}',
+    if (body.amazonPay case final amazonPay$?)
+      'amazon_pay=${Uri.encodeQueryComponent(amazonPay$.toString())}',
+    if (body.auBecsDebit case final auBecsDebit$?)
+      'au_becs_debit=${Uri.encodeQueryComponent(auBecsDebit$.toString())}',
+    if (body.bacsDebit case final bacsDebit$?)
+      'bacs_debit=${Uri.encodeQueryComponent(bacsDebit$.toString())}',
+    if (body.bancontact case final bancontact$?)
+      'bancontact=${Uri.encodeQueryComponent(bancontact$.toString())}',
+    if (body.billie case final billie$?)
+      'billie=${Uri.encodeQueryComponent(billie$.toString())}',
+    if (body.billingDetails case final billingDetails$?)
+      'billing_details=${Uri.encodeQueryComponent(billingDetails$.toString())}',
+    if (body.blik case final blik$?)
+      'blik=${Uri.encodeQueryComponent(blik$.toString())}',
+    if (body.boleto case final boleto$?)
+      'boleto=${Uri.encodeQueryComponent(boleto$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.cashapp case final cashapp$?)
+      'cashapp=${Uri.encodeQueryComponent(cashapp$.toString())}',
+    if (body.crypto case final crypto$?)
+      'crypto=${Uri.encodeQueryComponent(crypto$.toString())}',
+    if (body.custom case final custom$?)
+      'custom=${Uri.encodeQueryComponent(custom$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerBalance case final customerBalance$?)
+      'customer_balance=${Uri.encodeQueryComponent(customerBalance$.toString())}',
+    if (body.eps case final eps$?)
+      'eps=${Uri.encodeQueryComponent(eps$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fpx case final fpx$?)
+      'fpx=${Uri.encodeQueryComponent(fpx$.toString())}',
+    if (body.giropay case final giropay$?)
+      'giropay=${Uri.encodeQueryComponent(giropay$.toString())}',
+    if (body.grabpay case final grabpay$?)
+      'grabpay=${Uri.encodeQueryComponent(grabpay$.toString())}',
+    if (body.ideal case final ideal$?)
+      'ideal=${Uri.encodeQueryComponent(ideal$.toString())}',
+    if (body.interacPresent case final interacPresent$?)
+      'interac_present=${Uri.encodeQueryComponent(interacPresent$.toString())}',
+    if (body.kakaoPay case final kakaoPay$?)
+      'kakao_pay=${Uri.encodeQueryComponent(kakaoPay$.toString())}',
+    if (body.klarna case final klarna$?)
+      'klarna=${Uri.encodeQueryComponent(klarna$.toString())}',
+    if (body.konbini case final konbini$?)
+      'konbini=${Uri.encodeQueryComponent(konbini$.toString())}',
+    if (body.krCard case final krCard$?)
+      'kr_card=${Uri.encodeQueryComponent(krCard$.toString())}',
+    if (body.link case final link$?)
+      'link=${Uri.encodeQueryComponent(link$.toString())}',
+    if (body.mbWay case final mbWay$?)
+      'mb_way=${Uri.encodeQueryComponent(mbWay$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.mobilepay case final mobilepay$?)
+      'mobilepay=${Uri.encodeQueryComponent(mobilepay$.toString())}',
+    if (body.multibanco case final multibanco$?)
+      'multibanco=${Uri.encodeQueryComponent(multibanco$.toString())}',
+    if (body.naverPay case final naverPay$?)
+      'naver_pay=${Uri.encodeQueryComponent(naverPay$.toString())}',
+    if (body.nzBankAccount case final nzBankAccount$?)
+      'nz_bank_account=${Uri.encodeQueryComponent(nzBankAccount$.toString())}',
+    if (body.oxxo case final oxxo$?)
+      'oxxo=${Uri.encodeQueryComponent(oxxo$.toString())}',
+    if (body.p24 case final p24$?)
+      'p24=${Uri.encodeQueryComponent(p24$.toString())}',
+    if (body.payByBank case final payByBank$?)
+      'pay_by_bank=${Uri.encodeQueryComponent(payByBank$.toString())}',
+    if (body.payco case final payco$?)
+      'payco=${Uri.encodeQueryComponent(payco$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paynow case final paynow$?)
+      'paynow=${Uri.encodeQueryComponent(paynow$.toString())}',
+    if (body.paypal case final paypal$?)
+      'paypal=${Uri.encodeQueryComponent(paypal$.toString())}',
+    if (body.payto case final payto$?)
+      'payto=${Uri.encodeQueryComponent(payto$.toString())}',
+    if (body.pix case final pix$?)
+      'pix=${Uri.encodeQueryComponent(pix$.toString())}',
+    if (body.promptpay case final promptpay$?)
+      'promptpay=${Uri.encodeQueryComponent(promptpay$.toString())}',
+    if (body.radarOptions case final radarOptions$?)
+      'radar_options=${Uri.encodeQueryComponent(radarOptions$.toString())}',
+    if (body.revolutPay case final revolutPay$?)
+      'revolut_pay=${Uri.encodeQueryComponent(revolutPay$.toString())}',
+    if (body.samsungPay case final samsungPay$?)
+      'samsung_pay=${Uri.encodeQueryComponent(samsungPay$.toString())}',
+    if (body.satispay case final satispay$?)
+      'satispay=${Uri.encodeQueryComponent(satispay$.toString())}',
+    if (body.sepaDebit case final sepaDebit$?)
+      'sepa_debit=${Uri.encodeQueryComponent(sepaDebit$.toString())}',
+    if (body.sofort case final sofort$?)
+      'sofort=${Uri.encodeQueryComponent(sofort$.toString())}',
+    if (body.swish case final swish$?)
+      'swish=${Uri.encodeQueryComponent(swish$.toString())}',
+    if (body.twint case final twint$?)
+      'twint=${Uri.encodeQueryComponent(twint$.toString())}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
+    if (body.usBankAccount case final usBankAccount$?)
+      'us_bank_account=${Uri.encodeQueryComponent(usBankAccount$.toString())}',
+    if (body.wechatPay case final wechatPay$?)
+      'wechat_pay=${Uri.encodeQueryComponent(wechatPay$.toString())}',
+    if (body.zip case final zip$?)
+      'zip=${Uri.encodeQueryComponent(zip$.toString())}',
   ].join('&'),
 );
 
@@ -12420,20 +12420,20 @@ final request = ApiRequest(
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
   headers: headers,
   body: [
-    if (body.allowRedisplay case final _allowRedisplay?)
-      'allow_redisplay=${Uri.encodeQueryComponent(_allowRedisplay.toJson())}',
-    if (body.billingDetails case final _billingDetails?)
-      'billing_details=${Uri.encodeQueryComponent(_billingDetails.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.payto case final _payto?)
-      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
-    if (body.usBankAccount case final _usBankAccount?)
-      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
+    if (body.allowRedisplay case final allowRedisplay$?)
+      'allow_redisplay=${Uri.encodeQueryComponent(allowRedisplay$.toJson())}',
+    if (body.billingDetails case final billingDetails$?)
+      'billing_details=${Uri.encodeQueryComponent(billingDetails$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.payto case final payto$?)
+      'payto=${Uri.encodeQueryComponent(payto$.toString())}',
+    if (body.usBankAccount case final usBankAccount$?)
+      'us_bank_account=${Uri.encodeQueryComponent(usBankAccount$.toString())}',
   ].join('&'),
 );
 
@@ -12472,12 +12472,12 @@ final request = ApiRequest(
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/attach',
   headers: headers,
   body: [
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -12504,8 +12504,8 @@ final request = ApiRequest(
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/detach',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -12535,28 +12535,28 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'amount_requested=${Uri.encodeQueryComponent(body.amountRequested.toString())}',
-    if (body.customerDetails case final _customerDetails?)
-      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
-    if (body.customerPresence case final _customerPresence?)
-      'customer_presence=${Uri.encodeQueryComponent(_customerPresence.toJson())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.failed case final _failed?)
-      'failed=${Uri.encodeQueryComponent(_failed.toString())}',
-    if (body.guaranteed case final _guaranteed?)
-      'guaranteed=${Uri.encodeQueryComponent(_guaranteed.toString())}',
+    if (body.customerDetails case final customerDetails$?)
+      'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
+    if (body.customerPresence case final customerPresence$?)
+      'customer_presence=${Uri.encodeQueryComponent(customerPresence$.toJson())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.failed case final failed$?)
+      'failed=${Uri.encodeQueryComponent(failed$.toString())}',
+    if (body.guaranteed case final guaranteed$?)
+      'guaranteed=${Uri.encodeQueryComponent(guaranteed$.toString())}',
     'initiated_at=${Uri.encodeQueryComponent(body.initiatedAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.outcome case final _outcome?)
-      'outcome=${Uri.encodeQueryComponent(_outcome.toJson())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.outcome case final outcome$?)
+      'outcome=${Uri.encodeQueryComponent(outcome$.toJson())}',
     'payment_method_details=${Uri.encodeQueryComponent(body.paymentMethodDetails.toString())}',
-    if (body.processorDetails case final _processorDetails?)
-      'processor_details=${Uri.encodeQueryComponent(_processorDetails.toString())}',
-    if (body.shippingDetails case final _shippingDetails?)
-      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+    if (body.processorDetails case final processorDetails$?)
+      'processor_details=${Uri.encodeQueryComponent(processorDetails$.toString())}',
+    if (body.shippingDetails case final shippingDetails$?)
+      'shipping_details=${Uri.encodeQueryComponent(shippingDetails$.toString())}',
   ].join('&'),
 );
 
@@ -12615,23 +12615,23 @@ final request = ApiRequest(
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt',
   headers: headers,
   body: [
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.failed case final _failed?)
-      'failed=${Uri.encodeQueryComponent(_failed.toString())}',
-    if (body.guaranteed case final _guaranteed?)
-      'guaranteed=${Uri.encodeQueryComponent(_guaranteed.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.failed case final failed$?)
+      'failed=${Uri.encodeQueryComponent(failed$.toString())}',
+    if (body.guaranteed case final guaranteed$?)
+      'guaranteed=${Uri.encodeQueryComponent(guaranteed$.toString())}',
     'initiated_at=${Uri.encodeQueryComponent(body.initiatedAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.outcome case final _outcome?)
-      'outcome=${Uri.encodeQueryComponent(_outcome.toJson())}',
-    if (body.paymentMethodDetails case final _paymentMethodDetails?)
-      'payment_method_details=${Uri.encodeQueryComponent(_paymentMethodDetails.toString())}',
-    if (body.shippingDetails case final _shippingDetails?)
-      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.outcome case final outcome$?)
+      'outcome=${Uri.encodeQueryComponent(outcome$.toJson())}',
+    if (body.paymentMethodDetails case final paymentMethodDetails$?)
+      'payment_method_details=${Uri.encodeQueryComponent(paymentMethodDetails$.toString())}',
+    if (body.shippingDetails case final shippingDetails$?)
+      'shipping_details=${Uri.encodeQueryComponent(shippingDetails$.toString())}',
   ].join('&'),
 );
 
@@ -12660,10 +12660,10 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'canceled_at=${Uri.encodeQueryComponent(body.canceledAt.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -12691,11 +12691,11 @@ final request = ApiRequest(
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_failed',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'failed_at=${Uri.encodeQueryComponent(body.failedAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -12723,11 +12723,11 @@ final request = ApiRequest(
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_guaranteed',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'guaranteed_at=${Uri.encodeQueryComponent(body.guaranteedAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -12754,16 +12754,16 @@ final request = ApiRequest(
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_informational',
   headers: headers,
   body: [
-    if (body.customerDetails case final _customerDetails?)
-      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.shippingDetails case final _shippingDetails?)
-      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+    if (body.customerDetails case final customerDetails$?)
+      'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.shippingDetails case final shippingDetails$?)
+      'shipping_details=${Uri.encodeQueryComponent(shippingDetails$.toString())}',
   ].join('&'),
 );
 
@@ -12791,14 +12791,14 @@ final request = ApiRequest(
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_refund',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.initiatedAt case final _initiatedAt?)
-      'initiated_at=${Uri.encodeQueryComponent(_initiatedAt.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.initiatedAt case final initiatedAt$?)
+      'initiated_at=${Uri.encodeQueryComponent(initiatedAt$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'outcome=${Uri.encodeQueryComponent(body.outcome.toJson())}',
     'processor_details=${Uri.encodeQueryComponent(body.processorDetails.toString())}',
     'refunded=${Uri.encodeQueryComponent(body.refunded.toString())}',
@@ -12876,22 +12876,22 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.destination case final _destination?)
-      'destination=${Uri.encodeQueryComponent(_destination)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.method case final _method?)
-      'method=${Uri.encodeQueryComponent(_method.toJson())}',
-    if (body.payoutMethod case final _payoutMethod?)
-      'payout_method=${Uri.encodeQueryComponent(_payoutMethod)}',
-    if (body.sourceType case final _sourceType?)
-      'source_type=${Uri.encodeQueryComponent(_sourceType.toJson())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.destination case final destination$?)
+      'destination=${Uri.encodeQueryComponent(destination$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.method case final method$?)
+      'method=${Uri.encodeQueryComponent(method$.toJson())}',
+    if (body.payoutMethod case final payoutMethod$?)
+      'payout_method=${Uri.encodeQueryComponent(payoutMethod$)}',
+    if (body.sourceType case final sourceType$?)
+      'source_type=${Uri.encodeQueryComponent(sourceType$.toJson())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
   ].join('&'),
 );
 
@@ -12949,10 +12949,10 @@ final request = ApiRequest(
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -12979,8 +12979,8 @@ final request = ApiRequest(
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -13009,10 +13009,10 @@ final request = ApiRequest(
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/reverse',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -13078,40 +13078,40 @@ final request = ApiRequest(
   path: '/v1/plans',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.amountDecimal case final _amountDecimal?)
-      'amount_decimal=${Uri.encodeQueryComponent(_amountDecimal)}',
-    if (body.billingScheme case final _billingScheme?)
-      'billing_scheme=${Uri.encodeQueryComponent(_billingScheme.toJson())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.amountDecimal case final amountDecimal$?)
+      'amount_decimal=${Uri.encodeQueryComponent(amountDecimal$)}',
+    if (body.billingScheme case final billingScheme$?)
+      'billing_scheme=${Uri.encodeQueryComponent(billingScheme$.toJson())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.id case final _id?)
-      'id=${Uri.encodeQueryComponent(_id)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.id case final id$?)
+      'id=${Uri.encodeQueryComponent(id$)}',
     'interval=${Uri.encodeQueryComponent(body.interval.toJson())}',
-    if (body.intervalCount case final _intervalCount?)
-      'interval_count=${Uri.encodeQueryComponent(_intervalCount.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.meter case final _meter?)
-      'meter=${Uri.encodeQueryComponent(_meter)}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname)}',
-    if (body.product case final _product?)
-      'product=${Uri.encodeQueryComponent(_product.toString())}',
-    if (body.tiers case final _tiers?)
-      'tiers=${Uri.encodeQueryComponent(_tiers.toString())}',
-    if (body.tiersMode case final _tiersMode?)
-      'tiers_mode=${Uri.encodeQueryComponent(_tiersMode.toJson())}',
-    if (body.transformUsage case final _transformUsage?)
-      'transform_usage=${Uri.encodeQueryComponent(_transformUsage.toString())}',
-    if (body.trialPeriodDays case final _trialPeriodDays?)
-      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
-    if (body.usageType case final _usageType?)
-      'usage_type=${Uri.encodeQueryComponent(_usageType.toJson())}',
+    if (body.intervalCount case final intervalCount$?)
+      'interval_count=${Uri.encodeQueryComponent(intervalCount$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.meter case final meter$?)
+      'meter=${Uri.encodeQueryComponent(meter$)}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$)}',
+    if (body.product case final product$?)
+      'product=${Uri.encodeQueryComponent(product$.toString())}',
+    if (body.tiers case final tiers$?)
+      'tiers=${Uri.encodeQueryComponent(tiers$.toString())}',
+    if (body.tiersMode case final tiersMode$?)
+      'tiers_mode=${Uri.encodeQueryComponent(tiersMode$.toJson())}',
+    if (body.transformUsage case final transformUsage$?)
+      'transform_usage=${Uri.encodeQueryComponent(transformUsage$.toString())}',
+    if (body.trialPeriodDays case final trialPeriodDays$?)
+      'trial_period_days=${Uri.encodeQueryComponent(trialPeriodDays$.toString())}',
+    if (body.usageType case final usageType$?)
+      'usage_type=${Uri.encodeQueryComponent(usageType$.toJson())}',
   ].join('&'),
 );
 
@@ -13169,18 +13169,18 @@ final request = ApiRequest(
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname)}',
-    if (body.product case final _product?)
-      'product=${Uri.encodeQueryComponent(_product)}',
-    if (body.trialPeriodDays case final _trialPeriodDays?)
-      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$)}',
+    if (body.product case final product$?)
+      'product=${Uri.encodeQueryComponent(product$)}',
+    if (body.trialPeriodDays case final trialPeriodDays$?)
+      'trial_period_days=${Uri.encodeQueryComponent(trialPeriodDays$.toString())}',
   ].join('&'),
 );
 
@@ -13282,43 +13282,43 @@ final request = ApiRequest(
   path: '/v1/prices',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.billingScheme case final _billingScheme?)
-      'billing_scheme=${Uri.encodeQueryComponent(_billingScheme.toJson())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.billingScheme case final billingScheme$?)
+      'billing_scheme=${Uri.encodeQueryComponent(billingScheme$.toJson())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.currencyOptions case final _currencyOptions?)
-      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
-    if (body.customUnitAmount case final _customUnitAmount?)
-      'custom_unit_amount=${Uri.encodeQueryComponent(_customUnitAmount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.lookupKey case final _lookupKey?)
-      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname)}',
-    if (body.product case final _product?)
-      'product=${Uri.encodeQueryComponent(_product)}',
-    if (body.productData case final _productData?)
-      'product_data=${Uri.encodeQueryComponent(_productData.toString())}',
-    if (body.recurring case final _recurring?)
-      'recurring=${Uri.encodeQueryComponent(_recurring.toString())}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
-    if (body.tiers case final _tiers?)
-      'tiers=${Uri.encodeQueryComponent(_tiers.toString())}',
-    if (body.tiersMode case final _tiersMode?)
-      'tiers_mode=${Uri.encodeQueryComponent(_tiersMode.toJson())}',
-    if (body.transferLookupKey case final _transferLookupKey?)
-      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
-    if (body.transformQuantity case final _transformQuantity?)
-      'transform_quantity=${Uri.encodeQueryComponent(_transformQuantity.toString())}',
-    if (body.unitAmount case final _unitAmount?)
-      'unit_amount=${Uri.encodeQueryComponent(_unitAmount.toString())}',
-    if (body.unitAmountDecimal case final _unitAmountDecimal?)
-      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+    if (body.currencyOptions case final currencyOptions$?)
+      'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
+    if (body.customUnitAmount case final customUnitAmount$?)
+      'custom_unit_amount=${Uri.encodeQueryComponent(customUnitAmount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.lookupKey case final lookupKey$?)
+      'lookup_key=${Uri.encodeQueryComponent(lookupKey$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$)}',
+    if (body.product case final product$?)
+      'product=${Uri.encodeQueryComponent(product$)}',
+    if (body.productData case final productData$?)
+      'product_data=${Uri.encodeQueryComponent(productData$.toString())}',
+    if (body.recurring case final recurring$?)
+      'recurring=${Uri.encodeQueryComponent(recurring$.toString())}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
+    if (body.tiers case final tiers$?)
+      'tiers=${Uri.encodeQueryComponent(tiers$.toString())}',
+    if (body.tiersMode case final tiersMode$?)
+      'tiers_mode=${Uri.encodeQueryComponent(tiersMode$.toJson())}',
+    if (body.transferLookupKey case final transferLookupKey$?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(transferLookupKey$.toString())}',
+    if (body.transformQuantity case final transformQuantity$?)
+      'transform_quantity=${Uri.encodeQueryComponent(transformQuantity$.toString())}',
+    if (body.unitAmount case final unitAmount$?)
+      'unit_amount=${Uri.encodeQueryComponent(unitAmount$.toString())}',
+    if (body.unitAmountDecimal case final unitAmountDecimal$?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(unitAmountDecimal$)}',
   ].join('&'),
 );
 
@@ -13413,22 +13413,22 @@ final request = ApiRequest(
   path: '/v1/prices/${Uri.encodeComponent(price)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.currencyOptions case final _currencyOptions?)
-      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.lookupKey case final _lookupKey?)
-      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname)}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
-    if (body.transferLookupKey case final _transferLookupKey?)
-      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.currencyOptions case final currencyOptions$?)
+      'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.lookupKey case final lookupKey$?)
+      'lookup_key=${Uri.encodeQueryComponent(lookupKey$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$)}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
+    if (body.transferLookupKey case final transferLookupKey$?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(transferLookupKey$.toString())}',
   ].join('&'),
 );
 
@@ -13498,35 +13498,35 @@ final request = ApiRequest(
   path: '/v1/products',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.defaultPriceData case final _defaultPriceData?)
-      'default_price_data=${Uri.encodeQueryComponent(_defaultPriceData.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.id case final _id?)
-      'id=${Uri.encodeQueryComponent(_id)}',
-    if (body.images case final _images?)
-      'images=${Uri.encodeQueryComponent(_images.toString())}',
-    if (body.marketingFeatures case final _marketingFeatures?)
-      'marketing_features=${Uri.encodeQueryComponent(_marketingFeatures.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.defaultPriceData case final defaultPriceData$?)
+      'default_price_data=${Uri.encodeQueryComponent(defaultPriceData$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.id case final id$?)
+      'id=${Uri.encodeQueryComponent(id$)}',
+    if (body.images case final images$?)
+      'images=${Uri.encodeQueryComponent(images$.toString())}',
+    if (body.marketingFeatures case final marketingFeatures$?)
+      'marketing_features=${Uri.encodeQueryComponent(marketingFeatures$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
-    if (body.packageDimensions case final _packageDimensions?)
-      'package_dimensions=${Uri.encodeQueryComponent(_packageDimensions.toString())}',
-    if (body.shippable case final _shippable?)
-      'shippable=${Uri.encodeQueryComponent(_shippable.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.taxCode case final _taxCode?)
-      'tax_code=${Uri.encodeQueryComponent(_taxCode)}',
-    if (body.unitLabel case final _unitLabel?)
-      'unit_label=${Uri.encodeQueryComponent(_unitLabel)}',
-    if (body.url case final _url?)
-      'url=${Uri.encodeQueryComponent(_url)}',
+    if (body.packageDimensions case final packageDimensions$?)
+      'package_dimensions=${Uri.encodeQueryComponent(packageDimensions$.toString())}',
+    if (body.shippable case final shippable$?)
+      'shippable=${Uri.encodeQueryComponent(shippable$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.taxCode case final taxCode$?)
+      'tax_code=${Uri.encodeQueryComponent(taxCode$)}',
+    if (body.unitLabel case final unitLabel$?)
+      'unit_label=${Uri.encodeQueryComponent(unitLabel$)}',
+    if (body.url case final url$?)
+      'url=${Uri.encodeQueryComponent(url$)}',
   ].join('&'),
 );
 
@@ -13621,34 +13621,34 @@ final request = ApiRequest(
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.defaultPrice case final _defaultPrice?)
-      'default_price=${Uri.encodeQueryComponent(_defaultPrice)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.images case final _images?)
-      'images=${Uri.encodeQueryComponent(_images.toString())}',
-    if (body.marketingFeatures case final _marketingFeatures?)
-      'marketing_features=${Uri.encodeQueryComponent(_marketingFeatures.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.packageDimensions case final _packageDimensions?)
-      'package_dimensions=${Uri.encodeQueryComponent(_packageDimensions.toString())}',
-    if (body.shippable case final _shippable?)
-      'shippable=${Uri.encodeQueryComponent(_shippable.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.taxCode case final _taxCode?)
-      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
-    if (body.unitLabel case final _unitLabel?)
-      'unit_label=${Uri.encodeQueryComponent(_unitLabel.toString())}',
-    if (body.url case final _url?)
-      'url=${Uri.encodeQueryComponent(_url.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.defaultPrice case final defaultPrice$?)
+      'default_price=${Uri.encodeQueryComponent(defaultPrice$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.images case final images$?)
+      'images=${Uri.encodeQueryComponent(images$.toString())}',
+    if (body.marketingFeatures case final marketingFeatures$?)
+      'marketing_features=${Uri.encodeQueryComponent(marketingFeatures$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.packageDimensions case final packageDimensions$?)
+      'package_dimensions=${Uri.encodeQueryComponent(packageDimensions$.toString())}',
+    if (body.shippable case final shippable$?)
+      'shippable=${Uri.encodeQueryComponent(shippable$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.taxCode case final taxCode$?)
+      'tax_code=${Uri.encodeQueryComponent(taxCode$.toString())}',
+    if (body.unitLabel case final unitLabel$?)
+      'unit_label=${Uri.encodeQueryComponent(unitLabel$.toString())}',
+    if (body.url case final url$?)
+      'url=${Uri.encodeQueryComponent(url$.toString())}',
   ].join('&'),
 );
 
@@ -13736,8 +13736,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'entitlement_feature=${Uri.encodeQueryComponent(body.entitlementFeature)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -13863,25 +13863,25 @@ final request = ApiRequest(
   path: '/v1/promotion_codes',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.code case final _code?)
-      'code=${Uri.encodeQueryComponent(_code)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.maxRedemptions case final _maxRedemptions?)
-      'max_redemptions=${Uri.encodeQueryComponent(_maxRedemptions.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.code case final code$?)
+      'code=${Uri.encodeQueryComponent(code$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.maxRedemptions case final maxRedemptions$?)
+      'max_redemptions=${Uri.encodeQueryComponent(maxRedemptions$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'promotion=${Uri.encodeQueryComponent(body.promotion.toString())}',
-    if (body.restrictions case final _restrictions?)
-      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+    if (body.restrictions case final restrictions$?)
+      'restrictions=${Uri.encodeQueryComponent(restrictions$.toString())}',
   ].join('&'),
 );
 
@@ -13939,14 +13939,14 @@ final request = ApiRequest(
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.restrictions case final _restrictions?)
-      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.restrictions case final restrictions$?)
+      'restrictions=${Uri.encodeQueryComponent(restrictions$.toString())}',
   ].join('&'),
 );
 
@@ -14011,48 +14011,48 @@ final request = ApiRequest(
   path: '/v1/quotes',
   headers: headers,
   body: [
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.footer case final _footer?)
-      'footer=${Uri.encodeQueryComponent(_footer.toString())}',
-    if (body.fromQuote case final _fromQuote?)
-      'from_quote=${Uri.encodeQueryComponent(_fromQuote.toString())}',
-    if (body.header case final _header?)
-      'header=${Uri.encodeQueryComponent(_header.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.subscriptionData case final _subscriptionData?)
-      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
-    if (body.testClock case final _testClock?)
-      'test_clock=${Uri.encodeQueryComponent(_testClock)}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.footer case final footer$?)
+      'footer=${Uri.encodeQueryComponent(footer$.toString())}',
+    if (body.fromQuote case final fromQuote$?)
+      'from_quote=${Uri.encodeQueryComponent(fromQuote$.toString())}',
+    if (body.header case final header$?)
+      'header=${Uri.encodeQueryComponent(header$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.subscriptionData case final subscriptionData$?)
+      'subscription_data=${Uri.encodeQueryComponent(subscriptionData$.toString())}',
+    if (body.testClock case final testClock$?)
+      'test_clock=${Uri.encodeQueryComponent(testClock$)}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -14110,44 +14110,44 @@ final request = ApiRequest(
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
   headers: headers,
   body: [
-    if (body.applicationFeeAmount case final _applicationFeeAmount?)
-      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
-    if (body.footer case final _footer?)
-      'footer=${Uri.encodeQueryComponent(_footer.toString())}',
-    if (body.header case final _header?)
-      'header=${Uri.encodeQueryComponent(_header.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.subscriptionData case final _subscriptionData?)
-      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.applicationFeeAmount case final applicationFeeAmount$?)
+      'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
+    if (body.footer case final footer$?)
+      'footer=${Uri.encodeQueryComponent(footer$.toString())}',
+    if (body.header case final header$?)
+      'header=${Uri.encodeQueryComponent(header$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.subscriptionData case final subscriptionData$?)
+      'subscription_data=${Uri.encodeQueryComponent(subscriptionData$.toString())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
   ].join('&'),
 );
 
@@ -14174,8 +14174,8 @@ final request = ApiRequest(
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/accept',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -14202,8 +14202,8 @@ final request = ApiRequest(
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -14264,10 +14264,10 @@ final request = ApiRequest(
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/finalize',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
   ].join('&'),
 );
 
@@ -14431,13 +14431,13 @@ final request = ApiRequest(
   path: '/v1/radar/payment_evaluations',
   headers: headers,
   body: [
-    if (body.clientDeviceMetadataDetails case final _clientDeviceMetadataDetails?)
-      'client_device_metadata_details=${Uri.encodeQueryComponent(_clientDeviceMetadataDetails.toString())}',
+    if (body.clientDeviceMetadataDetails case final clientDeviceMetadataDetails$?)
+      'client_device_metadata_details=${Uri.encodeQueryComponent(clientDeviceMetadataDetails$.toString())}',
     'customer_details=${Uri.encodeQueryComponent(body.customerDetails.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'payment_details=${Uri.encodeQueryComponent(body.paymentDetails.toString())}',
   ].join('&'),
 );
@@ -14504,8 +14504,8 @@ final request = ApiRequest(
   path: '/v1/radar/value_list_items',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'value=${Uri.encodeQueryComponent(body.value)}',
     'value_list=${Uri.encodeQueryComponent(body.valueList)}',
   ].join('&'),
@@ -14631,12 +14631,12 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'alias=${Uri.encodeQueryComponent(body.alias)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.itemType case final _itemType?)
-      'item_type=${Uri.encodeQueryComponent(_itemType.toJson())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.itemType case final itemType$?)
+      'item_type=${Uri.encodeQueryComponent(itemType$.toJson())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
   ].join('&'),
 );
@@ -14695,14 +14695,14 @@ final request = ApiRequest(
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
   body: [
-    if (body.alias case final _alias?)
-      'alias=${Uri.encodeQueryComponent(_alias)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.alias case final alias$?)
+      'alias=${Uri.encodeQueryComponent(alias$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -14804,30 +14804,30 @@ final request = ApiRequest(
   path: '/v1/refunds',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.charge case final _charge?)
-      'charge=${Uri.encodeQueryComponent(_charge)}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.instructionsEmail case final _instructionsEmail?)
-      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.origin case final _origin?)
-      'origin=${Uri.encodeQueryComponent(_origin.toJson())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.reason case final _reason?)
-      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
-    if (body.reverseTransfer case final _reverseTransfer?)
-      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.charge case final charge$?)
+      'charge=${Uri.encodeQueryComponent(charge$)}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.instructionsEmail case final instructionsEmail$?)
+      'instructions_email=${Uri.encodeQueryComponent(instructionsEmail$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.origin case final origin$?)
+      'origin=${Uri.encodeQueryComponent(origin$.toJson())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.reason case final reason$?)
+      'reason=${Uri.encodeQueryComponent(reason$.toJson())}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
+    if (body.reverseTransfer case final reverseTransfer$?)
+      'reverse_transfer=${Uri.encodeQueryComponent(reverseTransfer$.toString())}',
   ].join('&'),
 );
 
@@ -14887,10 +14887,10 @@ final request = ApiRequest(
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -14919,8 +14919,8 @@ final request = ApiRequest(
   path: '/v1/refunds/${Uri.encodeComponent(refund)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -14984,10 +14984,10 @@ final request = ApiRequest(
   path: '/v1/reporting/report_runs',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.parameters case final _parameters?)
-      'parameters=${Uri.encodeQueryComponent(_parameters.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.parameters case final parameters$?)
+      'parameters=${Uri.encodeQueryComponent(parameters$.toString())}',
     'report_type=${Uri.encodeQueryComponent(body.reportType)}',
   ].join('&'),
 );
@@ -15176,8 +15176,8 @@ final request = ApiRequest(
   path: '/v1/reviews/${Uri.encodeComponent(review)}/approve',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -15286,50 +15286,50 @@ final request = ApiRequest(
   path: '/v1/setup_intents',
   headers: headers,
   body: [
-    if (body.attachToSelf case final _attachToSelf?)
-      'attach_to_self=${Uri.encodeQueryComponent(_attachToSelf.toString())}',
-    if (body.automaticPaymentMethods case final _automaticPaymentMethods?)
-      'automatic_payment_methods=${Uri.encodeQueryComponent(_automaticPaymentMethods.toString())}',
-    if (body.confirm case final _confirm?)
-      'confirm=${Uri.encodeQueryComponent(_confirm.toString())}',
-    if (body.confirmationToken case final _confirmationToken?)
-      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.flowDirections case final _flowDirections?)
-      'flow_directions=${Uri.encodeQueryComponent(_flowDirections.toString())}',
-    if (body.mandateData case final _mandateData?)
-      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
-      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.singleUse case final _singleUse?)
-      'single_use=${Uri.encodeQueryComponent(_singleUse.toString())}',
-    if (body.usage case final _usage?)
-      'usage=${Uri.encodeQueryComponent(_usage.toJson())}',
-    if (body.useStripeSdk case final _useStripeSdk?)
-      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+    if (body.attachToSelf case final attachToSelf$?)
+      'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
+    if (body.automaticPaymentMethods case final automaticPaymentMethods$?)
+      'automatic_payment_methods=${Uri.encodeQueryComponent(automaticPaymentMethods$.toString())}',
+    if (body.confirm case final confirm$?)
+      'confirm=${Uri.encodeQueryComponent(confirm$.toString())}',
+    if (body.confirmationToken case final confirmationToken$?)
+      'confirmation_token=${Uri.encodeQueryComponent(confirmationToken$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.flowDirections case final flowDirections$?)
+      'flow_directions=${Uri.encodeQueryComponent(flowDirections$.toString())}',
+    if (body.mandateData case final mandateData$?)
+      'mandate_data=${Uri.encodeQueryComponent(mandateData$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodConfiguration case final paymentMethodConfiguration$?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(paymentMethodConfiguration$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.singleUse case final singleUse$?)
+      'single_use=${Uri.encodeQueryComponent(singleUse$.toString())}',
+    if (body.usage case final usage$?)
+      'usage=${Uri.encodeQueryComponent(usage$.toJson())}',
+    if (body.useStripeSdk case final useStripeSdk$?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(useStripeSdk$.toString())}',
   ].join('&'),
 );
 
@@ -15392,32 +15392,32 @@ final request = ApiRequest(
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
   body: [
-    if (body.attachToSelf case final _attachToSelf?)
-      'attach_to_self=${Uri.encodeQueryComponent(_attachToSelf.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
-      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.flowDirections case final _flowDirections?)
-      'flow_directions=${Uri.encodeQueryComponent(_flowDirections.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
-      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.paymentMethodTypes case final _paymentMethodTypes?)
-      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.attachToSelf case final attachToSelf$?)
+      'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.excludedPaymentMethodTypes case final excludedPaymentMethodTypes$?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(excludedPaymentMethodTypes$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.flowDirections case final flowDirections$?)
+      'flow_directions=${Uri.encodeQueryComponent(flowDirections$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodConfiguration case final paymentMethodConfiguration$?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(paymentMethodConfiguration$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.paymentMethodTypes case final paymentMethodTypes$?)
+      'payment_method_types=${Uri.encodeQueryComponent(paymentMethodTypes$.toString())}',
   ].join('&'),
 );
 
@@ -15446,10 +15446,10 @@ final request = ApiRequest(
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
   body: [
-    if (body.cancellationReason case final _cancellationReason?)
-      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.cancellationReason case final cancellationReason$?)
+      'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -15489,24 +15489,24 @@ final request = ApiRequest(
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
   body: [
-    if (body.clientSecret case final _clientSecret?)
-      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
-    if (body.confirmationToken case final _confirmationToken?)
-      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.mandateData case final _mandateData?)
-      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.useStripeSdk case final _useStripeSdk?)
-      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+    if (body.clientSecret case final clientSecret$?)
+      'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
+    if (body.confirmationToken case final confirmationToken$?)
+      'confirmation_token=${Uri.encodeQueryComponent(confirmationToken$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.mandateData case final mandateData$?)
+      'mandate_data=${Uri.encodeQueryComponent(mandateData$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.useStripeSdk case final useStripeSdk$?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(useStripeSdk$.toString())}',
   ].join('&'),
 );
 
@@ -15533,14 +15533,14 @@ final request = ApiRequest(
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
   body: [
-    if (body.amounts case final _amounts?)
-      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
-    if (body.clientSecret case final _clientSecret?)
-      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
-    if (body.descriptorCode case final _descriptorCode?)
-      'descriptor_code=${Uri.encodeQueryComponent(_descriptorCode)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.amounts case final amounts$?)
+      'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
+    if (body.clientSecret case final clientSecret$?)
+      'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
+    if (body.descriptorCode case final descriptorCode$?)
+      'descriptor_code=${Uri.encodeQueryComponent(descriptorCode$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -15606,21 +15606,21 @@ final request = ApiRequest(
   path: '/v1/shipping_rates',
   headers: headers,
   body: [
-    if (body.deliveryEstimate case final _deliveryEstimate?)
-      'delivery_estimate=${Uri.encodeQueryComponent(_deliveryEstimate.toString())}',
+    if (body.deliveryEstimate case final deliveryEstimate$?)
+      'delivery_estimate=${Uri.encodeQueryComponent(deliveryEstimate$.toString())}',
     'display_name=${Uri.encodeQueryComponent(body.displayName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fixedAmount case final _fixedAmount?)
-      'fixed_amount=${Uri.encodeQueryComponent(_fixedAmount.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
-    if (body.taxCode case final _taxCode?)
-      'tax_code=${Uri.encodeQueryComponent(_taxCode)}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fixedAmount case final fixedAmount$?)
+      'fixed_amount=${Uri.encodeQueryComponent(fixedAmount$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
+    if (body.taxCode case final taxCode$?)
+      'tax_code=${Uri.encodeQueryComponent(taxCode$)}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
   ].join('&'),
 );
 
@@ -15678,16 +15678,16 @@ final request = ApiRequest(
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fixedAmount case final _fixedAmount?)
-      'fixed_amount=${Uri.encodeQueryComponent(_fixedAmount.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.taxBehavior case final _taxBehavior?)
-      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fixedAmount case final fixedAmount$?)
+      'fixed_amount=${Uri.encodeQueryComponent(fixedAmount$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.taxBehavior case final taxBehavior$?)
+      'tax_behavior=${Uri.encodeQueryComponent(taxBehavior$.toJson())}',
   ].join('&'),
 );
 
@@ -15714,12 +15714,12 @@ final request = ApiRequest(
   path: '/v1/sigma/saved_queries/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.sql case final _sql?)
-      'sql=${Uri.encodeQueryComponent(_sql)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.sql case final sql$?)
+      'sql=${Uri.encodeQueryComponent(sql$)}',
   ].join('&'),
 );
 
@@ -15811,38 +15811,38 @@ final request = ApiRequest(
   path: '/v1/sources',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.flow case final _flow?)
-      'flow=${Uri.encodeQueryComponent(_flow.toJson())}',
-    if (body.mandate case final _mandate?)
-      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.originalSource case final _originalSource?)
-      'original_source=${Uri.encodeQueryComponent(_originalSource)}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
-    if (body.receiver case final _receiver?)
-      'receiver=${Uri.encodeQueryComponent(_receiver.toString())}',
-    if (body.redirect case final _redirect?)
-      'redirect=${Uri.encodeQueryComponent(_redirect.toString())}',
-    if (body.sourceOrder case final _sourceOrder?)
-      'source_order=${Uri.encodeQueryComponent(_sourceOrder.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.token case final _token?)
-      'token=${Uri.encodeQueryComponent(_token)}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type)}',
-    if (body.usage case final _usage?)
-      'usage=${Uri.encodeQueryComponent(_usage.toJson())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.flow case final flow$?)
+      'flow=${Uri.encodeQueryComponent(flow$.toJson())}',
+    if (body.mandate case final mandate$?)
+      'mandate=${Uri.encodeQueryComponent(mandate$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.originalSource case final originalSource$?)
+      'original_source=${Uri.encodeQueryComponent(originalSource$)}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
+    if (body.receiver case final receiver$?)
+      'receiver=${Uri.encodeQueryComponent(receiver$.toString())}',
+    if (body.redirect case final redirect$?)
+      'redirect=${Uri.encodeQueryComponent(redirect$.toString())}',
+    if (body.sourceOrder case final sourceOrder$?)
+      'source_order=${Uri.encodeQueryComponent(sourceOrder$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.token case final token$?)
+      'token=${Uri.encodeQueryComponent(token$)}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$)}',
+    if (body.usage case final usage$?)
+      'usage=${Uri.encodeQueryComponent(usage$.toJson())}',
   ].join('&'),
 );
 
@@ -15903,18 +15903,18 @@ final request = ApiRequest(
   path: '/v1/sources/${Uri.encodeComponent(source)}',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.mandate case final _mandate?)
-      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
-    if (body.sourceOrder case final _sourceOrder?)
-      'source_order=${Uri.encodeQueryComponent(_sourceOrder.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.mandate case final mandate$?)
+      'mandate=${Uri.encodeQueryComponent(mandate$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
+    if (body.sourceOrder case final sourceOrder$?)
+      'source_order=${Uri.encodeQueryComponent(sourceOrder$.toString())}',
   ].join('&'),
 );
 
@@ -16035,8 +16035,8 @@ final request = ApiRequest(
   path: '/v1/sources/${Uri.encodeComponent(source)}/verify',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'values=${Uri.encodeQueryComponent(body.values.toString())}',
   ].join('&'),
 );
@@ -16099,29 +16099,29 @@ final request = ApiRequest(
   path: '/v1/subscription_items',
   headers: headers,
   body: [
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.price case final _price?)
-      'price=${Uri.encodeQueryComponent(_price)}',
-    if (body.priceData case final _priceData?)
-      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
-    if (body.quantity case final _quantity?)
-      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.price case final price$?)
+      'price=${Uri.encodeQueryComponent(price$)}',
+    if (body.priceData case final priceData$?)
+      'price_data=${Uri.encodeQueryComponent(priceData$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
+    if (body.quantity case final quantity$?)
+      'quantity=${Uri.encodeQueryComponent(quantity$.toString())}',
     'subscription=${Uri.encodeQueryComponent(body.subscription)}',
-    if (body.taxRates case final _taxRates?)
-      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+    if (body.taxRates case final taxRates$?)
+      'tax_rates=${Uri.encodeQueryComponent(taxRates$.toString())}',
   ].join('&'),
 );
 
@@ -16179,30 +16179,30 @@ final request = ApiRequest(
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
   body: [
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.price case final _price?)
-      'price=${Uri.encodeQueryComponent(_price)}',
-    if (body.priceData case final _priceData?)
-      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
-    if (body.quantity case final _quantity?)
-      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
-    if (body.taxRates case final _taxRates?)
-      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.price case final price$?)
+      'price=${Uri.encodeQueryComponent(price$)}',
+    if (body.priceData case final priceData$?)
+      'price_data=${Uri.encodeQueryComponent(priceData$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
+    if (body.quantity case final quantity$?)
+      'quantity=${Uri.encodeQueryComponent(quantity$.toString())}',
+    if (body.taxRates case final taxRates$?)
+      'tax_rates=${Uri.encodeQueryComponent(taxRates$.toString())}',
   ].join('&'),
 );
 
@@ -16229,14 +16229,14 @@ final request = ApiRequest(
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
   body: [
-    if (body.clearUsage case final _clearUsage?)
-      'clear_usage=${Uri.encodeQueryComponent(_clearUsage.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.clearUsage case final clearUsage$?)
+      'clear_usage=${Uri.encodeQueryComponent(clearUsage$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
   ].join('&'),
 );
 
@@ -16312,26 +16312,26 @@ final request = ApiRequest(
   path: '/v1/subscription_schedules',
   headers: headers,
   body: [
-    if (body.billingMode case final _billingMode?)
-      'billing_mode=${Uri.encodeQueryComponent(_billingMode.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.defaultSettings case final _defaultSettings?)
-      'default_settings=${Uri.encodeQueryComponent(_defaultSettings.toString())}',
-    if (body.endBehavior case final _endBehavior?)
-      'end_behavior=${Uri.encodeQueryComponent(_endBehavior.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fromSubscription case final _fromSubscription?)
-      'from_subscription=${Uri.encodeQueryComponent(_fromSubscription)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.phases case final _phases?)
-      'phases=${Uri.encodeQueryComponent(_phases.toString())}',
-    if (body.startDate case final _startDate?)
-      'start_date=${Uri.encodeQueryComponent(_startDate.toString())}',
+    if (body.billingMode case final billingMode$?)
+      'billing_mode=${Uri.encodeQueryComponent(billingMode$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.defaultSettings case final defaultSettings$?)
+      'default_settings=${Uri.encodeQueryComponent(defaultSettings$.toString())}',
+    if (body.endBehavior case final endBehavior$?)
+      'end_behavior=${Uri.encodeQueryComponent(endBehavior$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fromSubscription case final fromSubscription$?)
+      'from_subscription=${Uri.encodeQueryComponent(fromSubscription$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.phases case final phases$?)
+      'phases=${Uri.encodeQueryComponent(phases$.toString())}',
+    if (body.startDate case final startDate$?)
+      'start_date=${Uri.encodeQueryComponent(startDate$.toString())}',
   ].join('&'),
 );
 
@@ -16389,18 +16389,18 @@ final request = ApiRequest(
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
   headers: headers,
   body: [
-    if (body.defaultSettings case final _defaultSettings?)
-      'default_settings=${Uri.encodeQueryComponent(_defaultSettings.toString())}',
-    if (body.endBehavior case final _endBehavior?)
-      'end_behavior=${Uri.encodeQueryComponent(_endBehavior.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.phases case final _phases?)
-      'phases=${Uri.encodeQueryComponent(_phases.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.defaultSettings case final defaultSettings$?)
+      'default_settings=${Uri.encodeQueryComponent(defaultSettings$.toString())}',
+    if (body.endBehavior case final endBehavior$?)
+      'end_behavior=${Uri.encodeQueryComponent(endBehavior$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.phases case final phases$?)
+      'phases=${Uri.encodeQueryComponent(phases$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
   ].join('&'),
 );
 
@@ -16427,12 +16427,12 @@ final request = ApiRequest(
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceNow case final _invoiceNow?)
-      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
-    if (body.prorate case final _prorate?)
-      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceNow case final invoiceNow$?)
+      'invoice_now=${Uri.encodeQueryComponent(invoiceNow$.toString())}',
+    if (body.prorate case final prorate$?)
+      'prorate=${Uri.encodeQueryComponent(prorate$.toString())}',
   ].join('&'),
 );
 
@@ -16459,10 +16459,10 @@ final request = ApiRequest(
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/release',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.preserveCancelDate case final _preserveCancelDate?)
-      'preserve_cancel_date=${Uri.encodeQueryComponent(_preserveCancelDate.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.preserveCancelDate case final preserveCancelDate$?)
+      'preserve_cancel_date=${Uri.encodeQueryComponent(preserveCancelDate$.toString())}',
   ].join('&'),
 );
 
@@ -16547,76 +16547,76 @@ final request = ApiRequest(
   path: '/v1/subscriptions',
   headers: headers,
   body: [
-    if (body.addInvoiceItems case final _addInvoiceItems?)
-      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.backdateStartDate case final _backdateStartDate?)
-      'backdate_start_date=${Uri.encodeQueryComponent(_backdateStartDate.toString())}',
-    if (body.billingCycleAnchor case final _billingCycleAnchor?)
-      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toString())}',
-    if (body.billingCycleAnchorConfig case final _billingCycleAnchorConfig?)
-      'billing_cycle_anchor_config=${Uri.encodeQueryComponent(_billingCycleAnchorConfig.toString())}',
-    if (body.billingMode case final _billingMode?)
-      'billing_mode=${Uri.encodeQueryComponent(_billingMode.toString())}',
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.cancelAt case final _cancelAt?)
-      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
-    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
-      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerAccount case final _customerAccount?)
-      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.items case final _items?)
-      'items=${Uri.encodeQueryComponent(_items.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
-      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.trialEnd case final _trialEnd?)
-      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
-    if (body.trialFromPlan case final _trialFromPlan?)
-      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
-    if (body.trialPeriodDays case final _trialPeriodDays?)
-      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
-    if (body.trialSettings case final _trialSettings?)
-      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+    if (body.addInvoiceItems case final addInvoiceItems$?)
+      'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.backdateStartDate case final backdateStartDate$?)
+      'backdate_start_date=${Uri.encodeQueryComponent(backdateStartDate$.toString())}',
+    if (body.billingCycleAnchor case final billingCycleAnchor$?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toString())}',
+    if (body.billingCycleAnchorConfig case final billingCycleAnchorConfig$?)
+      'billing_cycle_anchor_config=${Uri.encodeQueryComponent(billingCycleAnchorConfig$.toString())}',
+    if (body.billingMode case final billingMode$?)
+      'billing_mode=${Uri.encodeQueryComponent(billingMode$.toString())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.cancelAt case final cancelAt$?)
+      'cancel_at=${Uri.encodeQueryComponent(cancelAt$.toString())}',
+    if (body.cancelAtPeriodEnd case final cancelAtPeriodEnd$?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(cancelAtPeriodEnd$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerAccount case final customerAccount$?)
+      'customer_account=${Uri.encodeQueryComponent(customerAccount$)}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$)}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.items case final items$?)
+      'items=${Uri.encodeQueryComponent(items$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.pendingInvoiceItemInterval case final pendingInvoiceItemInterval$?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(pendingInvoiceItemInterval$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.trialEnd case final trialEnd$?)
+      'trial_end=${Uri.encodeQueryComponent(trialEnd$.toString())}',
+    if (body.trialFromPlan case final trialFromPlan$?)
+      'trial_from_plan=${Uri.encodeQueryComponent(trialFromPlan$.toString())}',
+    if (body.trialPeriodDays case final trialPeriodDays$?)
+      'trial_period_days=${Uri.encodeQueryComponent(trialPeriodDays$.toString())}',
+    if (body.trialSettings case final trialSettings$?)
+      'trial_settings=${Uri.encodeQueryComponent(trialSettings$.toString())}',
   ].join('&'),
 );
 
@@ -16731,68 +16731,68 @@ final request = ApiRequest(
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
   body: [
-    if (body.addInvoiceItems case final _addInvoiceItems?)
-      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
-    if (body.applicationFeePercent case final _applicationFeePercent?)
-      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
-    if (body.automaticTax case final _automaticTax?)
-      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
-    if (body.billingCycleAnchor case final _billingCycleAnchor?)
-      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
-    if (body.billingThresholds case final _billingThresholds?)
-      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
-    if (body.cancelAt case final _cancelAt?)
-      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
-    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
-      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
-    if (body.cancellationDetails case final _cancellationDetails?)
-      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
-    if (body.collectionMethod case final _collectionMethod?)
-      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
-    if (body.daysUntilDue case final _daysUntilDue?)
-      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
-    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
-      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
-    if (body.defaultSource case final _defaultSource?)
-      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
-    if (body.defaultTaxRates case final _defaultTaxRates?)
-      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.discounts case final _discounts?)
-      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceSettings case final _invoiceSettings?)
-      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
-    if (body.items case final _items?)
-      'items=${Uri.encodeQueryComponent(_items.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.offSession case final _offSession?)
-      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
-    if (body.pauseCollection case final _pauseCollection?)
-      'pause_collection=${Uri.encodeQueryComponent(_pauseCollection.toString())}',
-    if (body.paymentBehavior case final _paymentBehavior?)
-      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
-    if (body.paymentSettings case final _paymentSettings?)
-      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
-    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
-      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
-    if (body.transferData case final _transferData?)
-      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
-    if (body.trialEnd case final _trialEnd?)
-      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
-    if (body.trialFromPlan case final _trialFromPlan?)
-      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
-    if (body.trialSettings case final _trialSettings?)
-      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+    if (body.addInvoiceItems case final addInvoiceItems$?)
+      'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
+    if (body.applicationFeePercent case final applicationFeePercent$?)
+      'application_fee_percent=${Uri.encodeQueryComponent(applicationFeePercent$.toString())}',
+    if (body.automaticTax case final automaticTax$?)
+      'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
+    if (body.billingCycleAnchor case final billingCycleAnchor$?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toJson())}',
+    if (body.billingThresholds case final billingThresholds$?)
+      'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
+    if (body.cancelAt case final cancelAt$?)
+      'cancel_at=${Uri.encodeQueryComponent(cancelAt$.toString())}',
+    if (body.cancelAtPeriodEnd case final cancelAtPeriodEnd$?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(cancelAtPeriodEnd$.toString())}',
+    if (body.cancellationDetails case final cancellationDetails$?)
+      'cancellation_details=${Uri.encodeQueryComponent(cancellationDetails$.toString())}',
+    if (body.collectionMethod case final collectionMethod$?)
+      'collection_method=${Uri.encodeQueryComponent(collectionMethod$.toJson())}',
+    if (body.daysUntilDue case final daysUntilDue$?)
+      'days_until_due=${Uri.encodeQueryComponent(daysUntilDue$.toString())}',
+    if (body.defaultPaymentMethod case final defaultPaymentMethod$?)
+      'default_payment_method=${Uri.encodeQueryComponent(defaultPaymentMethod$)}',
+    if (body.defaultSource case final defaultSource$?)
+      'default_source=${Uri.encodeQueryComponent(defaultSource$.toString())}',
+    if (body.defaultTaxRates case final defaultTaxRates$?)
+      'default_tax_rates=${Uri.encodeQueryComponent(defaultTaxRates$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.discounts case final discounts$?)
+      'discounts=${Uri.encodeQueryComponent(discounts$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceSettings case final invoiceSettings$?)
+      'invoice_settings=${Uri.encodeQueryComponent(invoiceSettings$.toString())}',
+    if (body.items case final items$?)
+      'items=${Uri.encodeQueryComponent(items$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.offSession case final offSession$?)
+      'off_session=${Uri.encodeQueryComponent(offSession$.toString())}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$.toString())}',
+    if (body.pauseCollection case final pauseCollection$?)
+      'pause_collection=${Uri.encodeQueryComponent(pauseCollection$.toString())}',
+    if (body.paymentBehavior case final paymentBehavior$?)
+      'payment_behavior=${Uri.encodeQueryComponent(paymentBehavior$.toJson())}',
+    if (body.paymentSettings case final paymentSettings$?)
+      'payment_settings=${Uri.encodeQueryComponent(paymentSettings$.toString())}',
+    if (body.pendingInvoiceItemInterval case final pendingInvoiceItemInterval$?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(pendingInvoiceItemInterval$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
+    if (body.transferData case final transferData$?)
+      'transfer_data=${Uri.encodeQueryComponent(transferData$.toString())}',
+    if (body.trialEnd case final trialEnd$?)
+      'trial_end=${Uri.encodeQueryComponent(trialEnd$.toString())}',
+    if (body.trialFromPlan case final trialFromPlan$?)
+      'trial_from_plan=${Uri.encodeQueryComponent(trialFromPlan$.toString())}',
+    if (body.trialSettings case final trialSettings$?)
+      'trial_settings=${Uri.encodeQueryComponent(trialSettings$.toString())}',
   ].join('&'),
 );
 
@@ -16823,14 +16823,14 @@ final request = ApiRequest(
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
   body: [
-    if (body.cancellationDetails case final _cancellationDetails?)
-      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.invoiceNow case final _invoiceNow?)
-      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
-    if (body.prorate case final _prorate?)
-      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+    if (body.cancellationDetails case final cancellationDetails$?)
+      'cancellation_details=${Uri.encodeQueryComponent(cancellationDetails$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.invoiceNow case final invoiceNow$?)
+      'invoice_now=${Uri.encodeQueryComponent(invoiceNow$.toString())}',
+    if (body.prorate case final prorate$?)
+      'prorate=${Uri.encodeQueryComponent(prorate$.toString())}',
   ].join('&'),
 );
 
@@ -16884,8 +16884,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'billing_mode=${Uri.encodeQueryComponent(body.billingMode.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -16912,14 +16912,14 @@ final request = ApiRequest(
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/resume',
   headers: headers,
   body: [
-    if (body.billingCycleAnchor case final _billingCycleAnchor?)
-      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.prorationBehavior case final _prorationBehavior?)
-      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
-    if (body.prorationDate case final _prorationDate?)
-      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.billingCycleAnchor case final billingCycleAnchor$?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.prorationBehavior case final prorationBehavior$?)
+      'proration_behavior=${Uri.encodeQueryComponent(prorationBehavior$.toJson())}',
+    if (body.prorationDate case final prorationDate$?)
+      'proration_date=${Uri.encodeQueryComponent(prorationDate$.toString())}',
   ].join('&'),
 );
 
@@ -16979,19 +16979,19 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.customerDetails case final _customerDetails?)
-      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.customerDetails case final customerDetails$?)
+      'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'line_items=${Uri.encodeQueryComponent(body.lineItems.toString())}',
-    if (body.shipFromDetails case final _shipFromDetails?)
-      'ship_from_details=${Uri.encodeQueryComponent(_shipFromDetails.toString())}',
-    if (body.shippingCost case final _shippingCost?)
-      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
-    if (body.taxDate case final _taxDate?)
-      'tax_date=${Uri.encodeQueryComponent(_taxDate.toString())}',
+    if (body.shipFromDetails case final shipFromDetails$?)
+      'ship_from_details=${Uri.encodeQueryComponent(shipFromDetails$.toString())}',
+    if (body.shippingCost case final shippingCost$?)
+      'shipping_cost=${Uri.encodeQueryComponent(shippingCost$.toString())}',
+    if (body.taxDate case final taxDate$?)
+      'tax_date=${Uri.encodeQueryComponent(taxDate$.toString())}',
   ].join('&'),
 );
 
@@ -17121,10 +17121,10 @@ final request = ApiRequest(
     'active_from=${Uri.encodeQueryComponent(body.activeFrom.toString())}',
     'country=${Uri.encodeQueryComponent(body.country)}',
     'country_options=${Uri.encodeQueryComponent(body.countryOptions.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
   ].join('&'),
 );
 
@@ -17184,12 +17184,12 @@ final request = ApiRequest(
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.activeFrom case final _activeFrom?)
-      'active_from=${Uri.encodeQueryComponent(_activeFrom.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.expiresAt case final _expiresAt?)
-      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.activeFrom case final activeFrom$?)
+      'active_from=${Uri.encodeQueryComponent(activeFrom$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.expiresAt case final expiresAt$?)
+      'expires_at=${Uri.encodeQueryComponent(expiresAt$.toString())}',
   ].join('&'),
 );
 
@@ -17247,12 +17247,12 @@ final request = ApiRequest(
   path: '/v1/tax/settings',
   headers: headers,
   body: [
-    if (body.defaults case final _defaults?)
-      'defaults=${Uri.encodeQueryComponent(_defaults.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.headOffice case final _headOffice?)
-      'head_office=${Uri.encodeQueryComponent(_headOffice.toString())}',
+    if (body.defaults case final defaults$?)
+      'defaults=${Uri.encodeQueryComponent(defaults$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.headOffice case final headOffice$?)
+      'head_office=${Uri.encodeQueryComponent(headOffice$.toString())}',
   ].join('&'),
 );
 
@@ -17280,12 +17280,12 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'calculation=${Uri.encodeQueryComponent(body.calculation)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.postedAt case final _postedAt?)
-      'posted_at=${Uri.encodeQueryComponent(_postedAt.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.postedAt case final postedAt$?)
+      'posted_at=${Uri.encodeQueryComponent(postedAt$.toString())}',
     'reference=${Uri.encodeQueryComponent(body.reference)}',
   ].join('&'),
 );
@@ -17313,19 +17313,19 @@ final request = ApiRequest(
   path: '/v1/tax/transactions/create_reversal',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.flatAmount case final _flatAmount?)
-      'flat_amount=${Uri.encodeQueryComponent(_flatAmount.toString())}',
-    if (body.lineItems case final _lineItems?)
-      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.flatAmount case final flatAmount$?)
+      'flat_amount=${Uri.encodeQueryComponent(flatAmount$.toString())}',
+    if (body.lineItems case final lineItems$?)
+      'line_items=${Uri.encodeQueryComponent(lineItems$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'mode=${Uri.encodeQueryComponent(body.mode.toJson())}',
     'original_transaction=${Uri.encodeQueryComponent(body.originalTransaction)}',
     'reference=${Uri.encodeQueryComponent(body.reference)}',
-    if (body.shippingCost case final _shippingCost?)
-      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+    if (body.shippingCost case final shippingCost$?)
+      'shipping_cost=${Uri.encodeQueryComponent(shippingCost$.toString())}',
   ].join('&'),
 );
 
@@ -17522,10 +17522,10 @@ final request = ApiRequest(
   path: '/v1/tax_ids',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.owner case final _owner?)
-      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.owner case final owner$?)
+      'owner=${Uri.encodeQueryComponent(owner$.toString())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
     'value=${Uri.encodeQueryComponent(body.value)}',
   ].join('&'),
@@ -17650,25 +17650,25 @@ final request = ApiRequest(
   path: '/v1/tax_rates',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.country case final _country?)
-      'country=${Uri.encodeQueryComponent(_country)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.country case final country$?)
+      'country=${Uri.encodeQueryComponent(country$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
     'display_name=${Uri.encodeQueryComponent(body.displayName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'inclusive=${Uri.encodeQueryComponent(body.inclusive.toString())}',
-    if (body.jurisdiction case final _jurisdiction?)
-      'jurisdiction=${Uri.encodeQueryComponent(_jurisdiction)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.jurisdiction case final jurisdiction$?)
+      'jurisdiction=${Uri.encodeQueryComponent(jurisdiction$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'percentage=${Uri.encodeQueryComponent(body.percentage.toString())}',
-    if (body.state case final _state?)
-      'state=${Uri.encodeQueryComponent(_state)}',
-    if (body.taxType case final _taxType?)
-      'tax_type=${Uri.encodeQueryComponent(_taxType.toJson())}',
+    if (body.state case final state$?)
+      'state=${Uri.encodeQueryComponent(state$)}',
+    if (body.taxType case final taxType$?)
+      'tax_type=${Uri.encodeQueryComponent(taxType$.toJson())}',
   ].join('&'),
 );
 
@@ -17726,24 +17726,24 @@ final request = ApiRequest(
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
   headers: headers,
   body: [
-    if (body.active case final _active?)
-      'active=${Uri.encodeQueryComponent(_active.toString())}',
-    if (body.country case final _country?)
-      'country=${Uri.encodeQueryComponent(_country)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.displayName case final _displayName?)
-      'display_name=${Uri.encodeQueryComponent(_displayName)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.jurisdiction case final _jurisdiction?)
-      'jurisdiction=${Uri.encodeQueryComponent(_jurisdiction)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.state case final _state?)
-      'state=${Uri.encodeQueryComponent(_state)}',
-    if (body.taxType case final _taxType?)
-      'tax_type=${Uri.encodeQueryComponent(_taxType.toJson())}',
+    if (body.active case final active$?)
+      'active=${Uri.encodeQueryComponent(active$.toString())}',
+    if (body.country case final country$?)
+      'country=${Uri.encodeQueryComponent(country$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.displayName case final displayName$?)
+      'display_name=${Uri.encodeQueryComponent(displayName$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.jurisdiction case final jurisdiction$?)
+      'jurisdiction=${Uri.encodeQueryComponent(jurisdiction$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.state case final state$?)
+      'state=${Uri.encodeQueryComponent(state$)}',
+    if (body.taxType case final taxType$?)
+      'tax_type=${Uri.encodeQueryComponent(taxType$.toJson())}',
   ].join('&'),
 );
 
@@ -17805,30 +17805,30 @@ final request = ApiRequest(
   path: '/v1/terminal/configurations',
   headers: headers,
   body: [
-    if (body.bbposWisepad3 case final _bbposWisepad3?)
-      'bbpos_wisepad3=${Uri.encodeQueryComponent(_bbposWisepad3.toString())}',
-    if (body.bbposWiseposE case final _bbposWiseposE?)
-      'bbpos_wisepos_e=${Uri.encodeQueryComponent(_bbposWiseposE.toString())}',
-    if (body.cellular case final _cellular?)
-      'cellular=${Uri.encodeQueryComponent(_cellular.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.offline case final _offline?)
-      'offline=${Uri.encodeQueryComponent(_offline.toString())}',
-    if (body.rebootWindow case final _rebootWindow?)
-      'reboot_window=${Uri.encodeQueryComponent(_rebootWindow.toString())}',
-    if (body.stripeS700 case final _stripeS700?)
-      'stripe_s700=${Uri.encodeQueryComponent(_stripeS700.toString())}',
-    if (body.stripeS710 case final _stripeS710?)
-      'stripe_s710=${Uri.encodeQueryComponent(_stripeS710.toString())}',
-    if (body.tipping case final _tipping?)
-      'tipping=${Uri.encodeQueryComponent(_tipping.toString())}',
-    if (body.verifoneP400 case final _verifoneP400?)
-      'verifone_p400=${Uri.encodeQueryComponent(_verifoneP400.toString())}',
-    if (body.wifi case final _wifi?)
-      'wifi=${Uri.encodeQueryComponent(_wifi.toString())}',
+    if (body.bbposWisepad3 case final bbposWisepad3$?)
+      'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
+    if (body.bbposWiseposE case final bbposWiseposE$?)
+      'bbpos_wisepos_e=${Uri.encodeQueryComponent(bbposWiseposE$.toString())}',
+    if (body.cellular case final cellular$?)
+      'cellular=${Uri.encodeQueryComponent(cellular$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.offline case final offline$?)
+      'offline=${Uri.encodeQueryComponent(offline$.toString())}',
+    if (body.rebootWindow case final rebootWindow$?)
+      'reboot_window=${Uri.encodeQueryComponent(rebootWindow$.toString())}',
+    if (body.stripeS700 case final stripeS700$?)
+      'stripe_s700=${Uri.encodeQueryComponent(stripeS700$.toString())}',
+    if (body.stripeS710 case final stripeS710$?)
+      'stripe_s710=${Uri.encodeQueryComponent(stripeS710$.toString())}',
+    if (body.tipping case final tipping$?)
+      'tipping=${Uri.encodeQueryComponent(tipping$.toString())}',
+    if (body.verifoneP400 case final verifoneP400$?)
+      'verifone_p400=${Uri.encodeQueryComponent(verifoneP400$.toString())}',
+    if (body.wifi case final wifi$?)
+      'wifi=${Uri.encodeQueryComponent(wifi$.toString())}',
   ].join('&'),
 );
 
@@ -17886,30 +17886,30 @@ final request = ApiRequest(
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
   body: [
-    if (body.bbposWisepad3 case final _bbposWisepad3?)
-      'bbpos_wisepad3=${Uri.encodeQueryComponent(_bbposWisepad3.toString())}',
-    if (body.bbposWiseposE case final _bbposWiseposE?)
-      'bbpos_wisepos_e=${Uri.encodeQueryComponent(_bbposWiseposE.toString())}',
-    if (body.cellular case final _cellular?)
-      'cellular=${Uri.encodeQueryComponent(_cellular.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
-    if (body.offline case final _offline?)
-      'offline=${Uri.encodeQueryComponent(_offline.toString())}',
-    if (body.rebootWindow case final _rebootWindow?)
-      'reboot_window=${Uri.encodeQueryComponent(_rebootWindow.toString())}',
-    if (body.stripeS700 case final _stripeS700?)
-      'stripe_s700=${Uri.encodeQueryComponent(_stripeS700.toString())}',
-    if (body.stripeS710 case final _stripeS710?)
-      'stripe_s710=${Uri.encodeQueryComponent(_stripeS710.toString())}',
-    if (body.tipping case final _tipping?)
-      'tipping=${Uri.encodeQueryComponent(_tipping.toString())}',
-    if (body.verifoneP400 case final _verifoneP400?)
-      'verifone_p400=${Uri.encodeQueryComponent(_verifoneP400.toString())}',
-    if (body.wifi case final _wifi?)
-      'wifi=${Uri.encodeQueryComponent(_wifi.toString())}',
+    if (body.bbposWisepad3 case final bbposWisepad3$?)
+      'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
+    if (body.bbposWiseposE case final bbposWiseposE$?)
+      'bbpos_wisepos_e=${Uri.encodeQueryComponent(bbposWiseposE$.toString())}',
+    if (body.cellular case final cellular$?)
+      'cellular=${Uri.encodeQueryComponent(cellular$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
+    if (body.offline case final offline$?)
+      'offline=${Uri.encodeQueryComponent(offline$.toString())}',
+    if (body.rebootWindow case final rebootWindow$?)
+      'reboot_window=${Uri.encodeQueryComponent(rebootWindow$.toString())}',
+    if (body.stripeS700 case final stripeS700$?)
+      'stripe_s700=${Uri.encodeQueryComponent(stripeS700$.toString())}',
+    if (body.stripeS710 case final stripeS710$?)
+      'stripe_s710=${Uri.encodeQueryComponent(stripeS710$.toString())}',
+    if (body.tipping case final tipping$?)
+      'tipping=${Uri.encodeQueryComponent(tipping$.toString())}',
+    if (body.verifoneP400 case final verifoneP400$?)
+      'verifone_p400=${Uri.encodeQueryComponent(verifoneP400$.toString())}',
+    if (body.wifi case final wifi$?)
+      'wifi=${Uri.encodeQueryComponent(wifi$.toString())}',
   ].join('&'),
 );
 
@@ -17962,10 +17962,10 @@ final request = ApiRequest(
   path: '/v1/terminal/connection_tokens',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.location case final _location?)
-      'location=${Uri.encodeQueryComponent(_location)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.location case final location$?)
+      'location=${Uri.encodeQueryComponent(location$)}',
   ].join('&'),
 );
 
@@ -18027,26 +18027,26 @@ final request = ApiRequest(
   path: '/v1/terminal/locations',
   headers: headers,
   body: [
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.configurationOverrides case final _configurationOverrides?)
-      'configuration_overrides=${Uri.encodeQueryComponent(_configurationOverrides)}',
-    if (body.displayName case final _displayName?)
-      'display_name=${Uri.encodeQueryComponent(_displayName)}',
-    if (body.displayNameKana case final _displayNameKana?)
-      'display_name_kana=${Uri.encodeQueryComponent(_displayNameKana)}',
-    if (body.displayNameKanji case final _displayNameKanji?)
-      'display_name_kanji=${Uri.encodeQueryComponent(_displayNameKanji)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.configurationOverrides case final configurationOverrides$?)
+      'configuration_overrides=${Uri.encodeQueryComponent(configurationOverrides$)}',
+    if (body.displayName case final displayName$?)
+      'display_name=${Uri.encodeQueryComponent(displayName$)}',
+    if (body.displayNameKana case final displayNameKana$?)
+      'display_name_kana=${Uri.encodeQueryComponent(displayNameKana$)}',
+    if (body.displayNameKanji case final displayNameKanji$?)
+      'display_name_kanji=${Uri.encodeQueryComponent(displayNameKanji$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$)}',
   ].join('&'),
 );
 
@@ -18104,26 +18104,26 @@ final request = ApiRequest(
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
   body: [
-    if (body.address case final _address?)
-      'address=${Uri.encodeQueryComponent(_address.toString())}',
-    if (body.addressKana case final _addressKana?)
-      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
-    if (body.addressKanji case final _addressKanji?)
-      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
-    if (body.configurationOverrides case final _configurationOverrides?)
-      'configuration_overrides=${Uri.encodeQueryComponent(_configurationOverrides.toString())}',
-    if (body.displayName case final _displayName?)
-      'display_name=${Uri.encodeQueryComponent(_displayName.toString())}',
-    if (body.displayNameKana case final _displayNameKana?)
-      'display_name_kana=${Uri.encodeQueryComponent(_displayNameKana.toString())}',
-    if (body.displayNameKanji case final _displayNameKanji?)
-      'display_name_kanji=${Uri.encodeQueryComponent(_displayNameKanji.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.phone case final _phone?)
-      'phone=${Uri.encodeQueryComponent(_phone.toString())}',
+    if (body.address case final address$?)
+      'address=${Uri.encodeQueryComponent(address$.toString())}',
+    if (body.addressKana case final addressKana$?)
+      'address_kana=${Uri.encodeQueryComponent(addressKana$.toString())}',
+    if (body.addressKanji case final addressKanji$?)
+      'address_kanji=${Uri.encodeQueryComponent(addressKanji$.toString())}',
+    if (body.configurationOverrides case final configurationOverrides$?)
+      'configuration_overrides=${Uri.encodeQueryComponent(configurationOverrides$.toString())}',
+    if (body.displayName case final displayName$?)
+      'display_name=${Uri.encodeQueryComponent(displayName$.toString())}',
+    if (body.displayNameKana case final displayNameKana$?)
+      'display_name_kana=${Uri.encodeQueryComponent(displayNameKana$.toString())}',
+    if (body.displayNameKanji case final displayNameKanji$?)
+      'display_name_kanji=${Uri.encodeQueryComponent(displayNameKanji$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.phone case final phone$?)
+      'phone=${Uri.encodeQueryComponent(phone$.toString())}',
   ].join('&'),
 );
 
@@ -18176,12 +18176,12 @@ final request = ApiRequest(
   path: '/v1/terminal/onboarding_links',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'link_options=${Uri.encodeQueryComponent(body.linkOptions.toString())}',
     'link_type=${Uri.encodeQueryComponent(body.linkType.toJson())}',
-    if (body.onBehalfOf case final _onBehalfOf?)
-      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.onBehalfOf case final onBehalfOf$?)
+      'on_behalf_of=${Uri.encodeQueryComponent(onBehalfOf$)}',
   ].join('&'),
 );
 
@@ -18246,14 +18246,14 @@ final request = ApiRequest(
   path: '/v1/terminal/readers',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.label case final _label?)
-      'label=${Uri.encodeQueryComponent(_label)}',
-    if (body.location case final _location?)
-      'location=${Uri.encodeQueryComponent(_location)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.label case final label$?)
+      'label=${Uri.encodeQueryComponent(label$)}',
+    if (body.location case final location$?)
+      'location=${Uri.encodeQueryComponent(location$)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'registration_code=${Uri.encodeQueryComponent(body.registrationCode)}',
   ].join('&'),
 );
@@ -18312,12 +18312,12 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.label case final _label?)
-      'label=${Uri.encodeQueryComponent(_label.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.label case final label$?)
+      'label=${Uri.encodeQueryComponent(label$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -18370,8 +18370,8 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/cancel_action',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -18398,11 +18398,11 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_inputs',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'inputs=${Uri.encodeQueryComponent(body.inputs.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -18429,10 +18429,10 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_payment_method',
   headers: headers,
   body: [
-    if (body.collectConfig case final _collectConfig?)
-      'collect_config=${Uri.encodeQueryComponent(_collectConfig.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.collectConfig case final collectConfig$?)
+      'collect_config=${Uri.encodeQueryComponent(collectConfig$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
   ].join('&'),
 );
@@ -18460,10 +18460,10 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/confirm_payment_intent',
   headers: headers,
   body: [
-    if (body.confirmConfig case final _confirmConfig?)
-      'confirm_config=${Uri.encodeQueryComponent(_confirmConfig.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.confirmConfig case final confirmConfig$?)
+      'confirm_config=${Uri.encodeQueryComponent(confirmConfig$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
   ].join('&'),
 );
@@ -18491,11 +18491,11 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_payment_intent',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
-    if (body.processConfig case final _processConfig?)
-      'process_config=${Uri.encodeQueryComponent(_processConfig.toString())}',
+    if (body.processConfig case final processConfig$?)
+      'process_config=${Uri.encodeQueryComponent(processConfig$.toString())}',
   ].join('&'),
 );
 
@@ -18523,10 +18523,10 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'allow_redisplay=${Uri.encodeQueryComponent(body.allowRedisplay.toJson())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.processConfig case final _processConfig?)
-      'process_config=${Uri.encodeQueryComponent(_processConfig.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.processConfig case final processConfig$?)
+      'process_config=${Uri.encodeQueryComponent(processConfig$.toString())}',
     'setup_intent=${Uri.encodeQueryComponent(body.setupIntent)}',
   ].join('&'),
 );
@@ -18554,22 +18554,22 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/refund_payment',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.charge case final _charge?)
-      'charge=${Uri.encodeQueryComponent(_charge)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
-    if (body.refundPaymentConfig case final _refundPaymentConfig?)
-      'refund_payment_config=${Uri.encodeQueryComponent(_refundPaymentConfig.toString())}',
-    if (body.reverseTransfer case final _reverseTransfer?)
-      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.charge case final charge$?)
+      'charge=${Uri.encodeQueryComponent(charge$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
+    if (body.refundPaymentConfig case final refundPaymentConfig$?)
+      'refund_payment_config=${Uri.encodeQueryComponent(refundPaymentConfig$.toString())}',
+    if (body.reverseTransfer case final reverseTransfer$?)
+      'reverse_transfer=${Uri.encodeQueryComponent(reverseTransfer$.toString())}',
   ].join('&'),
 );
 
@@ -18596,10 +18596,10 @@ final request = ApiRequest(
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/set_reader_display',
   headers: headers,
   body: [
-    if (body.cart case final _cart?)
-      'cart=${Uri.encodeQueryComponent(_cart.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.cart case final cart$?)
+      'cart=${Uri.encodeQueryComponent(cart$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
   ].join('&'),
 );
@@ -18630,22 +18630,22 @@ final request = ApiRequest(
   path: '/v1/terminal/refunds',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.charge case final _charge?)
-      'charge=${Uri.encodeQueryComponent(_charge)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.paymentIntent case final _paymentIntent?)
-      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
-    if (body.reason case final _reason?)
-      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
-    if (body.reverseTransfer case final _reverseTransfer?)
-      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.charge case final charge$?)
+      'charge=${Uri.encodeQueryComponent(charge$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.paymentIntent case final paymentIntent$?)
+      'payment_intent=${Uri.encodeQueryComponent(paymentIntent$)}',
+    if (body.reason case final reason$?)
+      'reason=${Uri.encodeQueryComponent(reason$.toJson())}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
+    if (body.reverseTransfer case final reverseTransfer$?)
+      'reverse_transfer=${Uri.encodeQueryComponent(reverseTransfer$.toString())}',
   ].join('&'),
 );
 
@@ -18672,20 +18672,20 @@ final request = ApiRequest(
   path: '/v1/test_helpers/confirmation_tokens',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
-    if (body.paymentMethodData case final _paymentMethodData?)
-      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
-    if (body.paymentMethodOptions case final _paymentMethodOptions?)
-      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
-    if (body.returnUrl case final _returnUrl?)
-      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
-    if (body.setupFutureUsage case final _setupFutureUsage?)
-      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
-    if (body.shipping case final _shipping?)
-      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'payment_method=${Uri.encodeQueryComponent(paymentMethod$)}',
+    if (body.paymentMethodData case final paymentMethodData$?)
+      'payment_method_data=${Uri.encodeQueryComponent(paymentMethodData$.toString())}',
+    if (body.paymentMethodOptions case final paymentMethodOptions$?)
+      'payment_method_options=${Uri.encodeQueryComponent(paymentMethodOptions$.toString())}',
+    if (body.returnUrl case final returnUrl$?)
+      'return_url=${Uri.encodeQueryComponent(returnUrl$)}',
+    if (body.setupFutureUsage case final setupFutureUsage$?)
+      'setup_future_usage=${Uri.encodeQueryComponent(setupFutureUsage$.toJson())}',
+    if (body.shipping case final shipping$?)
+      'shipping=${Uri.encodeQueryComponent(shipping$.toString())}',
   ].join('&'),
 );
 
@@ -18714,10 +18714,10 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.reference case final _reference?)
-      'reference=${Uri.encodeQueryComponent(_reference)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.reference case final reference$?)
+      'reference=${Uri.encodeQueryComponent(reference$)}',
   ].join('&'),
 );
 
@@ -18744,39 +18744,39 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.amountDetails case final _amountDetails?)
-      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
-    if (body.authorizationMethod case final _authorizationMethod?)
-      'authorization_method=${Uri.encodeQueryComponent(_authorizationMethod.toJson())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.amountDetails case final amountDetails$?)
+      'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
+    if (body.authorizationMethod case final authorizationMethod$?)
+      'authorization_method=${Uri.encodeQueryComponent(authorizationMethod$.toJson())}',
     'card=${Uri.encodeQueryComponent(body.card)}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.fleet case final _fleet?)
-      'fleet=${Uri.encodeQueryComponent(_fleet.toString())}',
-    if (body.fraudDisputabilityLikelihood case final _fraudDisputabilityLikelihood?)
-      'fraud_disputability_likelihood=${Uri.encodeQueryComponent(_fraudDisputabilityLikelihood.toJson())}',
-    if (body.fuel case final _fuel?)
-      'fuel=${Uri.encodeQueryComponent(_fuel.toString())}',
-    if (body.isAmountControllable case final _isAmountControllable?)
-      'is_amount_controllable=${Uri.encodeQueryComponent(_isAmountControllable.toString())}',
-    if (body.merchantAmount case final _merchantAmount?)
-      'merchant_amount=${Uri.encodeQueryComponent(_merchantAmount.toString())}',
-    if (body.merchantCurrency case final _merchantCurrency?)
-      'merchant_currency=${Uri.encodeQueryComponent(_merchantCurrency)}',
-    if (body.merchantData case final _merchantData?)
-      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
-    if (body.networkData case final _networkData?)
-      'network_data=${Uri.encodeQueryComponent(_networkData.toString())}',
-    if (body.riskAssessment case final _riskAssessment?)
-      'risk_assessment=${Uri.encodeQueryComponent(_riskAssessment.toString())}',
-    if (body.verificationData case final _verificationData?)
-      'verification_data=${Uri.encodeQueryComponent(_verificationData.toString())}',
-    if (body.wallet case final _wallet?)
-      'wallet=${Uri.encodeQueryComponent(_wallet.toJson())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.fleet case final fleet$?)
+      'fleet=${Uri.encodeQueryComponent(fleet$.toString())}',
+    if (body.fraudDisputabilityLikelihood case final fraudDisputabilityLikelihood$?)
+      'fraud_disputability_likelihood=${Uri.encodeQueryComponent(fraudDisputabilityLikelihood$.toJson())}',
+    if (body.fuel case final fuel$?)
+      'fuel=${Uri.encodeQueryComponent(fuel$.toString())}',
+    if (body.isAmountControllable case final isAmountControllable$?)
+      'is_amount_controllable=${Uri.encodeQueryComponent(isAmountControllable$.toString())}',
+    if (body.merchantAmount case final merchantAmount$?)
+      'merchant_amount=${Uri.encodeQueryComponent(merchantAmount$.toString())}',
+    if (body.merchantCurrency case final merchantCurrency$?)
+      'merchant_currency=${Uri.encodeQueryComponent(merchantCurrency$)}',
+    if (body.merchantData case final merchantData$?)
+      'merchant_data=${Uri.encodeQueryComponent(merchantData$.toString())}',
+    if (body.networkData case final networkData$?)
+      'network_data=${Uri.encodeQueryComponent(networkData$.toString())}',
+    if (body.riskAssessment case final riskAssessment$?)
+      'risk_assessment=${Uri.encodeQueryComponent(riskAssessment$.toString())}',
+    if (body.verificationData case final verificationData$?)
+      'verification_data=${Uri.encodeQueryComponent(verificationData$.toString())}',
+    if (body.wallet case final wallet$?)
+      'wallet=${Uri.encodeQueryComponent(wallet$.toJson())}',
   ].join('&'),
 );
 
@@ -18803,14 +18803,14 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/capture',
   headers: headers,
   body: [
-    if (body.captureAmount case final _captureAmount?)
-      'capture_amount=${Uri.encodeQueryComponent(_captureAmount.toString())}',
-    if (body.closeAuthorization case final _closeAuthorization?)
-      'close_authorization=${Uri.encodeQueryComponent(_closeAuthorization.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.purchaseDetails case final _purchaseDetails?)
-      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+    if (body.captureAmount case final captureAmount$?)
+      'capture_amount=${Uri.encodeQueryComponent(captureAmount$.toString())}',
+    if (body.closeAuthorization case final closeAuthorization$?)
+      'close_authorization=${Uri.encodeQueryComponent(closeAuthorization$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.purchaseDetails case final purchaseDetails$?)
+      'purchase_details=${Uri.encodeQueryComponent(purchaseDetails$.toString())}',
   ].join('&'),
 );
 
@@ -18837,8 +18837,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/expire',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -18865,13 +18865,13 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/finalize_amount',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'final_amount=${Uri.encodeQueryComponent(body.finalAmount.toString())}',
-    if (body.fleet case final _fleet?)
-      'fleet=${Uri.encodeQueryComponent(_fleet.toString())}',
-    if (body.fuel case final _fuel?)
-      'fuel=${Uri.encodeQueryComponent(_fuel.toString())}',
+    if (body.fleet case final fleet$?)
+      'fleet=${Uri.encodeQueryComponent(fleet$.toString())}',
+    if (body.fuel case final fuel$?)
+      'fuel=${Uri.encodeQueryComponent(fuel$.toString())}',
   ].join('&'),
 );
 
@@ -18899,8 +18899,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'confirmed=${Uri.encodeQueryComponent(body.confirmed.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -18927,11 +18927,11 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/increment',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'increment_amount=${Uri.encodeQueryComponent(body.incrementAmount.toString())}',
-    if (body.isAmountControllable case final _isAmountControllable?)
-      'is_amount_controllable=${Uri.encodeQueryComponent(_isAmountControllable.toString())}',
+    if (body.isAmountControllable case final isAmountControllable$?)
+      'is_amount_controllable=${Uri.encodeQueryComponent(isAmountControllable$.toString())}',
   ].join('&'),
 );
 
@@ -18958,10 +18958,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/reverse',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.reverseAmount case final _reverseAmount?)
-      'reverse_amount=${Uri.encodeQueryComponent(_reverseAmount.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.reverseAmount case final reverseAmount$?)
+      'reverse_amount=${Uri.encodeQueryComponent(reverseAmount$.toString())}',
   ].join('&'),
 );
 
@@ -18988,8 +18988,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/deliver',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19016,8 +19016,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/fail',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19044,8 +19044,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/return',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19072,8 +19072,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/ship',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19100,8 +19100,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/submit',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19128,8 +19128,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/activate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19156,8 +19156,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/deactivate',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19184,8 +19184,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/reject',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'rejection_reasons=${Uri.encodeQueryComponent(body.rejectionReasons.toString())}',
   ].join('&'),
 );
@@ -19216,19 +19216,19 @@ final request = ApiRequest(
     'bin=${Uri.encodeQueryComponent(body.bin)}',
     'clearing_date=${Uri.encodeQueryComponent(body.clearingDate.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.interchangeFeesAmount case final _interchangeFeesAmount?)
-      'interchange_fees_amount=${Uri.encodeQueryComponent(_interchangeFeesAmount.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.interchangeFeesAmount case final interchangeFeesAmount$?)
+      'interchange_fees_amount=${Uri.encodeQueryComponent(interchangeFeesAmount$.toString())}',
     'net_total_amount=${Uri.encodeQueryComponent(body.netTotalAmount.toString())}',
-    if (body.network case final _network?)
-      'network=${Uri.encodeQueryComponent(_network.toJson())}',
-    if (body.networkSettlementIdentifier case final _networkSettlementIdentifier?)
-      'network_settlement_identifier=${Uri.encodeQueryComponent(_networkSettlementIdentifier)}',
-    if (body.transactionAmount case final _transactionAmount?)
-      'transaction_amount=${Uri.encodeQueryComponent(_transactionAmount.toString())}',
-    if (body.transactionCount case final _transactionCount?)
-      'transaction_count=${Uri.encodeQueryComponent(_transactionCount.toString())}',
+    if (body.network case final network$?)
+      'network=${Uri.encodeQueryComponent(network$.toJson())}',
+    if (body.networkSettlementIdentifier case final networkSettlementIdentifier$?)
+      'network_settlement_identifier=${Uri.encodeQueryComponent(networkSettlementIdentifier$)}',
+    if (body.transactionAmount case final transactionAmount$?)
+      'transaction_amount=${Uri.encodeQueryComponent(transactionAmount$.toString())}',
+    if (body.transactionCount case final transactionCount$?)
+      'transaction_count=${Uri.encodeQueryComponent(transactionCount$.toString())}',
   ].join('&'),
 );
 
@@ -19255,8 +19255,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/settlements/${Uri.encodeComponent(settlement)}/complete',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19285,14 +19285,14 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'card=${Uri.encodeQueryComponent(body.card)}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.merchantData case final _merchantData?)
-      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
-    if (body.purchaseDetails case final _purchaseDetails?)
-      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.merchantData case final merchantData$?)
+      'merchant_data=${Uri.encodeQueryComponent(merchantData$.toString())}',
+    if (body.purchaseDetails case final purchaseDetails$?)
+      'purchase_details=${Uri.encodeQueryComponent(purchaseDetails$.toString())}',
   ].join('&'),
 );
 
@@ -19321,14 +19321,14 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'card=${Uri.encodeQueryComponent(body.card)}',
-    if (body.currency case final _currency?)
-      'currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.merchantData case final _merchantData?)
-      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
-    if (body.purchaseDetails case final _purchaseDetails?)
-      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+    if (body.currency case final currency$?)
+      'currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.merchantData case final merchantData$?)
+      'merchant_data=${Uri.encodeQueryComponent(merchantData$.toString())}',
+    if (body.purchaseDetails case final purchaseDetails$?)
+      'purchase_details=${Uri.encodeQueryComponent(purchaseDetails$.toString())}',
   ].join('&'),
 );
 
@@ -19355,10 +19355,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/issuing/transactions/${Uri.encodeComponent(transaction)}/refund',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.refundAmount case final _refundAmount?)
-      'refund_amount=${Uri.encodeQueryComponent(_refundAmount.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.refundAmount case final refundAmount$?)
+      'refund_amount=${Uri.encodeQueryComponent(refundAmount$.toString())}',
   ].join('&'),
 );
 
@@ -19385,8 +19385,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/refunds/${Uri.encodeComponent(refund)}/expire',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19413,18 +19413,18 @@ final request = ApiRequest(
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/present_payment_method',
   headers: headers,
   body: [
-    if (body.amountTip case final _amountTip?)
-      'amount_tip=${Uri.encodeQueryComponent(_amountTip.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.cardPresent case final _cardPresent?)
-      'card_present=${Uri.encodeQueryComponent(_cardPresent.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.interacPresent case final _interacPresent?)
-      'interac_present=${Uri.encodeQueryComponent(_interacPresent.toString())}',
-    if (body.type case final _type?)
-      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.amountTip case final amountTip$?)
+      'amount_tip=${Uri.encodeQueryComponent(amountTip$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.cardPresent case final cardPresent$?)
+      'card_present=${Uri.encodeQueryComponent(cardPresent$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.interacPresent case final interacPresent$?)
+      'interac_present=${Uri.encodeQueryComponent(interacPresent$.toString())}',
+    if (body.type case final type$?)
+      'type=${Uri.encodeQueryComponent(type$.toJson())}',
   ].join('&'),
 );
 
@@ -19451,10 +19451,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/succeed_input_collection',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.skipNonRequiredInputs case final _skipNonRequiredInputs?)
-      'skip_non_required_inputs=${Uri.encodeQueryComponent(_skipNonRequiredInputs.toJson())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.skipNonRequiredInputs case final skipNonRequiredInputs$?)
+      'skip_non_required_inputs=${Uri.encodeQueryComponent(skipNonRequiredInputs$.toJson())}',
   ].join('&'),
 );
 
@@ -19481,8 +19481,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/timeout_input_collection',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19543,11 +19543,11 @@ final request = ApiRequest(
   path: '/v1/test_helpers/test_clocks',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
-    if (body.name case final _name?)
-      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.name case final name$?)
+      'name=${Uri.encodeQueryComponent(name$)}',
   ].join('&'),
 );
 
@@ -19631,8 +19631,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}/advance',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
   ].join('&'),
 );
@@ -19660,10 +19660,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/fail',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.failureDetails case final _failureDetails?)
-      'failure_details=${Uri.encodeQueryComponent(_failureDetails.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.failureDetails case final failureDetails$?)
+      'failure_details=${Uri.encodeQueryComponent(failureDetails$.toString())}',
   ].join('&'),
 );
 
@@ -19690,8 +19690,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/return',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19718,8 +19718,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/succeed',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19746,8 +19746,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
   ].join('&'),
 );
@@ -19775,8 +19775,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/fail',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19803,8 +19803,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/post',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19831,10 +19831,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/return',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.returnedDetails case final _returnedDetails?)
-      'returned_details=${Uri.encodeQueryComponent(_returnedDetails.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.returnedDetails case final returnedDetails$?)
+      'returned_details=${Uri.encodeQueryComponent(returnedDetails$.toString())}',
   ].join('&'),
 );
 
@@ -19861,8 +19861,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
   ].join('&'),
 );
@@ -19890,8 +19890,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/fail',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19918,8 +19918,8 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/post',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -19946,10 +19946,10 @@ final request = ApiRequest(
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/return',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.returnedDetails case final _returnedDetails?)
-      'returned_details=${Uri.encodeQueryComponent(_returnedDetails.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.returnedDetails case final returnedDetails$?)
+      'returned_details=${Uri.encodeQueryComponent(returnedDetails$.toString())}',
   ].join('&'),
 );
 
@@ -19978,13 +19978,13 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
-    if (body.initiatingPaymentMethodDetails case final _initiatingPaymentMethodDetails?)
-      'initiating_payment_method_details=${Uri.encodeQueryComponent(_initiatingPaymentMethodDetails.toString())}',
+    if (body.initiatingPaymentMethodDetails case final initiatingPaymentMethodDetails$?)
+      'initiating_payment_method_details=${Uri.encodeQueryComponent(initiatingPaymentMethodDetails$.toString())}',
     'network=${Uri.encodeQueryComponent(body.network.toJson())}',
   ].join('&'),
 );
@@ -20014,13 +20014,13 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
-    if (body.initiatingPaymentMethodDetails case final _initiatingPaymentMethodDetails?)
-      'initiating_payment_method_details=${Uri.encodeQueryComponent(_initiatingPaymentMethodDetails.toString())}',
+    if (body.initiatingPaymentMethodDetails case final initiatingPaymentMethodDetails$?)
+      'initiating_payment_method_details=${Uri.encodeQueryComponent(initiatingPaymentMethodDetails$.toString())}',
     'network=${Uri.encodeQueryComponent(body.network.toJson())}',
   ].join('&'),
 );
@@ -20049,22 +20049,22 @@ final request = ApiRequest(
   path: '/v1/tokens',
   headers: headers,
   body: [
-    if (body.account case final _account?)
-      'account=${Uri.encodeQueryComponent(_account.toString())}',
-    if (body.bankAccount case final _bankAccount?)
-      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
-    if (body.card case final _card?)
-      'card=${Uri.encodeQueryComponent(_card.toString())}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.cvcUpdate case final _cvcUpdate?)
-      'cvc_update=${Uri.encodeQueryComponent(_cvcUpdate.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.person case final _person?)
-      'person=${Uri.encodeQueryComponent(_person.toString())}',
-    if (body.pii case final _pii?)
-      'pii=${Uri.encodeQueryComponent(_pii.toString())}',
+    if (body.account case final account$?)
+      'account=${Uri.encodeQueryComponent(account$.toString())}',
+    if (body.bankAccount case final bankAccount$?)
+      'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
+    if (body.card case final card$?)
+      'card=${Uri.encodeQueryComponent(card$.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.cvcUpdate case final cvcUpdate$?)
+      'cvc_update=${Uri.encodeQueryComponent(cvcUpdate$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.person case final person$?)
+      'person=${Uri.encodeQueryComponent(person$.toString())}',
+    if (body.pii case final pii$?)
+      'pii=${Uri.encodeQueryComponent(pii$.toString())}',
   ].join('&'),
 );
 
@@ -20165,18 +20165,18 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.source case final _source?)
-      'source=${Uri.encodeQueryComponent(_source)}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.source case final source$?)
+      'source=${Uri.encodeQueryComponent(source$)}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -20234,12 +20234,12 @@ final request = ApiRequest(
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
   headers: headers,
   body: [
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -20266,8 +20266,8 @@ final request = ApiRequest(
   path: '/v1/topups/${Uri.encodeComponent(topup)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -20333,22 +20333,22 @@ final request = ApiRequest(
   path: '/v1/transfers',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
     'destination=${Uri.encodeQueryComponent(body.destination)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.sourceTransaction case final _sourceTransaction?)
-      'source_transaction=${Uri.encodeQueryComponent(_sourceTransaction)}',
-    if (body.sourceType case final _sourceType?)
-      'source_type=${Uri.encodeQueryComponent(_sourceType.toJson())}',
-    if (body.transferGroup case final _transferGroup?)
-      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.sourceTransaction case final sourceTransaction$?)
+      'source_transaction=${Uri.encodeQueryComponent(sourceTransaction$)}',
+    if (body.sourceType case final sourceType$?)
+      'source_type=${Uri.encodeQueryComponent(sourceType$.toJson())}',
+    if (body.transferGroup case final transferGroup$?)
+      'transfer_group=${Uri.encodeQueryComponent(transferGroup$)}',
   ].join('&'),
 );
 
@@ -20413,16 +20413,16 @@ final request = ApiRequest(
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
   headers: headers,
   body: [
-    if (body.amount case final _amount?)
-      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.refundApplicationFee case final _refundApplicationFee?)
-      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.amount case final amount$?)
+      'amount=${Uri.encodeQueryComponent(amount$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.refundApplicationFee case final refundApplicationFee$?)
+      'refund_application_fee=${Uri.encodeQueryComponent(refundApplicationFee$.toString())}',
   ].join('&'),
 );
 
@@ -20482,12 +20482,12 @@ final request = ApiRequest(
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
   headers: headers,
   body: [
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -20547,10 +20547,10 @@ final request = ApiRequest(
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
   ].join('&'),
 );
 
@@ -20614,10 +20614,10 @@ final request = ApiRequest(
   path: '/v1/treasury/credit_reversals',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'received_credit=${Uri.encodeQueryComponent(body.receivedCredit)}',
   ].join('&'),
 );
@@ -20714,10 +20714,10 @@ final request = ApiRequest(
   path: '/v1/treasury/debit_reversals',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'received_debit=${Uri.encodeQueryComponent(body.receivedDebit)}',
   ].join('&'),
 );
@@ -20814,16 +20814,16 @@ final request = ApiRequest(
   path: '/v1/treasury/financial_accounts',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.features case final _features?)
-      'features=${Uri.encodeQueryComponent(_features.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname.toString())}',
-    if (body.platformRestrictions case final _platformRestrictions?)
-      'platform_restrictions=${Uri.encodeQueryComponent(_platformRestrictions.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.features case final features$?)
+      'features=${Uri.encodeQueryComponent(features$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$.toString())}',
+    if (body.platformRestrictions case final platformRestrictions$?)
+      'platform_restrictions=${Uri.encodeQueryComponent(platformRestrictions$.toString())}',
     'supported_currencies=${Uri.encodeQueryComponent(body.supportedCurrencies.toString())}',
   ].join('&'),
 );
@@ -20882,18 +20882,18 @@ final request = ApiRequest(
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.features case final _features?)
-      'features=${Uri.encodeQueryComponent(_features.toString())}',
-    if (body.forwardingSettings case final _forwardingSettings?)
-      'forwarding_settings=${Uri.encodeQueryComponent(_forwardingSettings.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.nickname case final _nickname?)
-      'nickname=${Uri.encodeQueryComponent(_nickname.toString())}',
-    if (body.platformRestrictions case final _platformRestrictions?)
-      'platform_restrictions=${Uri.encodeQueryComponent(_platformRestrictions.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.features case final features$?)
+      'features=${Uri.encodeQueryComponent(features$.toString())}',
+    if (body.forwardingSettings case final forwardingSettings$?)
+      'forwarding_settings=${Uri.encodeQueryComponent(forwardingSettings$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.nickname case final nickname$?)
+      'nickname=${Uri.encodeQueryComponent(nickname$.toString())}',
+    if (body.platformRestrictions case final platformRestrictions$?)
+      'platform_restrictions=${Uri.encodeQueryComponent(platformRestrictions$.toString())}',
   ].join('&'),
 );
 
@@ -20920,10 +20920,10 @@ final request = ApiRequest(
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/close',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.forwardingSettings case final _forwardingSettings?)
-      'forwarding_settings=${Uri.encodeQueryComponent(_forwardingSettings.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.forwardingSettings case final forwardingSettings$?)
+      'forwarding_settings=${Uri.encodeQueryComponent(forwardingSettings$.toString())}',
   ].join('&'),
 );
 
@@ -20981,22 +20981,22 @@ final request = ApiRequest(
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
   headers: headers,
   body: [
-    if (body.cardIssuing case final _cardIssuing?)
-      'card_issuing=${Uri.encodeQueryComponent(_cardIssuing.toString())}',
-    if (body.depositInsurance case final _depositInsurance?)
-      'deposit_insurance=${Uri.encodeQueryComponent(_depositInsurance.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.financialAddresses case final _financialAddresses?)
-      'financial_addresses=${Uri.encodeQueryComponent(_financialAddresses.toString())}',
-    if (body.inboundTransfers case final _inboundTransfers?)
-      'inbound_transfers=${Uri.encodeQueryComponent(_inboundTransfers.toString())}',
-    if (body.intraStripeFlows case final _intraStripeFlows?)
-      'intra_stripe_flows=${Uri.encodeQueryComponent(_intraStripeFlows.toString())}',
-    if (body.outboundPayments case final _outboundPayments?)
-      'outbound_payments=${Uri.encodeQueryComponent(_outboundPayments.toString())}',
-    if (body.outboundTransfers case final _outboundTransfers?)
-      'outbound_transfers=${Uri.encodeQueryComponent(_outboundTransfers.toString())}',
+    if (body.cardIssuing case final cardIssuing$?)
+      'card_issuing=${Uri.encodeQueryComponent(cardIssuing$.toString())}',
+    if (body.depositInsurance case final depositInsurance$?)
+      'deposit_insurance=${Uri.encodeQueryComponent(depositInsurance$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.financialAddresses case final financialAddresses$?)
+      'financial_addresses=${Uri.encodeQueryComponent(financialAddresses$.toString())}',
+    if (body.inboundTransfers case final inboundTransfers$?)
+      'inbound_transfers=${Uri.encodeQueryComponent(inboundTransfers$.toString())}',
+    if (body.intraStripeFlows case final intraStripeFlows$?)
+      'intra_stripe_flows=${Uri.encodeQueryComponent(intraStripeFlows$.toString())}',
+    if (body.outboundPayments case final outboundPayments$?)
+      'outbound_payments=${Uri.encodeQueryComponent(outboundPayments$.toString())}',
+    if (body.outboundTransfers case final outboundTransfers$?)
+      'outbound_transfers=${Uri.encodeQueryComponent(outboundTransfers$.toString())}',
   ].join('&'),
 );
 
@@ -21061,16 +21061,16 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'origin_payment_method=${Uri.encodeQueryComponent(body.originPaymentMethod)}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
   ].join('&'),
 );
 
@@ -21128,8 +21128,8 @@ final request = ApiRequest(
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(inboundTransfer)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -21198,25 +21198,25 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.customer case final _customer?)
-      'customer=${Uri.encodeQueryComponent(_customer)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.destinationPaymentMethod case final _destinationPaymentMethod?)
-      'destination_payment_method=${Uri.encodeQueryComponent(_destinationPaymentMethod)}',
-    if (body.destinationPaymentMethodData case final _destinationPaymentMethodData?)
-      'destination_payment_method_data=${Uri.encodeQueryComponent(_destinationPaymentMethodData.toString())}',
-    if (body.destinationPaymentMethodOptions case final _destinationPaymentMethodOptions?)
-      'destination_payment_method_options=${Uri.encodeQueryComponent(_destinationPaymentMethodOptions.toString())}',
-    if (body.endUserDetails case final _endUserDetails?)
-      'end_user_details=${Uri.encodeQueryComponent(_endUserDetails.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.customer case final customer$?)
+      'customer=${Uri.encodeQueryComponent(customer$)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.destinationPaymentMethod case final destinationPaymentMethod$?)
+      'destination_payment_method=${Uri.encodeQueryComponent(destinationPaymentMethod$)}',
+    if (body.destinationPaymentMethodData case final destinationPaymentMethodData$?)
+      'destination_payment_method_data=${Uri.encodeQueryComponent(destinationPaymentMethodData$.toString())}',
+    if (body.destinationPaymentMethodOptions case final destinationPaymentMethodOptions$?)
+      'destination_payment_method_options=${Uri.encodeQueryComponent(destinationPaymentMethodOptions$.toString())}',
+    if (body.endUserDetails case final endUserDetails$?)
+      'end_user_details=${Uri.encodeQueryComponent(endUserDetails$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
   ].join('&'),
 );
 
@@ -21274,8 +21274,8 @@ final request = ApiRequest(
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -21340,21 +21340,21 @@ final request = ApiRequest(
   body: [
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description)}',
-    if (body.destinationPaymentMethod case final _destinationPaymentMethod?)
-      'destination_payment_method=${Uri.encodeQueryComponent(_destinationPaymentMethod)}',
-    if (body.destinationPaymentMethodData case final _destinationPaymentMethodData?)
-      'destination_payment_method_data=${Uri.encodeQueryComponent(_destinationPaymentMethodData.toString())}',
-    if (body.destinationPaymentMethodOptions case final _destinationPaymentMethodOptions?)
-      'destination_payment_method_options=${Uri.encodeQueryComponent(_destinationPaymentMethodOptions.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$)}',
+    if (body.destinationPaymentMethod case final destinationPaymentMethod$?)
+      'destination_payment_method=${Uri.encodeQueryComponent(destinationPaymentMethod$)}',
+    if (body.destinationPaymentMethodData case final destinationPaymentMethodData$?)
+      'destination_payment_method_data=${Uri.encodeQueryComponent(destinationPaymentMethodData$.toString())}',
+    if (body.destinationPaymentMethodOptions case final destinationPaymentMethodOptions$?)
+      'destination_payment_method_options=${Uri.encodeQueryComponent(destinationPaymentMethodOptions$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.statementDescriptor case final _statementDescriptor?)
-      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.statementDescriptor case final statementDescriptor$?)
+      'statement_descriptor=${Uri.encodeQueryComponent(statementDescriptor$)}',
   ].join('&'),
 );
 
@@ -21412,8 +21412,8 @@ final request = ApiRequest(
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/cancel',
   headers: headers,
   body: [
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
 );
 
@@ -21759,17 +21759,17 @@ final request = ApiRequest(
   path: '/v1/webhook_endpoints',
   headers: headers,
   body: [
-    if (body.apiVersion case final _apiVersion?)
-      'api_version=${Uri.encodeQueryComponent(_apiVersion.toJson())}',
-    if (body.connect case final _connect?)
-      'connect=${Uri.encodeQueryComponent(_connect.toString())}',
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.apiVersion case final apiVersion$?)
+      'api_version=${Uri.encodeQueryComponent(apiVersion$.toJson())}',
+    if (body.connect case final connect$?)
+      'connect=${Uri.encodeQueryComponent(connect$.toString())}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
     'enabled_events=${Uri.encodeQueryComponent(body.enabledEvents.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
     'url=${Uri.encodeQueryComponent(body.url)}',
   ].join('&'),
 );
@@ -21828,18 +21828,18 @@ final request = ApiRequest(
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
   body: [
-    if (body.description case final _description?)
-      'description=${Uri.encodeQueryComponent(_description.toString())}',
-    if (body.disabled case final _disabled?)
-      'disabled=${Uri.encodeQueryComponent(_disabled.toString())}',
-    if (body.enabledEvents case final _enabledEvents?)
-      'enabled_events=${Uri.encodeQueryComponent(_enabledEvents.toString())}',
-    if (body.expand case final _expand?)
-      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
-    if (body.metadata case final _metadata?)
-      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
-    if (body.url case final _url?)
-      'url=${Uri.encodeQueryComponent(_url)}',
+    if (body.description case final description$?)
+      'description=${Uri.encodeQueryComponent(description$.toString())}',
+    if (body.disabled case final disabled$?)
+      'disabled=${Uri.encodeQueryComponent(disabled$.toString())}',
+    if (body.enabledEvents case final enabledEvents$?)
+      'enabled_events=${Uri.encodeQueryComponent(enabledEvents$.toString())}',
+    if (body.expand case final expand$?)
+      'expand=${Uri.encodeQueryComponent(expand$.toString())}',
+    if (body.metadata case final metadata$?)
+      'metadata=${Uri.encodeQueryComponent(metadata$.toString())}',
+    if (body.url case final url$?)
+      'url=${Uri.encodeQueryComponent(url$)}',
   ].join('&'),
 );
 

@@ -148,8 +148,8 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/snapshot',
   headers: headers,
   body: [
-    if (body.source case final _source?)
-      ApiMultipartField.text('source', _source),
+    if (body.source case final source$?)
+      ApiMultipartField.text('source', source$),
   ],
   contentType: 'multipart/form-data',
 );

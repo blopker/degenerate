@@ -59,14 +59,14 @@ final request = ApiRequest(
     'Region=${Uri.encodeQueryComponent(body.region)}',
     'PostalCode=${Uri.encodeQueryComponent(body.postalCode)}',
     'IsoCountry=${Uri.encodeQueryComponent(body.isoCountry)}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.emergencyEnabled case final _emergencyEnabled?)
-      'EmergencyEnabled=${Uri.encodeQueryComponent(_emergencyEnabled.toString())}',
-    if (body.autoCorrectAddress case final _autoCorrectAddress?)
-      'AutoCorrectAddress=${Uri.encodeQueryComponent(_autoCorrectAddress.toString())}',
-    if (body.streetSecondary case final _streetSecondary?)
-      'StreetSecondary=${Uri.encodeQueryComponent(_streetSecondary)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.emergencyEnabled case final emergencyEnabled$?)
+      'EmergencyEnabled=${Uri.encodeQueryComponent(emergencyEnabled$.toString())}',
+    if (body.autoCorrectAddress case final autoCorrectAddress$?)
+      'AutoCorrectAddress=${Uri.encodeQueryComponent(autoCorrectAddress$.toString())}',
+    if (body.streetSecondary case final streetSecondary$?)
+      'StreetSecondary=${Uri.encodeQueryComponent(streetSecondary$)}',
   ].join('&'),
 );
 
@@ -106,24 +106,24 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.customerName case final _customerName?)
-      'CustomerName=${Uri.encodeQueryComponent(_customerName)}',
-    if (body.street case final _street?)
-      'Street=${Uri.encodeQueryComponent(_street)}',
-    if (body.city case final _city?)
-      'City=${Uri.encodeQueryComponent(_city)}',
-    if (body.region case final _region?)
-      'Region=${Uri.encodeQueryComponent(_region)}',
-    if (body.postalCode case final _postalCode?)
-      'PostalCode=${Uri.encodeQueryComponent(_postalCode)}',
-    if (body.emergencyEnabled case final _emergencyEnabled?)
-      'EmergencyEnabled=${Uri.encodeQueryComponent(_emergencyEnabled.toString())}',
-    if (body.autoCorrectAddress case final _autoCorrectAddress?)
-      'AutoCorrectAddress=${Uri.encodeQueryComponent(_autoCorrectAddress.toString())}',
-    if (body.streetSecondary case final _streetSecondary?)
-      'StreetSecondary=${Uri.encodeQueryComponent(_streetSecondary)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.customerName case final customerName$?)
+      'CustomerName=${Uri.encodeQueryComponent(customerName$)}',
+    if (body.street case final street$?)
+      'Street=${Uri.encodeQueryComponent(street$)}',
+    if (body.city case final city$?)
+      'City=${Uri.encodeQueryComponent(city$)}',
+    if (body.region case final region$?)
+      'Region=${Uri.encodeQueryComponent(region$)}',
+    if (body.postalCode case final postalCode$?)
+      'PostalCode=${Uri.encodeQueryComponent(postalCode$)}',
+    if (body.emergencyEnabled case final emergencyEnabled$?)
+      'EmergencyEnabled=${Uri.encodeQueryComponent(emergencyEnabled$.toString())}',
+    if (body.autoCorrectAddress case final autoCorrectAddress$?)
+      'AutoCorrectAddress=${Uri.encodeQueryComponent(autoCorrectAddress$.toString())}',
+    if (body.streetSecondary case final streetSecondary$?)
+      'StreetSecondary=${Uri.encodeQueryComponent(streetSecondary$)}',
   ].join('&'),
 );
 

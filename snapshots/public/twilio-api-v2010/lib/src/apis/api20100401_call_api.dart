@@ -61,74 +61,74 @@ final request = ApiRequest(
   body: [
     'To=${Uri.encodeQueryComponent(body.to)}',
     'From=${Uri.encodeQueryComponent(body.from)}',
-    if (body.method case final _method?)
-      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
-    if (body.fallbackUrl case final _fallbackUrl?)
-      'FallbackUrl=${Uri.encodeQueryComponent(_fallbackUrl.toString())}',
-    if (body.fallbackMethod case final _fallbackMethod?)
-      'FallbackMethod=${Uri.encodeQueryComponent(_fallbackMethod.toJson())}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.statusCallbackEvent case final _statusCallbackEvent?)
-      'StatusCallbackEvent=${Uri.encodeQueryComponent(_statusCallbackEvent.toString())}',
-    if (body.statusCallbackMethod case final _statusCallbackMethod?)
-      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
-    if (body.sendDigits case final _sendDigits?)
-      'SendDigits=${Uri.encodeQueryComponent(_sendDigits)}',
-    if (body.timeout case final _timeout?)
-      'Timeout=${Uri.encodeQueryComponent(_timeout.toString())}',
-    if (body.record case final _record?)
-      'Record=${Uri.encodeQueryComponent(_record.toString())}',
-    if (body.recordingChannels case final _recordingChannels?)
-      'RecordingChannels=${Uri.encodeQueryComponent(_recordingChannels)}',
-    if (body.recordingStatusCallback case final _recordingStatusCallback?)
-      'RecordingStatusCallback=${Uri.encodeQueryComponent(_recordingStatusCallback)}',
-    if (body.recordingStatusCallbackMethod case final _recordingStatusCallbackMethod?)
-      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_recordingStatusCallbackMethod.toJson())}',
-    if (body.sipAuthUsername case final _sipAuthUsername?)
-      'SipAuthUsername=${Uri.encodeQueryComponent(_sipAuthUsername)}',
-    if (body.sipAuthPassword case final _sipAuthPassword?)
-      'SipAuthPassword=${Uri.encodeQueryComponent(_sipAuthPassword)}',
-    if (body.machineDetection case final _machineDetection?)
-      'MachineDetection=${Uri.encodeQueryComponent(_machineDetection)}',
-    if (body.machineDetectionTimeout case final _machineDetectionTimeout?)
-      'MachineDetectionTimeout=${Uri.encodeQueryComponent(_machineDetectionTimeout.toString())}',
-    if (body.recordingStatusCallbackEvent case final _recordingStatusCallbackEvent?)
-      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_recordingStatusCallbackEvent.toString())}',
-    if (body.trim case final _trim?)
-      'Trim=${Uri.encodeQueryComponent(_trim)}',
-    if (body.callerId case final _callerId?)
-      'CallerId=${Uri.encodeQueryComponent(_callerId)}',
-    if (body.machineDetectionSpeechThreshold case final _machineDetectionSpeechThreshold?)
-      'MachineDetectionSpeechThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechThreshold.toString())}',
-    if (body.machineDetectionSpeechEndThreshold case final _machineDetectionSpeechEndThreshold?)
-      'MachineDetectionSpeechEndThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechEndThreshold.toString())}',
-    if (body.machineDetectionSilenceTimeout case final _machineDetectionSilenceTimeout?)
-      'MachineDetectionSilenceTimeout=${Uri.encodeQueryComponent(_machineDetectionSilenceTimeout.toString())}',
-    if (body.asyncAmd case final _asyncAmd?)
-      'AsyncAmd=${Uri.encodeQueryComponent(_asyncAmd)}',
-    if (body.asyncAmdStatusCallback case final _asyncAmdStatusCallback?)
-      'AsyncAmdStatusCallback=${Uri.encodeQueryComponent(_asyncAmdStatusCallback.toString())}',
-    if (body.asyncAmdStatusCallbackMethod case final _asyncAmdStatusCallbackMethod?)
-      'AsyncAmdStatusCallbackMethod=${Uri.encodeQueryComponent(_asyncAmdStatusCallbackMethod.toJson())}',
-    if (body.byoc case final _byoc?)
-      'Byoc=${Uri.encodeQueryComponent(_byoc)}',
-    if (body.callReason case final _callReason?)
-      'CallReason=${Uri.encodeQueryComponent(_callReason)}',
-    if (body.callToken case final _callToken?)
-      'CallToken=${Uri.encodeQueryComponent(_callToken)}',
-    if (body.recordingTrack case final _recordingTrack?)
-      'RecordingTrack=${Uri.encodeQueryComponent(_recordingTrack)}',
-    if (body.timeLimit case final _timeLimit?)
-      'TimeLimit=${Uri.encodeQueryComponent(_timeLimit.toString())}',
-    if (body.clientNotificationUrl case final _clientNotificationUrl?)
-      'ClientNotificationUrl=${Uri.encodeQueryComponent(_clientNotificationUrl.toString())}',
-    if (body.url case final _url?)
-      'Url=${Uri.encodeQueryComponent(_url.toString())}',
-    if (body.twiml case final _twiml?)
-      'Twiml=${Uri.encodeQueryComponent(_twiml)}',
-    if (body.applicationSid case final _applicationSid?)
-      'ApplicationSid=${Uri.encodeQueryComponent(_applicationSid)}',
+    if (body.method case final method$?)
+      'Method=${Uri.encodeQueryComponent(method$.toJson())}',
+    if (body.fallbackUrl case final fallbackUrl$?)
+      'FallbackUrl=${Uri.encodeQueryComponent(fallbackUrl$.toString())}',
+    if (body.fallbackMethod case final fallbackMethod$?)
+      'FallbackMethod=${Uri.encodeQueryComponent(fallbackMethod$.toJson())}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackEvent case final statusCallbackEvent$?)
+      'StatusCallbackEvent=${Uri.encodeQueryComponent(statusCallbackEvent$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.sendDigits case final sendDigits$?)
+      'SendDigits=${Uri.encodeQueryComponent(sendDigits$)}',
+    if (body.timeout case final timeout$?)
+      'Timeout=${Uri.encodeQueryComponent(timeout$.toString())}',
+    if (body.record case final record$?)
+      'Record=${Uri.encodeQueryComponent(record$.toString())}',
+    if (body.recordingChannels case final recordingChannels$?)
+      'RecordingChannels=${Uri.encodeQueryComponent(recordingChannels$)}',
+    if (body.recordingStatusCallback case final recordingStatusCallback$?)
+      'RecordingStatusCallback=${Uri.encodeQueryComponent(recordingStatusCallback$)}',
+    if (body.recordingStatusCallbackMethod case final recordingStatusCallbackMethod$?)
+      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(recordingStatusCallbackMethod$.toJson())}',
+    if (body.sipAuthUsername case final sipAuthUsername$?)
+      'SipAuthUsername=${Uri.encodeQueryComponent(sipAuthUsername$)}',
+    if (body.sipAuthPassword case final sipAuthPassword$?)
+      'SipAuthPassword=${Uri.encodeQueryComponent(sipAuthPassword$)}',
+    if (body.machineDetection case final machineDetection$?)
+      'MachineDetection=${Uri.encodeQueryComponent(machineDetection$)}',
+    if (body.machineDetectionTimeout case final machineDetectionTimeout$?)
+      'MachineDetectionTimeout=${Uri.encodeQueryComponent(machineDetectionTimeout$.toString())}',
+    if (body.recordingStatusCallbackEvent case final recordingStatusCallbackEvent$?)
+      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(recordingStatusCallbackEvent$.toString())}',
+    if (body.trim case final trim$?)
+      'Trim=${Uri.encodeQueryComponent(trim$)}',
+    if (body.callerId case final callerId$?)
+      'CallerId=${Uri.encodeQueryComponent(callerId$)}',
+    if (body.machineDetectionSpeechThreshold case final machineDetectionSpeechThreshold$?)
+      'MachineDetectionSpeechThreshold=${Uri.encodeQueryComponent(machineDetectionSpeechThreshold$.toString())}',
+    if (body.machineDetectionSpeechEndThreshold case final machineDetectionSpeechEndThreshold$?)
+      'MachineDetectionSpeechEndThreshold=${Uri.encodeQueryComponent(machineDetectionSpeechEndThreshold$.toString())}',
+    if (body.machineDetectionSilenceTimeout case final machineDetectionSilenceTimeout$?)
+      'MachineDetectionSilenceTimeout=${Uri.encodeQueryComponent(machineDetectionSilenceTimeout$.toString())}',
+    if (body.asyncAmd case final asyncAmd$?)
+      'AsyncAmd=${Uri.encodeQueryComponent(asyncAmd$)}',
+    if (body.asyncAmdStatusCallback case final asyncAmdStatusCallback$?)
+      'AsyncAmdStatusCallback=${Uri.encodeQueryComponent(asyncAmdStatusCallback$.toString())}',
+    if (body.asyncAmdStatusCallbackMethod case final asyncAmdStatusCallbackMethod$?)
+      'AsyncAmdStatusCallbackMethod=${Uri.encodeQueryComponent(asyncAmdStatusCallbackMethod$.toJson())}',
+    if (body.byoc case final byoc$?)
+      'Byoc=${Uri.encodeQueryComponent(byoc$)}',
+    if (body.callReason case final callReason$?)
+      'CallReason=${Uri.encodeQueryComponent(callReason$)}',
+    if (body.callToken case final callToken$?)
+      'CallToken=${Uri.encodeQueryComponent(callToken$)}',
+    if (body.recordingTrack case final recordingTrack$?)
+      'RecordingTrack=${Uri.encodeQueryComponent(recordingTrack$)}',
+    if (body.timeLimit case final timeLimit$?)
+      'TimeLimit=${Uri.encodeQueryComponent(timeLimit$.toString())}',
+    if (body.clientNotificationUrl case final clientNotificationUrl$?)
+      'ClientNotificationUrl=${Uri.encodeQueryComponent(clientNotificationUrl$.toString())}',
+    if (body.url case final url$?)
+      'Url=${Uri.encodeQueryComponent(url$.toString())}',
+    if (body.twiml case final twiml$?)
+      'Twiml=${Uri.encodeQueryComponent(twiml$)}',
+    if (body.applicationSid case final applicationSid$?)
+      'ApplicationSid=${Uri.encodeQueryComponent(applicationSid$)}',
   ].join('&'),
 );
 
@@ -168,24 +168,24 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.url case final _url?)
-      'Url=${Uri.encodeQueryComponent(_url.toString())}',
-    if (body.method case final _method?)
-      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
-    if (body.status case final _status?)
-      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
-    if (body.fallbackUrl case final _fallbackUrl?)
-      'FallbackUrl=${Uri.encodeQueryComponent(_fallbackUrl.toString())}',
-    if (body.fallbackMethod case final _fallbackMethod?)
-      'FallbackMethod=${Uri.encodeQueryComponent(_fallbackMethod.toJson())}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.statusCallbackMethod case final _statusCallbackMethod?)
-      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
-    if (body.twiml case final _twiml?)
-      'Twiml=${Uri.encodeQueryComponent(_twiml)}',
-    if (body.timeLimit case final _timeLimit?)
-      'TimeLimit=${Uri.encodeQueryComponent(_timeLimit.toString())}',
+    if (body.url case final url$?)
+      'Url=${Uri.encodeQueryComponent(url$.toString())}',
+    if (body.method case final method$?)
+      'Method=${Uri.encodeQueryComponent(method$.toJson())}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
+    if (body.fallbackUrl case final fallbackUrl$?)
+      'FallbackUrl=${Uri.encodeQueryComponent(fallbackUrl$.toString())}',
+    if (body.fallbackMethod case final fallbackMethod$?)
+      'FallbackMethod=${Uri.encodeQueryComponent(fallbackMethod$.toJson())}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.twiml case final twiml$?)
+      'Twiml=${Uri.encodeQueryComponent(twiml$)}',
+    if (body.timeLimit case final timeLimit$?)
+      'TimeLimit=${Uri.encodeQueryComponent(timeLimit$.toString())}',
   ].join('&'),
 );
 

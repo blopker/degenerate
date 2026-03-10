@@ -25,34 +25,34 @@ final request = ApiRequest(
   body: [
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
-    if (body.bankAccountType case final _bankAccountType?)
-      'BankAccountType=${Uri.encodeQueryComponent(_bankAccountType.toJson())}',
-    if (body.chargeAmount case final _chargeAmount?)
-      'ChargeAmount=${Uri.encodeQueryComponent(_chargeAmount.toString())}',
-    if (body.currency case final _currency?)
-      'Currency=${Uri.encodeQueryComponent(_currency)}',
-    if (body.description case final _description?)
-      'Description=${Uri.encodeQueryComponent(_description)}',
-    if (body.input case final _input?)
-      'Input=${Uri.encodeQueryComponent(_input)}',
-    if (body.minPostalCodeLength case final _minPostalCodeLength?)
-      'MinPostalCodeLength=${Uri.encodeQueryComponent(_minPostalCodeLength.toString())}',
-    if (body.parameter case final _parameter?)
-      'Parameter=${Uri.encodeQueryComponent(_parameter)}',
-    if (body.paymentConnector case final _paymentConnector?)
-      'PaymentConnector=${Uri.encodeQueryComponent(_paymentConnector)}',
-    if (body.paymentMethod case final _paymentMethod?)
-      'PaymentMethod=${Uri.encodeQueryComponent(_paymentMethod.toJson())}',
-    if (body.postalCode case final _postalCode?)
-      'PostalCode=${Uri.encodeQueryComponent(_postalCode.toString())}',
-    if (body.securityCode case final _securityCode?)
-      'SecurityCode=${Uri.encodeQueryComponent(_securityCode.toString())}',
-    if (body.timeout case final _timeout?)
-      'Timeout=${Uri.encodeQueryComponent(_timeout.toString())}',
-    if (body.tokenType case final _tokenType?)
-      'TokenType=${Uri.encodeQueryComponent(_tokenType.toJson())}',
-    if (body.validCardTypes case final _validCardTypes?)
-      'ValidCardTypes=${Uri.encodeQueryComponent(_validCardTypes)}',
+    if (body.bankAccountType case final bankAccountType$?)
+      'BankAccountType=${Uri.encodeQueryComponent(bankAccountType$.toJson())}',
+    if (body.chargeAmount case final chargeAmount$?)
+      'ChargeAmount=${Uri.encodeQueryComponent(chargeAmount$.toString())}',
+    if (body.currency case final currency$?)
+      'Currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.description case final description$?)
+      'Description=${Uri.encodeQueryComponent(description$)}',
+    if (body.input case final input$?)
+      'Input=${Uri.encodeQueryComponent(input$)}',
+    if (body.minPostalCodeLength case final minPostalCodeLength$?)
+      'MinPostalCodeLength=${Uri.encodeQueryComponent(minPostalCodeLength$.toString())}',
+    if (body.parameter case final parameter$?)
+      'Parameter=${Uri.encodeQueryComponent(parameter$)}',
+    if (body.paymentConnector case final paymentConnector$?)
+      'PaymentConnector=${Uri.encodeQueryComponent(paymentConnector$)}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'PaymentMethod=${Uri.encodeQueryComponent(paymentMethod$.toJson())}',
+    if (body.postalCode case final postalCode$?)
+      'PostalCode=${Uri.encodeQueryComponent(postalCode$.toString())}',
+    if (body.securityCode case final securityCode$?)
+      'SecurityCode=${Uri.encodeQueryComponent(securityCode$.toString())}',
+    if (body.timeout case final timeout$?)
+      'Timeout=${Uri.encodeQueryComponent(timeout$.toString())}',
+    if (body.tokenType case final tokenType$?)
+      'TokenType=${Uri.encodeQueryComponent(tokenType$.toJson())}',
+    if (body.validCardTypes case final validCardTypes$?)
+      'ValidCardTypes=${Uri.encodeQueryComponent(validCardTypes$)}',
   ].join('&'),
 );
 
@@ -76,10 +76,10 @@ final request = ApiRequest(
   body: [
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
-    if (body.capture case final _capture?)
-      'Capture=${Uri.encodeQueryComponent(_capture.toJson())}',
-    if (body.status case final _status?)
-      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.capture case final capture$?)
+      'Capture=${Uri.encodeQueryComponent(capture$.toJson())}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
 );
 

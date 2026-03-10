@@ -41,22 +41,22 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.authorizeRedirectUrl case final _authorizeRedirectUrl?)
-      'AuthorizeRedirectUrl=${Uri.encodeQueryComponent(_authorizeRedirectUrl.toString())}',
-    if (body.companyName case final _companyName?)
-      'CompanyName=${Uri.encodeQueryComponent(_companyName)}',
-    if (body.deauthorizeCallbackMethod case final _deauthorizeCallbackMethod?)
-      'DeauthorizeCallbackMethod=${Uri.encodeQueryComponent(_deauthorizeCallbackMethod.toJson())}',
-    if (body.deauthorizeCallbackUrl case final _deauthorizeCallbackUrl?)
-      'DeauthorizeCallbackUrl=${Uri.encodeQueryComponent(_deauthorizeCallbackUrl.toString())}',
-    if (body.description case final _description?)
-      'Description=${Uri.encodeQueryComponent(_description)}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.homepageUrl case final _homepageUrl?)
-      'HomepageUrl=${Uri.encodeQueryComponent(_homepageUrl.toString())}',
-    if (body.permissions case final _permissions?)
-      'Permissions=${Uri.encodeQueryComponent(_permissions.toString())}',
+    if (body.authorizeRedirectUrl case final authorizeRedirectUrl$?)
+      'AuthorizeRedirectUrl=${Uri.encodeQueryComponent(authorizeRedirectUrl$.toString())}',
+    if (body.companyName case final companyName$?)
+      'CompanyName=${Uri.encodeQueryComponent(companyName$)}',
+    if (body.deauthorizeCallbackMethod case final deauthorizeCallbackMethod$?)
+      'DeauthorizeCallbackMethod=${Uri.encodeQueryComponent(deauthorizeCallbackMethod$.toJson())}',
+    if (body.deauthorizeCallbackUrl case final deauthorizeCallbackUrl$?)
+      'DeauthorizeCallbackUrl=${Uri.encodeQueryComponent(deauthorizeCallbackUrl$.toString())}',
+    if (body.description case final description$?)
+      'Description=${Uri.encodeQueryComponent(description$)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.homepageUrl case final homepageUrl$?)
+      'HomepageUrl=${Uri.encodeQueryComponent(homepageUrl$.toString())}',
+    if (body.permissions case final permissions$?)
+      'Permissions=${Uri.encodeQueryComponent(permissions$.toString())}',
   ].join('&'),
 );
 

@@ -176,8 +176,8 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/new',
   headers: headers,
   body: [
-    if (body.source case final _source?)
-      ApiMultipartField.text('source', _source.toJson()),
+    if (body.source case final source$?)
+      ApiMultipartField.text('source', source$.toJson()),
   ],
   contentType: 'multipart/form-data',
 );

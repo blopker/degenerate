@@ -42,8 +42,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'Url=${Uri.encodeQueryComponent(body.url.toString())}',
-    if (body.method case final _method?)
-      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
+    if (body.method case final method$?)
+      'Method=${Uri.encodeQueryComponent(method$.toJson())}',
   ].join('&'),
 );
 

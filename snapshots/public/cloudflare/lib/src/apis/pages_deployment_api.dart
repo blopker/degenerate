@@ -52,32 +52,32 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments',
   headers: headers,
   body: [
-    if (body.headers case final _headers?)
-      ApiMultipartField.file('_headers', _headers),
-    if (body.redirects case final _redirects?)
-      ApiMultipartField.file('_redirects', _redirects),
-    if (body.routesJson case final _routesJson?)
-      ApiMultipartField.file('_routes.json', _routesJson),
-    if (body.workerBundle case final _workerBundle?)
-      ApiMultipartField.file('_worker.bundle', _workerBundle),
-    if (body.workerJs case final _workerJs?)
-      ApiMultipartField.file('_worker.js', _workerJs),
-    if (body.branch case final _branch?)
-      ApiMultipartField.text('branch', _branch),
-    if (body.commitDirty case final _commitDirty?)
-      ApiMultipartField.text('commit_dirty', _commitDirty.toJson()),
-    if (body.commitHash case final _commitHash?)
-      ApiMultipartField.text('commit_hash', _commitHash),
-    if (body.commitMessage case final _commitMessage?)
-      ApiMultipartField.text('commit_message', _commitMessage),
-    if (body.functionsFilepathRoutingConfigJson case final _functionsFilepathRoutingConfigJson?)
-      ApiMultipartField.file('functions-filepath-routing-config.json', _functionsFilepathRoutingConfigJson),
-    if (body.manifest case final _manifest?)
-      ApiMultipartField.text('manifest', _manifest),
-    if (body.pagesBuildOutputDir case final _pagesBuildOutputDir?)
-      ApiMultipartField.text('pages_build_output_dir', _pagesBuildOutputDir),
-    if (body.wranglerConfigHash case final _wranglerConfigHash?)
-      ApiMultipartField.text('wrangler_config_hash', _wranglerConfigHash),
+    if (body.headers case final headers$?)
+      ApiMultipartField.file('_headers', headers$),
+    if (body.redirects case final redirects$?)
+      ApiMultipartField.file('_redirects', redirects$),
+    if (body.routesJson case final routesJson$?)
+      ApiMultipartField.file('_routes.json', routesJson$),
+    if (body.workerBundle case final workerBundle$?)
+      ApiMultipartField.file('_worker.bundle', workerBundle$),
+    if (body.workerJs case final workerJs$?)
+      ApiMultipartField.file('_worker.js', workerJs$),
+    if (body.branch case final branch$?)
+      ApiMultipartField.text('branch', branch$),
+    if (body.commitDirty case final commitDirty$?)
+      ApiMultipartField.text('commit_dirty', commitDirty$.toJson()),
+    if (body.commitHash case final commitHash$?)
+      ApiMultipartField.text('commit_hash', commitHash$),
+    if (body.commitMessage case final commitMessage$?)
+      ApiMultipartField.text('commit_message', commitMessage$),
+    if (body.functionsFilepathRoutingConfigJson case final functionsFilepathRoutingConfigJson$?)
+      ApiMultipartField.file('functions-filepath-routing-config.json', functionsFilepathRoutingConfigJson$),
+    if (body.manifest case final manifest$?)
+      ApiMultipartField.text('manifest', manifest$),
+    if (body.pagesBuildOutputDir case final pagesBuildOutputDir$?)
+      ApiMultipartField.text('pages_build_output_dir', pagesBuildOutputDir$),
+    if (body.wranglerConfigHash case final wranglerConfigHash$?)
+      ApiMultipartField.text('wrangler_config_hash', wranglerConfigHash$),
   ],
   contentType: 'multipart/form-data',
 );

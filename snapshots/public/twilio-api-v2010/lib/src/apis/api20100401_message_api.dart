@@ -55,52 +55,52 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'To=${Uri.encodeQueryComponent(body.to)}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.applicationSid case final _applicationSid?)
-      'ApplicationSid=${Uri.encodeQueryComponent(_applicationSid)}',
-    if (body.maxPrice case final _maxPrice?)
-      'MaxPrice=${Uri.encodeQueryComponent(_maxPrice.toString())}',
-    if (body.provideFeedback case final _provideFeedback?)
-      'ProvideFeedback=${Uri.encodeQueryComponent(_provideFeedback.toString())}',
-    if (body.attempt case final _attempt?)
-      'Attempt=${Uri.encodeQueryComponent(_attempt.toString())}',
-    if (body.validityPeriod case final _validityPeriod?)
-      'ValidityPeriod=${Uri.encodeQueryComponent(_validityPeriod.toString())}',
-    if (body.forceDelivery case final _forceDelivery?)
-      'ForceDelivery=${Uri.encodeQueryComponent(_forceDelivery.toString())}',
-    if (body.contentRetention case final _contentRetention?)
-      'ContentRetention=${Uri.encodeQueryComponent(_contentRetention.toJson())}',
-    if (body.addressRetention case final _addressRetention?)
-      'AddressRetention=${Uri.encodeQueryComponent(_addressRetention.toJson())}',
-    if (body.smartEncoded case final _smartEncoded?)
-      'SmartEncoded=${Uri.encodeQueryComponent(_smartEncoded.toString())}',
-    if (body.persistentAction case final _persistentAction?)
-      'PersistentAction=${Uri.encodeQueryComponent(_persistentAction.toString())}',
-    if (body.trafficType case final _trafficType?)
-      'TrafficType=${Uri.encodeQueryComponent(_trafficType.toJson())}',
-    if (body.shortenUrls case final _shortenUrls?)
-      'ShortenUrls=${Uri.encodeQueryComponent(_shortenUrls.toString())}',
-    if (body.scheduleType case final _scheduleType?)
-      'ScheduleType=${Uri.encodeQueryComponent(_scheduleType.toJson())}',
-    if (body.sendAt case final _sendAt?)
-      'SendAt=${Uri.encodeQueryComponent(_sendAt.toIso8601String())}',
-    if (body.sendAsMms case final _sendAsMms?)
-      'SendAsMms=${Uri.encodeQueryComponent(_sendAsMms.toString())}',
-    if (body.contentVariables case final _contentVariables?)
-      'ContentVariables=${Uri.encodeQueryComponent(_contentVariables)}',
-    if (body.riskCheck case final _riskCheck?)
-      'RiskCheck=${Uri.encodeQueryComponent(_riskCheck.toJson())}',
-    if (body.from case final _from?)
-      'From=${Uri.encodeQueryComponent(_from)}',
-    if (body.messagingServiceSid case final _messagingServiceSid?)
-      'MessagingServiceSid=${Uri.encodeQueryComponent(_messagingServiceSid)}',
-    if (body.body case final _body?)
-      'Body=${Uri.encodeQueryComponent(_body)}',
-    if (body.mediaUrl case final _mediaUrl?)
-      'MediaUrl=${Uri.encodeQueryComponent(_mediaUrl.toString())}',
-    if (body.contentSid case final _contentSid?)
-      'ContentSid=${Uri.encodeQueryComponent(_contentSid)}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.applicationSid case final applicationSid$?)
+      'ApplicationSid=${Uri.encodeQueryComponent(applicationSid$)}',
+    if (body.maxPrice case final maxPrice$?)
+      'MaxPrice=${Uri.encodeQueryComponent(maxPrice$.toString())}',
+    if (body.provideFeedback case final provideFeedback$?)
+      'ProvideFeedback=${Uri.encodeQueryComponent(provideFeedback$.toString())}',
+    if (body.attempt case final attempt$?)
+      'Attempt=${Uri.encodeQueryComponent(attempt$.toString())}',
+    if (body.validityPeriod case final validityPeriod$?)
+      'ValidityPeriod=${Uri.encodeQueryComponent(validityPeriod$.toString())}',
+    if (body.forceDelivery case final forceDelivery$?)
+      'ForceDelivery=${Uri.encodeQueryComponent(forceDelivery$.toString())}',
+    if (body.contentRetention case final contentRetention$?)
+      'ContentRetention=${Uri.encodeQueryComponent(contentRetention$.toJson())}',
+    if (body.addressRetention case final addressRetention$?)
+      'AddressRetention=${Uri.encodeQueryComponent(addressRetention$.toJson())}',
+    if (body.smartEncoded case final smartEncoded$?)
+      'SmartEncoded=${Uri.encodeQueryComponent(smartEncoded$.toString())}',
+    if (body.persistentAction case final persistentAction$?)
+      'PersistentAction=${Uri.encodeQueryComponent(persistentAction$.toString())}',
+    if (body.trafficType case final trafficType$?)
+      'TrafficType=${Uri.encodeQueryComponent(trafficType$.toJson())}',
+    if (body.shortenUrls case final shortenUrls$?)
+      'ShortenUrls=${Uri.encodeQueryComponent(shortenUrls$.toString())}',
+    if (body.scheduleType case final scheduleType$?)
+      'ScheduleType=${Uri.encodeQueryComponent(scheduleType$.toJson())}',
+    if (body.sendAt case final sendAt$?)
+      'SendAt=${Uri.encodeQueryComponent(sendAt$.toIso8601String())}',
+    if (body.sendAsMms case final sendAsMms$?)
+      'SendAsMms=${Uri.encodeQueryComponent(sendAsMms$.toString())}',
+    if (body.contentVariables case final contentVariables$?)
+      'ContentVariables=${Uri.encodeQueryComponent(contentVariables$)}',
+    if (body.riskCheck case final riskCheck$?)
+      'RiskCheck=${Uri.encodeQueryComponent(riskCheck$.toJson())}',
+    if (body.from case final from$?)
+      'From=${Uri.encodeQueryComponent(from$)}',
+    if (body.messagingServiceSid case final messagingServiceSid$?)
+      'MessagingServiceSid=${Uri.encodeQueryComponent(messagingServiceSid$)}',
+    if (body.body case final body$?)
+      'Body=${Uri.encodeQueryComponent(body$)}',
+    if (body.mediaUrl case final mediaUrl$?)
+      'MediaUrl=${Uri.encodeQueryComponent(mediaUrl$.toString())}',
+    if (body.contentSid case final contentSid$?)
+      'ContentSid=${Uri.encodeQueryComponent(contentSid$)}',
   ].join('&'),
 );
 
@@ -140,10 +140,10 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.body case final _body?)
-      'Body=${Uri.encodeQueryComponent(_body)}',
-    if (body.status case final _status?)
-      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.body case final body$?)
+      'Body=${Uri.encodeQueryComponent(body$)}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
 );
 

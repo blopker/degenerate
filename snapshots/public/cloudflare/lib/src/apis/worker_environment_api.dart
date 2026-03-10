@@ -46,8 +46,8 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
   headers: headers,
   body: [
-    if (body.files case final _files?)
-      ApiMultipartField.text('files', _files.toString()),
+    if (body.files case final files$?)
+      ApiMultipartField.text('files', files$.toString()),
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',

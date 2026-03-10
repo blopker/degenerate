@@ -51,8 +51,8 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
   ].join('&'),
 );
 
@@ -92,10 +92,10 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.status case final _status?)
-      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
 );
 

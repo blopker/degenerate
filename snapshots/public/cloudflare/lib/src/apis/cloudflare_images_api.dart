@@ -26,17 +26,17 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1',
   headers: headers,
   body: [
-    if (body.creator case final _creator?)
-      ApiMultipartField.text('creator', _creator),
-    if (body.file case final _file?)
-      ApiMultipartField.file('file', _file),
-    if (body.id case final _id?)
-      ApiMultipartField.text('id', _id),
-    if (body.metadata case final _metadata?)
-      ApiMultipartField.text('metadata', _metadata.toString()),
+    if (body.creator case final creator$?)
+      ApiMultipartField.text('creator', creator$),
+    if (body.file case final file$?)
+      ApiMultipartField.file('file', file$),
+    if (body.id case final id$?)
+      ApiMultipartField.text('id', id$),
+    if (body.metadata case final metadata$?)
+      ApiMultipartField.text('metadata', metadata$.toString()),
     ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
-    if (body.url case final _url?)
-      ApiMultipartField.text('url', _url),
+    if (body.url case final url$?)
+      ApiMultipartField.text('url', url$),
   ],
   contentType: 'multipart/form-data',
 );
@@ -235,13 +235,13 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2/direct_upload',
   headers: headers,
   body: [
-    if (body.creator case final _creator?)
-      ApiMultipartField.text('creator', _creator),
+    if (body.creator case final creator$?)
+      ApiMultipartField.text('creator', creator$),
     ApiMultipartField.text('expiry', body.expiry.toIso8601String()),
-    if (body.id case final _id?)
-      ApiMultipartField.text('id', _id),
-    if (body.metadata case final _metadata?)
-      ApiMultipartField.text('metadata', _metadata.toString()),
+    if (body.id case final id$?)
+      ApiMultipartField.text('id', id$),
+    if (body.metadata case final metadata$?)
+      ApiMultipartField.text('metadata', metadata$.toString()),
     ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
   ],
   contentType: 'multipart/form-data',

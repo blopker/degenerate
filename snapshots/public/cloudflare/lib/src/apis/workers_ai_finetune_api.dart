@@ -66,10 +66,10 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/${Uri.encodeComponent(finetuneId)}/finetune-assets',
   headers: headers,
   body: [
-    if (body.file case final _file?)
-      ApiMultipartField.file('file', _file),
-    if (body.fileName case final _fileName?)
-      ApiMultipartField.text('file_name', _fileName),
+    if (body.file case final file$?)
+      ApiMultipartField.file('file', file$),
+    if (body.fileName case final fileName$?)
+      ApiMultipartField.text('file_name', fileName$),
   ],
   contentType: 'multipart/form-data',
 );

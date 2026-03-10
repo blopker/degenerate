@@ -205,8 +205,8 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: headers,
   body: [
-    if (body.files case final _files?)
-      ApiMultipartField.text('files', _files.toString()),
+    if (body.files case final files$?)
+      ApiMultipartField.text('files', files$.toString()),
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',
@@ -407,8 +407,8 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
   headers: headers,
   body: [
-    if (body.settings case final _settings?)
-      ApiMultipartField.text('settings', _settings.toString()),
+    if (body.settings case final settings$?)
+      ApiMultipartField.text('settings', settings$.toString()),
   ],
   contentType: 'multipart/form-data',
 );

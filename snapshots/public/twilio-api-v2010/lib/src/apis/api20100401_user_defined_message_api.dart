@@ -24,8 +24,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'Content=${Uri.encodeQueryComponent(body.content)}',
-    if (body.idempotencyKey case final _idempotencyKey?)
-      'IdempotencyKey=${Uri.encodeQueryComponent(_idempotencyKey)}',
+    if (body.idempotencyKey case final idempotencyKey$?)
+      'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',
   ].join('&'),
 );
 

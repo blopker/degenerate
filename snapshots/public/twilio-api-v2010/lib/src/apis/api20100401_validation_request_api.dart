@@ -24,16 +24,16 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'PhoneNumber=${Uri.encodeQueryComponent(body.phoneNumber)}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.callDelay case final _callDelay?)
-      'CallDelay=${Uri.encodeQueryComponent(_callDelay.toString())}',
-    if (body.$extension case final _$extension?)
-      'Extension=${Uri.encodeQueryComponent(_$extension)}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.statusCallbackMethod case final _statusCallbackMethod?)
-      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.callDelay case final callDelay$?)
+      'CallDelay=${Uri.encodeQueryComponent(callDelay$.toString())}',
+    if (body.$extension case final $extension$?)
+      'Extension=${Uri.encodeQueryComponent($extension$)}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
   ].join('&'),
 );
 

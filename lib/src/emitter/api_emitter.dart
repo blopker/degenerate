@@ -950,7 +950,7 @@ try {
 
       if (isNullable) {
         // Use a case-pattern variable to enable type promotion on nullable public fields.
-        final localVar = '_${f.name}';
+        final localVar = '${f.name}\$';
         buf.writeln('    if ($fieldAccessor case final $localVar?)');
         buf.write('  ');
         _writeMultipartFieldExpr(buf, f, localVar, isBytes);
@@ -979,7 +979,7 @@ try {
           "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
 
       if (isNullable) {
-        final localVar = '_${f.name}';
+        final localVar = '${f.name}\$';
         final localValueExpr = _formFieldValueExpr(f.type, localVar);
         final localEncoded =
             "'${f.originalName}=\${Uri.encodeQueryComponent($localValueExpr)}'";

@@ -124,8 +124,8 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: [
-    if (body.image case final _image?)
-      'image=${Uri.encodeQueryComponent(_image)}',
+    if (body.image case final image$?)
+      'image=${Uri.encodeQueryComponent(image$)}',
   ].join('&'),
 );
 

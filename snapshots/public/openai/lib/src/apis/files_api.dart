@@ -68,8 +68,8 @@ final request = ApiRequest(
   body: [
     ApiMultipartField.file('file', body.file),
     ApiMultipartField.text('purpose', body.purpose.toJson()),
-    if (body.expiresAfter case final _expiresAfter?)
-      ApiMultipartField.text('expires_after', _expiresAfter.toString()),
+    if (body.expiresAfter case final expiresAfter$?)
+      ApiMultipartField.text('expires_after', expiresAfter$.toString()),
   ],
   contentType: 'multipart/form-data',
 );

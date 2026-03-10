@@ -51,8 +51,8 @@ final request = ApiRequest(
   body: [
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
     'IpAddress=${Uri.encodeQueryComponent(body.ipAddress)}',
-    if (body.cidrPrefixLength case final _cidrPrefixLength?)
-      'CidrPrefixLength=${Uri.encodeQueryComponent(_cidrPrefixLength.toString())}',
+    if (body.cidrPrefixLength case final cidrPrefixLength$?)
+      'CidrPrefixLength=${Uri.encodeQueryComponent(cidrPrefixLength$.toString())}',
   ].join('&'),
 );
 
@@ -92,12 +92,12 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid)}/IpAddresses/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.ipAddress case final _ipAddress?)
-      'IpAddress=${Uri.encodeQueryComponent(_ipAddress)}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.cidrPrefixLength case final _cidrPrefixLength?)
-      'CidrPrefixLength=${Uri.encodeQueryComponent(_cidrPrefixLength.toString())}',
+    if (body.ipAddress case final ipAddress$?)
+      'IpAddress=${Uri.encodeQueryComponent(ipAddress$)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.cidrPrefixLength case final cidrPrefixLength$?)
+      'CidrPrefixLength=${Uri.encodeQueryComponent(cidrPrefixLength$.toString())}',
   ].join('&'),
 );
 

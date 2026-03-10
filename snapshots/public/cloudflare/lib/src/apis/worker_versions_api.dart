@@ -58,8 +58,8 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: [
-    if (body.files case final _files?)
-      ApiMultipartField.text('files', _files.toString()),
+    if (body.files case final files$?)
+      ApiMultipartField.text('files', files$.toString()),
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',

@@ -24,8 +24,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     ApiMultipartField.text('sdp', body.sdp),
-    if (body.session case final _session?)
-      ApiMultipartField.text('session', _session.toString()),
+    if (body.session case final session$?)
+      ApiMultipartField.text('session', session$.toString()),
   ],
   contentType: 'multipart/form-data',
 );

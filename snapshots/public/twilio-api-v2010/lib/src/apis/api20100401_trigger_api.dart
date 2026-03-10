@@ -41,12 +41,12 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.callbackMethod case final _callbackMethod?)
-      'CallbackMethod=${Uri.encodeQueryComponent(_callbackMethod.toJson())}',
-    if (body.callbackUrl case final _callbackUrl?)
-      'CallbackUrl=${Uri.encodeQueryComponent(_callbackUrl.toString())}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.callbackMethod case final callbackMethod$?)
+      'CallbackMethod=${Uri.encodeQueryComponent(callbackMethod$.toJson())}',
+    if (body.callbackUrl case final callbackUrl$?)
+      'CallbackUrl=${Uri.encodeQueryComponent(callbackUrl$.toString())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
   ].join('&'),
 );
 
@@ -116,14 +116,14 @@ final request = ApiRequest(
     'CallbackUrl=${Uri.encodeQueryComponent(body.callbackUrl.toString())}',
     'TriggerValue=${Uri.encodeQueryComponent(body.triggerValue)}',
     'UsageCategory=${Uri.encodeQueryComponent(body.usageCategory)}',
-    if (body.callbackMethod case final _callbackMethod?)
-      'CallbackMethod=${Uri.encodeQueryComponent(_callbackMethod.toJson())}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.recurring case final _recurring?)
-      'Recurring=${Uri.encodeQueryComponent(_recurring.toJson())}',
-    if (body.triggerBy case final _triggerBy?)
-      'TriggerBy=${Uri.encodeQueryComponent(_triggerBy.toJson())}',
+    if (body.callbackMethod case final callbackMethod$?)
+      'CallbackMethod=${Uri.encodeQueryComponent(callbackMethod$.toJson())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.recurring case final recurring$?)
+      'Recurring=${Uri.encodeQueryComponent(recurring$.toJson())}',
+    if (body.triggerBy case final triggerBy$?)
+      'TriggerBy=${Uri.encodeQueryComponent(triggerBy$.toJson())}',
   ].join('&'),
 );
 

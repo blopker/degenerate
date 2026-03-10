@@ -23,8 +23,8 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Tokens.json',
   headers: headers,
   body: [
-    if (body.ttl case final _ttl?)
-      'Ttl=${Uri.encodeQueryComponent(_ttl.toString())}',
+    if (body.ttl case final ttl$?)
+      'Ttl=${Uri.encodeQueryComponent(ttl$.toString())}',
   ].join('&'),
 );
 

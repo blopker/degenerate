@@ -52,18 +52,18 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings.json',
   headers: headers,
   body: [
-    if (body.recordingStatusCallbackEvent case final _recordingStatusCallbackEvent?)
-      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_recordingStatusCallbackEvent.toString())}',
-    if (body.recordingStatusCallback case final _recordingStatusCallback?)
-      'RecordingStatusCallback=${Uri.encodeQueryComponent(_recordingStatusCallback.toString())}',
-    if (body.recordingStatusCallbackMethod case final _recordingStatusCallbackMethod?)
-      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_recordingStatusCallbackMethod.toJson())}',
-    if (body.trim case final _trim?)
-      'Trim=${Uri.encodeQueryComponent(_trim)}',
-    if (body.recordingChannels case final _recordingChannels?)
-      'RecordingChannels=${Uri.encodeQueryComponent(_recordingChannels)}',
-    if (body.recordingTrack case final _recordingTrack?)
-      'RecordingTrack=${Uri.encodeQueryComponent(_recordingTrack)}',
+    if (body.recordingStatusCallbackEvent case final recordingStatusCallbackEvent$?)
+      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(recordingStatusCallbackEvent$.toString())}',
+    if (body.recordingStatusCallback case final recordingStatusCallback$?)
+      'RecordingStatusCallback=${Uri.encodeQueryComponent(recordingStatusCallback$.toString())}',
+    if (body.recordingStatusCallbackMethod case final recordingStatusCallbackMethod$?)
+      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(recordingStatusCallbackMethod$.toJson())}',
+    if (body.trim case final trim$?)
+      'Trim=${Uri.encodeQueryComponent(trim$)}',
+    if (body.recordingChannels case final recordingChannels$?)
+      'RecordingChannels=${Uri.encodeQueryComponent(recordingChannels$)}',
+    if (body.recordingTrack case final recordingTrack$?)
+      'RecordingTrack=${Uri.encodeQueryComponent(recordingTrack$)}',
   ].join('&'),
 );
 
@@ -104,8 +104,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
-    if (body.pauseBehavior case final _pauseBehavior?)
-      'PauseBehavior=${Uri.encodeQueryComponent(_pauseBehavior)}',
+    if (body.pauseBehavior case final pauseBehavior$?)
+      'PauseBehavior=${Uri.encodeQueryComponent(pauseBehavior$)}',
   ].join('&'),
 );
 

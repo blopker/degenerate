@@ -51,24 +51,24 @@ final request = ApiRequest(
   body: [
     ApiMultipartField.file('file', body.file),
     ApiMultipartField.text('model', body.model.toString()),
-    if (body.language case final _language?)
-      ApiMultipartField.text('language', _language),
-    if (body.prompt case final _prompt?)
-      ApiMultipartField.text('prompt', _prompt),
-    if (body.responseFormat case final _responseFormat?)
-      ApiMultipartField.text('response_format', _responseFormat.toJson()),
+    if (body.language case final language$?)
+      ApiMultipartField.text('language', language$),
+    if (body.prompt case final prompt$?)
+      ApiMultipartField.text('prompt', prompt$),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
     ApiMultipartField.text('temperature', body.temperature.toString()),
-    if (body.include case final _include?)
-      ApiMultipartField.text('include', _include.toString()),
+    if (body.include case final include$?)
+      ApiMultipartField.text('include', include$.toString()),
     ApiMultipartField.text('timestamp_granularities', body.timestampGranularities.toString()),
-    if (body.stream case final _stream?)
-      ApiMultipartField.text('stream', _stream.toString()),
-    if (body.chunkingStrategy case final _chunkingStrategy?)
-      ApiMultipartField.text('chunking_strategy', _chunkingStrategy.toString()),
-    if (body.knownSpeakerNames case final _knownSpeakerNames?)
-      ApiMultipartField.text('known_speaker_names', _knownSpeakerNames.toString()),
-    if (body.knownSpeakerReferences case final _knownSpeakerReferences?)
-      ApiMultipartField.text('known_speaker_references', _knownSpeakerReferences.toString()),
+    if (body.stream case final stream$?)
+      ApiMultipartField.text('stream', stream$.toString()),
+    if (body.chunkingStrategy case final chunkingStrategy$?)
+      ApiMultipartField.text('chunking_strategy', chunkingStrategy$.toString()),
+    if (body.knownSpeakerNames case final knownSpeakerNames$?)
+      ApiMultipartField.text('known_speaker_names', knownSpeakerNames$.toString()),
+    if (body.knownSpeakerReferences case final knownSpeakerReferences$?)
+      ApiMultipartField.text('known_speaker_references', knownSpeakerReferences$.toString()),
   ],
   contentType: 'multipart/form-data',
 );
@@ -92,8 +92,8 @@ final request = ApiRequest(
   body: [
     ApiMultipartField.file('file', body.file),
     ApiMultipartField.text('model', body.model.toString()),
-    if (body.prompt case final _prompt?)
-      ApiMultipartField.text('prompt', _prompt),
+    if (body.prompt case final prompt$?)
+      ApiMultipartField.text('prompt', prompt$),
     ApiMultipartField.text('response_format', body.responseFormat.toJson()),
     ApiMultipartField.text('temperature', body.temperature.toString()),
   ],

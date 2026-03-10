@@ -24,10 +24,10 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'Callback=${Uri.encodeQueryComponent(body.callback.toString())}',
-    if (body.idempotencyKey case final _idempotencyKey?)
-      'IdempotencyKey=${Uri.encodeQueryComponent(_idempotencyKey)}',
-    if (body.method case final _method?)
-      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
+    if (body.idempotencyKey case final idempotencyKey$?)
+      'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',
+    if (body.method case final method$?)
+      'Method=${Uri.encodeQueryComponent(method$.toJson())}',
   ].join('&'),
 );
 

@@ -1418,7 +1418,7 @@ void main() {
       expect(source, contains('Uri.encodeQueryComponent'));
       expect(source, contains(".join('&')"));
       // Optional field uses null guard
-      expect(source, contains('if (body.scope case final _scope?)'));
+      expect(source, contains(r'if (body.scope case final scope$?)'));
     });
 
     test('throws for unsupported text request object bodies', () {

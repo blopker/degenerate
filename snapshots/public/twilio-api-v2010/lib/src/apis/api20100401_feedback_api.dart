@@ -23,8 +23,8 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Feedback.json',
   headers: headers,
   body: [
-    if (body.outcome case final _outcome?)
-      'Outcome=${Uri.encodeQueryComponent(_outcome.toJson())}',
+    if (body.outcome case final outcome$?)
+      'Outcome=${Uri.encodeQueryComponent(outcome$.toJson())}',
   ].join('&'),
 );
 

@@ -41,10 +41,10 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.maxSize case final _maxSize?)
-      'MaxSize=${Uri.encodeQueryComponent(_maxSize.toString())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.maxSize case final maxSize$?)
+      'MaxSize=${Uri.encodeQueryComponent(maxSize$.toString())}',
   ].join('&'),
 );
 
@@ -109,8 +109,8 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
-    if (body.maxSize case final _maxSize?)
-      'MaxSize=${Uri.encodeQueryComponent(_maxSize.toString())}',
+    if (body.maxSize case final maxSize$?)
+      'MaxSize=${Uri.encodeQueryComponent(maxSize$.toString())}',
   ].join('&'),
 );
 

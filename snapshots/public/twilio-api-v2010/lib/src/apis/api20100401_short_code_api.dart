@@ -41,18 +41,18 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.apiVersion case final _apiVersion?)
-      'ApiVersion=${Uri.encodeQueryComponent(_apiVersion)}',
-    if (body.smsUrl case final _smsUrl?)
-      'SmsUrl=${Uri.encodeQueryComponent(_smsUrl.toString())}',
-    if (body.smsMethod case final _smsMethod?)
-      'SmsMethod=${Uri.encodeQueryComponent(_smsMethod.toJson())}',
-    if (body.smsFallbackUrl case final _smsFallbackUrl?)
-      'SmsFallbackUrl=${Uri.encodeQueryComponent(_smsFallbackUrl.toString())}',
-    if (body.smsFallbackMethod case final _smsFallbackMethod?)
-      'SmsFallbackMethod=${Uri.encodeQueryComponent(_smsFallbackMethod.toJson())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.apiVersion case final apiVersion$?)
+      'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
+    if (body.smsUrl case final smsUrl$?)
+      'SmsUrl=${Uri.encodeQueryComponent(smsUrl$.toString())}',
+    if (body.smsMethod case final smsMethod$?)
+      'SmsMethod=${Uri.encodeQueryComponent(smsMethod$.toJson())}',
+    if (body.smsFallbackUrl case final smsFallbackUrl$?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(smsFallbackUrl$.toString())}',
+    if (body.smsFallbackMethod case final smsFallbackMethod$?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
   ].join('&'),
 );
 

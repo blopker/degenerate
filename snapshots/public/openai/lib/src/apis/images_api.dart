@@ -72,16 +72,16 @@ final request = ApiRequest(
   headers: headers,
   body: [
     ApiMultipartField.file('image', body.image),
-    if (body.model case final _model?)
-      ApiMultipartField.text('model', _model.toString()),
-    if (body.n case final _n?)
-      ApiMultipartField.text('n', _n.toString()),
-    if (body.responseFormat case final _responseFormat?)
-      ApiMultipartField.text('response_format', _responseFormat.toJson()),
-    if (body.size case final _size?)
-      ApiMultipartField.text('size', _size.toJson()),
-    if (body.user case final _user?)
-      ApiMultipartField.text('user', _user),
+    if (body.model case final model$?)
+      ApiMultipartField.text('model', model$.toString()),
+    if (body.n case final n$?)
+      ApiMultipartField.text('n', n$.toString()),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
+    if (body.size case final size$?)
+      ApiMultipartField.text('size', size$.toJson()),
+    if (body.user case final user$?)
+      ApiMultipartField.text('user', user$),
   ],
   contentType: 'multipart/form-data',
 );

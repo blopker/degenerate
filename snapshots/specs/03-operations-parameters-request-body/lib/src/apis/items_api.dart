@@ -65,8 +65,8 @@ final request = ApiRequest(
   body: [
     ApiMultipartField.file('file', body.file),
     ApiMultipartField.text('description', body.description),
-    if (body.tags case final _tags?)
-      ApiMultipartField.text('tags', _tags),
+    if (body.tags case final tags$?)
+      ApiMultipartField.text('tags', tags$),
   ],
   contentType: 'multipart/form-data',
 );
@@ -88,10 +88,10 @@ final request = ApiRequest(
   headers: headers,
   body: [
     'grant_type=${Uri.encodeQueryComponent(body.grantType)}',
-    if (body.scope case final _scope?)
-      'scope=${Uri.encodeQueryComponent(_scope)}',
-    if (body.timeout case final _timeout?)
-      'timeout=${Uri.encodeQueryComponent(_timeout.toString())}',
+    if (body.scope case final scope$?)
+      'scope=${Uri.encodeQueryComponent(scope$)}',
+    if (body.timeout case final timeout$?)
+      'timeout=${Uri.encodeQueryComponent(timeout$.toString())}',
   ].join('&'),
 );
 

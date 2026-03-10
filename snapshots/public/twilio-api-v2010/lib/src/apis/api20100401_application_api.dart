@@ -50,38 +50,38 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications.json',
   headers: headers,
   body: [
-    if (body.apiVersion case final _apiVersion?)
-      'ApiVersion=${Uri.encodeQueryComponent(_apiVersion)}',
-    if (body.voiceUrl case final _voiceUrl?)
-      'VoiceUrl=${Uri.encodeQueryComponent(_voiceUrl.toString())}',
-    if (body.voiceMethod case final _voiceMethod?)
-      'VoiceMethod=${Uri.encodeQueryComponent(_voiceMethod.toJson())}',
-    if (body.voiceFallbackUrl case final _voiceFallbackUrl?)
-      'VoiceFallbackUrl=${Uri.encodeQueryComponent(_voiceFallbackUrl.toString())}',
-    if (body.voiceFallbackMethod case final _voiceFallbackMethod?)
-      'VoiceFallbackMethod=${Uri.encodeQueryComponent(_voiceFallbackMethod.toJson())}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.statusCallbackMethod case final _statusCallbackMethod?)
-      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
-    if (body.voiceCallerIdLookup case final _voiceCallerIdLookup?)
-      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(_voiceCallerIdLookup.toString())}',
-    if (body.smsUrl case final _smsUrl?)
-      'SmsUrl=${Uri.encodeQueryComponent(_smsUrl.toString())}',
-    if (body.smsMethod case final _smsMethod?)
-      'SmsMethod=${Uri.encodeQueryComponent(_smsMethod.toJson())}',
-    if (body.smsFallbackUrl case final _smsFallbackUrl?)
-      'SmsFallbackUrl=${Uri.encodeQueryComponent(_smsFallbackUrl.toString())}',
-    if (body.smsFallbackMethod case final _smsFallbackMethod?)
-      'SmsFallbackMethod=${Uri.encodeQueryComponent(_smsFallbackMethod.toJson())}',
-    if (body.smsStatusCallback case final _smsStatusCallback?)
-      'SmsStatusCallback=${Uri.encodeQueryComponent(_smsStatusCallback.toString())}',
-    if (body.messageStatusCallback case final _messageStatusCallback?)
-      'MessageStatusCallback=${Uri.encodeQueryComponent(_messageStatusCallback.toString())}',
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.publicApplicationConnectEnabled case final _publicApplicationConnectEnabled?)
-      'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(_publicApplicationConnectEnabled.toString())}',
+    if (body.apiVersion case final apiVersion$?)
+      'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
+    if (body.voiceUrl case final voiceUrl$?)
+      'VoiceUrl=${Uri.encodeQueryComponent(voiceUrl$.toString())}',
+    if (body.voiceMethod case final voiceMethod$?)
+      'VoiceMethod=${Uri.encodeQueryComponent(voiceMethod$.toJson())}',
+    if (body.voiceFallbackUrl case final voiceFallbackUrl$?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(voiceFallbackUrl$.toString())}',
+    if (body.voiceFallbackMethod case final voiceFallbackMethod$?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(voiceFallbackMethod$.toJson())}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.voiceCallerIdLookup case final voiceCallerIdLookup$?)
+      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(voiceCallerIdLookup$.toString())}',
+    if (body.smsUrl case final smsUrl$?)
+      'SmsUrl=${Uri.encodeQueryComponent(smsUrl$.toString())}',
+    if (body.smsMethod case final smsMethod$?)
+      'SmsMethod=${Uri.encodeQueryComponent(smsMethod$.toJson())}',
+    if (body.smsFallbackUrl case final smsFallbackUrl$?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(smsFallbackUrl$.toString())}',
+    if (body.smsFallbackMethod case final smsFallbackMethod$?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
+    if (body.smsStatusCallback case final smsStatusCallback$?)
+      'SmsStatusCallback=${Uri.encodeQueryComponent(smsStatusCallback$.toString())}',
+    if (body.messageStatusCallback case final messageStatusCallback$?)
+      'MessageStatusCallback=${Uri.encodeQueryComponent(messageStatusCallback$.toString())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.publicApplicationConnectEnabled case final publicApplicationConnectEnabled$?)
+      'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(publicApplicationConnectEnabled$.toString())}',
   ].join('&'),
 );
 
@@ -121,38 +121,38 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.friendlyName case final _friendlyName?)
-      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
-    if (body.apiVersion case final _apiVersion?)
-      'ApiVersion=${Uri.encodeQueryComponent(_apiVersion)}',
-    if (body.voiceUrl case final _voiceUrl?)
-      'VoiceUrl=${Uri.encodeQueryComponent(_voiceUrl.toString())}',
-    if (body.voiceMethod case final _voiceMethod?)
-      'VoiceMethod=${Uri.encodeQueryComponent(_voiceMethod.toJson())}',
-    if (body.voiceFallbackUrl case final _voiceFallbackUrl?)
-      'VoiceFallbackUrl=${Uri.encodeQueryComponent(_voiceFallbackUrl.toString())}',
-    if (body.voiceFallbackMethod case final _voiceFallbackMethod?)
-      'VoiceFallbackMethod=${Uri.encodeQueryComponent(_voiceFallbackMethod.toJson())}',
-    if (body.statusCallback case final _statusCallback?)
-      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
-    if (body.statusCallbackMethod case final _statusCallbackMethod?)
-      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
-    if (body.voiceCallerIdLookup case final _voiceCallerIdLookup?)
-      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(_voiceCallerIdLookup.toString())}',
-    if (body.smsUrl case final _smsUrl?)
-      'SmsUrl=${Uri.encodeQueryComponent(_smsUrl.toString())}',
-    if (body.smsMethod case final _smsMethod?)
-      'SmsMethod=${Uri.encodeQueryComponent(_smsMethod.toJson())}',
-    if (body.smsFallbackUrl case final _smsFallbackUrl?)
-      'SmsFallbackUrl=${Uri.encodeQueryComponent(_smsFallbackUrl.toString())}',
-    if (body.smsFallbackMethod case final _smsFallbackMethod?)
-      'SmsFallbackMethod=${Uri.encodeQueryComponent(_smsFallbackMethod.toJson())}',
-    if (body.smsStatusCallback case final _smsStatusCallback?)
-      'SmsStatusCallback=${Uri.encodeQueryComponent(_smsStatusCallback.toString())}',
-    if (body.messageStatusCallback case final _messageStatusCallback?)
-      'MessageStatusCallback=${Uri.encodeQueryComponent(_messageStatusCallback.toString())}',
-    if (body.publicApplicationConnectEnabled case final _publicApplicationConnectEnabled?)
-      'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(_publicApplicationConnectEnabled.toString())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.apiVersion case final apiVersion$?)
+      'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
+    if (body.voiceUrl case final voiceUrl$?)
+      'VoiceUrl=${Uri.encodeQueryComponent(voiceUrl$.toString())}',
+    if (body.voiceMethod case final voiceMethod$?)
+      'VoiceMethod=${Uri.encodeQueryComponent(voiceMethod$.toJson())}',
+    if (body.voiceFallbackUrl case final voiceFallbackUrl$?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(voiceFallbackUrl$.toString())}',
+    if (body.voiceFallbackMethod case final voiceFallbackMethod$?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(voiceFallbackMethod$.toJson())}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.voiceCallerIdLookup case final voiceCallerIdLookup$?)
+      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(voiceCallerIdLookup$.toString())}',
+    if (body.smsUrl case final smsUrl$?)
+      'SmsUrl=${Uri.encodeQueryComponent(smsUrl$.toString())}',
+    if (body.smsMethod case final smsMethod$?)
+      'SmsMethod=${Uri.encodeQueryComponent(smsMethod$.toJson())}',
+    if (body.smsFallbackUrl case final smsFallbackUrl$?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(smsFallbackUrl$.toString())}',
+    if (body.smsFallbackMethod case final smsFallbackMethod$?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
+    if (body.smsStatusCallback case final smsStatusCallback$?)
+      'SmsStatusCallback=${Uri.encodeQueryComponent(smsStatusCallback$.toString())}',
+    if (body.messageStatusCallback case final messageStatusCallback$?)
+      'MessageStatusCallback=${Uri.encodeQueryComponent(messageStatusCallback$.toString())}',
+    if (body.publicApplicationConnectEnabled case final publicApplicationConnectEnabled$?)
+      'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(publicApplicationConnectEnabled$.toString())}',
   ].join('&'),
 );
 

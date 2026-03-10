@@ -41,12 +41,12 @@ final request = ApiRequest(
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(sid)}.json',
   headers: headers,
   body: [
-    if (body.status case final _status?)
-      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
-    if (body.announceUrl case final _announceUrl?)
-      'AnnounceUrl=${Uri.encodeQueryComponent(_announceUrl.toString())}',
-    if (body.announceMethod case final _announceMethod?)
-      'AnnounceMethod=${Uri.encodeQueryComponent(_announceMethod.toJson())}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
+    if (body.announceUrl case final announceUrl$?)
+      'AnnounceUrl=${Uri.encodeQueryComponent(announceUrl$.toString())}',
+    if (body.announceMethod case final announceMethod$?)
+      'AnnounceMethod=${Uri.encodeQueryComponent(announceMethod$.toJson())}',
   ].join('&'),
 );
 
