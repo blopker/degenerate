@@ -109,7 +109,7 @@ Future<ApiResult<Uint8List, Never>> cloudflareImagesBaseImage({required ImagesIm
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode image/* response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
 );
  } 

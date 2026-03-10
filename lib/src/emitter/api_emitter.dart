@@ -46,6 +46,44 @@ class ApiEmitter {
     ];
   }
 
+  List<String> collectWarnings() {
+    final warnings = <String>[];
+    for (final op in api.operations) {
+      final isBodyAllowed =
+          op.method != HttpMethod.get && op.method != HttpMethod.head;
+      final requestBodyContent = op.requestBody != null && isBodyAllowed
+          ? _preferredRequestBodyContent(op.requestBody!)
+          : null;
+      final successResponseContent = _successResponseContent(op);
+      final errorResponseContent = _errorResponseContent(op);
+
+      if (requestBodyContent != null &&
+          !isJsonLikeMediaType(requestBodyContent.$1) &&
+          !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
+        warnings.add(
+          'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1} with type ${irTypeName(requestBodyContent.$2.schema)}.',
+        );
+      }
+
+      if (successResponseContent != null &&
+          !isJsonLikeMediaType(successResponseContent.$1) &&
+          !_supportsNonJsonDecode(successResponseContent.$2.schema)) {
+        warnings.add(
+          'Operation ${op.operationId} uses unsupported non-JSON success response media type ${successResponseContent.$1} with type ${irTypeName(successResponseContent.$2.schema)}.',
+        );
+      }
+
+      if (errorResponseContent != null &&
+          !isJsonLikeMediaType(errorResponseContent.$1) &&
+          !_supportsNonJsonDecode(errorResponseContent.$2.schema)) {
+        warnings.add(
+          'Operation ${op.operationId} uses unsupported non-JSON error response media type ${errorResponseContent.$1} with type ${irTypeName(errorResponseContent.$2.schema)}.',
+        );
+      }
+    }
+    return warnings;
+  }
+
   List<String> _buildDocs() {
     return [
       '/// ${api.name} operations.',
@@ -315,6 +353,8 @@ class ApiEmitter {
           PrimitiveKind.int => 'return int.parse(response.body);',
           PrimitiveKind.double => 'return double.parse(response.body);',
           PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
+          PrimitiveKind.bytes =>
+            'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
           _ => 'return jsonDecode(response.body);',
         },
         IrExtensionType() =>
@@ -336,6 +376,7 @@ class ApiEmitter {
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
+        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
         _ => "throw UnsupportedError('$unsupportedMessage');",
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
@@ -480,6 +521,8 @@ try {
             'try { return double.parse(response.body); } catch (_) { return null; }',
           PrimitiveKind.bool =>
             'try { return jsonDecode(response.body) as bool; } catch (_) { return null; }',
+          PrimitiveKind.bytes =>
+            'try { return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')}; } catch (_) { return null; }',
           _ =>
             'try { return jsonDecode(response.body); } catch (_) { return null; }',
         },
@@ -511,6 +554,8 @@ try {
           'try { return double.parse(response.body); } catch (_) { return null; }',
         PrimitiveKind.bool =>
           "try { return response.body.toLowerCase() == 'true'; } catch (_) { return null; }",
+        PrimitiveKind.bytes =>
+          'try { return Uint8List.fromList(response.bodyBytes); } catch (_) { return null; }',
         _ => 'return null;',
       },
       IrEnum(:final name) =>
@@ -570,6 +615,40 @@ try {
       IrEnum() => 'body.toJson()',
       IrExtensionType() => 'body.toJson()',
       _ => "throw UnsupportedError('$unsupportedMessage');",
+    };
+  }
+
+  bool _supportsNonJsonDecode(IrType type) {
+    return switch (type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string ||
+        PrimitiveKind.int ||
+        PrimitiveKind.double ||
+        PrimitiveKind.bool ||
+        PrimitiveKind.bytes => true,
+        _ => false,
+      },
+      IrEnum() || IrExtensionType() => true,
+      _ => false,
+    };
+  }
+
+  bool _supportsNonJsonEncode(IrType type) {
+    return switch (type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string ||
+        PrimitiveKind.int ||
+        PrimitiveKind.double ||
+        PrimitiveKind.num ||
+        PrimitiveKind.bool ||
+        PrimitiveKind.dateTime ||
+        PrimitiveKind.uri ||
+        PrimitiveKind.bigInt ||
+        PrimitiveKind.duration ||
+        PrimitiveKind.bytes => true,
+      },
+      IrEnum() || IrExtensionType() => true,
+      _ => false,
     };
   }
 }

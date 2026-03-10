@@ -1,6 +1,6 @@
 # Degenerate — OpenAPI → Dart Code Generator TODO
 
-## Current State (2026-03-09)
+## Current State (2026-03-10)
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
@@ -54,10 +54,10 @@
 
 ### P0: Correctness Blockers
 
-- [ ] **Non-JSON request bodies always JSON-encoded** — regardless of media type, emitter always sets `Content-Type: application/json` and uses `jsonEncode()`. Breaks `multipart/form-data`, `application/x-www-form-urlencoded`, `text/plain`, and binary payloads. Need to carry chosen media type through IR and emit transport-specific serialization. *(review.md #4, review2.md 1d)*
-- [ ] **Non-JSON success/error responses discarded** — response typing only recognizes `application/json`. Should also handle `application/*+json`, `application/problem+json`, `text/plain`, and binary. *(review.md #5, review2.md #2)*
+- [x] **Non-JSON request bodies** — emitter now preserves chosen media type, emits `text/plain` raw body writes, binary `application/octet-stream` byte uploads, and `application/*+json` JSON encoding. Unsupported non-JSON complex types emit `UnsupportedError` + generator warning. *(review.md #4, review2.md 1d)*
+- [x] **Non-JSON success/error responses** — response typing handles `application/json`, `application/*+json` (e.g. `application/problem+json`), `text/plain`, and binary (`Uint8List` via `response.bodyBytes`). Generator warns on unsupported non-JSON complex schemas. *(review.md #5, review2.md #2)*
 - [ ] **Query serialization ignores style/explode/allowReserved** — array/object query params use `.toString()` instead of spec-defined serialization styles (`form`, `simple`, `label`, `matrix`, `deepObject`, `pipeDelimited`, `spaceDelimited`). IR should carry serialization metadata. *(review2.md 1c)*
-- [ ] **HTTP adapter only supports string bodies** — `HttpApiClient.send()` casts `request.body` to `String`. Blocks raw bytes, multipart, streamed uploads, and form submission even if generation improves. Body model and transport model need to evolve together. *(review2.md 1e)*
+- [x] **HTTP/Dio adapters support binary bodies and responses** — `HttpApiClient` and `DioApiClient` accept both `String` and `List<int>` request bodies. `ApiResponse` carries `bodyBytes: Uint8List` alongside text `body`, with zero-copy when caller provides `Uint8List`. *(review2.md 1e)*
 
 ### P1: Important Capability Gaps
 
@@ -82,8 +82,8 @@
 These are cross-cutting improvements that would make multiple P0/P1 items easier to implement:
 
 - [ ] **Parameter serialization layer** — IR should preserve `style`, `explode`, `allowReserved`, and parameter location. Emit or runtime-dispatch through a serializer that handles all OpenAPI serialization styles.
-- [ ] **Request-body preparation layer** — lower operation body to a prepared transport shape (`BodyKind.json`, `.text`, `.bytes`, `.formUrlEncoded`, `.multipart`) with per-type serialization and content-type logic.
-- [ ] **Response decoding layer** — instead of hardcoding `application/json`, emit decode strategies: `jsonObject`, `jsonArray`, `jsonScalar`, `text`, `bytes`, `void`.
+- [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw). Shared `media_type_utils.dart` handles media-type normalization and preference selection. Multipart/form not yet supported.
+- [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
 
 ---
 
@@ -108,6 +108,22 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 9 (2026-03-10) — Non-JSON media types + binary response support
+
+- Media-type-aware code generation: emitter preserves chosen request/response media type instead of hardcoding JSON
+- `application/*+json` detection (e.g. `application/problem+json`) with parameterized media type handling (`application/json; charset=utf-8`)
+- `text/plain` request bodies emit raw body writes, text success responses type correctly
+- Binary response support end-to-end: `ApiResponse.bodyBytes: Uint8List` with zero-copy when caller provides `Uint8List`
+- HTTP and Dio adapters read raw bytes first, preserve `bodyBytes`, decode text with `allowMalformed: true`
+- Generated clients deserialize `PrimitiveKind.bytes` from `response.bodyBytes` for non-JSON media types
+- Shared `media_type_utils.dart` centralizes `isJsonLikeMediaType`, `normalizeMediaType`, `preferredContent`
+- Generator warnings for unsupported non-JSON complex type schemas via `ApiEmitter.collectWarnings()`
+- Unsupported non-JSON object/list shapes emit `// TODO:` + `UnsupportedError` in generated code
+- `_requestBodyNeedsToJson` renamed to `_typeNeedsToJson` to match actual parameter type
+- Cloudflare, OpenAI, Stripe snapshots updated: binary endpoints now return `Uint8List.fromList(response.bodyBytes)` instead of throwing
+- New tests: plain-text request/response, `application/problem+json` errors, parameterized JSON media types, binary response deserialization, zero-copy `Uint8List`, Dio adapter binary success/error paths
+- All tests passing, analyzer clean on all touched files
 
 ### Session 8 (2026-03-09) — Review-driven bug fixes + wire tests
 

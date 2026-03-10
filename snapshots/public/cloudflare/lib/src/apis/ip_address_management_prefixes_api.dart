@@ -48,7 +48,7 @@ Future<ApiResult<Uint8List, Never>> ipAddressManagementPrefixesDownloadLoaDocume
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode application/pdf response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
 );
  } 

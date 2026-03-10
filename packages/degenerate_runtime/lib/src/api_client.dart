@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 /// The contract any HTTP client must satisfy.
 abstract interface class ApiClient {
   /// Send a request and return a response.
@@ -70,12 +73,18 @@ final class ApiResponse {
   final int statusCode;
   final Map<String, String> headers;
   final String body;
+  final Uint8List bodyBytes;
 
-  const ApiResponse({
+  ApiResponse({
     required this.statusCode,
     this.headers = const {},
     required this.body,
-  });
+    List<int>? bodyBytes,
+  }) : bodyBytes = switch (bodyBytes) {
+         Uint8List() => bodyBytes,
+         List<int>() => Uint8List.fromList(bodyBytes),
+         null => Uint8List.fromList(utf8.encode(body)),
+       };
 
   /// True if status code is 2xx.
   bool get isSuccessful => statusCode >= 200 && statusCode < 300;

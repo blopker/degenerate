@@ -15,10 +15,7 @@ void main() {
 
   group('listUsers', () {
     test('sends GET /users', () async {
-      client.nextResponse = const ApiResponse(
-        statusCode: 200,
-        body: '[]',
-      );
+      client.nextResponse = ApiResponse(statusCode: 200, body: '[]');
       await api.listUsers();
 
       expect(client.lastRequest!.method, equals('GET'));
@@ -26,10 +23,7 @@ void main() {
     });
 
     test('sends limit query parameter', () async {
-      client.nextResponse = const ApiResponse(
-        statusCode: 200,
-        body: '[]',
-      );
+      client.nextResponse = ApiResponse(statusCode: 200, body: '[]');
       await api.listUsers(limit: 10);
 
       expect(client.lastRequest!.queryParameters['limit'], equals('10'));
@@ -109,7 +103,7 @@ void main() {
     });
 
     test('returns ApiError with status code on failure', () async {
-      client.nextResponse = const ApiResponse(
+      client.nextResponse = ApiResponse(
         statusCode: 500,
         body: '{"message": "internal error"}',
       );

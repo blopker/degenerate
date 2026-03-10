@@ -204,7 +204,7 @@ Future<ApiResult<Uint8List, McnResponse>> onrampsExport({required McnAccountId a
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode application/zip response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
   onError: (response) {
     try { return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

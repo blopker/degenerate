@@ -30,7 +30,7 @@ Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest b
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode application/octet-stream response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
 );
  } 

@@ -25,6 +25,7 @@ class FileEmitter {
     required String specVersion,
     String runtimePath = 'degenerate_runtime',
     bool workspace = false,
+    List<String>? warnings,
   }) {
     final files = <String, String>{};
 
@@ -142,7 +143,9 @@ class FileEmitter {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final header = _header(specFileName, specVersion);
-      final specs = ApiEmitter(api).emit();
+      final apiEmitter = ApiEmitter(api);
+      warnings?.addAll(apiEmitter.collectWarnings());
+      final specs = apiEmitter.emit();
 
       final analysis = _analyzeApi(api);
 

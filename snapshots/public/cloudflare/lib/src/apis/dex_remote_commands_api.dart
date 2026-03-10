@@ -77,7 +77,7 @@ Future<ApiResult<Uint8List, Never>> getCommandsCommandIdDownloadsFilename({requi
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode application/zip response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
 );
  } 

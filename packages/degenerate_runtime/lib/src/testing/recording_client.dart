@@ -29,10 +29,8 @@ final class RecordingClient implements ApiClient {
   ApiResponse Function(ApiRequest request)? onRequest;
 
   /// Creates a recording client with an optional default response.
-  RecordingClient({
-    this.nextResponse = const ApiResponse(statusCode: 200, body: ''),
-    this.onRequest,
-  });
+  RecordingClient({ApiResponse? nextResponse, this.onRequest})
+    : nextResponse = nextResponse ?? ApiResponse(statusCode: 200, body: '');
 
   /// The most recently sent request, or `null` if no requests have been sent.
   ApiRequest? get lastRequest => requests.isEmpty ? null : requests.last;

@@ -59,10 +59,7 @@ void main() {
     });
 
     test('returns ApiError on non-2xx', () async {
-      client.nextResponse = const ApiResponse(
-        statusCode: 404,
-        body: 'not found',
-      );
+      client.nextResponse = ApiResponse(statusCode: 404, body: 'not found');
       final result = await api.getItem(itemId: 'x');
 
       expect(result, isA<ApiError>());

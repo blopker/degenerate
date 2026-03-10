@@ -1110,6 +1110,158 @@ void main() {
       );
       expect(source, isNot(contains('body: body,')));
     });
+
+    test('uses bodyBytes for octet-stream success responses', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'download',
+          'download',
+          HttpMethod.get,
+          '/download',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/octet-stream': IrMediaType(
+                  IrPrimitive(PrimitiveKind.bytes),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..directives.add(Directive.import('dart:typed_data'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains('ApiResult<Uint8List,'));
+      expect(source, contains('Uint8List.fromList(response.bodyBytes)'));
+    });
+  });
+
+  group('FileEmitter warnings', () {
+    test('collects warnings for unsupported non-JSON object bodies', () {
+      final warnings = <String>[];
+
+      FileEmitter().emitAll(
+        types: const [],
+        apis: [
+          IrApi('TestApi', [
+            IrOperation(
+              'sendObject',
+              'sendObject',
+              HttpMethod.post,
+              '/test',
+              requestBody: IrRequestBody({
+                'text/plain': IrMediaType(
+                  IrObject(
+                    'PlainRequest',
+                    [
+                      IrField(
+                        'value',
+                        'value',
+                        IrPrimitive(PrimitiveKind.string),
+                        isRequired: true,
+                      ),
+                    ],
+                    requiredFields: ['value'],
+                  ),
+                ),
+              }, isRequired: true),
+              responses: const {200: IrResponse()},
+            ),
+          ]),
+        ],
+        packageName: 'test_client',
+        specFileName: 'test.yaml',
+        specVersion: '3.0.0',
+        warnings: warnings,
+      );
+
+      expect(
+        warnings,
+        contains(
+          'Operation sendObject uses unsupported non-JSON request body media type text/plain with type PlainRequest.',
+        ),
+      );
+    });
+
+    test('collects warnings for unsupported non-JSON response/error shapes', () {
+      final warnings = <String>[];
+
+      FileEmitter().emitAll(
+        types: const [],
+        apis: [
+          IrApi('TestApi', [
+            IrOperation(
+              'getTextObject',
+              'getTextObject',
+              HttpMethod.get,
+              '/test',
+              responses: {
+                200: IrResponse(
+                  content: {
+                    'text/plain': IrMediaType(
+                      IrObject(
+                        'PlainObject',
+                        [
+                          IrField(
+                            'value',
+                            'value',
+                            IrPrimitive(PrimitiveKind.string),
+                            isRequired: true,
+                          ),
+                        ],
+                        requiredFields: ['value'],
+                      ),
+                    ),
+                  },
+                ),
+                400: IrResponse(
+                  content: {
+                    'text/plain': IrMediaType(
+                      IrObject(
+                        'PlainError',
+                        [
+                          IrField(
+                            'message',
+                            'message',
+                            IrPrimitive(PrimitiveKind.string),
+                            isRequired: true,
+                          ),
+                        ],
+                        requiredFields: ['message'],
+                      ),
+                    ),
+                  },
+                ),
+              },
+            ),
+          ]),
+        ],
+        packageName: 'test_client',
+        specFileName: 'test.yaml',
+        specVersion: '3.0.0',
+        warnings: warnings,
+      );
+
+      expect(
+        warnings,
+        contains(
+          'Operation getTextObject uses unsupported non-JSON success response media type text/plain with type PlainObject.',
+        ),
+      );
+      expect(
+        warnings,
+        contains(
+          'Operation getTextObject uses unsupported non-JSON error response media type text/plain with type PlainError.',
+        ),
+      );
+    });
   });
 
   // ─── Extension type emission ──────────────────────────────────

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:http/http.dart' as http;
 
@@ -31,10 +33,12 @@ final class HttpApiClient implements ApiClient {
       }
     }
     final streamed = await _inner.send(httpRequest);
+    final bytes = await streamed.stream.toBytes();
     return ApiResponse(
       statusCode: streamed.statusCode,
       headers: streamed.headers,
-      body: await streamed.stream.bytesToString(),
+      body: utf8.decode(bytes, allowMalformed: true),
+      bodyBytes: bytes,
     );
   }
 

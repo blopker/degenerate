@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:test/test.dart';
 
@@ -83,6 +85,29 @@ void main() {
       expect(ApiResponse(statusCode: 301, body: '').isSuccessful, isFalse);
       expect(ApiResponse(statusCode: 404, body: '').isSuccessful, isFalse);
       expect(ApiResponse(statusCode: 500, body: '').isSuccessful, isFalse);
+    });
+  });
+
+  group('ApiResponse.bodyBytes', () {
+    test('preserves explicit bytes', () {
+      final response = ApiResponse(
+        statusCode: 200,
+        body: 'ignored',
+        bodyBytes: [0, 255, 1],
+      );
+
+      expect(response.bodyBytes, [0, 255, 1]);
+    });
+
+    test('reuses provided Uint8List without copying', () {
+      final bytes = Uint8List.fromList([0, 255, 1]);
+      final response = ApiResponse(
+        statusCode: 200,
+        body: 'ignored',
+        bodyBytes: bytes,
+      );
+
+      expect(identical(response.bodyBytes, bytes), isTrue);
     });
   });
 }

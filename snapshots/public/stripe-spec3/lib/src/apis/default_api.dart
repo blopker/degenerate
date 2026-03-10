@@ -9774,7 +9774,7 @@ Future<ApiResult<Uint8List, ErrorModel>> getQuotesQuotePdf({required String quot
 return _execute(
   request,
   onSuccess: (response) {
-    throw UnsupportedError('Cannot decode application/pdf response into Uint8List');
+    return Uint8List.fromList(response.bodyBytes);
   },
   onError: (response) {
     try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

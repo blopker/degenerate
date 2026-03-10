@@ -53,5 +53,22 @@ void main() {
       expect(response.body, 'hello world');
       expect(utf8.encode(response.body), utf8.encode('hello world'));
     });
+
+    test('preserves binary response bytes', () async {
+      final inner = MockClient((request) async {
+        return http.Response.bytes([0, 255, 1], 200);
+      });
+
+      final client = HttpApiClient(
+        baseUrl: Uri.parse('https://api.example.com'),
+        inner: inner,
+      );
+
+      final response = await client.send(
+        const ApiRequest(method: 'GET', path: '/download'),
+      );
+
+      expect(response.bodyBytes, [0, 255, 1]);
+    });
   });
 }

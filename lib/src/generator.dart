@@ -225,6 +225,7 @@ class Generator {
     final specVersion = doc.version;
 
     final fileEmitter = FileEmitter();
+    final emitterWarnings = <String>[];
     final files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
@@ -233,7 +234,14 @@ class Generator {
       specVersion: specVersion,
       runtimePath: config.runtimePath,
       workspace: config.workspace,
+      warnings: emitterWarnings,
     );
+
+    if (emitterWarnings.isNotEmpty) {
+      for (final warning in emitterWarnings) {
+        _log('  Warning: $warning');
+      }
+    }
 
     _log('Generated ${files.length} files');
 
