@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create a Siprec
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec.json`
-Future<ApiResult<AccountCallSiprec, Never>> createSiprec({required String accountSid, required String callSid, CreateSiprecRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallSiprec, Never>> createSiprec({required String accountSid, required String callSid, CreateSiprecRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSiprecRequest');,
 );
 
@@ -34,12 +35,13 @@ return _execute(
 /// Stop a Siprec using either the SID of the Siprec resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec/{Sid}.json`
-Future<ApiResult<AccountCallSiprec, Never>> updateSiprec({required String accountSid, required String callSid, required String sid, UpdateSiprecRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallSiprec, Never>> updateSiprec({required String accountSid, required String callSid, required String sid, UpdateSiprecRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSiprecRequest');,
 );
 

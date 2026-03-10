@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches device posture rules for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/posture`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new device posture rule.
 ///
 /// `POST /accounts/{account_id}/devices/posture`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a single device posture rule.
 ///
 /// `GET /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a device posture rule.
 ///
 /// `PUT /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes a device posture rule.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

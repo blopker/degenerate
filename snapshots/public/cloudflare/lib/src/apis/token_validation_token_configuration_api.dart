@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists all token validation configurations for this zone
 ///
 /// `GET /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,12 +42,13 @@ return _execute(
 /// Create a new Token Validation configuration
 ///
 /// `POST /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +62,12 @@ return _execute(
 /// Get a single Token Configuration
 ///
 /// `GET /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +82,13 @@ return _execute(
 /// Edit fields of an existing Token Configuration
 ///
 /// `PATCH /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -95,11 +102,12 @@ return _execute(
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -112,12 +120,13 @@ return _execute(
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}/credentials',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

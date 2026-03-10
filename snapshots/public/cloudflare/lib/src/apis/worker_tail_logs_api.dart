@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get list of tails currently deployed on a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<ResponseCommon80, Never>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Starts a tail that receives logs and exception from a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<ResponseCommon80, Never>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,11 +57,12 @@ return _execute(
 /// Deletes a tail from a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/tails/{id}`
-Future<ApiResult<ResponseCommon80, Never>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails/${Uri.encodeComponent(id.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List the requested TLS setting for the hostnames under this zone.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Get the requested TLS setting for the hostname.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Update the tls setting value for the hostname.
 ///
 /// `PUT /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -76,11 +79,12 @@ return _execute(
 /// Delete the tls setting value for the hostname.
 ///
 /// `DELETE /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

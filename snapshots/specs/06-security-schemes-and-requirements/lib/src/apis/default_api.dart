@@ -14,11 +14,12 @@ final ApiConfig _config;
 
 ///
 /// `GET /secure`
-Future<ApiResult<void, Never>> secureRead() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> secureRead() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/secure',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

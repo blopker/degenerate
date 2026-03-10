@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Retrieves a list of certificate authorities.
 ///
 /// `GET /radar/ct/authorities`
-Future<ApiResult<RadarGetCertificateAuthoritiesResponse, RadarGetCertificateAuthoritiesResponse400>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCertificateAuthoritiesResponse, RadarGetCertificateAuthoritiesResponse400>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/authorities',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -44,14 +48,18 @@ return _execute(
 /// Retrieves the requested CA information.
 ///
 /// `GET /radar/ct/authorities/{ca_slug}`
-Future<ApiResult<RadarGetCertificateAuthorityDetailsResponse, RadarGetCertificateAuthorityDetailsResponse404>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCertificateAuthorityDetailsResponse, RadarGetCertificateAuthorityDetailsResponse404>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/authorities/${Uri.encodeComponent(caSlug)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -69,16 +77,20 @@ return _execute(
 /// Retrieves a list of certificate logs.
 ///
 /// `GET /radar/ct/logs`
-Future<ApiResult<RadarGetCertificateLogsResponse, RadarGetCertificateLogsResponse400>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCertificateLogsResponse, RadarGetCertificateLogsResponse400>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -96,14 +108,18 @@ return _execute(
 /// Retrieves the requested certificate log information.
 ///
 /// `GET /radar/ct/logs/{log_slug}`
-Future<ApiResult<RadarGetCertificateLogDetailsResponse, RadarGetCertificateLogDetailsResponse404>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCertificateLogDetailsResponse, RadarGetCertificateLogDetailsResponse404>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/logs/${Uri.encodeComponent(logSlug)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -121,35 +137,115 @@ return _execute(
 /// Retrieves an aggregated summary of certificates grouped by the specified dimension.
 ///
 /// `GET /radar/ct/summary/{dimension}`
-Future<ApiResult<RadarGetCtSummaryResponse, RadarGetCtSummaryResponse400>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCtSummaryResponse, RadarGetCtSummaryResponse400>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (ca != null) {
+for (final item in ca) {
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+}
+}
+if (caOwner != null) {
+for (final item in caOwner) {
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+}
+}
+if (duration != null) {
+for (final item in duration) {
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+}
+}
+if (entryType != null) {
+for (final item in entryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (expirationStatus != null) {
+for (final item in expirationStatus) {
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+}
+}
+if (hasIps != null) {
+for (final item in hasIps) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+}
+}
+if (hasWildcards != null) {
+for (final item in hasWildcards) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+}
+}
+if (log != null) {
+for (final item in log) {
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+}
+}
+if (logApi != null) {
+for (final item in logApi) {
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+}
+}
+if (logOperator != null) {
+for (final item in logOperator) {
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+}
+}
+if (publicKeyAlgorithm != null) {
+for (final item in publicKeyAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (signatureAlgorithm != null) {
+for (final item in signatureAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (tld != null) {
+for (final item in tld) {
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+}
+}
+if (validationLevel != null) {
+for (final item in validationLevel) {
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+}
+}
+if (uniqueEntries != null) {
+for (final item in uniqueEntries) {
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+}
+}
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (ca != null) 'ca': ca.toString(),
-    if (caOwner != null) 'caOwner': caOwner.toString(),
-    if (duration != null) 'duration': duration.toString(),
-    if (entryType != null) 'entryType': entryType.toString(),
-    if (expirationStatus != null) 'expirationStatus': expirationStatus.toString(),
-    if (hasIps != null) 'hasIps': hasIps.toString(),
-    if (hasWildcards != null) 'hasWildcards': hasWildcards.toString(),
-    if (log != null) 'log': log.toString(),
-    if (logApi != null) 'logApi': logApi.toString(),
-    if (logOperator != null) 'logOperator': logOperator.toString(),
-    if (publicKeyAlgorithm != null) 'publicKeyAlgorithm': publicKeyAlgorithm.toString(),
-    if (signatureAlgorithm != null) 'signatureAlgorithm': signatureAlgorithm.toString(),
-    if (tld != null) 'tld': tld.toString(),
-    if (validationLevel != null) 'validationLevel': validationLevel.toString(),
-    if (uniqueEntries != null) 'uniqueEntries': uniqueEntries.toString(),
-    if (normalization != null) 'normalization': normalization.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -167,34 +263,114 @@ return _execute(
 /// Retrieves certificate volume over time.
 ///
 /// `GET /radar/ct/timeseries`
-Future<ApiResult<RadarGetCtTimeseriesResponse, RadarGetCtTimeseriesResponse400>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCtTimeseriesResponse, RadarGetCtTimeseriesResponse400>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (ca != null) {
+for (final item in ca) {
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+}
+}
+if (caOwner != null) {
+for (final item in caOwner) {
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+}
+}
+if (duration != null) {
+for (final item in duration) {
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+}
+}
+if (entryType != null) {
+for (final item in entryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (expirationStatus != null) {
+for (final item in expirationStatus) {
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+}
+}
+if (hasIps != null) {
+for (final item in hasIps) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+}
+}
+if (hasWildcards != null) {
+for (final item in hasWildcards) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+}
+}
+if (log != null) {
+for (final item in log) {
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+}
+}
+if (logApi != null) {
+for (final item in logApi) {
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+}
+}
+if (logOperator != null) {
+for (final item in logOperator) {
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+}
+}
+if (publicKeyAlgorithm != null) {
+for (final item in publicKeyAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (signatureAlgorithm != null) {
+for (final item in signatureAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (tld != null) {
+for (final item in tld) {
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+}
+}
+if (validationLevel != null) {
+for (final item in validationLevel) {
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+}
+}
+if (uniqueEntries != null) {
+for (final item in uniqueEntries) {
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/timeseries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (ca != null) 'ca': ca.toString(),
-    if (caOwner != null) 'caOwner': caOwner.toString(),
-    if (duration != null) 'duration': duration.toString(),
-    if (entryType != null) 'entryType': entryType.toString(),
-    if (expirationStatus != null) 'expirationStatus': expirationStatus.toString(),
-    if (hasIps != null) 'hasIps': hasIps.toString(),
-    if (hasWildcards != null) 'hasWildcards': hasWildcards.toString(),
-    if (log != null) 'log': log.toString(),
-    if (logApi != null) 'logApi': logApi.toString(),
-    if (logOperator != null) 'logOperator': logOperator.toString(),
-    if (publicKeyAlgorithm != null) 'publicKeyAlgorithm': publicKeyAlgorithm.toString(),
-    if (signatureAlgorithm != null) 'signatureAlgorithm': signatureAlgorithm.toString(),
-    if (tld != null) 'tld': tld.toString(),
-    if (validationLevel != null) 'validationLevel': validationLevel.toString(),
-    if (uniqueEntries != null) 'uniqueEntries': uniqueEntries.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -212,36 +388,116 @@ return _execute(
 /// Retrieves the distribution of certificates grouped by the specified dimension over time.
 ///
 /// `GET /radar/ct/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCtTimeseriesGroupResponse, RadarGetCtTimeseriesGroupResponse400>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCtTimeseriesGroupResponse, RadarGetCtTimeseriesGroupResponse400>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (ca != null) {
+for (final item in ca) {
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+}
+}
+if (caOwner != null) {
+for (final item in caOwner) {
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+}
+}
+if (duration != null) {
+for (final item in duration) {
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+}
+}
+if (entryType != null) {
+for (final item in entryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (expirationStatus != null) {
+for (final item in expirationStatus) {
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+}
+}
+if (hasIps != null) {
+for (final item in hasIps) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+}
+}
+if (hasWildcards != null) {
+for (final item in hasWildcards) {
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+}
+}
+if (log != null) {
+for (final item in log) {
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+}
+}
+if (logApi != null) {
+for (final item in logApi) {
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+}
+}
+if (logOperator != null) {
+for (final item in logOperator) {
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+}
+}
+if (publicKeyAlgorithm != null) {
+for (final item in publicKeyAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (signatureAlgorithm != null) {
+for (final item in signatureAlgorithm) {
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+}
+}
+if (validationLevel != null) {
+for (final item in validationLevel) {
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+}
+}
+if (tld != null) {
+for (final item in tld) {
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+}
+}
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (uniqueEntries != null) {
+for (final item in uniqueEntries) {
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ct/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (ca != null) 'ca': ca.toString(),
-    if (caOwner != null) 'caOwner': caOwner.toString(),
-    if (duration != null) 'duration': duration.toString(),
-    if (entryType != null) 'entryType': entryType.toString(),
-    if (expirationStatus != null) 'expirationStatus': expirationStatus.toString(),
-    if (hasIps != null) 'hasIps': hasIps.toString(),
-    if (hasWildcards != null) 'hasWildcards': hasWildcards.toString(),
-    if (log != null) 'log': log.toString(),
-    if (logApi != null) 'logApi': logApi.toString(),
-    if (logOperator != null) 'logOperator': logOperator.toString(),
-    if (publicKeyAlgorithm != null) 'publicKeyAlgorithm': publicKeyAlgorithm.toString(),
-    if (signatureAlgorithm != null) 'signatureAlgorithm': signatureAlgorithm.toString(),
-    if (validationLevel != null) 'validationLevel': validationLevel.toString(),
-    if (tld != null) 'tld': tld.toString(),
-    if (normalization != null) 'normalization': normalization.toJson(),
-    if (uniqueEntries != null) 'uniqueEntries': uniqueEntries.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

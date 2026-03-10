@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`.
 ///
 /// `GET /accounts/{account_id}/intel/ip`
-Future<ApiResult<ResponseCommon39, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon39, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (ipv4 != null) queryParameters['ipv4'] = ipv4;
+if (ipv6 != null) queryParameters['ipv6'] = ipv6;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/ip',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ipv4': ?ipv4,
-    'ipv6': ?ipv6,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

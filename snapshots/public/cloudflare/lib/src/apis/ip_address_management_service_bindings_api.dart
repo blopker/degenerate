@@ -19,11 +19,12 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -40,12 +41,13 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -61,11 +63,12 @@ return _execute(
 /// Fetch a single Service Binding
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,11 +83,12 @@ return _execute(
 /// Delete a Service Binding
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -100,11 +104,12 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/services`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/services',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

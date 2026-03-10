@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
 ///
 /// `GET /gists`
-Future<ApiResult<List<BaseGist>, BasicError>> gistsList({DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<BaseGist>, BasicError>> gistsList({DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -48,12 +52,13 @@ return _execute(
 /// > Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
 ///
 /// `POST /gists`
-Future<ApiResult<GistSimple, ValidationError>> gistsCreate({required GistsCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<GistSimple, ValidationError>> gistsCreate({required GistsCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/gists',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -74,16 +79,20 @@ return _execute(
 /// Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 ///
 /// `GET /gists/public`
-Future<ApiResult<List<BaseGist>, ValidationError>> gistsListPublic({DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<BaseGist>, ValidationError>> gistsListPublic({DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/public',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -102,16 +111,20 @@ return _execute(
 /// List the authenticated user's starred gists:
 ///
 /// `GET /gists/starred`
-Future<ApiResult<List<BaseGist>, BasicError>> gistsListStarred({DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<BaseGist>, BasicError>> gistsListStarred({DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/starred',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -135,11 +148,12 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}`
-Future<ApiResult<GistSimple, GistsGetResponse403>> gistsGet({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<GistSimple, GistsGetResponse403>> gistsGet({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -166,12 +180,13 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `PATCH /gists/{gist_id}`
-Future<ApiResult<GistSimple, ValidationError>> gistsUpdate({required String gistId, required GistsUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<GistSimple, ValidationError>> gistsUpdate({required String gistId, required GistsUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/gists/${Uri.encodeComponent(gistId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -190,11 +205,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /gists/{gist_id}`
-Future<ApiResult<void, BasicError>> gistsDelete({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> gistsDelete({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/gists/${Uri.encodeComponent(gistId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -215,15 +231,19 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/comments`
-Future<ApiResult<List<GistComment>, BasicError>> gistsListComments({required String gistId, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<GistComment>, BasicError>> gistsListComments({required String gistId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/comments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -247,12 +267,13 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `POST /gists/{gist_id}/comments`
-Future<ApiResult<GistComment, BasicError>> gistsCreateComment({required String gistId, required GistsCreateCommentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<GistComment, BasicError>> gistsCreateComment({required String gistId, required GistsCreateCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/gists/${Uri.encodeComponent(gistId)}/comments',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -276,11 +297,12 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<GistComment, BasicError>> gistsGetComment({required String gistId, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<GistComment, BasicError>> gistsGetComment({required String gistId, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -303,12 +325,13 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `PATCH /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<GistComment, BasicError>> gistsUpdateComment({required String gistId, required int commentId, required GistsUpdateCommentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<GistComment, BasicError>> gistsUpdateComment({required String gistId, required int commentId, required GistsUpdateCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/gists/${Uri.encodeComponent(gistId)}/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -327,11 +350,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<void, BasicError>> gistsDeleteComment({required String gistId, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> gistsDeleteComment({required String gistId, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/gists/${Uri.encodeComponent(gistId)}/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -347,15 +371,19 @@ return _execute(
 /// 
 ///
 /// `GET /gists/{gist_id}/commits`
-Future<ApiResult<List<GistCommit>, BasicError>> gistsListCommits({required String gistId, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<GistCommit>, BasicError>> gistsListCommits({required String gistId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/commits',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -374,15 +402,19 @@ return _execute(
 /// 
 ///
 /// `GET /gists/{gist_id}/forks`
-Future<ApiResult<List<GistSimple>, BasicError>> gistsListForks({required String gistId, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<GistSimple>, BasicError>> gistsListForks({required String gistId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/forks',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -401,11 +433,12 @@ return _execute(
 /// 
 ///
 /// `POST /gists/{gist_id}/forks`
-Future<ApiResult<BaseGist, BasicError>> gistsFork({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<BaseGist, BasicError>> gistsFork({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/gists/${Uri.encodeComponent(gistId)}/forks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -423,11 +456,12 @@ return _execute(
 /// 
 ///
 /// `GET /gists/{gist_id}/star`
-Future<ApiResult<void, GistsCheckIsStarredResponse404>> gistsCheckIsStarred({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<void, GistsCheckIsStarredResponse404>> gistsCheckIsStarred({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/star',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -443,11 +477,12 @@ return _execute(
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /gists/{gist_id}/star`
-Future<ApiResult<void, BasicError>> gistsStar({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> gistsStar({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/gists/${Uri.encodeComponent(gistId)}/star',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -463,11 +498,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /gists/{gist_id}/star`
-Future<ApiResult<void, BasicError>> gistsUnstar({required String gistId}) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> gistsUnstar({required String gistId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/gists/${Uri.encodeComponent(gistId)}/star',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -488,11 +524,12 @@ return _execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/{sha}`
-Future<ApiResult<GistSimple, ValidationError>> gistsGetRevision({required String gistId, required String sha, }) async  { final request = ApiRequest(
+Future<ApiResult<GistSimple, ValidationError>> gistsGetRevision({required String gistId, required String sha, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gists/${Uri.encodeComponent(gistId)}/${Uri.encodeComponent(sha)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -510,16 +547,20 @@ return _execute(
 /// Lists public gists for the specified user:
 ///
 /// `GET /users/{username}/gists`
-Future<ApiResult<List<BaseGist>, ValidationError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<BaseGist>, ValidationError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/gists',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch a single Media resource associated with a specific Message resource
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Media/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Delete the Media resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Media/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

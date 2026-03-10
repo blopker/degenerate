@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.1.0
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'pub_openai_security.dart';
 import '../apis/assistants_api.dart';
 import '../apis/audio_api.dart';
 import '../apis/batch_api.dart';
@@ -85,4 +86,6 @@ final class PubOpenaiApi {
   late final VectorStoresApi vectorStores = VectorStoresApi(_config);
   late final VideosApi videos = VideosApi(_config);
   late final SkillsApi skills = SkillsApi(_config);
+
+  PubOpenaiApi withApiKeyAuth(String token) => PubOpenaiApi(PubOpenaiSecurity.applyApiKeyAuth(_config, token));
 }

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs`
-Future<ApiResult<AigConfigListProvidersResponse, AigConfigListProvidersResponse400>> aigConfigListProviders({required String accountId, required String gatewayId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigListProvidersResponse, AigConfigListProvidersResponse400>> aigConfigListProviders({required String accountId, required String gatewayId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/provider_configs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs`
-Future<ApiResult<AigConfigCreateProvidersResponse, AigConfigCreateProvidersResponse400>> aigConfigCreateProviders({required String accountId, required String gatewayId, AigConfigCreateProvidersRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigCreateProvidersResponse, AigConfigCreateProvidersResponse400>> aigConfigCreateProviders({required String accountId, required String gatewayId, AigConfigCreateProvidersRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/provider_configs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -67,12 +72,13 @@ return _execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}`
-Future<ApiResult<AigConfigUpdateProvidersResponse, AigConfigUpdateProvidersResponse400>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigUpdateProvidersResponse, AigConfigUpdateProvidersResponse400>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/provider_configs/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -91,11 +97,12 @@ return _execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}`
-Future<ApiResult<AigConfigDeleteProvidersResponse, AigConfigDeleteProvidersResponse404>> aigConfigDeleteProviders({required String accountId, required String gatewayId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigDeleteProvidersResponse, AigConfigDeleteProvidersResponse404>> aigConfigDeleteProviders({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/provider_configs/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// List/Filter Pipelines in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesResponse, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Create a new Pipeline.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Get Pipelines Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<PipelinesByPipelineIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, }) async  { final request = ApiRequest(
+Future<ApiResult<PipelinesByPipelineIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,11 +86,12 @@ return _execute(
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,16 +104,20 @@ return _execute(
 /// List/Filter Sinks in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksResponse, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pipelineId != null) queryParameters['pipeline_id'] = pipelineId;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'pipeline_id': ?pipelineId,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -121,12 +132,13 @@ return _execute(
 /// Create a new Sink.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -142,11 +154,12 @@ return _execute(
 /// Get Sink Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<SinksBySinkIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, }) async  { final request = ApiRequest(
+Future<ApiResult<SinksBySinkIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -161,14 +174,18 @@ return _execute(
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, String? force, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, String? force, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (force != null) queryParameters['force'] = force;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'force': ?force,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -181,16 +198,20 @@ return _execute(
 /// List/Filter Streams in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsResponse, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pipelineId != null) queryParameters['pipeline_id'] = pipelineId.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pipelineId != null) 'pipeline_id': pipelineId.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -205,12 +226,13 @@ return _execute(
 /// Create a new Stream.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -226,11 +248,12 @@ return _execute(
 /// Get Stream Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsByStreamIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -245,12 +268,13 @@ return _execute(
 /// Update a Stream.
 ///
 /// `PATCH /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse2, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<StreamsByStreamIdResponse2, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -266,14 +290,18 @@ return _execute(
 /// Delete Stream in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, String? force, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, String? force, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (force != null) queryParameters['force'] = force;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'force': ?force,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -286,12 +314,13 @@ return _execute(
 /// Validate Arroyo SQL.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/validate_sql`
-Future<ApiResult<ValidateSqlResponse, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ValidateSqlResponse, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/validate_sql',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

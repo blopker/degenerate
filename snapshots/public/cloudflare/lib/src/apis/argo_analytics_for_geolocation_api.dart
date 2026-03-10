@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Argo Analytics for a zone at different PoPs
 ///
 /// `GET /zones/{zone_id}/analytics/latency/colos`
-Future<ApiResult<ResponseCommon7, Never>> argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPs({required ArgoAnalyticsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon7, Never>> argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPs({required ArgoAnalyticsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/analytics/latency/colos',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

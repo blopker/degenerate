@@ -19,12 +19,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/credential`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/credential',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

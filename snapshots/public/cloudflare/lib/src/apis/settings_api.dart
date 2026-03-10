@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get the current settings for the active account
 ///
 /// `GET /accounts/{account_id}/cni/settings`
-Future<ApiResult<NscSettings, Never>> getSettings({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<NscSettings, Never>> getSettings({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update the current settings for the active account
 ///
 /// `PUT /accounts/{account_id}/cni/settings`
-Future<ApiResult<NscSettings, Never>> updateSettings({required String accountId, required NscSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<NscSettings, Never>> updateSettings({required String accountId, required NscSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cni/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

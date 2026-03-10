@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists Apps associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseArray, Never>> magicAccountAppsListApps({required MagicIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseArray, Never>> magicAccountAppsListApps({required MagicIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new App for an account
 ///
 /// `POST /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PUT /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,12 +81,13 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PATCH /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -99,11 +103,12 @@ return _execute(
 /// Deletes specific Account App.
 ///
 /// `DELETE /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

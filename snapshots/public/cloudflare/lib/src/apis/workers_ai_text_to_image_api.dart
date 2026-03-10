@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/black-forest-labs/flux-1-schnell model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-1-schnell`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/black-forest-labs/flux-1-schnell',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-dev model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-dev`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/black-forest-labs/flux-2-dev',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -73,16 +81,20 @@ return _execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-4b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-4b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/black-forest-labs/flux-2-klein-4b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -101,16 +113,20 @@ return _execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-9b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/black-forest-labs/flux-2-klein-9b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -129,16 +145,20 @@ return _execute(
 /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -157,16 +177,20 @@ return _execute(
 /// Runs inference on the @cf/leonardo/lucid-origin model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/lucid-origin`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLeonardoLucidOriginResponse400>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLeonardoLucidOriginResponse400>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/leonardo/lucid-origin',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -185,16 +209,20 @@ return _execute(
 /// Runs inference on the @cf/leonardo/phoenix-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/phoenix-1.0`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLeonardoPhoenix10Response400>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLeonardoPhoenix10Response400>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/leonardo/phoenix-1.0',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -213,16 +241,20 @@ return _execute(
 /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/lykon/dreamshaper-8-lcm`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLykonDreamshaper8LcmResponse400>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfLykonDreamshaper8LcmResponse400>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/lykon/dreamshaper-8-lcm',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -241,16 +273,20 @@ return _execute(
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-img2img`
-Future<ApiResult<Map<String, String>, $5Img2imgResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Img2imgResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/runwayml/stable-diffusion-v1-5-img2img',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -269,16 +305,20 @@ return _execute(
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-inpainting model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-inpainting`
-Future<ApiResult<Map<String, String>, $5InpaintingResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5InpaintingResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/runwayml/stable-diffusion-v1-5-inpainting',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -297,16 +337,20 @@ return _execute(
 /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -325,11 +369,12 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/sven/test-pipe-http model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/sven/test-pipe-http`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/sven/test-pipe-http',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

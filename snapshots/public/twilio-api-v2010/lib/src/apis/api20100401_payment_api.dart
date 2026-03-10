@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// create an instance of payments. This will start a new payments session
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json`
-Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreatePaymentsRequest');,
 );
 
@@ -34,12 +35,13 @@ return _execute(
 /// update an instance of payments with different phases of payment flows.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json`
-Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdatePaymentsRequest');,
 );
 

@@ -547,14 +547,19 @@ void main() {
     });
 
     test('required header params are written into request headers', () {
-      expect(source, contains("'X-Api-Key': xApiKey"));
+      expect(source, contains("headers['X-Api-Key'] = xApiKey;"));
     });
 
     test(
       'optional header params are conditionally written into request headers',
       () {
         expect(source, contains('xRequestId'));
-        expect(source, contains("'X-Request-Id'"));
+        expect(
+          source,
+          contains(
+            "if (xRequestId != null) headers['X-Request-Id'] = xRequestId;",
+          ),
+        );
       },
     );
 
@@ -1118,7 +1123,7 @@ void main() {
       );
       final source = emitRaw(library);
 
-      expect(source, contains("'Content-Type': 'text/plain'"));
+      expect(source, contains("headers['Content-Type'] = 'text/plain';"));
       expect(source, contains('body: body,'));
       expect(source, isNot(contains('body: jsonEncode(body')));
     });

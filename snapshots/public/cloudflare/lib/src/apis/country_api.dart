@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Retrieves countries information for all countries
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/countries`
-Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadResponse400>> getCountryRead({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadResponse400>> getCountryRead({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/countries',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

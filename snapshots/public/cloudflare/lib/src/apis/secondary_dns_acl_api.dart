@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List ACLs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create ACL.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get ACL.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Modify ACL.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAcl body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAcl body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete ACL.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetch the Global WARP override state.
 ///
 /// `GET /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<ResponseCommon67, Never>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/resilience/disconnect',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Sets the Global WARP override state.
 ///
 /// `POST /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<ResponseCommon67, Never>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/resilience/disconnect',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

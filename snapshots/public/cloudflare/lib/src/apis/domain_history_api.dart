@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Gets historical security threat and content categories currently and previously assigned to a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain-history`
-Future<ApiResult<ResponseCommon39, Never>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon39, Never>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domain != null) queryParameters['domain'] = domain;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/domain-history',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'domain': ?domain,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

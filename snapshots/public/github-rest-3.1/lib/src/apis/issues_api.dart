@@ -29,25 +29,29 @@ final ApiConfig _config;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, ValidationError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (filter != null) queryParameters['filter'] = filter.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (labels != null) queryParameters['labels'] = labels;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (collab != null) queryParameters['collab'] = collab.toString();
+if (orgs != null) queryParameters['orgs'] = orgs.toString();
+if (owned != null) queryParameters['owned'] = owned.toString();
+if (pulls != null) queryParameters['pulls'] = pulls.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/issues',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (filter != null) 'filter': filter.toJson(),
-    if (state != null) 'state': state.toJson(),
-    'labels': ?labels,
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (since != null) 'since': since.toString(),
-    if (collab != null) 'collab': collab.toString(),
-    if (orgs != null) 'orgs': orgs.toString(),
-    if (owned != null) 'owned': owned.toString(),
-    if (pulls != null) 'pulls': pulls.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -76,22 +80,26 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /orgs/{org}/issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListForOrg({required String org, IssuesListForOrgFilter? filter, IssuesListForOrgState? state, String? labels, String? type, IssuesListForOrgSort? sort, IssuesListForOrgDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, BasicError>> issuesListForOrg({required String org, IssuesListForOrgFilter? filter, IssuesListForOrgState? state, String? labels, String? type, IssuesListForOrgSort? sort, IssuesListForOrgDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (filter != null) queryParameters['filter'] = filter.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (labels != null) queryParameters['labels'] = labels;
+if (type != null) queryParameters['type'] = type;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/issues',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (filter != null) 'filter': filter.toJson(),
-    if (state != null) 'state': state.toJson(),
-    'labels': ?labels,
-    'type': ?type,
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -110,15 +118,19 @@ return _execute(
 /// Lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/assignees`
-Future<ApiResult<List<SimpleUser>, BasicError>> issuesListAssignees({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleUser>, BasicError>> issuesListAssignees({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/assignees',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -141,11 +153,12 @@ return _execute(
 /// Otherwise a `404` status code is returned.
 ///
 /// `GET /repos/{owner}/{repo}/assignees/{assignee}`
-Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssigned({required String owner, required String repo, required String assignee, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssigned({required String owner, required String repo, required String assignee, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/assignees/${Uri.encodeComponent(assignee)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -171,25 +184,29 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, ValidationError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (milestone != null) queryParameters['milestone'] = milestone;
+if (state != null) queryParameters['state'] = state.toJson();
+if (assignee != null) queryParameters['assignee'] = assignee;
+if (type != null) queryParameters['type'] = type;
+if (creator != null) queryParameters['creator'] = creator;
+if (mentioned != null) queryParameters['mentioned'] = mentioned;
+if (labels != null) queryParameters['labels'] = labels;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'milestone': ?milestone,
-    if (state != null) 'state': state.toJson(),
-    'assignee': ?assignee,
-    'type': ?type,
-    'creator': ?creator,
-    'mentioned': ?mentioned,
-    'labels': ?labels,
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -218,12 +235,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues`
-Future<ApiResult<Issue, BasicError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -251,18 +269,22 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments`
-Future<ApiResult<List<IssueComment>, ValidationError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<IssueComment>, ValidationError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -288,11 +310,12 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments/{comment_id}`
-Future<ApiResult<IssueComment, BasicError>> issuesGetComment({required String owner, required String repo, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<IssueComment, BasicError>> issuesGetComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -317,12 +340,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}`
-Future<ApiResult<IssueComment, ValidationError>> issuesUpdateComment({required String owner, required String repo, required int commentId, required IssuesUpdateCommentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssueComment, ValidationError>> issuesUpdateComment({required String owner, required String repo, required int commentId, required IssuesUpdateCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -341,11 +365,12 @@ return _execute(
 /// You can use the REST API to delete comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}`
-Future<ApiResult<void, Never>> issuesDeleteComment({required String owner, required String repo, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> issuesDeleteComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -365,11 +390,12 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<IssueComment, BasicError>> issuesPinComment({required String owner, required String repo, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<IssueComment, BasicError>> issuesPinComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}/pin',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -387,11 +413,12 @@ return _execute(
 /// You can use the REST API to unpin comments on issues.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<void, BasicError>> issuesUnpinComment({required String owner, required String repo, required int commentId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesUnpinComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}/pin',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -407,15 +434,19 @@ return _execute(
 /// Lists events for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/issues/events`
-Future<ApiResult<List<IssueEvent>, ValidationError>> issuesListEventsForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<IssueEvent>, ValidationError>> issuesListEventsForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -434,11 +465,12 @@ return _execute(
 /// Gets a single event by the event id.
 ///
 /// `GET /repos/{owner}/{repo}/issues/events/{event_id}`
-Future<ApiResult<IssueEvent, BasicError>> issuesGetEvent({required String owner, required String repo, required int eventId, }) async  { final request = ApiRequest(
+Future<ApiResult<IssueEvent, BasicError>> issuesGetEvent({required String owner, required String repo, required int eventId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/events/${Uri.encodeComponent(eventId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -471,11 +503,12 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, BasicError>> issuesGet({required String owner, required String repo, required int issueNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesGet({required String owner, required String repo, required int issueNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -500,12 +533,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, ValidationError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, ValidationError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -524,12 +558,13 @@ return _execute(
 /// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/assignees`
-Future<ApiResult<Issue, Never>> issuesAddAssignees({required String owner, required String repo, required int issueNumber, IssuesAddAssigneesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, Never>> issuesAddAssignees({required String owner, required String repo, required int issueNumber, IssuesAddAssigneesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/assignees',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -545,12 +580,13 @@ return _execute(
 /// Removes one or more assignees from an issue.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees`
-Future<ApiResult<Issue, Never>> issuesRemoveAssignees({required String owner, required String repo, required int issueNumber, IssuesRemoveAssigneesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, Never>> issuesRemoveAssignees({required String owner, required String repo, required int issueNumber, IssuesRemoveAssigneesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/assignees',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -570,11 +606,12 @@ return _execute(
 /// Otherwise a `404` status code is returned.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}`
-Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssignedToIssue({required String owner, required String repo, required int issueNumber, required String assignee, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssignedToIssue({required String owner, required String repo, required int issueNumber, required String assignee, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/assignees/${Uri.encodeComponent(assignee)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -599,16 +636,20 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<List<IssueComment>, BasicError>> issuesListComments({required String owner, required String repo, required int issueNumber, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<IssueComment>, BasicError>> issuesListComments({required String owner, required String repo, required int issueNumber, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/comments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -639,12 +680,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<IssueComment, BasicError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssueComment, BasicError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/comments',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -670,15 +712,19 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlockedBy({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlockedBy({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/dependencies/blocked_by',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -708,12 +754,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<Issue, BasicError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/dependencies/blocked_by',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -742,11 +789,12 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}`
-Future<ApiResult<Issue, BasicError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/dependencies/blocked_by/${Uri.encodeComponent(issueId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -771,15 +819,19 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking`
-Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlocking({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlocking({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/dependencies/blocking',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -798,15 +850,19 @@ return _execute(
 /// Lists all events for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/events`
-Future<ApiResult<List<IssueEventForIssue>, BasicError>> issuesListEvents({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<IssueEventForIssue>, BasicError>> issuesListEvents({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -825,15 +881,19 @@ return _execute(
 /// Lists all labels for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesListLabelsOnIssue({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, BasicError>> issuesListLabelsOnIssue({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/labels',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -852,12 +912,13 @@ return _execute(
 /// Adds labels to an issue.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, BasicError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/labels',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -877,12 +938,13 @@ return _execute(
 /// Removes any previous labels and sets the new labels for an issue.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, BasicError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/labels',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -902,11 +964,12 @@ return _execute(
 /// Removes all labels from an issue.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<void, BasicError>> issuesRemoveAllLabels({required String owner, required String repo, required int issueNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesRemoveAllLabels({required String owner, required String repo, required int issueNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/labels',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -922,11 +985,12 @@ return _execute(
 /// Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}`
-Future<ApiResult<List<Label>, BasicError>> issuesRemoveLabel({required String owner, required String repo, required int issueNumber, required String name, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, BasicError>> issuesRemoveLabel({required String owner, required String repo, required int issueNumber, required String name, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/labels/${Uri.encodeComponent(name)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -947,12 +1011,13 @@ return _execute(
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, BasicError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/lock',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -969,11 +1034,12 @@ return _execute(
 /// Users with push access can unlock an issue's conversation.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, BasicError>> issuesUnlock({required String owner, required String repo, required int issueNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesUnlock({required String owner, required String repo, required int issueNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/lock',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -996,11 +1062,12 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/parent`
-Future<ApiResult<Issue, BasicError>> issuesGetParent({required String owner, required String repo, required int issueNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesGetParent({required String owner, required String repo, required int issueNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/parent',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1026,12 +1093,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue`
-Future<ApiResult<Issue, BasicError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/sub_issue',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -1057,15 +1125,19 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListSubIssues({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, BasicError>> issuesListSubIssues({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/sub_issues',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1095,12 +1167,13 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<Issue, BasicError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/sub_issues',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -1119,12 +1192,13 @@ return _execute(
 /// You can use the REST API to reprioritize a sub-issue to a different position in the parent list.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority`
-Future<ApiResult<Issue, BasicError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Issue, BasicError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/sub_issues/priority',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -1143,15 +1217,19 @@ return _execute(
 /// List all timeline events for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/timeline`
-Future<ApiResult<List<TimelineIssueEvents>, BasicError>> issuesListEventsForTimeline({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<TimelineIssueEvents>, BasicError>> issuesListEventsForTimeline({required String owner, required String repo, required int issueNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/timeline',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1170,15 +1248,19 @@ return _execute(
 /// Lists all labels for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesListLabelsForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, BasicError>> issuesListLabelsForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/labels',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1197,12 +1279,13 @@ return _execute(
 /// Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
 ///
 /// `POST /repos/{owner}/{repo}/labels`
-Future<ApiResult<Label, ValidationError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Label, ValidationError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/labels',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -1221,11 +1304,12 @@ return _execute(
 /// Gets a label using the given name.
 ///
 /// `GET /repos/{owner}/{repo}/labels/{name}`
-Future<ApiResult<Label, BasicError>> issuesGetLabel({required String owner, required String repo, required String name, }) async  { final request = ApiRequest(
+Future<ApiResult<Label, BasicError>> issuesGetLabel({required String owner, required String repo, required String name, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/labels/${Uri.encodeComponent(name)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1243,12 +1327,13 @@ return _execute(
 /// Updates a label using the given label name.
 ///
 /// `PATCH /repos/{owner}/{repo}/labels/{name}`
-Future<ApiResult<Label, Never>> issuesUpdateLabel({required String owner, required String repo, required String name, IssuesUpdateLabelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Label, Never>> issuesUpdateLabel({required String owner, required String repo, required String name, IssuesUpdateLabelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/labels/${Uri.encodeComponent(name)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -1264,11 +1349,12 @@ return _execute(
 /// Deletes a label using the given label name.
 ///
 /// `DELETE /repos/{owner}/{repo}/labels/{name}`
-Future<ApiResult<void, Never>> issuesDeleteLabel({required String owner, required String repo, required String name, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> issuesDeleteLabel({required String owner, required String repo, required String name, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/labels/${Uri.encodeComponent(name)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1281,18 +1367,22 @@ return _execute(
 /// Lists milestones for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/milestones`
-Future<ApiResult<List<Milestone>, BasicError>> issuesListMilestones({required String owner, required String repo, IssuesListMilestonesState? state, IssuesListMilestonesSort? sort, IssuesListMilestonesDirection? direction, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Milestone>, BasicError>> issuesListMilestones({required String owner, required String repo, IssuesListMilestonesState? state, IssuesListMilestonesSort? sort, IssuesListMilestonesDirection? direction, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (state != null) queryParameters['state'] = state.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (state != null) 'state': state.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1311,12 +1401,13 @@ return _execute(
 /// Creates a milestone.
 ///
 /// `POST /repos/{owner}/{repo}/milestones`
-Future<ApiResult<Milestone, BasicError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Milestone, BasicError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -1335,11 +1426,12 @@ return _execute(
 /// Gets a milestone using the given milestone number.
 ///
 /// `GET /repos/{owner}/{repo}/milestones/{milestone_number}`
-Future<ApiResult<Milestone, BasicError>> issuesGetMilestone({required String owner, required String repo, required int milestoneNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<Milestone, BasicError>> issuesGetMilestone({required String owner, required String repo, required int milestoneNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones/${Uri.encodeComponent(milestoneNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1357,12 +1449,13 @@ return _execute(
 /// 
 ///
 /// `PATCH /repos/{owner}/{repo}/milestones/{milestone_number}`
-Future<ApiResult<Milestone, Never>> issuesUpdateMilestone({required String owner, required String repo, required int milestoneNumber, IssuesUpdateMilestoneRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Milestone, Never>> issuesUpdateMilestone({required String owner, required String repo, required int milestoneNumber, IssuesUpdateMilestoneRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones/${Uri.encodeComponent(milestoneNumber.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -1378,11 +1471,12 @@ return _execute(
 /// Deletes a milestone using the given milestone number.
 ///
 /// `DELETE /repos/{owner}/{repo}/milestones/{milestone_number}`
-Future<ApiResult<void, BasicError>> issuesDeleteMilestone({required String owner, required String repo, required int milestoneNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> issuesDeleteMilestone({required String owner, required String repo, required int milestoneNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones/${Uri.encodeComponent(milestoneNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1398,15 +1492,19 @@ return _execute(
 /// Lists labels for issues in a milestone.
 ///
 /// `GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels`
-Future<ApiResult<List<Label>, Never>> issuesListLabelsForMilestone({required String owner, required String repo, required int milestoneNumber, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Label>, Never>> issuesListLabelsForMilestone({required String owner, required String repo, required int milestoneNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/milestones/${Uri.encodeComponent(milestoneNumber.toString())}/labels',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1432,21 +1530,25 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /user/issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Issue>, BasicError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (filter != null) queryParameters['filter'] = filter.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (labels != null) queryParameters['labels'] = labels;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/issues',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (filter != null) 'filter': filter.toJson(),
-    if (state != null) 'state': state.toJson(),
-    'labels': ?labels,
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (since != null) 'since': since.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -18,12 +18,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/speech',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -41,12 +42,13 @@ return _execute(
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/transcriptions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateTranscriptionRequest');,
 );
 
@@ -60,12 +62,13 @@ return _execute(
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
-Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/translations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateTranslationRequest');,
 );
 
@@ -84,15 +87,19 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents`
-Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/audio/voice_consents',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -110,12 +117,13 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents`
-Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/voice_consents',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateVoiceConsentRequest');,
 );
 
@@ -134,11 +142,12 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -156,12 +165,13 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -180,11 +190,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -202,12 +213,13 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voices`
-Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/audio/voices',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateVoiceRequest');,
 );
 

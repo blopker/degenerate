@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Returns livestream analytics for the specified time range.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/overall`
-Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, }) async  { final request = ApiRequest(
+Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (startTime != null) queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/analytics/livestreams/overall',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (startTime != null) 'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,20 +44,24 @@ return _execute(
 /// Returns details of livestreams associated with the given App ID. It includes livestreams created by your App and RealtimeKit meetings that are livestreamed by your App. If you only want details of livestreams created by your App and not RealtimeKit meetings, you can use the `exclude_meetings` query parameter.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams`
-Future<ApiResult<FetchAllLivestreamsResponse, Never>> fetchAllLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, bool? excludeMeetings, int? perPage, int? pageNo, FetchAllLivestreamsStatus? status, DateTime? startTime, DateTime? endTime, FetchAllLivestreamsSortOrder? sortOrder, }) async  { final request = ApiRequest(
+Future<ApiResult<FetchAllLivestreamsResponse, Never>> fetchAllLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, bool? excludeMeetings, int? perPage, int? pageNo, FetchAllLivestreamsStatus? status, DateTime? startTime, DateTime? endTime, FetchAllLivestreamsSortOrder? sortOrder, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (excludeMeetings != null) queryParameters['exclude_meetings'] = excludeMeetings.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (status != null) queryParameters['status'] = status.toJson();
+if (startTime != null) queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (excludeMeetings != null) 'exclude_meetings': excludeMeetings.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (pageNo != null) 'page_no': pageNo.toString(),
-    if (status != null) 'status': status.toJson(),
-    if (startTime != null) 'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -68,12 +76,13 @@ return _execute(
 /// Creates a livestream for the given App ID and returns ingest server, stream key, and playback URL. You can pass custom input to the ingest server and stream key, and freely distribute the content using the playback URL on any player that supports HLS/LHLS.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/livestreams`
-Future<ApiResult<PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse, Never>> postAccountsRealtimeKitLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse, Never>> postAccountsRealtimeKitLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -89,15 +98,19 @@ return _execute(
 /// Returns details of a livestream with sessions for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}`
-Future<ApiResult<LivestreamSessionLivestreamIdResponse, Never>> getV2LivestreamSessionLivestreamId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, int? pageNo, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<LivestreamSessionLivestreamIdResponse, Never>> getV2LivestreamSessionLivestreamId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, int? pageNo, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/${Uri.encodeComponent(livestreamId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageNo != null) 'page_no': pageNo.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -112,11 +125,12 @@ return _execute(
 /// Returns details of all active livestreams for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}/active-livestream-session`
-Future<ApiResult<ActiveLivestreamSessionDetailsResponse, Never>> getV2ActiveLivestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, }) async  { final request = ApiRequest(
+Future<ApiResult<ActiveLivestreamSessionDetailsResponse, Never>> getV2ActiveLivestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/${Uri.encodeComponent(livestreamId)}/active-livestream-session',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -131,11 +145,12 @@ return _execute(
 /// Returns livestream session details for the given livestream session ID. Retrieve the `livestream_session_id`using the `Fetch livestream session details using a session ID` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/sessions/{livestream-session-id}`
-Future<ApiResult<LivestreamsLivestreamSessionIdResponse, Never>> getV2LivestreamsLivestreamSessionId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamSessionId, }) async  { final request = ApiRequest(
+Future<ApiResult<LivestreamsLivestreamSessionIdResponse, Never>> getV2LivestreamsLivestreamSessionId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamSessionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/sessions/${Uri.encodeComponent(livestreamSessionId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -150,11 +165,12 @@ return _execute(
 /// Returns details of all active livestreams for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream`
-Future<ApiResult<MeetingsMeetingIdActiveLivestreamResponse, Never>> getV2MeetingsMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final request = ApiRequest(
+Future<ApiResult<MeetingsMeetingIdActiveLivestreamResponse, Never>> getV2MeetingsMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -169,11 +185,12 @@ return _execute(
 /// Stops the active livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream/stop`
-Future<ApiResult<StopLivestreamingResponse, Never>> stopLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final request = ApiRequest(
+Future<ApiResult<StopLivestreamingResponse, Never>> stopLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream/stop',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -188,15 +205,19 @@ return _execute(
 /// Returns livestream session details for the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestream`
-Future<ApiResult<LivestreamSessionDetailsResponse, Never>> livestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, int? pageNo, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<LivestreamSessionDetailsResponse, Never>> livestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, int? pageNo, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/livestream',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageNo != null) 'page_no': pageNo.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -211,12 +232,13 @@ return _execute(
 /// Starts livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestreams`
-Future<ApiResult<StartLivestreamingResponse, Never>> startLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required StartLivestreamingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<StartLivestreamingResponse, Never>> startLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required StartLivestreamingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/livestreams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -232,15 +254,19 @@ return _execute(
 /// Returns livestream session details for the given session ID. Retreive the session ID using the `Fetch all sessions of an App` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/livestream-sessions`
-Future<ApiResult<LivestreamsessionSessionMeetingIdActiveLivestreamResponse, Never>> getV2LivestreamsessionSessionMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, double? perPage, double? pageNo, }) async  { final request = ApiRequest(
+Future<ApiResult<LivestreamsessionSessionMeetingIdActiveLivestreamResponse, Never>> getV2LivestreamsessionSessionMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, double? perPage, double? pageNo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/livestream-sessions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (pageNo != null) 'page_no': pageNo.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

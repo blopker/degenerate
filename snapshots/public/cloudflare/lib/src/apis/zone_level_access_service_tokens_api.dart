@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all service tokens.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensListServiceTokens({required AccessIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensListServiceTokens({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/service_tokens',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to create a new service token.
 ///
 /// `POST /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/service_tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a single service token.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured service token.
 ///
 /// `PUT /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes a service token.
 ///
 /// `DELETE /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

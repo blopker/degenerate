@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get all SSO connectors
 ///
 /// `GET /accounts/{account_id}/sso_connectors`
-Future<ApiResult<ResponseCommon35, Never>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Initialize new SSO connector
 ///
 /// `POST /accounts/{account_id}/sso_connectors`
-Future<ApiResult<ResponseCommon35, Never>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Get single SSO connector
 ///
 /// `GET /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -68,12 +71,13 @@ return _execute(
 /// Update SSO connector state
 ///
 /// `PATCH /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -87,11 +91,12 @@ return _execute(
 /// Delete SSO connector
 ///
 /// `DELETE /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -104,11 +109,12 @@ return _execute(
 /// Begin SSO connector verification
 ///
 /// `POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification`
-Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}/begin_verification',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

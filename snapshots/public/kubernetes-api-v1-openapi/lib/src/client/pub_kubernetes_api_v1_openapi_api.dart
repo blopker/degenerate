@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.0.0
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'pub_kubernetes_api_v1_openapi_security.dart';
 import '../apis/core_api.dart';
 
 /// Root SDK client providing access to all API groups.
@@ -19,4 +20,6 @@ final class OpenapiApi {
   OpenapiApi(this._config);
 
   late final CoreApi core = CoreApi(_config);
+
+  OpenapiApi withBearerToken(String value) => OpenapiApi(OpenapiSecurity.applyBearerToken(_config, value));
 }

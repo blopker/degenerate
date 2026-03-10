@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a result payload
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Delete a payload from the result along with all associated Data
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -47,16 +49,20 @@ return _execute(
 /// Retrieve a list of payloads belonging to the AddOnResult
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads.json`
-Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

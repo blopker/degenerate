@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a result payload
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{PayloadSid}/Data.json`
-Future<ApiResult<void, Never>> fetchRecordingAddOnResultPayloadData({required String accountSid, required String referenceSid, required String addOnResultSid, required String payloadSid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> fetchRecordingAddOnResultPayloadData({required String accountSid, required String referenceSid, required String addOnResultSid, required String payloadSid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads/${Uri.encodeComponent(payloadSid)}/Data.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

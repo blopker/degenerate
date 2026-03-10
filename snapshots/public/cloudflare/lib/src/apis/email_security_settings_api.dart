@@ -17,27 +17,31 @@ final ApiConfig _config;
 /// Lists, searches, and sorts an account’s email allow policies.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListAllowPolicies({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListAllowPoliciesOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isSender, bool? isTrustedSender, bool? isRecipient, bool? isExemptRecipient, bool? isSpoof, bool? isAcceptableSender, bool? verifySender, EmailSecurityPatternType? patternType, String? pattern, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListAllowPolicies({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListAllowPoliciesOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isSender, bool? isTrustedSender, bool? isRecipient, bool? isExemptRecipient, bool? isSpoof, bool? isAcceptableSender, bool? verifySender, EmailSecurityPatternType? patternType, String? pattern, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (search != null) queryParameters['search'] = search;
+if (isSender != null) queryParameters['is_sender'] = isSender.toString();
+if (isTrustedSender != null) queryParameters['is_trusted_sender'] = isTrustedSender.toString();
+if (isRecipient != null) queryParameters['is_recipient'] = isRecipient.toString();
+if (isExemptRecipient != null) queryParameters['is_exempt_recipient'] = isExemptRecipient.toString();
+if (isSpoof != null) queryParameters['is_spoof'] = isSpoof.toString();
+if (isAcceptableSender != null) queryParameters['is_acceptable_sender'] = isAcceptableSender.toString();
+if (verifySender != null) queryParameters['verify_sender'] = verifySender.toString();
+if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
+if (pattern != null) queryParameters['pattern'] = pattern;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'search': ?search,
-    if (isSender != null) 'is_sender': isSender.toString(),
-    if (isTrustedSender != null) 'is_trusted_sender': isTrustedSender.toString(),
-    if (isRecipient != null) 'is_recipient': isRecipient.toString(),
-    if (isExemptRecipient != null) 'is_exempt_recipient': isExemptRecipient.toString(),
-    if (isSpoof != null) 'is_spoof': isSpoof.toString(),
-    if (isAcceptableSender != null) 'is_acceptable_sender': isAcceptableSender.toString(),
-    if (verifySender != null) 'verify_sender': verifySender.toString(),
-    if (patternType != null) 'pattern_type': patternType.toJson(),
-    'pattern': ?pattern,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -53,12 +57,13 @@ return _execute(
 /// to bypass security scanning.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/allow_policies`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityCreateAllowPolicy body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityCreateAllowPolicy body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -75,11 +80,12 @@ return _execute(
 /// and scope.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -94,12 +100,13 @@ return _execute(
 /// Updates an existing email allow policy, modifying its matching criteria or scope.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -116,11 +123,12 @@ return _execute(
 /// security scanning.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -135,12 +143,13 @@ return _execute(
 /// Send a Batch of Allow Policies API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/allow_policies/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchAllowPolicies({required EmailSecurityAccountId accountId, required EmailSecurityBatchAllowPoliciesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchAllowPolicies({required EmailSecurityAccountId accountId, required EmailSecurityBatchAllowPoliciesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/batch',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -156,20 +165,24 @@ return _execute(
 /// Lists all blocked sender entries with their patterns and block reasons.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/block_senders`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListBlockedSenders({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListBlockedSendersOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityPatternType? patternType, String? pattern, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListBlockedSenders({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListBlockedSendersOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityPatternType? patternType, String? pattern, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (search != null) queryParameters['search'] = search;
+if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
+if (pattern != null) queryParameters['pattern'] = pattern;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'search': ?search,
-    if (patternType != null) 'pattern_type': patternType.toJson(),
-    'pattern': ?pattern,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -185,12 +198,13 @@ return _execute(
 /// senders from being delivered.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/block_senders`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityCreateBlockedSender body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityCreateBlockedSender body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -207,11 +221,12 @@ return _execute(
 /// block reason.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -226,12 +241,13 @@ return _execute(
 /// Modifies a blocked sender entry, updating its pattern or block reason.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -248,11 +264,12 @@ return _execute(
 /// normally.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -267,12 +284,13 @@ return _execute(
 /// Send a Batch of Block Senders API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/block_senders/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchBlockedSenders({required EmailSecurityAccountId accountId, required EmailSecurityBatchBlockedSendersRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchBlockedSenders({required EmailSecurityAccountId accountId, required EmailSecurityBatchBlockedSendersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/batch',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -288,22 +306,30 @@ return _execute(
 /// Lists, searches, and sorts an account’s email domains.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityDeliveryMode? allowedDeliveryMode, List<String>? domain, EmailSecurityDeliveryMode? activeDeliveryMode, String? integrationId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityDeliveryMode? allowedDeliveryMode, List<String>? domain, EmailSecurityDeliveryMode? activeDeliveryMode, String? integrationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (search != null) queryParameters['search'] = search;
+if (allowedDeliveryMode != null) queryParameters['allowed_delivery_mode'] = allowedDeliveryMode.toJson();
+if (domain != null) {
+for (final item in domain) {
+  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
+}
+}
+if (activeDeliveryMode != null) queryParameters['active_delivery_mode'] = activeDeliveryMode.toJson();
+if (integrationId != null) queryParameters['integration_id'] = integrationId;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'search': ?search,
-    if (allowedDeliveryMode != null) 'allowed_delivery_mode': allowedDeliveryMode.toJson(),
-    if (domain != null) 'domain': domain.toString(),
-    if (activeDeliveryMode != null) 'active_delivery_mode': activeDeliveryMode.toJson(),
-    'integration_id': ?integrationId,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -318,12 +344,13 @@ return _execute(
 /// Bulk removes multiple domains from email security configuration in a single request.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -339,11 +366,12 @@ return _execute(
 /// Gets configuration details for a specific domain in email security.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDomain({required EmailSecurityAccountId accountId, required int domainId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDomain({required EmailSecurityAccountId accountId, required int domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -358,12 +386,13 @@ return _execute(
 /// Updates configuration for a domain in email security.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -377,11 +406,12 @@ return _execute(
 /// Unprotect an email domain
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -396,19 +426,23 @@ return _execute(
 /// Lists, searches, and sorts entries in the impersonation registry.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDisplayNames({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDisplayNamesOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityListDisplayNamesProvenance? provenance, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDisplayNames({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDisplayNamesOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityListDisplayNamesProvenance? provenance, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (search != null) queryParameters['search'] = search;
+if (provenance != null) queryParameters['provenance'] = provenance.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'search': ?search,
-    if (provenance != null) 'provenance': provenance.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -423,12 +457,13 @@ return _execute(
 /// Creates a display name entry for email security impersonation protection.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/impersonation_registry`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateDisplayName({required EmailSecurityAccountId accountId, required EmailSecurityCreateDisplayName body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateDisplayName({required EmailSecurityAccountId accountId, required EmailSecurityCreateDisplayName body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -444,11 +479,12 @@ return _execute(
 /// Retrieves a display name entry used for impersonation protection.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -463,12 +499,13 @@ return _execute(
 /// Updates a display name entry used for impersonation protection.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -484,11 +521,12 @@ return _execute(
 /// Removes a display name from impersonation protection monitoring.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -503,12 +541,13 @@ return _execute(
 /// Send a Batch of `sending_domain_restrictions` API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/sending_domain_restrictions/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchSendingDomainRestrictions({required EmailSecurityAccountId accountId, required EmailSecurityBatchSendingDomainRestrictionsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchSendingDomainRestrictions({required EmailSecurityAccountId accountId, required EmailSecurityBatchSendingDomainRestrictionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/sending_domain_restrictions/batch',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -524,21 +563,25 @@ return _execute(
 /// Lists, searches, and sorts an account’s trusted email domains.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/trusted_domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListTrustedDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListTrustedDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isRecent, bool? isSimilarity, String? pattern, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListTrustedDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListTrustedDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isRecent, bool? isSimilarity, String? pattern, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (search != null) queryParameters['search'] = search;
+if (isRecent != null) queryParameters['is_recent'] = isRecent.toString();
+if (isSimilarity != null) queryParameters['is_similarity'] = isSimilarity.toString();
+if (pattern != null) queryParameters['pattern'] = pattern;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'search': ?search,
-    if (isRecent != null) 'is_recent': isRecent.toString(),
-    if (isSimilarity != null) 'is_similarity': isSimilarity.toString(),
-    'pattern': ?pattern,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -554,12 +597,13 @@ return _execute(
 /// detections.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/trusted_domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityCreateTrustedDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityCreateTrustedDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -575,11 +619,12 @@ return _execute(
 /// Gets information about a specific trusted domain entry.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -594,12 +639,13 @@ return _execute(
 /// Modifies a trusted domain entry's configuration.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -616,11 +662,12 @@ return _execute(
 /// scanning.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -635,12 +682,13 @@ return _execute(
 /// Send a Batch of Trusted Domains API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/trusted_domains/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchTrustedDomains({required EmailSecurityAccountId accountId, required EmailSecurityBatchTrustedDomainsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchTrustedDomains({required EmailSecurityAccountId accountId, required EmailSecurityBatchTrustedDomainsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/batch',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Upsert a repository connection for CI/CD integration
 ///
 /// `PUT /accounts/{account_id}/builds/repos/connections`
-Future<ApiResult<Response, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/connections',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -38,11 +39,12 @@ return _execute(
 /// Remove a repository connection
 ///
 /// `DELETE /accounts/{account_id}/builds/repos/connections/{repo_connection_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/connections/${Uri.encodeComponent(repoConnectionUuid.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

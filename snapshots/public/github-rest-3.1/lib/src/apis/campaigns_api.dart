@@ -21,18 +21,22 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns`
-Future<ApiResult<List<CampaignSummary>, BasicError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CampaignSummary>, BasicError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/campaigns',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (state != null) 'state': state.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -58,12 +62,13 @@ return _execute(
 /// in the campaign.
 ///
 /// `POST /orgs/{org}/campaigns`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsCreateCampaign({required String org, required CampaignsCreateCampaignRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CampaignSummary, BasicError>> campaignsCreateCampaign({required String org, required CampaignsCreateCampaignRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/campaigns',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -86,11 +91,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsGetCampaignSummary({required String org, required int campaignNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<CampaignSummary, BasicError>> campaignsGetCampaignSummary({required String org, required int campaignNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/campaigns/${Uri.encodeComponent(campaignNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -112,12 +118,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CampaignSummary, BasicError>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/orgs/${Uri.encodeComponent(org)}/campaigns/${Uri.encodeComponent(campaignNumber.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -140,11 +147,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<void, BasicError>> campaignsDeleteCampaign({required String org, required int campaignNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> campaignsDeleteCampaign({required String org, required int campaignNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/campaigns/${Uri.encodeComponent(campaignNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

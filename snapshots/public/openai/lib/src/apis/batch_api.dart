@@ -15,15 +15,19 @@ final ApiConfig _config;
 /// List your organization's batches.
 ///
 /// `GET /batches`
-Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/batches',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -36,12 +40,13 @@ return _execute(
 /// Creates and executes a batch from an uploaded file of requests
 ///
 /// `POST /batches`
-Future<ApiResult<Batch, Never>> createBatch({required CreateBatchRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> createBatch({required CreateBatchRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/batches',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -55,11 +60,12 @@ return _execute(
 /// Retrieves a batch.
 ///
 /// `GET /batches/{batch_id}`
-Future<ApiResult<Batch, Never>> retrieveBatch({required String batchId}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> retrieveBatch({required String batchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/batches/${Uri.encodeComponent(batchId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -72,11 +78,12 @@ return _execute(
 /// Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.
 ///
 /// `POST /batches/{batch_id}/cancel`
-Future<ApiResult<Batch, Never>> cancelBatch({required String batchId}) async  { final request = ApiRequest(
+Future<ApiResult<Batch, Never>> cancelBatch({required String batchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/batches/${Uri.encodeComponent(batchId)}/cancel',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

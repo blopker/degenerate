@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches all the custom pages at the account level.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages`
-Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Fetches the details of a custom page.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

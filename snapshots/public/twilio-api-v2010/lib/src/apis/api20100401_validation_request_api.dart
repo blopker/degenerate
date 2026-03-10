@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json`
-Future<ApiResult<AccountValidationRequest, Never>> createValidationRequest({required String accountSid, CreateValidationRequestRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountValidationRequest, Never>> createValidationRequest({required String accountSid, CreateValidationRequestRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/OutgoingCallerIds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateValidationRequestRequest');,
 );
 

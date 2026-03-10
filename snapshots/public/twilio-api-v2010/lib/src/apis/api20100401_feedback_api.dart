@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create Message Feedback to confirm a tracked user action was performed by the recipient of the associated Message
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Feedback.json`
-Future<ApiResult<AccountMessageMessageFeedback, Never>> createMessageFeedback({required String accountSid, required String messageSid, CreateMessageFeedbackRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountMessageMessageFeedback, Never>> createMessageFeedback({required String accountSid, required String messageSid, CreateMessageFeedbackRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Feedback.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateMessageFeedbackRequest');,
 );
 

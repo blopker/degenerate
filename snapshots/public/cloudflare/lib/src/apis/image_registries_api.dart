@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Generates temporary credentials for accessing Cloudflare's container image registry. Used for pulling and pushing container images.
 ///
 /// `POST /accounts/{account_id}/containers/registries/{domain}/credentials`
-Future<ApiResult<BaseResponse, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, }) async  { final request = ApiRequest(
+Future<ApiResult<BaseResponse, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/containers/registries/${Uri.encodeComponent(domain)}/credentials',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

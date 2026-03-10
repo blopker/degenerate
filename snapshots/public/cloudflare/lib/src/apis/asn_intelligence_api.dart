@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}`
-Future<ApiResult<ResponseCommon40, Never>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon40, Never>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/asn/${Uri.encodeComponent(asn.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Get ASN Subnets.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}/subnets`
-Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, Never>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, Never>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/asn/${Uri.encodeComponent(asn.toString())}/subnets',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

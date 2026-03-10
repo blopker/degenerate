@@ -17,19 +17,23 @@ final ApiConfig _config;
 /// Retrieves a list of autonomous systems.
 ///
 /// `GET /radar/entities/asns`
-Future<ApiResult<RadarGetEntitiesAsnListResponse, RadarGetEntitiesAsnListResponse400>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesAsnListResponse, RadarGetEntitiesAsnListResponse400>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (asn != null) queryParameters['asn'] = asn;
+if (location != null) queryParameters['location'] = location;
+if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    'asn': ?asn,
-    'location': ?location,
-    if (orderBy != null) 'orderBy': orderBy.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -47,14 +51,18 @@ return _execute(
 /// Retrieves the requested autonomous system information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this AS). Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/{asn}`
-Future<ApiResult<RadarGetEntitiesAsnByIdResponse, RadarGetEntitiesAsnByIdResponse404>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesAsnByIdResponse, RadarGetEntitiesAsnByIdResponse404>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns/${Uri.encodeComponent(asn.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -72,14 +80,18 @@ return _execute(
 /// Retrieves Internet Routing Registry AS-SETs that an AS is a member of.
 ///
 /// `GET /radar/entities/asns/{asn}/as_set`
-Future<ApiResult<RadarGetAsnsAsSetResponse, RadarGetAsnsAsSetResponse400>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAsnsAsSetResponse, RadarGetAsnsAsSetResponse400>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns/${Uri.encodeComponent(asn.toString())}/as_set',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -97,15 +109,19 @@ return _execute(
 /// Retrieves AS-level relationship for given networks.
 ///
 /// `GET /radar/entities/asns/{asn}/rel`
-Future<ApiResult<RadarGetAsnsRelResponse, RadarGetAsnsRelResponse400>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAsnsRelResponse, RadarGetAsnsRelResponse400>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (asn2 != null) queryParameters['asn2'] = asn2.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns/${Uri.encodeComponent(asn.toString())}/rel',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (asn2 != null) 'asn2': asn2.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -123,22 +139,30 @@ return _execute(
 /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
 ///
 /// `GET /radar/entities/asns/botnet_threat_feed`
-Future<ApiResult<RadarGetAsBotnetThreatFeedResponse, RadarGetAsBotnetThreatFeedResponse400>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAsBotnetThreatFeedResponse, RadarGetAsBotnetThreatFeedResponse400>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (metric != null) queryParameters['metric'] = metric.toJson();
+if (date != null) queryParameters['date'] = date;
+if (compareDateRange != null) queryParameters['compareDateRange'] = compareDateRange;
+if (location != null) queryParameters['location'] = location;
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns/botnet_threat_feed',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    if (metric != null) 'metric': metric.toJson(),
-    'date': ?date,
-    'compareDateRange': ?compareDateRange,
-    'location': ?location,
-    if (asn != null) 'asn': asn.toString(),
-    if (sortOrder != null) 'sortOrder': sortOrder.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -156,15 +180,19 @@ return _execute(
 /// Retrieves the requested autonomous system information based on IP address. Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/ip`
-Future<ApiResult<RadarGetEntitiesAsnByIpResponse, RadarGetEntitiesAsnByIpResponse404>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesAsnByIpResponse, RadarGetEntitiesAsnByIpResponse404>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['ip'] = ip;
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/asns/ip',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ip': ip,
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

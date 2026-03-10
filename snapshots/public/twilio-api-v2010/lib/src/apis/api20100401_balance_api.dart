@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Balance.json`
-Future<ApiResult<AccountBalance, Never>> fetchBalance({required String accountSid}) async  { final request = ApiRequest(
+Future<ApiResult<AccountBalance, Never>> fetchBalance({required String accountSid}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Balance.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

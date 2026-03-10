@@ -14,12 +14,13 @@ final ApiConfig _config;
 
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, Never>> createShape({required Shape body}) async  { final request = ApiRequest(
+Future<ApiResult<Shape, Never>> createShape({required Shape body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/shapes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 

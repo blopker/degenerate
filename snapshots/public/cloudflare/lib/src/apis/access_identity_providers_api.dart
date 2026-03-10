@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Lists all configured identity providers.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (scimEnabled != null) queryParameters['scim_enabled'] = scimEnabled;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'scim_enabled': ?scimEnabled,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProviders body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,11 +67,12 @@ return _execute(
 /// Fetches a configured identity provider.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -81,12 +87,13 @@ return _execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProviders body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -102,11 +109,12 @@ return _execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -121,18 +129,22 @@ return _execute(
 /// Lists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cfResourceId != null) queryParameters['cf_resource_id'] = cfResourceId.toString();
+if (idpResourceId != null) queryParameters['idp_resource_id'] = idpResourceId.toString();
+if (name != null) queryParameters['name'] = name.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}/scim/groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (cfResourceId != null) 'cf_resource_id': cfResourceId.toString(),
-    if (idpResourceId != null) 'idp_resource_id': idpResourceId.toString(),
-    if (name != null) 'name': name.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -147,20 +159,24 @@ return _execute(
 /// Lists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users`
-Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cfResourceId != null) queryParameters['cf_resource_id'] = cfResourceId.toString();
+if (idpResourceId != null) queryParameters['idp_resource_id'] = idpResourceId.toString();
+if (username != null) queryParameters['username'] = username.toString();
+if (email != null) queryParameters['email'] = email.toString();
+if (name != null) queryParameters['name'] = name.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}/scim/users',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (cfResourceId != null) 'cf_resource_id': cfResourceId.toString(),
-    if (idpResourceId != null) 'idp_resource_id': idpResourceId.toString(),
-    if (username != null) 'username': username.toString(),
-    if (email != null) 'email': email.toString(),
-    if (name != null) 'name': name.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

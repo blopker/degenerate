@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List Peers.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create Peer.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get Peer.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Modify Peer.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeer body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeer body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete Peer.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

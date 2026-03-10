@@ -17,22 +17,26 @@ final ApiConfig _config;
 /// List WARP configuration and enablement toggle change events by device.
 ///
 /// `GET /accounts/{account_id}/dex/warp-change-events`
-Future<ApiResult<ResponseCommon19, Never>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['page'] = page.toString();
+queryParameters['per_page'] = perPage.toString();
+queryParameters['from'] = from;
+queryParameters['to'] = to;
+if (type != null) queryParameters['type'] = type.toJson();
+if (toggle != null) queryParameters['toggle'] = toggle.toJson();
+if (configName != null) queryParameters['config_name'] = configName;
+if (accountName != null) queryParameters['account_name'] = accountName;
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/warp-change-events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'page': page.toString(),
-    'per_page': perPage.toString(),
-    'from': from,
-    'to': to,
-    if (type != null) 'type': type.toJson(),
-    if (toggle != null) 'toggle': toggle.toJson(),
-    'config_name': ?configName,
-    'account_name': ?accountName,
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

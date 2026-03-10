@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List domains handled by Registrar.
 ///
 /// `GET /accounts/{account_id}/registrar/domains`
-Future<ApiResult<ResponseCommon53, Never>> registrarDomainsListDomains({required Identifier3 accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon53, Never>> registrarDomainsListDomains({required Identifier3 accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Show individual domain.
 ///
 /// `GET /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<ResponseCommon53, Never>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon53, Never>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains/${Uri.encodeComponent(domainName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Update individual domain.
 ///
 /// `PUT /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<ResponseCommon53, Never>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon53, Never>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains/${Uri.encodeComponent(domainName.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

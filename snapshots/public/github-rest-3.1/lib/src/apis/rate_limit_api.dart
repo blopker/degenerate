@@ -33,11 +33,12 @@ final ApiConfig _config;
 /// > The `rate` object is closing down. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
 ///
 /// `GET /rate_limit`
-Future<ApiResult<RateLimitOverview, BasicError>> rateLimitGet() async  { final request = ApiRequest(
+Future<ApiResult<RateLimitOverview, BasicError>> rateLimitGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/rate_limit',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

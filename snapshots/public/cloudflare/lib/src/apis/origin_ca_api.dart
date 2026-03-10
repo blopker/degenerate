@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates`
-Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['zone_id'] = zoneId.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/certificates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'zone_id': zoneId.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `POST /certificates`
-Future<ApiResult<ResponseCommon68, Never>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -64,11 +69,12 @@ return _execute(
 /// Get an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,11 +89,12 @@ return _execute(
 /// Revoke an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `DELETE /certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse, Never>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse, Never>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

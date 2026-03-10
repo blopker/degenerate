@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// All state mutations go through this endpoint. The server validates the transition, persists it, and broadcasts the new state to LiveKit.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/event`
-Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiPostEvent({required String sessionSlug, required EventRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiPostEvent({required String sessionSlug, required EventRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/event',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -41,11 +42,12 @@ return _execute(
 /// Returns the current state snapshot. Used by clients on reconnect or as a fallback poll when LiveKit data messages may have been missed.
 ///
 /// `GET /api/mobile/protected/rooms/{session_slug}/state`
-Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiGetState({required String sessionSlug}) async  { final request = ApiRequest(
+Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiGetState({required String sessionSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/state',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -63,11 +65,12 @@ return _execute(
 /// Returns a LiveKit access token. Creates the Room if needed.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/join`
-Future<ApiResult<JoinResponse, RoomErrorResponse>> totemRoomsApiJoinRoom({required String sessionSlug}) async  { final request = ApiRequest(
+Future<ApiResult<JoinResponse, RoomErrorResponse>> totemRoomsApiJoinRoom({required String sessionSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/join',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,11 +88,12 @@ return _execute(
 /// Keeper mutes a specific participant's audio.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/mute/{participant_identity}`
-Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMute({required String sessionSlug, required String participantIdentity, }) async  { final request = ApiRequest(
+Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMute({required String sessionSlug, required String participantIdentity, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/mute/${Uri.encodeComponent(participantIdentity)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -105,11 +109,12 @@ return _execute(
 /// Keeper mutes everyone except themselves.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/mute-all`
-Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMuteAll({required String sessionSlug}) async  { final request = ApiRequest(
+Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMuteAll({required String sessionSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/mute-all',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -125,14 +130,18 @@ return _execute(
 /// Emits a remove event to a specific participant
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/remove/{participant_identity}`
-Future<ApiResult<RemoveParticipantPayload, RoomErrorResponse>> totemRoomsApiRemove({required String sessionSlug, required String participantIdentity, RemoveReason? reason, }) async  { final request = ApiRequest(
+Future<ApiResult<RemoveParticipantPayload, RoomErrorResponse>> totemRoomsApiRemove({required String sessionSlug, required String participantIdentity, RemoveReason? reason, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (reason != null) queryParameters['reason'] = reason.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/rooms/${Uri.encodeComponent(sessionSlug)}/remove/${Uri.encodeComponent(participantIdentity)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (reason != null) 'reason': reason.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

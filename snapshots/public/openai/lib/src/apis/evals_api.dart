@@ -16,17 +16,21 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /evals`
-Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// 
 ///
 /// `POST /evals`
-Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/evals',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,11 +67,12 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> getEval({required String evalId}) async  { final request = ApiRequest(
+Future<ApiResult<Eval, Never>> getEval({required String evalId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/evals/${Uri.encodeComponent(evalId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -100,11 +107,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}`
-Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/evals/${Uri.encodeComponent(evalId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -121,17 +129,21 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs`
-Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -145,12 +157,13 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}/runs`
-Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -168,11 +181,12 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -186,11 +200,12 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -204,11 +219,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -225,17 +241,21 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items`
-Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (status != null) queryParameters['status'] = status.toJson();
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}/output_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-    if (status != null) 'status': status.toJson(),
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -249,11 +269,12 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items/{output_item_id}`
-Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, }) async  { final request = ApiRequest(
+Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}/output_items/${Uri.encodeComponent(outputItemId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

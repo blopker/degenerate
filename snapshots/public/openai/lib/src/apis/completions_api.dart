@@ -18,12 +18,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /completions`
-Future<ApiResult<CreateCompletionResponse, Never>> createCompletion({required CreateCompletionRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateCompletionResponse, Never>> createCompletion({required CreateCompletionRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/completions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

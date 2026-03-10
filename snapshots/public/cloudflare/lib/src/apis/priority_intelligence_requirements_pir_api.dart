@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List Priority Intelligence Requirements
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -34,11 +35,12 @@ return _execute(
 /// Get a Priority Intelligence Requirement
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -51,12 +53,13 @@ return _execute(
 /// Update a Priority Intelligence Requirement
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -70,11 +73,12 @@ return _execute(
 /// Delete a Priority Intelligence Requirement
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -87,12 +91,13 @@ return _execute(
 /// Create a New Priority Intelligence Requirement
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/new',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -106,11 +111,12 @@ return _execute(
 /// Get Priority Intelligence Requirement Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/quota`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/quota',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

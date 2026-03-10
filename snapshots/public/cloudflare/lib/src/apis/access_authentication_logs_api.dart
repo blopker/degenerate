@@ -17,22 +17,26 @@ final ApiConfig _config;
 /// Gets a list of Access authentication audit logs for an account.
 ///
 /// `GET /accounts/{account_id}/access/logs/access_requests`
-Future<ApiResult<ResponseCommon3, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, String? direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, String? direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (direction != null) queryParameters['direction'] = direction;
+if (since != null) queryParameters['since'] = since.toString();
+if (until != null) queryParameters['until'] = until.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (email != null) queryParameters['email'] = email.toString();
+if (emailExact != null) queryParameters['email_exact'] = emailExact.toString();
+if (userId != null) queryParameters['user_id'] = userId.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/logs/access_requests',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'direction': ?direction,
-    if (since != null) 'since': since.toString(),
-    if (until != null) 'until': until.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (email != null) 'email': email.toString(),
-    if (emailExact != null) 'email_exact': emailExact.toString(),
-    if (userId != null) 'user_id': userId.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

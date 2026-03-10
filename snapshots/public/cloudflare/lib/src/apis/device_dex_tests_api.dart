@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (testName != null) queryParameters['testName'] = testName;
+if (kind != null) queryParameters['kind'] = kind.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'testName': ?testName,
-    if (kind != null) 'kind': kind.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,11 +68,12 @@ return _execute(
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -82,12 +88,13 @@ return _execute(
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -103,11 +110,12 @@ return _execute(
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

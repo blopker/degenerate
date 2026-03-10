@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// List all blog posts
 ///
 /// `GET /api/mobile/protected/blog/posts`
-Future<ApiResult<PagedBlogPostListSchema, Never>> totemBlogMobileApiListPosts({int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<PagedBlogPostListSchema, Never>> totemBlogMobileApiListPosts({int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/blog/posts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,11 +42,12 @@ return _execute(
 /// Post
 ///
 /// `GET /api/mobile/protected/blog/post/{slug}`
-Future<ApiResult<BlogPostSchema, Never>> totemBlogMobileApiPost({required String slug}) async  { final request = ApiRequest(
+Future<ApiResult<BlogPostSchema, Never>> totemBlogMobileApiPost({required String slug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/blog/post/${Uri.encodeComponent(slug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

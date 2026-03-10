@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,23 +37,35 @@ return _execute(
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (host != null) {
+for (final item in host) {
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+}
+}
+if (method != null) {
+for (final item in method) {
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
+}
+}
+if (endpoint != null) queryParameters['endpoint'] = endpoint;
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (order != null) queryParameters['order'] = order.toJson();
+if (diff != null) queryParameters['diff'] = diff.toString();
+if (origin != null) queryParameters['origin'] = origin.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery/operations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (host != null) 'host': host.toString(),
-    if (method != null) 'method': method.toString(),
-    'endpoint': ?endpoint,
-    if (direction != null) 'direction': direction.toJson(),
-    if (order != null) 'order': order.toJson(),
-    if (diff != null) 'diff': diff.toString(),
-    if (origin != null) 'origin': origin.toJson(),
-    if (state != null) 'state': state.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -67,12 +80,13 @@ return _execute(
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery/operations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -88,12 +102,13 @@ return _execute(
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery/operations/${Uri.encodeComponent(operationId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

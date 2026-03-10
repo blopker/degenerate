@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all TURN keys in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyList({required CallsAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyList({required CallsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Cloudflare Calls TURN key.
 ///
 /// `POST /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches details for a single TURN key.
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Edit details for a single TURN key.
 ///
 /// `PUT /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes a TURN key from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

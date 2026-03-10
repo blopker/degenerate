@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a list of Vectorize Indexes
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectorizeIndexes({required VectorizeIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectorizeIndexes({required VectorizeIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates and returns a new Vectorize Index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeCreateIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeCreateIndexRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Returns the specified Vectorize Index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// Deletes the specified Vectorize Index.
 ///
 /// `DELETE /accounts/{account_id}/vectorize/v2/indexes/{index_name}`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorizeIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -95,12 +99,13 @@ return _execute(
 /// Delete a set of vectors from an index by their vector identifiers.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/delete_by_ids`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorsById({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeIndexDeleteVectorsByIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteVectorsById({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeIndexDeleteVectorsByIdRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/delete_by_ids',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -116,12 +121,13 @@ return _execute(
 /// Get a set of vectors from an index by their vector identifiers.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/get_by_ids`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorsById({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeIndexGetVectorsByIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeGetVectorsById({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeIndexGetVectorsByIdRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/get_by_ids',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -137,11 +143,12 @@ return _execute(
 /// Get information about a vectorize index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/info`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeIndexInfo({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeIndexInfo({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/info',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -156,15 +163,19 @@ return _execute(
 /// Inserts vectors into the specified index and returns a mutation id corresponding to the vectors enqueued for insertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeInsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeInsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (unparsableBehavior != null) queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-ndjson';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/insert',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-ndjson'
-  },
-  queryParameters: {
-    if (unparsableBehavior != null) 'unparsable-behavior': unparsableBehavior.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 
@@ -180,15 +191,19 @@ return _execute(
 /// Returns a paginated list of vector identifiers from the specified index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/list`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectors({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, int? count, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectors({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, int? count, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (count != null) queryParameters['count'] = count.toString();
+if (cursor != null) queryParameters['cursor'] = cursor;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/list',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (count != null) 'count': count.toString(),
-    'cursor': ?cursor,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -203,12 +218,13 @@ return _execute(
 /// Enable metadata filtering based on metadata property. Limited to 10 properties.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/create`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateMetadataIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeCreateMetadataIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeCreateMetadataIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeCreateMetadataIndexRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -224,12 +240,13 @@ return _execute(
 /// Allow Vectorize to delete the specified metadata index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/delete`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteMetadataIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeDeleteMetadataIndexRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeDeleteMetadataIndex({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required VectorizeDeleteMetadataIndexRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/delete',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -245,11 +262,12 @@ return _execute(
 /// List Metadata Indexes for the specified Vectorize Index.
 ///
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/list`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeListMetadataIndexes({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeListMetadataIndexes({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/list',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -264,12 +282,13 @@ return _execute(
 /// Finds vectors closest to a given vector in an index.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/query`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeQueryVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required Request body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeQueryVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required Request body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/query',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -285,15 +304,19 @@ return _execute(
 /// Upserts vectors into the specified index, creating them if they do not exist and returns a mutation id corresponding to the vectors enqueued for upsertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert`
-Future<ApiResult<ResponseCommon72, Never>> vectorizeUpsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon72, Never>> vectorizeUpsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (unparsableBehavior != null) queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-ndjson';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/upsert',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-ndjson'
-  },
-  queryParameters: {
-    if (unparsableBehavior != null) 'unparsable-behavior': unparsableBehavior.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 

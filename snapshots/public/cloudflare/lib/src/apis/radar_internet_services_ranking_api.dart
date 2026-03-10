@@ -17,17 +17,29 @@ final ApiConfig _config;
 /// Retrieves the list of Internet services categories.
 ///
 /// `GET /radar/ranking/internet_services/categories`
-Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponse, RadarGetRankingInternetServicesCategoriesResponse400>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponse, RadarGetRankingInternetServicesCategoriesResponse400>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (date != null) {
+for (final item in date) {
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/internet_services/categories',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (date != null) 'date': date.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,20 +57,44 @@ return _execute(
 /// Retrieves Internet Services rank update changes over time.
 ///
 /// `GET /radar/ranking/internet_services/timeseries_groups`
-Future<ApiResult<RadarGetRankingInternetServicesTimeseriesResponse, RadarGetRankingInternetServicesTimeseriesResponse400>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingInternetServicesTimeseriesResponse, RadarGetRankingInternetServicesTimeseriesResponse400>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (serviceCategory != null) {
+for (final item in serviceCategory) {
+  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/internet_services/timeseries_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (serviceCategory != null) 'serviceCategory': serviceCategory.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -76,18 +112,34 @@ return _execute(
 /// Retrieves top Internet services based on their rank.
 ///
 /// `GET /radar/ranking/internet_services/top`
-Future<ApiResult<RadarGetRankingTopInternetServicesResponse, RadarGetRankingTopInternetServicesResponse400>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingTopInternetServicesResponse, RadarGetRankingTopInternetServicesResponse400>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (serviceCategory != null) {
+for (final item in serviceCategory) {
+  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (date != null) {
+for (final item in date) {
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/internet_services/top',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (serviceCategory != null) 'serviceCategory': serviceCategory.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (date != null) 'date': date.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

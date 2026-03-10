@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Subscribe To Space
 ///
 /// `POST /api/mobile/protected/spaces/subscribe/{space_slug}`
-Future<ApiResult<bool, Never>> totemSpacesMobileApiSubscribeToSpace({required String spaceSlug}) async  { final request = ApiRequest(
+Future<ApiResult<bool, Never>> totemSpacesMobileApiSubscribeToSpace({required String spaceSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/spaces/subscribe/${Uri.encodeComponent(spaceSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Unsubscribe To Space
 ///
 /// `DELETE /api/mobile/protected/spaces/subscribe/{space_slug}`
-Future<ApiResult<bool, Never>> totemSpacesMobileApiUnsubscribeToSpace({required String spaceSlug}) async  { final request = ApiRequest(
+Future<ApiResult<bool, Never>> totemSpacesMobileApiUnsubscribeToSpace({required String spaceSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/spaces/subscribe/${Uri.encodeComponent(spaceSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -49,11 +51,12 @@ return _execute(
 /// List Subscriptions
 ///
 /// `GET /api/mobile/protected/spaces/subscribe`
-Future<ApiResult<List<SpaceSchema>, Never>> totemSpacesMobileApiListSubscriptions() async  { final request = ApiRequest(
+Future<ApiResult<List<SpaceSchema>, Never>> totemSpacesMobileApiListSubscriptions() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/subscribe',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -67,15 +70,19 @@ return _execute(
 /// List Spaces
 ///
 /// `GET /api/mobile/protected/spaces/`
-Future<ApiResult<PagedMobileSpaceDetailSchema, Never>> totemSpacesMobileApiListSpaces({int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<PagedMobileSpaceDetailSchema, Never>> totemSpacesMobileApiListSpaces({int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -88,11 +95,12 @@ return _execute(
 /// Get Space Detail
 ///
 /// `GET /api/mobile/protected/spaces/space/{space_slug}`
-Future<ApiResult<MobileSpaceDetailSchema, Never>> totemSpacesMobileApiGetSpaceDetail({required String spaceSlug}) async  { final request = ApiRequest(
+Future<ApiResult<MobileSpaceDetailSchema, Never>> totemSpacesMobileApiGetSpaceDetail({required String spaceSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/space/${Uri.encodeComponent(spaceSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -105,11 +113,12 @@ return _execute(
 /// Get Keeper Spaces
 ///
 /// `GET /api/mobile/protected/spaces/keeper/{slug}/`
-Future<ApiResult<List<MobileSpaceDetailSchema>, Never>> totemSpacesMobileApiGetKeeperSpaces({required String slug}) async  { final request = ApiRequest(
+Future<ApiResult<List<MobileSpaceDetailSchema>, Never>> totemSpacesMobileApiGetKeeperSpaces({required String slug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/keeper/${Uri.encodeComponent(slug)}/',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -123,11 +132,12 @@ return _execute(
 /// Get Session Detail
 ///
 /// `GET /api/mobile/protected/spaces/session/{event_slug}`
-Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiGetSessionDetail({required String eventSlug}) async  { final request = ApiRequest(
+Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiGetSessionDetail({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/session/${Uri.encodeComponent(eventSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -140,12 +150,13 @@ return _execute(
 /// Post Session Feedback
 ///
 /// `POST /api/mobile/protected/spaces/session/{event_slug}/feedback`
-Future<ApiResult<void, Never>> totemSpacesMobileApiPostSessionFeedback({required String eventSlug, required SessionFeedbackSchema body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> totemSpacesMobileApiPostSessionFeedback({required String eventSlug, required SessionFeedbackSchema body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/spaces/session/${Uri.encodeComponent(eventSlug)}/feedback',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -157,11 +168,12 @@ return _execute(
 /// Get Sessions History
 ///
 /// `GET /api/mobile/protected/spaces/sessions/history`
-Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetSessionsHistory() async  { final request = ApiRequest(
+Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetSessionsHistory() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/sessions/history',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -175,14 +187,18 @@ return _execute(
 /// Get Recommended Spaces
 ///
 /// `GET /api/mobile/protected/spaces/sessions/recommended`
-Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetRecommendedSpaces({int? limit}) async  { final request = ApiRequest(
+Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetRecommendedSpaces({int? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/sessions/recommended',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -196,11 +212,12 @@ return _execute(
 /// Get Spaces Summary
 ///
 /// `GET /api/mobile/protected/spaces/summary`
-Future<ApiResult<SummarySpacesSchema, Never>> totemSpacesMobileApiGetSpacesSummary() async  { final request = ApiRequest(
+Future<ApiResult<SummarySpacesSchema, Never>> totemSpacesMobileApiGetSpacesSummary() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/spaces/summary',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -213,11 +230,12 @@ return _execute(
 /// Rsvp Confirm
 ///
 /// `POST /api/mobile/protected/spaces/rsvp/{event_slug}`
-Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiRsvpConfirm({required String eventSlug}) async  { final request = ApiRequest(
+Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiRsvpConfirm({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/spaces/rsvp/${Uri.encodeComponent(eventSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -230,11 +248,12 @@ return _execute(
 /// Rsvp Cancel
 ///
 /// `DELETE /api/mobile/protected/spaces/rsvp/{event_slug}`
-Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiRsvpCancel({required String eventSlug}) async  { final request = ApiRequest(
+Future<ApiResult<SessionDetailSchema, Never>> totemSpacesMobileApiRsvpCancel({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/spaces/rsvp/${Uri.encodeComponent(eventSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -31,17 +31,21 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/billing/usage/paygo`
-Future<ApiResult<UsageResponse, Never>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (from != null) queryParameters['from'] = from;
+if (to != null) queryParameters['to'] = to;
+if (lastYearPeriodStart != null) queryParameters['last_year_period_start'] = lastYearPeriodStart.toString();
+if (lastMonthPeriodStart != null) queryParameters['last_month_period_start'] = lastMonthPeriodStart.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/billing/usage/paygo',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'from': ?from,
-    'to': ?to,
-    if (lastYearPeriodStart != null) 'last_year_period_start': lastYearPeriodStart.toString(),
-    if (lastMonthPeriodStart != null) 'last_month_period_start': lastMonthPeriodStart.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

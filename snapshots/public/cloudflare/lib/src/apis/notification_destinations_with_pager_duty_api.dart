@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get a list of all configured PagerDuty services.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Deletes all the PagerDuty Services connected to the account.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,11 +57,12 @@ return _execute(
 /// Creates a new token for integrating with PagerDuty.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -74,11 +77,12 @@ return _execute(
 /// Links PagerDuty with the account using the integration token.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect/{token_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect/${Uri.encodeComponent(tokenId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

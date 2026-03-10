@@ -15,20 +15,24 @@ final ApiConfig _config;
 /// Retrieve a list of usage-records belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Records.json`
-Future<ApiResult<ListUsageRecordResponse, Never>> listUsageRecord({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListUsageRecordResponse, Never>> listUsageRecord({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (category != null) queryParameters['Category'] = category;
+if (startDate != null) queryParameters['StartDate'] = startDate;
+if (endDate != null) queryParameters['EndDate'] = endDate;
+if (includeSubaccounts != null) queryParameters['IncludeSubaccounts'] = includeSubaccounts.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Records.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'Category': ?category,
-    'StartDate': ?startDate,
-    'EndDate': ?endDate,
-    if (includeSubaccounts != null) 'IncludeSubaccounts': includeSubaccounts.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

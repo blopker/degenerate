@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// Search for Load Balancing resources.
 ///
 /// `GET /accounts/{account_id}/load_balancers/search`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (query != null) queryParameters['query'] = query;
+if (references != null) queryParameters['references'] = references.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'query': ?query,
-    if (references != null) 'references': references.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

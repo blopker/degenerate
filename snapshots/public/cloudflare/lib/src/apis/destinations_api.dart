@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// List your Workers Observability Telemetry Destinations.
 ///
 /// `GET /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<DestinationListResponse, DestinationListResponse401>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<DestinationListResponse, DestinationListResponse401>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['perPage'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/destinations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'perPage': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (orderBy != null) 'orderBy': orderBy.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,12 +49,13 @@ return _execute(
 /// Create a new Workers Observability Telemetry Destination.
 ///
 /// `POST /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<DestinationCreateResponse, DestinationCreateResponse400>> destinationCreate({required String accountId, DestinationCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DestinationCreateResponse, DestinationCreateResponse400>> destinationCreate({required String accountId, DestinationCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/destinations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -69,12 +74,13 @@ return _execute(
 /// Update an existing Workers Observability Telemetry Destination.
 ///
 /// `PATCH /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationUpdateResponse, DestinationUpdateResponse400>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DestinationUpdateResponse, DestinationUpdateResponse400>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/destinations/${Uri.encodeComponent(slug)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -93,11 +99,12 @@ return _execute(
 /// Delete a Workers Observability Telemetry Destination.
 ///
 /// `DELETE /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationsDeleteResponse, DestinationsDeleteResponse401>> destinationsDelete({required String accountId, required String slug, }) async  { final request = ApiRequest(
+Future<ApiResult<DestinationsDeleteResponse, DestinationsDeleteResponse401>> destinationsDelete({required String accountId, required String slug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/destinations/${Uri.encodeComponent(slug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

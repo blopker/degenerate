@@ -17,24 +17,64 @@ final ApiConfig _config;
 /// Retrieves the distribution of email security metrics by the specified dimension.
 ///
 /// `GET /radar/email/security/summary/{dimension}`
-Future<ApiResult<RadarGetEmailSecuritySummaryResponse, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecuritySummaryResponse, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -52,25 +92,65 @@ return _execute(
 /// Retrieves the distribution of email security metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/security/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -88,25 +168,65 @@ return _execute(
 /// Retrieves the top TLDs by number of email messages.
 ///
 /// `GET /radar/email/security/top/tlds`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/top/tlds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (tldCategory != null) 'tldCategory': tldCategory.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -124,25 +244,65 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as malicious or not.
 ///
 /// `GET /radar/email/security/top/tlds/malicious/{malicious}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/top/tlds/malicious/${Uri.encodeComponent(malicious.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (tldCategory != null) 'tldCategory': tldCategory.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -160,25 +320,65 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as spam or not.
 ///
 /// `GET /radar/email/security/top/tlds/spam/{spam}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/top/tlds/spam/${Uri.encodeComponent(spam.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (tldCategory != null) 'tldCategory': tldCategory.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -196,25 +396,65 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as spoof or not.
 ///
 /// `GET /radar/email/security/top/tlds/spoof/{spoof}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (tlsVersion != null) {
+for (final item in tlsVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/security/top/tlds/spoof/${Uri.encodeComponent(spoof.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (tlsVersion != null) 'tlsVersion': tlsVersion.toString(),
-    if (tldCategory != null) 'tldCategory': tldCategory.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

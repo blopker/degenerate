@@ -17,27 +17,79 @@ final ApiConfig _config;
 /// Retrieves an aggregated summary of AI bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/ai/bots/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryResponse, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAiBotsSummaryResponse, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (crawlPurpose != null) {
+for (final item in crawlPurpose) {
+  queryParametersList.add(ApiQueryParameter(name: 'crawlPurpose', value: item, allowReserved: false));
+}
+}
+if (userAgent != null) {
+for (final item in userAgent) {
+  queryParametersList.add(ApiQueryParameter(name: 'userAgent', value: item, allowReserved: false));
+}
+}
+if (vertical != null) {
+for (final item in vertical) {
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+}
+}
+if (industry != null) {
+for (final item in industry) {
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+}
+}
+if (contentType != null) {
+for (final item in contentType) {
+  queryParametersList.add(ApiQueryParameter(name: 'contentType', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ai/bots/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (crawlPurpose != null) 'crawlPurpose': crawlPurpose.toString(),
-    if (userAgent != null) 'userAgent': userAgent.toString(),
-    if (vertical != null) 'vertical': vertical.toString(),
-    if (industry != null) 'industry': industry.toString(),
-    if (contentType != null) 'contentType': contentType.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -55,28 +107,80 @@ return _execute(
 /// Retrieves AI bots HTTP request volume over time.
 ///
 /// `GET /radar/ai/bots/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponse, RadarGetAiBotsTimeseriesResponse400>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAiBotsTimeseriesResponse, RadarGetAiBotsTimeseriesResponse400>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (crawlPurpose != null) {
+for (final item in crawlPurpose) {
+  queryParametersList.add(ApiQueryParameter(name: 'crawlPurpose', value: item, allowReserved: false));
+}
+}
+if (userAgent != null) {
+for (final item in userAgent) {
+  queryParametersList.add(ApiQueryParameter(name: 'userAgent', value: item, allowReserved: false));
+}
+}
+if (industry != null) {
+for (final item in industry) {
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+}
+}
+if (vertical != null) {
+for (final item in vertical) {
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+}
+}
+if (contentType != null) {
+for (final item in contentType) {
+  queryParametersList.add(ApiQueryParameter(name: 'contentType', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ai/bots/timeseries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (crawlPurpose != null) 'crawlPurpose': crawlPurpose.toString(),
-    if (userAgent != null) 'userAgent': userAgent.toString(),
-    if (industry != null) 'industry': industry.toString(),
-    if (vertical != null) 'vertical': vertical.toString(),
-    if (contentType != null) 'contentType': contentType.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -94,29 +198,81 @@ return _execute(
 /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/ai/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupResponse, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupResponse, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (crawlPurpose != null) {
+for (final item in crawlPurpose) {
+  queryParametersList.add(ApiQueryParameter(name: 'crawlPurpose', value: item, allowReserved: false));
+}
+}
+if (userAgent != null) {
+for (final item in userAgent) {
+  queryParametersList.add(ApiQueryParameter(name: 'userAgent', value: item, allowReserved: false));
+}
+}
+if (industry != null) {
+for (final item in industry) {
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+}
+}
+if (vertical != null) {
+for (final item in vertical) {
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+}
+}
+if (contentType != null) {
+for (final item in contentType) {
+  queryParametersList.add(ApiQueryParameter(name: 'contentType', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ai/bots/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (crawlPurpose != null) 'crawlPurpose': crawlPurpose.toString(),
-    if (userAgent != null) 'userAgent': userAgent.toString(),
-    if (industry != null) 'industry': industry.toString(),
-    if (vertical != null) 'vertical': vertical.toString(),
-    if (contentType != null) 'contentType': contentType.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (normalization != null) 'normalization': normalization.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

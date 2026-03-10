@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// Get Custom Origin Trust Store for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreListDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreListDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Add Custom Origin Trust Store for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreCreate({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomOriginTrustStoreCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreCreate({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomOriginTrustStoreCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,11 +68,12 @@ return _execute(
 /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDetails({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDetails({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -82,11 +88,12 @@ return _execute(
 /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
 ///
 /// `DELETE /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDelete({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDelete({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

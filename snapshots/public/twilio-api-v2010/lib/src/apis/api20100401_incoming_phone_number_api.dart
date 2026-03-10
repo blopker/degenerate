@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an incoming-phone-number belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update an incoming-phone-number instance.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateIncomingPhoneNumberRequest');,
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Delete a phone-numbers belonging to the account used to make the request.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,20 +69,24 @@ return _execute(
 /// Retrieve a list of incoming-phone-numbers belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (beta != null) queryParameters['Beta'] = beta.toString();
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (phoneNumber != null) queryParameters['PhoneNumber'] = phoneNumber;
+if (origin != null) queryParameters['Origin'] = origin;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (beta != null) 'Beta': beta.toString(),
-    'FriendlyName': ?friendlyName,
-    'PhoneNumber': ?phoneNumber,
-    'Origin': ?origin,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -92,12 +99,13 @@ return _execute(
 /// Purchase a phone-number for the account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateIncomingPhoneNumberRequest');,
 );
 

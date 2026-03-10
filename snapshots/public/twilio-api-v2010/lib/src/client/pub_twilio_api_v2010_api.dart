@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.0.1
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'pub_twilio_api_v2010_security.dart';
 import '../apis/api20100401_account_api.dart';
 import '../apis/api20100401_address_api.dart';
 import '../apis/api20100401_application_api.dart';
@@ -167,4 +168,6 @@ final class PubTwilioApi {
   late final Api20100401TriggerApi api20100401Trigger = Api20100401TriggerApi(_config);
   late final Api20100401UserDefinedMessageApi api20100401UserDefinedMessage = Api20100401UserDefinedMessageApi(_config);
   late final Api20100401UserDefinedMessageSubscriptionApi api20100401UserDefinedMessageSubscription = Api20100401UserDefinedMessageSubscriptionApi(_config);
+
+  PubTwilioApi withAccountSidAuthToken({required String username, required String password}) => PubTwilioApi(PubTwilioSecurity.applyAccountSidAuthToken(_config, username: username, password: password));
 }

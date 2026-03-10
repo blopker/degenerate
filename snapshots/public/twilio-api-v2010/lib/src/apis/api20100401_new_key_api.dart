@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Keys.json`
-Future<ApiResult<AccountNewKey, Never>> createNewKey({required String accountSid, CreateNewKeyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountNewKey, Never>> createNewKey({required String accountSid, CreateNewKeyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateNewKeyRequest');,
 );
 

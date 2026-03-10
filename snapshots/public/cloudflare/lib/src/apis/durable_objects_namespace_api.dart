@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Returns the Durable Object namespaces owned by an account.
 ///
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces`
-Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListNamespaces({required WorkersIdentifier accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListNamespaces({required WorkersIdentifier accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/durable_objects/namespaces',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,15 +44,19 @@ return _execute(
 /// Returns the Durable Objects in a given namespace.
 ///
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects`
-Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListObjects({required WorkersIdentifier accountId, required WorkersSchemasId id, double? limit, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListObjects({required WorkersIdentifier accountId, required WorkersSchemasId id, double? limit, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (cursor != null) queryParameters['cursor'] = cursor;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/durable_objects/namespaces/${Uri.encodeComponent(id.toString())}/objects',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'cursor': ?cursor,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

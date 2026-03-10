@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Fetches all the presets belonging to an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (pageNo != null) 'page_no': pageNo.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Creates a preset belonging to the current App
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Fetches details of a preset using the provided preset ID
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// Update a preset by the provided preset ID
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -101,11 +108,12 @@ return _execute(
 /// Deletes a preset using the provided preset ID
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

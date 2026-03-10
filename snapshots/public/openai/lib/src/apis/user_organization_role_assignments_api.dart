@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Lists the organization roles assigned to a user within the organization.
 ///
 /// `GET /organization/users/{user_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/users/${Uri.encodeComponent(userId)}/roles',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Assigns an organization role to a user within the organization.
 ///
 /// `POST /organization/users/{user_id}/roles`
-Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/users/${Uri.encodeComponent(userId)}/roles',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Unassigns an organization role from a user within the organization.
 ///
 /// `DELETE /organization/users/{user_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/users/${Uri.encodeComponent(userId)}/roles/${Uri.encodeComponent(roleId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

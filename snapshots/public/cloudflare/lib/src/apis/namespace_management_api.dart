@@ -20,18 +20,22 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageToken != null) queryParameters['page_token'] = pageToken;
+if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+if (parent != null) queryParameters['parent'] = parent;
+if (returnUuids != null) queryParameters['return_uuids'] = returnUuids.toString();
+if (returnDetails != null) queryParameters['return_details'] = returnDetails.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'page_token': ?pageToken,
-    if (pageSize != null) 'page_size': pageSize.toString(),
-    'parent': ?parent,
-    if (returnUuids != null) 'return_uuids': returnUuids.toString(),
-    if (returnDetails != null) 'return_details': returnDetails.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

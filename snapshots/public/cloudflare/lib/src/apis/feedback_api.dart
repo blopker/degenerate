@@ -18,11 +18,12 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<List<BotManagementFeedbackReport>, Never>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<List<BotManagementFeedbackReport>, Never>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management/feedback',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -41,12 +42,13 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<void, Never>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReport body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReport body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management/feedback',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

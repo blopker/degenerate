@@ -14,14 +14,18 @@ final ApiConfig _config;
 
 ///
 /// `GET /users`
-Future<ApiResult<List<User>, Never>> listUsers({int? limit}) async  { final request = ApiRequest(
+Future<ApiResult<List<User>, Never>> listUsers({int? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -34,12 +38,13 @@ return _execute(
  } 
 ///
 /// `POST /users`
-Future<ApiResult<void, Never>> createUser({required User body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createUser({required User body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/users',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -50,11 +55,12 @@ return _execute(
  } 
 ///
 /// `GET /users/{userId}`
-Future<ApiResult<User, Never>> getUserById({required String userId}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> getUserById({required String userId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

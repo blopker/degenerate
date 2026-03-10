@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// List, search, and filter all of your custom SSL certificates. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 ///
 /// `GET /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (match != null) queryParameters['match'] = match.toJson();
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (match != null) 'match': match.toJson(),
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Upload a new SSL certificate for a zone.
 ///
 /// `POST /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneCreateSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneCreateSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,11 +68,12 @@ return _execute(
 /// Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.
 ///
 /// `GET /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneSslConfigurationDetails({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneSslConfigurationDetails({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -82,12 +88,13 @@ return _execute(
 /// Upload a new private key and/or PEM/CRT for the SSL certificate. Note: PATCHing a configuration for sni_custom certificates will result in a new resource id being returned, and the previous one being deleted.
 ///
 /// `PATCH /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneEditSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneEditSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -103,11 +110,12 @@ return _execute(
 /// Remove a SSL certificate from a zone.
 ///
 /// `DELETE /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -122,12 +130,13 @@ return _execute(
 /// If a zone has multiple SSL certificates, you can set the order in which they should be used during a request. The higher priority will break ties across overlapping 'legacy_custom' certificates.
 ///
 /// `PUT /zones/{zone_id}/custom_certificates/prioritize`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneRePrioritizeSslCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneRePrioritizeSslCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/prioritize',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

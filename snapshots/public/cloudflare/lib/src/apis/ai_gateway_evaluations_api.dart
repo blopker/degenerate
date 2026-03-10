@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// List Evaluators
 ///
 /// `GET /accounts/{account_id}/ai-gateway/evaluation-types`
-Future<ApiResult<AigConfigListEvaluatorsResponse, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigListEvaluatorsResponse, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy;
+if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/evaluation-types',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'order_by': ?orderBy,
-    if (orderByDirection != null) 'order_by_direction': orderByDirection.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,18 +47,22 @@ return _execute(
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigListEvaluationsResponse, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigListEvaluationsResponse, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) queryParameters['name'] = name;
+if (processed != null) queryParameters['processed'] = processed.toString();
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'name': ?name,
-    if (processed != null) 'processed': processed.toString(),
-    'search': ?search,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -72,12 +80,13 @@ return _execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigCreateEvaluationsResponse, AigConfigCreateEvaluationsResponse400>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigCreateEvaluationsResponse, AigConfigCreateEvaluationsResponse400>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -96,11 +105,12 @@ return _execute(
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigFetchEvaluationsResponse, AigConfigFetchEvaluationsResponse404>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigFetchEvaluationsResponse, AigConfigFetchEvaluationsResponse404>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -118,11 +128,12 @@ return _execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigDeleteEvaluationsResponse, AigConfigDeleteEvaluationsResponse404>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigDeleteEvaluationsResponse, AigConfigDeleteEvaluationsResponse404>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

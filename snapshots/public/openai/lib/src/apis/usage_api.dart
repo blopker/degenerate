@@ -15,20 +15,32 @@ final ApiConfig _config;
 /// Get costs details for the organization.
 ///
 /// `GET /organization/costs`
-Future<ApiResult<UsageResponse, Never>> usageCosts({required int startTime, int? endTime, UsageCostsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCostsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageCosts({required int startTime, int? endTime, UsageCostsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCostsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/costs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,23 +53,47 @@ return _execute(
 /// Get audio speeches usage details for the organization.
 ///
 /// `GET /organization/usage/audio_speeches`
-Future<ApiResult<UsageResponse, Never>> usageAudioSpeeches({required int startTime, int? endTime, UsageAudioSpeechesBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioSpeechesGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageAudioSpeeches({required int startTime, int? endTime, UsageAudioSpeechesBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioSpeechesGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/audio_speeches',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -70,23 +106,47 @@ return _execute(
 /// Get audio transcriptions usage details for the organization.
 ///
 /// `GET /organization/usage/audio_transcriptions`
-Future<ApiResult<UsageResponse, Never>> usageAudioTranscriptions({required int startTime, int? endTime, UsageAudioTranscriptionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioTranscriptionsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageAudioTranscriptions({required int startTime, int? endTime, UsageAudioTranscriptionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioTranscriptionsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/audio_transcriptions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -99,20 +159,32 @@ return _execute(
 /// Get code interpreter sessions usage details for the organization.
 ///
 /// `GET /organization/usage/code_interpreter_sessions`
-Future<ApiResult<UsageResponse, Never>> usageCodeInterpreterSessions({required int startTime, int? endTime, UsageCodeInterpreterSessionsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCodeInterpreterSessionsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageCodeInterpreterSessions({required int startTime, int? endTime, UsageCodeInterpreterSessionsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCodeInterpreterSessionsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/code_interpreter_sessions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -125,24 +197,48 @@ return _execute(
 /// Get completions usage details for the organization.
 ///
 /// `GET /organization/usage/completions`
-Future<ApiResult<UsageResponse, Never>> usageCompletions({required int startTime, int? endTime, UsageCompletionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, bool? batch, List<UsageCompletionsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageCompletions({required int startTime, int? endTime, UsageCompletionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, bool? batch, List<UsageCompletionsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (batch != null) queryParameters['batch'] = batch.toString();
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/completions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (batch != null) 'batch': batch.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -155,23 +251,47 @@ return _execute(
 /// Get embeddings usage details for the organization.
 ///
 /// `GET /organization/usage/embeddings`
-Future<ApiResult<UsageResponse, Never>> usageEmbeddings({required int startTime, int? endTime, UsageEmbeddingsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageEmbeddingsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageEmbeddings({required int startTime, int? endTime, UsageEmbeddingsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageEmbeddingsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/embeddings',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -184,25 +304,57 @@ return _execute(
 /// Get images usage details for the organization.
 ///
 /// `GET /organization/usage/images`
-Future<ApiResult<UsageResponse, Never>> usageImages({required int startTime, int? endTime, UsageImagesBucketWidth? bucketWidth, List<UsageImagesSources>? sources, List<UsageImagesSizes>? sizes, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageImagesGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageImages({required int startTime, int? endTime, UsageImagesBucketWidth? bucketWidth, List<UsageImagesSources>? sources, List<UsageImagesSizes>? sizes, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageImagesGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (sources != null) {
+for (final item in sources) {
+  queryParametersList.add(ApiQueryParameter(name: 'sources', value: item.toJson(), allowReserved: false));
+}
+}
+if (sizes != null) {
+for (final item in sizes) {
+  queryParametersList.add(ApiQueryParameter(name: 'sizes', value: item.toJson(), allowReserved: false));
+}
+}
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/images',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (sources != null) 'sources': sources.toString(),
-    if (sizes != null) 'sizes': sizes.toString(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -215,23 +367,47 @@ return _execute(
 /// Get moderations usage details for the organization.
 ///
 /// `GET /organization/usage/moderations`
-Future<ApiResult<UsageResponse, Never>> usageModerations({required int startTime, int? endTime, UsageModerationsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageModerationsGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageModerations({required int startTime, int? endTime, UsageModerationsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageModerationsGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (userIds != null) {
+for (final item in userIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+}
+}
+if (apiKeyIds != null) {
+for (final item in apiKeyIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+}
+}
+if (models != null) {
+for (final item in models) {
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/moderations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (userIds != null) 'user_ids': userIds.toString(),
-    if (apiKeyIds != null) 'api_key_ids': apiKeyIds.toString(),
-    if (models != null) 'models': models.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -244,20 +420,32 @@ return _execute(
 /// Get vector stores usage details for the organization.
 ///
 /// `GET /organization/usage/vector_stores`
-Future<ApiResult<UsageResponse, Never>> usageVectorStores({required int startTime, int? endTime, UsageVectorStoresBucketWidth? bucketWidth, List<String>? projectIds, List<UsageVectorStoresGroupBy>? groupBy, int? limit, String? page, }) async  { final request = ApiRequest(
+Future<ApiResult<UsageResponse, Never>> usageVectorStores({required int startTime, int? endTime, UsageVectorStoresBucketWidth? bucketWidth, List<String>? projectIds, List<UsageVectorStoresGroupBy>? groupBy, int? limit, String? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+}
+}
+if (groupBy != null) {
+for (final item in groupBy) {
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/usage/vector_stores',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (bucketWidth != null) 'bucket_width': bucketWidth.toJson(),
-    if (projectIds != null) 'project_ids': projectIds.toString(),
-    if (groupBy != null) 'group_by': groupBy.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

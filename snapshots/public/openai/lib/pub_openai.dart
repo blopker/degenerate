@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_openai_api.dart';
+export 'src/client/pub_openai_security.dart';
 
 export 'src/models/active_status.dart';
 export 'src/models/add_upload_part_request.dart';

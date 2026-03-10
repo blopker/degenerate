@@ -17,22 +17,54 @@ final ApiConfig _config;
 /// Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/summary`
-Future<ApiResult<RadarGetQualityIndexSummaryResponse, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualityIndexSummaryResponse, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+queryParameters['metric'] = metric.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/iqi/summary',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    'metric': metric.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,24 +82,56 @@ return _execute(
 /// Retrieves a time series (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/timeseries_groups`
-Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (interpolation != null) queryParameters['interpolation'] = interpolation.toString();
+queryParameters['metric'] = metric.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/iqi/timeseries_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (interpolation != null) 'interpolation': interpolation.toString(),
-    'metric': metric.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -85,21 +149,45 @@ return _execute(
 /// Retrieves a histogram from the previous 90 days of Cloudflare Speed Test data, split into fixed bandwidth (Mbps), latency (ms), or jitter (ms) buckets.
 ///
 /// `GET /radar/quality/speed/histogram`
-Future<ApiResult<RadarGetQualitySpeedHistogramResponse, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualitySpeedHistogramResponse, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (bucketSize != null) queryParameters['bucketSize'] = bucketSize.toString();
+if (metricGroup != null) queryParameters['metricGroup'] = metricGroup.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/speed/histogram',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (bucketSize != null) 'bucketSize': bucketSize.toString(),
-    if (metricGroup != null) 'metricGroup': metricGroup.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -117,19 +205,43 @@ return _execute(
 /// Retrieves a summary of bandwidth, latency, jitter, and packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/summary`
-Future<ApiResult<RadarGetQualitySpeedSummaryResponse, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualitySpeedSummaryResponse, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/speed/summary',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -147,22 +259,46 @@ return _execute(
 /// Retrieves the top autonomous systems by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/ases`
-Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
+if (reverse != null) queryParameters['reverse'] = reverse.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/speed/top/ases',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (orderBy != null) 'orderBy': orderBy.toJson(),
-    if (reverse != null) 'reverse': reverse.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -180,22 +316,46 @@ return _execute(
 /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/locations`
-Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
+if (reverse != null) queryParameters['reverse'] = reverse.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/quality/speed/top/locations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (orderBy != null) 'orderBy': orderBy.toJson(),
-    if (reverse != null) 'reverse': reverse.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

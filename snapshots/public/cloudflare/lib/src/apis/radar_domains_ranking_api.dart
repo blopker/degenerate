@@ -17,19 +17,31 @@ final ApiConfig _config;
 /// Retrieves domain rank details. Cloudflare provides an ordered rank for the top 100 domains, but for the remainder it only provides ranking buckets like top 200 thousand, top one million, etc.. These are available through Radar datasets endpoints.
 ///
 /// `GET /radar/ranking/domain/{domain}`
-Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (includeTopLocations != null) queryParameters['includeTopLocations'] = includeTopLocations.toString();
+if (date != null) {
+for (final item in date) {
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/domain/${Uri.encodeComponent(domain)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (rankingType != null) 'rankingType': rankingType.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (includeTopLocations != null) 'includeTopLocations': includeTopLocations.toString(),
-    if (date != null) 'date': date.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -47,23 +59,55 @@ return _execute(
 /// Retrieves domains rank over time.
 ///
 /// `GET /radar/ranking/timeseries_groups`
-Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (domains != null) {
+for (final item in domains) {
+  queryParametersList.add(ApiQueryParameter(name: 'domains', value: item, allowReserved: false));
+}
+}
+if (domainCategory != null) {
+for (final item in domainCategory) {
+  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/timeseries_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (rankingType != null) 'rankingType': rankingType.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (location != null) 'location': location.toString(),
-    if (domains != null) 'domains': domains.toString(),
-    if (domainCategory != null) 'domainCategory': domainCategory.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -81,20 +125,40 @@ return _execute(
 /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
 ///
 /// `GET /radar/ranking/top`
-Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (domainCategory != null) {
+for (final item in domainCategory) {
+  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
+}
+}
+if (date != null) {
+for (final item in date) {
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+}
+}
+if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/ranking/top',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (location != null) 'location': location.toString(),
-    if (domainCategory != null) 'domainCategory': domainCategory.toString(),
-    if (date != null) 'date': date.toString(),
-    if (rankingType != null) 'rankingType': rankingType.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

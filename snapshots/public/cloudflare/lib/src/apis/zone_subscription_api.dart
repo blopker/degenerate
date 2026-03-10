@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists zone subscription details.
 ///
 /// `GET /zones/{zone_id}/subscription`
-Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionDetails({required Identifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionDetails({required Identifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a zone subscription, either plan or add-ons.
 ///
 /// `POST /zones/{zone_id}/subscription`
-Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Subscription2 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Subscription2 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates zone subscriptions, either plan or add-ons.
 ///
 /// `PUT /zones/{zone_id}/subscription`
-Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Subscription2 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Subscription2 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

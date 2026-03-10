@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create a new token for ICE servers
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Tokens.json`
-Future<ApiResult<AccountToken, Never>> createToken({required String accountSid, CreateTokenRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountToken, Never>> createToken({required String accountSid, CreateTokenRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Tokens.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateTokenRequest');,
 );
 

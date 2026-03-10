@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponse, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiListFinetunesResponse, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -35,12 +36,13 @@ return _execute(
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponse, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiCreateFinetuneResponse, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Upload a Finetune Asset
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
-Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/${Uri.encodeComponent(finetuneId)}/finetune-assets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiUploadFinetuneAssetRequest');,
 );
 
@@ -79,16 +82,20 @@ return _execute(
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (orderBy != null) queryParameters['orderBy'] = orderBy;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/public',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    'orderBy': ?orderBy,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

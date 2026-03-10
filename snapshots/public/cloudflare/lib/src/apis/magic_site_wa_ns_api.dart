@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists Site WANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansListWans({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansListWans({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Site WAN.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansCreateWan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicWansAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansCreateWan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicWansAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get a specific Site WAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansWanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansWanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans/${Uri.encodeComponent(wanId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a specific Site WAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansUpdateWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansUpdateWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans/${Uri.encodeComponent(wanId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,12 +101,13 @@ return _execute(
 /// Patch a specific Site WAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansPatchWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansPatchWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans/${Uri.encodeComponent(wanId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -118,11 +123,12 @@ return _execute(
 /// Remove a specific Site WAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteWansDeleteWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteWansDeleteWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/wans/${Uri.encodeComponent(wanId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

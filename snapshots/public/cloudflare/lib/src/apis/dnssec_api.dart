@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Details about DNSSEC status and configuration.
 ///
 /// `GET /zones/{zone_id}/dnssec`
-Future<ApiResult<ResponseCommon27, Never>> dnssecDetails({required DnssecIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon27, Never>> dnssecDetails({required DnssecIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Enable or disable DNSSEC.
 ///
 /// `PATCH /zones/{zone_id}/dnssec`
-Future<ApiResult<ResponseCommon27, Never>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon27, Never>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Delete DNSSEC.
 ///
 /// `DELETE /zones/{zone_id}/dnssec`
-Future<ApiResult<ResponseCommon27, Never>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon27, Never>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

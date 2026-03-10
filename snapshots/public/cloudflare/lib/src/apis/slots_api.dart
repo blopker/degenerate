@@ -15,19 +15,23 @@ final ApiConfig _config;
 /// Retrieve a list of all slots matching the specified parameters
 ///
 /// `GET /accounts/{account_id}/cni/slots`
-Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (addressContains != null) queryParameters['address_contains'] = addressContains;
+if (site != null) queryParameters['site'] = site;
+if (speed != null) queryParameters['speed'] = speed;
+if (occupied != null) queryParameters['occupied'] = occupied.toString();
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/slots',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'address_contains': ?addressContains,
-    'site': ?site,
-    'speed': ?speed,
-    if (occupied != null) 'occupied': occupied.toString(),
-    if (cursor != null) 'cursor': cursor.toString(),
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,11 +44,12 @@ return _execute(
 /// Get information about the specified slot
 ///
 /// `GET /accounts/{account_id}/cni/slots/{slot}`
-Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/slots/${Uri.encodeComponent(slot)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

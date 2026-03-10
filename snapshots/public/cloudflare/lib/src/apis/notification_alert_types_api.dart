@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets a list of all alert types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/available_alerts`
-Future<ApiResult<ResponseCommon2, Never>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/available_alerts',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

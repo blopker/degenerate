@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// List all the permissions groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) queryParameters['id'] = id;
+if (name != null) queryParameters['name'] = name;
+if (label != null) queryParameters['label'] = label;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/permission_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'id': ?id,
-    'name': ?name,
-    'label': ?label,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,11 +47,12 @@ return _execute(
 /// Get information about a specific permission group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups/{permission_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/permission_groups/${Uri.encodeComponent(permissionGroupId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

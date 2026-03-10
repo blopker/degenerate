@@ -15,41 +15,51 @@ final ApiConfig _config;
 /// List Gateway Logs
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
-Future<ApiResult<AigConfigListGatewayLogsResponse, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigListGatewayLogsResponse, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (search != null) queryParameters['search'] = search;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (filters != null) {
+for (final item in filters) {
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+}
+}
+if (metaInfo != null) queryParameters['meta_info'] = metaInfo.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (startDate != null) queryParameters['start_date'] = startDate.toString();
+if (endDate != null) queryParameters['end_date'] = endDate.toString();
+if (minCost != null) queryParameters['min_cost'] = minCost.toString();
+if (maxCost != null) queryParameters['max_cost'] = maxCost.toString();
+if (minTokensIn != null) queryParameters['min_tokens_in'] = minTokensIn.toString();
+if (maxTokensIn != null) queryParameters['max_tokens_in'] = maxTokensIn.toString();
+if (minTokensOut != null) queryParameters['min_tokens_out'] = minTokensOut.toString();
+if (maxTokensOut != null) queryParameters['max_tokens_out'] = maxTokensOut.toString();
+if (minTotalTokens != null) queryParameters['min_total_tokens'] = minTotalTokens.toString();
+if (maxTotalTokens != null) queryParameters['max_total_tokens'] = maxTotalTokens.toString();
+if (minDuration != null) queryParameters['min_duration'] = minDuration.toString();
+if (maxDuration != null) queryParameters['max_duration'] = maxDuration.toString();
+if (feedback != null) {
+queryParametersList.add(ApiQueryParameter(name: 'feedback', value: feedback.toString(), allowReserved: false));
+}
+if (success != null) queryParameters['success'] = success.toString();
+if (cached != null) queryParameters['cached'] = cached.toString();
+if (model != null) queryParameters['model'] = model;
+if (modelType != null) queryParameters['model_type'] = modelType;
+if (provider != null) queryParameters['provider'] = provider;
+if (requestContentType != null) queryParameters['request_content_type'] = requestContentType;
+if (responseContentType != null) queryParameters['response_content_type'] = responseContentType;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'search': ?search,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (orderByDirection != null) 'order_by_direction': orderByDirection.toJson(),
-    if (filters != null) 'filters': filters.toString(),
-    if (metaInfo != null) 'meta_info': metaInfo.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (startDate != null) 'start_date': startDate.toString(),
-    if (endDate != null) 'end_date': endDate.toString(),
-    if (minCost != null) 'min_cost': minCost.toString(),
-    if (maxCost != null) 'max_cost': maxCost.toString(),
-    if (minTokensIn != null) 'min_tokens_in': minTokensIn.toString(),
-    if (maxTokensIn != null) 'max_tokens_in': maxTokensIn.toString(),
-    if (minTokensOut != null) 'min_tokens_out': minTokensOut.toString(),
-    if (maxTokensOut != null) 'max_tokens_out': maxTokensOut.toString(),
-    if (minTotalTokens != null) 'min_total_tokens': minTotalTokens.toString(),
-    if (maxTotalTokens != null) 'max_total_tokens': maxTotalTokens.toString(),
-    if (minDuration != null) 'min_duration': minDuration.toString(),
-    if (maxDuration != null) 'max_duration': maxDuration.toString(),
-    if (feedback != null) 'feedback': feedback.toString(),
-    if (success != null) 'success': success.toString(),
-    if (cached != null) 'cached': cached.toString(),
-    'model': ?model,
-    'model_type': ?modelType,
-    'provider': ?provider,
-    'request_content_type': ?requestContentType,
-    'response_content_type': ?responseContentType,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -65,17 +75,25 @@ return _execute(
 /// Delete Gateway Logs
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
-Future<ApiResult<AigConfigDeleteGatewayLogsResponse, AigConfigDeleteGatewayLogsResponse400>> aigConfigDeleteGatewayLogs({required String accountId, required String gatewayId, AigConfigDeleteGatewayLogsOrderBy? orderBy, AigConfigDeleteGatewayLogsOrderByDirection? orderByDirection, List<AigConfigDeleteGatewayLogsFilters>? filters, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigDeleteGatewayLogsResponse, AigConfigDeleteGatewayLogsResponse400>> aigConfigDeleteGatewayLogs({required String accountId, required String gatewayId, AigConfigDeleteGatewayLogsOrderBy? orderBy, AigConfigDeleteGatewayLogsOrderByDirection? orderByDirection, List<AigConfigDeleteGatewayLogsFilters>? filters, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (filters != null) {
+for (final item in filters) {
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (orderByDirection != null) 'order_by_direction': orderByDirection.toJson(),
-    if (filters != null) 'filters': filters.toString(),
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -93,11 +111,12 @@ return _execute(
 /// Retrieves detailed information for a specific AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigGetGatewayLogDetailResponse, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigGetGatewayLogDetailResponse, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -115,12 +134,13 @@ return _execute(
 /// Updates metadata for an AI Gateway log entry.
 ///
 /// `PATCH /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigPatchGatewayLogResponse, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AigConfigPatchGatewayLogResponse, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -139,11 +159,12 @@ return _execute(
 /// Retrieves the original request payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/request`
-Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}/request',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -161,11 +182,12 @@ return _execute(
 /// Retrieves the response payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/response`
-Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}/response',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

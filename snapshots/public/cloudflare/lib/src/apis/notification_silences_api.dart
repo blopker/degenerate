@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets a list of silences for an account.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<ResponseCommon2, Never>> notificationSilencesListSilences({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationSilencesListSilences({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new silence for an account.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<ResponseCommon2, Never>> notificationSilencesCreateSilences({required AaaAccountId accountId, required List<AaaSilenceCreateRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationSilencesCreateSilences({required AaaAccountId accountId, required List<AaaSilenceCreateRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates existing silences for an account.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<ResponseCommon2, Never>> notificationSilencesUpdateSilences({required AaaAccountId accountId, required List<AaaSilenceUpdateRequest> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationSilencesUpdateSilences({required AaaAccountId accountId, required List<AaaSilenceUpdateRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -78,11 +81,12 @@ return _execute(
 /// Gets a specific silence for an account.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/silences/{silence_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationSilencesGetSilence({required AaaAccountId accountId, required AaaSilenceId silenceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationSilencesGetSilence({required AaaAccountId accountId, required AaaSilenceId silenceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes an existing silence for an account.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/silences/{silence_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationSilencesDeleteSilences({required AaaAccountId accountId, required AaaSilenceId silenceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationSilencesDeleteSilences({required AaaAccountId accountId, required AaaSilenceId silenceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

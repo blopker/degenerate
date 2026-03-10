@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.0.0
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'pub_stripe_spec3_security.dart';
 import '../apis/default_api.dart';
 
 /// Root SDK client providing access to all API groups.
@@ -19,4 +20,7 @@ final class PubStripeSpec3Api {
   PubStripeSpec3Api(this._config);
 
   late final DefaultApi $default = DefaultApi(_config);
+
+  PubStripeSpec3Api withBasicAuth({required String username, required String password}) => PubStripeSpec3Api(PubStripeSpec3Security.applyBasicAuth(_config, username: username, password: password));
+  PubStripeSpec3Api withBearerAuth(String token) => PubStripeSpec3Api(PubStripeSpec3Security.applyBearerAuth(_config, token));
 }

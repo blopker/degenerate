@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// Fetches User Agent Blocking rules in a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (description != null) queryParameters['description'] = description.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (userAgent != null) queryParameters['user_agent'] = userAgent;
+if (paused != null) queryParameters['paused'] = paused.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (description != null) 'description': description.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'user_agent': ?userAgent,
-    if (paused != null) 'paused': paused.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Creates a new User Agent Blocking rule in a zone.
 ///
 /// `POST /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -64,11 +69,12 @@ return _execute(
 /// Fetches the details of a User Agent Blocking rule.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,12 +89,13 @@ return _execute(
 /// Updates an existing User Agent Blocking rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -104,11 +111,12 @@ return _execute(
 /// Deletes an existing User Agent Blocking rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

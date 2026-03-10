@@ -17,21 +17,25 @@ final ApiConfig _config;
 /// Lists and filters hostname routes in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) queryParameters['id'] = id.toString();
+if (hostname != null) queryParameters['hostname'] = hostname.toString();
+if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId.toString();
+if (comment != null) queryParameters['comment'] = comment.toString();
+if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
+if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (id != null) 'id': id.toString(),
-    if (hostname != null) 'hostname': hostname.toString(),
-    if (tunnelId != null) 'tunnel_id': tunnelId.toString(),
-    if (comment != null) 'comment': comment.toString(),
-    if (existedAt != null) 'existed_at': existedAt.toString(),
-    if (isDeleted != null) 'is_deleted': isDeleted.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,12 +50,13 @@ return _execute(
 /// Create a hostname route.
 ///
 /// `POST /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -67,11 +72,12 @@ return _execute(
 /// Get a hostname route.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -86,12 +92,13 @@ return _execute(
 /// Updates a hostname route.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -107,11 +114,12 @@ return _execute(
 /// Delete a hostname route.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

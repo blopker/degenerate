@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Gets all the data the botnet tracking database has for a given ASN registered to user account for given date. If no date is given, it will return results for the previous day.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report`
-Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (date != null) queryParameters['date'] = date.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/day_report',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (date != null) 'date': date.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,11 +43,12 @@ return _execute(
 /// Gets all the data the botnet threat feed tracking database has for a given ASN registered to user account.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report`
-Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/full_report',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -58,11 +63,12 @@ return _execute(
 /// Gets a list of all ASNs registered for a user for the DDoS Botnet Feed API.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/configs/asn`
-Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedListAsn({required DosIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedListAsn({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/botnet_feed/configs/asn',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -77,11 +83,12 @@ return _execute(
 /// Delete an ASN from botnet threat feed for a given user.
 ///
 /// `DELETE /accounts/{account_id}/botnet_feed/configs/asn/{asn_id}`
-Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedDeleteAsn({required DosIdentifier accountId, required DosAsn asnId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedDeleteAsn({required DosIdentifier accountId, required DosAsn asnId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/botnet_feed/configs/asn/${Uri.encodeComponent(asnId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

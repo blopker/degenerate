@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetch a list of all domains associated with a Pages project.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomains({required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomains({required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Add a new domain for the Pages project.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<ResponseCommon51, Never>> pagesDomainsAddDomain({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDomainsAddDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsAddDomain({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDomainsAddDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetch a single domain.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsGetDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// Retry the validation status of a single domain.
 ///
 /// `PATCH /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesDomainsPatchDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsPatchDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -95,11 +99,12 @@ return _execute(
 /// Delete a Pages project's domain.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesDomainsDeleteDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesDomainsDeleteDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,25 +17,69 @@ final ApiConfig _config;
 /// Retrieves the distribution of email routing metrics by the specified dimension.
 ///
 /// `GET /radar/email/routing/summary/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingSummaryResponse, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailRoutingSummaryResponse, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (encrypted != null) {
+for (final item in encrypted) {
+  queryParametersList.add(ApiQueryParameter(name: 'encrypted', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/routing/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (ipVersion != null) 'ipVersion': ipVersion.toString(),
-    if (encrypted != null) 'encrypted': encrypted.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -53,26 +97,70 @@ return _execute(
 /// Retrieves the distribution of email routing metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/routing/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponse, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponse, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (arc != null) {
+for (final item in arc) {
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+}
+}
+if (dkim != null) {
+for (final item in dkim) {
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+}
+}
+if (dmarc != null) {
+for (final item in dmarc) {
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+}
+}
+if (spf != null) {
+for (final item in spf) {
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (encrypted != null) {
+for (final item in encrypted) {
+  queryParametersList.add(ApiQueryParameter(name: 'encrypted', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/email/routing/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (arc != null) 'arc': arc.toString(),
-    if (dkim != null) 'dkim': dkim.toString(),
-    if (dmarc != null) 'dmarc': dmarc.toString(),
-    if (spf != null) 'spf': spf.toString(),
-    if (ipVersion != null) 'ipVersion': ipVersion.toString(),
-    if (encrypted != null) 'encrypted': encrypted.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

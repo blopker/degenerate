@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all the emojis available to use on GitHub.
 ///
 /// `GET /emojis`
-Future<ApiResult<Map<String, String>, Never>> emojisGet() async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> emojisGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/emojis',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

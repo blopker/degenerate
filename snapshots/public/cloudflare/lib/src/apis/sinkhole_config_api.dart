@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List sinkholes owned by this account
 ///
 /// `GET /accounts/{account_id}/intel/sinkholes`
-Future<ApiResult<ResponseCommon38, Never>> sinkholeConfigGetSinkholes({required IntelSinkholesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon38, Never>> sinkholeConfigGetSinkholes({required IntelSinkholesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/sinkholes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

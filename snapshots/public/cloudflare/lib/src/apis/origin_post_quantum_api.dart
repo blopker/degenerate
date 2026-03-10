@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `GET /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/origin_post_quantum_encryption',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `PUT /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/origin_post_quantum_encryption',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// Lists all turnstile widgets of an account.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (filter != null) queryParameters['filter'] = filter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'filter': ?filter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,19 +47,23 @@ return _execute(
 /// Lists challenge widgets.
 ///
 /// `POST /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (filter != null) queryParameters['filter'] = filter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'filter': ?filter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -71,11 +79,12 @@ return _execute(
 /// Show a single challenge widget configuration.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -90,12 +99,13 @@ return _execute(
 /// Update the configuration of a widget.
 ///
 /// `PUT /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +121,12 @@ return _execute(
 /// Destroy a Turnstile Widget.
 ///
 /// `DELETE /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -134,12 +145,13 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret`
-Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}/rotate_secret',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

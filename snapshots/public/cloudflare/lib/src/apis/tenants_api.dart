@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieves a Tenant by Tenant ID.
 ///
 /// `GET /tenants/{tenant_id}`
-Future<ApiResult<TenantsRetrieveTenantResponse, Never>> tenantsRetrieveTenant({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsRetrieveTenantResponse, Never>> tenantsRetrieveTenant({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// List of account types available for the Tenant to provision accounts.
 ///
 /// `GET /tenants/{tenant_id}/account_types`
-Future<ApiResult<TenantsValidAccountTypesResponse, Never>> tenantsValidAccountTypes({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsValidAccountTypesResponse, Never>> tenantsValidAccountTypes({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/account_types',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,11 +57,12 @@ return _execute(
 /// List of accounts for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/accounts`
-Future<ApiResult<TenantsListAccountsResponse, Never>> tenantsListAccounts({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListAccountsResponse, Never>> tenantsListAccounts({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/accounts',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -74,11 +77,12 @@ return _execute(
 /// List of innate entitlements available for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/entitlements`
-Future<ApiResult<TenantsListEntitlementsResponse, Never>> tenantsListEntitlements({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListEntitlementsResponse, Never>> tenantsListEntitlements({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/entitlements',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -93,11 +97,12 @@ return _execute(
 /// List of active members (Cloudflare users) for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/memberships`
-Future<ApiResult<TenantsListMembershipsResponse, Never>> tenantsListMemberships({required String tenantId}) async  { final request = ApiRequest(
+Future<ApiResult<TenantsListMembershipsResponse, Never>> tenantsListMemberships({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/memberships',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

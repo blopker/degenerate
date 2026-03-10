@@ -15,15 +15,19 @@ final ApiConfig _config;
 /// Returns a list of invites in the organization.
 ///
 /// `GET /organization/invites`
-Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/invites',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -36,12 +40,13 @@ return _execute(
 /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
 ///
 /// `POST /organization/invites`
-Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/invites',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -55,11 +60,12 @@ return _execute(
 /// Retrieves an invite.
 ///
 /// `GET /organization/invites/{invite_id}`
-Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId}) async  { final request = ApiRequest(
+Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/invites/${Uri.encodeComponent(inviteId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -72,11 +78,12 @@ return _execute(
 /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
 ///
 /// `DELETE /organization/invites/{invite_id}`
-Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId}) async  { final request = ApiRequest(
+Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/invites/${Uri.encodeComponent(inviteId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

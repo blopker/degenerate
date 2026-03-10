@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Lists all target industries for a specific dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries`
-Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/targetIndustries',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -35,14 +36,22 @@ return _execute(
 /// Lists target industries across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries`
-Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (datasetIds != null) {
+for (final item in datasetIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/targetIndustries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (datasetIds != null) 'datasetIds': datasetIds.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -58,11 +67,12 @@ return _execute(
 /// Lists all target industries from industry map catalog
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog`
-Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/targetIndustries/catalog',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

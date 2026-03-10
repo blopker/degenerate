@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists indexing jobs for an AI Search instance.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceListJobsResponse, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceListJobsResponse, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Creates a new indexing job for an AI Search instance.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceCreateJobResponse, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceCreateJobResponse, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -67,11 +72,12 @@ return _execute(
 /// Retrieves details for a specific AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceGetJobResponse, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceGetJobResponse, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -89,12 +95,13 @@ return _execute(
 /// Updates the status of an AI Search indexing job.
 ///
 /// `PATCH /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceChangeJobStatusResponse, AiSearchInstanceChangeJobStatusResponse400>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponse, AiSearchInstanceChangeJobStatusResponse400>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -113,15 +120,19 @@ return _execute(
 /// Lists log entries for an AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs`
-Future<ApiResult<AiSearchInstanceListJobLogsResponse, AiSearchInstanceListJobLogsResponse400>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceListJobLogsResponse, AiSearchInstanceListJobLogsResponse400>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Creates a new indicator type and initializes its dedicated Durable Object
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create`
-Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateResponse400>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateResponse400>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicatorTypes/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

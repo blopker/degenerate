@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve Fraud Detection settings for a zone.
 ///
 /// `GET /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<ResponseCommon32, Never>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon32, Never>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/fraud_detection/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -41,12 +42,13 @@ return _execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<ResponseCommon32, Never>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon32, Never>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/fraud_detection/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

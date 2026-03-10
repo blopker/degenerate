@@ -17,26 +17,42 @@ final ApiConfig _config;
 /// List resources in the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources`
-Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (providerId != null) queryParameters['provider_id'] = providerId;
+if (resourceType != null) {
+for (final item in resourceType) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+}
+}
+if (resourceId != null) {
+for (final item in resourceId) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
+}
+}
+if (region != null) queryParameters['region'] = region;
+if (resourceGroup != null) queryParameters['resource_group'] = resourceGroup;
+if (managed != null) queryParameters['managed'] = managed.toString();
+if (search != null) {
+for (final item in search) {
+  queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
+}
+}
+if (orderBy != null) queryParameters['order_by'] = orderBy;
+if (desc != null) queryParameters['desc'] = desc.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (cloudflare != null) queryParameters['cloudflare'] = cloudflare.toString();
+if (v2 != null) queryParameters['v2'] = v2.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'provider_id': ?providerId,
-    if (resourceType != null) 'resource_type': resourceType.toString(),
-    if (resourceId != null) 'resource_id': resourceId.toString(),
-    'region': ?region,
-    'resource_group': ?resourceGroup,
-    if (managed != null) 'managed': managed.toString(),
-    if (search != null) 'search': search.toString(),
-    'order_by': ?orderBy,
-    if (desc != null) 'desc': desc.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (cloudflare != null) 'cloudflare': cloudflare.toString(),
-    if (v2 != null) 'v2': v2.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -54,14 +70,18 @@ return _execute(
 /// Read an resource from the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
-Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (v2 != null) queryParameters['v2'] = v2.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/${Uri.encodeComponent(resourceId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (v2 != null) 'v2': v2.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -79,22 +99,38 @@ return _execute(
 /// Export resources in the Resource Catalog as a JSON file (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/export`
-Future<ApiResult<Uint8List, McnResponse>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, }) async  { final request = ApiRequest(
+Future<ApiResult<Uint8List, McnResponse>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (providerId != null) queryParameters['provider_id'] = providerId;
+if (resourceType != null) {
+for (final item in resourceType) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+}
+}
+if (resourceId != null) {
+for (final item in resourceId) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
+}
+}
+if (region != null) queryParameters['region'] = region;
+if (resourceGroup != null) queryParameters['resource_group'] = resourceGroup;
+if (search != null) {
+for (final item in search) {
+  queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
+}
+}
+if (orderBy != null) queryParameters['order_by'] = orderBy;
+if (desc != null) queryParameters['desc'] = desc.toString();
+if (v2 != null) queryParameters['v2'] = v2.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/export',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'provider_id': ?providerId,
-    if (resourceType != null) 'resource_type': resourceType.toString(),
-    if (resourceId != null) 'resource_id': resourceId.toString(),
-    'region': ?region,
-    'resource_group': ?resourceGroup,
-    if (search != null) 'search': search.toString(),
-    'order_by': ?orderBy,
-    if (desc != null) 'desc': desc.toString(),
-    if (v2 != null) 'v2': v2.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -112,12 +148,13 @@ return _execute(
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/resources/policy-preview`
-Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/policy-preview',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

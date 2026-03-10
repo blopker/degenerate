@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all Magic static routes.
 ///
 /// `GET /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesListRoutes({required MagicIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesListRoutes({required MagicIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Update multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.
 ///
 /// `PUT /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,12 +81,13 @@ return _execute(
 /// Delete multiple Magic static routes.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -99,11 +103,12 @@ return _execute(
 /// Get a specific Magic static route.
 ///
 /// `GET /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -118,12 +123,13 @@ return _execute(
 /// Update a specific Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -139,11 +145,12 @@ return _execute(
 /// Disable and remove a specific Magic static route.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

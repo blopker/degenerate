@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Retrieves IP address information.
 ///
 /// `GET /radar/entities/ip`
-Future<ApiResult<RadarGetEntitiesIpResponse, RadarGetEntitiesIpResponse404>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesIpResponse, RadarGetEntitiesIpResponse404>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['ip'] = ip;
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/ip',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ip': ip,
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

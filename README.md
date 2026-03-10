@@ -93,7 +93,6 @@ Options:
   -n, --name               Package name (default: inferred from spec title)
   -t, --tag                Only include APIs matching these tags (repeatable)
   -p, --path               Only include operations under these path prefixes (repeatable)
-      --client             HTTP client adapter: http|none (default: http)
       --include-deprecated  Include deprecated operations
       --clean              Remove output directory before generating
   -v, --verbose            Print IR and diagnostics
@@ -126,8 +125,6 @@ dart run degenerate -i spec.yaml -o lib/src/api --clean
 # Dry run to check for issues without writing files
 dart run degenerate -i spec.yaml --dry-run
 
-# Generate without HTTP client (bring your own ApiClient implementation)
-dart run degenerate -i spec.yaml --client none
 ```
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.

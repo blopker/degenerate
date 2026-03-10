@@ -15,14 +15,18 @@ final ApiConfig _config;
 /// Get WHOIS Record
 ///
 /// `GET /accounts/{account_id}/intel/whois`
-Future<ApiResult<ResponseCommon15, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon15, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domain != null) queryParameters['domain'] = domain;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/whois',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'domain': ?domain,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

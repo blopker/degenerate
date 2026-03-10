@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Retrieve data about all document fingerprints.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsReadAll({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsReadAll({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Creates a new document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Retrieve data about a specific document fingerprint.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -68,12 +71,13 @@ return _execute(
 /// Update the attributes of a single document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -87,12 +91,13 @@ return _execute(
 /// Uploads a new version for a document fingerprint.
 ///
 /// `PUT /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DlpDocumentFingerprintsUploadRequest');,
 );
 
@@ -106,11 +111,12 @@ return _execute(
 /// Delete a single document fingerprint.
 ///
 /// `DELETE /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<void, Never>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/document_fingerprints/${Uri.encodeComponent(documentFingerprintId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

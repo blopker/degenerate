@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/facebook/bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/bart-large-cnn`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfFacebookBartLargeCnnResponse400>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfFacebookBartLargeCnnResponse400>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/facebook/bart-large-cnn',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/facebook/nonomni-bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-bart-large-cnn`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/facebook/nonomni-bart-large-cnn',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 

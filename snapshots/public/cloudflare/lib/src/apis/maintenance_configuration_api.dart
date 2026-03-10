@@ -19,11 +19,12 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/maintenance-configs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -43,12 +44,13 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> updateMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogMaintenanceUpdateParams body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> updateMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogMaintenanceUpdateParams body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/maintenance-configs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

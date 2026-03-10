@@ -15,14 +15,22 @@ final ApiConfig _config;
 /// Lists indicator types across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicator-types`
-Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (datasetIds != null) {
+for (final item in datasetIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/indicator-types',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (datasetIds != null) 'datasetIds': datasetIds.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

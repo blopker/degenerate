@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists App Configs associated with a site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/app_configs`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsListAppConfigs({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsListAppConfigs({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new App Config for a site
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/app_configs`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsAddAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAppConfigAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsAddAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAppConfigAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates an App Config for a site
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsUpdateAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsUpdateAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,12 +81,13 @@ return _execute(
 /// Updates an App Config for a site
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsPatchAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsPatchAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -99,11 +103,12 @@ return _execute(
 /// Deletes specific App Config associated with a site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsDeleteAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, }) async  { final request = ApiRequest(
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsDeleteAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

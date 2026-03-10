@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
 ///
 /// `GET /gitignore/templates`
-Future<ApiResult<List<String>, Never>> gitignoreGetAllTemplates() async  { final request = ApiRequest(
+Future<ApiResult<List<String>, Never>> gitignoreGetAllTemplates() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gitignore/templates',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -41,11 +42,12 @@ return _execute(
 /// - **`application/vnd.github.raw+json`**: Returns the raw .gitignore contents.
 ///
 /// `GET /gitignore/templates/{name}`
-Future<ApiResult<GitignoreTemplate, Never>> gitignoreGetTemplate({required String name}) async  { final request = ApiRequest(
+Future<ApiResult<GitignoreTemplate, Never>> gitignoreGetTemplate({required String name}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/gitignore/templates/${Uri.encodeComponent(name)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

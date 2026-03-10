@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all packet capture requests for an account.
 ///
 /// `GET /accounts/{account_id}/pcaps`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionListPacketCaptureRequestsResponsedefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionListPacketCaptureRequestsResponsedefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -39,12 +40,13 @@ return _execute(
 /// Create new PCAP request for account.
 ///
 /// `POST /accounts/{account_id}/pcaps`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,11 +65,12 @@ return _execute(
 /// Get information for a PCAP request by id.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,11 +88,12 @@ return _execute(
 /// Download PCAP information into a file. Response is a binary PCAP file.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}/download`
-Future<ApiResult<void, Never>> magicPcapCollectionDownloadSimplePcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> magicPcapCollectionDownloadSimplePcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}/download',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -102,11 +106,12 @@ return _execute(
 /// Stop full PCAP.
 ///
 /// `PUT /accounts/{account_id}/pcaps/{pcap_id}/stop`
-Future<ApiResult<void, ResponseCommonFailure49>> magicPcapCollectionStopFullPcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, ResponseCommonFailure49>> magicPcapCollectionStopFullPcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}/stop',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -122,11 +127,12 @@ return _execute(
 /// List all buckets configured for use with PCAPs API.
 ///
 /// `GET /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -144,12 +150,13 @@ return _execute(
 /// Adds an AWS or GCP bucket to use with full packet captures.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -168,11 +175,12 @@ return _execute(
 /// Deletes buckets added to the packet captures API.
 ///
 /// `DELETE /accounts/{account_id}/pcaps/ownership/{ownership_id}`
-Future<ApiResult<void, Never>> magicPcapCollectionDeleteBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier ownershipId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> magicPcapCollectionDeleteBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier ownershipId, required MagicVisibilityPcapsIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership/${Uri.encodeComponent(ownershipId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -185,12 +193,13 @@ return _execute(
 /// Validates buckets added to the packet captures API.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership/validate`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon47, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership/validate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

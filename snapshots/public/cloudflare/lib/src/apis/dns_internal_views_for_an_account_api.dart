@@ -17,25 +17,29 @@ final ApiConfig _config;
 /// List DNS Internal Views for an Account
 ///
 /// `GET /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (nameExact != null) queryParameters['name.exact'] = nameExact;
+if (nameContains != null) queryParameters['name.contains'] = nameContains;
+if (nameStartswith != null) queryParameters['name.startswith'] = nameStartswith;
+if (nameEndswith != null) queryParameters['name.endswith'] = nameEndswith;
+if (zoneId != null) queryParameters['zone_id'] = zoneId;
+if (zoneName != null) queryParameters['zone_name'] = zoneName;
+if (match != null) queryParameters['match'] = match.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'name.exact': ?nameExact,
-    'name.contains': ?nameContains,
-    'name.startswith': ?nameStartswith,
-    'name.endswith': ?nameEndswith,
-    'zone_id': ?zoneId,
-    'zone_name': ?zoneName,
-    if (match != null) 'match': match.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,12 +54,13 @@ return _execute(
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -71,11 +76,12 @@ return _execute(
 /// Get DNS Internal View
 ///
 /// `GET /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -90,12 +96,13 @@ return _execute(
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +118,12 @@ return _execute(
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final request = ApiRequest(
+Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

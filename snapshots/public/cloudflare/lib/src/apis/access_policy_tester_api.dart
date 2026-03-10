@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Starts an Access policy test.
 ///
 /// `POST /accounts/{account_id}/access/policy-tests`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -41,11 +42,12 @@ return _execute(
 /// Fetches the current status of a given Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -63,16 +65,20 @@ return _execute(
 /// Fetches a single page of user results from an Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}/users`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toString())}/users',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

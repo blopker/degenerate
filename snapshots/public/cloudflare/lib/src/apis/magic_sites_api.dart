@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Lists Sites associated with an account. Use connectorid query param to return sites where connectorid matches either site.ConnectorID or site.SecondaryConnectorID.
 ///
 /// `GET /accounts/{account_id}/magic/sites`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (connectorid != null) queryParameters['connectorid'] = connectorid.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (connectorid != null) 'connectorid': connectorid.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Creates a new Site
 ///
 /// `POST /accounts/{account_id}/magic/sites`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesCreateSite({required MagicIdentifier accountId, required MagicSitesAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesCreateSite({required MagicIdentifier accountId, required MagicSitesAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,12 +65,13 @@ return _execute(
 /// Get a specific Site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesSiteDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesSiteDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// Update a specific Site.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesUpdateSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesUpdateSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -101,12 +108,13 @@ return _execute(
 /// Patch a specific Site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesPatchSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesPatchSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -122,11 +130,12 @@ return _execute(
 /// Remove a specific Site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSitesDeleteSite({required MagicIdentifier siteId, required MagicIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSitesDeleteSite({required MagicIdentifier siteId, required MagicIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

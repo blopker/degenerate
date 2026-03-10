@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists your signing keys. These can be found on your Cloudflare Images dashboard.
 ///
 /// `GET /accounts/{account_id}/images/v1/keys`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Create a new signing key with specified name. Returns all keys available.
 ///
 /// `PUT /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,11 +59,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

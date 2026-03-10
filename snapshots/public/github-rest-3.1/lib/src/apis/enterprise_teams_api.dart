@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// List all teams in the enterprise for the authenticated user
 ///
 /// `GET /enterprises/{enterprise}/teams`
-Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -44,12 +48,13 @@ return _execute(
 /// To create an enterprise team, the authenticated user must be an owner of the enterprise.
 ///
 /// `POST /enterprises/{enterprise}/teams`
-Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -65,11 +70,12 @@ return _execute(
 /// Gets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the "ent:" prefix. For example, "My TEam Näme" would become `ent:my-team-name`.
 ///
 /// `GET /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, }) async  { final request = ApiRequest(
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -87,12 +93,13 @@ return _execute(
 /// To edit a team, the authenticated user must be an enterprise owner.
 ///
 /// `PATCH /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -113,11 +120,12 @@ return _execute(
 /// If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

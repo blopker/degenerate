@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches Worker account settings for an account.
 ///
 /// `GET /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/account-settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates Worker account settings for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/account-settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

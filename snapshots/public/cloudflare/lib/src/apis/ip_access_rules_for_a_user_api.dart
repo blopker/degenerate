@@ -17,22 +17,26 @@ final ApiConfig _config;
 /// Fetches IP Access rules of the user. You can filter the results using several optional parameters.
 ///
 /// `GET /user/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (mode != null) queryParameters['mode'] = mode.toJson();
+if (configurationTarget != null) queryParameters['configuration.target'] = configurationTarget.toJson();
+if (configurationValue != null) queryParameters['configuration.value'] = configurationValue;
+if (notes != null) queryParameters['notes'] = notes;
+if (match != null) queryParameters['match'] = match.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/firewall/access_rules/rules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (mode != null) 'mode': mode.toJson(),
-    if (configurationTarget != null) 'configuration.target': configurationTarget.toJson(),
-    'configuration.value': ?configurationValue,
-    'notes': ?notes,
-    if (match != null) 'match': match.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -49,12 +53,13 @@ return _execute(
 /// Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /user/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/firewall/access_rules/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -70,12 +75,13 @@ return _execute(
 /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -93,11 +99,12 @@ return _execute(
 /// Note: Deleting a user-level rule will affect all zones owned by the user.
 ///
 /// `DELETE /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

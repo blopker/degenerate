@@ -18,15 +18,19 @@ final ApiConfig _config;
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /events`
-Future<ApiResult<List<Event>, BasicError>> activityListPublicEvents({int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, BasicError>> activityListPublicEvents({int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -58,11 +62,12 @@ return _execute(
 /// > Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 ///
 /// `GET /feeds`
-Future<ApiResult<Feed, Never>> activityGetFeeds() async  { final request = ApiRequest(
+Future<ApiResult<Feed, Never>> activityGetFeeds() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/feeds',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -78,15 +83,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /networks/{owner}/{repo}/events`
-Future<ApiResult<List<Event>, BasicError>> activityListPublicEventsForRepoNetwork({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, BasicError>> activityListPublicEventsForRepoNetwork({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/networks/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -105,19 +114,23 @@ return _execute(
 /// List all notifications for the current user, sorted by most recently updated.
 ///
 /// `GET /notifications`
-Future<ApiResult<List<Thread>, BasicError>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Thread>, BasicError>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (all != null) queryParameters['all'] = all.toString();
+if (participating != null) queryParameters['participating'] = participating.toString();
+if (since != null) queryParameters['since'] = since.toString();
+if (before != null) queryParameters['before'] = before.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/notifications',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (all != null) 'all': all.toString(),
-    if (participating != null) 'participating': participating.toString(),
-    if (since != null) 'since': since.toString(),
-    if (before != null) 'before': before.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -136,12 +149,13 @@ return _execute(
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /notifications`
-Future<ApiResult<ActivityMarkNotificationsAsReadResponse202, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<ActivityMarkNotificationsAsReadResponse202, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/notifications',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -160,11 +174,12 @@ return _execute(
 /// Gets information about a notification thread.
 ///
 /// `GET /notifications/threads/{thread_id}`
-Future<ApiResult<Thread, BasicError>> activityGetThread({required int threadId}) async  { final request = ApiRequest(
+Future<ApiResult<Thread, BasicError>> activityGetThread({required int threadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -182,11 +197,12 @@ return _execute(
 /// Marks a thread as "read." Marking a thread as "read" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
 ///
 /// `PATCH /notifications/threads/{thread_id}`
-Future<ApiResult<void, BasicError>> activityMarkThreadAsRead({required int threadId}) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> activityMarkThreadAsRead({required int threadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -202,11 +218,12 @@ return _execute(
 /// Marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
 ///
 /// `DELETE /notifications/threads/{thread_id}`
-Future<ApiResult<void, Never>> activityMarkThreadAsDone({required int threadId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> activityMarkThreadAsDone({required int threadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -221,11 +238,12 @@ return _execute(
 /// Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 ///
 /// `GET /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<ThreadSubscription, BasicError>> activityGetThreadSubscriptionForAuthenticatedUser({required int threadId}) async  { final request = ApiRequest(
+Future<ApiResult<ThreadSubscription, BasicError>> activityGetThreadSubscriptionForAuthenticatedUser({required int threadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -247,12 +265,13 @@ return _execute(
 /// Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription) endpoint.
 ///
 /// `PUT /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<ThreadSubscription, BasicError>> activitySetThreadSubscription({required int threadId, ActivitySetThreadSubscriptionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ThreadSubscription, BasicError>> activitySetThreadSubscription({required int threadId, ActivitySetThreadSubscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -271,11 +290,12 @@ return _execute(
 /// Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription) endpoint and set `ignore` to `true`.
 ///
 /// `DELETE /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<void, BasicError>> activityDeleteThreadSubscription({required int threadId}) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> activityDeleteThreadSubscription({required int threadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/notifications/threads/${Uri.encodeComponent(threadId.toString())}/subscription',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -292,15 +312,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /orgs/{org}/events`
-Future<ApiResult<List<Event>, Never>> activityListPublicOrgEvents({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListPublicOrgEvents({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -317,15 +341,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /repos/{owner}/{repo}/events`
-Future<ApiResult<List<Event>, Never>> activityListRepoEvents({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListRepoEvents({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -341,19 +369,23 @@ return _execute(
 /// Lists all notifications for the current user in the specified repository.
 ///
 /// `GET /repos/{owner}/{repo}/notifications`
-Future<ApiResult<List<Thread>, Never>> activityListRepoNotificationsForAuthenticatedUser({required String owner, required String repo, bool? all, bool? participating, DateTime? since, DateTime? before, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Thread>, Never>> activityListRepoNotificationsForAuthenticatedUser({required String owner, required String repo, bool? all, bool? participating, DateTime? since, DateTime? before, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (all != null) queryParameters['all'] = all.toString();
+if (participating != null) queryParameters['participating'] = participating.toString();
+if (since != null) queryParameters['since'] = since.toString();
+if (before != null) queryParameters['before'] = before.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/notifications',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (all != null) 'all': all.toString(),
-    if (participating != null) 'participating': participating.toString(),
-    if (since != null) 'since': since.toString(),
-    if (before != null) 'before': before.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -369,12 +401,13 @@ return _execute(
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /repos/{owner}/{repo}/notifications`
-Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/notifications',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -394,15 +427,19 @@ return _execute(
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /repos/{owner}/{repo}/stargazers`
-Future<ApiResult<ActivityListStargazersForRepoResponse, ValidationError>> activityListStargazersForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<ActivityListStargazersForRepoResponse, ValidationError>> activityListStargazersForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/stargazers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -420,15 +457,19 @@ return _execute(
 /// Lists the people watching the specified repository.
 ///
 /// `GET /repos/{owner}/{repo}/subscribers`
-Future<ApiResult<List<SimpleUser>, Never>> activityListWatchersForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleUser>, Never>> activityListWatchersForRepo({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/subscribers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -444,11 +485,12 @@ return _execute(
 /// Gets information about whether the authenticated user is subscribed to the repository.
 ///
 /// `GET /repos/{owner}/{repo}/subscription`
-Future<ApiResult<RepositorySubscription, BasicError>> activityGetRepoSubscription({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<RepositorySubscription, BasicError>> activityGetRepoSubscription({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/subscription',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -466,12 +508,13 @@ return _execute(
 /// If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/activity/watching#delete-a-repository-subscription) completely.
 ///
 /// `PUT /repos/{owner}/{repo}/subscription`
-Future<ApiResult<RepositorySubscription, Never>> activitySetRepoSubscription({required String owner, required String repo, ActivitySetRepoSubscriptionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<RepositorySubscription, Never>> activitySetRepoSubscription({required String owner, required String repo, ActivitySetRepoSubscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/subscription',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -487,11 +530,12 @@ return _execute(
 /// This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://docs.github.com/rest/activity/watching#set-a-repository-subscription).
 ///
 /// `DELETE /repos/{owner}/{repo}/subscription`
-Future<ApiResult<void, Never>> activityDeleteRepoSubscription({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> activityDeleteRepoSubscription({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/subscription',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -508,17 +552,21 @@ return _execute(
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /user/starred`
-Future<ApiResult<List<Repository>, BasicError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Repository>, BasicError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/starred',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -537,11 +585,12 @@ return _execute(
 /// Whether the authenticated user has starred the repository.
 ///
 /// `GET /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityCheckRepoIsStarredByAuthenticatedUser({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> activityCheckRepoIsStarredByAuthenticatedUser({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/starred/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -557,11 +606,12 @@ return _execute(
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityStarRepoForAuthenticatedUser({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> activityStarRepoForAuthenticatedUser({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/starred/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -577,11 +627,12 @@ return _execute(
 /// Unstar a repository that the authenticated user has previously starred.
 ///
 /// `DELETE /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityUnstarRepoForAuthenticatedUser({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> activityUnstarRepoForAuthenticatedUser({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/starred/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -597,15 +648,19 @@ return _execute(
 /// Lists repositories the authenticated user is watching.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<List<MinimalRepository>, BasicError>> activityListWatchedReposForAuthenticatedUser({int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<MinimalRepository>, BasicError>> activityListWatchedReposForAuthenticatedUser({int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -627,15 +682,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events`
-Future<ApiResult<List<Event>, Never>> activityListEventsForAuthenticatedUser({required String username, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListEventsForAuthenticatedUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -654,15 +713,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/orgs/{org}`
-Future<ApiResult<List<Event>, Never>> activityListOrgEventsForAuthenticatedUser({required String username, required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListOrgEventsForAuthenticatedUser({required String username, required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/events/orgs/${Uri.encodeComponent(org)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -679,15 +742,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/public`
-Future<ApiResult<List<Event>, Never>> activityListPublicEventsForUser({required String username, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListPublicEventsForUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/events/public',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -707,15 +774,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events`
-Future<ApiResult<List<Event>, Never>> activityListReceivedEventsForUser({required String username, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListReceivedEventsForUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/received_events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -732,15 +803,19 @@ return _execute(
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events/public`
-Future<ApiResult<List<Event>, Never>> activityListReceivedPublicEventsForUser({required String username, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Event>, Never>> activityListReceivedPublicEventsForUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/received_events/public',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -760,17 +835,21 @@ return _execute(
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /users/{username}/starred`
-Future<ApiResult<ActivityListReposStarredByUserResponse, Never>> activityListReposStarredByUser({required String username, ActivityListReposStarredByUserSort? sort, ActivityListReposStarredByUserDirection? direction, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<ActivityListReposStarredByUserResponse, Never>> activityListReposStarredByUser({required String username, ActivityListReposStarredByUserSort? sort, ActivityListReposStarredByUserDirection? direction, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/starred',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -785,15 +864,19 @@ return _execute(
 /// Lists repositories a user is watching.
 ///
 /// `GET /users/{username}/subscriptions`
-Future<ApiResult<List<MinimalRepository>, Never>> activityListReposWatchedByUser({required String username, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<MinimalRepository>, Never>> activityListReposWatchedByUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

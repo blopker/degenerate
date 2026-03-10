@@ -15,17 +15,25 @@ final ApiConfig _config;
 /// List all items for a conversation with the given ID.
 ///
 /// `GET /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-    if (include != null) 'include': include.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,15 +46,23 @@ return _execute(
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (include != null) 'include': include.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,14 +76,22 @@ return _execute(
 /// Get a single item from a conversation with the given IDs.
 ///
 /// `GET /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items/${Uri.encodeComponent(itemId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (include != null) 'include': include.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -80,11 +104,12 @@ return _execute(
 /// Delete an item from a conversation with the given IDs.
 ///
 /// `DELETE /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/conversations/${Uri.encodeComponent(conversationId)}/items/${Uri.encodeComponent(itemId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,12 +122,13 @@ return _execute(
 /// Create a conversation.
 ///
 /// `POST /conversations`
-Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body}) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/conversations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -116,11 +142,12 @@ return _execute(
 /// Get a conversation
 ///
 /// `GET /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId}) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -133,12 +160,13 @@ return _execute(
 /// Update a conversation
 ///
 /// `POST /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -152,11 +180,12 @@ return _execute(
 /// Delete a conversation. Items in the conversation will not be deleted.
 ///
 /// `DELETE /conversations/{conversation_id}`
-Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId}) async  { final request = ApiRequest(
+Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/conversations/${Uri.encodeComponent(conversationId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/spec_02_root_info_servers_tags_api.dart';
+export 'src/client/spec_02_root_info_servers_tags_security.dart';
 
 
 export 'src/apis/status_api.dart';

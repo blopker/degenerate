@@ -17,22 +17,26 @@ final ApiConfig _config;
 /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
 ///
 /// `GET /accounts/{account_id}/stream`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (status != null) queryParameters['status'] = status.toJson();
+if (creator != null) queryParameters['creator'] = creator.toString();
+if (type != null) queryParameters['type'] = type.toString();
+if (asc != null) queryParameters['asc'] = asc.toString();
+if (videoName != null) queryParameters['video_name'] = videoName.toString();
+if (search != null) queryParameters['search'] = search.toString();
+if (start != null) queryParameters['start'] = start.toString();
+if (end != null) queryParameters['end'] = end.toString();
+if (includeCounts != null) queryParameters['include_counts'] = includeCounts.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (status != null) 'status': status.toJson(),
-    if (creator != null) 'creator': creator.toString(),
-    if (type != null) 'type': type.toString(),
-    if (asc != null) 'asc': asc.toString(),
-    if (videoName != null) 'video_name': videoName.toString(),
-    if (search != null) 'search': search.toString(),
-    if (start != null) 'start': start.toString(),
-    if (end != null) 'end': end.toString(),
-    if (includeCounts != null) 'include_counts': includeCounts.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -47,18 +51,22 @@ return _execute(
 /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
 ///
 /// `POST /accounts/{account_id}/stream`
-Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, StreamDirectUser? directUser, required StreamTusResumable tusResumable, StreamCreator? uploadCreator, required StreamUploadLength uploadLength, StreamUploadMetadata? uploadMetadata, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, StreamDirectUser? directUser, required StreamTusResumable tusResumable, StreamCreator? uploadCreator, required StreamUploadLength uploadLength, StreamUploadMetadata? uploadMetadata, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (directUser != null) queryParameters['direct_user'] = directUser.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Tus-Resumable'] = tusResumable.toJson();
+if (uploadCreator != null) headers['Upload-Creator'] = uploadCreator.toString();
+headers['Upload-Length'] = uploadLength.toString();
+if (uploadMetadata != null) headers['Upload-Metadata'] = uploadMetadata.toString();
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream',
-  headers: {..._config.defaultHeaders
-    , 'Tus-Resumable': tusResumable.toJson()
-    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
-    , 'Upload-Length': uploadLength.toString()
-    , if (uploadMetadata != null) 'Upload-Metadata': uploadMetadata.toString()
-  },
-  queryParameters: {
-    if (directUser != null) 'direct_user': directUser.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -71,11 +79,12 @@ return _execute(
 /// Fetches details for a single video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -90,12 +99,13 @@ return _execute(
 /// Edit details for a single video.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +121,12 @@ return _execute(
 /// Deletes a video and its copies from Cloudflare Stream.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<void, Never>> streamVideosDeleteVideo({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamVideosDeleteVideo({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -128,11 +139,12 @@ return _execute(
 /// Fetches an HTML code snippet to embed a video in a web page delivered through Cloudflare. On success, returns an HTML fragment for use on web pages to display a video. On failure, returns a JSON response body.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/embed`
-Future<ApiResult<String, Never>> streamVideosRetreieveEmbedCodeHtml({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> streamVideosRetreieveEmbedCodeHtml({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/embed',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -147,12 +159,13 @@ return _execute(
 /// Creates a signed URL token for a video. If a body is not provided in the request, a token is created with default values.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/token`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/token',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -168,13 +181,14 @@ return _execute(
 /// Uploads a video to Stream from a provided URL.
 ///
 /// `POST /accounts/{account_id}/stream/copy`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamVideoCopyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamVideoCopyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+if (uploadCreator != null) headers['Upload-Creator'] = uploadCreator.toString();
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/copy',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -190,13 +204,14 @@ return _execute(
 /// Creates a direct upload that allows video uploads without an API key.
 ///
 /// `POST /accounts/{account_id}/stream/direct_upload`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamDirectUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamDirectUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+if (uploadCreator != null) headers['Upload-Creator'] = uploadCreator.toString();
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/direct_upload',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -212,14 +227,18 @@ return _execute(
 /// Returns information about an account's storage use.
 ///
 /// `GET /accounts/{account_id}/stream/storage-usage`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (creator != null) queryParameters['creator'] = creator.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/storage-usage',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (creator != null) 'creator': creator.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

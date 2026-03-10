@@ -15,18 +15,22 @@ final ApiConfig _config;
 /// List instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<AiSearchListInstancesResponse, AiSearchListInstancesResponse400>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchListInstancesResponse, AiSearchListInstancesResponse400>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (search != null) queryParameters['search'] = search;
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'search': ?search,
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (orderByDirection != null) 'order_by_direction': orderByDirection.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -44,12 +48,13 @@ return _execute(
 /// Create a new instances.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<AiSearchCreateInstancesResponse, AiSearchCreateInstancesResponse400>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchCreateInstancesResponse, AiSearchCreateInstancesResponse400>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -66,11 +71,12 @@ return _execute(
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchFetchInstancesResponse, AiSearchFetchInstancesResponse400>> aiSearchFetchInstances({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchFetchInstancesResponse, AiSearchFetchInstancesResponse400>> aiSearchFetchInstances({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -86,12 +92,13 @@ return _execute(
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchUpdateInstancesResponse, AiSearchUpdateInstancesResponse400>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchUpdateInstancesResponse, AiSearchUpdateInstancesResponse400>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -108,11 +115,12 @@ return _execute(
 /// Delete instances.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchDeleteInstancesResponse, AiSearchDeleteInstancesResponse404>> aiSearchDeleteInstances({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchDeleteInstancesResponse, AiSearchDeleteInstancesResponse404>> aiSearchDeleteInstances({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -130,12 +138,13 @@ return _execute(
 /// Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/chat/completions`
-Future<ApiResult<AiSearchInstanceChatCompletionResponse, AiSearchInstanceChatCompletionResponse404>> aiSearchInstanceChatCompletion({required String id, required String accountId, AiSearchInstanceChatCompletionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceChatCompletionResponse, AiSearchInstanceChatCompletionResponse404>> aiSearchInstanceChatCompletion({required String id, required String accountId, AiSearchInstanceChatCompletionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/chat/completions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -154,12 +163,13 @@ return _execute(
 /// Executes a semantic search query against an AI Search instance to find relevant indexed content.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/search`
-Future<ApiResult<AiSearchInstanceSearchResponse, AiSearchInstanceSearchResponse404>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchInstanceSearchResponse, AiSearchInstanceSearchResponse404>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/search',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -178,11 +188,12 @@ return _execute(
 /// Retrieves usage statistics for AI Search instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/stats`
-Future<ApiResult<AiSearchStatsResponse, AiSearchStatsResponse404>> aiSearchStats({required String id, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchStatsResponse, AiSearchStatsResponse404>> aiSearchStats({required String id, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/stats',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

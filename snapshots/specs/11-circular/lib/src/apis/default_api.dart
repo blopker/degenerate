@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List employees (A references B, B references A)
 ///
 /// `GET /employees`
-Future<ApiResult<List<Employee>, Never>> listEmployees() async  { final request = ApiRequest(
+Future<ApiResult<List<Employee>, Never>> listEmployees() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/employees',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -33,11 +34,12 @@ return _execute(
 /// List departments (B references A)
 ///
 /// `GET /departments`
-Future<ApiResult<List<Department>, Never>> listDepartments() async  { final request = ApiRequest(
+Future<ApiResult<List<Department>, Never>> listDepartments() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/departments',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -51,11 +53,12 @@ return _execute(
 /// List categories (self-referencing tree)
 ///
 /// `GET /categories`
-Future<ApiResult<List<Category>, Never>> listCategories() async  { final request = ApiRequest(
+Future<ApiResult<List<Category>, Never>> listCategories() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/categories',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -69,11 +72,12 @@ return _execute(
 /// Get filesystem tree (self-referencing with union)
 ///
 /// `GET /filesystem`
-Future<ApiResult<FileSystemNode, Never>> getFilesystem() async  { final request = ApiRequest(
+Future<ApiResult<FileSystemNode, Never>> getFilesystem() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/filesystem',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

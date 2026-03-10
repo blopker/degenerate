@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// List existing interconnects
 ///
 /// `GET /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required NscAccountTag accountId, String? site, String? type, int? cursor, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required NscAccountTag accountId, String? site, String? type, int? cursor, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (site != null) queryParameters['site'] = site;
+if (type != null) queryParameters['type'] = type;
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'site': ?site,
-    'type': ?type,
-    if (cursor != null) 'cursor': cursor.toString(),
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,12 +42,13 @@ return _execute(
 /// Create a new interconnect
 ///
 /// `POST /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnect, Never>> createInterconnect({required NscAccountTag accountId, required NscInterconnectCreate body, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnect, Never>> createInterconnect({required NscAccountTag accountId, required NscInterconnectCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +62,12 @@ return _execute(
 /// Get information about an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -74,11 +80,12 @@ return _execute(
 /// Delete an interconnect object
 ///
 /// `DELETE /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<void, Never>> deleteInterconnect({required String icon, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteInterconnect({required String icon, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -89,11 +96,12 @@ return _execute(
 /// Generate the Letter of Authorization (LOA) for a given interconnect
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/loa`
-Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}/loa',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -104,11 +112,12 @@ return _execute(
 /// Get the current status of an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/status`
-Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String icon, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String icon, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}/status',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns array of all GitHub's codes of conduct.
 ///
 /// `GET /codes_of_conduct`
-Future<ApiResult<List<CodeOfConduct>, Never>> codesOfConductGetAllCodesOfConduct() async  { final request = ApiRequest(
+Future<ApiResult<List<CodeOfConduct>, Never>> codesOfConductGetAllCodesOfConduct() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/codes_of_conduct',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -37,11 +38,12 @@ return _execute(
 /// Returns information about the specified GitHub code of conduct.
 ///
 /// `GET /codes_of_conduct/{key}`
-Future<ApiResult<CodeOfConduct, BasicError>> codesOfConductGetConductCode({required String key}) async  { final request = ApiRequest(
+Future<ApiResult<CodeOfConduct, BasicError>> codesOfConductGetConductCode({required String key}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/codes_of_conduct/${Uri.encodeComponent(key)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

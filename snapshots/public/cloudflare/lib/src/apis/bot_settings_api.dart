@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve a zone's Bot Management Config
 ///
 /// `GET /zones/{zone_id}/bot_management`
-Future<ApiResult<ResponseCommon9, Never>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon9, Never>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,12 +84,13 @@ return _execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/bot_management`
-Future<ApiResult<ResponseCommon9, Never>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingle body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon9, Never>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingle body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

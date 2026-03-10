@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a list of available placement regions organized by cloud provider. These regions can be used to configure Smart Placement for Workers.
 ///
 /// `GET /accounts/{account_id}/workers/placement/regions`
-Future<ApiResult<ResponseCommon80, Never>> workerPlacementListRegions({required WorkersIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerPlacementListRegions({required WorkersIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/placement/regions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

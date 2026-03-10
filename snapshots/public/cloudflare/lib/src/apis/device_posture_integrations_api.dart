@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches the list of device posture integrations for an account.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a new device posture integration.
 ///
 /// `POST /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches details for a single device posture integration.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured device posture integration.
 ///
 /// `PATCH /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete a configured device posture integration.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

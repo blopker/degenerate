@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all Access groups.
 ///
 /// `GET /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Access group.
 ///
 /// `POST /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a single Access group.
 ///
 /// `GET /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured Access group.
 ///
 /// `PUT /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes an Access group.
 ///
 /// `DELETE /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

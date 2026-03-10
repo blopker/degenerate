@@ -15,16 +15,24 @@ final ApiConfig _config;
 /// Lists all of the users in the organization.
 ///
 /// `GET /organization/users`
-Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, }) async  { final request = ApiRequest(
+Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (emails != null) {
+for (final item in emails) {
+  queryParametersList.add(ApiQueryParameter(name: 'emails', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/users',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (emails != null) 'emails': emails.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,11 +45,12 @@ return _execute(
 /// Retrieves a user by their identifier.
 ///
 /// `GET /organization/users/{user_id}`
-Future<ApiResult<User, Never>> retrieveUser({required String userId}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> retrieveUser({required String userId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/users/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -54,12 +63,13 @@ return _execute(
 /// Modifies a user's role in the organization.
 ///
 /// `POST /organization/users/{user_id}`
-Future<ApiResult<User, Never>> modifyUser({required String userId, required UserRoleUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> modifyUser({required String userId, required UserRoleUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/users/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -73,11 +83,12 @@ return _execute(
 /// Deletes a user from the organization.
 ///
 /// `DELETE /organization/users/{user_id}`
-Future<ApiResult<UserDeleteResponse, Never>> deleteUser({required String userId}) async  { final request = ApiRequest(
+Future<ApiResult<UserDeleteResponse, Never>> deleteUser({required String userId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/users/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

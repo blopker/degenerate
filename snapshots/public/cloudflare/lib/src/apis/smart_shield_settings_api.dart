@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve Smart Shield Settings.
 ///
 /// `GET /zones/{zone_id}/smart_shield`
-Future<ApiResult<ResponseCommon62, ResponseCommonFailure65>> smartShieldGetSettings({required SmartshieldIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, ResponseCommonFailure65>> smartShieldGetSettings({required SmartshieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -39,12 +40,13 @@ return _execute(
 /// Set Smart Shield Settings.
 ///
 /// `PATCH /zones/{zone_id}/smart_shield`
-Future<ApiResult<ResponseCommon62, ResponseCommonFailure65>> smartShieldPatchSettings({required SmartshieldIdentifier zoneId, required SmartshieldSmartShieldSettingsPatchBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, ResponseCommonFailure65>> smartShieldPatchSettings({required SmartshieldIdentifier zoneId, required SmartshieldSmartShieldSettingsPatchBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

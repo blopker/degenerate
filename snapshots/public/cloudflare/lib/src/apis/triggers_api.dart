@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Create a new CI/CD trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers`
-Future<ApiResult<Response, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -38,12 +39,13 @@ return _execute(
 /// Update an existing CI/CD trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,11 +64,12 @@ return _execute(
 /// Remove a CI/CD trigger
 ///
 /// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -84,12 +87,13 @@ return _execute(
 /// Trigger a manual build for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/builds`
-Future<ApiResult<Response, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/builds',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -105,11 +109,12 @@ return _execute(
 /// Clear the build cache for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache`
-Future<ApiResult<Response, BuildsErrorResponse>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/purge_build_cache',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

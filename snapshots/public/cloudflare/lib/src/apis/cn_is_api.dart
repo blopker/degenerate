@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// List existing CNI objects
 ///
 /// `GET /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (slot != null) queryParameters['slot'] = slot;
+if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId;
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'slot': ?slot,
-    'tunnel_id': ?tunnelId,
-    if (cursor != null) 'cursor': cursor.toString(),
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,12 +42,13 @@ return _execute(
 /// Create a new CNI object
 ///
 /// `POST /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, }) async  { final request = ApiRequest(
+Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +62,12 @@ return _execute(
 /// Get information about a CNI object
 ///
 /// `GET /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -74,12 +80,13 @@ return _execute(
 /// Modify stored information about a CNI object
 ///
 /// `PUT /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, }) async  { final request = ApiRequest(
+Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -93,11 +100,12 @@ return _execute(
 /// Delete a specified CNI object
 ///
 /// `DELETE /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

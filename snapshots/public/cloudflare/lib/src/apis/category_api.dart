@@ -15,14 +15,22 @@ final ApiConfig _config;
 /// Lists categories across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories`
-Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListResponse400>> getCategoryList({required String accountId, List<String>? datasetIds, }) async  { final request = ApiRequest(
+Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListResponse400>> getCategoryList({required String accountId, List<String>? datasetIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (datasetIds != null) {
+for (final item in datasetIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (datasetIds != null) 'datasetIds': datasetIds.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,11 +47,12 @@ return _execute(
 /// Reads a category
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<GetCategoryReadResponse, GetCategoryReadResponse400>> getCategoryRead({required String accountId, required String categoryId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCategoryReadResponse, GetCategoryReadResponse400>> getCategoryRead({required String accountId, required String categoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/${Uri.encodeComponent(categoryId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -59,12 +68,13 @@ return _execute(
 /// Updates a category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateResponse400>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateResponse400>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/${Uri.encodeComponent(categoryId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -81,12 +91,13 @@ return _execute(
 /// Updates a category
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateResponse400>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateResponse400>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/${Uri.encodeComponent(categoryId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -103,11 +114,12 @@ return _execute(
 /// Deletes a category
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteResponse400>> deleteCategoryDelete({required String accountId, required String categoryId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteResponse400>> deleteCategoryDelete({required String accountId, required String categoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/${Uri.encodeComponent(categoryId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -123,11 +135,12 @@ return _execute(
 /// Lists categories
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/catalog`
-Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteResponse400>> getCategoryListComplete({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteResponse400>> getCategoryListComplete({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/catalog',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -144,12 +157,13 @@ return _execute(
 /// Creates a new category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/create`
-Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateResponse400>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateResponse400>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/categories/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -168,11 +182,12 @@ return _execute(
 /// Get all application categories.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories`
-Future<ApiResult<ResponseCommon5, Never>> getCategories({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> getCategories({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/categories',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -187,11 +202,12 @@ return _execute(
 /// Get application category by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories/{id}`
-Future<ApiResult<ResponseCommon5, Never>> getCategoryById({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon5, Never>> getCategoryById({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/categories/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

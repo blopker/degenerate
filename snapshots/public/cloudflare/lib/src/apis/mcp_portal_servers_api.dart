@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// List MCP Servers
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<ListServersResponse, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<ListServersResponse, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'search': ?search,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Create a new MCP Server
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<CreateServersResponse, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreateServersResponse, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -62,11 +67,12 @@ return _execute(
 /// Read the details of a MCP Server
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<FetchServersResponse, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<FetchServersResponse, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -82,12 +88,13 @@ return _execute(
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<UpdateServersResponse, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<UpdateServersResponse, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -104,11 +111,12 @@ return _execute(
 /// Delete a MCP Server
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<DeleteServersResponse, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteServersResponse, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -124,11 +132,12 @@ return _execute(
 /// Sync MCP Server Capabilities
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync`
-Future<ApiResult<SyncServerResponse, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<SyncServerResponse, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/access/ai-controls/mcp/servers/${Uri.encodeComponent(id)}/sync',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

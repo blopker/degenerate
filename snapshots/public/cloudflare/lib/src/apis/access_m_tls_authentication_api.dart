@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists all mTLS root certificates.
 ///
 /// `GET /accounts/{account_id}/access/certificates`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /accounts/{account_id}/access/certificates`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier accountId, required AccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier accountId, required AccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -101,11 +108,12 @@ return _execute(
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -120,11 +128,12 @@ return _execute(
 /// List all mTLS hostname settings for this account.
 ///
 /// `GET /accounts/{account_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -139,12 +148,13 @@ return _execute(
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /accounts/{account_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

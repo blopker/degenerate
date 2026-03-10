@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all of a user's subscriptions.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<ResponseCommon8, Never>> userSubscriptionGetUserSubscriptions() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> userSubscriptionGetUserSubscriptions() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates a user's subscriptions.
 ///
 /// `PUT /user/subscriptions/{identifier}`
-Future<ApiResult<ResponseCommon8, Never>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Subscription2 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Subscription2 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/subscriptions/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Deletes a user's subscription.
 ///
 /// `DELETE /user/subscriptions/{identifier}`
-Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, Never>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier}) async  { final request = ApiRequest(
+Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, Never>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/subscriptions/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

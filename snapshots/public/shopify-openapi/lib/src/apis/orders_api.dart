@@ -17,19 +17,23 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,19 +46,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -67,19 +75,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -92,19 +104,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/count.json`
-Future<ApiResult<void, Never>> getCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -117,19 +133,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -142,19 +162,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/checkouts/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -167,27 +191,31 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (ids != null) queryParameters['ids'] = ids;
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
+if (status != null) queryParameters['status'] = status;
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ids': ?ids,
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'attribution_app_id': ?attributionAppId,
-    'status': ?status,
-    'financial_status': ?financialStatus,
-    'fulfillment_status': ?fulfillmentStatus,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -223,12 +251,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrders({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrders({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -242,14 +271,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -262,12 +295,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -281,11 +315,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderId({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -298,20 +333,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-    'financial_status': ?financialStatus,
-    'fulfillment_status': ?fulfillmentStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -324,12 +363,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/close.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -343,12 +383,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/open.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -365,20 +406,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (amount != null) queryParameters['amount'] = amount;
+if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (reason != null) queryParameters['reason'] = reason;
+if (email != null) queryParameters['email'] = email;
+if (refund != null) queryParameters['refund'] = refund;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/cancel.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'amount': ?amount,
-    'currency': ?currency,
-    'restock deprecated': ?restockDeprecated,
-    'reason': ?reason,
-    'email': ?email,
-    'refund': ?refund,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -392,27 +437,31 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (ids != null) queryParameters['ids'] = ids;
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
+if (status != null) queryParameters['status'] = status;
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ids': ?ids,
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'attribution_app_id': ?attributionAppId,
-    'status': ?status,
-    'financial_status': ?financialStatus,
-    'fulfillment_status': ?fulfillmentStatus,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -448,12 +497,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrders({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrders({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -467,14 +517,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -487,12 +541,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderId({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -506,11 +561,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderId({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderId({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -523,20 +579,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? status, String? financialStatus, String? fulfillmentStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (status != null) queryParameters['status'] = status;
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'status': ?status,
-    'financial_status': ?financialStatus,
-    'fulfillment_status': ?fulfillmentStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -549,12 +609,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/close.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -568,12 +629,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/open.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -590,20 +652,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, String? amount, String? currency, String? restockDeprecated, String? reason, String? email, String? refund, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (amount != null) queryParameters['amount'] = amount;
+if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (reason != null) queryParameters['reason'] = reason;
+if (email != null) queryParameters['email'] = email;
+if (refund != null) queryParameters['refund'] = refund;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/cancel.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'amount': ?amount,
-    'currency': ?currency,
-    'restock deprecated': ?restockDeprecated,
-    'reason': ?reason,
-    'email': ?email,
-    'refund': ?refund,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -617,27 +683,31 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrders({String? ids, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? processedAtMin, String? processedAtMax, String? attributionAppId, String? status, String? financialStatus, String? fulfillmentStatus, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (ids != null) queryParameters['ids'] = ids;
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
+if (status != null) queryParameters['status'] = status;
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ids': ?ids,
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'attribution_app_id': ?attributionAppId,
-    'status': ?status,
-    'financial_status': ?financialStatus,
-    'fulfillment_status': ?fulfillmentStatus,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -650,11 +720,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -667,12 +738,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -686,11 +758,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -707,12 +780,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -730,11 +804,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -747,11 +822,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -764,12 +840,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -783,11 +860,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -804,12 +882,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -827,11 +906,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -844,11 +924,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -861,12 +942,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -880,11 +962,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -901,12 +984,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -924,11 +1008,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -941,11 +1026,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -958,12 +1044,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -977,11 +1064,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -998,12 +1086,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1021,11 +1110,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1038,11 +1128,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1055,12 +1146,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1074,11 +1166,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1095,12 +1188,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1118,11 +1212,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1135,11 +1230,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1152,12 +1248,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1171,11 +1268,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1192,12 +1290,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-unstable
 ///
 /// `PUT /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1215,11 +1314,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/risks/${Uri.encodeComponent(riskId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1232,16 +1332,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1261,22 +1365,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1290,15 +1398,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1320,17 +1432,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1344,16 +1460,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1373,22 +1493,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1402,15 +1526,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1432,17 +1560,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1456,16 +1588,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1485,22 +1621,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1514,15 +1654,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1544,17 +1688,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1568,16 +1716,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1597,22 +1749,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1626,15 +1782,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1656,17 +1816,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1680,16 +1844,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1709,22 +1877,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1738,15 +1910,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1768,17 +1944,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1792,16 +1972,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, String? limit, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1821,22 +2005,26 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, String? restockDeprecated, String? notify, String? note, String? discrepancyReason, String? shipping, String? refundLineItems, String? transactions, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
+if (notify != null) queryParameters['notify'] = notify;
+if (note != null) queryParameters['note'] = note;
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (transactions != null) queryParameters['transactions'] = transactions;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'restock deprecated': ?restockDeprecated,
-    'notify': ?notify,
-    'note': ?note,
-    'discrepancy_reason': ?discrepancyReason,
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'transactions': ?transactions,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1850,15 +2038,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, String? fields, String? inShopCurrency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds/${Uri.encodeComponent(refundId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'in_shop_currency': ?inShopCurrency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1880,17 +2072,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, String? shipping, String? refundLineItems, String? currency, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (shipping != null) queryParameters['shipping'] = shipping;
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
+if (currency != null) queryParameters['currency'] = currency;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/orders/${Uri.encodeComponent(orderId)}/refunds/calculate.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'shipping': ?shipping,
-    'refund_line_items': ?refundLineItems,
-    'currency': ?currency,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Analyze repository for automatic configuration detection
 ///
 /// `GET /accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill`
-Future<ApiResult<Response, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['branch'] = branch.toString();
+if (rootDirectory != null) queryParameters['root_directory'] = rootDirectory.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/${Uri.encodeComponent(providerType.toString())}/${Uri.encodeComponent(providerAccountId.toString())}/${Uri.encodeComponent(repoId.toString())}/config_autofill',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'branch': branch.toString(),
-    if (rootDirectory != null) 'root_directory': rootDirectory.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

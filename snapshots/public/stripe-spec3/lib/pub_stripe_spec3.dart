@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_stripe_spec3_api.dart';
+export 'src/client/pub_stripe_spec3_security.dart';
 
 export 'src/models/account.dart';
 export 'src/models/account_annual_revenue.dart';

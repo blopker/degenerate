@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Posts a file to Binary Storage
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/binary`
-Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/binary',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PostBinDbPostRequest');,
 );
 
@@ -37,11 +38,12 @@ return _execute(
 /// Retrieves a file from Binary Storage
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/binary/{hash}`
-Future<ApiResult<void, GetBinDbGetBinaryResponse400>> getBinDbGetBinary({required double accountId, required String hash, }) async  { final request = ApiRequest(
+Future<ApiResult<void, GetBinDbGetBinaryResponse400>> getBinDbGetBinary({required double accountId, required String hash, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/binary/${Uri.encodeComponent(hash)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

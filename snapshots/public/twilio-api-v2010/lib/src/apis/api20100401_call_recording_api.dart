@@ -15,19 +15,23 @@ final ApiConfig _config;
 /// Retrieve a list of recordings belonging to the call used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
-Future<ApiResult<ListCallRecordingResponse, Never>> listCallRecording({required String accountSid, required String callSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCallRecordingResponse, Never>> listCallRecording({required String accountSid, required String callSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
+if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
+if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'DateCreated': ?dateCreated,
-    'DateCreated<': ?dateCreatedBefore,
-    'DateCreated>': ?dateCreatedAfter,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Create a recording for the call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
-Future<ApiResult<AccountCallCallRecording, Never>> createCallRecording({required String accountSid, required String callSid, CreateCallRecordingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallCallRecording, Never>> createCallRecording({required String accountSid, required String callSid, CreateCallRecordingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateCallRecordingRequest');,
 );
 
@@ -59,11 +64,12 @@ return _execute(
 /// Fetch an instance of a recording for a call
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountCallCallRecording, Never>> fetchCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallCallRecording, Never>> fetchCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +82,13 @@ return _execute(
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: Pass `Twilio.CURRENT` instead of recording sid to reference current active recording.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingResponse408>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingResponse408>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateCallRecordingRequest');,
 );
 
@@ -98,11 +105,12 @@ return _execute(
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

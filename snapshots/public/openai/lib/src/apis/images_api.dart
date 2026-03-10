@@ -23,12 +23,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /images/edits`
-Future<ApiResult<ImagesResponse, Never>> createImageEdit({required EditImageBodyJsonParam body}) async  { final request = ApiRequest(
+Future<ApiResult<ImagesResponse, Never>> createImageEdit({required EditImageBodyJsonParam body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/images/edits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -43,12 +44,13 @@ return _execute(
 /// 
 ///
 /// `POST /images/generations`
-Future<ApiResult<ImagesResponse, Never>> createImage({required CreateImageRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ImagesResponse, Never>> createImage({required CreateImageRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/images/generations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,12 +64,13 @@ return _execute(
 /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
 ///
 /// `POST /images/variations`
-Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/images/variations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateImageVariationRequest');,
 );
 

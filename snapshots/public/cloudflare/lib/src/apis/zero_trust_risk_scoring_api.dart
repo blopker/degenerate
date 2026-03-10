@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get risk event/score information for a specific user
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/{user_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Clear the risk score for a particular user
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/{user_id}/reset`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreResetPost({required String accountId, required String userId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreResetPost({required String accountId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}/reset',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -49,11 +51,12 @@ return _execute(
 /// Get all behaviors and associated configuration
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsGet({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,12 +69,13 @@ return _execute(
 /// Update configuration for risk behaviors
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -85,11 +89,12 @@ return _execute(
 /// Get risk score info for all users in the account
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/summary`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGet({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/summary',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

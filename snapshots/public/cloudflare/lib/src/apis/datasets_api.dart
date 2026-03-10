@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Populate dataset-specific lookup tables from existing Events data with batch processing
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/datasets/populate`
-Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/datasets/populate',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

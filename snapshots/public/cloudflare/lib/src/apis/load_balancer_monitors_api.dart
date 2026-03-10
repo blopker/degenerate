@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List configured monitors for a user.
 ///
 /// `GET /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitors() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a configured monitor.
 ///
 /// `POST /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/monitors',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// List a single configured monitor for a user.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Modify a configured monitor.
 ///
 /// `PUT /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,12 +101,13 @@ return _execute(
 /// Apply changes to an existing monitor, overwriting the supplied properties.
 ///
 /// `PATCH /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -118,11 +123,12 @@ return _execute(
 /// Delete a configured monitor.
 ///
 /// `DELETE /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -137,12 +143,13 @@ return _execute(
 /// Preview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /user/load_balancers/monitors/{monitor_id}/preview`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/preview',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -158,11 +165,12 @@ return _execute(
 /// Get the list of resources that reference the provided monitor.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}/references`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/references',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -177,11 +185,12 @@ return _execute(
 /// Get the result of a previous preview operation using the provided preview_id.
 ///
 /// `GET /user/load_balancers/preview/{preview_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewResult({required LoadBalancingPreviewId previewId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewResult({required LoadBalancingPreviewId previewId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancers/preview/${Uri.encodeComponent(previewId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

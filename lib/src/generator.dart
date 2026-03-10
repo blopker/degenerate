@@ -13,7 +13,6 @@ class GeneratorConfig {
   final String inputPath;
   final String outputDir;
   final String? packageName;
-  final String client; // 'http', 'none'
   final bool includeDeprecated;
   final bool verbose;
   final bool dryRun;
@@ -39,7 +38,6 @@ class GeneratorConfig {
     required this.inputPath,
     this.outputDir = 'lib/src/generated',
     this.packageName,
-    this.client = 'http',
     this.includeDeprecated = false,
     this.verbose = false,
     this.dryRun = false,

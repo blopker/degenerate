@@ -21,24 +21,28 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` or `repo`s cope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /orgs/{org}/code-scanning/alerts`
-Future<ApiResult<List<CodeScanningOrganizationAlertItems>, BasicError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CodeScanningOrganizationAlertItems>, BasicError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (toolName != null) queryParameters['tool_name'] = toolName.toString();
+if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (severity != null) queryParameters['severity'] = severity.toJson();
+if (assignees != null) queryParameters['assignees'] = assignees;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/code-scanning/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (toolName != null) 'tool_name': toolName.toString(),
-    if (toolGuid != null) 'tool_guid': toolGuid.toString(),
-    'before': ?before,
-    'after': ?after,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (state != null) 'state': state.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (severity != null) 'severity': severity.toJson(),
-    'assignees': ?assignees,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -63,26 +67,30 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts`
-Future<ApiResult<List<CodeScanningAlertItems>, BasicError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CodeScanningAlertItems>, BasicError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (toolName != null) queryParameters['tool_name'] = toolName.toString();
+if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (ref != null) queryParameters['ref'] = ref.toString();
+if (pr != null) queryParameters['pr'] = pr.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (state != null) queryParameters['state'] = state.toJson();
+if (severity != null) queryParameters['severity'] = severity.toJson();
+if (assignees != null) queryParameters['assignees'] = assignees;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (toolName != null) 'tool_name': toolName.toString(),
-    if (toolGuid != null) 'tool_guid': toolGuid.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (ref != null) 'ref': ref.toString(),
-    if (pr != null) 'pr': pr.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-    'before': ?before,
-    'after': ?after,
-    if (sort != null) 'sort': sort.toJson(),
-    if (state != null) 'state': state.toJson(),
-    if (severity != null) 'severity': severity.toJson(),
-    'assignees': ?assignees,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -103,11 +111,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}`
-Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -126,12 +135,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}`
-Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required CodeScanningUpdateAlertRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required CodeScanningUpdateAlertRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -152,11 +162,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix`
-Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningGetAutofix({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningGetAutofix({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -180,11 +191,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix`
-Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningCreateAutofix({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningCreateAutofix({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -206,12 +218,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits`
-Future<ApiResult<CodeScanningAutofixCommitsResponse, BasicError>> codeScanningCommitAutofix({required String owner, required String repo, required AlertNumber alertNumber, CodeScanningAutofixCommits? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAutofixCommitsResponse, BasicError>> codeScanningCommitAutofix({required String owner, required String repo, required AlertNumber alertNumber, CodeScanningAutofixCommits? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix/commits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -232,17 +245,21 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances`
-Future<ApiResult<List<CodeScanningAlertInstanceList>, BasicError>> codeScanningListAlertInstances({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, CodeScanningRef? ref, int? pr, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CodeScanningAlertInstanceList>, BasicError>> codeScanningListAlertInstances({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, CodeScanningRef? ref, int? pr, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (ref != null) queryParameters['ref'] = ref.toString();
+if (pr != null) queryParameters['pr'] = pr.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/instances',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (ref != null) 'ref': ref.toString(),
-    if (pr != null) 'pr': pr.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -275,22 +292,26 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/analyses`
-Future<ApiResult<List<CodeScanningAnalysis>, BasicError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CodeScanningAnalysis>, BasicError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (toolName != null) queryParameters['tool_name'] = toolName.toString();
+if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pr != null) queryParameters['pr'] = pr.toString();
+if (ref != null) queryParameters['ref'] = ref.toString();
+if (sarifId != null) queryParameters['sarif_id'] = sarifId.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/analyses',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (toolName != null) 'tool_name': toolName.toString(),
-    if (toolGuid != null) 'tool_guid': toolGuid.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (pr != null) 'pr': pr.toString(),
-    if (ref != null) 'ref': ref.toString(),
-    if (sarifId != null) 'sarif_id': sarifId.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -325,11 +346,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}`
-Future<ApiResult<CodeScanningAnalysis, BasicError>> codeScanningGetAnalysis({required String owner, required String repo, required int analysisId, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAnalysis, BasicError>> codeScanningGetAnalysis({required String owner, required String repo, required int analysisId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/analyses/${Uri.encodeComponent(analysisId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -410,14 +432,18 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}`
-Future<ApiResult<CodeScanningAnalysisDeletion, BasicError>> codeScanningDeleteAnalysis({required String owner, required String repo, required int analysisId, String? confirmDelete, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningAnalysisDeletion, BasicError>> codeScanningDeleteAnalysis({required String owner, required String repo, required int analysisId, String? confirmDelete, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (confirmDelete != null) queryParameters['confirm_delete'] = confirmDelete;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/analyses/${Uri.encodeComponent(analysisId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'confirm_delete': ?confirmDelete,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -437,11 +463,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/databases`
-Future<ApiResult<List<CodeScanningCodeqlDatabase>, BasicError>> codeScanningListCodeqlDatabases({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CodeScanningCodeqlDatabase>, BasicError>> codeScanningListCodeqlDatabases({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/databases',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -468,11 +495,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}`
-Future<ApiResult<CodeScanningCodeqlDatabase, BasicError>> codeScanningGetCodeqlDatabase({required String owner, required String repo, required String language, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningCodeqlDatabase, BasicError>> codeScanningGetCodeqlDatabase({required String owner, required String repo, required String language, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/databases/${Uri.encodeComponent(language)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -492,11 +520,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}`
-Future<ApiResult<void, BasicError>> codeScanningDeleteCodeqlDatabase({required String owner, required String repo, required String language, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> codeScanningDeleteCodeqlDatabase({required String owner, required String repo, required String language, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/databases/${Uri.encodeComponent(language)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -519,12 +548,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses`
-Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningCreateVariantAnalysis({required String owner, required String repo, required CodeScanningCreateVariantAnalysisRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningCreateVariantAnalysis({required String owner, required String repo, required CodeScanningCreateVariantAnalysisRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/variant-analyses',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -545,11 +575,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}`
-Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningGetVariantAnalysis({required String owner, required String repo, required int codeqlVariantAnalysisId, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningGetVariantAnalysis({required String owner, required String repo, required int codeqlVariantAnalysisId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/variant-analyses/${Uri.encodeComponent(codeqlVariantAnalysisId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -569,11 +600,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}`
-Future<ApiResult<CodeScanningVariantAnalysisRepoTask, BasicError>> codeScanningGetVariantAnalysisRepoTask({required String owner, required String repo, required int codeqlVariantAnalysisId, required String repoOwner, required String repoName, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningVariantAnalysisRepoTask, BasicError>> codeScanningGetVariantAnalysisRepoTask({required String owner, required String repo, required int codeqlVariantAnalysisId, required String repoOwner, required String repoName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/codeql/variant-analyses/${Uri.encodeComponent(codeqlVariantAnalysisId.toString())}/repos/${Uri.encodeComponent(repoOwner)}/${Uri.encodeComponent(repoName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -593,11 +625,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/default-setup`
-Future<ApiResult<CodeScanningDefaultSetup, BasicError>> codeScanningGetDefaultSetup({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningDefaultSetup, BasicError>> codeScanningGetDefaultSetup({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/default-setup',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -617,12 +650,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `PATCH /repos/{owner}/{repo}/code-scanning/default-setup`
-Future<ApiResult<EmptyObject, BasicError>> codeScanningUpdateDefaultSetup({required String owner, required String repo, required CodeScanningDefaultSetupUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<EmptyObject, BasicError>> codeScanningUpdateDefaultSetup({required String owner, required String repo, required CodeScanningDefaultSetupUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/default-setup',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -674,12 +708,13 @@ return _execute(
 /// This endpoint is limited to 1,000 requests per hour for each user or app installation calling it.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/sarifs`
-Future<ApiResult<CodeScanningSarifsReceipt, BasicError>> codeScanningUploadSarif({required String owner, required String repo, required CodeScanningUploadSarifRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningSarifsReceipt, BasicError>> codeScanningUploadSarif({required String owner, required String repo, required CodeScanningUploadSarifRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/sarifs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -699,11 +734,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}`
-Future<ApiResult<CodeScanningSarifsStatus, BasicError>> codeScanningGetSarif({required String owner, required String repo, required String sarifId, }) async  { final request = ApiRequest(
+Future<ApiResult<CodeScanningSarifsStatus, BasicError>> codeScanningGetSarif({required String owner, required String repo, required String sarifId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/sarifs/${Uri.encodeComponent(sarifId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

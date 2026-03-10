@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// Returns a list of files.
 ///
 /// `GET /files`
-Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (purpose != null) queryParameters['purpose'] = purpose;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/files',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'purpose': ?purpose,
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -55,12 +59,13 @@ return _execute(
 /// 
 ///
 /// `POST /files`
-Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/files',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from CreateFileRequest');,
 );
 
@@ -74,11 +79,12 @@ return _execute(
 /// Returns information about a specific file.
 ///
 /// `GET /files/{file_id}`
-Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -91,11 +97,12 @@ return _execute(
 /// Delete a file and remove it from all vector stores.
 ///
 /// `DELETE /files/{file_id}`
-Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/files/${Uri.encodeComponent(fileId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -108,11 +115,12 @@ return _execute(
 /// Returns the contents of the specified file.
 ///
 /// `GET /files/{file_id}/content`
-Future<ApiResult<String, Never>> downloadFile({required String fileId}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> downloadFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}/content',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

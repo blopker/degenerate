@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/spec_05_components_and_references_api.dart';
+export 'src/client/spec_05_components_and_references_security.dart';
 
 export 'src/models/error_model.dart';
 export 'src/models/user.dart';

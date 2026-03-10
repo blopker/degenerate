@@ -18,12 +18,13 @@ final ApiConfig _config;
 /// This is needed for our generated terraform API.
 ///
 /// `POST /accounts/{account_id}/dlp/entries/predefined`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreatePredefinedEntry({required String accountId, required DlpNewPredefinedEntry body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreatePredefinedEntry({required String accountId, required DlpNewPredefinedEntry body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/predefined',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -39,11 +40,12 @@ return _execute(
 /// This is a no-op as predefined entires can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/predefined/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeletePredefinedEntry({required String accountId, required String entryId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeletePredefinedEntry({required String accountId, required String entryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/predefined/${Uri.encodeComponent(entryId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

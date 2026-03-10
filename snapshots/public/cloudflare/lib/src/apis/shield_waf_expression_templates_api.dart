@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
 ///
 /// `POST /zones/{zone_id}/api_gateway/expression-template/fallthrough`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/expression-template/fallthrough',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

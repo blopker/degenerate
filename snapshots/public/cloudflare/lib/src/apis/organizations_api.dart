@@ -17,24 +17,32 @@ final ApiConfig _config;
 /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations`
-Future<ApiResult<OrganizationListOrganizationsResponse, Never>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationListOrganizationsResponse, Never>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) {
+queryParameters['id'] = id.map((item) => item.toJson()).join(',');
+}
+if (name != null) queryParameters['name'] = name;
+if (nameStartsWith != null) queryParameters['name.startsWith'] = nameStartsWith;
+if (nameEndsWith != null) queryParameters['name.endsWith'] = nameEndsWith;
+if (nameContains != null) queryParameters['name.contains'] = nameContains;
+if (containingAccount != null) queryParameters['containing.account'] = containingAccount;
+if (containingUser != null) queryParameters['containing.user'] = containingUser;
+if (containingOrganization != null) queryParameters['containing.organization'] = containingOrganization;
+if (parentId != null) {
+queryParametersList.add(ApiQueryParameter(name: 'parent.id', value: parentId.toString(), allowReserved: false));
+}
+if (pageToken != null) queryParameters['page_token'] = pageToken;
+if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (id != null) 'id': id.toString(),
-    'name': ?name,
-    'name.startsWith': ?nameStartsWith,
-    'name.endsWith': ?nameEndsWith,
-    'name.contains': ?nameContains,
-    'containing.account': ?containingAccount,
-    'containing.user': ?containingUser,
-    'containing.organization': ?containingOrganization,
-    if (parentId != null) 'parent.id': parentId.toString(),
-    'page_token': ?pageToken,
-    if (pageSize != null) 'page_size': pageSize.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -49,12 +57,13 @@ return _execute(
 /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations`
-Future<ApiResult<OrganizationsCreateUserOrganizationResponse, Never>> organizationsCreateUserOrganization({required Organization body}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsCreateUserOrganizationResponse, Never>> organizationsCreateUserOrganization({required Organization body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organizations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -70,11 +79,12 @@ return _execute(
 /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}`
-Future<ApiResult<OrganizationsRetrieveResponse, Never>> organizationsRetrieve({required OrganizationId organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsRetrieveResponse, Never>> organizationsRetrieve({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -89,12 +99,13 @@ return _execute(
 /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}`
-Future<ApiResult<OrganizationsModifyResponse, Never>> organizationsModify({required OrganizationId organizationId, required Organization body, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsModifyResponse, Never>> organizationsModify({required OrganizationId organizationId, required Organization body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +122,12 @@ return _execute(
 /// It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}`
-Future<ApiResult<OrganizationsDeleteResponse, Never>> organizationsDelete({required OrganizationId organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsDeleteResponse, Never>> organizationsDelete({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -130,23 +142,27 @@ return _execute(
 /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/accounts`
-Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (accountPubname != null) queryParameters['account_pubname'] = accountPubname;
+if (accountPubnameStartsWith != null) queryParameters['account_pubname.startsWith'] = accountPubnameStartsWith;
+if (accountPubnameEndsWith != null) queryParameters['account_pubname.endsWith'] = accountPubnameEndsWith;
+if (accountPubnameContains != null) queryParameters['account_pubname.contains'] = accountPubnameContains;
+if (name != null) queryParameters['name'] = name;
+if (nameStartsWith != null) queryParameters['name.startsWith'] = nameStartsWith;
+if (nameEndsWith != null) queryParameters['name.endsWith'] = nameEndsWith;
+if (nameContains != null) queryParameters['name.contains'] = nameContains;
+if (pageToken != null) queryParameters['page_token'] = pageToken;
+if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'account_pubname': ?accountPubname,
-    'account_pubname.startsWith': ?accountPubnameStartsWith,
-    'account_pubname.endsWith': ?accountPubnameEndsWith,
-    'account_pubname.contains': ?accountPubnameContains,
-    'name': ?name,
-    'name.startsWith': ?nameStartsWith,
-    'name.endsWith': ?nameEndsWith,
-    'name.contains': ?nameContains,
-    'page_token': ?pageToken,
-    if (pageSize != null) 'page_size': pageSize.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -161,11 +177,12 @@ return _execute(
 /// Get an organizations profile if it exists. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/profile`
-Future<ApiResult<ProfileResponse, Never>> organizationsGetProfile({required OrganizationId organizationId}) async  { final request = ApiRequest(
+Future<ApiResult<ProfileResponse, Never>> organizationsGetProfile({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -180,12 +197,13 @@ return _execute(
 /// Modify organization profile. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}/profile`
-Future<ApiResult<void, Never>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

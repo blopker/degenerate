@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Lists the live inputs created for an account. To get the credentials needed to stream to a specific live input, request a single live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (includeCounts != null) queryParameters['include_counts'] = includeCounts.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (includeCounts != null) 'include_counts': includeCounts.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Creates a live input, and returns credentials that you or your users can use to stream live video to Cloudflare Stream.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,11 +65,12 @@ return _execute(
 /// Retrieves details of an existing live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -79,12 +85,13 @@ return _execute(
 /// Updates a specified live input.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -100,11 +107,12 @@ return _execute(
 /// Prevents a live input from being streamed to and makes the live input inaccessible to any future API calls.
 ///
 /// `DELETE /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<void, Never>> streamLiveInputsDeleteALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamLiveInputsDeleteALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -117,11 +125,12 @@ return _execute(
 /// Prevents a live input from being streamed to and makes the live input inaccessible to any future API calls until enabled.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/disable`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/disable',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -136,11 +145,12 @@ return _execute(
 /// Allows a live input to be streamed to and makes the live input accessible to any future API calls.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/enable`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/enable',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -155,11 +165,12 @@ return _execute(
 /// Retrieves all outputs associated with a specified live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -174,12 +185,13 @@ return _execute(
 /// Creates a new output that can be used to simulcast or restream live video to other RTMP or SRT destinations. Outputs are always linked to a specific live input — one live input can have many outputs.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -195,12 +207,13 @@ return _execute(
 /// Updates the state of an output.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs/${Uri.encodeComponent(outputIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -216,11 +229,12 @@ return _execute(
 /// Deletes an output and removes it from the associated live input.
 ///
 /// `DELETE /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}`
-Future<ApiResult<void, Never>> streamLiveInputsDeleteAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> streamLiveInputsDeleteAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs/${Uri.encodeComponent(outputIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

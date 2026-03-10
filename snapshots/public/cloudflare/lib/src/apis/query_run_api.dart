@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Run a temporary or saved query.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/query`
-Future<ApiResult<TelemetryQueryResponse, TelemetryQueryResponse400>> telemetryQuery({required String accountId, required TelemetryQueryRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TelemetryQueryResponse, TelemetryQueryResponse400>> telemetryQuery({required String accountId, required TelemetryQueryRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/telemetry/query',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

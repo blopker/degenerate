@@ -29,12 +29,13 @@ final ApiConfig _config;
 /// > Any authenticated requests will return a 403.
 ///
 /// `POST /credentials/revoke`
-Future<ApiResult<Map<String, String>, ValidationErrorSimple>> credentialsRevoke({required CredentialsRevokeRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, ValidationErrorSimple>> credentialsRevoke({required CredentialsRevokeRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/credentials/revoke',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

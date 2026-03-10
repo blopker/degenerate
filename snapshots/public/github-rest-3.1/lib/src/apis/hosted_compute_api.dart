@@ -19,15 +19,19 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations`
-Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -44,12 +48,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/settings/network-configurations`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -67,11 +72,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -88,12 +94,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +118,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<void, Never>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -130,11 +138,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-settings/{network_settings_id}`
-Future<ApiResult<NetworkSettings, Never>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, }) async  { final request = ApiRequest(
+Future<ApiResult<NetworkSettings, Never>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/network-settings/${Uri.encodeComponent(networkSettingsId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

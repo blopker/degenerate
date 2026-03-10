@@ -14,11 +14,12 @@ final ApiConfig _config;
 
 ///
 /// `GET /ping`
-Future<ApiResult<void, Never>> ping() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> ping() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/ping',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

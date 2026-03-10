@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a Workers subdomain for an account.
 ///
 /// `GET /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/subdomain',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a Workers subdomain for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/subdomain',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Deletes a Workers subdomain for an account.
 ///
 /// `DELETE /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<void, Never>> workerSubdomainDeleteSubdomain({required WorkersIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerSubdomainDeleteSubdomain({required WorkersIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/subdomain',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

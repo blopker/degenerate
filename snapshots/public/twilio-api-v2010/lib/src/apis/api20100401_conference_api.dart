@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a conference
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json`
-Future<ApiResult<AccountConference, Never>> fetchConference({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConference, Never>> fetchConference({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json`
-Future<ApiResult<AccountConference, Never>> updateConference({required String accountSid, required String sid, UpdateConferenceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConference, Never>> updateConference({required String accountSid, required String sid, UpdateConferenceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateConferenceRequest');,
 );
 
@@ -51,24 +53,28 @@ return _execute(
 /// Retrieve a list of conferences belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences.json`
-Future<ApiResult<ListConferenceResponse, Never>> listConference({required String accountSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, String? dateUpdated, String? dateUpdatedBefore, String? dateUpdatedAfter, String? friendlyName, ConferenceEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListConferenceResponse, Never>> listConference({required String accountSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, String? dateUpdated, String? dateUpdatedBefore, String? dateUpdatedAfter, String? friendlyName, ConferenceEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
+if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
+if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter;
+if (dateUpdated != null) queryParameters['DateUpdated'] = dateUpdated;
+if (dateUpdatedBefore != null) queryParameters['DateUpdated<'] = dateUpdatedBefore;
+if (dateUpdatedAfter != null) queryParameters['DateUpdated>'] = dateUpdatedAfter;
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (status != null) queryParameters['Status'] = status.toJson();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'DateCreated': ?dateCreated,
-    'DateCreated<': ?dateCreatedBefore,
-    'DateCreated>': ?dateCreatedAfter,
-    'DateUpdated': ?dateUpdated,
-    'DateUpdated<': ?dateUpdatedBefore,
-    'DateUpdated>': ?dateUpdatedAfter,
-    'FriendlyName': ?friendlyName,
-    if (status != null) 'Status': status.toJson(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

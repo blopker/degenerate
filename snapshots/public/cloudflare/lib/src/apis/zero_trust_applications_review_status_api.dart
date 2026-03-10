@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve the statuses of your applications.
 ///
 /// `GET /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/apps/review_status',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Update the statuses of your applications.
 ///
 /// `PUT /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/apps/review_status',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

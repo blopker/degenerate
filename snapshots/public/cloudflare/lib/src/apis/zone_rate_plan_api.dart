@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailablePlans({required Identifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailablePlans({required Identifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans/${Uri.encodeComponent(planIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,11 +57,12 @@ return _execute(
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_rate_plans',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

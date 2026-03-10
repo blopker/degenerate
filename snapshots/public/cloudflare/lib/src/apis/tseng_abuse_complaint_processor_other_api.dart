@@ -17,22 +17,26 @@ final ApiConfig _config;
 /// List the abuse reports for a given account
 ///
 /// `GET /accounts/{account_id}/abuse-reports`
-Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (sort != null) queryParameters['sort'] = sort;
+if (domain != null) queryParameters['domain'] = domain;
+if (createdBefore != null) queryParameters['created_before'] = createdBefore;
+if (createdAfter != null) queryParameters['created_after'] = createdAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+if (mitigationStatus != null) queryParameters['mitigation_status'] = mitigationStatus.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'sort': ?sort,
-    'domain': ?domain,
-    'created_before': ?createdBefore,
-    'created_after': ?createdAfter,
-    if (status != null) 'status': status.toJson(),
-    if (type != null) 'type': type.toJson(),
-    if (mitigationStatus != null) 'mitigation_status': mitigationStatus.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,15 +54,19 @@ return _execute(
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
-Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportId)}/emails',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -76,21 +84,25 @@ return _execute(
 /// List mitigations done to remediate the abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/mitigations`
-Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, }) async  { final request = ApiRequest(
+Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+if (effectiveBefore != null) queryParameters['effective_before'] = effectiveBefore;
+if (effectiveAfter != null) queryParameters['effective_after'] = effectiveAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (entityType != null) queryParameters['entity_type'] = entityType.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportId)}/mitigations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (type != null) 'type': type.toJson(),
-    'effective_before': ?effectiveBefore,
-    'effective_after': ?effectiveAfter,
-    if (status != null) 'status': status.toJson(),
-    if (entityType != null) 'entity_type': entityType.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -108,12 +120,13 @@ return _execute(
 /// Request a review for mitigations on an account.
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal`
-Future<ApiResult<AbuseReportsMitigationAppealResult, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<AbuseReportsMitigationAppealResult, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportId)}/mitigations/appeal',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -132,11 +145,12 @@ return _execute(
 /// Retrieve the details of an abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<GetAbuseReportResponse, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAbuseReportResponse, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -154,12 +168,13 @@ return _execute(
 /// Submit the Abuse Report of a particular type
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<AbuseReportsSubmitReportResponse, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<AbuseReportsSubmitReportResponse, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

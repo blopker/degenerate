@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Allows an account admin to set the can_be_enabled setting on a list of zones.
 ///
 /// `PATCH /accounts/{account_id}/pay-per-crawl/zones_can_be_enabled`
-Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlSetZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, }) async  { final request = ApiRequest(
+Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlSetZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/zones_can_be_enabled',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -41,12 +42,13 @@ return _execute(
 /// Provided a list of pay-per-crawl configured zones this method will return whether they can enable PPC or not.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/zones_can_be_enabled/query`
-Future<ApiResult<PayPerCrawlQueryZonesCanBeEnabledResponse, ErrorResponse2>> payPerCrawlQueryZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, }) async  { final request = ApiRequest(
+Future<ApiResult<PayPerCrawlQueryZonesCanBeEnabledResponse, ErrorResponse2>> payPerCrawlQueryZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/zones_can_be_enabled/query',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -65,11 +67,12 @@ return _execute(
 /// Gets the pay-per-crawl config for a zone including the bot configuration.
 ///
 /// `GET /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlGetConfig({required String zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlGetConfig({required String zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pay-per-crawl/configuration',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -87,12 +90,13 @@ return _execute(
 /// Creates the pay-per-crawl config for a zone.
 ///
 /// `POST /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlCreateConfig({required String zoneId, required PayPerCrawlDaricConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlCreateConfig({required String zoneId, required PayPerCrawlDaricConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pay-per-crawl/configuration',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,12 +115,13 @@ return _execute(
 /// Changes the pay-per-crawl config for a zone.
 ///
 /// `PATCH /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlPatchConfig({required String zoneId, required PayPerCrawlDaricConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<PayPerCrawlGetConfigResponse, ErrorResponse2>> payPerCrawlPatchConfig({required String zoneId, required PayPerCrawlDaricConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId)}/pay-per-crawl/configuration',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

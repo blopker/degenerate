@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v2 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v2`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/pipecat-ai/smart-turn-v2',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -37,11 +38,12 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/pipecat-ai/smart-turn-v3',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,11 +59,12 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/test/hello-world-cog model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/test/hello-world-cog`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/test/hello-world-cog',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

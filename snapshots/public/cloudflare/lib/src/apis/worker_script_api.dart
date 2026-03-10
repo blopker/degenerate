@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/assets/upload`
-Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['base64'] = base64.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/assets/upload',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
-  queryParameters: {
-    'base64': base64.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');,
 );
 
@@ -41,14 +45,18 @@ return _execute(
 /// Fetch a list of uploaded workers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptListWorkers({required WorkersIdentifier accountId, String? tags, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptListWorkers({required WorkersIdentifier accountId, String? tags, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -63,18 +71,22 @@ return _execute(
 /// Search for Workers in an account.
 ///
 /// `GET /accounts/{account_id}/workers/scripts-search`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSearchWorkers({required WorkersIdentifier accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSearchWorkers({required WorkersIdentifier accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (id != null) queryParameters['id'] = id;
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts-search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'id': ?id,
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -89,11 +101,12 @@ return _execute(
 /// Fetch raw script content for your worker. Note this is the original script content, not JSON encoded.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<String, Never>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -108,15 +121,19 @@ return _execute(
 /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required String body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/javascript';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/javascript'
-  },
-  queryParameters: {
-    if (bindingsInherit != null) 'bindings_inherit': bindingsInherit.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 
@@ -132,14 +149,18 @@ return _execute(
 /// Delete your worker. This call has no response body on a successful delete.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (force != null) queryParameters['force'] = force.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (force != null) 'force': force.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -154,12 +175,13 @@ return _execute(
 /// Start uploading a collection of assets for use in a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/assets-upload-session`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/assets-upload-session',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -175,14 +197,15 @@ return _execute(
 /// Put script content without touching config or metadata.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-    , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
-    , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPutContentRequest');,
 );
 
@@ -198,11 +221,12 @@ return _execute(
 /// Fetch script content only.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/content/v2`
-Future<ApiResult<String, Never>> workerScriptGetContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerScriptGetContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content/v2',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -217,11 +241,12 @@ return _execute(
 /// Get script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Includes Logpush and Tail Consumers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/script-settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -236,12 +261,13 @@ return _execute(
 /// Patch script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Including but not limited to Logpush and Tail Consumers.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersScriptSettingsItem body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersScriptSettingsItem body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/script-settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -257,11 +283,12 @@ return _execute(
 /// List secrets bound to a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80, Never>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -276,12 +303,13 @@ return _execute(
 /// Add a secret to a script.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80, Never>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -297,14 +325,18 @@ return _execute(
 /// Get a given secret binding (value omitted) on a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets/${Uri.encodeComponent(secretName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (urlEncoded != null) 'url_encoded': urlEncoded.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -319,14 +351,18 @@ return _execute(
 /// Remove a secret from a script.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets/${Uri.encodeComponent(secretName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (urlEncoded != null) 'url_encoded': urlEncoded.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -341,11 +377,12 @@ return _execute(
 /// Get metadata and config, such as bindings or usage model.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -360,12 +397,13 @@ return _execute(
 /// Patch metadata or config, such as bindings or usage model.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerScriptPatchSettingsRequest');,
 );
 
@@ -381,11 +419,12 @@ return _execute(
 /// Get if the Worker is available on the workers.dev subdomain.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/subdomain',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -400,12 +439,13 @@ return _execute(
 /// Enable or disable the Worker on the workers.dev subdomain.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPostSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPostSubdomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptPostSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPostSubdomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/subdomain',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -421,11 +461,12 @@ return _execute(
 /// Disable all workers.dev subdomains for a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/subdomain',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -440,11 +481,12 @@ return _execute(
 /// Fetches the Usage Model for a given Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptFetchUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptFetchUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/usage-model',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -459,12 +501,13 @@ return _execute(
 /// Updates the Usage Model for a given Worker. Requires a Workers Paid subscription.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptUpdateUsageModelRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptUpdateUsageModelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/usage-model',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

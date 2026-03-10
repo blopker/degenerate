@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all configured identity providers.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/identity_providers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier zoneId, required AccessSchemasIdentityProviders body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/identity_providers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a configured identity provider.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, required AccessSchemasIdentityProviders body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, required AccessSchemasIdentityProviders body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

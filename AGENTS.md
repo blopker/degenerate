@@ -13,4 +13,6 @@ Outputs should be strict and typesafe. However, backwards compatible changes to 
 Use TDD, every change should have a failing test first.
 Write tests before implementation. When fixing bugs, first write a failing test that reproduces the issue, then fix it. All tests are in the test/ folder.
 
-Make sure `dart analyze` runs clean on outputs.
+`make test` runs all tests with `dart analyze` on important code.
+
+Check out the Makefile for common operations in this project, like updating the snapshot files.

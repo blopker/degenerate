@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieves the value of Argo Smart Routing enablement setting.
 ///
 /// `GET /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Configures the value of the Argo Smart Routing enablement setting.
 ///
 /// `PATCH /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

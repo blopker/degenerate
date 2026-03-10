@@ -23,26 +23,32 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForEnterprise({required String enterprise, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, DependabotListAlertsForEnterpriseHas? has, String? assignee, DependabotListAlertsForEnterpriseScope? scope, DependabotListAlertsForEnterpriseSort? sort, DependabotListAlertsForEnterpriseDirection? direction, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForEnterprise({required String enterprise, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, DependabotListAlertsForEnterpriseHas? has, String? assignee, DependabotListAlertsForEnterpriseScope? scope, DependabotListAlertsForEnterpriseSort? sort, DependabotListAlertsForEnterpriseDirection? direction, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (state != null) queryParameters['state'] = state;
+if (severity != null) queryParameters['severity'] = severity;
+if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
+if (package != null) queryParameters['package'] = package;
+if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
+if (has != null) {
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+}
+if (assignee != null) queryParameters['assignee'] = assignee;
+if (scope != null) queryParameters['scope'] = scope.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/dependabot/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'state': ?state,
-    'severity': ?severity,
-    'ecosystem': ?ecosystem,
-    'package': ?package,
-    'epss_percentage': ?epssPercentage,
-    if (has != null) 'has': has.toString(),
-    'assignee': ?assignee,
-    if (scope != null) 'scope': scope.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -64,15 +70,19 @@ return _execute(
 /// Unauthorized users will not see the existence of this endpoint.
 ///
 /// `GET /organizations/{org}/dependabot/repository-access`
-Future<ApiResult<DependabotRepositoryAccessDetails, BasicError>> dependabotRepositoryAccessForOrg({required String org, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotRepositoryAccessDetails, BasicError>> dependabotRepositoryAccessForOrg({required String org, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(org)}/dependabot/repository-access',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -102,12 +112,13 @@ return _execute(
 /// ````
 ///
 /// `PATCH /organizations/{org}/dependabot/repository-access`
-Future<ApiResult<void, BasicError>> dependabotUpdateRepositoryAccessForOrg({required String org, required DependabotUpdateRepositoryAccessForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> dependabotUpdateRepositoryAccessForOrg({required String org, required DependabotUpdateRepositoryAccessForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/organizations/${Uri.encodeComponent(org)}/dependabot/repository-access',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -130,12 +141,13 @@ return _execute(
 /// This operation supports both server-to-server and user-to-server access.
 ///
 /// `PUT /organizations/{org}/dependabot/repository-access/default-level`
-Future<ApiResult<void, BasicError>> dependabotSetRepositoryAccessDefaultLevel({required String org, required DependabotSetRepositoryAccessDefaultLevelRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> dependabotSetRepositoryAccessDefaultLevel({required String org, required DependabotSetRepositoryAccessDefaultLevelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/organizations/${Uri.encodeComponent(org)}/dependabot/repository-access/default-level',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -156,29 +168,35 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /orgs/{org}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForOrg({required String org, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, String? artifactRegistryUrl, String? artifactRegistry, DependabotListAlertsForOrgHas? has, String? assignee, String? runtimeRisk, DependabotListAlertsForOrgScope? scope, DependabotListAlertsForOrgSort? sort, DependabotListAlertsForOrgDirection? direction, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForOrg({required String org, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, String? artifactRegistryUrl, String? artifactRegistry, DependabotListAlertsForOrgHas? has, String? assignee, String? runtimeRisk, DependabotListAlertsForOrgScope? scope, DependabotListAlertsForOrgSort? sort, DependabotListAlertsForOrgDirection? direction, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (state != null) queryParameters['state'] = state;
+if (severity != null) queryParameters['severity'] = severity;
+if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
+if (package != null) queryParameters['package'] = package;
+if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
+if (artifactRegistryUrl != null) queryParameters['artifact_registry_url'] = artifactRegistryUrl;
+if (artifactRegistry != null) queryParameters['artifact_registry'] = artifactRegistry;
+if (has != null) {
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+}
+if (assignee != null) queryParameters['assignee'] = assignee;
+if (runtimeRisk != null) queryParameters['runtime_risk'] = runtimeRisk;
+if (scope != null) queryParameters['scope'] = scope.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'state': ?state,
-    'severity': ?severity,
-    'ecosystem': ?ecosystem,
-    'package': ?package,
-    'epss_percentage': ?epssPercentage,
-    'artifact_registry_url': ?artifactRegistryUrl,
-    'artifact_registry': ?artifactRegistry,
-    if (has != null) 'has': has.toString(),
-    'assignee': ?assignee,
-    'runtime_risk': ?runtimeRisk,
-    if (scope != null) 'scope': scope.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -200,15 +218,19 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/dependabot/secrets`
-Future<ApiResult<DependabotListOrgSecretsResponse, Never>> dependabotListOrgSecrets({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotListOrgSecretsResponse, Never>> dependabotListOrgSecrets({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -226,11 +248,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/dependabot/secrets/public-key`
-Future<ApiResult<DependabotPublicKey, Never>> dependabotGetOrgPublicKey({required String org}) async  { final request = ApiRequest(
+Future<ApiResult<DependabotPublicKey, Never>> dependabotGetOrgPublicKey({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/public-key',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -247,11 +270,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/dependabot/secrets/{secret_name}`
-Future<ApiResult<OrganizationDependabotSecret, Never>> dependabotGetOrgSecret({required String org, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationDependabotSecret, Never>> dependabotGetOrgSecret({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -269,12 +293,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/dependabot/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> dependabotCreateOrUpdateOrgSecret({required String org, required String secretName, required DependabotCreateOrUpdateOrgSecretRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<EmptyObject, Never>> dependabotCreateOrUpdateOrgSecret({required String org, required String secretName, required DependabotCreateOrUpdateOrgSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -292,11 +317,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/dependabot/secrets/{secret_name}`
-Future<ApiResult<void, Never>> dependabotDeleteOrgSecret({required String org, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dependabotDeleteOrgSecret({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -312,15 +338,19 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories`
-Future<ApiResult<DependabotListSelectedReposForOrgSecretResponse, Never>> dependabotListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotListSelectedReposForOrgSecretResponse, Never>> dependabotListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}/repositories',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -339,12 +369,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories`
-Future<ApiResult<void, Never>> dependabotSetSelectedReposForOrgSecret({required String org, required String secretName, required DependabotSetSelectedReposForOrgSecretRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dependabotSetSelectedReposForOrgSecret({required String org, required String secretName, required DependabotSetSelectedReposForOrgSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}/repositories',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -362,11 +393,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> dependabotAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dependabotAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -383,11 +415,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> dependabotRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dependabotRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/dependabot/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -400,27 +433,33 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlert>, BasicError>> dependabotListAlertsForRepo({required String owner, required String repo, String? state, String? severity, String? ecosystem, String? package, String? manifest, String? epssPercentage, DependabotListAlertsForRepoHas? has, String? assignee, DependabotListAlertsForRepoScope? scope, DependabotListAlertsForRepoSort? sort, DependabotListAlertsForRepoDirection? direction, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<DependabotAlert>, BasicError>> dependabotListAlertsForRepo({required String owner, required String repo, String? state, String? severity, String? ecosystem, String? package, String? manifest, String? epssPercentage, DependabotListAlertsForRepoHas? has, String? assignee, DependabotListAlertsForRepoScope? scope, DependabotListAlertsForRepoSort? sort, DependabotListAlertsForRepoDirection? direction, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (state != null) queryParameters['state'] = state;
+if (severity != null) queryParameters['severity'] = severity;
+if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
+if (package != null) queryParameters['package'] = package;
+if (manifest != null) queryParameters['manifest'] = manifest;
+if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
+if (has != null) {
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+}
+if (assignee != null) queryParameters['assignee'] = assignee;
+if (scope != null) queryParameters['scope'] = scope.toJson();
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'state': ?state,
-    'severity': ?severity,
-    'ecosystem': ?ecosystem,
-    'package': ?package,
-    'manifest': ?manifest,
-    'epss_percentage': ?epssPercentage,
-    if (has != null) 'has': has.toString(),
-    'assignee': ?assignee,
-    if (scope != null) 'scope': scope.toJson(),
-    if (sort != null) 'sort': sort.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -439,11 +478,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}`
-Future<ApiResult<DependabotAlert, BasicError>> dependabotGetAlert({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotAlert, BasicError>> dependabotGetAlert({required String owner, required String repo, required AlertNumber alertNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -463,12 +503,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}`
-Future<ApiResult<DependabotAlert, BasicError>> dependabotUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required DependabotUpdateAlertRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotAlert, BasicError>> dependabotUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required DependabotUpdateAlertRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -490,15 +531,19 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/secrets`
-Future<ApiResult<DependabotListRepoSecretsResponse, Never>> dependabotListRepoSecrets({required String owner, required String repo, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotListRepoSecretsResponse, Never>> dependabotListRepoSecrets({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/secrets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -517,11 +562,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint if the repository is private.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/secrets/public-key`
-Future<ApiResult<DependabotPublicKey, Never>> dependabotGetRepoPublicKey({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotPublicKey, Never>> dependabotGetRepoPublicKey({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/secrets/public-key',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -538,11 +584,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}`
-Future<ApiResult<DependabotSecret, Never>> dependabotGetRepoSecret({required String owner, required String repo, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<DependabotSecret, Never>> dependabotGetRepoSecret({required String owner, required String repo, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -560,12 +607,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> dependabotCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required DependabotCreateOrUpdateRepoSecretRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<EmptyObject, Never>> dependabotCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required DependabotCreateOrUpdateRepoSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -583,11 +631,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}`
-Future<ApiResult<void, Never>> dependabotDeleteRepoSecret({required String owner, required String repo, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> dependabotDeleteRepoSecret({required String owner, required String repo, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/secrets/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

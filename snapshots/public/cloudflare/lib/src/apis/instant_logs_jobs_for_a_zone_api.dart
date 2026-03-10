@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists Instant Logs jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/edge/jobs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Instant Logs job for a zone.
 ///
 /// `POST /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/edge/jobs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

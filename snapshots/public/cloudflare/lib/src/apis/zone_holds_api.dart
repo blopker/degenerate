@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
 ///
 /// `GET /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,14 +37,18 @@ return _execute(
 /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname.
 ///
 /// `POST /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (includeSubdomains != null) queryParameters['include_subdomains'] = includeSubdomains.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (includeSubdomains != null) 'include_subdomains': includeSubdomains.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -59,12 +64,13 @@ return _execute(
 /// The hold is enabled if the `hold_after` date-time value is in the past.
 ///
 /// `PATCH /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -81,14 +87,18 @@ return _execute(
 /// creation and activation of zones with this zone's hostname.
 ///
 /// `DELETE /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (holdAfter != null) queryParameters['hold_after'] = holdAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'hold_after': ?holdAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

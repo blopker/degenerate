@@ -17,18 +17,38 @@ final ApiConfig _config;
 /// Returns a summary of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/summary/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumSummaryResponse, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetOriginPostQuantumSummaryResponse, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/post_quantum/origin/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,18 +66,38 @@ return _execute(
 /// Returns a timeseries of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponse, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponse, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/post_quantum/origin/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -75,14 +115,18 @@ return _execute(
 /// Tests whether a hostname or IP address supports Post-Quantum (PQ) TLS key exchange. Returns information about the negotiated key exchange algorithm and whether it uses PQ cryptography.
 ///
 /// `GET /radar/post_quantum/tls/support`
-Future<ApiResult<RadarGetPostQuantumTlsSupportResponse, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host}) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetPostQuantumTlsSupportResponse, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['host'] = host;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/post_quantum/tls/support',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'host': host,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of an Add-on installation currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Remove the assignment of an Add-on installation from the Number specified.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<void, Never>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -47,16 +49,20 @@ return _execute(
 /// Retrieve a list of Add-on installations currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse, Never>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse, Never>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -69,12 +75,13 @@ return _execute(
 /// Assign an Add-on installation to the Number specified.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateIncomingPhoneNumberAssignedAddOnRequest');,
 );
 

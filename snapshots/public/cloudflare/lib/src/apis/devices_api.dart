@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches a list of the device settings profiles for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policies`
-Future<ApiResult<ResponseCommon67, Never>> devicesListDeviceSettingsPolicies({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesListDeviceSettingsPolicies({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policies',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Fetches the default device settings profile for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Creates a device settings profile to be applied to certain devices matching the criteria.
 ///
 /// `POST /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67, Never>> devicesCreateDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesCreateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesCreateDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesCreateDeviceSettingsPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -76,12 +79,13 @@ return _execute(
 /// Updates the default device settings profile for an account.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy`
-Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Fetches a device settings profile by ID.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetDeviceSettingsPolicyById({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetDeviceSettingsPolicyById({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -116,12 +121,13 @@ return _execute(
 /// Updates a configured device settings profile.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdateDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -137,11 +143,12 @@ return _execute(
 /// Deletes a device settings profile and fetches a list of the remaining profiles for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicesDeleteDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesDeleteDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -156,11 +163,12 @@ return _execute(
 /// Fetches the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/exclude',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -175,12 +183,13 @@ return _execute(
 /// Sets the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/exclude',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -196,11 +205,12 @@ return _execute(
 /// Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/fallback_domains',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -215,12 +225,13 @@ return _execute(
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead. This will only apply to the specified device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/fallback_domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -236,11 +247,12 @@ return _execute(
 /// Fetches the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/include',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -255,12 +267,13 @@ return _execute(
 /// Sets the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toString())}/include',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -276,11 +289,12 @@ return _execute(
 /// Fetches the list of routes excluded from the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/exclude',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -295,12 +309,13 @@ return _execute(
 /// Sets the list of routes excluded from the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/exclude',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -316,11 +331,12 @@ return _execute(
 /// Fetches a list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/fallback_domains',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -335,12 +351,13 @@ return _execute(
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/fallback_domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -356,11 +373,12 @@ return _execute(
 /// Fetches the list of routes included in the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/include',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -375,12 +393,13 @@ return _execute(
 /// Sets the list of routes included in the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesSetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/include',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -396,11 +415,12 @@ return _execute(
 /// Fetches device certificate provisioning.
 ///
 /// `GET /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<ResponseCommon67, Never>> devicesGetPolicyCertificates({required TeamsDevicesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesGetPolicyCertificates({required TeamsDevicesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/devices/policy/certificates',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -415,12 +435,13 @@ return _execute(
 /// Enable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. This facilitates device posture without a WARP session.
 ///
 /// `PATCH /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<ResponseCommon67, Never>> devicesUpdatePolicyCertificates({required TeamsDevicesIdentifier zoneId, required TeamsDevicesDevicesPolicyCertificates body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> devicesUpdatePolicyCertificates({required TeamsDevicesIdentifier zoneId, required TeamsDevicesDevicesPolicyCertificates body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/devices/policy/certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

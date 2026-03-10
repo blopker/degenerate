@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieves the current global schema validation settings for a zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Fully updates global schema validation settings for a zone, replacing existing configuration.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Partially updates global schema validation settings for a zone using PATCH semantics.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,15 +81,19 @@ return _execute(
 /// Lists all per-operation schema validation settings configured for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -101,12 +108,13 @@ return _execute(
 /// Updates schema validation settings for multiple API operations in a single request. Efficient for applying consistent validation rules across endpoints.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,InlineObject1827> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,InlineObject1827> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -122,11 +130,12 @@ return _execute(
 /// Retrieves the schema validation settings configured for a specific API operation.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -141,12 +150,13 @@ return _execute(
 /// Fully updates schema validation settings for a specific API operation.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -162,11 +172,12 @@ return _execute(
 /// Removes custom schema validation settings for a specific API operation, reverting to zone-level defaults.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

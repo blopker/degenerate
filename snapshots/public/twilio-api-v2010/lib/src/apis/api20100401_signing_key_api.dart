@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SigningKeys.json`
-Future<ApiResult<ListSigningKeyResponse, Never>> listSigningKey({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSigningKeyResponse, Never>> listSigningKey({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,11 +41,12 @@ return _execute(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<AccountSigningKey, Never>> fetchSigningKey({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSigningKey, Never>> fetchSigningKey({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -54,12 +59,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<AccountSigningKey, Never>> updateSigningKey({required String accountSid, required String sid, UpdateSigningKeyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSigningKey, Never>> updateSigningKey({required String accountSid, required String sid, UpdateSigningKeyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSigningKeyRequest');,
 );
 
@@ -73,11 +79,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSigningKey({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSigningKey({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

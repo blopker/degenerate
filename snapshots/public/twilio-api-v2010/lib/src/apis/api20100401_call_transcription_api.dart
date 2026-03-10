@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create a Transcription
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions.json`
-Future<ApiResult<AccountCallRealtimeTranscription, Never>> createRealtimeTranscription({required String accountSid, required String callSid, CreateRealtimeTranscriptionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> createRealtimeTranscription({required String accountSid, required String callSid, CreateRealtimeTranscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateRealtimeTranscriptionRequest');,
 );
 
@@ -34,12 +35,13 @@ return _execute(
 /// Stop a Transcription using either the SID of the Transcription resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountCallRealtimeTranscription, Never>> updateRealtimeTranscription({required String accountSid, required String callSid, required String sid, UpdateRealtimeTranscriptionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> updateRealtimeTranscription({required String accountSid, required String callSid, required String sid, UpdateRealtimeTranscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateRealtimeTranscriptionRequest');,
 );
 

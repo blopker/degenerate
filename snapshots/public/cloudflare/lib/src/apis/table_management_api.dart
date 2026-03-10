@@ -19,17 +19,21 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageToken != null) queryParameters['page_token'] = pageToken;
+if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+if (returnUuids != null) queryParameters['return_uuids'] = returnUuids.toString();
+if (returnDetails != null) queryParameters['return_details'] = returnDetails.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'page_token': ?pageToken,
-    if (pageSize != null) 'page_size': pageSize.toString(),
-    if (returnUuids != null) 'return_uuids': returnUuids.toString(),
-    if (returnDetails != null) 'return_details': returnDetails.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

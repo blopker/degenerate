@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get Current User
 ///
 /// `GET /api/mobile/protected/users/current`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser() async  { final request = ApiRequest(
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/current',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Get User Profile
 ///
 /// `GET /api/mobile/protected/users/profile/{user_slug}`
-Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug}) async  { final request = ApiRequest(
+Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/profile/${Uri.encodeComponent(userSlug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -49,12 +51,13 @@ return _execute(
 /// Update Current User
 ///
 /// `POST /api/mobile/protected/users/update`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/users/update',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -68,12 +71,13 @@ return _execute(
 /// Update Current User Image
 ///
 /// `POST /api/mobile/protected/users/update_image`
-Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/users/update_image',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from UpdateCurrentUserImageRequest');,
 );
 
@@ -87,11 +91,12 @@ return _execute(
 /// Delete Current User
 ///
 /// `DELETE /api/mobile/protected/users/delete`
-Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser() async  { final request = ApiRequest(
+Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/users/delete',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -104,11 +109,12 @@ return _execute(
 /// Keeper
 ///
 /// `GET /api/mobile/protected/users/keeper/{slug}`
-Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug}) async  { final request = ApiRequest(
+Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/keeper/${Uri.encodeComponent(slug)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -121,12 +127,13 @@ return _execute(
 /// Submit Feedback
 ///
 /// `POST /api/mobile/protected/users/feedback`
-Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/users/feedback',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

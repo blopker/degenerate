@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Read multiple CredentialListMapping resources from an account.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json`
-Future<ApiResult<ListSipCredentialListMappingResponse, Never>> listSipCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipCredentialListMappingResponse, Never>> listSipCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Create a CredentialListMapping resource for an account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> createSipCredentialListMapping({required String accountSid, required String domainSid, CreateSipCredentialListMappingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> createSipCredentialListMapping({required String accountSid, required String domainSid, CreateSipCredentialListMappingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipCredentialListMappingRequest');,
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Fetch a single CredentialListMapping resource from an account.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> fetchSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipCredentialListMapping, Never>> fetchSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -73,11 +79,12 @@ return _execute(
 /// Delete a CredentialListMapping resource from an account.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

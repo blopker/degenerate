@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Run traceroutes from Cloudflare colos.
 ///
 /// `POST /accounts/{account_id}/diagnostics/traceroute`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/traceroute',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

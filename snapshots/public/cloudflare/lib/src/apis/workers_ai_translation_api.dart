@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -73,16 +81,20 @@ return _execute(
 /// Runs inference on the @cf/meta/m2m100-1.2b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/m2m100-1.2b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/m2m100-1.2b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 

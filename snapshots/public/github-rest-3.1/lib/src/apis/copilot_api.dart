@@ -26,11 +26,12 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/billing`
-Future<ApiResult<CopilotOrganizationDetails, BasicError>> copilotGetCopilotOrganizationDetails({required String org}) async  { final request = ApiRequest(
+Future<ApiResult<CopilotOrganizationDetails, BasicError>> copilotGetCopilotOrganizationDetails({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,15 +58,19 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/billing/seats`
-Future<ApiResult<CopilotListCopilotSeatsResponse, BasicError>> copilotListCopilotSeats({required String org, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotListCopilotSeatsResponse, BasicError>> copilotListCopilotSeats({required String org, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing/seats',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -95,12 +100,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `POST /orgs/{org}/copilot/billing/selected_teams`
-Future<ApiResult<CopilotAddCopilotSeatsForTeamsResponse, BasicError>> copilotAddCopilotSeatsForTeams({required String org, required CopilotAddCopilotSeatsForTeamsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotAddCopilotSeatsForTeamsResponse, BasicError>> copilotAddCopilotSeatsForTeams({required String org, required CopilotAddCopilotSeatsForTeamsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing/selected_teams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -130,12 +136,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/copilot/billing/selected_teams`
-Future<ApiResult<CopilotCancelCopilotSeatAssignmentForTeamsResponse, BasicError>> copilotCancelCopilotSeatAssignmentForTeams({required String org, required CopilotCancelCopilotSeatAssignmentForTeamsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotCancelCopilotSeatAssignmentForTeamsResponse, BasicError>> copilotCancelCopilotSeatAssignmentForTeams({required String org, required CopilotCancelCopilotSeatAssignmentForTeamsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing/selected_teams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -166,12 +173,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `POST /orgs/{org}/copilot/billing/selected_users`
-Future<ApiResult<CopilotAddCopilotSeatsForUsersResponse, BasicError>> copilotAddCopilotSeatsForUsers({required String org, required CopilotAddCopilotSeatsForUsersRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotAddCopilotSeatsForUsersResponse, BasicError>> copilotAddCopilotSeatsForUsers({required String org, required CopilotAddCopilotSeatsForUsersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing/selected_users',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -201,12 +209,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/copilot/billing/selected_users`
-Future<ApiResult<CopilotCancelCopilotSeatAssignmentForUsersResponse, BasicError>> copilotCancelCopilotSeatAssignmentForUsers({required String org, required CopilotCancelCopilotSeatAssignmentForUsersRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotCancelCopilotSeatAssignmentForUsersResponse, BasicError>> copilotCancelCopilotSeatAssignmentForUsers({required String org, required CopilotCancelCopilotSeatAssignmentForUsersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/billing/selected_users',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -238,11 +247,12 @@ return _execute(
 /// > * At this time, the API does not support duplicate keys. If your content exclusion configuration contains duplicate keys, the API will return only the last occurrence of that key. For example, if duplicate entries are present, only the final value will be included in the response.
 ///
 /// `GET /orgs/{org}/copilot/content_exclusion`
-Future<ApiResult<Map<String, List<String>>, BasicError>> copilotContentExclusionForOrganization({required String org}) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, List<String>>, BasicError>> copilotContentExclusionForOrganization({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/content_exclusion',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -273,12 +283,13 @@ return _execute(
 /// > * At this time, the API does not support duplicate keys. If you submit content exclusions through the API with duplicate keys, only the last occurrence will be saved. Earlier entries with the same key will be overwritten.
 ///
 /// `PUT /orgs/{org}/copilot/content_exclusion`
-Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, BasicError>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<InlineObject97>> body, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, BasicError>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<InlineObject97>> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/content_exclusion',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -309,17 +320,21 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/metrics`
-Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForOrganization({required String org, String? since, String? until, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForOrganization({required String org, String? since, String? until, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since;
+if (until != null) queryParameters['until'] = until;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/copilot/metrics',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since': ?since,
-    'until': ?until,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -348,11 +363,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/members/{username}/copilot`
-Future<ApiResult<CopilotSeatDetails, BasicError>> copilotGetCopilotSeatDetailsForUser({required String org, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<CopilotSeatDetails, BasicError>> copilotGetCopilotSeatDetailsForUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/members/${Uri.encodeComponent(username)}/copilot',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -382,17 +398,21 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/team/{team_slug}/copilot/metrics`
-Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForTeam({required String org, required String teamSlug, String? since, String? until, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForTeam({required String org, required String teamSlug, String? since, String? until, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (since != null) queryParameters['since'] = since;
+if (until != null) queryParameters['until'] = until;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/team/${Uri.encodeComponent(teamSlug)}/copilot/metrics',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'since': ?since,
-    'until': ?until,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

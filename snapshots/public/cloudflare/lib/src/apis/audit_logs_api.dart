@@ -17,25 +17,33 @@ final ApiConfig _config;
 /// Gets a list of audit logs for an account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /accounts/{account_id}/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetAccountAuditLogs({required AaaIdentifier accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetAccountAuditLogsSince? since, AuditLogsGetAccountAuditLogsBefore? before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
+Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetAccountAuditLogs({required AaaIdentifier accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetAccountAuditLogsSince? since, AuditLogsGetAccountAuditLogsBefore? before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) queryParameters['id'] = id;
+if ($export != null) queryParameters['export'] = $export.toString();
+if (actionType != null) queryParameters['action.type'] = actionType;
+if (actorIp != null) queryParameters['actor.ip'] = actorIp;
+if (actorEmail != null) queryParameters['actor.email'] = actorEmail;
+if (since != null) {
+queryParametersList.add(ApiQueryParameter(name: 'since', value: since.toString(), allowReserved: false));
+}
+if (before != null) {
+queryParametersList.add(ApiQueryParameter(name: 'before', value: before.toString(), allowReserved: false));
+}
+if (zoneName != null) queryParameters['zone.name'] = zoneName;
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (hideUserLogs != null) queryParameters['hide_user_logs'] = hideUserLogs.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/audit_logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'id': ?id,
-    if ($export != null) 'export': $export.toString(),
-    'action.type': ?actionType,
-    'actor.ip': ?actorIp,
-    'actor.email': ?actorEmail,
-    if (since != null) 'since': since.toString(),
-    if (before != null) 'before': before.toString(),
-    'zone.name': ?zoneName,
-    if (direction != null) 'direction': direction.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (hideUserLogs != null) 'hide_user_logs': hideUserLogs.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,62 +58,242 @@ return _execute(
 /// Gets a list of audit logs for an account. <br />  <br /> This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  <br /> `<ul>` `<li>`Audit logs are available only for the past 30 days. <br /></li> `<li>`Error handling is not yet implemented.  <br /> </li> </ul>
 ///
 /// `GET /accounts/{account_id}/logs/audit`
-Future<ApiResult<ResponseCollection2, Never>> auditLogsV2GetAccountAuditLogs({required String accountId, List<String>? accountName, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? rawUri, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, required String since, required String before, GetAccountAuditLogsDirection? direction, double? limit, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCollection2, Never>> auditLogsV2GetAccountAuditLogs({required String accountId, List<String>? accountName, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? rawUri, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, required String since, required String before, GetAccountAuditLogsDirection? direction, double? limit, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (accountName != null) {
+for (final item in accountName) {
+  queryParametersList.add(ApiQueryParameter(name: 'account_name', value: item, allowReserved: false));
+}
+}
+if (actionResult != null) {
+for (final item in actionResult) {
+  queryParametersList.add(ApiQueryParameter(name: 'action_result', value: item.toJson(), allowReserved: false));
+}
+}
+if (actionType != null) {
+for (final item in actionType) {
+  queryParametersList.add(ApiQueryParameter(name: 'action_type', value: item.toJson(), allowReserved: false));
+}
+}
+if (actorContext != null) {
+for (final item in actorContext) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_context', value: item.toJson(), allowReserved: false));
+}
+}
+if (actorEmail != null) {
+for (final item in actorEmail) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_email', value: item, allowReserved: false));
+}
+}
+if (actorId != null) {
+for (final item in actorId) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_id', value: item, allowReserved: false));
+}
+}
+if (actorIpAddress != null) {
+for (final item in actorIpAddress) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address', value: item, allowReserved: false));
+}
+}
+if (actorTokenId != null) {
+for (final item in actorTokenId) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id', value: item, allowReserved: false));
+}
+}
+if (actorTokenName != null) {
+for (final item in actorTokenName) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name', value: item, allowReserved: false));
+}
+}
+if (actorType != null) {
+for (final item in actorType) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_type', value: item.toJson(), allowReserved: false));
+}
+}
+if (auditLogId != null) {
+for (final item in auditLogId) {
+  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id', value: item, allowReserved: false));
+}
+}
+if (id != null) {
+for (final item in id) {
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+}
+}
+if (rawCfRayId != null) {
+for (final item in rawCfRayId) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id', value: item, allowReserved: false));
+}
+}
+if (rawMethod != null) {
+for (final item in rawMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_method', value: item, allowReserved: false));
+}
+}
+if (rawStatusCode != null) {
+for (final item in rawStatusCode) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code', value: item.toString(), allowReserved: false));
+}
+}
+if (rawUri != null) {
+for (final item in rawUri) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_uri', value: item, allowReserved: false));
+}
+}
+if (resourceId != null) {
+for (final item in resourceId) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item, allowReserved: false));
+}
+}
+if (resourceProduct != null) {
+for (final item in resourceProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_product', value: item, allowReserved: false));
+}
+}
+if (resourceType != null) {
+for (final item in resourceType) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item, allowReserved: false));
+}
+}
+if (resourceScope != null) {
+for (final item in resourceScope) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_scope', value: item.toJson(), allowReserved: false));
+}
+}
+if (zoneId != null) {
+for (final item in zoneId) {
+  queryParametersList.add(ApiQueryParameter(name: 'zone_id', value: item, allowReserved: false));
+}
+}
+if (zoneName != null) {
+for (final item in zoneName) {
+  queryParametersList.add(ApiQueryParameter(name: 'zone_name', value: item, allowReserved: false));
+}
+}
+if (accountNameNot != null) {
+for (final item in accountNameNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'account_name.not', value: item, allowReserved: false));
+}
+}
+if (actionResultNot != null) {
+for (final item in actionResultNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'action_result.not', value: item.toJson(), allowReserved: false));
+}
+}
+if (actionTypeNot != null) {
+for (final item in actionTypeNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'action_type.not', value: item.toJson(), allowReserved: false));
+}
+}
+if (actorContextNot != null) {
+for (final item in actorContextNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_context.not', value: item.toJson(), allowReserved: false));
+}
+}
+if (actorEmailNot != null) {
+for (final item in actorEmailNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_email.not', value: item, allowReserved: false));
+}
+}
+if (actorIdNot != null) {
+for (final item in actorIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_id.not', value: item, allowReserved: false));
+}
+}
+if (actorIpAddressNot != null) {
+for (final item in actorIpAddressNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address.not', value: item, allowReserved: false));
+}
+}
+if (actorTokenIdNot != null) {
+for (final item in actorTokenIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id.not', value: item, allowReserved: false));
+}
+}
+if (actorTokenNameNot != null) {
+for (final item in actorTokenNameNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name.not', value: item, allowReserved: false));
+}
+}
+if (actorTypeNot != null) {
+for (final item in actorTypeNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_type.not', value: item.toJson(), allowReserved: false));
+}
+}
+if (auditLogIdNot != null) {
+for (final item in auditLogIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id.not', value: item, allowReserved: false));
+}
+}
+if (idNot != null) {
+for (final item in idNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'id.not', value: item, allowReserved: false));
+}
+}
+if (rawCfRayIdNot != null) {
+for (final item in rawCfRayIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id.not', value: item, allowReserved: false));
+}
+}
+if (rawMethodNot != null) {
+for (final item in rawMethodNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_method.not', value: item, allowReserved: false));
+}
+}
+if (rawStatusCodeNot != null) {
+for (final item in rawStatusCodeNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code.not', value: item.toString(), allowReserved: false));
+}
+}
+if (rawUriNot != null) {
+for (final item in rawUriNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'raw_uri.not', value: item, allowReserved: false));
+}
+}
+if (resourceIdNot != null) {
+for (final item in resourceIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id.not', value: item, allowReserved: false));
+}
+}
+if (resourceProductNot != null) {
+for (final item in resourceProductNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_product.not', value: item, allowReserved: false));
+}
+}
+if (resourceTypeNot != null) {
+for (final item in resourceTypeNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type.not', value: item, allowReserved: false));
+}
+}
+if (resourceScopeNot != null) {
+for (final item in resourceScopeNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_scope.not', value: item.toJson(), allowReserved: false));
+}
+}
+if (zoneIdNot != null) {
+for (final item in zoneIdNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'zone_id.not', value: item, allowReserved: false));
+}
+}
+if (zoneNameNot != null) {
+for (final item in zoneNameNot) {
+  queryParametersList.add(ApiQueryParameter(name: 'zone_name.not', value: item, allowReserved: false));
+}
+}
+queryParameters['since'] = since;
+queryParameters['before'] = before;
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (cursor != null) queryParameters['cursor'] = cursor;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/logs/audit',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (accountName != null) 'account_name': accountName.toString(),
-    if (actionResult != null) 'action_result': actionResult.toString(),
-    if (actionType != null) 'action_type': actionType.toString(),
-    if (actorContext != null) 'actor_context': actorContext.toString(),
-    if (actorEmail != null) 'actor_email': actorEmail.toString(),
-    if (actorId != null) 'actor_id': actorId.toString(),
-    if (actorIpAddress != null) 'actor_ip_address': actorIpAddress.toString(),
-    if (actorTokenId != null) 'actor_token_id': actorTokenId.toString(),
-    if (actorTokenName != null) 'actor_token_name': actorTokenName.toString(),
-    if (actorType != null) 'actor_type': actorType.toString(),
-    if (auditLogId != null) 'audit_log_id': auditLogId.toString(),
-    if (id != null) 'id': id.toString(),
-    if (rawCfRayId != null) 'raw_cf_ray_id': rawCfRayId.toString(),
-    if (rawMethod != null) 'raw_method': rawMethod.toString(),
-    if (rawStatusCode != null) 'raw_status_code': rawStatusCode.toString(),
-    if (rawUri != null) 'raw_uri': rawUri.toString(),
-    if (resourceId != null) 'resource_id': resourceId.toString(),
-    if (resourceProduct != null) 'resource_product': resourceProduct.toString(),
-    if (resourceType != null) 'resource_type': resourceType.toString(),
-    if (resourceScope != null) 'resource_scope': resourceScope.toString(),
-    if (zoneId != null) 'zone_id': zoneId.toString(),
-    if (zoneName != null) 'zone_name': zoneName.toString(),
-    if (accountNameNot != null) 'account_name.not': accountNameNot.toString(),
-    if (actionResultNot != null) 'action_result.not': actionResultNot.toString(),
-    if (actionTypeNot != null) 'action_type.not': actionTypeNot.toString(),
-    if (actorContextNot != null) 'actor_context.not': actorContextNot.toString(),
-    if (actorEmailNot != null) 'actor_email.not': actorEmailNot.toString(),
-    if (actorIdNot != null) 'actor_id.not': actorIdNot.toString(),
-    if (actorIpAddressNot != null) 'actor_ip_address.not': actorIpAddressNot.toString(),
-    if (actorTokenIdNot != null) 'actor_token_id.not': actorTokenIdNot.toString(),
-    if (actorTokenNameNot != null) 'actor_token_name.not': actorTokenNameNot.toString(),
-    if (actorTypeNot != null) 'actor_type.not': actorTypeNot.toString(),
-    if (auditLogIdNot != null) 'audit_log_id.not': auditLogIdNot.toString(),
-    if (idNot != null) 'id.not': idNot.toString(),
-    if (rawCfRayIdNot != null) 'raw_cf_ray_id.not': rawCfRayIdNot.toString(),
-    if (rawMethodNot != null) 'raw_method.not': rawMethodNot.toString(),
-    if (rawStatusCodeNot != null) 'raw_status_code.not': rawStatusCodeNot.toString(),
-    if (rawUriNot != null) 'raw_uri.not': rawUriNot.toString(),
-    if (resourceIdNot != null) 'resource_id.not': resourceIdNot.toString(),
-    if (resourceProductNot != null) 'resource_product.not': resourceProductNot.toString(),
-    if (resourceTypeNot != null) 'resource_type.not': resourceTypeNot.toString(),
-    if (resourceScopeNot != null) 'resource_scope.not': resourceScopeNot.toString(),
-    if (zoneIdNot != null) 'zone_id.not': zoneIdNot.toString(),
-    if (zoneNameNot != null) 'zone_name.not': zoneNameNot.toString(),
-    'since': since,
-    'before': before,
-    if (direction != null) 'direction': direction.toJson(),
-    if (limit != null) 'limit': limit.toString(),
-    'cursor': ?cursor,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -120,25 +308,33 @@ return _execute(
 /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /user/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetUserAuditLogsSince? since, AuditLogsGetUserAuditLogsBefore? before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final request = ApiRequest(
+Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, AuditLogsGetUserAuditLogsSince? since, AuditLogsGetUserAuditLogsBefore? before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) queryParameters['id'] = id;
+if ($export != null) queryParameters['export'] = $export.toString();
+if (actionType != null) queryParameters['action.type'] = actionType;
+if (actorIp != null) queryParameters['actor.ip'] = actorIp;
+if (actorEmail != null) queryParameters['actor.email'] = actorEmail;
+if (since != null) {
+queryParametersList.add(ApiQueryParameter(name: 'since', value: since.toString(), allowReserved: false));
+}
+if (before != null) {
+queryParametersList.add(ApiQueryParameter(name: 'before', value: before.toString(), allowReserved: false));
+}
+if (zoneName != null) queryParameters['zone.name'] = zoneName;
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (hideUserLogs != null) queryParameters['hide_user_logs'] = hideUserLogs.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/audit_logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'id': ?id,
-    if ($export != null) 'export': $export.toString(),
-    'action.type': ?actionType,
-    'actor.ip': ?actorIp,
-    'actor.email': ?actorEmail,
-    if (since != null) 'since': since.toString(),
-    if (before != null) 'before': before.toString(),
-    'zone.name': ?zoneName,
-    if (direction != null) 'direction': direction.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (hideUserLogs != null) 'hide_user_logs': hideUserLogs.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -15,18 +15,22 @@ final ApiConfig _config;
 /// List DEX Rules
 ///
 /// `GET /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19, Never>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['page'] = page.toString();
+queryParameters['per_page'] = perPage.toString();
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
+if (name != null) queryParameters['name'] = name;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'page': page.toString(),
-    'per_page': perPage.toString(),
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-    if (sortBy != null) 'sort_by': sortBy.toJson(),
-    'name': ?name,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Create a DEX Rule
 ///
 /// `POST /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19, Never>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,11 +65,12 @@ return _execute(
 /// Get details for a DEX Rule
 ///
 /// `GET /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -77,12 +83,13 @@ return _execute(
 /// Update a DEX Rule
 ///
 /// `PATCH /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -96,11 +103,12 @@ return _execute(
 /// Delete a DEX Rule
 ///
 /// `DELETE /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon19, Never>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

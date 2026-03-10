@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists Site LANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansListLans({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansListLans({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Site LAN. If the site is in high availability mode, static_addressing is required along with secondary and virtual address.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansCreateLan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicLansAddSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansCreateLan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicLansAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get a specific Site LAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansLanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansLanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans/${Uri.encodeComponent(lanId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a specific Site LAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansUpdateLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansUpdateLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans/${Uri.encodeComponent(lanId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,12 +101,13 @@ return _execute(
 /// Patch a specific Site LAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansPatchLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansPatchLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans/${Uri.encodeComponent(lanId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -118,11 +123,12 @@ return _execute(
 /// Remove a specific Site LAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicSiteLansDeleteLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon48, Never>> magicSiteLansDeleteLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/lans/${Uri.encodeComponent(lanId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

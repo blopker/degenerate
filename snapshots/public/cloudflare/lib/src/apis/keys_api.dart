@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List all the keys in your telemetry events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/keys`
-Future<ApiResult<TelemetryKeysListResponse, TelemetryKeysListResponse401>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TelemetryKeysListResponse, TelemetryKeysListResponse401>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/telemetry/keys',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

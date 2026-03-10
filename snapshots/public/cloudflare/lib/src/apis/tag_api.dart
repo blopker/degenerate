@@ -17,17 +17,25 @@ final ApiConfig _config;
 /// Returns indicators associated with the provided tag UUID across all indicator datasets, with pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators`
-Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
+if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (relatedEvent != null) {
+for (final item in relatedEvent) {
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/tags/${Uri.encodeComponent(tagUuid)}/indicators',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (pageSize != null) 'pageSize': pageSize.toString(),
-    'indicatorType': ?indicatorType,
-    if (relatedEvent != null) 'relatedEvent': relatedEvent.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,17 +53,21 @@ return _execute(
 /// Returns all Source-of-Truth tags for an account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags`
-Future<ApiResult<GetTagListResponse, GetTagListResponse400>> getTagList({required String accountId, double? page, double? pageSize, String? search, String? categoryUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTagListResponse, GetTagListResponse400>> getTagList({required String accountId, double? page, double? pageSize, String? search, String? categoryUuid, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
+if (search != null) queryParameters['search'] = search;
+if (categoryUuid != null) queryParameters['categoryUuid'] = categoryUuid;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (pageSize != null) 'pageSize': pageSize.toString(),
-    'search': ?search,
-    'categoryUuid': ?categoryUuid,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -73,12 +85,13 @@ return _execute(
 /// Updates a Source-of-Truth tag by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<PatchTagUpdateResponse, PatchTagUpdateResponse400>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PatchTagUpdateResponse, PatchTagUpdateResponse400>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/${Uri.encodeComponent(tagUuid)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -97,11 +110,12 @@ return _execute(
 /// Deletes a Source-of-Truth tag by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<DeleteTagDeleteResponse, DeleteTagDeleteResponse400>> deleteTagDelete({required String accountId, required String tagUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteTagDeleteResponse, DeleteTagDeleteResponse400>> deleteTagDelete({required String accountId, required String tagUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/${Uri.encodeComponent(tagUuid)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -119,12 +133,13 @@ return _execute(
 /// Creates a new tag to be used accross threat events.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/create`
-Future<ApiResult<PostTagCreateResponse, PostTagCreateResponse400>> postTagCreate({required String accountId, PostTagCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostTagCreateResponse, PostTagCreateResponse400>> postTagCreate({required String accountId, PostTagCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

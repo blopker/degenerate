@@ -15,22 +15,30 @@ final ApiConfig _config;
 /// List token validation rules
 ///
 /// `GET /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (tokenConfiguration != null) {
+for (final item in tokenConfiguration) {
+  queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson(), allowReserved: false));
+}
+}
+if (action != null) queryParameters['action'] = action.toJson();
+if (enabled != null) queryParameters['enabled'] = enabled.toString();
+if (id != null) queryParameters['id'] = id.toString();
+if (ruleId != null) queryParameters['rule_id'] = ruleId.toString();
+if (host != null) queryParameters['host'] = host.toString();
+if (hostname != null) queryParameters['hostname'] = hostname.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (tokenConfiguration != null) 'token_configuration': tokenConfiguration.toString(),
-    if (action != null) 'action': action.toJson(),
-    if (enabled != null) 'enabled': enabled.toString(),
-    if (id != null) 'id': id.toString(),
-    if (ruleId != null) 'rule_id': ruleId.toString(),
-    if (host != null) 'host': host.toString(),
-    if (hostname != null) 'hostname': hostname.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,12 +53,13 @@ return _execute(
 /// Create a token validation rule.
 ///
 /// `POST /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -66,11 +75,12 @@ return _execute(
 /// Get a zone token validation rule.
 ///
 /// `GET /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,12 +95,13 @@ return _execute(
 /// Edit a zone token validation rule.
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldRuleProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldRuleProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -106,11 +117,12 @@ return _execute(
 /// Delete a zone token validation rule.
 ///
 /// `DELETE /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -128,12 +140,13 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/bulk',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -156,12 +169,13 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/bulk',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -181,21 +195,45 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/preview`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, required ShieldSelector body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, required ShieldSelector body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (state != null) {
+for (final item in state) {
+  queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson(), allowReserved: false));
+}
+}
+if (host != null) {
+for (final item in host) {
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item.toJson(), allowReserved: false));
+}
+}
+if (hostname != null) {
+for (final item in hostname) {
+  queryParametersList.add(ApiQueryParameter(name: 'hostname', value: item.toJson(), allowReserved: false));
+}
+}
+if (method != null) {
+for (final item in method) {
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item.toJson(), allowReserved: false));
+}
+}
+if (endpoint != null) {
+for (final item in endpoint) {
+  queryParametersList.add(ApiQueryParameter(name: 'endpoint', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/preview',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (state != null) 'state': state.toString(),
-    if (host != null) 'host': host.toString(),
-    if (hostname != null) 'hostname': hostname.toString(),
-    if (method != null) 'method': method.toString(),
-    if (endpoint != null) 'endpoint': endpoint.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 

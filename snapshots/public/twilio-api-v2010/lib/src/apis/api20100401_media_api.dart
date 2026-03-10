@@ -15,19 +15,23 @@ final ApiConfig _config;
 /// Read a list of Media resources associated with a specific Message resource
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media.json`
-Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dateCreated != null) queryParameters['DateCreated'] = dateCreated.toString();
+if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Media.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (dateCreated != null) 'DateCreated': dateCreated.toString(),
-    if (dateCreatedBefore != null) 'DateCreated<': dateCreatedBefore.toString(),
-    if (dateCreatedAfter != null) 'DateCreated>': dateCreatedAfter.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

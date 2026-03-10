@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieves a list of webhooks.
 ///
 /// `GET /accounts/{account_id}/stream/webhook`
-Future<ApiResult<ResponseCommon66, Never>> streamWebhookViewWebhooks({required StreamAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWebhookViewWebhooks({required StreamAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/webhook',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a webhook notification.
 ///
 /// `PUT /accounts/{account_id}/stream/webhook`
-Future<ApiResult<ResponseCommon66, Never>> streamWebhookCreateWebhooks({required StreamAccountIdentifier accountId, required StreamWebhookRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWebhookCreateWebhooks({required StreamAccountIdentifier accountId, required StreamWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/webhook',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Deletes a webhook.
 ///
 /// `DELETE /accounts/{account_id}/stream/webhook`
-Future<ApiResult<ResponseCommon66, Never>> streamWebhookDeleteWebhooks({required StreamAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWebhookDeleteWebhooks({required StreamAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/webhook',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

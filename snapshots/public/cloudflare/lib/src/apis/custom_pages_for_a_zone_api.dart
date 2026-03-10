@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches all the custom pages at the zone level.
 ///
 /// `GET /zones/{zone_identifier}/custom_pages`
-Future<ApiResult<ResponseCommon17, Never>> customPagesForAZoneListCustomPages({required CustomPagesIdentifier zoneIdentifier}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAZoneListCustomPages({required CustomPagesIdentifier zoneIdentifier}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Fetches the details of a custom page.
 ///
 /// `GET /zones/{zone_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage, Never>> customPagesForAZoneGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomPagesCustomPage, Never>> customPagesForAZoneGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /zones/{zone_identifier}/custom_pages/{identifier}`
-Future<ApiResult<ResponseCommon17, Never>> customPagesForAZoneUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, required CustomPagesForAZoneUpdateACustomPageRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon17, Never>> customPagesForAZoneUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, required CustomPagesForAZoneUpdateACustomPageRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

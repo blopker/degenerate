@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// User Details
 ///
 /// `GET /user`
-Future<ApiResult<ResponseCommon35, Never>> userDetails() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userDetails() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -34,12 +35,13 @@ return _execute(
 /// Edit part of your user details.
 ///
 /// `PATCH /user`
-Future<ApiResult<ResponseCommon35, Never>> userEditUser({required UserEditUserRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userEditUser({required UserEditUserRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/user',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -55,11 +57,12 @@ return _execute(
 /// Retrieves list of tenants the authenticated user / method has access to.
 ///
 /// `GET /users/tenants`
-Future<ApiResult<UserListUserTenantsResponse, Never>> userListUserTenants() async  { final request = ApiRequest(
+Future<ApiResult<UserListUserTenantsResponse, Never>> userListUserTenants() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/tenants',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

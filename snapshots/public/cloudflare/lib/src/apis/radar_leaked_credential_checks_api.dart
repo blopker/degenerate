@@ -17,24 +17,64 @@ final ApiConfig _config;
 /// Retrieves an aggregated summary of HTTP authentication requests grouped by the specified dimension.
 ///
 /// `GET /radar/leaked_credential_checks/summary/{dimension}`
-Future<ApiResult<RadarGetLeakedCredentialChecksSummaryResponse, RadarGetLeakedCredentialChecksSummaryResponse400>> radarGetLeakedCredentialChecksSummary({required RadarGetLeakedCredentialChecksSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksSummaryBotClass>? botClass, List<RadarGetLeakedCredentialChecksSummaryCompromised>? compromised, int? limitPerGroup, RadarGetLeakedCredentialChecksSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetLeakedCredentialChecksSummaryResponse, RadarGetLeakedCredentialChecksSummaryResponse400>> radarGetLeakedCredentialChecksSummary({required RadarGetLeakedCredentialChecksSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksSummaryBotClass>? botClass, List<RadarGetLeakedCredentialChecksSummaryCompromised>? compromised, int? limitPerGroup, RadarGetLeakedCredentialChecksSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (botClass != null) {
+for (final item in botClass) {
+  queryParametersList.add(ApiQueryParameter(name: 'botClass', value: item.toJson(), allowReserved: false));
+}
+}
+if (compromised != null) {
+for (final item in compromised) {
+  queryParametersList.add(ApiQueryParameter(name: 'compromised', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/leaked_credential_checks/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (botClass != null) 'botClass': botClass.toString(),
-    if (compromised != null) 'compromised': compromised.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -52,27 +92,71 @@ return _execute(
 /// Retrieves the distribution of HTTP authentication requests, grouped by the specified dimension over time.
 ///
 /// `GET /radar/leaked_credential_checks/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetLeakedCredentialChecksTimeseriesGroupResponse, RadarGetLeakedCredentialChecksTimeseriesGroupResponse400>> radarGetLeakedCredentialChecksTimeseriesGroup({required RadarGetLeakedCredentialChecksTimeseriesGroupDimension dimension, RadarGetLeakedCredentialChecksTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksTimeseriesGroupBotClass>? botClass, List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised>? compromised, List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult>? checkResult, int? limitPerGroup, RadarGetLeakedCredentialChecksTimeseriesGroupNormalization? normalization, RadarGetLeakedCredentialChecksTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetLeakedCredentialChecksTimeseriesGroupResponse, RadarGetLeakedCredentialChecksTimeseriesGroupResponse400>> radarGetLeakedCredentialChecksTimeseriesGroup({required RadarGetLeakedCredentialChecksTimeseriesGroupDimension dimension, RadarGetLeakedCredentialChecksTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksTimeseriesGroupBotClass>? botClass, List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised>? compromised, List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult>? checkResult, int? limitPerGroup, RadarGetLeakedCredentialChecksTimeseriesGroupNormalization? normalization, RadarGetLeakedCredentialChecksTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (botClass != null) {
+for (final item in botClass) {
+  queryParametersList.add(ApiQueryParameter(name: 'botClass', value: item.toJson(), allowReserved: false));
+}
+}
+if (compromised != null) {
+for (final item in compromised) {
+  queryParametersList.add(ApiQueryParameter(name: 'compromised', value: item.toJson(), allowReserved: false));
+}
+}
+if (checkResult != null) {
+for (final item in checkResult) {
+  queryParametersList.add(ApiQueryParameter(name: 'checkResult', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/leaked_credential_checks/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (asn != null) 'asn': asn.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (botClass != null) 'botClass': botClass.toString(),
-    if (compromised != null) 'compromised': compromised.toString(),
-    if (checkResult != null) 'checkResult': checkResult.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (normalization != null) 'normalization': normalization.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

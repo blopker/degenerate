@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch and instance of a usage-trigger
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update an instance of a usage trigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateUsageTriggerRequest');,
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,19 +69,23 @@ return _execute(
 /// Retrieve a list of usage-triggers belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (recurring != null) queryParameters['Recurring'] = recurring.toJson();
+if (triggerBy != null) queryParameters['TriggerBy'] = triggerBy.toJson();
+if (usageCategory != null) queryParameters['UsageCategory'] = usageCategory;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (recurring != null) 'Recurring': recurring.toJson(),
-    if (triggerBy != null) 'TriggerBy': triggerBy.toJson(),
-    'UsageCategory': ?usageCategory,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -91,12 +98,13 @@ return _execute(
 /// Create a new UsageTrigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateUsageTriggerRequest');,
 );
 

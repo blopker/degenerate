@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Register or update an FCM token for the current user
 ///
 /// `POST /api/mobile/protected/fcm/register`
-Future<ApiResult<FcmTokenResponseSchema, Never>> totemApiMobileApiRegisterFcmToken({required FcmTokenRegisterSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<FcmTokenResponseSchema, Never>> totemApiMobileApiRegisterFcmToken({required FcmTokenRegisterSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/fcm/register',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -38,11 +39,12 @@ return _execute(
 /// Delete an FCM token for the current user
 ///
 /// `DELETE /api/mobile/protected/fcm/unregister/{token}`
-Future<ApiResult<void, Never>> totemApiMobileApiUnregisterFcmToken({required String token}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> totemApiMobileApiUnregisterFcmToken({required String token}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/fcm/unregister/${Uri.encodeComponent(token)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -53,11 +55,12 @@ return _execute(
 /// Onboard Get
 ///
 /// `GET /api/mobile/protected/onboard/`
-Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardGet() async  { final request = ApiRequest(
+Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/onboard/',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -70,12 +73,13 @@ return _execute(
 /// Onboard Post
 ///
 /// `POST /api/mobile/protected/onboard/`
-Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardPost({required OnboardSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardPost({required OnboardSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/onboard/',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -92,12 +96,13 @@ return _execute(
 /// This endpoint handles both new and existing users.
 ///
 /// `POST /api/mobile/auth/request-pin`
-Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthRequestPin({required PinRequestSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthRequestPin({required PinRequestSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/auth/request-pin',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -116,12 +121,13 @@ return _execute(
 /// Validate PIN and issue token pair.
 ///
 /// `POST /api/mobile/auth/validate-pin`
-Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthValidatePin({required ValidatePinSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthValidatePin({required ValidatePinSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/auth/validate-pin',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -140,12 +146,13 @@ return _execute(
 /// Refresh access token using a valid refresh token.
 ///
 /// `POST /api/mobile/auth/refresh`
-Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthRefreshToken({required RefreshTokenSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthRefreshToken({required RefreshTokenSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/auth/refresh',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -164,12 +171,13 @@ return _execute(
 /// Logout by invalidating a refresh token.
 ///
 /// `POST /api/mobile/auth/logout`
-Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthLogout({required RefreshTokenSchema body}) async  { final request = ApiRequest(
+Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthLogout({required RefreshTokenSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/auth/logout',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

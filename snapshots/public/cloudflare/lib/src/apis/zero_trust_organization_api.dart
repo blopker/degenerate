@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,11 +81,12 @@ return _execute(
 /// Returns the DoH settings for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,12 +101,13 @@ return _execute(
 /// Updates the DoH settings for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -118,15 +123,19 @@ return _execute(
 /// Revokes a user's access across all applications.
 ///
 /// `POST /accounts/{account_id}/access/organizations/revoke_user`
-Future<ApiResult<AccessEmptyResponse, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccessEmptyResponse, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (devices != null) queryParameters['devices'] = devices.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/revoke_user',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (devices != null) 'devices': devices.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 

@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Put Rules
 ///
 /// `PUT /zones/{zone_id}/cloud_connector/rules`
-Future<ApiResult<ResponseCommon12, Never>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon12, Never>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cloud_connector/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 

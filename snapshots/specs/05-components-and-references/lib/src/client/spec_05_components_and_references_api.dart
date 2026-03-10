@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.1.1
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'spec_05_components_and_references_security.dart';
 import '../apis/default_api.dart';
 
 /// Root SDK client providing access to all API groups.
@@ -19,4 +20,6 @@ final class Spec05ComponentsAndReferencesApi {
   Spec05ComponentsAndReferencesApi(this._config);
 
   late final DefaultApi $default = DefaultApi(_config);
+
+  Spec05ComponentsAndReferencesApi withBearerAuth(String token) => Spec05ComponentsAndReferencesApi(Spec05ComponentsAndReferencesSecurity.applyBearerAuth(_config, token));
 }

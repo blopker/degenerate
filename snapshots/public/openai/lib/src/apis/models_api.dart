@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
 ///
 /// `GET /models`
-Future<ApiResult<ListModelsResponse, Never>> listModels() async  { final request = ApiRequest(
+Future<ApiResult<ListModelsResponse, Never>> listModels() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/models',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 ///
 /// `GET /models/{model}`
-Future<ApiResult<Model, Never>> retrieveModel({required String model}) async  { final request = ApiRequest(
+Future<ApiResult<Model, Never>> retrieveModel({required String model}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/models/${Uri.encodeComponent(model)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -49,11 +51,12 @@ return _execute(
 /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
 ///
 /// `DELETE /models/{model}`
-Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/models/${Uri.encodeComponent(model)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

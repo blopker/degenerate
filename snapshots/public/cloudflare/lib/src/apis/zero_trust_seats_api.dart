@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.
 ///
 /// `PATCH /accounts/{account_id}/access/seats`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/seats',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 

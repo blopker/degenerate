@@ -17,17 +17,23 @@ final ApiConfig _config;
 /// Gets a list of all the domains that have resolved to a specific IP address.
 ///
 /// `GET /accounts/{account_id}/intel/dns`
-Future<ApiResult<ResponseCommon40, Never>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon40, Never>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (startEndParams != null) {
+queryParametersList.add(ApiQueryParameter(name: 'start_end_params', value: startEndParams.toString(), allowReserved: false));
+}
+if (ipv4 != null) queryParameters['ipv4'] = ipv4;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/dns',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (startEndParams != null) 'start_end_params': startEndParams.toString(),
-    'ipv4': ?ipv4,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

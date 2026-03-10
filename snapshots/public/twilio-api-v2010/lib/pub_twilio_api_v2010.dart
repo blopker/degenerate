@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_twilio_api_v2010_api.dart';
+export 'src/client/pub_twilio_api_v2010_security.dart';
 
 export 'src/models/account.dart';
 export 'src/models/account_address.dart';

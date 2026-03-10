@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create a new Signing Key for the account making the request.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SigningKeys.json`
-Future<ApiResult<AccountNewSigningKey, Never>> createNewSigningKey({required String accountSid, CreateNewSigningKeyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountNewSigningKey, Never>> createNewSigningKey({required String accountSid, CreateNewSigningKeyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateNewSigningKeyRequest');,
 );
 

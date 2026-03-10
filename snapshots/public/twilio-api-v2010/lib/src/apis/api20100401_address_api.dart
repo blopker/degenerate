@@ -15,20 +15,24 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Addresses.json`
-Future<ApiResult<ListAddressResponse, Never>> listAddress({required String accountSid, String? customerName, String? friendlyName, bool? emergencyEnabled, String? isoCountry, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAddressResponse, Never>> listAddress({required String accountSid, String? customerName, String? friendlyName, bool? emergencyEnabled, String? isoCountry, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (customerName != null) queryParameters['CustomerName'] = customerName;
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (emergencyEnabled != null) queryParameters['EmergencyEnabled'] = emergencyEnabled.toString();
+if (isoCountry != null) queryParameters['IsoCountry'] = isoCountry;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'CustomerName': ?customerName,
-    'FriendlyName': ?friendlyName,
-    if (emergencyEnabled != null) 'EmergencyEnabled': emergencyEnabled.toString(),
-    'IsoCountry': ?isoCountry,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Addresses.json`
-Future<ApiResult<AccountAddress, Never>> createAddress({required String accountSid, CreateAddressRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountAddress, Never>> createAddress({required String accountSid, CreateAddressRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateAddressRequest');,
 );
 
@@ -60,11 +65,12 @@ return _execute(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<AccountAddress, Never>> fetchAddress({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountAddress, Never>> fetchAddress({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -77,12 +83,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<AccountAddress, Never>> updateAddress({required String accountSid, required String sid, UpdateAddressRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountAddress, Never>> updateAddress({required String accountSid, required String sid, UpdateAddressRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateAddressRequest');,
 );
 
@@ -96,11 +103,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<void, Never>> deleteAddress({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteAddress({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

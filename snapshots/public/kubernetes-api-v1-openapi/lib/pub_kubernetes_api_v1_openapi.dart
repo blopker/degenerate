@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_kubernetes_api_v1_openapi_api.dart';
+export 'src/client/pub_kubernetes_api_v1_openapi_security.dart';
 
 export 'src/models/affinity.dart';
 export 'src/models/app_armor_profile.dart';

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all of an account's subscriptions.
 ///
 /// `GET /accounts/{account_id}/subscriptions`
-Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsListSubscriptions({required Identifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsListSubscriptions({required Identifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates an account subscription.
 ///
 /// `POST /accounts/{account_id}/subscriptions`
-Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Subscription2 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Subscription2 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/subscriptions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,12 +59,13 @@ return _execute(
 /// Updates an account subscription.
 ///
 /// `PUT /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Subscription2 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Subscription2 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/subscriptions/${Uri.encodeComponent(subscriptionIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,11 +81,12 @@ return _execute(
 /// Deletes an account's subscription.
 ///
 /// `DELETE /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon8, Never>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/subscriptions/${Uri.encodeComponent(subscriptionIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,21 +17,25 @@ final ApiConfig _config;
 /// Lists all Access applications in an account.
 ///
 /// `GET /accounts/{account_id}/access/apps`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (domain != null) queryParameters['domain'] = domain;
+if (aud != null) queryParameters['aud'] = aud;
+if (targetAttributes != null) queryParameters['target_attributes'] = targetAttributes;
+if (exact != null) queryParameters['exact'] = exact.toString();
+if (search != null) queryParameters['search'] = search;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'domain': ?domain,
-    'aud': ?aud,
-    'target_attributes': ?targetAttributes,
-    if (exact != null) 'exact': exact.toString(),
-    'search': ?search,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,12 +50,13 @@ return _execute(
 /// Adds a new application to Access.
 ///
 /// `POST /accounts/{account_id}/access/apps`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -67,11 +72,12 @@ return _execute(
 /// Fetches information about an Access application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -86,12 +92,13 @@ return _execute(
 /// Updates an Access application.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -107,11 +114,12 @@ return _execute(
 /// Deletes an application from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -126,11 +134,12 @@ return _execute(
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<AccessSchemasEmptyResponse, Never>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AccessSchemasEmptyResponse, Never>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/revoke_tokens',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -145,12 +154,13 @@ return _execute(
 /// Updates Access application settings.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -166,12 +176,13 @@ return _execute(
 /// Updates Access application settings.
 ///
 /// `PATCH /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -187,11 +198,12 @@ return _execute(
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<ResponseCommon3, Never>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/user_policy_checks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

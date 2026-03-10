@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Lists the users assigned to a group.
 ///
 /// `GET /organization/groups/{group_id}/users`
-Future<ApiResult<UserListResource, Never>> listGroupUsers({required String groupId, int? limit, String? after, ListGroupUsersOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<UserListResource, Never>> listGroupUsers({required String groupId, int? limit, String? after, ListGroupUsersOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/users',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Adds a user to a group.
 ///
 /// `POST /organization/groups/{group_id}/users`
-Future<ApiResult<GroupUserAssignment, Never>> addGroupUser({required String groupId, required CreateGroupUserBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupUserAssignment, Never>> addGroupUser({required String groupId, required CreateGroupUserBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/users',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Removes a user from a group.
 ///
 /// `DELETE /organization/groups/{group_id}/users/{user_id}`
-Future<ApiResult<GroupUserDeletedResource, Never>> removeGroupUser({required String groupId, required String userId, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupUserDeletedResource, Never>> removeGroupUser({required String groupId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/users/${Uri.encodeComponent(userId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Get all organizations assigned to an enterprise team
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// Assign an enterprise team to multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/add',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,12 +68,13 @@ return _execute(
 /// Unassign an enterprise team from multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/remove',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -82,11 +88,12 @@ return _execute(
 /// Check if an enterprise team is assigned to an organization
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -101,11 +108,12 @@ return _execute(
 /// Assign an enterprise team to an organization.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -120,11 +128,12 @@ return _execute(
 /// Unassign an enterprise team from an organization.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

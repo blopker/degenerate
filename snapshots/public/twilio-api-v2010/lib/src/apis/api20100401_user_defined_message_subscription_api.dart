@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Subscribe to User Defined Messages for a given Call SID.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json`
-Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateUserDefinedMessageSubscriptionRequest');,
 );
 
@@ -34,11 +35,12 @@ return _execute(
 /// Delete a specific User Defined Message Subscription.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

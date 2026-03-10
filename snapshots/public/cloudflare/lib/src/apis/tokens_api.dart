@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// List all access tokens you created.
 ///
 /// `GET /user/tokens`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensCreateToken({required IamCreatePayload body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensCreateToken({required IamCreatePayload body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,11 +67,12 @@ return _execute(
 /// Get information about a specific token.
 ///
 /// `GET /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -81,12 +87,13 @@ return _execute(
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -102,11 +109,12 @@ return _execute(
 /// Destroy a token.
 ///
 /// `DELETE /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -121,12 +129,13 @@ return _execute(
 /// Roll the token secret.
 ///
 /// `PUT /user/tokens/{token_id}/value`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,String> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,String> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}/value',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -142,15 +151,19 @@ return _execute(
 /// Find all available permission groups for API Tokens
 ///
 /// `GET /user/tokens/permission_groups`
-Future<ApiResult<ResponseCommon35, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (scope != null) queryParameters['scope'] = scope;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/permission_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'scope': ?scope,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -165,11 +178,12 @@ return _execute(
 /// Test whether a token works.
 ///
 /// `GET /user/tokens/verify`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensVerifyToken() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userApiTokensVerifyToken() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/tokens/verify',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

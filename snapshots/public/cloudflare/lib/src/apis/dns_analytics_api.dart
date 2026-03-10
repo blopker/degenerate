@@ -19,20 +19,24 @@ final ApiConfig _config;
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report`
-Future<ApiResult<ResponseCommon22, Never>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon22, Never>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (metrics != null) queryParameters['metrics'] = metrics.toString();
+if (dimensions != null) queryParameters['dimensions'] = dimensions.toString();
+if (since != null) queryParameters['since'] = since.toString();
+if (until != null) queryParameters['until'] = until.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sort != null) queryParameters['sort'] = sort.toString();
+if (filters != null) queryParameters['filters'] = filters.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_analytics/report',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (metrics != null) 'metrics': metrics.toString(),
-    if (dimensions != null) 'dimensions': dimensions.toString(),
-    if (since != null) 'since': since.toString(),
-    if (until != null) 'until': until.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (sort != null) 'sort': sort.toString(),
-    if (filters != null) 'filters': filters.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -49,21 +53,25 @@ return _execute(
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report/bytime`
-Future<ApiResult<ResponseCommon22, Never>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon22, Never>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (metrics != null) queryParameters['metrics'] = metrics.toString();
+if (dimensions != null) queryParameters['dimensions'] = dimensions.toString();
+if (since != null) queryParameters['since'] = since.toString();
+if (until != null) queryParameters['until'] = until.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sort != null) queryParameters['sort'] = sort.toString();
+if (filters != null) queryParameters['filters'] = filters.toString();
+if (timeDelta != null) queryParameters['time_delta'] = timeDelta.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_analytics/report/bytime',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (metrics != null) 'metrics': metrics.toString(),
-    if (dimensions != null) 'dimensions': dimensions.toString(),
-    if (since != null) 'since': since.toString(),
-    if (until != null) 'until': until.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (sort != null) 'sort': sort.toString(),
-    if (filters != null) 'filters': filters.toString(),
-    if (timeDelta != null) 'time_delta': timeDelta.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
 ///
 /// `GET /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (normalize != null) queryParameters['normalize'] = normalize.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/configuration',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (normalize != null) 'normalize': normalize.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,15 +43,19 @@ return _execute(
 /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
 ///
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (normalize != null) queryParameters['normalize'] = normalize.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/configuration',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (normalize != null) 'normalize': normalize.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 

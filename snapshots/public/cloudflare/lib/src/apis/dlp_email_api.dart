@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get mapping
 ///
 /// `GET /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetAccountMapping({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetAccountMapping({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/account_mapping',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Create mapping
 ///
 /// `POST /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/account_mapping',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -53,11 +55,12 @@ return _execute(
 /// Lists all email scanner rules for an account.
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerListAllRules({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerListAllRules({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -70,12 +73,13 @@ return _execute(
 /// Create email scanner rule
 ///
 /// `POST /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -89,12 +93,13 @@ return _execute(
 /// Update email scanner rule priorities
 ///
 /// `PATCH /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -108,11 +113,12 @@ return _execute(
 /// Get an email scanner rule
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerGetRule({required String accountId, required String ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -125,12 +131,13 @@ return _execute(
 /// Update email scanner rule
 ///
 /// `PUT /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -144,11 +151,12 @@ return _execute(
 /// Delete email scanner rule
 ///
 /// `DELETE /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/email/rules/${Uri.encodeComponent(ruleId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

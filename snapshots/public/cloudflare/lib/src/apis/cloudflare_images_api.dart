@@ -19,12 +19,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /accounts/{account_id}/images/v1`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from ImagesImageBasicUpload');,
 );
 
@@ -40,11 +41,12 @@ return _execute(
 /// Fetch details for a single image.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Update image access control. On access control change, all copies of the image are purged from cache.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -80,11 +83,12 @@ return _execute(
 /// Delete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -99,11 +103,12 @@ return _execute(
 /// Fetch base image. For most images this will be the originally uploaded file. For larger images it can be a near-lossless version of the original.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}/blob`
-Future<ApiResult<Uint8List, Never>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<Uint8List, Never>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}/blob',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -118,11 +123,12 @@ return _execute(
 /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.
 ///
 /// `GET /accounts/{account_id}/images/v1/stats`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/stats',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -177,18 +183,22 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`
-Future<ApiResult<ResponseCommon36, ResponseCommon36>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, ResponseCommon36>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (continuationToken != null) queryParameters['continuation_token'] = continuationToken.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (creator != null) queryParameters['creator'] = creator;
+if (metafieldoperator != null) queryParameters['meta.<field>[<operator>]'] = metafieldoperator;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (continuationToken != null) 'continuation_token': continuationToken.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-    'creator': ?creator,
-    'meta.<field>[<operator>]': ?metafieldoperator,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -206,12 +216,13 @@ return _execute(
 /// Direct uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2/direct_upload',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from ImagesImageDirectUploadRequest');,
 );
 

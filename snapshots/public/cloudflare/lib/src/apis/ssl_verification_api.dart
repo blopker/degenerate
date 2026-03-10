@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Get SSL Verification Info for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/verification`
-Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, String? retry, }) async  { final request = ApiRequest(
+Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, String? retry, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (retry != null) queryParameters['retry'] = retry;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/verification',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'retry': ?retry,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
 ///
 /// `PATCH /zones/{zone_id}/ssl/verification/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68, Never>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/verification/${Uri.encodeComponent(certificatePackId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

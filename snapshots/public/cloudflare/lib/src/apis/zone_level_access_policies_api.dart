@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists Access policies configured for an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a new Access policy for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a single Access policy.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a configured Access policy.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete an Access policy.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

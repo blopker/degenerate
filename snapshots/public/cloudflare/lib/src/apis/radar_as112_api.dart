@@ -17,24 +17,64 @@ final ApiConfig _config;
 /// Retrieves the distribution of AS112 queries by the specified dimension.
 ///
 /// `GET /radar/as112/summary/{dimension}`
-Future<ApiResult<RadarGetDnsAs112SummaryResponse, RadarGetDnsAs112SummaryResponse400>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112SummaryResponse, RadarGetDnsAs112SummaryResponse400>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (queryType != null) {
+for (final item in queryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (protocol != null) {
+for (final item in protocol) {
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+}
+}
+if (responseCode != null) {
+for (final item in responseCode) {
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (queryType != null) 'queryType': queryType.toString(),
-    if (protocol != null) 'protocol': protocol.toString(),
-    if (responseCode != null) 'responseCode': responseCode.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -52,24 +92,64 @@ return _execute(
 /// Retrieves the AS112 DNS queries over time.
 ///
 /// `GET /radar/as112/timeseries`
-Future<ApiResult<RadarGetDnsAs112TimeseriesResponse, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TimeseriesResponse, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (queryType != null) {
+for (final item in queryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (protocol != null) {
+for (final item in protocol) {
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+}
+}
+if (responseCode != null) {
+for (final item in responseCode) {
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/timeseries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (queryType != null) 'queryType': queryType.toString(),
-    if (protocol != null) 'protocol': protocol.toString(),
-    if (responseCode != null) 'responseCode': responseCode.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -87,25 +167,65 @@ return _execute(
 /// Retrieves the distribution of AS112 queries grouped by dimension over time.
 ///
 /// `GET /radar/as112/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetDnsAs112TimeseriesGroupResponse, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TimeseriesGroupResponse, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (queryType != null) {
+for (final item in queryType) {
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+}
+}
+if (protocol != null) {
+for (final item in protocol) {
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+}
+}
+if (responseCode != null) {
+for (final item in responseCode) {
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (queryType != null) 'queryType': queryType.toString(),
-    if (protocol != null) 'protocol': protocol.toString(),
-    if (responseCode != null) 'responseCode': responseCode.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -123,21 +243,49 @@ return _execute(
 /// Retrieves the top locations by AS112 DNS queries.
 ///
 /// `GET /radar/as112/top/locations`
-Future<ApiResult<RadarGetDnsAs112TopLocationsResponse, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TopLocationsResponse, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/top/locations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -155,21 +303,49 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 with DNSSEC (DNS Security Extensions) support.
 ///
 /// `GET /radar/as112/top/locations/dnssec/{dnssec}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponse, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponse, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/top/locations/dnssec/${Uri.encodeComponent(dnssec.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -187,21 +363,49 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 with EDNS (Extension Mechanisms for DNS) support.
 ///
 /// `GET /radar/as112/top/locations/edns/{edns}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByEdnsResponse, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TopLocationsByEdnsResponse, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/top/locations/edns/${Uri.encodeComponent(edns.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -219,21 +423,49 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 for an IP version.
 ///
 /// `GET /radar/as112/top/locations/ip_version/{ip_version}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByIpVersionResponse, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetDnsAs112TopLocationsByIpVersionResponse, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/as112/top/locations/ip_version/${Uri.encodeComponent(ipVersion.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (location != null) 'location': location.toString(),
-    if (continent != null) 'continent': continent.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

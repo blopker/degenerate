@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets the configuration for a remotely-managed tunnel
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<ResponseCommon70, Never>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon70, Never>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/configurations',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Adds or updates the configuration for a remotely-managed tunnel.
 ///
 /// `PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<ResponseCommon70, Never>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon70, Never>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/configurations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

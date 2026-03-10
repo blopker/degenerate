@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.1.1
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'spec_02_root_info_servers_tags_security.dart';
 import '../apis/status_api.dart';
 
 /// Root SDK client providing access to all API groups.
@@ -19,4 +20,6 @@ final class Spec02RootInfoServersTagsApi {
   Spec02RootInfoServersTagsApi(this._config);
 
   late final StatusApi status = StatusApi(_config);
+
+  Spec02RootInfoServersTagsApi withApiKeyAuth(String value) => Spec02RootInfoServersTagsApi(Spec02RootInfoServersTagsSecurity.applyApiKeyAuth(_config, value));
 }

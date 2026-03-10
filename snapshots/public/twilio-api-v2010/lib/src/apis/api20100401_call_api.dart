@@ -15,26 +15,30 @@ final ApiConfig _config;
 /// Retrieves a collection of calls made to and from your account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (to != null) queryParameters['To'] = to;
+if (from != null) queryParameters['From'] = from;
+if (parentCallSid != null) queryParameters['ParentCallSid'] = parentCallSid;
+if (status != null) queryParameters['Status'] = status.toJson();
+if (startTime != null) queryParameters['StartTime'] = startTime.toString();
+if (startTimeBefore != null) queryParameters['StartTime<'] = startTimeBefore.toString();
+if (startTimeAfter != null) queryParameters['StartTime>'] = startTimeAfter.toString();
+if (endTime != null) queryParameters['EndTime'] = endTime.toString();
+if (endTimeBefore != null) queryParameters['EndTime<'] = endTimeBefore.toString();
+if (endTimeAfter != null) queryParameters['EndTime>'] = endTimeAfter.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'To': ?to,
-    'From': ?from,
-    'ParentCallSid': ?parentCallSid,
-    if (status != null) 'Status': status.toJson(),
-    if (startTime != null) 'StartTime': startTime.toString(),
-    if (startTimeBefore != null) 'StartTime<': startTimeBefore.toString(),
-    if (startTimeAfter != null) 'StartTime>': startTimeAfter.toString(),
-    if (endTime != null) 'EndTime': endTime.toString(),
-    if (endTimeBefore != null) 'EndTime<': endTimeBefore.toString(),
-    if (endTimeAfter != null) 'EndTime>': endTimeAfter.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -47,12 +51,13 @@ return _execute(
 /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateCallRequest');,
 );
 
@@ -66,11 +71,12 @@ return _execute(
 /// Fetch the call specified by the provided Call SID
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,12 +89,13 @@ return _execute(
 /// Initiates a call redirect or terminates a call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateCallRequest');,
 );
 
@@ -102,11 +109,12 @@ return _execute(
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

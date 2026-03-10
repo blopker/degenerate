@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a list of Hyperdrives.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34, Never>> listHyperdrive({required HyperdriveIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> listHyperdrive({required HyperdriveIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates and returns a new Hyperdrive configuration.
 ///
 /// `POST /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Returns the specified Hyperdrive configuration.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates and returns the specified Hyperdrive configuration.
 ///
 /// `PUT /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,12 +101,13 @@ return _execute(
 /// Patches and returns the specified Hyperdrive configuration. Custom caching settings are not kept if caching is disabled.
 ///
 /// `PATCH /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -118,11 +123,12 @@ return _execute(
 /// Deletes the specified Hyperdrive.
 ///
 /// `DELETE /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon34, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

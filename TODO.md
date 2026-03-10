@@ -5,7 +5,7 @@
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
 - **230+ unit tests** all passing, **19 wire tests** passing, `dart analyze` clean on all source directories
-- **CLI**: `--input`, `--output`, `--name`, `--client http|none`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
+- **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
@@ -65,7 +65,7 @@
 - [x] **Security schemes drive codegen** — generator now emits typed auth helpers for API key (header/query/cookie), bearer, and basic auth plus generated security metadata for schemes and per-operation/global requirements. Fixture 06 snapshot exercises the output. *(review2.md #3, #6)*
 - [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
 - [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. Consider adding a pre-validation phase that checks the spec against the OpenAPI 3.0/3.1 JSON meta-schema and fails fast with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
-- [ ] **`--client` flag is a no-op** — CLI exposes `--client http|none` but nothing changes in generated output. Either wire it up or remove it. *(review.md #7, review2.md 7c)*
+- [x] **`--client` flag removed** — was a no-op; runtime is now handled by separate adapter packages (`degenerate_http`, `degenerate_dio`). *(review.md #7, review2.md 7c)*
 
 ### P2: Polish and Trust
 

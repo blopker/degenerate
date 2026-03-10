@@ -17,14 +17,20 @@ final ApiConfig _config;
 /// `<p>`Retrieves the details of an account.</p>
 ///
 /// `GET /v1/account`
-Future<ApiResult<Account, ErrorModel>> getAccount({List<String>? expand}) async  { final request = ApiRequest(
+Future<ApiResult<Account, ErrorModel>> getAccount({List<String>? expand}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/account',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +48,13 @@ return _execute(
 /// `<p>`Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.</p>
 ///
 /// `POST /v1/account_links`
-Future<ApiResult<AccountLink, ErrorModel>> postAccountLinks({required PostAccountLinksRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AccountLink, ErrorModel>> postAccountLinks({required PostAccountLinksRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountLinksRequest');,
 );
 
@@ -66,12 +73,13 @@ return _execute(
 /// `<p>`Creates a AccountSession object that includes a single-use token that the platform can use on their front-end to grant client-side API access.</p>
 ///
 /// `POST /v1/account_sessions`
-Future<ApiResult<AccountSession, ErrorModel>> postAccountSessions({required PostAccountSessionsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AccountSession, ErrorModel>> postAccountSessions({required PostAccountSessionsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountSessionsRequest');,
 );
 
@@ -90,18 +98,26 @@ return _execute(
 /// `<p>`Returns a list of accounts connected to your platform via <a href="/docs/connect">Connect</a>. If you’re not a platform, the list is empty.</p>
 ///
 /// `GET /v1/accounts`
-Future<ApiResult<GetAccountsResponse, ErrorModel>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAccountsResponse, ErrorModel>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -123,12 +139,13 @@ return _execute(
 /// You can prefill any information on the account.</p>
 ///
 /// `POST /v1/accounts`
-Future<ApiResult<Account, ErrorModel>> postAccounts({PostAccountsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Account, ErrorModel>> postAccounts({PostAccountsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsRequest');,
 );
 
@@ -147,14 +164,20 @@ return _execute(
 /// `<p>`Retrieves the details of an account.</p>
 ///
 /// `GET /v1/accounts/{account}`
-Future<ApiResult<Account, ErrorModel>> getAccountsAccount({required String account, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Account, ErrorModel>> getAccountsAccount({required String account, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -184,12 +207,13 @@ return _execute(
 /// <a href="/docs/connect/updating-accounts">Connect</a> documentation to learn more about updating accounts.</p>
 ///
 /// `POST /v1/accounts/{account}`
-Future<ApiResult<Account, ErrorModel>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Account, ErrorModel>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountRequest');,
 );
 
@@ -214,12 +238,13 @@ return _execute(
 /// `<p>`If you want to delete your own account, use the <a href="https://dashboard.stripe.com/settings/account">account information tab in your account settings</a> instead.</p>
 ///
 /// `DELETE /v1/accounts/{account}`
-Future<ApiResult<DeletedAccount, ErrorModel>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedAccount, ErrorModel>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountRequest');,
 );
 
@@ -238,12 +263,13 @@ return _execute(
 /// `<p>`Create an external account for a given account.</p>
 ///
 /// `POST /v1/accounts/{account}/bank_accounts`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountBankAccountsRequest');,
 );
 
@@ -262,14 +288,20 @@ return _execute(
 /// `<p>`Retrieve a specified external account for a given account.</p>
 ///
 /// `GET /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -293,12 +325,13 @@ return _execute(
 /// arguments or changes.</p>
 ///
 /// `POST /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountBankAccountsIdRequest');,
 );
 
@@ -317,12 +350,13 @@ return _execute(
 /// `<p>`Delete a specified external account for a given account.</p>
 ///
 /// `DELETE /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountBankAccountsIdRequest');,
 );
 
@@ -341,14 +375,20 @@ return _execute(
 /// `<p>`Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.</p>
 ///
 /// `GET /v1/accounts/{account}/capabilities`
-Future<ApiResult<GetAccountsAccountCapabilitiesResponse, ErrorModel>> getAccountsAccountCapabilities({required String account, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAccountsAccountCapabilitiesResponse, ErrorModel>> getAccountsAccountCapabilities({required String account, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -366,14 +406,20 @@ return _execute(
 /// `<p>`Retrieves information about the specified Account Capability.</p>
 ///
 /// `GET /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, ErrorModel>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Capability, ErrorModel>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -391,12 +437,13 @@ return _execute(
 /// `<p>`Updates an existing Account Capability. Request or remove a capability by updating its `<code>`requested</code> parameter.</p>
 ///
 /// `POST /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, ErrorModel>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Capability, ErrorModel>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountCapabilitiesCapabilityRequest');,
 );
 
@@ -415,18 +462,24 @@ return _execute(
 /// `<p>`List external accounts for an account.</p>
 ///
 /// `GET /v1/accounts/{account}/external_accounts`
-Future<ApiResult<GetAccountsAccountExternalAccountsResponse, ErrorModel>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAccountsAccountExternalAccountsResponse, ErrorModel>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (object != null) queryParameters['object'] = object.toJson();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (object != null) 'object': object.toJson(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -444,12 +497,13 @@ return _execute(
 /// `<p>`Create an external account for a given account.</p>
 ///
 /// `POST /v1/accounts/{account}/external_accounts`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountExternalAccountsRequest');,
 );
 
@@ -468,14 +522,20 @@ return _execute(
 /// `<p>`Retrieve a specified external account for a given account.</p>
 ///
 /// `GET /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -499,12 +559,13 @@ return _execute(
 /// arguments or changes.</p>
 ///
 /// `POST /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountExternalAccountsIdRequest');,
 );
 
@@ -523,12 +584,13 @@ return _execute(
 /// `<p>`Delete a specified external account for a given account.</p>
 ///
 /// `DELETE /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountExternalAccountsIdRequest');,
 );
 
@@ -549,12 +611,13 @@ return _execute(
 /// `<p>``<strong>`You can only create login links for accounts that use the <a href="/connect/express-dashboard">Express Dashboard</a> and are connected to your platform</strong>.</p>
 ///
 /// `POST /v1/accounts/{account}/login_links`
-Future<ApiResult<LoginLink, ErrorModel>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<LoginLink, ErrorModel>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/login_links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountLoginLinksRequest');,
 );
 
@@ -573,18 +636,31 @@ return _execute(
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>
 ///
 /// `GET /v1/accounts/{account}/people`
-Future<ApiResult<GetAccountsAccountPeopleResponse, ErrorModel>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAccountsAccountPeopleResponse, ErrorModel>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (relationship != null) {
+if (relationship.authorizer != null) queryParameters['relationship[authorizer]'] = relationship.authorizer.toString();
+if (relationship.director != null) queryParameters['relationship[director]'] = relationship.director.toString();
+if (relationship.executive != null) queryParameters['relationship[executive]'] = relationship.executive.toString();
+if (relationship.legalGuardian != null) queryParameters['relationship[legal_guardian]'] = relationship.legalGuardian.toString();
+if (relationship.owner != null) queryParameters['relationship[owner]'] = relationship.owner.toString();
+if (relationship.representative != null) queryParameters['relationship[representative]'] = relationship.representative.toString();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (relationship != null) 'relationship': relationship.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -602,12 +678,13 @@ return _execute(
 /// `<p>`Creates a new person.</p>
 ///
 /// `POST /v1/accounts/{account}/people`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPeopleRequest');,
 );
 
@@ -626,14 +703,20 @@ return _execute(
 /// `<p>`Retrieves an existing person.</p>
 ///
 /// `GET /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, ErrorModel>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -651,12 +734,13 @@ return _execute(
 /// `<p>`Updates an existing person.</p>
 ///
 /// `POST /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPeoplePersonRequest');,
 );
 
@@ -675,12 +759,13 @@ return _execute(
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener</code>. If your integration is using the `<code>`executive</code> parameter, you cannot delete the only verified `<code>`executive</code> on file.</p>
 ///
 /// `DELETE /v1/accounts/{account}/people/{person}`
-Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountPeoplePersonRequest');,
 );
 
@@ -699,18 +784,31 @@ return _execute(
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>
 ///
 /// `GET /v1/accounts/{account}/persons`
-Future<ApiResult<GetAccountsAccountPersonsResponse, ErrorModel>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAccountsAccountPersonsResponse, ErrorModel>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (relationship != null) {
+if (relationship.authorizer != null) queryParameters['relationship[authorizer]'] = relationship.authorizer.toString();
+if (relationship.director != null) queryParameters['relationship[director]'] = relationship.director.toString();
+if (relationship.executive != null) queryParameters['relationship[executive]'] = relationship.executive.toString();
+if (relationship.legalGuardian != null) queryParameters['relationship[legal_guardian]'] = relationship.legalGuardian.toString();
+if (relationship.owner != null) queryParameters['relationship[owner]'] = relationship.owner.toString();
+if (relationship.representative != null) queryParameters['relationship[representative]'] = relationship.representative.toString();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (relationship != null) 'relationship': relationship.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -728,12 +826,13 @@ return _execute(
 /// `<p>`Creates a new person.</p>
 ///
 /// `POST /v1/accounts/{account}/persons`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPersonsRequest');,
 );
 
@@ -752,14 +851,20 @@ return _execute(
 /// `<p>`Retrieves an existing person.</p>
 ///
 /// `GET /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, ErrorModel>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -777,12 +882,13 @@ return _execute(
 /// `<p>`Updates an existing person.</p>
 ///
 /// `POST /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPersonsPersonRequest');,
 );
 
@@ -801,12 +907,13 @@ return _execute(
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener</code>. If your integration is using the `<code>`executive</code> parameter, you cannot delete the only verified `<code>`executive</code> on file.</p>
 ///
 /// `DELETE /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountPersonsPersonRequest');,
 );
 
@@ -827,12 +934,13 @@ return _execute(
 /// `<p>`Only accounts where your platform is liable for negative account balances, which includes Custom and Express accounts, can be rejected. Test-mode accounts can be rejected at any time. Live-mode accounts can only be rejected after all balances are zero.</p>
 ///
 /// `POST /v1/accounts/{account}/reject`
-Future<ApiResult<Account, ErrorModel>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Account, ErrorModel>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/reject',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountRejectRequest');,
 );
 
@@ -850,18 +958,24 @@ return _execute(
 /// `<p>`List apple pay domains.</p>
 ///
 /// `GET /v1/apple_pay/domains`
-Future<ApiResult<GetApplePayDomainsResponse, ErrorModel>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetApplePayDomainsResponse, ErrorModel>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domainName != null) queryParameters['domain_name'] = domainName;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/apple_pay/domains',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'domain_name': ?domainName,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -878,12 +992,13 @@ return _execute(
 /// `<p>`Create an apple pay domain.</p>
 ///
 /// `POST /v1/apple_pay/domains`
-Future<ApiResult<ApplePayDomain, ErrorModel>> postApplePayDomains({required PostApplePayDomainsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ApplePayDomain, ErrorModel>> postApplePayDomains({required PostApplePayDomainsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/apple_pay/domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplePayDomainsRequest');,
 );
 
@@ -901,14 +1016,20 @@ return _execute(
 /// `<p>`Retrieve an apple pay domain.</p>
 ///
 /// `GET /v1/apple_pay/domains/{domain}`
-Future<ApiResult<ApplePayDomain, ErrorModel>> getApplePayDomainsDomain({required String domain, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ApplePayDomain, ErrorModel>> getApplePayDomainsDomain({required String domain, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/apple_pay/domains/${Uri.encodeComponent(domain)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -925,12 +1046,13 @@ return _execute(
 /// `<p>`Delete an apple pay domain.</p>
 ///
 /// `DELETE /v1/apple_pay/domains/{domain}`
-Future<ApiResult<DeletedApplePayDomain, ErrorModel>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedApplePayDomain, ErrorModel>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/apple_pay/domains/${Uri.encodeComponent(domain)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteApplePayDomainsDomainRequest');,
 );
 
@@ -949,19 +1071,27 @@ return _execute(
 /// `<p>`Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.</p>
 ///
 /// `GET /v1/application_fees`
-Future<ApiResult<GetApplicationFeesResponse, ErrorModel>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetApplicationFeesResponse, ErrorModel>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (charge != null) queryParameters['charge'] = charge;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/application_fees',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'charge': ?charge,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -979,14 +1109,20 @@ return _execute(
 /// `<p>`By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.</p>
 ///
 /// `GET /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, ErrorModel>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FeeRefund, ErrorModel>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1006,12 +1142,13 @@ return _execute(
 /// `<p>`This request only accepts metadata as an argument.</p>
 ///
 /// `POST /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesFeeRefundsIdRequest');,
 );
 
@@ -1030,14 +1167,20 @@ return _execute(
 /// `<p>`Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.</p>
 ///
 /// `GET /v1/application_fees/{id}`
-Future<ApiResult<ApplicationFee, ErrorModel>> getApplicationFeesId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ApplicationFee, ErrorModel>> getApplicationFeesId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1054,12 +1197,13 @@ return _execute(
 /// 
 ///
 /// `POST /v1/application_fees/{id}/refund`
-Future<ApiResult<ApplicationFee, ErrorModel>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ApplicationFee, ErrorModel>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refund',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesIdRefundRequest');,
 );
 
@@ -1078,17 +1222,23 @@ return _execute(
 /// `<p>`You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the `<code>`limit</code> and `<code>`starting_after</code> parameters to page through additional refunds.</p>
 ///
 /// `GET /v1/application_fees/{id}/refunds`
-Future<ApiResult<GetApplicationFeesIdRefundsResponse, ErrorModel>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetApplicationFeesIdRefundsResponse, ErrorModel>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1114,12 +1264,13 @@ return _execute(
 /// or when trying to refund more money than is left on an application fee.</p>
 ///
 /// `POST /v1/application_fees/{id}/refunds`
-Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesIdRefundsRequest');,
 );
 
@@ -1138,18 +1289,25 @@ return _execute(
 /// `<p>`List all secrets stored on the given scope.</p>
 ///
 /// `GET /v1/apps/secrets`
-Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({String? endingBefore, List<String>? expand, int? limit, required GetAppsSecretsScope scope, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({String? endingBefore, List<String>? expand, int? limit, required GetAppsSecretsScope scope, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['scope[type]'] = scope.type.toJson();
+if (scope.user != null) queryParameters['scope[user]'] = scope.user;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/apps/secrets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'scope': scope.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1167,12 +1325,13 @@ return _execute(
 /// `<p>`Create or replace a secret in the secret store.</p>
 ///
 /// `POST /v1/apps/secrets`
-Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecrets({required PostAppsSecretsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecrets({required PostAppsSecretsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAppsSecretsRequest');,
 );
 
@@ -1191,12 +1350,13 @@ return _execute(
 /// `<p>`Deletes a secret from the secret store by name and scope.</p>
 ///
 /// `POST /v1/apps/secrets/delete`
-Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets/delete',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAppsSecretsDeleteRequest');,
 );
 
@@ -1215,16 +1375,23 @@ return _execute(
 /// `<p>`Finds a secret in the secret store by name and scope.</p>
 ///
 /// `GET /v1/apps/secrets/find`
-Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({List<String>? expand, required String name, required GetAppsSecretsFindScope scope, }) async  { final request = ApiRequest(
+Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({List<String>? expand, required String name, required GetAppsSecretsFindScope scope, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['name'] = name;
+queryParameters['scope[type]'] = scope.type.toJson();
+if (scope.user != null) queryParameters['scope[user]'] = scope.user;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/apps/secrets/find',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    'name': name,
-    'scope': scope.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1243,14 +1410,20 @@ return _execute(
 ///  For a sample request, see <a href="/docs/connect/account-balances#accounting-for-negative-balances">Accounting for negative balances</a>.</p>
 ///
 /// `GET /v1/balance`
-Future<ApiResult<Balance, ErrorModel>> getBalance({List<String>? expand}) async  { final request = ApiRequest(
+Future<ApiResult<Balance, ErrorModel>> getBalance({List<String>? expand}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1270,22 +1443,30 @@ return _execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history</code>.</p>
 ///
 /// `GET /v1/balance/history`
-Future<ApiResult<GetBalanceHistoryResponse, ErrorModel>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBalanceHistoryResponse, ErrorModel>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (currency != null) queryParameters['currency'] = currency;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (payout != null) queryParameters['payout'] = payout;
+if (source != null) queryParameters['source'] = source;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance/history',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'currency': ?currency,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payout': ?payout,
-    'source': ?source,
-    'starting_after': ?startingAfter,
-    'type': ?type,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1305,14 +1486,20 @@ return _execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id</code>.</p>
 ///
 /// `GET /v1/balance/history/{id}`
-Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceHistoryId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceHistoryId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance/history/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1331,14 +1518,20 @@ return _execute(
 ///  Related guide: <a href="/connect/authentication">Making API calls for connected accounts</a></p>
 ///
 /// `GET /v1/balance_settings`
-Future<ApiResult<BalanceSettings, ErrorModel>> getBalanceSettings({List<String>? expand}) async  { final request = ApiRequest(
+Future<ApiResult<BalanceSettings, ErrorModel>> getBalanceSettings({List<String>? expand}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance_settings',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1357,12 +1550,13 @@ return _execute(
 ///  Related guide: <a href="/connect/authentication">Making API calls for connected accounts</a></p>
 ///
 /// `POST /v1/balance_settings`
-Future<ApiResult<BalanceSettings, ErrorModel>> postBalanceSettings({PostBalanceSettingsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<BalanceSettings, ErrorModel>> postBalanceSettings({PostBalanceSettingsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/balance_settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBalanceSettingsRequest');,
 );
 
@@ -1383,22 +1577,30 @@ return _execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history</code>.</p>
 ///
 /// `GET /v1/balance_transactions`
-Future<ApiResult<GetBalanceTransactionsResponse, ErrorModel>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBalanceTransactionsResponse, ErrorModel>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (currency != null) queryParameters['currency'] = currency;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (payout != null) queryParameters['payout'] = payout;
+if (source != null) queryParameters['source'] = source;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance_transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'currency': ?currency,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payout': ?payout,
-    'source': ?source,
-    'starting_after': ?startingAfter,
-    'type': ?type,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1418,14 +1620,20 @@ return _execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id</code>.</p>
 ///
 /// `GET /v1/balance_transactions/{id}`
-Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceTransactionsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceTransactionsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/balance_transactions/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1443,19 +1651,25 @@ return _execute(
 /// `<p>`Lists billing active and inactive alerts</p>
 ///
 /// `GET /v1/billing/alerts`
-Future<ApiResult<GetBillingAlertsResponse, ErrorModel>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingAlertsResponse, ErrorModel>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (alertType != null) queryParameters['alert_type'] = alertType.toJson();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (meter != null) queryParameters['meter'] = meter;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/alerts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (alertType != null) 'alert_type': alertType.toJson(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'meter': ?meter,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1473,12 +1687,13 @@ return _execute(
 /// `<p>`Creates a billing alert</p>
 ///
 /// `POST /v1/billing/alerts`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlerts({required PostBillingAlertsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlerts({required PostBillingAlertsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsRequest');,
 );
 
@@ -1497,14 +1712,20 @@ return _execute(
 /// `<p>`Retrieves a billing alert given an ID</p>
 ///
 /// `GET /v1/billing/alerts/{id}`
-Future<ApiResult<BillingAlert, ErrorModel>> getBillingAlertsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingAlert, ErrorModel>> getBillingAlertsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1522,12 +1743,13 @@ return _execute(
 /// `<p>`Reactivates this alert, allowing it to trigger again.</p>
 ///
 /// `POST /v1/billing/alerts/{id}/activate`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/activate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdActivateRequest');,
 );
 
@@ -1546,12 +1768,13 @@ return _execute(
 /// `<p>`Archives this alert, removing it from the list view and APIs. This is non-reversible.</p>
 ///
 /// `POST /v1/billing/alerts/{id}/archive`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/archive',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdArchiveRequest');,
 );
 
@@ -1570,12 +1793,13 @@ return _execute(
 /// `<p>`Deactivates this alert, preventing it from triggering.</p>
 ///
 /// `POST /v1/billing/alerts/{id}/deactivate`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/deactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdDeactivateRequest');,
 );
 
@@ -1594,17 +1818,25 @@ return _execute(
 /// `<p>`Retrieves the credit balance summary for a customer.</p>
 ///
 /// `GET /v1/billing/credit_balance_summary`
-Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({String? customer, String? customerAccount, List<String>? expand, required GetBillingCreditBalanceSummaryFilter filter, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({String? customer, String? customerAccount, List<String>? expand, required GetBillingCreditBalanceSummaryFilter filter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (filter.applicabilityScope != null) queryParameters['filter[applicability_scope]'] = filter.applicabilityScope.toString();
+if (filter.creditGrant != null) queryParameters['filter[credit_grant]'] = filter.creditGrant;
+queryParameters['filter[type]'] = filter.type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/credit_balance_summary',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    if (expand != null) 'expand': expand.toString(),
-    'filter': filter.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1622,20 +1854,26 @@ return _execute(
 /// `<p>`Retrieve a list of credit balance transactions.</p>
 ///
 /// `GET /v1/billing/credit_balance_transactions`
-Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, ErrorModel>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, ErrorModel>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (creditGrant != null) queryParameters['credit_grant'] = creditGrant;
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/credit_balance_transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'credit_grant': ?creditGrant,
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1653,14 +1891,20 @@ return _execute(
 /// `<p>`Retrieves a credit balance transaction.</p>
 ///
 /// `GET /v1/billing/credit_balance_transactions/{id}`
-Future<ApiResult<BillingCreditBalanceTransaction, ErrorModel>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditBalanceTransaction, ErrorModel>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/credit_balance_transactions/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1678,19 +1922,25 @@ return _execute(
 /// `<p>`Retrieve a list of credit grants.</p>
 ///
 /// `GET /v1/billing/credit_grants`
-Future<ApiResult<GetBillingCreditGrantsResponse, ErrorModel>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingCreditGrantsResponse, ErrorModel>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/credit_grants',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1708,12 +1958,13 @@ return _execute(
 /// `<p>`Creates a credit grant.</p>
 ///
 /// `POST /v1/billing/credit_grants`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsRequest');,
 );
 
@@ -1732,14 +1983,20 @@ return _execute(
 /// `<p>`Retrieves a credit grant.</p>
 ///
 /// `GET /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> getBillingCreditGrantsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditGrant, ErrorModel>> getBillingCreditGrantsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1757,12 +2014,13 @@ return _execute(
 /// `<p>`Updates a credit grant.</p>
 ///
 /// `POST /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdRequest');,
 );
 
@@ -1781,12 +2039,13 @@ return _execute(
 /// `<p>`Expires a credit grant.</p>
 ///
 /// `POST /v1/billing/credit_grants/{id}/expire`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/expire',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdExpireRequest');,
 );
 
@@ -1805,12 +2064,13 @@ return _execute(
 /// `<p>`Voids a credit grant.</p>
 ///
 /// `POST /v1/billing/credit_grants/{id}/void`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/void',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdVoidRequest');,
 );
 
@@ -1829,12 +2089,13 @@ return _execute(
 /// `<p>`Creates a billing meter event adjustment.</p>
 ///
 /// `POST /v1/billing/meter_event_adjustments`
-Future<ApiResult<BillingMeterEventAdjustment, ErrorModel>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeterEventAdjustment, ErrorModel>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_event_adjustments',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMeterEventAdjustmentsRequest');,
 );
 
@@ -1853,12 +2114,13 @@ return _execute(
 /// `<p>`Creates a billing meter event.</p>
 ///
 /// `POST /v1/billing/meter_events`
-Future<ApiResult<BillingMeterEvent, ErrorModel>> postBillingMeterEvents({required PostBillingMeterEventsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeterEvent, ErrorModel>> postBillingMeterEvents({required PostBillingMeterEventsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_events',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMeterEventsRequest');,
 );
 
@@ -1877,18 +2139,24 @@ return _execute(
 /// `<p>`Retrieve a list of billing meters.</p>
 ///
 /// `GET /v1/billing/meters`
-Future<ApiResult<GetBillingMetersResponse, ErrorModel>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingMetersResponse, ErrorModel>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/meters',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1906,12 +2174,13 @@ return _execute(
 /// `<p>`Creates a billing meter.</p>
 ///
 /// `POST /v1/billing/meters`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMeters({required PostBillingMetersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeter, ErrorModel>> postBillingMeters({required PostBillingMetersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersRequest');,
 );
 
@@ -1930,14 +2199,20 @@ return _execute(
 /// `<p>`Retrieves a billing meter given an ID.</p>
 ///
 /// `GET /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, ErrorModel>> getBillingMetersId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeter, ErrorModel>> getBillingMetersId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1955,12 +2230,13 @@ return _execute(
 /// `<p>`Updates a billing meter.</p>
 ///
 /// `POST /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdRequest');,
 );
 
@@ -1979,12 +2255,13 @@ return _execute(
 /// `<p>`When a meter is deactivated, no more meter events will be accepted for this meter. You can’t attach a deactivated meter to a price.</p>
 ///
 /// `POST /v1/billing/meters/{id}/deactivate`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/deactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdDeactivateRequest');,
 );
 
@@ -2003,21 +2280,27 @@ return _execute(
 /// `<p>`Retrieve a list of billing meter event summaries.</p>
 ///
 /// `GET /v1/billing/meters/{id}/event_summaries`
-Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, String? endingBefore, List<String>? expand, int? limit, required int startTime, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, String? endingBefore, List<String>? expand, int? limit, required int startTime, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['customer'] = customer;
+queryParameters['end_time'] = endTime.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['start_time'] = startTime.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (valueGroupingWindow != null) queryParameters['value_grouping_window'] = valueGroupingWindow.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/event_summaries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'customer': customer,
-    'end_time': endTime.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'start_time': startTime.toString(),
-    'starting_after': ?startingAfter,
-    if (valueGroupingWindow != null) 'value_grouping_window': valueGroupingWindow.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2035,12 +2318,13 @@ return _execute(
 /// `<p>`When a meter is reactivated, events for this meter can be accepted and you can attach the meter to a price.</p>
 ///
 /// `POST /v1/billing/meters/{id}/reactivate`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/reactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdReactivateRequest');,
 );
 
@@ -2059,19 +2343,25 @@ return _execute(
 /// `<p>`Returns a list of configurations that describe the functionality of the customer portal.</p>
 ///
 /// `GET /v1/billing_portal/configurations`
-Future<ApiResult<GetBillingPortalConfigurationsResponse, ErrorModel>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetBillingPortalConfigurationsResponse, ErrorModel>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (isDefault != null) queryParameters['is_default'] = isDefault.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing_portal/configurations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (isDefault != null) 'is_default': isDefault.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2089,12 +2379,13 @@ return _execute(
 /// `<p>`Creates a configuration that describes the functionality and behavior of a PortalSession</p>
 ///
 /// `POST /v1/billing_portal/configurations`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalConfigurationsRequest');,
 );
 
@@ -2113,14 +2404,20 @@ return _execute(
 /// `<p>`Retrieves a configuration that describes the functionality of the customer portal.</p>
 ///
 /// `GET /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingPortalConfiguration, ErrorModel>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2138,12 +2435,13 @@ return _execute(
 /// `<p>`Updates a configuration that describes the functionality of the customer portal.</p>
 ///
 /// `POST /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalConfigurationsConfigurationRequest');,
 );
 
@@ -2162,12 +2460,13 @@ return _execute(
 /// `<p>`Creates a session of the customer portal.</p>
 ///
 /// `POST /v1/billing_portal/sessions`
-Future<ApiResult<BillingPortalSession, ErrorModel>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<BillingPortalSession, ErrorModel>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalSessionsRequest');,
 );
 
@@ -2186,21 +2485,29 @@ return _execute(
 /// `<p>`Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.</p>
 ///
 /// `GET /v1/charges`
-Future<ApiResult<GetChargesResponse, ErrorModel>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, }) async  { final request = ApiRequest(
+Future<ApiResult<GetChargesResponse, ErrorModel>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (transferGroup != null) queryParameters['transfer_group'] = transferGroup;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_intent': ?paymentIntent,
-    'starting_after': ?startingAfter,
-    'transfer_group': ?transferGroup,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2219,12 +2526,13 @@ return _execute(
 /// object used to request payment.</p>
 ///
 /// `POST /v1/charges`
-Future<ApiResult<Charge, ErrorModel>> postCharges({PostChargesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Charge, ErrorModel>> postCharges({PostChargesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesRequest');,
 );
 
@@ -2246,17 +2554,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/charges/search`
-Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2274,14 +2588,20 @@ return _execute(
 /// `<p>`Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.</p>
 ///
 /// `GET /v1/charges/{charge}`
-Future<ApiResult<Charge, ErrorModel>> getChargesCharge({required String charge, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Charge, ErrorModel>> getChargesCharge({required String charge, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2299,12 +2619,13 @@ return _execute(
 /// `<p>`Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/charges/{charge}`
-Future<ApiResult<Charge, ErrorModel>> postChargesCharge({required String charge, PostChargesChargeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Charge, ErrorModel>> postChargesCharge({required String charge, PostChargesChargeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRequest');,
 );
 
@@ -2327,12 +2648,13 @@ return _execute(
 /// `<p>`Don’t use this method to capture a PaymentIntent-initiated charge. Use <a href="/docs/api/payment_intents/capture">Capture a PaymentIntent</a>.</p>
 ///
 /// `POST /v1/charges/{charge}/capture`
-Future<ApiResult<Charge, ErrorModel>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Charge, ErrorModel>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/capture',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeCaptureRequest');,
 );
 
@@ -2350,14 +2672,20 @@ return _execute(
 /// `<p>`Retrieve a dispute for a specified charge.</p>
 ///
 /// `GET /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, ErrorModel>> getChargesChargeDispute({required String charge, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> getChargesChargeDispute({required String charge, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2374,12 +2702,13 @@ return _execute(
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeDisputeRequest');,
 );
 
@@ -2397,12 +2726,13 @@ return _execute(
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute/close`
-Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute/close',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeDisputeCloseRequest');,
 );
 
@@ -2431,12 +2761,13 @@ return _execute(
 /// or when you attempt to refund more money than is left on a charge.</p>
 ///
 /// `POST /v1/charges/{charge}/refund`
-Future<ApiResult<Charge, ErrorModel>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Charge, ErrorModel>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refund',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundRequest');,
 );
 
@@ -2455,17 +2786,23 @@ return _execute(
 /// `<p>`You can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the `<code>`limit</code> and `<code>`starting_after</code> parameters to page through additional refunds.</p>
 ///
 /// `GET /v1/charges/{charge}/refunds`
-Future<ApiResult<GetChargesChargeRefundsResponse, ErrorModel>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetChargesChargeRefundsResponse, ErrorModel>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2493,12 +2830,13 @@ return _execute(
 /// or when trying to refund more money than is left on a charge.</p>
 ///
 /// `POST /v1/charges/{charge}/refunds`
-Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundsRequest');,
 );
 
@@ -2516,14 +2854,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing refund.</p>
 ///
 /// `GET /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2540,12 +2884,13 @@ return _execute(
 /// `<p>`Update a specified refund.</p>
 ///
 /// `POST /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundsRefundRequest');,
 );
 
@@ -2564,25 +2909,35 @@ return _execute(
 /// `<p>`Returns a list of Checkout Sessions.</p>
 ///
 /// `GET /v1/checkout/sessions`
-Future<ApiResult<GetCheckoutSessionsResponse, ErrorModel>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCheckoutSessionsResponse, ErrorModel>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (customerDetails != null) {
+queryParameters['customer_details[email]'] = customerDetails.email;
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
+if (paymentLink != null) queryParameters['payment_link'] = paymentLink;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (subscription != null) queryParameters['subscription'] = subscription;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/checkout/sessions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    if (customerDetails != null) 'customer_details': customerDetails.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_intent': ?paymentIntent,
-    'payment_link': ?paymentLink,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    'subscription': ?subscription,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2600,12 +2955,13 @@ return _execute(
 /// `<p>`Creates a Checkout Session object.</p>
 ///
 /// `POST /v1/checkout/sessions`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessions({PostCheckoutSessionsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessions({PostCheckoutSessionsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsRequest');,
 );
 
@@ -2624,14 +2980,20 @@ return _execute(
 /// `<p>`Retrieves a Checkout Session object.</p>
 ///
 /// `GET /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, ErrorModel>> getCheckoutSessionsSession({required String session, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CheckoutSession, ErrorModel>> getCheckoutSessionsSession({required String session, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2651,12 +3013,13 @@ return _execute(
 /// `<p>`Related guide: <a href="/payments/advanced/dynamic-updates">Dynamically update a Checkout Session</a></p>
 ///
 /// `POST /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsSessionRequest');,
 );
 
@@ -2677,12 +3040,13 @@ return _execute(
 /// `<p>`After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired.</p>
 ///
 /// `POST /v1/checkout/sessions/{session}/expire`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/expire',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsSessionExpireRequest');,
 );
 
@@ -2701,17 +3065,23 @@ return _execute(
 /// `<p>`When retrieving a Checkout Session, there is an includable `<strong>`line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/checkout/sessions/{session}/line_items`
-Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, ErrorModel>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, ErrorModel>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2730,17 +3100,23 @@ return _execute(
 /// most recently created orders appearing first.</p>
 ///
 /// `GET /v1/climate/orders`
-Future<ApiResult<GetClimateOrdersResponse, ErrorModel>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetClimateOrdersResponse, ErrorModel>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/orders',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2759,12 +3135,13 @@ return _execute(
 /// after creation and payment will be deducted your Stripe balance.</p>
 ///
 /// `POST /v1/climate/orders`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrders({required PostClimateOrdersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrders({required PostClimateOrdersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersRequest');,
 );
 
@@ -2783,14 +3160,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Climate order object with the given ID.</p>
 ///
 /// `GET /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, ErrorModel>> getClimateOrdersOrder({required String order, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ClimateOrder, ErrorModel>> getClimateOrdersOrder({required String order, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2808,12 +3191,13 @@ return _execute(
 /// `<p>`Updates the specified order by setting the values of the parameters passed.</p>
 ///
 /// `POST /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersOrderRequest');,
 );
 
@@ -2835,12 +3219,13 @@ return _execute(
 /// provides 90 days advance notice and refunds the `<code>`amount_total</code>.</p>
 ///
 /// `POST /v1/climate/orders/{order}/cancel`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersOrderCancelRequest');,
 );
 
@@ -2859,17 +3244,23 @@ return _execute(
 /// `<p>`Lists all available Climate product objects.</p>
 ///
 /// `GET /v1/climate/products`
-Future<ApiResult<GetClimateProductsResponse, ErrorModel>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetClimateProductsResponse, ErrorModel>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/products',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2887,14 +3278,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Climate product with the given ID.</p>
 ///
 /// `GET /v1/climate/products/{product}`
-Future<ApiResult<ClimateProduct, ErrorModel>> getClimateProductsProduct({required String product, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ClimateProduct, ErrorModel>> getClimateProductsProduct({required String product, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/products/${Uri.encodeComponent(product)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2912,17 +3309,23 @@ return _execute(
 /// `<p>`Lists all available Climate supplier objects.</p>
 ///
 /// `GET /v1/climate/suppliers`
-Future<ApiResult<GetClimateSuppliersResponse, ErrorModel>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetClimateSuppliersResponse, ErrorModel>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/suppliers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2940,14 +3343,20 @@ return _execute(
 /// `<p>`Retrieves a Climate supplier object.</p>
 ///
 /// `GET /v1/climate/suppliers/{supplier}`
-Future<ApiResult<ClimateSupplier, ErrorModel>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ClimateSupplier, ErrorModel>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/climate/suppliers/${Uri.encodeComponent(supplier)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2965,14 +3374,20 @@ return _execute(
 /// `<p>`Retrieves an existing ConfirmationToken object</p>
 ///
 /// `GET /v1/confirmation_tokens/{confirmation_token}`
-Future<ApiResult<ConfirmationToken, ErrorModel>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ConfirmationToken, ErrorModel>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/confirmation_tokens/${Uri.encodeComponent(confirmationToken)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2990,17 +3405,23 @@ return _execute(
 /// `<p>`Lists all Country Spec objects available in the API.</p>
 ///
 /// `GET /v1/country_specs`
-Future<ApiResult<GetCountrySpecsResponse, ErrorModel>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCountrySpecsResponse, ErrorModel>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/country_specs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3018,14 +3439,20 @@ return _execute(
 /// `<p>`Returns a Country Spec for a given Country code.</p>
 ///
 /// `GET /v1/country_specs/{country}`
-Future<ApiResult<CountrySpec, ErrorModel>> getCountrySpecsCountry({required String country, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CountrySpec, ErrorModel>> getCountrySpecsCountry({required String country, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/country_specs/${Uri.encodeComponent(country)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3043,18 +3470,26 @@ return _execute(
 /// `<p>`Returns a list of your coupons.</p>
 ///
 /// `GET /v1/coupons`
-Future<ApiResult<GetCouponsResponse, ErrorModel>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCouponsResponse, ErrorModel>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/coupons',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3074,12 +3509,13 @@ return _execute(
 /// `<p>`A coupon has either a `<code>`percent_off</code> or an `<code>`amount_off</code> and `<code>`currency</code>. If you set an `<code>`amount_off</code>, that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of `<currency>`100</currency> will have a final total of `<currency>`0</currency> if a coupon with an `<code>`amount_off</code> of `<amount>`200</amount> is applied to it and an invoice with a subtotal of `<currency>`300</currency> will have a final total of `<currency>`100</currency> if a coupon with an `<code>`amount_off</code> of `<amount>`200</amount> is applied to it.</p>
 ///
 /// `POST /v1/coupons`
-Future<ApiResult<Coupon, ErrorModel>> postCoupons({PostCouponsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Coupon, ErrorModel>> postCoupons({PostCouponsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCouponsRequest');,
 );
 
@@ -3098,14 +3534,20 @@ return _execute(
 /// `<p>`Retrieves the coupon with the given ID.</p>
 ///
 /// `GET /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, ErrorModel>> getCouponsCoupon({required String coupon, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Coupon, ErrorModel>> getCouponsCoupon({required String coupon, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3123,12 +3565,13 @@ return _execute(
 /// `<p>`Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.</p>
 ///
 /// `POST /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, ErrorModel>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Coupon, ErrorModel>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCouponsCouponRequest');,
 );
 
@@ -3147,12 +3590,13 @@ return _execute(
 /// `<p>`You can delete coupons via the <a href="https://dashboard.stripe.com/coupons">coupon management</a> page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.</p>
 ///
 /// `DELETE /v1/coupons/{coupon}`
-Future<ApiResult<DeletedCoupon, ErrorModel>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedCoupon, ErrorModel>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCouponsCouponRequest');,
 );
 
@@ -3171,21 +3615,29 @@ return _execute(
 /// `<p>`Returns a list of credit notes.</p>
 ///
 /// `GET /v1/credit_notes`
-Future<ApiResult<GetCreditNotesResponse, ErrorModel>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCreditNotesResponse, ErrorModel>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (invoice != null) queryParameters['invoice'] = invoice;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/credit_notes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': ?invoice,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3215,12 +3667,13 @@ return _execute(
 /// `<code>`post_payment_credit_notes_amount</code>, or both, depending on the invoice’s `<code>`amount_remaining</code> at the time of credit note creation.</p>
 ///
 /// `POST /v1/credit_notes`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotes({required PostCreditNotesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreditNote, ErrorModel>> postCreditNotes({required PostCreditNotesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesRequest');,
 );
 
@@ -3239,27 +3692,43 @@ return _execute(
 /// `<p>`Get a preview of a credit note without creating it.</p>
 ///
 /// `GET /v1/credit_notes/preview`
-Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, required String invoice, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, }) async  { final request = ApiRequest(
+Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, required String invoice, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (amount != null) queryParameters['amount'] = amount.toString();
+if (creditAmount != null) queryParameters['credit_amount'] = creditAmount.toString();
+if (effectiveAt != null) queryParameters['effective_at'] = effectiveAt.toString();
+if (emailType != null) queryParameters['email_type'] = emailType.toJson();
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['invoice'] = invoice;
+if (lines != null) {
+queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
+}
+if (memo != null) queryParameters['memo'] = memo;
+if (metadata != null) {
+for (final entry in metadata.entries) {
+  queryParameters['metadata[${entry.key}]'] = entry.value;
+}
+}
+if (outOfBandAmount != null) queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
+if (reason != null) queryParameters['reason'] = reason.toJson();
+if (refundAmount != null) queryParameters['refund_amount'] = refundAmount.toString();
+if (refunds != null) {
+queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
+}
+if (shippingCost != null) {
+if (shippingCost.shippingRate != null) queryParameters['shipping_cost[shipping_rate]'] = shippingCost.shippingRate;
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/credit_notes/preview',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (amount != null) 'amount': amount.toString(),
-    if (creditAmount != null) 'credit_amount': creditAmount.toString(),
-    if (effectiveAt != null) 'effective_at': effectiveAt.toString(),
-    if (emailType != null) 'email_type': emailType.toJson(),
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': invoice,
-    if (lines != null) 'lines': lines.toString(),
-    'memo': ?memo,
-    if (metadata != null) 'metadata': metadata.toString(),
-    if (outOfBandAmount != null) 'out_of_band_amount': outOfBandAmount.toString(),
-    if (reason != null) 'reason': reason.toJson(),
-    if (refundAmount != null) 'refund_amount': refundAmount.toString(),
-    if (refunds != null) 'refunds': refunds.toString(),
-    if (shippingCost != null) 'shipping_cost': shippingCost.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3277,30 +3746,46 @@ return _execute(
 /// `<p>`When retrieving a credit note preview, you’ll get a `<strong>`lines</strong> property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/credit_notes/preview/lines`
-Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, required String invoice, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, required String invoice, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (amount != null) queryParameters['amount'] = amount.toString();
+if (creditAmount != null) queryParameters['credit_amount'] = creditAmount.toString();
+if (effectiveAt != null) queryParameters['effective_at'] = effectiveAt.toString();
+if (emailType != null) queryParameters['email_type'] = emailType.toJson();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['invoice'] = invoice;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (lines != null) {
+queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
+}
+if (memo != null) queryParameters['memo'] = memo;
+if (metadata != null) {
+for (final entry in metadata.entries) {
+  queryParameters['metadata[${entry.key}]'] = entry.value;
+}
+}
+if (outOfBandAmount != null) queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
+if (reason != null) queryParameters['reason'] = reason.toJson();
+if (refundAmount != null) queryParameters['refund_amount'] = refundAmount.toString();
+if (refunds != null) {
+queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
+}
+if (shippingCost != null) {
+if (shippingCost.shippingRate != null) queryParameters['shipping_cost[shipping_rate]'] = shippingCost.shippingRate;
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/credit_notes/preview/lines',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (amount != null) 'amount': amount.toString(),
-    if (creditAmount != null) 'credit_amount': creditAmount.toString(),
-    if (effectiveAt != null) 'effective_at': effectiveAt.toString(),
-    if (emailType != null) 'email_type': emailType.toJson(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': invoice,
-    if (limit != null) 'limit': limit.toString(),
-    if (lines != null) 'lines': lines.toString(),
-    'memo': ?memo,
-    if (metadata != null) 'metadata': metadata.toString(),
-    if (outOfBandAmount != null) 'out_of_band_amount': outOfBandAmount.toString(),
-    if (reason != null) 'reason': reason.toJson(),
-    if (refundAmount != null) 'refund_amount': refundAmount.toString(),
-    if (refunds != null) 'refunds': refunds.toString(),
-    if (shippingCost != null) 'shipping_cost': shippingCost.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3318,17 +3803,23 @@ return _execute(
 /// `<p>`When retrieving a credit note, you’ll get a `<strong>`lines</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/credit_notes/{credit_note}/lines`
-Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, ErrorModel>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, ErrorModel>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/credit_notes/${Uri.encodeComponent(creditNote)}/lines',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3346,14 +3837,20 @@ return _execute(
 /// `<p>`Retrieves the credit note object with the given identifier.</p>
 ///
 /// `GET /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3371,12 +3868,13 @@ return _execute(
 /// `<p>`Updates an existing credit note.</p>
 ///
 /// `POST /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesIdRequest');,
 );
 
@@ -3395,12 +3893,13 @@ return _execute(
 /// `<p>`Marks a credit note as void. Learn more about <a href="/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.</p>
 ///
 /// `POST /v1/credit_notes/{id}/void`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}/void',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesIdVoidRequest');,
 );
 
@@ -3419,12 +3918,13 @@ return _execute(
 /// `<p>`Creates a Customer Session object that includes a single-use client secret that you can use on your front-end to grant client-side API access for certain customer resources.</p>
 ///
 /// `POST /v1/customer_sessions`
-Future<ApiResult<CustomerSession, ErrorModel>> postCustomerSessions({required PostCustomerSessionsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CustomerSession, ErrorModel>> postCustomerSessions({required PostCustomerSessionsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customer_sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomerSessionsRequest');,
 );
 
@@ -3443,20 +3943,28 @@ return _execute(
 /// `<p>`Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.</p>
 ///
 /// `GET /v1/customers`
-Future<ApiResult<GetCustomersResponse, ErrorModel>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersResponse, ErrorModel>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (email != null) queryParameters['email'] = email;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (testClock != null) queryParameters['test_clock'] = testClock;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'email': ?email,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'test_clock': ?testClock,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3474,12 +3982,13 @@ return _execute(
 /// `<p>`Creates a new customer object.</p>
 ///
 /// `POST /v1/customers`
-Future<ApiResult<Customer, ErrorModel>> postCustomers({PostCustomersRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Customer, ErrorModel>> postCustomers({PostCustomersRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersRequest');,
 );
 
@@ -3501,17 +4010,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/customers/search`
-Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3529,14 +4044,20 @@ return _execute(
 /// `<p>`Retrieves a Customer object.</p>
 ///
 /// `GET /v1/customers/{customer}`
-Future<ApiResult<GetCustomersCustomerResponse, ErrorModel>> getCustomersCustomer({required String customer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerResponse, ErrorModel>> getCustomersCustomer({required String customer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3556,12 +4077,13 @@ return _execute(
 /// `<p>`This request accepts mostly the same arguments as the customer creation call.</p>
 ///
 /// `POST /v1/customers/{customer}`
-Future<ApiResult<Customer, ErrorModel>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Customer, ErrorModel>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerRequest');,
 );
 
@@ -3580,12 +4102,13 @@ return _execute(
 /// `<p>`Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}`
-Future<ApiResult<DeletedCustomer, ErrorModel>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedCustomer, ErrorModel>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerRequest');,
 );
 
@@ -3604,19 +4127,27 @@ return _execute(
 /// `<p>`Returns a list of transactions that updated the customer’s <a href="/docs/billing/customer/balance">balances</a>.</p>
 ///
 /// `GET /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (invoice != null) queryParameters['invoice'] = invoice;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': ?invoice,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3634,12 +4165,13 @@ return _execute(
 /// `<p>`Creates an immutable transaction that updates the customer’s credit <a href="/docs/billing/customer/balance">balance</a>.</p>
 ///
 /// `POST /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBalanceTransactionsRequest');,
 );
 
@@ -3658,14 +4190,20 @@ return _execute(
 /// `<p>`Retrieves a specific customer balance transaction that updated the customer’s <a href="/docs/billing/customer/balance">balances</a>.</p>
 ///
 /// `GET /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3683,12 +4221,13 @@ return _execute(
 /// `<p>`Most credit balance transaction fields are immutable, but you may update its `<code>`description</code> and `<code>`metadata</code>.</p>
 ///
 /// `POST /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBalanceTransactionsTransactionRequest');,
 );
 
@@ -3711,12 +4250,13 @@ return _execute(
 /// To change the default, you should <a href="/docs/api#update_customer">update the customer</a> to have a new `<code>`default_source</code>.</p>
 ///
 /// `POST /v1/customers/{customer}/bank_accounts`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsRequest');,
 );
 
@@ -3734,12 +4274,13 @@ return _execute(
 /// `<p>`Update a specified source for a given customer.</p>
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, ErrorModel>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, ErrorModel>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsIdRequest');,
 );
 
@@ -3758,12 +4299,13 @@ return _execute(
 /// `<p>`Delete a specified source for a given customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, ErrorModel>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, ErrorModel>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerBankAccountsIdRequest');,
 );
 
@@ -3782,12 +4324,13 @@ return _execute(
 /// `<p>`Verify a specified bank account for a given customer.</p>
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}/verify`
-Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}/verify',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsIdVerifyRequest');,
 );
 
@@ -3810,12 +4353,13 @@ return _execute(
 /// To change the default, you should <a href="/docs/api#update_customer">update the customer</a> to have a new `<code>`default_source</code>.</p>
 ///
 /// `POST /v1/customers/{customer}/cards`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCardsRequest');,
 );
 
@@ -3833,12 +4377,13 @@ return _execute(
 /// `<p>`Update a specified source for a given customer.</p>
 ///
 /// `POST /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<PostCustomersCustomerCardsIdResponse, ErrorModel>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostCustomersCustomerCardsIdResponse, ErrorModel>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCardsIdRequest');,
 );
 
@@ -3857,12 +4402,13 @@ return _execute(
 /// `<p>`Delete a specified source for a given customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, ErrorModel>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, ErrorModel>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerCardsIdRequest');,
 );
 
@@ -3881,14 +4427,20 @@ return _execute(
 /// `<p>`Retrieves a customer’s cash balance.</p>
 ///
 /// `GET /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, ErrorModel>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CashBalance, ErrorModel>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3906,12 +4458,13 @@ return _execute(
 /// `<p>`Changes the settings on a customer’s cash balance.</p>
 ///
 /// `POST /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, ErrorModel>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CashBalance, ErrorModel>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCashBalanceRequest');,
 );
 
@@ -3930,17 +4483,23 @@ return _execute(
 /// `<p>`Returns a list of transactions that modified the customer’s <a href="/docs/payments/customer-balance">cash balance</a>.</p>
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions`
-Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance_transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3958,14 +4517,20 @@ return _execute(
 /// `<p>`Retrieves a specific cash balance transaction, which updated the customer’s <a href="/docs/payments/customer-balance">cash balance</a>.</p>
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions/{transaction}`
-Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance_transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3982,14 +4547,20 @@ return _execute(
 /// 
 ///
 /// `GET /v1/customers/{customer}/discount`
-Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerDiscount({required String customer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerDiscount({required String customer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/discount',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4007,12 +4578,13 @@ return _execute(
 /// `<p>`Removes the currently applied discount on a customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/discount',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerDiscountRequest');,
 );
 
@@ -4033,12 +4605,13 @@ return _execute(
 /// funding instructions will be retrieved. In other words, we will return the same funding instructions each time.</p>
 ///
 /// `POST /v1/customers/{customer}/funding_instructions`
-Future<ApiResult<FundingInstructions, ErrorModel>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<FundingInstructions, ErrorModel>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/funding_instructions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerFundingInstructionsRequest');,
 );
 
@@ -4057,19 +4630,25 @@ return _execute(
 /// `<p>`Returns a list of PaymentMethods for a given Customer</p>
 ///
 /// `GET /v1/customers/{customer}/payment_methods`
-Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, ErrorModel>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, ErrorModel>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (allowRedisplay != null) queryParameters['allow_redisplay'] = allowRedisplay.toJson();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/payment_methods',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (allowRedisplay != null) 'allow_redisplay': allowRedisplay.toJson(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4087,14 +4666,20 @@ return _execute(
 /// `<p>`Retrieves a PaymentMethod object for a given Customer.</p>
 ///
 /// `GET /v1/customers/{customer}/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/payment_methods/${Uri.encodeComponent(paymentMethod)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4111,18 +4696,24 @@ return _execute(
 /// `<p>`List sources for a specified customer.</p>
 ///
 /// `GET /v1/customers/{customer}/sources`
-Future<ApiResult<GetCustomersCustomerSourcesResponse, ErrorModel>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerSourcesResponse, ErrorModel>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (object != null) queryParameters['object'] = object;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'object': ?object,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4144,12 +4735,13 @@ return _execute(
 /// To change the default, you should <a href="/docs/api#update_customer">update the customer</a> to have a new `<code>`default_source</code>.</p>
 ///
 /// `POST /v1/customers/{customer}/sources`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesRequest');,
 );
 
@@ -4167,14 +4759,20 @@ return _execute(
 /// `<p>`Retrieve a specified source for a given customer.</p>
 ///
 /// `GET /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PaymentSource, ErrorModel>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentSource, ErrorModel>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4191,12 +4789,13 @@ return _execute(
 /// `<p>`Update a specified source for a given customer.</p>
 ///
 /// `POST /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PostCustomersCustomerSourcesIdResponse, ErrorModel>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostCustomersCustomerSourcesIdResponse, ErrorModel>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesIdRequest');,
 );
 
@@ -4215,12 +4814,13 @@ return _execute(
 /// `<p>`Delete a specified source for a given customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, ErrorModel>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, ErrorModel>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSourcesIdRequest');,
 );
 
@@ -4239,12 +4839,13 @@ return _execute(
 /// `<p>`Verify a specified bank account for a given customer.</p>
 ///
 /// `POST /v1/customers/{customer}/sources/{id}/verify`
-Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}/verify',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesIdVerifyRequest');,
 );
 
@@ -4263,17 +4864,23 @@ return _execute(
 /// `<p>`You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.</p>
 ///
 /// `GET /v1/customers/{customer}/subscriptions`
-Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, ErrorModel>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, ErrorModel>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4291,12 +4898,13 @@ return _execute(
 /// `<p>`Creates a new subscription on an existing customer.</p>
 ///
 /// `POST /v1/customers/{customer}/subscriptions`
-Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSubscriptionsRequest');,
 );
 
@@ -4315,14 +4923,20 @@ return _execute(
 /// `<p>`Retrieves the subscription with the given ID.</p>
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4340,12 +4954,13 @@ return _execute(
 /// `<p>`Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the <a href="#upcoming_invoice">upcoming invoice</a> endpoint.</p>
 ///
 /// `POST /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest');,
 );
 
@@ -4368,12 +4983,13 @@ return _execute(
 /// `<p>`By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.</p>
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest');,
 );
 
@@ -4391,14 +5007,20 @@ return _execute(
 /// 
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4416,12 +5038,13 @@ return _execute(
 /// `<p>`Removes the currently applied discount on a customer.</p>
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest');,
 );
 
@@ -4440,17 +5063,23 @@ return _execute(
 /// `<p>`Returns a list of tax IDs for a customer.</p>
 ///
 /// `GET /v1/customers/{customer}/tax_ids`
-Future<ApiResult<GetCustomersCustomerTaxIdsResponse, ErrorModel>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetCustomersCustomerTaxIdsResponse, ErrorModel>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4468,12 +5097,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`tax_id</code> object for a customer.</p>
 ///
 /// `POST /v1/customers/{customer}/tax_ids`
-Future<ApiResult<TaxId, ErrorModel>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxId, ErrorModel>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerTaxIdsRequest');,
 );
 
@@ -4492,14 +5122,20 @@ return _execute(
 /// `<p>`Retrieves the `<code>`tax_id</code> object with the given identifier.</p>
 ///
 /// `GET /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<TaxId, ErrorModel>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxId, ErrorModel>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4517,12 +5153,13 @@ return _execute(
 /// `<p>`Deletes an existing `<code>`tax_id</code> object.</p>
 ///
 /// `DELETE /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, ErrorModel>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTaxId, ErrorModel>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerTaxIdsIdRequest');,
 );
 
@@ -4541,20 +5178,28 @@ return _execute(
 /// `<p>`Returns a list of your disputes.</p>
 ///
 /// `GET /v1/disputes`
-Future<ApiResult<GetDisputesResponse, ErrorModel>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetDisputesResponse, ErrorModel>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (charge != null) queryParameters['charge'] = charge;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/disputes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'charge': ?charge,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_intent': ?paymentIntent,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4572,14 +5217,20 @@ return _execute(
 /// `<p>`Retrieves the dispute with the given ID.</p>
 ///
 /// `GET /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, ErrorModel>> getDisputesDispute({required String dispute, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> getDisputesDispute({required String dispute, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4599,12 +5250,13 @@ return _execute(
 /// `<p>`Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our <a href="/docs/disputes/categories">guide to dispute types</a>.</p>
 ///
 /// `POST /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, ErrorModel>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostDisputesDisputeRequest');,
 );
 
@@ -4625,12 +5277,13 @@ return _execute(
 /// `<p>`The status of the dispute will change from `<code>`needs_response</code> to `<code>`lost</code>. `<em>`Closing a dispute is irreversible</em>.</p>
 ///
 /// `POST /v1/disputes/{dispute}/close`
-Future<ApiResult<Dispute, ErrorModel>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Dispute, ErrorModel>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}/close',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostDisputesDisputeCloseRequest');,
 );
 
@@ -4649,18 +5302,24 @@ return _execute(
 /// `<p>`Retrieve a list of active entitlements for a customer</p>
 ///
 /// `GET /v1/entitlements/active_entitlements`
-Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, ErrorModel>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, ErrorModel>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['customer'] = customer;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/entitlements/active_entitlements',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'customer': customer,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4678,14 +5337,20 @@ return _execute(
 /// `<p>`Retrieve an active entitlement</p>
 ///
 /// `GET /v1/entitlements/active_entitlements/{id}`
-Future<ApiResult<EntitlementsActiveEntitlement, ErrorModel>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<EntitlementsActiveEntitlement, ErrorModel>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/entitlements/active_entitlements/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4703,19 +5368,25 @@ return _execute(
 /// `<p>`Retrieve a list of features</p>
 ///
 /// `GET /v1/entitlements/features`
-Future<ApiResult<GetEntitlementsFeaturesResponse, ErrorModel>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetEntitlementsFeaturesResponse, ErrorModel>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (archived != null) queryParameters['archived'] = archived.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (lookupKey != null) queryParameters['lookup_key'] = lookupKey;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/entitlements/features',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (archived != null) 'archived': archived.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'lookup_key': ?lookupKey,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4733,12 +5404,13 @@ return _execute(
 /// `<p>`Creates a feature</p>
 ///
 /// `POST /v1/entitlements/features`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEntitlementsFeaturesRequest');,
 );
 
@@ -4757,14 +5429,20 @@ return _execute(
 /// `<p>`Retrieves a feature</p>
 ///
 /// `GET /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> getEntitlementsFeaturesId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<EntitlementsFeature, ErrorModel>> getEntitlementsFeaturesId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4782,12 +5460,13 @@ return _execute(
 /// `<p>`Update a feature’s metadata or permanently deactivate it.</p>
 ///
 /// `POST /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEntitlementsFeaturesIdRequest');,
 );
 
@@ -4806,12 +5485,13 @@ return _execute(
 /// `<p>`Creates a short-lived API key for a given resource.</p>
 ///
 /// `POST /v1/ephemeral_keys`
-Future<ApiResult<EphemeralKey, ErrorModel>> postEphemeralKeys({PostEphemeralKeysRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<EphemeralKey, ErrorModel>> postEphemeralKeys({PostEphemeralKeysRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/ephemeral_keys',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEphemeralKeysRequest');,
 );
 
@@ -4830,12 +5510,13 @@ return _execute(
 /// `<p>`Invalidates a short-lived API key for a given resource.</p>
 ///
 /// `DELETE /v1/ephemeral_keys/{key}`
-Future<ApiResult<EphemeralKey, ErrorModel>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<EphemeralKey, ErrorModel>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/ephemeral_keys/${Uri.encodeComponent(key)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteEphemeralKeysKeyRequest');,
 );
 
@@ -4854,21 +5535,31 @@ return _execute(
 /// `<p>`List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in <a href="https://docs.stripe.com/api/events/object">event object</a> `<code>`api_version</code> attribute (not according to your current Stripe API version or `<code>`Stripe-Version</code> header).</p>
 ///
 /// `GET /v1/events`
-Future<ApiResult<GetEventsResponse, ErrorModel>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, }) async  { final request = ApiRequest(
+Future<ApiResult<GetEventsResponse, ErrorModel>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (deliverySuccess != null) queryParameters['delivery_success'] = deliverySuccess.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type;
+if (types != null) {
+queryParameters['types'] = types.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    if (deliverySuccess != null) 'delivery_success': deliverySuccess.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'type': ?type,
-    if (types != null) 'types': types.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4886,14 +5577,20 @@ return _execute(
 /// `<p>`Retrieves the details of an event if it was created in the last 30 days. Supply the unique identifier of the event, which you might have received in a webhook.</p>
 ///
 /// `GET /v1/events/{id}`
-Future<ApiResult<Event, ErrorModel>> getEventsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Event, ErrorModel>> getEventsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/events/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4913,17 +5610,23 @@ return _execute(
 /// `<p>`Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.</p>
 ///
 /// `GET /v1/exchange_rates`
-Future<ApiResult<GetExchangeRatesResponse, ErrorModel>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetExchangeRatesResponse, ErrorModel>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/exchange_rates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4943,14 +5646,20 @@ return _execute(
 /// `<p>`Retrieves the exchange rates from the given currency to every supported currency.</p>
 ///
 /// `GET /v1/exchange_rates/{rate_id}`
-Future<ApiResult<ExchangeRate, ErrorModel>> getExchangeRatesRateId({required String rateId, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ExchangeRate, ErrorModel>> getExchangeRatesRateId({required String rateId, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/exchange_rates/${Uri.encodeComponent(rateId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -4974,12 +5683,13 @@ return _execute(
 /// arguments or changes.</p>
 ///
 /// `POST /v1/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ExternalAccount, ErrorModel>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/external_accounts/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostExternalAccountsIdRequest');,
 );
 
@@ -4998,20 +5708,28 @@ return _execute(
 /// `<p>`Returns a list of file links.</p>
 ///
 /// `GET /v1/file_links`
-Future<ApiResult<GetFileLinksResponse, ErrorModel>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetFileLinksResponse, ErrorModel>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (expired != null) queryParameters['expired'] = expired.toString();
+if (file != null) queryParameters['file'] = file;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/file_links',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (expired != null) 'expired': expired.toString(),
-    'file': ?file,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5029,12 +5747,13 @@ return _execute(
 /// `<p>`Creates a new file link object.</p>
 ///
 /// `POST /v1/file_links`
-Future<ApiResult<FileLink, ErrorModel>> postFileLinks({required PostFileLinksRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<FileLink, ErrorModel>> postFileLinks({required PostFileLinksRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFileLinksRequest');,
 );
 
@@ -5053,14 +5772,20 @@ return _execute(
 /// `<p>`Retrieves the file link with the given ID.</p>
 ///
 /// `GET /v1/file_links/{link}`
-Future<ApiResult<FileLink, ErrorModel>> getFileLinksLink({required String link, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FileLink, ErrorModel>> getFileLinksLink({required String link, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5078,12 +5803,13 @@ return _execute(
 /// `<p>`Updates an existing file link object. Expired links can no longer be updated.</p>
 ///
 /// `POST /v1/file_links/{link}`
-Future<ApiResult<FileLink, ErrorModel>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<FileLink, ErrorModel>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFileLinksLinkRequest');,
 );
 
@@ -5102,19 +5828,27 @@ return _execute(
 /// `<p>`Returns a list of the files that your account has access to. Stripe sorts and returns the files by their creation dates, placing the most recently created files at the top.</p>
 ///
 /// `GET /v1/files`
-Future<ApiResult<GetFilesResponse, ErrorModel>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetFilesResponse, ErrorModel>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (purpose != null) queryParameters['purpose'] = purpose.toJson();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/files',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (purpose != null) 'purpose': purpose.toJson(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5134,12 +5868,13 @@ return _execute(
 /// `<p>`All of Stripe’s officially supported Client libraries support sending `<code>`multipart/form-data</code>.</p>
 ///
 /// `POST /v1/files`
-Future<ApiResult<File, ErrorModel>> postFiles({required PostFilesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<File, ErrorModel>> postFiles({required PostFilesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/files',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from PostFilesRequest');,
 );
 
@@ -5158,14 +5893,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing file object. After you supply a unique file ID, Stripe returns the corresponding file object. Learn how to <a href="/docs/file-upload#download-file-contents">access file contents</a>.</p>
 ///
 /// `GET /v1/files/{file}`
-Future<ApiResult<File, ErrorModel>> getFilesFile({required String file, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<File, ErrorModel>> getFilesFile({required String file, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/files/${Uri.encodeComponent(file)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5183,19 +5924,29 @@ return _execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Account</code> objects.</p>
 ///
 /// `GET /v1/financial_connections/accounts`
-Future<ApiResult<GetFinancialConnectionsAccountsResponse, ErrorModel>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetFinancialConnectionsAccountsResponse, ErrorModel>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (accountHolder != null) {
+if (accountHolder.account != null) queryParameters['account_holder[account]'] = accountHolder.account;
+if (accountHolder.customer != null) queryParameters['account_holder[customer]'] = accountHolder.customer;
+if (accountHolder.customerAccount != null) queryParameters['account_holder[customer_account]'] = accountHolder.customerAccount;
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (session != null) queryParameters['session'] = session;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (accountHolder != null) 'account_holder': accountHolder.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'session': ?session,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5213,14 +5964,20 @@ return _execute(
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account</code>.</p>
 ///
 /// `GET /v1/financial_connections/accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5238,12 +5995,13 @@ return _execute(
 /// `<p>`Disables your access to a Financial Connections `<code>`Account</code>. You will no longer be able to access data associated with the account (e.g. balances, transactions).</p>
 ///
 /// `POST /v1/financial_connections/accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/disconnect',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountDisconnectRequest');,
 );
 
@@ -5262,18 +6020,24 @@ return _execute(
 /// `<p>`Lists all owners for a given `<code>`Account</code></p>
 ///
 /// `GET /v1/financial_connections/accounts/{account}/owners`
-Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['ownership'] = ownership;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/owners',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'ownership': ownership,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5291,12 +6055,13 @@ return _execute(
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account</code>.</p>
 ///
 /// `POST /v1/financial_connections/accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/refresh',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountRefreshRequest');,
 );
 
@@ -5315,12 +6080,13 @@ return _execute(
 /// `<p>`Subscribes to periodic refreshes of data associated with a Financial Connections `<code>`Account</code>. When the account status is active, data is typically refreshed once a day.</p>
 ///
 /// `POST /v1/financial_connections/accounts/{account}/subscribe`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/subscribe',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountSubscribeRequest');,
 );
 
@@ -5339,12 +6105,13 @@ return _execute(
 /// `<p>`Unsubscribes from periodic refreshes of data associated with a Financial Connections `<code>`Account</code>.</p>
 ///
 /// `POST /v1/financial_connections/accounts/{account}/unsubscribe`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/unsubscribe',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountUnsubscribeRequest');,
 );
 
@@ -5363,12 +6130,13 @@ return _execute(
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session</code>. The session’s `<code>`client_secret</code> can be used to launch the flow using Stripe.js.</p>
 ///
 /// `POST /v1/financial_connections/sessions`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsSessionsRequest');,
 );
 
@@ -5387,14 +6155,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session</code></p>
 ///
 /// `GET /v1/financial_connections/sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5412,20 +6186,30 @@ return _execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Transaction</code> objects.</p>
 ///
 /// `GET /v1/financial_connections/transactions`
-Future<ApiResult<GetFinancialConnectionsTransactionsResponse, ErrorModel>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, }) async  { final request = ApiRequest(
+Future<ApiResult<GetFinancialConnectionsTransactionsResponse, ErrorModel>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['account'] = account;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (transactedAt != null) {
+queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString(), allowReserved: false));
+}
+if (transactionRefresh != null) {
+queryParameters['transaction_refresh[after]'] = transactionRefresh.after;
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'account': account,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (transactedAt != null) 'transacted_at': transactedAt.toString(),
-    if (transactionRefresh != null) 'transaction_refresh': transactionRefresh.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5443,14 +6227,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Transaction</code></p>
 ///
 /// `GET /v1/financial_connections/transactions/{transaction}`
-Future<ApiResult<FinancialConnectionsTransaction, ErrorModel>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsTransaction, ErrorModel>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/financial_connections/transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5468,18 +6258,29 @@ return _execute(
 /// `<p>`Lists all ForwardingRequest objects.</p>
 ///
 /// `GET /v1/forwarding/requests`
-Future<ApiResult<GetForwardingRequestsResponse, ErrorModel>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetForwardingRequestsResponse, ErrorModel>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+if (created.gt != null) queryParameters['created[gt]'] = created.gt.toString();
+if (created.gte != null) queryParameters['created[gte]'] = created.gte.toString();
+if (created.lt != null) queryParameters['created[lt]'] = created.lt.toString();
+if (created.lte != null) queryParameters['created[lte]'] = created.lte.toString();
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/forwarding/requests',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5497,12 +6298,13 @@ return _execute(
 /// `<p>`Creates a ForwardingRequest object.</p>
 ///
 /// `POST /v1/forwarding/requests`
-Future<ApiResult<ForwardingRequest, ErrorModel>> postForwardingRequests({required PostForwardingRequestsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ForwardingRequest, ErrorModel>> postForwardingRequests({required PostForwardingRequestsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/forwarding/requests',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostForwardingRequestsRequest');,
 );
 
@@ -5521,14 +6323,20 @@ return _execute(
 /// `<p>`Retrieves a ForwardingRequest object.</p>
 ///
 /// `GET /v1/forwarding/requests/{id}`
-Future<ApiResult<ForwardingRequest, ErrorModel>> getForwardingRequestsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ForwardingRequest, ErrorModel>> getForwardingRequestsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/forwarding/requests/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5546,21 +6354,29 @@ return _execute(
 /// `<p>`List all verification reports.</p>
 ///
 /// `GET /v1/identity/verification_reports`
-Future<ApiResult<GetIdentityVerificationReportsResponse, ErrorModel>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIdentityVerificationReportsResponse, ErrorModel>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (clientReferenceId != null) queryParameters['client_reference_id'] = clientReferenceId;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type.toJson();
+if (verificationSession != null) queryParameters['verification_session'] = verificationSession;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/identity/verification_reports',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'client_reference_id': ?clientReferenceId,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (type != null) 'type': type.toJson(),
-    'verification_session': ?verificationSession,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5578,14 +6394,20 @@ return _execute(
 /// `<p>`Retrieves an existing VerificationReport</p>
 ///
 /// `GET /v1/identity/verification_reports/{report}`
-Future<ApiResult<IdentityVerificationReport, ErrorModel>> getIdentityVerificationReportsReport({required String report, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationReport, ErrorModel>> getIdentityVerificationReportsReport({required String report, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/identity/verification_reports/${Uri.encodeComponent(report)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5603,22 +6425,30 @@ return _execute(
 /// `<p>`Returns a list of VerificationSessions</p>
 ///
 /// `GET /v1/identity/verification_sessions`
-Future<ApiResult<GetIdentityVerificationSessionsResponse, ErrorModel>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIdentityVerificationSessionsResponse, ErrorModel>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (clientReferenceId != null) queryParameters['client_reference_id'] = clientReferenceId;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (relatedCustomer != null) queryParameters['related_customer'] = relatedCustomer;
+if (relatedCustomerAccount != null) queryParameters['related_customer_account'] = relatedCustomerAccount;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/identity/verification_sessions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'client_reference_id': ?clientReferenceId,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'related_customer': ?relatedCustomer,
-    'related_customer_account': ?relatedCustomerAccount,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5642,12 +6472,13 @@ return _execute(
 /// `<p>`Related guide: <a href="/docs/identity/verify-identity-documents">Verify your users’ identity documents</a></p>
 ///
 /// `POST /v1/identity/verification_sessions`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsRequest');,
 );
 
@@ -5669,14 +6500,20 @@ return _execute(
 /// `<code>`client_secret</code> or `<code>`url</code> to allow re-submission.</p>
 ///
 /// `GET /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationSession, ErrorModel>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5697,12 +6534,13 @@ return _execute(
 /// verification check and options.</p>
 ///
 /// `POST /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionRequest');,
 );
 
@@ -5723,12 +6561,13 @@ return _execute(
 /// `<p>`Once canceled, future submission attempts are disabled. This cannot be undone. <a href="/docs/identity/verification-sessions#cancel">Learn more</a>.</p>
 ///
 /// `POST /v1/identity/verification_sessions/{session}/cancel`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionCancelRequest');,
 );
 
@@ -5765,12 +6604,13 @@ return _execute(
 /// `<p>`<a href="/docs/identity/verification-sessions#redact">Learn more</a>.</p>
 ///
 /// `POST /v1/identity/verification_sessions/{session}/redact`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/redact',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionRedactRequest');,
 );
 
@@ -5789,21 +6629,33 @@ return _execute(
 /// `<p>`When retrieving an invoice, there is an includable payments property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of payments.</p>
 ///
 /// `GET /v1/invoice_payments`
-Future<ApiResult<GetInvoicePaymentsResponse, ErrorModel>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoicePaymentsResponse, ErrorModel>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (invoice != null) queryParameters['invoice'] = invoice;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (payment != null) {
+if (payment.paymentIntent != null) queryParameters['payment[payment_intent]'] = payment.paymentIntent;
+if (payment.paymentRecord != null) queryParameters['payment[payment_record]'] = payment.paymentRecord;
+queryParameters['payment[type]'] = payment.type.toJson();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoice_payments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': ?invoice,
-    if (limit != null) 'limit': limit.toString(),
-    if (payment != null) 'payment': payment.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5821,14 +6673,20 @@ return _execute(
 /// `<p>`Retrieves the invoice payment with the given ID.</p>
 ///
 /// `GET /v1/invoice_payments/{invoice_payment}`
-Future<ApiResult<InvoicePayment, ErrorModel>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<InvoicePayment, ErrorModel>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoice_payments/${Uri.encodeComponent(invoicePayment)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5846,18 +6704,24 @@ return _execute(
 /// `<p>`List all templates, ordered by creation date, with the most recently created template appearing first.</p>
 ///
 /// `GET /v1/invoice_rendering_templates`
-Future<ApiResult<GetInvoiceRenderingTemplatesResponse, ErrorModel>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoiceRenderingTemplatesResponse, ErrorModel>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoice_rendering_templates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5875,15 +6739,21 @@ return _execute(
 /// `<p>`Retrieves an invoice rendering template with the given ID. It by default returns the latest version of the template. Optionally, specify a version to see previous versions.</p>
 ///
 /// `GET /v1/invoice_rendering_templates/{template}`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, }) async  { final request = ApiRequest(
+Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (version != null) queryParameters['version'] = version.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (version != null) 'version': version.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5901,12 +6771,13 @@ return _execute(
 /// `<p>`Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects (customers, invoices, etc.) can reference it. The template can also no longer be updated. However, if the template is already set on a Stripe object, it will continue to be applied on invoices generated by it.</p>
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/archive`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/archive',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceRenderingTemplatesTemplateArchiveRequest');,
 );
 
@@ -5925,12 +6796,13 @@ return _execute(
 /// `<p>`Unarchive an invoice rendering template so it can be used on new Stripe objects again.</p>
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/unarchive`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/unarchive',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceRenderingTemplatesTemplateUnarchiveRequest');,
 );
 
@@ -5949,22 +6821,30 @@ return _execute(
 /// `<p>`Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.</p>
 ///
 /// `GET /v1/invoiceitems`
-Future<ApiResult<GetInvoiceitemsResponse, ErrorModel>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoiceitemsResponse, ErrorModel>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (invoice != null) queryParameters['invoice'] = invoice;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (pending != null) queryParameters['pending'] = pending.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoiceitems',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'invoice': ?invoice,
-    if (limit != null) 'limit': limit.toString(),
-    if (pending != null) 'pending': pending.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -5982,12 +6862,13 @@ return _execute(
 /// `<p>`Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.</p>
 ///
 /// `POST /v1/invoiceitems`
-Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitems({PostInvoiceitemsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitems({PostInvoiceitemsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceitemsRequest');,
 );
 
@@ -6006,14 +6887,20 @@ return _execute(
 /// `<p>`Retrieves the invoice item with the given ID.</p>
 ///
 /// `GET /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, ErrorModel>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoiceitem, ErrorModel>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6031,12 +6918,13 @@ return _execute(
 /// `<p>`Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.</p>
 ///
 /// `POST /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceitemsInvoiceitemRequest');,
 );
 
@@ -6055,12 +6943,13 @@ return _execute(
 /// `<p>`Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.</p>
 ///
 /// `DELETE /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<DeletedInvoiceitem, ErrorModel>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedInvoiceitem, ErrorModel>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteInvoiceitemsInvoiceitemRequest');,
 );
 
@@ -6079,24 +6968,34 @@ return _execute(
 /// `<p>`You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.</p>
 ///
 /// `GET /v1/invoices`
-Future<ApiResult<GetInvoicesResponse, ErrorModel>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoicesResponse, ErrorModel>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (collectionMethod != null) queryParameters['collection_method'] = collectionMethod.toJson();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (dueDate != null) {
+queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (subscription != null) queryParameters['subscription'] = subscription;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoices',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (collectionMethod != null) 'collection_method': collectionMethod.toJson(),
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    if (dueDate != null) 'due_date': dueDate.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    'subscription': ?subscription,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6114,12 +7013,13 @@ return _execute(
 /// `<p>`This endpoint creates a draft invoice for a given customer. The invoice remains a draft until you <a href="#finalize_invoice">finalize</a> the invoice, which allows you to <a href="/api/invoices/pay">pay</a> or <a href="/api/invoices/send">send</a> the invoice to your customers.</p>
 ///
 /// `POST /v1/invoices`
-Future<ApiResult<Invoice, ErrorModel>> postInvoices({PostInvoicesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoices({PostInvoicesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesRequest');,
 );
 
@@ -6146,12 +7046,13 @@ return _execute(
 /// `<p>`Note: Currency conversion calculations use the latest exchange rates. Exchange rates may vary between the time of the preview and the time of the actual invoice creation. <a href="https://docs.stripe.com/currencies/conversions">Learn more</a></p>
 ///
 /// `POST /v1/invoices/create_preview`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/create_preview',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesCreatePreviewRequest');,
 );
 
@@ -6173,17 +7074,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/invoices/search`
-Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoices/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6201,14 +7108,20 @@ return _execute(
 /// `<p>`Retrieves the invoice with the given ID.</p>
 ///
 /// `GET /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, ErrorModel>> getInvoicesInvoice({required String invoice, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> getInvoicesInvoice({required String invoice, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6231,12 +7144,13 @@ return _execute(
 /// `<code>`auto_advance=false</code>.</p>
 ///
 /// `POST /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceRequest');,
 );
 
@@ -6255,12 +7169,13 @@ return _execute(
 /// `<p>`Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be <a href="#void_invoice">voided</a>.</p>
 ///
 /// `DELETE /v1/invoices/{invoice}`
-Future<ApiResult<DeletedInvoice, ErrorModel>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedInvoice, ErrorModel>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteInvoicesInvoiceRequest');,
 );
 
@@ -6279,12 +7194,13 @@ return _execute(
 /// `<p>`Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.</p>
 ///
 /// `POST /v1/invoices/{invoice}/add_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/add_lines',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceAddLinesRequest');,
 );
 
@@ -6312,12 +7228,13 @@ return _execute(
 /// `<p>`See: <a href="/docs/invoicing/partial-payments">Partial payments</a> to learn more.</p>
 ///
 /// `POST /v1/invoices/{invoice}/attach_payment`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/attach_payment',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceAttachPaymentRequest');,
 );
 
@@ -6336,12 +7253,13 @@ return _execute(
 /// `<p>`Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.</p>
 ///
 /// `POST /v1/invoices/{invoice}/finalize`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/finalize',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceFinalizeRequest');,
 );
 
@@ -6360,17 +7278,23 @@ return _execute(
 /// `<p>`When retrieving an invoice, you’ll get a `<strong>`lines</strong> property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/invoices/{invoice}/lines`
-Future<ApiResult<GetInvoicesInvoiceLinesResponse, ErrorModel>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetInvoicesInvoiceLinesResponse, ErrorModel>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6391,12 +7315,13 @@ return _execute(
 /// Updating an invoice’s line item is only possible before the invoice is finalized.</p>
 ///
 /// `POST /v1/invoices/{invoice}/lines/{line_item_id}`
-Future<ApiResult<LineItem, ErrorModel>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<LineItem, ErrorModel>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines/${Uri.encodeComponent(lineItemId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceLinesLineItemIdRequest');,
 );
 
@@ -6415,12 +7340,13 @@ return _execute(
 /// `<p>`Marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.</p>
 ///
 /// `POST /v1/invoices/{invoice}/mark_uncollectible`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/mark_uncollectible',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceMarkUncollectibleRequest');,
 );
 
@@ -6439,12 +7365,13 @@ return _execute(
 /// `<p>`Stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your <a href="https://dashboard.stripe.com/account/billing/automatic">subscriptions settings</a>. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.</p>
 ///
 /// `POST /v1/invoices/{invoice}/pay`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/pay',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoicePayRequest');,
 );
 
@@ -6463,12 +7390,13 @@ return _execute(
 /// `<p>`Removes multiple line items from an invoice. This is only possible when an invoice is still a draft.</p>
 ///
 /// `POST /v1/invoices/{invoice}/remove_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/remove_lines',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceRemoveLinesRequest');,
 );
 
@@ -6489,12 +7417,13 @@ return _execute(
 /// `<p>`Requests made in test-mode result in no emails being sent, despite sending an `<code>`invoice.sent</code> event.</p>
 ///
 /// `POST /v1/invoices/{invoice}/send`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/send',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceSendRequest');,
 );
 
@@ -6513,12 +7442,13 @@ return _execute(
 /// `<p>`Updates multiple line items on an invoice. This is only possible when an invoice is still a draft.</p>
 ///
 /// `POST /v1/invoices/{invoice}/update_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/update_lines',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceUpdateLinesRequest');,
 );
 
@@ -6539,12 +7469,13 @@ return _execute(
 /// `<p>`Consult with local regulations to determine whether and how an invoice might be amended, canceled, or voided in the jurisdiction you’re doing business in. You might need to <a href="#create_invoice">issue another invoice</a> or <a href="#create_credit_note">credit note</a> instead. Stripe recommends that you consult with your legal counsel for advice specific to your business.</p>
 ///
 /// `POST /v1/invoices/{invoice}/void`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/void',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceVoidRequest');,
 );
 
@@ -6563,21 +7494,29 @@ return _execute(
 /// `<p>`Returns a list of Issuing `<code>`Authorization</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/authorizations`
-Future<ApiResult<GetIssuingAuthorizationsResponse, ErrorModel>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingAuthorizationsResponse, ErrorModel>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (card != null) queryParameters['card'] = card;
+if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/authorizations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'card': ?card,
-    'cardholder': ?cardholder,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6595,14 +7534,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Authorization</code> object.</p>
 ///
 /// `GET /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6620,12 +7565,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Authorization</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingAuthorizationsAuthorizationRequest');,
 );
 
@@ -6644,22 +7590,30 @@ return _execute(
 /// `<p>`Returns a list of Issuing `<code>`Cardholder</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/cardholders`
-Future<ApiResult<GetIssuingCardholdersResponse, ErrorModel>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingCardholdersResponse, ErrorModel>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (email != null) queryParameters['email'] = email;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (phoneNumber != null) queryParameters['phone_number'] = phoneNumber;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/cardholders',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'email': ?email,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'phone_number': ?phoneNumber,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6677,12 +7631,13 @@ return _execute(
 /// `<p>`Creates a new Issuing `<code>`Cardholder</code> object that can be issued cards.</p>
 ///
 /// `POST /v1/issuing/cardholders`
-Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholders({required PostIssuingCardholdersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholders({required PostIssuingCardholdersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardholdersRequest');,
 );
 
@@ -6701,14 +7656,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Cardholder</code> object.</p>
 ///
 /// `GET /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, ErrorModel>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCardholder, ErrorModel>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6726,12 +7687,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Cardholder</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardholdersCardholderRequest');,
 );
 
@@ -6750,25 +7712,33 @@ return _execute(
 /// `<p>`Returns a list of Issuing `<code>`Card</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/cards`
-Future<ApiResult<GetIssuingCardsResponse, ErrorModel>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingCardsResponse, ErrorModel>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expMonth != null) queryParameters['exp_month'] = expMonth.toString();
+if (expYear != null) queryParameters['exp_year'] = expYear.toString();
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (last4 != null) queryParameters['last4'] = last4;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (personalizationDesign != null) queryParameters['personalization_design'] = personalizationDesign;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/cards',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'cardholder': ?cardholder,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expMonth != null) 'exp_month': expMonth.toString(),
-    if (expYear != null) 'exp_year': expYear.toString(),
-    if (expand != null) 'expand': expand.toString(),
-    'last4': ?last4,
-    if (limit != null) 'limit': limit.toString(),
-    'personalization_design': ?personalizationDesign,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6786,12 +7756,13 @@ return _execute(
 /// `<p>`Creates an Issuing `<code>`Card</code> object.</p>
 ///
 /// `POST /v1/issuing/cards`
-Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCards({required PostIssuingCardsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCards({required PostIssuingCardsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardsRequest');,
 );
 
@@ -6810,14 +7781,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Card</code> object.</p>
 ///
 /// `GET /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, ErrorModel>> getIssuingCardsCard({required String card, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> getIssuingCardsCard({required String card, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6835,12 +7812,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Card</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardsCardRequest');,
 );
 
@@ -6859,20 +7837,28 @@ return _execute(
 /// `<p>`Returns a list of Issuing `<code>`Dispute</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/disputes`
-Future<ApiResult<GetIssuingDisputesResponse, ErrorModel>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingDisputesResponse, ErrorModel>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (transaction != null) queryParameters['transaction'] = transaction;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/disputes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    'transaction': ?transaction,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6890,12 +7876,13 @@ return _execute(
 /// `<p>`Creates an Issuing `<code>`Dispute</code> object. Individual pieces of evidence within the `<code>`evidence</code> object are optional at this point. Stripe only validates that required evidence is present during submission. Refer to <a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">Dispute reasons and evidence</a> for more details about evidence requirements.</p>
 ///
 /// `POST /v1/issuing/disputes`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputes({PostIssuingDisputesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputes({PostIssuingDisputesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesRequest');,
 );
 
@@ -6914,14 +7901,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Dispute</code> object.</p>
 ///
 /// `GET /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, ErrorModel>> getIssuingDisputesDispute({required String dispute, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingDispute, ErrorModel>> getIssuingDisputesDispute({required String dispute, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -6939,12 +7932,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Dispute</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Properties on the `<code>`evidence</code> object can be unset by passing in an empty string.</p>
 ///
 /// `POST /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesDisputeRequest');,
 );
 
@@ -6963,12 +7957,13 @@ return _execute(
 /// `<p>`Submits an Issuing `<code>`Dispute</code> to the card network. Stripe validates that all evidence fields required for the dispute’s reason are present. For more details, see <a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">Dispute reasons and evidence</a>.</p>
 ///
 /// `POST /v1/issuing/disputes/{dispute}/submit`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}/submit',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesDisputeSubmitRequest');,
 );
 
@@ -6987,20 +7982,31 @@ return _execute(
 /// `<p>`Returns a list of personalization design objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/personalization_designs`
-Future<ApiResult<GetIssuingPersonalizationDesignsResponse, ErrorModel>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingPersonalizationDesignsResponse, ErrorModel>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (lookupKeys != null) {
+queryParameters['lookup_keys'] = lookupKeys.join(',');
+}
+if (preferences != null) {
+if (preferences.isDefault != null) queryParameters['preferences[is_default]'] = preferences.isDefault.toString();
+if (preferences.isPlatformDefault != null) queryParameters['preferences[is_platform_default]'] = preferences.isPlatformDefault.toString();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/personalization_designs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (lookupKeys != null) 'lookup_keys': lookupKeys.toString(),
-    if (preferences != null) 'preferences': preferences.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7018,12 +8024,13 @@ return _execute(
 /// `<p>`Creates a personalization design object.</p>
 ///
 /// `POST /v1/issuing/personalization_designs`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingPersonalizationDesignsRequest');,
 );
 
@@ -7042,14 +8049,20 @@ return _execute(
 /// `<p>`Retrieves a personalization design object.</p>
 ///
 /// `GET /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7067,12 +8080,13 @@ return _execute(
 /// `<p>`Updates a card personalization object.</p>
 ///
 /// `POST /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingPersonalizationDesignsPersonalizationDesignRequest');,
 );
 
@@ -7091,19 +8105,25 @@ return _execute(
 /// `<p>`Returns a list of physical bundle objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/physical_bundles`
-Future<ApiResult<GetIssuingPhysicalBundlesResponse, ErrorModel>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingPhysicalBundlesResponse, ErrorModel>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/physical_bundles',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7121,14 +8141,20 @@ return _execute(
 /// `<p>`Retrieves a physical bundle object.</p>
 ///
 /// `GET /v1/issuing/physical_bundles/{physical_bundle}`
-Future<ApiResult<IssuingPhysicalBundle, ErrorModel>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPhysicalBundle, ErrorModel>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/physical_bundles/${Uri.encodeComponent(physicalBundle)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7146,14 +8172,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Settlement</code> object.</p>
 ///
 /// `GET /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, ErrorModel>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingSettlement, ErrorModel>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7171,12 +8203,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Settlement</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingSettlement, ErrorModel>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingSettlementsSettlementRequest');,
 );
 
@@ -7195,20 +8228,28 @@ return _execute(
 /// `<p>`Lists all Issuing `<code>`Token</code> objects for a given card.</p>
 ///
 /// `GET /v1/issuing/tokens`
-Future<ApiResult<GetIssuingTokensResponse, ErrorModel>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingTokensResponse, ErrorModel>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['card'] = card;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/tokens',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'card': card,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7226,14 +8267,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Token</code> object.</p>
 ///
 /// `GET /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, ErrorModel>> getIssuingTokensToken({required String token, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingToken, ErrorModel>> getIssuingTokensToken({required String token, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/tokens/${Uri.encodeComponent(token)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7251,12 +8298,13 @@ return _execute(
 /// `<p>`Attempts to update the specified Issuing `<code>`Token</code> object to the status specified.</p>
 ///
 /// `POST /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, ErrorModel>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingToken, ErrorModel>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/tokens/${Uri.encodeComponent(token)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingTokensTokenRequest');,
 );
 
@@ -7275,21 +8323,29 @@ return _execute(
 /// `<p>`Returns a list of Issuing `<code>`Transaction</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/issuing/transactions`
-Future<ApiResult<GetIssuingTransactionsResponse, ErrorModel>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIssuingTransactionsResponse, ErrorModel>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (card != null) queryParameters['card'] = card;
+if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'card': ?card,
-    'cardholder': ?cardholder,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7307,14 +8363,20 @@ return _execute(
 /// `<p>`Retrieves an Issuing `<code>`Transaction</code> object.</p>
 ///
 /// `GET /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, ErrorModel>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingTransaction, ErrorModel>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7332,12 +8394,13 @@ return _execute(
 /// `<p>`Updates the specified Issuing `<code>`Transaction</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingTransaction, ErrorModel>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingTransactionsTransactionRequest');,
 );
 
@@ -7356,12 +8419,13 @@ return _execute(
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session</code>. The session’s `<code>`client_secret</code> can be used to launch the flow using Stripe.js.</p>
 ///
 /// `POST /v1/link_account_sessions`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/link_account_sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkAccountSessionsRequest');,
 );
 
@@ -7380,14 +8444,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session</code></p>
 ///
 /// `GET /v1/link_account_sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getLinkAccountSessionsSession({required String session, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getLinkAccountSessionsSession({required String session, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/link_account_sessions/${Uri.encodeComponent(session)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7405,19 +8475,29 @@ return _execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Account</code> objects.</p>
 ///
 /// `GET /v1/linked_accounts`
-Future<ApiResult<GetLinkedAccountsResponse, ErrorModel>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetLinkedAccountsResponse, ErrorModel>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (accountHolder != null) {
+if (accountHolder.account != null) queryParameters['account_holder[account]'] = accountHolder.account;
+if (accountHolder.customer != null) queryParameters['account_holder[customer]'] = accountHolder.customer;
+if (accountHolder.customerAccount != null) queryParameters['account_holder[customer_account]'] = accountHolder.customerAccount;
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (session != null) queryParameters['session'] = session;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/linked_accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (accountHolder != null) 'account_holder': accountHolder.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'session': ?session,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7435,14 +8515,20 @@ return _execute(
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account</code>.</p>
 ///
 /// `GET /v1/linked_accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getLinkedAccountsAccount({required String account, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getLinkedAccountsAccount({required String account, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7460,12 +8546,13 @@ return _execute(
 /// `<p>`Disables your access to a Financial Connections `<code>`Account</code>. You will no longer be able to access data associated with the account (e.g. balances, transactions).</p>
 ///
 /// `POST /v1/linked_accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/disconnect',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkedAccountsAccountDisconnectRequest');,
 );
 
@@ -7484,18 +8571,24 @@ return _execute(
 /// `<p>`Lists all owners for a given `<code>`Account</code></p>
 ///
 /// `GET /v1/linked_accounts/{account}/owners`
-Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['ownership'] = ownership;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/owners',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'ownership': ownership,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7513,12 +8606,13 @@ return _execute(
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account</code>.</p>
 ///
 /// `POST /v1/linked_accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/refresh',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkedAccountsAccountRefreshRequest');,
 );
 
@@ -7537,14 +8631,20 @@ return _execute(
 /// `<p>`Retrieves a Mandate object.</p>
 ///
 /// `GET /v1/mandates/{mandate}`
-Future<ApiResult<Mandate, ErrorModel>> getMandatesMandate({required String mandate, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Mandate, ErrorModel>> getMandatesMandate({required String mandate, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/mandates/${Uri.encodeComponent(mandate)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7562,17 +8662,23 @@ return _execute(
 /// `<p>`List all the Payment Attempt Records attached to the specified Payment Record.</p>
 ///
 /// `GET /v1/payment_attempt_records`
-Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({List<String>? expand, int? limit, required String paymentRecord, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({List<String>? expand, int? limit, required String paymentRecord, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['payment_record'] = paymentRecord;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_attempt_records',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_record': paymentRecord,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7590,14 +8696,20 @@ return _execute(
 /// `<p>`Retrieves a Payment Attempt Record with the given ID</p>
 ///
 /// `GET /v1/payment_attempt_records/{id}`
-Future<ApiResult<PaymentAttemptRecord, ErrorModel>> getPaymentAttemptRecordsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentAttemptRecord, ErrorModel>> getPaymentAttemptRecordsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_attempt_records/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7615,20 +8727,28 @@ return _execute(
 /// `<p>`Returns a list of PaymentIntents.</p>
 ///
 /// `GET /v1/payment_intents`
-Future<ApiResult<GetPaymentIntentsResponse, ErrorModel>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentIntentsResponse, ErrorModel>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_intents',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7655,12 +8775,13 @@ return _execute(
 /// `<code>`confirm=true</code>.</p>
 ///
 /// `POST /v1/payment_intents`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntents({required PostPaymentIntentsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntents({required PostPaymentIntentsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsRequest');,
 );
 
@@ -7682,17 +8803,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/payment_intents/search`
-Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_intents/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7714,15 +8841,21 @@ return _execute(
 /// `<p>`If you retrieve a PaymentIntent with a publishable key, it only returns a subset of properties. Refer to the <a href="#payment_intent_object">payment intent</a> object reference for more details.</p>
 ///
 /// `GET /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, ErrorModel>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'client_secret': ?clientSecret,
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7746,12 +8879,13 @@ return _execute(
 /// the <a href="/docs/api/payment_intents/confirm">confirm API</a> instead.</p>
 ///
 /// `POST /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentRequest');,
 );
 
@@ -7770,17 +8904,23 @@ return _execute(
 /// `<p>`Lists all LineItems of a given PaymentIntent.</p>
 ///
 /// `GET /v1/payment_intents/{intent}/amount_details_line_items`
-Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, ErrorModel>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, ErrorModel>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/amount_details_line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -7798,12 +8938,13 @@ return _execute(
 /// `<p>`Manually reconcile the remaining amount for a `<code>`customer_balance</code> PaymentIntent.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/apply_customer_balance`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/apply_customer_balance',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentApplyCustomerBalanceRequest');,
 );
 
@@ -7826,12 +8967,13 @@ return _execute(
 /// `<p>`You can’t cancel the PaymentIntent for a Checkout Session. <a href="/docs/api/checkout/sessions/expire">Expire the Checkout Session</a> instead.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/cancel`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentCancelRequest');,
 );
 
@@ -7854,12 +8996,13 @@ return _execute(
 /// `<p>`Learn more about <a href="/docs/payments/capture-later">separate authorization and capture</a>.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/capture`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/capture',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentCaptureRequest');,
 );
 
@@ -7907,12 +9050,13 @@ return _execute(
 /// transition the PaymentIntent to the `<code>`canceled</code> state.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/confirm`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/confirm',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentConfirmRequest');,
 );
 
@@ -7954,12 +9098,13 @@ return _execute(
 /// `<p>`Learn more about <a href="/docs/terminal/features/incremental-authorizations">incremental authorizations</a>.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/increment_authorization`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/increment_authorization',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentIncrementAuthorizationRequest');,
 );
 
@@ -7978,12 +9123,13 @@ return _execute(
 /// `<p>`Verifies microdeposits on a PaymentIntent object.</p>
 ///
 /// `POST /v1/payment_intents/{intent}/verify_microdeposits`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentVerifyMicrodepositsRequest');,
 );
 
@@ -8002,18 +9148,24 @@ return _execute(
 /// `<p>`Returns a list of your payment links.</p>
 ///
 /// `GET /v1/payment_links`
-Future<ApiResult<GetPaymentLinksResponse, ErrorModel>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentLinksResponse, ErrorModel>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_links',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8031,12 +9183,13 @@ return _execute(
 /// `<p>`Creates a payment link.</p>
 ///
 /// `POST /v1/payment_links`
-Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinks({required PostPaymentLinksRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinks({required PostPaymentLinksRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentLinksRequest');,
 );
 
@@ -8055,14 +9208,20 @@ return _execute(
 /// `<p>`Retrieve a payment link.</p>
 ///
 /// `GET /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, ErrorModel>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentLink, ErrorModel>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8080,12 +9239,13 @@ return _execute(
 /// `<p>`Updates a payment link.</p>
 ///
 /// `POST /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentLinksPaymentLinkRequest');,
 );
 
@@ -8104,17 +9264,23 @@ return _execute(
 /// `<p>`When retrieving a payment link, there is an includable `<strong>`line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/payment_links/{payment_link}/line_items`
-Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, ErrorModel>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, ErrorModel>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}/line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8132,18 +9298,26 @@ return _execute(
 /// `<p>`List payment method configurations</p>
 ///
 /// `GET /v1/payment_method_configurations`
-Future<ApiResult<GetPaymentMethodConfigurationsResponse, ErrorModel>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentMethodConfigurationsResponse, ErrorModel>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (application != null) {
+queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_method_configurations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (application != null) 'application': application.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8161,12 +9335,13 @@ return _execute(
 /// `<p>`Creates a payment method configuration</p>
 ///
 /// `POST /v1/payment_method_configurations`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodConfigurationsRequest');,
 );
 
@@ -8185,14 +9360,20 @@ return _execute(
 /// `<p>`Retrieve payment method configuration</p>
 ///
 /// `GET /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8210,12 +9391,13 @@ return _execute(
 /// `<p>`Update payment method configuration</p>
 ///
 /// `POST /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodConfigurationsConfigurationRequest');,
 );
 
@@ -8234,19 +9416,25 @@ return _execute(
 /// `<p>`Lists the details of existing payment method domains.</p>
 ///
 /// `GET /v1/payment_method_domains`
-Future<ApiResult<GetPaymentMethodDomainsResponse, ErrorModel>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentMethodDomainsResponse, ErrorModel>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domainName != null) queryParameters['domain_name'] = domainName;
+if (enabled != null) queryParameters['enabled'] = enabled.toString();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_method_domains',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'domain_name': ?domainName,
-    if (enabled != null) 'enabled': enabled.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8264,12 +9452,13 @@ return _execute(
 /// `<p>`Creates a payment method domain.</p>
 ///
 /// `POST /v1/payment_method_domains`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsRequest');,
 );
 
@@ -8288,14 +9477,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing payment method domain.</p>
 ///
 /// `GET /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodDomain, ErrorModel>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8313,12 +9508,13 @@ return _execute(
 /// `<p>`Updates an existing payment method domain.</p>
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsPaymentMethodDomainRequest');,
 );
 
@@ -8342,12 +9538,13 @@ return _execute(
 /// `<p>`Related guides: <a href="/docs/payments/payment-methods/pmd-registration">Payment method domains</a>.</p>
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}/validate`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}/validate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsPaymentMethodDomainValidateRequest');,
 );
 
@@ -8366,21 +9563,27 @@ return _execute(
 /// `<p>`Returns a list of all PaymentMethods.</p>
 ///
 /// `GET /v1/payment_methods`
-Future<ApiResult<GetPaymentMethodsResponse, ErrorModel>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPaymentMethodsResponse, ErrorModel>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (allowRedisplay != null) queryParameters['allow_redisplay'] = allowRedisplay.toJson();
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_methods',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (allowRedisplay != null) 'allow_redisplay': allowRedisplay.toJson(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8400,12 +9603,13 @@ return _execute(
 /// `<p>`Instead of creating a PaymentMethod directly, we recommend using the <a href="/docs/payments/accept-a-payment">PaymentIntents</a> API to accept a payment immediately or the <a href="/docs/payments/save-and-reuse">SetupIntent</a> API to collect payment method details ahead of a future payment.</p>
 ///
 /// `POST /v1/payment_methods`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethods({PostPaymentMethodsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethods({PostPaymentMethodsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsRequest');,
 );
 
@@ -8424,14 +9628,20 @@ return _execute(
 /// `<p>`Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use <a href="/docs/api/payment_methods/customer">Retrieve a Customer’s PaymentMethods</a></p>
 ///
 /// `GET /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8449,12 +9659,13 @@ return _execute(
 /// `<p>`Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.</p>
 ///
 /// `POST /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodRequest');,
 );
 
@@ -8485,12 +9696,13 @@ return _execute(
 /// on the Customer to the PaymentMethod’s ID.</p>
 ///
 /// `POST /v1/payment_methods/{payment_method}/attach`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/attach',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodAttachRequest');,
 );
 
@@ -8509,12 +9721,13 @@ return _execute(
 /// `<p>`Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.</p>
 ///
 /// `POST /v1/payment_methods/{payment_method}/detach`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/detach',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodDetachRequest');,
 );
 
@@ -8535,12 +9748,13 @@ return _execute(
 ///  Records in a terminal state directly, through this method.</p>
 ///
 /// `POST /v1/payment_records/report_payment`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/report_payment',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsReportPaymentRequest');,
 );
 
@@ -8559,14 +9773,20 @@ return _execute(
 /// `<p>`Retrieves a Payment Record with the given ID</p>
 ///
 /// `GET /v1/payment_records/{id}`
-Future<ApiResult<PaymentRecord, ErrorModel>> getPaymentRecordsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> getPaymentRecordsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8585,12 +9805,13 @@ return _execute(
 ///  attempt can only be specified if all other payment attempts are canceled or failed.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptRequest');,
 );
 
@@ -8610,12 +9831,13 @@ return _execute(
 ///  was canceled.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_canceled`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_canceled',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptCanceledRequest');,
 );
 
@@ -8635,12 +9857,13 @@ return _execute(
 ///  failed or errored.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_failed`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_failed',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptFailedRequest');,
 );
 
@@ -8660,12 +9883,13 @@ return _execute(
 ///  was guaranteed.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_guaranteed`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_guaranteed',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest');,
 );
 
@@ -8684,12 +9908,13 @@ return _execute(
 /// `<p>`Report informational updates on the specified Payment Record.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_informational`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_informational',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptInformationalRequest');,
 );
 
@@ -8709,12 +9934,13 @@ return _execute(
 ///  was refunded.</p>
 ///
 /// `POST /v1/payment_records/{id}/report_refund`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_refund',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportRefundRequest');,
 );
 
@@ -8733,21 +9959,31 @@ return _execute(
 /// `<p>`Returns a list of existing payouts sent to third-party bank accounts or payouts that Stripe sent to you. The payouts return in sorted order, with the most recently created payouts appearing first.</p>
 ///
 /// `GET /v1/payouts`
-Future<ApiResult<GetPayoutsResponse, ErrorModel>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPayoutsResponse, ErrorModel>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (arrivalDate != null) {
+queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString(), allowReserved: false));
+}
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (destination != null) queryParameters['destination'] = destination;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payouts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (arrivalDate != null) 'arrival_date': arrivalDate.toString(),
-    if (created != null) 'created': created.toString(),
-    'destination': ?destination,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8769,12 +10005,13 @@ return _execute(
 /// `<p>`If you create a manual payout on a Stripe account that uses multiple payment source types, you need to specify the source type balance that the payout draws from. The <a href="#balance_object">balance object</a> details available and pending amounts by source type.</p>
 ///
 /// `POST /v1/payouts`
-Future<ApiResult<Payout, ErrorModel>> postPayouts({required PostPayoutsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Payout, ErrorModel>> postPayouts({required PostPayoutsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsRequest');,
 );
 
@@ -8793,14 +10030,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing payout. Supply the unique payout ID from either a payout creation request or the payout list. Stripe returns the corresponding payout information.</p>
 ///
 /// `GET /v1/payouts/{payout}`
-Future<ApiResult<Payout, ErrorModel>> getPayoutsPayout({required String payout, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Payout, ErrorModel>> getPayoutsPayout({required String payout, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8818,12 +10061,13 @@ return _execute(
 /// `<p>`Updates the specified payout by setting the values of the parameters you pass. We don’t change parameters that you don’t provide. This request only accepts the metadata as arguments.</p>
 ///
 /// `POST /v1/payouts/{payout}`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Payout, ErrorModel>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutRequest');,
 );
 
@@ -8842,12 +10086,13 @@ return _execute(
 /// `<p>`You can cancel a previously created payout if its status is `<code>`pending</code>. Stripe refunds the funds to your available balance. You can’t cancel automatic Stripe payouts.</p>
 ///
 /// `POST /v1/payouts/{payout}/cancel`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutCancelRequest');,
 );
 
@@ -8868,12 +10113,13 @@ return _execute(
 /// `<p>`By requesting a reversal through `<code>`/v1/payouts/:id/reverse</code>, you confirm that the authorized signatory of the selected bank account authorizes the debit on the bank account and that no other authorization is required.</p>
 ///
 /// `POST /v1/payouts/{payout}/reverse`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/reverse',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutReverseRequest');,
 );
 
@@ -8892,20 +10138,28 @@ return _execute(
 /// `<p>`Returns a list of your plans.</p>
 ///
 /// `GET /v1/plans`
-Future<ApiResult<GetPlansResponse, ErrorModel>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPlansResponse, ErrorModel>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (product != null) queryParameters['product'] = product;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/plans',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'product': ?product,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8923,12 +10177,13 @@ return _execute(
 /// `<p>`You can now model subscriptions more flexibly using the <a href="#prices">Prices API</a>. It replaces the Plans API and is backwards compatible to simplify your migration.</p>
 ///
 /// `POST /v1/plans`
-Future<ApiResult<Plan, ErrorModel>> postPlans({required PostPlansRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Plan, ErrorModel>> postPlans({required PostPlansRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPlansRequest');,
 );
 
@@ -8947,14 +10202,20 @@ return _execute(
 /// `<p>`Retrieves the plan with the given ID.</p>
 ///
 /// `GET /v1/plans/{plan}`
-Future<ApiResult<Plan, ErrorModel>> getPlansPlan({required String plan, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Plan, ErrorModel>> getPlansPlan({required String plan, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -8972,12 +10233,13 @@ return _execute(
 /// `<p>`Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.</p>
 ///
 /// `POST /v1/plans/{plan}`
-Future<ApiResult<Plan, ErrorModel>> postPlansPlan({required String plan, PostPlansPlanRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Plan, ErrorModel>> postPlansPlan({required String plan, PostPlansPlanRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPlansPlanRequest');,
 );
 
@@ -8996,12 +10258,13 @@ return _execute(
 /// `<p>`Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.</p>
 ///
 /// `DELETE /v1/plans/{plan}`
-Future<ApiResult<DeletedPlan, ErrorModel>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedPlan, ErrorModel>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeletePlansPlanRequest');,
 );
 
@@ -9020,24 +10283,38 @@ return _execute(
 /// `<p>`Returns a list of your active prices, excluding <a href="/docs/products-prices/pricing-models#inline-pricing">inline prices</a>. For the list of inactive prices, set `<code>`active</code> to false.</p>
 ///
 /// `GET /v1/prices`
-Future<ApiResult<GetPricesResponse, ErrorModel>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPricesResponse, ErrorModel>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (currency != null) queryParameters['currency'] = currency;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (lookupKeys != null) {
+queryParameters['lookup_keys'] = lookupKeys.join(',');
+}
+if (product != null) queryParameters['product'] = product;
+if (recurring != null) {
+if (recurring.interval != null) queryParameters['recurring[interval]'] = recurring.interval.toJson();
+if (recurring.meter != null) queryParameters['recurring[meter]'] = recurring.meter;
+if (recurring.usageType != null) queryParameters['recurring[usage_type]'] = recurring.usageType.toJson();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (type != null) queryParameters['type'] = type.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/prices',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    if (created != null) 'created': created.toString(),
-    'currency': ?currency,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (lookupKeys != null) 'lookup_keys': lookupKeys.toString(),
-    'product': ?product,
-    if (recurring != null) 'recurring': recurring.toString(),
-    'starting_after': ?startingAfter,
-    if (type != null) 'type': type.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9055,12 +10332,13 @@ return _execute(
 /// `<p>`Creates a new <a href="https://docs.stripe.com/api/prices">Price</a> for an existing <a href="https://docs.stripe.com/api/products">Product</a>. The Price can be recurring or one-time.</p>
 ///
 /// `POST /v1/prices`
-Future<ApiResult<Price, ErrorModel>> postPrices({required PostPricesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Price, ErrorModel>> postPrices({required PostPricesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPricesRequest');,
 );
 
@@ -9082,17 +10360,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/prices/search`
-Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/prices/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9110,14 +10394,20 @@ return _execute(
 /// `<p>`Retrieves the price with the given ID.</p>
 ///
 /// `GET /v1/prices/{price}`
-Future<ApiResult<Price, ErrorModel>> getPricesPrice({required String price, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Price, ErrorModel>> getPricesPrice({required String price, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/prices/${Uri.encodeComponent(price)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9135,12 +10425,13 @@ return _execute(
 /// `<p>`Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.</p>
 ///
 /// `POST /v1/prices/{price}`
-Future<ApiResult<Price, ErrorModel>> postPricesPrice({required String price, PostPricesPriceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Price, ErrorModel>> postPricesPrice({required String price, PostPricesPriceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices/${Uri.encodeComponent(price)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPricesPriceRequest');,
 );
 
@@ -9159,22 +10450,32 @@ return _execute(
 /// `<p>`Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.</p>
 ///
 /// `GET /v1/products`
-Future<ApiResult<GetProductsResponse, ErrorModel>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, }) async  { final request = ApiRequest(
+Future<ApiResult<GetProductsResponse, ErrorModel>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (ids != null) {
+queryParameters['ids'] = ids.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (shippable != null) queryParameters['shippable'] = shippable.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (url != null) queryParameters['url'] = url;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/products',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (ids != null) 'ids': ids.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (shippable != null) 'shippable': shippable.toString(),
-    'starting_after': ?startingAfter,
-    'url': ?url,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9192,12 +10493,13 @@ return _execute(
 /// `<p>`Creates a new product object.</p>
 ///
 /// `POST /v1/products`
-Future<ApiResult<Product, ErrorModel>> postProducts({required PostProductsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Product, ErrorModel>> postProducts({required PostProductsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/products',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsRequest');,
 );
 
@@ -9219,17 +10521,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/products/search`
-Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/products/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9247,14 +10555,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.</p>
 ///
 /// `GET /v1/products/{id}`
-Future<ApiResult<Product, ErrorModel>> getProductsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Product, ErrorModel>> getProductsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/products/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9272,12 +10586,13 @@ return _execute(
 /// `<p>`Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/products/{id}`
-Future<ApiResult<Product, ErrorModel>> postProductsId({required String id, PostProductsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Product, ErrorModel>> postProductsId({required String id, PostProductsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsIdRequest');,
 );
 
@@ -9296,12 +10611,13 @@ return _execute(
 /// `<p>`Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with `<code>`type=good</code> is only possible if it has no SKUs associated with it.</p>
 ///
 /// `DELETE /v1/products/{id}`
-Future<ApiResult<DeletedProduct, ErrorModel>> deleteProductsId({required String id, DeleteProductsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedProduct, ErrorModel>> deleteProductsId({required String id, DeleteProductsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteProductsIdRequest');,
 );
 
@@ -9320,17 +10636,23 @@ return _execute(
 /// `<p>`Retrieve a list of features for a product</p>
 ///
 /// `GET /v1/products/{product}/features`
-Future<ApiResult<GetProductsProductFeaturesResponse, ErrorModel>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetProductsProductFeaturesResponse, ErrorModel>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/products/${Uri.encodeComponent(product)}/features',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9348,12 +10670,13 @@ return _execute(
 /// `<p>`Creates a product_feature, which represents a feature attachment to a product</p>
 ///
 /// `POST /v1/products/{product}/features`
-Future<ApiResult<ProductFeature, ErrorModel>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ProductFeature, ErrorModel>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(product)}/features',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsProductFeaturesRequest');,
 );
 
@@ -9372,14 +10695,20 @@ return _execute(
 /// `<p>`Retrieves a product_feature, which represents a feature attachment to a product</p>
 ///
 /// `GET /v1/products/{product}/features/{id}`
-Future<ApiResult<ProductFeature, ErrorModel>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ProductFeature, ErrorModel>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/products/${Uri.encodeComponent(product)}/features/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9397,12 +10726,13 @@ return _execute(
 /// `<p>`Deletes the feature attachment to a product</p>
 ///
 /// `DELETE /v1/products/{product}/features/{id}`
-Future<ApiResult<DeletedProductFeature, ErrorModel>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedProductFeature, ErrorModel>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(product)}/features/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteProductsProductFeaturesIdRequest');,
 );
 
@@ -9421,23 +10751,31 @@ return _execute(
 /// `<p>`Returns a list of your promotion codes.</p>
 ///
 /// `GET /v1/promotion_codes`
-Future<ApiResult<GetPromotionCodesResponse, ErrorModel>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetPromotionCodesResponse, ErrorModel>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (code != null) queryParameters['code'] = code;
+if (coupon != null) queryParameters['coupon'] = coupon;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/promotion_codes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    'code': ?code,
-    'coupon': ?coupon,
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9455,12 +10793,13 @@ return _execute(
 /// `<p>`A promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.</p>
 ///
 /// `POST /v1/promotion_codes`
-Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodes({required PostPromotionCodesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodes({required PostPromotionCodesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPromotionCodesRequest');,
 );
 
@@ -9479,14 +10818,20 @@ return _execute(
 /// `<p>`Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing `<code>`code</code> use <a href="/docs/api/promotion_codes/list">list</a> with the desired `<code>`code</code>.</p>
 ///
 /// `GET /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, ErrorModel>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<PromotionCode, ErrorModel>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9504,12 +10849,13 @@ return _execute(
 /// `<p>`Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.</p>
 ///
 /// `POST /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPromotionCodesPromotionCodeRequest');,
 );
 
@@ -9528,21 +10874,27 @@ return _execute(
 /// `<p>`Returns a list of your quotes.</p>
 ///
 /// `GET /v1/quotes`
-Future<ApiResult<GetQuotesResponse, ErrorModel>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, }) async  { final request = ApiRequest(
+Future<ApiResult<GetQuotesResponse, ErrorModel>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (testClock != null) queryParameters['test_clock'] = testClock;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/quotes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    'test_clock': ?testClock,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9560,12 +10912,13 @@ return _execute(
 /// `<p>`A quote models prices and services for a customer. Default options for `<code>`header</code>, `<code>`description</code>, `<code>`footer</code>, and `<code>`expires_at</code> can be set in the dashboard via the <a href="https://dashboard.stripe.com/settings/billing/quote">quote template</a>.</p>
 ///
 /// `POST /v1/quotes`
-Future<ApiResult<Quote, ErrorModel>> postQuotes({PostQuotesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> postQuotes({PostQuotesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesRequest');,
 );
 
@@ -9584,14 +10937,20 @@ return _execute(
 /// `<p>`Retrieves the quote with the given ID.</p>
 ///
 /// `GET /v1/quotes/{quote}`
-Future<ApiResult<Quote, ErrorModel>> getQuotesQuote({required String quote, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> getQuotesQuote({required String quote, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9609,12 +10968,13 @@ return _execute(
 /// `<p>`A quote models prices and services for a customer.</p>
 ///
 /// `POST /v1/quotes/{quote}`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteRequest');,
 );
 
@@ -9633,12 +10993,13 @@ return _execute(
 /// `<p>`Accepts the specified quote.</p>
 ///
 /// `POST /v1/quotes/{quote}/accept`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/accept',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteAcceptRequest');,
 );
 
@@ -9657,12 +11018,13 @@ return _execute(
 /// `<p>`Cancels the quote.</p>
 ///
 /// `POST /v1/quotes/{quote}/cancel`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteCancelRequest');,
 );
 
@@ -9681,17 +11043,23 @@ return _execute(
 /// `<p>`When retrieving a quote, there is an includable <a href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items">`<strong>`computed.upfront.line_items</strong></a> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.</p>
 ///
 /// `GET /v1/quotes/{quote}/computed_upfront_line_items`
-Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, ErrorModel>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, ErrorModel>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/computed_upfront_line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9709,12 +11077,13 @@ return _execute(
 /// `<p>`Finalizes the quote.</p>
 ///
 /// `POST /v1/quotes/{quote}/finalize`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/finalize',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteFinalizeRequest');,
 );
 
@@ -9733,17 +11102,23 @@ return _execute(
 /// `<p>`When retrieving a quote, there is an includable `<strong>`line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
 ///
 /// `GET /v1/quotes/{quote}/line_items`
-Future<ApiResult<GetQuotesQuoteLineItemsResponse, ErrorModel>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetQuotesQuoteLineItemsResponse, ErrorModel>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9761,14 +11136,20 @@ return _execute(
 /// `<p>`Download the PDF for a finalized quote. Explanation for special handling can be found <a href="https://docs.stripe.com/quotes/overview#quote_pdf">here</a></p>
 ///
 /// `GET /v1/quotes/{quote}/pdf`
-Future<ApiResult<Uint8List, ErrorModel>> getQuotesQuotePdf({required String quote, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Uint8List, ErrorModel>> getQuotesQuotePdf({required String quote, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/pdf',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9786,20 +11167,28 @@ return _execute(
 /// `<p>`Returns a list of early fraud warnings.</p>
 ///
 /// `GET /v1/radar/early_fraud_warnings`
-Future<ApiResult<GetRadarEarlyFraudWarningsResponse, ErrorModel>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRadarEarlyFraudWarningsResponse, ErrorModel>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (charge != null) queryParameters['charge'] = charge;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/early_fraud_warnings',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'charge': ?charge,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_intent': ?paymentIntent,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9819,14 +11208,20 @@ return _execute(
 /// `<p>`Please refer to the <a href="#early_fraud_warning_object">early fraud warning</a> object reference for more details.</p>
 ///
 /// `GET /v1/radar/early_fraud_warnings/{early_fraud_warning}`
-Future<ApiResult<RadarEarlyFraudWarning, ErrorModel>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarEarlyFraudWarning, ErrorModel>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/early_fraud_warnings/${Uri.encodeComponent(earlyFraudWarning)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9844,12 +11239,13 @@ return _execute(
 /// `<p>`Request a Radar API fraud risk score from Stripe for a payment before sending it for external processor authorization.</p>
 ///
 /// `POST /v1/radar/payment_evaluations`
-Future<ApiResult<RadarPaymentEvaluation, ErrorModel>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RadarPaymentEvaluation, ErrorModel>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/payment_evaluations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarPaymentEvaluationsRequest');,
 );
 
@@ -9868,20 +11264,28 @@ return _execute(
 /// `<p>`Returns a list of `<code>`ValueListItem</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/radar/value_list_items`
-Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, required String valueList, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, required String valueList, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (value != null) queryParameters['value'] = value;
+queryParameters['value_list'] = valueList;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/value_list_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'value': ?value,
-    'value_list': valueList,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9899,12 +11303,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`ValueListItem</code> object, which is added to the specified parent value list.</p>
 ///
 /// `POST /v1/radar/value_list_items`
-Future<ApiResult<RadarValueListItem, ErrorModel>> postRadarValueListItems({required PostRadarValueListItemsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RadarValueListItem, ErrorModel>> postRadarValueListItems({required PostRadarValueListItemsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_list_items',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListItemsRequest');,
 );
 
@@ -9923,14 +11328,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`ValueListItem</code> object.</p>
 ///
 /// `GET /v1/radar/value_list_items/{item}`
-Future<ApiResult<RadarValueListItem, ErrorModel>> getRadarValueListItemsItem({required String item, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarValueListItem, ErrorModel>> getRadarValueListItemsItem({required String item, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/value_list_items/${Uri.encodeComponent(item)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -9948,12 +11359,13 @@ return _execute(
 /// `<p>`Deletes a `<code>`ValueListItem</code> object, removing it from its parent value list.</p>
 ///
 /// `DELETE /v1/radar/value_list_items/{item}`
-Future<ApiResult<DeletedRadarValueListItem, ErrorModel>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedRadarValueListItem, ErrorModel>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_list_items/${Uri.encodeComponent(item)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteRadarValueListItemsItemRequest');,
 );
 
@@ -9972,20 +11384,28 @@ return _execute(
 /// `<p>`Returns a list of `<code>`ValueList</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/radar/value_lists`
-Future<ApiResult<GetRadarValueListsResponse, ErrorModel>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRadarValueListsResponse, ErrorModel>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (alias != null) queryParameters['alias'] = alias;
+if (contains != null) queryParameters['contains'] = contains;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/value_lists',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'alias': ?alias,
-    'contains': ?contains,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10003,12 +11423,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`ValueList</code> object, which can then be referenced in rules.</p>
 ///
 /// `POST /v1/radar/value_lists`
-Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueLists({required PostRadarValueListsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueLists({required PostRadarValueListsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListsRequest');,
 );
 
@@ -10027,14 +11448,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`ValueList</code> object.</p>
 ///
 /// `GET /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, ErrorModel>> getRadarValueListsValueList({required String valueList, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarValueList, ErrorModel>> getRadarValueListsValueList({required String valueList, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10052,12 +11479,13 @@ return _execute(
 /// `<p>`Updates a `<code>`ValueList</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that `<code>`item_type</code> is immutable.</p>
 ///
 /// `POST /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListsValueListRequest');,
 );
 
@@ -10076,12 +11504,13 @@ return _execute(
 /// `<p>`Deletes a `<code>`ValueList</code> object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.</p>
 ///
 /// `DELETE /v1/radar/value_lists/{value_list}`
-Future<ApiResult<DeletedRadarValueList, ErrorModel>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedRadarValueList, ErrorModel>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteRadarValueListsValueListRequest');,
 );
 
@@ -10100,20 +11529,28 @@ return _execute(
 /// `<p>`Returns a list of all refunds you created. We return the refunds in sorted order, with the most recent refunds appearing first. The 10 most recent refunds are always available by default on the Charge object.</p>
 ///
 /// `GET /v1/refunds`
-Future<ApiResult<GetRefundsResponse, ErrorModel>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRefundsResponse, ErrorModel>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (charge != null) queryParameters['charge'] = charge;
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/refunds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'charge': ?charge,
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_intent': ?paymentIntent,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10141,12 +11578,13 @@ return _execute(
 /// or when trying to refund more money than is left on a charge.</p>
 ///
 /// `POST /v1/refunds`
-Future<ApiResult<Refund, ErrorModel>> postRefunds({PostRefundsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postRefunds({PostRefundsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRequest');,
 );
 
@@ -10165,14 +11603,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing refund.</p>
 ///
 /// `GET /v1/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> getRefundsRefund({required String refund, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> getRefundsRefund({required String refund, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10192,12 +11636,13 @@ return _execute(
 /// `<p>`This request only accepts `<code>`metadata</code> as an argument.</p>
 ///
 /// `POST /v1/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRefundRequest');,
 );
 
@@ -10218,12 +11663,13 @@ return _execute(
 /// `<p>`You can’t cancel refunds in other states. Only refunds for payment methods that require customer action can enter the `<code>`requires_action</code> state.</p>
 ///
 /// `POST /v1/refunds/{refund}/cancel`
-Future<ApiResult<Refund, ErrorModel>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRefundCancelRequest');,
 );
 
@@ -10242,18 +11688,26 @@ return _execute(
 /// `<p>`Returns a list of Report Runs, with the most recent appearing first.</p>
 ///
 /// `GET /v1/reporting/report_runs`
-Future<ApiResult<GetReportingReportRunsResponse, ErrorModel>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetReportingReportRunsResponse, ErrorModel>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reporting/report_runs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10271,12 +11725,13 @@ return _execute(
 /// `<p>`Creates a new object and begin running the report. (Certain report types require a <a href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)</p>
 ///
 /// `POST /v1/reporting/report_runs`
-Future<ApiResult<ReportingReportRun, ErrorModel>> postReportingReportRuns({required PostReportingReportRunsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ReportingReportRun, ErrorModel>> postReportingReportRuns({required PostReportingReportRunsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/reporting/report_runs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostReportingReportRunsRequest');,
 );
 
@@ -10295,14 +11750,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing Report Run.</p>
 ///
 /// `GET /v1/reporting/report_runs/{report_run}`
-Future<ApiResult<ReportingReportRun, ErrorModel>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ReportingReportRun, ErrorModel>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reporting/report_runs/${Uri.encodeComponent(reportRun)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10320,14 +11781,20 @@ return _execute(
 /// `<p>`Returns a full list of Report Types.</p>
 ///
 /// `GET /v1/reporting/report_types`
-Future<ApiResult<GetReportingReportTypesResponse, ErrorModel>> getReportingReportTypes({List<String>? expand}) async  { final request = ApiRequest(
+Future<ApiResult<GetReportingReportTypesResponse, ErrorModel>> getReportingReportTypes({List<String>? expand}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reporting/report_types',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10345,14 +11812,20 @@ return _execute(
 /// `<p>`Retrieves the details of a Report Type. (Certain report types require a <a href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)</p>
 ///
 /// `GET /v1/reporting/report_types/{report_type}`
-Future<ApiResult<ReportingReportType, ErrorModel>> getReportingReportTypesReportType({required String reportType, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ReportingReportType, ErrorModel>> getReportingReportTypesReportType({required String reportType, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reporting/report_types/${Uri.encodeComponent(reportType)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10370,18 +11843,26 @@ return _execute(
 /// `<p>`Returns a list of `<code>`Review</code> objects that have `<code>`open</code> set to `<code>`true</code>. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
 ///
 /// `GET /v1/reviews`
-Future<ApiResult<GetReviewsResponse, ErrorModel>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetReviewsResponse, ErrorModel>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reviews',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10399,14 +11880,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`Review</code> object.</p>
 ///
 /// `GET /v1/reviews/{review}`
-Future<ApiResult<Review, ErrorModel>> getReviewsReview({required String review, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Review, ErrorModel>> getReviewsReview({required String review, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/reviews/${Uri.encodeComponent(review)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10424,12 +11911,13 @@ return _execute(
 /// `<p>`Approves a `<code>`Review</code> object, closing it and removing it from the list of reviews.</p>
 ///
 /// `POST /v1/reviews/{review}/approve`
-Future<ApiResult<Review, ErrorModel>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Review, ErrorModel>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/reviews/${Uri.encodeComponent(review)}/approve',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostReviewsReviewApproveRequest');,
 );
 
@@ -10448,19 +11936,27 @@ return _execute(
 /// `<p>`Returns a list of SetupAttempts that associate with a provided SetupIntent.</p>
 ///
 /// `GET /v1/setup_attempts`
-Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, required String setupIntent, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, required String setupIntent, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+queryParameters['setup_intent'] = setupIntent;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/setup_attempts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'setup_intent': setupIntent,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10478,22 +11974,30 @@ return _execute(
 /// `<p>`Returns a list of SetupIntents.</p>
 ///
 /// `GET /v1/setup_intents`
-Future<ApiResult<GetSetupIntentsResponse, ErrorModel>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSetupIntentsResponse, ErrorModel>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (attachToSelf != null) queryParameters['attach_to_self'] = attachToSelf.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (paymentMethod != null) queryParameters['payment_method'] = paymentMethod;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/setup_intents',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (attachToSelf != null) 'attach_to_self': attachToSelf.toString(),
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'payment_method': ?paymentMethod,
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10514,12 +12018,13 @@ return _execute(
 /// it to collect any required permissions to charge the payment method later.</p>
 ///
 /// `POST /v1/setup_intents`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntents({PostSetupIntentsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntents({PostSetupIntentsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsRequest');,
 );
 
@@ -10542,15 +12047,21 @@ return _execute(
 /// `<p>`When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the <a href="#setup_intent_object">SetupIntent</a> object reference for more details.</p>
 ///
 /// `GET /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, ErrorModel>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'client_secret': ?clientSecret,
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10568,12 +12079,13 @@ return _execute(
 /// `<p>`Updates a SetupIntent object.</p>
 ///
 /// `POST /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentRequest');,
 );
 
@@ -10594,12 +12106,13 @@ return _execute(
 /// `<p>`After you cancel it, setup is abandoned and any operations on the SetupIntent fail with an error. You can’t cancel the SetupIntent for a Checkout Session. <a href="/docs/api/checkout/sessions/expire">Expire the Checkout Session</a> instead.</p>
 ///
 /// `POST /v1/setup_intents/{intent}/cancel`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentCancelRequest');,
 );
 
@@ -10631,12 +12144,13 @@ return _execute(
 /// confirmation limit is reached.</p>
 ///
 /// `POST /v1/setup_intents/{intent}/confirm`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/confirm',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentConfirmRequest');,
 );
 
@@ -10655,12 +12169,13 @@ return _execute(
 /// `<p>`Verifies microdeposits on a SetupIntent object.</p>
 ///
 /// `POST /v1/setup_intents/{intent}/verify_microdeposits`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentVerifyMicrodepositsRequest');,
 );
 
@@ -10679,20 +12194,28 @@ return _execute(
 /// `<p>`Returns a list of your shipping rates.</p>
 ///
 /// `GET /v1/shipping_rates`
-Future<ApiResult<GetShippingRatesResponse, ErrorModel>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetShippingRatesResponse, ErrorModel>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (currency != null) queryParameters['currency'] = currency;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/shipping_rates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    if (created != null) 'created': created.toString(),
-    'currency': ?currency,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10710,12 +12233,13 @@ return _execute(
 /// `<p>`Creates a new shipping rate object.</p>
 ///
 /// `POST /v1/shipping_rates`
-Future<ApiResult<ShippingRate, ErrorModel>> postShippingRates({required PostShippingRatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ShippingRate, ErrorModel>> postShippingRates({required PostShippingRatesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostShippingRatesRequest');,
 );
 
@@ -10734,14 +12258,20 @@ return _execute(
 /// `<p>`Returns the shipping rate object with the given ID.</p>
 ///
 /// `GET /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, ErrorModel>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ShippingRate, ErrorModel>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10759,12 +12289,13 @@ return _execute(
 /// `<p>`Updates an existing shipping rate object.</p>
 ///
 /// `POST /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, ErrorModel>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ShippingRate, ErrorModel>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostShippingRatesShippingRateTokenRequest');,
 );
 
@@ -10783,12 +12314,13 @@ return _execute(
 /// `<p>`Update an existing Sigma query that previously exists</p>
 ///
 /// `POST /v1/sigma/saved_queries/{id}`
-Future<ApiResult<Query, ErrorModel>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Query, ErrorModel>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/sigma/saved_queries/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSigmaSavedQueriesIdRequest');,
 );
 
@@ -10807,17 +12339,23 @@ return _execute(
 /// `<p>`Returns a list of scheduled query runs.</p>
 ///
 /// `GET /v1/sigma/scheduled_query_runs`
-Future<ApiResult<GetSigmaScheduledQueryRunsResponse, ErrorModel>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSigmaScheduledQueryRunsResponse, ErrorModel>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sigma/scheduled_query_runs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10835,14 +12373,20 @@ return _execute(
 /// `<p>`Retrieves the details of an scheduled query run.</p>
 ///
 /// `GET /v1/sigma/scheduled_query_runs/{scheduled_query_run}`
-Future<ApiResult<ScheduledQueryRun, ErrorModel>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<ScheduledQueryRun, ErrorModel>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sigma/scheduled_query_runs/${Uri.encodeComponent(scheduledQueryRun)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10860,12 +12404,13 @@ return _execute(
 /// `<p>`Creates a new source object.</p>
 ///
 /// `POST /v1/sources`
-Future<ApiResult<Source, ErrorModel>> postSources({PostSourcesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Source, ErrorModel>> postSources({PostSourcesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesRequest');,
 );
 
@@ -10884,15 +12429,21 @@ return _execute(
 /// `<p>`Retrieves an existing source object. Supply the unique source ID from a source creation request and Stripe will return the corresponding up-to-date source object information.</p>
 ///
 /// `GET /v1/sources/{source}`
-Future<ApiResult<Source, ErrorModel>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Source, ErrorModel>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sources/${Uri.encodeComponent(source)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'client_secret': ?clientSecret,
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10912,12 +12463,13 @@ return _execute(
 /// `<p>`This request accepts the `<code>`metadata</code> and `<code>`owner</code> as arguments. It is also possible to update type specific information for selected payment methods. Please refer to our <a href="/docs/sources">payment method guides</a> for more detail.</p>
 ///
 /// `POST /v1/sources/{source}`
-Future<ApiResult<Source, ErrorModel>> postSourcesSource({required String source, PostSourcesSourceRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Source, ErrorModel>> postSourcesSource({required String source, PostSourcesSourceRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesSourceRequest');,
 );
 
@@ -10936,14 +12488,20 @@ return _execute(
 /// `<p>`Retrieves a new Source MandateNotification.</p>
 ///
 /// `GET /v1/sources/{source}/mandate_notifications/{mandate_notification}`
-Future<ApiResult<SourceMandateNotification, ErrorModel>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<SourceMandateNotification, ErrorModel>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sources/${Uri.encodeComponent(source)}/mandate_notifications/${Uri.encodeComponent(mandateNotification)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10960,17 +12518,23 @@ return _execute(
 /// `<p>`List source transactions for a given source.</p>
 ///
 /// `GET /v1/sources/{source}/source_transactions`
-Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, ErrorModel>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, ErrorModel>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sources/${Uri.encodeComponent(source)}/source_transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -10988,14 +12552,20 @@ return _execute(
 /// `<p>`Retrieve an existing source transaction object. Supply the unique source ID from a source creation request and the source transaction ID and Stripe will return the corresponding up-to-date source object information.</p>
 ///
 /// `GET /v1/sources/{source}/source_transactions/{source_transaction}`
-Future<ApiResult<SourceTransaction, ErrorModel>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<SourceTransaction, ErrorModel>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/sources/${Uri.encodeComponent(source)}/source_transactions/${Uri.encodeComponent(sourceTransaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11012,12 +12582,13 @@ return _execute(
 /// `<p>`Verify a given source.</p>
 ///
 /// `POST /v1/sources/{source}/verify`
-Future<ApiResult<Source, ErrorModel>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Source, ErrorModel>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}/verify',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesSourceVerifyRequest');,
 );
 
@@ -11036,18 +12607,24 @@ return _execute(
 /// `<p>`Returns a list of your subscription items for a given subscription.</p>
 ///
 /// `GET /v1/subscription_items`
-Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, required String subscription, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, required String subscription, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+queryParameters['subscription'] = subscription;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscription_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'subscription': subscription,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11065,12 +12642,13 @@ return _execute(
 /// `<p>`Adds a new item to an existing subscription. No existing items will be changed or replaced.</p>
 ///
 /// `POST /v1/subscription_items`
-Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItems({required PostSubscriptionItemsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItems({required PostSubscriptionItemsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionItemsRequest');,
 );
 
@@ -11089,14 +12667,20 @@ return _execute(
 /// `<p>`Retrieves the subscription item with the given ID.</p>
 ///
 /// `GET /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, ErrorModel>> getSubscriptionItemsItem({required String item, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionItem, ErrorModel>> getSubscriptionItemsItem({required String item, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11114,12 +12698,13 @@ return _execute(
 /// `<p>`Updates the plan or quantity of an item on a current subscription.</p>
 ///
 /// `POST /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionItemsItemRequest');,
 );
 
@@ -11138,12 +12723,13 @@ return _execute(
 /// `<p>`Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.</p>
 ///
 /// `DELETE /v1/subscription_items/{item}`
-Future<ApiResult<DeletedSubscriptionItem, ErrorModel>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedSubscriptionItem, ErrorModel>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionItemsItemRequest');,
 );
 
@@ -11162,24 +12748,38 @@ return _execute(
 /// `<p>`Retrieves the list of your subscription schedules.</p>
 ///
 /// `GET /v1/subscription_schedules`
-Future<ApiResult<GetSubscriptionSchedulesResponse, ErrorModel>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSubscriptionSchedulesResponse, ErrorModel>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (canceledAt != null) {
+queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString(), allowReserved: false));
+}
+if (completedAt != null) {
+queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completedAt.toString(), allowReserved: false));
+}
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (releasedAt != null) {
+queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString(), allowReserved: false));
+}
+if (scheduled != null) queryParameters['scheduled'] = scheduled.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscription_schedules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (canceledAt != null) 'canceled_at': canceledAt.toString(),
-    if (completedAt != null) 'completed_at': completedAt.toString(),
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (releasedAt != null) 'released_at': releasedAt.toString(),
-    if (scheduled != null) 'scheduled': scheduled.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11197,12 +12797,13 @@ return _execute(
 /// `<p>`Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.</p>
 ///
 /// `POST /v1/subscription_schedules`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesRequest');,
 );
 
@@ -11221,14 +12822,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.</p>
 ///
 /// `GET /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionSchedule, ErrorModel>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11246,12 +12853,13 @@ return _execute(
 /// `<p>`Updates an existing subscription schedule.</p>
 ///
 /// `POST /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleRequest');,
 );
 
@@ -11270,12 +12878,13 @@ return _execute(
 /// `<p>`Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is `<code>`not_started</code> or `<code>`active</code>.</p>
 ///
 /// `POST /v1/subscription_schedules/{schedule}/cancel`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleCancelRequest');,
 );
 
@@ -11294,12 +12903,13 @@ return _execute(
 /// `<p>`Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is `<code>`not_started</code> or `<code>`active</code>. If the subscription schedule is currently associated with a subscription, releasing it will remove its `<code>`subscription</code> property and set the subscription’s ID to the `<code>`released_subscription</code> property.</p>
 ///
 /// `POST /v1/subscription_schedules/{schedule}/release`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/release',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleReleaseRequest');,
 );
 
@@ -11318,27 +12928,41 @@ return _execute(
 /// `<p>`By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify `<code>`status=canceled</code>.</p>
 ///
 /// `GET /v1/subscriptions`
-Future<ApiResult<GetSubscriptionsResponse, ErrorModel>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSubscriptionsResponse, ErrorModel>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (automaticTax != null) {
+queryParameters['automatic_tax[enabled]'] = automaticTax.enabled.toString();
+}
+if (collectionMethod != null) queryParameters['collection_method'] = collectionMethod.toJson();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (currentPeriodEnd != null) {
+queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: currentPeriodEnd.toString(), allowReserved: false));
+}
+if (currentPeriodStart != null) {
+queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (price != null) queryParameters['price'] = price;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (testClock != null) queryParameters['test_clock'] = testClock;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscriptions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (automaticTax != null) 'automatic_tax': automaticTax.toString(),
-    if (collectionMethod != null) 'collection_method': collectionMethod.toJson(),
-    if (created != null) 'created': created.toString(),
-    if (currentPeriodEnd != null) 'current_period_end': currentPeriodEnd.toString(),
-    if (currentPeriodStart != null) 'current_period_start': currentPeriodStart.toString(),
-    'customer': ?customer,
-    'customer_account': ?customerAccount,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'price': ?price,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    'test_clock': ?testClock,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11362,12 +12986,13 @@ return _execute(
 /// Schedules provide the flexibility to model more complex billing configurations that change over time.</p>
 ///
 /// `POST /v1/subscriptions`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptions({PostSubscriptionsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postSubscriptions({PostSubscriptionsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsRequest');,
 );
 
@@ -11389,17 +13014,23 @@ return _execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.</p>
 ///
 /// `GET /v1/subscriptions/search`
-Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final request = ApiRequest(
+Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({List<String>? expand, int? limit, String? page, required String query, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (page != null) queryParameters['page'] = page;
+queryParameters['query'] = query;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscriptions/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'page': ?page,
-    'query': query,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11417,14 +13048,20 @@ return _execute(
 /// `<p>`Retrieves the subscription with the given ID.</p>
 ///
 /// `GET /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11462,12 +13099,13 @@ return _execute(
 /// `<p>`Updating the quantity on a subscription many times in an hour may result in <a href="/docs/rate-limits">rate limiting</a>. If you need to bill for a frequently changing quantity, consider integrating <a href="/docs/billing/subscriptions/usage-based">usage-based billing</a> instead.</p>
 ///
 /// `POST /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionExposedIdRequest');,
 );
 
@@ -11490,12 +13128,13 @@ return _execute(
 /// `<p>`By default, upon subscription cancellation, Stripe stops automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.</p>
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionsSubscriptionExposedIdRequest');,
 );
 
@@ -11514,12 +13153,13 @@ return _execute(
 /// `<p>`Removes the currently applied discount on a subscription.</p>
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedDiscount, ErrorModel>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionsSubscriptionExposedIdDiscountRequest');,
 );
 
@@ -11538,12 +13178,13 @@ return _execute(
 /// `<p>`Upgrade the billing_mode of an existing subscription.</p>
 ///
 /// `POST /v1/subscriptions/{subscription}/migrate`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/migrate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionMigrateRequest');,
 );
 
@@ -11562,12 +13203,13 @@ return _execute(
 /// `<p>`Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If no resumption invoice is generated, the subscription becomes `<code>`active</code> immediately. If a resumption invoice is generated, the subscription remains `<code>`paused</code> until the invoice is paid or marked uncollectible. If the invoice is not paid by the expiration date, it is voided and the subscription remains `<code>`paused</code>.</p>
 ///
 /// `POST /v1/subscriptions/{subscription}/resume`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/resume',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionResumeRequest');,
 );
 
@@ -11586,15 +13228,21 @@ return _execute(
 /// `<p>`Finds a tax association object by PaymentIntent id.</p>
 ///
 /// `GET /v1/tax/associations/find`
-Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({List<String>? expand, required String paymentIntent, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({List<String>? expand, required String paymentIntent, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['payment_intent'] = paymentIntent;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/associations/find',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-    'payment_intent': paymentIntent,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11612,12 +13260,13 @@ return _execute(
 /// `<p>`Calculates tax based on the input and returns a Tax `<code>`Calculation</code> object.</p>
 ///
 /// `POST /v1/tax/calculations`
-Future<ApiResult<TaxCalculation, ErrorModel>> postTaxCalculations({required PostTaxCalculationsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxCalculation, ErrorModel>> postTaxCalculations({required PostTaxCalculationsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/calculations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxCalculationsRequest');,
 );
 
@@ -11636,14 +13285,20 @@ return _execute(
 /// `<p>`Retrieves a Tax `<code>`Calculation</code> object, if the calculation hasn’t expired.</p>
 ///
 /// `GET /v1/tax/calculations/{calculation}`
-Future<ApiResult<TaxCalculation, ErrorModel>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxCalculation, ErrorModel>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/calculations/${Uri.encodeComponent(calculation)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11661,17 +13316,23 @@ return _execute(
 /// `<p>`Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.</p>
 ///
 /// `GET /v1/tax/calculations/{calculation}/line_items`
-Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, ErrorModel>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, ErrorModel>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/calculations/${Uri.encodeComponent(calculation)}/line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11689,18 +13350,24 @@ return _execute(
 /// `<p>`Returns a list of Tax `<code>`Registration</code> objects.</p>
 ///
 /// `GET /v1/tax/registrations`
-Future<ApiResult<GetTaxRegistrationsResponse, ErrorModel>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxRegistrationsResponse, ErrorModel>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/registrations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11718,12 +13385,13 @@ return _execute(
 /// `<p>`Creates a new Tax `<code>`Registration</code> object.</p>
 ///
 /// `POST /v1/tax/registrations`
-Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrations({required PostTaxRegistrationsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrations({required PostTaxRegistrationsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRegistrationsRequest');,
 );
 
@@ -11742,14 +13410,20 @@ return _execute(
 /// `<p>`Returns a Tax `<code>`Registration</code> object.</p>
 ///
 /// `GET /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, ErrorModel>> getTaxRegistrationsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxRegistration, ErrorModel>> getTaxRegistrationsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11769,12 +13443,13 @@ return _execute(
 /// `<p>`A registration cannot be deleted after it has been created. If you wish to end a registration you may do so by setting `<code>`expires_at</code>.</p>
 ///
 /// `POST /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRegistrationsIdRequest');,
 );
 
@@ -11793,14 +13468,20 @@ return _execute(
 /// `<p>`Retrieves Tax `<code>`Settings</code> for a merchant.</p>
 ///
 /// `GET /v1/tax/settings`
-Future<ApiResult<TaxSettings, ErrorModel>> getTaxSettings({List<String>? expand}) async  { final request = ApiRequest(
+Future<ApiResult<TaxSettings, ErrorModel>> getTaxSettings({List<String>? expand}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/settings',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11818,12 +13499,13 @@ return _execute(
 /// `<p>`Updates Tax `<code>`Settings</code> parameters used in tax calculations. All parameters are editable but none can be removed once set.</p>
 ///
 /// `POST /v1/tax/settings`
-Future<ApiResult<TaxSettings, ErrorModel>> postTaxSettings({PostTaxSettingsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxSettings, ErrorModel>> postTaxSettings({PostTaxSettingsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxSettingsRequest');,
 );
 
@@ -11842,12 +13524,13 @@ return _execute(
 /// `<p>`Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.</p>
 ///
 /// `POST /v1/tax/transactions/create_from_calculation`
-Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_from_calculation',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxTransactionsCreateFromCalculationRequest');,
 );
 
@@ -11866,12 +13549,13 @@ return _execute(
 /// `<p>`Partially or fully reverses a previously created `<code>`Transaction</code>.</p>
 ///
 /// `POST /v1/tax/transactions/create_reversal`
-Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_reversal',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxTransactionsCreateReversalRequest');,
 );
 
@@ -11890,14 +13574,20 @@ return _execute(
 /// `<p>`Retrieves a Tax `<code>`Transaction</code> object.</p>
 ///
 /// `GET /v1/tax/transactions/{transaction}`
-Future<ApiResult<TaxTransaction, ErrorModel>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxTransaction, ErrorModel>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/transactions/${Uri.encodeComponent(transaction)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11915,17 +13605,23 @@ return _execute(
 /// `<p>`Retrieves the line items of a committed standalone transaction as a collection.</p>
 ///
 /// `GET /v1/tax/transactions/{transaction}/line_items`
-Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, ErrorModel>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, ErrorModel>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax/transactions/${Uri.encodeComponent(transaction)}/line_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11943,17 +13639,23 @@ return _execute(
 /// `<p>`A list of <a href="https://stripe.com/docs/tax/tax-categories">all tax codes available</a> to add to Products in order to allow specific tax calculations.</p>
 ///
 /// `GET /v1/tax_codes`
-Future<ApiResult<GetTaxCodesResponse, ErrorModel>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxCodesResponse, ErrorModel>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_codes',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11971,14 +13673,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will return the corresponding tax code information.</p>
 ///
 /// `GET /v1/tax_codes/{id}`
-Future<ApiResult<TaxCode, ErrorModel>> getTaxCodesId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxCode, ErrorModel>> getTaxCodesId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_codes/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -11996,18 +13704,29 @@ return _execute(
 /// `<p>`Returns a list of tax IDs.</p>
 ///
 /// `GET /v1/tax_ids`
-Future<ApiResult<GetTaxIdsResponse, ErrorModel>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxIdsResponse, ErrorModel>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (owner != null) {
+if (owner.account != null) queryParameters['owner[account]'] = owner.account;
+if (owner.customer != null) queryParameters['owner[customer]'] = owner.customer;
+if (owner.customerAccount != null) queryParameters['owner[customer_account]'] = owner.customerAccount;
+queryParameters['owner[type]'] = owner.type.toJson();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_ids',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (owner != null) 'owner': owner.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12025,12 +13744,13 @@ return _execute(
 /// `<p>`Creates a new account or customer `<code>`tax_id</code> object.</p>
 ///
 /// `POST /v1/tax_ids`
-Future<ApiResult<TaxId, ErrorModel>> postTaxIds({required PostTaxIdsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxId, ErrorModel>> postTaxIds({required PostTaxIdsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_ids',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxIdsRequest');,
 );
 
@@ -12049,14 +13769,20 @@ return _execute(
 /// `<p>`Retrieves an account or customer `<code>`tax_id</code> object.</p>
 ///
 /// `GET /v1/tax_ids/{id}`
-Future<ApiResult<TaxId, ErrorModel>> getTaxIdsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxId, ErrorModel>> getTaxIdsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_ids/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12074,12 +13800,13 @@ return _execute(
 /// `<p>`Deletes an existing account or customer `<code>`tax_id</code> object.</p>
 ///
 /// `DELETE /v1/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, ErrorModel>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTaxId, ErrorModel>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/tax_ids/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTaxIdsIdRequest');,
 );
 
@@ -12098,20 +13825,28 @@ return _execute(
 /// `<p>`Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.</p>
 ///
 /// `GET /v1/tax_rates`
-Future<ApiResult<GetTaxRatesResponse, ErrorModel>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTaxRatesResponse, ErrorModel>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (active != null) queryParameters['active'] = active.toString();
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (inclusive != null) queryParameters['inclusive'] = inclusive.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_rates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (active != null) 'active': active.toString(),
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (inclusive != null) 'inclusive': inclusive.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12129,12 +13864,13 @@ return _execute(
 /// `<p>`Creates a new tax rate.</p>
 ///
 /// `POST /v1/tax_rates`
-Future<ApiResult<TaxRate, ErrorModel>> postTaxRates({required PostTaxRatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TaxRate, ErrorModel>> postTaxRates({required PostTaxRatesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRatesRequest');,
 );
 
@@ -12153,14 +13889,20 @@ return _execute(
 /// `<p>`Retrieves a tax rate with the given ID</p>
 ///
 /// `GET /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, ErrorModel>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxRate, ErrorModel>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12178,12 +13920,13 @@ return _execute(
 /// `<p>`Updates an existing tax rate.</p>
 ///
 /// `POST /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, ErrorModel>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TaxRate, ErrorModel>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRatesTaxRateRequest');,
 );
 
@@ -12202,18 +13945,24 @@ return _execute(
 /// `<p>`Returns a list of `<code>`Configuration</code> objects.</p>
 ///
 /// `GET /v1/terminal/configurations`
-Future<ApiResult<GetTerminalConfigurationsResponse, ErrorModel>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalConfigurationsResponse, ErrorModel>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (isAccountDefault != null) queryParameters['is_account_default'] = isAccountDefault.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/configurations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (isAccountDefault != null) 'is_account_default': isAccountDefault.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12231,12 +13980,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`Configuration</code> object.</p>
 ///
 /// `POST /v1/terminal/configurations`
-Future<ApiResult<TerminalConfiguration, ErrorModel>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalConfiguration, ErrorModel>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConfigurationsRequest');,
 );
 
@@ -12255,14 +14005,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`Configuration</code> object.</p>
 ///
 /// `GET /v1/terminal/configurations/{configuration}`
-Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, ErrorModel>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, ErrorModel>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12280,12 +14036,13 @@ return _execute(
 /// `<p>`Updates a new `<code>`Configuration</code> object.</p>
 ///
 /// `POST /v1/terminal/configurations/{configuration}`
-Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, ErrorModel>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, ErrorModel>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConfigurationsConfigurationRequest');,
 );
 
@@ -12304,12 +14061,13 @@ return _execute(
 /// `<p>`Deletes a `<code>`Configuration</code> object.</p>
 ///
 /// `DELETE /v1/terminal/configurations/{configuration}`
-Future<ApiResult<DeletedTerminalConfiguration, ErrorModel>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTerminalConfiguration, ErrorModel>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalConfigurationsConfigurationRequest');,
 );
 
@@ -12328,12 +14086,13 @@ return _execute(
 /// `<p>`To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.</p>
 ///
 /// `POST /v1/terminal/connection_tokens`
-Future<ApiResult<TerminalConnectionToken, ErrorModel>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalConnectionToken, ErrorModel>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/connection_tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConnectionTokensRequest');,
 );
 
@@ -12352,17 +14111,23 @@ return _execute(
 /// `<p>`Returns a list of `<code>`Location</code> objects.</p>
 ///
 /// `GET /v1/terminal/locations`
-Future<ApiResult<GetTerminalLocationsResponse, ErrorModel>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalLocationsResponse, ErrorModel>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/locations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12381,12 +14146,13 @@ return _execute(
 /// For further details, including which address fields are required in each country, see the <a href="/docs/terminal/fleet/locations">Manage locations</a> guide.</p>
 ///
 /// `POST /v1/terminal/locations`
-Future<ApiResult<TerminalLocation, ErrorModel>> postTerminalLocations({PostTerminalLocationsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalLocation, ErrorModel>> postTerminalLocations({PostTerminalLocationsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalLocationsRequest');,
 );
 
@@ -12405,14 +14171,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`Location</code> object.</p>
 ///
 /// `GET /v1/terminal/locations/{location}`
-Future<ApiResult<GetTerminalLocationsLocationResponse, ErrorModel>> getTerminalLocationsLocation({required String location, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalLocationsLocationResponse, ErrorModel>> getTerminalLocationsLocation({required String location, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12430,12 +14202,13 @@ return _execute(
 /// `<p>`Updates a `<code>`Location</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/terminal/locations/{location}`
-Future<ApiResult<PostTerminalLocationsLocationResponse, ErrorModel>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostTerminalLocationsLocationResponse, ErrorModel>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalLocationsLocationRequest');,
 );
 
@@ -12454,12 +14227,13 @@ return _execute(
 /// `<p>`Deletes a `<code>`Location</code> object.</p>
 ///
 /// `DELETE /v1/terminal/locations/{location}`
-Future<ApiResult<DeletedTerminalLocation, ErrorModel>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTerminalLocation, ErrorModel>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalLocationsLocationRequest');,
 );
 
@@ -12478,12 +14252,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`OnboardingLink</code> object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.</p>
 ///
 /// `POST /v1/terminal/onboarding_links`
-Future<ApiResult<TerminalOnboardingLink, ErrorModel>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalOnboardingLink, ErrorModel>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/onboarding_links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalOnboardingLinksRequest');,
 );
 
@@ -12502,21 +14277,27 @@ return _execute(
 /// `<p>`Returns a list of `<code>`Reader</code> objects.</p>
 ///
 /// `GET /v1/terminal/readers`
-Future<ApiResult<GetTerminalReadersResponse, ErrorModel>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalReadersResponse, ErrorModel>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (deviceType != null) queryParameters['device_type'] = deviceType.toJson();
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (location != null) queryParameters['location'] = location;
+if (serialNumber != null) queryParameters['serial_number'] = serialNumber;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/readers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (deviceType != null) 'device_type': deviceType.toJson(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'location': ?location,
-    'serial_number': ?serialNumber,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12534,12 +14315,13 @@ return _execute(
 /// `<p>`Creates a new `<code>`Reader</code> object.</p>
 ///
 /// `POST /v1/terminal/readers`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReaders({required PostTerminalReadersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReaders({required PostTerminalReadersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersRequest');,
 );
 
@@ -12558,14 +14340,20 @@ return _execute(
 /// `<p>`Retrieves a `<code>`Reader</code> object.</p>
 ///
 /// `GET /v1/terminal/readers/{reader}`
-Future<ApiResult<GetTerminalReadersReaderResponse, ErrorModel>> getTerminalReadersReader({required String reader, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTerminalReadersReaderResponse, ErrorModel>> getTerminalReadersReader({required String reader, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -12583,12 +14371,13 @@ return _execute(
 /// `<p>`Updates a `<code>`Reader</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}`
-Future<ApiResult<PostTerminalReadersReaderResponse, ErrorModel>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostTerminalReadersReaderResponse, ErrorModel>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderRequest');,
 );
 
@@ -12607,12 +14396,13 @@ return _execute(
 /// `<p>`Deletes a `<code>`Reader</code> object.</p>
 ///
 /// `DELETE /v1/terminal/readers/{reader}`
-Future<ApiResult<DeletedTerminalReader, ErrorModel>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTerminalReader, ErrorModel>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalReadersReaderRequest');,
 );
 
@@ -12631,12 +14421,13 @@ return _execute(
 /// `<p>`Cancels the current reader action. See <a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">Programmatic Cancellation</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/cancel_action`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/cancel_action',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCancelActionRequest');,
 );
 
@@ -12655,12 +14446,13 @@ return _execute(
 /// `<p>`Initiates an <a href="/docs/terminal/features/collect-inputs">input collection flow</a> on a Reader to display input forms and collect information from your customers.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_inputs`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_inputs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCollectInputsRequest');,
 );
 
@@ -12679,12 +14471,13 @@ return _execute(
 /// `<p>`Initiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. See <a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#collect-a-paymentmethod">Collecting a Payment method</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_payment_method`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_payment_method',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCollectPaymentMethodRequest');,
 );
 
@@ -12703,12 +14496,13 @@ return _execute(
 /// `<p>`Finalizes a payment on a Reader. See <a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">Confirming a Payment</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/confirm_payment_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/confirm_payment_intent',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderConfirmPaymentIntentRequest');,
 );
 
@@ -12727,12 +14521,13 @@ return _execute(
 /// `<p>`Initiates a payment flow on a Reader. See <a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">process the payment</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/process_payment_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_payment_intent',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderProcessPaymentIntentRequest');,
 );
 
@@ -12751,12 +14546,13 @@ return _execute(
 /// `<p>`Initiates a SetupIntent flow on a Reader. See <a href="/docs/terminal/features/saving-payment-details/save-directly">Save directly without charging</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/process_setup_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_setup_intent',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderProcessSetupIntentRequest');,
 );
 
@@ -12775,12 +14571,13 @@ return _execute(
 /// `<p>`Initiates an in-person refund on a Reader. See <a href="/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">Refund an Interac Payment</a> for more details.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/refund_payment`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/refund_payment',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderRefundPaymentRequest');,
 );
 
@@ -12799,12 +14596,13 @@ return _execute(
 /// `<p>`Sets the reader display to show <a href="/docs/terminal/features/display">cart details</a>.</p>
 ///
 /// `POST /v1/terminal/readers/{reader}/set_reader_display`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/set_reader_display',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderSetReaderDisplayRequest');,
 );
 
@@ -12826,12 +14624,13 @@ return _execute(
 /// `<p>`You can optionally refund only part of a charge.</p>
 ///
 /// `POST /v1/terminal/refunds`
-Future<ApiResult<TerminalRefund, ErrorModel>> postTerminalRefunds({PostTerminalRefundsRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<TerminalRefund, ErrorModel>> postTerminalRefunds({PostTerminalRefundsRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/refunds',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalRefundsRequest');,
 );
 
@@ -12850,12 +14649,13 @@ return _execute(
 /// `<p>`Creates a test mode Confirmation Token server side for your integration tests.</p>
 ///
 /// `POST /v1/test_helpers/confirmation_tokens`
-Future<ApiResult<ConfirmationToken, ErrorModel>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<ConfirmationToken, ErrorModel>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/confirmation_tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersConfirmationTokensRequest');,
 );
 
@@ -12874,12 +14674,13 @@ return _execute(
 /// `<p>`Create an incoming testmode bank transfer</p>
 ///
 /// `POST /v1/test_helpers/customers/{customer}/fund_cash_balance`
-Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/customers/${Uri.encodeComponent(customer)}/fund_cash_balance',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersCustomersCustomerFundCashBalanceRequest');,
 );
 
@@ -12898,12 +14699,13 @@ return _execute(
 /// `<p>`Create a test-mode authorization.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsRequest');,
 );
 
@@ -12922,12 +14724,13 @@ return _execute(
 /// `<p>`Capture a test-mode authorization.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/capture`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/capture',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest');,
 );
 
@@ -12946,12 +14749,13 @@ return _execute(
 /// `<p>`Expire a test-mode Authorization.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/expire`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/expire',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest');,
 );
 
@@ -12970,12 +14774,13 @@ return _execute(
 /// `<p>`Finalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/finalize_amount',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest');,
 );
 
@@ -12994,12 +14799,13 @@ return _execute(
 /// `<p>`Respond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/fraud_challenges/respond',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest');,
 );
 
@@ -13018,12 +14824,13 @@ return _execute(
 /// `<p>`Increment a test-mode Authorization.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/increment`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/increment',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest');,
 );
 
@@ -13042,12 +14849,13 @@ return _execute(
 /// `<p>`Reverse a test-mode Authorization.</p>
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/reverse',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest');,
 );
 
@@ -13066,12 +14874,13 @@ return _execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card</code> object to `<code>`delivered</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/deliver',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingDeliverRequest');,
 );
 
@@ -13090,12 +14899,13 @@ return _execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card</code> object to `<code>`failure</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/fail`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/fail',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingFailRequest');,
 );
 
@@ -13114,12 +14924,13 @@ return _execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card</code> object to `<code>`returned</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/return`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/return',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingReturnRequest');,
 );
 
@@ -13138,12 +14949,13 @@ return _execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card</code> object to `<code>`shipped</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/ship`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/ship',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingShipRequest');,
 );
 
@@ -13162,12 +14974,13 @@ return _execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card</code> object to `<code>`submitted</code>. This method requires Stripe Version ‘2024-09-30.acacia’ or later.</p>
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/submit`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/submit',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingSubmitRequest');,
 );
 
@@ -13186,12 +14999,13 @@ return _execute(
 /// `<p>`Updates the `<code>`status</code> of the specified testmode personalization design object to `<code>`active</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/activate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest');,
 );
 
@@ -13210,12 +15024,13 @@ return _execute(
 /// `<p>`Updates the `<code>`status</code> of the specified testmode personalization design object to `<code>`inactive</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/deactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest');,
 );
 
@@ -13234,12 +15049,13 @@ return _execute(
 /// `<p>`Updates the `<code>`status</code> of the specified testmode personalization design object to `<code>`rejected</code>.</p>
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/reject',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest');,
 );
 
@@ -13258,12 +15074,13 @@ return _execute(
 /// `<p>`Allows the user to create an Issuing settlement.</p>
 ///
 /// `POST /v1/test_helpers/issuing/settlements`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingSettlementsRequest');,
 );
 
@@ -13282,12 +15099,13 @@ return _execute(
 /// `<p>`Allows the user to mark an Issuing settlement as complete.</p>
 ///
 /// `POST /v1/test_helpers/issuing/settlements/{settlement}/complete`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements/${Uri.encodeComponent(settlement)}/complete',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingSettlementsSettlementCompleteRequest');,
 );
 
@@ -13306,12 +15124,13 @@ return _execute(
 /// `<p>`Allows the user to capture an arbitrary amount, also known as a forced capture.</p>
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_force_capture`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_force_capture',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsCreateForceCaptureRequest');,
 );
 
@@ -13330,12 +15149,13 @@ return _execute(
 /// `<p>`Allows the user to refund an arbitrary amount, also known as a unlinked refund.</p>
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_unlinked_refund`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_unlinked_refund',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest');,
 );
 
@@ -13354,12 +15174,13 @@ return _execute(
 /// `<p>`Refund a test-mode Transaction.</p>
 ///
 /// `POST /v1/test_helpers/issuing/transactions/{transaction}/refund`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/${Uri.encodeComponent(transaction)}/refund',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsTransactionRefundRequest');,
 );
 
@@ -13378,12 +15199,13 @@ return _execute(
 /// `<p>`Expire a refund with a status of `<code>`requires_action</code>.</p>
 ///
 /// `POST /v1/test_helpers/refunds/{refund}/expire`
-Future<ApiResult<Refund, ErrorModel>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Refund, ErrorModel>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/refunds/${Uri.encodeComponent(refund)}/expire',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersRefundsRefundExpireRequest');,
 );
 
@@ -13402,12 +15224,13 @@ return _execute(
 /// `<p>`Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.</p>
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/present_payment_method',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest');,
 );
 
@@ -13426,12 +15249,13 @@ return _execute(
 /// `<p>`Use this endpoint to trigger a successful input collection on a simulated reader.</p>
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/succeed_input_collection',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest');,
 );
 
@@ -13450,12 +15274,13 @@ return _execute(
 /// `<p>`Use this endpoint to complete an input collection with a timeout error on a simulated reader.</p>
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/timeout_input_collection',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest');,
 );
 
@@ -13474,17 +15299,23 @@ return _execute(
 /// `<p>`Returns a list of your test clocks.</p>
 ///
 /// `GET /v1/test_helpers/test_clocks`
-Future<ApiResult<GetTestHelpersTestClocksResponse, ErrorModel>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTestHelpersTestClocksResponse, ErrorModel>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/test_helpers/test_clocks',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -13502,12 +15333,13 @@ return _execute(
 /// `<p>`Creates a new test clock that can be attached to new customers and quotes.</p>
 ///
 /// `POST /v1/test_helpers/test_clocks`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTestClocksRequest');,
 );
 
@@ -13526,14 +15358,20 @@ return _execute(
 /// `<p>`Retrieves a test clock.</p>
 ///
 /// `GET /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TestHelpersTestClock, ErrorModel>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -13551,12 +15389,13 @@ return _execute(
 /// `<p>`Deletes a test clock.</p>
 ///
 /// `DELETE /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<DeletedTestHelpersTestClock, ErrorModel>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedTestHelpersTestClock, ErrorModel>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTestHelpersTestClocksTestClockRequest');,
 );
 
@@ -13575,12 +15414,13 @@ return _execute(
 /// `<p>`Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to `<code>`Ready</code>.</p>
 ///
 /// `POST /v1/test_helpers/test_clocks/{test_clock}/advance`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}/advance',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTestClocksTestClockAdvanceRequest');,
 );
 
@@ -13599,12 +15439,13 @@ return _execute(
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`failed</code> status. The InboundTransfer must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/fail',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdFailRequest');,
 );
 
@@ -13623,12 +15464,13 @@ return _execute(
 /// `<p>`Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the `<code>`succeeded</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/return`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/return',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdReturnRequest');,
 );
 
@@ -13647,12 +15489,13 @@ return _execute(
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`succeeded</code> status. The InboundTransfer must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/succeed',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdSucceedRequest');,
 );
 
@@ -13671,12 +15514,13 @@ return _execute(
 /// `<p>`Updates a test mode created OutboundPayment with tracking details. The OutboundPayment must not be cancelable, and cannot be in the `<code>`canceled</code> or `<code>`failed</code> states.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdRequest');,
 );
 
@@ -13695,12 +15539,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`failed</code> status. The OutboundPayment must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/fail`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/fail',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdFailRequest');,
 );
 
@@ -13719,12 +15564,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`posted</code> status. The OutboundPayment must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/post`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/post',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdPostRequest');,
 );
 
@@ -13743,12 +15589,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`returned</code> status. The OutboundPayment must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/return`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/return',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest');,
 );
 
@@ -13767,12 +15614,13 @@ return _execute(
 /// `<p>`Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the `<code>`canceled</code> or `<code>`failed</code> states.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest');,
 );
 
@@ -13791,12 +15639,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`failed</code> status. The OutboundTransfer must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/fail',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest');,
 );
 
@@ -13815,12 +15664,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`posted</code> status. The OutboundTransfer must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/post',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest');,
 );
 
@@ -13839,12 +15689,13 @@ return _execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`returned</code> status. The OutboundTransfer must already be in the `<code>`processing</code> state.</p>
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/return',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest');,
 );
 
@@ -13863,12 +15714,13 @@ return _execute(
 /// `<p>`Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.</p>
 ///
 /// `POST /v1/test_helpers/treasury/received_credits`
-Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_credits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryReceivedCreditsRequest');,
 );
 
@@ -13887,12 +15739,13 @@ return _execute(
 /// `<p>`Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.</p>
 ///
 /// `POST /v1/test_helpers/treasury/received_debits`
-Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_debits',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryReceivedDebitsRequest');,
 );
 
@@ -13912,12 +15765,13 @@ return _execute(
 /// You can use this token with any v1 API method in place of a bank account dictionary. You can only use this token once. To do so, attach it to a <a href="#accounts">connected account</a> where <a href="/api/accounts/object#account_object-controller-requirement_collection">controller.requirement_collection</a> is `<code>`application</code>, which includes Custom accounts.</p>
 ///
 /// `POST /v1/tokens`
-Future<ApiResult<Token, ErrorModel>> postTokens({PostTokensRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Token, ErrorModel>> postTokens({PostTokensRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTokensRequest');,
 );
 
@@ -13936,14 +15790,20 @@ return _execute(
 /// `<p>`Retrieves the token with the given ID.</p>
 ///
 /// `GET /v1/tokens/{token}`
-Future<ApiResult<Token, ErrorModel>> getTokensToken({required String token, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Token, ErrorModel>> getTokensToken({required String token, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/tokens/${Uri.encodeComponent(token)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -13961,20 +15821,30 @@ return _execute(
 /// `<p>`Returns a list of top-ups.</p>
 ///
 /// `GET /v1/topups`
-Future<ApiResult<GetTopupsResponse, ErrorModel>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTopupsResponse, ErrorModel>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (amount != null) {
+queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString(), allowReserved: false));
+}
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/topups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (amount != null) 'amount': amount.toString(),
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -13992,12 +15862,13 @@ return _execute(
 /// `<p>`Top up the balance of an account</p>
 ///
 /// `POST /v1/topups`
-Future<ApiResult<Topup, ErrorModel>> postTopups({required PostTopupsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Topup, ErrorModel>> postTopups({required PostTopupsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsRequest');,
 );
 
@@ -14016,14 +15887,20 @@ return _execute(
 /// `<p>`Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.</p>
 ///
 /// `GET /v1/topups/{topup}`
-Future<ApiResult<Topup, ErrorModel>> getTopupsTopup({required String topup, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Topup, ErrorModel>> getTopupsTopup({required String topup, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14041,12 +15918,13 @@ return _execute(
 /// `<p>`Updates the metadata of a top-up. Other top-up details are not editable by design.</p>
 ///
 /// `POST /v1/topups/{topup}`
-Future<ApiResult<Topup, ErrorModel>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Topup, ErrorModel>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsTopupRequest');,
 );
 
@@ -14065,12 +15943,13 @@ return _execute(
 /// `<p>`Cancels a top-up. Only pending top-ups can be canceled.</p>
 ///
 /// `POST /v1/topups/{topup}/cancel`
-Future<ApiResult<Topup, ErrorModel>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Topup, ErrorModel>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsTopupCancelRequest');,
 );
 
@@ -14089,20 +15968,28 @@ return _execute(
 /// `<p>`Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.</p>
 ///
 /// `GET /v1/transfers`
-Future<ApiResult<GetTransfersResponse, ErrorModel>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTransfersResponse, ErrorModel>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (destination != null) queryParameters['destination'] = destination;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (transferGroup != null) queryParameters['transfer_group'] = transferGroup;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/transfers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'destination': ?destination,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    'transfer_group': ?transferGroup,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14120,12 +16007,13 @@ return _execute(
 /// `<p>`To send funds from your Stripe account to a connected account, you create a new transfer object. Your <a href="#balance">Stripe balance</a> must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.</p>
 ///
 /// `POST /v1/transfers`
-Future<ApiResult<Transfer, ErrorModel>> postTransfers({required PostTransfersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Transfer, ErrorModel>> postTransfers({required PostTransfersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersRequest');,
 );
 
@@ -14144,17 +16032,23 @@ return _execute(
 /// `<p>`You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the `<code>`limit</code> and `<code>`starting_after</code> parameters to page through additional reversals.</p>
 ///
 /// `GET /v1/transfers/{id}/reversals`
-Future<ApiResult<GetTransfersIdReversalsResponse, ErrorModel>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTransfersIdReversalsResponse, ErrorModel>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14176,12 +16070,13 @@ return _execute(
 /// `<p>`Once entirely reversed, a transfer can’t be reversed again. This method will return an error when called on an already-reversed transfer, or when trying to reverse more money than is left on a transfer.</p>
 ///
 /// `POST /v1/transfers/{id}/reversals`
-Future<ApiResult<TransferReversal, ErrorModel>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TransferReversal, ErrorModel>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersIdReversalsRequest');,
 );
 
@@ -14200,14 +16095,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.</p>
 ///
 /// `GET /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, ErrorModel>> getTransfersTransfer({required String transfer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<Transfer, ErrorModel>> getTransfersTransfer({required String transfer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14227,12 +16128,13 @@ return _execute(
 /// `<p>`This request accepts only metadata as an argument.</p>
 ///
 /// `POST /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, ErrorModel>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Transfer, ErrorModel>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersTransferRequest');,
 );
 
@@ -14251,14 +16153,20 @@ return _execute(
 /// `<p>`By default, you can see the 10 most recent reversals stored directly on the transfer object, but you can also retrieve details about a specific reversal stored on the transfer.</p>
 ///
 /// `GET /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, ErrorModel>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TransferReversal, ErrorModel>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14278,12 +16186,13 @@ return _execute(
 /// `<p>`This request only accepts metadata and description as arguments.</p>
 ///
 /// `POST /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, ErrorModel>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TransferReversal, ErrorModel>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersTransferReversalsIdRequest');,
 );
 
@@ -14302,20 +16211,26 @@ return _execute(
 /// `<p>`Returns a list of CreditReversals.</p>
 ///
 /// `GET /v1/treasury/credit_reversals`
-Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (receivedCredit != null) queryParameters['received_credit'] = receivedCredit;
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/credit_reversals',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'received_credit': ?receivedCredit,
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14333,12 +16248,13 @@ return _execute(
 /// `<p>`Reverses a ReceivedCredit and creates a CreditReversal object.</p>
 ///
 /// `POST /v1/treasury/credit_reversals`
-Future<ApiResult<TreasuryCreditReversal, ErrorModel>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryCreditReversal, ErrorModel>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/credit_reversals',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryCreditReversalsRequest');,
 );
 
@@ -14357,14 +16273,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list</p>
 ///
 /// `GET /v1/treasury/credit_reversals/{credit_reversal}`
-Future<ApiResult<TreasuryCreditReversal, ErrorModel>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryCreditReversal, ErrorModel>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/credit_reversals/${Uri.encodeComponent(creditReversal)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14382,21 +16304,27 @@ return _execute(
 /// `<p>`Returns a list of DebitReversals.</p>
 ///
 /// `GET /v1/treasury/debit_reversals`
-Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (receivedDebit != null) queryParameters['received_debit'] = receivedDebit;
+if (resolution != null) queryParameters['resolution'] = resolution.toJson();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/debit_reversals',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'received_debit': ?receivedDebit,
-    if (resolution != null) 'resolution': resolution.toJson(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14414,12 +16342,13 @@ return _execute(
 /// `<p>`Reverses a ReceivedDebit and creates a DebitReversal object.</p>
 ///
 /// `POST /v1/treasury/debit_reversals`
-Future<ApiResult<TreasuryDebitReversal, ErrorModel>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryDebitReversal, ErrorModel>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/debit_reversals',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryDebitReversalsRequest');,
 );
 
@@ -14438,14 +16367,20 @@ return _execute(
 /// `<p>`Retrieves a DebitReversal object.</p>
 ///
 /// `GET /v1/treasury/debit_reversals/{debit_reversal}`
-Future<ApiResult<TreasuryDebitReversal, ErrorModel>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryDebitReversal, ErrorModel>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/debit_reversals/${Uri.encodeComponent(debitReversal)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14463,19 +16398,27 @@ return _execute(
 /// `<p>`Returns a list of FinancialAccounts.</p>
 ///
 /// `GET /v1/treasury/financial_accounts`
-Future<ApiResult<GetTreasuryFinancialAccountsResponse, ErrorModel>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryFinancialAccountsResponse, ErrorModel>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/financial_accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14493,12 +16436,13 @@ return _execute(
 /// `<p>`Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts by default.</p>
 ///
 /// `POST /v1/treasury/financial_accounts`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsRequest');,
 );
 
@@ -14517,14 +16461,20 @@ return _execute(
 /// `<p>`Retrieves the details of a FinancialAccount.</p>
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14542,12 +16492,13 @@ return _execute(
 /// `<p>`Updates the details of a FinancialAccount.</p>
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountRequest');,
 );
 
@@ -14566,12 +16517,13 @@ return _execute(
 /// `<p>`Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has no pending InboundTransfers, and has canceled all attached Issuing cards.</p>
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/close`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/close',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountCloseRequest');,
 );
 
@@ -14590,14 +16542,20 @@ return _execute(
 /// `<p>`Retrieves Features information associated with the FinancialAccount.</p>
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14615,12 +16573,13 @@ return _execute(
 /// `<p>`Updates the Features associated with a FinancialAccount.</p>
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest');,
 );
 
@@ -14639,19 +16598,25 @@ return _execute(
 /// `<p>`Returns a list of InboundTransfers sent from the specified FinancialAccount.</p>
 ///
 /// `GET /v1/treasury/inbound_transfers`
-Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/inbound_transfers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14669,12 +16634,13 @@ return _execute(
 /// `<p>`Creates an InboundTransfer.</p>
 ///
 /// `POST /v1/treasury/inbound_transfers`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryInboundTransfersRequest');,
 );
 
@@ -14693,14 +16659,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing InboundTransfer.</p>
 ///
 /// `GET /v1/treasury/inbound_transfers/{id}`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> getTreasuryInboundTransfersId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> getTreasuryInboundTransfersId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14718,12 +16690,13 @@ return _execute(
 /// `<p>`Cancels an InboundTransfer.</p>
 ///
 /// `POST /v1/treasury/inbound_transfers/{inbound_transfer}/cancel`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(inboundTransfer)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryInboundTransfersInboundTransferCancelRequest');,
 );
 
@@ -14742,21 +16715,29 @@ return _execute(
 /// `<p>`Returns a list of OutboundPayments sent from the specified FinancialAccount.</p>
 ///
 /// `GET /v1/treasury/outbound_payments`
-Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (customer != null) queryParameters['customer'] = customer;
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/outbound_payments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'customer': ?customer,
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14774,12 +16755,13 @@ return _execute(
 /// `<p>`Creates an OutboundPayment.</p>
 ///
 /// `POST /v1/treasury/outbound_payments`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundPaymentsRequest');,
 );
 
@@ -14798,14 +16780,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.</p>
 ///
 /// `GET /v1/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14823,12 +16811,13 @@ return _execute(
 /// `<p>`Cancel an OutboundPayment.</p>
 ///
 /// `POST /v1/treasury/outbound_payments/{id}/cancel`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundPaymentsIdCancelRequest');,
 );
 
@@ -14847,19 +16836,25 @@ return _execute(
 /// `<p>`Returns a list of OutboundTransfers sent from the specified FinancialAccount.</p>
 ///
 /// `GET /v1/treasury/outbound_transfers`
-Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/outbound_transfers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14877,12 +16872,13 @@ return _execute(
 /// `<p>`Creates an OutboundTransfer.</p>
 ///
 /// `POST /v1/treasury/outbound_transfers`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundTransfersRequest');,
 );
 
@@ -14901,14 +16897,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.</p>
 ///
 /// `GET /v1/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14926,12 +16928,13 @@ return _execute(
 /// `<p>`An OutboundTransfer can be canceled if the funds have not yet been paid out.</p>
 ///
 /// `POST /v1/treasury/outbound_transfers/{outbound_transfer}/cancel`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/cancel',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundTransfersOutboundTransferCancelRequest');,
 );
 
@@ -14950,20 +16953,28 @@ return _execute(
 /// `<p>`Returns a list of ReceivedCredits.</p>
 ///
 /// `GET /v1/treasury/received_credits`
-Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (linkedFlows != null) {
+queryParameters['linked_flows[source_flow_type]'] = linkedFlows.sourceFlowType.toJson();
+}
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/received_credits',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    if (linkedFlows != null) 'linked_flows': linkedFlows.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -14981,14 +16992,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID from the ReceivedCredit list.</p>
 ///
 /// `GET /v1/treasury/received_credits/{id}`
-Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/received_credits/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15006,19 +17023,25 @@ return _execute(
 /// `<p>`Returns a list of ReceivedDebits.</p>
 ///
 /// `GET /v1/treasury/received_debits`
-Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/received_debits',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15036,14 +17059,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from the ReceivedDebit list</p>
 ///
 /// `GET /v1/treasury/received_debits/{id}`
-Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/received_debits/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15061,22 +17090,32 @@ return _execute(
 /// `<p>`Retrieves a list of TransactionEntry objects.</p>
 ///
 /// `GET /v1/treasury/transaction_entries`
-Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (effectiveAt != null) {
+queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (transaction != null) queryParameters['transaction'] = transaction;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/transaction_entries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    if (effectiveAt != null) 'effective_at': effectiveAt.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    'starting_after': ?startingAfter,
-    'transaction': ?transaction,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15094,14 +17133,20 @@ return _execute(
 /// `<p>`Retrieves a TransactionEntry object.</p>
 ///
 /// `GET /v1/treasury/transaction_entries/{id}`
-Future<ApiResult<TreasuryTransactionEntry, ErrorModel>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryTransactionEntry, ErrorModel>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/transaction_entries/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15119,22 +17164,32 @@ return _execute(
 /// `<p>`Retrieves a list of Transaction objects.</p>
 ///
 /// `GET /v1/treasury/transactions`
-Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (created != null) {
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+}
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+queryParameters['financial_account'] = financialAccount;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (status != null) queryParameters['status'] = status.toJson();
+if (statusTransitions != null) {
+if (statusTransitions.postedAt != null) queryParameters['status_transitions[posted_at]'] = statusTransitions.postedAt.toString();
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/transactions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (created != null) 'created': created.toString(),
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    'financial_account': financialAccount,
-    if (limit != null) 'limit': limit.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    'starting_after': ?startingAfter,
-    if (status != null) 'status': status.toJson(),
-    if (statusTransitions != null) 'status_transitions': statusTransitions.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15152,14 +17207,20 @@ return _execute(
 /// `<p>`Retrieves the details of an existing Transaction.</p>
 ///
 /// `GET /v1/treasury/transactions/{id}`
-Future<ApiResult<TreasuryTransaction, ErrorModel>> getTreasuryTransactionsId({required String id, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<TreasuryTransaction, ErrorModel>> getTreasuryTransactionsId({required String id, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/treasury/transactions/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15177,17 +17238,23 @@ return _execute(
 /// `<p>`Returns a list of your webhook endpoints.</p>
 ///
 /// `GET /v1/webhook_endpoints`
-Future<ApiResult<GetWebhookEndpointsResponse, ErrorModel>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final request = ApiRequest(
+Future<ApiResult<GetWebhookEndpointsResponse, ErrorModel>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/webhook_endpoints',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ending_before': ?endingBefore,
-    if (expand != null) 'expand': expand.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'starting_after': ?startingAfter,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15205,12 +17272,13 @@ return _execute(
 /// `<p>`A webhook endpoint must have a `<code>`url</code> and a list of `<code>`enabled_events</code>. You may optionally specify the Boolean `<code>`connect</code> parameter. If set to true, then a Connect webhook endpoint that notifies the specified `<code>`url</code> about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified `<code>`url</code> only about events from your account is created. You can also create webhook endpoints in the <a href="https://dashboard.stripe.com/account/webhooks">webhooks settings</a> section of the Dashboard.</p>
 ///
 /// `POST /v1/webhook_endpoints`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpoints({required PostWebhookEndpointsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpoints({required PostWebhookEndpointsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostWebhookEndpointsRequest');,
 );
 
@@ -15229,14 +17297,20 @@ return _execute(
 /// `<p>`Retrieves the webhook endpoint with the given ID.</p>
 ///
 /// `GET /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, }) async  { final request = ApiRequest(
+Future<ApiResult<WebhookEndpoint, ErrorModel>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (expand != null) {
+queryParameters['expand'] = expand.join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (expand != null) 'expand': expand.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -15254,12 +17328,13 @@ return _execute(
 /// `<p>`Updates the webhook endpoint. You may edit the `<code>`url</code>, the list of `<code>`enabled_events</code>, and the status of your endpoint.</p>
 ///
 /// `POST /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostWebhookEndpointsWebhookEndpointRequest');,
 );
 
@@ -15278,12 +17353,13 @@ return _execute(
 /// `<p>`You can also delete webhook endpoints via the <a href="https://dashboard.stripe.com/account/webhooks">webhook endpoint management</a> page of the Stripe dashboard.</p>
 ///
 /// `DELETE /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<DeletedWebhookEndpoint, ErrorModel>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedWebhookEndpoint, ErrorModel>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteWebhookEndpointsWebhookEndpointRequest');,
 );
 

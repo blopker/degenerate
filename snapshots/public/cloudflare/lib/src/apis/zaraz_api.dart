@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets latest Zaraz configuration for a zone. It can be preview or published configuration, whichever was the last updated. Secret variables values will not be included.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/config`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates Zaraz configuration for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/config`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId, required ZarazZarazConfigBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId, required ZarazZarazConfigBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Gets default Zaraz configuration for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/default`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazDefault({required ZarazIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazDefault({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/default',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// Exports full current published Zaraz configuration for a zone, secret variables included.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/export`
-Future<ApiResult<ZarazZarazConfigBase, Never>> getZonesZoneIdentifierZarazExport({required ZarazIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ZarazZarazConfigBase, Never>> getZonesZoneIdentifierZarazExport({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/export',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -95,17 +99,21 @@ return _execute(
 /// Lists a history of published Zaraz configuration records for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/history`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, int? offset, int? limit, GetZonesZoneIdentifierZarazHistorySortField? sortField, GetZonesZoneIdentifierZarazHistorySortOrder? sortOrder, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, int? offset, int? limit, GetZonesZoneIdentifierZarazHistorySortField? sortField, GetZonesZoneIdentifierZarazHistorySortOrder? sortOrder, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sortField != null) queryParameters['sortField'] = sortField.toJson();
+if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (offset != null) 'offset': offset.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    if (sortField != null) 'sortField': sortField.toJson(),
-    if (sortOrder != null) 'sortOrder': sortOrder.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -120,12 +128,13 @@ return _execute(
 /// Restores a historical published Zaraz configuration by ID for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/history`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, required int body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, required int body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -141,14 +150,18 @@ return _execute(
 /// Gets a history of published Zaraz configurations by ID(s) for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/history/configs`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['ids'] = ids.map((item) => item.toString()).join(',');
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history/configs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'ids': ids.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -163,12 +176,13 @@ return _execute(
 /// Publish current Zaraz preview configuration for a zone.
 ///
 /// `POST /zones/{zone_id}/settings/zaraz/publish`
-Future<ApiResult<ResponseCommon81, Never>> postZonesZoneIdentifierZarazPublish({required ZarazIdentifier zoneId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> postZonesZoneIdentifierZarazPublish({required ZarazIdentifier zoneId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/publish',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -184,11 +198,12 @@ return _execute(
 /// Gets Zaraz workflow for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/workflow`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -203,12 +218,13 @@ return _execute(
 /// Updates Zaraz workflow for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/workflow`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId, required ZarazZarazWorkflow body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId, required ZarazZarazWorkflow body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

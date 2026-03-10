@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Purge all cached build artifacts for a Pages project
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/purge_build_cache`
-Future<ApiResult<ResponseCommon51, Never>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon51, Never>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/purge_build_cache',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all leases owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/leases`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/leases',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

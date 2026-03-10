@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a short code
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update a short code with the following parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateShortCodeRequest');,
 );
 
@@ -51,18 +53,22 @@ return _execute(
 /// Retrieve a list of short-codes belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
-Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (shortCode != null) queryParameters['ShortCode'] = shortCode;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'FriendlyName': ?friendlyName,
-    'ShortCode': ?shortCode,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,20 +17,24 @@ final ApiConfig _config;
 /// Retrieves a list of locations.
 ///
 /// `GET /radar/entities/locations`
-Future<ApiResult<RadarGetEntitiesLocationsResponse, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesLocationsResponse, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (location != null) queryParameters['location'] = location;
+if (region != null) queryParameters['region'] = region;
+if (subregion != null) queryParameters['subregion'] = subregion;
+if (continent != null) queryParameters['continent'] = continent.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/locations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    'location': ?location,
-    'region': ?region,
-    'subregion': ?subregion,
-    if (continent != null) 'continent': continent.toJson(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -48,14 +52,18 @@ return _execute(
 /// Retrieves the requested location information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this location).
 ///
 /// `GET /radar/entities/locations/{location}`
-Future<ApiResult<RadarGetEntitiesLocationByAlpha2Response, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetEntitiesLocationByAlpha2Response, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/entities/locations/${Uri.encodeComponent(location)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

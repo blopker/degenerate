@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a connect-app
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<AccountConnectApp, Never>> fetchConnectApp({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConnectApp, Never>> fetchConnectApp({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update a connect-app with the specified parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<AccountConnectApp, Never>> updateConnectApp({required String accountSid, required String sid, UpdateConnectAppRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConnectApp, Never>> updateConnectApp({required String accountSid, required String sid, UpdateConnectAppRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateConnectAppRequest');,
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Delete an instance of a connect-app
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<void, Never>> deleteConnectApp({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteConnectApp({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,16 +69,20 @@ return _execute(
 /// Retrieve a list of connect-apps belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/ConnectApps.json`
-Future<ApiResult<ListConnectAppResponse, Never>> listConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListConnectAppResponse, Never>> listConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

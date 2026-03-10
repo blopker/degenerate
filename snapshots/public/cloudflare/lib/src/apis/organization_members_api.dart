@@ -17,20 +17,28 @@ final ApiConfig _config;
 /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members`
-Future<ApiResult<MembersListResponse, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersListResponse, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (status != null) {
+for (final item in status) {
+  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson(), allowReserved: false));
+}
+}
+if (userEmail != null) queryParameters['user.email'] = userEmail;
+if (userEmailContains != null) queryParameters['user.email.contains'] = userEmailContains;
+if (userEmailStartsWith != null) queryParameters['user.email.startsWith'] = userEmailStartsWith;
+if (userEmailEndsWith != null) queryParameters['user.email.endsWith'] = userEmailEndsWith;
+if (pageToken != null) queryParameters['page_token'] = pageToken;
+if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (status != null) 'status': status.toString(),
-    'user.email': ?userEmail,
-    'user.email.contains': ?userEmailContains,
-    'user.email.startsWith': ?userEmailStartsWith,
-    'user.email.endsWith': ?userEmailEndsWith,
-    'page_token': ?pageToken,
-    if (pageSize != null) 'page_size': pageSize.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,12 +53,13 @@ return _execute(
 /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations/{organization_id}/members`
-Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -66,11 +75,12 @@ return _execute(
 /// Retrieve a single membership from an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,12 +95,13 @@ return _execute(
 /// Delete a membership to a particular Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<void, Never>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -104,12 +115,13 @@ return _execute(
 /// Batch create multiple memberships that grant access to a specific Organization.
 ///
 /// `POST /organizations/{organization_id}/members:batchCreate`
-Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members:batchCreate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

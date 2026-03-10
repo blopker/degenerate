@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists all team members in an enterprise team.
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsList({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsList({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// Add multiple team members to an enterprise team.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkAddRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkAddRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships/add',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,12 +68,13 @@ return _execute(
 /// Remove multiple team members from an enterprise team.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkRemoveRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkRemoveRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships/remove',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -85,11 +91,12 @@ return _execute(
 /// Returns whether the user is a member of the enterprise team.
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsGet({required String enterprise, required String enterpriseTeam, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsGet({required String enterprise, required String enterpriseTeam, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -104,11 +111,12 @@ return _execute(
 /// Add a team member to an enterprise team.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsAdd({required String enterprise, required String enterpriseTeam, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsAdd({required String enterprise, required String enterpriseTeam, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -123,11 +131,12 @@ return _execute(
 /// Remove membership of a specific user from a particular team in an enterprise.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<void, BasicError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/memberships/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

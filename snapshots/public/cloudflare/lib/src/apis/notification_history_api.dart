@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// Gets a list of history records for notifications sent to an account. The records are displayed for last `x` number of days based on the zone plan (free = 30, pro = 30, biz = 30, ent = 90).
 ///
 /// `GET /accounts/{account_id}/alerting/v3/history`
-Future<ApiResult<ResponseCommon2, Never>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) queryParameters['before'] = before.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (since != null) queryParameters['since'] = since.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/history',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (before != null) 'before': before.toString(),
-    if (page != null) 'page': page.toString(),
-    if (since != null) 'since': since.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

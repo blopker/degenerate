@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<AccountKey, Never>> fetchKey({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountKey, Never>> fetchKey({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<AccountKey, Never>> updateKey({required String accountSid, required String sid, UpdateKeyRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountKey, Never>> updateKey({required String accountSid, required String sid, UpdateKeyRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateKeyRequest');,
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<void, Never>> deleteKey({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteKey({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,16 +69,20 @@ return _execute(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Keys.json`
-Future<ApiResult<ListKeyResponse, Never>> listKey({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListKeyResponse, Never>> listKey({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

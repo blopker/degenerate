@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Return all alerts on submitted domains
 ///
 /// `GET /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/alerts',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -37,11 +38,12 @@ return _execute(
 /// Return a success message after updating alerts on submitted domains by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/alerts',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,11 +59,12 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/alerts/clear',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -77,11 +80,12 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/alerts/refute',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,11 +101,12 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/alerts/verify',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -117,11 +122,12 @@ return _execute(
 /// Return all brands
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -137,11 +143,12 @@ return _execute(
 /// Return new brands
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -157,11 +164,12 @@ return _execute(
 /// Return a success message after deleting brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -177,11 +185,12 @@ return _execute(
 /// Return patterns for brands based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands/patterns',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -197,11 +206,12 @@ return _execute(
 /// Return a success message after creating new patterns for brands by ID
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands/patterns',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -217,11 +227,12 @@ return _execute(
 /// Return a success message after deleting patterns for brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/brands/patterns',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -237,11 +248,12 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/clear',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -257,11 +269,12 @@ return _execute(
 /// Return submitted domains based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/domain-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/domain-info',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -277,11 +290,12 @@ return _execute(
 /// Return recent URL submissions
 ///
 /// `GET /accounts/{account_id}/brand-protection/recent-submissions`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/recent-submissions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -297,11 +311,12 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/refute',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -317,11 +332,12 @@ return _execute(
 /// Return URL submissions based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/submission-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/submission-info',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -337,11 +353,12 @@ return _execute(
 /// Return new URL submissions
 ///
 /// `POST /accounts/{account_id}/brand-protection/submit`
-Future<ApiResult<UrlSubmit, ErrorModel>> postAccountsBrandProtectionSubmit({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<UrlSubmit, ErrorModel>> postAccountsBrandProtectionSubmit({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/submit',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -359,11 +376,12 @@ return _execute(
 /// Return submitted domains based on pattern
 ///
 /// `GET /accounts/{account_id}/brand-protection/tracked-domains`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/tracked-domains',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -379,11 +397,12 @@ return _execute(
 /// Return submitted URLs based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/url-info`
-Future<ApiResult<UrlInfo, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<UrlInfo, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/url-info',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -401,11 +420,12 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/verify',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -419,11 +439,12 @@ return _execute(
 /// Internal route for testing URL submissions
 ///
 /// `POST /internal/submit`
-Future<ApiResult<void, ErrorModel>> postInternalSubmit() async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> postInternalSubmit() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/internal/submit',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -439,11 +460,12 @@ return _execute(
 /// Return a success message after running liveness checks
 ///
 /// `GET /live`
-Future<ApiResult<void, ErrorModel>> getLive() async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getLive() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/live',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -459,11 +481,12 @@ return _execute(
 /// Return a success message after running readiness checks
 ///
 /// `GET /ready`
-Future<ApiResult<void, ErrorModel>> getReady() async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getReady() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/ready',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

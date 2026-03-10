@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Create a Stream
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams.json`
-Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Streams.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateStreamRequest');,
 );
 
@@ -34,12 +35,13 @@ return _execute(
 /// Stop a Stream using either the SID of the Stream resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams/{Sid}.json`
-Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Streams/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateStreamRequest');,
 );
 

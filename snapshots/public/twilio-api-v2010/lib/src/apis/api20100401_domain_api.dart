@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Retrieve a list of domains belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<ListSipDomainResponse, Never>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipDomainResponse, Never>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Create a new Domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<AccountSipSipDomain, Never>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipDomainRequest');,
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Fetch an instance of a Domain
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain, Never>> fetchSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> fetchSipDomain({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -73,12 +79,13 @@ return _execute(
 /// Update the attributes of a domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain, Never>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomain, Never>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipDomainRequest');,
 );
 
@@ -92,11 +99,12 @@ return _execute(
 /// Delete an instance of a Domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipDomain({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipDomain({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

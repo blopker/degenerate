@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// List uploaded certificates for this organization.
 ///
 /// `GET /organization/certificates`
-Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/certificates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates`
-Future<ApiResult<Certificate, Never>> uploadCertificate({required UploadCertificateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> uploadCertificate({required UploadCertificateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,12 +67,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/activate`
-Future<ApiResult<ListCertificatesResponse, Never>> activateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> activateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/activate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -84,12 +90,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse, Never>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/deactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -106,14 +113,22 @@ return _execute(
 /// 
 ///
 /// `GET /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate, Never>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (include != null) 'include': include.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -127,12 +142,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate, Never>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Certificate, Never>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -149,11 +165,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/certificates/{certificate_id}`
-Future<ApiResult<DeleteCertificateResponse, Never>> deleteCertificate({required String certificateId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteCertificateResponse, Never>> deleteCertificate({required String certificateId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/certificates/${Uri.encodeComponent(certificateId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -166,16 +183,20 @@ return _execute(
 /// List certificates for this project.
 ///
 /// `GET /organization/projects/{project_id}/certificates`
-Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -191,12 +212,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/activate`
-Future<ApiResult<ListCertificatesResponse, Never>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates/activate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -212,12 +234,13 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse, Never>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/certificates/deactivate',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

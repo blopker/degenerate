@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetch a single zone setting by name
 ///
 /// `GET /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88, Never>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon88, Never>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/${Uri.encodeComponent(settingId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates a single zone setting by the identifier
 ///
 /// `PATCH /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88, Never>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon88, Never>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/${Uri.encodeComponent(settingId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `GET /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/aegis',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `PATCH /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/aegis',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -99,11 +103,12 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/fonts',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -120,12 +125,13 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/fonts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -141,11 +147,12 @@ return _execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `GET /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_h2_max_streams',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -160,12 +167,13 @@ return _execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_h2_max_streams',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -181,11 +189,12 @@ return _execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `GET /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_max_http_version',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -200,12 +209,13 @@ return _execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_max_http_version',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -223,11 +233,12 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/speed_brain',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -244,12 +255,13 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/speed_brain',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

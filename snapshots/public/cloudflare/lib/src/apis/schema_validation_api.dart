@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// Lists all OpenAPI schemas uploaded to API Shield with pagination support.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemasPaginated({required ShieldIdentifier zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemasPaginated({required ShieldIdentifier zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (omitSource != null) queryParameters['omit_source'] = omitSource.toString();
+if (validationEnabled != null) queryParameters['validation_enabled'] = validationEnabled.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (omitSource != null) 'omit_source': omitSource.toString(),
-    if (validationEnabled != null) 'validation_enabled': validationEnabled.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Uploads a new OpenAPI schema for API Shield schema validation. The schema defines expected request/response formats for API endpoints.
 ///
 /// `POST /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,14 +68,18 @@ return _execute(
 /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, bool? omitSource, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, bool? omitSource, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (omitSource != null) queryParameters['omit_source'] = omitSource.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (omitSource != null) 'omit_source': omitSource.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -85,12 +94,13 @@ return _execute(
 /// Modifies an existing OpenAPI schema in API Shield, updating the validation rules for associated API operations.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, required SchemaValidationEditSchemaRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, required SchemaValidationEditSchemaRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -106,11 +116,12 @@ return _execute(
 /// Permanently removes an uploaded OpenAPI schema from API Shield. Operations using this schema will lose their validation rules.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeleteSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeleteSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -125,20 +136,36 @@ return _execute(
 /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (feature != null) {
+for (final item in feature) {
+  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));
+}
+}
+if (host != null) {
+for (final item in host) {
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+}
+}
+if (method != null) {
+for (final item in method) {
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
+}
+}
+if (endpoint != null) queryParameters['endpoint'] = endpoint;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (operationStatus != null) queryParameters['operation_status'] = operationStatus.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}/operations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (feature != null) 'feature': feature.toString(),
-    if (host != null) 'host': host.toString(),
-    if (method != null) 'method': method.toString(),
-    'endpoint': ?endpoint,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (operationStatus != null) 'operation_status': operationStatus.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -153,15 +180,19 @@ return _execute(
 /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/hosts`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemaHosts({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemaHosts({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/hosts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

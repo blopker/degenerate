@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}`
-Future<ApiResult<ClassroomAssignment, BasicError>> classroomGetAnAssignment({required int assignmentId}) async  { final request = ApiRequest(
+Future<ApiResult<ClassroomAssignment, BasicError>> classroomGetAnAssignment({required int assignmentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/assignments/${Uri.encodeComponent(assignmentId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -39,15 +40,19 @@ return _execute(
 /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/accepted_assignments`
-Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/assignments/${Uri.encodeComponent(assignmentId.toString())}/accepted_assignments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -63,11 +68,12 @@ return _execute(
 /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/grades`
-Future<ApiResult<List<ClassroomAssignmentGrade>, BasicError>> classroomGetAssignmentGrades({required int assignmentId}) async  { final request = ApiRequest(
+Future<ApiResult<List<ClassroomAssignmentGrade>, BasicError>> classroomGetAssignmentGrades({required int assignmentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/assignments/${Uri.encodeComponent(assignmentId.toString())}/grades',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -86,15 +92,19 @@ return _execute(
 /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
 ///
 /// `GET /classrooms`
-Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/classrooms',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -110,11 +120,12 @@ return _execute(
 /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}`
-Future<ApiResult<Classroom, BasicError>> classroomGetAClassroom({required int classroomId}) async  { final request = ApiRequest(
+Future<ApiResult<Classroom, BasicError>> classroomGetAClassroom({required int classroomId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/classrooms/${Uri.encodeComponent(classroomId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -132,15 +143,19 @@ return _execute(
 /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}/assignments`
-Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/classrooms/${Uri.encodeComponent(classroomId.toString())}/assignments',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

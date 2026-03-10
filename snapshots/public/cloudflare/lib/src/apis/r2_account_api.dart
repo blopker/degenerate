@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get Storage/Object Count Metrics across all buckets in your account. Note that Account-Level Metrics may not immediately reflect the latest data.
 ///
 /// `GET /accounts/{account_id}/r2/metrics`
-Future<ApiResult<Response2, Never>> r2GetAccountLevelMetrics({required R2AccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<Response2, Never>> r2GetAccountLevelMetrics({required R2AccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/metrics',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

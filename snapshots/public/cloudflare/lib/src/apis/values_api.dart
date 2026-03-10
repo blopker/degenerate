@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List unique values found in your events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/values`
-Future<ApiResult<TelemetryValuesListResponse, TelemetryValuesListResponse401>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<TelemetryValuesListResponse, TelemetryValuesListResponse401>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/workers/observability/telemetry/values',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

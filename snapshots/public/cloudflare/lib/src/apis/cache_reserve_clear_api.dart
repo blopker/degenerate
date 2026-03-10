@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `GET /zones/{zone_id}/smart_shield/cache_reserve_clear`
-Future<ApiResult<ResponseCommon62, Never>> smartShieldSettingsGetCacheReserveClear({required SmartshieldIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldSettingsGetCacheReserveClear({required SmartshieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/cache_reserve_clear',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `POST /zones/{zone_id}/smart_shield/cache_reserve_clear`
-Future<ApiResult<ResponseCommon62, Never>> smartShieldSettingsStartCacheReserveClear({required SmartshieldIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon62, Never>> smartShieldSettingsStartCacheReserveClear({required SmartshieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/cache_reserve_clear',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

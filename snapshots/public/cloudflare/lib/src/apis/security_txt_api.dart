@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Retrieves security.txt
 ///
 /// `GET /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<ResponseCommon61, Never>> getSecurityTxt({required SecurityCenterIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> getSecurityTxt({required SecurityCenterIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Updates security.txt
 ///
 /// `PUT /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<ResponseCommon61, Never>> updateSecurityTxt({required SecurityCenterIdentifier zoneId, required SecurityCenterSecurityTxt body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> updateSecurityTxt({required SecurityCenterIdentifier zoneId, required SecurityCenterSecurityTxt body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Deletes security.txt
 ///
 /// `DELETE /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<ResponseCommon61, Never>> deleteSecurityTxt({required SecurityCenterIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon61, Never>> deleteSecurityTxt({required SecurityCenterIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

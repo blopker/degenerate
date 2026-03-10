@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,14 +37,15 @@ return _execute(
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-    , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
-    , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkerEnvironmentPutScriptContentRequest');,
 );
 
@@ -59,11 +61,12 @@ return _execute(
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -78,12 +81,13 @@ return _execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required ResponseCommon80 body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required ResponseCommon80 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

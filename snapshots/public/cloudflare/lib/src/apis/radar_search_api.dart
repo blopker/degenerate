@@ -17,19 +17,31 @@ final ApiConfig _config;
 /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals
 ///
 /// `GET /radar/search/global`
-Future<ApiResult<RadarGetSearchGlobalResponse, RadarGetSearchGlobalResponse400>> radarGetSearchGlobal({int? limit, double? limitPerGroup, required String query, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetSearchGlobalResponse, RadarGetSearchGlobalResponse400>> radarGetSearchGlobal({int? limit, double? limitPerGroup, required String query, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+queryParameters['query'] = query;
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+if (exclude != null) {
+for (final item in exclude) {
+  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/search/global',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    'query': query,
-    if (include != null) 'include': include.toString(),
-    if (exclude != null) 'exclude': exclude.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

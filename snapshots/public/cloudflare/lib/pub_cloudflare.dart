@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_cloudflare_api.dart';
+export 'src/client/pub_cloudflare_security.dart';
 
 export 'src/models/n0_request.dart';
 export 'src/models/n0_response400.dart';

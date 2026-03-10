@@ -17,26 +17,30 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -49,12 +53,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-01
 ///
 /// `POST /admin/api/2020-01/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202001CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -68,20 +73,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -94,14 +103,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -114,12 +127,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -133,11 +147,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -150,11 +165,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-01
 ///
 /// `GET /admin/api/2020-01/articles/authors.json`
-Future<ApiResult<void, Never>> deprecated202001GetArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -167,15 +183,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-01
 ///
 /// `GET /admin/api/2020-01/articles/tags.json`
-Future<ApiResult<void, Never>> deprecated202001GetArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -188,26 +208,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-04
 ///
 /// `GET /admin/api/2020-04/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -220,12 +244,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-04
 ///
 /// `POST /admin/api/2020-04/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202004CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -239,20 +264,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-04
 ///
 /// `GET /admin/api/2020-04/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -265,14 +294,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-04
 ///
 /// `GET /admin/api/2020-04/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -285,12 +318,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -304,11 +338,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -321,11 +356,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-04
 ///
 /// `GET /admin/api/2020-04/articles/authors.json`
-Future<ApiResult<void, Never>> deprecated202004GetArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -338,15 +374,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-04
 ///
 /// `GET /admin/api/2020-04/articles/tags.json`
-Future<ApiResult<void, Never>> deprecated202004GetArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -359,26 +399,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-07
 ///
 /// `GET /admin/api/2020-07/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -391,12 +435,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-07
 ///
 /// `POST /admin/api/2020-07/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202007CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -410,20 +455,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-07
 ///
 /// `GET /admin/api/2020-07/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -436,14 +485,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-07
 ///
 /// `GET /admin/api/2020-07/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -456,12 +509,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -475,11 +529,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -492,11 +547,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-07
 ///
 /// `GET /admin/api/2020-07/articles/authors.json`
-Future<ApiResult<void, Never>> deprecated202007GetArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -509,15 +565,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-07
 ///
 /// `GET /admin/api/2020-07/articles/tags.json`
-Future<ApiResult<void, Never>> deprecated202007GetArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -530,26 +590,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-10
 ///
 /// `GET /admin/api/2020-10/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> getBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -562,12 +626,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-10
 ///
 /// `POST /admin/api/2020-10/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> createBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -581,20 +646,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-10
 ///
 /// `GET /admin/api/2020-10/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> getBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -607,14 +676,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-10
 ///
 /// `GET /admin/api/2020-10/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> getBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -627,12 +700,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> updateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -646,11 +720,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -663,11 +738,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-10
 ///
 /// `GET /admin/api/2020-10/articles/authors.json`
-Future<ApiResult<void, Never>> getArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -680,15 +756,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-10
 ///
 /// `GET /admin/api/2020-10/articles/tags.json`
-Future<ApiResult<void, Never>> getArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -701,26 +781,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2021-01
 ///
 /// `GET /admin/api/2021-01/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -733,12 +817,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2021-01
 ///
 /// `POST /admin/api/2021-01/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecated202101CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -752,20 +837,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2021-01
 ///
 /// `GET /admin/api/2021-01/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -778,14 +867,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2021-01
 ///
 /// `GET /admin/api/2021-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -798,12 +891,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -817,11 +911,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -834,11 +929,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2021-01
 ///
 /// `GET /admin/api/2021-01/articles/authors.json`
-Future<ApiResult<void, Never>> deprecated202101GetArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -851,15 +947,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2021-01
 ///
 /// `GET /admin/api/2021-01/articles/tags.json`
-Future<ApiResult<void, Never>> deprecated202101GetArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -872,26 +972,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-unstable
 ///
 /// `GET /admin/api/unstable/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticles({required String blogId, String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? handle, String? tag, String? author, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (handle != null) queryParameters['handle'] = handle;
+if (tag != null) queryParameters['tag'] = tag;
+if (author != null) queryParameters['author'] = author;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'handle': ?handle,
-    'tag': ?tag,
-    'author': ?author,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -904,12 +1008,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-unstable
 ///
 /// `POST /admin/api/unstable/blogs/{blog_id}/articles.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateBlogsParamBlogIdArticles({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -923,20 +1028,24 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-unstable
 ///
 /// `GET /admin/api/unstable/blogs/{blog_id}/articles/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticlesCount({required String blogId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -949,14 +1058,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-unstable
 ///
 /// `GET /admin/api/unstable/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -969,12 +1082,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-unstable
 ///
 /// `PUT /admin/api/unstable/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -988,11 +1102,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/blogs/{blog_id}/articles/{article_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteBlogsParamBlogIdArticlesParamArticleId({required String blogId, required String articleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/blogs/${Uri.encodeComponent(blogId)}/articles/${Uri.encodeComponent(articleId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1005,11 +1120,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-unstable
 ///
 /// `GET /admin/api/unstable/articles/authors.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetArticlesAuthors() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetArticlesAuthors() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/articles/authors.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1022,15 +1138,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-unstable
 ///
 /// `GET /admin/api/unstable/articles/tags.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetArticlesTags({String? limit, String? popular, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetArticlesTags({String? limit, String? popular, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (popular != null) queryParameters['popular'] = popular;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/articles/tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'popular': ?popular,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1045,15 +1165,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-01
 ///
 /// `GET /admin/api/2020-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202001GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1067,16 +1191,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1090,14 +1218,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1112,15 +1244,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-04
 ///
 /// `GET /admin/api/2020-04/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202004GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1134,16 +1270,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1157,14 +1297,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1179,15 +1323,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-07
 ///
 /// `GET /admin/api/2020-07/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202007GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1201,16 +1349,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1224,14 +1376,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1246,15 +1402,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-10
 ///
 /// `GET /admin/api/2020-10/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> getThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1268,16 +1428,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> updateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1291,14 +1455,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1313,15 +1481,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2021-01
 ///
 /// `GET /admin/api/2021-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202101GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1335,16 +1507,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1358,14 +1534,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1380,15 +1560,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-unstable
 ///
 /// `GET /admin/api/unstable/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetThemesParamThemeIdAssets({required String themeId, String? fields, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1402,16 +1586,20 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-unstable
 ///
 /// `PUT /admin/api/unstable/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateThemesParamThemeIdAssets({required String themeId, String? src, String? sourceKey, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+if (sourceKey != null) queryParameters['source_key'] = sourceKey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'src': ?src,
-    'source_key': ?sourceKey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body),
 );
 
@@ -1425,14 +1613,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/themes/{theme_id}/assets.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteThemesParamThemeIdAssets({required String themeId, String? assetkey, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (assetkey != null) queryParameters['asset[key]'] = assetkey;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}/assets.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'asset[key]': ?assetkey,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1445,17 +1637,21 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#index-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogs({String? limit, String? sinceId, String? handle, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogs({String? limit, String? sinceId, String? handle, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (handle != null) queryParameters['handle'] = handle;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'handle': ?handle,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1468,12 +1664,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#create-2020-01
 ///
 /// `POST /admin/api/2020-01/blogs.json`
-Future<ApiResult<void, Never>> deprecated202001CreateBlogs({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateBlogs({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/blogs.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1487,11 +1684,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#count-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogsCount() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs/count.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1504,14 +1702,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#show-2020-01
 ///
 /// `GET /admin/api/2020-01/blogs/{blog_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogId({required String blogId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetBlogsParamBlogId({required String blogId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1524,12 +1726,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/blogs/{blog_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateBlogsParamBlogId({required String blogId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateBlogsParamBlogId({required String blogId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1543,11 +1746,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/blogs/{blog_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteBlogsParamBlogId({required String blogId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteBlogsParamBlogId({required String blogId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/blogs/${Uri.encodeComponent(blogId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1560,26 +1764,30 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#index-2020-01
 ///
 /// `GET /admin/api/2020-01/comments.json`
-Future<ApiResult<void, Never>> deprecated202001GetComments({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? fields, String? publishedStatus, String? status, int? articleId, int? blogId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetComments({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? fields, String? publishedStatus, String? status, int? articleId, int? blogId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (fields != null) queryParameters['fields'] = fields;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (status != null) queryParameters['status'] = status;
+if (articleId != null) queryParameters['article_id'] = articleId.toString();
+if (blogId != null) queryParameters['blog_id'] = blogId.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/comments.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'fields': ?fields,
-    'published_status': ?publishedStatus,
-    'status': ?status,
-    if (articleId != null) 'article_id': articleId.toString(),
-    if (blogId != null) 'blog_id': blogId.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1592,12 +1800,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#create-2020-01
 ///
 /// `POST /admin/api/2020-01/comments.json`
-Future<ApiResult<void, Never>> deprecated202001CreateComments({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateComments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1611,23 +1820,27 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#count-2020-01
 ///
 /// `GET /admin/api/2020-01/comments/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCommentsCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? status, int? articleId, int? blogId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCommentsCount({String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? publishedAtMin, String? publishedAtMax, String? publishedStatus, String? status, int? articleId, int? blogId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin;
+if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax;
+if (publishedStatus != null) queryParameters['published_status'] = publishedStatus;
+if (status != null) queryParameters['status'] = status;
+if (articleId != null) queryParameters['article_id'] = articleId.toString();
+if (blogId != null) queryParameters['blog_id'] = blogId.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/comments/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'published_at_min': ?publishedAtMin,
-    'published_at_max': ?publishedAtMax,
-    'published_status': ?publishedStatus,
-    'status': ?status,
-    if (articleId != null) 'article_id': articleId.toString(),
-    if (blogId != null) 'blog_id': blogId.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1640,14 +1853,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#show-2020-01
 ///
 /// `GET /admin/api/2020-01/comments/{comment_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCommentsParamCommentId({required String commentId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetCommentsParamCommentId({required String commentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1660,12 +1877,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/comments/{comment_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCommentsParamCommentId({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateCommentsParamCommentId({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1679,12 +1897,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#spam-2020-01
 ///
 /// `POST /admin/api/2020-01/comments/{comment_id}/spam.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdSpam({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdSpam({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}/spam.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1698,12 +1917,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#not_spam-2020-01
 ///
 /// `POST /admin/api/2020-01/comments/{comment_id}/not_spam.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdNotSpam({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdNotSpam({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}/not_spam.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1717,12 +1937,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#approve-2020-01
 ///
 /// `POST /admin/api/2020-01/comments/{comment_id}/approve.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdApprove({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdApprove({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}/approve.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1736,12 +1957,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#remove-2020-01
 ///
 /// `POST /admin/api/2020-01/comments/{comment_id}/remove.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdRemove({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdRemove({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}/remove.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1755,12 +1977,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#restore-2020-01
 ///
 /// `POST /admin/api/2020-01/comments/{comment_id}/restore.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdRestore({required String commentId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateCommentsParamCommentIdRestore({required String commentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/comments/${Uri.encodeComponent(commentId)}/restore.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1774,18 +1997,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-01
 ///
 /// `GET /admin/api/2020-01/redirects.json`
-Future<ApiResult<void, Never>> deprecated202001GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1799,12 +2026,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-2020-01
 ///
 /// `POST /admin/api/2020-01/redirects.json`
-Future<ApiResult<void, Never>> deprecated202001CreateRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1818,15 +2046,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-01
 ///
 /// `GET /admin/api/2020-01/redirects/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1839,14 +2071,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-01
 ///
 /// `GET /admin/api/2020-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1859,12 +2095,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1878,11 +2115,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -1895,18 +2133,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-04
 ///
 /// `GET /admin/api/2020-04/redirects.json`
-Future<ApiResult<void, Never>> deprecated202004GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1920,12 +2162,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-2020-04
 ///
 /// `POST /admin/api/2020-04/redirects.json`
-Future<ApiResult<void, Never>> deprecated202004CreateRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1939,15 +2182,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-04
 ///
 /// `GET /admin/api/2020-04/redirects/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1960,14 +2207,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-04
 ///
 /// `GET /admin/api/2020-04/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -1980,12 +2231,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -1999,11 +2251,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2016,18 +2269,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-07
 ///
 /// `GET /admin/api/2020-07/redirects.json`
-Future<ApiResult<void, Never>> deprecated202007GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2041,12 +2298,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-2020-07
 ///
 /// `POST /admin/api/2020-07/redirects.json`
-Future<ApiResult<void, Never>> deprecated202007CreateRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2060,15 +2318,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-07
 ///
 /// `GET /admin/api/2020-07/redirects/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2081,14 +2343,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-07
 ///
 /// `GET /admin/api/2020-07/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2101,12 +2367,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2120,11 +2387,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2137,18 +2405,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-10
 ///
 /// `GET /admin/api/2020-10/redirects.json`
-Future<ApiResult<void, Never>> getRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2162,12 +2434,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-2020-10
 ///
 /// `POST /admin/api/2020-10/redirects.json`
-Future<ApiResult<void, Never>> createRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2181,15 +2454,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-10
 ///
 /// `GET /admin/api/2020-10/redirects/count.json`
-Future<ApiResult<void, Never>> getRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2202,14 +2479,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-10
 ///
 /// `GET /admin/api/2020-10/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> getRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2222,12 +2503,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> updateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2241,11 +2523,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2258,18 +2541,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2021-01
 ///
 /// `GET /admin/api/2021-01/redirects.json`
-Future<ApiResult<void, Never>> deprecated202101GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2283,12 +2570,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-2021-01
 ///
 /// `POST /admin/api/2021-01/redirects.json`
-Future<ApiResult<void, Never>> deprecated202101CreateRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2302,15 +2590,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2021-01
 ///
 /// `GET /admin/api/2021-01/redirects/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2323,14 +2615,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2021-01
 ///
 /// `GET /admin/api/2021-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2343,12 +2639,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2362,11 +2659,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2379,18 +2677,22 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-unstable
 ///
 /// `GET /admin/api/unstable/redirects.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRedirects({String? limit, String? sinceId, String? path, String? target, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/redirects.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'path': ?path,
-    'target': ?target,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2404,12 +2706,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#create-unstable
 ///
 /// `POST /admin/api/unstable/redirects.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateRedirects({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateRedirects({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/redirects.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2423,15 +2726,19 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-unstable
 ///
 /// `GET /admin/api/unstable/redirects/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetRedirectsCount({String? path, String? target, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRedirectsCount({String? path, String? target, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (path != null) queryParameters['path'] = path;
+if (target != null) queryParameters['target'] = target;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/redirects/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'path': ?path,
-    'target': ?target,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2444,14 +2751,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-unstable
 ///
 /// `GET /admin/api/unstable/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetRedirectsParamRedirectId({required String redirectId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2464,12 +2775,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-unstable
 ///
 /// `PUT /admin/api/unstable/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateRedirectsParamRedirectId({required String redirectId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2483,11 +2795,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/redirects/{redirect_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteRedirectsParamRedirectId({required String redirectId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteRedirectsParamRedirectId({required String redirectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/redirects/${Uri.encodeComponent(redirectId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2500,21 +2813,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-01
 ///
 /// `GET /admin/api/2020-01/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202001GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2527,12 +2844,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-01
 ///
 /// `POST /admin/api/2020-01/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202001CreateScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2546,14 +2864,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-01
 ///
 /// `GET /admin/api/2020-01/script_tags/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2566,14 +2888,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-01
 ///
 /// `GET /admin/api/2020-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2586,12 +2912,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2605,11 +2932,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2622,21 +2950,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-04
 ///
 /// `GET /admin/api/2020-04/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202004GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2649,12 +2981,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-04
 ///
 /// `POST /admin/api/2020-04/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202004CreateScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2668,14 +3001,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-04
 ///
 /// `GET /admin/api/2020-04/script_tags/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2688,14 +3025,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-04
 ///
 /// `GET /admin/api/2020-04/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2708,12 +3049,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2727,11 +3069,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2744,21 +3087,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-07
 ///
 /// `GET /admin/api/2020-07/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202007GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2771,12 +3118,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-07
 ///
 /// `POST /admin/api/2020-07/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202007CreateScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2790,14 +3138,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-07
 ///
 /// `GET /admin/api/2020-07/script_tags/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2810,14 +3162,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-07
 ///
 /// `GET /admin/api/2020-07/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2830,12 +3186,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2849,11 +3206,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2866,21 +3224,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-10
 ///
 /// `GET /admin/api/2020-10/script_tags.json`
-Future<ApiResult<void, Never>> getScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2893,12 +3255,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-10
 ///
 /// `POST /admin/api/2020-10/script_tags.json`
-Future<ApiResult<void, Never>> createScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2912,14 +3275,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-10
 ///
 /// `GET /admin/api/2020-10/script_tags/count.json`
-Future<ApiResult<void, Never>> getScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2932,14 +3299,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-10
 ///
 /// `GET /admin/api/2020-10/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> getScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -2952,12 +3323,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> updateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -2971,11 +3343,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -2988,21 +3361,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2021-01
 ///
 /// `GET /admin/api/2021-01/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202101GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3015,12 +3392,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2021-01
 ///
 /// `POST /admin/api/2021-01/script_tags.json`
-Future<ApiResult<void, Never>> deprecated202101CreateScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3034,14 +3412,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2021-01
 ///
 /// `GET /admin/api/2021-01/script_tags/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3054,14 +3436,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2021-01
 ///
 /// `GET /admin/api/2021-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3074,12 +3460,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3093,11 +3480,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3110,21 +3498,25 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-unstable
 ///
 /// `GET /admin/api/unstable/script_tags.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTags({String? limit, String? sinceId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, String? src, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (src != null) queryParameters['src'] = src;
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/script_tags.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'created_at_min': ?createdAtMin,
-    'created_at_max': ?createdAtMax,
-    'updated_at_min': ?updatedAtMin,
-    'updated_at_max': ?updatedAtMax,
-    'src': ?src,
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3137,12 +3529,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-unstable
 ///
 /// `POST /admin/api/unstable/script_tags.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateScriptTags({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateScriptTags({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/script_tags.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3156,14 +3549,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-unstable
 ///
 /// `GET /admin/api/unstable/script_tags/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTagsCount({String? src}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTagsCount({String? src}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (src != null) queryParameters['src'] = src;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/script_tags/count.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'src': ?src,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3176,14 +3573,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-unstable
 ///
 /// `GET /admin/api/unstable/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetScriptTagsParamScriptTagId({required String scriptTagId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3196,12 +3597,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-unstable
 ///
 /// `PUT /admin/api/unstable/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateScriptTagsParamScriptTagId({required String scriptTagId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3215,11 +3617,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/script_tags/{script_tag_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteScriptTagsParamScriptTagId({required String scriptTagId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/script_tags/${Uri.encodeComponent(scriptTagId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3232,14 +3635,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-01
 ///
 /// `GET /admin/api/2020-01/themes.json`
-Future<ApiResult<void, Never>> deprecated202001GetThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3255,12 +3662,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-2020-01
 ///
 /// `POST /admin/api/2020-01/themes.json`
-Future<ApiResult<void, Never>> deprecated202001CreateThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001CreateThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-01/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3274,14 +3682,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-01
 ///
 /// `GET /admin/api/2020-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3294,12 +3706,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3313,11 +3726,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001DeleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3330,14 +3744,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-04
 ///
 /// `GET /admin/api/2020-04/themes.json`
-Future<ApiResult<void, Never>> deprecated202004GetThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3353,12 +3771,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-2020-04
 ///
 /// `POST /admin/api/2020-04/themes.json`
-Future<ApiResult<void, Never>> deprecated202004CreateThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004CreateThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-04/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3372,14 +3791,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-04
 ///
 /// `GET /admin/api/2020-04/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3392,12 +3815,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3411,11 +3835,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004DeleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3428,14 +3853,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-07
 ///
 /// `GET /admin/api/2020-07/themes.json`
-Future<ApiResult<void, Never>> deprecated202007GetThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3451,12 +3880,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-2020-07
 ///
 /// `POST /admin/api/2020-07/themes.json`
-Future<ApiResult<void, Never>> deprecated202007CreateThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007CreateThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-07/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3470,14 +3900,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-07
 ///
 /// `GET /admin/api/2020-07/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3490,12 +3924,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3509,11 +3944,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007DeleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3526,14 +3962,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-10
 ///
 /// `GET /admin/api/2020-10/themes.json`
-Future<ApiResult<void, Never>> getThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3549,12 +3989,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-2020-10
 ///
 /// `POST /admin/api/2020-10/themes.json`
-Future<ApiResult<void, Never>> createThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> createThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2020-10/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3568,14 +4009,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-10
 ///
 /// `GET /admin/api/2020-10/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> getThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3588,12 +4033,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> updateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3607,11 +4053,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3624,14 +4071,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2021-01
 ///
 /// `GET /admin/api/2021-01/themes.json`
-Future<ApiResult<void, Never>> deprecated202101GetThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3647,12 +4098,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-2021-01
 ///
 /// `POST /admin/api/2021-01/themes.json`
-Future<ApiResult<void, Never>> deprecated202101CreateThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101CreateThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/2021-01/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3666,14 +4118,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2021-01
 ///
 /// `GET /admin/api/2021-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3686,12 +4142,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101UpdateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3705,11 +4162,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101DeleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -3722,14 +4180,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-unstable
 ///
 /// `GET /admin/api/unstable/themes.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetThemes({String? fields}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetThemes({String? fields}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/themes.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3745,12 +4207,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#create-unstable
 ///
 /// `POST /admin/api/unstable/themes.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateThemes({String? body}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableCreateThemes({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/admin/api/unstable/themes.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3764,14 +4227,18 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-unstable
 ///
 /// `GET /admin/api/unstable/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetThemesParamThemeId({required String themeId, String? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetThemesParamThemeId({required String themeId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) queryParameters['fields'] = fields;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'fields': ?fields,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -3784,12 +4251,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-unstable
 ///
 /// `PUT /admin/api/unstable/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateThemesParamThemeId({required String themeId, String? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateThemesParamThemeId({required String themeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -3803,11 +4271,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/themes/{theme_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteThemesParamThemeId({required String themeId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteThemesParamThemeId({required String themeId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/themes/${Uri.encodeComponent(themeId)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

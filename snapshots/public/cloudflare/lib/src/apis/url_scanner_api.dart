@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Submit URLs to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/ and take into account scans submitted in bulk have lower priority and may take longer to finish.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/bulk`
-Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkResponse400>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, }) async  { final request = ApiRequest(
+Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkResponse400>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/bulk',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -42,11 +43,12 @@ return _execute(
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/dom/{scan_id}`
-Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/dom/${Uri.encodeComponent(scanId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -64,11 +66,12 @@ return _execute(
 /// Get a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/har/{scan_id}`
-Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarResponse4002>> urlscannerGetScanHarV2({required String scanId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarResponse4002>> urlscannerGetScanHarV2({required String scanId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/har/${Uri.encodeComponent(scanId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -86,11 +89,12 @@ return _execute(
 /// Returns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/responses/{response_id}`
-Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/responses/${Uri.encodeComponent(responseId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -108,11 +112,12 @@ return _execute(
 /// Get URL scan by uuid
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/result/{scan_id}`
-Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanResponse4002>> urlscannerGetScanV2({required String scanId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanResponse4002>> urlscannerGetScanV2({required String scanId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/result/${Uri.encodeComponent(scanId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -130,12 +135,13 @@ return _execute(
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/scan`
-Future<ApiResult<UrlscannerCreateScanResponse2, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, }) async  { final request = ApiRequest(
+Future<ApiResult<UrlscannerCreateScanResponse2, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/scan',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -154,14 +160,18 @@ return _execute(
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
-Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, }) async  { final request = ApiRequest(
+Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (resolution != null) queryParameters['resolution'] = resolution.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/screenshots/${Uri.encodeComponent(scanId)}.png',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (resolution != null) 'resolution': resolution.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -179,15 +189,19 @@ return _execute(
 /// Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:<br/> <br/>- 'path:"/bundles/jquery.js"': Searches for scans who requested resources with the given path.<br/>- 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded.<br/>- 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with "microsoft".<br/>- 'apikey:me AND date:[2025-01 TO 2025-02]': my scans from 2025 January to 2025 February.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/search`
-Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, }) async  { final request = ApiRequest(
+Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (size != null) queryParameters['size'] = size.toString();
+if (q != null) queryParameters['q'] = q;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/urlscanner/v2/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (size != null) 'size': size.toString(),
-    'q': ?q,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

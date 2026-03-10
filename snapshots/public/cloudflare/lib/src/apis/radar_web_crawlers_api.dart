@@ -17,23 +17,59 @@ final ApiConfig _config;
 /// Retrieves an aggregated summary of HTTP requests from crawlers, grouped by the specified dimension.
 ///
 /// `GET /radar/bots/crawlers/summary/{dimension}`
-Future<ApiResult<RadarGetCrawlersSummaryResponse, RadarGetCrawlersSummaryResponse400>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCrawlersSummaryResponse, RadarGetCrawlersSummaryResponse400>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (botOperator != null) {
+for (final item in botOperator) {
+  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
+}
+}
+if (vertical != null) {
+for (final item in vertical) {
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+}
+}
+if (industry != null) {
+for (final item in industry) {
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+}
+}
+if (clientType != null) {
+for (final item in clientType) {
+  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/bots/crawlers/summary/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (botOperator != null) 'botOperator': botOperator.toString(),
-    if (vertical != null) 'vertical': vertical.toString(),
-    if (industry != null) 'industry': industry.toString(),
-    if (clientType != null) 'clientType': clientType.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -51,24 +87,60 @@ return _execute(
 /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
 ///
 /// `GET /radar/bots/crawlers/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponse, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponse, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (botOperator != null) {
+for (final item in botOperator) {
+  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
+}
+}
+if (vertical != null) {
+for (final item in vertical) {
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+}
+}
+if (industry != null) {
+for (final item in industry) {
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+}
+}
+if (clientType != null) {
+for (final item in clientType) {
+  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/bots/crawlers/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (aggInterval != null) 'aggInterval': aggInterval.toJson(),
-    if (name != null) 'name': name.toString(),
-    if (dateRange != null) 'dateRange': dateRange.toString(),
-    if (dateStart != null) 'dateStart': dateStart.toString(),
-    if (dateEnd != null) 'dateEnd': dateEnd.toString(),
-    if (limitPerGroup != null) 'limitPerGroup': limitPerGroup.toString(),
-    if (botOperator != null) 'botOperator': botOperator.toString(),
-    if (vertical != null) 'vertical': vertical.toString(),
-    if (industry != null) 'industry': industry.toString(),
-    if (clientType != null) 'clientType': clientType.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

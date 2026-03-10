@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists SSH Certificate Authorities (CA).
 ///
 /// `GET /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaListSshCa({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaListSshCa({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Adds a new SSH Certificate Authority (CA).
 ///
 /// `POST /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,11 +57,12 @@ return _execute(
 /// Deletes an SSH Certificate Authority.
 ///
 /// `DELETE /accounts/{account_id}/access/gateway_ca/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

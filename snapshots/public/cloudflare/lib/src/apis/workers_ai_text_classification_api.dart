@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/baai/bge-reranker-base model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-reranker-base`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-reranker-base',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/huggingface/distilbert-sst-2-int8`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/huggingface/distilbert-sst-2-int8',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 

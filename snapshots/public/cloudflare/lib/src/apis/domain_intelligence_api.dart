@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Gets security details and statistics about a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain`
-Future<ApiResult<ResponseCommon40, Never>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon40, Never>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domain != null) queryParameters['domain'] = domain;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/domain',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'domain': ?domain,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,14 +43,22 @@ return _execute(
 /// Same as summary.
 ///
 /// `GET /accounts/{account_id}/intel/domain/bulk`
-Future<ApiResult<ResponseCommon39, Never>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon39, Never>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domain != null) {
+for (final item in domain) {
+  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/domain/bulk',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (domain != null) 'domain': domain.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

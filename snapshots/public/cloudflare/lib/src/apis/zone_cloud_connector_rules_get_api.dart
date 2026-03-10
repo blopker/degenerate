@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Rules
 ///
 /// `GET /zones/{zone_id}/cloud_connector/rules`
-Future<ApiResult<ResponseCommon12, Never>> zoneCloudConnectorRules({required CloudConnectorIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon12, Never>> zoneCloudConnectorRules({required CloudConnectorIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cloud_connector/rules',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

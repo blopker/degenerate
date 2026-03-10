@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,15 +44,19 @@ return _execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (deploy != null) queryParameters['deploy'] = deploy.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (deploy != null) 'deploy': deploy.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -64,14 +72,18 @@ return _execute(
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) queryParameters['include'] = include.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (include != null) 'include': include.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -86,11 +98,12 @@ return _execute(
 /// Delete a version.
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

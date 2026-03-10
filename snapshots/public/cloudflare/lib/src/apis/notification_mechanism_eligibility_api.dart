@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get a list of all delivery mechanism types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/eligible`
-Future<ApiResult<ResponseCommon2, Never>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/eligible',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

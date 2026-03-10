@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List Connectors
 ///
 /// `GET /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorList({required MconnAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorList({required MconnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -35,12 +36,13 @@ return _execute(
 /// Add a connector to your account
 ///
 /// `POST /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetch Connector
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -77,12 +80,13 @@ return _execute(
 /// Replace Connector or Re-provision License Key
 ///
 /// `PUT /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -99,12 +103,13 @@ return _execute(
 /// Edit Connector to update specific properties or Re-provision License Key
 ///
 /// `PATCH /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -121,11 +126,12 @@ return _execute(
 /// Remove a connector from your account
 ///
 /// `DELETE /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -141,18 +147,22 @@ return _execute(
 /// List Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['from'] = from.toString();
+queryParameters['to'] = to.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (cursor != null) queryParameters['cursor'] = cursor;
+if (k != null) queryParameters['k'] = k;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'from': from.toString(),
-    'to': to.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'cursor': ?cursor,
-    'k': ?k,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -168,11 +178,12 @@ return _execute(
 /// Get Event
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/${Uri.encodeComponent(eventT.toString())}.${Uri.encodeComponent(eventN.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -188,11 +199,12 @@ return _execute(
 /// Get latest Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/latest',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -208,17 +220,21 @@ return _execute(
 /// List Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['from'] = from.toString();
+queryParameters['to'] = to.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (cursor != null) queryParameters['cursor'] = cursor;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'from': from.toString(),
-    'to': to.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'cursor': ?cursor,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -234,11 +250,12 @@ return _execute(
 /// Get Snapshot
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/${Uri.encodeComponent(snapshotT.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -254,11 +271,12 @@ return _execute(
 /// Get latest Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final request = ApiRequest(
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/latest',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

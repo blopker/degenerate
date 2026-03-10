@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Returns all Source-of-Truth tag categories for an account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags/categories`
-Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'search': ?search,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Updates a Source-of-Truth tag category by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateResponse400>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateResponse400>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -66,11 +71,12 @@ return _execute(
 /// Deletes a Source-of-Truth tag category by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteResponse400>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteResponse400>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -88,12 +94,13 @@ return _execute(
 /// Creates a new Source-of-Truth tag category for an account.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/categories/create`
-Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateResponse400>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateResponse400>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

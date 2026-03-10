@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.
 ///
 /// `GET /ips`
-Future<ApiResult<ResponseCommon52, Never>> cloudflareIpsCloudflareIpDetails({String? networks}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon52, Never>> cloudflareIpsCloudflareIpDetails({String? networks}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (networks != null) queryParameters['networks'] = networks;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/ips',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'networks': ?networks,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

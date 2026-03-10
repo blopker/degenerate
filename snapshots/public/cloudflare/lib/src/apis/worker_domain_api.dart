@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// Lists all Worker Domains for an account.
 ///
 /// `GET /accounts/{account_id}/workers/domains`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (zoneName != null) queryParameters['zone_name'] = zoneName.toString();
+if (service != null) queryParameters['service'] = service.toString();
+if (zoneId != null) queryParameters['zone_id'] = zoneId.toString();
+if (hostname != null) queryParameters['hostname'] = hostname;
+if (environment != null) queryParameters['environment'] = environment;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (zoneName != null) 'zone_name': zoneName.toString(),
-    if (service != null) 'service': service.toString(),
-    if (zoneId != null) 'zone_id': zoneId.toString(),
-    'hostname': ?hostname,
-    'environment': ?environment,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Attaches a Worker to a zone and hostname.
 ///
 /// `PUT /accounts/{account_id}/workers/domains`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -64,11 +69,12 @@ return _execute(
 /// Gets a Worker domain.
 ///
 /// `GET /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains/${Uri.encodeComponent(domainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,11 +89,12 @@ return _execute(
 /// Detaches a Worker from a zone and hostname.
 ///
 /// `DELETE /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains/${Uri.encodeComponent(domainId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Author Search
 ///
 /// `GET /accounts/{account_id}/ai/authors/search`
-Future<ApiResult<WorkersAiSearchAuthorResponse, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiSearchAuthorResponse, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/authors/search',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -37,14 +38,18 @@ return _execute(
 /// Retrieves the input and output JSON schema definition for a Workers AI model.
 ///
 /// `GET /accounts/{account_id}/ai/models/schema`
-Future<ApiResult<WorkersAiGetModelSchemaResponse, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiGetModelSchemaResponse, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['model'] = model;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/models/schema',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'model': model,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -60,20 +65,24 @@ return _execute(
 /// Model Search
 ///
 /// `GET /accounts/{account_id}/ai/models/search`
-Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (task != null) queryParameters['task'] = task;
+if (author != null) queryParameters['author'] = author;
+if (source != null) queryParameters['source'] = source.toString();
+if (hideExperimental != null) queryParameters['hide_experimental'] = hideExperimental.toString();
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/models/search',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    'task': ?task,
-    'author': ?author,
-    if (source != null) 'source': source.toString(),
-    if (hideExperimental != null) 'hide_experimental': hideExperimental.toString(),
-    'search': ?search,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -96,12 +105,13 @@ return _execute(
 /// Model specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
 ///
 /// `POST /accounts/{account_id}/ai/run/{model_name}`
-Future<ApiResult<WorkersAiPostRunModelResponse, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiPostRunModelResponse, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/${Uri.encodeComponent(modelName)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -118,11 +128,12 @@ return _execute(
 /// Task Search
 ///
 /// `GET /accounts/{account_id}/ai/tasks/search`
-Future<ApiResult<WorkersAiSearchTaskResponse, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiSearchTaskResponse, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tasks/search',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -140,12 +151,13 @@ return _execute(
 /// Converts uploaded files into Markdown format using Workers AI.
 ///
 /// `POST /accounts/{account_id}/ai/tomarkdown`
-Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from WorkersAiPostToMarkdownRequest');,
 );
 
@@ -164,11 +176,12 @@ return _execute(
 /// Lists all file formats supported for conversion to Markdown.
 ///
 /// `GET /accounts/{account_id}/ai/tomarkdown/supported`
-Future<ApiResult<WorkersAiGetToMarkdownSupportedResponse, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<WorkersAiGetToMarkdownSupportedResponse, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown/supported',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

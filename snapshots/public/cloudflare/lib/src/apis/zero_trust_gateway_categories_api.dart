@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all categories.
 ///
 /// `GET /accounts/{account_id}/gateway/categories`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/categories',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

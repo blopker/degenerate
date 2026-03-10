@@ -15,15 +15,19 @@ final ApiConfig _config;
 /// List jobs
 ///
 /// `GET /accounts/{account_id}/slurper/jobs`
-Future<ApiResult<Success2, Never>> slurperListJobs({required String accountId, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperListJobs({required String accountId, int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -36,12 +40,13 @@ return _execute(
 /// Create a job
 ///
 /// `POST /accounts/{account_id}/slurper/jobs`
-Future<ApiResult<Success2, Failure2>> slurperCreateJob({required String accountId, required R2SlurperCreateJobRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Failure2>> slurperCreateJob({required String accountId, required R2SlurperCreateJobRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -58,11 +63,12 @@ return _execute(
 /// Get job details
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}`
-Future<ApiResult<Success2, Never>> slurperGetJob({required String accountId, required String jobId, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperGetJob({required String accountId, required String jobId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -75,11 +81,12 @@ return _execute(
 /// Abort a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/abort`
-Future<ApiResult<Success2, Never>> slurperAbortJob({required String accountId, required String jobId, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperAbortJob({required String accountId, required String jobId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}/abort',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -92,15 +99,19 @@ return _execute(
 /// Get job logs
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}/logs`
-Future<ApiResult<Success2, Never>> slurperGetJobLogs({required String accountId, required String jobId, int? limit, int? offset, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperGetJobLogs({required String accountId, required String jobId, int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -113,11 +124,12 @@ return _execute(
 /// Pause a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/pause`
-Future<ApiResult<Success2, Failure2>> slurperPauseJob({required String accountId, required String jobId, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Failure2>> slurperPauseJob({required String accountId, required String jobId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}/pause',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -133,11 +145,12 @@ return _execute(
 /// Get job progress
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}/progress`
-Future<ApiResult<Success2, Never>> slurperGetJobProgress({required String accountId, required String jobId, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperGetJobProgress({required String accountId, required String jobId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}/progress',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -150,11 +163,12 @@ return _execute(
 /// Resume a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/resume`
-Future<ApiResult<Success2, Never>> slurperResumeJob({required String accountId, required String jobId, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperResumeJob({required String accountId, required String jobId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/${Uri.encodeComponent(jobId)}/resume',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -167,11 +181,12 @@ return _execute(
 /// Abort all jobs
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/abortAll`
-Future<ApiResult<Success2, Never>> slurperAbortAllJobs({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperAbortAllJobs({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/jobs/abortAll',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -186,12 +201,13 @@ return _execute(
 /// Check whether tokens are valid against the source bucket
 ///
 /// `PUT /accounts/{account_id}/slurper/source/connectivity-precheck`
-Future<ApiResult<Success2, Never>> slurperCheckSourceConnectivity({required String accountId, required R2SlurperSourceJobSchema body, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperCheckSourceConnectivity({required String accountId, required R2SlurperSourceJobSchema body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/source/connectivity-precheck',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -207,12 +223,13 @@ return _execute(
 /// Check whether tokens are valid against the target bucket
 ///
 /// `PUT /accounts/{account_id}/slurper/target/connectivity-precheck`
-Future<ApiResult<Success2, Never>> slurperCheckTargetConnectivity({required String accountId, required R2SlurperR2TargetSchema body, }) async  { final request = ApiRequest(
+Future<ApiResult<Success2, Never>> slurperCheckTargetConnectivity({required String accountId, required R2SlurperR2TargetSchema body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/slurper/target/connectivity-precheck',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

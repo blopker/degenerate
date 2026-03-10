@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List an account's custom nameservers.
 ///
 /// `GET /accounts/{account_id}/custom_ns`
-Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -34,12 +35,13 @@ return _execute(
 /// Add Account Custom Nameserver
 ///
 /// `POST /accounts/{account_id}/custom_ns`
-Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -53,11 +55,12 @@ return _execute(
 /// Delete Account Custom Nameserver
 ///
 /// `DELETE /accounts/{account_id}/custom_ns/{custom_ns_id}`
-Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon23, Never>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns/${Uri.encodeComponent(customNsId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

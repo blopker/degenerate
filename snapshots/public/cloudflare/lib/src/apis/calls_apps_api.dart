@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required CallsAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required CallsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.
 ///
 /// `POST /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes an app from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

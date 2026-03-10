@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List Zero Trust Gateway locations for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a new Zero Trust Gateway location.
 ///
 /// `POST /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get a single Zero Trust Gateway location.
 ///
 /// `GET /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a configured Zero Trust Gateway location.
 ///
 /// `PUT /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete a configured Zero Trust Gateway location.
 ///
 /// `DELETE /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

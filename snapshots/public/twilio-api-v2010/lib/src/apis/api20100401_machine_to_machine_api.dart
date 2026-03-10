@@ -15,34 +15,38 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/MachineToMachine.json`
-Future<ApiResult<ListAvailablePhoneNumberMachineToMachineResponse, Never>> listAvailablePhoneNumberMachineToMachine({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAvailablePhoneNumberMachineToMachineResponse, Never>> listAvailablePhoneNumberMachineToMachine({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (areaCode != null) queryParameters['AreaCode'] = areaCode.toString();
+if (contains != null) queryParameters['Contains'] = contains;
+if (smsEnabled != null) queryParameters['SmsEnabled'] = smsEnabled.toString();
+if (mmsEnabled != null) queryParameters['MmsEnabled'] = mmsEnabled.toString();
+if (voiceEnabled != null) queryParameters['VoiceEnabled'] = voiceEnabled.toString();
+if (excludeAllAddressRequired != null) queryParameters['ExcludeAllAddressRequired'] = excludeAllAddressRequired.toString();
+if (excludeLocalAddressRequired != null) queryParameters['ExcludeLocalAddressRequired'] = excludeLocalAddressRequired.toString();
+if (excludeForeignAddressRequired != null) queryParameters['ExcludeForeignAddressRequired'] = excludeForeignAddressRequired.toString();
+if (beta != null) queryParameters['Beta'] = beta.toString();
+if (nearNumber != null) queryParameters['NearNumber'] = nearNumber;
+if (nearLatLong != null) queryParameters['NearLatLong'] = nearLatLong;
+if (distance != null) queryParameters['Distance'] = distance.toString();
+if (inPostalCode != null) queryParameters['InPostalCode'] = inPostalCode;
+if (inRegion != null) queryParameters['InRegion'] = inRegion;
+if (inRateCenter != null) queryParameters['InRateCenter'] = inRateCenter;
+if (inLata != null) queryParameters['InLata'] = inLata;
+if (inLocality != null) queryParameters['InLocality'] = inLocality;
+if (faxEnabled != null) queryParameters['FaxEnabled'] = faxEnabled.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode)}/MachineToMachine.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (areaCode != null) 'AreaCode': areaCode.toString(),
-    'Contains': ?contains,
-    if (smsEnabled != null) 'SmsEnabled': smsEnabled.toString(),
-    if (mmsEnabled != null) 'MmsEnabled': mmsEnabled.toString(),
-    if (voiceEnabled != null) 'VoiceEnabled': voiceEnabled.toString(),
-    if (excludeAllAddressRequired != null) 'ExcludeAllAddressRequired': excludeAllAddressRequired.toString(),
-    if (excludeLocalAddressRequired != null) 'ExcludeLocalAddressRequired': excludeLocalAddressRequired.toString(),
-    if (excludeForeignAddressRequired != null) 'ExcludeForeignAddressRequired': excludeForeignAddressRequired.toString(),
-    if (beta != null) 'Beta': beta.toString(),
-    'NearNumber': ?nearNumber,
-    'NearLatLong': ?nearLatLong,
-    if (distance != null) 'Distance': distance.toString(),
-    'InPostalCode': ?inPostalCode,
-    'InRegion': ?inRegion,
-    'InRateCenter': ?inRateCenter,
-    'InLata': ?inLata,
-    'InLocality': ?inLocality,
-    if (faxEnabled != null) 'FaxEnabled': faxEnabled.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List TSIGs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/tsigs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create TSIG.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/tsigs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get TSIG.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Modify TSIG.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete TSIG.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/tsigs/${Uri.encodeComponent(tsigId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -15,22 +15,51 @@ final ApiConfig _config;
 /// List user actions and configuration changes within this organization.
 ///
 /// `GET /organization/audit_logs`
-Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (effectiveAt != null) {
+if (effectiveAt.gt != null) queryParametersList.add(ApiQueryParameter(name: 'gt', value: effectiveAt.gt.toString(), allowReserved: false));
+if (effectiveAt.gte != null) queryParametersList.add(ApiQueryParameter(name: 'gte', value: effectiveAt.gte.toString(), allowReserved: false));
+if (effectiveAt.lt != null) queryParametersList.add(ApiQueryParameter(name: 'lt', value: effectiveAt.lt.toString(), allowReserved: false));
+if (effectiveAt.lte != null) queryParametersList.add(ApiQueryParameter(name: 'lte', value: effectiveAt.lte.toString(), allowReserved: false));
+}
+if (projectIds != null) {
+for (final item in projectIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids[]', value: item, allowReserved: false));
+}
+}
+if (eventTypes != null) {
+for (final item in eventTypes) {
+  queryParametersList.add(ApiQueryParameter(name: 'event_types[]', value: item.toJson(), allowReserved: false));
+}
+}
+if (actorIds != null) {
+for (final item in actorIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ids[]', value: item, allowReserved: false));
+}
+}
+if (actorEmails != null) {
+for (final item in actorEmails) {
+  queryParametersList.add(ApiQueryParameter(name: 'actor_emails[]', value: item, allowReserved: false));
+}
+}
+if (resourceIds != null) {
+for (final item in resourceIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'resource_ids[]', value: item, allowReserved: false));
+}
+}
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (before != null) queryParameters['before'] = before;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/audit_logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (effectiveAt != null) 'effective_at': effectiveAt.toString(),
-    if (projectIds != null) 'project_ids[]': projectIds.toString(),
-    if (eventTypes != null) 'event_types[]': eventTypes.toString(),
-    if (actorIds != null) 'actor_ids[]': actorIds.toString(),
-    if (actorEmails != null) 'actor_emails[]': actorEmails.toString(),
-    if (resourceIds != null) 'resource_ids[]': resourceIds.toString(),
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    'before': ?before,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

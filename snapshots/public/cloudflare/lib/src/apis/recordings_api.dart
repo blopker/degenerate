@@ -17,23 +17,29 @@ final ApiConfig _config;
 /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (meetingId != null) queryParameters['meeting_id'] = meetingId;
+if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (expired != null) queryParameters['expired'] = expired.toString();
+if (search != null) queryParameters['search'] = search;
+if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (startTime != null) queryParameters['start_time'] = startTime.toString();
+if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (status != null) {
+queryParameters['status'] = status.map((item) => item.toJson()).join(',');
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'meeting_id': ?meetingId,
-    if (pageNo != null) 'page_no': pageNo.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (expired != null) 'expired': expired.toString(),
-    'search': ?search,
-    if (sortBy != null) 'sort_by': sortBy.toJson(),
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-    if (startTime != null) 'start_time': startTime.toString(),
-    if (endTime != null) 'end_time': endTime.toString(),
-    if (status != null) 'status': status.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -48,12 +54,13 @@ return _execute(
 /// Starts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -69,11 +76,12 @@ return _execute(
 /// Returns details of a recording for the given recording ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/${Uri.encodeComponent(recordingId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -88,12 +96,13 @@ return _execute(
 /// Pause/Resume/Stop a given recording ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId)}/recordings/${Uri.encodeComponent(recordingId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -109,11 +118,12 @@ return _execute(
 /// Returns the active recording details for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final request = ApiRequest(
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/active-recording/${Uri.encodeComponent(meetingId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -131,12 +141,13 @@ return _execute(
 /// Starts a track recording in a meeting. Track recordings consist of "layers". Layers are used to map audio/video tracks in a meeting to output destinations. More information about track recordings is available in the [Track Recordings Guide Page](https://docs.realtime.cloudflare.com/guides/capabilities/recording/recording-overview).
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings/track`
-Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/track',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

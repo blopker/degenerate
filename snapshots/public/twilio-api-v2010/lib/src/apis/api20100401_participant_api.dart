@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a participant
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Update the properties of the participant
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateParticipantRequest');,
 );
 
@@ -51,11 +53,12 @@ return _execute(
 /// Kick a participant from a given conference
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -66,19 +69,23 @@ return _execute(
 /// Retrieve a list of participants belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (muted != null) queryParameters['Muted'] = muted.toString();
+if (hold != null) queryParameters['Hold'] = hold.toString();
+if (coaching != null) queryParameters['Coaching'] = coaching.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (muted != null) 'Muted': muted.toString(),
-    if (hold != null) 'Hold': hold.toString(),
-    if (coaching != null) 'Coaching': coaching.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -91,12 +98,13 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateParticipantRequest');,
 );
 

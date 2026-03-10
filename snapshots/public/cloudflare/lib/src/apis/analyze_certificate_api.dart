@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Returns the set of hostnames, the signature algorithm, and the expiration date of the certificate.
 ///
 /// `POST /zones/{zone_id}/ssl/analyze`
-Future<ApiResult<ResponseCommon68, Never>> analyzeCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required AnalyzeCertificateAnalyzeCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> analyzeCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required AnalyzeCertificateAnalyzeCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/analyze',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

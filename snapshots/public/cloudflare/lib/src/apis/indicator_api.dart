@@ -17,18 +17,26 @@ final ApiConfig _config;
 /// Retrieves a paginated list of indicators for the account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators`
-Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
+if (search != null) queryParameters['search'] = search;
+if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (relatedEvent != null) {
+for (final item in relatedEvent) {
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (pageSize != null) 'pageSize': pageSize.toString(),
-    'search': ?search,
-    'indicatorType': ?indicatorType,
-    if (relatedEvent != null) 'relatedEvent': relatedEvent.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,11 +51,12 @@ return _execute(
 /// Retrieves a specific indicator by its UUID.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -65,12 +74,13 @@ return _execute(
 /// Updates an existing indicator's properties.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateResponse400>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateResponse400>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -89,11 +99,12 @@ return _execute(
 /// Deletes a specific indicator by its UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -111,12 +122,13 @@ return _execute(
 /// Creates multiple indicators at once with their respective types and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk`
-Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/bulk',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -135,12 +147,13 @@ return _execute(
 /// Creates a new indicator with the specified type and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create`
-Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -159,11 +172,12 @@ return _execute(
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, String>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Map<String, String>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/tags',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -182,26 +196,42 @@ return _execute(
 /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicators`
-Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (datasetIds != null) {
+for (final item in datasetIds) {
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+}
+}
+if (page != null) queryParameters['page'] = page.toString();
+if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
+if (search != null) queryParameters['search'] = search;
+if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (relatedEvents != null) {
+for (final item in relatedEvents) {
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item, allowReserved: false));
+}
+}
+if (tags != null) {
+for (final item in tags) {
+  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
+}
+}
+if (createdAfter != null) queryParameters['createdAfter'] = createdAfter.toString();
+if (createdBefore != null) queryParameters['createdBefore'] = createdBefore.toString();
+if (relatedEventsLimit != null) queryParameters['relatedEventsLimit'] = relatedEventsLimit.toString();
+if (includeTags != null) queryParameters['includeTags'] = includeTags.toString();
+if (includeTotalCount != null) queryParameters['includeTotalCount'] = includeTotalCount.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/indicators',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (datasetIds != null) 'datasetIds': datasetIds.toString(),
-    if (page != null) 'page': page.toString(),
-    if (pageSize != null) 'pageSize': pageSize.toString(),
-    'search': ?search,
-    'indicatorType': ?indicatorType,
-    if (relatedEvents != null) 'relatedEvents': relatedEvents.toString(),
-    if (tags != null) 'tags': tags.toString(),
-    if (createdAfter != null) 'createdAfter': createdAfter.toString(),
-    if (createdBefore != null) 'createdBefore': createdBefore.toString(),
-    if (relatedEventsLimit != null) 'relatedEventsLimit': relatedEventsLimit.toString(),
-    if (includeTags != null) 'includeTags': includeTags.toString(),
-    if (includeTotalCount != null) 'includeTotalCount': includeTotalCount.toString(),
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

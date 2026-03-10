@@ -15,14 +15,18 @@ final ApiConfig _config;
 /// Argo Analytics for a zone
 ///
 /// `GET /zones/{zone_id}/analytics/latency`
-Future<ApiResult<ResponseCommon7, Never>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon7, Never>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (bins != null) queryParameters['bins'] = bins;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/analytics/latency',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'bins': ?bins,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

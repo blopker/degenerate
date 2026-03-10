@@ -17,19 +17,23 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,19 +46,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-04
 ///
 /// `GET /admin/api/2020-04/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -67,19 +75,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-07
 ///
 /// `GET /admin/api/2020-07/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -92,19 +104,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-10
 ///
 /// `GET /admin/api/2020-10/tender_transactions.json`
-Future<ApiResult<void, Never>> getTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -117,19 +133,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2021-01
 ///
 /// `GET /admin/api/2021-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -142,19 +162,23 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-unstable
 ///
 /// `GET /admin/api/unstable/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit;
+if (sinceId != null) queryParameters['since_id'] = sinceId;
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
+if (processedAt != null) queryParameters['processed_at'] = processedAt;
+if (order != null) queryParameters['order'] = order;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/tender_transactions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'limit': ?limit,
-    'since_id': ?sinceId,
-    'processed_at_min': ?processedAtMin,
-    'processed_at_max': ?processedAtMax,
-    'processed_at': ?processedAt,
-    'order': ?order,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

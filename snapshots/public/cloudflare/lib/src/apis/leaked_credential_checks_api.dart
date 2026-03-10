@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieves the current status of Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates the current status of Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// List user-defined detection patterns for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Create user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetection body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetection body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Get user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -116,12 +121,13 @@ return _execute(
 /// Update user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `PUT /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetection body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetection body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -137,11 +143,12 @@ return _execute(
 /// Remove user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `DELETE /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon74, Never>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

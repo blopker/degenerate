@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// List all projects owned by a specific organization accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2`
-Future<ApiResult<List<Projects>, BasicError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Projects>, BasicError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (q != null) queryParameters['q'] = q;
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'q': ?q,
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,11 +50,12 @@ return _execute(
 /// Get a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}`
-Future<ApiResult<Projects, BasicError>> projectsGetForOrg({required int projectNumber, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<Projects, BasicError>> projectsGetForOrg({required int projectNumber, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -68,12 +73,13 @@ return _execute(
 /// Create draft issue item for the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/drafts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -92,16 +98,20 @@ return _execute(
 /// List all fields for a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    'before': ?before,
-    'after': ?after,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -118,12 +128,13 @@ return _execute(
 /// Add a field to an organization-owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, BasicError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Field, BasicError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -142,11 +153,12 @@ return _execute(
 /// Get a specific field for an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, BasicError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, }) async  { final request = ApiRequest(
+Future<ApiResult<Field, BasicError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields/${Uri.encodeComponent(fieldId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -164,18 +176,24 @@ return _execute(
 /// List all items for a specific organization-owned project accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (q != null) queryParameters['q'] = q;
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'q': ?q,
-    if (fields != null) 'fields': fields.toString(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -194,12 +212,13 @@ return _execute(
 /// Add an issue or pull request item to the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForOrg({required String org, required int projectNumber, required ProjectsAddItemForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForOrg({required String org, required int projectNumber, required ProjectsAddItemForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -218,14 +237,20 @@ return _execute(
 /// Get a specific item from an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemWithContent, BasicError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (fields != null) 'fields': fields.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -243,12 +268,13 @@ return _execute(
 /// Update a specific item in an organization-owned project.
 ///
 /// `PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -267,11 +293,12 @@ return _execute(
 /// Delete a specific item from an organization-owned project.
 ///
 /// `DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<void, BasicError>> projectsDeleteItemForOrg({required int projectNumber, required String org, required int itemId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> projectsDeleteItemForOrg({required int projectNumber, required String org, required int itemId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -287,12 +314,13 @@ return _execute(
 /// Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/views`
-Future<ApiResult<View, BasicError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<View, BasicError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -311,17 +339,23 @@ return _execute(
 /// List items in an organization project with the saved view's filter applied.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views/${Uri.encodeComponent(viewNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (fields != null) 'fields': fields.toString(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -340,12 +374,13 @@ return _execute(
 /// Create draft issue item for the specified user owned project.
 ///
 /// `POST /user/{user_id}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/${Uri.encodeComponent(userId)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/drafts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -364,12 +399,13 @@ return _execute(
 /// Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /users/{user_id}/projectsV2/{project_number}/views`
-Future<ApiResult<View, BasicError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<View, BasicError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/users/${Uri.encodeComponent(userId)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -388,17 +424,21 @@ return _execute(
 /// List all projects owned by a specific user accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2`
-Future<ApiResult<List<Projects>, BasicError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Projects>, BasicError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (q != null) queryParameters['q'] = q;
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'q': ?q,
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -417,11 +457,12 @@ return _execute(
 /// Get a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}`
-Future<ApiResult<Projects, BasicError>> projectsGetForUser({required int projectNumber, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<Projects, BasicError>> projectsGetForUser({required int projectNumber, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -439,16 +480,20 @@ return _execute(
 /// List all fields for a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    'before': ?before,
-    'after': ?after,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -467,12 +512,13 @@ return _execute(
 /// Add a field to a specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, BasicError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Field, BasicError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -491,11 +537,12 @@ return _execute(
 /// Get a specific field for a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, BasicError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, }) async  { final request = ApiRequest(
+Future<ApiResult<Field, BasicError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields/${Uri.encodeComponent(fieldId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -513,18 +560,24 @@ return _execute(
 /// List all items for a specific user-owned project accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (q != null) queryParameters['q'] = q;
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-    'q': ?q,
-    if (fields != null) 'fields': fields.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -543,12 +596,13 @@ return _execute(
 /// Add an issue or pull request item to the specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForUser({required String username, required int projectNumber, required ProjectsAddItemForUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForUser({required String username, required int projectNumber, required ProjectsAddItemForUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -567,14 +621,20 @@ return _execute(
 /// Get a specific item from a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemWithContent, BasicError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (fields != null) 'fields': fields.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -592,12 +652,13 @@ return _execute(
 /// Update a specific item in a user-owned project.
 ///
 /// `PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -616,11 +677,12 @@ return _execute(
 /// Delete a specific item from a user-owned project.
 ///
 /// `DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<void, BasicError>> projectsDeleteItemForUser({required int projectNumber, required String username, required int itemId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> projectsDeleteItemForUser({required int projectNumber, required String username, required int itemId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -636,17 +698,23 @@ return _execute(
 /// List items in a user project with the saved view's filter applied.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+}
+if (before != null) queryParameters['before'] = before;
+if (after != null) queryParameters['after'] = after;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views/${Uri.encodeComponent(viewNumber.toString())}/items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (fields != null) 'fields': fields.toString(),
-    'before': ?before,
-    'after': ?after,
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches the current URL Normalization settings.
 ///
 /// `GET /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsResponse, Never>> getUrlNormalization({required RulesetsZoneId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getUrlNormalization({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates the URL Normalization settings.
 ///
 /// `PUT /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsResponse, Never>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Deletes the URL Normalization settings.
 ///
 /// `DELETE /zones/{zone_id}/url_normalization`
-Future<ApiResult<void, Never>> deleteUrlNormalization({required RulesetsZoneId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteUrlNormalization({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch a notification belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications/{Sid}.json`
-Future<ApiResult<AccountNotificationInstance, Never>> fetchNotification({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountNotificationInstance, Never>> fetchNotification({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Notifications/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,20 +33,24 @@ return _execute(
 /// Retrieve a list of notifications belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications.json`
-Future<ApiResult<ListNotificationResponse, Never>> listNotification({required String accountSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListNotificationResponse, Never>> listNotification({required String accountSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (log != null) queryParameters['Log'] = log.toString();
+if (messageDate != null) queryParameters['MessageDate'] = messageDate;
+if (messageDateBefore != null) queryParameters['MessageDate<'] = messageDateBefore;
+if (messageDateAfter != null) queryParameters['MessageDate>'] = messageDateAfter;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Notifications.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (log != null) 'Log': log.toString(),
-    'MessageDate': ?messageDate,
-    'MessageDate<': ?messageDateBefore,
-    'MessageDate>': ?messageDateAfter,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

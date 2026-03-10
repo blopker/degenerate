@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get Universal SSL Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/universal/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Patch Universal SSL Settings for a Zone.
 ///
 /// `PATCH /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/universal/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

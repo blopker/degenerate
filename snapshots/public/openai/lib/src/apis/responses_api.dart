@@ -22,12 +22,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body}) async  { final request = ApiRequest(
+Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/responses',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -42,17 +43,25 @@ return _execute(
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, }) async  { final request = ApiRequest(
+Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+if (stream != null) queryParameters['stream'] = stream.toString();
+if (startingAfter != null) queryParameters['starting_after'] = startingAfter.toString();
+if (includeObfuscation != null) queryParameters['include_obfuscation'] = includeObfuscation.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/responses/${Uri.encodeComponent(responseId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (include != null) 'include': include.toString(),
-    if (stream != null) 'stream': stream.toString(),
-    if (startingAfter != null) 'starting_after': startingAfter.toString(),
-    if (includeObfuscation != null) 'include_obfuscation': includeObfuscation.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -66,11 +75,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/responses/${Uri.encodeComponent(responseId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -87,11 +97,12 @@ return _execute(
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId}) async  { final request = ApiRequest(
+Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/responses/${Uri.encodeComponent(responseId)}/cancel',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -107,17 +118,25 @@ return _execute(
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
-Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+if (include != null) {
+for (final item in include) {
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+}
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/responses/${Uri.encodeComponent(responseId)}/input_items',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-    if (include != null) 'include': include.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

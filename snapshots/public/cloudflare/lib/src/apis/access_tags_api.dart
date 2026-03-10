@@ -15,15 +15,19 @@ final ApiConfig _config;
 /// List tags
 ///
 /// `GET /accounts/{account_id}/access/tags`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -36,12 +40,13 @@ return _execute(
 /// Create a tag
 ///
 /// `POST /accounts/{account_id}/access/tags`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -55,11 +60,12 @@ return _execute(
 /// Get a tag
 ///
 /// `GET /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -72,12 +78,13 @@ return _execute(
 /// Update a tag
 ///
 /// `PUT /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -91,11 +98,12 @@ return _execute(
 /// Delete a tag
 ///
 /// `DELETE /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

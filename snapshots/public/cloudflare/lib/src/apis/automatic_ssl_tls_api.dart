@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// If the system is enabled, the response will include next_scheduled_scan, representing the next time this zone will be scanned and the zone's ssl/tls encryption mode is potentially upgraded by the system. If the system is disabled, next_scheduled_scan will not be present in the response body.
 ///
 /// `GET /zones/{zone_id}/settings/ssl_automatic_mode`
-Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModeGetEnrollment({required CacheIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModeGetEnrollment({required CacheIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/ssl_automatic_mode',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// The automatic system is enabled when this endpoint is hit with value in the request body is set to "auto", and disabled when the request body value is set to "custom".
 ///
 /// `PATCH /zones/{zone_id}/settings/ssl_automatic_mode`
-Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModePatchEnrollment({required CacheIdentifier zoneId, required CacheSchemasPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingleId2, Never>> sslDetectorAutomaticModePatchEnrollment({required CacheIdentifier zoneId, required CacheSchemasPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/ssl_automatic_mode',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

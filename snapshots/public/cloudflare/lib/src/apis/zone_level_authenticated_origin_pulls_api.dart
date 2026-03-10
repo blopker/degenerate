@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all client certificates configured for zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Upload your own certificate you want Cloudflare to use for edge-to-origin communication to override the shared certificate. Please note that it is important to keep only one certificate active. Also, make sure to enable zone-level authenticated origin pulls by making a PUT call to settings endpoint to see the uploaded certificate in use.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Retrieves details for a specific client certificate used in zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// Removes a client certificate used for zone-level authenticated origin pulls.
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -95,11 +99,12 @@ return _execute(
 /// Get whether zone-level authenticated origin pulls is enabled or not. It is false by default.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -114,12 +119,13 @@ return _execute(
 /// Enable or disable zone-level authenticated origin pulls. 'enabled' should be set true either before/after the certificate is uploaded to see the certificate in use.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

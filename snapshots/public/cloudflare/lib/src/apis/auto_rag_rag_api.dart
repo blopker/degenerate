@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// Files
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/files`
-Future<ApiResult<AutoragConfigFilesResponse, AutoragConfigFilesResponse404>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigFilesResponse, AutoragConfigFilesResponse404>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (search != null) queryParameters['search'] = search;
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/files',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'search': ?search,
-    if (status != null) 'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,11 +45,12 @@ return _execute(
 /// Sync
 ///
 /// `PATCH /accounts/{account_id}/autorag/rags/{id}/sync`
-Future<ApiResult<AutoragConfigSyncResponse, AutoragConfigSyncResponse400>> autoragConfigSync({required String id, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigSyncResponse, AutoragConfigSyncResponse400>> autoragConfigSync({required String id, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/sync',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

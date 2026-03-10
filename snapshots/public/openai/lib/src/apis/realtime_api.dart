@@ -16,12 +16,13 @@ final ApiConfig _config;
 /// to complete the peer connection.
 ///
 /// `POST /realtime/calls`
-Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from RealtimeCallCreateRequest');,
 );
 
@@ -36,12 +37,13 @@ return _execute(
 /// handle it.
 ///
 /// `POST /realtime/calls/{call_id}/accept`
-Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/accept',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -54,11 +56,12 @@ return _execute(
 /// WebRTC.
 ///
 /// `POST /realtime/calls/{call_id}/hangup`
-Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/hangup',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -69,12 +72,13 @@ return _execute(
 /// Transfer an active SIP call to a new destination using the SIP REFER verb.
 ///
 /// `POST /realtime/calls/{call_id}/refer`
-Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/refer',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -86,12 +90,13 @@ return _execute(
 /// Decline an incoming SIP call by returning a SIP status code to the caller.
 ///
 /// `POST /realtime/calls/{call_id}/reject`
-Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/reject',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -116,12 +121,13 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/client_secrets`
-Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/client_secrets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -144,12 +150,13 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/sessions`
-Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -172,12 +179,13 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/transcription_sessions`
-Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/realtime/transcription_sessions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

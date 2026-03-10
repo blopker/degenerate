@@ -299,12 +299,9 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    buf.writeln('final request = ApiRequest(');
-    buf.writeln("  method: '$httpMethod',");
-    buf.writeln("  path: '$path',");
-    buf.writeln('  headers: {..._config.defaultHeaders');
+    buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
     if (requestBodyContent case (final mediaType, _)) {
-      buf.writeln("    , 'Content-Type': '$mediaType'");
+      buf.writeln("headers['Content-Type'] = '$mediaType';");
     }
     for (final p in headerParams) {
       final sanitizedName = p.name
@@ -313,14 +310,19 @@ class ApiEmitter {
           .trim();
       final headerValue = _toHeaderString(p);
       if (p.isRequired) {
-        buf.writeln("    , '$sanitizedName': $headerValue");
+        buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
         buf.writeln(
-          "    , if (${p.dartName} != null) '$sanitizedName': $headerValue",
+          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
         );
       }
     }
-    buf.writeln('  },');
+    buf.writeln();
+
+    buf.writeln('final request = ApiRequest(');
+    buf.writeln("  method: '$httpMethod',");
+    buf.writeln("  path: '$path',");
+    buf.writeln('  headers: headers,');
 
     if (queryParams.isNotEmpty) {
       buf.writeln('  queryParameters: queryParameters,');

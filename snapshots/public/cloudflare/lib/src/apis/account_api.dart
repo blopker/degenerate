@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve account limits and usage information
 ///
 /// `GET /accounts/{account_id}/builds/account/limits`
-Future<ApiResult<Response, Never>> getAccountLimits({required BuildsAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> getAccountLimits({required BuildsAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/account/limits',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

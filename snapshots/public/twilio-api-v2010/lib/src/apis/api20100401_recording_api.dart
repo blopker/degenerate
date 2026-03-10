@@ -15,14 +15,18 @@ final ApiConfig _config;
 /// Fetch an instance of a recording
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountRecording, Never>> fetchRecording({required String accountSid, required String sid, bool? includeSoftDeleted, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountRecording, Never>> fetchRecording({required String accountSid, required String sid, bool? includeSoftDeleted, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (includeSoftDeleted != null) queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (includeSoftDeleted != null) 'IncludeSoftDeleted': includeSoftDeleted.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -35,11 +39,12 @@ return _execute(
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecording({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteRecording({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -50,22 +55,26 @@ return _execute(
 /// Retrieve a list of recordings belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings.json`
-Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dateCreated != null) queryParameters['DateCreated'] = dateCreated.toString();
+if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+if (callSid != null) queryParameters['CallSid'] = callSid;
+if (conferenceSid != null) queryParameters['ConferenceSid'] = conferenceSid;
+if (includeSoftDeleted != null) queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (dateCreated != null) 'DateCreated': dateCreated.toString(),
-    if (dateCreatedBefore != null) 'DateCreated<': dateCreatedBefore.toString(),
-    if (dateCreatedAfter != null) 'DateCreated>': dateCreatedAfter.toString(),
-    'CallSid': ?callSid,
-    'ConferenceSid': ?conferenceSid,
-    if (includeSoftDeleted != null) 'IncludeSoftDeleted': includeSoftDeleted.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Get all builds for a specific worker script with pagination
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/builds`
-Future<ApiResult<Response, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/workers/${Uri.encodeComponent(externalScriptId.toString())}/builds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,11 +44,12 @@ return _execute(
 /// Get all triggers for a specific worker script
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/triggers`
-Future<ApiResult<Response, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/workers/${Uri.encodeComponent(externalScriptId.toString())}/triggers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -59,17 +64,21 @@ return _execute(
 /// List all Workers for an account.
 ///
 /// `GET /accounts/{account_id}/workers/workers`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -87,12 +96,13 @@ return _execute(
 /// Create a new Worker.
 ///
 /// `POST /accounts/{account_id}/workers/workers`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> createWorker({required WorkersIdentifier accountId, required WorkersWorker body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> createWorker({required WorkersIdentifier accountId, required WorkersWorker body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -111,11 +121,12 @@ return _execute(
 /// Get details about a specific Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> getWorker({required WorkersIdentifier accountId, required String workerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> getWorker({required WorkersIdentifier accountId, required String workerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -133,12 +144,13 @@ return _execute(
 /// Perform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.
 ///
 /// `PUT /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -157,12 +169,13 @@ return _execute(
 /// Perform a partial update on a Worker, where omitted properties are left unchanged from their current values.
 ///
 /// `PATCH /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -181,11 +194,12 @@ return _execute(
 /// Delete a Worker and all its associated resources (versions, deployments, etc.).
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorker({required WorkersIdentifier accountId, required String workerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorker({required WorkersIdentifier accountId, required String workerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

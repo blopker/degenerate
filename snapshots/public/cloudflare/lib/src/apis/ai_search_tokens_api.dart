@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// List tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<AiSearchListTokensResponse, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchListTokensResponse, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/tokens',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (orderByDirection != null) 'order_by_direction': orderByDirection.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Create a new tokens.
 ///
 /// `POST /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<AiSearchCreateTokensResponse, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchCreateTokensResponse, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -65,11 +70,12 @@ return _execute(
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponse, AiSearchFetchTokensResponse400>> aiSearchFetchTokens({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchFetchTokensResponse, AiSearchFetchTokensResponse400>> aiSearchFetchTokens({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/tokens/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,12 +91,13 @@ return _execute(
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponse, AiSearchUpdateTokensResponse400>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchUpdateTokensResponse, AiSearchUpdateTokensResponse400>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/tokens/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -107,11 +114,12 @@ return _execute(
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchDeleteTokensResponse, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, }) async  { final request = ApiRequest(
+Future<ApiResult<AiSearchDeleteTokensResponse, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/tokens/${Uri.encodeComponent(id)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

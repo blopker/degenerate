@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// List all region mappings.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (subdivisionCode != null) queryParameters['subdivision_code'] = subdivisionCode.toString();
+if (subdivisionCodeA2 != null) queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toString();
+if (countryCodeA2 != null) queryParameters['country_code_a2'] = countryCodeA2;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (subdivisionCode != null) 'subdivision_code': subdivisionCode.toString(),
-    if (subdivisionCodeA2 != null) 'subdivision_code_a2': subdivisionCodeA2.toString(),
-    'country_code_a2': ?countryCodeA2,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,11 +45,12 @@ return _execute(
 /// Get a single region mapping.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions/{region_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions/${Uri.encodeComponent(regionId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Fetches all rulesets at the zone level.
 ///
 /// `GET /zones/{zone_id}/rulesets`
-Future<ApiResult<RulesetsResponse, Never>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (cursor != null) 'cursor': cursor.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Creates a ruleset at the zone level.
 ///
 /// `POST /zones/{zone_id}/rulesets`
-Future<ApiResult<RulesetsResponse, Never>> createZoneRuleset({required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> createZoneRuleset({required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Fetches the latest version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<RulesetsResponse, Never>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// Updates a zone ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<RulesetsResponse, Never>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -101,11 +108,12 @@ return _execute(
 /// Deletes all versions of an existing zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<void, Never>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -118,12 +126,13 @@ return _execute(
 /// Adds a new rule to a zone ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.
 ///
 /// `POST /zones/{zone_id}/rulesets/{ruleset_id}/rules`
-Future<ApiResult<RulesetsResponse, Never>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRequestRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -139,12 +148,13 @@ return _execute(
 /// Updates an existing rule in a zone ruleset.
 ///
 /// `PATCH /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<RulesetsResponse, Never>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRequestRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required RulesetsRequestRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -160,11 +170,12 @@ return _execute(
 /// Deletes an existing rule from a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<RulesetsResponse, Never>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -179,11 +190,12 @@ return _execute(
 /// Fetches the versions of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<RulesetsResponse, Never>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -198,11 +210,12 @@ return _execute(
 /// Fetches a specific version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<RulesetsResponse, Never>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -217,11 +230,12 @@ return _execute(
 /// Deletes an existing version of a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<void, Never>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -234,11 +248,12 @@ return _execute(
 /// Fetches the rules of a managed zone ruleset version for a given tag.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}`
-Future<ApiResult<RulesetsResponse, Never>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}/by_tag/${Uri.encodeComponent(ruleTag.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -253,11 +268,12 @@ return _execute(
 /// Fetches the latest version of the zone entry point ruleset for a given phase.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<RulesetsResponse, Never>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -272,12 +288,13 @@ return _execute(
 /// Updates a zone entry point ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<RulesetsResponse, Never>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required RulesetsRuleset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -293,11 +310,12 @@ return _execute(
 /// Fetches the versions of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<RulesetsResponse, Never>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -312,11 +330,12 @@ return _execute(
 /// Fetches a specific version of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}`
-Future<ApiResult<RulesetsResponse, Never>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

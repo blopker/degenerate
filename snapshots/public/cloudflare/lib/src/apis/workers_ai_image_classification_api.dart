@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/microsoft/nonomni-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/nonomni-resnet-50`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/octet-stream';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/microsoft/nonomni-resnet-50',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/octet-stream'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/microsoft/resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/resnet-50`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/octet-stream';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/microsoft/resnet-50',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/octet-stream'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 

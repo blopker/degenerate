@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Fetches rendered HTML content from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/content`
-Future<ApiResult<BrapiPostContentResponse, BrapiPostContentResponse400>> brapiPostContent({required String accountId, double? cacheTtl, required BrapiPostContentRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostContentResponse, BrapiPostContentResponse400>> brapiPostContent({required String accountId, double? cacheTtl, required BrapiPostContentRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/content',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -44,15 +48,19 @@ return _execute(
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/json`
-Future<ApiResult<BrapiPostJsonResponse, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, double? cacheTtl, required BrapiPostJsonRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostJsonResponse, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, double? cacheTtl, required BrapiPostJsonRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -71,15 +79,19 @@ return _execute(
 /// Get links from a web page.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/links`
-Future<ApiResult<BrapiPostLinksResponse, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, double? cacheTtl, required BrapiPostLinksRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostLinksResponse, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, double? cacheTtl, required BrapiPostLinksRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/links',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -98,15 +110,19 @@ return _execute(
 /// Gets markdown of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/markdown`
-Future<ApiResult<BrapiPostMarkdownResponse, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, double? cacheTtl, required BrapiPostMarkdownRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostMarkdownResponse, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, double? cacheTtl, required BrapiPostMarkdownRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/markdown',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -125,15 +141,19 @@ return _execute(
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
-Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/pdf',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -152,15 +172,19 @@ return _execute(
 /// Get meta attributes like height, width, text and others of selected elements.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/scrape`
-Future<ApiResult<BrapiPostScrapeResponse, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, double? cacheTtl, required BrapiPostScrapeRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostScrapeResponse, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, double? cacheTtl, required BrapiPostScrapeRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/scrape',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -179,15 +203,19 @@ return _execute(
 /// Takes a screenshot of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/screenshot`
-Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, double? cacheTtl, required BrapiPostScreenshotRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, double? cacheTtl, required BrapiPostScreenshotRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/screenshot',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -206,15 +234,19 @@ return _execute(
 /// Returns the page's HTML content and screenshot. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/snapshot`
-Future<ApiResult<BrapiPostSnapshotResponse, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, double? cacheTtl, required BrapiPostSnapshotRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<BrapiPostSnapshotResponse, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, double? cacheTtl, required BrapiPostSnapshotRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/browser-rendering/snapshot',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (cacheTtl != null) 'cacheTTL': cacheTtl.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 

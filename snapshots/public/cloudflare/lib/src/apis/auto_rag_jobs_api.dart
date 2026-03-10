@@ -15,15 +15,19 @@ final ApiConfig _config;
 /// List Jobs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs`
-Future<ApiResult<AutoragConfigListJobsResponse, AutoragConfigListJobsResponse404>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigListJobsResponse, AutoragConfigListJobsResponse404>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/jobs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,11 +43,12 @@ return _execute(
 /// Get a Job Details
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}`
-Future<ApiResult<AutoragConfigGetJobResponse, AutoragConfigGetJobResponse404>> autoragConfigGetJob({required String id, required String jobId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigGetJobResponse, AutoragConfigGetJobResponse404>> autoragConfigGetJob({required String id, required String jobId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -59,15 +64,19 @@ return _execute(
 /// List Job Logs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs`
-Future<ApiResult<AutoragConfigListJobLogsResponse, AutoragConfigListJobLogsResponse404>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigListJobLogsResponse, AutoragConfigListJobLogsResponse404>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

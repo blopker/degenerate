@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists existing variants.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Specify variants that allow you to resize images for different use cases.
 ///
 /// `POST /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsCreateAVariant({required ImagesAccountIdentifier accountId, required ImagesImageVariantDefinition body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsCreateAVariant({required ImagesAccountIdentifier accountId, required ImagesImageVariantDefinition body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetch details for a single variant.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsVariantDetails({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsVariantDetails({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updating a variant purges the cache for all images associated with the variant.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsUpdateAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, required ImagesImageVariantPatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsUpdateAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, required ImagesImageVariantPatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deleting a variant purges the cache for all images associated with the variant.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsDeleteAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsDeleteAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

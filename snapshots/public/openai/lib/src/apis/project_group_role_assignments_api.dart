@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Lists the project roles assigned to a group within a project.
 ///
 /// `GET /projects/{project_id}/groups/{group_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listProjectGroupRoleAssignments({required String projectId, required String groupId, int? limit, String? after, ListProjectGroupRoleAssignmentsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<RoleListResource, Never>> listProjectGroupRoleAssignments({required String projectId, required String groupId, int? limit, String? after, ListProjectGroupRoleAssignmentsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/projects/${Uri.encodeComponent(projectId)}/groups/${Uri.encodeComponent(groupId)}/roles',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Assigns a project role to a group within a project.
 ///
 /// `POST /projects/{project_id}/groups/{group_id}/roles`
-Future<ApiResult<GroupRoleAssignment, Never>> assignProjectGroupRole({required String projectId, required String groupId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupRoleAssignment, Never>> assignProjectGroupRole({required String projectId, required String groupId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/projects/${Uri.encodeComponent(projectId)}/groups/${Uri.encodeComponent(groupId)}/roles',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Unassigns a project role from a group within a project.
 ///
 /// `DELETE /projects/{project_id}/groups/{group_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectGroupRole({required String projectId, required String groupId, required String roleId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectGroupRole({required String projectId, required String groupId, required String roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/projects/${Uri.encodeComponent(projectId)}/groups/${Uri.encodeComponent(groupId)}/roles/${Uri.encodeComponent(roleId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

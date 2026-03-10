@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.0.3
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'pub_cloudflare_security.dart';
 import '../apis/accounts_api.dart';
 import '../apis/tseng_abuse_complaint_processor_other_api.dart';
 import '../apis/mcp_portal_api.dart';
@@ -833,4 +834,9 @@ final class PubCloudflareApi {
   late final Web3HostnameApi web3Hostname = Web3HostnameApi(_config);
   late final WorkerRoutesApi workerRoutes = WorkerRoutesApi(_config);
   late final CustomPagesForAZoneApi customPagesForAZone = CustomPagesForAZoneApi(_config);
+
+  PubCloudflareApi withApiEmail(String value) => PubCloudflareApi(PubCloudflareSecurity.applyApiEmail(_config, value));
+  PubCloudflareApi withApiKey(String value) => PubCloudflareApi(PubCloudflareSecurity.applyApiKey(_config, value));
+  PubCloudflareApi withApiToken(String token) => PubCloudflareApi(PubCloudflareSecurity.applyApiToken(_config, token));
+  PubCloudflareApi withUserServiceKey(String value) => PubCloudflareApi(PubCloudflareSecurity.applyUserServiceKey(_config, value));
 }

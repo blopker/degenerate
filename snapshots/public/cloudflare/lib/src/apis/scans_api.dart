@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List Scan Configs
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13, Never>> getConfigFetch({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> getConfigFetch({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,12 +33,13 @@ return _execute(
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -51,12 +53,13 @@ return _execute(
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<ResponseCommon13, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon13, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -70,11 +73,12 @@ return _execute(
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -87,11 +91,12 @@ return _execute(
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
-Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/results/${Uri.encodeComponent(configId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

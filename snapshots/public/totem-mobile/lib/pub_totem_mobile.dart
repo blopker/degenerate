@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/pub_totem_mobile_api.dart';
+export 'src/client/pub_totem_mobile_security.dart';
 
 export 'src/models/accept_stick_event.dart';
 export 'src/models/active_detail.dart';

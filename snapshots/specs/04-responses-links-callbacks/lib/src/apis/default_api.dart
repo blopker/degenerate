@@ -14,12 +14,13 @@ final ApiConfig _config;
 
 ///
 /// `POST /jobs`
-Future<ApiResult<Job, ErrorModel>> createJob({NewJob? body}) async  { final request = ApiRequest(
+Future<ApiResult<Job, ErrorModel>> createJob({NewJob? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/jobs',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -35,11 +36,12 @@ return _execute(
  } 
 ///
 /// `GET /jobs/{jobId}`
-Future<ApiResult<Job, Never>> getJob({required String jobId}) async  { final request = ApiRequest(
+Future<ApiResult<Job, Never>> getJob({required String jobId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/jobs/${Uri.encodeComponent(jobId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

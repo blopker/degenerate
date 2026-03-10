@@ -17,18 +17,26 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /chat/completions`
-Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (model != null) queryParameters['model'] = model;
+if (metadata != null) {
+for (final entry in metadata.entries) {
+  queryParametersList.add(ApiQueryParameter(name: entry.key, value: entry.value, allowReserved: false));
+}
+}
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'model': ?model,
-    if (metadata != null) 'metadata': metadata.toString(),
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -59,12 +67,13 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/chat/completions',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -80,11 +89,12 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId}) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -100,12 +110,13 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -121,11 +132,12 @@ return _execute(
 /// 
 ///
 /// `DELETE /chat/completions/{completion_id}`
-Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId}) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -141,16 +153,20 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}/messages`
-Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/chat/completions/${Uri.encodeComponent(completionId)}/messages',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'after': ?after,
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

@@ -15,17 +15,21 @@ final ApiConfig _config;
 /// Returns a list of vector stores.
 ///
 /// `GET /vector_stores`
-Future<ApiResult<ListVectorStoresResponse, Never>> listVectorStores({int? limit, ListVectorStoresOrder? order, String? after, String? before, }) async  { final request = ApiRequest(
+Future<ApiResult<ListVectorStoresResponse, Never>> listVectorStores({int? limit, ListVectorStoresOrder? order, String? after, String? before, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+if (before != null) queryParameters['before'] = before;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-    'before': ?before,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -38,12 +42,13 @@ return _execute(
 /// Create a vector store.
 ///
 /// `POST /vector_stores`
-Future<ApiResult<VectorStoreObject, Never>> createVectorStore({required CreateVectorStoreRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreObject, Never>> createVectorStore({required CreateVectorStoreRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +62,12 @@ return _execute(
 /// Retrieves a vector store.
 ///
 /// `GET /vector_stores/{vector_store_id}`
-Future<ApiResult<VectorStoreObject, Never>> getVectorStore({required String vectorStoreId}) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreObject, Never>> getVectorStore({required String vectorStoreId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -74,12 +80,13 @@ return _execute(
 /// Modifies a vector store.
 ///
 /// `POST /vector_stores/{vector_store_id}`
-Future<ApiResult<VectorStoreObject, Never>> modifyVectorStore({required String vectorStoreId, required UpdateVectorStoreRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreObject, Never>> modifyVectorStore({required String vectorStoreId, required UpdateVectorStoreRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -93,11 +100,12 @@ return _execute(
 /// Delete a vector store.
 ///
 /// `DELETE /vector_stores/{vector_store_id}`
-Future<ApiResult<DeleteVectorStoreResponse, Never>> deleteVectorStore({required String vectorStoreId}) async  { final request = ApiRequest(
+Future<ApiResult<DeleteVectorStoreResponse, Never>> deleteVectorStore({required String vectorStoreId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -112,12 +120,13 @@ return _execute(
 /// The maximum number of files in a single batch request is 2000.
 ///
 /// `POST /vector_stores/{vector_store_id}/file_batches`
-Future<ApiResult<VectorStoreFileBatchObject, Never>> createVectorStoreFileBatch({required String vectorStoreId, required CreateVectorStoreFileBatchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileBatchObject, Never>> createVectorStoreFileBatch({required String vectorStoreId, required CreateVectorStoreFileBatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/file_batches',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -131,11 +140,12 @@ return _execute(
 /// Retrieves a vector store file batch.
 ///
 /// `GET /vector_stores/{vector_store_id}/file_batches/{batch_id}`
-Future<ApiResult<VectorStoreFileBatchObject, Never>> getVectorStoreFileBatch({required String vectorStoreId, required String batchId, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileBatchObject, Never>> getVectorStoreFileBatch({required String vectorStoreId, required String batchId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/file_batches/${Uri.encodeComponent(batchId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -148,11 +158,12 @@ return _execute(
 /// Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.
 ///
 /// `POST /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel`
-Future<ApiResult<VectorStoreFileBatchObject, Never>> cancelVectorStoreFileBatch({required String vectorStoreId, required String batchId, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileBatchObject, Never>> cancelVectorStoreFileBatch({required String vectorStoreId, required String batchId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/file_batches/${Uri.encodeComponent(batchId)}/cancel',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -165,18 +176,22 @@ return _execute(
 /// Returns a list of vector store files in a batch.
 ///
 /// `GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files`
-Future<ApiResult<ListVectorStoreFilesResponse, Never>> listFilesInVectorStoreBatch({required String vectorStoreId, required String batchId, int? limit, ListFilesInVectorStoreBatchOrder? order, String? after, String? before, ListFilesInVectorStoreBatchFilter? filter, }) async  { final request = ApiRequest(
+Future<ApiResult<ListVectorStoreFilesResponse, Never>> listFilesInVectorStoreBatch({required String vectorStoreId, required String batchId, int? limit, ListFilesInVectorStoreBatchOrder? order, String? after, String? before, ListFilesInVectorStoreBatchFilter? filter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+if (before != null) queryParameters['before'] = before;
+if (filter != null) queryParameters['filter'] = filter.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/file_batches/${Uri.encodeComponent(batchId)}/files',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-    'before': ?before,
-    if (filter != null) 'filter': filter.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -189,18 +204,22 @@ return _execute(
 /// Returns a list of vector store files.
 ///
 /// `GET /vector_stores/{vector_store_id}/files`
-Future<ApiResult<ListVectorStoreFilesResponse, Never>> listVectorStoreFiles({required String vectorStoreId, int? limit, ListVectorStoreFilesOrder? order, String? after, String? before, ListVectorStoreFilesFilter? filter, }) async  { final request = ApiRequest(
+Future<ApiResult<ListVectorStoreFilesResponse, Never>> listVectorStoreFiles({required String vectorStoreId, int? limit, ListVectorStoreFilesOrder? order, String? after, String? before, ListVectorStoreFilesFilter? filter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+if (before != null) queryParameters['before'] = before;
+if (filter != null) queryParameters['filter'] = filter.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (order != null) 'order': order.toJson(),
-    'after': ?after,
-    'before': ?before,
-    if (filter != null) 'filter': filter.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -213,12 +232,13 @@ return _execute(
 /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
 ///
 /// `POST /vector_stores/{vector_store_id}/files`
-Future<ApiResult<VectorStoreFileObject, Never>> createVectorStoreFile({required String vectorStoreId, required CreateVectorStoreFileRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileObject, Never>> createVectorStoreFile({required String vectorStoreId, required CreateVectorStoreFileRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -232,11 +252,12 @@ return _execute(
 /// Retrieves a vector store file.
 ///
 /// `GET /vector_stores/{vector_store_id}/files/{file_id}`
-Future<ApiResult<VectorStoreFileObject, Never>> getVectorStoreFile({required String vectorStoreId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileObject, Never>> getVectorStoreFile({required String vectorStoreId, required String fileId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files/${Uri.encodeComponent(fileId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -249,12 +270,13 @@ return _execute(
 /// Update attributes on a vector store file.
 ///
 /// `POST /vector_stores/{vector_store_id}/files/{file_id}`
-Future<ApiResult<VectorStoreFileObject, Never>> updateVectorStoreFileAttributes({required String vectorStoreId, required String fileId, required UpdateVectorStoreFileAttributesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileObject, Never>> updateVectorStoreFileAttributes({required String vectorStoreId, required String fileId, required UpdateVectorStoreFileAttributesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files/${Uri.encodeComponent(fileId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -268,11 +290,12 @@ return _execute(
 /// Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.
 ///
 /// `DELETE /vector_stores/{vector_store_id}/files/{file_id}`
-Future<ApiResult<DeleteVectorStoreFileResponse, Never>> deleteVectorStoreFile({required String vectorStoreId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteVectorStoreFileResponse, Never>> deleteVectorStoreFile({required String vectorStoreId, required String fileId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files/${Uri.encodeComponent(fileId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -285,11 +308,12 @@ return _execute(
 /// Retrieve the parsed contents of a vector store file.
 ///
 /// `GET /vector_stores/{vector_store_id}/files/{file_id}/content`
-Future<ApiResult<VectorStoreFileContentResponse, Never>> retrieveVectorStoreFileContent({required String vectorStoreId, required String fileId, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreFileContentResponse, Never>> retrieveVectorStoreFileContent({required String vectorStoreId, required String fileId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/files/${Uri.encodeComponent(fileId)}/content',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -302,12 +326,13 @@ return _execute(
 /// Search a vector store for relevant chunks based on a query and file attributes filter.
 ///
 /// `POST /vector_stores/{vector_store_id}/search`
-Future<ApiResult<VectorStoreSearchResultsPage, Never>> searchVectorStore({required String vectorStoreId, required VectorStoreSearchRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<VectorStoreSearchResultsPage, Never>> searchVectorStore({required String vectorStoreId, required VectorStoreSearchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/search',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

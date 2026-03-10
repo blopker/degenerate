@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Returns day-wise session and recording analytics data of an App for the specified time range start_date to end_date. If start_date and end_date are not provided, the default time range is set from 30 days ago to the current date.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/daywise`
-Future<ApiResult<GetOrgAnalyticsResponse, Never>> getOrgAnalytics({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? startDate, String? endDate, }) async  { final request = ApiRequest(
+Future<ApiResult<GetOrgAnalyticsResponse, Never>> getOrgAnalytics({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? startDate, String? endDate, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (startDate != null) queryParameters['start_date'] = startDate;
+if (endDate != null) queryParameters['end_date'] = endDate;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/analytics/daywise',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'start_date': ?startDate,
-    'end_date': ?endDate,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

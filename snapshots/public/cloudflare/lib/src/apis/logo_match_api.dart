@@ -17,16 +17,24 @@ final ApiConfig _config;
 /// Return matches for logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logo-matches`
-Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({required String accountId, List<String>? logoId, String? offset, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({required String accountId, List<String>? logoId, String? offset, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (logoId != null) {
+for (final item in logoId) {
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+}
+}
+if (offset != null) queryParameters['offset'] = offset;
+if (limit != null) queryParameters['limit'] = limit;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logo-matches',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (logoId != null) 'logo_id': logoId.toString(),
-    'offset': ?offset,
-    'limit': ?limit,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -44,16 +52,24 @@ return _execute(
 /// Return matches as CSV for logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logo-matches/download`
-Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDownload({required String accountId, List<String>? logoId, String? offset, String? limit, }) async  { final request = ApiRequest(
+Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDownload({required String accountId, List<String>? logoId, String? offset, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (logoId != null) {
+for (final item in logoId) {
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+}
+}
+if (offset != null) queryParameters['offset'] = offset;
+if (limit != null) queryParameters['limit'] = limit;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logo-matches/download',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (logoId != null) 'logo_id': logoId.toString(),
-    'offset': ?offset,
-    'limit': ?limit,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -71,11 +87,12 @@ return _execute(
 /// Return all saved logo queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logos',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -91,17 +108,21 @@ return _execute(
 /// Return new saved logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, String? tag, String? matchType, double? threshold, required ImageFile body, }) async  { final request = ApiRequest(
+Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, String? tag, String? matchType, double? threshold, required ImageFile body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (tag != null) queryParameters['tag'] = tag;
+if (matchType != null) queryParameters['match_type'] = matchType;
+if (threshold != null) queryParameters['threshold'] = threshold.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logos',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
-  queryParameters: {
-    'tag': ?tag,
-    'match_type': ?matchType,
-    if (threshold != null) 'threshold': threshold.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from ImageFile');,
 );
 
@@ -120,11 +141,12 @@ return _execute(
 /// Return saved logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos/{logo_id}`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logos/${Uri.encodeComponent(logoId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -140,11 +162,12 @@ return _execute(
 /// Return a success message after deleting saved logo queries by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/logos/{logo_id}`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionLogos({required String accountId, required String logoId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionLogos({required String accountId, required String logoId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/logos/${Uri.encodeComponent(logoId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -160,11 +183,12 @@ return _execute(
 /// Return new logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-logo`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/scan-logo',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -180,11 +204,12 @@ return _execute(
 /// Return new logo queries created from URLs
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-page`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/scan-page',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -198,11 +223,12 @@ return _execute(
 /// Internal route for testing signed URLs
 ///
 /// `GET /signed-url`
-Future<ApiResult<void, ErrorModel>> getSignedUrl() async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> getSignedUrl() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/signed-url',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

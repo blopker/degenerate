@@ -15,21 +15,25 @@ final ApiConfig _config;
 /// Retrieve a list of Message resources associated with a Twilio Account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (to != null) queryParameters['To'] = to;
+if (from != null) queryParameters['From'] = from;
+if (dateSent != null) queryParameters['DateSent'] = dateSent.toString();
+if (dateSentBefore != null) queryParameters['DateSent<'] = dateSentBefore.toString();
+if (dateSentAfter != null) queryParameters['DateSent>'] = dateSentAfter.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'To': ?to,
-    'From': ?from,
-    if (dateSent != null) 'DateSent': dateSent.toString(),
-    if (dateSentBefore != null) 'DateSent<': dateSentBefore.toString(),
-    if (dateSentAfter != null) 'DateSent>': dateSentAfter.toString(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Send a message
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateMessageRequest');,
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Fetch a specific Message
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -78,12 +84,13 @@ return _execute(
 /// Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateMessageRequest');,
 );
 
@@ -97,11 +104,12 @@ return _execute(
 /// Deletes a Message resource from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

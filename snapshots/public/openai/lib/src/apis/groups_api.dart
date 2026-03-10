@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Lists all groups in the organization.
 ///
 /// `GET /organization/groups`
-Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (order != null) queryParameters['order'] = order.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/organization/groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    'after': ?after,
-    if (order != null) 'order': order.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Creates a new group in the organization.
 ///
 /// `POST /organization/groups`
-Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body}) async  { final request = ApiRequest(
+Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/groups',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,12 +61,13 @@ return _execute(
 /// Updates a group's information.
 ///
 /// `POST /organization/groups/{group_id}`
-Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, }) async  { final request = ApiRequest(
+Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -75,11 +81,12 @@ return _execute(
 /// Deletes a group from the organization.
 ///
 /// `DELETE /organization/groups/{group_id}`
-Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId}) async  { final request = ApiRequest(
+Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

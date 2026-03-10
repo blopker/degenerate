@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List configured load balancers.
 ///
 /// `GET /zones/{zone_id}/load_balancers`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersListLoadBalancers({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersListLoadBalancers({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a new load balancer.
 ///
 /// `POST /zones/{zone_id}/load_balancers`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersCreateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancersCreateLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersCreateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancersCreateLoadBalancerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetch a single configured load balancer.
 ///
 /// `GET /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersLoadBalancerDetails({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersLoadBalancerDetails({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a configured load balancer.
 ///
 /// `PUT /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersUpdateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersUpdateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,12 +101,13 @@ return _execute(
 /// Apply changes to an existing load balancer, overwriting the supplied properties.
 ///
 /// `PATCH /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersPatchLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersPatchLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -118,11 +123,12 @@ return _execute(
 /// Delete a configured load balancer.
 ///
 /// `DELETE /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancersDeleteLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancersDeleteLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

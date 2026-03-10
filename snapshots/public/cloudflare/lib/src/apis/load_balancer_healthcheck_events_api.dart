@@ -17,20 +17,24 @@ final ApiConfig _config;
 /// List origin health changes.
 ///
 /// `GET /user/load_balancing_analytics/events`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (until != null) queryParameters['until'] = until.toString();
+if (poolName != null) queryParameters['pool_name'] = poolName.toString();
+if (originHealthy != null) queryParameters['origin_healthy'] = originHealthy.toString();
+if (poolId != null) queryParameters['pool_id'] = poolId.toString();
+if (since != null) queryParameters['since'] = since.toString();
+if (originName != null) queryParameters['origin_name'] = originName;
+if (poolHealthy != null) queryParameters['pool_healthy'] = poolHealthy.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/load_balancing_analytics/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (until != null) 'until': until.toString(),
-    if (poolName != null) 'pool_name': poolName.toString(),
-    if (originHealthy != null) 'origin_healthy': originHealthy.toString(),
-    if (poolId != null) 'pool_id': poolId.toString(),
-    if (since != null) 'since': since.toString(),
-    'origin_name': ?originName,
-    if (poolHealthy != null) 'pool_healthy': poolHealthy.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

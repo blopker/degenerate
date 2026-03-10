@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all watermark profiles for an account.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates watermark profiles using a single `HTTP POST multipart/form-data` request.
 ///
 /// `POST /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from StreamWatermarkBasicUpload');,
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Retrieves details for a single watermark profile.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// Deletes a watermark profile.
 ///
 /// `DELETE /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

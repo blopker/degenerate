@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all invitations associated with my user.
 ///
 /// `GET /user/invites`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesListInvitations() async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesListInvitations() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/invites',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Gets the details of an invitation.
 ///
 /// `GET /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Responds to an invitation.
 ///
 /// `PATCH /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

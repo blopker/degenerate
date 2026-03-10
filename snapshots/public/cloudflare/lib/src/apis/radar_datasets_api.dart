@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// Retrieves a list of datasets.
 ///
 /// `GET /radar/datasets`
-Future<ApiResult<RadarGetReportsDatasetsResponse, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetReportsDatasetsResponse, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (datasetType != null) queryParameters['datasetType'] = datasetType.toJson();
+if (date != null) queryParameters['date'] = date;
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/datasets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    if (datasetType != null) 'datasetType': datasetType.toJson(),
-    'date': ?date,
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,11 +50,12 @@ return _execute(
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
 ///
 /// `GET /radar/datasets/{alias}`
-Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias}) async  { final request = ApiRequest(
+Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/datasets/${Uri.encodeComponent(alias)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -68,15 +73,19 @@ return _execute(
 /// Retrieves an URL to download a single dataset.
 ///
 /// `POST /radar/datasets/download`
-Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponse, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponse, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/radar/datasets/download',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 

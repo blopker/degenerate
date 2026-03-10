@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets CMB config.
 ///
 /// `GET /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon43, Never>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates CMB config.
 ///
 /// `POST /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon43, Never>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Deletes CMB config.
 ///
 /// `DELETE /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon43, Never>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

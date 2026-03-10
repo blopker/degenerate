@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Retrieve builds for specific version IDs
 ///
 /// `GET /accounts/{account_id}/builds/builds`
-Future<ApiResult<Response, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['version_ids'] = versionIds.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'version_ids': versionIds.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,11 +43,12 @@ return _execute(
 /// Retrieve detailed information about a specific build
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -61,11 +66,12 @@ return _execute(
 /// Cancel a running or queued build
 ///
 /// `PUT /accounts/{account_id}/builds/builds/{build_uuid}/cancel`
-Future<ApiResult<Response, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}/cancel',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,14 +89,18 @@ return _execute(
 /// Retrieve logs for a specific build with cursor-based pagination
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}/logs`
-Future<ApiResult<Response, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}/logs',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (cursor != null) 'cursor': cursor.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -108,14 +118,18 @@ return _execute(
 /// Retrieve the most recent builds for multiple worker scripts
 ///
 /// `GET /accounts/{account_id}/builds/builds/latest`
-Future<ApiResult<Response, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['external_script_ids'] = externalScriptIds.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/latest',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'external_script_ids': externalScriptIds.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

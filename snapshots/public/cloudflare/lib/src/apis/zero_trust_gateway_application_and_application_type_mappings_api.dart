@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all application and application type mappings.
 ///
 /// `GET /accounts/{account_id}/gateway/app_types`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/app_types',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

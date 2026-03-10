@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Clips a video based on the specified start and end times provided in seconds.
 ///
 /// `POST /accounts/{account_id}/stream/clip`
-Future<ApiResult<ResponseCommon66, Never>> streamVideoClippingClipVideosGivenAStartAndEndTime({required StreamAccountIdentifier accountId, required StreamVideoClipStandard body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamVideoClippingClipVideosGivenAStartAndEndTime({required StreamAccountIdentifier accountId, required StreamVideoClipStandard body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/clip',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

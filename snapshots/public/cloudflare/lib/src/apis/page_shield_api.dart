@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches the Page Shield settings.
 ///
 /// `GET /zones/{zone_id}/page_shield`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldGetSettings({required PageShieldId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldGetSettings({required PageShieldId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates Page Shield settings.
 ///
 /// `PUT /zones/{zone_id}/page_shield`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldUpdateSettings({required PageShieldId zoneId, required PageShieldUpdateSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldUpdateSettings({required PageShieldId zoneId, required PageShieldUpdateSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,25 +59,29 @@ return _execute(
 /// Lists all connections detected by Page Shield.
 ///
 /// `GET /zones/{zone_id}/page_shield/connections`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldListConnections({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListConnectionsOrderBy? orderBy, PageShieldListConnectionsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, String? status, String? pageUrl, PageShieldListConnectionsExport? $export, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldListConnections({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListConnectionsOrderBy? orderBy, PageShieldListConnectionsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, String? status, String? pageUrl, PageShieldListConnectionsExport? $export, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (excludeUrls != null) queryParameters['exclude_urls'] = excludeUrls;
+if (urls != null) queryParameters['urls'] = urls;
+if (hosts != null) queryParameters['hosts'] = hosts;
+if (page != null) queryParameters['page'] = page;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (prioritizeMalicious != null) queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
+if (excludeCdnCgi != null) queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
+if (status != null) queryParameters['status'] = status;
+if (pageUrl != null) queryParameters['page_url'] = pageUrl;
+if ($export != null) queryParameters['export'] = $export.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/connections',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'exclude_urls': ?excludeUrls,
-    'urls': ?urls,
-    'hosts': ?hosts,
-    'page': ?page,
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (prioritizeMalicious != null) 'prioritize_malicious': prioritizeMalicious.toString(),
-    if (excludeCdnCgi != null) 'exclude_cdn_cgi': excludeCdnCgi.toString(),
-    'status': ?status,
-    'page_url': ?pageUrl,
-    if ($export != null) 'export': $export.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -90,11 +96,12 @@ return _execute(
 /// Fetches a connection detected by Page Shield by connection ID.
 ///
 /// `GET /zones/{zone_id}/page_shield/connections/{connection_id}`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldGetConnection({required PageShieldId zoneId, required PageShieldId connectionId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldGetConnection({required PageShieldId zoneId, required PageShieldId connectionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/connections/${Uri.encodeComponent(connectionId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -109,27 +116,31 @@ return _execute(
 /// Lists all cookies collected by Page Shield.
 ///
 /// `GET /zones/{zone_id}/page_shield/cookies`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldListCookies({required PageShieldId zoneId, String? hosts, String? page, double? perPage, PageShieldListCookiesOrderBy? orderBy, PageShieldListCookiesDirection? direction, String? pageUrl, PageShieldListCookiesExport? $export, String? name, bool? secure, bool? httpOnly, PageShieldListCookiesSameSite? sameSite, PageShieldListCookiesType? type, String? path, String? domain, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldListCookies({required PageShieldId zoneId, String? hosts, String? page, double? perPage, PageShieldListCookiesOrderBy? orderBy, PageShieldListCookiesDirection? direction, String? pageUrl, PageShieldListCookiesExport? $export, String? name, bool? secure, bool? httpOnly, PageShieldListCookiesSameSite? sameSite, PageShieldListCookiesType? type, String? path, String? domain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (hosts != null) queryParameters['hosts'] = hosts;
+if (page != null) queryParameters['page'] = page;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (pageUrl != null) queryParameters['page_url'] = pageUrl;
+if ($export != null) queryParameters['export'] = $export.toJson();
+if (name != null) queryParameters['name'] = name;
+if (secure != null) queryParameters['secure'] = secure.toString();
+if (httpOnly != null) queryParameters['http_only'] = httpOnly.toString();
+if (sameSite != null) queryParameters['same_site'] = sameSite.toJson();
+if (type != null) queryParameters['type'] = type.toJson();
+if (path != null) queryParameters['path'] = path;
+if (domain != null) queryParameters['domain'] = domain;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/cookies',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'hosts': ?hosts,
-    'page': ?page,
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    'page_url': ?pageUrl,
-    if ($export != null) 'export': $export.toJson(),
-    'name': ?name,
-    if (secure != null) 'secure': secure.toString(),
-    if (httpOnly != null) 'http_only': httpOnly.toString(),
-    if (sameSite != null) 'same_site': sameSite.toJson(),
-    if (type != null) 'type': type.toJson(),
-    'path': ?path,
-    'domain': ?domain,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -144,11 +155,12 @@ return _execute(
 /// Fetches a cookie collected by Page Shield by cookie ID.
 ///
 /// `GET /zones/{zone_id}/page_shield/cookies/{cookie_id}`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldGetCookie({required PageShieldId zoneId, required PageShieldId cookieId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldGetCookie({required PageShieldId zoneId, required PageShieldId cookieId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/cookies/${Uri.encodeComponent(cookieId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -163,11 +175,12 @@ return _execute(
 /// Lists all Page Shield policies.
 ///
 /// `GET /zones/{zone_id}/page_shield/policies`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldListPolicies({required PageShieldId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldListPolicies({required PageShieldId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -182,12 +195,13 @@ return _execute(
 /// Create a Page Shield policy.
 ///
 /// `POST /zones/{zone_id}/page_shield/policies`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldCreatePolicy({required PageShieldId zoneId, required PageShieldPolicy body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldCreatePolicy({required PageShieldId zoneId, required PageShieldPolicy body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -203,11 +217,12 @@ return _execute(
 /// Fetches a Page Shield policy by ID.
 ///
 /// `GET /zones/{zone_id}/page_shield/policies/{policy_id}`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldGetPolicy({required PageShieldId zoneId, required PageShieldId policyId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldGetPolicy({required PageShieldId zoneId, required PageShieldId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -222,12 +237,13 @@ return _execute(
 /// Update a Page Shield policy by ID.
 ///
 /// `PUT /zones/{zone_id}/page_shield/policies/{policy_id}`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldUpdatePolicy({required PageShieldId zoneId, required PageShieldId policyId, required PageShieldUpdatePolicyRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldUpdatePolicy({required PageShieldId zoneId, required PageShieldId policyId, required PageShieldUpdatePolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -243,11 +259,12 @@ return _execute(
 /// Delete a Page Shield policy by ID.
 ///
 /// `DELETE /zones/{zone_id}/page_shield/policies/{policy_id}`
-Future<ApiResult<void, Never>> pageShieldDeletePolicy({required PageShieldId zoneId, required PageShieldId policyId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> pageShieldDeletePolicy({required PageShieldId zoneId, required PageShieldId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -260,26 +277,30 @@ return _execute(
 /// Lists all scripts detected by Page Shield.
 ///
 /// `GET /zones/{zone_id}/page_shield/scripts`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldListScripts({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListScriptsOrderBy? orderBy, PageShieldListScriptsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, bool? excludeDuplicates, String? status, String? pageUrl, PageShieldListScriptsExport? $export, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldListScripts({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListScriptsOrderBy? orderBy, PageShieldListScriptsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, bool? excludeDuplicates, String? status, String? pageUrl, PageShieldListScriptsExport? $export, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (excludeUrls != null) queryParameters['exclude_urls'] = excludeUrls;
+if (urls != null) queryParameters['urls'] = urls;
+if (hosts != null) queryParameters['hosts'] = hosts;
+if (page != null) queryParameters['page'] = page;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (prioritizeMalicious != null) queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
+if (excludeCdnCgi != null) queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
+if (excludeDuplicates != null) queryParameters['exclude_duplicates'] = excludeDuplicates.toString();
+if (status != null) queryParameters['status'] = status;
+if (pageUrl != null) queryParameters['page_url'] = pageUrl;
+if ($export != null) queryParameters['export'] = $export.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/scripts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'exclude_urls': ?excludeUrls,
-    'urls': ?urls,
-    'hosts': ?hosts,
-    'page': ?page,
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-    if (prioritizeMalicious != null) 'prioritize_malicious': prioritizeMalicious.toString(),
-    if (excludeCdnCgi != null) 'exclude_cdn_cgi': excludeCdnCgi.toString(),
-    if (excludeDuplicates != null) 'exclude_duplicates': excludeDuplicates.toString(),
-    'status': ?status,
-    'page_url': ?pageUrl,
-    if ($export != null) 'export': $export.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -294,11 +315,12 @@ return _execute(
 /// Fetches a script detected by Page Shield by script ID.
 ///
 /// `GET /zones/{zone_id}/page_shield/scripts/{script_id}`
-Future<ApiResult<ResponseCommon50, Never>> pageShieldGetScript({required PageShieldId zoneId, required PageShieldId scriptId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon50, Never>> pageShieldGetScript({required PageShieldId zoneId, required PageShieldId scriptId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/scripts/${Uri.encodeComponent(scriptId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

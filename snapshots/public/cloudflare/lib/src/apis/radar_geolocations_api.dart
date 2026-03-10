@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// Retrieves a list of geolocations.
 ///
 /// `GET /radar/geolocations`
-Future<ApiResult<RadarGetGeolocationsResponse, RadarGetGeolocationsResponse400>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetGeolocationsResponse, RadarGetGeolocationsResponse400>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (geoId != null) queryParameters['geoId'] = geoId;
+if (location != null) queryParameters['location'] = location;
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/geolocations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-    if (offset != null) 'offset': offset.toString(),
-    'geoId': ?geoId,
-    'location': ?location,
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -46,14 +50,18 @@ return _execute(
 /// Retrieves the requested Geolocation information.
 ///
 /// `GET /radar/geolocations/{geo_id}`
-Future<ApiResult<RadarGetGeolocationDetailsResponse, RadarGetGeolocationDetailsResponse404>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, }) async  { final request = ApiRequest(
+Future<ApiResult<RadarGetGeolocationDetailsResponse, RadarGetGeolocationDetailsResponse404>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/radar/geolocations/${Uri.encodeComponent(geoId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (format != null) 'format': format.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

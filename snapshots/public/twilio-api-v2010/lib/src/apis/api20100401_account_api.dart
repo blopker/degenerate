@@ -15,18 +15,22 @@ final ApiConfig _config;
 /// Retrieves a collection of Accounts belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts.json`
-Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (status != null) queryParameters['Status'] = status.toJson();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'FriendlyName': ?friendlyName,
-    if (status != null) 'Status': status.toJson(),
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Create a new Twilio Subaccount from the account making the request
 ///
 /// `POST /2010-04-01/Accounts.json`
-Future<ApiResult<Account, Never>> createAccount({CreateAccountRequest? body}) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> createAccount({CreateAccountRequest? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateAccountRequest');,
 );
 
@@ -58,11 +63,12 @@ return _execute(
 /// Fetch the account specified by the provided Account Sid
 ///
 /// `GET /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account, Never>> fetchAccount({required String sid}) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> fetchAccount({required String sid}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -75,12 +81,13 @@ return _execute(
 /// Modify the properties of a given Account
 ///
 /// `POST /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account, Never>> updateAccount({required String sid, UpdateAccountRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Account, Never>> updateAccount({required String sid, UpdateAccountRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateAccountRequest');,
 );
 

@@ -19,11 +19,12 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/oidc/customization/sub`
-Future<ApiResult<OidcCustomSub, Never>> oidcGetOidcCustomSubTemplateForOrg({required String org}) async  { final request = ApiRequest(
+Future<ApiResult<OidcCustomSub, Never>> oidcGetOidcCustomSubTemplateForOrg({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/actions/oidc/customization/sub',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -40,12 +41,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, BasicError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, }) async  { final request = ApiRequest(
+Future<ApiResult<EmptyObject, BasicError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/actions/oidc/customization/sub',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

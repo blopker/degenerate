@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetch all apps for your account
 ///
 /// `GET /accounts/{account_id}/realtime/kit/apps`
-Future<ApiResult<GetAppsResponse, Never>> getApps({required RealtimekitAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<GetAppsResponse, Never>> getApps({required RealtimekitAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/apps',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create new app for your account
 ///
 /// `POST /accounts/{account_id}/realtime/kit/apps`
-Future<ApiResult<CreateAppResponse, Never>> createApp({required String accountId, CreateAppRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<CreateAppResponse, Never>> createApp({required String accountId, CreateAppRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/realtime/kit/apps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

@@ -17,18 +17,22 @@ final ApiConfig _config;
 /// List all members of an account.
 ///
 /// `GET /accounts/{account_id}/members`
-Future<ApiResult<ResponseCommon35, Never>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, String? order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, String? order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (order != null) queryParameters['order'] = order;
+if (status != null) queryParameters['status'] = status.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/members',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'order': ?order,
-    if (status != null) 'status': status.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,12 +47,13 @@ return _execute(
 /// Add a user to the list of members for this account.
 ///
 /// `POST /accounts/{account_id}/members`
-Future<ApiResult<ResponseCommon35, Never>> accountMembersAddMember({required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersAddMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersAddMember({required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersAddMemberRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/members',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -64,11 +69,12 @@ return _execute(
 /// Get information about a specific member of an account.
 ///
 /// `GET /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountMembersMemberDetails({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersMemberDetails({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -83,12 +89,13 @@ return _execute(
 /// Modify an account member.
 ///
 /// `PUT /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountMembersUpdateMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersUpdateMemberRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersUpdateMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersUpdateMemberRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -104,11 +111,12 @@ return _execute(
 /// Remove a member from an account.
 ///
 /// `DELETE /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountMembersRemoveMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountMembersRemoveMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

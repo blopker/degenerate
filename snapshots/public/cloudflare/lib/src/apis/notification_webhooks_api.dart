@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets a list of all configured webhook destinations.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksListWebhooks({required AaaAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksListWebhooks({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new webhook destination.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Get details for a single webhooks destination.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update a webhook destination.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete a configured webhook destination.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

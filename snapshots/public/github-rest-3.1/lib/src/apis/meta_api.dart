@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get Hypermedia links to resources accessible in GitHub's REST API
 ///
 /// `GET /`
-Future<ApiResult<Root, Never>> metaRoot() async  { final request = ApiRequest(
+Future<ApiResult<Root, Never>> metaRoot() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -43,11 +44,12 @@ return _execute(
 /// > This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
 ///
 /// `GET /meta`
-Future<ApiResult<Overview, Never>> metaGet() async  { final request = ApiRequest(
+Future<ApiResult<Overview, Never>> metaGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/meta',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -62,14 +64,18 @@ return _execute(
 /// Get the octocat as ASCII art
 ///
 /// `GET /octocat`
-Future<ApiResult<String, Never>> metaGetOctocat({String? s}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> metaGetOctocat({String? s}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (s != null) queryParameters['s'] = s;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/octocat',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    's': ?s,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -84,11 +90,12 @@ return _execute(
 /// Get all supported GitHub API versions.
 ///
 /// `GET /versions`
-Future<ApiResult<List<String>, BasicError>> metaGetAllVersions() async  { final request = ApiRequest(
+Future<ApiResult<List<String>, BasicError>> metaGetAllVersions() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/versions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -107,11 +114,12 @@ return _execute(
 /// Get a random sentence from the Zen of GitHub
 ///
 /// `GET /zen`
-Future<ApiResult<String, Never>> metaGetZen() async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> metaGetZen() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zen',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Creates a new Web Analytics site.
 ///
 /// `POST /accounts/{account_id}/rum/site_info`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -38,11 +39,12 @@ return _execute(
 /// Retrieves a Web Analytics site.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Updates an existing Web Analytics site.
 ///
 /// `PUT /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -78,11 +81,12 @@ return _execute(
 /// Deletes an existing Web Analytics site.
 ///
 /// `DELETE /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,16 +101,20 @@ return _execute(
 /// Lists all Web Analytics sites of an account.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/list`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/list',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-    if (orderBy != null) 'order_by': orderBy.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -121,12 +129,13 @@ return _execute(
 /// Creates a new rule in a Web Analytics ruleset.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rule`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -142,12 +151,13 @@ return _execute(
 /// Updates a rule in a Web Analytics ruleset.
 ///
 /// `PUT /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -163,11 +173,12 @@ return _execute(
 /// Deletes an existing rule from a Web Analytics ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -182,11 +193,12 @@ return _execute(
 /// Lists all the rules in a Web Analytics ruleset.
 ///
 /// `GET /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -201,12 +213,13 @@ return _execute(
 /// Modifies one or more rules in a Web Analytics ruleset with a single request.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -222,11 +235,12 @@ return _execute(
 /// Retrieves RUM status for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetRumStatus({required RumIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetRumStatus({required RumIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/rum',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -241,12 +255,13 @@ return _execute(
 /// Toggles RUM on/off for an existing zone.
 ///
 /// `PATCH /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon57, Never>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/rum',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

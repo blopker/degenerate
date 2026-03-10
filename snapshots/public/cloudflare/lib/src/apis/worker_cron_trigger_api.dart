@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches Cron Triggers for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<ResponseCommon80, Never>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/schedules',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates Cron Triggers for a Worker.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<ResponseCommon80, Never>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersSchedule> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersSchedule> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/schedules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 

@@ -17,25 +17,37 @@ final ApiConfig _config;
 /// Lists WARP registrations.
 ///
 /// `GET /accounts/{account_id}/devices/registrations`
-Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (userId != null) {
+for (final item in userId) {
+  queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item, allowReserved: false));
+}
+}
+if (seenAfter != null) queryParameters['seen_after'] = seenAfter;
+if (seenBefore != null) queryParameters['seen_before'] = seenBefore;
+if (status != null) queryParameters['status'] = status.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (search != null) queryParameters['search'] = search;
+if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
+if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (cursor != null) queryParameters['cursor'] = cursor;
+if (id != null) {
+for (final item in id) {
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+}
+}
+if (deviceId != null) queryParameters['device.id'] = deviceId;
+if (include != null) queryParameters['include'] = include;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (userId != null) 'user.id': userId.toString(),
-    'seen_after': ?seenAfter,
-    'seen_before': ?seenBefore,
-    if (status != null) 'status': status.toJson(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    'search': ?search,
-    if (sortBy != null) 'sort_by': sortBy.toJson(),
-    if (sortOrder != null) 'sort_order': sortOrder.toJson(),
-    'cursor': ?cursor,
-    if (id != null) 'id': id.toString(),
-    'device.id': ?deviceId,
-    'include': ?include,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,14 +62,18 @@ return _execute(
 /// Fetches a single WARP registration.
 ///
 /// `GET /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, }) async  { final request = ApiRequest(
+Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (include != null) queryParameters['include'] = include;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/${Uri.encodeComponent(registrationId)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'include': ?include,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -72,11 +88,12 @@ return _execute(
 /// Deletes a WARP registration.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/${Uri.encodeComponent(registrationId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -91,14 +108,20 @@ return _execute(
 /// Revokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/revoke`
-Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
+Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+for (final item in id) {
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/revoke',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'id': id.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -113,14 +136,20 @@ return _execute(
 /// Unrevokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/unrevoke`
-Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, }) async  { final request = ApiRequest(
+Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+for (final item in id) {
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/unrevoke',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'id': id.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

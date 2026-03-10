@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Lists the most commonly used licenses on GitHub. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses`
-Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (featured != null) queryParameters['featured'] = featured.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/licenses',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (featured != null) 'featured': featured.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,11 +46,12 @@ return _execute(
 /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses/{license}`
-Future<ApiResult<License, BasicError>> licensesGet({required String license}) async  { final request = ApiRequest(
+Future<ApiResult<License, BasicError>> licensesGet({required String license}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/licenses/${Uri.encodeComponent(license)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -69,14 +74,18 @@ return _execute(
 /// - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/license`
-Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, }) async  { final request = ApiRequest(
+Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (ref != null) queryParameters['ref'] = ref.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/license',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (ref != null) 'ref': ref.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

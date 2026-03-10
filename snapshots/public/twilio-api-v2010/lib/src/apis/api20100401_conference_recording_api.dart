@@ -15,19 +15,23 @@ final ApiConfig _config;
 /// Retrieve a list of recordings belonging to the call used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings.json`
-Future<ApiResult<ListConferenceRecordingResponse, Never>> listConferenceRecording({required String accountSid, required String conferenceSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListConferenceRecordingResponse, Never>> listConferenceRecording({required String accountSid, required String conferenceSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
+if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
+if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'DateCreated': ?dateCreated,
-    'DateCreated<': ?dateCreatedBefore,
-    'DateCreated>': ?dateCreatedAfter,
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,11 +44,12 @@ return _execute(
 /// Fetch an instance of a recording for a call
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountConferenceConferenceRecording, Never>> fetchConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceConferenceRecording, Never>> fetchConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -57,12 +62,13 @@ return _execute(
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: To use `Twilio.CURRENT`, pass it as recording sid.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountConferenceConferenceRecording, Never>> updateConferenceRecording({required String accountSid, required String conferenceSid, required String sid, UpdateConferenceRecordingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountConferenceConferenceRecording, Never>> updateConferenceRecording({required String accountSid, required String conferenceSid, required String sid, UpdateConferenceRecordingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateConferenceRecordingRequest');,
 );
 
@@ -76,11 +82,12 @@ return _execute(
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteConferenceRecording({required String accountSid, required String conferenceSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

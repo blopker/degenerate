@@ -17,14 +17,18 @@ final ApiConfig _config;
 /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}`
-Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependency-graph/compare/${Uri.encodeComponent(basehead)}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -43,11 +47,12 @@ return _execute(
 /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/sbom`
-Future<ApiResult<DependencyGraphSpdxSbom, BasicError>> dependencyGraphExportSbom({required String owner, required String repo, }) async  { final request = ApiRequest(
+Future<ApiResult<DependencyGraphSpdxSbom, BasicError>> dependencyGraphExportSbom({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependency-graph/sbom',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -69,12 +74,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/dependency-graph/snapshots`
-Future<ApiResult<DependencyGraphCreateRepositorySnapshotResponse, Never>> dependencyGraphCreateRepositorySnapshot({required String owner, required String repo, required Snapshot body, }) async  { final request = ApiRequest(
+Future<ApiResult<DependencyGraphCreateRepositorySnapshotResponse, Never>> dependencyGraphCreateRepositorySnapshot({required String owner, required String repo, required Snapshot body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependency-graph/snapshots',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

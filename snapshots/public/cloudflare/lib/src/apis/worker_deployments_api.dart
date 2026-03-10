@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List of Worker Deployments. The first deployment in the list is the latest deployment actively serving traffic.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,15 +37,19 @@ return _execute(
 /// Deployments configure how [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions) are deployed to traffic. A deployment can consist of one or two versions of a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (force != null) queryParameters['force'] = force.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    if (force != null) 'force': force.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,11 +65,12 @@ return _execute(
 /// Get information about a Worker Deployment.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments/${Uri.encodeComponent(deploymentId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -79,11 +85,12 @@ return _execute(
 /// Delete a Worker Deployment. The latest deployment, which is actively serving traffic, cannot be deleted. All other deployments can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsDeleteDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsDeleteDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments/${Uri.encodeComponent(deploymentId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

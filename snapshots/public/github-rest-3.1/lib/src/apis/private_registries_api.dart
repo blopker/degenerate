@@ -21,15 +21,19 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries`
-Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, BasicError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, }) async  { final request = ApiRequest(
+Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, BasicError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (page != null) 'page': page.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -50,12 +54,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/private-registries`
-Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -77,11 +82,12 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/public-key`
-Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, BasicError>> privateRegistriesGetOrgPublicKey({required String org}) async  { final request = ApiRequest(
+Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, BasicError>> privateRegistriesGetOrgPublicKey({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/public-key',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -102,11 +108,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<OrgPrivateRegistryConfiguration, BasicError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<OrgPrivateRegistryConfiguration, BasicError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -127,12 +134,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -152,11 +160,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, BasicError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -28,13 +28,6 @@ ArgParser buildParser() {
       help: 'Package name (default: inferred from spec title).',
       valueHelp: 'name',
     )
-    ..addOption(
-      'client',
-      help: 'HTTP client adapter.',
-      valueHelp: 'http|none',
-      defaultsTo: 'http',
-      allowed: ['http', 'none'],
-    )
     ..addMultiOption(
       'tag',
       abbr: 't',
@@ -146,7 +139,6 @@ Future<void> main(List<String> arguments) async {
       inputPath: input,
       outputDir: outputDir,
       packageName: results.option('name'),
-      client: results.option('client') ?? 'http',
       includeDeprecated: results.flag('include-deprecated'),
       tags: results.multiOption('tag'),
       paths: results.multiOption('path'),

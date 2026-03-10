@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists all mTLS certificates.
 ///
 /// `GET /zones/{zone_id}/access/certificates`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /zones/{zone_id}/access/certificates`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -116,11 +121,12 @@ return _execute(
 /// List all mTLS hostname settings for this zone.
 ///
 /// `GET /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -135,12 +141,13 @@ return _execute(
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

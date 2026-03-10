@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/deprecated_api_calls#index-2021-01
 ///
 /// `GET /admin/api/2021-01/deprecated_api_calls.json`
-Future<ApiResult<void, Never>> deprecated202101GetDeprecatedApiCalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecated202101GetDeprecatedApiCalls() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/deprecated_api_calls.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -34,11 +35,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/deprecated_api_calls#index-unstable
 ///
 /// `GET /admin/api/unstable/deprecated_api_calls.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetDeprecatedApiCalls() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deprecatedUnstableGetDeprecatedApiCalls() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/deprecated_api_calls.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

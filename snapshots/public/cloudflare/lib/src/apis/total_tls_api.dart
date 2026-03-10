@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get Total TLS Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<ResponseCommon68, Never>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/total_tls',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Set Total TLS Settings or disable the feature for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<ResponseCommon68, Never>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/total_tls',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

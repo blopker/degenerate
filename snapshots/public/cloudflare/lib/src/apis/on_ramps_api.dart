@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// List On-ramps (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnResponse, McnResponse>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (orderBy != null) queryParameters['order_by'] = orderBy;
+if (desc != null) queryParameters['desc'] = desc.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (vpcs != null) queryParameters['vpcs'] = vpcs.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'order_by': ?orderBy,
-    if (desc != null) 'desc': desc.toString(),
-    if (status != null) 'status': status.toString(),
-    if (vpcs != null) 'vpcs': vpcs.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -45,13 +49,14 @@ return _execute(
 /// Create a new On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+if (forwarded != null) headers['forwarded'] = forwarded;
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-    , if (forwarded != null) 'forwarded': forwarded
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -70,17 +75,21 @@ return _execute(
 /// Read an On-ramp (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (status != null) queryParameters['status'] = status.toString();
+if (vpcs != null) queryParameters['vpcs'] = vpcs.toString();
+if (postApplyResources != null) queryParameters['post_apply_resources'] = postApplyResources.toString();
+if (plannedResources != null) queryParameters['planned_resources'] = plannedResources.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (status != null) 'status': status.toString(),
-    if (vpcs != null) 'vpcs': vpcs.toString(),
-    if (postApplyResources != null) 'post_apply_resources': postApplyResources.toString(),
-    if (plannedResources != null) 'planned_resources': plannedResources.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -98,12 +107,13 @@ return _execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -122,12 +132,13 @@ return _execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -146,15 +157,19 @@ return _execute(
 /// Delete an On-ramp (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (destroy != null) queryParameters['destroy'] = destroy.toString();
+if (force != null) queryParameters['force'] = force.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (destroy != null) 'destroy': destroy.toString(),
-    if (force != null) 'force': force.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -172,11 +187,12 @@ return _execute(
 /// Apply an On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/apply`
-Future<ApiResult<McnResponse, McnResponse>> onrampsApply({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsApply({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/apply',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -194,11 +210,12 @@ return _execute(
 /// Export an On-ramp to terraform ready file(s) (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/export`
-Future<ApiResult<Uint8List, McnResponse>> onrampsExport({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final request = ApiRequest(
+Future<ApiResult<Uint8List, McnResponse>> onrampsExport({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/export',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -216,11 +233,12 @@ return _execute(
 /// Plan an On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/plan`
-Future<ApiResult<McnResponse, McnResponse>> onrampsPlan({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsPlan({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/plan',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -238,11 +256,12 @@ return _execute(
 /// Read the Magic WAN Address Space (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceRead({required McnAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceRead({required McnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -260,12 +279,13 @@ return _execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -284,12 +304,13 @@ return _execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

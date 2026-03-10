@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// List all shapes
 ///
 /// `GET /shapes`
-Future<ApiResult<List<Shape>, Never>> listShapes() async  { final request = ApiRequest(
+Future<ApiResult<List<Shape>, Never>> listShapes() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/shapes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Create a shape
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body}) async  { final request = ApiRequest(
+Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/shapes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -55,12 +57,13 @@ return _execute(
 /// Create an order with nested items
 ///
 /// `POST /orders`
-Future<ApiResult<Order, PetOrError>> createOrder({required Order body}) async  { final request = ApiRequest(
+Future<ApiResult<Order, PetOrError>> createOrder({required Order body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/orders',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -77,12 +80,13 @@ return _execute(
 /// Send a notification via email and/or SMS (anyOf)
 ///
 /// `POST /notifications`
-Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body}) async  { final request = ApiRequest(
+Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/notifications',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -96,15 +100,21 @@ return _execute(
 /// List pets with extended info
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, }) async  { final request = ApiRequest(
+Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (status != null) queryParameters['status'] = status.toJson();
+if (identifier != null) {
+queryParametersList.add(ApiQueryParameter(name: 'identifier', value: identifier.toString(), allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (status != null) 'status': status.toJson(),
-    if (identifier != null) 'identifier': identifier.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -118,11 +128,12 @@ return _execute(
 /// Get key-value metadata for a pet
 ///
 /// `GET /pets/{petId}/metadata`
-Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId}) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pets/${Uri.encodeComponent(petId)}/metadata',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

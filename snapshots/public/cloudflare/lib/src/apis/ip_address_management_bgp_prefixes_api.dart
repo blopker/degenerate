@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// List all BGP Prefixes within the specified IP Prefix. BGP Prefixes are used to control which specific subnets are advertised to the Internet. It is possible to advertise subnets more specific than an IP Prefix by creating more specific BGP Prefixes.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Create a BGP prefix, controlling the BGP advertisement status of a specific subnet. When created, BGP prefixes are initially withdrawn, and can be advertised with the Update BGP Prefix API.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Retrieve a single BGP Prefix according to its identifier
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Update the properties of a BGP Prefix, such as the on demand advertisement status (advertised or withdrawn).
 ///
 /// `PATCH /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Delete a BGP Prefix associated with the specified IP Prefix. A BGP Prefix must be withdrawn before it can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeleteBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeleteBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Show DNS settings for a zone
 ///
 /// `GET /zones/{zone_id}/dns_settings`
-Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Update DNS settings for a zone
 ///
 /// `PATCH /zones/{zone_id}/dns_settings`
-Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsBase body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

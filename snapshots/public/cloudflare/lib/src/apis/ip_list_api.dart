@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a list of available IP list categories (e.g., anonymizer, botnetcc, malware, tor, vpn, open_proxies). This endpoint provides metadata about which IP lists are available in the system.
 ///
 /// `GET /accounts/{account_id}/intel/ip-lists`
-Future<ApiResult<ResponseCommon39, Never>> ipListGetIpLists({required IntelIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon39, Never>> ipListGetIpLists({required IntelIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/ip-lists',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

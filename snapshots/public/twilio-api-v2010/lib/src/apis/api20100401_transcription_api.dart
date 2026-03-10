@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Fetch an instance of a Transcription
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountTranscription, Never>> fetchTranscription({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountTranscription, Never>> fetchTranscription({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -32,11 +33,12 @@ return _execute(
 /// Delete a transcription from the account used to make the request
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteTranscription({required String accountSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteTranscription({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -47,16 +49,20 @@ return _execute(
 /// Retrieve a list of transcriptions belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Transcriptions.json`
-Future<ApiResult<ListTranscriptionResponse, Never>> listTranscription({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListTranscriptionResponse, Never>> listTranscription({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Transcriptions.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

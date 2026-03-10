@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Retrieve the account and zone specific unique identifier used as part of the CNAME target for DCV Delegation.
 ///
 /// `GET /zones/{zone_id}/dcv_delegation/uuid`
-Future<ApiResult<ResponseCommon68, Never>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon68, Never>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dcv_delegation/uuid',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

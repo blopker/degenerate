@@ -14,11 +14,12 @@ final ApiConfig _config;
 
 ///
 /// `GET /users/{userId}`
-Future<ApiResult<User, Never>> getUser({required UserId userId}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> getUser({required UserId userId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(userId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

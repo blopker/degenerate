@@ -1321,9 +1321,7 @@ environment:
 
 dependencies:
   collection: ^1.18.0        # ListEquality, DeepCollectionEquality
-  # One of:
-  http: ^1.2.0               # if --client=http
-  # dio: ^5.4.0              # if --client=dio
+  degenerate_runtime: ...     # core interfaces, middleware
 ```
 
 ---
@@ -1340,7 +1338,6 @@ Options:
   -i, --input <path>         Path or URL to OpenAPI spec (required)
   -o, --output <dir>         Output directory (default: lib/src/generated)
   -n, --name <name>          Package/library name (default: inferred from spec title)
-  --client <http|dio|none>   HTTP client adapter to generate (default: http)
   --include-deprecated       Include deprecated operations (default: false)
   --date-library <core|none> DateTime handling (default: core)
   --null-fields              Include null fields in JSON output (default: omit)

@@ -17,46 +17,50 @@ final ApiConfig _config;
 /// List, search, sort, and filter a zones' DNS records.
 ///
 /// `GET /zones/{zone_id}/dns_records`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (nameExact != null) queryParameters['name.exact'] = nameExact;
+if (nameContains != null) queryParameters['name.contains'] = nameContains;
+if (nameStartswith != null) queryParameters['name.startswith'] = nameStartswith;
+if (nameEndswith != null) queryParameters['name.endswith'] = nameEndswith;
+if (type != null) queryParameters['type'] = type.toJson();
+if (content != null) queryParameters['content'] = content;
+if (contentExact != null) queryParameters['content.exact'] = contentExact;
+if (contentContains != null) queryParameters['content.contains'] = contentContains;
+if (contentStartswith != null) queryParameters['content.startswith'] = contentStartswith;
+if (contentEndswith != null) queryParameters['content.endswith'] = contentEndswith;
+if (proxied != null) queryParameters['proxied'] = proxied.toString();
+if (match != null) queryParameters['match'] = match.toJson();
+if (comment != null) queryParameters['comment'] = comment;
+if (commentPresent != null) queryParameters['comment.present'] = commentPresent;
+if (commentAbsent != null) queryParameters['comment.absent'] = commentAbsent;
+if (commentExact != null) queryParameters['comment.exact'] = commentExact;
+if (commentContains != null) queryParameters['comment.contains'] = commentContains;
+if (commentStartswith != null) queryParameters['comment.startswith'] = commentStartswith;
+if (commentEndswith != null) queryParameters['comment.endswith'] = commentEndswith;
+if (tag != null) queryParameters['tag'] = tag;
+if (tagPresent != null) queryParameters['tag.present'] = tagPresent;
+if (tagAbsent != null) queryParameters['tag.absent'] = tagAbsent;
+if (tagExact != null) queryParameters['tag.exact'] = tagExact;
+if (tagContains != null) queryParameters['tag.contains'] = tagContains;
+if (tagStartswith != null) queryParameters['tag.startswith'] = tagStartswith;
+if (tagEndswith != null) queryParameters['tag.endswith'] = tagEndswith;
+if (search != null) queryParameters['search'] = search.toString();
+if (tagMatch != null) queryParameters['tag_match'] = tagMatch.toJson();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'name.exact': ?nameExact,
-    'name.contains': ?nameContains,
-    'name.startswith': ?nameStartswith,
-    'name.endswith': ?nameEndswith,
-    if (type != null) 'type': type.toJson(),
-    'content': ?content,
-    'content.exact': ?contentExact,
-    'content.contains': ?contentContains,
-    'content.startswith': ?contentStartswith,
-    'content.endswith': ?contentEndswith,
-    if (proxied != null) 'proxied': proxied.toString(),
-    if (match != null) 'match': match.toJson(),
-    'comment': ?comment,
-    'comment.present': ?commentPresent,
-    'comment.absent': ?commentAbsent,
-    'comment.exact': ?commentExact,
-    'comment.contains': ?commentContains,
-    'comment.startswith': ?commentStartswith,
-    'comment.endswith': ?commentEndswith,
-    'tag': ?tag,
-    'tag.present': ?tagPresent,
-    'tag.absent': ?tagAbsent,
-    'tag.exact': ?tagExact,
-    'tag.contains': ?tagContains,
-    'tag.startswith': ?tagStartswith,
-    'tag.endswith': ?tagEndswith,
-    if (search != null) 'search': search.toString(),
-    if (tagMatch != null) 'tag_match': tagMatch.toJson(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (order != null) 'order': order.toJson(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -78,12 +82,13 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneCreateDnsRecord({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneCreateDnsRecord({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +102,12 @@ return _execute(
 /// DNS Record Details
 ///
 /// `GET /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneDnsRecordDetails({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneDnsRecordDetails({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -123,12 +129,13 @@ return _execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneUpdateDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneUpdateDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -151,12 +158,13 @@ return _execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZonePatchDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPatch body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZonePatchDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -170,11 +178,12 @@ return _execute(
 /// Delete DNS Record
 ///
 /// `DELETE /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponse, Never>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponse, Never>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -199,12 +208,13 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/batch`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneBatchDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestBatchObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneBatchDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestBatchObject body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/batch',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -222,11 +232,12 @@ return _execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `GET /zones/{zone_id}/dns_records/export`
-Future<ApiResult<String, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/export',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -243,12 +254,13 @@ return _execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `POST /zones/{zone_id}/dns_records/import`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneImportDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneImportDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/import',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from DnsRecordsForAZoneImportDnsRecordsRequest');,
 );
 
@@ -265,11 +277,12 @@ return _execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneReviewDnsScan({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneReviewDnsScan({required DnsRecordsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/review',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -285,12 +298,13 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneApplyDnsScanResults({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestReviewScanObject body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneApplyDnsScanResults({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestReviewScanObject body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/review',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -306,11 +320,12 @@ return _execute(
 /// Initiates an asynchronous scan for common DNS records on your domain. Note that this **does not** automatically add records to your zone. The scan runs in the background, and results can be reviewed later using the `/scan/review` endpoints. Useful if you haven't updated your nameservers yet.
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/trigger`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneTriggerDnsScan({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneTriggerDnsScan({required DnsRecordsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/trigger',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -325,11 +340,12 @@ return _execute(
 /// Get the current DNS record usage for a zone, including the number of records and the quota limit.
 ///
 /// `GET /zones/{zone_id}/dns_records/usage`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneGetUsage({required DnsRecordsIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneGetUsage({required DnsRecordsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/usage',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

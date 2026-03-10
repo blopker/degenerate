@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Lists all datasets in an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset`
-Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListResponse400>> getDatasetList({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListResponse400>> getDatasetList({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Reads a dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<GetDatasetReadResponse, GetDatasetReadResponse400>> getDatasetRead({required String accountId, required String datasetId, }) async  { final request = ApiRequest(
+Future<ApiResult<GetDatasetReadResponse, GetDatasetReadResponse400>> getDatasetRead({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -56,12 +58,13 @@ return _execute(
 /// Updates an existing dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateResponse400>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateResponse400>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -78,12 +81,13 @@ return _execute(
 /// Updates an existing dataset
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateResponse400>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateResponse400>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -102,11 +106,12 @@ return _execute(
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, }) async  { final request = ApiRequest(
+Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -122,12 +127,13 @@ return _execute(
 /// Creates a dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/create`
-Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateResponse400>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateResponse400>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/create',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

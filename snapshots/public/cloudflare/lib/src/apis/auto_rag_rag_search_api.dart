@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// AI Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/ai-search`
-Future<ApiResult<AutoragConfigAiSearchResponse, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigAiSearchResponse, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/ai-search',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -37,12 +38,13 @@ return _execute(
 /// Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/search`
-Future<ApiResult<AutoragConfigSearchResponse, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AutoragConfigSearchResponse, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/search',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 

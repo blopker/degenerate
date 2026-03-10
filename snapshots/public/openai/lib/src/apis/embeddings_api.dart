@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Creates an embedding vector representing the input text.
 ///
 /// `POST /embeddings`
-Future<ApiResult<CreateEmbeddingResponse, Never>> createEmbedding({required CreateEmbeddingRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<CreateEmbeddingResponse, Never>> createEmbedding({required CreateEmbeddingRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/embeddings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

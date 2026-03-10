@@ -36,12 +36,13 @@ queryParameters['filter[limit]'] = filter.limit.toString();
 final cookies = <String, String>{..._config.defaultCookies};
 if (session != null) cookies['session'] = session;
 
+final headers = <String, String>{..._config.defaultHeaders};
+if (xTraceId != null) headers['X-Trace-Id'] = xTraceId;
+
 final request = ApiRequest(
   method: 'GET',
   path: '/items/${Uri.encodeComponent(itemId)}',
-  headers: {..._config.defaultHeaders
-    , if (xTraceId != null) 'X-Trace-Id': xTraceId
-  },
+  headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   cookies: cookies,

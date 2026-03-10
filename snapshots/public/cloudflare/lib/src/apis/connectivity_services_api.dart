@@ -15,16 +15,22 @@ final ApiConfig _config;
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesList({required InfraAccountTag accountId, ConnectivityServicesListType? type, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> connectivityServicesList({required InfraAccountTag accountId, ConnectivityServicesListType? type, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (type != null) {
+queryParametersList.add(ApiQueryParameter(name: 'type', value: type.toString(), allowReserved: false));
+}
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/connectivity/directory/services',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (type != null) 'type': type.toString(),
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +43,13 @@ return _execute(
 /// Create connectivity service
 ///
 /// `POST /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/connectivity/directory/services',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,11 +63,12 @@ return _execute(
 /// Get connectivity service
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesGet({required String accountId, required String serviceId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> connectivityServicesGet({required String accountId, required String serviceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/connectivity/directory/services/${Uri.encodeComponent(serviceId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -73,12 +81,13 @@ return _execute(
 /// Update connectivity service
 ///
 /// `PUT /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/connectivity/directory/services/${Uri.encodeComponent(serviceId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -92,11 +101,12 @@ return _execute(
 /// Delete connectivity service
 ///
 /// `DELETE /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<void, Never>> connectivityServicesDelete({required String accountId, required String serviceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> connectivityServicesDelete({required String accountId, required String serviceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/connectivity/directory/services/${Uri.encodeComponent(serviceId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

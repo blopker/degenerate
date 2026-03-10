@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Get the current DNS record usage and quota for an account. May include internal DNS usage and quota.
 ///
 /// `GET /accounts/{account_id}/dns_records/usage`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_records/usage',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

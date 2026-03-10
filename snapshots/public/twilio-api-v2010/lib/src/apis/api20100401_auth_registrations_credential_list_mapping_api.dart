@@ -15,16 +15,20 @@ final ApiConfig _config;
 /// Retrieve a list of credential list mappings belonging to the domain used in the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json`
-Future<ApiResult<ListSipAuthRegistrationsCredentialListMappingResponse, Never>> listSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final request = ApiRequest(
+Future<ApiResult<ListSipAuthRegistrationsCredentialListMappingResponse, Never>> listSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Registrations/CredentialListMappings.json',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (pageSize != null) 'PageSize': pageSize.toString(),
-    if (page != null) 'Page': page.toString(),
-    'PageToken': ?pageToken,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -37,12 +41,13 @@ return _execute(
 /// Create a new credential list mapping resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping, Never>> createSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, CreateSipAuthRegistrationsCredentialListMappingRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping, Never>> createSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, CreateSipAuthRegistrationsCredentialListMappingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Registrations/CredentialListMappings.json',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/x-www-form-urlencoded'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipAuthRegistrationsCredentialListMappingRequest');,
 );
 
@@ -56,11 +61,12 @@ return _execute(
 /// Fetch a specific instance of a credential list mapping
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping, Never>> fetchSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping, Never>> fetchSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Registrations/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -73,11 +79,12 @@ return _execute(
 /// Delete a credential list mapping from the requested domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteSipAuthRegistrationsCredentialListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Registrations/CredentialListMappings/${Uri.encodeComponent(sid)}.json',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

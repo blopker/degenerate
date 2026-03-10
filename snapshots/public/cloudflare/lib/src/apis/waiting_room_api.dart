@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists waiting rooms for account.
 ///
 /// `GET /accounts/{account_id}/waiting_rooms`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/waiting_rooms',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,15 +44,19 @@ return _execute(
 /// Lists waiting rooms for zone.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -63,12 +71,13 @@ return _execute(
 /// Creates a new waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -84,11 +93,12 @@ return _execute(
 /// Fetches a single configured waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -103,12 +113,13 @@ return _execute(
 /// Updates a configured waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -124,12 +135,13 @@ return _execute(
 /// Patches a configured waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -145,11 +157,12 @@ return _execute(
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -164,15 +177,19 @@ return _execute(
 /// Lists events for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -187,12 +204,13 @@ return _execute(
 /// Only available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -208,11 +226,12 @@ return _execute(
 /// Fetches a single configured event for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -227,12 +246,13 @@ return _execute(
 /// Updates a configured event for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -248,12 +268,13 @@ return _execute(
 /// Patches a configured event for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -269,11 +290,12 @@ return _execute(
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -288,11 +310,12 @@ return _execute(
 /// Previews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}/details',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -307,11 +330,12 @@ return _execute(
 /// Lists rules for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -326,12 +350,13 @@ return _execute(
 /// Only available for the Waiting Room Advanced subscription. Creates a rule for a waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -347,12 +372,13 @@ return _execute(
 /// Only available for the Waiting Room Advanced subscription. Replaces all rules for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -368,12 +394,13 @@ return _execute(
 /// Patches a rule for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -389,11 +416,12 @@ return _execute(
 /// Deletes a rule for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<ResponseCommon77, Never>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon77, Never>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -417,11 +445,12 @@ return _execute(
 /// 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/status`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/status',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -453,12 +482,13 @@ return _execute(
 /// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/preview',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -472,11 +502,12 @@ return _execute(
 /// Get zone-level Waiting Room settings
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -489,12 +520,13 @@ return _execute(
 /// Update zone-level Waiting Room settings
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -508,12 +540,13 @@ return _execute(
 /// Patch zone-level Waiting Room settings
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

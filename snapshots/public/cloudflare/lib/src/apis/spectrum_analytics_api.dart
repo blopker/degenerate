@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (appId != null) queryParameters['appID'] = appId.toString();
+if (coloName != null) queryParameters['colo_name'] = coloName;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/aggregate/current',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (appId != null) 'appID': appId.toString(),
-    'colo_name': ?coloName,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,20 +44,36 @@ return _execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dimensions != null) {
+for (final item in dimensions) {
+  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson(), allowReserved: false));
+}
+}
+if (sort != null) {
+for (final item in sort) {
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
+}
+}
+if (until != null) queryParameters['until'] = until.toString();
+if (metrics != null) {
+for (final item in metrics) {
+  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
+}
+}
+if (filters != null) queryParameters['filters'] = filters.toString();
+if (since != null) queryParameters['since'] = since.toString();
+queryParameters['time_delta'] = timeDelta.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/events/bytime',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (dimensions != null) 'dimensions': dimensions.toString(),
-    if (sort != null) 'sort': sort.toString(),
-    if (until != null) 'until': until.toString(),
-    if (metrics != null) 'metrics': metrics.toString(),
-    if (filters != null) 'filters': filters.toString(),
-    if (since != null) 'since': since.toString(),
-    'time_delta': timeDelta.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -68,19 +88,35 @@ return _execute(
 /// Retrieves a list of summarised aggregate metrics over a given time period.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/summary`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (dimensions != null) {
+for (final item in dimensions) {
+  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson(), allowReserved: false));
+}
+}
+if (sort != null) {
+for (final item in sort) {
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
+}
+}
+if (until != null) queryParameters['until'] = until.toString();
+if (metrics != null) {
+for (final item in metrics) {
+  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
+}
+}
+if (filters != null) queryParameters['filters'] = filters.toString();
+if (since != null) queryParameters['since'] = since.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/events/summary',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (dimensions != null) 'dimensions': dimensions.toString(),
-    if (sort != null) 'sort': sort.toString(),
-    if (until != null) 'until': until.toString(),
-    if (metrics != null) 'metrics': metrics.toString(),
-    if (filters != null) 'filters': filters.toString(),
-    if (since != null) 'since': since.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

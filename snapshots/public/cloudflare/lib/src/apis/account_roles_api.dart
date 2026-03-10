@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Get all available roles for an account.
 ///
 /// `GET /accounts/{account_id}/roles`
-Future<ApiResult<ResponseCommon35, Never>> accountRolesListRoles({required IamCommonComponentsSchemasIdentifier accountId, double? page, double? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountRolesListRoles({required IamCommonComponentsSchemasIdentifier accountId, double? page, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/roles',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,11 +44,12 @@ return _execute(
 /// Get information about a specific role for an account.
 ///
 /// `GET /accounts/{account_id}/roles/{role_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountRolesRoleDetails({required IamRoleComponentsSchemasIdentifier roleId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountRolesRoleDetails({required IamRoleComponentsSchemasIdentifier roleId, required IamCommonComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/roles/${Uri.encodeComponent(roleId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

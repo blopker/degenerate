@@ -15,14 +15,18 @@ final ApiConfig _config;
 /// List all pets
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, ErrorModel>> listPets({int? limit}) async  { final request = ApiRequest(
+Future<ApiResult<List<Pet>, ErrorModel>> listPets({int? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pets',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (limit != null) 'limit': limit.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -39,12 +43,13 @@ return _execute(
 /// Create a pet
 ///
 /// `POST /pets`
-Future<ApiResult<void, ErrorModel>> createPets({required Pet body}) async  { final request = ApiRequest(
+Future<ApiResult<void, ErrorModel>> createPets({required Pet body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/pets',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -59,11 +64,12 @@ return _execute(
 /// Info for a specific pet
 ///
 /// `GET /pets/{petId}`
-Future<ApiResult<Pet, ErrorModel>> showPetById({required String petId}) async  { final request = ApiRequest(
+Future<ApiResult<Pet, ErrorModel>> showPetById({required String petId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pets/${Uri.encodeComponent(petId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Generate authentication token for VPC flow logs export.
 ///
 /// `POST /accounts/{account_id}/mnm/vpc-flows/token`
-Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon46, Never>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/vpc-flows/token',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

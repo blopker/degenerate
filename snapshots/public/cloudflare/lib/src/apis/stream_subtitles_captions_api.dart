@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Lists the available captions or subtitles for a specific video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions`
-Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,11 +37,12 @@ return _execute(
 /// Lists the captions or subtitles for provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.
 ///
 /// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from StreamCaptionBasicUpload');,
 );
 
@@ -76,11 +79,12 @@ return _execute(
 /// Removes the captions or subtitles from a video.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -95,11 +99,12 @@ return _execute(
 /// Generate captions or subtitles for provided language via AI.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/captions/{language}/generate`
-Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/generate',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -114,11 +119,12 @@ return _execute(
 /// Return WebVTT captions for a provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
-Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/vtt',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -17,17 +17,21 @@ final ApiConfig _config;
 /// List all accounts you have ownership or verified access to.
 ///
 /// `GET /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (direction != null) 'direction': direction.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -42,12 +46,13 @@ return _execute(
 /// Create an account (only available for tenant admins at this time)
 ///
 /// `POST /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -63,11 +68,12 @@ return _execute(
 /// Get information about a specific account that you are a member of.
 ///
 /// `GET /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -82,12 +88,13 @@ return _execute(
 /// Update an existing account.
 ///
 /// `PUT /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -103,11 +110,12 @@ return _execute(
 /// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
 ///
 /// `DELETE /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -122,12 +130,13 @@ return _execute(
 /// Move an account within an organization hierarchy or an account outside an organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /accounts/{account_id}/move`
-Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/move',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -148,11 +157,12 @@ return _execute(
 /// account.
 ///
 /// `GET /accounts/{account_id}/organizations`
-Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/organizations',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -165,11 +175,12 @@ return _execute(
 /// Get account profile
 ///
 /// `GET /accounts/{account_id}/profile`
-Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -182,12 +193,13 @@ return _execute(
 /// Modify account profile
 ///
 /// `PUT /accounts/{account_id}/profile`
-Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -201,12 +213,13 @@ return _execute(
 /// Batch move a collection of accounts to a specific organization. ⚠️ Not implemented.
 ///
 /// `POST /accounts/move`
-Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/move',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

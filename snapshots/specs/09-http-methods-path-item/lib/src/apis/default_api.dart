@@ -14,11 +14,12 @@ final ApiConfig _config;
 
 ///
 /// `GET /verbs`
-Future<ApiResult<void, Never>> verbsGet() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -28,11 +29,12 @@ return _execute(
  } 
 ///
 /// `POST /verbs`
-Future<ApiResult<void, Never>> verbsPost() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPost() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -42,11 +44,12 @@ return _execute(
  } 
 ///
 /// `PUT /verbs`
-Future<ApiResult<void, Never>> verbsPut() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPut() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -56,11 +59,12 @@ return _execute(
  } 
 ///
 /// `PATCH /verbs`
-Future<ApiResult<void, Never>> verbsPatch() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsPatch() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -70,11 +74,12 @@ return _execute(
  } 
 ///
 /// `DELETE /verbs`
-Future<ApiResult<void, Never>> verbsDelete() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsDelete() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -84,11 +89,12 @@ return _execute(
  } 
 ///
 /// `HEAD /verbs`
-Future<ApiResult<void, Never>> verbsHead() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsHead() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'HEAD',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -98,11 +104,12 @@ return _execute(
  } 
 ///
 /// `OPTIONS /verbs`
-Future<ApiResult<void, Never>> verbsOptions() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsOptions() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'OPTIONS',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -112,11 +119,12 @@ return _execute(
  } 
 ///
 /// `TRACE /verbs`
-Future<ApiResult<void, Never>> verbsTrace() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> verbsTrace() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'TRACE',
   path: '/verbs',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

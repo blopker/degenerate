@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets the Zero Trust Connectivity Settings for the given account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/connectivity_settings',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates the Zero Trust Connectivity Settings for the given account.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/connectivity_settings',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

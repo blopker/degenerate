@@ -34,12 +34,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /uploads`
-Future<ApiResult<Upload, Never>> createUpload({required CreateUploadRequest body}) async  { final request = ApiRequest(
+Future<ApiResult<Upload, Never>> createUpload({required CreateUploadRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/uploads',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -56,11 +57,12 @@ return _execute(
 /// 
 ///
 /// `POST /uploads/{upload_id}/cancel`
-Future<ApiResult<Upload, Never>> cancelUpload({required String uploadId}) async  { final request = ApiRequest(
+Future<ApiResult<Upload, Never>> cancelUpload({required String uploadId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/uploads/${Uri.encodeComponent(uploadId)}/cancel',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -81,12 +83,13 @@ return _execute(
 /// 
 ///
 /// `POST /uploads/{upload_id}/complete`
-Future<ApiResult<Upload, Never>> completeUpload({required String uploadId, required CompleteUploadRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Upload, Never>> completeUpload({required String uploadId, required CompleteUploadRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/uploads/${Uri.encodeComponent(uploadId)}/complete',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -105,12 +108,13 @@ return _execute(
 /// 
 ///
 /// `POST /uploads/{upload_id}/parts`
-Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, required AddUploadPartRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, required AddUploadPartRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'multipart/form-data';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/uploads/${Uri.encodeComponent(uploadId)}/parts',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'multipart/form-data'
-  },
+  headers: headers,
   body: throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from AddUploadPartRequest');,
 );
 

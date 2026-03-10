@@ -18,12 +18,13 @@ final ApiConfig _config;
 /// This is needed for our generated terraform API.
 ///
 /// `POST /accounts/{account_id}/dlp/entries/integration`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -39,12 +40,13 @@ return _execute(
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration/${Uri.encodeComponent(entryId)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -60,11 +62,12 @@ return _execute(
 /// This is a no-op as integration entires can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration/${Uri.encodeComponent(entryId)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

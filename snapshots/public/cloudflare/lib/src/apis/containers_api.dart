@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Lists all the container applications that are associated with your account.
 ///
 /// `GET /accounts/{account_id}/containers`
-Future<ApiResult<BaseResponse, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, }) async  { final request = ApiRequest(
+Future<ApiResult<BaseResponse, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (image != null) queryParameters['image'] = image;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/containers',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'image': ?image,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

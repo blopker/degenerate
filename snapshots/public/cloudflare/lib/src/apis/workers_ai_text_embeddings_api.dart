@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Runs inference on the @cf/baai/bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-base-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-base-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -45,16 +49,20 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-large-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-large-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -73,16 +81,20 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-m3`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-m3',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -101,16 +113,20 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-small-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-small-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -129,16 +145,20 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-base-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-base-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -157,16 +177,20 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-large-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-large-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -185,16 +209,20 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-m3`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-m3',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -213,16 +241,20 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-small-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-small-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -241,16 +273,20 @@ return _execute(
 /// Runs inference on the @cf/baai/ray-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/ray-bge-large-en-v1.5`
-Future<ApiResult<Map<String, String>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/ray-bge-large-en-v1.5',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -269,16 +305,20 @@ return _execute(
 /// Runs inference on the @cf/google/embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/embeddinggemma-300m`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/embeddinggemma-300m',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -297,16 +337,20 @@ return _execute(
 /// Runs inference on the @cf/google/omni-embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/omni-embeddinggemma-300m`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/omni-embeddinggemma-300m',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -325,16 +369,20 @@ return _execute(
 /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/pfnet/plamo-embedding-1b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/pfnet/plamo-embedding-1b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -353,16 +401,20 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen3-embedding-0.6b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-embedding-0.6b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen3-embedding-0.6b',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 

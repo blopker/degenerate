@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Request Trace
 ///
 /// `POST /accounts/{account_id}/request-tracer/trace`
-Future<ApiResult<ResponseCommon54, Never>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon54, Never>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/request-tracer/trace',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

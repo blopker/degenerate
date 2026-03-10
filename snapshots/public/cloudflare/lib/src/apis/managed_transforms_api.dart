@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsResponse, Never>> listManagedTransforms({required RulesetsZoneId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> listManagedTransforms({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsResponse, Never>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, }) async  { final request = ApiRequest(
+Future<ApiResult<RulesetsResponse, Never>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PATCH',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void, Never>> deleteManagedTransforms({required RulesetsZoneId zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteManagedTransforms({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

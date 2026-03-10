@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/flux model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxResponse400>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxResponse400>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/flux',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -37,16 +38,20 @@ return _execute(
 /// Runs inference on the @cf/deepgram/flux model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramFluxResponse400>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramFluxResponse400>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/flux',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -65,11 +70,12 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Response400>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Response400>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/nova-3',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -85,16 +91,20 @@ return _execute(
 /// Runs inference on the @cf/deepgram/nova-3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramNova3Response400>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramNova3Response400>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/nova-3',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -113,11 +123,12 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3-internal`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId}) async  { final request = ApiRequest(
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/nova-3-internal',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -133,16 +144,20 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperResponse400>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperResponse400>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/octet-stream';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openai/whisper',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/octet-stream'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 
@@ -161,16 +176,20 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-large-v3-turbo`
-Future<ApiResult<Map<String, String>, TurboResponse400>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, TurboResponse400>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openai/whisper-large-v3-turbo',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -189,16 +208,20 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper-tiny-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-tiny-en`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/octet-stream';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openai/whisper-tiny-en',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/octet-stream'
-  },
-  queryParameters: {
-    'queueRequest': ?queueRequest,
-    'tags': ?tags,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
   body: body,
 );
 

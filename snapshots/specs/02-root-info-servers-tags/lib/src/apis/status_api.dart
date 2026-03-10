@@ -15,11 +15,12 @@ final ApiConfig _config;
 /// Get service status
 ///
 /// `GET /status`
-Future<ApiResult<void, Never>> getStatus() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getStatus() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/status',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

@@ -14,11 +14,12 @@ final ApiConfig _config;
 
 ///
 /// `GET /health`
-Future<ApiResult<void, Never>> getHealth() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getHealth() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/health',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

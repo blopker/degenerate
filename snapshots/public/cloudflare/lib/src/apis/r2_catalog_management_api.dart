@@ -20,11 +20,12 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -44,11 +45,12 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -69,11 +71,12 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/disable`
-Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final request = ApiRequest(
+Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/disable',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -92,11 +95,12 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/enable`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/enable',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

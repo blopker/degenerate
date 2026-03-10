@@ -17,16 +17,20 @@ final ApiConfig _config;
 /// Lists existing routing rules.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesListRoutingRules({required EmailIdentifier zoneId, double? page, double? perPage, bool? enabled, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesListRoutingRules({required EmailIdentifier zoneId, double? page, double? perPage, bool? enabled, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (enabled != null) queryParameters['enabled'] = enabled.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-    if (enabled != null) 'enabled': enabled.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -41,12 +45,13 @@ return _execute(
 /// Rules consist of a set of criteria for matching emails (such as an email being sent to a specific custom email address) plus a set of actions to take on the email (like forwarding it to a specific destination address).
 ///
 /// `POST /zones/{zone_id}/email/routing/rules`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesCreateRoutingRule({required EmailIdentifier zoneId, required EmailCreateRuleProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesCreateRoutingRule({required EmailIdentifier zoneId, required EmailCreateRuleProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -62,11 +67,12 @@ return _execute(
 /// Get information for a specific routing rule already created.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -81,12 +87,13 @@ return _execute(
 /// Update actions and matches, or enable/disable specific routing rules.
 ///
 /// `PUT /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, required EmailUpdateRuleProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, required EmailUpdateRuleProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -102,11 +109,12 @@ return _execute(
 /// Delete a specific routing rule.
 ///
 /// `DELETE /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesDeleteRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesDeleteRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -121,11 +129,12 @@ return _execute(
 /// Get information on the default catch-all routing rule.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules/catch_all`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetCatchAllRule({required EmailIdentifier zoneId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetCatchAllRule({required EmailIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/catch_all',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -140,12 +149,13 @@ return _execute(
 /// Enable or disable catch-all routing rule, or change action to forward to specific destination address.
 ///
 /// `PUT /zones/{zone_id}/email/routing/rules/catch_all`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateCatchAllRule({required EmailIdentifier zoneId, required EmailUpdateCatchAllRuleProperties body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateCatchAllRule({required EmailIdentifier zoneId, required EmailUpdateCatchAllRuleProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/catch_all',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 

@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Gets the Access key rotation settings for an account.
 ///
 /// `GET /accounts/{account_id}/access/keys`
-Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Updates the Access key rotation settings for an account.
 ///
 /// `PUT /accounts/{account_id}/access/keys`
-Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Perfoms a key rotation for an account.
 ///
 /// `POST /accounts/{account_id}/access/keys/rotate`
-Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon3, Never>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys/rotate',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

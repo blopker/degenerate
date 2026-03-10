@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// List all the resource groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (id != null) queryParameters['id'] = id.toString();
+if (name != null) queryParameters['name'] = name;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (id != null) 'id': id.toString(),
-    'name': ?name,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Create a new Resource Group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Get information about a specific resource group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -80,12 +86,13 @@ return _execute(
 /// Modify an existing resource group.
 ///
 /// `PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -101,11 +108,12 @@ return _execute(
 /// Remove a resource group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

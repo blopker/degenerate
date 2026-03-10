@@ -17,15 +17,19 @@ final ApiConfig _config;
 /// Get all build tokens with pagination
 ///
 /// `GET /accounts/{account_id}/builds/tokens`
-Future<ApiResult<Response, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/tokens',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    if (page != null) 'page': page.toString(),
-    if (perPage != null) 'per_page': perPage.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -40,12 +44,13 @@ return _execute(
 /// Create a new build authentication token
 ///
 /// `POST /accounts/{account_id}/builds/tokens`
-Future<ApiResult<Response, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/tokens',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -61,11 +66,12 @@ return _execute(
 /// Remove a build authentication token
 ///
 /// `DELETE /accounts/{account_id}/builds/tokens/{build_token_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, BuildsErrorResponse>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/tokens/${Uri.encodeComponent(buildTokenUuid.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(

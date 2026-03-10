@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Fetches a list of managed networks for an account.
 ///
 /// `GET /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId}) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Creates a new device managed network.
 ///
 /// `POST /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// Fetches details for a single managed network.
 ///
 /// `GET /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,12 +79,13 @@ return _execute(
 /// Updates a configured device managed network.
 ///
 /// `PUT /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -97,11 +101,12 @@ return _execute(
 /// Deletes a device managed network and fetches a list of the remaining device managed networks for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final request = ApiRequest(
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
