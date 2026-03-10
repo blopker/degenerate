@@ -71,6 +71,40 @@ void main() {
       final uri = req.resolveUri(Uri.parse('https://api.example.com'));
       expect(uri.queryParameters['limit'], '10');
     });
+
+    test('supports duplicate query parameter names', () {
+      final req = ApiRequest(
+        method: 'GET',
+        path: '/pets',
+        queryParametersList: const [
+          ApiQueryParameter(name: 'tag', value: 'a'),
+          ApiQueryParameter(name: 'tag', value: 'b'),
+        ],
+      );
+      final uri = req.resolveUri(Uri.parse('https://api.example.com'));
+
+      expect(uri.queryParametersAll['tag'], ['a', 'b']);
+    });
+
+    test('supports allowReserved query parameters', () {
+      final req = ApiRequest(
+        method: 'GET',
+        path: '/pets',
+        queryParametersList: const [
+          ApiQueryParameter(
+            name: 'redirect',
+            value: 'https://example.com/a?b=c&d=e',
+            allowReserved: true,
+          ),
+        ],
+      );
+      final uri = req.resolveUri(Uri.parse('https://api.example.com'));
+
+      expect(
+        uri.toString(),
+        'https://api.example.com/pets?redirect=https://example.com/a?b=c&d=e',
+      );
+    });
   });
 
   group('ApiResponse.isSuccessful', () {

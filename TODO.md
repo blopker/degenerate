@@ -56,7 +56,7 @@
 
 - [x] **Non-JSON request bodies** — emitter now preserves chosen media type, emits `text/plain` raw body writes, binary `application/octet-stream` byte uploads, and `application/*+json` JSON encoding. Unsupported non-JSON complex types emit `UnsupportedError` + generator warning. *(review.md #4, review2.md 1d)*
 - [x] **Non-JSON success/error responses** — response typing handles `application/json`, `application/*+json` (e.g. `application/problem+json`), `text/plain`, and binary (`Uint8List` via `response.bodyBytes`). Generator warns on unsupported non-JSON complex schemas. *(review.md #5, review2.md #2)*
-- [ ] **Query serialization ignores style/explode/allowReserved** — array/object query params use `.toString()` instead of spec-defined serialization styles (`form`, `simple`, `label`, `matrix`, `deepObject`, `pipeDelimited`, `spaceDelimited`). IR should carry serialization metadata. *(review2.md 1c)*
+- [ ] **Query serialization style/explode/allowReserved** — IR now carries `style`, `explode`, `allowReserved` on `IrParameter`. Emitter handles high-impact cases: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited arrays (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params), allowReserved passthrough. Runtime supports duplicate query keys via `ApiQueryParameter` + `queryParametersList`. Remaining: non-exploded form/simple variants, path/header/cookie style application, wire tests. *(review2.md 1c)*
 - [x] **HTTP/Dio adapters support binary bodies and responses** — `HttpApiClient` and `DioApiClient` accept both `String` and `List<int>` request bodies. `ApiResponse` carries `bodyBytes: Uint8List` alongside text `body`, with zero-copy when caller provides `Uint8List`. *(review2.md 1e)*
 
 ### P1: Important Capability Gaps
@@ -81,7 +81,7 @@
 
 These are cross-cutting improvements that would make multiple P0/P1 items easier to implement:
 
-- [ ] **Parameter serialization layer** — IR should preserve `style`, `explode`, `allowReserved`, and parameter location. Emit or runtime-dispatch through a serializer that handles all OpenAPI serialization styles.
+- [x] **Parameter serialization layer** — IR preserves `style`, `explode`, `allowReserved` on `IrParameter`. Emitter generates style-aware query serialization. Runtime `ApiQueryParameter` supports repeated keys and reserved-char passthrough. Remaining style matrix coverage is incremental.
 - [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw). Shared `media_type_utils.dart` handles media-type normalization and preference selection. Multipart/form not yet supported.
 - [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
 
@@ -109,7 +109,7 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 
 ## Session History
 
-### Session 9 (2026-03-10) — Non-JSON media types + binary response support
+### Session 9 (2026-03-10) — Non-JSON media types, binary responses, query serialization
 
 - Media-type-aware code generation: emitter preserves chosen request/response media type instead of hardcoding JSON
 - `application/*+json` detection (e.g. `application/problem+json`) with parameterized media type handling (`application/json; charset=utf-8`)
@@ -123,6 +123,12 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - `_requestBodyNeedsToJson` renamed to `_typeNeedsToJson` to match actual parameter type
 - Cloudflare, OpenAI, Stripe snapshots updated: binary endpoints now return `Uint8List.fromList(response.bodyBytes)` instead of throwing
 - New tests: plain-text request/response, `application/problem+json` errors, parameterized JSON media types, binary response deserialization, zero-copy `Uint8List`, Dio adapter binary success/error paths
+- Query serialization: IR now carries `style`, `explode`, `allowReserved` on `IrParameter`, populated from OpenAPI spec in `OperationLowerer`
+- Runtime `ApiQueryParameter` type supports repeated query keys and per-parameter `allowReserved`
+- `ApiRequest.resolveUri()` rewritten to build query strings manually, supporting duplicate keys and reserved-char passthrough
+- Emitter generates style-aware query serialization: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params)
+- Identity map elision: string arrays emit `tag.join('|')` instead of `tag.map((item) => item).join('|')`
+- New tests: exploded form arrays, pipeDelimited arrays, spaceDelimited arrays, deepObject objects, non-exploded form objects, allowReserved passthrough, duplicate query param URI building
 - All tests passing, analyzer clean on all touched files
 
 ### Session 8 (2026-03-09) — Review-driven bug fixes + wire tests

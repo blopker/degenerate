@@ -14,11 +14,24 @@ abstract interface class ApiClient {
 }
 
 /// An outgoing API request.
+final class ApiQueryParameter {
+  final String name;
+  final String value;
+  final bool allowReserved;
+
+  const ApiQueryParameter({
+    required this.name,
+    required this.value,
+    this.allowReserved = false,
+  });
+}
+
 final class ApiRequest {
   final String method;
   final String path;
   final Map<String, String> headers;
   final Map<String, String> queryParameters;
+  final List<ApiQueryParameter> queryParametersList;
   final Object? body;
   final String? contentType;
 
@@ -27,6 +40,7 @@ final class ApiRequest {
     required this.path,
     this.headers = const {},
     this.queryParameters = const {},
+    this.queryParametersList = const [],
     this.body,
     this.contentType,
   });
@@ -37,6 +51,7 @@ final class ApiRequest {
     String? path,
     Map<String, String>? headers,
     Map<String, String>? queryParameters,
+    List<ApiQueryParameter>? queryParametersList,
     Object? Function()? body,
     String? Function()? contentType,
   }) {
@@ -45,6 +60,7 @@ final class ApiRequest {
       path: path ?? this.path,
       headers: headers ?? this.headers,
       queryParameters: queryParameters ?? this.queryParameters,
+      queryParametersList: queryParametersList ?? this.queryParametersList,
       body: body != null ? body() : this.body,
       contentType: contentType != null ? contentType() : this.contentType,
     );
@@ -58,14 +74,41 @@ final class ApiRequest {
     }
     final fullPath = '$basePath$path';
     final resolved = baseUrl.replace(path: fullPath);
-    if (queryParameters.isEmpty) return resolved;
-    final existing = resolved.queryParameters;
-    return resolved.replace(
-      queryParameters: existing.isEmpty
-          ? queryParameters
-          : {...existing, ...queryParameters},
-    );
+    if (queryParameters.isEmpty && queryParametersList.isEmpty) return resolved;
+
+    final queryParts = <String>[];
+    if (resolved.hasQuery) {
+      queryParts.add(resolved.query);
+    }
+    for (final entry in queryParameters.entries) {
+      queryParts.add(
+        '${Uri.encodeQueryComponent(entry.key)}=${Uri.encodeQueryComponent(entry.value)}',
+      );
+    }
+    for (final entry in queryParametersList) {
+      final encode = entry.allowReserved
+          ? _encodeQueryComponentAllowReserved
+          : Uri.encodeQueryComponent;
+      queryParts.add('${encode(entry.name)}=${encode(entry.value)}');
+    }
+    return resolved.replace(query: queryParts.join('&'));
   }
+}
+
+const _unreservedOrReservedQueryChars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~:/?#[]@!\$&'()*+,;=";
+
+String _encodeQueryComponentAllowReserved(String value) {
+  final buffer = StringBuffer();
+  for (final byte in utf8.encode(value)) {
+    final char = String.fromCharCode(byte);
+    if (_unreservedOrReservedQueryChars.contains(char)) {
+      buffer.write(char);
+    } else {
+      buffer.write('%${byte.toRadixString(16).toUpperCase().padLeft(2, '0')}');
+    }
+  }
+  return buffer.toString();
 }
 
 /// A raw API response before deserialization.

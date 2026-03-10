@@ -255,6 +255,15 @@ class ApiEmitter {
       return '\${$encodeExpr}';
     });
 
+    if (queryParams.isNotEmpty) {
+      buf.writeln('final queryParameters = <String, String>{};');
+      buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
+      for (final p in queryParams) {
+        _writeQueryParameterSerialization(buf, p);
+      }
+      buf.writeln();
+    }
+
     buf.writeln('final request = ApiRequest(');
     buf.writeln("  method: '$httpMethod',");
     buf.writeln("  path: '$path',");
@@ -270,6 +279,9 @@ class ApiEmitter {
       final headerValue = _toHeaderString(p);
       if (p.isRequired) {
         buf.writeln("    , '$sanitizedName': $headerValue");
+      } else if (headerValue == p.dartName) {
+        // Value is the nullable variable itself; use null-aware element.
+        buf.writeln("    , ?'$sanitizedName': $headerValue");
       } else {
         buf.writeln(
           "    , if (${p.dartName} != null) '$sanitizedName': $headerValue",
@@ -279,25 +291,8 @@ class ApiEmitter {
     buf.writeln('  },');
 
     if (queryParams.isNotEmpty) {
-      buf.writeln('  queryParameters: {');
-      for (final p in queryParams) {
-        final sanitizedName = p.name
-            .replaceAll('\n', '')
-            .replaceAll('\r', '')
-            .trim();
-        final queryValue = _toQueryString(p);
-        if (p.isRequired) {
-          buf.writeln("    '$sanitizedName': $queryValue,");
-        } else if (queryValue == p.dartName) {
-          // Use null-aware element syntax when value is the variable itself.
-          buf.writeln("    '$sanitizedName': ?${p.dartName},");
-        } else {
-          buf.writeln(
-            "    if (${p.dartName} != null) '$sanitizedName': $queryValue,",
-          );
-        }
-      }
-      buf.writeln('  },');
+      buf.writeln('  queryParameters: queryParameters,');
+      buf.writeln('  queryParametersList: queryParametersList,');
     }
 
     if (bodyType != null) {
@@ -410,6 +405,230 @@ class ApiEmitter {
       _ => '${p.dartName}.toString()',
     };
   }
+
+  void _writeQueryParameterSerialization(StringBuffer buf, IrParameter p) {
+    final style = _queryStyle(p);
+    final explode = _queryExplode(p, style);
+
+    if (_canUseSimpleQueryMap(p, style, explode)) {
+      _writeSimpleQueryMapEntry(buf, p);
+      return;
+    }
+
+    final guardStart = p.isRequired ? null : 'if (${p.dartName} != null) {';
+    if (guardStart != null) buf.writeln(guardStart);
+    final accessor = p.isRequired ? p.dartName : '${p.dartName}!';
+
+    switch (p.type) {
+      case IrList(:final items):
+        _writeListQuerySerialization(buf, p, accessor, items, style, explode);
+      case IrObject(:final fields):
+        _writeObjectQuerySerialization(
+          buf,
+          p,
+          accessor,
+          fields,
+          style,
+          explode,
+        );
+      case IrMap(:final values):
+        _writeMapQuerySerialization(buf, p, accessor, values, style, explode);
+      default:
+        _writeSimpleQueryListEntry(buf, p, _queryScalarExpr(p.type, accessor));
+    }
+
+    if (guardStart != null) buf.writeln('}');
+  }
+
+  void _writeSimpleQueryMapEntry(StringBuffer buf, IrParameter p) {
+    final sanitizedName = _sanitizeParameterName(p.name);
+    final queryValue = _toQueryString(p);
+    if (p.isRequired) {
+      buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
+    } else {
+      buf.writeln(
+        "if (${p.dartName} != null) queryParameters['$sanitizedName'] = $queryValue;",
+      );
+    }
+  }
+
+  void _writeSimpleQueryListEntry(
+    StringBuffer buf,
+    IrParameter p,
+    String valueExpr,
+  ) {
+    final sanitizedName = _sanitizeParameterName(p.name);
+    buf.writeln(
+      "queryParametersList.add(ApiQueryParameter(name: '$sanitizedName', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+    );
+  }
+
+  void _writeListQuerySerialization(
+    StringBuffer buf,
+    IrParameter p,
+    String accessor,
+    IrType items,
+    String style,
+    bool explode,
+  ) {
+    final name = _sanitizeParameterName(p.name);
+    final itemExpr = _queryScalarExpr(items, 'item');
+    if (style == 'form' && explode) {
+      buf.writeln('for (final item in $accessor) {');
+      buf.writeln(
+        "  queryParametersList.add(ApiQueryParameter(name: '$name', value: $itemExpr, allowReserved: ${p.allowReserved}));",
+      );
+      buf.writeln('}');
+      return;
+    }
+
+    final delimiter = switch (style) {
+      'pipeDelimited' => '|',
+      'spaceDelimited' => ' ',
+      _ => ',',
+    };
+    final escapedDelimiter = escapeDartString(delimiter);
+    final joined = itemExpr == 'item'
+        ? "$accessor.join('$escapedDelimiter')"
+        : "$accessor.map((item) => $itemExpr).join('$escapedDelimiter')";
+    if (p.allowReserved) {
+      _writeSimpleQueryListEntry(buf, p, joined);
+    } else {
+      buf.writeln("queryParameters['$name'] = $joined;");
+    }
+  }
+
+  void _writeObjectQuerySerialization(
+    StringBuffer buf,
+    IrParameter p,
+    String accessor,
+    List<IrField> fields,
+    String style,
+    bool explode,
+  ) {
+    final name = _sanitizeParameterName(p.name);
+    if (style == 'deepObject') {
+      for (final field in fields) {
+        final valueExpr = _queryScalarExpr(
+          field.type,
+          '$accessor.${field.name}',
+        );
+        final key = '$name[${field.originalName}]';
+        if (!field.isRequired) {
+          buf.writeln(
+            "if ($accessor.${field.name} != null) queryParameters['$key'] = $valueExpr;",
+          );
+        } else {
+          buf.writeln("queryParameters['$key'] = $valueExpr;");
+        }
+      }
+      return;
+    }
+
+    if (style == 'form' && explode) {
+      for (final field in fields) {
+        final valueExpr = _queryScalarExpr(
+          field.type,
+          '$accessor.${field.name}',
+        );
+        if (!field.isRequired) {
+          buf.writeln(
+            "if ($accessor.${field.name} != null) queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+          );
+        } else {
+          buf.writeln(
+            "queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+          );
+        }
+      }
+      return;
+    }
+
+    final parts = <String>[];
+    for (final field in fields) {
+      final valueExpr = _queryScalarExpr(field.type, '$accessor.${field.name}');
+      parts.add("'${escapeDartString(field.originalName)}'");
+      parts.add(valueExpr);
+    }
+    final joined = "[${parts.join(', ')}].join(',')";
+    if (p.allowReserved) {
+      _writeSimpleQueryListEntry(buf, p, joined);
+    } else {
+      buf.writeln("queryParameters['$name'] = $joined;");
+    }
+  }
+
+  void _writeMapQuerySerialization(
+    StringBuffer buf,
+    IrParameter p,
+    String accessor,
+    IrType values,
+    String style,
+    bool explode,
+  ) {
+    final name = _sanitizeParameterName(p.name);
+    final valueExpr = _queryScalarExpr(values, 'entry.value');
+    if (style == 'deepObject') {
+      buf.writeln('for (final entry in $accessor.entries) {');
+      buf.writeln("  queryParameters['$name[\${entry.key}]'] = $valueExpr;");
+      buf.writeln('}');
+      return;
+    }
+
+    if (style == 'form' && explode) {
+      buf.writeln('for (final entry in $accessor.entries) {');
+      buf.writeln(
+        "  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr, allowReserved: ${p.allowReserved}));",
+      );
+      buf.writeln('}');
+      return;
+    }
+
+    buf.writeln('final ${p.dartName}Parts = <String>[];');
+    buf.writeln('for (final entry in $accessor.entries) {');
+    buf.writeln('  ${p.dartName}Parts.add(entry.key);');
+    buf.writeln('  ${p.dartName}Parts.add($valueExpr);');
+    buf.writeln('}');
+    if (p.allowReserved) {
+      _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
+    } else {
+      buf.writeln("queryParameters['$name'] = ${p.dartName}Parts.join(',');");
+    }
+  }
+
+  String _queryScalarExpr(IrType type, String accessor) {
+    return switch (type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string => accessor,
+        PrimitiveKind.bool => '$accessor.toString()',
+        PrimitiveKind.dateTime ||
+        PrimitiveKind.uri ||
+        PrimitiveKind.bigInt ||
+        PrimitiveKind.duration => buildToJsonCode(type, accessor),
+        PrimitiveKind.bytes => 'base64Encode($accessor)',
+        _ => '$accessor.toString()',
+      },
+      IrEnum() || IrExtensionType() => '$accessor.toJson()',
+      _ => '$accessor.toString()',
+    };
+  }
+
+  bool _canUseSimpleQueryMap(IrParameter p, String style, bool explode) {
+    if (p.allowReserved) return false;
+    return switch (p.type) {
+      IrPrimitive() || IrEnum() || IrExtensionType() => true,
+      IrList() || IrObject() || IrMap() => false,
+      _ => false,
+    };
+  }
+
+  String _queryStyle(IrParameter p) => p.style ?? 'form';
+
+  bool _queryExplode(IrParameter p, String style) =>
+      p.explode ?? (style == 'form');
+
+  String _sanitizeParameterName(String value) =>
+      value.replaceAll('\n', '').replaceAll('\r', '').trim();
 
   Method _buildExecute() {
     return Method(

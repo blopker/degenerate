@@ -563,6 +563,223 @@ void main() {
     });
   });
 
+  group('ApiEmitter - query serialization', () {
+    test('serializes exploded form arrays as repeated query parameters', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'tag',
+              'tag',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string)),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains('final queryParametersList = <ApiQueryParameter>[];'),
+      );
+      expect(
+        source,
+        contains(
+          "ApiQueryParameter(name: 'tag', value: item, allowReserved: false)",
+        ),
+      );
+    });
+
+    test('serializes pipeDelimited arrays into queryParameters map', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'tag',
+              'tag',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string)),
+              isRequired: true,
+              style: 'pipeDelimited',
+              explode: false,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains("queryParameters['tag'] = tag.join('|');"));
+    });
+
+    test('serializes spaceDelimited arrays into queryParameters map', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'tag',
+              'tag',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string)),
+              isRequired: true,
+              style: 'spaceDelimited',
+              explode: false,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains("queryParameters['tag'] = tag.join(' ');"));
+    });
+
+    test('serializes deepObject query params into bracketed keys', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrObject(
+                'Filter',
+                [
+                  IrField(
+                    'status',
+                    'status',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                ],
+                requiredFields: ['status'],
+              ),
+              isRequired: true,
+              style: 'deepObject',
+              explode: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains("queryParameters['filter[status]'] = filter.status;"),
+      );
+    });
+
+    test('serializes non-exploded form objects into comma-joined values', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrObject(
+                'Filter',
+                [
+                  IrField(
+                    'status',
+                    'status',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                  IrField(
+                    'limit',
+                    'limit',
+                    IrPrimitive(PrimitiveKind.int),
+                    isRequired: true,
+                  ),
+                ],
+                requiredFields: ['status', 'limit'],
+              ),
+              isRequired: true,
+              style: 'form',
+              explode: false,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains(
+          "queryParameters['filter'] = ['status', filter.status, 'limit', filter.limit.toString()].join(',');",
+        ),
+      );
+    });
+
+    test('uses queryParametersList for allowReserved values', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          parameters: [
+            IrParameter(
+              'redirect',
+              'redirect',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+              allowReserved: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains(
+          "ApiQueryParameter(name: 'redirect', value: redirect, allowReserved: true)",
+        ),
+      );
+    });
+  });
+
   // ─── Cookie parameter warning ─────────────────────────────────
 
   group('ApiEmitter - cookie parameters', () {

@@ -213,6 +213,9 @@ class OperationLowerer {
     final inValue = param['in'] as String? ?? 'query';
     final location = _parseParameterLocation(inValue);
     final required = param['required'] == true;
+    final style = param['style'] as String?;
+    final explode = param['explode'] as bool?;
+    final allowReserved = param['allowReserved'] == true;
 
     final schemaMap = param['schema'] as Map<String, dynamic>?;
     // Generate a name hint for inline parameter schemas.
@@ -231,6 +234,9 @@ class OperationLowerer {
       location,
       type,
       isRequired: required,
+      style: style,
+      explode: explode,
+      allowReserved: allowReserved,
       defaultValue: defaultValue,
     );
   }

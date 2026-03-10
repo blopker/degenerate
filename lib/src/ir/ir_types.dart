@@ -188,6 +188,9 @@ final class IrParameter {
   final ParameterLocation location; // path, query, header, cookie
   final IrType type;
   final bool isRequired;
+  final String? style;
+  final bool? explode;
+  final bool allowReserved;
   final Object? defaultValue;
   const IrParameter(
     this.name,
@@ -195,6 +198,9 @@ final class IrParameter {
     this.location,
     this.type, {
     this.isRequired = false,
+    this.style,
+    this.explode,
+    this.allowReserved = false,
     this.defaultValue,
   });
 }
