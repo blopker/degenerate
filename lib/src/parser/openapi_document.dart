@@ -57,6 +57,19 @@ class OpenApiDocument {
     return s.cast<Map<String, dynamic>>();
   }
 
+  Map<String, dynamic> get securitySchemes {
+    final components = root['components'] as Map<String, dynamic>?;
+    if (components == null) return <String, dynamic>{};
+    final schemes = components['securitySchemes'] as Map<String, dynamic>?;
+    return schemes ?? <String, dynamic>{};
+  }
+
+  List<Map<String, dynamic>>? get security {
+    final security = root['security'];
+    if (security is! List) return null;
+    return security.whereType<Map<String, dynamic>>().toList();
+  }
+
   /// Cache for resolved `$ref` pointers.
   final _refCache = <String, dynamic>{};
 

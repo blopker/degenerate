@@ -32,6 +32,7 @@ final class ApiRequest {
   final Map<String, String> headers;
   final Map<String, String> queryParameters;
   final List<ApiQueryParameter> queryParametersList;
+  final Map<String, String> cookies;
   final Object? body;
   final String? contentType;
 
@@ -41,6 +42,7 @@ final class ApiRequest {
     this.headers = const {},
     this.queryParameters = const {},
     this.queryParametersList = const [],
+    this.cookies = const {},
     this.body,
     this.contentType,
   });
@@ -52,6 +54,7 @@ final class ApiRequest {
     Map<String, String>? headers,
     Map<String, String>? queryParameters,
     List<ApiQueryParameter>? queryParametersList,
+    Map<String, String>? cookies,
     Object? Function()? body,
     String? Function()? contentType,
   }) {
@@ -61,6 +64,7 @@ final class ApiRequest {
       headers: headers ?? this.headers,
       queryParameters: queryParameters ?? this.queryParameters,
       queryParametersList: queryParametersList ?? this.queryParametersList,
+      cookies: cookies ?? this.cookies,
       body: body != null ? body() : this.body,
       contentType: contentType != null ? contentType() : this.contentType,
     );
@@ -93,6 +97,26 @@ final class ApiRequest {
     }
     return resolved.replace(query: queryParts.join('&'));
   }
+
+  Map<String, String> resolvedHeaders() {
+    if (cookies.isEmpty) return headers;
+    final cookieHeader = cookies.entries
+        .map((entry) => '${entry.key}=${_encodeCookieValue(entry.value)}')
+        .join('; ');
+    return {
+      ...headers,
+      'Cookie': headers.containsKey('Cookie')
+          ? '${headers['Cookie']}; $cookieHeader'
+          : cookieHeader,
+    };
+  }
+}
+
+String _encodeCookieValue(String value) {
+  return value
+      .replaceAll('%', '%25')
+      .replaceAll(';', '%3B')
+      .replaceAll('=', '%3D');
 }
 
 const _unreservedOrReservedQueryChars =

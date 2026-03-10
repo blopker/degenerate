@@ -105,6 +105,28 @@ void main() {
         'https://api.example.com/pets?redirect=https://example.com/a?b=c&d=e',
       );
     });
+
+    test('synthesizes cookie header from cookies map', () {
+      final req = ApiRequest(
+        method: 'GET',
+        path: '/pets',
+        headers: {'Accept': 'application/json'},
+        cookies: {'session': 'abc', 'theme': 'dark'},
+      );
+
+      expect(req.resolvedHeaders()['Accept'], 'application/json');
+      expect(req.resolvedHeaders()['Cookie'], 'session=abc; theme=dark');
+    });
+
+    test('encodes reserved characters in cookie values', () {
+      final req = ApiRequest(
+        method: 'GET',
+        path: '/pets',
+        cookies: {'session': 'abc;123=xyz%done'},
+      );
+
+      expect(req.resolvedHeaders()['Cookie'], 'session=abc%3B123%3Dxyz%25done');
+    });
   });
 
   group('ApiResponse.isSuccessful', () {

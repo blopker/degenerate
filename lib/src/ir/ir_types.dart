@@ -155,6 +155,47 @@ final class IrApi {
   const IrApi(this.name, this.operations);
 }
 
+final class IrSecurityRequirement {
+  final Map<String, List<String>> schemes;
+  const IrSecurityRequirement(this.schemes);
+}
+
+final class IrOAuthFlow {
+  final String type;
+  final String? authorizationUrl;
+  final String? tokenUrl;
+  final String? refreshUrl;
+  final Map<String, String> scopes;
+  const IrOAuthFlow({
+    required this.type,
+    this.authorizationUrl,
+    this.tokenUrl,
+    this.refreshUrl,
+    this.scopes = const {},
+  });
+}
+
+final class IrSecurityScheme {
+  final String name;
+  final String type;
+  final String? scheme;
+  final String? bearerFormat;
+  final String? parameterName;
+  final String? location;
+  final String? openIdConnectUrl;
+  final List<IrOAuthFlow> flows;
+  const IrSecurityScheme({
+    required this.name,
+    required this.type,
+    this.scheme,
+    this.bearerFormat,
+    this.parameterName,
+    this.location,
+    this.openIdConnectUrl,
+    this.flows = const [],
+  });
+}
+
 final class IrOperation {
   final String operationId;
   final String dartMethodName;
@@ -167,6 +208,7 @@ final class IrOperation {
   final Map<int, IrResponse> responses; // status code → response
   final IrResponse? defaultResponse;
   final bool isDeprecated;
+  final List<IrSecurityRequirement>? securityRequirements;
   const IrOperation(
     this.operationId,
     this.dartMethodName,
@@ -179,6 +221,7 @@ final class IrOperation {
     this.responses = const {},
     this.defaultResponse,
     this.isDeprecated = false,
+    this.securityRequirements,
   });
 }
 

@@ -15,12 +15,13 @@ final class DioApiClient implements ApiClient {
   @override
   Future<ApiResponse> send(ApiRequest request) async {
     final uri = request.resolveUri(baseUrl);
+    final headers = request.resolvedHeaders();
     try {
       final response = await _inner.requestUri<List<int>>(
         uri,
         options: dio.Options(
           method: request.method,
-          headers: request.headers.isNotEmpty ? request.headers : null,
+          headers: headers.isNotEmpty ? headers : null,
           contentType: request.contentType,
           responseType: dio.ResponseType.bytes,
           // Let us handle status codes ourselves.

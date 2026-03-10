@@ -70,5 +70,28 @@ void main() {
 
       expect(response.bodyBytes, [0, 255, 1]);
     });
+
+    test('sends cookies as Cookie header', () async {
+      http.BaseRequest? capturedRequest;
+      final inner = MockClient((request) async {
+        capturedRequest = request;
+        return http.Response('', 200);
+      });
+
+      final client = HttpApiClient(
+        baseUrl: Uri.parse('https://api.example.com'),
+        inner: inner,
+      );
+
+      await client.send(
+        const ApiRequest(
+          method: 'GET',
+          path: '/hello',
+          cookies: {'session': 'abc', 'theme': 'dark'},
+        ),
+      );
+
+      expect(capturedRequest!.headers['cookie'], 'session=abc; theme=dark');
+    });
   });
 }

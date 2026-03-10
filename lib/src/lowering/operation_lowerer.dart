@@ -96,6 +96,7 @@ class OperationLowerer {
               responses: op.responses,
               defaultResponse: op.defaultResponse,
               isDeprecated: op.isDeprecated,
+              securityRequirements: op.securityRequirements,
             ),
           );
         } else {
@@ -131,6 +132,7 @@ class OperationLowerer {
     final summary = op['summary'] as String?;
     final description = op['description'] as String?;
     final deprecated = op['deprecated'] == true;
+    final securityRequirements = _lowerSecurityRequirements(op['security']);
 
     // Merge path-level and operation-level parameters.
     final opParams = _resolveParamRefs(op['parameters'] as List? ?? []);
@@ -189,7 +191,22 @@ class OperationLowerer {
       responses: responses,
       defaultResponse: defaultResponse,
       isDeprecated: deprecated,
+      securityRequirements: securityRequirements,
     );
+  }
+
+  List<IrSecurityRequirement>? _lowerSecurityRequirements(dynamic value) {
+    if (value is! List) return null;
+    return value.whereType<Map<String, dynamic>>().map((requirement) {
+      final schemes = <String, List<String>>{};
+      for (final entry in requirement.entries) {
+        final scopes = entry.value is List
+            ? (entry.value as List).map((e) => e.toString()).toList()
+            : const <String>[];
+        schemes[entry.key] = scopes;
+      }
+      return IrSecurityRequirement(schemes);
+    }).toList();
   }
 
   // ──────────────────────────────────────────────────────────────

@@ -100,6 +100,7 @@ class ApiEmitter {
     final pathParams = <IrParameter>[];
     final queryParams = <IrParameter>[];
     final headerParams = <IrParameter>[];
+    final cookieParams = <IrParameter>[];
     for (final p in op.parameters) {
       switch (p.location) {
         case ParameterLocation.path:
@@ -109,7 +110,7 @@ class ApiEmitter {
         case ParameterLocation.header:
           headerParams.add(p);
         case ParameterLocation.cookie:
-          break;
+          cookieParams.add(p);
       }
     }
 
@@ -141,6 +142,18 @@ class ApiEmitter {
 
     // Header parameters
     for (final p in headerParams) {
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = p.dartName
+            ..named = true
+            ..required = p.isRequired
+            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
+        ),
+      );
+    }
+
+    for (final p in cookieParams) {
       params.add(
         Parameter(
           (pb) => pb
@@ -194,6 +207,7 @@ class ApiEmitter {
       pathParams: pathParams,
       queryParams: queryParams,
       headerParams: headerParams,
+      cookieParams: cookieParams,
     );
 
     final docs = <String>[];
@@ -238,6 +252,7 @@ class ApiEmitter {
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
+    required List<IrParameter> cookieParams,
   }) {
     final buf = StringBuffer();
     final httpMethod = op.method.name.toUpperCase();
@@ -256,10 +271,30 @@ class ApiEmitter {
     });
 
     if (queryParams.isNotEmpty) {
-      buf.writeln('final queryParameters = <String, String>{};');
+      buf.writeln(
+        'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
+      );
       buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
       for (final p in queryParams) {
         _writeQueryParameterSerialization(buf, p);
+      }
+      buf.writeln();
+    }
+
+    if (cookieParams.isNotEmpty) {
+      buf.writeln(
+        'final cookies = <String, String>{..._config.defaultCookies};',
+      );
+      for (final p in cookieParams) {
+        final sanitizedName = _sanitizeParameterName(p.name);
+        final cookieValue = _toHeaderString(p);
+        if (p.isRequired) {
+          buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
+        } else {
+          buf.writeln(
+            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
+          );
+        }
       }
       buf.writeln();
     }
@@ -290,6 +325,9 @@ class ApiEmitter {
     if (queryParams.isNotEmpty) {
       buf.writeln('  queryParameters: queryParameters,');
       buf.writeln('  queryParametersList: queryParametersList,');
+    }
+    if (cookieParams.isNotEmpty) {
+      buf.writeln('  cookies: cookies,');
     }
 
     if (bodyType != null) {

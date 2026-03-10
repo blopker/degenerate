@@ -16,7 +16,7 @@ final class HttpApiClient implements ApiClient {
   Future<ApiResponse> send(ApiRequest request) async {
     final uri = request.resolveUri(baseUrl);
     final httpRequest = http.Request(request.method, uri)
-      ..headers.addAll(request.headers);
+      ..headers.addAll(request.resolvedHeaders());
     if (request.contentType != null) {
       httpRequest.headers['content-type'] = request.contentType!;
     }

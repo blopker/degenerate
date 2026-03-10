@@ -129,6 +129,16 @@ void main() {
       expect(client.lastRequest!.headers, isNot(contains('X-Trace-Id')));
     });
 
+    test('sends cookie parameter when provided', () async {
+      await api.getItem(itemId: 'x', session: 'sess-123');
+
+      expect(client.lastRequest!.cookies['session'], equals('sess-123'));
+      expect(
+        client.lastRequest!.resolvedHeaders()['Cookie'],
+        equals('session=sess-123'),
+      );
+    });
+
     test('returns ApiSuccess on 200', () async {
       final result = await api.getItem(itemId: 'x');
 

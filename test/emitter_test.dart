@@ -784,7 +784,7 @@ void main() {
 
   group('ApiEmitter - cookie parameters', () {
     test(
-      'cookie params are excluded from method signature with TODO comment',
+      'cookie params are included in method signature and request cookies',
       () {
         final api = IrApi('TestApi', [
           IrOperation(
@@ -820,8 +820,15 @@ void main() {
         );
         final source = emitRaw(library);
 
-        // Cookie params should NOT appear in method signature
-        expect(source, isNot(contains('sessionId')));
+        expect(source, contains('{required String sessionId}'));
+        expect(
+          source,
+          contains(
+            'final cookies = <String, String>{..._config.defaultCookies};',
+          ),
+        );
+        expect(source, contains("cookies['session_id'] = sessionId;"));
+        expect(source, contains('cookies: cookies,'));
         expect(() => _formatOrFail(source), returnsNormally);
       },
     );
@@ -1477,6 +1484,96 @@ void main() {
         contains(
           'Operation getTextObject uses unsupported non-JSON error response media type text/plain with type PlainError.',
         ),
+      );
+    });
+  });
+
+  group('FileEmitter security emission', () {
+    test('emits security helpers and requirement metadata', () {
+      final files = FileEmitter().emitAll(
+        types: const [],
+        apis: [
+          IrApi('DefaultApi', [
+            IrOperation(
+              'secureRead',
+              'secureRead',
+              HttpMethod.get,
+              '/secure',
+              responses: const {200: IrResponse()},
+              securityRequirements: const [
+                IrSecurityRequirement({'HttpBearer': []}),
+              ],
+            ),
+          ]),
+        ],
+        securitySchemes: const [
+          IrSecurityScheme(
+            name: 'ApiKeyAuth',
+            type: 'apiKey',
+            parameterName: 'x-api-key',
+            location: 'header',
+          ),
+          IrSecurityScheme(name: 'HttpBearer', type: 'http', scheme: 'bearer'),
+          IrSecurityScheme(name: 'HttpBasic', type: 'http', scheme: 'basic'),
+        ],
+        globalSecurity: const [
+          IrSecurityRequirement({'ApiKeyAuth': []}),
+        ],
+        packageName: 'test_client',
+        specFileName: 'test.yaml',
+        specVersion: '3.0.0',
+      );
+
+      final securityFile = files['lib/src/client/test_client_security.dart']!;
+      final sdkFile = files['lib/src/client/test_client_api.dart']!;
+      final barrelFile = files['lib/test_client.dart']!;
+
+      expect(
+        securityFile,
+        contains('static final securitySchemes = <String, ApiSecurityScheme>{'),
+      );
+      expect(
+        securityFile,
+        contains(
+          'static final globalRequirements = [ApiSecurityRequirement({\'ApiKeyAuth\': []})];',
+        ),
+      );
+      expect(
+        securityFile,
+        contains(
+          'static final secureReadRequirements = [ApiSecurityRequirement({\'HttpBearer\': []})];',
+        ),
+      );
+      expect(
+        securityFile,
+        contains(
+          'static ApiConfig applyApiKeyAuth(ApiConfig config, String value)',
+        ),
+      );
+      expect(
+        securityFile,
+        contains(
+          'static ApiConfig applyHttpBearer(ApiConfig config, String token)',
+        ),
+      );
+      expect(
+        securityFile,
+        contains(
+          'static ApiConfig applyHttpBasic(ApiConfig config, {required String username, required String password})',
+        ),
+      );
+      expect(sdkFile, contains("import 'test_client_security.dart';"));
+      expect(sdkFile, contains('withApiKeyAuth(String value)'));
+      expect(sdkFile, contains('withHttpBearer(String token)'));
+      expect(
+        sdkFile,
+        contains(
+          'withHttpBasic({required String username, required String password})',
+        ),
+      );
+      expect(
+        barrelFile,
+        contains("export 'src/client/test_client_security.dart';"),
       );
     });
   });

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns one item
 ///
 /// `GET /items/{itemId}`
-Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, }) async  { final queryParameters = <String, String>{};
+Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, String? session, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.join(','), allowReserved: true));
@@ -33,6 +33,9 @@ queryParameters['filter[status]'] = filter.status;
 queryParameters['filter[limit]'] = filter.limit.toString();
 }
 
+final cookies = <String, String>{..._config.defaultCookies};
+if (session != null) cookies['session'] = session;
+
 final request = ApiRequest(
   method: 'GET',
   path: '/items/${Uri.encodeComponent(itemId)}',
@@ -41,6 +44,7 @@ final request = ApiRequest(
   },
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  cookies: cookies,
 );
 
 return _execute(

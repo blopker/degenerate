@@ -56,13 +56,13 @@
 
 - [x] **Non-JSON request bodies** — emitter now preserves chosen media type, emits `text/plain` raw body writes, binary `application/octet-stream` byte uploads, and `application/*+json` JSON encoding. Unsupported non-JSON complex types emit `UnsupportedError` + generator warning. *(review.md #4, review2.md 1d)*
 - [x] **Non-JSON success/error responses** — response typing handles `application/json`, `application/*+json` (e.g. `application/problem+json`), `text/plain`, and binary (`Uint8List` via `response.bodyBytes`). Generator warns on unsupported non-JSON complex schemas. *(review.md #5, review2.md #2)*
-- [ ] **Query serialization style/explode/allowReserved** — IR now carries `style`, `explode`, `allowReserved` on `IrParameter`. Emitter handles high-impact cases: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited arrays (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params), allowReserved passthrough. Runtime supports duplicate query keys via `ApiQueryParameter` + `queryParametersList`. Wire tests cover pipeDelimited, spaceDelimited, deepObject, and allowReserved through generated code. Remaining: non-exploded form/simple variants, path/header/cookie style application. *(review2.md 1c)*
+- [x] **Query serialization style/explode/allowReserved** — IR now carries `style`, `explode`, `allowReserved` on `IrParameter`. Emitter handles query `form` (exploded and non-exploded), `pipeDelimited`, `spaceDelimited`, `deepObject`, and `allowReserved`. Runtime supports duplicate query keys via `ApiQueryParameter` + `queryParametersList`. Wire tests cover delimited arrays, deepObject, cookies, and reserved-char passthrough through generated code. *(review2.md 1c)*
 - [x] **HTTP/Dio adapters support binary bodies and responses** — `HttpApiClient` and `DioApiClient` accept both `String` and `List<int>` request bodies. `ApiResponse` carries `bodyBytes: Uint8List` alongside text `body`, with zero-copy when caller provides `Uint8List`. *(review2.md 1e)*
 
 ### P1: Important Capability Gaps
 
-- [ ] **Cookie parameters dropped** — recognized during partitioning but explicitly ignored (`break`). Need to either synthesize a `Cookie` header or add first-class cookie support in `ApiRequest`. *(review.md #3, review2.md 1b)*
-- [ ] **Security schemes don't drive codegen** — runtime has `AuthInterceptor`, but generator doesn't emit typed auth surfaces from `securitySchemes`. Should support API key (header/query/cookie), bearer/basic, and per-operation security requirements. Fixture 06 exists but isn't wired up. *(review2.md #3, #6)*
+- [x] **Cookie parameters emitted** — cookie params now appear in method signatures, flow through `ApiRequest.cookies`, and adapters synthesize the `Cookie` header. `ApiConfig` supports `defaultCookies`. *(review.md #3, review2.md 1b)*
+- [x] **Security schemes drive codegen** — generator now emits typed auth helpers for API key (header/query/cookie), bearer, and basic auth plus generated security metadata for schemes and per-operation/global requirements. Fixture 06 snapshot exercises the output. *(review2.md #3, #6)*
 - [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
 - [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. Consider adding a pre-validation phase that checks the spec against the OpenAPI 3.0/3.1 JSON meta-schema and fails fast with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
 - [ ] **`--client` flag is a no-op** — CLI exposes `--client http|none` but nothing changes in generated output. Either wire it up or remove it. *(review.md #7, review2.md 7c)*
@@ -83,7 +83,7 @@
 These are cross-cutting improvements that would make multiple P0/P1 items easier to implement.
 Items from review3.md added where they don't duplicate existing entries:
 
-- [x] **Parameter serialization layer** — IR preserves `style`, `explode`, `allowReserved` on `IrParameter`. Emitter generates style-aware query serialization. Runtime `ApiQueryParameter` supports repeated keys and reserved-char passthrough. Remaining style matrix coverage is incremental.
+- [x] **Parameter serialization layer** — IR preserves `style`, `explode`, `allowReserved` on `IrParameter`. Emitter generates style-aware query serialization. Runtime `ApiQueryParameter` supports repeated keys and reserved-char passthrough.
 - [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw). Shared `media_type_utils.dart` handles media-type normalization and preference selection. Multipart/form not yet supported.
 - [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
 - [ ] **Migrate serialization helpers to `code_builder` Expressions** — `buildFromJsonCode`/`buildToJsonCode` return raw strings mixed with AST construction. Refactoring to return `code_builder` `Expression` objects would enable automatic import tracking and eliminate string-templating edge cases. High effort, low urgency. *(review3.md #3)*
@@ -135,6 +135,11 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - New tests: exploded form arrays, pipeDelimited arrays, spaceDelimited arrays, deepObject objects, non-exploded form objects, allowReserved passthrough, duplicate query param URI building
 - Wire tests for spec-03: repeated/reserved query serialization validated through generated code, allowReserved reserved-char passthrough verified at URI level
 - Expanded spec-03 fixture with pipeDelimited, spaceDelimited, and deepObject query params; wire tests verify pipe joining, space joining, and bracketed key serialization through generated code and URI encoding
+- Cookie parameters now generate method parameters, populate `ApiRequest.cookies`, and flow into synthesized `Cookie` headers in runtime adapters; `ApiConfig.defaultCookies` added
+- `ApiConfig` now supports `defaultQueryParameters`, enabling generated security helpers to attach query-based auth without custom interceptors
+- Generated security metadata file now describes security schemes and per-operation/global requirements using runtime `ApiSecurityScheme`, `ApiSecurityRequirement`, and `ApiOAuthFlow` types
+- Generated SDK/security helpers now support API key auth in header/query/cookie plus HTTP bearer/basic auth (`withApiKeyAuth`, `withHttpBearer`, `withHttpBasic`, etc.)
+- Fixture 06 snapshot updated to verify generated security helpers and requirement metadata; generated package analyzes clean
 - Fixed optional headers to always use `if (x != null)` guard instead of broken `?` null-aware element syntax
 - Fixed redundant `!` null-assert in guarded query serialization — generated code now uses Dart type promotion
 - All tests passing, analyzer clean on all touched files

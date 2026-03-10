@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/spec_06_security_schemes_and_requirements_api.dart';
+export 'src/client/spec_06_security_schemes_and_requirements_security.dart';
 
 
 export 'src/apis/default_api.dart';

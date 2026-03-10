@@ -226,9 +226,13 @@ class Generator {
 
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
+    final securitySchemes = _lowerSecuritySchemes(doc.securitySchemes);
+    final globalSecurity = _lowerSecurityRequirements(doc.security);
     final files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
+      securitySchemes: securitySchemes,
+      globalSecurity: globalSecurity,
       packageName: packageName,
       specFileName: specFileName,
       specVersion: specVersion,
@@ -294,6 +298,66 @@ class Generator {
       'Done! Wrote $written files to ${config.outputDir}'
       '${skipped > 0 ? ' ($skipped unchanged)' : ''}',
     );
+  }
+
+  List<IrSecurityScheme> _lowerSecuritySchemes(Map<String, dynamic> raw) {
+    final schemes = <IrSecurityScheme>[];
+    for (final entry in raw.entries) {
+      final value = entry.value;
+      if (value is! Map<String, dynamic>) continue;
+      final flows = <IrOAuthFlow>[];
+      final rawFlows = value['flows'];
+      if (rawFlows is Map<String, dynamic>) {
+        for (final flowEntry in rawFlows.entries) {
+          final flow = flowEntry.value;
+          if (flow is! Map<String, dynamic>) continue;
+          final scopes = <String, String>{};
+          final rawScopes = flow['scopes'];
+          if (rawScopes is Map<String, dynamic>) {
+            for (final scopeEntry in rawScopes.entries) {
+              scopes[scopeEntry.key] = scopeEntry.value.toString();
+            }
+          }
+          flows.add(
+            IrOAuthFlow(
+              type: flowEntry.key,
+              authorizationUrl: flow['authorizationUrl'] as String?,
+              tokenUrl: flow['tokenUrl'] as String?,
+              refreshUrl: flow['refreshUrl'] as String?,
+              scopes: scopes,
+            ),
+          );
+        }
+      }
+      schemes.add(
+        IrSecurityScheme(
+          name: entry.key,
+          type: value['type'] as String? ?? 'unknown',
+          scheme: value['scheme'] as String?,
+          bearerFormat: value['bearerFormat'] as String?,
+          parameterName: value['name'] as String?,
+          location: value['in'] as String?,
+          openIdConnectUrl: value['openIdConnectUrl'] as String?,
+          flows: flows,
+        ),
+      );
+    }
+    return schemes;
+  }
+
+  List<IrSecurityRequirement>? _lowerSecurityRequirements(
+    List<Map<String, dynamic>>? raw,
+  ) {
+    if (raw == null) return null;
+    return raw.map((requirement) {
+      final schemes = <String, List<String>>{};
+      for (final entry in requirement.entries) {
+        schemes[entry.key] = entry.value is List
+            ? (entry.value as List).map((e) => e.toString()).toList()
+            : const <String>[];
+      }
+      return IrSecurityRequirement(schemes);
+    }).toList();
   }
 
   void _log(String message) {
@@ -401,6 +465,7 @@ class Generator {
           responses: responses,
           defaultResponse: defaultResp ?? op.defaultResponse,
           isDeprecated: op.isDeprecated,
+          securityRequirements: op.securityRequirements,
         );
       }).toList();
       if (!apiChanged) return api;
