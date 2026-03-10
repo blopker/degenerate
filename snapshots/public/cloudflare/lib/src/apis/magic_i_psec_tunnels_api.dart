@@ -21,6 +21,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnels({re
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -41,6 +42,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsCreateIpsecTunnels({
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -62,6 +64,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateMultipleIpsecT
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body),
 );
@@ -82,6 +85,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnelDetai
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -102,6 +106,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateIpsecTunnel({r
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -122,6 +127,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsDeleteIpsecTunnel({r
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/ipsec_tunnels/${Uri.encodeComponent(ipsecTunnelId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 

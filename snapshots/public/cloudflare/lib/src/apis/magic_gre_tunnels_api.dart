@@ -21,6 +21,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnels({requir
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -41,6 +42,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsCreateGreTunnels({requ
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -62,6 +64,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateMultipleGreTunne
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body),
 );
@@ -82,6 +85,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnelDetails({
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -102,6 +106,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateGreTunnel({requi
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -122,6 +127,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsDeleteGreTunnel({requi
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 

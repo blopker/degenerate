@@ -11,7 +11,7 @@ import '../apis/default_api.dart';
 ///
 /// ```dart
 /// final sdk = TestApi(ApiConfig(client: myClient));
-/// sdk.$default.getUserById();
+/// sdk.$default.listUsers();
 /// ```
 final class TestApi {
   final ApiConfig _config;

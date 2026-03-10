@@ -72,7 +72,13 @@ class OpenApiDocument {
   }
 
   dynamic _resolveRefUncached(String ref) {
-    if (!ref.startsWith('#/')) return null;
+    if (!ref.startsWith('#/')) {
+      throw UnsupportedError(
+        'External \$ref "$ref" is not supported. '
+        'Only local refs starting with "#/" are supported. '
+        'Inline the referenced content or use a bundler to resolve external refs.',
+      );
+    }
     final segments = ref.substring(2).split('/');
     dynamic current = root;
     for (final segment in segments) {

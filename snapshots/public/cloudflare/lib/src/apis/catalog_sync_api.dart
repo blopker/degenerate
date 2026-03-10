@@ -44,6 +44,7 @@ Future<ApiResult<McnResponse, McnResponse>> catalogSyncsCreate({required McnAcco
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (forwarded != null) 'forwarded': forwarded
   },
   body: jsonEncode(body.toJson()),
 );

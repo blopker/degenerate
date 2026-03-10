@@ -74,8 +74,25 @@ void main() {
       expect(doc.resolveRef('#/components/schemas/DoesNotExist'), isNull);
     });
 
-    test('returns null for invalid ref format', () {
-      expect(doc.resolveRef('not-a-ref'), isNull);
+    test('throws for invalid ref format', () {
+      expect(
+        () => doc.resolveRef('not-a-ref'),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('throws for external file ref', () {
+      expect(
+        () => doc.resolveRef('external.yaml#/components/schemas/Pet'),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('throws for URL-based external ref', () {
+      expect(
+        () => doc.resolveRef('https://example.com/spec.yaml#/components/schemas/Pet'),
+        throwsA(isA<UnsupportedError>()),
+      );
     });
   });
 

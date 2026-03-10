@@ -39,6 +39,8 @@ Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({re
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
+    , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
   body: jsonEncode(body.toJson()),
 );

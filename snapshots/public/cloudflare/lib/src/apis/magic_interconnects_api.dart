@@ -21,6 +21,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnects({
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -41,6 +42,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateMultipleInter
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body),
 );
@@ -61,6 +63,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnectDet
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 
@@ -81,6 +84,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateInterconnect(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
   body: jsonEncode(body.toJson()),
 );

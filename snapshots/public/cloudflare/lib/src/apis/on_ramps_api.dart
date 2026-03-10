@@ -50,6 +50,7 @@ Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (forwarded != null) 'forwarded': forwarded
   },
   body: jsonEncode(body.toJson()),
 );

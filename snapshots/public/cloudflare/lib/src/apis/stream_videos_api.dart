@@ -51,6 +51,10 @@ Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({require
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream',
   headers: {..._config.defaultHeaders
+    , 'Tus-Resumable': tusResumable.toJson()
+    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
+    , 'Upload-Length': uploadLength.toString()
+    , if (uploadMetadata != null) 'Upload-Metadata': uploadMetadata.toString()
   },
   queryParameters: {
     if (directUser != null) 'direct_user': directUser.toString(),
@@ -169,6 +173,7 @@ Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosFromAUrl({req
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/copy',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -190,6 +195,7 @@ Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosViaDirectUplo
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/direct_upload',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (uploadCreator != null) 'Upload-Creator': uploadCreator.toString()
   },
   body: jsonEncode(body.toJson()),
 );

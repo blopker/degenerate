@@ -178,6 +178,8 @@ Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required Work
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
+    , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
   body: jsonEncode(body.toJson()),
 );

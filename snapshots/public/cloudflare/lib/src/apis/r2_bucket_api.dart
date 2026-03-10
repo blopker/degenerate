@@ -21,6 +21,7 @@ Future<ApiResult<Response2, ResponseFailure>> r2GetEventNotificationConfigs({req
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -43,6 +44,7 @@ Future<ApiResult<Response2, ResponseFailure>> r2GetEventNotificationConfig({requ
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -66,6 +68,7 @@ Future<ApiResult<Response2, Never>> r2PutEventNotificationConfig({required R2Que
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -87,6 +90,7 @@ Future<ApiResult<Response2, Never>> r2EventNotificationDeleteConfig({required R2
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body?.toJson()),
 );
@@ -107,6 +111,7 @@ Future<ApiResult<Response2, Never>> r2ListBuckets({required R2AccountIdentifier 
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   queryParameters: {
     'name_contains': ?nameContains,
@@ -135,6 +140,7 @@ Future<ApiResult<Response2, Never>> r2CreateBucket({required R2AccountIdentifier
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -155,6 +161,7 @@ Future<ApiResult<Response2, Never>> r2GetBucket({required R2AccountIdentifier ac
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -174,6 +181,8 @@ Future<ApiResult<Response2, Never>> r2PatchBucket({required R2AccountIdentifier 
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
+    , 'cf-r2-storage-class': cfR2StorageClass.toJson()
   },
 );
 
@@ -193,6 +202,7 @@ Future<ApiResult<Response2, Never>> r2DeleteBucket({required R2BucketName bucket
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -212,6 +222,7 @@ Future<ApiResult<Response2, Never>> r2GetBucketCorsPolicy({required R2BucketName
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -232,6 +243,7 @@ Future<ApiResult<Response2, Never>> r2PutBucketCorsPolicy({required R2BucketName
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -252,6 +264,7 @@ Future<ApiResult<Response2, Never>> r2DeleteBucketCorsPolicy({required R2BucketN
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -271,6 +284,7 @@ Future<ApiResult<Response2, Never>> r2ListCustomDomains({required R2AccountIdent
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -291,6 +305,7 @@ Future<ApiResult<Response2, Never>> r2AddCustomDomain({required R2AccountIdentif
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -311,6 +326,7 @@ Future<ApiResult<Response2, Never>> r2GetCustomDomainSettings({required R2Accoun
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -331,6 +347,7 @@ Future<ApiResult<Response2, Never>> r2EditCustomDomainSettings({required R2Accou
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -351,6 +368,7 @@ Future<ApiResult<Response2, Never>> r2DeleteCustomDomain({required R2BucketName 
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -370,6 +388,7 @@ Future<ApiResult<Response2, Never>> r2GetBucketPublicPolicy({required R2AccountI
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/managed',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -390,6 +409,7 @@ Future<ApiResult<Response2, Never>> r2PutBucketPublicPolicy({required R2AccountI
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/managed',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -410,6 +430,7 @@ Future<ApiResult<Response2, Never>> r2GetBucketLifecycleConfiguration({required 
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lifecycle',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -430,6 +451,7 @@ Future<ApiResult<Response2, Never>> r2PutBucketLifecycleConfiguration({required 
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lifecycle',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -490,6 +512,7 @@ Future<ApiResult<Response2, Never>> r2GetBucketLockConfiguration({required R2Buc
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lock',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -510,6 +533,7 @@ Future<ApiResult<Response2, Never>> r2PutBucketLockConfiguration({required R2Buc
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lock',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -530,6 +554,7 @@ Future<ApiResult<Response2, Never>> r2GetBucketSippyConfig({required R2AccountId
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 
@@ -550,6 +575,7 @@ Future<ApiResult<Response2, Never>> r2PutBucketSippyConfig({required R2AccountId
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
   body: jsonEncode(body.toJson()),
 );
@@ -570,6 +596,7 @@ Future<ApiResult<Response2, Never>> r2DeleteBucketSippyConfig({required R2Bucket
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
   headers: {..._config.defaultHeaders
+    , if (cfR2Jurisdiction != null) 'cf-r2-jurisdiction': cfR2Jurisdiction.toJson()
   },
 );
 

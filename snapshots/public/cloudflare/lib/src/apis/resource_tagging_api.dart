@@ -46,6 +46,7 @@ Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsSet({required R
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (ifMatch != null) 'If-Match': ifMatch
   },
   body: jsonEncode(body.toJson()),
 );
@@ -70,6 +71,7 @@ Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTa
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (ifMatch != null) 'If-Match': ifMatch
   },
   body: jsonEncode(body.toJson()),
 );
@@ -185,6 +187,7 @@ Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsZoneSet({requir
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (ifMatch != null) 'If-Match': ifMatch
   },
   body: jsonEncode(body.toJson()),
 );
@@ -209,6 +212,7 @@ Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required Resour
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (ifMatch != null) 'If-Match': ifMatch
   },
   body: jsonEncode(body.toJson()),
 );

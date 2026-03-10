@@ -50,6 +50,7 @@ Future<ApiResult<McnResponse, McnResponse>> providersCreate({required McnAccount
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (forwarded != null) 'forwarded': forwarded
   },
   body: jsonEncode(body.toJson()),
 );

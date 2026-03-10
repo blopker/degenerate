@@ -142,7 +142,40 @@ void _snapshotTests(String groupName, List<File> specFiles) {
   });
 }
 
+/// Specs that use external $refs and are expected to fail generation.
+const _externalRefSpecs = {'digitalocean-v2'};
+
 void main() {
   _snapshotTests('specs', _specFiles(p.join(_fixturesDir, 'specs')));
-  _snapshotTests('public', _specFiles(p.join(_fixturesDir, 'public')));
+  _snapshotTests(
+    'public',
+    _specFiles(p.join(_fixturesDir, 'public'))
+        .where((f) => !_externalRefSpecs.contains(p.basenameWithoutExtension(f.path)))
+        .toList(),
+  );
+
+  group('public - external refs', () {
+    for (final specName in _externalRefSpecs) {
+      test('$specName fails with UnsupportedError', () async {
+        final specFile = _specFiles(p.join(_fixturesDir, 'public'))
+            .firstWhere((f) => p.basenameWithoutExtension(f.path) == specName);
+        final tempDir =
+            Directory.systemTemp.createTempSync('degenerate_snap_');
+        try {
+          final config = GeneratorConfig(
+            inputPath: specFile.path,
+            outputDir: tempDir.path,
+            packageName: 'test_api',
+            runtimePath: '../../../packages/degenerate_runtime',
+          );
+          await expectLater(
+            Generator(config).generate(),
+            throwsA(isA<UnsupportedError>()),
+          );
+        } finally {
+          tempDir.deleteSync(recursive: true);
+        }
+      });
+    }
+  });
 }

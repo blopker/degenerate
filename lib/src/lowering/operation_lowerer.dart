@@ -27,8 +27,22 @@ class OperationLowerer {
 
     for (final pathEntry in paths.entries) {
       final path = pathEntry.key;
-      final pathItem = pathEntry.value;
+      var pathItem = pathEntry.value;
       if (pathItem is! Map<String, dynamic>) continue;
+
+      // Resolve path-item-level $ref (e.g. external file refs).
+      if (pathItem.containsKey(r'$ref')) {
+        if (_doc != null) {
+          final resolved = _doc.resolveRef(pathItem[r'$ref'] as String);
+          if (resolved is Map<String, dynamic>) {
+            pathItem = resolved;
+          } else {
+            continue;
+          }
+        } else {
+          continue;
+        }
+      }
 
       // Collect path-level parameters that apply to all operations.
       final pathParameters = _resolveParamRefs(
@@ -36,8 +50,18 @@ class OperationLowerer {
       );
 
       for (final method in _httpMethods) {
-        final opMap = pathItem[method];
+        var opMap = pathItem[method];
         if (opMap is! Map<String, dynamic>) continue;
+
+        // Resolve operation-level $ref (e.g. external file refs).
+        if (opMap.containsKey(r'$ref') && _doc != null) {
+          final resolved = _doc.resolveRef(opMap[r'$ref'] as String);
+          if (resolved is Map<String, dynamic>) {
+            opMap = resolved;
+          } else {
+            continue;
+          }
+        }
 
         final operation = lowerOperation(
           path,

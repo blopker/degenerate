@@ -13,6 +13,42 @@ final class DefaultApi {const DefaultApi(this._config);
 final ApiConfig _config;
 
 ///
+/// `GET /users`
+Future<ApiResult<List<User>, Never>> listUsers({int? limit}) async  { final request = ApiRequest(
+  method: 'GET',
+  path: '/users',
+  headers: {..._config.defaultHeaders
+  },
+  queryParameters: {
+    if (limit != null) 'limit': limit.toString(),
+  },
+);
+
+return _execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => User.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+///
+/// `POST /users`
+Future<ApiResult<void, Never>> createUser({required User body}) async  { final request = ApiRequest(
+  method: 'POST',
+  path: '/users',
+  headers: {..._config.defaultHeaders
+    , 'Content-Type': 'application/json'
+  },
+  body: jsonEncode(body.toJson()),
+);
+
+return _execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+///
 /// `GET /users/{userId}`
 Future<ApiResult<User, Never>> getUserById({required String userId}) async  { final request = ApiRequest(
   method: 'GET',

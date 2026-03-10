@@ -64,6 +64,7 @@ Future<ApiResult<ResponseCommon48, Never>> magicSitesSiteDetails({required Magic
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}',
   headers: {..._config.defaultHeaders
+    , if (xMagicNewHcTarget != null) 'x-magic-new-hc-target': xMagicNewHcTarget.toString()
   },
 );
 

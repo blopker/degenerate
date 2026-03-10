@@ -148,6 +148,7 @@ class ApiEmitter {
       bodyType: bodyType,
       pathParams: pathParams,
       queryParams: queryParams,
+      headerParams: headerParams,
     );
 
     final docs = <String>[];
@@ -188,6 +189,7 @@ class ApiEmitter {
     IrType? bodyType,
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
+    required List<IrParameter> headerParams,
   }) {
     final buf = StringBuffer();
     final httpMethod = op.method.name.toUpperCase();
@@ -211,6 +213,20 @@ class ApiEmitter {
     buf.writeln('  headers: {..._config.defaultHeaders');
     if (bodyType != null) {
       buf.writeln("    , 'Content-Type': 'application/json'");
+    }
+    for (final p in headerParams) {
+      final sanitizedName = p.name
+          .replaceAll('\n', '')
+          .replaceAll('\r', '')
+          .trim();
+      final headerValue = _toHeaderString(p);
+      if (p.isRequired) {
+        buf.writeln("    , '$sanitizedName': $headerValue");
+      } else {
+        buf.writeln(
+          "    , if (${p.dartName} != null) '$sanitizedName': $headerValue",
+        );
+      }
     }
     buf.writeln('  },');
 
@@ -296,6 +312,18 @@ class ApiEmitter {
         'return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
       _ =>
         'return ${irTypeName(returnType)}.fromJson(jsonDecode(response.body) as Map<String, dynamic>);',
+    };
+  }
+
+  String _toHeaderString(IrParameter p) {
+    final type = p.type;
+    return switch (type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string => p.dartName,
+        _ => '${p.dartName}.toString()',
+      },
+      IrEnum() => '${p.dartName}.toJson()',
+      _ => '${p.dartName}.toString()',
     };
   }
 
@@ -421,6 +449,25 @@ try {
 
   String _buildErrorDeserializeExpr(IrType errorType) {
     return switch (errorType) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string =>
+          'try { return response.body; } catch (_) { return null; }',
+        PrimitiveKind.int =>
+          'try { return int.parse(response.body); } catch (_) { return null; }',
+        PrimitiveKind.double =>
+          'try { return double.parse(response.body); } catch (_) { return null; }',
+        PrimitiveKind.bool =>
+          'try { return jsonDecode(response.body) as bool; } catch (_) { return null; }',
+        _ =>
+          'try { return jsonDecode(response.body); } catch (_) { return null; }',
+      },
+      IrEnum(:final name) =>
+        'try { return $name.fromJson(jsonDecode(response.body) as String); } catch (_) { return null; }',
+      IrList(:final items) =>
+        'try { final json = jsonDecode(response.body) as List<dynamic>;\n'
+        '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList(); } catch (_) { return null; }',
+      IrMap(:final values) =>
+        'try { return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')})); } catch (_) { return null; }',
       IrObject(:final name) =>
         'try { return $name.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }',
       IrTypeRef(:final name) =>
@@ -431,14 +478,24 @@ try {
   }
 
   IrType? _successResponseType(IrOperation op) {
-    // Find the first 2xx response with content
-    for (final code in [200, 201, 202, 203, 204]) {
+    // Find the first 2xx response with content.
+    // Check common codes first, then any other 2xx code.
+    final priorityCodes = [200, 201, 202, 203, 204];
+    for (final code in priorityCodes) {
       final resp = op.responses[code];
       if (resp != null) {
         final jsonContent = resp.content['application/json'];
         if (jsonContent != null) return jsonContent.schema;
         // 201/204 with no content means void
         if (resp.content.isEmpty) return null;
+      }
+    }
+    // Check remaining 2xx codes (206, 207, etc.)
+    for (final entry in op.responses.entries) {
+      if (entry.key >= 200 && entry.key < 300 && !priorityCodes.contains(entry.key)) {
+        final jsonContent = entry.value.content['application/json'];
+        if (jsonContent != null) return jsonContent.schema;
+        if (entry.value.content.isEmpty) return null;
       }
     }
     return null;

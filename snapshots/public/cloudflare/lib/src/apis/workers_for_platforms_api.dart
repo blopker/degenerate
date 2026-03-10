@@ -309,6 +309,8 @@ Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptContent({requ
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
   headers: {..._config.defaultHeaders
     , 'Content-Type': 'application/json'
+    , if (cfWorkerBodyPart != null) 'CF-WORKER-BODY-PART': cfWorkerBodyPart
+    , if (cfWorkerMainModulePart != null) 'CF-WORKER-MAIN-MODULE-PART': cfWorkerMainModulePart
   },
   body: jsonEncode(body.toJson()),
 );

@@ -21,6 +21,7 @@ Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fi
   method: 'GET',
   path: '/items/${Uri.encodeComponent(itemId)}',
   headers: {..._config.defaultHeaders
+    , if (xTraceId != null) 'X-Trace-Id': xTraceId
   },
   queryParameters: {
     if (fields != null) 'fields': fields.toString(),

@@ -382,4 +382,78 @@ void main() {
       });
     });
   });
+
+  // ─── External ref handling ─────────────────────────────────────
+
+  group('OperationLowerer - external refs', () {
+    test('path-item with external \$ref throws UnsupportedError', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test'},
+        'paths': {
+          '/pets': {
+            r'$ref': 'resources/pets.yml',
+          },
+        },
+      });
+
+      final tl = TypeLowerer();
+      final opLowerer = OperationLowerer(tl, doc: doc);
+
+      expect(
+        () => opLowerer.lowerPaths(doc.paths),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('operation with external \$ref throws UnsupportedError', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test'},
+        'paths': {
+          '/pets': {
+            'get': {
+              r'$ref': 'resources/pets_list.yml',
+            },
+          },
+        },
+      });
+
+      final tl = TypeLowerer();
+      final opLowerer = OperationLowerer(tl, doc: doc);
+
+      expect(
+        () => opLowerer.lowerPaths(doc.paths),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('parameter with external \$ref throws UnsupportedError', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test'},
+        'paths': {
+          '/pets': {
+            'get': {
+              'operationId': 'listPets',
+              'parameters': [
+                {r'$ref': 'common/parameters.yml#/limit'},
+              ],
+              'responses': {
+                '200': {'description': 'OK'},
+              },
+            },
+          },
+        },
+      });
+
+      final tl = TypeLowerer();
+      final opLowerer = OperationLowerer(tl, doc: doc);
+
+      expect(
+        () => opLowerer.lowerPaths(doc.paths),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+  });
 }
