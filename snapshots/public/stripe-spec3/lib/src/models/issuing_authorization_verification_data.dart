@@ -122,15 +122,11 @@ final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVeri
 factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationData(
   addressLine1Check: IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
-  authenticationExemption: json['authentication_exemption'] != null
-        ? IssuingAuthorizationVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>)
-        : null,
+  authenticationExemption: json['authentication_exemption'] != null ? IssuingAuthorizationVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
   cvcCheck: IssuingAuthorizationVerificationDataCvcCheck.fromJson(json['cvc_check'] as String),
   expiryCheck: IssuingAuthorizationVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String),
   postalCode: json['postal_code'] as String?,
-  threeDSecure: json['three_d_secure'] != null
-        ? IssuingAuthorizationVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? IssuingAuthorizationVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.

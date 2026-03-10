@@ -44,9 +44,7 @@ factory PostForwardingRequestsRequest.fromJson(Map<String, dynamic> json) { retu
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentMethod: json['payment_method'] as String,
   replacements: (json['replacements'] as List<dynamic>).map((e) => PostForwardingRequestsRequestReplacements.fromJson(e as String)).toList(),
-  request: json['request'] != null
-        ? PostForwardingRequestsRequestRequest.fromJson(json['request'] as Map<String, dynamic>)
-        : null,
+  request: json['request'] != null ? PostForwardingRequestsRequestRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
   url: json['url'] as String,
 ); }
 

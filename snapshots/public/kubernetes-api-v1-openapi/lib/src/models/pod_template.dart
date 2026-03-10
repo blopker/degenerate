@@ -10,12 +10,8 @@ final class PodTemplate {const PodTemplate({this.apiVersion, this.kind, this.met
 factory PodTemplate.fromJson(Map<String, dynamic> json) { return PodTemplate(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  template: json['template'] != null
-        ? PodTemplateSpec.fromJson(json['template'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  template: json['template'] != null ? PodTemplateSpec.fromJson(json['template'] as Map<String, dynamic>) : null,
 ); }
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources

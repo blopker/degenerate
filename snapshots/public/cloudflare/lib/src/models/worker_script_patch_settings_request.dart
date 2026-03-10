@@ -7,9 +7,7 @@
 import 'workers_script_and_version_settings_item.dart';final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
 
 factory WorkerScriptPatchSettingsRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPatchSettingsRequest(
-  settings: json['settings'] != null
-        ? WorkersScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? WorkersScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 final WorkersScriptAndVersionSettingsItem? settings;

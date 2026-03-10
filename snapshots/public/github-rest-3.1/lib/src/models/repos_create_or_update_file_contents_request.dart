@@ -11,12 +11,8 @@ factory ReposCreateOrUpdateFileContentsRequest.fromJson(Map<String, dynamic> jso
   content: json['content'] as String,
   sha: json['sha'] as String?,
   branch: json['branch'] as String?,
-  committer: json['committer'] != null
-        ? ReposCreateOrUpdateFileContentsRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>)
-        : null,
-  author: json['author'] != null
-        ? ReposCreateOrUpdateFileContentsRequestAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
+  committer: json['committer'] != null ? ReposCreateOrUpdateFileContentsRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
+  author: json['author'] != null ? ReposCreateOrUpdateFileContentsRequestAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
 ); }
 
 /// The commit message.

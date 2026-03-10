@@ -7,9 +7,7 @@
 import 'post_payment_intents_intent_increment_authorization_request_hooks_inputs_tax.dart';final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs({this.tax});
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs(
-  tax: json['tax'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax? tax;

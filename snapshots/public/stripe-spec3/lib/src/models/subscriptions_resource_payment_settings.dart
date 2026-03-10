@@ -177,9 +177,7 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionsResourcePaymentSettings {const SubscriptionsResourcePaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
 
 factory SubscriptionsResourcePaymentSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePaymentSettings(
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? SubscriptionsResourcePaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? SubscriptionsResourcePaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(e as String)).toList(),
   saveDefaultPaymentMethod: json['save_default_payment_method'] != null ? SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(json['save_default_payment_method'] as String) : null,
 ); }

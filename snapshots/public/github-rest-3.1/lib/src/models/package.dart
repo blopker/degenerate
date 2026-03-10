@@ -75,12 +75,8 @@ factory Package.fromJson(Map<String, dynamic> json) { return Package(
   htmlUrl: json['html_url'] as String,
   versionCount: (json['version_count'] as num).toInt(),
   visibility: PackageVisibility.fromJson(json['visibility'] as String),
-  owner: json['owner'] != null
-        ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

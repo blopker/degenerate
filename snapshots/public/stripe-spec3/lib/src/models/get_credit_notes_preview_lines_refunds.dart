@@ -32,9 +32,7 @@ final class GetCreditNotesPreviewLinesRefunds {const GetCreditNotesPreviewLinesR
 
 factory GetCreditNotesPreviewLinesRefunds.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,
-  paymentRecordRefund: json['payment_record_refund'] != null
-        ? GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>)
-        : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: json['refund'] as String?,
   type: json['type'] != null ? GetCreditNotesPreviewLinesRefundsType.fromJson(json['type'] as String) : null,
 ); }

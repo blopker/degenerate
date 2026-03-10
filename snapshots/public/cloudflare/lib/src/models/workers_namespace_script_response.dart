@@ -11,9 +11,7 @@ factory WorkersNamespaceScriptResponse.fromJson(Map<String, dynamic> json) { ret
   createdOn: json['created_on'] != null ? WorkersCreatedOn.fromJson(json['created_on'] as String) : null,
   dispatchNamespace: json['dispatch_namespace'] != null ? WorkersDispatchNamespaceName.fromJson(json['dispatch_namespace'] as String) : null,
   modifiedOn: json['modified_on'] != null ? WorkersModifiedOn.fromJson(json['modified_on'] as String) : null,
-  script: json['script'] != null
-        ? WorkersScriptResponse.fromJson(json['script'] as Map<String, dynamic>)
-        : null,
+  script: json['script'] != null ? WorkersScriptResponse.fromJson(json['script'] as Map<String, dynamic>) : null,
 ); }
 
 final WorkersCreatedOn? createdOn;

@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentIntentProcessing {const PaymentIntentProcessing({this.card, required this.type, });
 
 factory PaymentIntentProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentProcessing(
-  card: json['card'] != null
-        ? PaymentIntentCardProcessing.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PaymentIntentCardProcessing.fromJson(json['card'] as Map<String, dynamic>) : null,
   type: PaymentIntentProcessingType.fromJson(json['type'] as String),
 ); }
 

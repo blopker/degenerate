@@ -8,18 +8,10 @@ import 'smartshield_smart_shield_settings_patch_body_cache_reserve.dart';import 
 final class SmartshieldSmartShieldSettingsPatchBody {const SmartshieldSmartShieldSettingsPatchBody({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
 
 factory SmartshieldSmartShieldSettingsPatchBody.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBody(
-  cacheReserve: json['cache_reserve'] != null
-        ? SmartshieldSmartShieldSettingsPatchBodyCacheReserve.fromJson(json['cache_reserve'] as Map<String, dynamic>)
-        : null,
-  regionalTieredCache: json['regional_tiered_cache'] != null
-        ? SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(json['regional_tiered_cache'] as Map<String, dynamic>)
-        : null,
-  smartRouting: json['smart_routing'] != null
-        ? SmartshieldSmartShieldSettingsPatchBodySmartRouting.fromJson(json['smart_routing'] as Map<String, dynamic>)
-        : null,
-  smartTieredCache: json['smart_tiered_cache'] != null
-        ? SmartshieldSmartShieldSettingsPatchBodySmartTieredCache.fromJson(json['smart_tiered_cache'] as Map<String, dynamic>)
-        : null,
+  cacheReserve: json['cache_reserve'] != null ? SmartshieldSmartShieldSettingsPatchBodyCacheReserve.fromJson(json['cache_reserve'] as Map<String, dynamic>) : null,
+  regionalTieredCache: json['regional_tiered_cache'] != null ? SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(json['regional_tiered_cache'] as Map<String, dynamic>) : null,
+  smartRouting: json['smart_routing'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartRouting.fromJson(json['smart_routing'] as Map<String, dynamic>) : null,
+  smartTieredCache: json['smart_tiered_cache'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartTieredCache.fromJson(json['smart_tiered_cache'] as Map<String, dynamic>) : null,
 ); }
 
 final SmartshieldSmartShieldSettingsPatchBodyCacheReserve? cacheReserve;

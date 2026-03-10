@@ -7,9 +7,7 @@
 import 'load_balancing_origin_health_ip.dart';final class LoadBalancingOriginHealth {const LoadBalancingOriginHealth({this.ip});
 
 factory LoadBalancingOriginHealth.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginHealth(
-  ip: json['ip'] != null
-        ? LoadBalancingOriginHealthIp.fromJson(json['ip'] as Map<String, dynamic>)
-        : null,
+  ip: json['ip'] != null ? LoadBalancingOriginHealthIp.fromJson(json['ip'] as Map<String, dynamic>) : null,
 ); }
 
 final LoadBalancingOriginHealthIp? ip;

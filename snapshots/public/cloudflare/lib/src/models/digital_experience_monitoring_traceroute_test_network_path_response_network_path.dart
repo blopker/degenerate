@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_sampling.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_slots.dart';final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath({this.sampling, required this.slots, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath(
-  sampling: json['sampling'] != null
-        ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(json['sampling'] as Map<String, dynamic>)
-        : null,
+  sampling: json['sampling'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(json['sampling'] as Map<String, dynamic>) : null,
   slots: (json['slots'] as List<dynamic>).map((e) => DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

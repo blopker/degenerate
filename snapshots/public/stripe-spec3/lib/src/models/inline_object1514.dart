@@ -7,69 +7,27 @@
 import 'inline_object1514_aed.dart';import 'inline_object1514_aud.dart';import 'inline_object1514_cad.dart';import 'inline_object1514_chf.dart';import 'inline_object1514_czk.dart';import 'inline_object1514_dkk.dart';import 'inline_object1514_eur.dart';import 'inline_object1514_gbp.dart';import 'inline_object1514_gip.dart';import 'inline_object1514_hkd.dart';import 'inline_object1514_huf.dart';import 'inline_object1514_jpy.dart';import 'inline_object1514_mxn.dart';import 'inline_object1514_myr.dart';import 'inline_object1514_nok.dart';import 'inline_object1514_nzd.dart';import 'inline_object1514_pln.dart';import 'inline_object1514_ron.dart';import 'inline_object1514_sek.dart';import 'inline_object1514_sgd.dart';import 'inline_object1514_usd.dart';final class InlineObject1514 {const InlineObject1514({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
 
 factory InlineObject1514.fromJson(Map<String, dynamic> json) { return InlineObject1514(
-  aed: json['aed'] != null
-        ? InlineObject1514Aed.fromJson(json['aed'] as Map<String, dynamic>)
-        : null,
-  aud: json['aud'] != null
-        ? InlineObject1514Aud.fromJson(json['aud'] as Map<String, dynamic>)
-        : null,
-  cad: json['cad'] != null
-        ? InlineObject1514Cad.fromJson(json['cad'] as Map<String, dynamic>)
-        : null,
-  chf: json['chf'] != null
-        ? InlineObject1514Chf.fromJson(json['chf'] as Map<String, dynamic>)
-        : null,
-  czk: json['czk'] != null
-        ? InlineObject1514Czk.fromJson(json['czk'] as Map<String, dynamic>)
-        : null,
-  dkk: json['dkk'] != null
-        ? InlineObject1514Dkk.fromJson(json['dkk'] as Map<String, dynamic>)
-        : null,
-  eur: json['eur'] != null
-        ? InlineObject1514Eur.fromJson(json['eur'] as Map<String, dynamic>)
-        : null,
-  gbp: json['gbp'] != null
-        ? InlineObject1514Gbp.fromJson(json['gbp'] as Map<String, dynamic>)
-        : null,
-  gip: json['gip'] != null
-        ? InlineObject1514Gip.fromJson(json['gip'] as Map<String, dynamic>)
-        : null,
-  hkd: json['hkd'] != null
-        ? InlineObject1514Hkd.fromJson(json['hkd'] as Map<String, dynamic>)
-        : null,
-  huf: json['huf'] != null
-        ? InlineObject1514Huf.fromJson(json['huf'] as Map<String, dynamic>)
-        : null,
-  jpy: json['jpy'] != null
-        ? InlineObject1514Jpy.fromJson(json['jpy'] as Map<String, dynamic>)
-        : null,
-  mxn: json['mxn'] != null
-        ? InlineObject1514Mxn.fromJson(json['mxn'] as Map<String, dynamic>)
-        : null,
-  myr: json['myr'] != null
-        ? InlineObject1514Myr.fromJson(json['myr'] as Map<String, dynamic>)
-        : null,
-  nok: json['nok'] != null
-        ? InlineObject1514Nok.fromJson(json['nok'] as Map<String, dynamic>)
-        : null,
-  nzd: json['nzd'] != null
-        ? InlineObject1514Nzd.fromJson(json['nzd'] as Map<String, dynamic>)
-        : null,
-  pln: json['pln'] != null
-        ? InlineObject1514Pln.fromJson(json['pln'] as Map<String, dynamic>)
-        : null,
-  ron: json['ron'] != null
-        ? InlineObject1514Ron.fromJson(json['ron'] as Map<String, dynamic>)
-        : null,
-  sek: json['sek'] != null
-        ? InlineObject1514Sek.fromJson(json['sek'] as Map<String, dynamic>)
-        : null,
-  sgd: json['sgd'] != null
-        ? InlineObject1514Sgd.fromJson(json['sgd'] as Map<String, dynamic>)
-        : null,
-  usd: json['usd'] != null
-        ? InlineObject1514Usd.fromJson(json['usd'] as Map<String, dynamic>)
-        : null,
+  aed: json['aed'] != null ? InlineObject1514Aed.fromJson(json['aed'] as Map<String, dynamic>) : null,
+  aud: json['aud'] != null ? InlineObject1514Aud.fromJson(json['aud'] as Map<String, dynamic>) : null,
+  cad: json['cad'] != null ? InlineObject1514Cad.fromJson(json['cad'] as Map<String, dynamic>) : null,
+  chf: json['chf'] != null ? InlineObject1514Chf.fromJson(json['chf'] as Map<String, dynamic>) : null,
+  czk: json['czk'] != null ? InlineObject1514Czk.fromJson(json['czk'] as Map<String, dynamic>) : null,
+  dkk: json['dkk'] != null ? InlineObject1514Dkk.fromJson(json['dkk'] as Map<String, dynamic>) : null,
+  eur: json['eur'] != null ? InlineObject1514Eur.fromJson(json['eur'] as Map<String, dynamic>) : null,
+  gbp: json['gbp'] != null ? InlineObject1514Gbp.fromJson(json['gbp'] as Map<String, dynamic>) : null,
+  gip: json['gip'] != null ? InlineObject1514Gip.fromJson(json['gip'] as Map<String, dynamic>) : null,
+  hkd: json['hkd'] != null ? InlineObject1514Hkd.fromJson(json['hkd'] as Map<String, dynamic>) : null,
+  huf: json['huf'] != null ? InlineObject1514Huf.fromJson(json['huf'] as Map<String, dynamic>) : null,
+  jpy: json['jpy'] != null ? InlineObject1514Jpy.fromJson(json['jpy'] as Map<String, dynamic>) : null,
+  mxn: json['mxn'] != null ? InlineObject1514Mxn.fromJson(json['mxn'] as Map<String, dynamic>) : null,
+  myr: json['myr'] != null ? InlineObject1514Myr.fromJson(json['myr'] as Map<String, dynamic>) : null,
+  nok: json['nok'] != null ? InlineObject1514Nok.fromJson(json['nok'] as Map<String, dynamic>) : null,
+  nzd: json['nzd'] != null ? InlineObject1514Nzd.fromJson(json['nzd'] as Map<String, dynamic>) : null,
+  pln: json['pln'] != null ? InlineObject1514Pln.fromJson(json['pln'] as Map<String, dynamic>) : null,
+  ron: json['ron'] != null ? InlineObject1514Ron.fromJson(json['ron'] as Map<String, dynamic>) : null,
+  sek: json['sek'] != null ? InlineObject1514Sek.fromJson(json['sek'] as Map<String, dynamic>) : null,
+  sgd: json['sgd'] != null ? InlineObject1514Sgd.fromJson(json['sgd'] as Map<String, dynamic>) : null,
+  usd: json['usd'] != null ? InlineObject1514Usd.fromJson(json['usd'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1514Aed? aed;

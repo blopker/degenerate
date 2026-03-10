@@ -9,9 +9,7 @@ final class PostSourcesRequestSourceOrder {const PostSourcesRequestSourceOrder({
 
 factory PostSourcesRequestSourceOrder.fromJson(Map<String, dynamic> json) { return PostSourcesRequestSourceOrder(
   items: (json['items'] as List<dynamic>?)?.map((e) => PostSourcesRequestSourceOrderItems.fromJson(e as Map<String, dynamic>)).toList(),
-  shipping: json['shipping'] != null
-        ? PostSourcesRequestSourceOrderShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostSourcesRequestSourceOrderShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
 ); }
 
 final List<PostSourcesRequestSourceOrderItems>? items;

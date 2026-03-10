@@ -14,9 +14,7 @@ factory UrlscannerGetScanResponse2DataRequestsRequest.fromJson(Map<String, dynam
   loaderId: json['loaderId'] as String?,
   primaryRequest: json['primaryRequest'] as bool?,
   redirectHasExtraInfo: json['redirectHasExtraInfo'] as bool,
-  redirectResponse: json['redirectResponse'] != null
-        ? UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(json['redirectResponse'] as Map<String, dynamic>)
-        : null,
+  redirectResponse: json['redirectResponse'] != null ? UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(json['redirectResponse'] as Map<String, dynamic>) : null,
   request: UrlscannerGetScanResponse2DataRequestsRequestRequest.fromJson(json['request'] as Map<String, dynamic>),
   requestId: json['requestId'] as String,
   type: json['type'] as String,

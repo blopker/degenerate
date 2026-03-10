@@ -53,9 +53,7 @@ final class RealtimeTranscriptionSessionCreateRequestGa {const RealtimeTranscrip
 
 factory RealtimeTranscriptionSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestGa(
   type: RealtimeTranscriptionSessionCreateRequestGaType.fromJson(json['type'] as String),
-  audio: json['audio'] != null
-        ? RealtimeTranscriptionSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeTranscriptionSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateRequestGaInclude.fromJson(e as String)).toList(),
 ); }
 

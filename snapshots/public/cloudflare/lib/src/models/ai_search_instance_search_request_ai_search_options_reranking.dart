@@ -9,9 +9,7 @@ import 'ai_search_instance_search_request_ai_search_options_reranking_model.dart
 factory AiSearchInstanceSearchRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsReranking(
   enabled: json['enabled'] as bool?,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
-  model: json['model'] != null
-        ? AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? enabled;

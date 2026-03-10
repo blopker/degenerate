@@ -36,9 +36,7 @@ factory PaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { re
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsCardPresentCaptureMethod.fromJson(json['capture_method'] as String) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] as bool?,
   requestIncrementalAuthorizationSupport: json['request_incremental_authorization_support'] as bool?,
-  routing: json['routing'] != null
-        ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>)
-        : null,
+  routing: json['routing'] != null ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>) : null,
 ); }
 
 /// Controls when the funds will be captured from the customer's account.

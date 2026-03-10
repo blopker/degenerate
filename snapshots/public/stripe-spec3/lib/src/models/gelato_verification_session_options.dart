@@ -8,21 +8,11 @@ import 'gelato_session_document_options.dart';import 'gelato_session_email_optio
 final class GelatoVerificationSessionOptions {const GelatoVerificationSessionOptions({this.document, this.email, this.idNumber, this.matching, this.phone, });
 
 factory GelatoVerificationSessionOptions.fromJson(Map<String, dynamic> json) { return GelatoVerificationSessionOptions(
-  document: json['document'] != null
-        ? GelatoSessionDocumentOptions.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? GelatoSessionEmailOptions.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  idNumber: json['id_number'] != null
-        ? GelatoSessionIdNumberOptions.fromJson(json['id_number'] as Map<String, dynamic>)
-        : null,
-  matching: json['matching'] != null
-        ? GelatoSessionMatchingOptions.fromJson(json['matching'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? GelatoSessionPhoneOptions.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? GelatoSessionDocumentOptions.fromJson(json['document'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? GelatoSessionEmailOptions.fromJson(json['email'] as Map<String, dynamic>) : null,
+  idNumber: json['id_number'] != null ? GelatoSessionIdNumberOptions.fromJson(json['id_number'] as Map<String, dynamic>) : null,
+  matching: json['matching'] != null ? GelatoSessionMatchingOptions.fromJson(json['matching'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? GelatoSessionPhoneOptions.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 final GelatoSessionDocumentOptions? document;

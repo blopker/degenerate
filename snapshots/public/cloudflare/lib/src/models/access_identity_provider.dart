@@ -71,9 +71,7 @@ factory AccessIdentityProvider.fromJson(Map<String, dynamic> json) { return Acce
   config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
-  scimConfig: json['scim_config'] != null
-        ? AccessIdentityProviderScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>)
-        : null,
+  scimConfig: json['scim_config'] != null ? AccessIdentityProviderScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: AccessIdentityProviderType.fromJson(json['type'] as String),
 ); }
 

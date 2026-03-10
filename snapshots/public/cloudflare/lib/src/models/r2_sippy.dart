@@ -7,13 +7,9 @@
 import 'r2_sippy_destination.dart';import 'r2_sippy_source.dart';final class R2Sippy {const R2Sippy({this.destination, this.enabled, this.source, });
 
 factory R2Sippy.fromJson(Map<String, dynamic> json) { return R2Sippy(
-  destination: json['destination'] != null
-        ? R2SippyDestination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? R2SippyDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
-  source: json['source'] != null
-        ? R2SippySource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? R2SippySource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details about the configured destination bucket.

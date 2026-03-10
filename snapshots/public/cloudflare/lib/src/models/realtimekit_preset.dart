@@ -9,9 +9,7 @@ import 'realtimekit_preset_config.dart';import 'realtimekit_preset_permissions.d
 factory RealtimekitPreset.fromJson(Map<String, dynamic> json) { return RealtimekitPreset(
   config: RealtimekitPresetConfig.fromJson(json['config'] as Map<String, dynamic>),
   name: json['name'] as String,
-  permissions: json['permissions'] != null
-        ? RealtimekitPresetPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RealtimekitPresetPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   ui: RealtimekitPresetUi.fromJson(json['ui'] as Map<String, dynamic>),
 ); }
 

@@ -122,9 +122,7 @@ factory File.fromJson(Map<String, dynamic> json) { return File(
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   filename: json['filename'] as String?,
   id: json['id'] as String,
-  links: json['links'] != null
-        ? FileLinks.fromJson(json['links'] as Map<String, dynamic>)
-        : null,
+  links: json['links'] != null ? FileLinks.fromJson(json['links'] as Map<String, dynamic>) : null,
   object: FileObject.fromJson(json['object'] as String),
   purpose: FilePurpose.fromJson(json['purpose'] as String),
   size: (json['size'] as num).toInt(),

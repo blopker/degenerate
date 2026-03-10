@@ -8,9 +8,7 @@ import 'portal_flows_flow_subscription_cancel_retention.dart';///
 final class PortalFlowsFlowSubscriptionCancel {const PortalFlowsFlowSubscriptionCancel({this.retention, required this.subscription, });
 
 factory PortalFlowsFlowSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionCancel(
-  retention: json['retention'] != null
-        ? PortalFlowsFlowSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>)
-        : null,
+  retention: json['retention'] != null ? PortalFlowsFlowSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String,
 ); }
 

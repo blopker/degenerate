@@ -11,9 +11,7 @@ factory WorkersKvBulkWrite2.fromJson(Map<String, dynamic> json) { return Workers
   expiration: json['expiration'] != null ? WorkersKvExpiration.fromJson(json['expiration'] as num) : null,
   expirationTtl: json['expiration_ttl'] != null ? WorkersKvExpirationTtl.fromJson(json['expiration_ttl'] as num) : null,
   key: WorkersKvKeyNameBulk.fromJson(json['key'] as String),
-  metadata: json['metadata'] != null
-        ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   value: json['value'] as String,
 ); }
 

@@ -11,12 +11,8 @@ factory InlineObject37FieldValue.fromJson(Map<String, dynamic> json) { return In
   fieldType: json['field_type'] as String?,
   fieldName: json['field_name'] as String?,
   projectNumber: json['project_number'] != null ? (json['project_number'] as num).toInt() : null,
-  from: json['from'] != null
-        ? InlineObject37FieldValueFrom.fromJson(json['from'])
-        : null,
-  to: json['to'] != null
-        ? InlineObject37FieldValueTo.fromJson(json['to'])
-        : null,
+  from: json['from'] != null ? InlineObject37FieldValueFrom.fromJson(json['from']) : null,
+  to: json['to'] != null ? InlineObject37FieldValueTo.fromJson(json['to']) : null,
 ); }
 
 final String? fieldNodeId;

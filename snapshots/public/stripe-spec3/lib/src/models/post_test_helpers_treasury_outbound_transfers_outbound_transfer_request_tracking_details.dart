@@ -32,13 +32,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
 
 factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
-  ach: json['ach'] != null
-        ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
   type: PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType.fromJson(json['type'] as String),
-  usDomesticWire: json['us_domestic_wire'] != null
-        ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>)
-        : null,
+  usDomesticWire: json['us_domestic_wire'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch? ach;

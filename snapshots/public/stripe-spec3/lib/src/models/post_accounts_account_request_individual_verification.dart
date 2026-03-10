@@ -7,12 +7,8 @@
 import 'post_accounts_account_request_individual_verification_additional_document.dart';import 'post_accounts_account_request_individual_verification_document.dart';final class PostAccountsAccountRequestIndividualVerification {const PostAccountsAccountRequestIndividualVerification({this.additionalDocument, this.document, });
 
 factory PostAccountsAccountRequestIndividualVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividualVerification(
-  additionalDocument: json['additional_document'] != null
-        ? PostAccountsAccountRequestIndividualVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>)
-        : null,
-  document: json['document'] != null
-        ? PostAccountsAccountRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  additionalDocument: json['additional_document'] != null ? PostAccountsAccountRequestIndividualVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
+  document: json['document'] != null ? PostAccountsAccountRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountRequestIndividualVerificationAdditionalDocument? additionalDocument;

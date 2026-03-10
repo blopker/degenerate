@@ -33,9 +33,7 @@ final class ZonesCacheKeyFields {const ZonesCacheKeyFields({this.id, this.value,
 
 factory ZonesCacheKeyFields.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFields(
   id: json['id'] != null ? ZonesCacheKeyFieldsId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null
-        ? ZonesCacheKeyFieldsValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? ZonesCacheKeyFieldsValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 /// Control specifically what variables to include when deciding which

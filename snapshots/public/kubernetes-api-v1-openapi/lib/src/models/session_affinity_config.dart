@@ -8,9 +8,7 @@ import 'client_ip_config.dart';/// SessionAffinityConfig represents the configur
 final class SessionAffinityConfig {const SessionAffinityConfig({this.clientIp});
 
 factory SessionAffinityConfig.fromJson(Map<String, dynamic> json) { return SessionAffinityConfig(
-  clientIp: json['clientIP'] != null
-        ? ClientIpConfig.fromJson(json['clientIP'] as Map<String, dynamic>)
-        : null,
+  clientIp: json['clientIP'] != null ? ClientIpConfig.fromJson(json['clientIP'] as Map<String, dynamic>) : null,
 ); }
 
 /// clientIP contains the configurations of Client IP based session affinity.

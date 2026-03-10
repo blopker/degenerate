@@ -7,9 +7,7 @@
 import 'smartshield_base.dart';final class SmartshieldCacheReserveClearResponseValue {const SmartshieldCacheReserveClearResponseValue({this.result});
 
 factory SmartshieldCacheReserveClearResponseValue.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClearResponseValue(
-  result: json['result'] != null
-        ? SmartshieldBase.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? SmartshieldBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final SmartshieldBase? result;

@@ -8,9 +8,7 @@ import 'compact_response_method_public_body_input.dart';import 'model_ids_compac
 
 factory CompactResponseMethodPublicBody.fromJson(Map<String, dynamic> json) { return CompactResponseMethodPublicBody(
   model: ModelIdsCompaction.fromJson(json['model'] as Map<String, dynamic>),
-  input: json['input'] != null
-        ? CompactResponseMethodPublicBodyInput.fromJson(json['input'])
-        : null,
+  input: json['input'] != null ? CompactResponseMethodPublicBodyInput.fromJson(json['input']) : null,
   previousResponseId: json['previous_response_id'] as String?,
   instructions: json['instructions'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,

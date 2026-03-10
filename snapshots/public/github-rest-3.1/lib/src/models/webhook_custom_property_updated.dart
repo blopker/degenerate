@@ -30,18 +30,10 @@ final class WebhookCustomPropertyUpdated {const WebhookCustomPropertyUpdated({re
 factory WebhookCustomPropertyUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyUpdated(
   action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),
   definition: CustomProperty.fromJson(json['definition'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookCustomPropertyUpdatedAction action;

@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'cloudflare_pipelines_field_t
 
 factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
   fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesFieldType.fromJson(e as Map<String, dynamic>)).toList(),
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   inferred: json['inferred'] as bool?,
 ); }
 

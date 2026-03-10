@@ -7,12 +7,8 @@
 import 'webhook_discussion_edited_changes_body.dart';import 'webhook_discussion_edited_changes_title.dart';final class WebhookDiscussionEditedChanges {const WebhookDiscussionEditedChanges({this.body, this.title, });
 
 factory WebhookDiscussionEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEditedChanges(
-  body: json['body'] != null
-        ? WebhookDiscussionEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  title: json['title'] != null
-        ? WebhookDiscussionEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhookDiscussionEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? WebhookDiscussionEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDiscussionEditedChangesBody? body;

@@ -9,34 +9,18 @@ import 'package:collection/collection.dart';import 'post_products_id_request_des
 factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
   active: json['active'] as bool?,
   defaultPrice: json['default_price'] as String?,
-  description: json['description'] != null
-        ? PostProductsIdRequestDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostProductsIdRequestDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  images: json['images'] != null
-        ? PostProductsIdRequestImages.fromJson(json['images'] as Map<String, dynamic>)
-        : null,
-  marketingFeatures: json['marketing_features'] != null
-        ? PostProductsIdRequestMarketingFeatures.fromJson(json['marketing_features'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostProductsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  images: json['images'] != null ? PostProductsIdRequestImages.fromJson(json['images'] as Map<String, dynamic>) : null,
+  marketingFeatures: json['marketing_features'] != null ? PostProductsIdRequestMarketingFeatures.fromJson(json['marketing_features'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostProductsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  packageDimensions: json['package_dimensions'] != null
-        ? PostProductsIdRequestPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>)
-        : null,
+  packageDimensions: json['package_dimensions'] != null ? PostProductsIdRequestPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
-  taxCode: json['tax_code'] != null
-        ? PostProductsIdRequestTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>)
-        : null,
-  unitLabel: json['unit_label'] != null
-        ? PostProductsIdRequestUnitLabel.fromJson(json['unit_label'] as Map<String, dynamic>)
-        : null,
-  url: json['url'] != null
-        ? PostProductsIdRequestUrl.fromJson(json['url'] as Map<String, dynamic>)
-        : null,
+  taxCode: json['tax_code'] != null ? PostProductsIdRequestTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>) : null,
+  unitLabel: json['unit_label'] != null ? PostProductsIdRequestUnitLabel.fromJson(json['unit_label'] as Map<String, dynamic>) : null,
+  url: json['url'] != null ? PostProductsIdRequestUrl.fromJson(json['url'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the product is available for purchase.

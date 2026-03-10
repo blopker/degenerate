@@ -11,9 +11,7 @@ factory BalanceAmountNet.fromJson(Map<String, dynamic> json) { return BalanceAmo
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   netAvailable: (json['net_available'] as List<dynamic>?)?.map((e) => BalanceNetAvailable.fromJson(e as Map<String, dynamic>)).toList(),
-  sourceTypes: json['source_types'] != null
-        ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>)
-        : null,
+  sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
 ); }
 
 /// Balance amount.

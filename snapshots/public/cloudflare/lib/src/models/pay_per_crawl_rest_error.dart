@@ -10,9 +10,7 @@ factory PayPerCrawlRestError.fromJson(Map<String, dynamic> json) { return PayPer
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   documentationUrl: json['documentation_url'] as String?,
   error: json['error'] as String?,
-  source: json['source'] != null
-        ? PayPerCrawlErrorSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? PayPerCrawlErrorSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int? code;

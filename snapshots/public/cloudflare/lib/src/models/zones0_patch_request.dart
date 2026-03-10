@@ -43,9 +43,7 @@ final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan
 
 factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(
   paused: json['paused'] != null ? ZonesPaused.fromJson(json['paused'] as bool) : null,
-  plan: json['plan'] != null
-        ? Zones0PatchRequestPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? Zones0PatchRequestPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? Zones0PatchRequestType.fromJson(json['type'] as String) : null,
   vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

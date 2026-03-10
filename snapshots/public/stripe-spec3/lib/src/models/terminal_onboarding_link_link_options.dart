@@ -8,9 +8,7 @@ import 'terminal_onboarding_link_link_options_apple_terms_and_conditions.dart';/
 final class TerminalOnboardingLinkLinkOptions {const TerminalOnboardingLinkLinkOptions({this.appleTermsAndConditions});
 
 factory TerminalOnboardingLinkLinkOptions.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLinkLinkOptions(
-  appleTermsAndConditions: json['apple_terms_and_conditions'] != null
-        ? TerminalOnboardingLinkLinkOptionsAppleTermsAndConditions.fromJson(json['apple_terms_and_conditions'] as Map<String, dynamic>)
-        : null,
+  appleTermsAndConditions: json['apple_terms_and_conditions'] != null ? TerminalOnboardingLinkLinkOptionsAppleTermsAndConditions.fromJson(json['apple_terms_and_conditions'] as Map<String, dynamic>) : null,
 ); }
 
 /// The options associated with the Apple Terms and Conditions link type.

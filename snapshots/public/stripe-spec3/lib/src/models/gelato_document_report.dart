@@ -92,23 +92,13 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoDocumentReport {const GelatoDocumentReport({this.address, this.dob, this.error, this.expirationDate, this.files, this.firstName, this.issuedDate, this.issuingCountry, this.lastName, this.number, this.sex, required this.status, this.type, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoDocumentReport.fromJson(Map<String, dynamic> json) { return GelatoDocumentReport(
-  address: json['address'] != null
-        ? GelatoDocumentReportAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? GelatoDocumentReportDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
-  error: json['error'] != null
-        ? GelatoDocumentReportError2.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
-  expirationDate: json['expiration_date'] != null
-        ? GelatoDocumentReportExpirationDate.fromJson(json['expiration_date'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? GelatoDocumentReportAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? GelatoDocumentReportDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoDocumentReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  expirationDate: json['expiration_date'] != null ? GelatoDocumentReportExpirationDate.fromJson(json['expiration_date'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
   firstName: json['first_name'] as String?,
-  issuedDate: json['issued_date'] != null
-        ? GelatoDocumentReportIssuedDate.fromJson(json['issued_date'] as Map<String, dynamic>)
-        : null,
+  issuedDate: json['issued_date'] != null ? GelatoDocumentReportIssuedDate.fromJson(json['issued_date'] as Map<String, dynamic>) : null,
   issuingCountry: json['issuing_country'] as String?,
   lastName: json['last_name'] as String?,
   number: json['number'] as String?,

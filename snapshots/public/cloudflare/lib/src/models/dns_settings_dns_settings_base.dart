@@ -72,15 +72,11 @@ final class DnsSettingsDnsSettingsBase {const DnsSettingsDnsSettingsBase({this.f
 factory DnsSettingsDnsSettingsBase.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsBase(
   flattenAllCnames: json['flatten_all_cnames'] != null ? DnsSettingsFlattenAllCnames.fromJson(json['flatten_all_cnames'] as bool) : null,
   foundationDns: json['foundation_dns'] != null ? DnsSettingsFoundationDns.fromJson(json['foundation_dns'] as bool) : null,
-  internalDns: json['internal_dns'] != null
-        ? DnsSettingsInternalDnsBase.fromJson(json['internal_dns'] as Map<String, dynamic>)
-        : null,
+  internalDns: json['internal_dns'] != null ? DnsSettingsInternalDnsBase.fromJson(json['internal_dns'] as Map<String, dynamic>) : null,
   multiProvider: json['multi_provider'] != null ? DnsSettingsMultiProvider.fromJson(json['multi_provider'] as bool) : null,
   nsTtl: json['ns_ttl'] != null ? DnsSettingsNsTtl.fromJson(json['ns_ttl'] as num) : null,
   secondaryOverrides: json['secondary_overrides'] != null ? DnsSettingsSecondaryOverrides.fromJson(json['secondary_overrides'] as bool) : null,
-  soa: json['soa'] != null
-        ? DnsSettingsSoaBase.fromJson(json['soa'] as Map<String, dynamic>)
-        : null,
+  soa: json['soa'] != null ? DnsSettingsSoaBase.fromJson(json['soa'] as Map<String, dynamic>) : null,
   zoneMode: json['zone_mode'] != null ? DnsSettingsZoneMode.fromJson(json['zone_mode'] as String) : null,
 ); }
 

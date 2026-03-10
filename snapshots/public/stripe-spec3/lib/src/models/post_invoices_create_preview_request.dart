@@ -32,35 +32,21 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
 factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequest(
-  automaticTax: json['automatic_tax'] != null
-        ? PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  customerDetails: json['customer_details'] != null
-        ? PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostInvoicesCreatePreviewRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceItems: (json['invoice_items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
-  issuer: json['issuer'] != null
-        ? PostInvoicesCreatePreviewRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
-  onBehalfOf: json['on_behalf_of'] != null
-        ? PostInvoicesCreatePreviewRequestOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostInvoicesCreatePreviewRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostInvoicesCreatePreviewRequestOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
   previewMode: json['preview_mode'] != null ? PostInvoicesCreatePreviewRequestPreviewMode.fromJson(json['preview_mode'] as String) : null,
   schedule: json['schedule'] as String?,
-  scheduleDetails: json['schedule_details'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>)
-        : null,
+  scheduleDetails: json['schedule_details'] != null ? PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
-  subscriptionDetails: json['subscription_details'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>)
-        : null,
+  subscriptionDetails: json['subscription_details'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for automatic tax lookup for this invoice preview.

@@ -7,9 +7,7 @@
 import 'topic_search_result_item_related_topic_relation.dart';final class TopicSearchResultItemRelated {const TopicSearchResultItemRelated({this.topicRelation});
 
 factory TopicSearchResultItemRelated.fromJson(Map<String, dynamic> json) { return TopicSearchResultItemRelated(
-  topicRelation: json['topic_relation'] != null
-        ? TopicSearchResultItemRelatedTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>)
-        : null,
+  topicRelation: json['topic_relation'] != null ? TopicSearchResultItemRelatedTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>) : null,
 ); }
 
 final TopicSearchResultItemRelatedTopicRelation? topicRelation;

@@ -124,9 +124,7 @@ final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoi
 factory BillingBillResourceInvoicingTaxesTax.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingTaxesTax(
   amount: (json['amount'] as num).toInt(),
   taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
-  taxRateDetails: json['tax_rate_details'] != null
-        ? BillingBillResourceInvoicingTaxesTaxTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>)
-        : null,
+  taxRateDetails: json['tax_rate_details'] != null ? BillingBillResourceInvoicingTaxesTaxTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
   taxabilityReason: BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null,
   type: BillingBillResourceInvoicingTaxesTaxType.fromJson(json['type'] as String),

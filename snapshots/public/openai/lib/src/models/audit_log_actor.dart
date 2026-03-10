@@ -34,12 +34,8 @@ final class AuditLogActor {const AuditLogActor({this.type, this.session, this.ap
 
 factory AuditLogActor.fromJson(Map<String, dynamic> json) { return AuditLogActor(
   type: json['type'] != null ? AuditLogActorType.fromJson(json['type'] as String) : null,
-  session: json['session'] != null
-        ? AuditLogActorSession.fromJson(json['session'] as Map<String, dynamic>)
-        : null,
-  apiKey: json['api_key'] != null
-        ? Key2.fromJson(json['api_key'] as Map<String, dynamic>)
-        : null,
+  session: json['session'] != null ? AuditLogActorSession.fromJson(json['session'] as Map<String, dynamic>) : null,
+  apiKey: json['api_key'] != null ? Key2.fromJson(json['api_key'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of actor. Is either `session` or `api_key`.

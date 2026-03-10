@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({this.cart, required this.type, });
 
 factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayAction(
-  cart: json['cart'] != null
-        ? TerminalReaderReaderResourceSetReaderDisplayActionCart.fromJson(json['cart'] as Map<String, dynamic>)
-        : null,
+  cart: json['cart'] != null ? TerminalReaderReaderResourceSetReaderDisplayActionCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
   type: TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(json['type'] as String),
 ); }
 

@@ -9,9 +9,7 @@ final class AuditLogServiceAccountCreated {const AuditLogServiceAccountCreated({
 
 factory AuditLogServiceAccountCreated.fromJson(Map<String, dynamic> json) { return AuditLogServiceAccountCreated(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogServiceAccountCreatedData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogServiceAccountCreatedData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The service account ID.

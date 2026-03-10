@@ -8,9 +8,7 @@ import 'shield_parameter_schemas_definition.dart';import 'shield_timestamp.dart'
 
 factory ShieldOperationFeatureParameterSchemasParameterSchemas.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureParameterSchemasParameterSchemas(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
-  parameterSchemas: json['parameter_schemas'] != null
-        ? ShieldParameterSchemasDefinition.fromJson(json['parameter_schemas'] as Map<String, dynamic>)
-        : null,
+  parameterSchemas: json['parameter_schemas'] != null ? ShieldParameterSchemasDefinition.fromJson(json['parameter_schemas'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldTimestamp? lastUpdated;

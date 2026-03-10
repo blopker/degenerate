@@ -86,9 +86,7 @@ final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit {const Post
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,

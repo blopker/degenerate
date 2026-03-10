@@ -102,27 +102,19 @@ final class Review {const Review({this.billingZip, this.charge, this.closedReaso
 
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
   billingZip: json['billing_zip'] as String?,
-  charge: json['charge'] != null
-        ? ReviewCharge.fromJson(json['charge'] as Map<String, dynamic>)
-        : null,
+  charge: json['charge'] != null ? ReviewCharge.fromJson(json['charge'] as Map<String, dynamic>) : null,
   closedReason: json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   ipAddress: json['ip_address'] as String?,
-  ipAddressLocation: json['ip_address_location'] != null
-        ? ReviewIpAddressLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>)
-        : null,
+  ipAddressLocation: json['ip_address_location'] != null ? ReviewIpAddressLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
   openedReason: ReviewOpenedReason.fromJson(json['opened_reason'] as String),
-  paymentIntent: json['payment_intent'] != null
-        ? ReviewPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? ReviewPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
-  session: json['session'] != null
-        ? ReviewSession.fromJson(json['session'] as Map<String, dynamic>)
-        : null,
+  session: json['session'] != null ? ReviewSession.fromJson(json['session'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ZIP or postal code of the card used, if applicable.

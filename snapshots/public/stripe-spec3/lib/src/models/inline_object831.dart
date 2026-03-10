@@ -243,12 +243,8 @@ final class InlineObject831 {const InlineObject831({this.captureMethod, this.cvc
 factory InlineObject831.fromJson(Map<String, dynamic> json) { return InlineObject831(
   captureMethod: json['capture_method'] != null ? InlineObject831CaptureMethod.fromJson(json['capture_method'] as String) : null,
   cvcToken: json['cvc_token'] as String?,
-  installments: json['installments'] != null
-        ? InlineObject831Installments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject831MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? InlineObject831Installments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject831MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? InlineObject831Network.fromJson(json['network'] as String) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? InlineObject831RequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
   requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? InlineObject831RequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
@@ -257,15 +253,9 @@ factory InlineObject831.fromJson(Map<String, dynamic> json) { return InlineObjec
   requestThreeDSecure: json['request_three_d_secure'] != null ? InlineObject831RequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
   requireCvcRecollection: json['require_cvc_recollection'] as bool?,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject831SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null
-        ? InlineObject831StatementDescriptorSuffixKana.fromJson(json['statement_descriptor_suffix_kana'] as Map<String, dynamic>)
-        : null,
-  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null
-        ? InlineObject831StatementDescriptorSuffixKanji.fromJson(json['statement_descriptor_suffix_kanji'] as Map<String, dynamic>)
-        : null,
-  threeDSecure: json['three_d_secure'] != null
-        ? InlineObject831ThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
+  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? InlineObject831StatementDescriptorSuffixKana.fromJson(json['statement_descriptor_suffix_kana'] as Map<String, dynamic>) : null,
+  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? InlineObject831StatementDescriptorSuffixKanji.fromJson(json['statement_descriptor_suffix_kanji'] as Map<String, dynamic>) : null,
+  threeDSecure: json['three_d_secure'] != null ? InlineObject831ThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject831CaptureMethod? captureMethod;

@@ -41,20 +41,14 @@ bool get isUnknown { return !values.contains(this); }
 final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
-  annualRevenue: json['annual_revenue'] != null
-        ? AccountBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>)
-        : null,
+  annualRevenue: json['annual_revenue'] != null ? AccountBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
   estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
   mcc: json['mcc'] as String?,
   minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
-  monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null
-        ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>)
-        : null,
+  monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productDescription: json['product_description'] as String?,
-  supportAddress: json['support_address'] != null
-        ? AccountBusinessProfileSupportAddress.fromJson(json['support_address'] as Map<String, dynamic>)
-        : null,
+  supportAddress: json['support_address'] != null ? AccountBusinessProfileSupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
   supportEmail: json['support_email'] as String?,
   supportPhone: json['support_phone'] as String?,
   supportUrl: json['support_url'] as String?,

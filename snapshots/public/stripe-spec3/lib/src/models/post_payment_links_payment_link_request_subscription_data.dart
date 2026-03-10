@@ -8,18 +8,10 @@ import 'post_payment_links_payment_link_request_subscription_data_invoice_settin
 final class PostPaymentLinksPaymentLinkRequestSubscriptionData {const PostPaymentLinksPaymentLinkRequestSubscriptionData({this.invoiceSettings, this.metadata, this.trialPeriodDays, this.trialSettings, });
 
 factory PostPaymentLinksPaymentLinkRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestSubscriptionData(
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostPaymentLinksPaymentLinkRequestSubscriptionDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  trialPeriodDays: json['trial_period_days'] != null
-        ? PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days'] as Map<String, dynamic>)
-        : null,
-  trialSettings: json['trial_settings'] != null
-        ? PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  trialPeriodDays: json['trial_period_days'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days'] as Map<String, dynamic>) : null,
+  trialSettings: json['trial_settings'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings? invoiceSettings;

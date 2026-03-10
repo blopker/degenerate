@@ -36,18 +36,12 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({this.dropdown, required this.key, required this.label, this.numeric, required this.optional, this.text, required this.type, });
 
 factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFields(
-  dropdown: json['dropdown'] != null
-        ? PaymentLinksResourceCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>)
-        : null,
+  dropdown: json['dropdown'] != null ? PaymentLinksResourceCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PaymentLinksResourceCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
-  numeric: json['numeric'] != null
-        ? PaymentLinksResourceCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>)
-        : null,
+  numeric: json['numeric'] != null ? PaymentLinksResourceCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   optional: json['optional'] as bool,
-  text: json['text'] != null
-        ? PaymentLinksResourceCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? PaymentLinksResourceCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PaymentLinksResourceCustomFieldsType.fromJson(json['type'] as String),
 ); }
 

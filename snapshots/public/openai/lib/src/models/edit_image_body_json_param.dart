@@ -175,13 +175,9 @@ bool get isUnknown { return !values.contains(this); }
 final class EditImageBodyJsonParam {const EditImageBodyJsonParam({this.model, required this.images, this.mask, required this.prompt, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
-  model: json['model'] != null
-        ? EditImageBodyJsonParamModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? EditImageBodyJsonParamModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   images: (json['images'] as List<dynamic>).map((e) => ImageRefParam.fromJson(e as Map<String, dynamic>)).toList(),
-  mask: json['mask'] != null
-        ? ImageRefParam.fromJson(json['mask'] as Map<String, dynamic>)
-        : null,
+  mask: json['mask'] != null ? ImageRefParam.fromJson(json['mask'] as Map<String, dynamic>) : null,
   prompt: json['prompt'] as String,
   n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
   quality: json.containsKey('quality') ? EditImageBodyJsonParamQuality.fromJson(json['quality'] as String) : EditImageBodyJsonParamQuality.auto,

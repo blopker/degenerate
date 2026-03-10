@@ -7,18 +7,10 @@
 import 'inline_object625_footer_body.dart';import 'inline_object625_footer_title.dart';import 'inline_object625_header_body.dart';import 'inline_object625_header_title.dart';final class InlineObject625 {const InlineObject625({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory InlineObject625.fromJson(Map<String, dynamic> json) { return InlineObject625(
-  footerBody: json['footer_body'] != null
-        ? InlineObject625FooterBody.fromJson(json['footer_body'] as Map<String, dynamic>)
-        : null,
-  footerTitle: json['footer_title'] != null
-        ? InlineObject625FooterTitle.fromJson(json['footer_title'] as Map<String, dynamic>)
-        : null,
-  headerBody: json['header_body'] != null
-        ? InlineObject625HeaderBody.fromJson(json['header_body'] as Map<String, dynamic>)
-        : null,
-  headerTitle: json['header_title'] != null
-        ? InlineObject625HeaderTitle.fromJson(json['header_title'] as Map<String, dynamic>)
-        : null,
+  footerBody: json['footer_body'] != null ? InlineObject625FooterBody.fromJson(json['footer_body'] as Map<String, dynamic>) : null,
+  footerTitle: json['footer_title'] != null ? InlineObject625FooterTitle.fromJson(json['footer_title'] as Map<String, dynamic>) : null,
+  headerBody: json['header_body'] != null ? InlineObject625HeaderBody.fromJson(json['header_body'] as Map<String, dynamic>) : null,
+  headerTitle: json['header_title'] != null ? InlineObject625HeaderTitle.fromJson(json['header_title'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject625FooterBody? footerBody;

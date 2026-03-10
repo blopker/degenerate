@@ -11,9 +11,7 @@ factory RuleSuiteRequiredStatusChecksChecks.fromJson(Map<String, dynamic> json) 
   context: json['context'] as String?,
   state: json['state'] as String?,
   type: json['type'] as String?,
-  app: json['app'] != null
-        ? RuleSuiteRequiredStatusChecksChecksApp.fromJson(json['app'] as Map<String, dynamic>)
-        : null,
+  app: json['app'] != null ? RuleSuiteRequiredStatusChecksChecksApp.fromJson(json['app'] as Map<String, dynamic>) : null,
 ); }
 
 /// The unique identifier of the status check.

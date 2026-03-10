@@ -8,9 +8,7 @@ import 'post_payment_intents_intent_confirm_request_hooks_inputs.dart';/// Autom
 final class PostPaymentIntentsIntentConfirmRequestHooks {const PostPaymentIntentsIntentConfirmRequestHooks({this.inputs});
 
 factory PostPaymentIntentsIntentConfirmRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestHooks(
-  inputs: json['inputs'] != null
-        ? PostPaymentIntentsIntentConfirmRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>)
-        : null,
+  inputs: json['inputs'] != null ? PostPaymentIntentsIntentConfirmRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentConfirmRequestHooksInputs? inputs;

@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode {const PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode({this.flexible, required this.type, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode(
-  flexible: json['flexible'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>)
-        : null,
+  flexible: json['flexible'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: PostInvoicesCreatePreviewRequestScheduleDetailsBillingModeType.fromJson(json['type'] as String),
 ); }
 

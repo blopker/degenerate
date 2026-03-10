@@ -10,9 +10,7 @@ factory AccessSchemasBasicAppResponseProps.fromJson(Map<String, dynamic> json) {
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
-  scimConfig: json['scim_config'] != null
-        ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>)
-        : null,
+  scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 

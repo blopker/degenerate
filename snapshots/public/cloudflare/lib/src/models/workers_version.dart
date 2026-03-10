@@ -35,29 +35,19 @@ bool get isUnknown { return !values.contains(this); }
 final class WorkersVersion {const WorkersVersion({this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, required this.createdOn, required this.id, this.limits, this.mainModule, this.migrations, this.modules, required this.number, this.placement, this.source, this.startupTimeMs, required this.urls, this.usageModel = WorkersVersionUsageModel.standard, });
 
 factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersion(
-  annotations: json['annotations'] != null
-        ? WorkersVersionAnnotations.fromJson(json['annotations'] as Map<String, dynamic>)
-        : null,
-  assets: json['assets'] != null
-        ? WorkersVersionAssets.fromJson(json['assets'] as Map<String, dynamic>)
-        : null,
+  annotations: json['annotations'] != null ? WorkersVersionAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
+  assets: json['assets'] != null ? WorkersVersionAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
-  limits: json['limits'] != null
-        ? WorkersVersionLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? WorkersVersionLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   mainModule: json['main_module'] as String?,
-  migrations: json['migrations'] != null
-        ? WorkersVersionMigrations.fromJson(json['migrations'])
-        : null,
+  migrations: json['migrations'] != null ? WorkersVersionMigrations.fromJson(json['migrations']) : null,
   modules: (json['modules'] as List<dynamic>?)?.map((e) => WorkersVersionModules.fromJson(e as Map<String, dynamic>)).toList(),
   number: (json['number'] as num).toInt(),
-  placement: json['placement'] != null
-        ? WorkersPlacementInfoNoStatus.fromJson(json['placement'] as Map<String, dynamic>)
-        : null,
+  placement: json['placement'] != null ? WorkersPlacementInfoNoStatus.fromJson(json['placement'] as Map<String, dynamic>) : null,
   source: json['source'] as String?,
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
   urls: (json['urls'] as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),

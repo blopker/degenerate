@@ -7,26 +7,16 @@
 import 'post_invoices_create_preview_request_subscription_details_items_billing_thresholds.dart';import 'post_invoices_create_preview_request_subscription_details_items_discounts.dart';import 'post_invoices_create_preview_request_subscription_details_items_metadata.dart';import 'post_invoices_create_preview_request_subscription_details_items_price_data.dart';import 'post_invoices_create_preview_request_subscription_details_items_tax_rates.dart';final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItems {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItems({this.billingThresholds, this.clearUsage, this.deleted, this.discounts, this.id, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   clearUsage: json['clear_usage'] as bool?,
   deleted: json['deleted'] as bool?,
-  discounts: json['discounts'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
-  metadata: json['metadata'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds? billingThresholds;

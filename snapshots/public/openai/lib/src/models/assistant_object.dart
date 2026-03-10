@@ -38,15 +38,11 @@ factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantOb
   model: json['model'] as String,
   instructions: json['instructions'] as String,
   tools: (json['tools'] as List<dynamic>).map((e) => AssistantObjectTools.fromJson(e)).toList(),
-  toolResources: json['tool_resources'] != null
-        ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>)
-        : null,
+  toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null
-        ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>) : null,
 ); }
 
 /// The identifier, which can be referenced in API endpoints.

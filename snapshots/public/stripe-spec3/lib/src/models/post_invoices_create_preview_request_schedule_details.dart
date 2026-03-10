@@ -59,9 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesCreatePreviewRequestScheduleDetails {const PostInvoicesCreatePreviewRequestScheduleDetails({this.billingMode, this.endBehavior, this.phases, this.prorationBehavior, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetails(
-  billingMode: json['billing_mode'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>)
-        : null,
+  billingMode: json['billing_mode'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior.fromJson(json['end_behavior'] as String) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior.fromJson(json['proration_behavior'] as String) : null,

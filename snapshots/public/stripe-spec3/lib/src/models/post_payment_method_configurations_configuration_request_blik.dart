@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_blik_display_pr
 final class PostPaymentMethodConfigurationsConfigurationRequestBlik {const PostPaymentMethodConfigurationsConfigurationRequestBlik({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestBlik.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestBlik(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestBlikDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBlikDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestBlikDisplayPreference? displayPreference;

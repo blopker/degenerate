@@ -15,9 +15,7 @@ factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<St
   customerEmailAddress: json['customer_email_address'] as String?,
   customerPurchaseIp: json['customer_purchase_ip'] as String?,
   productDescription: json['product_description'] as String?,
-  shippingAddress: json['shipping_address'] != null
-        ? DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
+  shippingAddress: json['shipping_address'] != null ? DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// Stripe charge ID for the Visa Compelling Evidence 3.0 eligible prior charge.

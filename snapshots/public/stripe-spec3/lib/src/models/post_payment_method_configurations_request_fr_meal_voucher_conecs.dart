@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_fr_meal_voucher_conecs_displa
 final class PostPaymentMethodConfigurationsRequestFrMealVoucherConecs {const PostPaymentMethodConfigurationsRequestFrMealVoucherConecs({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestFrMealVoucherConecs.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestFrMealVoucherConecs(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference? displayPreference;

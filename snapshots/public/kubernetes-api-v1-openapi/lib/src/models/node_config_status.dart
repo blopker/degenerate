@@ -8,16 +8,10 @@ import 'node_config_source.dart';/// NodeConfigStatus describes the status of th
 final class NodeConfigStatus {const NodeConfigStatus({this.active, this.assigned, this.error, this.lastKnownGood, });
 
 factory NodeConfigStatus.fromJson(Map<String, dynamic> json) { return NodeConfigStatus(
-  active: json['active'] != null
-        ? NodeConfigSource.fromJson(json['active'] as Map<String, dynamic>)
-        : null,
-  assigned: json['assigned'] != null
-        ? NodeConfigSource.fromJson(json['assigned'] as Map<String, dynamic>)
-        : null,
+  active: json['active'] != null ? NodeConfigSource.fromJson(json['active'] as Map<String, dynamic>) : null,
+  assigned: json['assigned'] != null ? NodeConfigSource.fromJson(json['assigned'] as Map<String, dynamic>) : null,
   error: json['error'] as String?,
-  lastKnownGood: json['lastKnownGood'] != null
-        ? NodeConfigSource.fromJson(json['lastKnownGood'] as Map<String, dynamic>)
-        : null,
+  lastKnownGood: json['lastKnownGood'] != null ? NodeConfigSource.fromJson(json['lastKnownGood'] as Map<String, dynamic>) : null,
 ); }
 
 /// Active reports the checkpointed config the node is actively using. Active will represent either the current version of the Assigned config, or the current LastKnownGood config, depending on whether attempting to use the Assigned config results in an error.

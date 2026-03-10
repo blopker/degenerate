@@ -23,12 +23,8 @@ factory DigitalExperienceMonitoringDevice.fromJson(Map<String, dynamic> json) { 
   cpuPct: json['cpuPct'] != null ? (json['cpuPct'] as num).toDouble() : null,
   cpuPctByApp: (json['cpuPctByApp'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => DigitalExperienceMonitoringCpuPctByApp2.fromJson(e as Map<String, dynamic>)).toList()).toList(),
   deviceId: json['deviceId'] as String,
-  deviceIpv4: json['deviceIpv4'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['deviceIpv4'] as Map<String, dynamic>)
-        : null,
-  deviceIpv6: json['deviceIpv6'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['deviceIpv6'] as Map<String, dynamic>)
-        : null,
+  deviceIpv4: json['deviceIpv4'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['deviceIpv4'] as Map<String, dynamic>) : null,
+  deviceIpv6: json['deviceIpv6'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['deviceIpv6'] as Map<String, dynamic>) : null,
   deviceName: json['deviceName'] as String?,
   diskReadBps: json['diskReadBps'] != null ? (json['diskReadBps'] as num).toInt() : null,
   diskUsagePct: json['diskUsagePct'] != null ? (json['diskUsagePct'] as num).toDouble() : null,
@@ -36,19 +32,11 @@ factory DigitalExperienceMonitoringDevice.fromJson(Map<String, dynamic> json) { 
   dohSubdomain: json['dohSubdomain'] as String?,
   estimatedLossPct: json['estimatedLossPct'] != null ? (json['estimatedLossPct'] as num).toDouble() : null,
   firewallEnabled: json['firewallEnabled'] as bool?,
-  gatewayIpv4: json['gatewayIpv4'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['gatewayIpv4'] as Map<String, dynamic>)
-        : null,
-  gatewayIpv6: json['gatewayIpv6'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['gatewayIpv6'] as Map<String, dynamic>)
-        : null,
+  gatewayIpv4: json['gatewayIpv4'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['gatewayIpv4'] as Map<String, dynamic>) : null,
+  gatewayIpv6: json['gatewayIpv6'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['gatewayIpv6'] as Map<String, dynamic>) : null,
   handshakeLatencyMs: json['handshakeLatencyMs'] != null ? (json['handshakeLatencyMs'] as num).toDouble() : null,
-  ispIpv4: json['ispIpv4'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['ispIpv4'] as Map<String, dynamic>)
-        : null,
-  ispIpv6: json['ispIpv6'] != null
-        ? DigitalExperienceMonitoringIpInfo.fromJson(json['ispIpv6'] as Map<String, dynamic>)
-        : null,
+  ispIpv4: json['ispIpv4'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['ispIpv4'] as Map<String, dynamic>) : null,
+  ispIpv6: json['ispIpv6'] != null ? DigitalExperienceMonitoringIpInfo.fromJson(json['ispIpv6'] as Map<String, dynamic>) : null,
   metal: json['metal'] as String?,
   mode: DigitalExperienceMonitoringMode.fromJson(json['mode'] as String),
   networkRcvdBps: json['networkRcvdBps'] != null ? (json['networkRcvdBps'] as num).toInt() : null,

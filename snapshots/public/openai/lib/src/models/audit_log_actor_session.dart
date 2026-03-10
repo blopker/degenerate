@@ -8,9 +8,7 @@ import 'audit_log_actor_user.dart';/// The session in which the audit logged act
 final class AuditLogActorSession {const AuditLogActorSession({this.user, this.ipAddress, });
 
 factory AuditLogActorSession.fromJson(Map<String, dynamic> json) { return AuditLogActorSession(
-  user: json['user'] != null
-        ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   ipAddress: json['ip_address'] as String?,
 ); }
 

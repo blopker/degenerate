@@ -10,49 +10,31 @@ final class DisputeEvidence {const DisputeEvidence({this.accessActivityLog, this
 factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvidence(
   accessActivityLog: json['access_activity_log'] as String?,
   billingAddress: json['billing_address'] as String?,
-  cancellationPolicy: json['cancellation_policy'] != null
-        ? DisputeEvidenceCancellationPolicy.fromJson(json['cancellation_policy'] as Map<String, dynamic>)
-        : null,
+  cancellationPolicy: json['cancellation_policy'] != null ? DisputeEvidenceCancellationPolicy.fromJson(json['cancellation_policy'] as Map<String, dynamic>) : null,
   cancellationPolicyDisclosure: json['cancellation_policy_disclosure'] as String?,
   cancellationRebuttal: json['cancellation_rebuttal'] as String?,
-  customerCommunication: json['customer_communication'] != null
-        ? DisputeEvidenceCustomerCommunication.fromJson(json['customer_communication'] as Map<String, dynamic>)
-        : null,
+  customerCommunication: json['customer_communication'] != null ? DisputeEvidenceCustomerCommunication.fromJson(json['customer_communication'] as Map<String, dynamic>) : null,
   customerEmailAddress: json['customer_email_address'] as String?,
   customerName: json['customer_name'] as String?,
   customerPurchaseIp: json['customer_purchase_ip'] as String?,
-  customerSignature: json['customer_signature'] != null
-        ? DisputeEvidenceCustomerSignature.fromJson(json['customer_signature'] as Map<String, dynamic>)
-        : null,
-  duplicateChargeDocumentation: json['duplicate_charge_documentation'] != null
-        ? DisputeEvidenceDuplicateChargeDocumentation.fromJson(json['duplicate_charge_documentation'] as Map<String, dynamic>)
-        : null,
+  customerSignature: json['customer_signature'] != null ? DisputeEvidenceCustomerSignature.fromJson(json['customer_signature'] as Map<String, dynamic>) : null,
+  duplicateChargeDocumentation: json['duplicate_charge_documentation'] != null ? DisputeEvidenceDuplicateChargeDocumentation.fromJson(json['duplicate_charge_documentation'] as Map<String, dynamic>) : null,
   duplicateChargeExplanation: json['duplicate_charge_explanation'] as String?,
   duplicateChargeId: json['duplicate_charge_id'] as String?,
   enhancedEvidence: DisputeEnhancedEvidence.fromJson(json['enhanced_evidence'] as Map<String, dynamic>),
   productDescription: json['product_description'] as String?,
-  receipt: json['receipt'] != null
-        ? DisputeEvidenceReceipt.fromJson(json['receipt'] as Map<String, dynamic>)
-        : null,
-  refundPolicy: json['refund_policy'] != null
-        ? DisputeEvidenceRefundPolicy.fromJson(json['refund_policy'] as Map<String, dynamic>)
-        : null,
+  receipt: json['receipt'] != null ? DisputeEvidenceReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null,
+  refundPolicy: json['refund_policy'] != null ? DisputeEvidenceRefundPolicy.fromJson(json['refund_policy'] as Map<String, dynamic>) : null,
   refundPolicyDisclosure: json['refund_policy_disclosure'] as String?,
   refundRefusalExplanation: json['refund_refusal_explanation'] as String?,
   serviceDate: json['service_date'] as String?,
-  serviceDocumentation: json['service_documentation'] != null
-        ? DisputeEvidenceServiceDocumentation.fromJson(json['service_documentation'] as Map<String, dynamic>)
-        : null,
+  serviceDocumentation: json['service_documentation'] != null ? DisputeEvidenceServiceDocumentation.fromJson(json['service_documentation'] as Map<String, dynamic>) : null,
   shippingAddress: json['shipping_address'] as String?,
   shippingCarrier: json['shipping_carrier'] as String?,
   shippingDate: json['shipping_date'] as String?,
-  shippingDocumentation: json['shipping_documentation'] != null
-        ? DisputeEvidenceShippingDocumentation.fromJson(json['shipping_documentation'] as Map<String, dynamic>)
-        : null,
+  shippingDocumentation: json['shipping_documentation'] != null ? DisputeEvidenceShippingDocumentation.fromJson(json['shipping_documentation'] as Map<String, dynamic>) : null,
   shippingTrackingNumber: json['shipping_tracking_number'] as String?,
-  uncategorizedFile: json['uncategorized_file'] != null
-        ? DisputeEvidenceUncategorizedFile.fromJson(json['uncategorized_file'] as Map<String, dynamic>)
-        : null,
+  uncategorizedFile: json['uncategorized_file'] != null ? DisputeEvidenceUncategorizedFile.fromJson(json['uncategorized_file'] as Map<String, dynamic>) : null,
   uncategorizedText: json['uncategorized_text'] as String?,
 ); }
 

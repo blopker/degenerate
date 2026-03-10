@@ -7,9 +7,7 @@
 import 'inline_object871_box.dart';final class InlineObject871 {const InlineObject871({this.box, this.label, this.score, });
 
 factory InlineObject871.fromJson(Map<String, dynamic> json) { return InlineObject871(
-  box: json['box'] != null
-        ? InlineObject871Box.fromJson(json['box'] as Map<String, dynamic>)
-        : null,
+  box: json['box'] != null ? InlineObject871Box.fromJson(json['box'] as Map<String, dynamic>) : null,
   label: json['label'] as String?,
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }

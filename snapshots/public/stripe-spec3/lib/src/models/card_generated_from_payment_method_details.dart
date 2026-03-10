@@ -8,9 +8,7 @@ import 'payment_method_details_card_present.dart';///
 final class CardGeneratedFromPaymentMethodDetails {const CardGeneratedFromPaymentMethodDetails({this.cardPresent, required this.type, });
 
 factory CardGeneratedFromPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return CardGeneratedFromPaymentMethodDetails(
-  cardPresent: json['card_present'] != null
-        ? PaymentMethodDetailsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
+  cardPresent: json['card_present'] != null ? PaymentMethodDetailsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

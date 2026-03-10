@@ -9,9 +9,7 @@ final class InvoicesResourceInvoiceRendering {const InvoicesResourceInvoiceRende
 
 factory InvoicesResourceInvoiceRendering.fromJson(Map<String, dynamic> json) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: json['amount_tax_display'] as String?,
-  pdf: json['pdf'] != null
-        ? InvoicesResourceInvoiceRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>)
-        : null,
+  pdf: json['pdf'] != null ? InvoicesResourceInvoiceRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
   templateVersion: json['template_version'] != null ? (json['template_version'] as num).toInt() : null,
 ); }

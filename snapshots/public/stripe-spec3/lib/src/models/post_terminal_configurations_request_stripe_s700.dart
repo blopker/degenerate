@@ -8,9 +8,7 @@ import 'post_terminal_configurations_request_stripe_s700_splashscreen.dart';/// 
 final class PostTerminalConfigurationsRequestStripeS700 {const PostTerminalConfigurationsRequestStripeS700({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestStripeS700.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestStripeS700(
-  splashscreen: json['splashscreen'] != null
-        ? PostTerminalConfigurationsRequestStripeS700Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>)
-        : null,
+  splashscreen: json['splashscreen'] != null ? PostTerminalConfigurationsRequestStripeS700Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalConfigurationsRequestStripeS700Splashscreen? splashscreen;

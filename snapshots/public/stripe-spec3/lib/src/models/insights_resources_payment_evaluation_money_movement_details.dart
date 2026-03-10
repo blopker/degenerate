@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({this.card, required this.moneyMovementType, });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
-  card: json['card'] != null
-        ? InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   moneyMovementType: InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
 ); }
 

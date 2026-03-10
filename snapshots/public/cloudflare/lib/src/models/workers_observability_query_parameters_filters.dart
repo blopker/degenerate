@@ -139,9 +139,7 @@ factory WorkersObservabilityQueryParametersFilters.fromJson(Map<String, dynamic>
   key: json['key'] as String,
   operation: WorkersObservabilityQueryParametersFiltersOperation.fromJson(json['operation'] as String),
   type: WorkersObservabilityQueryParametersFiltersType.fromJson(json['type'] as String),
-  value: json['value'] != null
-        ? WorkersObservabilityQueryParametersFiltersValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? WorkersObservabilityQueryParametersFiltersValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final String key;

@@ -8,9 +8,7 @@ import 'payments_primitives_payment_records_resource_payment_method_card_details
 final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments({this.plan});
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments(
-  plan: json['plan'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 /// Installment plan selected for the payment.

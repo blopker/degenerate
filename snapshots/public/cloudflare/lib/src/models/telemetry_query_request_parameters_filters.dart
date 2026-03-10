@@ -139,9 +139,7 @@ factory TelemetryQueryRequestParametersFilters.fromJson(Map<String, dynamic> jso
   key: json['key'] as String,
   operation: TelemetryQueryRequestParametersFiltersOperation.fromJson(json['operation'] as String),
   type: TelemetryQueryRequestParametersFiltersType.fromJson(json['type'] as String),
-  value: json['value'] != null
-        ? TelemetryQueryRequestParametersFiltersValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? TelemetryQueryRequestParametersFiltersValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final String key;

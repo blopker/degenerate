@@ -7,9 +7,7 @@
 import 'post_billing_portal_configurations_configuration_request_features_customer_update_allowed_updates.dart';final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
-  allowedUpdates: json['allowed_updates'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates.fromJson(json['allowed_updates'] as Map<String, dynamic>)
-        : null,
+  allowedUpdates: json['allowed_updates'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates.fromJson(json['allowed_updates'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
 ); }
 

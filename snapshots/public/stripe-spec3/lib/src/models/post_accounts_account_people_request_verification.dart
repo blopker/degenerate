@@ -8,12 +8,8 @@ import 'post_accounts_account_people_request_verification_additional_document.da
 final class PostAccountsAccountPeopleRequestVerification {const PostAccountsAccountPeopleRequestVerification({this.additionalDocument, this.document, });
 
 factory PostAccountsAccountPeopleRequestVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestVerification(
-  additionalDocument: json['additional_document'] != null
-        ? PostAccountsAccountPeopleRequestVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>)
-        : null,
-  document: json['document'] != null
-        ? PostAccountsAccountPeopleRequestVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  additionalDocument: json['additional_document'] != null ? PostAccountsAccountPeopleRequestVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
+  document: json['document'] != null ? PostAccountsAccountPeopleRequestVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountPeopleRequestVerificationAdditionalDocument? additionalDocument;

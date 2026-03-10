@@ -49,9 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject696 {const InlineObject696({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
 factory InlineObject696.fromJson(Map<String, dynamic> json) { return InlineObject696(
-  bankTransfer: json['bank_transfer'] != null
-        ? InlineObject696BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>)
-        : null,
+  bankTransfer: json['bank_transfer'] != null ? InlineObject696BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] != null ? InlineObject696FundingType.fromJson(json['funding_type'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject696SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }

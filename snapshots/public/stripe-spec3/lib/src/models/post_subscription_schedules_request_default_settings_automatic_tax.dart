@@ -8,9 +8,7 @@ import 'post_subscription_schedules_request_default_settings_automatic_tax_liabi
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

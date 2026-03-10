@@ -9,9 +9,7 @@ final class SetupAttemptPaymentMethodDetailsCard {const SetupAttemptPaymentMetho
 
 factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCard(
   brand: json['brand'] as String?,
-  checks: json['checks'] != null
-        ? SetupAttemptPaymentMethodDetailsCardChecks2.fromJson(json['checks'] as Map<String, dynamic>)
-        : null,
+  checks: json['checks'] != null ? SetupAttemptPaymentMethodDetailsCardChecks2.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
   expYear: json['exp_year'] != null ? (json['exp_year'] as num).toInt() : null,
@@ -19,12 +17,8 @@ factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json)
   funding: json['funding'] as String?,
   last4: json['last4'] as String?,
   network: json['network'] as String?,
-  threeDSecure: json['three_d_secure'] != null
-        ? SetupAttemptPaymentMethodDetailsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
-  wallet: json['wallet'] != null
-        ? SetupAttemptPaymentMethodDetailsCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? SetupAttemptPaymentMethodDetailsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? SetupAttemptPaymentMethodDetailsCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.

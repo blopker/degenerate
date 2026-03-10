@@ -20,12 +20,8 @@ factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization
   updatedAt: DateTime.parse(json['updated_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   fingerprint: json['fingerprint'] as String,
-  user: json['user'] != null
-        ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   expiresAt: DateTime.parse(json['expires_at'] as String),
 ); }
 

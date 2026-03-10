@@ -30,9 +30,7 @@ final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLeng
 
 factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLength(
   type: RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleMaxFilePathLengthType type;

@@ -8,9 +8,7 @@ import 'access_connection_rules_rdp.dart';/// The rules that define how users ma
 final class AccessConnectionRules {const AccessConnectionRules({this.rdp});
 
 factory AccessConnectionRules.fromJson(Map<String, dynamic> json) { return AccessConnectionRules(
-  rdp: json['rdp'] != null
-        ? AccessConnectionRulesRdp.fromJson(json['rdp'] as Map<String, dynamic>)
-        : null,
+  rdp: json['rdp'] != null ? AccessConnectionRulesRdp.fromJson(json['rdp'] as Map<String, dynamic>) : null,
 ); }
 
 final AccessConnectionRulesRdp? rdp;

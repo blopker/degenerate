@@ -9,9 +9,7 @@ final class PostCheckoutSessionsRequestInvoiceCreation {const PostCheckoutSessio
 
 factory PostCheckoutSessionsRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestInvoiceCreation(
   enabled: json['enabled'] as bool,
-  invoiceData: json['invoice_data'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>)
-        : null,
+  invoiceData: json['invoice_data'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

@@ -10,9 +10,7 @@ factory LogpushMessages2.fromJson(Map<String, dynamic> json) { return LogpushMes
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  source: json['source'] != null
-        ? LogpushMessages2Source.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? LogpushMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;

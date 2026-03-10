@@ -111,9 +111,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Card {const Card({this.account, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine1Check, this.addressLine2, this.addressState, this.addressZip, this.addressZipCheck, this.allowRedisplay, this.availablePayoutMethods, required this.brand, this.country, this.currency, this.customer, this.cvcCheck, this.defaultForCurrency, this.dynamicLast4, required this.expMonth, required this.expYear, this.fingerprint, required this.funding, required this.id, this.iin, required this.last4, this.metadata, this.name, this.networks, required this.object, this.regulatedStatus, this.status, this.tokenizationMethod, });
 
 factory Card.fromJson(Map<String, dynamic> json) { return Card(
-  account: json['account'] != null
-        ? CardAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? CardAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -127,9 +125,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   brand: json['brand'] as String,
   country: json['country'] as String?,
   currency: json['currency'] as String?,
-  customer: json['customer'] != null
-        ? CardCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? CardCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   cvcCheck: json['cvc_check'] as String?,
   defaultForCurrency: json['default_for_currency'] as bool?,
   dynamicLast4: json['dynamic_last4'] as String?,
@@ -142,9 +138,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   last4: json['last4'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
-  networks: json['networks'] != null
-        ? TokenCardNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? TokenCardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   object: CardObject.fromJson(json['object'] as String),
   regulatedStatus: json['regulated_status'] != null ? CardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
   status: json['status'] as String?,

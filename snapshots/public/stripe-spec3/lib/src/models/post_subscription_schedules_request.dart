@@ -38,24 +38,16 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
 
 factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequest(
-  billingMode: json['billing_mode'] != null
-        ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>)
-        : null,
+  billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultSettings: json['default_settings'] != null
-        ? PostSubscriptionSchedulesRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>)
-        : null,
+  defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fromSubscription: json['from_subscription'] as String?,
-  metadata: json['metadata'] != null
-        ? PostSubscriptionSchedulesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostSubscriptionSchedulesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
-  startDate: json['start_date'] != null
-        ? PostSubscriptionSchedulesRequestStartDate.fromJson(json['start_date'] as Map<String, dynamic>)
-        : null,
+  startDate: json['start_date'] != null ? PostSubscriptionSchedulesRequestStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null,
 ); }
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.

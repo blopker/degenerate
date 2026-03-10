@@ -11,147 +11,55 @@ factory AuditLog.fromJson(Map<String, dynamic> json) { return AuditLog(
   id: json['id'] as String,
   type: AuditLogEventType.fromJson(json['type'] as String),
   effectiveAt: (json['effective_at'] as num).toInt(),
-  project: json['project'] != null
-        ? AuditLogProject.fromJson(json['project'] as Map<String, dynamic>)
-        : null,
+  project: json['project'] != null ? AuditLogProject.fromJson(json['project'] as Map<String, dynamic>) : null,
   actor: AuditLogActor.fromJson(json['actor'] as Map<String, dynamic>),
-  apiKeyCreated: json['api_key.created'] != null
-        ? AuditLogKeyCreated.fromJson(json['api_key.created'] as Map<String, dynamic>)
-        : null,
-  apiKeyUpdated: json['api_key.updated'] != null
-        ? AuditLogKeyUpdated.fromJson(json['api_key.updated'] as Map<String, dynamic>)
-        : null,
-  apiKeyDeleted: json['api_key.deleted'] != null
-        ? AuditLogKeyDeleted.fromJson(json['api_key.deleted'] as Map<String, dynamic>)
-        : null,
-  checkpointPermissionCreated: json['checkpoint.permission.created'] != null
-        ? AuditLogCheckpointPermissionCreated.fromJson(json['checkpoint.permission.created'] as Map<String, dynamic>)
-        : null,
-  checkpointPermissionDeleted: json['checkpoint.permission.deleted'] != null
-        ? AuditLogCheckpointPermissionDeleted.fromJson(json['checkpoint.permission.deleted'] as Map<String, dynamic>)
-        : null,
-  externalKeyRegistered: json['external_key.registered'] != null
-        ? AuditLogExternalKeyRegistered.fromJson(json['external_key.registered'] as Map<String, dynamic>)
-        : null,
-  externalKeyRemoved: json['external_key.removed'] != null
-        ? AuditLogExternalKeyRemoved.fromJson(json['external_key.removed'] as Map<String, dynamic>)
-        : null,
-  groupCreated: json['group.created'] != null
-        ? AuditLogGroupCreated.fromJson(json['group.created'] as Map<String, dynamic>)
-        : null,
-  groupUpdated: json['group.updated'] != null
-        ? AuditLogGroupUpdated.fromJson(json['group.updated'] as Map<String, dynamic>)
-        : null,
-  groupDeleted: json['group.deleted'] != null
-        ? AuditLogGroupDeleted.fromJson(json['group.deleted'] as Map<String, dynamic>)
-        : null,
-  scimEnabled: json['scim.enabled'] != null
-        ? AuditLogScimEnabled.fromJson(json['scim.enabled'] as Map<String, dynamic>)
-        : null,
-  scimDisabled: json['scim.disabled'] != null
-        ? AuditLogScimDisabled.fromJson(json['scim.disabled'] as Map<String, dynamic>)
-        : null,
-  inviteSent: json['invite.sent'] != null
-        ? AuditLogInviteSent.fromJson(json['invite.sent'] as Map<String, dynamic>)
-        : null,
-  inviteAccepted: json['invite.accepted'] != null
-        ? AuditLogInviteAccepted.fromJson(json['invite.accepted'] as Map<String, dynamic>)
-        : null,
-  inviteDeleted: json['invite.deleted'] != null
-        ? AuditLogInviteDeleted.fromJson(json['invite.deleted'] as Map<String, dynamic>)
-        : null,
-  ipAllowlistCreated: json['ip_allowlist.created'] != null
-        ? AuditLogIpAllowlistCreated.fromJson(json['ip_allowlist.created'] as Map<String, dynamic>)
-        : null,
-  ipAllowlistUpdated: json['ip_allowlist.updated'] != null
-        ? AuditLogIpAllowlistUpdated.fromJson(json['ip_allowlist.updated'] as Map<String, dynamic>)
-        : null,
-  ipAllowlistDeleted: json['ip_allowlist.deleted'] != null
-        ? AuditLogIpAllowlistDeleted.fromJson(json['ip_allowlist.deleted'] as Map<String, dynamic>)
-        : null,
-  ipAllowlistConfigActivated: json['ip_allowlist.config.activated'] != null
-        ? AuditLogIpAllowlistConfigActivated.fromJson(json['ip_allowlist.config.activated'] as Map<String, dynamic>)
-        : null,
-  ipAllowlistConfigDeactivated: json['ip_allowlist.config.deactivated'] != null
-        ? AuditLogIpAllowlistConfigDeactivated.fromJson(json['ip_allowlist.config.deactivated'] as Map<String, dynamic>)
-        : null,
+  apiKeyCreated: json['api_key.created'] != null ? AuditLogKeyCreated.fromJson(json['api_key.created'] as Map<String, dynamic>) : null,
+  apiKeyUpdated: json['api_key.updated'] != null ? AuditLogKeyUpdated.fromJson(json['api_key.updated'] as Map<String, dynamic>) : null,
+  apiKeyDeleted: json['api_key.deleted'] != null ? AuditLogKeyDeleted.fromJson(json['api_key.deleted'] as Map<String, dynamic>) : null,
+  checkpointPermissionCreated: json['checkpoint.permission.created'] != null ? AuditLogCheckpointPermissionCreated.fromJson(json['checkpoint.permission.created'] as Map<String, dynamic>) : null,
+  checkpointPermissionDeleted: json['checkpoint.permission.deleted'] != null ? AuditLogCheckpointPermissionDeleted.fromJson(json['checkpoint.permission.deleted'] as Map<String, dynamic>) : null,
+  externalKeyRegistered: json['external_key.registered'] != null ? AuditLogExternalKeyRegistered.fromJson(json['external_key.registered'] as Map<String, dynamic>) : null,
+  externalKeyRemoved: json['external_key.removed'] != null ? AuditLogExternalKeyRemoved.fromJson(json['external_key.removed'] as Map<String, dynamic>) : null,
+  groupCreated: json['group.created'] != null ? AuditLogGroupCreated.fromJson(json['group.created'] as Map<String, dynamic>) : null,
+  groupUpdated: json['group.updated'] != null ? AuditLogGroupUpdated.fromJson(json['group.updated'] as Map<String, dynamic>) : null,
+  groupDeleted: json['group.deleted'] != null ? AuditLogGroupDeleted.fromJson(json['group.deleted'] as Map<String, dynamic>) : null,
+  scimEnabled: json['scim.enabled'] != null ? AuditLogScimEnabled.fromJson(json['scim.enabled'] as Map<String, dynamic>) : null,
+  scimDisabled: json['scim.disabled'] != null ? AuditLogScimDisabled.fromJson(json['scim.disabled'] as Map<String, dynamic>) : null,
+  inviteSent: json['invite.sent'] != null ? AuditLogInviteSent.fromJson(json['invite.sent'] as Map<String, dynamic>) : null,
+  inviteAccepted: json['invite.accepted'] != null ? AuditLogInviteAccepted.fromJson(json['invite.accepted'] as Map<String, dynamic>) : null,
+  inviteDeleted: json['invite.deleted'] != null ? AuditLogInviteDeleted.fromJson(json['invite.deleted'] as Map<String, dynamic>) : null,
+  ipAllowlistCreated: json['ip_allowlist.created'] != null ? AuditLogIpAllowlistCreated.fromJson(json['ip_allowlist.created'] as Map<String, dynamic>) : null,
+  ipAllowlistUpdated: json['ip_allowlist.updated'] != null ? AuditLogIpAllowlistUpdated.fromJson(json['ip_allowlist.updated'] as Map<String, dynamic>) : null,
+  ipAllowlistDeleted: json['ip_allowlist.deleted'] != null ? AuditLogIpAllowlistDeleted.fromJson(json['ip_allowlist.deleted'] as Map<String, dynamic>) : null,
+  ipAllowlistConfigActivated: json['ip_allowlist.config.activated'] != null ? AuditLogIpAllowlistConfigActivated.fromJson(json['ip_allowlist.config.activated'] as Map<String, dynamic>) : null,
+  ipAllowlistConfigDeactivated: json['ip_allowlist.config.deactivated'] != null ? AuditLogIpAllowlistConfigDeactivated.fromJson(json['ip_allowlist.config.deactivated'] as Map<String, dynamic>) : null,
   loginSucceeded: (json['login.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  loginFailed: json['login.failed'] != null
-        ? AuditLogLoginFailed.fromJson(json['login.failed'] as Map<String, dynamic>)
-        : null,
+  loginFailed: json['login.failed'] != null ? AuditLogLoginFailed.fromJson(json['login.failed'] as Map<String, dynamic>) : null,
   logoutSucceeded: (json['logout.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  logoutFailed: json['logout.failed'] != null
-        ? AuditLogLogoutFailed.fromJson(json['logout.failed'] as Map<String, dynamic>)
-        : null,
-  organizationUpdated: json['organization.updated'] != null
-        ? AuditLogOrganizationUpdated.fromJson(json['organization.updated'] as Map<String, dynamic>)
-        : null,
-  projectCreated: json['project.created'] != null
-        ? AuditLogProjectCreated.fromJson(json['project.created'] as Map<String, dynamic>)
-        : null,
-  projectUpdated: json['project.updated'] != null
-        ? AuditLogProjectUpdated.fromJson(json['project.updated'] as Map<String, dynamic>)
-        : null,
-  projectArchived: json['project.archived'] != null
-        ? AuditLogProjectArchived.fromJson(json['project.archived'] as Map<String, dynamic>)
-        : null,
-  projectDeleted: json['project.deleted'] != null
-        ? AuditLogProjectDeleted.fromJson(json['project.deleted'] as Map<String, dynamic>)
-        : null,
-  rateLimitUpdated: json['rate_limit.updated'] != null
-        ? AuditLogRateLimitUpdated.fromJson(json['rate_limit.updated'] as Map<String, dynamic>)
-        : null,
-  rateLimitDeleted: json['rate_limit.deleted'] != null
-        ? AuditLogRateLimitDeleted.fromJson(json['rate_limit.deleted'] as Map<String, dynamic>)
-        : null,
-  roleCreated: json['role.created'] != null
-        ? AuditLogRoleCreated.fromJson(json['role.created'] as Map<String, dynamic>)
-        : null,
-  roleUpdated: json['role.updated'] != null
-        ? AuditLogRoleUpdated.fromJson(json['role.updated'] as Map<String, dynamic>)
-        : null,
-  roleDeleted: json['role.deleted'] != null
-        ? AuditLogRoleDeleted.fromJson(json['role.deleted'] as Map<String, dynamic>)
-        : null,
-  roleAssignmentCreated: json['role.assignment.created'] != null
-        ? AuditLogRoleAssignmentCreated.fromJson(json['role.assignment.created'] as Map<String, dynamic>)
-        : null,
-  roleAssignmentDeleted: json['role.assignment.deleted'] != null
-        ? AuditLogRoleAssignmentDeleted.fromJson(json['role.assignment.deleted'] as Map<String, dynamic>)
-        : null,
-  serviceAccountCreated: json['service_account.created'] != null
-        ? AuditLogServiceAccountCreated.fromJson(json['service_account.created'] as Map<String, dynamic>)
-        : null,
-  serviceAccountUpdated: json['service_account.updated'] != null
-        ? AuditLogServiceAccountUpdated.fromJson(json['service_account.updated'] as Map<String, dynamic>)
-        : null,
-  serviceAccountDeleted: json['service_account.deleted'] != null
-        ? AuditLogServiceAccountDeleted.fromJson(json['service_account.deleted'] as Map<String, dynamic>)
-        : null,
-  userAdded: json['user.added'] != null
-        ? AuditLogUserAdded.fromJson(json['user.added'] as Map<String, dynamic>)
-        : null,
-  userUpdated: json['user.updated'] != null
-        ? AuditLogUserUpdated.fromJson(json['user.updated'] as Map<String, dynamic>)
-        : null,
-  userDeleted: json['user.deleted'] != null
-        ? AuditLogUserDeleted.fromJson(json['user.deleted'] as Map<String, dynamic>)
-        : null,
-  certificateCreated: json['certificate.created'] != null
-        ? AuditLogCertificateCreated.fromJson(json['certificate.created'] as Map<String, dynamic>)
-        : null,
-  certificateUpdated: json['certificate.updated'] != null
-        ? AuditLogCertificateUpdated.fromJson(json['certificate.updated'] as Map<String, dynamic>)
-        : null,
-  certificateDeleted: json['certificate.deleted'] != null
-        ? AuditLogCertificateDeleted.fromJson(json['certificate.deleted'] as Map<String, dynamic>)
-        : null,
-  certificatesActivated: json['certificates.activated'] != null
-        ? AuditLogCertificatesActivated.fromJson(json['certificates.activated'] as Map<String, dynamic>)
-        : null,
-  certificatesDeactivated: json['certificates.deactivated'] != null
-        ? AuditLogCertificatesDeactivated.fromJson(json['certificates.deactivated'] as Map<String, dynamic>)
-        : null,
+  logoutFailed: json['logout.failed'] != null ? AuditLogLogoutFailed.fromJson(json['logout.failed'] as Map<String, dynamic>) : null,
+  organizationUpdated: json['organization.updated'] != null ? AuditLogOrganizationUpdated.fromJson(json['organization.updated'] as Map<String, dynamic>) : null,
+  projectCreated: json['project.created'] != null ? AuditLogProjectCreated.fromJson(json['project.created'] as Map<String, dynamic>) : null,
+  projectUpdated: json['project.updated'] != null ? AuditLogProjectUpdated.fromJson(json['project.updated'] as Map<String, dynamic>) : null,
+  projectArchived: json['project.archived'] != null ? AuditLogProjectArchived.fromJson(json['project.archived'] as Map<String, dynamic>) : null,
+  projectDeleted: json['project.deleted'] != null ? AuditLogProjectDeleted.fromJson(json['project.deleted'] as Map<String, dynamic>) : null,
+  rateLimitUpdated: json['rate_limit.updated'] != null ? AuditLogRateLimitUpdated.fromJson(json['rate_limit.updated'] as Map<String, dynamic>) : null,
+  rateLimitDeleted: json['rate_limit.deleted'] != null ? AuditLogRateLimitDeleted.fromJson(json['rate_limit.deleted'] as Map<String, dynamic>) : null,
+  roleCreated: json['role.created'] != null ? AuditLogRoleCreated.fromJson(json['role.created'] as Map<String, dynamic>) : null,
+  roleUpdated: json['role.updated'] != null ? AuditLogRoleUpdated.fromJson(json['role.updated'] as Map<String, dynamic>) : null,
+  roleDeleted: json['role.deleted'] != null ? AuditLogRoleDeleted.fromJson(json['role.deleted'] as Map<String, dynamic>) : null,
+  roleAssignmentCreated: json['role.assignment.created'] != null ? AuditLogRoleAssignmentCreated.fromJson(json['role.assignment.created'] as Map<String, dynamic>) : null,
+  roleAssignmentDeleted: json['role.assignment.deleted'] != null ? AuditLogRoleAssignmentDeleted.fromJson(json['role.assignment.deleted'] as Map<String, dynamic>) : null,
+  serviceAccountCreated: json['service_account.created'] != null ? AuditLogServiceAccountCreated.fromJson(json['service_account.created'] as Map<String, dynamic>) : null,
+  serviceAccountUpdated: json['service_account.updated'] != null ? AuditLogServiceAccountUpdated.fromJson(json['service_account.updated'] as Map<String, dynamic>) : null,
+  serviceAccountDeleted: json['service_account.deleted'] != null ? AuditLogServiceAccountDeleted.fromJson(json['service_account.deleted'] as Map<String, dynamic>) : null,
+  userAdded: json['user.added'] != null ? AuditLogUserAdded.fromJson(json['user.added'] as Map<String, dynamic>) : null,
+  userUpdated: json['user.updated'] != null ? AuditLogUserUpdated.fromJson(json['user.updated'] as Map<String, dynamic>) : null,
+  userDeleted: json['user.deleted'] != null ? AuditLogUserDeleted.fromJson(json['user.deleted'] as Map<String, dynamic>) : null,
+  certificateCreated: json['certificate.created'] != null ? AuditLogCertificateCreated.fromJson(json['certificate.created'] as Map<String, dynamic>) : null,
+  certificateUpdated: json['certificate.updated'] != null ? AuditLogCertificateUpdated.fromJson(json['certificate.updated'] as Map<String, dynamic>) : null,
+  certificateDeleted: json['certificate.deleted'] != null ? AuditLogCertificateDeleted.fromJson(json['certificate.deleted'] as Map<String, dynamic>) : null,
+  certificatesActivated: json['certificates.activated'] != null ? AuditLogCertificatesActivated.fromJson(json['certificates.activated'] as Map<String, dynamic>) : null,
+  certificatesDeactivated: json['certificates.deactivated'] != null ? AuditLogCertificatesDeactivated.fromJson(json['certificates.deactivated'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of this log.

@@ -7,12 +7,8 @@
 import 'inline_object941_customer_reference.dart';import 'inline_object941_order_reference.dart';final class InlineObject941 {const InlineObject941({this.customerReference, this.orderReference, });
 
 factory InlineObject941.fromJson(Map<String, dynamic> json) { return InlineObject941(
-  customerReference: json['customer_reference'] != null
-        ? InlineObject941CustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>)
-        : null,
-  orderReference: json['order_reference'] != null
-        ? InlineObject941OrderReference.fromJson(json['order_reference'] as Map<String, dynamic>)
-        : null,
+  customerReference: json['customer_reference'] != null ? InlineObject941CustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>) : null,
+  orderReference: json['order_reference'] != null ? InlineObject941OrderReference.fromJson(json['order_reference'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject941CustomerReference? customerReference;

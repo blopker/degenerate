@@ -8,9 +8,7 @@ import 'post_checkout_sessions_request_shipping_options_shipping_rate_data.dart'
 
 factory PostCheckoutSessionsRequestShippingOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptions(
   shippingRate: json['shipping_rate'] as String?,
-  shippingRateData: json['shipping_rate_data'] != null
-        ? PostCheckoutSessionsRequestShippingOptionsShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>)
-        : null,
+  shippingRateData: json['shipping_rate_data'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>) : null,
 ); }
 
 final String? shippingRate;

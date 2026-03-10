@@ -12,9 +12,7 @@ factory AccessSchemasSaasProps.fromJson(Map<String, dynamic> json) { return Acce
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
-  saasApp: json['saas_app'] != null
-        ? AccessSchemasSaasPropsSaasApp.fromJson(json['saas_app'])
-        : null,
+  saasApp: json['saas_app'] != null ? AccessSchemasSaasPropsSaasApp.fromJson(json['saas_app']) : null,
   type: json['type'] as String?,
 ); }
 

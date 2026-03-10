@@ -15,9 +15,7 @@ factory UrlscannerGetScanResponse2Page.fromJson(Map<String, dynamic> json) { ret
   domain: json['domain'] as String,
   ip: json['ip'] as String,
   mimeType: json['mimeType'] as String,
-  screenshot: json['screenshot'] != null
-        ? UrlscannerGetScanResponse2PageScreenshot.fromJson(json['screenshot'] as Map<String, dynamic>)
-        : null,
+  screenshot: json['screenshot'] != null ? UrlscannerGetScanResponse2PageScreenshot.fromJson(json['screenshot'] as Map<String, dynamic>) : null,
   server: json['server'] as String,
   status: json['status'] as String,
   title: json['title'] as String,

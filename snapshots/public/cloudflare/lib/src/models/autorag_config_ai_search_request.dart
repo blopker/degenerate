@@ -7,20 +7,12 @@
 import 'autorag_config_ai_search_request_filters.dart';import 'autorag_config_ai_search_request_model.dart';import 'autorag_config_ai_search_request_ranking_options.dart';import 'autorag_config_ai_search_request_reranking.dart';final class AutoragConfigAiSearchRequest {const AutoragConfigAiSearchRequest({this.filters, this.maxNumResults = 10, this.model, required this.query, this.rankingOptions, this.reranking, this.rewriteQuery = false, this.stream = false, this.systemPrompt, });
 
 factory AutoragConfigAiSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequest(
-  filters: json['filters'] != null
-        ? AutoragConfigAiSearchRequestFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? AutoragConfigAiSearchRequestFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  model: json['model'] != null
-        ? AutoragConfigAiSearchRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AutoragConfigAiSearchRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   query: json['query'] as String,
-  rankingOptions: json['ranking_options'] != null
-        ? AutoragConfigAiSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
-  reranking: json['reranking'] != null
-        ? AutoragConfigAiSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>)
-        : null,
+  rankingOptions: json['ranking_options'] != null ? AutoragConfigAiSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
+  reranking: json['reranking'] != null ? AutoragConfigAiSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
   systemPrompt: json['system_prompt'] as String?,

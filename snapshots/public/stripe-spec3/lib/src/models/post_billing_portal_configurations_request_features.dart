@@ -8,21 +8,11 @@ import 'post_billing_portal_configurations_request_features_customer_update.dart
 final class PostBillingPortalConfigurationsRequestFeatures {const PostBillingPortalConfigurationsRequestFeatures({this.customerUpdate, this.invoiceHistory, this.paymentMethodUpdate, this.subscriptionCancel, this.subscriptionUpdate, });
 
 factory PostBillingPortalConfigurationsRequestFeatures.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeatures(
-  customerUpdate: json['customer_update'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>)
-        : null,
-  invoiceHistory: json['invoice_history'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory.fromJson(json['invoice_history'] as Map<String, dynamic>)
-        : null,
-  paymentMethodUpdate: json['payment_method_update'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate.fromJson(json['payment_method_update'] as Map<String, dynamic>)
-        : null,
-  subscriptionCancel: json['subscription_cancel'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>)
-        : null,
-  subscriptionUpdate: json['subscription_update'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>)
-        : null,
+  customerUpdate: json['customer_update'] != null ? PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>) : null,
+  invoiceHistory: json['invoice_history'] != null ? PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory.fromJson(json['invoice_history'] as Map<String, dynamic>) : null,
+  paymentMethodUpdate: json['payment_method_update'] != null ? PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate.fromJson(json['payment_method_update'] as Map<String, dynamic>) : null,
+  subscriptionCancel: json['subscription_cancel'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
 ); }
 
 final PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate? customerUpdate;

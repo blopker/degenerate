@@ -53,9 +53,7 @@ final class CreateFileRequest {const CreateFileRequest({required this.file, requ
 factory CreateFileRequest.fromJson(Map<String, dynamic> json) { return CreateFileRequest(
   file: base64Decode(json['file'] as String),
   purpose: CreateFileRequestPurpose.fromJson(json['purpose'] as String),
-  expiresAfter: json['expires_after'] != null
-        ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
 ); }
 
 /// The File object (not file name) to be uploaded.

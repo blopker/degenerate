@@ -33,15 +33,11 @@ factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) {
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
   id: json['id'] as String,
   object: PaymentIntentAmountDetailsLineItemObject.fromJson(json['object'] as String),
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   productCode: json['product_code'] as String?,
   productName: json['product_name'] as String,
   quantity: (json['quantity'] as num).toInt(),
-  tax: json['tax'] != null
-        ? PaymentIntentAmountDetailsLineItemTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? PaymentIntentAmountDetailsLineItemTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json['unit_of_measure'] as String?,
 ); }

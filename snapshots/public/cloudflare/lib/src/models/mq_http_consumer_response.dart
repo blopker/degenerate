@@ -11,9 +11,7 @@ factory MqHttpConsumerResponse.fromJson(Map<String, dynamic> json) { return MqHt
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   deadLetterQueue: json['dead_letter_queue'] as String?,
   queueName: json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null,
-  settings: json['settings'] != null
-        ? MqHttpConsumerResponseSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? MqHttpConsumerResponseSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
 ); }
 

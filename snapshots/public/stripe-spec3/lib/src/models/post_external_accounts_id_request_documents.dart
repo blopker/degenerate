@@ -8,9 +8,7 @@ import 'post_external_accounts_id_request_documents_bank_account_ownership_verif
 final class PostExternalAccountsIdRequestDocuments {const PostExternalAccountsIdRequestDocuments({this.bankAccountOwnershipVerification});
 
 factory PostExternalAccountsIdRequestDocuments.fromJson(Map<String, dynamic> json) { return PostExternalAccountsIdRequestDocuments(
-  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null
-        ? PostExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>)
-        : null,
+  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? PostExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,
 ); }
 
 final PostExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification? bankAccountOwnershipVerification;

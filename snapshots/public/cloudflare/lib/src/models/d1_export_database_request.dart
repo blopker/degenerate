@@ -30,9 +30,7 @@ final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({this.current
 
 factory D1ExportDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequest(
   currentBookmark: json['current_bookmark'] as String?,
-  dumpOptions: json['dump_options'] != null
-        ? D1ExportDatabaseRequestDumpOptions.fromJson(json['dump_options'] as Map<String, dynamic>)
-        : null,
+  dumpOptions: json['dump_options'] != null ? D1ExportDatabaseRequestDumpOptions.fromJson(json['dump_options'] as Map<String, dynamic>) : null,
   outputFormat: D1ExportDatabaseRequestOutputFormat.fromJson(json['output_format'] as String),
 ); }
 

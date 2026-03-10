@@ -8,9 +8,7 @@ import 'post_payment_records_id_report_payment_attempt_request_shipping_details_
 final class PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails({this.address, this.name, this.phone, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails(
-  address: json['address'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
 ); }

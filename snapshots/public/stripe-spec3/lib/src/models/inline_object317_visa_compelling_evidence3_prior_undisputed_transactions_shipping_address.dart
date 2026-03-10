@@ -7,24 +7,12 @@
 import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_city.dart';import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_country.dart';import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line1.dart';import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line2.dart';import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_postal_code.dart';import 'inline_object317_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_state.dart';final class InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress {const InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(Map<String, dynamic> json) { return InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
-  city: json['city'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity.fromJson(json['city'] as Map<String, dynamic>)
-        : null,
-  country: json['country'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry.fromJson(json['country'] as Map<String, dynamic>)
-        : null,
-  line1: json['line1'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1.fromJson(json['line1'] as Map<String, dynamic>)
-        : null,
-  line2: json['line2'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2.fromJson(json['line2'] as Map<String, dynamic>)
-        : null,
-  postalCode: json['postal_code'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode.fromJson(json['postal_code'] as Map<String, dynamic>)
-        : null,
-  state: json['state'] != null
-        ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState.fromJson(json['state'] as Map<String, dynamic>)
-        : null,
+  city: json['city'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity.fromJson(json['city'] as Map<String, dynamic>) : null,
+  country: json['country'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry.fromJson(json['country'] as Map<String, dynamic>) : null,
+  line1: json['line1'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1.fromJson(json['line1'] as Map<String, dynamic>) : null,
+  line2: json['line2'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2.fromJson(json['line2'] as Map<String, dynamic>) : null,
+  postalCode: json['postal_code'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode.fromJson(json['postal_code'] as Map<String, dynamic>) : null,
+  state: json['state'] != null ? InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState.fromJson(json['state'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject317VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity? city;

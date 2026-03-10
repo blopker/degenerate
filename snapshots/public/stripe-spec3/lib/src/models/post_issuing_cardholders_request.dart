@@ -91,21 +91,15 @@ final class PostIssuingCardholdersRequest {const PostIssuingCardholdersRequest({
 
 factory PostIssuingCardholdersRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequest(
   billing: PostIssuingCardholdersRequestBilling.fromJson(json['billing'] as Map<String, dynamic>),
-  company: json['company'] != null
-        ? PostIssuingCardholdersRequestCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
+  company: json['company'] != null ? PostIssuingCardholdersRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individual: json['individual'] != null
-        ? PostIssuingCardholdersRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  individual: json['individual'] != null ? PostIssuingCardholdersRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   phoneNumber: json['phone_number'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersRequestPreferredLocales.fromJson(e as String)).toList(),
-  spendingControls: json['spending_controls'] != null
-        ? PostIssuingCardholdersRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>)
-        : null,
+  spendingControls: json['spending_controls'] != null ? PostIssuingCardholdersRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardholdersRequestStatus.fromJson(json['status'] as String) : null,
   type: json['type'] != null ? PostIssuingCardholdersRequestType.fromJson(json['type'] as String) : null,
 ); }

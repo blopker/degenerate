@@ -12,9 +12,7 @@ factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) { return Valid
   message: json['message'] as String?,
   code: json['code'] as String,
   index: json['index'] != null ? (json['index'] as num).toInt() : null,
-  value: json['value'] != null
-        ? ValidationErrorErrorsValue.fromJson(json['value'])
-        : null,
+  value: json['value'] != null ? ValidationErrorErrorsValue.fromJson(json['value']) : null,
 ); }
 
 final String? resource;

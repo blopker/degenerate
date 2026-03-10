@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject307 {const InlineObject307({this.financialConnections, this.verificationMethod, });
 
 factory InlineObject307.fromJson(Map<String, dynamic> json) { return InlineObject307(
-  financialConnections: json['financial_connections'] != null
-        ? InlineObject307FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? InlineObject307FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? InlineObject307VerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

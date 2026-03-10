@@ -72,9 +72,7 @@ final class CustomerTax {const CustomerTax({required this.automaticTax, this.ipA
 factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
   ipAddress: json['ip_address'] as String?,
-  location: json['location'] != null
-        ? CustomerTaxLocation2.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? CustomerTaxLocation2.fromJson(json['location'] as Map<String, dynamic>) : null,
   provider: CustomerTaxProvider.fromJson(json['provider'] as String),
 ); }
 

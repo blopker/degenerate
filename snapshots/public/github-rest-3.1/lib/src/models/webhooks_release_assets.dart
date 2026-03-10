@@ -42,9 +42,7 @@ factory WebhooksReleaseAssets.fromJson(Map<String, dynamic> json) { return Webho
   digest: json['digest'] as String,
   state: WebhooksReleaseAssetsState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  uploader: json['uploader'] != null
-        ? WebhooksReleaseAssetsUploader.fromJson(json['uploader'] as Map<String, dynamic>)
-        : null,
+  uploader: json['uploader'] != null ? WebhooksReleaseAssetsUploader.fromJson(json['uploader'] as Map<String, dynamic>) : null,
   url: Uri.parse(json['url'] as String),
 ); }
 

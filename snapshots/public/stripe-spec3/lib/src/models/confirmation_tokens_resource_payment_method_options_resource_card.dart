@@ -9,9 +9,7 @@ final class ConfirmationTokensResourcePaymentMethodOptionsResourceCard {const Co
 
 factory ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCard(
   cvcToken: json['cvc_token'] as String?,
-  installments: json['installments'] != null
-        ? ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment.fromJson(json['installments'] as Map<String, dynamic>) : null,
 ); }
 
 /// The `cvc_update` Token collected from the Payment Element.

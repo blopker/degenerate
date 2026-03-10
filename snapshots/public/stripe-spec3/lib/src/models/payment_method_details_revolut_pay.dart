@@ -8,9 +8,7 @@ import 'revolut_pay_underlying_payment_method_funding_details.dart';///
 final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId, });
 
 factory PaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsRevolutPay(
-  funding: json['funding'] != null
-        ? RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>)
-        : null,
+  funding: json['funding'] != null ? RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,
   transactionId: json['transaction_id'] as String?,
 ); }
 

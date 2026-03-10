@@ -8,9 +8,7 @@ import 'radar_get_annotations_outages_response_result_annotations_asns_details_l
 
 factory RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
   asn: json['asn'] as String,
-  locations: json['locations'] != null
-        ? RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>)
-        : null,
+  locations: json['locations'] != null ? RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
 ); }
 

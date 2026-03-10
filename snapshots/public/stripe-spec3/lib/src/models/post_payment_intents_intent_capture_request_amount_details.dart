@@ -8,19 +8,11 @@ import 'post_payment_intents_intent_capture_request_amount_details_discount_amou
 final class PostPaymentIntentsIntentCaptureRequestAmountDetails {const PostPaymentIntentsIntentCaptureRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
-  discountAmount: json['discount_amount'] != null
-        ? PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>)
-        : null,
+  discountAmount: json['discount_amount'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null
-        ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PostPaymentIntentsIntentCaptureRequestAmountDetailsTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? discountAmount;

@@ -60,9 +60,7 @@ factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDe
   revokedAt: json['revoked_at'] != null ? TeamsDevicesRevokedAt.fromJson(json['revoked_at'] as String) : null,
   serialNumber: json['serial_number'] != null ? TeamsDevicesSerialNumber.fromJson(json['serial_number'] as String) : null,
   updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
-  user: json['user'] != null
-        ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
 ); }
 

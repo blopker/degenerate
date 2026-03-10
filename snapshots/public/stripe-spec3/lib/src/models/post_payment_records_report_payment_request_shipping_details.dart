@@ -8,9 +8,7 @@ import 'post_payment_records_report_payment_request_shipping_details_address.dar
 final class PostPaymentRecordsReportPaymentRequestShippingDetails {const PostPaymentRecordsReportPaymentRequestShippingDetails({this.address, this.name, this.phone, });
 
 factory PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestShippingDetails(
-  address: json['address'] != null
-        ? PostPaymentRecordsReportPaymentRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostPaymentRecordsReportPaymentRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
 ); }

@@ -7,9 +7,7 @@
 import 'webhook_sponsorship_edited_changes_privacy_level.dart';final class WebhookSponsorshipEditedChanges {const WebhookSponsorshipEditedChanges({this.privacyLevel});
 
 factory WebhookSponsorshipEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipEditedChanges(
-  privacyLevel: json['privacy_level'] != null
-        ? WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(json['privacy_level'] as Map<String, dynamic>)
-        : null,
+  privacyLevel: json['privacy_level'] != null ? WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(json['privacy_level'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSponsorshipEditedChangesPrivacyLevel? privacyLevel;

@@ -73,9 +73,7 @@ final class PostFilesRequest {const PostFilesRequest({this.expand, required this
 factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   file: base64Decode(json['file'] as String),
-  fileLinkData: json['file_link_data'] != null
-        ? PostFilesRequestFileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>)
-        : null,
+  fileLinkData: json['file_link_data'] != null ? PostFilesRequestFileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
   purpose: PostFilesRequestPurpose.fromJson(json['purpose'] as String),
 ); }
 

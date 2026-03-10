@@ -31,9 +31,7 @@ final class BillingPortalConfiguration {const BillingPortalConfiguration({requir
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,
-  application: json['application'] != null
-        ? BillingPortalConfigurationApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   defaultReturnUrl: json['default_return_url'] as String?,

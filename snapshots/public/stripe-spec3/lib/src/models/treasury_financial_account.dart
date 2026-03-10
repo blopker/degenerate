@@ -213,9 +213,7 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   balance: TreasuryFinancialAccountsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>),
   country: json['country'] as String,
   created: (json['created'] as num).toInt(),
-  features: json['features'] != null
-        ? TreasuryFinancialAccountFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? TreasuryFinancialAccountFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   financialAddresses: (json['financial_addresses'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceFinancialAddress.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
   isDefault: json['is_default'] as bool?,
@@ -224,9 +222,7 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   nickname: json['nickname'] as String?,
   object: TreasuryFinancialAccountObject.fromJson(json['object'] as String),
   pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountPendingFeatures.fromJson(e as String)).toList(),
-  platformRestrictions: json['platform_restrictions'] != null
-        ? TreasuryFinancialAccountPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>)
-        : null,
+  platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountRestrictedFeatures.fromJson(e as String)).toList(),
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),

@@ -28,15 +28,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject735 {const InlineObject735({this.audio, this.content, this.functionCall, this.name, this.refusal, required this.role, this.toolCalls, });
 
 factory InlineObject735.fromJson(Map<String, dynamic> json) { return InlineObject735(
-  audio: json['audio'] != null
-        ? InlineObject735Audio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
-  content: json['content'] != null
-        ? InlineObject735Content.fromJson(json['content'] as Map<String, dynamic>)
-        : null,
-  functionCall: json['function_call'] != null
-        ? InlineObject735FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? InlineObject735Audio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  content: json['content'] != null ? InlineObject735Content.fromJson(json['content'] as Map<String, dynamic>) : null,
+  functionCall: json['function_call'] != null ? InlineObject735FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   refusal: json['refusal'] as String?,
   role: InlineObject735Role.fromJson(json['role'] as String),

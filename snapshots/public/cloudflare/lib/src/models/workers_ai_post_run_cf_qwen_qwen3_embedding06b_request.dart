@@ -7,16 +7,10 @@
 import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_documents.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_queries.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_text.dart';final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction = 'Given a web search query, retrieve relevant passages that answer the query', this.queries, this.text, });
 
 factory WorkersAiPostRunCfQwenQwen3Embedding06bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
-  documents: json['documents'] != null
-        ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestDocuments.fromJson(json['documents'])
-        : null,
+  documents: json['documents'] != null ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestDocuments.fromJson(json['documents']) : null,
   instruction: json.containsKey('instruction') ? json['instruction'] as String : 'Given a web search query, retrieve relevant passages that answer the query',
-  queries: json['queries'] != null
-        ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestQueries.fromJson(json['queries'])
-        : null,
-  text: json['text'] != null
-        ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestText.fromJson(json['text'])
-        : null,
+  queries: json['queries'] != null ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestQueries.fromJson(json['queries']) : null,
+  text: json['text'] != null ? WorkersAiPostRunCfQwenQwen3Embedding06bRequestText.fromJson(json['text']) : null,
 ); }
 
 final WorkersAiPostRunCfQwenQwen3Embedding06bRequestDocuments? documents;

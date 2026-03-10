@@ -42,9 +42,7 @@ factory CloudConnectorRule.fromJson(Map<String, dynamic> json) { return CloudCon
   enabled: json['enabled'] as bool?,
   expression: json['expression'] as String?,
   id: json['id'] as String?,
-  parameters: json['parameters'] != null
-        ? CloudConnectorRuleParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? CloudConnectorRuleParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   provider: json['provider'] != null ? CloudConnectorProvider.fromJson(json['provider'] as String) : null,
 ); }
 

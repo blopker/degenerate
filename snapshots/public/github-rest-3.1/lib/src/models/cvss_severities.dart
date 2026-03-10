@@ -7,12 +7,8 @@
 import 'cvss_severities_cvss.dart';import 'cvss_severities_cvss2.dart';final class CvssSeverities {const CvssSeverities({this.cvssV3, this.cvssV4, });
 
 factory CvssSeverities.fromJson(Map<String, dynamic> json) { return CvssSeverities(
-  cvssV3: json['cvss_v3'] != null
-        ? CvssSeveritiesCvss.fromJson(json['cvss_v3'] as Map<String, dynamic>)
-        : null,
-  cvssV4: json['cvss_v4'] != null
-        ? CvssSeveritiesCvss2.fromJson(json['cvss_v4'] as Map<String, dynamic>)
-        : null,
+  cvssV3: json['cvss_v3'] != null ? CvssSeveritiesCvss.fromJson(json['cvss_v3'] as Map<String, dynamic>) : null,
+  cvssV4: json['cvss_v4'] != null ? CvssSeveritiesCvss2.fromJson(json['cvss_v4'] as Map<String, dynamic>) : null,
 ); }
 
 final CvssSeveritiesCvss? cvssV3;

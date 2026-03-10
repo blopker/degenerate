@@ -77,14 +77,10 @@ factory DomainProperties.fromJson(Map<String, dynamic> json) { return DomainProp
   expiresAt: json['expires_at'] != null ? ExpiresAt.fromJson(json['expires_at'] as String) : null,
   id: json['id'] != null ? DomainIdentifier.fromJson(json['id'] as String) : null,
   locked: json['locked'] != null ? Locked.fromJson(json['locked'] as bool) : null,
-  registrantContact: json['registrant_contact'] != null
-        ? ContactProperties.fromJson(json['registrant_contact'] as Map<String, dynamic>)
-        : null,
+  registrantContact: json['registrant_contact'] != null ? ContactProperties.fromJson(json['registrant_contact'] as Map<String, dynamic>) : null,
   registryStatuses: json['registry_statuses'] != null ? RegistryStatuses.fromJson(json['registry_statuses'] as String) : null,
   supportedTld: json['supported_tld'] != null ? SupportedTld.fromJson(json['supported_tld'] as bool) : null,
-  transferIn: json['transfer_in'] != null
-        ? TransferIn.fromJson(json['transfer_in'] as Map<String, dynamic>)
-        : null,
+  transferIn: json['transfer_in'] != null ? TransferIn.fromJson(json['transfer_in'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] != null ? UpdatedAt.fromJson(json['updated_at'] as String) : null,
 ); }
 

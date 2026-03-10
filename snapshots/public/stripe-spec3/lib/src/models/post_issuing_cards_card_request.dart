@@ -62,19 +62,11 @@ final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this
 factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostIssuingCardsCardRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostIssuingCardsCardRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostIssuingCardsCardRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   personalizationDesign: json['personalization_design'] as String?,
-  pin: json['pin'] != null
-        ? PostIssuingCardsCardRequestPin.fromJson(json['pin'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  spendingControls: json['spending_controls'] != null
-        ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>)
-        : null,
+  pin: json['pin'] != null ? PostIssuingCardsCardRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardsCardRequestStatus.fromJson(json['status'] as String) : null,
 ); }
 

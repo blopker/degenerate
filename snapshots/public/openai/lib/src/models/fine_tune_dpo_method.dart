@@ -8,9 +8,7 @@ import 'fine_tune_dpo_hyperparameters.dart';/// Configuration for the DPO fine-t
 final class FineTuneDpoMethod {const FineTuneDpoMethod({this.hyperparameters});
 
 factory FineTuneDpoMethod.fromJson(Map<String, dynamic> json) { return FineTuneDpoMethod(
-  hyperparameters: json['hyperparameters'] != null
-        ? FineTuneDpoHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>)
-        : null,
+  hyperparameters: json['hyperparameters'] != null ? FineTuneDpoHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
 ); }
 
 final FineTuneDpoHyperparameters? hyperparameters;

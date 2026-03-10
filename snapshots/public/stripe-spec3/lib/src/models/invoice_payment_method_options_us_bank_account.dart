@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InvoicePaymentMethodOptionsUsBankAccount {const InvoicePaymentMethodOptionsUsBankAccount({this.financialConnections, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccount(
-  financialConnections: json['financial_connections'] != null
-        ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

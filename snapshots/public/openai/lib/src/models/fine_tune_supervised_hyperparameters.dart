@@ -8,15 +8,9 @@ import 'fine_tune_supervised_hyperparameters_batch_size.dart';import 'fine_tune_
 final class FineTuneSupervisedHyperparameters {const FineTuneSupervisedHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuneSupervisedHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneSupervisedHyperparameters(
-  batchSize: json['batch_size'] != null
-        ? FineTuneSupervisedHyperparametersBatchSize.fromJson(json['batch_size'])
-        : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null
-        ? FineTuneSupervisedHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier'])
-        : null,
-  nEpochs: json['n_epochs'] != null
-        ? FineTuneSupervisedHyperparametersNEpochs.fromJson(json['n_epochs'])
-        : null,
+  batchSize: json['batch_size'] != null ? FineTuneSupervisedHyperparametersBatchSize.fromJson(json['batch_size']) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? FineTuneSupervisedHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier']) : null,
+  nEpochs: json['n_epochs'] != null ? FineTuneSupervisedHyperparametersNEpochs.fromJson(json['n_epochs']) : null,
 ); }
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_au_becs_debit_d
 final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference? displayPreference;

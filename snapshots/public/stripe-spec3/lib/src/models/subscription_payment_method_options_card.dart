@@ -94,9 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionPaymentMethodOptionsCard {const SubscriptionPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory SubscriptionPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsCard(
-  mandateOptions: json['mandate_options'] != null
-        ? InvoiceMandateOptionsCard.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InvoiceMandateOptionsCard.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? SubscriptionPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? SubscriptionPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }

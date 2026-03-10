@@ -8,9 +8,7 @@ import 'realtimekit_poll.dart';final class CreatePollResponseData {const CreateP
 
 factory CreatePollResponseData.fromJson(Map<String, dynamic> json) { return CreatePollResponseData(
   action: json['action'] as String?,
-  poll: json['poll'] != null
-        ? RealtimekitPoll.fromJson(json['poll'] as Map<String, dynamic>)
-        : null,
+  poll: json['poll'] != null ? RealtimekitPoll.fromJson(json['poll'] as Map<String, dynamic>) : null,
 ); }
 
 final String? action;

@@ -89,9 +89,7 @@ factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxT
   product: json['product'] as String?,
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
-  reversal: json['reversal'] != null
-        ? TaxTransactionLineItemReversal.fromJson(json['reversal'] as Map<String, dynamic>)
-        : null,
+  reversal: json['reversal'] != null ? TaxTransactionLineItemReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
   taxBehavior: TaxTransactionLineItemTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),

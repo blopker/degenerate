@@ -30,9 +30,7 @@ final class RepositoryRuleMaxFileSize {const RepositoryRuleMaxFileSize({required
 
 factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFileSize(
   type: RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleMaxFileSizeParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleMaxFileSizeParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleMaxFileSizeType type;

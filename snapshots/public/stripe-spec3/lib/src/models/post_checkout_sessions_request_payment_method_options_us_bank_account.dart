@@ -58,9 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
-  financialConnections: json['financial_connections'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,

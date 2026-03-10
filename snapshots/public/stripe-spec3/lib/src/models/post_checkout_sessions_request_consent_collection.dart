@@ -56,9 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestConsentCollection {const PostCheckoutSessionsRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PostCheckoutSessionsRequestConsentCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestConsentCollection(
-  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null
-        ? PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>)
-        : null,
+  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
   promotions: json['promotions'] != null ? PostCheckoutSessionsRequestConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
   termsOfService: json['terms_of_service'] != null ? PostCheckoutSessionsRequestConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
 ); }

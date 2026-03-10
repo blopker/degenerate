@@ -88,9 +88,7 @@ final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({requ
 
 factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null
-        ? IssuingAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? IssuingAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   approved: json['approved'] as bool,
   authorizationCode: json['authorization_code'] as String?,
   created: (json['created'] as num).toInt(),

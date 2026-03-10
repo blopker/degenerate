@@ -8,18 +8,10 @@ import 'payment_intent_next_action_konbini_stores_familymart.dart';import 'payme
 final class PaymentIntentNextActionKonbiniStores {const PaymentIntentNextActionKonbiniStores({this.familymart, this.lawson, this.ministop, this.seicomart, });
 
 factory PaymentIntentNextActionKonbiniStores.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniStores(
-  familymart: json['familymart'] != null
-        ? PaymentIntentNextActionKonbiniStoresFamilymart.fromJson(json['familymart'] as Map<String, dynamic>)
-        : null,
-  lawson: json['lawson'] != null
-        ? PaymentIntentNextActionKonbiniStoresLawson.fromJson(json['lawson'] as Map<String, dynamic>)
-        : null,
-  ministop: json['ministop'] != null
-        ? PaymentIntentNextActionKonbiniStoresMinistop.fromJson(json['ministop'] as Map<String, dynamic>)
-        : null,
-  seicomart: json['seicomart'] != null
-        ? PaymentIntentNextActionKonbiniStoresSeicomart.fromJson(json['seicomart'] as Map<String, dynamic>)
-        : null,
+  familymart: json['familymart'] != null ? PaymentIntentNextActionKonbiniStoresFamilymart.fromJson(json['familymart'] as Map<String, dynamic>) : null,
+  lawson: json['lawson'] != null ? PaymentIntentNextActionKonbiniStoresLawson.fromJson(json['lawson'] as Map<String, dynamic>) : null,
+  ministop: json['ministop'] != null ? PaymentIntentNextActionKonbiniStoresMinistop.fromJson(json['ministop'] as Map<String, dynamic>) : null,
+  seicomart: json['seicomart'] != null ? PaymentIntentNextActionKonbiniStoresSeicomart.fromJson(json['seicomart'] as Map<String, dynamic>) : null,
 ); }
 
 /// FamilyMart instruction details.

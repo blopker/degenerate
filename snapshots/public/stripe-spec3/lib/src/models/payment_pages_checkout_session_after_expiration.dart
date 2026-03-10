@@ -8,9 +8,7 @@ import 'payment_pages_checkout_session_after_expiration_recovery2.dart';///
 final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
 
 factory PaymentPagesCheckoutSessionAfterExpiration.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpiration(
-  recovery: json['recovery'] != null
-        ? PaymentPagesCheckoutSessionAfterExpirationRecovery2.fromJson(json['recovery'] as Map<String, dynamic>)
-        : null,
+  recovery: json['recovery'] != null ? PaymentPagesCheckoutSessionAfterExpirationRecovery2.fromJson(json['recovery'] as Map<String, dynamic>) : null,
 ); }
 
 /// When set, configuration used to recover the Checkout Session on expiry.

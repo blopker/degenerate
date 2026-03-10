@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'post_climate_orders_order_request_beneficiary.dart';final class PostClimateOrdersOrderRequest {const PostClimateOrdersOrderRequest({this.beneficiary, this.expand, this.metadata, });
 
 factory PostClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersOrderRequest(
-  beneficiary: json['beneficiary'] != null
-        ? PostClimateOrdersOrderRequestBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>)
-        : null,
+  beneficiary: json['beneficiary'] != null ? PostClimateOrdersOrderRequestBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

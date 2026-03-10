@@ -7,9 +7,7 @@
 import 'get_treasury_transactions_status_transitions_posted_at.dart';final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
 
 factory GetTreasuryTransactionsStatusTransitions.fromJson(Map<String, dynamic> json) { return GetTreasuryTransactionsStatusTransitions(
-  postedAt: json['posted_at'] != null
-        ? GetTreasuryTransactionsStatusTransitionsPostedAt.fromJson(json['posted_at'] as Map<String, dynamic>)
-        : null,
+  postedAt: json['posted_at'] != null ? GetTreasuryTransactionsStatusTransitionsPostedAt.fromJson(json['posted_at'] as Map<String, dynamic>) : null,
 ); }
 
 final GetTreasuryTransactionsStatusTransitionsPostedAt? postedAt;

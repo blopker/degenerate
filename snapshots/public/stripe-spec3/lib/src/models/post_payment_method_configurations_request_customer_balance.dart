@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_customer_balance_display_pref
 final class PostPaymentMethodConfigurationsRequestCustomerBalance {const PostPaymentMethodConfigurationsRequestCustomerBalance({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestCustomerBalance.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCustomerBalance(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestCustomerBalanceDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestCustomerBalanceDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestCustomerBalanceDisplayPreference? displayPreference;

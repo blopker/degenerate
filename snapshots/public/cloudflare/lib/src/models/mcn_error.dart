@@ -10,12 +10,8 @@ factory McnError.fromJson(Map<String, dynamic> json) { return McnError(
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  meta: json['meta'] != null
-        ? McnErrorMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
-  source: json['source'] != null
-        ? McnErrorSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? McnErrorMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? McnErrorSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;

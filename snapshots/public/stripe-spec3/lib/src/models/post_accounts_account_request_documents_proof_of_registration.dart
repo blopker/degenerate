@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_accounts_account_reques
 
 factory PostAccountsAccountRequestDocumentsProofOfRegistration.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsProofOfRegistration(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  signer: json['signer'] != null
-        ? PostAccountsAccountRequestDocumentsProofOfRegistrationSigner.fromJson(json['signer'] as Map<String, dynamic>)
-        : null,
+  signer: json['signer'] != null ? PostAccountsAccountRequestDocumentsProofOfRegistrationSigner.fromJson(json['signer'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? files;

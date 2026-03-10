@@ -9,9 +9,7 @@ final class AuditLogKeyUpdated {const AuditLogKeyUpdated({this.id, this.changesR
 
 factory AuditLogKeyUpdated.fromJson(Map<String, dynamic> json) { return AuditLogKeyUpdated(
   id: json['id'] as String?,
-  changesRequested: json['changes_requested'] != null
-        ? AuditLogKeyUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>)
-        : null,
+  changesRequested: json['changes_requested'] != null ? AuditLogKeyUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
 ); }
 
 /// The tracking ID of the API key.

@@ -7,21 +7,13 @@
 import 'post_customers_customer_subscriptions_request_items_billing_thresholds.dart';import 'post_customers_customer_subscriptions_request_items_discounts.dart';import 'post_customers_customer_subscriptions_request_items_price_data.dart';import 'post_customers_customer_subscriptions_request_items_tax_rates.dart';final class PostCustomersCustomerSubscriptionsRequestItems {const PostCustomersCustomerSubscriptionsRequestItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostCustomersCustomerSubscriptionsRequestItems.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostCustomersCustomerSubscriptionsRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostCustomersCustomerSubscriptionsRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostCustomersCustomerSubscriptionsRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostCustomersCustomerSubscriptionsRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostCustomersCustomerSubscriptionsRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostCustomersCustomerSubscriptionsRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostCustomersCustomerSubscriptionsRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerSubscriptionsRequestItemsBillingThresholds? billingThresholds;

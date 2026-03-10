@@ -8,13 +8,9 @@ import 'payments_primitives_payment_records_resource_payment_method_card_details
 final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet({this.applePay, this.dynamicLast4, this.googlePay, required this.type, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(
-  applePay: json['apple_pay'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>)
-        : null,
+  applePay: json['apple_pay'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
   dynamicLast4: json['dynamic_last4'] as String?,
-  googlePay: json['google_pay'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>)
-        : null,
+  googlePay: json['google_pay'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

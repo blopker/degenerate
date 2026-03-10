@@ -8,19 +8,11 @@ import 'package:collection/collection.dart';import 'get_participant_data_from_pe
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata(
   audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  browserMetadata: json['browser_metadata'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata.fromJson(json['browser_metadata'] as Map<String, dynamic>)
-        : null,
-  candidatePairs: json['candidate_pairs'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs.fromJson(json['candidate_pairs'] as Map<String, dynamic>)
-        : null,
-  deviceInfo: json['device_info'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>)
-        : null,
+  browserMetadata: json['browser_metadata'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata.fromJson(json['browser_metadata'] as Map<String, dynamic>) : null,
+  candidatePairs: json['candidate_pairs'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs.fromJson(json['candidate_pairs'] as Map<String, dynamic>) : null,
+  deviceInfo: json['device_info'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  ipInformation: json['ip_information'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>)
-        : null,
+  ipInformation: json['ip_information'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>) : null,
   pcMetadata: (json['pc_metadata'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   roomViewType: json['room_view_type'] as String?,
   sdkName: json['sdk_name'] as String?,

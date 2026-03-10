@@ -9,9 +9,7 @@ final class ZarazZarazConfigBaseSettings {const ZarazZarazConfigBaseSettings({re
 
 factory ZarazZarazConfigBaseSettings.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseSettings(
   autoInjectScript: json['autoInjectScript'] as bool,
-  contextEnricher: json['contextEnricher'] != null
-        ? ZarazZarazConfigBaseSettingsContextEnricher.fromJson(json['contextEnricher'] as Map<String, dynamic>)
-        : null,
+  contextEnricher: json['contextEnricher'] != null ? ZarazZarazConfigBaseSettingsContextEnricher.fromJson(json['contextEnricher'] as Map<String, dynamic>) : null,
   cookieDomain: json['cookieDomain'] as String?,
   ecommerce: json['ecommerce'] as bool?,
   eventsApiPath: json['eventsApiPath'] as String?,

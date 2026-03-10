@@ -66,9 +66,7 @@ final class PostLinkAccountSessionsRequest {const PostLinkAccountSessionsRequest
 factory PostLinkAccountSessionsRequest.fromJson(Map<String, dynamic> json) { return PostLinkAccountSessionsRequest(
   accountHolder: PostLinkAccountSessionsRequestAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  filters: json['filters'] != null
-        ? PostLinkAccountSessionsRequestFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? PostLinkAccountSessionsRequestFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>).map((e) => PostLinkAccountSessionsRequestPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PostLinkAccountSessionsRequestPrefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,

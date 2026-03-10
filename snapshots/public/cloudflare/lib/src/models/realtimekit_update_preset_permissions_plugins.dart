@@ -11,9 +11,7 @@ factory RealtimekitUpdatePresetPermissionsPlugins.fromJson(Map<String, dynamic> 
   canClose: json['can_close'] as bool?,
   canEditConfig: json['can_edit_config'] as bool?,
   canStart: json['can_start'] as bool?,
-  config: json['config'] != null
-        ? RealtimekitUpdatePresetPermissionsPluginsConfig.fromJson(json['config'])
-        : null,
+  config: json['config'] != null ? RealtimekitUpdatePresetPermissionsPluginsConfig.fromJson(json['config']) : null,
 ); }
 
 /// Can close plugins that are already open

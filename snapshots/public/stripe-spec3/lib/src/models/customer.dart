@@ -59,33 +59,23 @@ bool get isUnknown { return !values.contains(this); }
 final class Customer {const Customer({this.address, this.balance, this.businessName, this.cashBalance, required this.created, this.currency, this.customerAccount, this.defaultSource, this.delinquent, this.description, this.discount, this.email, required this.id, this.individualName, this.invoiceCreditBalance, this.invoicePrefix, this.invoiceSettings, required this.livemode, this.metadata, this.name, this.nextInvoiceSequence, required this.object, this.phone, this.preferredLocales, this.shipping, this.sources, this.subscriptions, this.tax, this.taxExempt, this.taxIds, this.testClock, });
 
 factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
-  address: json['address'] != null
-        ? CustomerAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? CustomerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   businessName: json['business_name'] as String?,
-  cashBalance: json['cash_balance'] != null
-        ? CustomerCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>)
-        : null,
+  cashBalance: json['cash_balance'] != null ? CustomerCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultSource: json['default_source'] != null
-        ? CustomerDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>)
-        : null,
+  defaultSource: json['default_source'] != null ? CustomerDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>) : null,
   delinquent: json['delinquent'] as bool?,
   description: json['description'] as String?,
-  discount: json['discount'] != null
-        ? CustomerDiscount.fromJson(json['discount'] as Map<String, dynamic>)
-        : null,
+  discount: json['discount'] != null ? CustomerDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   id: json['id'] as String,
   individualName: json['individual_name'] as String?,
   invoiceCreditBalance: (json['invoice_credit_balance'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
   invoicePrefix: json['invoice_prefix'] as String?,
-  invoiceSettings: json['invoice_settings'] != null
-        ? InvoiceSettingCustomerSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? InvoiceSettingCustomerSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
@@ -93,25 +83,13 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   object: CustomerObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null
-        ? CustomerShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  sources: json['sources'] != null
-        ? CustomerSources.fromJson(json['sources'] as Map<String, dynamic>)
-        : null,
-  subscriptions: json['subscriptions'] != null
-        ? CustomerSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? CustomerTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? CustomerShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  sources: json['sources'] != null ? CustomerSources.fromJson(json['sources'] as Map<String, dynamic>) : null,
+  subscriptions: json['subscriptions'] != null ? CustomerSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? CustomerTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null,
-  taxIds: json['tax_ids'] != null
-        ? CustomerTaxIds.fromJson(json['tax_ids'] as Map<String, dynamic>)
-        : null,
-  testClock: json['test_clock'] != null
-        ? CustomerTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  taxIds: json['tax_ids'] != null ? CustomerTaxIds.fromJson(json['tax_ids'] as Map<String, dynamic>) : null,
+  testClock: json['test_clock'] != null ? CustomerTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
 ); }
 
 /// The customer's address.

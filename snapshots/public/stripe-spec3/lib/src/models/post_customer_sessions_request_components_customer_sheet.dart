@@ -8,9 +8,7 @@ import 'post_customer_sessions_request_components_customer_sheet_features.dart';
 
 factory PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsCustomerSheet(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostCustomerSessionsRequestComponentsCustomerSheetFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostCustomerSessionsRequestComponentsCustomerSheetFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

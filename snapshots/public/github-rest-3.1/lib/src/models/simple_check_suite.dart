@@ -90,9 +90,7 @@ final class SimpleCheckSuite {const SimpleCheckSuite({this.after, this.app, this
 
 factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleCheckSuite(
   after: json['after'] as String?,
-  app: json['app'] != null
-        ? Integration.fromJson(json['app'] as Map<String, dynamic>)
-        : null,
+  app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   before: json['before'] as String?,
   conclusion: json['conclusion'] != null ? SimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
@@ -101,9 +99,7 @@ factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleChec
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   pullRequests: (json['pull_requests'] as List<dynamic>?)?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? SimpleCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   url: json['url'] as String?,

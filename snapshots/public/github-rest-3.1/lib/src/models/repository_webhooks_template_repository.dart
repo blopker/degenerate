@@ -131,9 +131,7 @@ factory RepositoryWebhooksTemplateRepository.fromJson(Map<String, dynamic> json)
   nodeId: json['node_id'] as String?,
   name: json['name'] as String?,
   fullName: json['full_name'] as String?,
-  owner: json['owner'] != null
-        ? RepositoryWebhooksTemplateRepositoryOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? RepositoryWebhooksTemplateRepositoryOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   private: json['private'] as bool?,
   htmlUrl: json['html_url'] as String?,
   description: json['description'] as String?,
@@ -201,9 +199,7 @@ factory RepositoryWebhooksTemplateRepository.fromJson(Map<String, dynamic> json)
   pushedAt: json['pushed_at'] as String?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
-  permissions: json['permissions'] != null
-        ? RepositoryWebhooksTemplateRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RepositoryWebhooksTemplateRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   allowRebaseMerge: json['allow_rebase_merge'] as bool?,
   tempCloneToken: json['temp_clone_token'] as String?,
   allowSquashMerge: json['allow_squash_merge'] as bool?,

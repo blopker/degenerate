@@ -7,9 +7,7 @@
 import 'realtimekit_chat_message.dart';final class GetSessionChatResponse {const GetSessionChatResponse({this.data, this.success, });
 
 factory GetSessionChatResponse.fromJson(Map<String, dynamic> json) { return GetSessionChatResponse(
-  data: json['data'] != null
-        ? RealtimekitChatMessage.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? RealtimekitChatMessage.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

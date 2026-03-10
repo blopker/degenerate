@@ -7,18 +7,10 @@
 import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_address.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_email.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_name.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_phone.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, });
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
-  address: json['address'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress? address;

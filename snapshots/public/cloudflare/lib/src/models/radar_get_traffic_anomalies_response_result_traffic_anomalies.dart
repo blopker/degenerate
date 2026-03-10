@@ -7,16 +7,10 @@
 import 'package:collection/collection.dart';import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_asn_details.dart';import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_location_details.dart';import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_origin_details.dart';final class RadarGetTrafficAnomaliesResponseResultTrafficAnomalies {const RadarGetTrafficAnomaliesResponseResultTrafficAnomalies({this.asnDetails, this.endDate, this.locationDetails, this.originDetails, required this.startDate, required this.status, required this.type, required this.uuid, this.visibleInDataSources, });
 
 factory RadarGetTrafficAnomaliesResponseResultTrafficAnomalies.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(
-  asnDetails: json['asnDetails'] != null
-        ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails.fromJson(json['asnDetails'] as Map<String, dynamic>)
-        : null,
+  asnDetails: json['asnDetails'] != null ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails.fromJson(json['asnDetails'] as Map<String, dynamic>) : null,
   endDate: json['endDate'] != null ? DateTime.parse(json['endDate'] as String) : null,
-  locationDetails: json['locationDetails'] != null
-        ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesLocationDetails.fromJson(json['locationDetails'] as Map<String, dynamic>)
-        : null,
-  originDetails: json['originDetails'] != null
-        ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails.fromJson(json['originDetails'] as Map<String, dynamic>)
-        : null,
+  locationDetails: json['locationDetails'] != null ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesLocationDetails.fromJson(json['locationDetails'] as Map<String, dynamic>) : null,
+  originDetails: json['originDetails'] != null ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails.fromJson(json['originDetails'] as Map<String, dynamic>) : null,
   startDate: json['startDate'] as String,
   status: json['status'] as String,
   type: json['type'] as String,

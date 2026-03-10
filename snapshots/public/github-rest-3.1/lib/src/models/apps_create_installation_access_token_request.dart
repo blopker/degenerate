@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'app_permissions.dart';final 
 factory AppsCreateInstallationAccessTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCreateInstallationAccessTokenRequest(
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-  permissions: json['permissions'] != null
-        ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
 ); }
 
 /// List of repository names that the token should have access to

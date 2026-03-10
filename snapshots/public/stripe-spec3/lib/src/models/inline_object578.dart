@@ -7,21 +7,11 @@
 import 'inline_object578_additional_documentation.dart';import 'inline_object578_card_statement.dart';import 'inline_object578_cash_receipt.dart';import 'inline_object578_check_image.dart';import 'inline_object578_explanation.dart';final class InlineObject578 {const InlineObject578({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory InlineObject578.fromJson(Map<String, dynamic> json) { return InlineObject578(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject578AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  cardStatement: json['card_statement'] != null
-        ? InlineObject578CardStatement.fromJson(json['card_statement'] as Map<String, dynamic>)
-        : null,
-  cashReceipt: json['cash_receipt'] != null
-        ? InlineObject578CashReceipt.fromJson(json['cash_receipt'] as Map<String, dynamic>)
-        : null,
-  checkImage: json['check_image'] != null
-        ? InlineObject578CheckImage.fromJson(json['check_image'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject578Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject578AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  cardStatement: json['card_statement'] != null ? InlineObject578CardStatement.fromJson(json['card_statement'] as Map<String, dynamic>) : null,
+  cashReceipt: json['cash_receipt'] != null ? InlineObject578CashReceipt.fromJson(json['cash_receipt'] as Map<String, dynamic>) : null,
+  checkImage: json['check_image'] != null ? InlineObject578CheckImage.fromJson(json['check_image'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject578Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
   originalTransaction: json['original_transaction'] as String?,
 ); }
 

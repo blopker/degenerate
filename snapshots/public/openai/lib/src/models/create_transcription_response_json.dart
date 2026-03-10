@@ -10,9 +10,7 @@ final class CreateTranscriptionResponseJson {const CreateTranscriptionResponseJs
 factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJson(
   text: json['text'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => CreateTranscriptionResponseJsonLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null
-        ? CreateTranscriptionResponseJsonUsage.fromJson(json['usage'])
-        : null,
+  usage: json['usage'] != null ? CreateTranscriptionResponseJsonUsage.fromJson(json['usage']) : null,
 ); }
 
 /// The transcribed text.

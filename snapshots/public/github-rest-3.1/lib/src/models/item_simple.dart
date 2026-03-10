@@ -10,13 +10,9 @@ final class ItemSimple {const ItemSimple({required this.id, this.nodeId, this.co
 factory ItemSimple.fromJson(Map<String, dynamic> json) { return ItemSimple(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
-  content: json['content'] != null
-        ? ItemSimpleContent.fromJson(json['content'])
-        : null,
+  content: json['content'] != null ? ItemSimpleContent.fromJson(json['content']) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
-  creator: json['creator'] != null
-        ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-        : null,
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: DateTime.parse(json['archived_at'] as String),

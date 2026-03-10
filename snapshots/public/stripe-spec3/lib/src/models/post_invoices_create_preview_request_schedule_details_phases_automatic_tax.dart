@@ -8,9 +8,7 @@ import 'post_invoices_create_preview_request_schedule_details_phases_automatic_t
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

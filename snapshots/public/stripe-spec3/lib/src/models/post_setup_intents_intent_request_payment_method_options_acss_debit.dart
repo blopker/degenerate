@@ -59,9 +59,7 @@ final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit {const Po
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

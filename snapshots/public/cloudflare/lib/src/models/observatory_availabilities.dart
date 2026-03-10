@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'observatory_availabilities_quota.dart';import 'observatory_availabilities_regions_per_plan.dart';import 'observatory_labeled_region.dart';final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
 
 factory ObservatoryAvailabilities.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilities(
-  quota: json['quota'] != null
-        ? ObservatoryAvailabilitiesQuota.fromJson(json['quota'] as Map<String, dynamic>)
-        : null,
+  quota: json['quota'] != null ? ObservatoryAvailabilitiesQuota.fromJson(json['quota'] as Map<String, dynamic>) : null,
   regions: (json['regions'] as List<dynamic>?)?.map((e) => ObservatoryLabeledRegion.fromJson(e as Map<String, dynamic>)).toList(),
-  regionsPerPlan: json['regionsPerPlan'] != null
-        ? ObservatoryAvailabilitiesRegionsPerPlan.fromJson(json['regionsPerPlan'] as Map<String, dynamic>)
-        : null,
+  regionsPerPlan: json['regionsPerPlan'] != null ? ObservatoryAvailabilitiesRegionsPerPlan.fromJson(json['regionsPerPlan'] as Map<String, dynamic>) : null,
 ); }
 
 final ObservatoryAvailabilitiesQuota? quota;

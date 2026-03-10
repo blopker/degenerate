@@ -18,9 +18,7 @@ factory PackageVersion.fromJson(Map<String, dynamic> json) { return PackageVersi
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   deletedAt: json['deleted_at'] != null ? DateTime.parse(json['deleted_at'] as String) : null,
-  metadata: json['metadata'] != null
-        ? PackageVersionMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PackageVersionMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier of the package version.

@@ -7,15 +7,11 @@
 import 'package:collection/collection.dart';import 'mq_event_destination.dart';import 'mq_event_source.dart';final class SubscriptionsCreateRequest {const SubscriptionsCreateRequest({this.destination, this.enabled, this.events, this.name, this.source, });
 
 factory SubscriptionsCreateRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsCreateRequest(
-  destination: json['destination'] != null
-        ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
-  source: json['source'] != null
-        ? MqEventSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? MqEventSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final MqEventDestination? destination;

@@ -8,12 +8,8 @@ import 'package:collection/collection.dart';import 'post_customers_customer_bank
 
 factory PostCustomersCustomerBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsRequest(
   alipayAccount: json['alipay_account'] as String?,
-  bankAccount: json['bank_account'] != null
-        ? PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? PostCustomersCustomerBankAccountsRequestCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  bankAccount: json['bank_account'] != null ? PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostCustomersCustomerBankAccountsRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   source: json['source'] as String?,

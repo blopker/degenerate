@@ -14,19 +14,11 @@ factory PostZonesZoneIdLogpushJobsRequest.fromJson(Map<String, dynamic> json) { 
   frequency: json['frequency'] != null ? LogpushFrequency.fromJson(json['frequency'] as String) : null,
   kind: json['kind'] != null ? LogpushKind.fromJson(json['kind'] as String) : null,
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-  maxUploadBytes: json['max_upload_bytes'] != null
-        ? LogpushMaxUploadBytes.fromJson(json['max_upload_bytes'] as Map<String, dynamic>)
-        : null,
-  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null
-        ? LogpushMaxUploadIntervalSeconds.fromJson(json['max_upload_interval_seconds'] as Map<String, dynamic>)
-        : null,
-  maxUploadRecords: json['max_upload_records'] != null
-        ? LogpushMaxUploadRecords.fromJson(json['max_upload_records'] as Map<String, dynamic>)
-        : null,
+  maxUploadBytes: json['max_upload_bytes'] != null ? LogpushMaxUploadBytes.fromJson(json['max_upload_bytes'] as Map<String, dynamic>) : null,
+  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? LogpushMaxUploadIntervalSeconds.fromJson(json['max_upload_interval_seconds'] as Map<String, dynamic>) : null,
+  maxUploadRecords: json['max_upload_records'] != null ? LogpushMaxUploadRecords.fromJson(json['max_upload_records'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null,
-  outputOptions: json['output_options'] != null
-        ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>)
-        : null,
+  outputOptions: json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null,
   ownershipChallenge: json['ownership_challenge'] != null ? LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String) : null,
 ); }
 

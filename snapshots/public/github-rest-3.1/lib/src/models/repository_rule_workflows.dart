@@ -30,9 +30,7 @@ final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required thi
 
 factory RepositoryRuleWorkflows.fromJson(Map<String, dynamic> json) { return RepositoryRuleWorkflows(
   type: RepositoryRuleWorkflowsType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleWorkflowsParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleWorkflowsParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleWorkflowsType type;

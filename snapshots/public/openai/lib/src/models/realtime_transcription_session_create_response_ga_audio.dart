@@ -9,9 +9,7 @@ import 'realtime_transcription_session_create_response_ga_audio_input.dart';/// 
 final class RealtimeTranscriptionSessionCreateResponseGaAudio {const RealtimeTranscriptionSessionCreateResponseGaAudio({this.input});
 
 factory RealtimeTranscriptionSessionCreateResponseGaAudio.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponseGaAudio(
-  input: json['input'] != null
-        ? RealtimeTranscriptionSessionCreateResponseGaAudioInput.fromJson(json['input'] as Map<String, dynamic>)
-        : null,
+  input: json['input'] != null ? RealtimeTranscriptionSessionCreateResponseGaAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimeTranscriptionSessionCreateResponseGaAudioInput? input;

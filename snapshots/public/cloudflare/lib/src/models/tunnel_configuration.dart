@@ -47,9 +47,7 @@ final class TunnelConfiguration {const TunnelConfiguration({this.accountId, this
 
 factory TunnelConfiguration.fromJson(Map<String, dynamic> json) { return TunnelConfiguration(
   accountId: json['account_id'] != null ? TunnelIdentifier.fromJson(json['account_id'] as String) : null,
-  config: json['config'] != null
-        ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? TunnelTimestamp.fromJson(json['created_at'] as String) : null,
   source: json['source'] != null ? TunnelSchemasConfigSrc.fromJson(json['source'] as String) : null,
   tunnelId: json['tunnel_id'] != null ? TunnelSchemasTunnelId.fromJson(json['tunnel_id'] as String) : null,

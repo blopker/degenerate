@@ -139,9 +139,7 @@ factory WebhookPullRequestAutoMergeEnabledPullRequest.fromJson(Map<String, dynam
   mergeableState: json['mergeable_state'] as String?,
   merged: json['merged'] as bool?,
   mergedAt: DateTime.parse(json['merged_at'] as String),
-  mergedBy: json['merged_by'] != null
-        ? WebhookPullRequestAutoMergeEnabledPullRequestMergedBy.fromJson(json['merged_by'] as Map<String, dynamic>)
-        : null,
+  mergedBy: json['merged_by'] != null ? WebhookPullRequestAutoMergeEnabledPullRequestMergedBy.fromJson(json['merged_by'] as Map<String, dynamic>) : null,
   milestone: WebhookPullRequestAutoMergeEnabledPullRequestMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),

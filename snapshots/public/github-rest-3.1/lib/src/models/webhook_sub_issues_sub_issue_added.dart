@@ -34,18 +34,10 @@ factory WebhookSubIssuesSubIssueAdded.fromJson(Map<String, dynamic> json) { retu
   subIssueRepo: Repository.fromJson(json['sub_issue_repo'] as Map<String, dynamic>),
   parentIssueId: (json['parent_issue_id'] as num).toDouble(),
   parentIssue: Issue.fromJson(json['parent_issue'] as Map<String, dynamic>),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSubIssuesSubIssueAddedAction action;

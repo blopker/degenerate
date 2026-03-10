@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_sofort_display_preference.dar
 final class PostPaymentMethodConfigurationsRequestSofort {const PostPaymentMethodConfigurationsRequestSofort({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestSofort.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSofort(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestSofortDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSofortDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestSofortDisplayPreference? displayPreference;

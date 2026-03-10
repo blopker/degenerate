@@ -13,15 +13,11 @@ factory MagicLan.fromJson(Map<String, dynamic> json) { return MagicLan(
   isBreakout: json['is_breakout'] as bool?,
   isPrioritized: json['is_prioritized'] as bool?,
   name: json['name'] as String?,
-  nat: json['nat'] != null
-        ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>)
-        : null,
+  nat: json['nat'] != null ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>) : null,
   physport: json['physport'] != null ? MagicPort.fromJson(json['physport'] as num) : null,
   routedSubnets: (json['routed_subnets'] as List<dynamic>?)?.map((e) => MagicRoutedSubnet.fromJson(e as Map<String, dynamic>)).toList(),
   siteId: json['site_id'] != null ? MagicIdentifier.fromJson(json['site_id'] as String) : null,
-  staticAddressing: json['static_addressing'] != null
-        ? MagicLanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>)
-        : null,
+  staticAddressing: json['static_addressing'] != null ? MagicLanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
   vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
 ); }
 

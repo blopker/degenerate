@@ -84,47 +84,25 @@ final class PostInvoicesCreatePreviewRequestScheduleDetailsPhases {const PostInv
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod.fromJson(json['collection_method'] as String) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
-  duration: json['duration'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>)
-        : null,
-  endDate: json['end_date'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesEndDate.fromJson(json['end_date'] as Map<String, dynamic>)
-        : null,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
+  duration: json['duration'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>) : null,
+  endDate: json['end_date'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesEndDate.fromJson(json['end_date'] as Map<String, dynamic>) : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>).map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   prorationBehavior: json['proration_behavior'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  startDate: json['start_date'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesStartDate.fromJson(json['start_date'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  startDate: json['start_date'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
-  trialEnd: json['trial_end'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd.fromJson(json['trial_end'] as Map<String, dynamic>)
-        : null,
+  trialEnd: json['trial_end'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd.fromJson(json['trial_end'] as Map<String, dynamic>) : null,
 ); }
 
 final List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems>? addInvoiceItems;

@@ -10,15 +10,9 @@ import 'create_fine_tuning_job_request_hyperparameters_batch_size.dart';import '
 final class CreateFineTuningJobRequestHyperparameters {const CreateFineTuningJobRequestHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory CreateFineTuningJobRequestHyperparameters.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequestHyperparameters(
-  batchSize: json['batch_size'] != null
-        ? CreateFineTuningJobRequestHyperparametersBatchSize.fromJson(json['batch_size'])
-        : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null
-        ? CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier'])
-        : null,
-  nEpochs: json['n_epochs'] != null
-        ? CreateFineTuningJobRequestHyperparametersNEpochs.fromJson(json['n_epochs'])
-        : null,
+  batchSize: json['batch_size'] != null ? CreateFineTuningJobRequestHyperparametersBatchSize.fromJson(json['batch_size']) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier']) : null,
+  nEpochs: json['n_epochs'] != null ? CreateFineTuningJobRequestHyperparametersNEpochs.fromJson(json['n_epochs']) : null,
 ); }
 
 /// Number of examples in each batch. A larger batch size means that model parameters

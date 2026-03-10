@@ -9,9 +9,7 @@ import 'iam_account_type.dart';import 'iam_create_account_unit.dart';final class
 factory IamCreateAccount.fromJson(Map<String, dynamic> json) { return IamCreateAccount(
   name: json['name'] as String,
   type: json['type'] != null ? IamAccountType.fromJson(json['type'] as Object?) : null,
-  unit: json['unit'] != null
-        ? IamCreateAccountUnit.fromJson(json['unit'] as Map<String, dynamic>)
-        : null,
+  unit: json['unit'] != null ? IamCreateAccountUnit.fromJson(json['unit'] as Map<String, dynamic>) : null,
 ); }
 
 /// Account name

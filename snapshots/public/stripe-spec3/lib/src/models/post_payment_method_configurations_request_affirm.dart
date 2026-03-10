@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_affirm_display_preference.dar
 final class PostPaymentMethodConfigurationsRequestAffirm {const PostPaymentMethodConfigurationsRequestAffirm({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestAffirm.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAffirm(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestAffirmDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAffirmDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestAffirmDisplayPreference? displayPreference;

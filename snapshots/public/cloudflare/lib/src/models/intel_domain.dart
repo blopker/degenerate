@@ -28,12 +28,8 @@ num toJson() => value;
 final class IntelDomain {const IntelDomain({this.additionalInformation, this.application, this.contentCategories, this.domain, this.inheritedContentCategories, this.inheritedFrom, this.inheritedRiskTypes, this.popularityRank, this.resolvesToRefs, this.riskScore, this.riskTypes, });
 
 factory IntelDomain.fromJson(Map<String, dynamic> json) { return IntelDomain(
-  additionalInformation: json['additional_information'] != null
-        ? IntelAdditionalInformation.fromJson(json['additional_information'] as Map<String, dynamic>)
-        : null,
-  application: json['application'] != null
-        ? IntelApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  additionalInformation: json['additional_information'] != null ? IntelAdditionalInformation.fromJson(json['additional_information'] as Map<String, dynamic>) : null,
+  application: json['application'] != null ? IntelApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   contentCategories: (json['content_categories'] as List<dynamic>?)?.map((e) => IntelContentCategories2.fromJson(e as Map<String, dynamic>)).toList(),
   domain: json['domain'] != null ? IntelDomainName.fromJson(json['domain'] as String) : null,
   inheritedContentCategories: (json['inherited_content_categories'] as List<dynamic>?)?.map((e) => IntelCategoryWithSuperCategoryId.fromJson(e as Map<String, dynamic>)).toList(),

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_apple_pay_display_preference.
 final class PostPaymentMethodConfigurationsRequestApplePay {const PostPaymentMethodConfigurationsRequestApplePay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestApplePay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestApplePay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestApplePayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestApplePayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestApplePayDisplayPreference? displayPreference;

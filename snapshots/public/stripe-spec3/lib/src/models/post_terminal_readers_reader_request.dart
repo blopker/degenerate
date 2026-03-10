@@ -8,12 +8,8 @@ import 'package:collection/collection.dart';import 'post_terminal_readers_reader
 
 factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  label: json['label'] != null
-        ? PostTerminalReadersReaderRequestLabel.fromJson(json['label'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostTerminalReadersReaderRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  label: json['label'] != null ? PostTerminalReadersReaderRequestLabel.fromJson(json['label'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostTerminalReadersReaderRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

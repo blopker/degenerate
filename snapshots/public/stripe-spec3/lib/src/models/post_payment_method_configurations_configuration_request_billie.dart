@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_billie_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestBillie {const PostPaymentMethodConfigurationsConfigurationRequestBillie({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestBillie.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestBillie(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestBillieDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBillieDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestBillieDisplayPreference? displayPreference;

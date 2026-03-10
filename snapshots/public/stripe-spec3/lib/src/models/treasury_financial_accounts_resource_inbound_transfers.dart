@@ -8,9 +8,7 @@ import 'treasury_financial_accounts_resource_inbound_ach_toggle_settings.dart';/
 final class TreasuryFinancialAccountsResourceInboundTransfers {const TreasuryFinancialAccountsResourceInboundTransfers({this.ach});
 
 factory TreasuryFinancialAccountsResourceInboundTransfers.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceInboundTransfers(
-  ach: json['ach'] != null
-        ? TreasuryFinancialAccountsResourceInboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? TreasuryFinancialAccountsResourceInboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasuryFinancialAccountsResourceInboundAchToggleSettings? ach;

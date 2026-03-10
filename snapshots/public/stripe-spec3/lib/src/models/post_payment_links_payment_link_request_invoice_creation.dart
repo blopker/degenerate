@@ -9,9 +9,7 @@ final class PostPaymentLinksPaymentLinkRequestInvoiceCreation {const PostPayment
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestInvoiceCreation(
   enabled: json['enabled'] as bool,
-  invoiceData: json['invoice_data'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>)
-        : null,
+  invoiceData: json['invoice_data'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

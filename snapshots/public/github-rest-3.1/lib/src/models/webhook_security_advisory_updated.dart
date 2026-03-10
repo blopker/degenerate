@@ -29,22 +29,12 @@ final class WebhookSecurityAdvisoryUpdated {const WebhookSecurityAdvisoryUpdated
 
 factory WebhookSecurityAdvisoryUpdated.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryUpdated(
   action: WebhookSecurityAdvisoryUpdatedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   securityAdvisory: WebhooksSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSecurityAdvisoryUpdatedAction action;

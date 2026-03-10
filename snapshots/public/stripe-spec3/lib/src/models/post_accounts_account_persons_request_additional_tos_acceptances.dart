@@ -8,9 +8,7 @@ import 'post_accounts_account_persons_request_additional_tos_acceptances_account
 final class PostAccountsAccountPersonsRequestAdditionalTosAcceptances {const PostAccountsAccountPersonsRequestAdditionalTosAcceptances({this.account});
 
 factory PostAccountsAccountPersonsRequestAdditionalTosAcceptances.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestAdditionalTosAcceptances(
-  account: json['account'] != null
-        ? PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccount? account;

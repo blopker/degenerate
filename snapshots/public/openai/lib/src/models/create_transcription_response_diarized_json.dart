@@ -35,9 +35,7 @@ factory CreateTranscriptionResponseDiarizedJson.fromJson(Map<String, dynamic> js
   duration: (json['duration'] as num).toDouble(),
   text: json['text'] as String,
   segments: (json['segments'] as List<dynamic>).map((e) => TranscriptionDiarizedSegment.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null
-        ? CreateTranscriptionResponseDiarizedJsonUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? CreateTranscriptionResponseDiarizedJsonUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of task that was run. Always `transcribe`.

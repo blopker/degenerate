@@ -34,16 +34,10 @@ bool get isUnknown { return !values.contains(this); }
 final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawler {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
 
 factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(
-  crawlOptions: json['crawl_options'] != null
-        ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>)
-        : null,
-  parseOptions: json['parse_options'] != null
-        ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>)
-        : null,
+  crawlOptions: json['crawl_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
+  parseOptions: json['parse_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
   parseType: json.containsKey('parse_type') ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap,
-  storeOptions: json['store_options'] != null
-        ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>)
-        : null,
+  storeOptions: json['store_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
 final AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? crawlOptions;

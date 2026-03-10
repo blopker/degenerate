@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class GetBillingCreditBalanceSummaryFilter {const GetBillingCreditBalanceSummaryFilter({this.applicabilityScope, this.creditGrant, required this.type, });
 
 factory GetBillingCreditBalanceSummaryFilter.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceSummaryFilter(
-  applicabilityScope: json['applicability_scope'] != null
-        ? GetBillingCreditBalanceSummaryFilterApplicabilityScope.fromJson(json['applicability_scope'] as Map<String, dynamic>)
-        : null,
+  applicabilityScope: json['applicability_scope'] != null ? GetBillingCreditBalanceSummaryFilterApplicabilityScope.fromJson(json['applicability_scope'] as Map<String, dynamic>) : null,
   creditGrant: json['credit_grant'] as String?,
   type: GetBillingCreditBalanceSummaryFilterType.fromJson(json['type'] as String),
 ); }

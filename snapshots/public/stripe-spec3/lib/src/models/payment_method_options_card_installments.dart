@@ -10,9 +10,7 @@ final class PaymentMethodOptionsCardInstallments {const PaymentMethodOptionsCard
 factory PaymentMethodOptionsCardInstallments.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardInstallments(
   availablePlans: (json['available_plans'] as List<dynamic>?)?.map((e) => PaymentMethodDetailsCardInstallmentsPlan.fromJson(e as Map<String, dynamic>)).toList(),
   enabled: json['enabled'] as bool,
-  plan: json['plan'] != null
-        ? PaymentMethodOptionsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PaymentMethodOptionsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 /// Installment plans that may be selected for this PaymentIntent.

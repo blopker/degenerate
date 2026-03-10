@@ -67,23 +67,15 @@ factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return Confirmat
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  mandateData: json['mandate_data'] != null
-        ? ConfirmationTokenMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>)
-        : null,
+  mandateData: json['mandate_data'] != null ? ConfirmationTokenMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
   object: ConfirmationTokenObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] as String?,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? ConfirmationTokenPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
-  paymentMethodPreview: json['payment_method_preview'] != null
-        ? ConfirmationTokenPaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? ConfirmationTokenPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodPreview: json['payment_method_preview'] != null ? ConfirmationTokenPaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   setupIntent: json['setup_intent'] as String?,
-  shipping: json['shipping'] != null
-        ? ConfirmationTokenShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? ConfirmationTokenShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool,
 ); }
 

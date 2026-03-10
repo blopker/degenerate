@@ -8,9 +8,7 @@ import 'run_step_delta_object_delta_step_details.dart';/// The delta containing 
 final class RunStepDeltaObjectDelta {const RunStepDeltaObjectDelta({this.stepDetails});
 
 factory RunStepDeltaObjectDelta.fromJson(Map<String, dynamic> json) { return RunStepDeltaObjectDelta(
-  stepDetails: json['step_details'] != null
-        ? RunStepDeltaObjectDeltaStepDetails.fromJson(json['step_details'])
-        : null,
+  stepDetails: json['step_details'] != null ? RunStepDeltaObjectDeltaStepDetails.fromJson(json['step_details']) : null,
 ); }
 
 /// The details of the run step.

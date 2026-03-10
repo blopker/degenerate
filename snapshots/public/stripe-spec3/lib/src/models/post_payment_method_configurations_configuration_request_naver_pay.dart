@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_naver_pay_displ
 final class PostPaymentMethodConfigurationsConfigurationRequestNaverPay {const PostPaymentMethodConfigurationsConfigurationRequestNaverPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestNaverPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestNaverPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreference? displayPreference;

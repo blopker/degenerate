@@ -101,12 +101,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentIntentPaymentMethodOptionsUsBankAccount {const PaymentIntentPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsUsBankAccount(
-  financialConnections: json['financial_connections'] != null
-        ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsUsBankAccountSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   transactionPurpose: json['transaction_purpose'] != null ? PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,

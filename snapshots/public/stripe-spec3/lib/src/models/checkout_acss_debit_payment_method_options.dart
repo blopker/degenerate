@@ -96,9 +96,7 @@ final class CheckoutAcssDebitPaymentMethodOptions {const CheckoutAcssDebitPaymen
 
 factory CheckoutAcssDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutAcssDebitPaymentMethodOptions(
   currency: json['currency'] != null ? CheckoutAcssDebitPaymentMethodOptionsCurrency.fromJson(json['currency'] as String) : null,
-  mandateOptions: json['mandate_options'] != null
-        ? CheckoutAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? CheckoutAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,

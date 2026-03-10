@@ -8,9 +8,7 @@ import 'rulesets_result_info_cursors.dart';/// Information to navigate the resul
 final class RulesetsResultInfo {const RulesetsResultInfo({this.cursors});
 
 factory RulesetsResultInfo.fromJson(Map<String, dynamic> json) { return RulesetsResultInfo(
-  cursors: json['cursors'] != null
-        ? RulesetsResultInfoCursors.fromJson(json['cursors'] as Map<String, dynamic>)
-        : null,
+  cursors: json['cursors'] != null ? RulesetsResultInfoCursors.fromJson(json['cursors'] as Map<String, dynamic>) : null,
 ); }
 
 /// The set of cursors.

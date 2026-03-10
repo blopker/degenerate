@@ -33,9 +33,7 @@ final class RankingOptions {const RankingOptions({this.ranker, this.scoreThresho
 factory RankingOptions.fromJson(Map<String, dynamic> json) { return RankingOptions(
   ranker: json['ranker'] != null ? RankerVersionType.fromJson(json['ranker'] as String) : null,
   scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
-  hybridSearch: json['hybrid_search'] != null
-        ? HybridSearchOptions.fromJson(json['hybrid_search'] as Map<String, dynamic>)
-        : null,
+  hybridSearch: json['hybrid_search'] != null ? HybridSearchOptions.fromJson(json['hybrid_search'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ranker to use for the file search.

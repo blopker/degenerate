@@ -33,12 +33,8 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent({this.invoiceItemDetails, this.subscriptionItemDetails, required this.type, });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(
-  invoiceItemDetails: json['invoice_item_details'] != null
-        ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentInvoiceItemDetails.fromJson(json['invoice_item_details'] as Map<String, dynamic>)
-        : null,
-  subscriptionItemDetails: json['subscription_item_details'] != null
-        ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentSubscriptionItemDetails.fromJson(json['subscription_item_details'] as Map<String, dynamic>)
-        : null,
+  invoiceItemDetails: json['invoice_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentInvoiceItemDetails.fromJson(json['invoice_item_details'] as Map<String, dynamic>) : null,
+  subscriptionItemDetails: json['subscription_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentSubscriptionItemDetails.fromJson(json['subscription_item_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType.fromJson(json['type'] as String),
 ); }
 

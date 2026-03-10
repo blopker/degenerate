@@ -39,21 +39,15 @@ final class CcPublicApplication {const CcPublicApplication({required this.create
 
 factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPublicApplication(
   createdAt: CcIso8601Timestamp.fromJson(json['created_at'] as String),
-  durableObject: json['durable_object'] != null
-        ? CcDurableObjectsConfigurationNamespaceId.fromJson(json['durable_object'] as Map<String, dynamic>)
-        : null,
+  durableObject: json['durable_object'] != null ? CcDurableObjectsConfigurationNamespaceId.fromJson(json['durable_object'] as Map<String, dynamic>) : null,
   health: CcApplicationHealthInstances.fromJson(json['health'] as Map<String, dynamic>),
   id: CcApplicationId.fromJson(json['id'] as String),
   image: CcImage.fromJson(json['image'] as String),
   instanceType: CcPublicInstanceType.fromJson(json['instance_type'] as Map<String, dynamic>),
   maxInstances: (json['max_instances'] as num).toInt(),
   name: json['name'] as String,
-  network: json['network'] != null
-        ? CcApplicationNetwork.fromJson(json['network'] as Map<String, dynamic>)
-        : null,
-  observability: json['observability'] != null
-        ? CcObservability.fromJson(json['observability'] as Map<String, dynamic>)
-        : null,
+  network: json['network'] != null ? CcApplicationNetwork.fromJson(json['network'] as Map<String, dynamic>) : null,
+  observability: json['observability'] != null ? CcObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
   rolloutActiveGracePeriod: json['rollout_active_grace_period'] != null ? CcApplicationRolloutActiveGracePeriod.fromJson(json['rollout_active_grace_period'] as num) : null,
   updatedAt: CcIso8601Timestamp.fromJson(json['updated_at'] as String),
   version: (json['version'] as num).toInt(),

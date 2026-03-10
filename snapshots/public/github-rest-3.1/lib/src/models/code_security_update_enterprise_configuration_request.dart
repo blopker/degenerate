@@ -521,18 +521,12 @@ factory CodeSecurityUpdateEnterpriseConfigurationRequest.fromJson(Map<String, dy
   codeSecurity: json['code_security'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity.fromJson(json['code_security'] as String) : null,
   dependencyGraph: json['dependency_graph'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph.fromJson(json['dependency_graph'] as String) : null,
   dependencyGraphAutosubmitAction: json['dependency_graph_autosubmit_action'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : null,
-  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null
-        ? CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>)
-        : null,
+  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null,
   dependabotAlerts: json['dependabot_alerts'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : null,
   dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : null,
   codeScanningDefaultSetup: json['code_scanning_default_setup'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : null,
-  codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null
-        ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>)
-        : null,
-  codeScanningOptions: json['code_scanning_options'] != null
-        ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>)
-        : null,
+  codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null,
+  codeScanningOptions: json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null,
   codeScanningDelegatedAlertDismissal: json.containsKey('code_scanning_delegated_alert_dismissal') ? CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal.disabled,
   secretProtection: json['secret_protection'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection.fromJson(json['secret_protection'] as String) : null,
   secretScanning: json['secret_scanning'] != null ? CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning.fromJson(json['secret_scanning'] as String) : null,

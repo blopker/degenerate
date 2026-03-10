@@ -8,9 +8,7 @@ import 'amazon_pay_underlying_payment_method_funding_details.dart';///
 final class PaymentMethodDetailsAmazonPay {const PaymentMethodDetailsAmazonPay({this.funding, this.transactionId, });
 
 factory PaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAmazonPay(
-  funding: json['funding'] != null
-        ? AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>)
-        : null,
+  funding: json['funding'] != null ? AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,
   transactionId: json['transaction_id'] as String?,
 ); }
 

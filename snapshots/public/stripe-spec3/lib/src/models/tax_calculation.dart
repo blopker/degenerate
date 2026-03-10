@@ -38,17 +38,11 @@ factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculati
   customerDetails: TaxProductResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   id: json['id'] as String?,
-  lineItems: json['line_items'] != null
-        ? TaxCalculationLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? TaxCalculationLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: TaxCalculationObject.fromJson(json['object'] as String),
-  shipFromDetails: json['ship_from_details'] != null
-        ? TaxCalculationShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>)
-        : null,
-  shippingCost: json['shipping_cost'] != null
-        ? TaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  shipFromDetails: json['ship_from_details'] != null ? TaxCalculationShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? TaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   taxAmountExclusive: (json['tax_amount_exclusive'] as num).toInt(),
   taxAmountInclusive: (json['tax_amount_inclusive'] as num).toInt(),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>).map((e) => TaxProductResourceTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),

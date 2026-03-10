@@ -10,9 +10,7 @@ final class CinderVolumeSource {const CinderVolumeSource({this.fsType, this.read
 factory CinderVolumeSource.fromJson(Map<String, dynamic> json) { return CinderVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeId: json['volumeID'] as String,
 ); }
 

@@ -38,15 +38,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
 
 factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetails(
-  address: json['address'] != null
-        ? PostInvoicesCreatePreviewRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PostInvoicesCreatePreviewRequestCustomerDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

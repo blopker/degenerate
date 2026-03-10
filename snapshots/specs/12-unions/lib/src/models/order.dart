@@ -40,13 +40,9 @@ factory Order.fromJson(Map<String, dynamic> json) { return Order(
   id: json['id'] as String,
   status: json['status'] != null ? OrderStatus.fromJson(json['status'] as String) : null,
   items: (json['items'] as List<dynamic>).map((e) => OrderItem.fromJson(e as Map<String, dynamic>)).toList(),
-  shippingAddress: json['shippingAddress'] != null
-        ? Address.fromJson(json['shippingAddress'] as Map<String, dynamic>)
-        : null,
+  shippingAddress: json['shippingAddress'] != null ? Address.fromJson(json['shippingAddress'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nullabilitySample: json['nullabilitySample'] != null
-        ? NullabilityCombos.fromJson(json['nullabilitySample'] as Map<String, dynamic>)
-        : null,
+  nullabilitySample: json['nullabilitySample'] != null ? NullabilityCombos.fromJson(json['nullabilitySample'] as Map<String, dynamic>) : null,
 ); }
 
 final String id;

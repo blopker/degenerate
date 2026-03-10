@@ -8,13 +8,9 @@ import 'package:collection/collection.dart';import 'post_issuing_disputes_disput
 
 factory PostIssuingDisputesDisputeRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  evidence: json['evidence'] != null
-        ? PostIssuingDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>)
-        : null,
+  evidence: json['evidence'] != null ? PostIssuingDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostIssuingDisputesDisputeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostIssuingDisputesDisputeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// The dispute amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).

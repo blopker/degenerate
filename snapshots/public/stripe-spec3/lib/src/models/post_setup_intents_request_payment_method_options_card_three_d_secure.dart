@@ -115,9 +115,7 @@ factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(Map
   aresTransStatus: json['ares_trans_status'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(json['ares_trans_status'] as String) : null,
   cryptogram: json['cryptogram'] as String?,
   electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
-  networkOptions: json['network_options'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions.fromJson(json['network_options'] as Map<String, dynamic>)
-        : null,
+  networkOptions: json['network_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions.fromJson(json['network_options'] as Map<String, dynamic>) : null,
   requestorChallengeIndicator: json['requestor_challenge_indicator'] as String?,
   transactionId: json['transaction_id'] as String?,
   version: json['version'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion.fromJson(json['version'] as String) : null,

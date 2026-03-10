@@ -8,28 +8,16 @@ import 'account_bacs_debit_payments_settings.dart';import 'account_branding_sett
 final class AccountSettings {const AccountSettings({this.bacsDebitPayments, required this.branding, this.cardIssuing, required this.cardPayments, required this.dashboard, this.invoices, required this.payments, this.payouts, this.sepaDebitPayments, this.treasury, });
 
 factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSettings(
-  bacsDebitPayments: json['bacs_debit_payments'] != null
-        ? AccountBacsDebitPaymentsSettings.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>)
-        : null,
+  bacsDebitPayments: json['bacs_debit_payments'] != null ? AccountBacsDebitPaymentsSettings.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
   branding: AccountBrandingSettings.fromJson(json['branding'] as Map<String, dynamic>),
-  cardIssuing: json['card_issuing'] != null
-        ? AccountCardIssuingSettings.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
+  cardIssuing: json['card_issuing'] != null ? AccountCardIssuingSettings.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
   cardPayments: AccountCardPaymentsSettings.fromJson(json['card_payments'] as Map<String, dynamic>),
   dashboard: AccountDashboardSettings.fromJson(json['dashboard'] as Map<String, dynamic>),
-  invoices: json['invoices'] != null
-        ? AccountInvoicesSettings.fromJson(json['invoices'] as Map<String, dynamic>)
-        : null,
+  invoices: json['invoices'] != null ? AccountInvoicesSettings.fromJson(json['invoices'] as Map<String, dynamic>) : null,
   payments: AccountPaymentsSettings.fromJson(json['payments'] as Map<String, dynamic>),
-  payouts: json['payouts'] != null
-        ? AccountPayoutSettings.fromJson(json['payouts'] as Map<String, dynamic>)
-        : null,
-  sepaDebitPayments: json['sepa_debit_payments'] != null
-        ? AccountSepaDebitPaymentsSettings.fromJson(json['sepa_debit_payments'] as Map<String, dynamic>)
-        : null,
-  treasury: json['treasury'] != null
-        ? AccountTreasurySettings.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  payouts: json['payouts'] != null ? AccountPayoutSettings.fromJson(json['payouts'] as Map<String, dynamic>) : null,
+  sepaDebitPayments: json['sepa_debit_payments'] != null ? AccountSepaDebitPaymentsSettings.fromJson(json['sepa_debit_payments'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? AccountTreasurySettings.fromJson(json['treasury'] as Map<String, dynamic>) : null,
 ); }
 
 final AccountBacsDebitPaymentsSettings? bacsDebitPayments;

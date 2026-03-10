@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_jcb_display_pre
 final class PostPaymentMethodConfigurationsConfigurationRequestJcb {const PostPaymentMethodConfigurationsConfigurationRequestJcb({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestJcb.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestJcb(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestJcbDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestJcbDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestJcbDisplayPreference? displayPreference;

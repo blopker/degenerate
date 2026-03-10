@@ -40,9 +40,7 @@ factory InlineObject713.fromJson(Map<String, dynamic> json) { return InlineObjec
   interval: InlineObject713Interval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
   name: json['name'] as String?,
-  nextBilling: json['next_billing'] != null
-        ? InlineObject713NextBilling.fromJson(json['next_billing'] as Map<String, dynamic>)
-        : null,
+  nextBilling: json['next_billing'] != null ? InlineObject713NextBilling.fromJson(json['next_billing'] as Map<String, dynamic>) : null,
   reference: json['reference'] as String,
 ); }
 

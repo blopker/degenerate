@@ -8,12 +8,8 @@ import 'account_branding_settings_icon.dart';import 'account_branding_settings_l
 final class AccountBrandingSettings {const AccountBrandingSettings({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
 
 factory AccountBrandingSettings.fromJson(Map<String, dynamic> json) { return AccountBrandingSettings(
-  icon: json['icon'] != null
-        ? AccountBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>)
-        : null,
-  logo: json['logo'] != null
-        ? AccountBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>)
-        : null,
+  icon: json['icon'] != null ? AccountBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,
+  logo: json['logo'] != null ? AccountBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
   primaryColor: json['primary_color'] as String?,
   secondaryColor: json['secondary_color'] as String?,
 ); }

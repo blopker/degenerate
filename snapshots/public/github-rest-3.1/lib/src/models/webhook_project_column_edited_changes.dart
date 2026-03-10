@@ -7,9 +7,7 @@
 import 'webhook_project_column_edited_changes_name.dart';final class WebhookProjectColumnEditedChanges {const WebhookProjectColumnEditedChanges({this.name});
 
 factory WebhookProjectColumnEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnEditedChanges(
-  name: json['name'] != null
-        ? WebhookProjectColumnEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
+  name: json['name'] != null ? WebhookProjectColumnEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookProjectColumnEditedChangesName? name;

@@ -8,9 +8,7 @@ import 'workers_version_item_short_metadata.dart';final class WorkersVersionItem
 
 factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return WorkersVersionItemShort(
   id: json['id'] as String?,
-  metadata: json['metadata'] != null
-        ? WorkersVersionItemShortMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? WorkersVersionItemShortMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
 ); }
 

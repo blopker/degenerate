@@ -78,9 +78,7 @@ factory WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(Map<String, dyna
   dismissedReason: WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(json['dismissed_reason'] as String),
   fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
-  mostRecentInstance: json['most_recent_instance'] != null
-        ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>)
-        : null,
+  mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertUpdatedAssignmentAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: WebhookCodeScanningAlertUpdatedAssignmentAlertState.fromJson(json['state'] as String),

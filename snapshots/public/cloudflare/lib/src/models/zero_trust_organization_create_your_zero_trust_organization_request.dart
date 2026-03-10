@@ -13,12 +13,8 @@ factory ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest.fromJson(Map
   denyUnmatchedRequests: json['deny_unmatched_requests'] != null ? AccessDenyUnmatchedRequests.fromJson(json['deny_unmatched_requests'] as bool) : null,
   denyUnmatchedRequestsExemptedZoneNames: (json['deny_unmatched_requests_exempted_zone_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   isUiReadOnly: json['is_ui_read_only'] != null ? AccessIsUiReadOnly.fromJson(json['is_ui_read_only'] as bool) : null,
-  loginDesign: json['login_design'] != null
-        ? AccessLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>)
-        : null,
-  mfaConfig: json['mfa_config'] != null
-        ? AccessOrgMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>)
-        : null,
+  loginDesign: json['login_design'] != null ? AccessLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>) : null,
+  mfaConfig: json['mfa_config'] != null ? AccessOrgMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>) : null,
   mfaRequiredForAllApps: json['mfa_required_for_all_apps'] != null ? AccessMfaRequiredForAllApps.fromJson(json['mfa_required_for_all_apps'] as bool) : null,
   name: AccessName.fromJson(json['name'] as String),
   sessionDuration: json['session_duration'] != null ? AccessSessionDuration.fromJson(json['session_duration'] as String) : null,

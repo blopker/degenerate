@@ -7,20 +7,12 @@
 import 'package:collection/collection.dart';import 'urlscanner_get_scan_response_result_scan_asns.dart';import 'urlscanner_get_scan_response_result_scan_certificates.dart';import 'urlscanner_get_scan_response_result_scan_domains.dart';import 'urlscanner_get_scan_response_result_scan_geo.dart';import 'urlscanner_get_scan_response_result_scan_ips.dart';import 'urlscanner_get_scan_response_result_scan_links.dart';import 'urlscanner_get_scan_response_result_scan_meta.dart';import 'urlscanner_get_scan_response_result_scan_page.dart';import 'urlscanner_get_scan_response_result_scan_performance.dart';import 'urlscanner_get_scan_response_result_scan_task.dart';import 'urlscanner_get_scan_response_result_scan_verdicts.dart';final class UrlscannerGetScanResponseResultScan {const UrlscannerGetScanResponseResultScan({this.asns, required this.certificates, this.domains, required this.geo, this.ips, this.links, required this.meta, required this.page, required this.performance, required this.task, required this.verdicts, });
 
 factory UrlscannerGetScanResponseResultScan.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScan(
-  asns: json['asns'] != null
-        ? UrlscannerGetScanResponseResultScanAsns.fromJson(json['asns'] as Map<String, dynamic>)
-        : null,
+  asns: json['asns'] != null ? UrlscannerGetScanResponseResultScanAsns.fromJson(json['asns'] as Map<String, dynamic>) : null,
   certificates: (json['certificates'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanCertificates.fromJson(e as Map<String, dynamic>)).toList(),
-  domains: json['domains'] != null
-        ? UrlscannerGetScanResponseResultScanDomains.fromJson(json['domains'] as Map<String, dynamic>)
-        : null,
+  domains: json['domains'] != null ? UrlscannerGetScanResponseResultScanDomains.fromJson(json['domains'] as Map<String, dynamic>) : null,
   geo: UrlscannerGetScanResponseResultScanGeo.fromJson(json['geo'] as Map<String, dynamic>),
-  ips: json['ips'] != null
-        ? UrlscannerGetScanResponseResultScanIps.fromJson(json['ips'] as Map<String, dynamic>)
-        : null,
-  links: json['links'] != null
-        ? UrlscannerGetScanResponseResultScanLinks.fromJson(json['links'] as Map<String, dynamic>)
-        : null,
+  ips: json['ips'] != null ? UrlscannerGetScanResponseResultScanIps.fromJson(json['ips'] as Map<String, dynamic>) : null,
+  links: json['links'] != null ? UrlscannerGetScanResponseResultScanLinks.fromJson(json['links'] as Map<String, dynamic>) : null,
   meta: UrlscannerGetScanResponseResultScanMeta.fromJson(json['meta'] as Map<String, dynamic>),
   page: UrlscannerGetScanResponseResultScanPage.fromJson(json['page'] as Map<String, dynamic>),
   performance: (json['performance'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanPerformance.fromJson(e as Map<String, dynamic>)).toList(),

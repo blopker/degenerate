@@ -8,12 +8,8 @@ import 'post_treasury_financial_accounts_financial_account_features_request_outb
 final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments({this.ach, this.usDomesticWire, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments(
-  ach: json['ach'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymentsAch.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
-  usDomesticWire: json['us_domestic_wire'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymentsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymentsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
+  usDomesticWire: json['us_domestic_wire'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymentsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymentsAch? ach;

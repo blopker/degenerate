@@ -7,9 +7,7 @@
 import 'item_converted_changes_content_type.dart';final class ItemConvertedChanges {const ItemConvertedChanges({this.contentType});
 
 factory ItemConvertedChanges.fromJson(Map<String, dynamic> json) { return ItemConvertedChanges(
-  contentType: json['content_type'] != null
-        ? ItemConvertedChangesContentType.fromJson(json['content_type'] as Map<String, dynamic>)
-        : null,
+  contentType: json['content_type'] != null ? ItemConvertedChangesContentType.fromJson(json['content_type'] as Map<String, dynamic>) : null,
 ); }
 
 final ItemConvertedChangesContentType? contentType;

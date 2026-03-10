@@ -40,9 +40,7 @@ factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return Rada
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: RadarEarlyFraudWarningObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null
-        ? RadarEarlyFraudWarningPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? RadarEarlyFraudWarningPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
 ); }
 
 /// An EFW is actionable if it has not received a dispute and has not been fully refunded. You may wish to proactively refund a charge that receives an EFW, in order to avoid receiving a dispute later.

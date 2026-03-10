@@ -10,9 +10,7 @@ final class WorkersObservability {const WorkersObservability({required this.enab
 factory WorkersObservability.fromJson(Map<String, dynamic> json) { return WorkersObservability(
   enabled: json['enabled'] as bool,
   headSamplingRate: json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null,
-  logs: json['logs'] != null
-        ? WorkersObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>)
-        : null,
+  logs: json['logs'] != null ? WorkersObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether observability is enabled for the Worker.

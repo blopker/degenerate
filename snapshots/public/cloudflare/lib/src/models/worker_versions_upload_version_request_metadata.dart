@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'worker_versions_upload_versi
 final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, required this.mainModule, this.usageModel, });
 
 factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequestMetadata(
-  annotations: json['annotations'] != null
-        ? WorkerVersionsUploadVersionRequestMetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>)
-        : null,
+  annotations: json['annotations'] != null ? WorkerVersionsUploadVersionRequestMetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),

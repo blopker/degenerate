@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject385 {const InlineObject385({this.installments, this.requestThreeDSecure, });
 
 factory InlineObject385.fromJson(Map<String, dynamic> json) { return InlineObject385(
-  installments: json['installments'] != null
-        ? InlineObject385Installments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? InlineObject385Installments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? InlineObject385RequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }
 

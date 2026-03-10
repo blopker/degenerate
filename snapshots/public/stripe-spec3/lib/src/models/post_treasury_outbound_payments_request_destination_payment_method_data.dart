@@ -32,15 +32,11 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData({this.billingDetails, this.financialAccount, this.metadata, required this.type, this.usBankAccount, });
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
-  billingDetails: json['billing_details'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
+  billingDetails: json['billing_details'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   type: PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails? billingDetails;

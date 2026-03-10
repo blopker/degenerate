@@ -37,9 +37,7 @@ final class PaymentPagesCheckoutSessionAutomaticTax {const PaymentPagesCheckoutS
 
 factory PaymentPagesCheckoutSessionAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PaymentPagesCheckoutSessionAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PaymentPagesCheckoutSessionAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
   status: json['status'] != null ? PaymentPagesCheckoutSessionAutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }

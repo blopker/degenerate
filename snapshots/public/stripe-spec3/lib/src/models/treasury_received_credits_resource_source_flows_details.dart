@@ -42,18 +42,10 @@ bool get isUnknown { return !values.contains(this); }
 final class TreasuryReceivedCreditsResourceSourceFlowsDetails {const TreasuryReceivedCreditsResourceSourceFlowsDetails({this.creditReversal, this.outboundPayment, this.outboundTransfer, this.payout, required this.type, });
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetails.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceSourceFlowsDetails(
-  creditReversal: json['credit_reversal'] != null
-        ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>)
-        : null,
-  outboundPayment: json['outbound_payment'] != null
-        ? TreasuryOutboundPayment.fromJson(json['outbound_payment'] as Map<String, dynamic>)
-        : null,
-  outboundTransfer: json['outbound_transfer'] != null
-        ? TreasuryOutboundTransfer.fromJson(json['outbound_transfer'] as Map<String, dynamic>)
-        : null,
-  payout: json['payout'] != null
-        ? Payout.fromJson(json['payout'] as Map<String, dynamic>)
-        : null,
+  creditReversal: json['credit_reversal'] != null ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>) : null,
+  outboundPayment: json['outbound_payment'] != null ? TreasuryOutboundPayment.fromJson(json['outbound_payment'] as Map<String, dynamic>) : null,
+  outboundTransfer: json['outbound_transfer'] != null ? TreasuryOutboundTransfer.fromJson(json['outbound_transfer'] as Map<String, dynamic>) : null,
+  payout: json['payout'] != null ? Payout.fromJson(json['payout'] as Map<String, dynamic>) : null,
   type: TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(json['type'] as String),
 ); }
 

@@ -8,9 +8,7 @@ import 'tunnel_origin_request_access.dart';/// Configuration parameters for the 
 final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });
 
 factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelOriginRequest(
-  access: json['access'] != null
-        ? TunnelOriginRequestAccess.fromJson(json['access'] as Map<String, dynamic>)
-        : null,
+  access: json['access'] != null ? TunnelOriginRequestAccess.fromJson(json['access'] as Map<String, dynamic>) : null,
   caPool: json['caPool'] as String?,
   connectTimeout: json['connectTimeout'] != null ? (json['connectTimeout'] as num).toInt() : null,
   disableChunkedEncoding: json['disableChunkedEncoding'] as bool?,

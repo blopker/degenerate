@@ -7,17 +7,11 @@
 import 'autorag_config_search_request_filters.dart';import 'autorag_config_search_request_ranking_options.dart';import 'autorag_config_search_request_reranking.dart';final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({this.filters, this.maxNumResults = 10, required this.query, this.rankingOptions, this.reranking, this.rewriteQuery = false, });
 
 factory AutoragConfigSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequest(
-  filters: json['filters'] != null
-        ? AutoragConfigSearchRequestFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? AutoragConfigSearchRequestFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
   query: json['query'] as String,
-  rankingOptions: json['ranking_options'] != null
-        ? AutoragConfigSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
-  reranking: json['reranking'] != null
-        ? AutoragConfigSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>)
-        : null,
+  rankingOptions: json['ranking_options'] != null ? AutoragConfigSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
+  reranking: json['reranking'] != null ? AutoragConfigSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
 ); }
 

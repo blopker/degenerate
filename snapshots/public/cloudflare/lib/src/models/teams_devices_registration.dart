@@ -15,15 +15,11 @@ factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return Te
   key: json['key'] as String,
   keyType: json['key_type'] as String?,
   lastSeenAt: json['last_seen_at'] as String,
-  policy: json['policy'] != null
-        ? TeamsDevicesPolicySummary.fromJson(json['policy'] as Map<String, dynamic>)
-        : null,
+  policy: json['policy'] != null ? TeamsDevicesPolicySummary.fromJson(json['policy'] as Map<String, dynamic>) : null,
   revokedAt: json['revoked_at'] as String?,
   tunnelType: json['tunnel_type'] as String?,
   updatedAt: json['updated_at'] as String,
-  user: json['user'] != null
-        ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// The RFC3339 timestamp when the registration was created.

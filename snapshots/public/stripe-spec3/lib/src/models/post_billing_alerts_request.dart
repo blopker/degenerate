@@ -32,9 +32,7 @@ factory PostBillingAlertsRequest.fromJson(Map<String, dynamic> json) { return Po
   alertType: PostBillingAlertsRequestAlertType.fromJson(json['alert_type'] as String),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   title: json['title'] as String,
-  usageThreshold: json['usage_threshold'] != null
-        ? PostBillingAlertsRequestUsageThreshold.fromJson(json['usage_threshold'] as Map<String, dynamic>)
-        : null,
+  usageThreshold: json['usage_threshold'] != null ? PostBillingAlertsRequestUsageThreshold.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of alert to create.

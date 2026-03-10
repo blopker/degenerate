@@ -8,9 +8,7 @@ import 'payment_method_details_mobilepay_card.dart';///
 final class PaymentMethodDetailsMobilepay {const PaymentMethodDetailsMobilepay({this.card});
 
 factory PaymentMethodDetailsMobilepay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsMobilepay(
-  card: json['card'] != null
-        ? PaymentMethodDetailsMobilepayCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PaymentMethodDetailsMobilepayCard.fromJson(json['card'] as Map<String, dynamic>) : null,
 ); }
 
 /// Internal card details

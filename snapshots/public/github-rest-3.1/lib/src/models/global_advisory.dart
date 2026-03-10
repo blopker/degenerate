@@ -89,12 +89,8 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   withdrawnAt: DateTime.parse(json['withdrawn_at'] as String),
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => Vulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   cvss: GlobalAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null
-        ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>)
-        : null,
-  epss: json['epss'] != null
-        ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>)
-        : null,
+  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
+  epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
   cwes: (json['cwes'] as List<dynamic>).map((e) => GlobalAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   credits: (json['credits'] as List<dynamic>).map((e) => GlobalAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

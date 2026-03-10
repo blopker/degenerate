@@ -42,9 +42,7 @@ factory InlineObject69PullRequestRequestedTeams.fromJson(Map<String, dynamic> js
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null
-        ? InlineObject69PullRequestRequestedTeamsParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? InlineObject69PullRequestRequestedTeamsParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String?,
   privacy: json['privacy'] != null ? InlineObject69PullRequestRequestedTeamsPrivacy.fromJson(json['privacy'] as String) : null,
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,

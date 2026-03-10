@@ -8,9 +8,7 @@ import 'billing_bill_resource_invoicing_lines_common_proration_details_credited_
 final class BillingBillResourceInvoicingLinesCommonProrationDetails {const BillingBillResourceInvoicingLinesCommonProrationDetails({this.creditedItems});
 
 factory BillingBillResourceInvoicingLinesCommonProrationDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesCommonProrationDetails(
-  creditedItems: json['credited_items'] != null
-        ? BillingBillResourceInvoicingLinesCommonProrationDetailsCreditedItems.fromJson(json['credited_items'] as Map<String, dynamic>)
-        : null,
+  creditedItems: json['credited_items'] != null ? BillingBillResourceInvoicingLinesCommonProrationDetailsCreditedItems.fromJson(json['credited_items'] as Map<String, dynamic>) : null,
 ); }
 
 /// For a credit proration `line_item`, the original debit line_items to which the credit proration applies.

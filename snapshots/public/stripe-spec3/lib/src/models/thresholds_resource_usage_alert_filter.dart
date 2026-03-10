@@ -29,9 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({this.customer, required this.type, });
 
 factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
-  customer: json['customer'] != null
-        ? ThresholdsResourceUsageAlertFilterCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? ThresholdsResourceUsageAlertFilterCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   type: ThresholdsResourceUsageAlertFilterType.fromJson(json['type'] as String),
 ); }
 

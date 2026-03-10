@@ -28,9 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WorkersDeployment {const WorkersDeployment({this.annotations, this.authorEmail, required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, });
 
 factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDeployment(
-  annotations: json['annotations'] != null
-        ? WorkersDeploymentAnnotations.fromJson(json['annotations'] as Map<String, dynamic>)
-        : null,
+  annotations: json['annotations'] != null ? WorkersDeploymentAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   authorEmail: json['author_email'] as String?,
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,

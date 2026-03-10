@@ -189,9 +189,7 @@ final class ImageGenTool {const ImageGenTool({required this.type, this.model, th
 
 factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   type: json['type'] as String,
-  model: json['model'] != null
-        ? ImageGenToolModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? ImageGenToolModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   quality: json.containsKey('quality') ? ImageGenToolQuality.fromJson(json['quality'] as String) : ImageGenToolQuality.auto,
   size: json.containsKey('size') ? ImageGenToolSize.fromJson(json['size'] as String) : ImageGenToolSize.auto,
   outputFormat: json.containsKey('output_format') ? ImageGenToolOutputFormat.fromJson(json['output_format'] as String) : ImageGenToolOutputFormat.png,
@@ -199,9 +197,7 @@ factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   moderation: json.containsKey('moderation') ? ImageGenToolModeration.fromJson(json['moderation'] as String) : ImageGenToolModeration.auto,
   background: json.containsKey('background') ? ImageGenToolBackground.fromJson(json['background'] as String) : ImageGenToolBackground.auto,
   inputFidelity: json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null,
-  inputImageMask: json['input_image_mask'] != null
-        ? ImageGenToolInputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>)
-        : null,
+  inputImageMask: json['input_image_mask'] != null ? ImageGenToolInputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>) : null,
   partialImages: json.containsKey('partial_images') ? (json['partial_images'] as num).toInt() : 0,
   action: json['action'] != null ? ImageGenActionEnum.fromJson(json['action'] as String) : null,
 ); }

@@ -14,9 +14,7 @@ factory RbdPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return R
   monitors: (json['monitors'] as List<dynamic>).map((e) => e as String).toList(),
   pool: json.containsKey('pool') ? json['pool'] as String : 'rbd',
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   user: json.containsKey('user') ? json['user'] as String : 'admin',
 ); }
 

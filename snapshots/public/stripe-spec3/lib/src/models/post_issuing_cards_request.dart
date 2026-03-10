@@ -96,20 +96,12 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   financialAccount: json['financial_account'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   personalizationDesign: json['personalization_design'] as String?,
-  pin: json['pin'] != null
-        ? PostIssuingCardsRequestPin.fromJson(json['pin'] as Map<String, dynamic>)
-        : null,
+  pin: json['pin'] != null ? PostIssuingCardsRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   replacementFor: json['replacement_for'] as String?,
   replacementReason: json['replacement_reason'] != null ? PostIssuingCardsRequestReplacementReason.fromJson(json['replacement_reason'] as String) : null,
-  secondLine: json['second_line'] != null
-        ? PostIssuingCardsRequestSecondLine.fromJson(json['second_line'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PostIssuingCardsRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  spendingControls: json['spending_controls'] != null
-        ? PostIssuingCardsRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>)
-        : null,
+  secondLine: json['second_line'] != null ? PostIssuingCardsRequestSecondLine.fromJson(json['second_line'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostIssuingCardsRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  spendingControls: json['spending_controls'] != null ? PostIssuingCardsRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardsRequestStatus.fromJson(json['status'] as String) : null,
   type: PostIssuingCardsRequestType.fromJson(json['type'] as String),
 ); }

@@ -7,9 +7,7 @@
 import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_response.dart';import 'teams_devices_uuid.dart';final class TeamsDevicesDeviceManagedNetworks {const TeamsDevicesDeviceManagedNetworks({this.config, this.name, this.networkId, this.type, });
 
 factory TeamsDevicesDeviceManagedNetworks.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceManagedNetworks(
-  config: json['config'] != null
-        ? TeamsDevicesSchemasConfigResponse.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? TeamsDevicesSchemasConfigResponse.fromJson(json['config'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? TeamsDevicesDeviceManagedNetworksComponentsSchemasName.fromJson(json['name'] as String) : null,
   networkId: json['network_id'] != null ? TeamsDevicesUuid.fromJson(json['network_id'] as String) : null,
   type: json['type'] != null ? TeamsDevicesComponentsSchemasType.fromJson(json['type'] as String) : null,

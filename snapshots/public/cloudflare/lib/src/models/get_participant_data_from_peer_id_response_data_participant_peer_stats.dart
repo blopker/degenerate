@@ -7,16 +7,10 @@
 import 'package:collection/collection.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_device_info.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_ip_information.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_precall_network_information.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStats {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStats({this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStats.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStats(
-  deviceInfo: json['device_info'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>)
-        : null,
+  deviceInfo: json['device_info'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  ipInformation: json['ip_information'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>)
-        : null,
-  precallNetworkInformation: json['precall_network_information'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation.fromJson(json['precall_network_information'] as Map<String, dynamic>)
-        : null,
+  ipInformation: json['ip_information'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>) : null,
+  precallNetworkInformation: json['precall_network_information'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation.fromJson(json['precall_network_information'] as Map<String, dynamic>) : null,
 ); }
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo? deviceInfo;

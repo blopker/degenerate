@@ -7,9 +7,7 @@
 import 'webhook_organization_renamed_changes_login.dart';final class WebhookOrganizationRenamedChanges {const WebhookOrganizationRenamedChanges({this.login});
 
 factory WebhookOrganizationRenamedChanges.fromJson(Map<String, dynamic> json) { return WebhookOrganizationRenamedChanges(
-  login: json['login'] != null
-        ? WebhookOrganizationRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>)
-        : null,
+  login: json['login'] != null ? WebhookOrganizationRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookOrganizationRenamedChangesLogin? login;

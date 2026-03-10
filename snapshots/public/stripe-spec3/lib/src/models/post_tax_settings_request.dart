@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'post_tax_settings_request_defaults.dart';import 'post_tax_settings_request_head_office.dart';final class PostTaxSettingsRequest {const PostTaxSettingsRequest({this.defaults, this.expand, this.headOffice, });
 
 factory PostTaxSettingsRequest.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequest(
-  defaults: json['defaults'] != null
-        ? PostTaxSettingsRequestDefaults.fromJson(json['defaults'] as Map<String, dynamic>)
-        : null,
+  defaults: json['defaults'] != null ? PostTaxSettingsRequestDefaults.fromJson(json['defaults'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  headOffice: json['head_office'] != null
-        ? PostTaxSettingsRequestHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>)
-        : null,
+  headOffice: json['head_office'] != null ? PostTaxSettingsRequestHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null,
 ); }
 
 /// Default configuration to be used on Stripe Tax calculations.

@@ -62,9 +62,7 @@ factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return Deployment
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   environmentUrl: json['environment_url'] != null ? Uri.parse(json['environment_url'] as String) : null,
   logUrl: json['log_url'] != null ? Uri.parse(json['log_url'] as String) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

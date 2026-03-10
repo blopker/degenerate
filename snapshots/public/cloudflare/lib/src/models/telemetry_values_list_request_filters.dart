@@ -139,9 +139,7 @@ factory TelemetryValuesListRequestFilters.fromJson(Map<String, dynamic> json) { 
   key: json['key'] as String,
   operation: TelemetryValuesListRequestFiltersOperation.fromJson(json['operation'] as String),
   type: TelemetryValuesListRequestFiltersType.fromJson(json['type'] as String),
-  value: json['value'] != null
-        ? TelemetryValuesListRequestFiltersValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? TelemetryValuesListRequestFiltersValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final String key;

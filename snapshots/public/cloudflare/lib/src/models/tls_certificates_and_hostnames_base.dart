@@ -62,9 +62,7 @@ factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { re
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   port: TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num),
   status: TlsCertificatesAndHostnamesSchemasStatus.fromJson(json['status'] as String),
-  tunnel: json['tunnel'] != null
-        ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>)
-        : null,
+  tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
 ); }
 
 /// When the Keyless SSL was created.

@@ -7,9 +7,7 @@
 import 'zones_security_header_value_strict_transport_security.dart';final class ZonesSecurityHeaderValue {const ZonesSecurityHeaderValue({this.strictTransportSecurity});
 
 factory ZonesSecurityHeaderValue.fromJson(Map<String, dynamic> json) { return ZonesSecurityHeaderValue(
-  strictTransportSecurity: json['strict_transport_security'] != null
-        ? ZonesSecurityHeaderValueStrictTransportSecurity.fromJson(json['strict_transport_security'] as Map<String, dynamic>)
-        : null,
+  strictTransportSecurity: json['strict_transport_security'] != null ? ZonesSecurityHeaderValueStrictTransportSecurity.fromJson(json['strict_transport_security'] as Map<String, dynamic>) : null,
 ); }
 
 /// Strict Transport Security.

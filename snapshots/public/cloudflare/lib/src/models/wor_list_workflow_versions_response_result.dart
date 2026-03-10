@@ -11,9 +11,7 @@ factory WorListWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json
   createdOn: DateTime.parse(json['created_on'] as String),
   hasDag: json['has_dag'] as bool,
   id: json['id'] as String,
-  limits: json['limits'] != null
-        ? WorListWorkflowVersionsResponseResultLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? WorListWorkflowVersionsResponseResultLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   workflowId: json['workflow_id'] as String,
 ); }

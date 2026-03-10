@@ -9,9 +9,7 @@ final class PostInvoicesRequestShippingCost {const PostInvoicesRequestShippingCo
 
 factory PostInvoicesRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCost(
   shippingRate: json['shipping_rate'] as String?,
-  shippingRateData: json['shipping_rate_data'] != null
-        ? PostInvoicesRequestShippingCostShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>)
-        : null,
+  shippingRateData: json['shipping_rate_data'] != null ? PostInvoicesRequestShippingCostShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>) : null,
 ); }
 
 final String? shippingRate;

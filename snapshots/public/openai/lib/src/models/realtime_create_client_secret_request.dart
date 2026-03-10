@@ -11,12 +11,8 @@ import 'realtime_create_client_secret_request_expires_after.dart';import 'realti
 final class RealtimeCreateClientSecretRequest {const RealtimeCreateClientSecretRequest({this.expiresAfter, this.session, });
 
 factory RealtimeCreateClientSecretRequest.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequest(
-  expiresAfter: json['expires_after'] != null
-        ? RealtimeCreateClientSecretRequestExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
-  session: json['session'] != null
-        ? RealtimeCreateClientSecretRequestSession.fromJson(json['session'])
-        : null,
+  expiresAfter: json['expires_after'] != null ? RealtimeCreateClientSecretRequestExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
+  session: json['session'] != null ? RealtimeCreateClientSecretRequestSession.fromJson(json['session']) : null,
 ); }
 
 /// Configuration for the client secret expiration. Expiration refers to the time after which

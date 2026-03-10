@@ -13,9 +13,7 @@ import 'workers_version_assets_config.dart';/// Configuration for assets within 
 final class WorkersVersionAssets {const WorkersVersionAssets({this.config, this.jwt, });
 
 factory WorkersVersionAssets.fromJson(Map<String, dynamic> json) { return WorkersVersionAssets(
-  config: json['config'] != null
-        ? WorkersVersionAssetsConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? WorkersVersionAssetsConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   jwt: json['jwt'] as String?,
 ); }
 

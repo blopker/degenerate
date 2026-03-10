@@ -9,9 +9,7 @@ import 'public_user.dart';final class GistSimpleForks {const GistSimpleForks({th
 factory GistSimpleForks.fromJson(Map<String, dynamic> json) { return GistSimpleForks(
   id: json['id'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  user: json['user'] != null
-        ? PublicUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? PublicUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }

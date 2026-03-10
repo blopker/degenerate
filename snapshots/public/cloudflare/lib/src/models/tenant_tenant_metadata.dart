@@ -7,9 +7,7 @@
 import 'tenant_tenant_metadata_dns.dart';final class TenantTenantMetadata {const TenantTenantMetadata({this.dns});
 
 factory TenantTenantMetadata.fromJson(Map<String, dynamic> json) { return TenantTenantMetadata(
-  dns: json['dns'] != null
-        ? TenantTenantMetadataDns.fromJson(json['dns'] as Map<String, dynamic>)
-        : null,
+  dns: json['dns'] != null ? TenantTenantMetadataDns.fromJson(json['dns'] as Map<String, dynamic>) : null,
 ); }
 
 final TenantTenantMetadataDns? dns;

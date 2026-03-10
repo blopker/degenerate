@@ -7,9 +7,7 @@
 import 'shield_operation_feature_schema_info_schema_info.dart';final class ShieldOperationFeatureSchemaInfo {const ShieldOperationFeatureSchemaInfo({this.schemaInfo});
 
 factory ShieldOperationFeatureSchemaInfo.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfo(
-  schemaInfo: json['schema_info'] != null
-        ? ShieldOperationFeatureSchemaInfoSchemaInfo.fromJson(json['schema_info'] as Map<String, dynamic>)
-        : null,
+  schemaInfo: json['schema_info'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfo.fromJson(json['schema_info'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldOperationFeatureSchemaInfoSchemaInfo? schemaInfo;

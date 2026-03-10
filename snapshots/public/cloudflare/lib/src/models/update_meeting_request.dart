@@ -32,9 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class UpdateMeetingRequest {const UpdateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd = false, this.title, });
 
 factory UpdateMeetingRequest.fromJson(Map<String, dynamic> json) { return UpdateMeetingRequest(
-  aiConfig: json['ai_config'] != null
-        ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>)
-        : null,
+  aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,
   liveStreamOnStart: json.containsKey('live_stream_on_start') ? json['live_stream_on_start'] as bool : false,
   persistChat: json.containsKey('persist_chat') ? json['persist_chat'] as bool : false,
   recordOnStart: json.containsKey('record_on_start') ? json['record_on_start'] as bool : false,

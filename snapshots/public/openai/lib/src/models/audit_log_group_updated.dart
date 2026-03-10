@@ -9,9 +9,7 @@ final class AuditLogGroupUpdated {const AuditLogGroupUpdated({this.id, this.chan
 
 factory AuditLogGroupUpdated.fromJson(Map<String, dynamic> json) { return AuditLogGroupUpdated(
   id: json['id'] as String?,
-  changesRequested: json['changes_requested'] != null
-        ? AuditLogGroupUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>)
-        : null,
+  changesRequested: json['changes_requested'] != null ? AuditLogGroupUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the group.

@@ -7,9 +7,7 @@
 import 'images_image_variant_public_request.dart';final class ImagesImageVariantsResponse {const ImagesImageVariantsResponse({this.variants});
 
 factory ImagesImageVariantsResponse.fromJson(Map<String, dynamic> json) { return ImagesImageVariantsResponse(
-  variants: json['variants'] != null
-        ? ImagesImageVariantPublicRequest.fromJson(json['variants'] as Map<String, dynamic>)
-        : null,
+  variants: json['variants'] != null ? ImagesImageVariantPublicRequest.fromJson(json['variants'] as Map<String, dynamic>) : null,
 ); }
 
 final ImagesImageVariantPublicRequest? variants;

@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'aaa_audit_logs2.dart';import
 factory ResponseCollection2.fromJson(Map<String, dynamic> json) { return ResponseCollection2(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AaaSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>?)?.map((e) => AaaAuditLogs2.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: json['result_info'] != null
-        ? AaaResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? AaaResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

@@ -35,22 +35,14 @@ factory PostSetupIntentsIntentRequest.fromJson(Map<String, dynamic> json) { retu
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null
-        ? PostSetupIntentsIntentRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>)
-        : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? PostSetupIntentsIntentRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestFlowDirections.fromJson(e as String)).toList(),
-  metadata: json['metadata'] != null
-        ? PostSetupIntentsIntentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostSetupIntentsIntentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostSetupIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

@@ -10,9 +10,7 @@ factory DigitalExperienceMonitoringIpInfo.fromJson(Map<String, dynamic> json) { 
   address: json['address'] as String?,
   asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,
   aso: json['aso'] as String?,
-  location: json['location'] != null
-        ? DigitalExperienceMonitoringIpInfoLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? DigitalExperienceMonitoringIpInfoLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   netmask: json['netmask'] as String?,
   version: json['version'] as String?,
 ); }

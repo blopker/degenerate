@@ -8,19 +8,11 @@ import 'package:collection/collection.dart';import 'post_treasury_financial_acco
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  features: json['features'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
-  forwardingSettings: json['forwarding_settings'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+  forwardingSettings: json['forwarding_settings'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestNickname.fromJson(json['nickname'] as Map<String, dynamic>)
-        : null,
-  platformRestrictions: json['platform_restrictions'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>)
-        : null,
+  nickname: json['nickname'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestNickname.fromJson(json['nickname'] as Map<String, dynamic>) : null,
+  platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

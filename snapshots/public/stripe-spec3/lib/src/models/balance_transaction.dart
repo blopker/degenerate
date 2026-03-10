@@ -234,9 +234,7 @@ factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceT
   net: (json['net'] as num).toInt(),
   object: BalanceTransactionObject.fromJson(json['object'] as String),
   reportingCategory: json['reporting_category'] as String,
-  source: json['source'] != null
-        ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
   type: BalanceTransactionType.fromJson(json['type'] as String),
 ); }

@@ -16,9 +16,7 @@ factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   protectionRules: (json['protection_rules'] as List<dynamic>?)?.map((e) => EnvironmentProtectionRules.fromJson(e as Map<String, dynamic>)).toList(),
-  deploymentBranchPolicy: json['deployment_branch_policy'] != null
-        ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>)
-        : null,
+  deploymentBranchPolicy: json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// The id of the environment.

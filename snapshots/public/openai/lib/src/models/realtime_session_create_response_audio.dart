@@ -9,12 +9,8 @@ import 'realtime_session_create_response_audio_input.dart';import 'realtime_sess
 final class RealtimeSessionCreateResponseAudio {const RealtimeSessionCreateResponseAudio({this.input, this.output, });
 
 factory RealtimeSessionCreateResponseAudio.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudio(
-  input: json['input'] != null
-        ? RealtimeSessionCreateResponseAudioInput.fromJson(json['input'] as Map<String, dynamic>)
-        : null,
-  output: json['output'] != null
-        ? RealtimeSessionCreateResponseAudioOutput.fromJson(json['output'] as Map<String, dynamic>)
-        : null,
+  input: json['input'] != null ? RealtimeSessionCreateResponseAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,
+  output: json['output'] != null ? RealtimeSessionCreateResponseAudioOutput.fromJson(json['output'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimeSessionCreateResponseAudioInput? input;

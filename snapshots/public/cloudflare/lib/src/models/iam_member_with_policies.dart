@@ -12,9 +12,7 @@ factory IamMemberWithPolicies.fromJson(Map<String, dynamic> json) { return IamMe
   policies: (json['policies'] as List<dynamic>?)?.map((e) => IamListMemberPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   roles: (json['roles'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'],
-  user: json['user'] != null
-        ? IamMemberWithPoliciesUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? IamMemberWithPoliciesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final IamEmail? email;

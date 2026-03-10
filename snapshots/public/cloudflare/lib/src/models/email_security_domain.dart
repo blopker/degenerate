@@ -125,16 +125,12 @@ final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowe
 
 factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityDomain(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
-  authorization: json['authorization'] != null
-        ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>)
-        : null,
+  authorization: json['authorization'] != null ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   dmarcStatus: json['dmarc_status'] != null ? EmailSecurityDomainDmarcStatus.fromJson(json['dmarc_status'] as String) : null,
   domain: json['domain'] as String,
   dropDispositions: (json['drop_dispositions'] as List<dynamic>).map((e) => EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
-  emailsProcessed: json['emails_processed'] != null
-        ? EmailSecurityDomainEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>)
-        : null,
+  emailsProcessed: json['emails_processed'] != null ? EmailSecurityDomainEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null,
   folder: json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null,
   id: (json['id'] as num).toInt(),
   inboxProvider: json['inbox_provider'] != null ? EmailSecurityDomainInboxProvider.fromJson(json['inbox_provider'] as String) : null,

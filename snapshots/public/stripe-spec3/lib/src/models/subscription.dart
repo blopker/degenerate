@@ -110,37 +110,25 @@ bool get isUnknown { return !values.contains(this); }
 final class Subscription {const Subscription({this.application, this.applicationFeePercent, required this.automaticTax, required this.billingCycleAnchor, this.billingCycleAnchorConfig, required this.billingMode, this.billingThresholds, this.cancelAt, required this.cancelAtPeriodEnd, this.canceledAt, this.cancellationDetails, required this.collectionMethod, required this.created, required this.currency, required this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, required this.discounts, this.endedAt, required this.id, required this.invoiceSettings, required this.items, this.latestInvoice, required this.livemode, required this.metadata, this.nextPendingInvoiceItemInvoice, required this.object, this.onBehalfOf, this.pauseCollection, this.paymentSettings, this.pendingInvoiceItemInterval, this.pendingSetupIntent, this.pendingUpdate, this.schedule, required this.startDate, required this.status, this.testClock, this.transferData, this.trialEnd, this.trialSettings, this.trialStart, });
 
 factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
-  application: json['application'] != null
-        ? SubscriptionApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? SubscriptionApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: SubscriptionAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   billingCycleAnchor: (json['billing_cycle_anchor'] as num).toInt(),
-  billingCycleAnchorConfig: json['billing_cycle_anchor_config'] != null
-        ? SubscriptionBillingCycleAnchorConfig.fromJson(json['billing_cycle_anchor_config'] as Map<String, dynamic>)
-        : null,
+  billingCycleAnchorConfig: json['billing_cycle_anchor_config'] != null ? SubscriptionBillingCycleAnchorConfig.fromJson(json['billing_cycle_anchor_config'] as Map<String, dynamic>) : null,
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
-  billingThresholds: json['billing_thresholds'] != null
-        ? SubscriptionBillingThresholds2.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionBillingThresholds2.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   cancelAt: json['cancel_at'] != null ? (json['cancel_at'] as num).toInt() : null,
   cancelAtPeriodEnd: json['cancel_at_period_end'] as bool,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
-  cancellationDetails: json['cancellation_details'] != null
-        ? SubscriptionCancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>)
-        : null,
+  cancellationDetails: json['cancellation_details'] != null ? SubscriptionCancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>) : null,
   collectionMethod: SubscriptionCollectionMethod.fromJson(json['collection_method'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customer: SubscriptionCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
-  defaultPaymentMethod: json['default_payment_method'] != null
-        ? SubscriptionDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>)
-        : null,
-  defaultSource: json['default_source'] != null
-        ? SubscriptionDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>)
-        : null,
+  defaultPaymentMethod: json['default_payment_method'] != null ? SubscriptionDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>) : null,
+  defaultSource: json['default_source'] != null ? SubscriptionDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>) : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => SubscriptionDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
@@ -148,46 +136,24 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   id: json['id'] as String,
   invoiceSettings: SubscriptionsResourceSubscriptionInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>),
   items: SubscriptionItems.fromJson(json['items'] as Map<String, dynamic>),
-  latestInvoice: json['latest_invoice'] != null
-        ? SubscriptionLatestInvoice.fromJson(json['latest_invoice'] as Map<String, dynamic>)
-        : null,
+  latestInvoice: json['latest_invoice'] != null ? SubscriptionLatestInvoice.fromJson(json['latest_invoice'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   nextPendingInvoiceItemInvoice: json['next_pending_invoice_item_invoice'] != null ? (json['next_pending_invoice_item_invoice'] as num).toInt() : null,
   object: SubscriptionObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? SubscriptionOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  pauseCollection: json['pause_collection'] != null
-        ? SubscriptionPauseCollection.fromJson(json['pause_collection'] as Map<String, dynamic>)
-        : null,
-  paymentSettings: json['payment_settings'] != null
-        ? SubscriptionPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>)
-        : null,
-  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null
-        ? SubscriptionPendingInvoiceItemInterval2.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>)
-        : null,
-  pendingSetupIntent: json['pending_setup_intent'] != null
-        ? SubscriptionPendingSetupIntent.fromJson(json['pending_setup_intent'] as Map<String, dynamic>)
-        : null,
-  pendingUpdate: json['pending_update'] != null
-        ? SubscriptionPendingUpdate.fromJson(json['pending_update'] as Map<String, dynamic>)
-        : null,
-  schedule: json['schedule'] != null
-        ? SubscriptionSchedule2.fromJson(json['schedule'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? SubscriptionOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  pauseCollection: json['pause_collection'] != null ? SubscriptionPauseCollection.fromJson(json['pause_collection'] as Map<String, dynamic>) : null,
+  paymentSettings: json['payment_settings'] != null ? SubscriptionPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
+  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? SubscriptionPendingInvoiceItemInterval2.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>) : null,
+  pendingSetupIntent: json['pending_setup_intent'] != null ? SubscriptionPendingSetupIntent.fromJson(json['pending_setup_intent'] as Map<String, dynamic>) : null,
+  pendingUpdate: json['pending_update'] != null ? SubscriptionPendingUpdate.fromJson(json['pending_update'] as Map<String, dynamic>) : null,
+  schedule: json['schedule'] != null ? SubscriptionSchedule2.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   startDate: (json['start_date'] as num).toInt(),
   status: SubscriptionStatus.fromJson(json['status'] as String),
-  testClock: json['test_clock'] != null
-        ? SubscriptionTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? SubscriptionTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  testClock: json['test_clock'] != null ? SubscriptionTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? SubscriptionTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null
-        ? SubscriptionTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  trialSettings: json['trial_settings'] != null ? SubscriptionTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
   trialStart: json['trial_start'] != null ? (json['trial_start'] as num).toInt() : null,
 ); }
 

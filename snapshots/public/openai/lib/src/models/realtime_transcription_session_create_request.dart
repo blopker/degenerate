@@ -60,16 +60,10 @@ bool get isUnknown { return !values.contains(this); }
 final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
 
 factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequest(
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
-  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null
-        ? RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>)
-        : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
+  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
   inputAudioFormat: json.containsKey('input_audio_format') ? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(json['input_audio_format'] as String) : RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16,
-  inputAudioTranscription: json['input_audio_transcription'] != null
-        ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>)
-        : null,
+  inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateRequestInclude.fromJson(e as String)).toList(),
 ); }
 

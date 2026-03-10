@@ -9,9 +9,7 @@ import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consu
 factory MqWorkerConsumerRequest.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerRequest(
   deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,
   scriptName: MqScriptName.fromJson(json['script_name'] as String),
-  settings: json['settings'] != null
-        ? MqWorkerConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? MqWorkerConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

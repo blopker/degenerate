@@ -66,14 +66,10 @@ final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymen
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
   balance: json['balance'] != null ? TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(json['balance'] as String) : null,
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
-  financialAccount: json['financial_account'] != null
-        ? ReceivedPaymentMethodDetailsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>)
-        : null,
+  financialAccount: json['financial_account'] != null ? ReceivedPaymentMethodDetailsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>) : null,
   issuingCard: json['issuing_card'] as String?,
   type: TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// Set when `type` is `balance`.

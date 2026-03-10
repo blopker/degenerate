@@ -10,58 +10,30 @@ final class ZeroTrustGatewayRuleSettings {const ZeroTrustGatewayRuleSettings({th
 factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettings(
   addHeaders: (json['add_headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   allowChildBypass: json['allow_child_bypass'] as bool?,
-  auditSsh: json['audit_ssh'] != null
-        ? ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(json['audit_ssh'] as Map<String, dynamic>)
-        : null,
-  bisoAdminControls: json['biso_admin_controls'] != null
-        ? ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(json['biso_admin_controls'] as Map<String, dynamic>)
-        : null,
-  blockPage: json['block_page'] != null
-        ? ZeroTrustGatewayRuleSettingsBlockPage.fromJson(json['block_page'] as Map<String, dynamic>)
-        : null,
+  auditSsh: json['audit_ssh'] != null ? ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(json['audit_ssh'] as Map<String, dynamic>) : null,
+  bisoAdminControls: json['biso_admin_controls'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(json['biso_admin_controls'] as Map<String, dynamic>) : null,
+  blockPage: json['block_page'] != null ? ZeroTrustGatewayRuleSettingsBlockPage.fromJson(json['block_page'] as Map<String, dynamic>) : null,
   blockPageEnabled: json['block_page_enabled'] as bool?,
   blockReason: json['block_reason'] as String?,
   bypassParentRule: json['bypass_parent_rule'] as bool?,
-  checkSession: json['check_session'] != null
-        ? ZeroTrustGatewayRuleSettingsCheckSession.fromJson(json['check_session'] as Map<String, dynamic>)
-        : null,
-  dnsResolvers: json['dns_resolvers'] != null
-        ? ZeroTrustGatewayRuleSettingsDnsResolvers.fromJson(json['dns_resolvers'] as Map<String, dynamic>)
-        : null,
-  egress: json['egress'] != null
-        ? ZeroTrustGatewayRuleSettingsEgress.fromJson(json['egress'] as Map<String, dynamic>)
-        : null,
-  forensicCopy: json['forensic_copy'] != null
-        ? ZeroTrustGatewayRuleSettingsForensicCopy.fromJson(json['forensic_copy'] as Map<String, dynamic>)
-        : null,
+  checkSession: json['check_session'] != null ? ZeroTrustGatewayRuleSettingsCheckSession.fromJson(json['check_session'] as Map<String, dynamic>) : null,
+  dnsResolvers: json['dns_resolvers'] != null ? ZeroTrustGatewayRuleSettingsDnsResolvers.fromJson(json['dns_resolvers'] as Map<String, dynamic>) : null,
+  egress: json['egress'] != null ? ZeroTrustGatewayRuleSettingsEgress.fromJson(json['egress'] as Map<String, dynamic>) : null,
+  forensicCopy: json['forensic_copy'] != null ? ZeroTrustGatewayRuleSettingsForensicCopy.fromJson(json['forensic_copy'] as Map<String, dynamic>) : null,
   ignoreCnameCategoryMatches: json['ignore_cname_category_matches'] as bool?,
   insecureDisableDnssecValidation: json['insecure_disable_dnssec_validation'] as bool?,
   ipCategories: json['ip_categories'] as bool?,
   ipIndicatorFeeds: json['ip_indicator_feeds'] as bool?,
-  l4override: json['l4override'] != null
-        ? ZeroTrustGatewayRuleSettingsL4override.fromJson(json['l4override'] as Map<String, dynamic>)
-        : null,
-  notificationSettings: json['notification_settings'] != null
-        ? ZeroTrustGatewayRuleSettingsNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>)
-        : null,
+  l4override: json['l4override'] != null ? ZeroTrustGatewayRuleSettingsL4override.fromJson(json['l4override'] as Map<String, dynamic>) : null,
+  notificationSettings: json['notification_settings'] != null ? ZeroTrustGatewayRuleSettingsNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null,
   overrideHost: json['override_host'] as String?,
   overrideIps: (json['override_ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  payloadLog: json['payload_log'] != null
-        ? ZeroTrustGatewayRuleSettingsPayloadLog.fromJson(json['payload_log'] as Map<String, dynamic>)
-        : null,
-  quarantine: json['quarantine'] != null
-        ? ZeroTrustGatewayRuleSettingsQuarantine.fromJson(json['quarantine'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? ZeroTrustGatewayRuleSettingsRedirect.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
-  resolveDnsInternally: json['resolve_dns_internally'] != null
-        ? ZeroTrustGatewayRuleSettingsResolveDnsInternally.fromJson(json['resolve_dns_internally'] as Map<String, dynamic>)
-        : null,
+  payloadLog: json['payload_log'] != null ? ZeroTrustGatewayRuleSettingsPayloadLog.fromJson(json['payload_log'] as Map<String, dynamic>) : null,
+  quarantine: json['quarantine'] != null ? ZeroTrustGatewayRuleSettingsQuarantine.fromJson(json['quarantine'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? ZeroTrustGatewayRuleSettingsRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  resolveDnsInternally: json['resolve_dns_internally'] != null ? ZeroTrustGatewayRuleSettingsResolveDnsInternally.fromJson(json['resolve_dns_internally'] as Map<String, dynamic>) : null,
   resolveDnsThroughCloudflare: json['resolve_dns_through_cloudflare'] as bool?,
-  untrustedCert: json['untrusted_cert'] != null
-        ? ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(json['untrusted_cert'] as Map<String, dynamic>)
-        : null,
+  untrustedCert: json['untrusted_cert'] != null ? ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(json['untrusted_cert'] as Map<String, dynamic>) : null,
 ); }
 
 /// Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Settable only for `http` rules with the action set to `allow`.

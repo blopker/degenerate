@@ -8,9 +8,7 @@ import 'observatory_plan_properties_info.dart';/// The number of tests available
 final class ObservatoryAvailabilitiesQuotaQuotasPerPlan {const ObservatoryAvailabilitiesQuotaQuotasPerPlan({this.value});
 
 factory ObservatoryAvailabilitiesQuotaQuotasPerPlan.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuotaQuotasPerPlan(
-  value: json['value'] != null
-        ? ObservatoryPlanPropertiesInfo.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? ObservatoryPlanPropertiesInfo.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final ObservatoryPlanPropertiesInfo? value;

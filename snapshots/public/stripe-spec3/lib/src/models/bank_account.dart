@@ -60,9 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 final class BankAccount {const BankAccount({this.account, this.accountHolderName, this.accountHolderType, this.accountType, this.availablePayoutMethods, this.bankName, required this.country, required this.currency, this.customer, this.defaultForCurrency, this.fingerprint, this.futureRequirements, required this.id, required this.last4, this.metadata, required this.object, this.requirements, this.routingNumber, required this.status, });
 
 factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
-  account: json['account'] != null
-        ? BankAccountAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? BankAccountAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] as String?,
   accountType: json['account_type'] as String?,
@@ -70,21 +68,15 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   bankName: json['bank_name'] as String?,
   country: json['country'] as String,
   currency: json['currency'] as String,
-  customer: json['customer'] != null
-        ? BankAccountCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? BankAccountCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   fingerprint: json['fingerprint'] as String?,
-  futureRequirements: json['future_requirements'] != null
-        ? BankAccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>)
-        : null,
+  futureRequirements: json['future_requirements'] != null ? BankAccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   last4: json['last4'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: BankAccountObject.fromJson(json['object'] as String),
-  requirements: json['requirements'] != null
-        ? BankAccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>)
-        : null,
+  requirements: json['requirements'] != null ? BankAccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   routingNumber: json['routing_number'] as String?,
   status: json['status'] as String,
 ); }

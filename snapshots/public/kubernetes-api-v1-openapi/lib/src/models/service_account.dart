@@ -12,9 +12,7 @@ factory ServiceAccount.fromJson(Map<String, dynamic> json) { return ServiceAccou
   automountServiceAccountToken: json['automountServiceAccountToken'] as bool?,
   imagePullSecrets: (json['imagePullSecrets'] as List<dynamic>?)?.map((e) => LocalObjectReference.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   secrets: (json['secrets'] as List<dynamic>?)?.map((e) => ObjectReference.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

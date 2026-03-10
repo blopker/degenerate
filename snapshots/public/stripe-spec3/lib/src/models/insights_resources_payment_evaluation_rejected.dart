@@ -8,9 +8,7 @@ import 'insights_resources_payment_evaluation_rejected_card.dart';/// Details of
 final class InsightsResourcesPaymentEvaluationRejected {const InsightsResourcesPaymentEvaluationRejected({this.card});
 
 factory InsightsResourcesPaymentEvaluationRejected.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRejected(
-  card: json['card'] != null
-        ? InsightsResourcesPaymentEvaluationRejectedCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? InsightsResourcesPaymentEvaluationRejectedCard.fromJson(json['card'] as Map<String, dynamic>) : null,
 ); }
 
 final InsightsResourcesPaymentEvaluationRejectedCard? card;

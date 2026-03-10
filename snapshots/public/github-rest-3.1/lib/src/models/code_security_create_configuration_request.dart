@@ -577,27 +577,19 @@ factory CodeSecurityCreateConfigurationRequest.fromJson(Map<String, dynamic> jso
   codeSecurity: json['code_security'] != null ? CodeSecurityCreateConfigurationRequestCodeSecurity.fromJson(json['code_security'] as String) : null,
   dependencyGraph: json.containsKey('dependency_graph') ? CodeSecurityCreateConfigurationRequestDependencyGraph.fromJson(json['dependency_graph'] as String) : CodeSecurityCreateConfigurationRequestDependencyGraph.enabled,
   dependencyGraphAutosubmitAction: json.containsKey('dependency_graph_autosubmit_action') ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.disabled,
-  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null
-        ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>)
-        : null,
+  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null,
   dependabotAlerts: json.containsKey('dependabot_alerts') ? CodeSecurityCreateConfigurationRequestDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : CodeSecurityCreateConfigurationRequestDependabotAlerts.disabled,
   dependabotSecurityUpdates: json.containsKey('dependabot_security_updates') ? CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.disabled,
   dependabotDelegatedAlertDismissal: json.containsKey('dependabot_delegated_alert_dismissal') ? CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(json['dependabot_delegated_alert_dismissal'] as String) : CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.disabled,
-  codeScanningOptions: json['code_scanning_options'] != null
-        ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>)
-        : null,
+  codeScanningOptions: json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null,
   codeScanningDefaultSetup: json.containsKey('code_scanning_default_setup') ? CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.disabled,
-  codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null
-        ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>)
-        : null,
+  codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null,
   codeScanningDelegatedAlertDismissal: json.containsKey('code_scanning_delegated_alert_dismissal') ? CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.notSet,
   secretProtection: json['secret_protection'] != null ? CodeSecurityCreateConfigurationRequestSecretProtection.fromJson(json['secret_protection'] as String) : null,
   secretScanning: json.containsKey('secret_scanning') ? CodeSecurityCreateConfigurationRequestSecretScanning.fromJson(json['secret_scanning'] as String) : CodeSecurityCreateConfigurationRequestSecretScanning.disabled,
   secretScanningPushProtection: json.containsKey('secret_scanning_push_protection') ? CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.disabled,
   secretScanningDelegatedBypass: json.containsKey('secret_scanning_delegated_bypass') ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.disabled,
-  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null
-        ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>)
-        : null,
+  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
   secretScanningValidityChecks: json.containsKey('secret_scanning_validity_checks') ? CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.disabled,
   secretScanningNonProviderPatterns: json.containsKey('secret_scanning_non_provider_patterns') ? CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.disabled,
   secretScanningGenericSecrets: json.containsKey('secret_scanning_generic_secrets') ? CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.disabled,

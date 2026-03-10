@@ -61,9 +61,7 @@ factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {
   nodeId: json['node_id'] as String,
   path: json['path'] as String,
   position: (json['position'] as num).toInt(),
-  reactions: json['reactions'] != null
-        ? WebhookCommitCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? WebhookCommitCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
   user: WebhookCommitCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>),

@@ -8,9 +8,7 @@ import 'access_connection_rules_ssh.dart';/// The rules that define how users ma
 final class AccessConnectionRulesInfra {const AccessConnectionRulesInfra({this.ssh});
 
 factory AccessConnectionRulesInfra.fromJson(Map<String, dynamic> json) { return AccessConnectionRulesInfra(
-  ssh: json['ssh'] != null
-        ? AccessConnectionRulesSsh.fromJson(json['ssh'] as Map<String, dynamic>)
-        : null,
+  ssh: json['ssh'] != null ? AccessConnectionRulesSsh.fromJson(json['ssh'] as Map<String, dynamic>) : null,
 ); }
 
 final AccessConnectionRulesSsh? ssh;

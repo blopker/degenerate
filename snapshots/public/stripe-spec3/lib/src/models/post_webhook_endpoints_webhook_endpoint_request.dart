@@ -790,15 +790,11 @@ bool get isUnknown { return !values.contains(this); }
 final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
 
 factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsWebhookEndpointRequest(
-  description: json['description'] != null
-        ? PostWebhookEndpointsWebhookEndpointRequestDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostWebhookEndpointsWebhookEndpointRequestDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   disabled: json['disabled'] as bool?,
   enabledEvents: (json['enabled_events'] as List<dynamic>?)?.map((e) => PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostWebhookEndpointsWebhookEndpointRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostWebhookEndpointsWebhookEndpointRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
 ); }
 

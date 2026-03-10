@@ -153,33 +153,21 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   financialAccount: json['financial_account'] as String?,
   id: json['id'] as String,
   last4: json['last4'] as String,
-  latestFraudWarning: json['latest_fraud_warning'] != null
-        ? IssuingCardLatestFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>)
-        : null,
+  latestFraudWarning: json['latest_fraud_warning'] != null ? IssuingCardLatestFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
   object: IssuingCardObject.fromJson(json['object'] as String),
-  personalizationDesign: json['personalization_design'] != null
-        ? IssuingCardPersonalizationDesign.fromJson(json['personalization_design'] as Map<String, dynamic>)
-        : null,
-  replacedBy: json['replaced_by'] != null
-        ? IssuingCardReplacedBy.fromJson(json['replaced_by'] as Map<String, dynamic>)
-        : null,
-  replacementFor: json['replacement_for'] != null
-        ? IssuingCardReplacementFor.fromJson(json['replacement_for'] as Map<String, dynamic>)
-        : null,
+  personalizationDesign: json['personalization_design'] != null ? IssuingCardPersonalizationDesign.fromJson(json['personalization_design'] as Map<String, dynamic>) : null,
+  replacedBy: json['replaced_by'] != null ? IssuingCardReplacedBy.fromJson(json['replaced_by'] as Map<String, dynamic>) : null,
+  replacementFor: json['replacement_for'] != null ? IssuingCardReplacementFor.fromJson(json['replacement_for'] as Map<String, dynamic>) : null,
   replacementReason: json['replacement_reason'] != null ? IssuingCardReplacementReason.fromJson(json['replacement_reason'] as String) : null,
   secondLine: json['second_line'] as String?,
-  shipping: json['shipping'] != null
-        ? IssuingCardShipping2.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? IssuingCardShipping2.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: IssuingCardAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>),
   status: IssuingCardStatus.fromJson(json['status'] as String),
   type: IssuingCardType.fromJson(json['type'] as String),
-  wallets: json['wallets'] != null
-        ? IssuingCardWallets2.fromJson(json['wallets'] as Map<String, dynamic>)
-        : null,
+  wallets: json['wallets'] != null ? IssuingCardWallets2.fromJson(json['wallets'] as Map<String, dynamic>) : null,
 ); }
 
 /// The brand of the card.

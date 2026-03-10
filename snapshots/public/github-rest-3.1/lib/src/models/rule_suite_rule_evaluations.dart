@@ -60,9 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details, });
 
 factory RuleSuiteRuleEvaluations.fromJson(Map<String, dynamic> json) { return RuleSuiteRuleEvaluations(
-  ruleSource: json['rule_source'] != null
-        ? RuleSuiteRuleEvaluationsRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>)
-        : null,
+  ruleSource: json['rule_source'] != null ? RuleSuiteRuleEvaluationsRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>) : null,
   enforcement: json['enforcement'] != null ? RuleSuiteRuleEvaluationsEnforcement.fromJson(json['enforcement'] as String) : null,
   result: json['result'] != null ? RuleSuiteRuleEvaluationsResult.fromJson(json['result'] as String) : null,
   ruleType: json['rule_type'] as String?,

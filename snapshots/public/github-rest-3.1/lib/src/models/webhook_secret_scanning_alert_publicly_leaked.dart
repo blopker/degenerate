@@ -30,19 +30,11 @@ final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScannin
 factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertPubliclyLeaked(
   action: WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSecretScanningAlertPubliclyLeakedAction action;

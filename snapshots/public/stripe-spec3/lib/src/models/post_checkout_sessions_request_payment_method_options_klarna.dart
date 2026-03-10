@@ -51,9 +51,7 @@ final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarna {const PostChe
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
+  subscriptions: json['subscriptions'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod? captureMethod;

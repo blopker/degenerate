@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'spectrum_analytics_column_me
 
 factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metrics: json['metrics'] != null
-        ? SpectrumAnalyticsColumnMetrics.fromJson(json['metrics'])
-        : null,
+  metrics: json['metrics'] != null ? SpectrumAnalyticsColumnMetrics.fromJson(json['metrics']) : null,
 ); }
 
 final List<String>? dimensions;

@@ -7,9 +7,7 @@
 import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_packet_limit.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({this.filterV1, this.offsetTime, required this.packetLimit, required this.system, required this.timeLimit, required this.type, });
 
 factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsRequestSimple(
-  filterV1: json['filter_v1'] != null
-        ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>)
-        : null,
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
   packetLimit: MagicVisibilityPcapsPcapsPacketLimit.fromJson(json['packet_limit'] as num),
   system: MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String),

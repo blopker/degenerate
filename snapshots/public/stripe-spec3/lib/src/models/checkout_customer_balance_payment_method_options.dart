@@ -58,9 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 final class CheckoutCustomerBalancePaymentMethodOptions {const CheckoutCustomerBalancePaymentMethodOptions({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
 factory CheckoutCustomerBalancePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCustomerBalancePaymentMethodOptions(
-  bankTransfer: json['bank_transfer'] != null
-        ? CheckoutCustomerBalanceBankTransferPaymentMethodOptions.fromJson(json['bank_transfer'] as Map<String, dynamic>)
-        : null,
+  bankTransfer: json['bank_transfer'] != null ? CheckoutCustomerBalanceBankTransferPaymentMethodOptions.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] != null ? CheckoutCustomerBalancePaymentMethodOptionsFundingType.fromJson(json['funding_type'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutCustomerBalancePaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }

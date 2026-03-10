@@ -7,12 +7,8 @@
 import 'realtimekit_update_preset_ui_design_tokens_colors_background.dart';import 'realtimekit_update_preset_ui_design_tokens_colors_brand.dart';final class RealtimekitUpdatePresetUiDesignTokensColors {const RealtimekitUpdatePresetUiDesignTokensColors({this.background, this.brand, this.danger = '#FF2D2D', this.success = '#62A504', this.text = '#EEEEEE', this.textOnBrand = '#EEEEEE', this.videoBg = '#191919', this.warning = '#FFCD07', });
 
 factory RealtimekitUpdatePresetUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColors(
-  background: json['background'] != null
-        ? RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>)
-        : null,
-  brand: json['brand'] != null
-        ? RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(json['brand'] as Map<String, dynamic>)
-        : null,
+  background: json['background'] != null ? RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>) : null,
+  brand: json['brand'] != null ? RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(json['brand'] as Map<String, dynamic>) : null,
   danger: json.containsKey('danger') ? json['danger'] as String : '#FF2D2D',
   success: json.containsKey('success') ? json['success'] as String : '#62A504',
   text: json.containsKey('text') ? json['text'] as String : '#EEEEEE',

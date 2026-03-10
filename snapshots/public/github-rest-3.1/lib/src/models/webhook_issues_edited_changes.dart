@@ -8,12 +8,8 @@ import 'webhook_issues_edited_changes_body.dart';import 'webhook_issues_edited_c
 final class WebhookIssuesEditedChanges {const WebhookIssuesEditedChanges({this.body, this.title, });
 
 factory WebhookIssuesEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedChanges(
-  body: json['body'] != null
-        ? WebhookIssuesEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  title: json['title'] != null
-        ? WebhookIssuesEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhookIssuesEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? WebhookIssuesEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookIssuesEditedChangesBody? body;

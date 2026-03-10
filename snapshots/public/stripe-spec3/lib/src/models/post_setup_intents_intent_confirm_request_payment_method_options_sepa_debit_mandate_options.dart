@@ -7,9 +7,7 @@
 import 'post_setup_intents_intent_confirm_request_payment_method_options_sepa_debit_mandate_options_reference_prefix.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptions({this.referencePrefix});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptions(
-  referencePrefix: json['reference_prefix'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>)
-        : null,
+  referencePrefix: json['reference_prefix'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix? referencePrefix;

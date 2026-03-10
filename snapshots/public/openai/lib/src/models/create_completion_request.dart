@@ -18,13 +18,9 @@ factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return Cre
   n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
   presencePenalty: json.containsKey('presence_penalty') ? (json['presence_penalty'] as num).toDouble() : 0.0,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  stop: json['stop'] != null
-        ? StopConfiguration.fromJson(json['stop'] as Map<String, dynamic>)
-        : null,
+  stop: json['stop'] != null ? StopConfiguration.fromJson(json['stop'] as Map<String, dynamic>) : null,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
-  streamOptions: json['stream_options'] != null
-        ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>)
-        : null,
+  streamOptions: json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
   suffix: json['suffix'] as String?,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 1.0,
   topP: json.containsKey('top_p') ? (json['top_p'] as num).toDouble() : 1.0,

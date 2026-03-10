@@ -10,9 +10,7 @@ factory CloudforceOneRequestsMessages2.fromJson(Map<String, dynamic> json) { ret
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  source: json['source'] != null
-        ? CloudforceOneRequestsMessages2Source.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? CloudforceOneRequestsMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;

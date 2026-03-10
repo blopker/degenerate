@@ -32,21 +32,15 @@ bool get isUnknown { return !values.contains(this); }
 final class SourceMandateNotification {const SourceMandateNotification({this.acssDebit, this.amount, this.bacsDebit, required this.created, required this.id, required this.livemode, required this.object, required this.reason, this.sepaDebit, required this.source, required this.status, required this.type, });
 
 factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return SourceMandateNotification(
-  acssDebit: json['acss_debit'] != null
-        ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? SourceMandateNotificationBacsDebitData.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
+  bacsDebit: json['bacs_debit'] != null ? SourceMandateNotificationBacsDebitData.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: SourceMandateNotificationObject.fromJson(json['object'] as String),
   reason: json['reason'] as String,
-  sepaDebit: json['sepa_debit'] != null
-        ? SourceMandateNotificationSepaDebitData.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
+  sepaDebit: json['sepa_debit'] != null ? SourceMandateNotificationSepaDebitData.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
   source: Source.fromJson(json['source'] as Map<String, dynamic>),
   status: json['status'] as String,
   type: json['type'] as String,

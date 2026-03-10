@@ -101,35 +101,21 @@ final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIs
 
 factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountDetails: json['amount_details'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   authorizationMethod: json['authorization_method'] != null ? PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(json['authorization_method'] as String) : null,
   card: json['card'] as String,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fleet: json['fleet'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? PostTestHelpersIssuingAuthorizationsRequestFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
   fraudDisputabilityLikelihood: json['fraud_disputability_likelihood'] != null ? PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(json['fraud_disputability_likelihood'] as String) : null,
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
   isAmountControllable: json['is_amount_controllable'] as bool?,
   merchantAmount: json['merchant_amount'] != null ? (json['merchant_amount'] as num).toInt() : null,
   merchantCurrency: json['merchant_currency'] as String?,
-  merchantData: json['merchant_data'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>)
-        : null,
-  networkData: json['network_data'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestNetworkData.fromJson(json['network_data'] as Map<String, dynamic>)
-        : null,
-  riskAssessment: json['risk_assessment'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>)
-        : null,
-  verificationData: json['verification_data'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>)
-        : null,
+  merchantData: json['merchant_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
+  networkData: json['network_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
+  riskAssessment: json['risk_assessment'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>) : null,
+  verificationData: json['verification_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(json['wallet'] as String) : null,
 ); }
 

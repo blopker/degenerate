@@ -38,28 +38,16 @@ factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynami
   currency: json['currency'] as String?,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   invoiceitem: json['invoiceitem'] as String?,
-  metadata: json['metadata'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  period: json['period'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  period: json['period'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxBehavior: json['tax_behavior'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>)
-        : null,
-  taxRates: json['tax_rates'] != null
-        ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxCode: json['tax_code'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

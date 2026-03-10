@@ -7,12 +7,8 @@
 import 'active_livestream_session_details_response_data_livestream.dart';import 'active_livestream_session_details_response_data_session.dart';final class ActiveLivestreamSessionDetailsResponseData {const ActiveLivestreamSessionDetailsResponseData({this.livestream, this.session, });
 
 factory ActiveLivestreamSessionDetailsResponseData.fromJson(Map<String, dynamic> json) { return ActiveLivestreamSessionDetailsResponseData(
-  livestream: json['livestream'] != null
-        ? ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>)
-        : null,
-  session: json['session'] != null
-        ? ActiveLivestreamSessionDetailsResponseDataSession.fromJson(json['session'] as Map<String, dynamic>)
-        : null,
+  livestream: json['livestream'] != null ? ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>) : null,
+  session: json['session'] != null ? ActiveLivestreamSessionDetailsResponseDataSession.fromJson(json['session'] as Map<String, dynamic>) : null,
 ); }
 
 final ActiveLivestreamSessionDetailsResponseDataLivestream? livestream;

@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
-  mandateOptions: json['mandate_options'] != null
-        ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

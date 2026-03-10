@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_link_display_pr
 final class PostPaymentMethodConfigurationsConfigurationRequestLink {const PostPaymentMethodConfigurationsConfigurationRequestLink({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestLink.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestLink(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestLinkDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestLinkDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestLinkDisplayPreference? displayPreference;

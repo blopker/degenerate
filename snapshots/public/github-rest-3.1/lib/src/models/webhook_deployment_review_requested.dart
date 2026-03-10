@@ -29,13 +29,9 @@ final class WebhookDeploymentReviewRequested {const WebhookDeploymentReviewReque
 
 factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequested(
   action: WebhookDeploymentReviewRequestedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   environment: json['environment'] as String,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   requestor: WebhooksUser.fromJson(json['requestor'] as Map<String, dynamic>),

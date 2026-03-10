@@ -114,12 +114,8 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DisputeObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null
-        ? DisputePaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? DisputePaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),
 ); }

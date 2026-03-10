@@ -37,43 +37,25 @@ factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return Pa
   authorizationCode: json['authorization_code'] as String?,
   brand: json['brand'] as String?,
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
-  checks: json['checks'] != null
-        ? PaymentMethodDetailsCardChecks2.fromJson(json['checks'] as Map<String, dynamic>)
-        : null,
+  checks: json['checks'] != null ? PaymentMethodDetailsCardChecks2.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
-  extendedAuthorization: json['extended_authorization'] != null
-        ? ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization.fromJson(json['extended_authorization'] as Map<String, dynamic>)
-        : null,
+  extendedAuthorization: json['extended_authorization'] != null ? ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization.fromJson(json['extended_authorization'] as Map<String, dynamic>) : null,
   fingerprint: json['fingerprint'] as String?,
   funding: json['funding'] as String?,
-  incrementalAuthorization: json['incremental_authorization'] != null
-        ? ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization.fromJson(json['incremental_authorization'] as Map<String, dynamic>)
-        : null,
-  installments: json['installments'] != null
-        ? PaymentMethodDetailsCardInstallments2.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  incrementalAuthorization: json['incremental_authorization'] != null ? ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization.fromJson(json['incremental_authorization'] as Map<String, dynamic>) : null,
+  installments: json['installments'] != null ? PaymentMethodDetailsCardInstallments2.fromJson(json['installments'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String?,
   mandate: json['mandate'] as String?,
-  multicapture: json['multicapture'] != null
-        ? ResourceMulticapture.fromJson(json['multicapture'] as Map<String, dynamic>)
-        : null,
+  multicapture: json['multicapture'] != null ? ResourceMulticapture.fromJson(json['multicapture'] as Map<String, dynamic>) : null,
   network: json['network'] as String?,
-  networkToken: json['network_token'] != null
-        ? PaymentMethodDetailsCardNetworkToken2.fromJson(json['network_token'] as Map<String, dynamic>)
-        : null,
+  networkToken: json['network_token'] != null ? PaymentMethodDetailsCardNetworkToken2.fromJson(json['network_token'] as Map<String, dynamic>) : null,
   networkTransactionId: json['network_transaction_id'] as String?,
-  overcapture: json['overcapture'] != null
-        ? ResourceEnterpriseFeaturesOvercaptureOvercapture.fromJson(json['overcapture'] as Map<String, dynamic>)
-        : null,
+  overcapture: json['overcapture'] != null ? ResourceEnterpriseFeaturesOvercaptureOvercapture.fromJson(json['overcapture'] as Map<String, dynamic>) : null,
   regulatedStatus: json['regulated_status'] != null ? PaymentMethodDetailsCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null
-        ? PaymentMethodDetailsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
-  wallet: json['wallet'] != null
-        ? PaymentMethodDetailsCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? PaymentMethodDetailsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentMethodDetailsCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// The authorized amount.

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_nz_bank_account
 final class PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount {const PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestNzBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestNzBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestNzBankAccountDisplayPreference? displayPreference;

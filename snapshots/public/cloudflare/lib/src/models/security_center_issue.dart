@@ -38,9 +38,7 @@ factory SecurityCenterIssue.fromJson(Map<String, dynamic> json) { return Securit
   id: json['id'] as String?,
   issueClass: json['issue_class'] != null ? SecurityCenterIssueClass.fromJson(json['issue_class'] as String) : null,
   issueType: json['issue_type'] != null ? SecurityCenterIssueType.fromJson(json['issue_type'] as String) : null,
-  payload: json['payload'] != null
-        ? SecurityCenterIssuePayload.fromJson(json['payload'] as Map<String, dynamic>)
-        : null,
+  payload: json['payload'] != null ? SecurityCenterIssuePayload.fromJson(json['payload'] as Map<String, dynamic>) : null,
   resolveLink: json['resolve_link'] as String?,
   resolveText: json['resolve_text'] as String?,
   severity: json['severity'] != null ? SecurityCenterIssueSeverity.fromJson(json['severity'] as String) : null,

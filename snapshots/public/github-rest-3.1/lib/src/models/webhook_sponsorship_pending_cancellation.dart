@@ -30,18 +30,10 @@ final class WebhookSponsorshipPendingCancellation {const WebhookSponsorshipPendi
 factory WebhookSponsorshipPendingCancellation.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingCancellation(
   action: WebhookSponsorshipPendingCancellationAction.fromJson(json['action'] as String),
   effectiveDate: json['effective_date'] != null ? WebhooksEffectiveDate.fromJson(json['effective_date'] as String) : null,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
 ); }

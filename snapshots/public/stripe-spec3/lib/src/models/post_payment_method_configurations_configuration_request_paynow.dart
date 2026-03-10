@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_paynow_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestPaynow {const PostPaymentMethodConfigurationsConfigurationRequestPaynow({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference? displayPreference;

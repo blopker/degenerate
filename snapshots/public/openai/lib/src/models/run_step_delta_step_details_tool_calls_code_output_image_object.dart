@@ -31,9 +31,7 @@ final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject {const RunStep
 factory RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
   index: (json['index'] as num).toInt(),
   type: RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.fromJson(json['type'] as String),
-  image: json['image'] != null
-        ? RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(json['image'] as Map<String, dynamic>)
-        : null,
+  image: json['image'] != null ? RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(json['image'] as Map<String, dynamic>) : null,
 ); }
 
 /// The index of the output in the outputs array.

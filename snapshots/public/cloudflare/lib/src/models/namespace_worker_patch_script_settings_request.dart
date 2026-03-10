@@ -7,9 +7,7 @@
 import 'workers_namespace_script_and_version_settings_item.dart';final class NamespaceWorkerPatchScriptSettingsRequest {const NamespaceWorkerPatchScriptSettingsRequest({this.settings});
 
 factory NamespaceWorkerPatchScriptSettingsRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPatchScriptSettingsRequest(
-  settings: json['settings'] != null
-        ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 final WorkersNamespaceScriptAndVersionSettingsItem? settings;

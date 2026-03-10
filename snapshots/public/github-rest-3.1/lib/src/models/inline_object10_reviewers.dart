@@ -8,9 +8,7 @@ import 'deployment_reviewer_type.dart';import 'inline_object10_reviewers_reviewe
 
 factory InlineObject10Reviewers.fromJson(Map<String, dynamic> json) { return InlineObject10Reviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
-  reviewer: json['reviewer'] != null
-        ? InlineObject10ReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>)
-        : null,
+  reviewer: json['reviewer'] != null ? InlineObject10ReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
 ); }
 
 final DeploymentReviewerType? type;

@@ -10,9 +10,7 @@ final class StorageOsPersistentVolumeSource {const StorageOsPersistentVolumeSour
 factory StorageOsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return StorageOsPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? ObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? ObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeName: json['volumeName'] as String?,
   volumeNamespace: json['volumeNamespace'] as String?,
 ); }

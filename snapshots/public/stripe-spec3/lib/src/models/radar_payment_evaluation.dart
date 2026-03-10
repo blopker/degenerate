@@ -30,25 +30,17 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarPaymentEvaluation {const RadarPaymentEvaluation({this.clientDeviceMetadataDetails, required this.createdAt, this.customerDetails, required this.events, required this.id, required this.insights, required this.livemode, this.metadata, required this.object, this.outcome, this.paymentDetails, });
 
 factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluation(
-  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null
-        ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>)
-        : null,
+  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
   createdAt: (json['created_at'] as num).toInt(),
-  customerDetails: json['customer_details'] != null
-        ? InsightsResourcesPaymentEvaluationCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? InsightsResourcesPaymentEvaluationCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>).map((e) => InsightsResourcesPaymentEvaluationEvent.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
   insights: InsightsResourcesPaymentEvaluationInsights.fromJson(json['insights'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: RadarPaymentEvaluationObject.fromJson(json['object'] as String),
-  outcome: json['outcome'] != null
-        ? RadarPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>)
-        : null,
-  paymentDetails: json['payment_details'] != null
-        ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
+  outcome: json['outcome'] != null ? RadarPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
 ); }
 
 final InsightsResourcesPaymentEvaluationClientDeviceMetadata? clientDeviceMetadataDetails;

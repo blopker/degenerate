@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'create_message_request.dart'
 
 factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunRequest(
   assistantId: json['assistant_id'] as String,
-  model: json['model'] != null
-        ? CreateRunRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? CreateRunRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
   instructions: json['instructions'] as String?,
   additionalInstructions: json['additional_instructions'] as String?,
@@ -22,16 +20,10 @@ factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunR
   stream: json['stream'] as bool?,
   maxPromptTokens: json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
-  truncationStrategy: json['truncation_strategy'] != null
-        ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>)
-        : null,
-  toolChoice: json['tool_choice'] != null
-        ? ToolChoiceOption.fromJson(json['tool_choice'] as Map<String, dynamic>)
-        : null,
+  truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
+  toolChoice: json['tool_choice'] != null ? ToolChoiceOption.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
-  responseFormat: json['response_format'] != null
-        ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.

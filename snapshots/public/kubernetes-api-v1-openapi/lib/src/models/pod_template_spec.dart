@@ -8,12 +8,8 @@ import 'object_meta.dart';import 'pod_spec.dart';/// PodTemplateSpec describes t
 final class PodTemplateSpec {const PodTemplateSpec({this.metadata, this.spec, });
 
 factory PodTemplateSpec.fromJson(Map<String, dynamic> json) { return PodTemplateSpec(
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  spec: json['spec'] != null
-        ? PodSpec.fromJson(json['spec'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  spec: json['spec'] != null ? PodSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
 ); }
 
 /// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata

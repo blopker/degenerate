@@ -8,9 +8,7 @@ import 'rule_suite_pull_request_pull_request.dart';/// Metadata for a pull reque
 final class RuleSuitePullRequest {const RuleSuitePullRequest({this.pullRequest});
 
 factory RuleSuitePullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequest(
-  pullRequest: json['pull_request'] != null
-        ? RuleSuitePullRequestPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
+  pullRequest: json['pull_request'] != null ? RuleSuitePullRequestPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
 ); }
 
 /// The pull request associated with the rule evaluation.

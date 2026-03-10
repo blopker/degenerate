@@ -36,16 +36,10 @@ final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest {con
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(
   amountTip: json['amount_tip'] != null ? (json['amount_tip'] as num).toInt() : null,
-  card: json['card'] != null
-        ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  interacPresent: json['interac_present'] != null
-        ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>)
-        : null,
+  interacPresent: json['interac_present'] != null ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType.fromJson(json['type'] as String) : null,
 ); }
 

@@ -8,9 +8,7 @@ import 'invoice_mandate_options_payto.dart';///
 final class InvoicePaymentMethodOptionsPayto {const InvoicePaymentMethodOptionsPayto({this.mandateOptions});
 
 factory InvoicePaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsPayto(
-  mandateOptions: json['mandate_options'] != null
-        ? InvoiceMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InvoiceMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final InvoiceMandateOptionsPayto? mandateOptions;

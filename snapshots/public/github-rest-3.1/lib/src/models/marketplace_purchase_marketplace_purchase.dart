@@ -14,9 +14,7 @@ factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> jso
   onFreeTrial: json['on_free_trial'] as bool?,
   freeTrialEndsOn: json['free_trial_ends_on'] as String?,
   updatedAt: json['updated_at'] as String?,
-  plan: json['plan'] != null
-        ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 final String? billingCycle;

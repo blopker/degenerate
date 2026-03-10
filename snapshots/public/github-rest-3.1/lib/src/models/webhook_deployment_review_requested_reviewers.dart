@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });
 
 factory WebhookDeploymentReviewRequestedReviewers.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedReviewers(
-  reviewer: json['reviewer'] != null
-        ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>)
-        : null,
+  reviewer: json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? WebhookDeploymentReviewRequestedReviewersType.fromJson(json['type'] as String) : null,
 ); }
 

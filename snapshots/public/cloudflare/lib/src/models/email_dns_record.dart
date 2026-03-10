@@ -84,9 +84,7 @@ factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsReco
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
-  ttl: json['ttl'] != null
-        ? EmailDnsRecordTtl.fromJson(json['ttl'] as Map<String, dynamic>)
-        : null,
+  ttl: json['ttl'] != null ? EmailDnsRecordTtl.fromJson(json['ttl'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
 ); }
 

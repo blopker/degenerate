@@ -37,9 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject820 {const InlineObject820({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory InlineObject820.fromJson(Map<String, dynamic> json) { return InlineObject820(
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject820MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject820MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject820SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }

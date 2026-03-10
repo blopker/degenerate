@@ -8,12 +8,8 @@ import 'post_customers_customer_subscriptions_request_invoice_settings_account_t
 final class PostCustomersCustomerSubscriptionsRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostCustomersCustomerSubscriptionsRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  issuer: json['issuer'] != null
-        ? PostCustomersCustomerSubscriptionsRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostCustomersCustomerSubscriptionsRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? PostCustomersCustomerSubscriptionsRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerSubscriptionsRequestInvoiceSettingsAccountTaxIds? accountTaxIds;

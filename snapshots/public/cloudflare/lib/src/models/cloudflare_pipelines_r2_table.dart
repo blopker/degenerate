@@ -10,17 +10,11 @@ factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) { return 
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
   credentials: CloudflarePipelinesR2TableCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
-  fileNaming: json['file_naming'] != null
-        ? CloudflarePipelinesR2TableFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>)
-        : null,
+  fileNaming: json['file_naming'] != null ? CloudflarePipelinesR2TableFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
   jurisdiction: json['jurisdiction'] as String?,
-  partitioning: json['partitioning'] != null
-        ? CloudflarePipelinesR2TablePartitioning.fromJson(json['partitioning'] as Map<String, dynamic>)
-        : null,
+  partitioning: json['partitioning'] != null ? CloudflarePipelinesR2TablePartitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
-  rollingPolicy: json['rolling_policy'] != null
-        ? CloudflarePipelinesR2TableRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>)
-        : null,
+  rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2TableRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Cloudflare Account ID for the bucket

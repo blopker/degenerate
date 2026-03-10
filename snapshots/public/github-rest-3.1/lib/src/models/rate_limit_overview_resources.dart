@@ -8,37 +8,17 @@ import 'rate_limit.dart';final class RateLimitOverviewResources {const RateLimit
 
 factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) { return RateLimitOverviewResources(
   core: RateLimit.fromJson(json['core'] as Map<String, dynamic>),
-  graphql: json['graphql'] != null
-        ? RateLimit.fromJson(json['graphql'] as Map<String, dynamic>)
-        : null,
+  graphql: json['graphql'] != null ? RateLimit.fromJson(json['graphql'] as Map<String, dynamic>) : null,
   search: RateLimit.fromJson(json['search'] as Map<String, dynamic>),
-  codeSearch: json['code_search'] != null
-        ? RateLimit.fromJson(json['code_search'] as Map<String, dynamic>)
-        : null,
-  sourceImport: json['source_import'] != null
-        ? RateLimit.fromJson(json['source_import'] as Map<String, dynamic>)
-        : null,
-  integrationManifest: json['integration_manifest'] != null
-        ? RateLimit.fromJson(json['integration_manifest'] as Map<String, dynamic>)
-        : null,
-  codeScanningUpload: json['code_scanning_upload'] != null
-        ? RateLimit.fromJson(json['code_scanning_upload'] as Map<String, dynamic>)
-        : null,
-  actionsRunnerRegistration: json['actions_runner_registration'] != null
-        ? RateLimit.fromJson(json['actions_runner_registration'] as Map<String, dynamic>)
-        : null,
-  scim: json['scim'] != null
-        ? RateLimit.fromJson(json['scim'] as Map<String, dynamic>)
-        : null,
-  dependencySnapshots: json['dependency_snapshots'] != null
-        ? RateLimit.fromJson(json['dependency_snapshots'] as Map<String, dynamic>)
-        : null,
-  dependencySbom: json['dependency_sbom'] != null
-        ? RateLimit.fromJson(json['dependency_sbom'] as Map<String, dynamic>)
-        : null,
-  codeScanningAutofix: json['code_scanning_autofix'] != null
-        ? RateLimit.fromJson(json['code_scanning_autofix'] as Map<String, dynamic>)
-        : null,
+  codeSearch: json['code_search'] != null ? RateLimit.fromJson(json['code_search'] as Map<String, dynamic>) : null,
+  sourceImport: json['source_import'] != null ? RateLimit.fromJson(json['source_import'] as Map<String, dynamic>) : null,
+  integrationManifest: json['integration_manifest'] != null ? RateLimit.fromJson(json['integration_manifest'] as Map<String, dynamic>) : null,
+  codeScanningUpload: json['code_scanning_upload'] != null ? RateLimit.fromJson(json['code_scanning_upload'] as Map<String, dynamic>) : null,
+  actionsRunnerRegistration: json['actions_runner_registration'] != null ? RateLimit.fromJson(json['actions_runner_registration'] as Map<String, dynamic>) : null,
+  scim: json['scim'] != null ? RateLimit.fromJson(json['scim'] as Map<String, dynamic>) : null,
+  dependencySnapshots: json['dependency_snapshots'] != null ? RateLimit.fromJson(json['dependency_snapshots'] as Map<String, dynamic>) : null,
+  dependencySbom: json['dependency_sbom'] != null ? RateLimit.fromJson(json['dependency_sbom'] as Map<String, dynamic>) : null,
+  codeScanningAutofix: json['code_scanning_autofix'] != null ? RateLimit.fromJson(json['code_scanning_autofix'] as Map<String, dynamic>) : null,
 ); }
 
 final RateLimit core;

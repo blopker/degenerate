@@ -129,21 +129,11 @@ factory WebhookSecretScanningScanCompleted.fromJson(Map<String, dynamic> json) {
   secretTypes: (json['secret_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   customPatternName: json['custom_pattern_name'] as String?,
   customPatternScope: json['custom_pattern_scope'] != null ? WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(json['custom_pattern_scope'] as String) : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSecretScanningScanCompletedAction action;

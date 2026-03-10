@@ -72,26 +72,18 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, required this.subscription, this.taxRates, });
 
 factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionItemsRequestBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostSubscriptionItemsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionItemsRequestBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionItemsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentBehavior: json['payment_behavior'] != null ? PostSubscriptionItemsRequestPaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostSubscriptionItemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostSubscriptionItemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionItemsRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
-  taxRates: json['tax_rates'] != null
-        ? PostSubscriptionItemsRequestTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionItemsRequestTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. Pass an empty string to remove previously-defined thresholds.

@@ -10,44 +10,20 @@ final class BranchProtection {const BranchProtection({this.url, this.enabled, th
 factory BranchProtection.fromJson(Map<String, dynamic> json) { return BranchProtection(
   url: json['url'] as String?,
   enabled: json['enabled'] as bool?,
-  requiredStatusChecks: json['required_status_checks'] != null
-        ? ProtectedBranchRequiredStatusCheck.fromJson(json['required_status_checks'] as Map<String, dynamic>)
-        : null,
-  enforceAdmins: json['enforce_admins'] != null
-        ? ProtectedBranchAdminEnforced.fromJson(json['enforce_admins'] as Map<String, dynamic>)
-        : null,
-  requiredPullRequestReviews: json['required_pull_request_reviews'] != null
-        ? ProtectedBranchPullRequestReview.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>)
-        : null,
-  restrictions: json['restrictions'] != null
-        ? BranchRestrictionPolicy.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
-  requiredLinearHistory: json['required_linear_history'] != null
-        ? BranchProtectionRequiredLinearHistory.fromJson(json['required_linear_history'] as Map<String, dynamic>)
-        : null,
-  allowForcePushes: json['allow_force_pushes'] != null
-        ? BranchProtectionAllowForcePushes.fromJson(json['allow_force_pushes'] as Map<String, dynamic>)
-        : null,
-  allowDeletions: json['allow_deletions'] != null
-        ? BranchProtectionAllowDeletions.fromJson(json['allow_deletions'] as Map<String, dynamic>)
-        : null,
-  blockCreations: json['block_creations'] != null
-        ? BranchProtectionBlockCreations.fromJson(json['block_creations'] as Map<String, dynamic>)
-        : null,
-  requiredConversationResolution: json['required_conversation_resolution'] != null
-        ? BranchProtectionRequiredConversationResolution.fromJson(json['required_conversation_resolution'] as Map<String, dynamic>)
-        : null,
+  requiredStatusChecks: json['required_status_checks'] != null ? ProtectedBranchRequiredStatusCheck.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
+  enforceAdmins: json['enforce_admins'] != null ? ProtectedBranchAdminEnforced.fromJson(json['enforce_admins'] as Map<String, dynamic>) : null,
+  requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? ProtectedBranchPullRequestReview.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? BranchRestrictionPolicy.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
+  requiredLinearHistory: json['required_linear_history'] != null ? BranchProtectionRequiredLinearHistory.fromJson(json['required_linear_history'] as Map<String, dynamic>) : null,
+  allowForcePushes: json['allow_force_pushes'] != null ? BranchProtectionAllowForcePushes.fromJson(json['allow_force_pushes'] as Map<String, dynamic>) : null,
+  allowDeletions: json['allow_deletions'] != null ? BranchProtectionAllowDeletions.fromJson(json['allow_deletions'] as Map<String, dynamic>) : null,
+  blockCreations: json['block_creations'] != null ? BranchProtectionBlockCreations.fromJson(json['block_creations'] as Map<String, dynamic>) : null,
+  requiredConversationResolution: json['required_conversation_resolution'] != null ? BranchProtectionRequiredConversationResolution.fromJson(json['required_conversation_resolution'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   protectionUrl: json['protection_url'] as String?,
-  requiredSignatures: json['required_signatures'] != null
-        ? BranchProtectionRequiredSignatures.fromJson(json['required_signatures'] as Map<String, dynamic>)
-        : null,
-  lockBranch: json['lock_branch'] != null
-        ? BranchProtectionLockBranch.fromJson(json['lock_branch'] as Map<String, dynamic>)
-        : null,
-  allowForkSyncing: json['allow_fork_syncing'] != null
-        ? BranchProtectionAllowForkSyncing.fromJson(json['allow_fork_syncing'] as Map<String, dynamic>)
-        : null,
+  requiredSignatures: json['required_signatures'] != null ? BranchProtectionRequiredSignatures.fromJson(json['required_signatures'] as Map<String, dynamic>) : null,
+  lockBranch: json['lock_branch'] != null ? BranchProtectionLockBranch.fromJson(json['lock_branch'] as Map<String, dynamic>) : null,
+  allowForkSyncing: json['allow_fork_syncing'] != null ? BranchProtectionAllowForkSyncing.fromJson(json['allow_fork_syncing'] as Map<String, dynamic>) : null,
 ); }
 
 final String? url;

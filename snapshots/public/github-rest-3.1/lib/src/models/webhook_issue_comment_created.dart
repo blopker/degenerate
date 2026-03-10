@@ -30,16 +30,10 @@ final class WebhookIssueCommentCreated {const WebhookIssueCommentCreated({requir
 factory WebhookIssueCommentCreated.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreated(
   action: WebhookIssueCommentCreatedAction.fromJson(json['action'] as String),
   comment: WebhookIssueCommentCreatedComment.fromJson(json['comment'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhookIssueCommentCreatedIssue.fromJson(json['issue'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }

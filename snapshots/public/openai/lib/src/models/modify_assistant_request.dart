@@ -7,23 +7,17 @@
 import 'package:collection/collection.dart';import 'modify_assistant_request_model.dart';import 'modify_assistant_request_tool_resources.dart';import 'modify_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_option.dart';final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort, this.name, this.description, this.instructions, this.tools = const [], this.toolResources, this.metadata, this.temperature, this.topP, this.responseFormat, });
 
 factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequest(
-  model: json['model'] != null
-        ? ModifyAssistantRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? ModifyAssistantRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
   name: json['name'] as String?,
   description: json['description'] as String?,
   instructions: json['instructions'] as String?,
   tools: json.containsKey('tools') ? (json['tools'] as List<dynamic>).map((e) => ModifyAssistantRequestTools.fromJson(e)).toList() : const [],
-  toolResources: json['tool_resources'] != null
-        ? ModifyAssistantRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>)
-        : null,
+  toolResources: json['tool_resources'] != null ? ModifyAssistantRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null
-        ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>) : null,
 ); }
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.

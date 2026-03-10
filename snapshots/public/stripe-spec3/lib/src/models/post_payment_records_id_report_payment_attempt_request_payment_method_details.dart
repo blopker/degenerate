@@ -29,12 +29,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
-  billingDetails: json['billing_details'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
-  custom: json['custom'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>)
-        : null,
+  billingDetails: json['billing_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  custom: json['custom'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
   type: json['type'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType.fromJson(json['type'] as String) : null,
 ); }

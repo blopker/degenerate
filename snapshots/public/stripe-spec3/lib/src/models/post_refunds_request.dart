@@ -63,9 +63,7 @@ factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefu
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   instructionsEmail: json['instructions_email'] as String?,
-  metadata: json['metadata'] != null
-        ? PostRefundsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostRefundsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   origin: json['origin'] != null ? PostRefundsRequestOrigin.fromJson(json['origin'] as String) : null,
   paymentIntent: json['payment_intent'] as String?,
   reason: json['reason'] != null ? PostRefundsRequestReason.fromJson(json['reason'] as String) : null,

@@ -7,9 +7,7 @@
 import 'validate_grader_response_grader.dart';final class ValidateGraderResponse {const ValidateGraderResponse({this.grader});
 
 factory ValidateGraderResponse.fromJson(Map<String, dynamic> json) { return ValidateGraderResponse(
-  grader: json['grader'] != null
-        ? ValidateGraderResponseGrader.fromJson(json['grader'])
-        : null,
+  grader: json['grader'] != null ? ValidateGraderResponseGrader.fromJson(json['grader']) : null,
 ); }
 
 /// The grader used for the fine-tuning job.

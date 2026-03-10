@@ -48,9 +48,7 @@ factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   deletedAt: DateTime.parse(json['deleted_at'] as String),
   deletedBy: SimpleUser.fromJson(json['deleted_by'] as Map<String, dynamic>),
   state: json['state'] != null ? ProjectsState.fromJson(json['state'] as String) : null,
-  latestStatusUpdate: json['latest_status_update'] != null
-        ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>)
-        : null,
+  latestStatusUpdate: json['latest_status_update'] != null ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null,
   isTemplate: json['is_template'] as bool?,
 ); }
 

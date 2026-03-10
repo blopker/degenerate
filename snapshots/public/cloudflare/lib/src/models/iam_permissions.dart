@@ -7,42 +7,18 @@
 import 'iam_grants.dart';final class IamPermissions {const IamPermissions({this.analytics, this.billing, this.cachePurge, this.dns, this.dnsRecords, this.lb, this.logs, this.organization, this.ssl, this.waf, this.zoneSettings, this.zones, });
 
 factory IamPermissions.fromJson(Map<String, dynamic> json) { return IamPermissions(
-  analytics: json['analytics'] != null
-        ? IamGrants.fromJson(json['analytics'] as Map<String, dynamic>)
-        : null,
-  billing: json['billing'] != null
-        ? IamGrants.fromJson(json['billing'] as Map<String, dynamic>)
-        : null,
-  cachePurge: json['cache_purge'] != null
-        ? IamGrants.fromJson(json['cache_purge'] as Map<String, dynamic>)
-        : null,
-  dns: json['dns'] != null
-        ? IamGrants.fromJson(json['dns'] as Map<String, dynamic>)
-        : null,
-  dnsRecords: json['dns_records'] != null
-        ? IamGrants.fromJson(json['dns_records'] as Map<String, dynamic>)
-        : null,
-  lb: json['lb'] != null
-        ? IamGrants.fromJson(json['lb'] as Map<String, dynamic>)
-        : null,
-  logs: json['logs'] != null
-        ? IamGrants.fromJson(json['logs'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? IamGrants.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  ssl: json['ssl'] != null
-        ? IamGrants.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
-  waf: json['waf'] != null
-        ? IamGrants.fromJson(json['waf'] as Map<String, dynamic>)
-        : null,
-  zoneSettings: json['zone_settings'] != null
-        ? IamGrants.fromJson(json['zone_settings'] as Map<String, dynamic>)
-        : null,
-  zones: json['zones'] != null
-        ? IamGrants.fromJson(json['zones'] as Map<String, dynamic>)
-        : null,
+  analytics: json['analytics'] != null ? IamGrants.fromJson(json['analytics'] as Map<String, dynamic>) : null,
+  billing: json['billing'] != null ? IamGrants.fromJson(json['billing'] as Map<String, dynamic>) : null,
+  cachePurge: json['cache_purge'] != null ? IamGrants.fromJson(json['cache_purge'] as Map<String, dynamic>) : null,
+  dns: json['dns'] != null ? IamGrants.fromJson(json['dns'] as Map<String, dynamic>) : null,
+  dnsRecords: json['dns_records'] != null ? IamGrants.fromJson(json['dns_records'] as Map<String, dynamic>) : null,
+  lb: json['lb'] != null ? IamGrants.fromJson(json['lb'] as Map<String, dynamic>) : null,
+  logs: json['logs'] != null ? IamGrants.fromJson(json['logs'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? IamGrants.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  ssl: json['ssl'] != null ? IamGrants.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+  waf: json['waf'] != null ? IamGrants.fromJson(json['waf'] as Map<String, dynamic>) : null,
+  zoneSettings: json['zone_settings'] != null ? IamGrants.fromJson(json['zone_settings'] as Map<String, dynamic>) : null,
+  zones: json['zones'] != null ? IamGrants.fromJson(json['zones'] as Map<String, dynamic>) : null,
 ); }
 
 final IamGrants? analytics;

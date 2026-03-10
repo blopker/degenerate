@@ -8,9 +8,7 @@ import 'post_identity_verification_sessions_request_options_document.dart';/// A
 final class PostIdentityVerificationSessionsRequestOptions {const PostIdentityVerificationSessionsRequestOptions({this.document});
 
 factory PostIdentityVerificationSessionsRequestOptions.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestOptions(
-  document: json['document'] != null
-        ? PostIdentityVerificationSessionsRequestOptionsDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? PostIdentityVerificationSessionsRequestOptionsDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIdentityVerificationSessionsRequestOptionsDocument? document;

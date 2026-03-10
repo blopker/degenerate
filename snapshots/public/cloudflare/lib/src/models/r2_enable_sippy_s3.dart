@@ -7,12 +7,8 @@
 import 'r2_enable_sippy_s3_destination.dart';import 'r2_enable_sippy_s3_source.dart';final class R2EnableSippyS3 {const R2EnableSippyS3({this.destination, this.source, });
 
 factory R2EnableSippyS3.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3(
-  destination: json['destination'] != null
-        ? R2EnableSippyS3Destination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
-  source: json['source'] != null
-        ? R2EnableSippyS3Source.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? R2EnableSippyS3Destination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? R2EnableSippyS3Source.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// R2 bucket to copy objects to.

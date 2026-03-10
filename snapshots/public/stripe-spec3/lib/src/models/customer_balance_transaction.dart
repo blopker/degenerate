@@ -91,22 +91,16 @@ final class CustomerBalanceTransaction {const CustomerBalanceTransaction({requir
 
 factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
-  checkoutSession: json['checkout_session'] != null
-        ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session'] as Map<String, dynamic>)
-        : null,
+  checkoutSession: json['checkout_session'] != null ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  creditNote: json['credit_note'] != null
-        ? CustomerBalanceTransactionCreditNote.fromJson(json['credit_note'] as Map<String, dynamic>)
-        : null,
+  creditNote: json['credit_note'] != null ? CustomerBalanceTransactionCreditNote.fromJson(json['credit_note'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String,
   customer: CustomerBalanceTransactionCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   endingBalance: (json['ending_balance'] as num).toInt(),
   id: json['id'] as String,
-  invoice: json['invoice'] != null
-        ? CustomerBalanceTransactionInvoice.fromJson(json['invoice'] as Map<String, dynamic>)
-        : null,
+  invoice: json['invoice'] != null ? CustomerBalanceTransactionInvoice.fromJson(json['invoice'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),

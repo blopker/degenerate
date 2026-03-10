@@ -29,9 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({this.cancel, required this.eventName, this.expand, required this.type, });
 
 factory PostBillingMeterEventAdjustmentsRequest.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventAdjustmentsRequest(
-  cancel: json['cancel'] != null
-        ? PostBillingMeterEventAdjustmentsRequestCancel.fromJson(json['cancel'] as Map<String, dynamic>)
-        : null,
+  cancel: json['cancel'] != null ? PostBillingMeterEventAdjustmentsRequestCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
   eventName: json['event_name'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostBillingMeterEventAdjustmentsRequestType.fromJson(json['type'] as String),

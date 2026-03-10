@@ -9,12 +9,8 @@ import 'modify_assistant_request_tool_resources_code_interpreter.dart';import 'm
 final class ModifyAssistantRequestToolResources {const ModifyAssistantRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory ModifyAssistantRequestToolResources.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequestToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? ModifyAssistantRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? ModifyAssistantRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? ModifyAssistantRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? ModifyAssistantRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 final ModifyAssistantRequestToolResourcesCodeInterpreter? codeInterpreter;

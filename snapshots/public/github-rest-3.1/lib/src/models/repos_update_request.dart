@@ -161,9 +161,7 @@ factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpd
   homepage: json['homepage'] as String?,
   private: json.containsKey('private') ? json['private'] as bool : false,
   visibility: json['visibility'] != null ? ReposUpdateRequestVisibility.fromJson(json['visibility'] as String) : null,
-  securityAndAnalysis: json['security_and_analysis'] != null
-        ? ReposUpdateRequestSecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>)
-        : null,
+  securityAndAnalysis: json['security_and_analysis'] != null ? ReposUpdateRequestSecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
   hasIssues: json.containsKey('has_issues') ? json['has_issues'] as bool : true,
   hasProjects: json.containsKey('has_projects') ? json['has_projects'] as bool : true,
   hasWiki: json.containsKey('has_wiki') ? json['has_wiki'] as bool : true,

@@ -33,9 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingDisputeNotReceivedEvidence {const IssuingDisputeNotReceivedEvidence({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
 factory IssuingDisputeNotReceivedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeNotReceivedEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeNotReceivedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeNotReceivedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   expectedAt: json['expected_at'] != null ? (json['expected_at'] as num).toInt() : null,
   explanation: json['explanation'] as String?,
   productDescription: json['product_description'] as String?,

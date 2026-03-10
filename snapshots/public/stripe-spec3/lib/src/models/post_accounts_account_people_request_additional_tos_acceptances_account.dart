@@ -9,9 +9,7 @@ import 'post_accounts_account_people_request_additional_tos_acceptances_account_
 factory PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccount(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null
-        ? PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccountUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>)
-        : null,
+  userAgent: json['user_agent'] != null ? PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccountUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>) : null,
 ); }
 
 final int? date;

@@ -32,32 +32,18 @@ bool get isUnknown { return !values.contains(this); }
 final class PostAccountsAccountPersonsRequest {const PostAccountsAccountPersonsRequest({this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.documents, this.email, this.expand, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.personToken, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.usCfpbData, this.verification, });
 
 factory PostAccountsAccountPersonsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequest(
-  additionalTosAcceptances: json['additional_tos_acceptances'] != null
-        ? PostAccountsAccountPersonsRequestAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>)
-        : null,
-  address: json['address'] != null
-        ? PostAccountsAccountPersonsRequestAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PostAccountsAccountPersonsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PostAccountsAccountPersonsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? PostAccountsAccountPersonsRequestDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
-  documents: json['documents'] != null
-        ? PostAccountsAccountPersonsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
+  additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PostAccountsAccountPersonsRequestAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? PostAccountsAccountPersonsRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PostAccountsAccountPersonsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PostAccountsAccountPersonsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? PostAccountsAccountPersonsRequestDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  documents: json['documents'] != null ? PostAccountsAccountPersonsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
-  fullNameAliases: json['full_name_aliases'] != null
-        ? PostAccountsAccountPersonsRequestFullNameAliases.fromJson(json['full_name_aliases'] as Map<String, dynamic>)
-        : null,
+  fullNameAliases: json['full_name_aliases'] != null ? PostAccountsAccountPersonsRequestFullNameAliases.fromJson(json['full_name_aliases'] as Map<String, dynamic>) : null,
   gender: json['gender'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberSecondary: json['id_number_secondary'] as String?,
@@ -65,26 +51,16 @@ factory PostAccountsAccountPersonsRequest.fromJson(Map<String, dynamic> json) { 
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null
-        ? PostAccountsAccountPersonsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostAccountsAccountPersonsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   nationality: json['nationality'] as String?,
   personToken: json['person_token'] as String?,
   phone: json['phone'] as String?,
   politicalExposure: json['political_exposure'] != null ? PostAccountsAccountPersonsRequestPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
-  registeredAddress: json['registered_address'] != null
-        ? PostAccountsAccountPersonsRequestRegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>)
-        : null,
-  relationship: json['relationship'] != null
-        ? PostAccountsAccountPersonsRequestRelationship.fromJson(json['relationship'] as Map<String, dynamic>)
-        : null,
+  registeredAddress: json['registered_address'] != null ? PostAccountsAccountPersonsRequestRegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
+  relationship: json['relationship'] != null ? PostAccountsAccountPersonsRequestRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   ssnLast4: json['ssn_last_4'] as String?,
-  usCfpbData: json['us_cfpb_data'] != null
-        ? PostAccountsAccountPersonsRequestUsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>)
-        : null,
-  verification: json['verification'] != null
-        ? PostAccountsAccountPersonsRequestVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  usCfpbData: json['us_cfpb_data'] != null ? PostAccountsAccountPersonsRequestUsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
+  verification: json['verification'] != null ? PostAccountsAccountPersonsRequestVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details on the legal guardian's or authorizer's acceptance of the required Stripe agreements.

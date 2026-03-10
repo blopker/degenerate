@@ -37,21 +37,13 @@ final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReade
 
 factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  charge: json['charge'] != null
-        ? TerminalReaderReaderResourceRefundPaymentActionCharge.fromJson(json['charge'] as Map<String, dynamic>)
-        : null,
+  charge: json['charge'] != null ? TerminalReaderReaderResourceRefundPaymentActionCharge.fromJson(json['charge'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  paymentIntent: json['payment_intent'] != null
-        ? TerminalReaderReaderResourceRefundPaymentActionPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? TerminalReaderReaderResourceRefundPaymentActionPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
   reason: json['reason'] != null ? TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(json['reason'] as String) : null,
-  refund: json['refund'] != null
-        ? TerminalReaderReaderResourceRefundPaymentActionRefund.fromJson(json['refund'] as Map<String, dynamic>)
-        : null,
+  refund: json['refund'] != null ? TerminalReaderReaderResourceRefundPaymentActionRefund.fromJson(json['refund'] as Map<String, dynamic>) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
-  refundPaymentConfig: json['refund_payment_config'] != null
-        ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>)
-        : null,
+  refundPaymentConfig: json['refund_payment_config'] != null ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,
 ); }
 

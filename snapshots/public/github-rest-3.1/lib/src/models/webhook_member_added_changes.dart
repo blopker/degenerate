@@ -7,12 +7,8 @@
 import 'webhook_member_added_changes_permission.dart';import 'webhook_member_added_changes_role_name.dart';final class WebhookMemberAddedChanges {const WebhookMemberAddedChanges({this.permission, this.roleName, });
 
 factory WebhookMemberAddedChanges.fromJson(Map<String, dynamic> json) { return WebhookMemberAddedChanges(
-  permission: json['permission'] != null
-        ? WebhookMemberAddedChangesPermission.fromJson(json['permission'] as Map<String, dynamic>)
-        : null,
-  roleName: json['role_name'] != null
-        ? WebhookMemberAddedChangesRoleName.fromJson(json['role_name'] as Map<String, dynamic>)
-        : null,
+  permission: json['permission'] != null ? WebhookMemberAddedChangesPermission.fromJson(json['permission'] as Map<String, dynamic>) : null,
+  roleName: json['role_name'] != null ? WebhookMemberAddedChangesRoleName.fromJson(json['role_name'] as Map<String, dynamic>) : null,
 ); }
 
 /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`

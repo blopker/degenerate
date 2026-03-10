@@ -40,15 +40,9 @@ final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletio
 
 factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
   afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
-  subscriptionCancel: json['subscription_cancel'] != null
-        ? PortalFlowsFlowSubscriptionCancel2.fromJson(json['subscription_cancel'] as Map<String, dynamic>)
-        : null,
-  subscriptionUpdate: json['subscription_update'] != null
-        ? PortalFlowsFlowSubscriptionUpdate2.fromJson(json['subscription_update'] as Map<String, dynamic>)
-        : null,
-  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null
-        ? PortalFlowsFlowSubscriptionUpdateConfirm2.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>)
-        : null,
+  subscriptionCancel: json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel2.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate2.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
+  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm2.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
   type: PortalFlowsFlowType.fromJson(json['type'] as String),
 ); }
 

@@ -96,17 +96,11 @@ final class PaymentIntentTypeSpecificPaymentMethodOptionsClient {const PaymentIn
 
 factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: json['capture_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  installments: json['installments'] != null
-        ? PaymentFlowsInstallmentOptions.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? PaymentFlowsInstallmentOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   requestIncrementalAuthorizationSupport: json['request_incremental_authorization_support'] as bool?,
   requireCvcRecollection: json['require_cvc_recollection'] as bool?,
-  routing: json['routing'] != null
-        ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>)
-        : null,
+  routing: json['routing'] != null ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   verificationMethod: json['verification_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }

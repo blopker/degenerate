@@ -22,17 +22,13 @@ factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClippi
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
   meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
-  playback: json['playback'] != null
-        ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>)
-        : null,
+  playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   startTimeSeconds: json['startTimeSeconds'] != null ? StreamStartTimeSeconds.fromJson(json['startTimeSeconds'] as num) : null,
   status: json['status'] != null ? StreamMediaState.fromJson(json['status'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
-  watermark: json['watermark'] != null
-        ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? allowedOrigins;

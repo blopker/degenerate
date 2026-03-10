@@ -7,21 +7,13 @@
 import 'post_checkout_sessions_request_invoice_creation_invoice_data_account_tax_ids.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_custom_fields.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_issuer.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_rendering_options.dart';final class PostCheckoutSessionsRequestInvoiceCreationInvoiceData {const PostCheckoutSessionsRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  customFields: json['custom_fields'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  customFields: json['custom_fields'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   footer: json['footer'] as String?,
-  issuer: json['issuer'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  renderingOptions: json['rendering_options'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>)
-        : null,
+  renderingOptions: json['rendering_options'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds? accountTaxIds;

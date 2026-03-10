@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';final class IamCreatePayload {const IamCreatePayload({this.condition, this.expiresOn, required this.name, this.notBefore, required this.policies, });
 
 factory IamCreatePayload.fromJson(Map<String, dynamic> json) { return IamCreatePayload(
-  condition: json['condition'] != null
-        ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>)
-        : null,
+  condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
   expiresOn: json['expires_on'] != null ? IamExpiresOn.fromJson(json['expires_on'] as String) : null,
   name: IamName.fromJson(json['name'] as String),
   notBefore: json['not_before'] != null ? IamNotBefore.fromJson(json['not_before'] as String) : null,

@@ -8,12 +8,8 @@ import 'post_customers_customer_subscriptions_subscription_exposed_id_request_in
 final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  issuer: json['issuer'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds? accountTaxIds;

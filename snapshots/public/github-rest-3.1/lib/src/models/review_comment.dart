@@ -107,9 +107,7 @@ factory ReviewComment.fromJson(Map<String, dynamic> json) { return ReviewComment
   links: ReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
   bodyText: json['body_text'] as String?,
   bodyHtml: json['body_html'] as String?,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   side: json.containsKey('side') ? ReviewCommentSide.fromJson(json['side'] as String) : ReviewCommentSide.right,
   startSide: json.containsKey('start_side') ? ReviewCommentStartSide.fromJson(json['start_side'] as String) : ReviewCommentStartSide.right,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,

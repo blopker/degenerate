@@ -8,9 +8,7 @@ import 'post_checkout_sessions_session_request_collected_information_shipping_de
 final class PostCheckoutSessionsSessionRequestCollectedInformation {const PostCheckoutSessionsSessionRequestCollectedInformation({this.shippingDetails});
 
 factory PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestCollectedInformation(
-  shippingDetails: json['shipping_details'] != null
-        ? PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  shippingDetails: json['shipping_details'] != null ? PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails? shippingDetails;

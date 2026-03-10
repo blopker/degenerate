@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'mconn_customer_device.dart';
 
 factory MconnCustomerConnector.fromJson(Map<String, dynamic> json) { return MconnCustomerConnector(
   activated: json['activated'] as bool,
-  device: json['device'] != null
-        ? MconnCustomerDevice.fromJson(json['device'] as Map<String, dynamic>)
-        : null,
+  device: json['device'] != null ? MconnCustomerDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
   id: MconnUuid.fromJson(json['id'] as String),
   interruptWindowDaysOfWeek: (json['interrupt_window_days_of_week'] as List<dynamic>).map((e) => MconnDayOfWeek.fromJson(e as String)).toList(),
   interruptWindowDurationHours: (json['interrupt_window_duration_hours'] as num).toDouble(),

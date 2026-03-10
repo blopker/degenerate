@@ -9,9 +9,7 @@ final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendin
 
 factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationPendingRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null
-        ? IssuingAuthorizationPendingRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? IssuingAuthorizationPendingRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String,
   isAmountControllable: json['is_amount_controllable'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),

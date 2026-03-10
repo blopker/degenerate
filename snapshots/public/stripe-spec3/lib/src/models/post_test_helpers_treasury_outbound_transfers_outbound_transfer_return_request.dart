@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_test_helpers_treasury_o
 
 factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  returnedDetails: json['returned_details'] != null
-        ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>)
-        : null,
+  returnedDetails: json['returned_details'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

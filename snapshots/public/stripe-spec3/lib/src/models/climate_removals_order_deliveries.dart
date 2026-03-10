@@ -9,9 +9,7 @@ final class ClimateRemovalsOrderDeliveries {const ClimateRemovalsOrderDeliveries
 
 factory ClimateRemovalsOrderDeliveries.fromJson(Map<String, dynamic> json) { return ClimateRemovalsOrderDeliveries(
   deliveredAt: (json['delivered_at'] as num).toInt(),
-  location: json['location'] != null
-        ? ClimateRemovalsOrderDeliveriesLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? ClimateRemovalsOrderDeliveriesLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   metricTons: json['metric_tons'] as String,
   registryUrl: json['registry_url'] as String?,
   supplier: ClimateSupplier.fromJson(json['supplier'] as Map<String, dynamic>),

@@ -12,27 +12,19 @@ factory InlineObject1276.fromJson(Map<String, dynamic> json) { return InlineObje
   addStyleTag: (json['addStyleTag'] as List<dynamic>?)?.map((e) => InlineObject1276AddStyleTag.fromJson(e as Map<String, dynamic>)).toList(),
   allowRequestPattern: (json['allowRequestPattern'] as List<dynamic>?)?.map((e) => e as String).toList(),
   allowResourceTypes: (json['allowResourceTypes'] as List<dynamic>?)?.map((e) => InlineObject1276AllowResourceTypes.fromJson(e as Map<String, dynamic>)).toList(),
-  authenticate: json['authenticate'] != null
-        ? InlineObject1276Authenticate.fromJson(json['authenticate'] as Map<String, dynamic>)
-        : null,
+  authenticate: json['authenticate'] != null ? InlineObject1276Authenticate.fromJson(json['authenticate'] as Map<String, dynamic>) : null,
   bestAttempt: json['bestAttempt'] as bool?,
   cookies: (json['cookies'] as List<dynamic>?)?.map((e) => InlineObject1276Cookies.fromJson(e as Map<String, dynamic>)).toList(),
   emulateMediaType: json['emulateMediaType'] as String?,
-  gotoOptions: json['gotoOptions'] != null
-        ? InlineObject1276GotoOptions.fromJson(json['gotoOptions'] as Map<String, dynamic>)
-        : null,
+  gotoOptions: json['gotoOptions'] != null ? InlineObject1276GotoOptions.fromJson(json['gotoOptions'] as Map<String, dynamic>) : null,
   html: json['html'] as String,
   rejectRequestPattern: (json['rejectRequestPattern'] as List<dynamic>?)?.map((e) => e as String).toList(),
   rejectResourceTypes: (json['rejectResourceTypes'] as List<dynamic>?)?.map((e) => InlineObject1276RejectResourceTypes.fromJson(e as Map<String, dynamic>)).toList(),
   setExtraHttpHeaders: (json['setExtraHTTPHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   setJavaScriptEnabled: json['setJavaScriptEnabled'] as bool?,
   userAgent: json.containsKey('userAgent') ? json['userAgent'] as String : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-  viewport: json['viewport'] != null
-        ? InlineObject1276Viewport.fromJson(json['viewport'] as Map<String, dynamic>)
-        : null,
-  waitForSelector: json['waitForSelector'] != null
-        ? InlineObject1276WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>)
-        : null,
+  viewport: json['viewport'] != null ? InlineObject1276Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
+  waitForSelector: json['waitForSelector'] != null ? InlineObject1276WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
 ); }
 

@@ -7,21 +7,13 @@
 import 'package:collection/collection.dart';import 'post_billing_portal_configurations_request_business_profile.dart';import 'post_billing_portal_configurations_request_default_return_url.dart';import 'post_billing_portal_configurations_request_features.dart';import 'post_billing_portal_configurations_request_login_page.dart';import 'post_billing_portal_configurations_request_name.dart';final class PostBillingPortalConfigurationsRequest {const PostBillingPortalConfigurationsRequest({this.businessProfile, this.defaultReturnUrl, this.expand, required this.features, this.loginPage, this.metadata, this.name, });
 
 factory PostBillingPortalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequest(
-  businessProfile: json['business_profile'] != null
-        ? PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>)
-        : null,
-  defaultReturnUrl: json['default_return_url'] != null
-        ? PostBillingPortalConfigurationsRequestDefaultReturnUrl.fromJson(json['default_return_url'] as Map<String, dynamic>)
-        : null,
+  businessProfile: json['business_profile'] != null ? PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
+  defaultReturnUrl: json['default_return_url'] != null ? PostBillingPortalConfigurationsRequestDefaultReturnUrl.fromJson(json['default_return_url'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: PostBillingPortalConfigurationsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>),
-  loginPage: json['login_page'] != null
-        ? PostBillingPortalConfigurationsRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>)
-        : null,
+  loginPage: json['login_page'] != null ? PostBillingPortalConfigurationsRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] != null
-        ? PostBillingPortalConfigurationsRequestName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
+  name: json['name'] != null ? PostBillingPortalConfigurationsRequestName.fromJson(json['name'] as Map<String, dynamic>) : null,
 ); }
 
 /// The business information shown to customers in the portal.

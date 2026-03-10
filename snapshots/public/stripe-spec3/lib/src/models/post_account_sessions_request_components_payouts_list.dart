@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_payouts_list_features.dart';fin
 
 factory PostAccountSessionsRequestComponentsPayoutsList.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPayoutsList(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

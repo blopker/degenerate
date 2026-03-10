@@ -15,9 +15,7 @@ factory StreamVideoClipStandard.fromJson(Map<String, dynamic> json) { return Str
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   startTimeSeconds: StreamStartTimeSeconds.fromJson(json['startTimeSeconds'] as num),
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
-  watermark: json['watermark'] != null
-        ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? allowedOrigins;

@@ -76,29 +76,15 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, required this.status, required this.type, });
 
 factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceReaderAction(
-  collectInputs: json['collect_inputs'] != null
-        ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>)
-        : null,
-  collectPaymentMethod: json['collect_payment_method'] != null
-        ? TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(json['collect_payment_method'] as Map<String, dynamic>)
-        : null,
-  confirmPaymentIntent: json['confirm_payment_intent'] != null
-        ? TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(json['confirm_payment_intent'] as Map<String, dynamic>)
-        : null,
+  collectInputs: json['collect_inputs'] != null ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>) : null,
+  collectPaymentMethod: json['collect_payment_method'] != null ? TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(json['collect_payment_method'] as Map<String, dynamic>) : null,
+  confirmPaymentIntent: json['confirm_payment_intent'] != null ? TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(json['confirm_payment_intent'] as Map<String, dynamic>) : null,
   failureCode: json['failure_code'] as String?,
   failureMessage: json['failure_message'] as String?,
-  processPaymentIntent: json['process_payment_intent'] != null
-        ? TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(json['process_payment_intent'] as Map<String, dynamic>)
-        : null,
-  processSetupIntent: json['process_setup_intent'] != null
-        ? TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(json['process_setup_intent'] as Map<String, dynamic>)
-        : null,
-  refundPayment: json['refund_payment'] != null
-        ? TerminalReaderReaderResourceRefundPaymentAction.fromJson(json['refund_payment'] as Map<String, dynamic>)
-        : null,
-  setReaderDisplay: json['set_reader_display'] != null
-        ? TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(json['set_reader_display'] as Map<String, dynamic>)
-        : null,
+  processPaymentIntent: json['process_payment_intent'] != null ? TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(json['process_payment_intent'] as Map<String, dynamic>) : null,
+  processSetupIntent: json['process_setup_intent'] != null ? TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(json['process_setup_intent'] as Map<String, dynamic>) : null,
+  refundPayment: json['refund_payment'] != null ? TerminalReaderReaderResourceRefundPaymentAction.fromJson(json['refund_payment'] as Map<String, dynamic>) : null,
+  setReaderDisplay: json['set_reader_display'] != null ? TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(json['set_reader_display'] as Map<String, dynamic>) : null,
   status: TerminalReaderReaderResourceReaderActionStatus.fromJson(json['status'] as String),
   type: TerminalReaderReaderResourceReaderActionType.fromJson(json['type'] as String),
 ); }

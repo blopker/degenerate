@@ -72,9 +72,7 @@ final class RealtimekitUpdatePresetUiDesignTokens {const RealtimekitUpdatePreset
 factory RealtimekitUpdatePresetUiDesignTokens.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokens(
   borderRadius: json['border_radius'] != null ? RealtimekitUpdatePresetUiDesignTokensBorderRadius.fromJson(json['border_radius'] as String) : null,
   borderWidth: json['border_width'] != null ? RealtimekitUpdatePresetUiDesignTokensBorderWidth.fromJson(json['border_width'] as String) : null,
-  colors: json['colors'] != null
-        ? RealtimekitUpdatePresetUiDesignTokensColors.fromJson(json['colors'] as Map<String, dynamic>)
-        : null,
+  colors: json['colors'] != null ? RealtimekitUpdatePresetUiDesignTokensColors.fromJson(json['colors'] as Map<String, dynamic>) : null,
   logo: json['logo'] as String?,
   spacingBase: json.containsKey('spacing_base') ? (json['spacing_base'] as num).toDouble() : 4.0,
   theme: json['theme'] != null ? RealtimekitUpdatePresetUiDesignTokensTheme.fromJson(json['theme'] as String) : null,

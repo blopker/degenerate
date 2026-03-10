@@ -12,16 +12,12 @@ factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { retur
   consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? HealthchecksConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? HealthchecksDescription.fromJson(json['description'] as String) : null,
-  httpConfig: json['http_config'] != null
-        ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>)
-        : null,
+  httpConfig: json['http_config'] != null ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
   interval: json['interval'] != null ? HealthchecksInterval.fromJson(json['interval'] as num) : null,
   name: HealthchecksName.fromJson(json['name'] as String),
   retries: json['retries'] != null ? HealthchecksRetries.fromJson(json['retries'] as num) : null,
   suspended: json['suspended'] != null ? HealthchecksSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null
-        ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>)
-        : null,
+  tcpConfig: json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
   timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
 ); }

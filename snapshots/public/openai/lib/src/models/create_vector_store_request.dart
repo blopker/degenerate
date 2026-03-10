@@ -10,12 +10,8 @@ factory CreateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return Cr
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
   description: json['description'] as String?,
-  expiresAfter: json['expires_after'] != null
-        ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
-  chunkingStrategy: json['chunking_strategy'] != null
-        ? CreateVectorStoreRequestChunkingStrategy.fromJson(json['chunking_strategy'])
-        : null,
+  expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? CreateVectorStoreRequestChunkingStrategy.fromJson(json['chunking_strategy']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

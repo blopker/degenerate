@@ -33,19 +33,11 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingNetworkTokenNetworkData {const IssuingNetworkTokenNetworkData({this.device, this.mastercard, required this.type, this.visa, this.walletProvider, });
 
 factory IssuingNetworkTokenNetworkData.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenNetworkData(
-  device: json['device'] != null
-        ? IssuingNetworkTokenDevice.fromJson(json['device'] as Map<String, dynamic>)
-        : null,
-  mastercard: json['mastercard'] != null
-        ? IssuingNetworkTokenMastercard.fromJson(json['mastercard'] as Map<String, dynamic>)
-        : null,
+  device: json['device'] != null ? IssuingNetworkTokenDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
+  mastercard: json['mastercard'] != null ? IssuingNetworkTokenMastercard.fromJson(json['mastercard'] as Map<String, dynamic>) : null,
   type: IssuingNetworkTokenNetworkDataType.fromJson(json['type'] as String),
-  visa: json['visa'] != null
-        ? IssuingNetworkTokenVisa.fromJson(json['visa'] as Map<String, dynamic>)
-        : null,
-  walletProvider: json['wallet_provider'] != null
-        ? IssuingNetworkTokenWalletProvider.fromJson(json['wallet_provider'] as Map<String, dynamic>)
-        : null,
+  visa: json['visa'] != null ? IssuingNetworkTokenVisa.fromJson(json['visa'] as Map<String, dynamic>) : null,
+  walletProvider: json['wallet_provider'] != null ? IssuingNetworkTokenWalletProvider.fromJson(json['wallet_provider'] as Map<String, dynamic>) : null,
 ); }
 
 final IssuingNetworkTokenDevice? device;

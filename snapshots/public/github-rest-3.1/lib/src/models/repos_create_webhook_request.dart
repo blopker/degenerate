@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'repos_create_webhook_request
 
 factory ReposCreateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposCreateWebhookRequest(
   name: json['name'] as String?,
-  config: json['config'] != null
-        ? ReposCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? ReposCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   active: json.containsKey('active') ? json['active'] as bool : true,
 ); }

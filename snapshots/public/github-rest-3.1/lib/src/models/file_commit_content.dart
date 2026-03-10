@@ -16,9 +16,7 @@ factory FileCommitContent.fromJson(Map<String, dynamic> json) { return FileCommi
   gitUrl: json['git_url'] as String?,
   downloadUrl: json['download_url'] as String?,
   type: json['type'] as String?,
-  links: json['_links'] != null
-        ? FileCommitContentLinks.fromJson(json['_links'] as Map<String, dynamic>)
-        : null,
+  links: json['_links'] != null ? FileCommitContentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
 ); }
 
 final String? name;

@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InsightsResourcesPaymentEvaluationUserInterventionRaised {const InsightsResourcesPaymentEvaluationUserInterventionRaised({this.custom, required this.key, required this.type, });
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaised.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionRaised(
-  custom: json['custom'] != null
-        ? InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom.fromJson(json['custom'] as Map<String, dynamic>)
-        : null,
+  custom: json['custom'] != null ? InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   type: InsightsResourcesPaymentEvaluationUserInterventionRaisedType.fromJson(json['type'] as String),
 ); }

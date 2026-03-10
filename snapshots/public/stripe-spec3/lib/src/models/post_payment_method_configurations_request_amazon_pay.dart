@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_amazon_pay_display_preference
 final class PostPaymentMethodConfigurationsRequestAmazonPay {const PostPaymentMethodConfigurationsRequestAmazonPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestAmazonPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAmazonPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference? displayPreference;

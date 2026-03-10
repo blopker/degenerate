@@ -9,9 +9,7 @@ final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutoma
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

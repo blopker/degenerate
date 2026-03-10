@@ -10,12 +10,8 @@ factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) { return Ve
   query: VectorStoreSearchRequestQuery.fromJson(json['query']),
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  filters: json['filters'] != null
-        ? VectorStoreSearchRequestFilters.fromJson(json['filters'])
-        : null,
-  rankingOptions: json['ranking_options'] != null
-        ? VectorStoreSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? VectorStoreSearchRequestFilters.fromJson(json['filters']) : null,
+  rankingOptions: json['ranking_options'] != null ? VectorStoreSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// A query string for a search

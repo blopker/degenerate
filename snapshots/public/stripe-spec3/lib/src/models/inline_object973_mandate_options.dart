@@ -58,9 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject973MandateOptions {const InlineObject973MandateOptions({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory InlineObject973MandateOptions.fromJson(Map<String, dynamic> json) { return InlineObject973MandateOptions(
-  customMandateUrl: json['custom_mandate_url'] != null
-        ? InlineObject973MandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url'] as Map<String, dynamic>)
-        : null,
+  customMandateUrl: json['custom_mandate_url'] != null ? InlineObject973MandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url'] as Map<String, dynamic>) : null,
   intervalDescription: json['interval_description'] as String?,
   paymentSchedule: json['payment_schedule'] != null ? InlineObject973MandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
   transactionType: json['transaction_type'] != null ? InlineObject973MandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,

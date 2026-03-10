@@ -9,12 +9,8 @@ final class PaymentMethodCardGeneratedCard {const PaymentMethodCardGeneratedCard
 
 factory PaymentMethodCardGeneratedCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCardGeneratedCard(
   charge: json['charge'] as String?,
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? PaymentMethodCardGeneratedCardPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
-  setupAttempt: json['setup_attempt'] != null
-        ? PaymentMethodCardGeneratedCardSetupAttempt.fromJson(json['setup_attempt'] as Map<String, dynamic>)
-        : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PaymentMethodCardGeneratedCardPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  setupAttempt: json['setup_attempt'] != null ? PaymentMethodCardGeneratedCardSetupAttempt.fromJson(json['setup_attempt'] as Map<String, dynamic>) : null,
 ); }
 
 /// The charge that created this object.

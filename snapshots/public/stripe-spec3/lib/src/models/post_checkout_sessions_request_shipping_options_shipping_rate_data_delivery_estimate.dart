@@ -7,12 +7,8 @@
 import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_delivery_estimate_maximum.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_delivery_estimate_minimum.dart';final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate({this.maximum, this.minimum, });
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate(
-  maximum: json['maximum'] != null
-        ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>)
-        : null,
-  minimum: json['minimum'] != null
-        ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>)
-        : null,
+  maximum: json['maximum'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,
+  minimum: json['minimum'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMaximum? maximum;

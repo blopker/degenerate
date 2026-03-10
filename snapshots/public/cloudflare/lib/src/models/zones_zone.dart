@@ -56,12 +56,8 @@ factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   plan: ZonesZonePlan.fromJson(json['plan'] as Map<String, dynamic>),
   status: json['status'] != null ? ZonesZoneStatus.fromJson(json['status'] as String) : null,
-  tenant: json['tenant'] != null
-        ? ZonesZoneTenant.fromJson(json['tenant'] as Map<String, dynamic>)
-        : null,
-  tenantUnit: json['tenant_unit'] != null
-        ? ZonesZoneTenantUnit.fromJson(json['tenant_unit'] as Map<String, dynamic>)
-        : null,
+  tenant: json['tenant'] != null ? ZonesZoneTenant.fromJson(json['tenant'] as Map<String, dynamic>) : null,
+  tenantUnit: json['tenant_unit'] != null ? ZonesZoneTenantUnit.fromJson(json['tenant_unit'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? ZonesType.fromJson(json['type'] as String) : null,
   vanityNameServers: json.containsKey('vanity_name_servers') ? (json['vanity_name_servers'] as List<dynamic>).map((e) => e as String).toList() : const [],
   verificationKey: json['verification_key'] as String?,

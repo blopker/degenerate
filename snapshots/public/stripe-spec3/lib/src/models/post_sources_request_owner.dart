@@ -8,9 +8,7 @@ import 'post_sources_request_owner_address.dart';/// Information about the owner
 final class PostSourcesRequestOwner {const PostSourcesRequestOwner({this.address, this.email, this.name, this.phone, });
 
 factory PostSourcesRequestOwner.fromJson(Map<String, dynamic> json) { return PostSourcesRequestOwner(
-  address: json['address'] != null
-        ? PostSourcesRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostSourcesRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,

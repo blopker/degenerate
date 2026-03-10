@@ -10,9 +10,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality.fro
   audioConsumer: (json['audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   audioConsumerCumulative: (json['audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   audioProducer: (json['audio_producer'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(e as Map<String, dynamic>)).toList(),
-  audioProducerCumulative: json['audio_producer_cumulative'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(json['audio_producer_cumulative'] as Map<String, dynamic>)
-        : null,
+  audioProducerCumulative: json['audio_producer_cumulative'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(json['audio_producer_cumulative'] as Map<String, dynamic>) : null,
   screenshareAudioConsumer: (json['screenshare_audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   screenshareAudioConsumerCumulative: (json['screenshare_audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   screenshareAudioProducer: (json['screenshare_audio_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

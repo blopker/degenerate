@@ -36,15 +36,9 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalConfigurationConfigurationResourceWifiConfig {const TerminalConfigurationConfigurationResourceWifiConfig({this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, required this.type, });
 
 factory TerminalConfigurationConfigurationResourceWifiConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceWifiConfig(
-  enterpriseEapPeap: json['enterprise_eap_peap'] != null
-        ? TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>)
-        : null,
-  enterpriseEapTls: json['enterprise_eap_tls'] != null
-        ? TerminalConfigurationConfigurationResourceEnterpriseTlsWifi.fromJson(json['enterprise_eap_tls'] as Map<String, dynamic>)
-        : null,
-  personalPsk: json['personal_psk'] != null
-        ? TerminalConfigurationConfigurationResourcePersonalPskWifi.fromJson(json['personal_psk'] as Map<String, dynamic>)
-        : null,
+  enterpriseEapPeap: json['enterprise_eap_peap'] != null ? TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>) : null,
+  enterpriseEapTls: json['enterprise_eap_tls'] != null ? TerminalConfigurationConfigurationResourceEnterpriseTlsWifi.fromJson(json['enterprise_eap_tls'] as Map<String, dynamic>) : null,
+  personalPsk: json['personal_psk'] != null ? TerminalConfigurationConfigurationResourcePersonalPskWifi.fromJson(json['personal_psk'] as Map<String, dynamic>) : null,
   type: TerminalConfigurationConfigurationResourceWifiConfigType.fromJson(json['type'] as String),
 ); }
 

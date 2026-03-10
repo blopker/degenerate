@@ -8,15 +8,9 @@ import 'zero_trust_gateway_account_log_options.dart';/// Configure logging setti
 final class ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType {const ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType({this.dns, this.http, this.l4, });
 
 factory ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType(
-  dns: json['dns'] != null
-        ? ZeroTrustGatewayAccountLogOptions.fromJson(json['dns'] as Map<String, dynamic>)
-        : null,
-  http: json['http'] != null
-        ? ZeroTrustGatewayAccountLogOptions.fromJson(json['http'] as Map<String, dynamic>)
-        : null,
-  l4: json['l4'] != null
-        ? ZeroTrustGatewayAccountLogOptions.fromJson(json['l4'] as Map<String, dynamic>)
-        : null,
+  dns: json['dns'] != null ? ZeroTrustGatewayAccountLogOptions.fromJson(json['dns'] as Map<String, dynamic>) : null,
+  http: json['http'] != null ? ZeroTrustGatewayAccountLogOptions.fromJson(json['http'] as Map<String, dynamic>) : null,
+  l4: json['l4'] != null ? ZeroTrustGatewayAccountLogOptions.fromJson(json['l4'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configure logging settings for DNS firewall.

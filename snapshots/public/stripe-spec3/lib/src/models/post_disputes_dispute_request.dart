@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'post_disputes_dispute_request_evidence.dart';import 'post_disputes_dispute_request_metadata.dart';final class PostDisputesDisputeRequest {const PostDisputesDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
 
 factory PostDisputesDisputeRequest.fromJson(Map<String, dynamic> json) { return PostDisputesDisputeRequest(
-  evidence: json['evidence'] != null
-        ? PostDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>)
-        : null,
+  evidence: json['evidence'] != null ? PostDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostDisputesDisputeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostDisputesDisputeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   submit: json['submit'] as bool?,
 ); }
 

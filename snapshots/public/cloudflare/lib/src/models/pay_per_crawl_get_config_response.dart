@@ -9,12 +9,8 @@ import 'package:collection/collection.dart';import 'pay_per_crawl_daric_config.d
 factory PayPerCrawlGetConfigResponse.fromJson(Map<String, dynamic> json) { return PayPerCrawlGetConfigResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null
-        ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
-  resultInfo: json['result_info'] != null
-        ? PayPerCrawlResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? PayPerCrawlResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

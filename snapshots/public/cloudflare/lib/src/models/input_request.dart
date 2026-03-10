@@ -63,9 +63,7 @@ factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
   checkPrivateKey: json['check_private_key'] as bool,
   cn: json['cn'] as String?,
   extendedKeyUsage: (json['extended_key_usage'] as List<dynamic>?)?.map((e) => TeamsDevicesExtendedKeyUsageEnum.fromJson(e as String)).toList(),
-  locations: json['locations'] != null
-        ? InputRequestLocations.fromJson(json['locations'] as Map<String, dynamic>)
-        : null,
+  locations: json['locations'] != null ? InputRequestLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   operatingSystem: InputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   subjectAlternativeNames: (json['subject_alternative_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

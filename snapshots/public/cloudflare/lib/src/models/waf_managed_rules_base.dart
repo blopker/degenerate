@@ -29,9 +29,7 @@ final class WafManagedRulesBase {const WafManagedRulesBase({this.description, th
 
 factory WafManagedRulesBase.fromJson(Map<String, dynamic> json) { return WafManagedRulesBase(
   description: json['description'] != null ? WafManagedRulesSchemasDescription.fromJson(json['description'] as String) : null,
-  group: json['group'] != null
-        ? WafManagedRulesBaseGroup.fromJson(json['group'] as Map<String, dynamic>)
-        : null,
+  group: json['group'] != null ? WafManagedRulesBaseGroup.fromJson(json['group'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   packageId: json['package_id'] != null ? WafManagedRulesIdentifier.fromJson(json['package_id'] as String) : null,
   priority: json['priority'] != null ? WafManagedRulesPriority.fromJson(json['priority'] as String) : null,

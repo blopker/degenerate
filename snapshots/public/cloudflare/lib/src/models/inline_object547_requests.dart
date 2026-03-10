@@ -13,9 +13,7 @@ factory InlineObject547Requests.fromJson(Map<String, dynamic> json) { return Inl
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null
-        ? InlineObject547RequestsResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? InlineObject547RequestsResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,

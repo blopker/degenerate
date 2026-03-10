@@ -34,23 +34,13 @@ final class PostPaymentRecordsIdReportPaymentAttemptRequest {const PostPaymentRe
 factory PostPaymentRecordsIdReportPaymentAttemptRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequest(
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  failed: json['failed'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestFailed.fromJson(json['failed'] as Map<String, dynamic>)
-        : null,
-  guaranteed: json['guaranteed'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>)
-        : null,
+  failed: json['failed'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestFailed.fromJson(json['failed'] as Map<String, dynamic>) : null,
+  guaranteed: json['guaranteed'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
   initiatedAt: (json['initiated_at'] as num).toInt(),
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   outcome: json['outcome'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(json['outcome'] as String) : null,
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.

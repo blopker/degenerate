@@ -8,9 +8,7 @@ import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_se
 
 factory NscCni.fromJson(Map<String, dynamic> json) { return NscCni(
   account: NscAccountTag.fromJson(json['account'] as String),
-  bgp: json['bgp'] != null
-        ? NscBgpControl.fromJson(json['bgp'] as Map<String, dynamic>)
-        : null,
+  bgp: json['bgp'] != null ? NscBgpControl.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   custIp: json['cust_ip'] as String,
   id: json['id'] as String,
   interconnect: json['interconnect'] as String,

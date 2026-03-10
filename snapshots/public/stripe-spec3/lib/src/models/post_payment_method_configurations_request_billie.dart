@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_billie_display_preference.dar
 final class PostPaymentMethodConfigurationsRequestBillie {const PostPaymentMethodConfigurationsRequestBillie({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestBillie.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBillie(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestBillieDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBillieDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestBillieDisplayPreference? displayPreference;

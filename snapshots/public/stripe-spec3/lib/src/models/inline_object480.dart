@@ -9,9 +9,7 @@ import 'inline_object480_address.dart';import 'inline_object480_phone.dart';fina
 factory InlineObject480.fromJson(Map<String, dynamic> json) { return InlineObject480(
   address: InlineObject480Address.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null
-        ? InlineObject480Phone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  phone: json['phone'] != null ? InlineObject480Phone.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject480Address address;

@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_products_request_defaul
 
 factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
   active: json['active'] as bool?,
-  defaultPriceData: json['default_price_data'] != null
-        ? PostProductsRequestDefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>)
-        : null,
+  defaultPriceData: json['default_price_data'] != null ? PostProductsRequestDefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
@@ -18,9 +16,7 @@ factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostPro
   marketingFeatures: (json['marketing_features'] as List<dynamic>?)?.map((e) => PostProductsRequestMarketingFeatures.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
-  packageDimensions: json['package_dimensions'] != null
-        ? PostProductsRequestPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>)
-        : null,
+  packageDimensions: json['package_dimensions'] != null ? PostProductsRequestPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
   taxCode: json['tax_code'] as String?,

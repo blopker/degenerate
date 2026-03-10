@@ -8,14 +8,10 @@ import 'legal_entity_company_verification_document_back.dart';import 'legal_enti
 final class LegalEntityCompanyVerificationDocument {const LegalEntityCompanyVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
 
 factory LegalEntityCompanyVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyVerificationDocument(
-  back: json['back'] != null
-        ? LegalEntityCompanyVerificationDocumentBack.fromJson(json['back'] as Map<String, dynamic>)
-        : null,
+  back: json['back'] != null ? LegalEntityCompanyVerificationDocumentBack.fromJson(json['back'] as Map<String, dynamic>) : null,
   details: json['details'] as String?,
   detailsCode: json['details_code'] as String?,
-  front: json['front'] != null
-        ? LegalEntityCompanyVerificationDocumentFront.fromJson(json['front'] as Map<String, dynamic>)
-        : null,
+  front: json['front'] != null ? LegalEntityCompanyVerificationDocumentFront.fromJson(json['front'] as Map<String, dynamic>) : null,
 ); }
 
 /// The back of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `additional_verification`. Note that `additional_verification` files are [not downloadable](/file-upload#uploading-a-file).

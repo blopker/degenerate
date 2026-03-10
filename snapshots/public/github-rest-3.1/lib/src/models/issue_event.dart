@@ -16,44 +16,20 @@ factory IssueEvent.fromJson(Map<String, dynamic> json) { return IssueEvent(
   commitId: json['commit_id'] as String,
   commitUrl: json['commit_url'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
-  issue: json['issue'] != null
-        ? Issue.fromJson(json['issue'] as Map<String, dynamic>)
-        : null,
-  label: json['label'] != null
-        ? IssueEventLabel.fromJson(json['label'] as Map<String, dynamic>)
-        : null,
-  assignee: json['assignee'] != null
-        ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
-  assigner: json['assigner'] != null
-        ? SimpleUser.fromJson(json['assigner'] as Map<String, dynamic>)
-        : null,
-  reviewRequester: json['review_requester'] != null
-        ? SimpleUser.fromJson(json['review_requester'] as Map<String, dynamic>)
-        : null,
-  requestedReviewer: json['requested_reviewer'] != null
-        ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>)
-        : null,
-  requestedTeam: json['requested_team'] != null
-        ? Team.fromJson(json['requested_team'] as Map<String, dynamic>)
-        : null,
-  dismissedReview: json['dismissed_review'] != null
-        ? IssueEventDismissedReview.fromJson(json['dismissed_review'] as Map<String, dynamic>)
-        : null,
-  milestone: json['milestone'] != null
-        ? IssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>)
-        : null,
-  projectCard: json['project_card'] != null
-        ? IssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>)
-        : null,
-  rename: json['rename'] != null
-        ? IssueEventRename.fromJson(json['rename'] as Map<String, dynamic>)
-        : null,
+  issue: json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null,
+  label: json['label'] != null ? IssueEventLabel.fromJson(json['label'] as Map<String, dynamic>) : null,
+  assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assigner: json['assigner'] != null ? SimpleUser.fromJson(json['assigner'] as Map<String, dynamic>) : null,
+  reviewRequester: json['review_requester'] != null ? SimpleUser.fromJson(json['review_requester'] as Map<String, dynamic>) : null,
+  requestedReviewer: json['requested_reviewer'] != null ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null,
+  requestedTeam: json['requested_team'] != null ? Team.fromJson(json['requested_team'] as Map<String, dynamic>) : null,
+  dismissedReview: json['dismissed_review'] != null ? IssueEventDismissedReview.fromJson(json['dismissed_review'] as Map<String, dynamic>) : null,
+  milestone: json['milestone'] != null ? IssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
+  projectCard: json['project_card'] != null ? IssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
+  rename: json['rename'] != null ? IssueEventRename.fromJson(json['rename'] as Map<String, dynamic>) : null,
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
   lockReason: json['lock_reason'] as String?,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

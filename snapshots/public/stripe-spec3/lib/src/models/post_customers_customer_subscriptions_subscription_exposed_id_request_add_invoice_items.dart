@@ -9,17 +9,11 @@ import 'package:collection/collection.dart';import 'post_customers_customer_subs
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  period: json['period'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>)
-        : null,
+  period: json['period'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsDiscounts>? discounts;

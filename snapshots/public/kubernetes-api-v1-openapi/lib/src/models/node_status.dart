@@ -12,20 +12,12 @@ factory NodeStatus.fromJson(Map<String, dynamic> json) { return NodeStatus(
   allocatable: (json['allocatable'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
   capacity: (json['capacity'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => NodeCondition.fromJson(e as Map<String, dynamic>)).toList(),
-  config: json['config'] != null
-        ? NodeConfigStatus.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
-  daemonEndpoints: json['daemonEndpoints'] != null
-        ? NodeDaemonEndpoints.fromJson(json['daemonEndpoints'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? NodeConfigStatus.fromJson(json['config'] as Map<String, dynamic>) : null,
+  daemonEndpoints: json['daemonEndpoints'] != null ? NodeDaemonEndpoints.fromJson(json['daemonEndpoints'] as Map<String, dynamic>) : null,
   declaredFeatures: (json['declaredFeatures'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  features: json['features'] != null
-        ? NodeFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? NodeFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   images: (json['images'] as List<dynamic>?)?.map((e) => ContainerImage.fromJson(e as Map<String, dynamic>)).toList(),
-  nodeInfo: json['nodeInfo'] != null
-        ? NodeSystemInfo.fromJson(json['nodeInfo'] as Map<String, dynamic>)
-        : null,
+  nodeInfo: json['nodeInfo'] != null ? NodeSystemInfo.fromJson(json['nodeInfo'] as Map<String, dynamic>) : null,
   phase: json['phase'] as String?,
   runtimeHandlers: (json['runtimeHandlers'] as List<dynamic>?)?.map((e) => NodeRuntimeHandler.fromJson(e as Map<String, dynamic>)).toList(),
   volumesAttached: (json['volumesAttached'] as List<dynamic>?)?.map((e) => AttachedVolume.fromJson(e as Map<String, dynamic>)).toList(),

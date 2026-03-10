@@ -7,9 +7,7 @@
 import 'create_poll_response_data.dart';final class CreatePollResponse {const CreatePollResponse({this.data, this.success, });
 
 factory CreatePollResponse.fromJson(Map<String, dynamic> json) { return CreatePollResponse(
-  data: json['data'] != null
-        ? CreatePollResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? CreatePollResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

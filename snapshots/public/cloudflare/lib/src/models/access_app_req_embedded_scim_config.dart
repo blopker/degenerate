@@ -7,9 +7,7 @@
 import 'access_scim_config.dart';final class AccessAppReqEmbeddedScimConfig {const AccessAppReqEmbeddedScimConfig({this.scimConfig});
 
 factory AccessAppReqEmbeddedScimConfig.fromJson(Map<String, dynamic> json) { return AccessAppReqEmbeddedScimConfig(
-  scimConfig: json['scim_config'] != null
-        ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>)
-        : null,
+  scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
 ); }
 
 final AccessScimConfig? scimConfig;

@@ -13,9 +13,7 @@ factory Item.fromJson(Map<String, dynamic> json) { return Item(
   projectNodeId: json['project_node_id'] as String?,
   contentNodeId: json['content_node_id'] as String,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
-  creator: json['creator'] != null
-        ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-        : null,
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: DateTime.parse(json['archived_at'] as String),

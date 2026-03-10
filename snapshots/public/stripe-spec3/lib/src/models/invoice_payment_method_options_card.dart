@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure, });
 
 factory InvoicePaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCard(
-  installments: json['installments'] != null
-        ? InvoiceInstallmentsCard.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? InvoiceInstallmentsCard.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? InvoicePaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }
 

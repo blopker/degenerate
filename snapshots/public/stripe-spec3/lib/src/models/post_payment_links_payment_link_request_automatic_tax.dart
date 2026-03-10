@@ -9,9 +9,7 @@ final class PostPaymentLinksPaymentLinkRequestAutomaticTax {const PostPaymentLin
 
 factory PostPaymentLinksPaymentLinkRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostPaymentLinksPaymentLinkRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostPaymentLinksPaymentLinkRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

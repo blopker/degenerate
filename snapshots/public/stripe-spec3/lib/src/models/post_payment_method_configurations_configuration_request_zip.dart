@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_zip_display_pre
 final class PostPaymentMethodConfigurationsConfigurationRequestZip {const PostPaymentMethodConfigurationsConfigurationRequestZip({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestZip(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference? displayPreference;

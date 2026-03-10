@@ -8,9 +8,7 @@ import 'inline_object477_shipping_rate_data.dart';final class InlineObject477 {c
 
 factory InlineObject477.fromJson(Map<String, dynamic> json) { return InlineObject477(
   shippingRate: json['shipping_rate'] as String?,
-  shippingRateData: json['shipping_rate_data'] != null
-        ? InlineObject477ShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>)
-        : null,
+  shippingRateData: json['shipping_rate_data'] != null ? InlineObject477ShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>) : null,
 ); }
 
 final String? shippingRate;

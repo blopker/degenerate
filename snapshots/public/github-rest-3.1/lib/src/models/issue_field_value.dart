@@ -43,9 +43,7 @@ factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldV
   nodeId: json['node_id'] as String,
   dataType: IssueFieldValueDataType.fromJson(json['data_type'] as String),
   value: IssueFieldValueValue.fromJson(json['value'] as Map<String, dynamic>),
-  singleSelectOption: json['single_select_option'] != null
-        ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>)
-        : null,
+  singleSelectOption: json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier for the issue field.

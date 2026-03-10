@@ -65,9 +65,7 @@ final class BillingUpdateBudgetOrgRequest {const BillingUpdateBudgetOrgRequest({
 factory BillingUpdateBudgetOrgRequest.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgRequest(
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toInt() : null,
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
-  budgetAlerting: json['budget_alerting'] != null
-        ? BillingUpdateBudgetOrgRequestBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>)
-        : null,
+  budgetAlerting: json['budget_alerting'] != null ? BillingUpdateBudgetOrgRequestBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null,
   budgetScope: json['budget_scope'] != null ? BillingUpdateBudgetOrgRequestBudgetScope.fromJson(json['budget_scope'] as String) : null,
   budgetEntityName: json['budget_entity_name'] as String?,
   budgetType: json['budget_type'] != null ? BillingUpdateBudgetOrgRequestBudgetType.fromJson(json['budget_type'] as String) : null,

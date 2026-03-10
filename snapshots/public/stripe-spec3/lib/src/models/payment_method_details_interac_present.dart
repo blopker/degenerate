@@ -60,9 +60,7 @@ factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) {
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodDetailsInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
   reader: json['reader'] as String?,
-  receipt: json['receipt'] != null
-        ? PaymentMethodDetailsInteracPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>)
-        : null,
+  receipt: json['receipt'] != null ? PaymentMethodDetailsInteracPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `interac`, `mastercard` or `visa`.

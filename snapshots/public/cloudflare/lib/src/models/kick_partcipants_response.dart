@@ -7,9 +7,7 @@
 import 'kick_partcipants_response_data.dart';final class KickPartcipantsResponse {const KickPartcipantsResponse({this.data, this.success, });
 
 factory KickPartcipantsResponse.fromJson(Map<String, dynamic> json) { return KickPartcipantsResponse(
-  data: json['data'] != null
-        ? KickPartcipantsResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? KickPartcipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

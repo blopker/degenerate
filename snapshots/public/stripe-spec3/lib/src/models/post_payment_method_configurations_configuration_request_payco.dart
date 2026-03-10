@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_payco_display_p
 final class PostPaymentMethodConfigurationsConfigurationRequestPayco {const PostPaymentMethodConfigurationsConfigurationRequestPayco({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestPayco.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPayco(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestPaycoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaycoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestPaycoDisplayPreference? displayPreference;

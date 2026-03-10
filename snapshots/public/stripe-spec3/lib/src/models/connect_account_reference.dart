@@ -33,9 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 final class ConnectAccountReference {const ConnectAccountReference({this.account, required this.type, });
 
 factory ConnectAccountReference.fromJson(Map<String, dynamic> json) { return ConnectAccountReference(
-  account: json['account'] != null
-        ? ConnectAccountReferenceAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? ConnectAccountReferenceAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   type: ConnectAccountReferenceType.fromJson(json['type'] as String),
 ); }
 

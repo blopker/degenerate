@@ -121,9 +121,7 @@ factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   last4: json['last4'] as String?,
   livemode: json['livemode'] as bool,
   network: IssuingTokenNetwork.fromJson(json['network'] as String),
-  networkData: json['network_data'] != null
-        ? IssuingNetworkTokenNetworkData.fromJson(json['network_data'] as Map<String, dynamic>)
-        : null,
+  networkData: json['network_data'] != null ? IssuingNetworkTokenNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
   networkUpdatedAt: (json['network_updated_at'] as num).toInt(),
   object: IssuingTokenObject.fromJson(json['object'] as String),
   status: IssuingTokenStatus.fromJson(json['status'] as String),

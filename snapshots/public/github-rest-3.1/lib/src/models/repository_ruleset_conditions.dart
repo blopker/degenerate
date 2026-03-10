@@ -8,9 +8,7 @@ import 'repository_ruleset_conditions_ref_name.dart';/// Parameters for a reposi
 final class RepositoryRulesetConditions {const RepositoryRulesetConditions({this.refName});
 
 factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditions(
-  refName: json['ref_name'] != null
-        ? RepositoryRulesetConditionsRefName.fromJson(json['ref_name'] as Map<String, dynamic>)
-        : null,
+  refName: json['ref_name'] != null ? RepositoryRulesetConditionsRefName.fromJson(json['ref_name'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRulesetConditionsRefName? refName;

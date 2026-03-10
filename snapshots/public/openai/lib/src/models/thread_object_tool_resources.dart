@@ -9,12 +9,8 @@ import 'thread_object_tool_resources_code_interpreter.dart';import 'thread_objec
 final class ThreadObjectToolResources {const ThreadObjectToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory ThreadObjectToolResources.fromJson(Map<String, dynamic> json) { return ThreadObjectToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? ThreadObjectToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? ThreadObjectToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? ThreadObjectToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? ThreadObjectToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 final ThreadObjectToolResourcesCodeInterpreter? codeInterpreter;

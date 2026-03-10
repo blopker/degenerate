@@ -20,23 +20,15 @@ factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
   compare: json['compare'] as String,
   created: json['created'] as bool,
   deleted: json['deleted'] as bool,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   forced: json['forced'] as bool,
   headCommit: WebhookPushHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusher: WebhookPushPusher.fromJson(json['pusher'] as Map<String, dynamic>),
   ref: json['ref'] as String,
   repository: WebhookPushRepository.fromJson(json['repository'] as Map<String, dynamic>),
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 /// The SHA of the most recent commit on `ref` after the push.

@@ -9,9 +9,7 @@ final class TerminalReaderReaderResourceProcessPaymentIntentAction {const Termin
 
 factory TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessPaymentIntentAction(
   paymentIntent: TerminalReaderReaderResourceProcessPaymentIntentActionPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>),
-  processConfig: json['process_config'] != null
-        ? TerminalReaderReaderResourceProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>)
-        : null,
+  processConfig: json['process_config'] != null ? TerminalReaderReaderResourceProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
 ); }
 
 /// Most recent PaymentIntent processed by the reader.

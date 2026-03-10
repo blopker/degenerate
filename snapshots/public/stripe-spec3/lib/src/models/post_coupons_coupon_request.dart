@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'inline_object185.dart';impor
 factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequest(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject185.fromJson(v as Map<String, dynamic>))),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostCouponsCouponRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCouponsCouponRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
 ); }
 

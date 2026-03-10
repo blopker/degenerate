@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject293 {const InlineObject293({this.mandateOptions, this.verificationMethod, });
 
 factory InlineObject293.fromJson(Map<String, dynamic> json) { return InlineObject293(
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject293MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject293MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? InlineObject293VerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

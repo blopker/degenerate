@@ -8,18 +8,10 @@ import 'payment_pages_checkout_session_custom_text_after_submit.dart';import 'pa
 final class PaymentPagesCheckoutSessionCustomText {const PaymentPagesCheckoutSessionCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentPagesCheckoutSessionCustomText.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomText(
-  afterSubmit: json['after_submit'] != null
-        ? PaymentPagesCheckoutSessionCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>)
-        : null,
-  shippingAddress: json['shipping_address'] != null
-        ? PaymentPagesCheckoutSessionCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
-  submit: json['submit'] != null
-        ? PaymentPagesCheckoutSessionCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>)
-        : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null
-        ? PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>)
-        : null,
+  afterSubmit: json['after_submit'] != null ? PaymentPagesCheckoutSessionCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PaymentPagesCheckoutSessionCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PaymentPagesCheckoutSessionCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// Custom text that should be displayed after the payment confirmation button.

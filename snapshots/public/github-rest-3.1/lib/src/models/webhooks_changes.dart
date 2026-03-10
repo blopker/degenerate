@@ -8,9 +8,7 @@ import 'webhooks_changes_body.dart';/// The changes to the comment.
 final class WebhooksChanges {const WebhooksChanges({this.body});
 
 factory WebhooksChanges.fromJson(Map<String, dynamic> json) { return WebhooksChanges(
-  body: json['body'] != null
-        ? WebhooksChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhooksChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhooksChangesBody? body;

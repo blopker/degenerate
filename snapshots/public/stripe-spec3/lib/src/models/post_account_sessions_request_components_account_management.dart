@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_account_management_features.dar
 
 factory PostAccountSessionsRequestComponentsAccountManagement.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountManagement(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsAccountManagementFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsAccountManagementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

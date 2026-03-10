@@ -45,29 +45,15 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({this.customText, this.email, this.numeric, this.phone, this.$required, this.selection, this.signature, this.skipped, this.text, this.toggles, required this.type, });
 
 factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceInput(
-  customText: json['custom_text'] != null
-        ? TerminalReaderReaderResourceInputCustomText.fromJson(json['custom_text'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? TerminalReaderReaderResourceEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  numeric: json['numeric'] != null
-        ? TerminalReaderReaderResourceNumeric.fromJson(json['numeric'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? TerminalReaderReaderResourcePhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  customText: json['custom_text'] != null ? TerminalReaderReaderResourceInputCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? TerminalReaderReaderResourceEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  numeric: json['numeric'] != null ? TerminalReaderReaderResourceNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? TerminalReaderReaderResourcePhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
   $required: json['required'] as bool?,
-  selection: json['selection'] != null
-        ? TerminalReaderReaderResourceSelection.fromJson(json['selection'] as Map<String, dynamic>)
-        : null,
-  signature: json['signature'] != null
-        ? TerminalReaderReaderResourceSignature.fromJson(json['signature'] as Map<String, dynamic>)
-        : null,
+  selection: json['selection'] != null ? TerminalReaderReaderResourceSelection.fromJson(json['selection'] as Map<String, dynamic>) : null,
+  signature: json['signature'] != null ? TerminalReaderReaderResourceSignature.fromJson(json['signature'] as Map<String, dynamic>) : null,
   skipped: json['skipped'] as bool?,
-  text: json['text'] != null
-        ? TerminalReaderReaderResourceText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? TerminalReaderReaderResourceText.fromJson(json['text'] as Map<String, dynamic>) : null,
   toggles: (json['toggles'] as List<dynamic>?)?.map((e) => TerminalReaderReaderResourceToggle.fromJson(e as Map<String, dynamic>)).toList(),
   type: TerminalReaderReaderResourceInputType.fromJson(json['type'] as String),
 ); }

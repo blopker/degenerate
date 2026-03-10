@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_bacs_debit_display_preference
 final class PostPaymentMethodConfigurationsRequestBacsDebit {const PostPaymentMethodConfigurationsRequestBacsDebit({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestBacsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBacsDebit(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference? displayPreference;

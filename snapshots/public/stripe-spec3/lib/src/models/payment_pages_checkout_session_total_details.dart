@@ -11,9 +11,7 @@ factory PaymentPagesCheckoutSessionTotalDetails.fromJson(Map<String, dynamic> js
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountShipping: json['amount_shipping'] != null ? (json['amount_shipping'] as num).toInt() : null,
   amountTax: (json['amount_tax'] as num).toInt(),
-  breakdown: json['breakdown'] != null
-        ? PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown.fromJson(json['breakdown'] as Map<String, dynamic>)
-        : null,
+  breakdown: json['breakdown'] != null ? PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown.fromJson(json['breakdown'] as Map<String, dynamic>) : null,
 ); }
 
 /// This is the sum of all the discounts.

@@ -30,15 +30,9 @@ final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited
 factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEdited(
   action: WebhookPullRequestReviewEditedAction.fromJson(json['action'] as String),
   changes: WebhookPullRequestReviewEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pullRequest: WebhookPullRequestReviewEditedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   review: WebhooksReview.fromJson(json['review'] as Map<String, dynamic>),

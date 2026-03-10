@@ -41,9 +41,7 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
   physport: json['physport'] != null ? MagicPort.fromJson(json['physport'] as num) : null,
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
   siteId: json['site_id'] != null ? MagicIdentifier.fromJson(json['site_id'] as String) : null,
-  staticAddressing: json['static_addressing'] != null
-        ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>)
-        : null,
+  staticAddressing: json['static_addressing'] != null ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
   vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
 ); }
 

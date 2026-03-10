@@ -7,23 +7,15 @@
 import 'aaa_audit_logs_action.dart';import 'aaa_audit_logs_actor.dart';import 'aaa_audit_logs_owner.dart';import 'aaa_audit_logs_resource.dart';final class AaaAuditLogs {const AaaAuditLogs({this.action, this.actor, this.id, this.$interface, this.metadata, this.newValue, this.oldValue, this.owner, this.resource, this.when, });
 
 factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
-  action: json['action'] != null
-        ? AaaAuditLogsAction.fromJson(json['action'] as Map<String, dynamic>)
-        : null,
-  actor: json['actor'] != null
-        ? AaaAuditLogsActor.fromJson(json['actor'] as Map<String, dynamic>)
-        : null,
+  action: json['action'] != null ? AaaAuditLogsAction.fromJson(json['action'] as Map<String, dynamic>) : null,
+  actor: json['actor'] != null ? AaaAuditLogsActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
   $interface: json['interface'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   newValue: json['newValue'] as String?,
   oldValue: json['oldValue'] as String?,
-  owner: json['owner'] != null
-        ? AaaAuditLogsOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
-  resource: json['resource'] != null
-        ? AaaAuditLogsResource.fromJson(json['resource'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? AaaAuditLogsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  resource: json['resource'] != null ? AaaAuditLogsResource.fromJson(json['resource'] as Map<String, dynamic>) : null,
   when: json['when'] != null ? DateTime.parse(json['when'] as String) : null,
 ); }
 

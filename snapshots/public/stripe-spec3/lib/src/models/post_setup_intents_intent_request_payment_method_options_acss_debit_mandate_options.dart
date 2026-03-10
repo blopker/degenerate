@@ -82,9 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions(
-  customMandateUrl: json['custom_mandate_url'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url'] as Map<String, dynamic>)
-        : null,
+  customMandateUrl: json['custom_mandate_url'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url'] as Map<String, dynamic>) : null,
   defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor.fromJson(e as String)).toList(),
   intervalDescription: json['interval_description'] as String?,
   paymentSchedule: json['payment_schedule'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,

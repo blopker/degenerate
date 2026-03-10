@@ -53,24 +53,16 @@ factory WebhookIssueCommentUnpinnedIssue.fromJson(Map<String, dynamic> json) { r
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   performedViaGithubApp: (json['performed_via_github_app'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  pullRequest: json['pull_request'] != null
-        ? WebhookIssueCommentUnpinnedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
+  pullRequest: json['pull_request'] != null ? WebhookIssueCommentUnpinnedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   reactions: WebhookIssueCommentUnpinnedIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   repositoryUrl: json['repository_url'] as String,
-  subIssuesSummary: json['sub_issues_summary'] != null
-        ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>)
-        : null,
-  issueDependenciesSummary: json['issue_dependencies_summary'] != null
-        ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>)
-        : null,
+  subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
+  issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   state: WebhookIssueCommentUnpinnedIssueState.fromJson(json['state'] as String),
   stateReason: json['state_reason'] as String?,
   timelineUrl: json['timeline_url'] as String?,
   title: json['title'] as String,
-  type: json['type'] != null
-        ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
+  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
   user: WebhookIssueCommentUnpinnedIssueUser.fromJson(json['user'] as Map<String, dynamic>),

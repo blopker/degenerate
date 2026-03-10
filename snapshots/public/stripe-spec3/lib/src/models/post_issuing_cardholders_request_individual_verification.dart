@@ -7,9 +7,7 @@
 import 'post_issuing_cardholders_request_individual_verification_document.dart';final class PostIssuingCardholdersRequestIndividualVerification {const PostIssuingCardholdersRequestIndividualVerification({this.document});
 
 factory PostIssuingCardholdersRequestIndividualVerification.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestIndividualVerification(
-  document: json['document'] != null
-        ? PostIssuingCardholdersRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? PostIssuingCardholdersRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIssuingCardholdersRequestIndividualVerificationDocument? document;

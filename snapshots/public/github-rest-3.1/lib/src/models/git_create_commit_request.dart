@@ -10,12 +10,8 @@ factory GitCreateCommitRequest.fromJson(Map<String, dynamic> json) { return GitC
   message: json['message'] as String,
   tree: json['tree'] as String,
   parents: (json['parents'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  author: json['author'] != null
-        ? GitCreateCommitRequestAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
-  committer: json['committer'] != null
-        ? GitCreateCommitRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>)
-        : null,
+  author: json['author'] != null ? GitCreateCommitRequestAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? GitCreateCommitRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
   signature: json['signature'] as String?,
 ); }
 

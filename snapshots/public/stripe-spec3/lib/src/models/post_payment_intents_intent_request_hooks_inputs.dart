@@ -7,9 +7,7 @@
 import 'post_payment_intents_intent_request_hooks_inputs_tax.dart';final class PostPaymentIntentsIntentRequestHooksInputs {const PostPaymentIntentsIntentRequestHooksInputs({this.tax});
 
 factory PostPaymentIntentsIntentRequestHooksInputs.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestHooksInputs(
-  tax: json['tax'] != null
-        ? PostPaymentIntentsIntentRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? PostPaymentIntentsIntentRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentRequestHooksInputsTax? tax;

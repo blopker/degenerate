@@ -8,29 +8,19 @@ import 'package:collection/collection.dart';import 'workers_assets.dart';import 
 final class WorkersMultipartScriptMetadata {const WorkersMultipartScriptMetadata({this.assets, this.bindings, this.bodyPart, this.compatibilityDate, this.compatibilityFlags, this.keepAssets, this.keepBindings, this.limits, this.logpush, this.mainModule, this.migrations, this.observability, this.placement, this.tags, this.tailConsumers, this.usageModel, });
 
 factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) { return WorkersMultipartScriptMetadata(
-  assets: json['assets'] != null
-        ? WorkersAssets.fromJson(json['assets'] as Map<String, dynamic>)
-        : null,
+  assets: json['assets'] != null ? WorkersAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   bodyPart: json['body_part'] as String?,
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   keepAssets: json['keep_assets'] as bool?,
   keepBindings: (json['keep_bindings'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  limits: json['limits'] != null
-        ? WorkersLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? WorkersLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   logpush: json['logpush'] != null ? WorkersLogpush.fromJson(json['logpush'] as bool) : null,
   mainModule: json['main_module'] as String?,
-  migrations: json['migrations'] != null
-        ? WorkersMultipartScriptMetadataMigrations.fromJson(json['migrations'])
-        : null,
-  observability: json['observability'] != null
-        ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>)
-        : null,
-  placement: json['placement'] != null
-        ? WorkersPlacementInfo.fromJson(json['placement'] as Map<String, dynamic>)
-        : null,
+  migrations: json['migrations'] != null ? WorkersMultipartScriptMetadataMigrations.fromJson(json['migrations']) : null,
+  observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
+  placement: json['placement'] != null ? WorkersPlacementInfo.fromJson(json['placement'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,

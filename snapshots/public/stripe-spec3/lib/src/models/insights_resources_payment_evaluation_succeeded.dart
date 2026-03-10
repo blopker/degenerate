@@ -8,9 +8,7 @@ import 'insights_resources_payment_evaluation_succeeded_card.dart';/// Details o
 final class InsightsResourcesPaymentEvaluationSucceeded {const InsightsResourcesPaymentEvaluationSucceeded({this.card});
 
 factory InsightsResourcesPaymentEvaluationSucceeded.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationSucceeded(
-  card: json['card'] != null
-        ? InsightsResourcesPaymentEvaluationSucceededCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? InsightsResourcesPaymentEvaluationSucceededCard.fromJson(json['card'] as Map<String, dynamic>) : null,
 ); }
 
 final InsightsResourcesPaymentEvaluationSucceededCard? card;

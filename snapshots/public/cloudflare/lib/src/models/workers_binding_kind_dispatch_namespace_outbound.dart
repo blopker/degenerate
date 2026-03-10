@@ -9,9 +9,7 @@ final class WorkersBindingKindDispatchNamespaceOutbound {const WorkersBindingKin
 
 factory WorkersBindingKindDispatchNamespaceOutbound.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespaceOutbound(
   params: (json['params'] as List<dynamic>?)?.map((e) => WorkersBindingKindDispatchNamespaceOutboundParams.fromJson(e as Map<String, dynamic>)).toList(),
-  worker: json['worker'] != null
-        ? WorkersBindingKindDispatchNamespaceOutboundWorker.fromJson(json['worker'] as Map<String, dynamic>)
-        : null,
+  worker: json['worker'] != null ? WorkersBindingKindDispatchNamespaceOutboundWorker.fromJson(json['worker'] as Map<String, dynamic>) : null,
 ); }
 
 /// Pass information from the Dispatch Worker to the Outbound Worker through the parameters.

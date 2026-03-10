@@ -43,13 +43,9 @@ factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic>
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostCustomersCustomerBankAccountsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCustomersCustomerBankAccountsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  owner: json['owner'] != null
-        ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
 ); }
 
 /// The name of the person or business that owns the bank account.

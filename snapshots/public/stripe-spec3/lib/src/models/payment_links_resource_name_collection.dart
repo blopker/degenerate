@@ -8,12 +8,8 @@ import 'payment_links_resource_business_name.dart';import 'payment_links_resourc
 final class PaymentLinksResourceNameCollection {const PaymentLinksResourceNameCollection({this.business, this.individual, });
 
 factory PaymentLinksResourceNameCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceNameCollection(
-  business: json['business'] != null
-        ? PaymentLinksResourceBusinessName.fromJson(json['business'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PaymentLinksResourceIndividualName.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  business: json['business'] != null ? PaymentLinksResourceBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PaymentLinksResourceIndividualName.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentLinksResourceBusinessName? business;

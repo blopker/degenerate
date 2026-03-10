@@ -8,15 +8,11 @@ import 'source_owner_address.dart';import 'source_owner_verified_address.dart';/
 final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });
 
 factory SourceOwner.fromJson(Map<String, dynamic> json) { return SourceOwner(
-  address: json['address'] != null
-        ? SourceOwnerAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? SourceOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
-  verifiedAddress: json['verified_address'] != null
-        ? SourceOwnerVerifiedAddress.fromJson(json['verified_address'] as Map<String, dynamic>)
-        : null,
+  verifiedAddress: json['verified_address'] != null ? SourceOwnerVerifiedAddress.fromJson(json['verified_address'] as Map<String, dynamic>) : null,
   verifiedEmail: json['verified_email'] as String?,
   verifiedName: json['verified_name'] as String?,
   verifiedPhone: json['verified_phone'] as String?,

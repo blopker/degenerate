@@ -130,9 +130,7 @@ final class TlsCertificatesAndHostnamesClientCertificate {const TlsCertificatesA
 
 factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesClientCertificate(
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,
-  certificateAuthority: json['certificate_authority'] != null
-        ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as Map<String, dynamic>)
-        : null,
+  certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as Map<String, dynamic>) : null,
   commonName: json['common_name'] != null ? TlsCertificatesAndHostnamesCommonName.fromJson(json['common_name'] as String) : null,
   country: json['country'] != null ? TlsCertificatesAndHostnamesCountry.fromJson(json['country'] as String) : null,
   csr: json['csr'] != null ? TlsCertificatesAndHostnamesSchemasCsr.fromJson(json['csr'] as String) : null,

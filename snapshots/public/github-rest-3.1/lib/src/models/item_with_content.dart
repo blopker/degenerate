@@ -13,9 +13,7 @@ factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithCon
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
   content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  creator: json['creator'] != null
-        ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-        : null,
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: DateTime.parse(json['archived_at'] as String),

@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_payment_records_id_repo
 factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   guaranteedAt: (json['guaranteed_at'] as num).toInt(),
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

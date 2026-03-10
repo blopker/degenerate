@@ -34,9 +34,7 @@ factory TranscriptTextDoneEvent.fromJson(Map<String, dynamic> json) { return Tra
   type: TranscriptTextDoneEventType.fromJson(json['type'] as String),
   text: json['text'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDoneEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null
-        ? TranscriptTextUsageTokens.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? TranscriptTextUsageTokens.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of the event. Always `transcript.text.done`.

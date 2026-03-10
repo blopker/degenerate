@@ -1174,14 +1174,10 @@ final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({this
 factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsRequest(
   apiVersion: json['api_version'] != null ? PostWebhookEndpointsRequestVersion.fromJson(json['api_version'] as String) : null,
   connect: json['connect'] as bool?,
-  description: json['description'] != null
-        ? PostWebhookEndpointsRequestDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostWebhookEndpointsRequestDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   enabledEvents: (json['enabled_events'] as List<dynamic>).map((e) => PostWebhookEndpointsRequestEnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostWebhookEndpointsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostWebhookEndpointsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   url: json['url'] as String,
 ); }
 

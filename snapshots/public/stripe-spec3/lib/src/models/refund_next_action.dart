@@ -8,9 +8,7 @@ import 'refund_next_action_display_details.dart';///
 final class RefundNextAction {const RefundNextAction({this.displayDetails, required this.type, });
 
 factory RefundNextAction.fromJson(Map<String, dynamic> json) { return RefundNextAction(
-  displayDetails: json['display_details'] != null
-        ? RefundNextActionDisplayDetails.fromJson(json['display_details'] as Map<String, dynamic>)
-        : null,
+  displayDetails: json['display_details'] != null ? RefundNextActionDisplayDetails.fromJson(json['display_details'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

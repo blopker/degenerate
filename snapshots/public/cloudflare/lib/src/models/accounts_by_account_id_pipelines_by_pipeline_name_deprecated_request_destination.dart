@@ -53,9 +53,7 @@ final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinati
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
   batch: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch.fromJson(json['batch'] as Map<String, dynamic>),
   compression: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression.fromJson(json['compression'] as Map<String, dynamic>),
-  credentials: json['credentials'] != null
-        ? AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCredentials.fromJson(json['credentials'] as Map<String, dynamic>)
-        : null,
+  credentials: json['credentials'] != null ? AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCredentials.fromJson(json['credentials'] as Map<String, dynamic>) : null,
   format: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat.fromJson(json['format'] as String),
   path: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath.fromJson(json['path'] as Map<String, dynamic>),
   type: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType.fromJson(json['type'] as String),

@@ -72,9 +72,7 @@ final class CustomPropertySetPayload {const CustomPropertySetPayload({required t
 factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return CustomPropertySetPayload(
   valueType: CustomPropertySetPayloadValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
-  defaultValue: json['default_value'] != null
-        ? CustomPropertySetPayloadDefaultValue.fromJson(json['default_value'])
-        : null,
+  defaultValue: json['default_value'] != null ? CustomPropertySetPayloadDefaultValue.fromJson(json['default_value']) : null,
   description: json['description'] as String?,
   allowedValues: (json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList(),
   valuesEditableBy: json['values_editable_by'] != null ? CustomPropertySetPayloadValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,

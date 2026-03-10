@@ -35,9 +35,7 @@ final class FeeRefund {const FeeRefund({required this.amount, this.balanceTransa
 
 factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null
-        ? FeeRefundBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? FeeRefundBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   fee: FeeRefundFee.fromJson(json['fee'] as Map<String, dynamic>),

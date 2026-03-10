@@ -7,9 +7,7 @@
 import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_id.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_status.dart';import 'magic_visibility_pcaps_pcaps_submitted.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';final class MagicVisibilityPcapsPcapsResponseSimple {const MagicVisibilityPcapsPcapsResponseSimple({this.filterV1, this.id, this.offsetTime, this.status, this.submitted, this.system, this.timeLimit, this.type, });
 
 factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsResponseSimple(
-  filterV1: json['filter_v1'] != null
-        ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>)
-        : null,
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? MagicVisibilityPcapsPcapsId.fromJson(json['id'] as String) : null,
   offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
   status: json['status'] != null ? MagicVisibilityPcapsPcapsStatus.fromJson(json['status'] as String) : null,

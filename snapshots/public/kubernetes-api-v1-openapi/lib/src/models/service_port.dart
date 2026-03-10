@@ -13,9 +13,7 @@ factory ServicePort.fromJson(Map<String, dynamic> json) { return ServicePort(
   nodePort: json['nodePort'] != null ? (json['nodePort'] as num).toInt() : null,
   port: (json['port'] as num).toInt(),
   protocol: json.containsKey('protocol') ? json['protocol'] as String : 'TCP',
-  targetPort: json['targetPort'] != null
-        ? IoK8sApimachineryPkgUtilIntstrIntOrString.fromJson(json['targetPort'] as Map<String, dynamic>)
-        : null,
+  targetPort: json['targetPort'] != null ? IoK8sApimachineryPkgUtilIntstrIntOrString.fromJson(json['targetPort'] as Map<String, dynamic>) : null,
 ); }
 
 /// The application protocol for this port. This is used as a hint for implementations to offer richer behavior for protocols that they understand. This field follows standard Kubernetes label syntax. Valid values are either:

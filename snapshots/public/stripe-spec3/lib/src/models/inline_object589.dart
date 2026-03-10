@@ -34,22 +34,12 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject589 {const InlineObject589({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
 factory InlineObject589.fromJson(Map<String, dynamic> json) { return InlineObject589(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject589AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject589Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
-  receivedAt: json['received_at'] != null
-        ? InlineObject589ReceivedAt.fromJson(json['received_at'] as Map<String, dynamic>)
-        : null,
-  returnDescription: json['return_description'] != null
-        ? InlineObject589ReturnDescription.fromJson(json['return_description'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject589AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject589Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
+  receivedAt: json['received_at'] != null ? InlineObject589ReceivedAt.fromJson(json['received_at'] as Map<String, dynamic>) : null,
+  returnDescription: json['return_description'] != null ? InlineObject589ReturnDescription.fromJson(json['return_description'] as Map<String, dynamic>) : null,
   returnStatus: json['return_status'] != null ? InlineObject589ReturnStatus.fromJson(json['return_status'] as String) : null,
-  returnedAt: json['returned_at'] != null
-        ? InlineObject589ReturnedAt.fromJson(json['returned_at'] as Map<String, dynamic>)
-        : null,
+  returnedAt: json['returned_at'] != null ? InlineObject589ReturnedAt.fromJson(json['returned_at'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject589AdditionalDocumentation? additionalDocumentation;

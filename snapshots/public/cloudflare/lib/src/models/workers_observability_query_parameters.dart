@@ -45,12 +45,8 @@ factory WorkersObservabilityQueryParameters.fromJson(Map<String, dynamic> json) 
   groupBys: (json['groupBys'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryParametersGroupBys.fromJson(e as Map<String, dynamic>)).toList(),
   havings: (json['havings'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryParametersHavings.fromJson(e as Map<String, dynamic>)).toList(),
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
-  needle: json['needle'] != null
-        ? WorkersObservabilityQueryParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>)
-        : null,
-  orderBy: json['orderBy'] != null
-        ? WorkersObservabilityQueryParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>)
-        : null,
+  needle: json['needle'] != null ? WorkersObservabilityQueryParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
+  orderBy: json['orderBy'] != null ? WorkersObservabilityQueryParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Create Calculations to compute as part of the query.

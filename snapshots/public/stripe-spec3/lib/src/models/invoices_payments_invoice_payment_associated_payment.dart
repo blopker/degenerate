@@ -36,15 +36,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({this.charge, this.paymentIntent, this.paymentRecord, required this.type, });
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dynamic> json) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
-  charge: json['charge'] != null
-        ? InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge.fromJson(json['charge'] as Map<String, dynamic>)
-        : null,
-  paymentIntent: json['payment_intent'] != null
-        ? InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
-  paymentRecord: json['payment_record'] != null
-        ? InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord.fromJson(json['payment_record'] as Map<String, dynamic>)
-        : null,
+  charge: json['charge'] != null ? InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge.fromJson(json['charge'] as Map<String, dynamic>) : null,
+  paymentIntent: json['payment_intent'] != null ? InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
+  paymentRecord: json['payment_record'] != null ? InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord.fromJson(json['payment_record'] as Map<String, dynamic>) : null,
   type: InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(json['type'] as String),
 ); }
 

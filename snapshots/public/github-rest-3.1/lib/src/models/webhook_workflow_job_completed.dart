@@ -29,21 +29,13 @@ final class WebhookWorkflowJobCompleted {const WebhookWorkflowJobCompleted({requ
 
 factory WebhookWorkflowJobCompleted.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobCompleted(
   action: WebhookWorkflowJobCompletedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflowJob: WebhookWorkflowJobCompletedWorkflowJob.fromJson(json['workflow_job'] as Map<String, dynamic>),
-  deployment: json['deployment'] != null
-        ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>)
-        : null,
+  deployment: json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookWorkflowJobCompletedAction action;

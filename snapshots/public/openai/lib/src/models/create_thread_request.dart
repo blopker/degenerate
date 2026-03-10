@@ -11,9 +11,7 @@ final class CreateThreadRequest {const CreateThreadRequest({this.messages, this.
 
 factory CreateThreadRequest.fromJson(Map<String, dynamic> json) { return CreateThreadRequest(
   messages: (json['messages'] as List<dynamic>?)?.map((e) => CreateMessageRequest.fromJson(e as Map<String, dynamic>)).toList(),
-  toolResources: json['tool_resources'] != null
-        ? CreateThreadRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>)
-        : null,
+  toolResources: json['tool_resources'] != null ? CreateThreadRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

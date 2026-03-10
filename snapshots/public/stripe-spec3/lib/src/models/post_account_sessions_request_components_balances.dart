@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_balances_features.dart';final c
 
 factory PostAccountSessionsRequestComponentsBalances.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsBalances(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsBalancesFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsBalancesFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

@@ -85,9 +85,7 @@ factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) 
   cacheTtl: (json['cache_ttl'] as num).toInt(),
   collectLogs: json['collect_logs'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
-  dlp: json['dlp'] != null
-        ? AigConfigFetchGatewayResponseResultDlp.fromJson(json['dlp'] as Map<String, dynamic>)
-        : null,
+  dlp: json['dlp'] != null ? AigConfigFetchGatewayResponseResultDlp.fromJson(json['dlp'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   isDefault: json['is_default'] as bool?,
   logManagement: json['log_management'] != null ? (json['log_management'] as num).toInt() : null,
@@ -100,9 +98,7 @@ factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) 
   rateLimitingLimit: (json['rate_limiting_limit'] as num).toInt(),
   rateLimitingTechnique: AigConfigFetchGatewayResponseResultRateLimitingTechnique.fromJson(json['rate_limiting_technique'] as String),
   storeId: json['store_id'] as String?,
-  stripe: json['stripe'] != null
-        ? AigConfigFetchGatewayResponseResultStripe.fromJson(json['stripe'] as Map<String, dynamic>)
-        : null,
+  stripe: json['stripe'] != null ? AigConfigFetchGatewayResponseResultStripe.fromJson(json['stripe'] as Map<String, dynamic>) : null,
   workersAiBillingMode: json.containsKey('workers_ai_billing_mode') ? AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : AigConfigFetchGatewayResponseResultWorkersAiBillingMode.postpaid,
   zdr: json['zdr'] as bool?,
 ); }

@@ -172,9 +172,7 @@ factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { 
   accountId: json['account_id'] as String?,
   accountTrustScore: json['account_trust_score'] != null ? (json['account_trust_score'] as num).toInt() : null,
   cardNumberSource: json['card_number_source'] != null ? IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(json['card_number_source'] as String) : null,
-  cardholderAddress: json['cardholder_address'] != null
-        ? IssuingNetworkTokenAddress.fromJson(json['cardholder_address'] as Map<String, dynamic>)
-        : null,
+  cardholderAddress: json['cardholder_address'] != null ? IssuingNetworkTokenAddress.fromJson(json['cardholder_address'] as Map<String, dynamic>) : null,
   cardholderName: json['cardholder_name'] as String?,
   deviceTrustScore: json['device_trust_score'] != null ? (json['device_trust_score'] as num).toInt() : null,
   hashedAccountEmailAddress: json['hashed_account_email_address'] as String?,

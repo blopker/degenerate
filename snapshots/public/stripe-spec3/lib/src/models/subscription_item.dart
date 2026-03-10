@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionItem {const SubscriptionItem({this.billingThresholds, required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, this.quantity, required this.subscription, this.taxRates, });
 
 factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return SubscriptionItem(
-  billingThresholds: json['billing_thresholds'] != null
-        ? SubscriptionItemBillingThresholds2.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds2.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currentPeriodEnd: (json['current_period_end'] as num).toInt(),
   currentPeriodStart: (json['current_period_start'] as num).toInt(),

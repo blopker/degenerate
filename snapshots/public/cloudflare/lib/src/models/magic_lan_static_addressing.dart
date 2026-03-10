@@ -9,12 +9,8 @@ final class MagicLanStaticAddressing {const MagicLanStaticAddressing({required t
 
 factory MagicLanStaticAddressing.fromJson(Map<String, dynamic> json) { return MagicLanStaticAddressing(
   address: MagicCidr.fromJson(json['address'] as String),
-  dhcpRelay: json['dhcp_relay'] != null
-        ? MagicLanDhcpRelay.fromJson(json['dhcp_relay'] as Map<String, dynamic>)
-        : null,
-  dhcpServer: json['dhcp_server'] != null
-        ? MagicLanDhcpServer.fromJson(json['dhcp_server'] as Map<String, dynamic>)
-        : null,
+  dhcpRelay: json['dhcp_relay'] != null ? MagicLanDhcpRelay.fromJson(json['dhcp_relay'] as Map<String, dynamic>) : null,
+  dhcpServer: json['dhcp_server'] != null ? MagicLanDhcpServer.fromJson(json['dhcp_server'] as Map<String, dynamic>) : null,
   secondaryAddress: json['secondary_address'] != null ? MagicCidr.fromJson(json['secondary_address'] as String) : null,
   virtualAddress: json['virtual_address'] != null ? MagicCidr.fromJson(json['virtual_address'] as String) : null,
 ); }

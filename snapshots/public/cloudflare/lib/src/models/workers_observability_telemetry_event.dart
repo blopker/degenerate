@@ -10,9 +10,7 @@ final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTeleme
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
   $containers: (json['\$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   $metadata: WorkersObservabilityTelemetryEvent$metadata.fromJson(json['\$metadata'] as Map<String, dynamic>),
-  $workers: json['\$workers'] != null
-        ? WorkersObservabilityTelemetryEvent$workers.fromJson(json['\$workers'] as Map<String, dynamic>)
-        : null,
+  $workers: json['\$workers'] != null ? WorkersObservabilityTelemetryEvent$workers.fromJson(json['\$workers'] as Map<String, dynamic>) : null,
   dataset: json['dataset'] as String,
   source: WorkersObservabilityTelemetryEventSource.fromJson(json['source'] as Map<String, dynamic>),
   timestamp: (json['timestamp'] as num).toInt(),

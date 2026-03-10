@@ -8,39 +8,17 @@ import 'webhook_branch_protection_rule_edited_changes_admin_enforced.dart';impor
 final class WebhookBranchProtectionRuleEditedChanges {const WebhookBranchProtectionRuleEditedChanges({this.adminEnforced, this.authorizedActorNames, this.authorizedActorsOnly, this.authorizedDismissalActorsOnly, this.linearHistoryRequirementEnforcementLevel, this.lockBranchEnforcementLevel, this.lockAllowsForkSync, this.pullRequestReviewsEnforcementLevel, this.requireLastPushApproval, this.requiredStatusChecks, this.requiredStatusChecksEnforcementLevel, });
 
 factory WebhookBranchProtectionRuleEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChanges(
-  adminEnforced: json['admin_enforced'] != null
-        ? WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(json['admin_enforced'] as Map<String, dynamic>)
-        : null,
-  authorizedActorNames: json['authorized_actor_names'] != null
-        ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames.fromJson(json['authorized_actor_names'] as Map<String, dynamic>)
-        : null,
-  authorizedActorsOnly: json['authorized_actors_only'] != null
-        ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly.fromJson(json['authorized_actors_only'] as Map<String, dynamic>)
-        : null,
-  authorizedDismissalActorsOnly: json['authorized_dismissal_actors_only'] != null
-        ? WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly.fromJson(json['authorized_dismissal_actors_only'] as Map<String, dynamic>)
-        : null,
-  linearHistoryRequirementEnforcementLevel: json['linear_history_requirement_enforcement_level'] != null
-        ? WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel.fromJson(json['linear_history_requirement_enforcement_level'] as Map<String, dynamic>)
-        : null,
-  lockBranchEnforcementLevel: json['lock_branch_enforcement_level'] != null
-        ? WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel.fromJson(json['lock_branch_enforcement_level'] as Map<String, dynamic>)
-        : null,
-  lockAllowsForkSync: json['lock_allows_fork_sync'] != null
-        ? WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(json['lock_allows_fork_sync'] as Map<String, dynamic>)
-        : null,
-  pullRequestReviewsEnforcementLevel: json['pull_request_reviews_enforcement_level'] != null
-        ? WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel.fromJson(json['pull_request_reviews_enforcement_level'] as Map<String, dynamic>)
-        : null,
-  requireLastPushApproval: json['require_last_push_approval'] != null
-        ? WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(json['require_last_push_approval'] as Map<String, dynamic>)
-        : null,
-  requiredStatusChecks: json['required_status_checks'] != null
-        ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>)
-        : null,
-  requiredStatusChecksEnforcementLevel: json['required_status_checks_enforcement_level'] != null
-        ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(json['required_status_checks_enforcement_level'] as Map<String, dynamic>)
-        : null,
+  adminEnforced: json['admin_enforced'] != null ? WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(json['admin_enforced'] as Map<String, dynamic>) : null,
+  authorizedActorNames: json['authorized_actor_names'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames.fromJson(json['authorized_actor_names'] as Map<String, dynamic>) : null,
+  authorizedActorsOnly: json['authorized_actors_only'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly.fromJson(json['authorized_actors_only'] as Map<String, dynamic>) : null,
+  authorizedDismissalActorsOnly: json['authorized_dismissal_actors_only'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly.fromJson(json['authorized_dismissal_actors_only'] as Map<String, dynamic>) : null,
+  linearHistoryRequirementEnforcementLevel: json['linear_history_requirement_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel.fromJson(json['linear_history_requirement_enforcement_level'] as Map<String, dynamic>) : null,
+  lockBranchEnforcementLevel: json['lock_branch_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel.fromJson(json['lock_branch_enforcement_level'] as Map<String, dynamic>) : null,
+  lockAllowsForkSync: json['lock_allows_fork_sync'] != null ? WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(json['lock_allows_fork_sync'] as Map<String, dynamic>) : null,
+  pullRequestReviewsEnforcementLevel: json['pull_request_reviews_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel.fromJson(json['pull_request_reviews_enforcement_level'] as Map<String, dynamic>) : null,
+  requireLastPushApproval: json['require_last_push_approval'] != null ? WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(json['require_last_push_approval'] as Map<String, dynamic>) : null,
+  requiredStatusChecks: json['required_status_checks'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
+  requiredStatusChecksEnforcementLevel: json['required_status_checks_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(json['required_status_checks_enforcement_level'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookBranchProtectionRuleEditedChangesAdminEnforced? adminEnforced;

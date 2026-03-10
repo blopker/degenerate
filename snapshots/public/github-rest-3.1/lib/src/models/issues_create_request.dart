@@ -10,9 +10,7 @@ factory IssuesCreateRequest.fromJson(Map<String, dynamic> json) { return IssuesC
   title: IssuesCreateRequestTitle.fromJson(json['title']),
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
-  milestone: json['milestone'] != null
-        ? IssuesCreateRequestMilestone.fromJson(json['milestone'])
-        : null,
+  milestone: json['milestone'] != null ? IssuesCreateRequestMilestone.fromJson(json['milestone']) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => IssuesCreateRequestLabels.fromJson(e)).toList(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] as String?,

@@ -41,9 +41,7 @@ final class DependabotAlertDismissalRequestSimple {const DependabotAlertDismissa
 factory DependabotAlertDismissalRequestSimple.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimple(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   status: json['status'] != null ? DependabotAlertDismissalRequestSimpleStatus.fromJson(json['status'] as String) : null,
-  requester: json['requester'] != null
-        ? DependabotAlertDismissalRequestSimpleRequester.fromJson(json['requester'] as Map<String, dynamic>)
-        : null,
+  requester: json['requester'] != null ? DependabotAlertDismissalRequestSimpleRequester.fromJson(json['requester'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }

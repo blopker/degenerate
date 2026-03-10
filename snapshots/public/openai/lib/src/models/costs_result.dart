@@ -30,9 +30,7 @@ final class CostsResult {const CostsResult({required this.object, this.amount, t
 
 factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
   object: CostsResultObject.fromJson(json['object'] as String),
-  amount: json['amount'] != null
-        ? CostsResultAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? CostsResultAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   lineItem: json['line_item'] as String?,
   projectId: json['project_id'] as String?,
 ); }

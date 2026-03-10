@@ -67,45 +67,23 @@ final class PostAccountsRequest {const PostAccountsRequest({this.accountToken, t
 
 factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsRequest(
   accountToken: json['account_token'] as String?,
-  bankAccount: json['bank_account'] != null
-        ? PostAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>)
-        : null,
-  businessProfile: json['business_profile'] != null
-        ? PostAccountsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>)
-        : null,
+  bankAccount: json['bank_account'] != null ? PostAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
+  businessProfile: json['business_profile'] != null ? PostAccountsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? PostAccountsRequestBusinessType.fromJson(json['business_type'] as String) : null,
-  capabilities: json['capabilities'] != null
-        ? PostAccountsRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
-  company: json['company'] != null
-        ? PostAccountsRequestCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
-  controller: json['controller'] != null
-        ? PostAccountsRequestController.fromJson(json['controller'] as Map<String, dynamic>)
-        : null,
+  capabilities: json['capabilities'] != null ? PostAccountsRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
+  company: json['company'] != null ? PostAccountsRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  controller: json['controller'] != null ? PostAccountsRequestController.fromJson(json['controller'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   defaultCurrency: json['default_currency'] as String?,
-  documents: json['documents'] != null
-        ? PostAccountsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
+  documents: json['documents'] != null ? PostAccountsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,
-  groups: json['groups'] != null
-        ? PostAccountsRequestGroups.fromJson(json['groups'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PostAccountsRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostAccountsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  settings: json['settings'] != null
-        ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
-  tosAcceptance: json['tos_acceptance'] != null
-        ? PostAccountsRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  groups: json['groups'] != null ? PostAccountsRequestGroups.fromJson(json['groups'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostAccountsRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostAccountsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  settings: json['settings'] != null ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostAccountsRequestType.fromJson(json['type'] as String) : null,
 ); }
 

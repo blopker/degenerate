@@ -59,29 +59,15 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
   meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
-  recording: json['recording'] != null
-        ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>)
-        : null,
-  rtmps: json['rtmps'] != null
-        ? StreamInputRtmps.fromJson(json['rtmps'] as Map<String, dynamic>)
-        : null,
-  rtmpsPlayback: json['rtmpsPlayback'] != null
-        ? StreamPlaybackRtmps.fromJson(json['rtmpsPlayback'] as Map<String, dynamic>)
-        : null,
-  srt: json['srt'] != null
-        ? StreamInputSrt.fromJson(json['srt'] as Map<String, dynamic>)
-        : null,
-  srtPlayback: json['srtPlayback'] != null
-        ? StreamPlaybackSrt.fromJson(json['srtPlayback'] as Map<String, dynamic>)
-        : null,
+  recording: json['recording'] != null ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>) : null,
+  rtmps: json['rtmps'] != null ? StreamInputRtmps.fromJson(json['rtmps'] as Map<String, dynamic>) : null,
+  rtmpsPlayback: json['rtmpsPlayback'] != null ? StreamPlaybackRtmps.fromJson(json['rtmpsPlayback'] as Map<String, dynamic>) : null,
+  srt: json['srt'] != null ? StreamInputSrt.fromJson(json['srt'] as Map<String, dynamic>) : null,
+  srtPlayback: json['srtPlayback'] != null ? StreamPlaybackSrt.fromJson(json['srtPlayback'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? StreamLiveInputStatus.fromJson(json['status'] as String) : null,
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
-  webRtc: json['webRTC'] != null
-        ? StreamInputWebrtc.fromJson(json['webRTC'] as Map<String, dynamic>)
-        : null,
-  webRtcPlayback: json['webRTCPlayback'] != null
-        ? StreamPlaybackWebrtc.fromJson(json['webRTCPlayback'] as Map<String, dynamic>)
-        : null,
+  webRtc: json['webRTC'] != null ? StreamInputWebrtc.fromJson(json['webRTC'] as Map<String, dynamic>) : null,
+  webRtcPlayback: json['webRTCPlayback'] != null ? StreamPlaybackWebrtc.fromJson(json['webRTCPlayback'] as Map<String, dynamic>) : null,
 ); }
 
 final StreamLiveInputCreated? created;

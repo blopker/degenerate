@@ -7,23 +7,15 @@
 import 'package:collection/collection.dart';import 'post_terminal_locations_request_address.dart';import 'post_terminal_locations_request_address_kana.dart';import 'post_terminal_locations_request_address_kanji.dart';import 'post_terminal_locations_request_metadata.dart';final class PostTerminalLocationsRequest {const PostTerminalLocationsRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
 
 factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequest(
-  address: json['address'] != null
-        ? PostTerminalLocationsRequestAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PostTerminalLocationsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PostTerminalLocationsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTerminalLocationsRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PostTerminalLocationsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PostTerminalLocationsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   configurationOverrides: json['configuration_overrides'] as String?,
   displayName: json['display_name'] as String?,
   displayNameKana: json['display_name_kana'] as String?,
   displayNameKanji: json['display_name_kanji'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTerminalLocationsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTerminalLocationsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   phone: json['phone'] as String?,
 ); }
 

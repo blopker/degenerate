@@ -9,18 +9,14 @@ import 'pull_request_review_event_review_links.dart';import 'simple_user.dart';f
 factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReview(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
-  user: json['user'] != null
-        ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,
   commitId: json['commit_id'] as String?,
   submittedAt: json['submitted_at'] as String?,
   state: json['state'] as String?,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   pullRequestUrl: json['pull_request_url'] != null ? Uri.parse(json['pull_request_url'] as String) : null,
-  links: json['_links'] != null
-        ? PullRequestReviewEventReviewLinks.fromJson(json['_links'] as Map<String, dynamic>)
-        : null,
+  links: json['_links'] != null ? PullRequestReviewEventReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String?,
 ); }
 

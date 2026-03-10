@@ -8,9 +8,7 @@ import 'post_treasury_financial_accounts_financial_account_features_request_fina
 final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses({this.aba});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses(
-  aba: json['aba'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>)
-        : null,
+  aba: json['aba'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddressesAba? aba;

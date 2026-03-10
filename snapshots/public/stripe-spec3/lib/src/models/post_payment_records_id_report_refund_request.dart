@@ -29,14 +29,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({this.amount, this.expand, this.initiatedAt, this.metadata, required this.outcome, required this.processorDetails, required this.refunded, });
 
 factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequest(
-  amount: json['amount'] != null
-        ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   initiatedAt: json['initiated_at'] != null ? (json['initiated_at'] as num).toInt() : null,
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsIdReportRefundRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportRefundRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   outcome: PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(json['outcome'] as String),
   processorDetails: PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   refunded: PostPaymentRecordsIdReportRefundRequestRefunded.fromJson(json['refunded'] as Map<String, dynamic>),

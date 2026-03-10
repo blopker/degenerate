@@ -41,9 +41,7 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
   collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
   billingEmail: json['billing_email'] as String?,
-  plan: json['plan'] != null
-        ? OrganizationFullPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? OrganizationFullPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   defaultRepositoryPermission: json['default_repository_permission'] as String?,
   defaultRepositoryBranch: json['default_repository_branch'] as String?,
   membersCanCreateRepositories: json['members_can_create_repositories'] as bool?,

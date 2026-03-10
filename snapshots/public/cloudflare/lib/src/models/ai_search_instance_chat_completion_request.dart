@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'ai_search_instance_chat_completion_request_ai_search_options.dart';import 'ai_search_instance_chat_completion_request_messages.dart';import 'ai_search_instance_chat_completion_request_model.dart';final class AiSearchInstanceChatCompletionRequest {const AiSearchInstanceChatCompletionRequest({this.aiSearchOptions, required this.messages, this.model, this.stream, });
 
 factory AiSearchInstanceChatCompletionRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequest(
-  aiSearchOptions: json['ai_search_options'] != null
-        ? AiSearchInstanceChatCompletionRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>)
-        : null,
+  aiSearchOptions: json['ai_search_options'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
   messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  model: json['model'] != null
-        ? AiSearchInstanceChatCompletionRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AiSearchInstanceChatCompletionRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   stream: json['stream'] as bool?,
 ); }
 

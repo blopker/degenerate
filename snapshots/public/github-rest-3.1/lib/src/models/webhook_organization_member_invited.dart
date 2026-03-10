@@ -29,21 +29,13 @@ final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInv
 
 factory WebhookOrganizationMemberInvited.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvited(
   action: WebhookOrganizationMemberInvitedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   invitation: WebhookOrganizationMemberInvitedInvitation.fromJson(json['invitation'] as Map<String, dynamic>),
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  user: json['user'] != null
-        ? WebhooksUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? WebhooksUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookOrganizationMemberInvitedAction action;

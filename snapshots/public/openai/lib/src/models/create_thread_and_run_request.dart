@@ -8,33 +8,21 @@ import 'package:collection/collection.dart';import 'create_thread_and_run_reques
 
 factory CreateThreadAndRunRequest.fromJson(Map<String, dynamic> json) { return CreateThreadAndRunRequest(
   assistantId: json['assistant_id'] as String,
-  thread: json['thread'] != null
-        ? CreateThreadRequest.fromJson(json['thread'] as Map<String, dynamic>)
-        : null,
-  model: json['model'] != null
-        ? CreateThreadAndRunRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  thread: json['thread'] != null ? CreateThreadRequest.fromJson(json['thread'] as Map<String, dynamic>) : null,
+  model: json['model'] != null ? CreateThreadAndRunRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   instructions: json['instructions'] as String?,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => CreateThreadAndRunRequestTools.fromJson(e)).toList(),
-  toolResources: json['tool_resources'] != null
-        ? CreateThreadAndRunRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>)
-        : null,
+  toolResources: json['tool_resources'] != null ? CreateThreadAndRunRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 1.0,
   topP: json.containsKey('top_p') ? (json['top_p'] as num).toDouble() : 1.0,
   stream: json['stream'] as bool?,
   maxPromptTokens: json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
-  truncationStrategy: json['truncation_strategy'] != null
-        ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>)
-        : null,
-  toolChoice: json['tool_choice'] != null
-        ? ToolChoiceOption.fromJson(json['tool_choice'] as Map<String, dynamic>)
-        : null,
+  truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
+  toolChoice: json['tool_choice'] != null ? ToolChoiceOption.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
-  responseFormat: json['response_format'] != null
-        ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? ResponseFormatOption.fromJson(json['response_format'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.

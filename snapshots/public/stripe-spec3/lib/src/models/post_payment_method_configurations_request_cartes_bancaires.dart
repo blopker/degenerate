@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_cartes_bancaires_display_pref
 final class PostPaymentMethodConfigurationsRequestCartesBancaires {const PostPaymentMethodConfigurationsRequestCartesBancaires({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestCartesBancaires.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCartesBancaires(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestCartesBancairesDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestCartesBancairesDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestCartesBancairesDisplayPreference? displayPreference;

@@ -37,15 +37,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject734 {const InlineObject734({this.file, this.imageUrl, this.inputAudio, this.text, required this.type, });
 
 factory InlineObject734.fromJson(Map<String, dynamic> json) { return InlineObject734(
-  file: json['file'] != null
-        ? InlineObject734File.fromJson(json['file'] as Map<String, dynamic>)
-        : null,
-  imageUrl: json['image_url'] != null
-        ? InlineObject734ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>)
-        : null,
-  inputAudio: json['input_audio'] != null
-        ? InlineObject734InputAudio.fromJson(json['input_audio'] as Map<String, dynamic>)
-        : null,
+  file: json['file'] != null ? InlineObject734File.fromJson(json['file'] as Map<String, dynamic>) : null,
+  imageUrl: json['image_url'] != null ? InlineObject734ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,
+  inputAudio: json['input_audio'] != null ? InlineObject734InputAudio.fromJson(json['input_audio'] as Map<String, dynamic>) : null,
   text: json['text'] as String?,
   type: InlineObject734Type.fromJson(json['type'] as String),
 ); }

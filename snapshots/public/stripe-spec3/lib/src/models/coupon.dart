@@ -61,9 +61,7 @@ final class Coupon {const Coupon({this.amountOff, this.appliesTo, required this.
 
 factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
-  appliesTo: json['applies_to'] != null
-        ? CouponAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>)
-        : null,
+  appliesTo: json['applies_to'] != null ? CouponAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CouponCurrencyOption.fromJson(v as Map<String, dynamic>))),

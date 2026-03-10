@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_treasury_financial_acco
 
 factory PostTreasuryFinancialAccountsFinancialAccountCloseRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountCloseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  forwardingSettings: json['forwarding_settings'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>)
-        : null,
+  forwardingSettings: json['forwarding_settings'] != null ? PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

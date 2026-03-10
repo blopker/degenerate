@@ -8,9 +8,7 @@ import 'payment_method_us_bank_account_blocked.dart';///
 final class PaymentMethodUsBankAccountStatusDetails {const PaymentMethodUsBankAccountStatusDetails({this.blocked});
 
 factory PaymentMethodUsBankAccountStatusDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccountStatusDetails(
-  blocked: json['blocked'] != null
-        ? PaymentMethodUsBankAccountBlocked.fromJson(json['blocked'] as Map<String, dynamic>)
-        : null,
+  blocked: json['blocked'] != null ? PaymentMethodUsBankAccountBlocked.fromJson(json['blocked'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentMethodUsBankAccountBlocked? blocked;

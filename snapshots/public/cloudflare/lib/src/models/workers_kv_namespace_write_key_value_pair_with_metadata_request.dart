@@ -7,9 +7,7 @@
 import 'workers_kv_any.dart';import 'workers_kv_value.dart';final class WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest {const WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest({this.metadata, required this.value, });
 
 factory WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(
-  metadata: json['metadata'] != null
-        ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   value: WorkersKvValue.fromJson(json['value'] as Map<String, dynamic>),
 ); }
 

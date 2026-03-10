@@ -8,14 +8,10 @@ import 'package:collection/collection.dart';import 'label_selector.dart';/// Def
 final class PodAffinityTerm {const PodAffinityTerm({this.labelSelector, this.matchLabelKeys, this.mismatchLabelKeys, this.namespaceSelector, this.namespaces, this.topologyKey = '', });
 
 factory PodAffinityTerm.fromJson(Map<String, dynamic> json) { return PodAffinityTerm(
-  labelSelector: json['labelSelector'] != null
-        ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>)
-        : null,
+  labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,
   matchLabelKeys: (json['matchLabelKeys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   mismatchLabelKeys: (json['mismatchLabelKeys'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  namespaceSelector: json['namespaceSelector'] != null
-        ? LabelSelector.fromJson(json['namespaceSelector'] as Map<String, dynamic>)
-        : null,
+  namespaceSelector: json['namespaceSelector'] != null ? LabelSelector.fromJson(json['namespaceSelector'] as Map<String, dynamic>) : null,
   namespaces: (json['namespaces'] as List<dynamic>?)?.map((e) => e as String).toList(),
   topologyKey: json['topologyKey'] as String,
 ); }

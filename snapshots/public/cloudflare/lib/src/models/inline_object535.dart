@@ -7,9 +7,7 @@
 import 'inline_object535_image_url.dart';final class InlineObject535 {const InlineObject535({this.imageUrl, this.text, this.type, });
 
 factory InlineObject535.fromJson(Map<String, dynamic> json) { return InlineObject535(
-  imageUrl: json['image_url'] != null
-        ? InlineObject535ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>)
-        : null,
+  imageUrl: json['image_url'] != null ? InlineObject535ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,
   text: json['text'] as String?,
   type: json['type'] as String?,
 ); }

@@ -34,22 +34,12 @@ factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> j
   sha: json['sha'] as String?,
   ref: json['ref'] as String?,
   deploymentCallbackUrl: json['deployment_callback_url'] != null ? Uri.parse(json['deployment_callback_url'] as String) : null,
-  deployment: json['deployment'] != null
-        ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>)
-        : null,
+  deployment: json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null,
   pullRequests: (json['pull_requests'] as List<dynamic>?)?.map((e) => PullRequest.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDeploymentProtectionRuleRequestedAction? action;

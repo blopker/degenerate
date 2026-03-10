@@ -76,15 +76,11 @@ factory PostAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynami
   addressState: json['address_state'] as String?,
   addressZip: json['address_zip'] as String?,
   defaultForCurrency: json['default_for_currency'] as bool?,
-  documents: json['documents'] != null
-        ? PostAccountsAccountExternalAccountsIdRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
+  documents: json['documents'] != null ? PostAccountsAccountExternalAccountsIdRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostAccountsAccountExternalAccountsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostAccountsAccountExternalAccountsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
 ); }
 

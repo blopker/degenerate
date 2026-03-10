@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'urlscanner_get_scan_response
 
 factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
   allow: (json['allow'] as List<dynamic>).map((e) => e as String).toList(),
-  contentSignal: json['contentSignal'] != null
-        ? UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(json['contentSignal'] as Map<String, dynamic>)
-        : null,
+  contentSignal: json['contentSignal'] != null ? UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(json['contentSignal'] as Map<String, dynamic>) : null,
   crawlDelay: json['crawlDelay'] != null ? (json['crawlDelay'] as num).toDouble() : null,
   disallow: (json['disallow'] as List<dynamic>).map((e) => e as String).toList(),
 ); }

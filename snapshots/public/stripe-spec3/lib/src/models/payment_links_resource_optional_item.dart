@@ -8,9 +8,7 @@ import 'payment_links_resource_optional_item_adjustable_quantity2.dart';///
 final class PaymentLinksResourceOptionalItem {const PaymentLinksResourceOptionalItem({this.adjustableQuantity, required this.price, required this.quantity, });
 
 factory PaymentLinksResourceOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceOptionalItem(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PaymentLinksResourceOptionalItemAdjustableQuantity2.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PaymentLinksResourceOptionalItemAdjustableQuantity2.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }

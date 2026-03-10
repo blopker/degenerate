@@ -69,9 +69,7 @@ final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.h
 factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
   htmlHandling: json.containsKey('html_handling') ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash,
   notFoundHandling: json.containsKey('not_found_handling') ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : WorkersVersionAssetsConfigNotFoundHandling.none,
-  runWorkerFirst: json['run_worker_first'] != null
-        ? WorkersVersionAssetsConfigRunWorkerFirst.fromJson(json['run_worker_first'])
-        : null,
+  runWorkerFirst: json['run_worker_first'] != null ? WorkersVersionAssetsConfigRunWorkerFirst.fromJson(json['run_worker_first']) : null,
 ); }
 
 /// Determines the redirects and rewrites of requests for HTML content.

@@ -8,12 +8,8 @@ import 'post_subscriptions_request_invoice_settings_account_tax_ids.dart';import
 final class PostSubscriptionsRequestInvoiceSettings {const PostSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostSubscriptionsRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostSubscriptionsRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  issuer: json['issuer'] != null
-        ? PostSubscriptionsRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionsRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? PostSubscriptionsRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionsRequestInvoiceSettingsAccountTaxIds? accountTaxIds;

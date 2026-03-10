@@ -70,9 +70,7 @@ factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
   status: UploadStatus.fromJson(json['status'] as String),
   expiresAt: (json['expires_at'] as num).toInt(),
   object: json['object'] != null ? UploadObject.fromJson(json['object'] as String) : null,
-  file: json['file'] != null
-        ? OpenAiFile.fromJson(json['file'] as Map<String, dynamic>)
-        : null,
+  file: json['file'] != null ? OpenAiFile.fromJson(json['file'] as Map<String, dynamic>) : null,
 ); }
 
 /// The Upload unique identifier, which can be referenced in API endpoints.

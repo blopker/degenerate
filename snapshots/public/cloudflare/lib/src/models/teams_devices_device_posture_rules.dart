@@ -10,9 +10,7 @@ factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) { ret
   description: json['description'] != null ? TeamsDevicesDescription.fromJson(json['description'] as String) : null,
   expiration: json['expiration'] != null ? TeamsDevicesExpiration.fromJson(json['expiration'] as String) : null,
   id: json['id'] != null ? TeamsDevicesUuid.fromJson(json['id'] as String) : null,
-  input: json['input'] != null
-        ? TeamsDevicesInput.fromJson(json['input'] as Map<String, dynamic>)
-        : null,
+  input: json['input'] != null ? TeamsDevicesInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   match: (json['match'] as List<dynamic>?)?.map((e) => TeamsDevicesMatchItem.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] != null ? TeamsDevicesName.fromJson(json['name'] as String) : null,
   schedule: json['schedule'] != null ? TeamsDevicesSchedule.fromJson(json['schedule'] as String) : null,

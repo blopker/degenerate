@@ -60,12 +60,8 @@ final class PostIssuingCardsRequestShipping {const PostIssuingCardsRequestShippi
 
 factory PostIssuingCardsRequestShipping.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequestShipping(
   address: PostIssuingCardsRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
-  addressValidation: json['address_validation'] != null
-        ? PostIssuingCardsRequestShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>)
-        : null,
-  customs: json['customs'] != null
-        ? PostIssuingCardsRequestShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>)
-        : null,
+  addressValidation: json['address_validation'] != null ? PostIssuingCardsRequestShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
+  customs: json['customs'] != null ? PostIssuingCardsRequestShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   phoneNumber: json['phone_number'] as String?,
   requireSignature: json['require_signature'] as bool?,

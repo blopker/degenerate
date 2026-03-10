@@ -36,9 +36,7 @@ final class PostQuotesQuoteRequestLineItemsPriceData {const PostQuotesQuoteReque
 factory PostQuotesQuoteRequestLineItemsPriceData.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestLineItemsPriceData(
   currency: json['currency'] as String,
   product: json['product'] as String,
-  recurring: json['recurring'] != null
-        ? PostQuotesQuoteRequestLineItemsPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  recurring: json['recurring'] != null ? PostQuotesQuoteRequestLineItemsPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostQuotesQuoteRequestLineItemsPriceDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

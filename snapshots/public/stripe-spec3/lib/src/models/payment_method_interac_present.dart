@@ -52,9 +52,7 @@ factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return
   funding: json['funding'] as String?,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null
-        ? PaymentMethodInteracPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? PaymentMethodInteracPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
 ); }

@@ -29,17 +29,11 @@ final class WebhookInstallationUnsuspend {const WebhookInstallationUnsuspend({re
 
 factory WebhookInstallationUnsuspend.fromJson(Map<String, dynamic> json) { return WebhookInstallationUnsuspend(
   action: WebhookInstallationUnsuspendAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => WebhooksRepositories2.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   requester: json['requester'],
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }

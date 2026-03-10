@@ -32,9 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
 
 factory RealtimekitTrackLayerOutput.fromJson(Map<String, dynamic> json) { return RealtimekitTrackLayerOutput(
-  storageConfig: json['storage_config'] != null
-        ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>)
-        : null,
+  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
   type: json.containsKey('type') ? RealtimekitTrackLayerOutputType.fromJson(json['type'] as String) : RealtimekitTrackLayerOutputType.realtimekitBucket,
 ); }
 

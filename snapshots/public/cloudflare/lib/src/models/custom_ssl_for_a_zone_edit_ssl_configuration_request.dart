@@ -10,9 +10,7 @@ factory CustomSslForAZoneEditSslConfigurationRequest.fromJson(Map<String, dynami
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesCertificate.fromJson(json['certificate'] as String) : null,
   deploy: json['deploy'] != null ? TlsCertificatesAndHostnamesDeploy.fromJson(json['deploy'] as String) : null,
-  geoRestrictions: json['geo_restrictions'] != null
-        ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>)
-        : null,
+  geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
   policy: json['policy'] != null ? TlsCertificatesAndHostnamesPolicy.fromJson(json['policy'] as String) : null,
   privateKey: json['private_key'] != null ? TlsCertificatesAndHostnamesPrivateKey.fromJson(json['private_key'] as String) : null,
 ); }

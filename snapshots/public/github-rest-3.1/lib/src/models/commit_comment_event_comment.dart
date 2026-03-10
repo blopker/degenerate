@@ -16,14 +16,10 @@ factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) { return C
   position: json['position'] != null ? (json['position'] as num).toInt() : null,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   commitId: json['commit_id'] as String?,
-  user: json['user'] != null
-        ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri? htmlUrl;

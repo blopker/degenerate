@@ -55,13 +55,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesRequestShippingCostShippingRateData {const PostInvoicesRequestShippingCostShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory PostInvoicesRequestShippingCostShippingRateData.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCostShippingRateData(
-  deliveryEstimate: json['delivery_estimate'] != null
-        ? PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>)
-        : null,
+  deliveryEstimate: json['delivery_estimate'] != null ? PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String,
-  fixedAmount: json['fixed_amount'] != null
-        ? PostInvoicesRequestShippingCostShippingRateDataFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>)
-        : null,
+  fixedAmount: json['fixed_amount'] != null ? PostInvoicesRequestShippingCostShippingRateDataFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   taxBehavior: json['tax_behavior'] != null ? PostInvoicesRequestShippingCostShippingRateDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] as String?,

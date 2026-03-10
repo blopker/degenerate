@@ -9,19 +9,13 @@ import 'package:collection/collection.dart';import 'chat_completion_message_tool
 final class ChatCompletionRequestAssistantMessage {const ChatCompletionRequestAssistantMessage({this.content, this.refusal, required this.role, this.name, this.audio, this.toolCalls, this.functionCall, });
 
 factory ChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessage(
-  content: json['content'] != null
-        ? ChatCompletionRequestAssistantMessageContent.fromJson(json['content'])
-        : null,
+  content: json['content'] != null ? ChatCompletionRequestAssistantMessageContent.fromJson(json['content']) : null,
   refusal: json['refusal'] as String?,
   role: json['role'] as String,
   name: json['name'] as String?,
-  audio: json['audio'] != null
-        ? ChatCompletionRequestAssistantMessageAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? ChatCompletionRequestAssistantMessageAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCalls2.fromJson(e as Map<String, dynamic>)).toList(),
-  functionCall: json['function_call'] != null
-        ? ChatCompletionRequestAssistantMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
-        : null,
+  functionCall: json['function_call'] != null ? ChatCompletionRequestAssistantMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
 ); }
 
 final ChatCompletionRequestAssistantMessageContent? content;

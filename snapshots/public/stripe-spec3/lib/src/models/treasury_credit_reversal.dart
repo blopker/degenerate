@@ -96,9 +96,7 @@ factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return Trea
   receivedCredit: json['received_credit'] as String,
   status: TreasuryCreditReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedCreditsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null
-        ? TreasuryCreditReversalTransaction.fromJson(json['transaction'] as Map<String, dynamic>)
-        : null,
+  transaction: json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount (in cents) transferred.

@@ -7,9 +7,7 @@
 import 'vectorize_index_description.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_name.dart';final class VectorizeCreateIndexResponse {const VectorizeCreateIndexResponse({this.config, this.createdOn, this.description, this.modifiedOn, this.name, });
 
 factory VectorizeCreateIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeCreateIndexResponse(
-  config: json['config'] != null
-        ? VectorizeIndexDimensionConfiguration.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? VectorizeIndexDimensionConfiguration.fromJson(json['config'] as Map<String, dynamic>) : null,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   description: json['description'] != null ? VectorizeIndexDescription.fromJson(json['description'] as String) : null,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,

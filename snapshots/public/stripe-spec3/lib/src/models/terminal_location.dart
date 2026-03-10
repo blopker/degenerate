@@ -33,12 +33,8 @@ final class TerminalLocation {const TerminalLocation({required this.address, thi
 
 factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLocation(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
-  addressKana: json['address_kana'] != null
-        ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
+  addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   configurationOverrides: json['configuration_overrides'] as String?,
   displayName: json['display_name'] as String,
   displayNameKana: json['display_name_kana'] as String?,

@@ -9,9 +9,7 @@ final class Overview {const Overview({required this.verifiablePasswordAuthentica
 
 factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   verifiablePasswordAuthentication: json['verifiable_password_authentication'] as bool,
-  sshKeyFingerprints: json['ssh_key_fingerprints'] != null
-        ? OverviewSshKeyFingerprints.fromJson(json['ssh_key_fingerprints'] as Map<String, dynamic>)
-        : null,
+  sshKeyFingerprints: json['ssh_key_fingerprints'] != null ? OverviewSshKeyFingerprints.fromJson(json['ssh_key_fingerprints'] as Map<String, dynamic>) : null,
   sshKeys: (json['ssh_keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: (json['hooks'] as List<dynamic>?)?.map((e) => e as String).toList(),
   githubEnterpriseImporter: (json['github_enterprise_importer'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -26,9 +24,7 @@ factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   codespaces: (json['codespaces'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dependabot: (json['dependabot'] as List<dynamic>?)?.map((e) => e as String).toList(),
   copilot: (json['copilot'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  domains: json['domains'] != null
-        ? OverviewDomains.fromJson(json['domains'] as Map<String, dynamic>)
-        : null,
+  domains: json['domains'] != null ? OverviewDomains.fromJson(json['domains'] as Map<String, dynamic>) : null,
 ); }
 
 final bool verifiablePasswordAuthentication;

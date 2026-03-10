@@ -28,9 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });
 
 factory WebhooksReviewers2.fromJson(Map<String, dynamic> json) { return WebhooksReviewers2(
-  reviewer: json['reviewer'] != null
-        ? WebhooksReviewers2Reviewer.fromJson(json['reviewer'] as Map<String, dynamic>)
-        : null,
+  reviewer: json['reviewer'] != null ? WebhooksReviewers2Reviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? WebhooksReviewers2Type.fromJson(json['type'] as String) : null,
 ); }
 

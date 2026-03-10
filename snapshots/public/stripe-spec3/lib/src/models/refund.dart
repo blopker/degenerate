@@ -94,45 +94,27 @@ final class Refund {const Refund({required this.amount, this.balanceTransaction,
 
 factory Refund.fromJson(Map<String, dynamic> json) { return Refund(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null
-        ? RefundBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
-  charge: json['charge'] != null
-        ? RefundCharge.fromJson(json['charge'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? RefundBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
+  charge: json['charge'] != null ? RefundCharge.fromJson(json['charge'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  destinationDetails: json['destination_details'] != null
-        ? RefundDestinationDetails.fromJson(json['destination_details'] as Map<String, dynamic>)
-        : null,
-  failureBalanceTransaction: json['failure_balance_transaction'] != null
-        ? RefundFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>)
-        : null,
+  destinationDetails: json['destination_details'] != null ? RefundDestinationDetails.fromJson(json['destination_details'] as Map<String, dynamic>) : null,
+  failureBalanceTransaction: json['failure_balance_transaction'] != null ? RefundFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>) : null,
   failureReason: json['failure_reason'] as String?,
   id: json['id'] as String,
   instructionsEmail: json['instructions_email'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null
-        ? RefundNextAction.fromJson(json['next_action'] as Map<String, dynamic>)
-        : null,
+  nextAction: json['next_action'] != null ? RefundNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null,
   object: RefundObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null
-        ? RefundPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? RefundPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
   pendingReason: json['pending_reason'] != null ? RefundPendingReason.fromJson(json['pending_reason'] as String) : null,
-  presentmentDetails: json['presentment_details'] != null
-        ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>)
-        : null,
+  presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] != null ? RefundReason.fromJson(json['reason'] as String) : null,
   receiptNumber: json['receipt_number'] as String?,
-  sourceTransferReversal: json['source_transfer_reversal'] != null
-        ? RefundSourceTransferReversal.fromJson(json['source_transfer_reversal'] as Map<String, dynamic>)
-        : null,
+  sourceTransferReversal: json['source_transfer_reversal'] != null ? RefundSourceTransferReversal.fromJson(json['source_transfer_reversal'] as Map<String, dynamic>) : null,
   status: json['status'] as String?,
-  transferReversal: json['transfer_reversal'] != null
-        ? RefundTransferReversal.fromJson(json['transfer_reversal'] as Map<String, dynamic>)
-        : null,
+  transferReversal: json['transfer_reversal'] != null ? RefundTransferReversal.fromJson(json['transfer_reversal'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount, in cents (or local equivalent).

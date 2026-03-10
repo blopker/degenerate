@@ -11,20 +11,12 @@ factory FileCommitCommit.fromJson(Map<String, dynamic> json) { return FileCommit
   nodeId: json['node_id'] as String?,
   url: json['url'] as String?,
   htmlUrl: json['html_url'] as String?,
-  author: json['author'] != null
-        ? FileCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
-  committer: json['committer'] != null
-        ? FileCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>)
-        : null,
+  author: json['author'] != null ? FileCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? FileCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
   message: json['message'] as String?,
-  tree: json['tree'] != null
-        ? FileCommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>)
-        : null,
+  tree: json['tree'] != null ? FileCommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null,
   parents: (json['parents'] as List<dynamic>?)?.map((e) => FileCommitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
-  verification: json['verification'] != null
-        ? FileCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? FileCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final String? sha;

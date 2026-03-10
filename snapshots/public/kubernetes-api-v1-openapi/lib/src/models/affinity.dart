@@ -8,15 +8,9 @@ import 'node_affinity.dart';import 'pod_affinity.dart';import 'pod_anti_affinity
 final class Affinity {const Affinity({this.nodeAffinity, this.podAffinity, this.podAntiAffinity, });
 
 factory Affinity.fromJson(Map<String, dynamic> json) { return Affinity(
-  nodeAffinity: json['nodeAffinity'] != null
-        ? NodeAffinity.fromJson(json['nodeAffinity'] as Map<String, dynamic>)
-        : null,
-  podAffinity: json['podAffinity'] != null
-        ? PodAffinity.fromJson(json['podAffinity'] as Map<String, dynamic>)
-        : null,
-  podAntiAffinity: json['podAntiAffinity'] != null
-        ? PodAntiAffinity.fromJson(json['podAntiAffinity'] as Map<String, dynamic>)
-        : null,
+  nodeAffinity: json['nodeAffinity'] != null ? NodeAffinity.fromJson(json['nodeAffinity'] as Map<String, dynamic>) : null,
+  podAffinity: json['podAffinity'] != null ? PodAffinity.fromJson(json['podAffinity'] as Map<String, dynamic>) : null,
+  podAntiAffinity: json['podAntiAffinity'] != null ? PodAntiAffinity.fromJson(json['podAntiAffinity'] as Map<String, dynamic>) : null,
 ); }
 
 /// Describes node affinity scheduling rules for the pod.

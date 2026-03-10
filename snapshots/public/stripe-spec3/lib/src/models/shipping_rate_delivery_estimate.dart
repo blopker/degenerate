@@ -8,12 +8,8 @@ import 'shipping_rate_delivery_estimate_maximum.dart';import 'shipping_rate_deli
 final class ShippingRateDeliveryEstimate {const ShippingRateDeliveryEstimate({this.maximum, this.minimum, });
 
 factory ShippingRateDeliveryEstimate.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimate(
-  maximum: json['maximum'] != null
-        ? ShippingRateDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>)
-        : null,
-  minimum: json['minimum'] != null
-        ? ShippingRateDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>)
-        : null,
+  maximum: json['maximum'] != null ? ShippingRateDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,
+  minimum: json['minimum'] != null ? ShippingRateDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>) : null,
 ); }
 
 /// The upper bound of the estimated range. If empty, represents no upper bound i.e., infinite.

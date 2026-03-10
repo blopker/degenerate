@@ -8,9 +8,7 @@ import 'confirmation_tokens_resource_payment_method_options_card.dart';/// Payme
 final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card});
 
 factory ConfirmationTokensResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptions(
-  card: json['card'] != null
-        ? ConfirmationTokensResourcePaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
 ); }
 
 /// This hash contains the card payment method options.

@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'digital_experience_monitorin
 factory DigitalExperienceMonitoringTimingAggregates.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTimingAggregates(
   avgMs: json['avgMs'] != null ? (json['avgMs'] as num).toInt() : null,
   history: (json['history'] as List<dynamic>).map((e) => DigitalExperienceMonitoringAggregateStat.fromJson(e as Map<String, dynamic>)).toList(),
-  overTime: json['overTime'] != null
-        ? DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(json['overTime'] as Map<String, dynamic>)
-        : null,
+  overTime: json['overTime'] != null ? DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(json['overTime'] as Map<String, dynamic>) : null,
 ); }
 
 final int? avgMs;

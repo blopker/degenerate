@@ -8,9 +8,7 @@ import 'inline_object179.dart';import 'inline_object180.dart';import 'zaraz_zara
 final class ZarazZarazConfigBaseConsent {const ZarazZarazConfigBaseConsent({this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, required this.enabled, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });
 
 factory ZarazZarazConfigBaseConsent.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseConsent(
-  buttonTextTranslations: json['buttonTextTranslations'] != null
-        ? ZarazZarazConfigBaseConsentButtonTextTranslations.fromJson(json['buttonTextTranslations'] as Map<String, dynamic>)
-        : null,
+  buttonTextTranslations: json['buttonTextTranslations'] != null ? ZarazZarazConfigBaseConsentButtonTextTranslations.fromJson(json['buttonTextTranslations'] as Map<String, dynamic>) : null,
   companyEmail: json['companyEmail'] as String?,
   companyName: json['companyName'] as String?,
   companyStreetAddress: json['companyStreetAddress'] as String?,

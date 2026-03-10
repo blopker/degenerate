@@ -70,27 +70,15 @@ final class IdentityVerificationReport {const IdentityVerificationReport({this.c
 factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return IdentityVerificationReport(
   clientReferenceId: json['client_reference_id'] as String?,
   created: (json['created'] as num).toInt(),
-  document: json['document'] != null
-        ? GelatoDocumentReport.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? GelatoEmailReport.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? GelatoDocumentReport.fromJson(json['document'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? GelatoEmailReport.fromJson(json['email'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  idNumber: json['id_number'] != null
-        ? GelatoIdNumberReport.fromJson(json['id_number'] as Map<String, dynamic>)
-        : null,
+  idNumber: json['id_number'] != null ? GelatoIdNumberReport.fromJson(json['id_number'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: IdentityVerificationReportObject.fromJson(json['object'] as String),
-  options: json['options'] != null
-        ? GelatoVerificationReportOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? GelatoPhoneReport.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
-  selfie: json['selfie'] != null
-        ? GelatoSelfieReport.fromJson(json['selfie'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? GelatoVerificationReportOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? GelatoPhoneReport.fromJson(json['phone'] as Map<String, dynamic>) : null,
+  selfie: json['selfie'] != null ? GelatoSelfieReport.fromJson(json['selfie'] as Map<String, dynamic>) : null,
   type: IdentityVerificationReportType.fromJson(json['type'] as String),
   verificationFlow: json['verification_flow'] as String?,
   verificationSession: json['verification_session'] as String?,

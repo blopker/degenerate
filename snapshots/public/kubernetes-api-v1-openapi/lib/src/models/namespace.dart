@@ -10,15 +10,9 @@ final class Namespace {const Namespace({this.apiVersion, this.kind, this.metadat
 factory Namespace.fromJson(Map<String, dynamic> json) { return Namespace(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  spec: json['spec'] != null
-        ? NamespaceSpec.fromJson(json['spec'] as Map<String, dynamic>)
-        : null,
-  status: json['status'] != null
-        ? NamespaceStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  spec: json['spec'] != null ? NamespaceSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
+  status: json['status'] != null ? NamespaceStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
 ); }
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources

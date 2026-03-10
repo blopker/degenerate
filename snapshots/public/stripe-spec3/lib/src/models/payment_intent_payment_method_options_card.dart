@@ -251,12 +251,8 @@ final class PaymentIntentPaymentMethodOptionsCard {const PaymentIntentPaymentMet
 
 factory PaymentIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsCard(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsCardCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  installments: json['installments'] != null
-        ? PaymentIntentPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PaymentIntentPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? PaymentIntentPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? PaymentIntentPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? PaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
   requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? PaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,

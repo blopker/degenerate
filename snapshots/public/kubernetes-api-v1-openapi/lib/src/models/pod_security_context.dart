@@ -8,27 +8,19 @@ import 'package:collection/collection.dart';import 'app_armor_profile.dart';impo
 final class PodSecurityContext {const PodSecurityContext({this.appArmorProfile, this.fsGroup, this.fsGroupChangePolicy, this.runAsGroup, this.runAsNonRoot, this.runAsUser, this.seLinuxChangePolicy, this.seLinuxOptions, this.seccompProfile, this.supplementalGroups, this.supplementalGroupsPolicy, this.sysctls, this.windowsOptions, });
 
 factory PodSecurityContext.fromJson(Map<String, dynamic> json) { return PodSecurityContext(
-  appArmorProfile: json['appArmorProfile'] != null
-        ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>)
-        : null,
+  appArmorProfile: json['appArmorProfile'] != null ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>) : null,
   fsGroup: json['fsGroup'] != null ? (json['fsGroup'] as num).toInt() : null,
   fsGroupChangePolicy: json['fsGroupChangePolicy'] as String?,
   runAsGroup: json['runAsGroup'] != null ? (json['runAsGroup'] as num).toInt() : null,
   runAsNonRoot: json['runAsNonRoot'] as bool?,
   runAsUser: json['runAsUser'] != null ? (json['runAsUser'] as num).toInt() : null,
   seLinuxChangePolicy: json['seLinuxChangePolicy'] as String?,
-  seLinuxOptions: json['seLinuxOptions'] != null
-        ? SeLinuxOptions.fromJson(json['seLinuxOptions'] as Map<String, dynamic>)
-        : null,
-  seccompProfile: json['seccompProfile'] != null
-        ? SeccompProfile.fromJson(json['seccompProfile'] as Map<String, dynamic>)
-        : null,
+  seLinuxOptions: json['seLinuxOptions'] != null ? SeLinuxOptions.fromJson(json['seLinuxOptions'] as Map<String, dynamic>) : null,
+  seccompProfile: json['seccompProfile'] != null ? SeccompProfile.fromJson(json['seccompProfile'] as Map<String, dynamic>) : null,
   supplementalGroups: (json['supplementalGroups'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   supplementalGroupsPolicy: json['supplementalGroupsPolicy'] as String?,
   sysctls: (json['sysctls'] as List<dynamic>?)?.map((e) => Sysctl.fromJson(e as Map<String, dynamic>)).toList(),
-  windowsOptions: json['windowsOptions'] != null
-        ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>)
-        : null,
+  windowsOptions: json['windowsOptions'] != null ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>) : null,
 ); }
 
 /// appArmorProfile is the AppArmor options to use by the containers in this pod. Note that this field cannot be set when spec.os.name is windows.

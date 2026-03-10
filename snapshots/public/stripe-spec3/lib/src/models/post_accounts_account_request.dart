@@ -39,38 +39,20 @@ final class PostAccountsAccountRequest {const PostAccountsAccountRequest({this.a
 
 factory PostAccountsAccountRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequest(
   accountToken: json['account_token'] as String?,
-  businessProfile: json['business_profile'] != null
-        ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>)
-        : null,
+  businessProfile: json['business_profile'] != null ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? PostAccountsAccountRequestBusinessType.fromJson(json['business_type'] as String) : null,
-  capabilities: json['capabilities'] != null
-        ? PostAccountsAccountRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
-  company: json['company'] != null
-        ? PostAccountsAccountRequestCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
+  capabilities: json['capabilities'] != null ? PostAccountsAccountRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
+  company: json['company'] != null ? PostAccountsAccountRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   defaultCurrency: json['default_currency'] as String?,
-  documents: json['documents'] != null
-        ? PostAccountsAccountRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
+  documents: json['documents'] != null ? PostAccountsAccountRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,
-  groups: json['groups'] != null
-        ? PostAccountsAccountRequestGroups.fromJson(json['groups'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PostAccountsAccountRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostAccountsAccountRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  settings: json['settings'] != null
-        ? PostAccountsAccountRequestSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
-  tosAcceptance: json['tos_acceptance'] != null
-        ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  groups: json['groups'] != null ? PostAccountsAccountRequestGroups.fromJson(json['groups'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostAccountsAccountRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostAccountsAccountRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  settings: json['settings'] != null ? PostAccountsAccountRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// An [account token](https://api.stripe.com#create_account_token), used to securely provide details to the account.

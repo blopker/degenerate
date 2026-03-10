@@ -84,39 +84,23 @@ final class PostSubscriptionSchedulesRequestPhases {const PostSubscriptionSchedu
 factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionSchedulesRequestPhasesBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesRequestPhasesBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesRequestPhasesCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null
-        ? PostSubscriptionSchedulesRequestPhasesDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? PostSubscriptionSchedulesRequestPhasesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostSubscriptionSchedulesRequestPhasesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
-  duration: json['duration'] != null
-        ? PostSubscriptionSchedulesRequestPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>)
-        : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostSubscriptionSchedulesRequestPhasesDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? PostSubscriptionSchedulesRequestPhasesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionSchedulesRequestPhasesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
+  duration: json['duration'] != null ? PostSubscriptionSchedulesRequestPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>) : null,
   endDate: json['end_date'] != null ? (json['end_date'] as num).toInt() : null,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostSubscriptionSchedulesRequestPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesRequestPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>).map((e) => PostSubscriptionSchedulesRequestPhasesItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionSchedulesRequestPhasesProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  transferData: json['transfer_data'] != null
-        ? PostSubscriptionSchedulesRequestPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostSubscriptionSchedulesRequestPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
 ); }

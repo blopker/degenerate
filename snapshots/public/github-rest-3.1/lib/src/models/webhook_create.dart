@@ -33,16 +33,10 @@ final class WebhookCreate {const WebhookCreate({required this.description, this.
 
 factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
   description: json['description'] as String,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   masterBranch: json['master_branch'] as String,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusherType: WebhooksDeployPusherType.fromJson(json['pusher_type'] as String),
   ref: WebhooksRef0.fromJson(json['ref'] as String),
   refType: WebhookCreateRefType.fromJson(json['ref_type'] as String),

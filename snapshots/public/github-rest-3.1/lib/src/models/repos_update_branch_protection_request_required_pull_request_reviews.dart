@@ -8,16 +8,12 @@ import 'repos_update_branch_protection_request_required_pull_request_reviews_byp
 final class ReposUpdateBranchProtectionRequestRequiredPullRequestReviews {const ReposUpdateBranchProtectionRequestRequiredPullRequestReviews({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
 
 factory ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRequiredPullRequestReviews(
-  dismissalRestrictions: json['dismissal_restrictions'] != null
-        ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>)
-        : null,
+  dismissalRestrictions: json['dismissal_restrictions'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool?,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool?,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
   requireLastPushApproval: json.containsKey('require_last_push_approval') ? json['require_last_push_approval'] as bool : false,
-  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null
-        ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>)
-        : null,
+  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.

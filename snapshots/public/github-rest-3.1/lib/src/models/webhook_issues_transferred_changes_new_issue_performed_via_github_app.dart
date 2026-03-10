@@ -170,9 +170,7 @@ factory WebhookIssuesTransferredChangesNewIssuePerformedViaGithubApp.fromJson(Ma
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   owner: WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppOwner.fromJson(json['owner'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

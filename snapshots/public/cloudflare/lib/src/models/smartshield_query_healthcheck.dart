@@ -12,16 +12,12 @@ factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? SmartshieldConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
-  httpConfig: json['http_config'] != null
-        ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>)
-        : null,
+  httpConfig: json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
   interval: json['interval'] != null ? SmartshieldInterval.fromJson(json['interval'] as num) : null,
   name: SmartshieldName.fromJson(json['name'] as String),
   retries: json['retries'] != null ? SmartshieldRetries.fromJson(json['retries'] as num) : null,
   suspended: json['suspended'] != null ? SmartshieldSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null
-        ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>)
-        : null,
+  tcpConfig: json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
 ); }

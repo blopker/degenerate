@@ -11,9 +11,7 @@ factory InlineObject1386GotoOptions.fromJson(Map<String, dynamic> json) { return
   referer: json['referer'] as String?,
   referrerPolicy: json['referrerPolicy'] as String?,
   timeout: json.containsKey('timeout') ? (json['timeout'] as num).toDouble() : 30000.0,
-  waitUntil: json['waitUntil'] != null
-        ? InlineObject1386GotoOptionsWaitUntil.fromJson(json['waitUntil'] as Map<String, dynamic>)
-        : null,
+  waitUntil: json['waitUntil'] != null ? InlineObject1386GotoOptionsWaitUntil.fromJson(json['waitUntil'] as Map<String, dynamic>) : null,
 ); }
 
 final String? referer;

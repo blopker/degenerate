@@ -38,9 +38,7 @@ factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return Realtim
   arguments: json['arguments'] as String,
   approvalRequestId: json['approval_request_id'] as String?,
   output: json['output'] as String?,
-  error: json['error'] != null
-        ? RealtimeMcpToolCallError.fromJson(json['error'])
-        : null,
+  error: json['error'] != null ? RealtimeMcpToolCallError.fromJson(json['error']) : null,
 ); }
 
 /// The type of the item. Always `mcp_call`.

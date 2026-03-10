@@ -30,19 +30,11 @@ final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.ac
 
 factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return WebhookIssuesAssigned(
   action: WebhookIssuesAssignedAction.fromJson(json['action'] as String),
-  assignee: json['assignee'] != null
-        ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  assignee: json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }

@@ -81,30 +81,16 @@ factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { re
   clientSecret: RealtimeSessionCreateResponseGaClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   type: RealtimeSessionCreateResponseGaType.fromJson(json['type'] as String),
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaOutputModalities.fromJson(e as String)).toList(),
-  model: json['model'] != null
-        ? RealtimeSessionCreateResponseGaModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? RealtimeSessionCreateResponseGaModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   instructions: json['instructions'] as String?,
-  audio: json['audio'] != null
-        ? RealtimeSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaInclude.fromJson(e as String)).toList(),
-  tracing: json['tracing'] != null
-        ? RealtimeSessionCreateResponseGaTracing.fromJson(json['tracing'])
-        : null,
+  tracing: json['tracing'] != null ? RealtimeSessionCreateResponseGaTracing.fromJson(json['tracing']) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaTools.fromJson(e)).toList(),
-  toolChoice: json['tool_choice'] != null
-        ? RealtimeSessionCreateResponseGaToolChoice.fromJson(json['tool_choice'])
-        : null,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeSessionCreateResponseGaMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
-  truncation: json['truncation'] != null
-        ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>)
-        : null,
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  toolChoice: json['tool_choice'] != null ? RealtimeSessionCreateResponseGaToolChoice.fromJson(json['tool_choice']) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeSessionCreateResponseGaMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
+  truncation: json['truncation'] != null ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
 ); }
 
 /// Ephemeral key returned by the API.

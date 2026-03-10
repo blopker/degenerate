@@ -31,9 +31,7 @@ factory WebhookPersonalAccessTokenRequestDenied.fromJson(Map<String, dynamic> js
   action: WebhookPersonalAccessTokenRequestDeniedAction.fromJson(json['action'] as String),
   personalAccessTokenRequest: PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>),
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
 ); }

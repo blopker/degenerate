@@ -8,12 +8,8 @@ import 'pages_health_check_alt_domain.dart';import 'pages_health_check_domain.da
 final class PagesHealthCheck {const PagesHealthCheck({this.domain, this.altDomain, });
 
 factory PagesHealthCheck.fromJson(Map<String, dynamic> json) { return PagesHealthCheck(
-  domain: json['domain'] != null
-        ? PagesHealthCheckDomain.fromJson(json['domain'] as Map<String, dynamic>)
-        : null,
-  altDomain: json['alt_domain'] != null
-        ? PagesHealthCheckAltDomain.fromJson(json['alt_domain'] as Map<String, dynamic>)
-        : null,
+  domain: json['domain'] != null ? PagesHealthCheckDomain.fromJson(json['domain'] as Map<String, dynamic>) : null,
+  altDomain: json['alt_domain'] != null ? PagesHealthCheckAltDomain.fromJson(json['alt_domain'] as Map<String, dynamic>) : null,
 ); }
 
 final PagesHealthCheckDomain? domain;

@@ -7,9 +7,7 @@
 import 'webhooks_project_changes_archived_at.dart';final class WebhooksProjectChanges {const WebhooksProjectChanges({this.archivedAt});
 
 factory WebhooksProjectChanges.fromJson(Map<String, dynamic> json) { return WebhooksProjectChanges(
-  archivedAt: json['archived_at'] != null
-        ? WebhooksProjectChangesArchivedAt.fromJson(json['archived_at'] as Map<String, dynamic>)
-        : null,
+  archivedAt: json['archived_at'] != null ? WebhooksProjectChangesArchivedAt.fromJson(json['archived_at'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhooksProjectChangesArchivedAt? archivedAt;

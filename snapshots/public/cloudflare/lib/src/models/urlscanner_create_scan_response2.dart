@@ -34,9 +34,7 @@ final class UrlscannerCreateScanResponse2 {const UrlscannerCreateScanResponse2({
 factory UrlscannerCreateScanResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse2(
   api: json['api'] as String,
   message: json['message'] as String,
-  options: json['options'] != null
-        ? UrlscannerCreateScanResponse2Options.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? UrlscannerCreateScanResponse2Options.fromJson(json['options'] as Map<String, dynamic>) : null,
   result: json['result'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,

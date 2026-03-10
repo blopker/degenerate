@@ -11,15 +11,9 @@ factory InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(Map<String, dy
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  moneyMovementDetails: json['money_movement_details'] != null
-        ? InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>)
-        : null,
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? InsightsResourcesPaymentEvaluationPaymentDetailsPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  moneyMovementDetails: json['money_movement_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
 ); }
 

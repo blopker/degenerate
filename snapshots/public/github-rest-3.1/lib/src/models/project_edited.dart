@@ -30,9 +30,7 @@ final class ProjectEdited {const ProjectEdited({required this.action, required t
 factory ProjectEdited.fromJson(Map<String, dynamic> json) { return ProjectEdited(
   action: ProjectEditedAction.fromJson(json['action'] as String),
   changes: ProjectEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2: Projects.fromJson(json['projects_v2'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

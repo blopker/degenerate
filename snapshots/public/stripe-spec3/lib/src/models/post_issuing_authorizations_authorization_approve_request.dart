@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_issuing_authorizations_
 factory PostIssuingAuthorizationsAuthorizationApproveRequest.fromJson(Map<String, dynamic> json) { return PostIssuingAuthorizationsAuthorizationApproveRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostIssuingAuthorizationsAuthorizationApproveRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostIssuingAuthorizationsAuthorizationApproveRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// If the authorization's `pending_request.is_amount_controllable` property is `true`, you may provide this value to control how much to hold for the authorization. Must be positive (use [`decline`](https://docs.stripe.com/api/issuing/authorizations/decline) to decline an authorization request).

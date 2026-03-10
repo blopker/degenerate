@@ -8,9 +8,7 @@ import 'checkout_link_wallet_options.dart';///
 final class CheckoutSessionWalletOptions {const CheckoutSessionWalletOptions({this.link});
 
 factory CheckoutSessionWalletOptions.fromJson(Map<String, dynamic> json) { return CheckoutSessionWalletOptions(
-  link: json['link'] != null
-        ? CheckoutLinkWalletOptions.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
+  link: json['link'] != null ? CheckoutLinkWalletOptions.fromJson(json['link'] as Map<String, dynamic>) : null,
 ); }
 
 final CheckoutLinkWalletOptions? link;

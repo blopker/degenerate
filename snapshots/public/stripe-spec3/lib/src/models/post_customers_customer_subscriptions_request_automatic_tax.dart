@@ -9,9 +9,7 @@ final class PostCustomersCustomerSubscriptionsRequestAutomaticTax {const PostCus
 
 factory PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

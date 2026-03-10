@@ -12,13 +12,9 @@ factory PaymentLinksResourceInvoiceSettings.fromJson(Map<String, dynamic> json) 
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   footer: json['footer'] as String?,
-  issuer: json['issuer'] != null
-        ? PaymentLinksResourceInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PaymentLinksResourceInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  renderingOptions: json['rendering_options'] != null
-        ? PaymentLinksResourceInvoiceSettingsRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>)
-        : null,
+  renderingOptions: json['rendering_options'] != null ? PaymentLinksResourceInvoiceSettingsRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account tax IDs associated with the invoice.

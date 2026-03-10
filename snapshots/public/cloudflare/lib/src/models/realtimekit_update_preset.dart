@@ -7,16 +7,10 @@
 import 'realtimekit_update_preset_config.dart';import 'realtimekit_update_preset_permissions.dart';import 'realtimekit_update_preset_ui.dart';final class RealtimekitUpdatePreset {const RealtimekitUpdatePreset({this.config, this.name, this.permissions, this.ui, });
 
 factory RealtimekitUpdatePreset.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePreset(
-  config: json['config'] != null
-        ? RealtimekitUpdatePresetConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? RealtimekitUpdatePresetConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  permissions: json['permissions'] != null
-        ? RealtimekitUpdatePresetPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
-  ui: json['ui'] != null
-        ? RealtimekitUpdatePresetUi.fromJson(json['ui'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RealtimekitUpdatePresetPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  ui: json['ui'] != null ? RealtimekitUpdatePresetUi.fromJson(json['ui'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitUpdatePresetConfig? config;

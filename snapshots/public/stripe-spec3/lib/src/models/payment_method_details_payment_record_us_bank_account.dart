@@ -64,9 +64,7 @@ factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dyna
   expectedDebitDate: json['expected_debit_date'] as String?,
   fingerprint: json['fingerprint'] as String?,
   last4: json['last4'] as String?,
-  mandate: json['mandate'] != null
-        ? PaymentMethodDetailsPaymentRecordUsBankAccountMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   paymentReference: json['payment_reference'] as String?,
   routingNumber: json['routing_number'] as String?,
 ); }

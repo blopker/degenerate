@@ -9,14 +9,10 @@ final class PodSpec {const PodSpec({this.activeDeadlineSeconds, this.affinity, t
 
 factory PodSpec.fromJson(Map<String, dynamic> json) { return PodSpec(
   activeDeadlineSeconds: json['activeDeadlineSeconds'] != null ? (json['activeDeadlineSeconds'] as num).toInt() : null,
-  affinity: json['affinity'] != null
-        ? Affinity.fromJson(json['affinity'] as Map<String, dynamic>)
-        : null,
+  affinity: json['affinity'] != null ? Affinity.fromJson(json['affinity'] as Map<String, dynamic>) : null,
   automountServiceAccountToken: json['automountServiceAccountToken'] as bool?,
   containers: (json['containers'] as List<dynamic>).map((e) => Container.fromJson(e as Map<String, dynamic>)).toList(),
-  dnsConfig: json['dnsConfig'] != null
-        ? PodDnsConfig.fromJson(json['dnsConfig'] as Map<String, dynamic>)
-        : null,
+  dnsConfig: json['dnsConfig'] != null ? PodDnsConfig.fromJson(json['dnsConfig'] as Map<String, dynamic>) : null,
   dnsPolicy: json['dnsPolicy'] as String?,
   enableServiceLinks: json['enableServiceLinks'] as bool?,
   ephemeralContainers: (json['ephemeralContainers'] as List<dynamic>?)?.map((e) => EphemeralContainer.fromJson(e as Map<String, dynamic>)).toList(),
@@ -31,25 +27,19 @@ factory PodSpec.fromJson(Map<String, dynamic> json) { return PodSpec(
   initContainers: (json['initContainers'] as List<dynamic>?)?.map((e) => Container.fromJson(e as Map<String, dynamic>)).toList(),
   nodeName: json['nodeName'] as String?,
   nodeSelector: (json['nodeSelector'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  os: json['os'] != null
-        ? PodOs.fromJson(json['os'] as Map<String, dynamic>)
-        : null,
+  os: json['os'] != null ? PodOs.fromJson(json['os'] as Map<String, dynamic>) : null,
   overhead: (json['overhead'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
   preemptionPolicy: json['preemptionPolicy'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
   priorityClassName: json['priorityClassName'] as String?,
   readinessGates: (json['readinessGates'] as List<dynamic>?)?.map((e) => PodReadinessGate.fromJson(e as Map<String, dynamic>)).toList(),
   resourceClaims: (json['resourceClaims'] as List<dynamic>?)?.map((e) => PodResourceClaim.fromJson(e as Map<String, dynamic>)).toList(),
-  resources: json['resources'] != null
-        ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>)
-        : null,
+  resources: json['resources'] != null ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
   restartPolicy: json['restartPolicy'] as String?,
   runtimeClassName: json['runtimeClassName'] as String?,
   schedulerName: json['schedulerName'] as String?,
   schedulingGates: (json['schedulingGates'] as List<dynamic>?)?.map((e) => PodSchedulingGate.fromJson(e as Map<String, dynamic>)).toList(),
-  securityContext: json['securityContext'] != null
-        ? PodSecurityContext.fromJson(json['securityContext'] as Map<String, dynamic>)
-        : null,
+  securityContext: json['securityContext'] != null ? PodSecurityContext.fromJson(json['securityContext'] as Map<String, dynamic>) : null,
   serviceAccount: json['serviceAccount'] as String?,
   serviceAccountName: json['serviceAccountName'] as String?,
   setHostnameAsFqdn: json['setHostnameAsFQDN'] as bool?,
@@ -59,9 +49,7 @@ factory PodSpec.fromJson(Map<String, dynamic> json) { return PodSpec(
   tolerations: (json['tolerations'] as List<dynamic>?)?.map((e) => Toleration.fromJson(e as Map<String, dynamic>)).toList(),
   topologySpreadConstraints: (json['topologySpreadConstraints'] as List<dynamic>?)?.map((e) => TopologySpreadConstraint.fromJson(e as Map<String, dynamic>)).toList(),
   volumes: (json['volumes'] as List<dynamic>?)?.map((e) => Volume.fromJson(e as Map<String, dynamic>)).toList(),
-  workloadRef: json['workloadRef'] != null
-        ? WorkloadReference.fromJson(json['workloadRef'] as Map<String, dynamic>)
-        : null,
+  workloadRef: json['workloadRef'] != null ? WorkloadReference.fromJson(json['workloadRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.

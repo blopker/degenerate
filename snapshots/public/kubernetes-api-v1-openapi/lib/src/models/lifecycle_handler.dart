@@ -8,18 +8,10 @@ import 'exec_action.dart';import 'http_get_action.dart';import 'sleep_action.dar
 final class LifecycleHandler {const LifecycleHandler({this.exec, this.httpGet, this.sleep, this.tcpSocket, });
 
 factory LifecycleHandler.fromJson(Map<String, dynamic> json) { return LifecycleHandler(
-  exec: json['exec'] != null
-        ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>)
-        : null,
-  httpGet: json['httpGet'] != null
-        ? HttpGetAction.fromJson(json['httpGet'] as Map<String, dynamic>)
-        : null,
-  sleep: json['sleep'] != null
-        ? SleepAction.fromJson(json['sleep'] as Map<String, dynamic>)
-        : null,
-  tcpSocket: json['tcpSocket'] != null
-        ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>)
-        : null,
+  exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,
+  httpGet: json['httpGet'] != null ? HttpGetAction.fromJson(json['httpGet'] as Map<String, dynamic>) : null,
+  sleep: json['sleep'] != null ? SleepAction.fromJson(json['sleep'] as Map<String, dynamic>) : null,
+  tcpSocket: json['tcpSocket'] != null ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>) : null,
 ); }
 
 /// Exec specifies a command to execute in the container.

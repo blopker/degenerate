@@ -44,12 +44,8 @@ final class PackageVersionMetadata {const PackageVersionMetadata({required this.
 
 factory PackageVersionMetadata.fromJson(Map<String, dynamic> json) { return PackageVersionMetadata(
   packageType: PackageVersionMetadataPackageType.fromJson(json['package_type'] as String),
-  container: json['container'] != null
-        ? PackageVersionMetadataContainer.fromJson(json['container'] as Map<String, dynamic>)
-        : null,
-  docker: json['docker'] != null
-        ? PackageVersionMetadataDocker.fromJson(json['docker'] as Map<String, dynamic>)
-        : null,
+  container: json['container'] != null ? PackageVersionMetadataContainer.fromJson(json['container'] as Map<String, dynamic>) : null,
+  docker: json['docker'] != null ? PackageVersionMetadataDocker.fromJson(json['docker'] as Map<String, dynamic>) : null,
 ); }
 
 final PackageVersionMetadataPackageType packageType;

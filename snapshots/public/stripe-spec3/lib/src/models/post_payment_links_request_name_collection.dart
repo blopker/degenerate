@@ -8,12 +8,8 @@ import 'post_payment_links_request_name_collection_business.dart';import 'post_p
 final class PostPaymentLinksRequestNameCollection {const PostPaymentLinksRequestNameCollection({this.business, this.individual, });
 
 factory PostPaymentLinksRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestNameCollection(
-  business: json['business'] != null
-        ? PostPaymentLinksRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PostPaymentLinksRequestNameCollectionIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  business: json['business'] != null ? PostPaymentLinksRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostPaymentLinksRequestNameCollectionIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksRequestNameCollectionBusiness? business;

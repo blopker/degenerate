@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_oxxo_display_preference.dart'
 final class PostPaymentMethodConfigurationsRequestOxxo {const PostPaymentMethodConfigurationsRequestOxxo({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestOxxo(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestOxxoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestOxxoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestOxxoDisplayPreference? displayPreference;

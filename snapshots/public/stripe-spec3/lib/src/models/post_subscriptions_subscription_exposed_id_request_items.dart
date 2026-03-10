@@ -7,26 +7,16 @@
 import 'post_subscriptions_subscription_exposed_id_request_items_billing_thresholds.dart';import 'post_subscriptions_subscription_exposed_id_request_items_discounts.dart';import 'post_subscriptions_subscription_exposed_id_request_items_metadata.dart';import 'post_subscriptions_subscription_exposed_id_request_items_price_data.dart';import 'post_subscriptions_subscription_exposed_id_request_items_tax_rates.dart';final class PostSubscriptionsSubscriptionExposedIdRequestItems {const PostSubscriptionsSubscriptionExposedIdRequestItems({this.billingThresholds, this.clearUsage, this.deleted, this.discounts, this.id, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionsSubscriptionExposedIdRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   clearUsage: json['clear_usage'] as bool?,
   deleted: json['deleted'] as bool?,
-  discounts: json['discounts'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostSubscriptionsSubscriptionExposedIdRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
-  metadata: json['metadata'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostSubscriptionsSubscriptionExposedIdRequestItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostSubscriptionsSubscriptionExposedIdRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionsSubscriptionExposedIdRequestItemsBillingThresholds? billingThresholds;

@@ -38,41 +38,25 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
 
 factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCustomersRequest(
-  address: json['address'] != null
-        ? PostCustomersRequestAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostCustomersRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  businessName: json['business_name'] != null
-        ? PostCustomersRequestBusinessName.fromJson(json['business_name'] as Map<String, dynamic>)
-        : null,
-  cashBalance: json['cash_balance'] != null
-        ? PostCustomersRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>)
-        : null,
+  businessName: json['business_name'] != null ? PostCustomersRequestBusinessName.fromJson(json['business_name'] as Map<String, dynamic>) : null,
+  cashBalance: json['cash_balance'] != null ? PostCustomersRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null
-        ? PostCustomersRequestIndividualName.fromJson(json['individual_name'] as Map<String, dynamic>)
-        : null,
+  individualName: json['individual_name'] != null ? PostCustomersRequestIndividualName.fromJson(json['individual_name'] as Map<String, dynamic>) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostCustomersRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostCustomersRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostCustomersRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostCustomersRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   paymentMethod: json['payment_method'] as String?,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null
-        ? PostCustomersRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostCustomersRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   source: json['source'] as String?,
-  tax: json['tax'] != null
-        ? PostCustomersRequestTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? PostCustomersRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIdData: (json['tax_id_data'] as List<dynamic>?)?.map((e) => PostCustomersRequestTaxIdData.fromJson(e as Map<String, dynamic>)).toList(),
   testClock: json['test_clock'] as String?,

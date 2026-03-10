@@ -33,9 +33,7 @@ factory MessageDeltaContentTextAnnotationsFilePathObject.fromJson(Map<String, dy
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentTextAnnotationsFilePathObjectType.fromJson(json['type'] as String),
   text: json['text'] as String?,
-  filePath: json['file_path'] != null
-        ? MessageDeltaContentTextAnnotationsFilePathObjectFilePath.fromJson(json['file_path'] as Map<String, dynamic>)
-        : null,
+  filePath: json['file_path'] != null ? MessageDeltaContentTextAnnotationsFilePathObjectFilePath.fromJson(json['file_path'] as Map<String, dynamic>) : null,
   startIndex: json['start_index'] != null ? (json['start_index'] as num).toInt() : null,
   endIndex: json['end_index'] != null ? (json['end_index'] as num).toInt() : null,
 ); }

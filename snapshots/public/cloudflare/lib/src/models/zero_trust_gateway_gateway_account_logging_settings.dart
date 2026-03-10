@@ -8,9 +8,7 @@ import 'zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_typ
 
 factory ZeroTrustGatewayGatewayAccountLoggingSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
   redactPii: json.containsKey('redact_pii') ? json['redact_pii'] as bool : false,
-  settingsByRuleType: json['settings_by_rule_type'] != null
-        ? ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType.fromJson(json['settings_by_rule_type'] as Map<String, dynamic>)
-        : null,
+  settingsByRuleType: json['settings_by_rule_type'] != null ? ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType.fromJson(json['settings_by_rule_type'] as Map<String, dynamic>) : null,
 ); }
 
 /// Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).

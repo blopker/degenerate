@@ -25,9 +25,7 @@ factory Deployment.fromJson(Map<String, dynamic> json) { return Deployment(
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

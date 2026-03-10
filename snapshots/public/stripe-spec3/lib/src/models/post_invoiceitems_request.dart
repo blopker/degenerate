@@ -41,29 +41,17 @@ factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return Pos
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null
-        ? PostInvoiceitemsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostInvoiceitemsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoice: json['invoice'] as String?,
-  metadata: json['metadata'] != null
-        ? PostInvoiceitemsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  period: json['period'] != null
-        ? PostInvoiceitemsRequestPeriod.fromJson(json['period'] as Map<String, dynamic>)
-        : null,
-  priceData: json['price_data'] != null
-        ? PostInvoiceitemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
-  pricing: json['pricing'] != null
-        ? PostInvoiceitemsRequestPricing.fromJson(json['pricing'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostInvoiceitemsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  period: json['period'] != null ? PostInvoiceitemsRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
+  priceData: json['price_data'] != null ? PostInvoiceitemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
+  pricing: json['pricing'] != null ? PostInvoiceitemsRequestPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null
-        ? PostInvoiceitemsRequestTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>)
-        : null,
+  taxCode: json['tax_code'] != null ? PostInvoiceitemsRequestTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>) : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

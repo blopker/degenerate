@@ -8,9 +8,7 @@ import 'autorag_config_search_request_reranking_model.dart';final class AutoragC
 
 factory AutoragConfigSearchRequestReranking.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequestReranking(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
-  model: json['model'] != null
-        ? AutoragConfigSearchRequestRerankingModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AutoragConfigSearchRequestRerankingModel.fromJson(json['model'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

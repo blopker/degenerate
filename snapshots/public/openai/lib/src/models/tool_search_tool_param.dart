@@ -11,9 +11,7 @@ factory ToolSearchToolParam.fromJson(Map<String, dynamic> json) { return ToolSea
   type: json['type'] as String,
   execution: json['execution'] != null ? ToolSearchExecutionType.fromJson(json['execution'] as String) : null,
   description: json['description'] as String?,
-  parameters: json['parameters'] != null
-        ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of the tool. Always `tool_search`.

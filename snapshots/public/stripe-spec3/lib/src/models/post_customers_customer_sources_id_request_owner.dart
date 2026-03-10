@@ -7,9 +7,7 @@
 import 'post_customers_customer_sources_id_request_owner_address.dart';final class PostCustomersCustomerSourcesIdRequestOwner {const PostCustomersCustomerSourcesIdRequestOwner({this.address, this.email, this.name, this.phone, });
 
 factory PostCustomersCustomerSourcesIdRequestOwner.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesIdRequestOwner(
-  address: json['address'] != null
-        ? PostCustomersCustomerSourcesIdRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostCustomersCustomerSourcesIdRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,

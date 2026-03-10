@@ -10,9 +10,7 @@ final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemPa
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(
   invoiceItem: json['invoice_item'] as String,
   proration: json['proration'] as bool,
-  prorationDetails: json['proration_details'] != null
-        ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParentProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>)
-        : null,
+  prorationDetails: json['proration_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParentProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
 ); }
 

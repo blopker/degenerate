@@ -8,9 +8,7 @@ import 'inline_object757_custom_format.dart';final class InlineObject757Custom {
 
 factory InlineObject757Custom.fromJson(Map<String, dynamic> json) { return InlineObject757Custom(
   description: json['description'] as String?,
-  format: json['format'] != null
-        ? InlineObject757CustomFormat.fromJson(json['format'])
-        : null,
+  format: json['format'] != null ? InlineObject757CustomFormat.fromJson(json['format']) : null,
   name: json['name'] as String,
 ); }
 

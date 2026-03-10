@@ -9,9 +9,7 @@ final class AuditLogGroupCreated {const AuditLogGroupCreated({this.id, this.data
 
 factory AuditLogGroupCreated.fromJson(Map<String, dynamic> json) { return AuditLogGroupCreated(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogGroupCreatedData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogGroupCreatedData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the group.

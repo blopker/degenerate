@@ -10,27 +10,19 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.
   name: json['name'] as String?,
   version: json['version'] as String?,
   npmUser: json['npm_user'] as String?,
-  author: json['author'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor.fromJson(json['author'])
-        : null,
-  bugs: json['bugs'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs.fromJson(json['bugs'])
-        : null,
+  author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor.fromJson(json['author']) : null,
+  bugs: json['bugs'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs.fromJson(json['bugs']) : null,
   dependencies: (json['dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   devDependencies: (json['dev_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   peerDependencies: (json['peer_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   optionalDependencies: (json['optional_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   description: json['description'] as String?,
-  dist: json['dist'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist.fromJson(json['dist'])
-        : null,
+  dist: json['dist'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist.fromJson(json['dist']) : null,
   gitHead: json['git_head'] as String?,
   homepage: json['homepage'] as String?,
   license: json['license'] as String?,
   main: json['main'] as String?,
-  repository: json['repository'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository.fromJson(json['repository'])
-        : null,
+  repository: json['repository'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository.fromJson(json['repository']) : null,
   scripts: (json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   id: json['id'] as String?,
   nodeVersion: json['node_version'] as String?,
@@ -43,9 +35,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
   bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   man: (json['man'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  directories: json['directories'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories.fromJson(json['directories'])
-        : null,
+  directories: json['directories'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories.fromJson(json['directories']) : null,
   os: (json['os'] as List<dynamic>?)?.map((e) => e as String).toList(),
   cpu: (json['cpu'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readme: json['readme'] as String?,

@@ -8,15 +8,9 @@ import 'fine_tuning_job_hyperparameters_batch_size.dart';import 'fine_tuning_job
 final class FineTuningJobHyperparameters {const FineTuningJobHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuningJobHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuningJobHyperparameters(
-  batchSize: json['batch_size'] != null
-        ? FineTuningJobHyperparametersBatchSize.fromJson(json['batch_size'])
-        : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null
-        ? FineTuningJobHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier'])
-        : null,
-  nEpochs: json['n_epochs'] != null
-        ? FineTuningJobHyperparametersNEpochs.fromJson(json['n_epochs'])
-        : null,
+  batchSize: json['batch_size'] != null ? FineTuningJobHyperparametersBatchSize.fromJson(json['batch_size']) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? FineTuningJobHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier']) : null,
+  nEpochs: json['n_epochs'] != null ? FineTuningJobHyperparametersNEpochs.fromJson(json['n_epochs']) : null,
 ); }
 
 final FineTuningJobHyperparametersBatchSize? batchSize;

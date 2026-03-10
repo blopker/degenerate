@@ -14,9 +14,7 @@ factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamReposito
   fullName: json['full_name'] as String,
   license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
   forks: (json['forks'] as num).toInt(),
-  permissions: json['permissions'] != null
-        ? TeamRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? TeamRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String?,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   private: json['private'] as bool,

@@ -7,15 +7,11 @@
 import 'package:collection/collection.dart';import 'post_checkout_sessions_request_line_items_adjustable_quantity.dart';import 'post_checkout_sessions_request_line_items_price_data.dart';final class PostCheckoutSessionsRequestLineItems {const PostCheckoutSessionsRequestLineItems({this.adjustableQuantity, this.dynamicTaxRates, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostCheckoutSessionsRequestLineItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItems(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   dynamicTaxRates: (json['dynamic_tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostCheckoutSessionsRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostCheckoutSessionsRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

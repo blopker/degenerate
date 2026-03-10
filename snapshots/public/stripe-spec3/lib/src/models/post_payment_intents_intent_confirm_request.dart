@@ -71,49 +71,27 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentIntentsIntentConfirmRequest {const PostPaymentIntentsIntentConfirmRequest({this.amountDetails, this.captureMethod, this.clientSecret, this.confirmationToken, this.errorOnRequiresAction, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.offSession, this.paymentDetails, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.useStripeSdk, });
 
 factory PostPaymentIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequest(
-  amountDetails: json['amount_details'] != null
-        ? PostPaymentIntentsIntentConfirmRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentConfirmRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   captureMethod: json['capture_method'] != null ? PostPaymentIntentsIntentConfirmRequestCaptureMethod.fromJson(json['capture_method'] as String) : null,
   clientSecret: json['client_secret'] as String?,
   confirmationToken: json['confirmation_token'] as String?,
   errorOnRequiresAction: json['error_on_requires_action'] as bool?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null
-        ? PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>)
-        : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  hooks: json['hooks'] != null
-        ? PostPaymentIntentsIntentConfirmRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>)
-        : null,
+  hooks: json['hooks'] != null ? PostPaymentIntentsIntentConfirmRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   mandate: json['mandate'] as String?,
-  mandateData: json['mandate_data'] != null
-        ? PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>)
-        : null,
-  offSession: json['off_session'] != null
-        ? PostPaymentIntentsIntentConfirmRequestOffSession.fromJson(json['off_session'] as Map<String, dynamic>)
-        : null,
-  paymentDetails: json['payment_details'] != null
-        ? PostPaymentIntentsIntentConfirmRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
+  mandateData: json['mandate_data'] != null ? PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
+  offSession: json['off_session'] != null ? PostPaymentIntentsIntentConfirmRequestOffSession.fromJson(json['off_session'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  radarOptions: json['radar_options'] != null
-        ? PostPaymentIntentsIntentConfirmRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>)
-        : null,
-  receiptEmail: json['receipt_email'] != null
-        ? PostPaymentIntentsIntentConfirmRequestReceiptEmail.fromJson(json['receipt_email'] as Map<String, dynamic>)
-        : null,
+  radarOptions: json['radar_options'] != null ? PostPaymentIntentsIntentConfirmRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
+  receiptEmail: json['receipt_email'] != null ? PostPaymentIntentsIntentConfirmRequestReceiptEmail.fromJson(json['receipt_email'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null
-        ? PostPaymentIntentsIntentConfirmRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentConfirmRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
 ); }
 

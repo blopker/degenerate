@@ -10,9 +10,7 @@ final class PaymentPagesCheckoutSessionCollectedInformation {const PaymentPagesC
 factory PaymentPagesCheckoutSessionCollectedInformation.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: json['business_name'] as String?,
   individualName: json['individual_name'] as String?,
-  shippingDetails: json['shipping_details'] != null
-        ? PaymentPagesCheckoutSessionCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  shippingDetails: json['shipping_details'] != null ? PaymentPagesCheckoutSessionCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Customer’s business name for this Checkout Session

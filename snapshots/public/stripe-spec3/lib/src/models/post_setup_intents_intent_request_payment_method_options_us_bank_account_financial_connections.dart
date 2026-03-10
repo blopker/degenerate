@@ -64,9 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
-  filters: json['filters'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,

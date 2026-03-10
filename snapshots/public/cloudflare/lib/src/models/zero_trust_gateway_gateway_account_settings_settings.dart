@@ -8,48 +8,20 @@ import 'zero_trust_gateway_activity_log_settings.dart';import 'zero_trust_gatewa
 final class ZeroTrustGatewayGatewayAccountSettingsSettings {const ZeroTrustGatewayGatewayAccountSettingsSettings({this.activityLog, this.antivirus, this.blockPage, this.bodyScanning, this.browserIsolation, this.certificate, this.customCertificate, this.extendedEmailMatching, this.fips, this.hostSelector, this.inspection, this.protocolDetection, this.sandbox, this.tlsDecrypt, });
 
 factory ZeroTrustGatewayGatewayAccountSettingsSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountSettingsSettings(
-  activityLog: json['activity_log'] != null
-        ? ZeroTrustGatewayActivityLogSettings.fromJson(json['activity_log'] as Map<String, dynamic>)
-        : null,
-  antivirus: json['antivirus'] != null
-        ? ZeroTrustGatewayAntiVirusSettings.fromJson(json['antivirus'] as Map<String, dynamic>)
-        : null,
-  blockPage: json['block_page'] != null
-        ? ZeroTrustGatewayBlockPageSettings.fromJson(json['block_page'] as Map<String, dynamic>)
-        : null,
-  bodyScanning: json['body_scanning'] != null
-        ? ZeroTrustGatewayBodyScanningSettings.fromJson(json['body_scanning'] as Map<String, dynamic>)
-        : null,
-  browserIsolation: json['browser_isolation'] != null
-        ? ZeroTrustGatewayBrowserIsolationSettings.fromJson(json['browser_isolation'] as Map<String, dynamic>)
-        : null,
-  certificate: json['certificate'] != null
-        ? ZeroTrustGatewayCertificateSettings.fromJson(json['certificate'] as Map<String, dynamic>)
-        : null,
-  customCertificate: json['custom_certificate'] != null
-        ? ZeroTrustGatewayCustomCertificateSettings.fromJson(json['custom_certificate'] as Map<String, dynamic>)
-        : null,
-  extendedEmailMatching: json['extended_email_matching'] != null
-        ? ZeroTrustGatewayExtendedEmailMatching.fromJson(json['extended_email_matching'] as Map<String, dynamic>)
-        : null,
-  fips: json['fips'] != null
-        ? ZeroTrustGatewayFipsSettings.fromJson(json['fips'] as Map<String, dynamic>)
-        : null,
-  hostSelector: json['host_selector'] != null
-        ? ZeroTrustGatewayHostSelectorSettings.fromJson(json['host_selector'] as Map<String, dynamic>)
-        : null,
-  inspection: json['inspection'] != null
-        ? ZeroTrustGatewayInspectionSettings.fromJson(json['inspection'] as Map<String, dynamic>)
-        : null,
-  protocolDetection: json['protocol_detection'] != null
-        ? ZeroTrustGatewayProtocolDetection.fromJson(json['protocol_detection'] as Map<String, dynamic>)
-        : null,
-  sandbox: json['sandbox'] != null
-        ? ZeroTrustGatewaySandbox.fromJson(json['sandbox'] as Map<String, dynamic>)
-        : null,
-  tlsDecrypt: json['tls_decrypt'] != null
-        ? ZeroTrustGatewayTlsSettings.fromJson(json['tls_decrypt'] as Map<String, dynamic>)
-        : null,
+  activityLog: json['activity_log'] != null ? ZeroTrustGatewayActivityLogSettings.fromJson(json['activity_log'] as Map<String, dynamic>) : null,
+  antivirus: json['antivirus'] != null ? ZeroTrustGatewayAntiVirusSettings.fromJson(json['antivirus'] as Map<String, dynamic>) : null,
+  blockPage: json['block_page'] != null ? ZeroTrustGatewayBlockPageSettings.fromJson(json['block_page'] as Map<String, dynamic>) : null,
+  bodyScanning: json['body_scanning'] != null ? ZeroTrustGatewayBodyScanningSettings.fromJson(json['body_scanning'] as Map<String, dynamic>) : null,
+  browserIsolation: json['browser_isolation'] != null ? ZeroTrustGatewayBrowserIsolationSettings.fromJson(json['browser_isolation'] as Map<String, dynamic>) : null,
+  certificate: json['certificate'] != null ? ZeroTrustGatewayCertificateSettings.fromJson(json['certificate'] as Map<String, dynamic>) : null,
+  customCertificate: json['custom_certificate'] != null ? ZeroTrustGatewayCustomCertificateSettings.fromJson(json['custom_certificate'] as Map<String, dynamic>) : null,
+  extendedEmailMatching: json['extended_email_matching'] != null ? ZeroTrustGatewayExtendedEmailMatching.fromJson(json['extended_email_matching'] as Map<String, dynamic>) : null,
+  fips: json['fips'] != null ? ZeroTrustGatewayFipsSettings.fromJson(json['fips'] as Map<String, dynamic>) : null,
+  hostSelector: json['host_selector'] != null ? ZeroTrustGatewayHostSelectorSettings.fromJson(json['host_selector'] as Map<String, dynamic>) : null,
+  inspection: json['inspection'] != null ? ZeroTrustGatewayInspectionSettings.fromJson(json['inspection'] as Map<String, dynamic>) : null,
+  protocolDetection: json['protocol_detection'] != null ? ZeroTrustGatewayProtocolDetection.fromJson(json['protocol_detection'] as Map<String, dynamic>) : null,
+  sandbox: json['sandbox'] != null ? ZeroTrustGatewaySandbox.fromJson(json['sandbox'] as Map<String, dynamic>) : null,
+  tlsDecrypt: json['tls_decrypt'] != null ? ZeroTrustGatewayTlsSettings.fromJson(json['tls_decrypt'] as Map<String, dynamic>) : null,
 ); }
 
 final ZeroTrustGatewayActivityLogSettings? activityLog;

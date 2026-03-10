@@ -94,15 +94,9 @@ factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> 
   customOriginSni: json['custom_origin_sni'] != null ? TlsCertificatesAndHostnamesCustomOriginSni.fromJson(json['custom_origin_sni'] as String) : null,
   hostname: json['hostname'] != null ? TlsCertificatesAndHostnamesHostname.fromJson(json['hostname'] as String) : null,
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
-  ownershipVerification: json['ownership_verification'] != null
-        ? TlsCertificatesAndHostnamesOwnershipVerification.fromJson(json['ownership_verification'] as Map<String, dynamic>)
-        : null,
-  ownershipVerificationHttp: json['ownership_verification_http'] != null
-        ? TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(json['ownership_verification_http'] as Map<String, dynamic>)
-        : null,
-  ssl: json['ssl'] != null
-        ? TlsCertificatesAndHostnamesSsl.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
+  ownershipVerification: json['ownership_verification'] != null ? TlsCertificatesAndHostnamesOwnershipVerification.fromJson(json['ownership_verification'] as Map<String, dynamic>) : null,
+  ownershipVerificationHttp: json['ownership_verification_http'] != null ? TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(json['ownership_verification_http'] as Map<String, dynamic>) : null,
+  ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(json['status'] as String) : null,
   verificationErrors: (json['verification_errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

@@ -8,18 +8,12 @@ import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_e
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo(
   backendRTT: json['backend_r_t_t'] != null ? (json['backend_r_t_t'] as num).toDouble() : null,
-  connectivity: json['connectivity'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoConnectivity.fromJson(json['connectivity'] as Map<String, dynamic>)
-        : null,
+  connectivity: json['connectivity'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoConnectivity.fromJson(json['connectivity'] as Map<String, dynamic>) : null,
   effectiveNetworkType: json['effective_network_type'] as String?,
   fractionalLoss: json['fractional_loss'] != null ? (json['fractional_loss'] as num).toInt() : null,
-  ipDetails: json['ip_details'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails.fromJson(json['ip_details'] as Map<String, dynamic>)
-        : null,
+  ipDetails: json['ip_details'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails.fromJson(json['ip_details'] as Map<String, dynamic>) : null,
   jitter: json['jitter'] != null ? (json['jitter'] as num).toInt() : null,
-  location: json['location'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   rTT: json['r_t_t'] != null ? (json['r_t_t'] as num).toDouble() : null,
   throughput: json['throughput'] != null ? (json['throughput'] as num).toInt() : null,
   turnConnectivity: json['turn_connectivity'] as bool?,

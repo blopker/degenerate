@@ -139,9 +139,7 @@ factory WebhookPullRequestDequeuedPullRequest.fromJson(Map<String, dynamic> json
   mergeableState: json['mergeable_state'] as String?,
   merged: json['merged'] as bool?,
   mergedAt: DateTime.parse(json['merged_at'] as String),
-  mergedBy: json['merged_by'] != null
-        ? WebhookPullRequestDequeuedPullRequestMergedBy.fromJson(json['merged_by'] as Map<String, dynamic>)
-        : null,
+  mergedBy: json['merged_by'] != null ? WebhookPullRequestDequeuedPullRequestMergedBy.fromJson(json['merged_by'] as Map<String, dynamic>) : null,
   milestone: WebhookPullRequestDequeuedPullRequestMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),

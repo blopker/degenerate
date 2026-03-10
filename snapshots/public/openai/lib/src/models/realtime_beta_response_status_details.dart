@@ -80,9 +80,7 @@ final class RealtimeBetaResponseStatusDetails {const RealtimeBetaResponseStatusD
 factory RealtimeBetaResponseStatusDetails.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseStatusDetails(
   type: json['type'] != null ? RealtimeBetaResponseStatusDetailsType.fromJson(json['type'] as String) : null,
   reason: json['reason'] != null ? RealtimeBetaResponseStatusDetailsReason.fromJson(json['reason'] as String) : null,
-  error: json['error'] != null
-        ? RealtimeBetaResponseStatusDetailsError.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? RealtimeBetaResponseStatusDetailsError.fromJson(json['error'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of error that caused the response to fail, corresponding

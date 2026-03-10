@@ -171,12 +171,8 @@ final class SetupAttemptPaymentMethodDetailsIdeal {const SetupAttemptPaymentMeth
 factory SetupAttemptPaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsIdeal(
   bank: json['bank'] != null ? SetupAttemptPaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null,
   bic: json['bic'] != null ? SetupAttemptPaymentMethodDetailsIdealBic.fromJson(json['bic'] as String) : null,
-  generatedSepaDebit: json['generated_sepa_debit'] != null
-        ? SetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>)
-        : null,
-  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null
-        ? SetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>)
-        : null,
+  generatedSepaDebit: json['generated_sepa_debit'] != null ? SetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>) : null,
+  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null ? SetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>) : null,
   ibanLast4: json['iban_last4'] as String?,
   verifiedName: json['verified_name'] as String?,
 ); }

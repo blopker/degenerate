@@ -7,9 +7,7 @@
 import 'magic_cidr.dart';import 'magic_ip_address.dart';import 'magic_nat.dart';final class MagicRoutedSubnet {const MagicRoutedSubnet({this.nat, required this.nextHop, required this.prefix, });
 
 factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) { return MagicRoutedSubnet(
-  nat: json['nat'] != null
-        ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>)
-        : null,
+  nat: json['nat'] != null ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>) : null,
   nextHop: MagicIpAddress.fromJson(json['next_hop'] as String),
   prefix: MagicCidr.fromJson(json['prefix'] as String),
 ); }

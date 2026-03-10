@@ -393,21 +393,15 @@ final class TaxId {const TaxId({this.country, required this.created, this.custom
 factory TaxId.fromJson(Map<String, dynamic> json) { return TaxId(
   country: json['country'] as String?,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null
-        ? TaxIdCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? TaxIdCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TaxIdObject.fromJson(json['object'] as String),
-  owner: json['owner'] != null
-        ? TaxIdOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? TaxIdOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   type: TaxIdType.fromJson(json['type'] as String),
   value: json['value'] as String,
-  verification: json['verification'] != null
-        ? TaxIdVerification2.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? TaxIdVerification2.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Two-letter ISO code representing the country of the tax ID.

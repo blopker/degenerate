@@ -9,9 +9,7 @@ import 'mcn_resource_details_section_item_value.dart';final class McnResourceDet
 factory McnResourceDetailsSectionItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItem(
   helpText: json['helpText'] as String?,
   name: json['name'] as String?,
-  value: json['value'] != null
-        ? McnResourceDetailsSectionItemValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? McnResourceDetailsSectionItemValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final String? helpText;

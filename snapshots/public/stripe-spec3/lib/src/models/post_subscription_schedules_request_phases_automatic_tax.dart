@@ -8,9 +8,7 @@ import 'post_subscription_schedules_request_phases_automatic_tax_liability.dart'
 
 factory PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostSubscriptionSchedulesRequestPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostSubscriptionSchedulesRequestPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

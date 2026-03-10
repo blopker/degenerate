@@ -74,33 +74,25 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   created: json['created'] != null ? StreamCreated.fromJson(json['created'] as String) : null,
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   duration: json['duration'] != null ? StreamDuration.fromJson(json['duration'] as num) : null,
-  input: json['input'] != null
-        ? StreamInput.fromJson(json['input'] as Map<String, dynamic>)
-        : null,
+  input: json['input'] != null ? StreamInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
   meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
-  playback: json['playback'] != null
-        ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>)
-        : null,
+  playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,
   readyToStream: json['readyToStream'] != null ? StreamReadyToStream.fromJson(json['readyToStream'] as bool) : null,
   readyToStreamAt: json['readyToStreamAt'] != null ? StreamReadyToStreamAt.fromJson(json['readyToStreamAt'] as String) : null,
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   size: json['size'] != null ? StreamSize.fromJson(json['size'] as num) : null,
-  status: json['status'] != null
-        ? StreamMediaStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
+  status: json['status'] != null ? StreamMediaStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
   thumbnail: json['thumbnail'] != null ? StreamThumbnailUrl.fromJson(json['thumbnail'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   uid: json['uid'] != null ? StreamIdentifier.fromJson(json['uid'] as String) : null,
   uploadExpiry: json['uploadExpiry'] != null ? StreamOneTimeUploadExpiry.fromJson(json['uploadExpiry'] as String) : null,
   uploaded: json['uploaded'] != null ? StreamUploaded.fromJson(json['uploaded'] as String) : null,
-  watermark: json['watermark'] != null
-        ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? allowedOrigins;

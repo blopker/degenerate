@@ -202,165 +202,61 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentIntentsRequestPaymentMethodData {const PostPaymentIntentsRequestPaymentMethodData({this.acssDebit, this.affirm, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.cashapp, this.crypto, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, required this.type, this.usBankAccount, this.wechatPay, this.zip, });
 
 factory PostPaymentIntentsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodData(
-  acssDebit: json['acss_debit'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  affirm: json['affirm'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>)
-        : null,
-  afterpayClearpay: json['afterpay_clearpay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>)
-        : null,
-  alipay: json['alipay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAlipay.fromJson(json['alipay'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? PostPaymentIntentsRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  affirm: json['affirm'] != null ? PostPaymentIntentsRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? PostPaymentIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? PostPaymentIntentsRequestPaymentMethodDataAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
   allowRedisplay: json['allow_redisplay'] != null ? PostPaymentIntentsRequestPaymentMethodDataAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-  alma: json['alma'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAlma.fromJson(json['alma'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  auBecsDebit: json['au_becs_debit'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  billie: json['billie'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBillie.fromJson(json['billie'] as Map<String, dynamic>)
-        : null,
-  billingDetails: json['billing_details'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
-  blik: json['blik'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBlik.fromJson(json['blik'] as Map<String, dynamic>)
-        : null,
-  boleto: json['boleto'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataBoleto.fromJson(json['boleto'] as Map<String, dynamic>)
-        : null,
-  cashapp: json['cashapp'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataCashapp.fromJson(json['cashapp'] as Map<String, dynamic>)
-        : null,
-  crypto: json['crypto'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataCrypto.fromJson(json['crypto'] as Map<String, dynamic>)
-        : null,
-  customerBalance: json['customer_balance'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>)
-        : null,
-  eps: json['eps'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataEps.fromJson(json['eps'] as Map<String, dynamic>)
-        : null,
-  fpx: json['fpx'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataFpx.fromJson(json['fpx'] as Map<String, dynamic>)
-        : null,
-  giropay: json['giropay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataGiropay.fromJson(json['giropay'] as Map<String, dynamic>)
-        : null,
-  grabpay: json['grabpay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>)
-        : null,
-  ideal: json['ideal'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataIdeal.fromJson(json['ideal'] as Map<String, dynamic>)
-        : null,
-  interacPresent: json['interac_present'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>)
-        : null,
-  kakaoPay: json['kakao_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  konbini: json['konbini'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataKonbini.fromJson(json['konbini'] as Map<String, dynamic>)
-        : null,
-  krCard: json['kr_card'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataKrCard.fromJson(json['kr_card'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  mbWay: json['mb_way'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataMbWay.fromJson(json['mb_way'] as Map<String, dynamic>)
-        : null,
+  alma: json['alma'] != null ? PostPaymentIntentsRequestPaymentMethodDataAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? PostPaymentIntentsRequestPaymentMethodDataAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostPaymentIntentsRequestPaymentMethodDataBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? PostPaymentIntentsRequestPaymentMethodDataBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  billie: json['billie'] != null ? PostPaymentIntentsRequestPaymentMethodDataBillie.fromJson(json['billie'] as Map<String, dynamic>) : null,
+  billingDetails: json['billing_details'] != null ? PostPaymentIntentsRequestPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? PostPaymentIntentsRequestPaymentMethodDataBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  boleto: json['boleto'] != null ? PostPaymentIntentsRequestPaymentMethodDataBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? PostPaymentIntentsRequestPaymentMethodDataCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? PostPaymentIntentsRequestPaymentMethodDataCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? PostPaymentIntentsRequestPaymentMethodDataCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? PostPaymentIntentsRequestPaymentMethodDataEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  fpx: json['fpx'] != null ? PostPaymentIntentsRequestPaymentMethodDataFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? PostPaymentIntentsRequestPaymentMethodDataGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? PostPaymentIntentsRequestPaymentMethodDataGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  ideal: json['ideal'] != null ? PostPaymentIntentsRequestPaymentMethodDataIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  interacPresent: json['interac_present'] != null ? PostPaymentIntentsRequestPaymentMethodDataInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostPaymentIntentsRequestPaymentMethodDataKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? PostPaymentIntentsRequestPaymentMethodDataKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? PostPaymentIntentsRequestPaymentMethodDataKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostPaymentIntentsRequestPaymentMethodDataLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? PostPaymentIntentsRequestPaymentMethodDataMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  mobilepay: json['mobilepay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>)
-        : null,
-  multibanco: json['multibanco'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>)
-        : null,
-  naverPay: json['naver_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>)
-        : null,
-  nzBankAccount: json['nz_bank_account'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>)
-        : null,
-  oxxo: json['oxxo'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataOxxo.fromJson(json['oxxo'] as Map<String, dynamic>)
-        : null,
-  p24: json['p24'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataP24.fromJson(json['p24'] as Map<String, dynamic>)
-        : null,
-  payByBank: json['pay_by_bank'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>)
-        : null,
-  payco: json['payco'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPayco.fromJson(json['payco'] as Map<String, dynamic>)
-        : null,
-  paynow: json['paynow'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPaynow.fromJson(json['paynow'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  pix: json['pix'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPix.fromJson(json['pix'] as Map<String, dynamic>)
-        : null,
-  promptpay: json['promptpay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>)
-        : null,
-  radarOptions: json['radar_options'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>)
-        : null,
-  revolutPay: json['revolut_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>)
-        : null,
-  samsungPay: json['samsung_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>)
-        : null,
-  satispay: json['satispay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataSatispay.fromJson(json['satispay'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  sofort: json['sofort'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataSofort.fromJson(json['sofort'] as Map<String, dynamic>)
-        : null,
-  swish: json['swish'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataSwish.fromJson(json['swish'] as Map<String, dynamic>)
-        : null,
-  twint: json['twint'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataTwint.fromJson(json['twint'] as Map<String, dynamic>)
-        : null,
+  mobilepay: json['mobilepay'] != null ? PostPaymentIntentsRequestPaymentMethodDataMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? PostPaymentIntentsRequestPaymentMethodDataMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? PostPaymentIntentsRequestPaymentMethodDataNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  oxxo: json['oxxo'] != null ? PostPaymentIntentsRequestPaymentMethodDataOxxo.fromJson(json['oxxo'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? PostPaymentIntentsRequestPaymentMethodDataP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  payByBank: json['pay_by_bank'] != null ? PostPaymentIntentsRequestPaymentMethodDataPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>) : null,
+  payco: json['payco'] != null ? PostPaymentIntentsRequestPaymentMethodDataPayco.fromJson(json['payco'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? PostPaymentIntentsRequestPaymentMethodDataPaynow.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostPaymentIntentsRequestPaymentMethodDataPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostPaymentIntentsRequestPaymentMethodDataPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? PostPaymentIntentsRequestPaymentMethodDataPix.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  promptpay: json['promptpay'] != null ? PostPaymentIntentsRequestPaymentMethodDataPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>) : null,
+  radarOptions: json['radar_options'] != null ? PostPaymentIntentsRequestPaymentMethodDataRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  samsungPay: json['samsung_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
+  satispay: json['satispay'] != null ? PostPaymentIntentsRequestPaymentMethodDataSatispay.fromJson(json['satispay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostPaymentIntentsRequestPaymentMethodDataSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? PostPaymentIntentsRequestPaymentMethodDataSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? PostPaymentIntentsRequestPaymentMethodDataSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? PostPaymentIntentsRequestPaymentMethodDataTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
   type: PostPaymentIntentsRequestPaymentMethodDataType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
-  wechatPay: json['wechat_pay'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>)
-        : null,
-  zip: json['zip'] != null
-        ? PostPaymentIntentsRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? PostPaymentIntentsRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? PostPaymentIntentsRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? PostPaymentIntentsRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsRequestPaymentMethodDataAcssDebit? acssDebit;

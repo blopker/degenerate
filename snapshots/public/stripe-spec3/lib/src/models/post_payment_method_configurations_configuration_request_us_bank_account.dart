@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_us_bank_account
 final class PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount {const PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestUsBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestUsBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestUsBankAccountDisplayPreference? displayPreference;

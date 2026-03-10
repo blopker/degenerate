@@ -32,12 +32,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings(
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
-  paymentMethodTypes: json['payment_method_types'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodTypes: json['payment_method_types'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types'] as Map<String, dynamic>) : null,
   saveDefaultPaymentMethod: json['save_default_payment_method'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod.fromJson(json['save_default_payment_method'] as String) : null,
 ); }
 

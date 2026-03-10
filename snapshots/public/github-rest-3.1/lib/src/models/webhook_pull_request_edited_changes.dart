@@ -8,15 +8,9 @@ import 'webhook_pull_request_edited_changes_base.dart';import 'webhook_pull_requ
 final class WebhookPullRequestEditedChanges {const WebhookPullRequestEditedChanges({this.base, this.body, this.title, });
 
 factory WebhookPullRequestEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChanges(
-  base: json['base'] != null
-        ? WebhookPullRequestEditedChangesBase.fromJson(json['base'] as Map<String, dynamic>)
-        : null,
-  body: json['body'] != null
-        ? WebhookPullRequestEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  title: json['title'] != null
-        ? WebhookPullRequestEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>)
-        : null,
+  base: json['base'] != null ? WebhookPullRequestEditedChangesBase.fromJson(json['base'] as Map<String, dynamic>) : null,
+  body: json['body'] != null ? WebhookPullRequestEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? WebhookPullRequestEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookPullRequestEditedChangesBase? base;

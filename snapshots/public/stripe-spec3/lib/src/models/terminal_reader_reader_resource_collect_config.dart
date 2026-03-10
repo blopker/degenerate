@@ -10,9 +10,7 @@ final class TerminalReaderReaderResourceCollectConfig {const TerminalReaderReade
 factory TerminalReaderReaderResourceCollectConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   skipTipping: json['skip_tipping'] as bool?,
-  tipping: json['tipping'] != null
-        ? TerminalReaderReaderResourceTippingConfig.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
+  tipping: json['tipping'] != null ? TerminalReaderReaderResourceTippingConfig.fromJson(json['tipping'] as Map<String, dynamic>) : null,
 ); }
 
 /// Enable customer-initiated cancellation when processing this payment.

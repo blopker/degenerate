@@ -8,9 +8,7 @@ import 'zones_string_constraint.dart';/// URL target.
 final class ZonesUrlTarget {const ZonesUrlTarget({this.constraint, this.target, });
 
 factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarget(
-  constraint: json['constraint'] != null
-        ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>)
-        : null,
+  constraint: json['constraint'] != null ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>) : null,
   target: json['target'],
 ); }
 

@@ -8,9 +8,7 @@ import 'persistent_volume_claim_template.dart';/// Represents an ephemeral volum
 final class EphemeralVolumeSource {const EphemeralVolumeSource({this.volumeClaimTemplate});
 
 factory EphemeralVolumeSource.fromJson(Map<String, dynamic> json) { return EphemeralVolumeSource(
-  volumeClaimTemplate: json['volumeClaimTemplate'] != null
-        ? PersistentVolumeClaimTemplate.fromJson(json['volumeClaimTemplate'] as Map<String, dynamic>)
-        : null,
+  volumeClaimTemplate: json['volumeClaimTemplate'] != null ? PersistentVolumeClaimTemplate.fromJson(json['volumeClaimTemplate'] as Map<String, dynamic>) : null,
 ); }
 
 /// Will be used to create a stand-alone PVC to provision the volume. The pod in which this EphemeralVolumeSource is embedded will be the owner of the PVC, i.e. the PVC will be deleted together with the pod.  The name of the PVC will be `<pod name>-<volume name>` where `<volume name>` is the name from the `PodSpec.Volumes` array entry. Pod validation will reject the pod if the concatenated name is not valid for a PVC (for example, too long).

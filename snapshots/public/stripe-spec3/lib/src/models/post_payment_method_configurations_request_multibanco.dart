@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_multibanco_display_preference
 final class PostPaymentMethodConfigurationsRequestMultibanco {const PostPaymentMethodConfigurationsRequestMultibanco({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestMultibanco.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestMultibanco(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference? displayPreference;

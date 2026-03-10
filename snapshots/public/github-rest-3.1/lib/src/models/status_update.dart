@@ -48,9 +48,7 @@ factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   projectNodeId: json['project_node_id'] as String?,
-  creator: json['creator'] != null
-        ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-        : null,
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   status: json['status'] != null ? StatusUpdateStatus.fromJson(json['status'] as String) : null,

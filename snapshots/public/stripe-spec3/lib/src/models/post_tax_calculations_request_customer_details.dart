@@ -59,9 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTaxCalculationsRequestCustomerDetails {const PostTaxCalculationsRequestCustomerDetails({this.address, this.addressSource, this.ipAddress, this.taxIds, this.taxabilityOverride, });
 
 factory PostTaxCalculationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetails(
-  address: json['address'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressSource: json['address_source'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressSource.fromJson(json['address_source'] as String) : null,
   ipAddress: json['ip_address'] as String?,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => PostTaxCalculationsRequestCustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),

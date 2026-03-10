@@ -33,12 +33,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentLinksResourceAfterCompletion {const PaymentLinksResourceAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
 
 factory PaymentLinksResourceAfterCompletion.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAfterCompletion(
-  hostedConfirmation: json['hosted_confirmation'] != null
-        ? PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(json['hosted_confirmation'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? PaymentLinksResourceCompletionBehaviorRedirect.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
+  hostedConfirmation: json['hosted_confirmation'] != null ? PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PaymentLinksResourceCompletionBehaviorRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   type: PaymentLinksResourceAfterCompletionType.fromJson(json['type'] as String),
 ); }
 

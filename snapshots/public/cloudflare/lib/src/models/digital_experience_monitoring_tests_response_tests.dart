@@ -36,9 +36,7 @@ factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynam
   description: json['description'] as String,
   enabled: json['enabled'] as bool,
   host: json['host'] as String,
-  httpResults: json['httpResults'] != null
-        ? DigitalExperienceMonitoringTestsResponseTestsHttpResults.fromJson(json['httpResults'] as Map<String, dynamic>)
-        : null,
+  httpResults: json['httpResults'] != null ? DigitalExperienceMonitoringTestsResponseTestsHttpResults.fromJson(json['httpResults'] as Map<String, dynamic>) : null,
   httpResultsByColo: (json['httpResultsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   interval: json['interval'] as String,
@@ -47,9 +45,7 @@ factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynam
   name: json['name'] as String,
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTestsResponseTestsTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
-  tracerouteResults: json['tracerouteResults'] != null
-        ? DigitalExperienceMonitoringTestsResponseTestsTracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>)
-        : null,
+  tracerouteResults: json['tracerouteResults'] != null ? DigitalExperienceMonitoringTestsResponseTestsTracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>) : null,
   tracerouteResultsByColo: (json['tracerouteResultsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   updated: json['updated'] as String,
 ); }

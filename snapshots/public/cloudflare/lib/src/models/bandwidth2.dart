@@ -12,12 +12,8 @@ factory Bandwidth2.fromJson(Map<String, dynamic> json) { return Bandwidth2(
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
   contentType: (json['content_type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  ssl: json['ssl'] != null
-        ? Bandwidth2Ssl.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
-  sslProtocols: json['ssl_protocols'] != null
-        ? Bandwidth2SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>)
-        : null,
+  ssl: json['ssl'] != null ? Bandwidth2Ssl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+  sslProtocols: json['ssl_protocols'] != null ? Bandwidth2SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 

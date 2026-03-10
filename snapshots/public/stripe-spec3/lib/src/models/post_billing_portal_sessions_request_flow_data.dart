@@ -38,18 +38,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostBillingPortalSessionsRequestFlowData {const PostBillingPortalSessionsRequestFlowData({this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, required this.type, });
 
 factory PostBillingPortalSessionsRequestFlowData.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowData(
-  afterCompletion: json['after_completion'] != null
-        ? PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>)
-        : null,
-  subscriptionCancel: json['subscription_cancel'] != null
-        ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>)
-        : null,
-  subscriptionUpdate: json['subscription_update'] != null
-        ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>)
-        : null,
-  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null
-        ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>)
-        : null,
+  afterCompletion: json['after_completion'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,
+  subscriptionCancel: json['subscription_cancel'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
+  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
   type: PostBillingPortalSessionsRequestFlowDataType.fromJson(json['type'] as String),
 ); }
 

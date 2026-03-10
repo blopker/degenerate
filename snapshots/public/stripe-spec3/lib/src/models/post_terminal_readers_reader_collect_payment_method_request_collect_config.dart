@@ -38,9 +38,7 @@ factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJs
   allowRedisplay: json['allow_redisplay'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   skipTipping: json['skip_tipping'] as bool?,
-  tipping: json['tipping'] != null
-        ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
+  tipping: json['tipping'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay? allowRedisplay;

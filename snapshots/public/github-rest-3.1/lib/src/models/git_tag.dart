@@ -15,9 +15,7 @@ factory GitTag.fromJson(Map<String, dynamic> json) { return GitTag(
   message: json['message'] as String,
   tagger: GitTagTagger.fromJson(json['tagger'] as Map<String, dynamic>),
   object: GitTagObject.fromJson(json['object'] as Map<String, dynamic>),
-  verification: json['verification'] != null
-        ? Verification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final String nodeId;

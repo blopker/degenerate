@@ -7,9 +7,7 @@
 import 'inline_object1508_splashscreen.dart';final class InlineObject1508 {const InlineObject1508({this.splashscreen});
 
 factory InlineObject1508.fromJson(Map<String, dynamic> json) { return InlineObject1508(
-  splashscreen: json['splashscreen'] != null
-        ? InlineObject1508Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>)
-        : null,
+  splashscreen: json['splashscreen'] != null ? InlineObject1508Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1508Splashscreen? splashscreen;

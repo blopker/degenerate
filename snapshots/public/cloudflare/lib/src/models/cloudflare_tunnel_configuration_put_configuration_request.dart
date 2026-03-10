@@ -7,9 +7,7 @@
 import 'tunnel_config.dart';final class CloudflareTunnelConfigurationPutConfigurationRequest {const CloudflareTunnelConfigurationPutConfigurationRequest({this.config});
 
 factory CloudflareTunnelConfigurationPutConfigurationRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelConfigurationPutConfigurationRequest(
-  config: json['config'] != null
-        ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
 ); }
 
 final TunnelConfig? config;

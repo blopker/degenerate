@@ -33,9 +33,7 @@ factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOv
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,
-  rewriteAction: json['rewrite_action'] != null
-        ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>)
-        : null,
+  rewriteAction: json['rewrite_action'] != null ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as Object?))),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

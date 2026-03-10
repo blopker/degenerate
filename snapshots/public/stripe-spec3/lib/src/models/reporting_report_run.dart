@@ -44,9 +44,7 @@ factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return Reportin
   object: ReportingReportRunObject.fromJson(json['object'] as String),
   parameters: FinancialReportingFinanceReportRunRunParameters.fromJson(json['parameters'] as Map<String, dynamic>),
   reportType: json['report_type'] as String,
-  result: json['result'] != null
-        ? ReportingReportRunResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? ReportingReportRunResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
   succeededAt: json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null,
 ); }

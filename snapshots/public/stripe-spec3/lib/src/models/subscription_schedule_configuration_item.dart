@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'stackable_discount_with_disc
 final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({this.billingThresholds, required this.discounts, this.metadata, required this.price, this.quantity, this.taxRates, });
 
 factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleConfigurationItem(
-  billingThresholds: json['billing_thresholds'] != null
-        ? SubscriptionScheduleConfigurationItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionScheduleConfigurationItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   discounts: (json['discounts'] as List<dynamic>).map((e) => StackableDiscountWithDiscountSettings.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: SubscriptionScheduleConfigurationItemPrice.fromJson(json['price'] as Map<String, dynamic>),

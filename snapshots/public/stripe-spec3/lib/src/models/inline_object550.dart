@@ -34,18 +34,10 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject550 {const InlineObject550({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
 factory InlineObject550.fromJson(Map<String, dynamic> json) { return InlineObject550(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject550AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  expectedAt: json['expected_at'] != null
-        ? InlineObject550ExpectedAt.fromJson(json['expected_at'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject550Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
-  productDescription: json['product_description'] != null
-        ? InlineObject550ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject550AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  expectedAt: json['expected_at'] != null ? InlineObject550ExpectedAt.fromJson(json['expected_at'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject550Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
+  productDescription: json['product_description'] != null ? InlineObject550ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>) : null,
   productType: json['product_type'] != null ? InlineObject550ProductType.fromJson(json['product_type'] as String) : null,
 ); }
 

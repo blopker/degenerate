@@ -112,9 +112,7 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   originalLine: json['original_line'] != null ? (json['original_line'] as num).toInt() : null,
   side: json.containsKey('side') ? PullRequestReviewCommentSide.fromJson(json['side'] as String) : PullRequestReviewCommentSide.right,
   subjectType: json['subject_type'] != null ? PullRequestReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
 ); }

@@ -8,21 +8,11 @@ import 'webhook_team_edited_changes_description.dart';import 'webhook_team_edite
 final class WebhookTeamEditedChanges {const WebhookTeamEditedChanges({this.description, this.name, this.privacy, this.notificationSetting, this.repository, });
 
 factory WebhookTeamEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChanges(
-  description: json['description'] != null
-        ? WebhookTeamEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? WebhookTeamEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  privacy: json['privacy'] != null
-        ? WebhookTeamEditedChangesPrivacy.fromJson(json['privacy'] as Map<String, dynamic>)
-        : null,
-  notificationSetting: json['notification_setting'] != null
-        ? WebhookTeamEditedChangesNotificationSetting.fromJson(json['notification_setting'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? WebhookTeamEditedChangesRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? WebhookTeamEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? WebhookTeamEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  privacy: json['privacy'] != null ? WebhookTeamEditedChangesPrivacy.fromJson(json['privacy'] as Map<String, dynamic>) : null,
+  notificationSetting: json['notification_setting'] != null ? WebhookTeamEditedChangesNotificationSetting.fromJson(json['notification_setting'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? WebhookTeamEditedChangesRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookTeamEditedChangesDescription? description;

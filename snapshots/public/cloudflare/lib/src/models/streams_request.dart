@@ -7,19 +7,11 @@
 import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'streams_request_http.dart';import 'streams_request_worker_binding.dart';final class StreamsRequest {const StreamsRequest({this.format, this.http, required this.name, this.schema, this.workerBinding, });
 
 factory StreamsRequest.fromJson(Map<String, dynamic> json) { return StreamsRequest(
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
-  http: json['http'] != null
-        ? StreamsRequestHttp.fromJson(json['http'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
+  http: json['http'] != null ? StreamsRequestHttp.fromJson(json['http'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-  schema: json['schema'] != null
-        ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>)
-        : null,
-  workerBinding: json['worker_binding'] != null
-        ? StreamsRequestWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>)
-        : null,
+  schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
+  workerBinding: json['worker_binding'] != null ? StreamsRequestWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>) : null,
 ); }
 
 final CloudflarePipelinesFormat? format;

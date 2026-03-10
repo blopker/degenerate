@@ -8,9 +8,7 @@ import 'start_livestreaming_request_video_config.dart';final class StartLivestre
 
 factory StartLivestreamingRequest.fromJson(Map<String, dynamic> json) { return StartLivestreamingRequest(
   name: json['name'] as String?,
-  videoConfig: json['video_config'] != null
-        ? StartLivestreamingRequestVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>)
-        : null,
+  videoConfig: json['video_config'] != null ? StartLivestreamingRequestVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
 final String? name;

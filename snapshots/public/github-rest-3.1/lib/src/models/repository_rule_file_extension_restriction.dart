@@ -30,9 +30,7 @@ final class RepositoryRuleFileExtensionRestriction {const RepositoryRuleFileExte
 
 factory RepositoryRuleFileExtensionRestriction.fromJson(Map<String, dynamic> json) { return RepositoryRuleFileExtensionRestriction(
   type: RepositoryRuleFileExtensionRestrictionType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleFileExtensionRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleFileExtensionRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleFileExtensionRestrictionType type;

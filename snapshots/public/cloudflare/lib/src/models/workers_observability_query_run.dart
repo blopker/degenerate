@@ -39,9 +39,7 @@ factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { retur
   granularity: (json['granularity'] as num).toDouble(),
   id: json['id'] as String,
   query: WorkersObservabilityQuery.fromJson(json['query'] as Map<String, dynamic>),
-  statistics: json['statistics'] != null
-        ? WorkersObservabilityQueryRunStatistics.fromJson(json['statistics'] as Map<String, dynamic>)
-        : null,
+  statistics: json['statistics'] != null ? WorkersObservabilityQueryRunStatistics.fromJson(json['statistics'] as Map<String, dynamic>) : null,
   status: WorkersObservabilityQueryRunStatus.fromJson(json['status'] as String),
   timeframe: WorkersObservabilityQueryRunTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   updated: json['updated'] as String?,

@@ -45,9 +45,7 @@ final class PostTerminalReadersReaderCollectInputsRequestInputs {const PostTermi
 factory PostTerminalReadersReaderCollectInputsRequestInputs.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputs(
   customText: PostTerminalReadersReaderCollectInputsRequestInputsCustomText.fromJson(json['custom_text'] as Map<String, dynamic>),
   $required: json['required'] as bool?,
-  selection: json['selection'] != null
-        ? PostTerminalReadersReaderCollectInputsRequestInputsSelection.fromJson(json['selection'] as Map<String, dynamic>)
-        : null,
+  selection: json['selection'] != null ? PostTerminalReadersReaderCollectInputsRequestInputsSelection.fromJson(json['selection'] as Map<String, dynamic>) : null,
   toggles: (json['toggles'] as List<dynamic>?)?.map((e) => PostTerminalReadersReaderCollectInputsRequestInputsToggles.fromJson(e as Map<String, dynamic>)).toList(),
   type: PostTerminalReadersReaderCollectInputsRequestInputsType.fromJson(json['type'] as String),
 ); }

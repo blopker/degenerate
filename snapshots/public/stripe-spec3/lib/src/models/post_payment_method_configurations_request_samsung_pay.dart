@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_samsung_pay_display_preferenc
 final class PostPaymentMethodConfigurationsRequestSamsungPay {const PostPaymentMethodConfigurationsRequestSamsungPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSamsungPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference? displayPreference;

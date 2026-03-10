@@ -34,16 +34,10 @@ bool get isUnknown { return !values.contains(this); }
 final class AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler {const AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
 
 factory AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler(
-  crawlOptions: json['crawl_options'] != null
-        ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>)
-        : null,
-  parseOptions: json['parse_options'] != null
-        ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>)
-        : null,
+  crawlOptions: json['crawl_options'] != null ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
+  parseOptions: json['parse_options'] != null ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
   parseType: json.containsKey('parse_type') ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap,
-  storeOptions: json['store_options'] != null
-        ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>)
-        : null,
+  storeOptions: json['store_options'] != null ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
 final AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? crawlOptions;

@@ -8,9 +8,7 @@ import 'post_payment_intents_intent_capture_request_hooks_inputs.dart';/// Autom
 final class PostPaymentIntentsIntentCaptureRequestHooks {const PostPaymentIntentsIntentCaptureRequestHooks({this.inputs});
 
 factory PostPaymentIntentsIntentCaptureRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestHooks(
-  inputs: json['inputs'] != null
-        ? PostPaymentIntentsIntentCaptureRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>)
-        : null,
+  inputs: json['inputs'] != null ? PostPaymentIntentsIntentCaptureRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentCaptureRequestHooksInputs? inputs;

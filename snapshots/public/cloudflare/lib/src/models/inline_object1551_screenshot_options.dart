@@ -9,20 +9,14 @@ final class InlineObject1551ScreenshotOptions {const InlineObject1551ScreenshotO
 
 factory InlineObject1551ScreenshotOptions.fromJson(Map<String, dynamic> json) { return InlineObject1551ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,
-  clip: json['clip'] != null
-        ? InlineObject1551ScreenshotOptionsClip.fromJson(json['clip'] as Map<String, dynamic>)
-        : null,
-  encoding: json['encoding'] != null
-        ? InlineObject1551ScreenshotOptionsEncoding.fromJson(json['encoding'] as Map<String, dynamic>)
-        : null,
+  clip: json['clip'] != null ? InlineObject1551ScreenshotOptionsClip.fromJson(json['clip'] as Map<String, dynamic>) : null,
+  encoding: json['encoding'] != null ? InlineObject1551ScreenshotOptionsEncoding.fromJson(json['encoding'] as Map<String, dynamic>) : null,
   fromSurface: json['fromSurface'] as bool?,
   fullPage: json['fullPage'] as bool?,
   omitBackground: json['omitBackground'] as bool?,
   optimizeForSpeed: json['optimizeForSpeed'] as bool?,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
-  type: json['type'] != null
-        ? InlineObject1551ScreenshotOptionsType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
+  type: json['type'] != null ? InlineObject1551ScreenshotOptionsType.fromJson(json['type'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? captureBeyondViewport;

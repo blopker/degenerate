@@ -13,12 +13,8 @@ factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
   contentType: (json['content_type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  ssl: json['ssl'] != null
-        ? RequestsSsl.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
-  sslProtocols: json['ssl_protocols'] != null
-        ? RequestsSslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>)
-        : null,
+  ssl: json['ssl'] != null ? RequestsSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+  sslProtocols: json['ssl_protocols'] != null ? RequestsSslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 

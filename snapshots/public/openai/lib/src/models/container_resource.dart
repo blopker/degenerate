@@ -44,13 +44,9 @@ factory ContainerResource.fromJson(Map<String, dynamic> json) { return Container
   createdAt: (json['created_at'] as num).toInt(),
   status: json['status'] as String,
   lastActiveAt: json['last_active_at'] != null ? (json['last_active_at'] as num).toInt() : null,
-  expiresAfter: json['expires_after'] != null
-        ? ContainerResourceExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? ContainerResourceExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   memoryLimit: json['memory_limit'] != null ? ContainerResourceMemoryLimit.fromJson(json['memory_limit'] as String) : null,
-  networkPolicy: json['network_policy'] != null
-        ? ContainerResourceNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>)
-        : null,
+  networkPolicy: json['network_policy'] != null ? ContainerResourceNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier for the container.

@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address, this.businessName, this.email, this.individualName, this.name, this.phone, this.taxExempt, this.taxIds, });
 
 factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomerDetails(
-  address: json['address'] != null
-        ? PaymentPagesCheckoutSessionCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PaymentPagesCheckoutSessionCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   businessName: json['business_name'] as String?,
   email: json['email'] as String?,
   individualName: json['individual_name'] as String?,

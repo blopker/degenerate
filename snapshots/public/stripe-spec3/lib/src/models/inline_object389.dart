@@ -7,9 +7,7 @@
 import 'inline_object389_bank_transfer.dart';final class InlineObject389 {const InlineObject389({this.bankTransfer, this.fundingType, });
 
 factory InlineObject389.fromJson(Map<String, dynamic> json) { return InlineObject389(
-  bankTransfer: json['bank_transfer'] != null
-        ? InlineObject389BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>)
-        : null,
+  bankTransfer: json['bank_transfer'] != null ? InlineObject389BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] as String?,
 ); }
 

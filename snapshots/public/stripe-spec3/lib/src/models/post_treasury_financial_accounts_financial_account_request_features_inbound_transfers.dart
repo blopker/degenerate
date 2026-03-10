@@ -7,9 +7,7 @@
 import 'post_treasury_financial_accounts_financial_account_request_features_inbound_transfers_ach.dart';final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers({this.ach});
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers(
-  ach: json['ach'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch? ach;

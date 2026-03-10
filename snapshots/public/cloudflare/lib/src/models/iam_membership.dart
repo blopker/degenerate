@@ -7,14 +7,10 @@
 import 'package:collection/collection.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';final class IamMembership {const IamMembership({this.account, this.apiAccessEnabled, this.id, this.permissions, this.roles, this.status, });
 
 factory IamMembership.fromJson(Map<String, dynamic> json) { return IamMembership(
-  account: json['account'] != null
-        ? IamAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? IamAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   apiAccessEnabled: json['api_access_enabled'] != null ? AccessEnabled.fromJson(json['api_access_enabled'] as bool) : null,
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
-  permissions: json['permissions'] != null
-        ? IamPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? IamPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
   status: json['status'] != null ? IamSchemasStatus.fromJson(json['status'] as String) : null,
 ); }

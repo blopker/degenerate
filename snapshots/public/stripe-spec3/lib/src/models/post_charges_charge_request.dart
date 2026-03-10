@@ -10,16 +10,10 @@ factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return Po
   customer: json['customer'] as String?,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fraudDetails: json['fraud_details'] != null
-        ? PostChargesChargeRequestFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostChargesChargeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  fraudDetails: json['fraud_details'] != null ? PostChargesChargeRequestFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostChargesChargeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
-  shipping: json['shipping'] != null
-        ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

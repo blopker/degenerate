@@ -67,9 +67,7 @@ bool get isUnknown { return !values.contains(this); }
 final class CheckoutUsBankAccountPaymentMethodOptions {const CheckoutUsBankAccountPaymentMethodOptions({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory CheckoutUsBankAccountPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutUsBankAccountPaymentMethodOptions(
-  financialConnections: json['financial_connections'] != null
-        ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,

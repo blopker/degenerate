@@ -106,13 +106,9 @@ factory Page.fromJson(Map<String, dynamic> json) { return Page(
   custom404: json['custom_404'] as bool,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   buildType: json['build_type'] != null ? PageBuildType.fromJson(json['build_type'] as String) : null,
-  source: json['source'] != null
-        ? PagesSourceHash.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? PagesSourceHash.fromJson(json['source'] as Map<String, dynamic>) : null,
   public: json['public'] as bool,
-  httpsCertificate: json['https_certificate'] != null
-        ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>)
-        : null,
+  httpsCertificate: json['https_certificate'] != null ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>) : null,
   httpsEnforced: json['https_enforced'] as bool?,
 ); }
 

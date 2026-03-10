@@ -7,9 +7,7 @@
 import 'd1_database_update_partial_request_body_read_replication.dart';final class D1DatabaseUpdatePartialRequestBody {const D1DatabaseUpdatePartialRequestBody({this.readReplication});
 
 factory D1DatabaseUpdatePartialRequestBody.fromJson(Map<String, dynamic> json) { return D1DatabaseUpdatePartialRequestBody(
-  readReplication: json['read_replication'] != null
-        ? D1DatabaseUpdatePartialRequestBodyReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>)
-        : null,
+  readReplication: json['read_replication'] != null ? D1DatabaseUpdatePartialRequestBodyReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configuration for D1 read replication.

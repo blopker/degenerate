@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_twint_display_preference.dart
 final class PostPaymentMethodConfigurationsRequestTwint {const PostPaymentMethodConfigurationsRequestTwint({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestTwint.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestTwint(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestTwintDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestTwintDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestTwintDisplayPreference? displayPreference;

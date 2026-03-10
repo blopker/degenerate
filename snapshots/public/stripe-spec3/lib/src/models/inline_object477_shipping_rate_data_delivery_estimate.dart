@@ -7,12 +7,8 @@
 import 'inline_object477_shipping_rate_data_delivery_estimate_maximum.dart';import 'inline_object477_shipping_rate_data_delivery_estimate_minimum.dart';final class InlineObject477ShippingRateDataDeliveryEstimate {const InlineObject477ShippingRateDataDeliveryEstimate({this.maximum, this.minimum, });
 
 factory InlineObject477ShippingRateDataDeliveryEstimate.fromJson(Map<String, dynamic> json) { return InlineObject477ShippingRateDataDeliveryEstimate(
-  maximum: json['maximum'] != null
-        ? InlineObject477ShippingRateDataDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>)
-        : null,
-  minimum: json['minimum'] != null
-        ? InlineObject477ShippingRateDataDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>)
-        : null,
+  maximum: json['maximum'] != null ? InlineObject477ShippingRateDataDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,
+  minimum: json['minimum'] != null ? InlineObject477ShippingRateDataDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject477ShippingRateDataDeliveryEstimateMaximum? maximum;

@@ -10,17 +10,11 @@ final class CloudflarePipelinesR2TablePublic {const CloudflarePipelinesR2TablePu
 factory CloudflarePipelinesR2TablePublic.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePublic(
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
-  fileNaming: json['file_naming'] != null
-        ? CloudflarePipelinesR2TablePublicFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>)
-        : null,
+  fileNaming: json['file_naming'] != null ? CloudflarePipelinesR2TablePublicFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
   jurisdiction: json['jurisdiction'] as String?,
-  partitioning: json['partitioning'] != null
-        ? CloudflarePipelinesR2TablePublicPartitioning.fromJson(json['partitioning'] as Map<String, dynamic>)
-        : null,
+  partitioning: json['partitioning'] != null ? CloudflarePipelinesR2TablePublicPartitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
-  rollingPolicy: json['rolling_policy'] != null
-        ? CloudflarePipelinesR2TablePublicRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>)
-        : null,
+  rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2TablePublicRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Cloudflare Account ID for the bucket

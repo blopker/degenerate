@@ -9,9 +9,7 @@ import 'post_accounts_request_settings_card_issuing_tos_acceptance_user_agent.da
 factory PostAccountsRequestSettingsCardIssuingTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardIssuingTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null
-        ? PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>)
-        : null,
+  userAgent: json['user_agent'] != null ? PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>) : null,
 ); }
 
 final int? date;

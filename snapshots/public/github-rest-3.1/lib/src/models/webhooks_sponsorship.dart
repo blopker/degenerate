@@ -8,9 +8,7 @@ import 'webhooks_sponsorship_maintainer.dart';import 'webhooks_sponsorship_spons
 
 factory WebhooksSponsorship.fromJson(Map<String, dynamic> json) { return WebhooksSponsorship(
   createdAt: json['created_at'] as String,
-  maintainer: json['maintainer'] != null
-        ? WebhooksSponsorshipMaintainer.fromJson(json['maintainer'] as Map<String, dynamic>)
-        : null,
+  maintainer: json['maintainer'] != null ? WebhooksSponsorshipMaintainer.fromJson(json['maintainer'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   privacyLevel: json['privacy_level'] as String,
   sponsor: WebhooksSponsorshipSponsor.fromJson(json['sponsor'] as Map<String, dynamic>),

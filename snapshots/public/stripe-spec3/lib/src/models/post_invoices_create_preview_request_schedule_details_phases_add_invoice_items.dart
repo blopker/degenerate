@@ -9,17 +9,11 @@ import 'package:collection/collection.dart';import 'post_invoices_create_preview
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  period: json['period'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>)
-        : null,
+  period: json['period'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsDiscounts>? discounts;

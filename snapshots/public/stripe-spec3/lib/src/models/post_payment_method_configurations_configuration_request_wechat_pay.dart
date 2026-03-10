@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_wechat_pay_disp
 final class PostPaymentMethodConfigurationsConfigurationRequestWechatPay {const PostPaymentMethodConfigurationsConfigurationRequestWechatPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestWechatPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestWechatPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference? displayPreference;

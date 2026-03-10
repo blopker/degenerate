@@ -10,9 +10,7 @@ final class RulesetsMessage {const RulesetsMessage({this.code, required this.mes
 factory RulesetsMessage.fromJson(Map<String, dynamic> json) { return RulesetsMessage(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String,
-  source: json['source'] != null
-        ? RulesetsMessageSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? RulesetsMessageSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// A unique code for this message.

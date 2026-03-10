@@ -40,9 +40,7 @@ factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) { return LoadBal
   address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,
   disabledAt: json['disabled_at'] != null ? LoadBalancingDisabledAt.fromJson(json['disabled_at'] as String) : null,
   enabled: json['enabled'] != null ? LoadBalancingSchemasEnabled.fromJson(json['enabled'] as bool) : null,
-  header: json['header'] != null
-        ? LoadBalancingSchemasHeader.fromJson(json['header'] as Map<String, dynamic>)
-        : null,
+  header: json['header'] != null ? LoadBalancingSchemasHeader.fromJson(json['header'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? LoadBalancingSchemasName.fromJson(json['name'] as String) : null,
   port: json['port'] != null ? LoadBalancingOriginPort.fromJson(json['port'] as num) : null,
   virtualNetworkId: json['virtual_network_id'] != null ? LoadBalancingVirtualNetworkId.fromJson(json['virtual_network_id'] as String) : null,

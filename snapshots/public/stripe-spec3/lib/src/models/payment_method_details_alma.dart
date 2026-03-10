@@ -8,9 +8,7 @@ import 'alma_installments.dart';///
 final class PaymentMethodDetailsAlma {const PaymentMethodDetailsAlma({this.installments, this.transactionId, });
 
 factory PaymentMethodDetailsAlma.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAlma(
-  installments: json['installments'] != null
-        ? AlmaInstallments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? AlmaInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   transactionId: json['transaction_id'] as String?,
 ); }
 

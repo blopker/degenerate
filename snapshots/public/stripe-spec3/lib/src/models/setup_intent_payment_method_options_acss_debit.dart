@@ -62,9 +62,7 @@ final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMe
 
 factory SetupIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
-  mandateOptions: json['mandate_options'] != null
-        ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

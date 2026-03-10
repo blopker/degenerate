@@ -8,9 +8,7 @@ import 'payment_intent_processing_customer_notification.dart';///
 final class PaymentIntentCardProcessing {const PaymentIntentCardProcessing({this.customerNotification});
 
 factory PaymentIntentCardProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentCardProcessing(
-  customerNotification: json['customer_notification'] != null
-        ? PaymentIntentProcessingCustomerNotification.fromJson(json['customer_notification'] as Map<String, dynamic>)
-        : null,
+  customerNotification: json['customer_notification'] != null ? PaymentIntentProcessingCustomerNotification.fromJson(json['customer_notification'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentIntentProcessingCustomerNotification? customerNotification;

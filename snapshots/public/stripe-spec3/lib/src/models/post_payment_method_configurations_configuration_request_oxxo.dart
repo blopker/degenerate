@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_oxxo_display_pr
 final class PostPaymentMethodConfigurationsConfigurationRequestOxxo {const PostPaymentMethodConfigurationsConfigurationRequestOxxo({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestOxxo(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestOxxoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestOxxoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestOxxoDisplayPreference? displayPreference;

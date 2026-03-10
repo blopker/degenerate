@@ -38,9 +38,7 @@ final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this
 factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return ObservatoryLighthouseReport(
   cls: json['cls'] != null ? (json['cls'] as num).toDouble() : null,
   deviceType: json['deviceType'] != null ? ObservatoryDeviceType.fromJson(json['deviceType'] as String) : null,
-  error: json['error'] != null
-        ? ObservatoryLighthouseReportError.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? ObservatoryLighthouseReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
   fcp: json['fcp'] != null ? (json['fcp'] as num).toDouble() : null,
   jsonReportUrl: json['jsonReportUrl'] as String?,
   lcp: json['lcp'] != null ? (json['lcp'] as num).toDouble() : null,

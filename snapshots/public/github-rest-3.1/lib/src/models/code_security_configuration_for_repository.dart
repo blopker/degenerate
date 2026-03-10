@@ -52,9 +52,7 @@ final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurat
 
 factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationForRepository(
   status: json['status'] != null ? CodeSecurityConfigurationForRepositoryStatus.fromJson(json['status'] as String) : null,
-  configuration: json['configuration'] != null
-        ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
 ); }
 
 /// The attachment status of the code security configuration on the repository.

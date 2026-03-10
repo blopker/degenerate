@@ -25,9 +25,7 @@ factory GistSimpleForkOf.fromJson(Map<String, dynamic> json) { return GistSimple
   commentsEnabled: json['comments_enabled'] as bool?,
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
   commentsUrl: Uri.parse(json['comments_url'] as String),
-  owner: json['owner'] != null
-        ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
   forks: (json['forks'] as List<dynamic>?)?.map((e) => e).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => e).toList(),

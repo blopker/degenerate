@@ -11,12 +11,8 @@ factory NotificationPoliciesUpdateANotificationPolicyRequest.fromJson(Map<String
   alertType: json['alert_type'] != null ? AaaAlertType.fromJson(json['alert_type'] as String) : null,
   description: json['description'] != null ? AaaSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? AaaEnabled.fromJson(json['enabled'] as bool) : null,
-  filters: json['filters'] != null
-        ? AaaFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
-  mechanisms: json['mechanisms'] != null
-        ? AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? AaaFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
+  mechanisms: json['mechanisms'] != null ? AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? AaaSchemasName.fromJson(json['name'] as String) : null,
 ); }
 

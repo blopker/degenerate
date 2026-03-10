@@ -14,9 +14,7 @@ factory StreamVideoCopyRequest.fromJson(Map<String, dynamic> json) { return Stre
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   url: Uri.parse(json['url'] as String),
-  watermark: json['watermark'] != null
-        ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? allowedOrigins;

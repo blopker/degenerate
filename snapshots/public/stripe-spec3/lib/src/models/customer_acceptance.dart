@@ -34,12 +34,8 @@ final class CustomerAcceptance {const CustomerAcceptance({this.acceptedAt, this.
 
 factory CustomerAcceptance.fromJson(Map<String, dynamic> json) { return CustomerAcceptance(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
-  offline: json['offline'] != null
-        ? OfflineAcceptance.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
-  online: json['online'] != null
-        ? OnlineAcceptance.fromJson(json['online'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? OfflineAcceptance.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  online: json['online'] != null ? OnlineAcceptance.fromJson(json['online'] as Map<String, dynamic>) : null,
   type: CustomerAcceptanceType.fromJson(json['type'] as String),
 ); }
 

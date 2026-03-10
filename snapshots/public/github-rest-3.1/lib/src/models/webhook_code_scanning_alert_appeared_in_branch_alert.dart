@@ -78,9 +78,7 @@ factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynam
   dismissedReason: WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.fromJson(json['dismissed_reason'] as String),
   fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
-  mostRecentInstance: json['most_recent_instance'] != null
-        ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>)
-        : null,
+  mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(json['state'] as String),

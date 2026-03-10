@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_bancontact_display_preference
 final class PostPaymentMethodConfigurationsRequestBancontact {const PostPaymentMethodConfigurationsRequestBancontact({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBancontact(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestBancontactDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBancontactDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestBancontactDisplayPreference? displayPreference;

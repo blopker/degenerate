@@ -8,12 +8,8 @@ import 'realtimekit_update_preset_permissions_chat_private.dart';import 'realtim
 final class RealtimekitUpdatePresetPermissionsChat {const RealtimekitUpdatePresetPermissionsChat({this.private, this.public, });
 
 factory RealtimekitUpdatePresetPermissionsChat.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsChat(
-  private: json['private'] != null
-        ? RealtimekitUpdatePresetPermissionsChatPrivate.fromJson(json['private'] as Map<String, dynamic>)
-        : null,
-  public: json['public'] != null
-        ? RealtimekitUpdatePresetPermissionsChatPublic.fromJson(json['public'] as Map<String, dynamic>)
-        : null,
+  private: json['private'] != null ? RealtimekitUpdatePresetPermissionsChatPrivate.fromJson(json['private'] as Map<String, dynamic>) : null,
+  public: json['public'] != null ? RealtimekitUpdatePresetPermissionsChatPublic.fromJson(json['public'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitUpdatePresetPermissionsChatPrivate? private;

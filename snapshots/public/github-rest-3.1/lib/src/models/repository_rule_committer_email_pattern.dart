@@ -30,9 +30,7 @@ final class RepositoryRuleCommitterEmailPattern {const RepositoryRuleCommitterEm
 
 factory RepositoryRuleCommitterEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitterEmailPattern(
   type: RepositoryRuleCommitterEmailPatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleCommitterEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleCommitterEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitterEmailPatternType type;

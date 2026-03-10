@@ -32,9 +32,7 @@ final class InboundTransfers {const InboundTransfers({required this.billingDetai
 factory InboundTransfers.fromJson(Map<String, dynamic> json) { return InboundTransfers(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
   type: InboundTransfersType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasurySharedResourceBillingDetails billingDetails;

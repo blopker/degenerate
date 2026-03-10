@@ -8,15 +8,11 @@ import 'package:collection/collection.dart';import 'post_issuing_disputes_reques
 
 factory PostIssuingDisputesRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  evidence: json['evidence'] != null
-        ? PostIssuingDisputesRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>)
-        : null,
+  evidence: json['evidence'] != null ? PostIssuingDisputesRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   transaction: json['transaction'] as String?,
-  treasury: json['treasury'] != null
-        ? PostIssuingDisputesRequestTreasury.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  treasury: json['treasury'] != null ? PostIssuingDisputesRequestTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
 ); }
 
 /// The dispute amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). If not set, defaults to the full transaction amount.

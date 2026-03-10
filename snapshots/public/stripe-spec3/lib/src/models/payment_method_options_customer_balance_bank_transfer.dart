@@ -81,9 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentMethodOptionsCustomerBalanceBankTransfer {const PaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.requestedAddressTypes, this.type, });
 
 factory PaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
-  euBankTransfer: json['eu_bank_transfer'] != null
-        ? PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>)
-        : null,
+  euBankTransfer: json['eu_bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   requestedAddressTypes: (json['requested_address_types'] as List<dynamic>?)?.map((e) => PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes.fromJson(e as String)).toList(),
   type: json['type'] != null ? PaymentMethodOptionsCustomerBalanceBankTransferType.fromJson(json['type'] as String) : null,
 ); }

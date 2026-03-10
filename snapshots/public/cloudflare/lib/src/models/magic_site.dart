@@ -11,9 +11,7 @@ factory MagicSite.fromJson(Map<String, dynamic> json) { return MagicSite(
   description: json['description'] as String?,
   haMode: json['ha_mode'] as bool?,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
-  location: json['location'] != null
-        ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? MagicSiteName.fromJson(json['name'] as String) : null,
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
 ); }

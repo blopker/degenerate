@@ -9,12 +9,8 @@ import 'assistant_object_tool_resources_code_interpreter.dart';import 'assistant
 final class AssistantObjectToolResources {const AssistantObjectToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory AssistantObjectToolResources.fromJson(Map<String, dynamic> json) { return AssistantObjectToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? AssistantObjectToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? AssistantObjectToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? AssistantObjectToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? AssistantObjectToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 final AssistantObjectToolResourcesCodeInterpreter? codeInterpreter;

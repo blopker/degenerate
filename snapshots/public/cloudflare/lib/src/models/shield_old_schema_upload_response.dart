@@ -8,9 +8,7 @@ import 'shield_old_public_schema.dart';import 'shield_old_schema_upload_details_
 
 factory ShieldOldSchemaUploadResponse.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadResponse(
   schema: ShieldOldPublicSchema.fromJson(json['schema'] as Map<String, dynamic>),
-  uploadDetails: json['upload_details'] != null
-        ? ShieldOldSchemaUploadDetailsWarningsOnly.fromJson(json['upload_details'] as Map<String, dynamic>)
-        : null,
+  uploadDetails: json['upload_details'] != null ? ShieldOldSchemaUploadDetailsWarningsOnly.fromJson(json['upload_details'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldOldPublicSchema schema;

@@ -29,18 +29,10 @@ final class WebhookBranchProtectionRuleEdited {const WebhookBranchProtectionRule
 
 factory WebhookBranchProtectionRuleEdited.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEdited(
   action: WebhookBranchProtectionRuleEditedAction.fromJson(json['action'] as String),
-  changes: json['changes'] != null
-        ? WebhookBranchProtectionRuleEditedChanges.fromJson(json['changes'] as Map<String, dynamic>)
-        : null,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  changes: json['changes'] != null ? WebhookBranchProtectionRuleEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   rule: WebhooksRule.fromJson(json['rule'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

@@ -91,14 +91,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSetupIntentsIntentRequestPaymentMethodOptionsCard {const PostSetupIntentsIntentRequestPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, this.threeDSecure, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCard(
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsCardMandateOptions? mandateOptions;

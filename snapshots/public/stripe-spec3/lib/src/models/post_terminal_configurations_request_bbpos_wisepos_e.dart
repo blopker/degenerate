@@ -8,9 +8,7 @@ import 'post_terminal_configurations_request_bbpos_wisepos_e_splashscreen.dart';
 final class PostTerminalConfigurationsRequestBbposWiseposE {const PostTerminalConfigurationsRequestBbposWiseposE({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestBbposWiseposE.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestBbposWiseposE(
-  splashscreen: json['splashscreen'] != null
-        ? PostTerminalConfigurationsRequestBbposWiseposESplashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>)
-        : null,
+  splashscreen: json['splashscreen'] != null ? PostTerminalConfigurationsRequestBbposWiseposESplashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalConfigurationsRequestBbposWiseposESplashscreen? splashscreen;

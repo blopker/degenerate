@@ -8,9 +8,7 @@ import 'post_treasury_outbound_transfers_request_destination_payment_method_opti
 final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions({this.usBankAccount});
 
 factory PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions(
-  usBankAccount: json['us_bank_account'] != null
-        ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptionsUsBankAccount? usBankAccount;

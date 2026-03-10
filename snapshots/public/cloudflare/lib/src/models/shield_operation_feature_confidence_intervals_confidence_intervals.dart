@@ -8,9 +8,7 @@ import 'shield_operation_feature_confidence_intervals_confidence_intervals_sugge
 
 factory ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
-  suggestedThreshold: json['suggested_threshold'] != null
-        ? ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThreshold.fromJson(json['suggested_threshold'] as Map<String, dynamic>)
-        : null,
+  suggestedThreshold: json['suggested_threshold'] != null ? ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThreshold.fromJson(json['suggested_threshold'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldTimestamp? lastUpdated;

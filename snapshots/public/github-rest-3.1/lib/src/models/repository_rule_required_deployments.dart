@@ -30,9 +30,7 @@ final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeplo
 
 factory RepositoryRuleRequiredDeployments.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeployments(
   type: RepositoryRuleRequiredDeploymentsType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleRequiredDeploymentsParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleRequiredDeploymentsParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleRequiredDeploymentsType type;

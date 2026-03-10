@@ -8,18 +8,10 @@ import 'payment_flows_private_payment_methods_card_payment_intent_amount_details
 final class PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions {const PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
 
 factory PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions(
-  card: json['card'] != null
-        ? PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions.fromJson(json['paypal'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions? card;

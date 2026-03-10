@@ -7,12 +7,8 @@
 import 'get_org_analytics_response_data_recording_stats.dart';import 'get_org_analytics_response_data_session_stats.dart';final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
 
 factory GetOrgAnalyticsResponseData.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseData(
-  recordingStats: json['recording_stats'] != null
-        ? GetOrgAnalyticsResponseDataRecordingStats.fromJson(json['recording_stats'] as Map<String, dynamic>)
-        : null,
-  sessionStats: json['session_stats'] != null
-        ? GetOrgAnalyticsResponseDataSessionStats.fromJson(json['session_stats'] as Map<String, dynamic>)
-        : null,
+  recordingStats: json['recording_stats'] != null ? GetOrgAnalyticsResponseDataRecordingStats.fromJson(json['recording_stats'] as Map<String, dynamic>) : null,
+  sessionStats: json['session_stats'] != null ? GetOrgAnalyticsResponseDataSessionStats.fromJson(json['session_stats'] as Map<String, dynamic>) : null,
 ); }
 
 /// Recording statistics of an App during the range specified

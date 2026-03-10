@@ -7,9 +7,7 @@
 import 'post_radar_payment_evaluations_request_payment_details_payment_method_details_billing_details.dart';final class PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails({this.billingDetails, required this.paymentMethod, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails(
-  billingDetails: json['billing_details'] != null
-        ? PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
+  billingDetails: json['billing_details'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String,
 ); }
 

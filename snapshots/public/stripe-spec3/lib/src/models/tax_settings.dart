@@ -58,9 +58,7 @@ final class TaxSettings {const TaxSettings({required this.defaults, this.headOff
 
 factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
   defaults: TaxProductResourceTaxSettingsDefaults.fromJson(json['defaults'] as Map<String, dynamic>),
-  headOffice: json['head_office'] != null
-        ? TaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>)
-        : null,
+  headOffice: json['head_office'] != null ? TaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: TaxSettingsObject.fromJson(json['object'] as String),
   status: TaxSettingsStatus.fromJson(json['status'] as String),

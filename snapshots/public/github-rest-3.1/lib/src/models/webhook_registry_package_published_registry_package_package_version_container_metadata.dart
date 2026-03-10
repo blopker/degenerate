@@ -9,9 +9,7 @@ import 'webhook_registry_package_published_registry_package_package_version_cont
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
   labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  tag: json['tag'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>)
-        : null,
+  tag: json['tag'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>) : null,
 ); }
 
 final Map<String,Object?>? labels;

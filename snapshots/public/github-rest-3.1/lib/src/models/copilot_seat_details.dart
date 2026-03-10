@@ -36,15 +36,9 @@ bool get isUnknown { return !values.contains(this); }
 final class CopilotSeatDetails {const CopilotSeatDetails({this.assignee, this.organization, this.assigningTeam, this.pendingCancellationDate, this.lastActivityAt, this.lastActivityEditor, this.lastAuthenticatedAt, required this.createdAt, this.updatedAt, this.planType, });
 
 factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotSeatDetails(
-  assignee: json['assignee'] != null
-        ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  assigningTeam: json['assigning_team'] != null
-        ? CopilotSeatDetailsAssigningTeam.fromJson(json['assigning_team'])
-        : null,
+  assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  assigningTeam: json['assigning_team'] != null ? CopilotSeatDetailsAssigningTeam.fromJson(json['assigning_team']) : null,
   pendingCancellationDate: json['pending_cancellation_date'] as String?,
   lastActivityAt: json['last_activity_at'] != null ? DateTime.parse(json['last_activity_at'] as String) : null,
   lastActivityEditor: json['last_activity_editor'] as String?,

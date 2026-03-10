@@ -10,9 +10,7 @@ factory WorDeleteWorkflowResponse.fromJson(Map<String, dynamic> json) { return W
   errors: (json['errors'] as List<dynamic>).map((e) => WorDeleteWorkflowResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorDeleteWorkflowResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorDeleteWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-  resultInfo: json['result_info'] != null
-        ? WorDeleteWorkflowResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? WorDeleteWorkflowResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

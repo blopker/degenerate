@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_billing_credit_grants_i
 
 factory PostBillingCreditGrantsIdRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null
-        ? PostBillingCreditGrantsIdRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>)
-        : null,
+  expiresAt: json['expires_at'] != null ? PostBillingCreditGrantsIdRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

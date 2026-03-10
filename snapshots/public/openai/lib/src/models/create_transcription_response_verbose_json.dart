@@ -13,9 +13,7 @@ factory CreateTranscriptionResponseVerboseJson.fromJson(Map<String, dynamic> jso
   text: json['text'] as String,
   words: (json['words'] as List<dynamic>?)?.map((e) => TranscriptionWord.fromJson(e as Map<String, dynamic>)).toList(),
   segments: (json['segments'] as List<dynamic>?)?.map((e) => TranscriptionSegment.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null
-        ? TranscriptTextUsageDuration.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? TranscriptTextUsageDuration.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The language of the input audio.

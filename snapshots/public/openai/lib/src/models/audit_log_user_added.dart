@@ -9,9 +9,7 @@ final class AuditLogUserAdded {const AuditLogUserAdded({this.id, this.data, });
 
 factory AuditLogUserAdded.fromJson(Map<String, dynamic> json) { return AuditLogUserAdded(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogUserAddedData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogUserAddedData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The user ID.

@@ -19,9 +19,7 @@ factory BuildsBuildResponseTrigger.fromJson(Map<String, dynamic> json) { return 
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
   pathExcludes: (json['path_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   pathIncludes: (json['path_includes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  repoConnection: json['repo_connection'] != null
-        ? BuildsUpsertRepoConnectionResponse.fromJson(json['repo_connection'] as Map<String, dynamic>)
-        : null,
+  repoConnection: json['repo_connection'] != null ? BuildsUpsertRepoConnectionResponse.fromJson(json['repo_connection'] as Map<String, dynamic>) : null,
   rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
   triggerName: json['trigger_name'] != null ? BuildsTriggerName.fromJson(json['trigger_name'] as String) : null,
   triggerUuid: json['trigger_uuid'] != null ? BuildsTriggerUuid.fromJson(json['trigger_uuid'] as String) : null,

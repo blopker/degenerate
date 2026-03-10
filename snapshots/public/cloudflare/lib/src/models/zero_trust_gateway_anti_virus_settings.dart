@@ -32,9 +32,7 @@ factory ZeroTrustGatewayAntiVirusSettings.fromJson(Map<String, dynamic> json) { 
   enabledDownloadPhase: json['enabled_download_phase'] != null ? ZeroTrustGatewayEnabledDownloadPhase.fromJson(json['enabled_download_phase'] as bool) : null,
   enabledUploadPhase: json['enabled_upload_phase'] != null ? ZeroTrustGatewayEnabledUploadPhase.fromJson(json['enabled_upload_phase'] as bool) : null,
   failClosed: json['fail_closed'] != null ? ZeroTrustGatewayFailClosed.fromJson(json['fail_closed'] as bool) : null,
-  notificationSettings: json['notification_settings'] != null
-        ? ZeroTrustGatewayNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>)
-        : null,
+  notificationSettings: json['notification_settings'] != null ? ZeroTrustGatewayNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null,
 ); }
 
 final ZeroTrustGatewayEnabledDownloadPhase? enabledDownloadPhase;

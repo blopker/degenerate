@@ -7,9 +7,7 @@
 import 'get_livestream_analytics_complete_response_data.dart';final class GetLivestreamAnalyticsCompleteResponse {const GetLivestreamAnalyticsCompleteResponse({this.data, this.success, });
 
 factory GetLivestreamAnalyticsCompleteResponse.fromJson(Map<String, dynamic> json) { return GetLivestreamAnalyticsCompleteResponse(
-  data: json['data'] != null
-        ? GetLivestreamAnalyticsCompleteResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? GetLivestreamAnalyticsCompleteResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

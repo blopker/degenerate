@@ -42,23 +42,13 @@ bool get isUnknown { return !values.contains(this); }
 final class InsightsResourcesPaymentEvaluationEvent {const InsightsResourcesPaymentEvaluationEvent({this.disputeOpened, this.earlyFraudWarningReceived, required this.occurredAt, this.refunded, required this.type, this.userInterventionRaised, this.userInterventionResolved, });
 
 factory InsightsResourcesPaymentEvaluationEvent.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationEvent(
-  disputeOpened: json['dispute_opened'] != null
-        ? InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(json['dispute_opened'] as Map<String, dynamic>)
-        : null,
-  earlyFraudWarningReceived: json['early_fraud_warning_received'] != null
-        ? InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(json['early_fraud_warning_received'] as Map<String, dynamic>)
-        : null,
+  disputeOpened: json['dispute_opened'] != null ? InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(json['dispute_opened'] as Map<String, dynamic>) : null,
+  earlyFraudWarningReceived: json['early_fraud_warning_received'] != null ? InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(json['early_fraud_warning_received'] as Map<String, dynamic>) : null,
   occurredAt: (json['occurred_at'] as num).toInt(),
-  refunded: json['refunded'] != null
-        ? InsightsResourcesPaymentEvaluationRefunded.fromJson(json['refunded'] as Map<String, dynamic>)
-        : null,
+  refunded: json['refunded'] != null ? InsightsResourcesPaymentEvaluationRefunded.fromJson(json['refunded'] as Map<String, dynamic>) : null,
   type: InsightsResourcesPaymentEvaluationEventType.fromJson(json['type'] as String),
-  userInterventionRaised: json['user_intervention_raised'] != null
-        ? InsightsResourcesPaymentEvaluationUserInterventionRaised.fromJson(json['user_intervention_raised'] as Map<String, dynamic>)
-        : null,
-  userInterventionResolved: json['user_intervention_resolved'] != null
-        ? InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(json['user_intervention_resolved'] as Map<String, dynamic>)
-        : null,
+  userInterventionRaised: json['user_intervention_raised'] != null ? InsightsResourcesPaymentEvaluationUserInterventionRaised.fromJson(json['user_intervention_raised'] as Map<String, dynamic>) : null,
+  userInterventionResolved: json['user_intervention_resolved'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(json['user_intervention_resolved'] as Map<String, dynamic>) : null,
 ); }
 
 final InsightsResourcesPaymentEvaluationDisputeOpened? disputeOpened;

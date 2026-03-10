@@ -41,27 +41,19 @@ final class Transfer {const Transfer({required this.amount, required this.amount
 factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   amount: (json['amount'] as num).toInt(),
   amountReversed: (json['amount_reversed'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null
-        ? TransferBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? TransferBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  destination: json['destination'] != null
-        ? TransferDestination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
-  destinationPayment: json['destination_payment'] != null
-        ? TransferDestinationPayment.fromJson(json['destination_payment'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? TransferDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  destinationPayment: json['destination_payment'] != null ? TransferDestinationPayment.fromJson(json['destination_payment'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TransferObject.fromJson(json['object'] as String),
   reversals: TransferReversals.fromJson(json['reversals'] as Map<String, dynamic>),
   reversed: json['reversed'] as bool,
-  sourceTransaction: json['source_transaction'] != null
-        ? TransferSourceTransaction.fromJson(json['source_transaction'] as Map<String, dynamic>)
-        : null,
+  sourceTransaction: json['source_transaction'] != null ? TransferSourceTransaction.fromJson(json['source_transaction'] as Map<String, dynamic>) : null,
   sourceType: json['source_type'] as String?,
   transferGroup: json['transfer_group'] as String?,
 ); }

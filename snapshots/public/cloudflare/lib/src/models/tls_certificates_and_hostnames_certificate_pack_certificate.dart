@@ -10,9 +10,7 @@ final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCert
 factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: json['bundle_method'] as String?,
   expiresOn: json['expires_on'] != null ? DateTime.parse(json['expires_on'] as String) : null,
-  geoRestrictions: json['geo_restrictions'] != null
-        ? TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>)
-        : null,
+  geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
   hosts: (json['hosts'] as List<dynamic>).map((e) => e as String).toList(),
   id: json['id'] as String,
   issuer: json['issuer'] as String?,

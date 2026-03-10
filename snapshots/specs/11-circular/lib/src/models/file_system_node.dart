@@ -38,9 +38,7 @@ factory FileSystemNode.fromJson(Map<String, dynamic> json) { return FileSystemNo
   kind: FileSystemNodeKind.fromJson(json['kind'] as String),
   sizeBytes: json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null,
   children: (json['children'] as List<dynamic>?)?.map((e) => FileSystemNode.fromJson(e as Map<String, dynamic>)).toList(),
-  symlinkTarget: json['symlinkTarget'] != null
-        ? FileSystemNode.fromJson(json['symlinkTarget'] as Map<String, dynamic>)
-        : null,
+  symlinkTarget: json['symlinkTarget'] != null ? FileSystemNode.fromJson(json['symlinkTarget'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

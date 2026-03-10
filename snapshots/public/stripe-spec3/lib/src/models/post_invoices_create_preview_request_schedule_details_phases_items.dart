@@ -7,21 +7,13 @@
 import 'post_invoices_create_preview_request_schedule_details_phases_items_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_price_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_tax_rates.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds? billingThresholds;

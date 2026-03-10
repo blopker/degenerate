@@ -63,12 +63,8 @@ final class PostSourcesSourceRequestMandateAcceptance {const PostSourcesSourceRe
 factory PostSourcesSourceRequestMandateAcceptance.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestMandateAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  offline: json['offline'] != null
-        ? PostSourcesSourceRequestMandateAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
-  online: json['online'] != null
-        ? PostSourcesSourceRequestMandateAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? PostSourcesSourceRequestMandateAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  online: json['online'] != null ? PostSourcesSourceRequestMandateAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,
   status: PostSourcesSourceRequestMandateAcceptanceStatus.fromJson(json['status'] as String),
   type: json['type'] != null ? PostSourcesSourceRequestMandateAcceptanceType.fromJson(json['type'] as String) : null,
   userAgent: json['user_agent'] as String?,

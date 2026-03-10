@@ -10,15 +10,9 @@ final class CreateChatSessionBody {const CreateChatSessionBody({required this.wo
 factory CreateChatSessionBody.fromJson(Map<String, dynamic> json) { return CreateChatSessionBody(
   workflow: WorkflowParam.fromJson(json['workflow'] as Map<String, dynamic>),
   user: json['user'] as String,
-  expiresAfter: json['expires_after'] != null
-        ? ExpiresAfterParam.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
-  rateLimits: json['rate_limits'] != null
-        ? RateLimitsParam.fromJson(json['rate_limits'] as Map<String, dynamic>)
-        : null,
-  chatkitConfiguration: json['chatkit_configuration'] != null
-        ? ChatkitConfigurationParam.fromJson(json['chatkit_configuration'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? ExpiresAfterParam.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
+  rateLimits: json['rate_limits'] != null ? RateLimitsParam.fromJson(json['rate_limits'] as Map<String, dynamic>) : null,
+  chatkitConfiguration: json['chatkit_configuration'] != null ? ChatkitConfigurationParam.fromJson(json['chatkit_configuration'] as Map<String, dynamic>) : null,
 ); }
 
 /// Workflow that powers the session.

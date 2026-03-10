@@ -8,13 +8,9 @@ import 'since.dart';import 'until.dart';/// The exact parameters/timestamps the 
 final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
 
 factory QueryResponse.fromJson(Map<String, dynamic> json) { return QueryResponse(
-  since: json['since'] != null
-        ? Since.fromJson(json['since'] as Map<String, dynamic>)
-        : null,
+  since: json['since'] != null ? Since.fromJson(json['since'] as Map<String, dynamic>) : null,
   timeDelta: json['time_delta'] != null ? (json['time_delta'] as num).toInt() : null,
-  until: json['until'] != null
-        ? Until.fromJson(json['until'] as Map<String, dynamic>)
-        : null,
+  until: json['until'] != null ? Until.fromJson(json['until'] as Map<String, dynamic>) : null,
 ); }
 
 final Since? since;

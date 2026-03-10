@@ -8,18 +8,10 @@ import 'post_issuing_personalization_designs_request_carrier_text_footer_body.da
 final class PostIssuingPersonalizationDesignsRequestCarrierText {const PostIssuingPersonalizationDesignsRequestCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequestCarrierText(
-  footerBody: json['footer_body'] != null
-        ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody.fromJson(json['footer_body'] as Map<String, dynamic>)
-        : null,
-  footerTitle: json['footer_title'] != null
-        ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitle.fromJson(json['footer_title'] as Map<String, dynamic>)
-        : null,
-  headerBody: json['header_body'] != null
-        ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody.fromJson(json['header_body'] as Map<String, dynamic>)
-        : null,
-  headerTitle: json['header_title'] != null
-        ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitle.fromJson(json['header_title'] as Map<String, dynamic>)
-        : null,
+  footerBody: json['footer_body'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody.fromJson(json['footer_body'] as Map<String, dynamic>) : null,
+  footerTitle: json['footer_title'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitle.fromJson(json['footer_title'] as Map<String, dynamic>) : null,
+  headerBody: json['header_body'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody.fromJson(json['header_body'] as Map<String, dynamic>) : null,
+  headerTitle: json['header_title'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitle.fromJson(json['header_title'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody? footerBody;

@@ -8,9 +8,7 @@ import 'dependency.dart';import 'inline_object8.dart';import 'manifest_file.dart
 
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,
-  file: json['file'] != null
-        ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>)
-        : null,
+  file: json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject8.fromJson(v as Map<String, dynamic>))),
   resolved: (json['resolved'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Dependency.fromJson(v as Map<String, dynamic>))),
 ); }

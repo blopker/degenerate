@@ -11,9 +11,7 @@ factory MagicCreateRouteRequest.fromJson(Map<String, dynamic> json) { return Mag
   nexthop: MagicNexthop.fromJson(json['nexthop'] as String),
   prefix: MagicPrefix.fromJson(json['prefix'] as String),
   priority: MagicPriority.fromJson(json['priority'] as num),
-  scope: json['scope'] != null
-        ? MagicScope.fromJson(json['scope'] as Map<String, dynamic>)
-        : null,
+  scope: json['scope'] != null ? MagicScope.fromJson(json['scope'] as Map<String, dynamic>) : null,
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
 ); }
 

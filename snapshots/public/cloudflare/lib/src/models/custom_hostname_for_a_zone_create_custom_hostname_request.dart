@@ -16,9 +16,7 @@ final class CustomHostnameForAZoneCreateCustomHostnameRequest {const CustomHostn
 factory CustomHostnameForAZoneCreateCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   hostname: TlsCertificatesAndHostnamesHostnamePost.fromJson(json['hostname'] as String),
-  ssl: json['ssl'] != null
-        ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
+  ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>) : null,
 ); }
 
 final Map<String,String>? customMetadata;

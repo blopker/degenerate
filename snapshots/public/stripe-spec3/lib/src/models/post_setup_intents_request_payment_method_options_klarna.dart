@@ -164,13 +164,9 @@ final class PostSetupIntentsRequestPaymentMethodOptionsKlarna {const PostSetupIn
 
 factory PostSetupIntentsRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,
-  onDemand: json['on_demand'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PostSetupIntentsRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
-  subscriptions: json['subscriptions'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
+  subscriptions: json['subscriptions'] != null ? PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
 ); }
 
 final String? currency;

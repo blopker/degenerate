@@ -7,9 +7,7 @@
 import 'abuse_reports_error_message_code.dart';final class AbuseReportsErrorMessage {const AbuseReportsErrorMessage({this.code, required this.message, });
 
 factory AbuseReportsErrorMessage.fromJson(Map<String, dynamic> json) { return AbuseReportsErrorMessage(
-  code: json['code'] != null
-        ? AbuseReportsErrorMessageCode.fromJson(json['code'])
-        : null,
+  code: json['code'] != null ? AbuseReportsErrorMessageCode.fromJson(json['code']) : null,
   message: json['message'] as String,
 ); }
 

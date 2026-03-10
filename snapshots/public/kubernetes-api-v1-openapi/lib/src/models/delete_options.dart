@@ -14,9 +14,7 @@ factory DeleteOptions.fromJson(Map<String, dynamic> json) { return DeleteOptions
   ignoreStoreReadErrorWithClusterBreakingPotential: json['ignoreStoreReadErrorWithClusterBreakingPotential'] as bool?,
   kind: json['kind'] as String?,
   orphanDependents: json['orphanDependents'] as bool?,
-  preconditions: json['preconditions'] != null
-        ? Preconditions.fromJson(json['preconditions'] as Map<String, dynamic>)
-        : null,
+  preconditions: json['preconditions'] != null ? Preconditions.fromJson(json['preconditions'] as Map<String, dynamic>) : null,
   propagationPolicy: json['propagationPolicy'] as String?,
 ); }
 

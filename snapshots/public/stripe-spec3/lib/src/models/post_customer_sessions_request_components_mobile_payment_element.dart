@@ -8,9 +8,7 @@ import 'post_customer_sessions_request_components_mobile_payment_element_feature
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElement.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsMobilePaymentElement(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

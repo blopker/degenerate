@@ -14,9 +14,7 @@ factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return Abu
   mitigationSummary: AbuseReportsMitigationSummary.fromJson(json['mitigation_summary'] as Map<String, dynamic>),
   originalWork: json['original_work'] as String?,
   status: AbuseReportsReportStatus.fromJson(json['status'] as String),
-  submitter: json['submitter'] != null
-        ? AbuseReportsSubmitterDetails.fromJson(json['submitter'] as Map<String, dynamic>)
-        : null,
+  submitter: json['submitter'] != null ? AbuseReportsSubmitterDetails.fromJson(json['submitter'] as Map<String, dynamic>) : null,
   type: AbuseReportsReportType.fromJson(json['type'] as String),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

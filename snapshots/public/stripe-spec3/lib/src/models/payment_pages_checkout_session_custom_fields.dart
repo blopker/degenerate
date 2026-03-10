@@ -36,18 +36,12 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentPagesCheckoutSessionCustomFields {const PaymentPagesCheckoutSessionCustomFields({this.dropdown, required this.key, required this.label, this.numeric, required this.optional, this.text, required this.type, });
 
 factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFields(
-  dropdown: json['dropdown'] != null
-        ? PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>)
-        : null,
+  dropdown: json['dropdown'] != null ? PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
-  numeric: json['numeric'] != null
-        ? PaymentPagesCheckoutSessionCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>)
-        : null,
+  numeric: json['numeric'] != null ? PaymentPagesCheckoutSessionCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   optional: json['optional'] as bool,
-  text: json['text'] != null
-        ? PaymentPagesCheckoutSessionCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? PaymentPagesCheckoutSessionCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PaymentPagesCheckoutSessionCustomFieldsType.fromJson(json['type'] as String),
 ); }
 

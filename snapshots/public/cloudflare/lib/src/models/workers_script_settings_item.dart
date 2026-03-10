@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'workers_logpush.dart';import
 
 factory WorkersScriptSettingsItem.fromJson(Map<String, dynamic> json) { return WorkersScriptSettingsItem(
   logpush: json['logpush'] != null ? WorkersLogpush.fromJson(json['logpush'] as bool) : null,
-  observability: json['observability'] != null
-        ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>)
-        : null,
+  observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

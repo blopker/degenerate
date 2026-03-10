@@ -7,9 +7,7 @@
 import 'public_user_schema.dart';final class BlogPostListSchema {const BlogPostListSchema({this.author, this.headerImageUrl, required this.title, this.subtitle, this.datePublished, this.slug, this.publish = false, this.readTime = 1, this.summary, });
 
 factory BlogPostListSchema.fromJson(Map<String, dynamic> json) { return BlogPostListSchema(
-  author: json['author'] != null
-        ? PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
+  author: json['author'] != null ? PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>) : null,
   headerImageUrl: json['header_image_url'] as String?,
   title: json['title'] as String,
   subtitle: json['subtitle'] as String?,

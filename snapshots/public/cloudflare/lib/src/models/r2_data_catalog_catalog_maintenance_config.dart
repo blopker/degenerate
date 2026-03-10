@@ -8,12 +8,8 @@ import 'r2_data_catalog_catalog_compaction_config.dart';import 'r2_data_catalog_
 final class R2DataCatalogCatalogMaintenanceConfig {const R2DataCatalogCatalogMaintenanceConfig({this.compaction, this.snapshotExpiration, });
 
 factory R2DataCatalogCatalogMaintenanceConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogMaintenanceConfig(
-  compaction: json['compaction'] != null
-        ? R2DataCatalogCatalogCompactionConfig.fromJson(json['compaction'] as Map<String, dynamic>)
-        : null,
-  snapshotExpiration: json['snapshot_expiration'] != null
-        ? R2DataCatalogSnapshotExpirationConfig.fromJson(json['snapshot_expiration'] as Map<String, dynamic>)
-        : null,
+  compaction: json['compaction'] != null ? R2DataCatalogCatalogCompactionConfig.fromJson(json['compaction'] as Map<String, dynamic>) : null,
+  snapshotExpiration: json['snapshot_expiration'] != null ? R2DataCatalogSnapshotExpirationConfig.fromJson(json['snapshot_expiration'] as Map<String, dynamic>) : null,
 ); }
 
 final R2DataCatalogCatalogCompactionConfig? compaction;

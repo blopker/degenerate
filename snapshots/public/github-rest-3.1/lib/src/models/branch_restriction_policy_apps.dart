@@ -10,9 +10,7 @@ factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) { return
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   slug: json['slug'] as String?,
   nodeId: json['node_id'] as String?,
-  owner: json['owner'] != null
-        ? BranchRestrictionPolicyAppsOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? BranchRestrictionPolicyAppsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   clientId: json['client_id'] as String?,
   description: json['description'] as String?,
@@ -20,9 +18,7 @@ factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) { return
   htmlUrl: json['html_url'] as String?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
-  permissions: json['permissions'] != null
-        ? BranchRestrictionPolicyAppsPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? BranchRestrictionPolicyAppsPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

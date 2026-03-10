@@ -10,9 +10,7 @@ final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf,
 factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   forks: (json['forks'] as List<dynamic>?)?.map((e) => GistSimpleForks.fromJson(e as Map<String, dynamic>)).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => GistHistory.fromJson(e as Map<String, dynamic>)).toList(),
-  forkOf: json['fork_of'] != null
-        ? GistSimpleForkOf.fromJson(json['fork_of'] as Map<String, dynamic>)
-        : null,
+  forkOf: json['fork_of'] != null ? GistSimpleForkOf.fromJson(json['fork_of'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
   forksUrl: json['forks_url'] as String?,
   commitsUrl: json['commits_url'] as String?,
@@ -30,9 +28,7 @@ factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   commentsEnabled: json['comments_enabled'] as bool?,
   user: json['user'] as String?,
   commentsUrl: json['comments_url'] as String?,
-  owner: json['owner'] != null
-        ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
 ); }
 

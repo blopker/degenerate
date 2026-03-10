@@ -29,9 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentRecordsReportPaymentRequestProcessorDetails {const PostPaymentRecordsReportPaymentRequestProcessorDetails({this.custom, required this.type, });
 
 factory PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestProcessorDetails(
-  custom: json['custom'] != null
-        ? PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>)
-        : null,
+  custom: json['custom'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
   type: PostPaymentRecordsReportPaymentRequestProcessorDetailsType.fromJson(json['type'] as String),
 ); }
 

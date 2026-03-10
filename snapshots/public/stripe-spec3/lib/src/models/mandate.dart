@@ -86,16 +86,12 @@ factory Mandate.fromJson(Map<String, dynamic> json) { return Mandate(
   customerAcceptance: CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  multiUse: json['multi_use'] != null
-        ? MandateMultiUse.fromJson(json['multi_use'] as Map<String, dynamic>)
-        : null,
+  multiUse: json['multi_use'] != null ? MandateMultiUse.fromJson(json['multi_use'] as Map<String, dynamic>) : null,
   object: MandateObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] as String?,
   paymentMethod: MandatePaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>),
   paymentMethodDetails: MandatePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  singleUse: json['single_use'] != null
-        ? MandateSingleUse.fromJson(json['single_use'] as Map<String, dynamic>)
-        : null,
+  singleUse: json['single_use'] != null ? MandateSingleUse.fromJson(json['single_use'] as Map<String, dynamic>) : null,
   status: MandateStatus.fromJson(json['status'] as String),
   type: MandateType.fromJson(json['type'] as String),
 ); }

@@ -69,9 +69,7 @@ factory OrgMembership.fromJson(Map<String, dynamic> json) { return OrgMembership
   organizationUrl: Uri.parse(json['organization_url'] as String),
   organization: OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>),
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? OrgMembershipPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? OrgMembershipPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

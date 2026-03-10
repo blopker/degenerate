@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_p24_display_pre
 final class PostPaymentMethodConfigurationsConfigurationRequestP24 {const PostPaymentMethodConfigurationsConfigurationRequestP24({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestP24.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestP24(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestP24DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestP24DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestP24DisplayPreference? displayPreference;

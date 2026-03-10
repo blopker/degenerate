@@ -34,9 +34,7 @@ factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynami
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   financialAccount: json['financial_account'] as String,
-  initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null
-        ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>)
-        : null,
+  initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>) : null,
   network: PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(json['network'] as String),
 ); }
 

@@ -8,12 +8,8 @@ import 'package:collection/collection.dart';import 'inline_object65_headers.dart
 
 factory InlineObject65.fromJson(Map<String, dynamic> json) { return InlineObject65(
   headers: (json['headers'] as List<dynamic>?)?.map((e) => InlineObject65Headers.fromJson(e as Map<String, dynamic>)).toList(),
-  request: json['request'] != null
-        ? InlineObject65Request.fromJson(json['request'] as Map<String, dynamic>)
-        : null,
-  response: json['response'] != null
-        ? InlineObject65Response.fromJson(json['response'] as Map<String, dynamic>)
-        : null,
+  request: json['request'] != null ? InlineObject65Request.fromJson(json['request'] as Map<String, dynamic>) : null,
+  response: json['response'] != null ? InlineObject65Response.fromJson(json['response'] as Map<String, dynamic>) : null,
 ); }
 
 final List<InlineObject65Headers>? headers;

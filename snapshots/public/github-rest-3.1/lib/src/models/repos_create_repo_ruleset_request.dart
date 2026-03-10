@@ -39,9 +39,7 @@ factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { retu
   target: json.containsKey('target') ? ReposCreateRepoRulesetRequestTarget.fromJson(json['target'] as String) : ReposCreateRepoRulesetRequestTarget.branch,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
-  conditions: json['conditions'] != null
-        ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>)
-        : null,
+  conditions: json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

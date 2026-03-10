@@ -7,9 +7,7 @@
 import 'zones_setting_value.dart';final class InlineObject188 {const InlineObject188({this.value});
 
 factory InlineObject188.fromJson(Map<String, dynamic> json) { return InlineObject188(
-  value: json['value'] != null
-        ? ZonesSettingValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? ZonesSettingValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final ZonesSettingValue? value;

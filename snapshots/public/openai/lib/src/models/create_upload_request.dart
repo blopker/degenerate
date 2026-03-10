@@ -46,9 +46,7 @@ factory CreateUploadRequest.fromJson(Map<String, dynamic> json) { return CreateU
   purpose: CreateUploadRequestPurpose.fromJson(json['purpose'] as String),
   bytes: (json['bytes'] as num).toInt(),
   mimeType: json['mime_type'] as String,
-  expiresAfter: json['expires_after'] != null
-        ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
 ); }
 
 /// The name of the file to upload.

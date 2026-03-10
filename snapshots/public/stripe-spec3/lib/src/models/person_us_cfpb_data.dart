@@ -8,12 +8,8 @@ import 'person_us_cfpb_data_ethnicity_details.dart';import 'person_us_cfpb_data_
 final class PersonUsCfpbData {const PersonUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
 
 factory PersonUsCfpbData.fromJson(Map<String, dynamic> json) { return PersonUsCfpbData(
-  ethnicityDetails: json['ethnicity_details'] != null
-        ? PersonUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>)
-        : null,
-  raceDetails: json['race_details'] != null
-        ? PersonUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>)
-        : null,
+  ethnicityDetails: json['ethnicity_details'] != null ? PersonUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,
+  raceDetails: json['race_details'] != null ? PersonUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>) : null,
   selfIdentifiedGender: json['self_identified_gender'] as String?,
 ); }
 

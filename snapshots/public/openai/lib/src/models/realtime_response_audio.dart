@@ -8,9 +8,7 @@ import 'realtime_response_audio_output.dart';/// Configuration for audio output.
 final class RealtimeResponseAudio {const RealtimeResponseAudio({this.output});
 
 factory RealtimeResponseAudio.fromJson(Map<String, dynamic> json) { return RealtimeResponseAudio(
-  output: json['output'] != null
-        ? RealtimeResponseAudioOutput.fromJson(json['output'] as Map<String, dynamic>)
-        : null,
+  output: json['output'] != null ? RealtimeResponseAudioOutput.fromJson(json['output'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimeResponseAudioOutput? output;

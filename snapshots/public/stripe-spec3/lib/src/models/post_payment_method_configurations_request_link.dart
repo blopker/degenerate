@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_link_display_preference.dart'
 final class PostPaymentMethodConfigurationsRequestLink {const PostPaymentMethodConfigurationsRequestLink({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestLink.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestLink(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestLinkDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestLinkDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestLinkDisplayPreference? displayPreference;

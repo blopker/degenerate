@@ -9,13 +9,9 @@ final class InvoiceSettingCustomerSetting {const InvoiceSettingCustomerSetting({
 
 factory InvoiceSettingCustomerSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomerSetting(
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
-  defaultPaymentMethod: json['default_payment_method'] != null
-        ? InvoiceSettingCustomerSettingDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>)
-        : null,
+  defaultPaymentMethod: json['default_payment_method'] != null ? InvoiceSettingCustomerSettingDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>) : null,
   footer: json['footer'] as String?,
-  renderingOptions: json['rendering_options'] != null
-        ? InvoiceSettingCustomerSettingRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>)
-        : null,
+  renderingOptions: json['rendering_options'] != null ? InvoiceSettingCustomerSettingRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Default custom fields to be displayed on invoices for this customer.

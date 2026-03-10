@@ -8,18 +8,10 @@ import 'fine_tune_dpo_hyperparameters_batch_size.dart';import 'fine_tune_dpo_hyp
 final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuneDpoHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneDpoHyperparameters(
-  beta: json['beta'] != null
-        ? FineTuneDpoHyperparametersBeta.fromJson(json['beta'])
-        : null,
-  batchSize: json['batch_size'] != null
-        ? FineTuneDpoHyperparametersBatchSize.fromJson(json['batch_size'])
-        : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null
-        ? FineTuneDpoHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier'])
-        : null,
-  nEpochs: json['n_epochs'] != null
-        ? FineTuneDpoHyperparametersNEpochs.fromJson(json['n_epochs'])
-        : null,
+  beta: json['beta'] != null ? FineTuneDpoHyperparametersBeta.fromJson(json['beta']) : null,
+  batchSize: json['batch_size'] != null ? FineTuneDpoHyperparametersBatchSize.fromJson(json['batch_size']) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? FineTuneDpoHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier']) : null,
+  nEpochs: json['n_epochs'] != null ? FineTuneDpoHyperparametersNEpochs.fromJson(json['n_epochs']) : null,
 ); }
 
 /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.

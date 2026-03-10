@@ -12,9 +12,7 @@ factory PaymentMethodSepaDebit.fromJson(Map<String, dynamic> json) { return Paym
   branchCode: json['branch_code'] as String?,
   country: json['country'] as String?,
   fingerprint: json['fingerprint'] as String?,
-  generatedFrom: json['generated_from'] != null
-        ? PaymentMethodSepaDebitGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>)
-        : null,
+  generatedFrom: json['generated_from'] != null ? PaymentMethodSepaDebitGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String?,
 ); }
 

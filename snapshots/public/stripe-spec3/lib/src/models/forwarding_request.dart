@@ -85,15 +85,9 @@ factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return Forwardin
   object: ForwardingRequestObject.fromJson(json['object'] as String),
   paymentMethod: json['payment_method'] as String,
   replacements: (json['replacements'] as List<dynamic>).map((e) => ForwardingRequestReplacements.fromJson(e as String)).toList(),
-  requestContext: json['request_context'] != null
-        ? ForwardingRequestRequestContext.fromJson(json['request_context'] as Map<String, dynamic>)
-        : null,
-  requestDetails: json['request_details'] != null
-        ? ForwardingRequestRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>)
-        : null,
-  responseDetails: json['response_details'] != null
-        ? ForwardingRequestResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>)
-        : null,
+  requestContext: json['request_context'] != null ? ForwardingRequestRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null,
+  requestDetails: json['request_details'] != null ? ForwardingRequestRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null,
+  responseDetails: json['response_details'] != null ? ForwardingRequestResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
 ); }
 

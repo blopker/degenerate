@@ -8,9 +8,7 @@ import 'streams_response_result_http_cors.dart';final class StreamsResponseResul
 
 factory StreamsResponseResultHttp.fromJson(Map<String, dynamic> json) { return StreamsResponseResultHttp(
   authentication: json['authentication'] as bool,
-  cors: json['cors'] != null
-        ? StreamsResponseResultHttpCors.fromJson(json['cors'] as Map<String, dynamic>)
-        : null,
+  cors: json['cors'] != null ? StreamsResponseResultHttpCors.fromJson(json['cors'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool,
 ); }
 

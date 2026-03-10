@@ -10,9 +10,7 @@ final class PostInvoicesRequestShippingDetails {const PostInvoicesRequestShippin
 factory PostInvoicesRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingDetails(
   address: PostInvoicesRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null
-        ? PostInvoicesRequestShippingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  phone: json['phone'] != null ? PostInvoicesRequestShippingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesRequestShippingDetailsAddress address;

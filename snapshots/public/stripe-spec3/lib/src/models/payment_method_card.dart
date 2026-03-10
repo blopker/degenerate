@@ -34,29 +34,19 @@ final class PaymentMethodCard {const PaymentMethodCard({required this.brand, thi
 
 factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCard(
   brand: json['brand'] as String,
-  checks: json['checks'] != null
-        ? PaymentMethodCardChecks2.fromJson(json['checks'] as Map<String, dynamic>)
-        : null,
+  checks: json['checks'] != null ? PaymentMethodCardChecks2.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   displayBrand: json['display_brand'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
   fingerprint: json['fingerprint'] as String?,
   funding: json['funding'] as String,
-  generatedFrom: json['generated_from'] != null
-        ? PaymentMethodCardGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>)
-        : null,
+  generatedFrom: json['generated_from'] != null ? PaymentMethodCardGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String,
-  networks: json['networks'] != null
-        ? PaymentMethodCardNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? PaymentMethodCardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   regulatedStatus: json['regulated_status'] != null ? PaymentMethodCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
-  threeDSecureUsage: json['three_d_secure_usage'] != null
-        ? PaymentMethodCardThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>)
-        : null,
-  wallet: json['wallet'] != null
-        ? PaymentMethodCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  threeDSecureUsage: json['three_d_secure_usage'] != null ? PaymentMethodCardThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentMethodCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.

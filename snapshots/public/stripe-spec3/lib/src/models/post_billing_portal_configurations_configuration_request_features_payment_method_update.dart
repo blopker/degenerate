@@ -8,9 +8,7 @@ import 'post_billing_portal_configurations_configuration_request_features_paymen
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate(
   enabled: json['enabled'] as bool,
-  paymentMethodConfiguration: json['payment_method_configuration'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration.fromJson(json['payment_method_configuration'] as Map<String, dynamic>)
-        : null,
+  paymentMethodConfiguration: json['payment_method_configuration'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration.fromJson(json['payment_method_configuration'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

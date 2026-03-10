@@ -7,9 +7,7 @@
 import 'livestreams_livestream_session_id_response_data.dart';final class LivestreamsLivestreamSessionIdResponse {const LivestreamsLivestreamSessionIdResponse({this.data, this.success, });
 
 factory LivestreamsLivestreamSessionIdResponse.fromJson(Map<String, dynamic> json) { return LivestreamsLivestreamSessionIdResponse(
-  data: json['data'] != null
-        ? LivestreamsLivestreamSessionIdResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? LivestreamsLivestreamSessionIdResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

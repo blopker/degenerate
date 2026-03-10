@@ -7,9 +7,7 @@
 import 'post_radar_payment_evaluations_request_payment_details_shipping_details_address.dart';final class PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails({this.address, this.name, this.phone, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails(
-  address: json['address'] != null
-        ? PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
 ); }

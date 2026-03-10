@@ -7,15 +7,9 @@
 import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_configuration.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_pattern.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_rule_type.dart';final class WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges {const WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges({this.configuration, this.ruleType, this.pattern, });
 
 factory WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges(
-  configuration: json['configuration'] != null
-        ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
-  ruleType: json['rule_type'] != null
-        ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesRuleType.fromJson(json['rule_type'] as Map<String, dynamic>)
-        : null,
-  pattern: json['pattern'] != null
-        ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesPattern.fromJson(json['pattern'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
+  ruleType: json['rule_type'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesRuleType.fromJson(json['rule_type'] as Map<String, dynamic>) : null,
+  pattern: json['pattern'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesPattern.fromJson(json['pattern'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration? configuration;

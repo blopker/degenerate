@@ -8,16 +8,10 @@ import 'package:collection/collection.dart';import 'post_treasury_financial_acco
 
 factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  features: json['features'] != null
-        ? PostTreasuryFinancialAccountsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostTreasuryFinancialAccountsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] != null
-        ? PostTreasuryFinancialAccountsRequestNickname.fromJson(json['nickname'] as Map<String, dynamic>)
-        : null,
-  platformRestrictions: json['platform_restrictions'] != null
-        ? PostTreasuryFinancialAccountsRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>)
-        : null,
+  nickname: json['nickname'] != null ? PostTreasuryFinancialAccountsRequestNickname.fromJson(json['nickname'] as Map<String, dynamic>) : null,
+  platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 

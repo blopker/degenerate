@@ -7,9 +7,7 @@
 import 'post_accounts_request_settings_card_issuing_tos_acceptance.dart';final class PostAccountsRequestSettingsCardIssuing {const PostAccountsRequestSettingsCardIssuing({this.tosAcceptance});
 
 factory PostAccountsRequestSettingsCardIssuing.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardIssuing(
-  tosAcceptance: json['tos_acceptance'] != null
-        ? PostAccountsRequestSettingsCardIssuingTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestSettingsCardIssuingTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestSettingsCardIssuingTosAcceptance? tosAcceptance;

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_cashapp_display
 final class PostPaymentMethodConfigurationsConfigurationRequestCashapp {const PostPaymentMethodConfigurationsConfigurationRequestCashapp({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestCashapp.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestCashapp(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestCashappDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCashappDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestCashappDisplayPreference? displayPreference;

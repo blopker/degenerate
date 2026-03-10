@@ -65,9 +65,7 @@ final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddre
 
 factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),
-  normalizedAddress: json['normalized_address'] != null
-        ? IssuingCardShippingAddressValidationNormalizedAddress.fromJson(json['normalized_address'] as Map<String, dynamic>)
-        : null,
+  normalizedAddress: json['normalized_address'] != null ? IssuingCardShippingAddressValidationNormalizedAddress.fromJson(json['normalized_address'] as Map<String, dynamic>) : null,
   result: json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null,
 ); }
 

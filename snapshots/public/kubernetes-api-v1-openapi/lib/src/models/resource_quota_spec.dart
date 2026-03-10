@@ -9,9 +9,7 @@ final class ResourceQuotaSpec {const ResourceQuotaSpec({this.hard, this.scopeSel
 
 factory ResourceQuotaSpec.fromJson(Map<String, dynamic> json) { return ResourceQuotaSpec(
   hard: (json['hard'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
-  scopeSelector: json['scopeSelector'] != null
-        ? ScopeSelector.fromJson(json['scopeSelector'] as Map<String, dynamic>)
-        : null,
+  scopeSelector: json['scopeSelector'] != null ? ScopeSelector.fromJson(json['scopeSelector'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

@@ -82,15 +82,11 @@ factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return Tr
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryOutboundTransferObject.fromJson(json['object'] as String),
-  returnedDetails: json['returned_details'] != null
-        ? TreasuryOutboundTransferReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>)
-        : null,
+  returnedDetails: json['returned_details'] != null ? TreasuryOutboundTransferReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryOutboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundTransfersResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  trackingDetails: json['tracking_details'] != null
-        ? TreasuryOutboundTransferTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>)
-        : null,
+  trackingDetails: json['tracking_details'] != null ? TreasuryOutboundTransferTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null,
   transaction: TreasuryOutboundTransferTransaction.fromJson(json['transaction'] as Map<String, dynamic>),
 ); }
 

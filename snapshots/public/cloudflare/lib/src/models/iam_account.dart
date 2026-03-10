@@ -9,13 +9,9 @@ import 'iam_account_managed_by.dart';import 'iam_account_settings.dart';import '
 factory IamAccount.fromJson(Map<String, dynamic> json) { return IamAccount(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),
-  managedBy: json['managed_by'] != null
-        ? IamAccountManagedBy.fromJson(json['managed_by'] as Map<String, dynamic>)
-        : null,
+  managedBy: json['managed_by'] != null ? IamAccountManagedBy.fromJson(json['managed_by'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-  settings: json['settings'] != null
-        ? IamAccountSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? IamAccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: IamAccountType.fromJson(json['type'] as Object?),
 ); }
 

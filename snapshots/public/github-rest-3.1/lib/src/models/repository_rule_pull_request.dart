@@ -30,9 +30,7 @@ final class RepositoryRulePullRequest {const RepositoryRulePullRequest({required
 
 factory RepositoryRulePullRequest.fromJson(Map<String, dynamic> json) { return RepositoryRulePullRequest(
   type: RepositoryRulePullRequestType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRulePullRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRulePullRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRulePullRequestType type;

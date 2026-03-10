@@ -11,9 +11,7 @@ factory InvoicesResourceShippingCost.fromJson(Map<String, dynamic> json) { retur
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  shippingRate: json['shipping_rate'] != null
-        ? InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate'] as Map<String, dynamic>)
-        : null,
+  shippingRate: json['shipping_rate'] != null ? InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate'] as Map<String, dynamic>) : null,
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

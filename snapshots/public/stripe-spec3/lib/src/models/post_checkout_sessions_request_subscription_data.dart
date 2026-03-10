@@ -34,25 +34,17 @@ final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessi
 factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,
-  billingMode: json['billing_mode'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>)
-        : null,
+  billingMode: json['billing_mode'] != null ? PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   prorationBehavior: json['proration_behavior'] != null ? PostCheckoutSessionsRequestSubscriptionDataProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  transferData: json['transfer_data'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostCheckoutSessionsRequestSubscriptionDataTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  trialSettings: json['trial_settings'] != null ? PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
 ); }
 
 final double? applicationFeePercent;

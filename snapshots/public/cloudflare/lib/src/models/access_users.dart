@@ -12,9 +12,7 @@ factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
   emails: (json['emails'] as List<dynamic>?)?.map((e) => AccessUsersEmails.fromJson(e as Map<String, dynamic>)).toList(),
   externalId: json['externalId'] as String?,
   id: json['id'] != null ? AccessId.fromJson(json['id'] as String) : null,
-  meta: json['meta'] != null
-        ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

@@ -32,49 +32,25 @@ bool get isUnknown { return !values.contains(this); }
 final class PostQuotesQuoteRequest {const PostQuotesQuoteRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.transferData, });
 
 factory PostQuotesQuoteRequest.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequest(
-  applicationFeeAmount: json['application_fee_amount'] != null
-        ? PostQuotesQuoteRequestApplicationFeeAmount.fromJson(json['application_fee_amount'] as Map<String, dynamic>)
-        : null,
-  applicationFeePercent: json['application_fee_percent'] != null
-        ? PostQuotesQuoteRequestApplicationFeePercent.fromJson(json['application_fee_percent'] as Map<String, dynamic>)
-        : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostQuotesQuoteRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  applicationFeeAmount: json['application_fee_amount'] != null ? PostQuotesQuoteRequestApplicationFeeAmount.fromJson(json['application_fee_amount'] as Map<String, dynamic>) : null,
+  applicationFeePercent: json['application_fee_percent'] != null ? PostQuotesQuoteRequestApplicationFeePercent.fromJson(json['application_fee_percent'] as Map<String, dynamic>) : null,
+  automaticTax: json['automatic_tax'] != null ? PostQuotesQuoteRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? PostQuotesQuoteRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null
-        ? PostQuotesQuoteRequestDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? PostQuotesQuoteRequestDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostQuotesQuoteRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostQuotesQuoteRequestDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? PostQuotesQuoteRequestDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostQuotesQuoteRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  footer: json['footer'] != null
-        ? PostQuotesQuoteRequestFooter.fromJson(json['footer'] as Map<String, dynamic>)
-        : null,
-  header: json['header'] != null
-        ? PostQuotesQuoteRequestHeader.fromJson(json['header'] as Map<String, dynamic>)
-        : null,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostQuotesQuoteRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  footer: json['footer'] != null ? PostQuotesQuoteRequestFooter.fromJson(json['footer'] as Map<String, dynamic>) : null,
+  header: json['header'] != null ? PostQuotesQuoteRequestHeader.fromJson(json['header'] as Map<String, dynamic>) : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostQuotesQuoteRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostQuotesQuoteRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? PostQuotesQuoteRequestOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  subscriptionData: json['subscription_data'] != null
-        ? PostQuotesQuoteRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? PostQuotesQuoteRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostQuotesQuoteRequestOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  subscriptionData: json['subscription_data'] != null ? PostQuotesQuoteRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostQuotesQuoteRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. There cannot be any line items with recurring prices when using this field.

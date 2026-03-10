@@ -14,9 +14,7 @@ factory MarketplacePurchase.fromJson(Map<String, dynamic> json) { return Marketp
   login: json['login'] as String,
   organizationBillingEmail: json['organization_billing_email'] as String?,
   email: json['email'] as String?,
-  marketplacePendingChange: json['marketplace_pending_change'] != null
-        ? MarketplacePurchaseMarketplacePendingChange.fromJson(json['marketplace_pending_change'] as Map<String, dynamic>)
-        : null,
+  marketplacePendingChange: json['marketplace_pending_change'] != null ? MarketplacePurchaseMarketplacePendingChange.fromJson(json['marketplace_pending_change'] as Map<String, dynamic>) : null,
   marketplacePurchase: MarketplacePurchaseMarketplacePurchase.fromJson(json['marketplace_purchase'] as Map<String, dynamic>),
 ); }
 

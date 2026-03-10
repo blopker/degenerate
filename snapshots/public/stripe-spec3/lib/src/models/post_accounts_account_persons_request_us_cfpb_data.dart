@@ -8,12 +8,8 @@ import 'post_accounts_account_persons_request_us_cfpb_data_ethnicity_details.dar
 final class PostAccountsAccountPersonsRequestUsCfpbData {const PostAccountsAccountPersonsRequestUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
 
 factory PostAccountsAccountPersonsRequestUsCfpbData.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestUsCfpbData(
-  ethnicityDetails: json['ethnicity_details'] != null
-        ? PostAccountsAccountPersonsRequestUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>)
-        : null,
-  raceDetails: json['race_details'] != null
-        ? PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>)
-        : null,
+  ethnicityDetails: json['ethnicity_details'] != null ? PostAccountsAccountPersonsRequestUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,
+  raceDetails: json['race_details'] != null ? PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>) : null,
   selfIdentifiedGender: json['self_identified_gender'] as String?,
 ); }
 

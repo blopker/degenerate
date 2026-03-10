@@ -8,24 +8,12 @@ import 'cluster_trust_bundle_projection.dart';import 'config_map_projection.dart
 final class VolumeProjection {const VolumeProjection({this.clusterTrustBundle, this.configMap, this.downwardApi, this.podCertificate, this.secret, this.serviceAccountToken, });
 
 factory VolumeProjection.fromJson(Map<String, dynamic> json) { return VolumeProjection(
-  clusterTrustBundle: json['clusterTrustBundle'] != null
-        ? ClusterTrustBundleProjection.fromJson(json['clusterTrustBundle'] as Map<String, dynamic>)
-        : null,
-  configMap: json['configMap'] != null
-        ? ConfigMapProjection.fromJson(json['configMap'] as Map<String, dynamic>)
-        : null,
-  downwardApi: json['downwardAPI'] != null
-        ? Projection.fromJson(json['downwardAPI'] as Map<String, dynamic>)
-        : null,
-  podCertificate: json['podCertificate'] != null
-        ? PodCertificateProjection.fromJson(json['podCertificate'] as Map<String, dynamic>)
-        : null,
-  secret: json['secret'] != null
-        ? SecretProjection.fromJson(json['secret'] as Map<String, dynamic>)
-        : null,
-  serviceAccountToken: json['serviceAccountToken'] != null
-        ? ServiceAccountTokenProjection.fromJson(json['serviceAccountToken'] as Map<String, dynamic>)
-        : null,
+  clusterTrustBundle: json['clusterTrustBundle'] != null ? ClusterTrustBundleProjection.fromJson(json['clusterTrustBundle'] as Map<String, dynamic>) : null,
+  configMap: json['configMap'] != null ? ConfigMapProjection.fromJson(json['configMap'] as Map<String, dynamic>) : null,
+  downwardApi: json['downwardAPI'] != null ? Projection.fromJson(json['downwardAPI'] as Map<String, dynamic>) : null,
+  podCertificate: json['podCertificate'] != null ? PodCertificateProjection.fromJson(json['podCertificate'] as Map<String, dynamic>) : null,
+  secret: json['secret'] != null ? SecretProjection.fromJson(json['secret'] as Map<String, dynamic>) : null,
+  serviceAccountToken: json['serviceAccountToken'] != null ? ServiceAccountTokenProjection.fromJson(json['serviceAccountToken'] as Map<String, dynamic>) : null,
 ); }
 
 /// ClusterTrustBundle allows a pod to access the `.spec.trustBundle` field of ClusterTrustBundle objects in an auto-updating file.

@@ -8,9 +8,7 @@ import 'ai_search_instance_search_request_ai_search_options_query_rewrite_model.
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite(
   enabled: json['enabled'] as bool?,
-  model: json['model'] != null
-        ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   rewritePrompt: json['rewrite_prompt'] as String?,
 ); }
 

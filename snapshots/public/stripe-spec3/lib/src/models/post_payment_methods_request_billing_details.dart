@@ -8,18 +8,10 @@ import 'post_payment_methods_request_billing_details_address.dart';import 'post_
 final class PostPaymentMethodsRequestBillingDetails {const PostPaymentMethodsRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostPaymentMethodsRequestBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBillingDetails(
-  address: json['address'] != null
-        ? PostPaymentMethodsRequestBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? PostPaymentMethodsRequestBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? PostPaymentMethodsRequestBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostPaymentMethodsRequestBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostPaymentMethodsRequestBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? PostPaymentMethodsRequestBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? PostPaymentMethodsRequestBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostPaymentMethodsRequestBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

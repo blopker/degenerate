@@ -133,13 +133,9 @@ final class IssuingCardShipping {const IssuingCardShipping({required this.addres
 
 factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
-  addressValidation: json['address_validation'] != null
-        ? IssuingCardShippingAddressValidation2.fromJson(json['address_validation'] as Map<String, dynamic>)
-        : null,
+  addressValidation: json['address_validation'] != null ? IssuingCardShippingAddressValidation2.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
   carrier: json['carrier'] != null ? IssuingCardShippingCarrier.fromJson(json['carrier'] as String) : null,
-  customs: json['customs'] != null
-        ? IssuingCardShippingCustoms2.fromJson(json['customs'] as Map<String, dynamic>)
-        : null,
+  customs: json['customs'] != null ? IssuingCardShippingCustoms2.fromJson(json['customs'] as Map<String, dynamic>) : null,
   eta: json['eta'] != null ? (json['eta'] as num).toInt() : null,
   name: json['name'] as String,
   phoneNumber: json['phone_number'] as String?,

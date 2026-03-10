@@ -67,12 +67,8 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
-  address: json['address'] != null
-        ? GelatoVerifiedOutputsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? GelatoVerifiedOutputsDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? GelatoVerifiedOutputsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? GelatoVerifiedOutputsDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   idNumber: json['id_number'] as String?,

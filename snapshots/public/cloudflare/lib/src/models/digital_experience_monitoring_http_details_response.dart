@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'digital_experience_monitorin
 
 factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: json['host'] as String?,
-  httpStats: json['httpStats'] != null
-        ? DigitalExperienceMonitoringHttpDetailsResponseHttpStats.fromJson(json['httpStats'] as Map<String, dynamic>)
-        : null,
+  httpStats: json['httpStats'] != null ? DigitalExperienceMonitoringHttpDetailsResponseHttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null,
   httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   interval: json['interval'] as String?,
   kind: json['kind'],

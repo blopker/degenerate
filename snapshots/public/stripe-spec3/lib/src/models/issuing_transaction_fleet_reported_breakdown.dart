@@ -8,15 +8,9 @@ import 'issuing_transaction_fleet_reported_breakdown_fuel.dart';import 'issuing_
 final class IssuingTransactionFleetReportedBreakdown {const IssuingTransactionFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory IssuingTransactionFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetReportedBreakdown(
-  fuel: json['fuel'] != null
-        ? IssuingTransactionFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  nonFuel: json['non_fuel'] != null
-        ? IssuingTransactionFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? IssuingTransactionFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  fuel: json['fuel'] != null ? IssuingTransactionFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  nonFuel: json['non_fuel'] != null ? IssuingTransactionFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? IssuingTransactionFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 /// Breakdown of fuel portion of the purchase.

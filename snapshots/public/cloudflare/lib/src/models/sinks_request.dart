@@ -32,16 +32,10 @@ bool get isUnknown { return !values.contains(this); }
 final class SinksRequest {const SinksRequest({this.config, this.format, required this.name, this.schema, required this.type, });
 
 factory SinksRequest.fromJson(Map<String, dynamic> json) { return SinksRequest(
-  config: json['config'] != null
-        ? SinksRequestConfig.fromJson(json['config'])
-        : null,
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? SinksRequestConfig.fromJson(json['config']) : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-  schema: json['schema'] != null
-        ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>)
-        : null,
+  schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksRequestType.fromJson(json['type'] as String),
 ); }
 

@@ -159,13 +159,9 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   name: json['name'] as String,
   fullName: json['full_name'] as String,
   license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
   forks: (json['forks'] as num).toInt(),
-  permissions: json['permissions'] != null
-        ? RepositoryWebhooksPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RepositoryWebhooksPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   private: json['private'] as bool,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -239,9 +235,7 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  templateRepository: json['template_repository'] != null
-        ? RepositoryWebhooksTemplateRepository.fromJson(json['template_repository'] as Map<String, dynamic>)
-        : null,
+  templateRepository: json['template_repository'] != null ? RepositoryWebhooksTemplateRepository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
   tempCloneToken: json['temp_clone_token'] as String?,
   allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,

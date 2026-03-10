@@ -36,9 +36,7 @@ final class InlineObject760 {const InlineObject760({this.searchContextSize = Inl
 
 factory InlineObject760.fromJson(Map<String, dynamic> json) { return InlineObject760(
   searchContextSize: json.containsKey('search_context_size') ? InlineObject760SearchContextSize.fromJson(json['search_context_size'] as String) : InlineObject760SearchContextSize.medium,
-  userLocation: json['user_location'] != null
-        ? InlineObject760UserLocation.fromJson(json['user_location'] as Map<String, dynamic>)
-        : null,
+  userLocation: json['user_location'] != null ? InlineObject760UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject760SearchContextSize searchContextSize;

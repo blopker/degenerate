@@ -7,15 +7,9 @@
 import 'workflow_usage_billable_macos.dart';import 'workflow_usage_billable_ubuntu.dart';import 'workflow_usage_billable_windows.dart';final class WorkflowUsageBillable {const WorkflowUsageBillable({this.ubuntu, this.macos, this.windows, });
 
 factory WorkflowUsageBillable.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillable(
-  ubuntu: json['UBUNTU'] != null
-        ? WorkflowUsageBillableUbuntu.fromJson(json['UBUNTU'] as Map<String, dynamic>)
-        : null,
-  macos: json['MACOS'] != null
-        ? WorkflowUsageBillableMacos.fromJson(json['MACOS'] as Map<String, dynamic>)
-        : null,
-  windows: json['WINDOWS'] != null
-        ? WorkflowUsageBillableWindows.fromJson(json['WINDOWS'] as Map<String, dynamic>)
-        : null,
+  ubuntu: json['UBUNTU'] != null ? WorkflowUsageBillableUbuntu.fromJson(json['UBUNTU'] as Map<String, dynamic>) : null,
+  macos: json['MACOS'] != null ? WorkflowUsageBillableMacos.fromJson(json['MACOS'] as Map<String, dynamic>) : null,
+  windows: json['WINDOWS'] != null ? WorkflowUsageBillableWindows.fromJson(json['WINDOWS'] as Map<String, dynamic>) : null,
 ); }
 
 final WorkflowUsageBillableUbuntu? ubuntu;

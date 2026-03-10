@@ -7,19 +7,11 @@
 import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_ping_hook.dart';final class WebhookPing {const WebhookPing({this.hook, this.hookId, this.organization, this.repository, this.sender, this.zen, });
 
 factory WebhookPing.fromJson(Map<String, dynamic> json) { return WebhookPing(
-  hook: json['hook'] != null
-        ? WebhookPingHook.fromJson(json['hook'] as Map<String, dynamic>)
-        : null,
+  hook: json['hook'] != null ? WebhookPingHook.fromJson(json['hook'] as Map<String, dynamic>) : null,
   hookId: json['hook_id'] != null ? (json['hook_id'] as num).toInt() : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   zen: json['zen'] as String?,
 ); }
 

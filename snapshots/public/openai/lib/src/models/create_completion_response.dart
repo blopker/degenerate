@@ -37,9 +37,7 @@ factory CreateCompletionResponse.fromJson(Map<String, dynamic> json) { return Cr
   model: json['model'] as String,
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateCompletionResponseObject.fromJson(json['object'] as String),
-  usage: json['usage'] != null
-        ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// A unique identifier for the completion.

@@ -9,9 +9,7 @@ import 'access_organizations_components_schemas_name.dart';import 'access_schema
 factory ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
   authDomain: json['auth_domain'] != null ? AccessSchemasAuthDomain.fromJson(json['auth_domain'] as String) : null,
   isUiReadOnly: json['is_ui_read_only'] != null ? AccessSchemasIsUiReadOnly.fromJson(json['is_ui_read_only'] as bool) : null,
-  loginDesign: json['login_design'] != null
-        ? AccessSchemasLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>)
-        : null,
+  loginDesign: json['login_design'] != null ? AccessSchemasLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? AccessOrganizationsComponentsSchemasName.fromJson(json['name'] as String) : null,
   uiReadOnlyToggleReason: json['ui_read_only_toggle_reason'] != null ? AccessUiReadOnlyToggleReason.fromJson(json['ui_read_only_toggle_reason'] as String) : null,
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessSchemasUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,

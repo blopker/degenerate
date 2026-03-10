@@ -10,13 +10,9 @@ factory PullRequestEvent.fromJson(Map<String, dynamic> json) { return PullReques
   action: json['action'] as String,
   number: (json['number'] as num).toInt(),
   pullRequest: PullRequestMinimal.fromJson(json['pull_request'] as Map<String, dynamic>),
-  assignee: json['assignee'] != null
-        ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
+  assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
-  label: json['label'] != null
-        ? Label.fromJson(json['label'] as Map<String, dynamic>)
-        : null,
+  label: json['label'] != null ? Label.fromJson(json['label'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

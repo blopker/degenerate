@@ -9,16 +9,12 @@ import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipeline
 factory StreamsResponse2Result.fromJson(Map<String, dynamic> json) { return StreamsResponse2Result(
   createdAt: DateTime.parse(json['created_at'] as String),
   endpoint: json['endpoint'] != null ? Uri.parse(json['endpoint'] as String) : null,
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   http: StreamsResponse2ResultHttp.fromJson(json['http'] as Map<String, dynamic>),
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-  schema: json['schema'] != null
-        ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>)
-        : null,
+  schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   version: (json['version'] as num).toInt(),
   workerBinding: StreamsResponse2ResultWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>),
 ); }

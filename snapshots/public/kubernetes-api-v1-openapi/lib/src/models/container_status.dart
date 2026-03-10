@@ -13,23 +13,15 @@ factory ContainerStatus.fromJson(Map<String, dynamic> json) { return ContainerSt
   containerId: json['containerID'] as String?,
   image: json['image'] as String,
   imageId: json['imageID'] as String,
-  lastState: json['lastState'] != null
-        ? ContainerState.fromJson(json['lastState'] as Map<String, dynamic>)
-        : null,
+  lastState: json['lastState'] != null ? ContainerState.fromJson(json['lastState'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   ready: json['ready'] as bool,
-  resources: json['resources'] != null
-        ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>)
-        : null,
+  resources: json['resources'] != null ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
   restartCount: (json['restartCount'] as num).toInt(),
   started: json['started'] as bool?,
-  state: json['state'] != null
-        ? ContainerState.fromJson(json['state'] as Map<String, dynamic>)
-        : null,
+  state: json['state'] != null ? ContainerState.fromJson(json['state'] as Map<String, dynamic>) : null,
   stopSignal: json['stopSignal'] as String?,
-  user: json['user'] != null
-        ? ContainerUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? ContainerUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   volumeMounts: (json['volumeMounts'] as List<dynamic>?)?.map((e) => VolumeMountStatus.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

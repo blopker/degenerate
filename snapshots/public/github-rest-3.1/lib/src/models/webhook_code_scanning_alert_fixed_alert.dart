@@ -73,9 +73,7 @@ factory WebhookCodeScanningAlertFixedAlert.fromJson(Map<String, dynamic> json) {
   fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] != null ? Uri.parse(json['instances_url'] as String) : null,
-  mostRecentInstance: json['most_recent_instance'] != null
-        ? WebhookCodeScanningAlertFixedAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>)
-        : null,
+  mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertFixedAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertFixedAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: WebhookCodeScanningAlertFixedAlertState.fromJson(json['state'] as String),

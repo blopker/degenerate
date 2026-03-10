@@ -66,9 +66,7 @@ factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json)
   id: json['id'] as String?,
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toDouble() : null,
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
-  budgetAlerting: json['budget_alerting'] != null
-        ? BillingUpdateBudgetOrgResponseBudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>)
-        : null,
+  budgetAlerting: json['budget_alerting'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null,
   budgetScope: json['budget_scope'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetScope.fromJson(json['budget_scope'] as String) : null,
   budgetEntityName: json.containsKey('budget_entity_name') ? json['budget_entity_name'] as String : '',
   budgetType: json['budget_type'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(json['budget_type'] as String) : null,

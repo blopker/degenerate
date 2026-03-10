@@ -7,15 +7,9 @@
 import 'ai_search_instance_search_request_ai_search_options_query_rewrite.dart';import 'ai_search_instance_search_request_ai_search_options_reranking.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval.dart';final class AiSearchInstanceSearchRequestAiSearchOptions {const AiSearchInstanceSearchRequestAiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
 
 factory AiSearchInstanceSearchRequestAiSearchOptions.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptions(
-  queryRewrite: json['query_rewrite'] != null
-        ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(json['query_rewrite'] as Map<String, dynamic>)
-        : null,
-  reranking: json['reranking'] != null
-        ? AiSearchInstanceSearchRequestAiSearchOptionsReranking.fromJson(json['reranking'] as Map<String, dynamic>)
-        : null,
-  retrieval: json['retrieval'] != null
-        ? AiSearchInstanceSearchRequestAiSearchOptionsRetrieval.fromJson(json['retrieval'] as Map<String, dynamic>)
-        : null,
+  queryRewrite: json['query_rewrite'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(json['query_rewrite'] as Map<String, dynamic>) : null,
+  reranking: json['reranking'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsReranking.fromJson(json['reranking'] as Map<String, dynamic>) : null,
+  retrieval: json['retrieval'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRetrieval.fromJson(json['retrieval'] as Map<String, dynamic>) : null,
 ); }
 
 final AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite? queryRewrite;

@@ -71,15 +71,11 @@ final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesA
 factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesExpiresOn.fromJson(json['expires_on'] as String) : null,
-  geoRestrictions: json['geo_restrictions'] != null
-        ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>)
-        : null,
+  geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
   hosts: (json['hosts'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String),
   issuer: json['issuer'] != null ? TlsCertificatesAndHostnamesIssuer.fromJson(json['issuer'] as String) : null,
-  keylessServer: json['keyless_server'] != null
-        ? TlsCertificatesAndHostnamesBase.fromJson(json['keyless_server'] as Map<String, dynamic>)
-        : null,
+  keylessServer: json['keyless_server'] != null ? TlsCertificatesAndHostnamesBase.fromJson(json['keyless_server'] as Map<String, dynamic>) : null,
   modifiedOn: json['modified_on'] != null ? TlsCertificatesAndHostnamesModifiedOn.fromJson(json['modified_on'] as String) : null,
   policyRestrictions: json['policy_restrictions'] != null ? TlsCertificatesAndHostnamesPolicyRestrictions.fromJson(json['policy_restrictions'] as String) : null,
   priority: json['priority'] != null ? TlsCertificatesAndHostnamesPriority.fromJson(json['priority'] as num) : null,

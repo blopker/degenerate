@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_test_helpers_treasury_i
 
 factory PostTestHelpersTreasuryInboundTransfersIdFailRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  failureDetails: json['failure_details'] != null
-        ? PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>)
-        : null,
+  failureDetails: json['failure_details'] != null ? PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

@@ -14,9 +14,7 @@ factory PostChargesChargeCaptureRequest.fromJson(Map<String, dynamic> json) { re
   receiptEmail: json['receipt_email'] as String?,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

@@ -9,9 +9,7 @@ final class Dashboard {const Dashboard({this.timeseries, this.totals, });
 
 factory Dashboard.fromJson(Map<String, dynamic> json) { return Dashboard(
   timeseries: (json['timeseries'] as List<dynamic>?)?.map((e) => Timeseries2.fromJson(e as Map<String, dynamic>)).toList(),
-  totals: json['totals'] != null
-        ? Totals.fromJson(json['totals'] as Map<String, dynamic>)
-        : null,
+  totals: json['totals'] != null ? Totals.fromJson(json['totals'] as Map<String, dynamic>) : null,
 ); }
 
 final List<Timeseries2>? timeseries;

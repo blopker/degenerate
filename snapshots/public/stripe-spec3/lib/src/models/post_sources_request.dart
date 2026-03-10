@@ -67,23 +67,13 @@ factory PostSourcesRequest.fromJson(Map<String, dynamic> json) { return PostSour
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flow: json['flow'] != null ? PostSourcesRequestFlow.fromJson(json['flow'] as String) : null,
-  mandate: json['mandate'] != null
-        ? PostSourcesRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? PostSourcesRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   originalSource: json['original_source'] as String?,
-  owner: json['owner'] != null
-        ? PostSourcesRequestOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
-  receiver: json['receiver'] != null
-        ? PostSourcesRequestReceiver.fromJson(json['receiver'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? PostSourcesRequestRedirect.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
-  sourceOrder: json['source_order'] != null
-        ? PostSourcesRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? PostSourcesRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  receiver: json['receiver'] != null ? PostSourcesRequestReceiver.fromJson(json['receiver'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PostSourcesRequestRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  sourceOrder: json['source_order'] != null ? PostSourcesRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   token: json['token'] as String?,
   type: json['type'] as String?,

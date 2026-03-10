@@ -7,9 +7,7 @@
 import 'images_image_variant_definition.dart';final class ImagesImageVariantResponse {const ImagesImageVariantResponse({this.variant});
 
 factory ImagesImageVariantResponse.fromJson(Map<String, dynamic> json) { return ImagesImageVariantResponse(
-  variant: json['variant'] != null
-        ? ImagesImageVariantDefinition.fromJson(json['variant'] as Map<String, dynamic>)
-        : null,
+  variant: json['variant'] != null ? ImagesImageVariantDefinition.fromJson(json['variant'] as Map<String, dynamic>) : null,
 ); }
 
 final ImagesImageVariantDefinition? variant;

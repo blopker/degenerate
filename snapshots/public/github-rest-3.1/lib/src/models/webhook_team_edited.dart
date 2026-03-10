@@ -30,16 +30,10 @@ final class WebhookTeamEdited {const WebhookTeamEdited({required this.action, re
 factory WebhookTeamEdited.fromJson(Map<String, dynamic> json) { return WebhookTeamEdited(
   action: WebhookTeamEditedAction.fromJson(json['action'] as String),
   changes: WebhookTeamEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  repository: json['repository'] != null
-        ? WebhookTeamEditedRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? WebhookTeamEditedRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
 ); }

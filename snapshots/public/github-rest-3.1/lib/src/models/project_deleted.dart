@@ -29,9 +29,7 @@ final class ProjectDeleted {const ProjectDeleted({required this.action, this.ins
 
 factory ProjectDeleted.fromJson(Map<String, dynamic> json) { return ProjectDeleted(
   action: ProjectDeletedAction.fromJson(json['action'] as String),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2: Projects.fromJson(json['projects_v2'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

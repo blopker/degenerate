@@ -7,15 +7,9 @@
 import 'digital_experience_monitoring_percentiles.dart';final class DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse {const DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse({this.hopsCount, this.packetLossPct, this.roundTripTimeMs, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
-  hopsCount: json['hopsCount'] != null
-        ? DigitalExperienceMonitoringPercentiles.fromJson(json['hopsCount'] as Map<String, dynamic>)
-        : null,
-  packetLossPct: json['packetLossPct'] != null
-        ? DigitalExperienceMonitoringPercentiles.fromJson(json['packetLossPct'] as Map<String, dynamic>)
-        : null,
-  roundTripTimeMs: json['roundTripTimeMs'] != null
-        ? DigitalExperienceMonitoringPercentiles.fromJson(json['roundTripTimeMs'] as Map<String, dynamic>)
-        : null,
+  hopsCount: json['hopsCount'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['hopsCount'] as Map<String, dynamic>) : null,
+  packetLossPct: json['packetLossPct'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['packetLossPct'] as Map<String, dynamic>) : null,
+  roundTripTimeMs: json['roundTripTimeMs'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['roundTripTimeMs'] as Map<String, dynamic>) : null,
 ); }
 
 final DigitalExperienceMonitoringPercentiles? hopsCount;

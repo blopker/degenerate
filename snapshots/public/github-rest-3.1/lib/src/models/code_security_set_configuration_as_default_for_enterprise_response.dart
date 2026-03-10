@@ -39,9 +39,7 @@ final class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse {const Co
 
 factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
   defaultForNewRepos: json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,
-  configuration: json['configuration'] != null
-        ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which types of repository this security configuration is applied to by default.

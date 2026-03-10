@@ -60,9 +60,7 @@ final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_s
 
 factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSearchPreviewTool(
   type: json['type'] as String,
-  userLocation: json['user_location'] != null
-        ? ApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>)
-        : null,
+  userLocation: json['user_location'] != null ? ApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
   searchContextSize: json['search_context_size'] != null ? SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   searchContentTypes: (json['search_content_types'] as List<dynamic>?)?.map((e) => SearchContentType.fromJson(e as String)).toList(),
 ); }

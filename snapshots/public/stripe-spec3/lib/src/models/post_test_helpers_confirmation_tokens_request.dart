@@ -36,17 +36,11 @@ final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfi
 factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentMethod: json['payment_method'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null
-        ? PostTestHelpersConfirmationTokensRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostTestHelpersConfirmationTokensRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

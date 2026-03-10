@@ -87,26 +87,14 @@ bool get isUnknown { return !values.contains(this); }
 final class FundingInstructionsBankTransferFinancialAddress {const FundingInstructionsBankTransferFinancialAddress({this.aba, this.iban, this.sortCode, this.spei, this.supportedNetworks, this.swift, required this.type, this.zengin, });
 
 factory FundingInstructionsBankTransferFinancialAddress.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferFinancialAddress(
-  aba: json['aba'] != null
-        ? FundingInstructionsBankTransferAbaRecord.fromJson(json['aba'] as Map<String, dynamic>)
-        : null,
-  iban: json['iban'] != null
-        ? FundingInstructionsBankTransferIbanRecord.fromJson(json['iban'] as Map<String, dynamic>)
-        : null,
-  sortCode: json['sort_code'] != null
-        ? FundingInstructionsBankTransferSortCodeRecord.fromJson(json['sort_code'] as Map<String, dynamic>)
-        : null,
-  spei: json['spei'] != null
-        ? FundingInstructionsBankTransferSpeiRecord.fromJson(json['spei'] as Map<String, dynamic>)
-        : null,
+  aba: json['aba'] != null ? FundingInstructionsBankTransferAbaRecord.fromJson(json['aba'] as Map<String, dynamic>) : null,
+  iban: json['iban'] != null ? FundingInstructionsBankTransferIbanRecord.fromJson(json['iban'] as Map<String, dynamic>) : null,
+  sortCode: json['sort_code'] != null ? FundingInstructionsBankTransferSortCodeRecord.fromJson(json['sort_code'] as Map<String, dynamic>) : null,
+  spei: json['spei'] != null ? FundingInstructionsBankTransferSpeiRecord.fromJson(json['spei'] as Map<String, dynamic>) : null,
   supportedNetworks: (json['supported_networks'] as List<dynamic>?)?.map((e) => FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJson(e as String)).toList(),
-  swift: json['swift'] != null
-        ? FundingInstructionsBankTransferSwiftRecord.fromJson(json['swift'] as Map<String, dynamic>)
-        : null,
+  swift: json['swift'] != null ? FundingInstructionsBankTransferSwiftRecord.fromJson(json['swift'] as Map<String, dynamic>) : null,
   type: FundingInstructionsBankTransferFinancialAddressType.fromJson(json['type'] as String),
-  zengin: json['zengin'] != null
-        ? FundingInstructionsBankTransferZenginRecord.fromJson(json['zengin'] as Map<String, dynamic>)
-        : null,
+  zengin: json['zengin'] != null ? FundingInstructionsBankTransferZenginRecord.fromJson(json['zengin'] as Map<String, dynamic>) : null,
 ); }
 
 final FundingInstructionsBankTransferAbaRecord? aba;

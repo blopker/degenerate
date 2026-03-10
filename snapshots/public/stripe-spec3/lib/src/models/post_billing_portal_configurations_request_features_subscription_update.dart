@@ -83,17 +83,11 @@ final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate {co
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  defaultAllowedUpdates: json['default_allowed_updates'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates.fromJson(json['default_allowed_updates'] as Map<String, dynamic>)
-        : null,
+  defaultAllowedUpdates: json['default_allowed_updates'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates.fromJson(json['default_allowed_updates'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool,
-  products: json['products'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProducts.fromJson(json['products'] as Map<String, dynamic>)
-        : null,
+  products: json['products'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProducts.fromJson(json['products'] as Map<String, dynamic>) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  scheduleAtPeriodEnd: json['schedule_at_period_end'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>)
-        : null,
+  scheduleAtPeriodEnd: json['schedule_at_period_end'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>) : null,
   trialUpdateBehavior: json['trial_update_behavior'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String) : null,
 ); }
 

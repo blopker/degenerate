@@ -8,9 +8,7 @@ import 'ai_search_instance_chat_completion_request_ai_search_options_query_rewri
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(
   enabled: json['enabled'] as bool?,
-  model: json['model'] != null
-        ? AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   rewritePrompt: json['rewrite_prompt'] as String?,
 ); }
 

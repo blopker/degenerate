@@ -7,9 +7,7 @@
 import 'webhook_pull_request_review_edited_changes_body.dart';final class WebhookPullRequestReviewEditedChanges {const WebhookPullRequestReviewEditedChanges({this.body});
 
 factory WebhookPullRequestReviewEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedChanges(
-  body: json['body'] != null
-        ? WebhookPullRequestReviewEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhookPullRequestReviewEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookPullRequestReviewEditedChangesBody? body;

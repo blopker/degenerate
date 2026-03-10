@@ -37,9 +37,7 @@ final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({requir
 
 factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return QuotesResourceAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? QuotesResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? QuotesResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
   status: json['status'] != null ? QuotesResourceAutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }

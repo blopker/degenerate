@@ -7,36 +7,16 @@
 import 'security_and_analysis_advanced_security.dart';import 'security_and_analysis_code_security.dart';import 'security_and_analysis_dependabot_security_updates.dart';import 'security_and_analysis_secret_scanning.dart';import 'security_and_analysis_secret_scanning_ai_detection.dart';import 'security_and_analysis_secret_scanning_delegated_alert_dismissal.dart';import 'security_and_analysis_secret_scanning_delegated_bypass.dart';import 'security_and_analysis_secret_scanning_delegated_bypass_options.dart';import 'security_and_analysis_secret_scanning_non_provider_patterns.dart';import 'security_and_analysis_secret_scanning_push_protection.dart';final class SecurityAndAnalysis {const SecurityAndAnalysis({this.advancedSecurity, this.codeSecurity, this.dependabotSecurityUpdates, this.secretScanning, this.secretScanningPushProtection, this.secretScanningNonProviderPatterns, this.secretScanningAiDetection, this.secretScanningDelegatedAlertDismissal, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, });
 
 factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysis(
-  advancedSecurity: json['advanced_security'] != null
-        ? SecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>)
-        : null,
-  codeSecurity: json['code_security'] != null
-        ? SecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>)
-        : null,
-  dependabotSecurityUpdates: json['dependabot_security_updates'] != null
-        ? SecurityAndAnalysisDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as Map<String, dynamic>)
-        : null,
-  secretScanning: json['secret_scanning'] != null
-        ? SecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>)
-        : null,
-  secretScanningPushProtection: json['secret_scanning_push_protection'] != null
-        ? SecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>)
-        : null,
-  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null
-        ? SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>)
-        : null,
-  secretScanningAiDetection: json['secret_scanning_ai_detection'] != null
-        ? SecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null
-        ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null
-        ? SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null
-        ? SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>)
-        : null,
+  advancedSecurity: json['advanced_security'] != null ? SecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null,
+  codeSecurity: json['code_security'] != null ? SecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null,
+  dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? SecurityAndAnalysisDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as Map<String, dynamic>) : null,
+  secretScanning: json['secret_scanning'] != null ? SecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,
+  secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? SecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>) : null,
+  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>) : null,
+  secretScanningAiDetection: json['secret_scanning_ai_detection'] != null ? SecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Enable or disable GitHub Advanced Security for the repository.

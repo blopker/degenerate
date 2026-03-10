@@ -8,12 +8,8 @@ import 'rulesets_set_cache_settings_custom_cache_key_query_string_exclude.dart';
 final class RulesetsSetCacheSettingsCustomCacheKeyQueryString {const RulesetsSetCacheSettingsCustomCacheKeyQueryString({this.exclude, this.include, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyQueryString.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyQueryString(
-  exclude: json['exclude'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude.fromJson(json['exclude'] as Map<String, dynamic>)
-        : null,
-  include: json['include'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude.fromJson(json['include'] as Map<String, dynamic>)
-        : null,
+  exclude: json['exclude'] != null ? RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude.fromJson(json['exclude'] as Map<String, dynamic>) : null,
+  include: json['include'] != null ? RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude.fromJson(json['include'] as Map<String, dynamic>) : null,
 ); }
 
 /// Which query string parameters to exclude from the cache key.

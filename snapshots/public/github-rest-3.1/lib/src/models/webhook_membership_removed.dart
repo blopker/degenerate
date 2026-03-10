@@ -54,17 +54,11 @@ final class WebhookMembershipRemoved {const WebhookMembershipRemoved({required t
 
 factory WebhookMembershipRemoved.fromJson(Map<String, dynamic> json) { return WebhookMembershipRemoved(
   action: WebhookMembershipRemovedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   member: WebhooksUser.fromJson(json['member'] as Map<String, dynamic>),
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   scope: WebhookMembershipRemovedScope.fromJson(json['scope'] as String),
   sender: WebhookMembershipRemovedSender.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam.fromJson(json['team'] as Map<String, dynamic>),

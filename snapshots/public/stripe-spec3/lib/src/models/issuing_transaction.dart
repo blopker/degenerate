@@ -88,43 +88,25 @@ final class IssuingTransaction {const IssuingTransaction({required this.amount, 
 
 factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null
-        ? IssuingTransactionAmountDetails2.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
-  authorization: json['authorization'] != null
-        ? IssuingTransactionAuthorization.fromJson(json['authorization'] as Map<String, dynamic>)
-        : null,
-  balanceTransaction: json['balance_transaction'] != null
-        ? IssuingTransactionBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? IssuingTransactionAmountDetails2.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  authorization: json['authorization'] != null ? IssuingTransactionAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null,
+  balanceTransaction: json['balance_transaction'] != null ? IssuingTransactionBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   card: IssuingTransactionCard.fromJson(json['card'] as Map<String, dynamic>),
-  cardholder: json['cardholder'] != null
-        ? IssuingTransactionCardholder.fromJson(json['cardholder'] as Map<String, dynamic>)
-        : null,
+  cardholder: json['cardholder'] != null ? IssuingTransactionCardholder.fromJson(json['cardholder'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  dispute: json['dispute'] != null
-        ? IssuingTransactionDispute.fromJson(json['dispute'] as Map<String, dynamic>)
-        : null,
+  dispute: json['dispute'] != null ? IssuingTransactionDispute.fromJson(json['dispute'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
   merchantData: IssuingAuthorizationMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  networkData: json['network_data'] != null
-        ? IssuingTransactionNetworkData2.fromJson(json['network_data'] as Map<String, dynamic>)
-        : null,
+  networkData: json['network_data'] != null ? IssuingTransactionNetworkData2.fromJson(json['network_data'] as Map<String, dynamic>) : null,
   object: IssuingTransactionObject.fromJson(json['object'] as String),
-  purchaseDetails: json['purchase_details'] != null
-        ? IssuingTransactionPurchaseDetails2.fromJson(json['purchase_details'] as Map<String, dynamic>)
-        : null,
-  token: json['token'] != null
-        ? IssuingTransactionToken.fromJson(json['token'] as Map<String, dynamic>)
-        : null,
-  treasury: json['treasury'] != null
-        ? IssuingTransactionTreasury2.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  purchaseDetails: json['purchase_details'] != null ? IssuingTransactionPurchaseDetails2.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
+  token: json['token'] != null ? IssuingTransactionToken.fromJson(json['token'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? IssuingTransactionTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
   type: IssuingTransactionType.fromJson(json['type'] as String),
   wallet: json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null,
 ); }

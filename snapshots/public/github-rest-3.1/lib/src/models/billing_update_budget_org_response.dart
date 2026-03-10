@@ -8,9 +8,7 @@ import 'billing_update_budget_org_response_budget.dart';final class BillingUpdat
 
 factory BillingUpdateBudgetOrgResponse.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponse(
   message: json['message'] as String?,
-  budget: json['budget'] != null
-        ? BillingUpdateBudgetOrgResponseBudget.fromJson(json['budget'] as Map<String, dynamic>)
-        : null,
+  budget: json['budget'] != null ? BillingUpdateBudgetOrgResponseBudget.fromJson(json['budget'] as Map<String, dynamic>) : null,
 ); }
 
 final String? message;

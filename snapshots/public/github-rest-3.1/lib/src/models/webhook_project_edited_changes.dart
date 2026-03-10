@@ -8,12 +8,8 @@ import 'webhook_project_edited_changes_body.dart';import 'webhook_project_edited
 final class WebhookProjectEditedChanges {const WebhookProjectEditedChanges({this.body, this.name, });
 
 factory WebhookProjectEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectEditedChanges(
-  body: json['body'] != null
-        ? WebhookProjectEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? WebhookProjectEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhookProjectEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? WebhookProjectEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookProjectEditedChangesBody? body;

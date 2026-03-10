@@ -12,9 +12,7 @@ factory VolumeMountStatus.fromJson(Map<String, dynamic> json) { return VolumeMou
   name: json['name'] as String,
   readOnly: json['readOnly'] as bool?,
   recursiveReadOnly: json['recursiveReadOnly'] as String?,
-  volumeStatus: json['volumeStatus'] != null
-        ? VolumeStatus.fromJson(json['volumeStatus'] as Map<String, dynamic>)
-        : null,
+  volumeStatus: json['volumeStatus'] != null ? VolumeStatus.fromJson(json['volumeStatus'] as Map<String, dynamic>) : null,
 ); }
 
 /// MountPath corresponds to the original VolumeMount.

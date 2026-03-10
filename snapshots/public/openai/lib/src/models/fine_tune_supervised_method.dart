@@ -8,9 +8,7 @@ import 'fine_tune_supervised_hyperparameters.dart';/// Configuration for the sup
 final class FineTuneSupervisedMethod {const FineTuneSupervisedMethod({this.hyperparameters});
 
 factory FineTuneSupervisedMethod.fromJson(Map<String, dynamic> json) { return FineTuneSupervisedMethod(
-  hyperparameters: json['hyperparameters'] != null
-        ? FineTuneSupervisedHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>)
-        : null,
+  hyperparameters: json['hyperparameters'] != null ? FineTuneSupervisedHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
 ); }
 
 final FineTuneSupervisedHyperparameters? hyperparameters;

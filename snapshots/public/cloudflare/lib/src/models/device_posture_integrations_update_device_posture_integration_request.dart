@@ -7,9 +7,7 @@
 import 'teams_devices_components_schemas_name.dart';import 'teams_devices_config_request.dart';import 'teams_devices_interval.dart';import 'teams_devices_schemas_type.dart';final class DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest {const DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest({this.config, this.interval, this.name, this.type, });
 
 factory DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest.fromJson(Map<String, dynamic> json) { return DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest(
-  config: json['config'] != null
-        ? TeamsDevicesConfigRequest.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? TeamsDevicesConfigRequest.fromJson(json['config'] as Map<String, dynamic>) : null,
   interval: json['interval'] != null ? TeamsDevicesInterval.fromJson(json['interval'] as String) : null,
   name: json['name'] != null ? TeamsDevicesComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] != null ? TeamsDevicesSchemasType.fromJson(json['type'] as String) : null,

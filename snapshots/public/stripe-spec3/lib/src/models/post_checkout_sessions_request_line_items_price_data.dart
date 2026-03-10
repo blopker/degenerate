@@ -36,12 +36,8 @@ final class PostCheckoutSessionsRequestLineItemsPriceData {const PostCheckoutSes
 factory PostCheckoutSessionsRequestLineItemsPriceData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItemsPriceData(
   currency: json['currency'] as String,
   product: json['product'] as String?,
-  productData: json['product_data'] != null
-        ? PostCheckoutSessionsRequestLineItemsPriceDataProductData.fromJson(json['product_data'] as Map<String, dynamic>)
-        : null,
-  recurring: json['recurring'] != null
-        ? PostCheckoutSessionsRequestLineItemsPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  productData: json['product_data'] != null ? PostCheckoutSessionsRequestLineItemsPriceDataProductData.fromJson(json['product_data'] as Map<String, dynamic>) : null,
+  recurring: json['recurring'] != null ? PostCheckoutSessionsRequestLineItemsPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

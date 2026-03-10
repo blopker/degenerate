@@ -31,28 +31,14 @@ bool get isUnknown { return !values.contains(this); }
 final class TreasuryFinancialAccountFeatures {const TreasuryFinancialAccountFeatures({this.cardIssuing, this.depositInsurance, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, required this.object, this.outboundPayments, this.outboundTransfers, });
 
 factory TreasuryFinancialAccountFeatures.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountFeatures(
-  cardIssuing: json['card_issuing'] != null
-        ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  depositInsurance: json['deposit_insurance'] != null
-        ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['deposit_insurance'] as Map<String, dynamic>)
-        : null,
-  financialAddresses: json['financial_addresses'] != null
-        ? TreasuryFinancialAccountsResourceFinancialAddressesFeatures.fromJson(json['financial_addresses'] as Map<String, dynamic>)
-        : null,
-  inboundTransfers: json['inbound_transfers'] != null
-        ? TreasuryFinancialAccountsResourceInboundTransfers.fromJson(json['inbound_transfers'] as Map<String, dynamic>)
-        : null,
-  intraStripeFlows: json['intra_stripe_flows'] != null
-        ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>)
-        : null,
+  cardIssuing: json['card_issuing'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  depositInsurance: json['deposit_insurance'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['deposit_insurance'] as Map<String, dynamic>) : null,
+  financialAddresses: json['financial_addresses'] != null ? TreasuryFinancialAccountsResourceFinancialAddressesFeatures.fromJson(json['financial_addresses'] as Map<String, dynamic>) : null,
+  inboundTransfers: json['inbound_transfers'] != null ? TreasuryFinancialAccountsResourceInboundTransfers.fromJson(json['inbound_transfers'] as Map<String, dynamic>) : null,
+  intraStripeFlows: json['intra_stripe_flows'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>) : null,
   object: TreasuryFinancialAccountFeaturesObject.fromJson(json['object'] as String),
-  outboundPayments: json['outbound_payments'] != null
-        ? TreasuryFinancialAccountsResourceOutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>)
-        : null,
-  outboundTransfers: json['outbound_transfers'] != null
-        ? TreasuryFinancialAccountsResourceOutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>)
-        : null,
+  outboundPayments: json['outbound_payments'] != null ? TreasuryFinancialAccountsResourceOutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>) : null,
+  outboundTransfers: json['outbound_transfers'] != null ? TreasuryFinancialAccountsResourceOutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasuryFinancialAccountsResourceToggleSettings? cardIssuing;

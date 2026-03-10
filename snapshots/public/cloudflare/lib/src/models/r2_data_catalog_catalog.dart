@@ -36,9 +36,7 @@ factory R2DataCatalogCatalog.fromJson(Map<String, dynamic> json) { return R2Data
   bucket: json['bucket'] as String,
   credentialStatus: json['credential_status'] != null ? R2DataCatalogCredentialStatus.fromJson(json['credential_status'] as String) : null,
   id: json['id'] as String,
-  maintenanceConfig: json['maintenance_config'] != null
-        ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>)
-        : null,
+  maintenanceConfig: json['maintenance_config'] != null ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   status: R2DataCatalogCatalogStatus.fromJson(json['status'] as String),
 ); }

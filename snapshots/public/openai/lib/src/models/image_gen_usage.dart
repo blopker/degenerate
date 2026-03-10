@@ -11,9 +11,7 @@ factory ImageGenUsage.fromJson(Map<String, dynamic> json) { return ImageGenUsage
   inputTokens: (json['input_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
   outputTokens: (json['output_tokens'] as num).toInt(),
-  outputTokensDetails: json['output_tokens_details'] != null
-        ? ImageGenOutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>)
-        : null,
+  outputTokensDetails: json['output_tokens_details'] != null ? ImageGenOutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>) : null,
   inputTokensDetails: ImageGenInputUsageDetails.fromJson(json['input_tokens_details'] as Map<String, dynamic>),
 ); }
 

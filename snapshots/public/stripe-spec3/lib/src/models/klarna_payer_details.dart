@@ -8,9 +8,7 @@ import 'klarna_payer_details_address.dart';///
 final class KlarnaPayerDetails {const KlarnaPayerDetails({this.address});
 
 factory KlarnaPayerDetails.fromJson(Map<String, dynamic> json) { return KlarnaPayerDetails(
-  address: json['address'] != null
-        ? KlarnaPayerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? KlarnaPayerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
 ); }
 
 /// The payer's address

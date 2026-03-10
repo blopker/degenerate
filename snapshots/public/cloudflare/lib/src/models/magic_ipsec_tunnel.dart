@@ -16,30 +16,20 @@ final class MagicIpsecTunnel {const MagicIpsecTunnel({this.allowNullCipher, this
 factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnel(
   allowNullCipher: json['allow_null_cipher'] != null ? MagicAllowNullCipher.fromJson(json['allow_null_cipher'] as bool) : null,
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
-  bgp: json['bgp'] != null
-        ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>)
-        : null,
-  bgpStatus: json['bgp_status'] != null
-        ? MagicBgpStatusWithState.fromJson(json['bgp_status'] as Map<String, dynamic>)
-        : null,
+  bgp: json['bgp'] != null ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>) : null,
+  bgpStatus: json['bgp_status'] != null ? MagicBgpStatusWithState.fromJson(json['bgp_status'] as Map<String, dynamic>) : null,
   cloudflareEndpoint: MagicCloudflareIpsecEndpoint.fromJson(json['cloudflare_endpoint'] as String),
   createdOn: json['created_on'] != null ? MagicSchemasCreatedOn.fromJson(json['created_on'] as String) : null,
-  customRemoteIdentities: json['custom_remote_identities'] != null
-        ? MagicCustomRemoteIdentities.fromJson(json['custom_remote_identities'] as Map<String, dynamic>)
-        : null,
+  customRemoteIdentities: json['custom_remote_identities'] != null ? MagicCustomRemoteIdentities.fromJson(json['custom_remote_identities'] as Map<String, dynamic>) : null,
   customerEndpoint: json['customer_endpoint'] != null ? MagicCustomerIpsecEndpoint.fromJson(json['customer_endpoint'] as String) : null,
   description: json['description'] != null ? MagicComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  healthCheck: json['health_check'] != null
-        ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>)
-        : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   id: MagicSchemasIdentifier.fromJson(json['id'] as String),
   interfaceAddress: MagicInterfaceAddress.fromJson(json['interface_address'] as String),
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
   modifiedOn: json['modified_on'] != null ? MagicSchemasModifiedOn.fromJson(json['modified_on'] as String) : null,
   name: MagicIpsecTunnelName.fromJson(json['name'] as String),
-  pskMetadata: json['psk_metadata'] != null
-        ? MagicPskMetadata.fromJson(json['psk_metadata'] as Map<String, dynamic>)
-        : null,
+  pskMetadata: json['psk_metadata'] != null ? MagicPskMetadata.fromJson(json['psk_metadata'] as Map<String, dynamic>) : null,
   replayProtection: json['replay_protection'] != null ? MagicReplayProtection.fromJson(json['replay_protection'] as bool) : null,
 ); }
 

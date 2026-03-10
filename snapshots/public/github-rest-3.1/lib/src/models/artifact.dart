@@ -19,9 +19,7 @@ factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
   expiresAt: DateTime.parse(json['expires_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   digest: json['digest'] as String?,
-  workflowRun: json['workflow_run'] != null
-        ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>)
-        : null,
+  workflowRun: json['workflow_run'] != null ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

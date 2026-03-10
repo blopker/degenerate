@@ -7,9 +7,7 @@
 import 'create_app_response_data_app.dart';final class CreateAppResponseData {const CreateAppResponseData({this.app});
 
 factory CreateAppResponseData.fromJson(Map<String, dynamic> json) { return CreateAppResponseData(
-  app: json['app'] != null
-        ? CreateAppResponseDataApp.fromJson(json['app'] as Map<String, dynamic>)
-        : null,
+  app: json['app'] != null ? CreateAppResponseDataApp.fromJson(json['app'] as Map<String, dynamic>) : null,
 ); }
 
 final CreateAppResponseDataApp? app;

@@ -7,9 +7,7 @@
 import 'post_tokens_request_person_additional_tos_acceptances_account.dart';final class PostTokensRequestPersonAdditionalTosAcceptances {const PostTokensRequestPersonAdditionalTosAcceptances({this.account});
 
 factory PostTokensRequestPersonAdditionalTosAcceptances.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonAdditionalTosAcceptances(
-  account: json['account'] != null
-        ? PostTokensRequestPersonAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? PostTokensRequestPersonAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTokensRequestPersonAdditionalTosAcceptancesAccount? account;

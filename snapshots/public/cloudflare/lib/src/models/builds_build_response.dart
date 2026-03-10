@@ -38,22 +38,16 @@ final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, t
 
 factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,
-  buildTriggerMetadata: json['build_trigger_metadata'] != null
-        ? BuildsBuildTriggerMetadataResponse.fromJson(json['build_trigger_metadata'] as Map<String, dynamic>)
-        : null,
+  buildTriggerMetadata: json['build_trigger_metadata'] != null ? BuildsBuildTriggerMetadataResponse.fromJson(json['build_trigger_metadata'] as Map<String, dynamic>) : null,
   buildUuid: json['build_uuid'] != null ? BuildsBuildUuid.fromJson(json['build_uuid'] as String) : null,
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,
   initializingOn: json['initializing_on'] != null ? DateTime.parse(json['initializing_on'] as String) : null,
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
-  pullRequest: json['pull_request'] != null
-        ? BuildsBuildResponsePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
+  pullRequest: json['pull_request'] != null ? BuildsBuildResponsePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   runningOn: json['running_on'] != null ? DateTime.parse(json['running_on'] as String) : null,
   status: json['status'] != null ? BuildsBuildStatus.fromJson(json['status'] as String) : null,
   stoppedOn: json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null,
-  trigger: json['trigger'] != null
-        ? BuildsBuildResponseTrigger.fromJson(json['trigger'] as Map<String, dynamic>)
-        : null,
+  trigger: json['trigger'] != null ? BuildsBuildResponseTrigger.fromJson(json['trigger'] as Map<String, dynamic>) : null,
 ); }
 
 final BuildsBuildOutcome? buildOutcome;

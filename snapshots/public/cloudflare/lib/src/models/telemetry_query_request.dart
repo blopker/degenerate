@@ -78,9 +78,7 @@ factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return Telem
   offset: json['offset'] as String?,
   offsetBy: json['offsetBy'] != null ? (json['offsetBy'] as num).toDouble() : null,
   offsetDirection: json['offsetDirection'] as String?,
-  parameters: json['parameters'] != null
-        ? TelemetryQueryRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? TelemetryQueryRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   patternType: json['patternType'] != null ? TelemetryQueryRequestPatternType.fromJson(json['patternType'] as String) : null,
   queryId: json['queryId'] as String,
   timeframe: TelemetryQueryRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),

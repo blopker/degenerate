@@ -11,9 +11,7 @@ factory WaitingroomPatchRule.fromJson(Map<String, dynamic> json) { return Waitin
   description: json['description'] != null ? WaitingroomRuleDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? WaitingroomRuleEnabled.fromJson(json['enabled'] as bool) : null,
   expression: WaitingroomRuleExpression.fromJson(json['expression'] as String),
-  position: json['position'] != null
-        ? WaitingroomRulePosition.fromJson(json['position'] as Map<String, dynamic>)
-        : null,
+  position: json['position'] != null ? WaitingroomRulePosition.fromJson(json['position'] as Map<String, dynamic>) : null,
 ); }
 
 final WaitingroomRuleAction action;

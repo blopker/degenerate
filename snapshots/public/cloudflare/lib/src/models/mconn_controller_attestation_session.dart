@@ -8,9 +8,7 @@ import 'mconn_controller_connector_identity.dart';import 'mconn_controller_devic
 
 factory MconnControllerAttestationSession.fromJson(Map<String, dynamic> json) { return MconnControllerAttestationSession(
   akPublic: json['ak_public'] as String,
-  connector: json['connector'] != null
-        ? MconnControllerConnectorIdentity.fromJson(json['connector'] as Map<String, dynamic>)
-        : null,
+  connector: json['connector'] != null ? MconnControllerConnectorIdentity.fromJson(json['connector'] as Map<String, dynamic>) : null,
   device: MconnControllerDeviceIdentity.fromJson(json['device'] as Map<String, dynamic>),
   nonce: json['nonce'] as String,
 ); }

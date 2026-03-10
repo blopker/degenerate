@@ -9,12 +9,8 @@ import 'package:collection/collection.dart';import 'post_promotion_codes_promoti
 factory PostPromotionCodesPromotionCodeRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPromotionCodesPromotionCodeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  restrictions: json['restrictions'] != null
-        ? PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPromotionCodesPromotionCodeRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the promotion code is currently active. A promotion code can only be reactivated when the coupon is still valid and the promotion code is otherwise redeemable.

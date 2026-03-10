@@ -9,12 +9,8 @@ final class PostBalanceSettingsRequestPayments {const PostBalanceSettingsRequest
 
 factory PostBalanceSettingsRequestPayments.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequestPayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,
-  payouts: json['payouts'] != null
-        ? PostBalanceSettingsRequestPaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>)
-        : null,
-  settlementTiming: json['settlement_timing'] != null
-        ? PostBalanceSettingsRequestPaymentsSettlementTiming.fromJson(json['settlement_timing'] as Map<String, dynamic>)
-        : null,
+  payouts: json['payouts'] != null ? PostBalanceSettingsRequestPaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
+  settlementTiming: json['settlement_timing'] != null ? PostBalanceSettingsRequestPaymentsSettlementTiming.fromJson(json['settlement_timing'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? debitNegativeBalances;

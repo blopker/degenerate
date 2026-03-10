@@ -18,12 +18,8 @@ factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInte
   coloName: json['colo_name'] != null ? MagicComponentsSchemasName.fromJson(json['colo_name'] as String) : null,
   createdOn: json['created_on'] != null ? MagicSchemasCreatedOn.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? MagicInterconnectComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  gre: json['gre'] != null
-        ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>)
-        : null,
-  healthCheck: json['health_check'] != null
-        ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>)
-        : null,
+  gre: json['gre'] != null ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>) : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? MagicSchemasIdentifier.fromJson(json['id'] as String) : null,
   interfaceAddress: json['interface_address'] != null ? MagicInterfaceAddress.fromJson(json['interface_address'] as String) : null,
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,

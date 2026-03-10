@@ -17,16 +17,12 @@ factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return A
   asn: json['asn'] != null ? AddressingSchemasAsn.fromJson(json['asn'] as num) : null,
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
-  bgpSignalOpts: json['bgp_signal_opts'] != null
-        ? AddressingBgpSignalOpts.fromJson(json['bgp_signal_opts'] as Map<String, dynamic>)
-        : null,
+  bgpSignalOpts: json['bgp_signal_opts'] != null ? AddressingBgpSignalOpts.fromJson(json['bgp_signal_opts'] as Map<String, dynamic>) : null,
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,
   createdAt: json['created_at'] != null ? AddressingTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AddressingBgpPrefixIdentifier.fromJson(json['id'] as String) : null,
   modifiedAt: json['modified_at'] != null ? AddressingTimestamp.fromJson(json['modified_at'] as String) : null,
-  onDemand: json['on_demand'] != null
-        ? AddressingBgpOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? AddressingBgpOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
 ); }
 
 final AddressingSchemasAsn? asn;

@@ -97,16 +97,12 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionSchedule {const SubscriptionSchedule({this.application, required this.billingMode, this.canceledAt, this.completedAt, required this.created, this.currentPhase, required this.customer, this.customerAccount, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, this.metadata, required this.object, required this.phases, this.releasedAt, this.releasedSubscription, required this.status, this.subscription, this.testClock, });
 
 factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
-  application: json['application'] != null
-        ? SubscriptionScheduleApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? SubscriptionScheduleApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   created: (json['created'] as num).toInt(),
-  currentPhase: json['current_phase'] != null
-        ? SubscriptionScheduleCurrentPhase2.fromJson(json['current_phase'] as Map<String, dynamic>)
-        : null,
+  currentPhase: json['current_phase'] != null ? SubscriptionScheduleCurrentPhase2.fromJson(json['current_phase'] as Map<String, dynamic>) : null,
   customer: SubscriptionScheduleCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
   defaultSettings: SubscriptionSchedulesResourceDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>),
@@ -119,12 +115,8 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   releasedAt: json['released_at'] != null ? (json['released_at'] as num).toInt() : null,
   releasedSubscription: json['released_subscription'] as String?,
   status: SubscriptionScheduleStatus.fromJson(json['status'] as String),
-  subscription: json['subscription'] != null
-        ? SubscriptionScheduleSubscription.fromJson(json['subscription'] as Map<String, dynamic>)
-        : null,
-  testClock: json['test_clock'] != null
-        ? SubscriptionScheduleTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  subscription: json['subscription'] != null ? SubscriptionScheduleSubscription.fromJson(json['subscription'] as Map<String, dynamic>) : null,
+  testClock: json['test_clock'] != null ? SubscriptionScheduleTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
 ); }
 
 /// ID of the Connect Application that created the schedule.

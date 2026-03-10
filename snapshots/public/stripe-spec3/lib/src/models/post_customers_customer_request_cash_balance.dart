@@ -8,9 +8,7 @@ import 'post_customers_customer_request_cash_balance_settings.dart';/// Balance 
 final class PostCustomersCustomerRequestCashBalance {const PostCustomersCustomerRequestCashBalance({this.settings});
 
 factory PostCustomersCustomerRequestCashBalance.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestCashBalance(
-  settings: json['settings'] != null
-        ? PostCustomersCustomerRequestCashBalanceSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? PostCustomersCustomerRequestCashBalanceSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerRequestCashBalanceSettings? settings;

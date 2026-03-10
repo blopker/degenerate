@@ -9,9 +9,7 @@ final class AssistantToolsFileSearchFileSearch {const AssistantToolsFileSearchFi
 
 factory AssistantToolsFileSearchFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearchFileSearch(
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
-  rankingOptions: json['ranking_options'] != null
-        ? FileSearchRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
+  rankingOptions: json['ranking_options'] != null ? FileSearchRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.

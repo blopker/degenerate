@@ -8,15 +8,9 @@ import 'realtimekit_update_preset_permissions_media_audio.dart';import 'realtime
 final class RealtimekitUpdatePresetPermissionsMedia {const RealtimekitUpdatePresetPermissionsMedia({this.audio, this.screenshare, this.video, });
 
 factory RealtimekitUpdatePresetPermissionsMedia.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsMedia(
-  audio: json['audio'] != null
-        ? RealtimekitUpdatePresetPermissionsMediaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
-  screenshare: json['screenshare'] != null
-        ? RealtimekitUpdatePresetPermissionsMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>)
-        : null,
-  video: json['video'] != null
-        ? RealtimekitUpdatePresetPermissionsMediaVideo.fromJson(json['video'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimekitUpdatePresetPermissionsMediaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  screenshare: json['screenshare'] != null ? RealtimekitUpdatePresetPermissionsMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>) : null,
+  video: json['video'] != null ? RealtimekitUpdatePresetPermissionsMediaVideo.fromJson(json['video'] as Map<String, dynamic>) : null,
 ); }
 
 /// Audio permissions

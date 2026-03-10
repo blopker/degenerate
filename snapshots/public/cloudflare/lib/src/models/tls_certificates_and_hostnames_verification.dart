@@ -147,9 +147,7 @@ factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> js
   certificateStatus: TlsCertificatesAndHostnamesCertificateStatus.fromJson(json['certificate_status'] as String),
   signature: json['signature'] != null ? TlsCertificatesAndHostnamesSchemasSignature.fromJson(json['signature'] as String) : null,
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesSchemasValidationMethod.fromJson(json['validation_method'] as String) : null,
-  verificationInfo: json['verification_info'] != null
-        ? TlsCertificatesAndHostnamesVerificationInfo.fromJson(json['verification_info'] as Map<String, dynamic>)
-        : null,
+  verificationInfo: json['verification_info'] != null ? TlsCertificatesAndHostnamesVerificationInfo.fromJson(json['verification_info'] as Map<String, dynamic>) : null,
   verificationStatus: json['verification_status'] != null ? TlsCertificatesAndHostnamesVerificationStatus.fromJson(json['verification_status'] as bool) : null,
   verificationType: json['verification_type'] != null ? TlsCertificatesAndHostnamesVerificationType.fromJson(json['verification_type'] as String) : null,
 ); }

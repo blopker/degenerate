@@ -12,9 +12,7 @@ factory PodStatus.fromJson(Map<String, dynamic> json) { return PodStatus(
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => PodCondition.fromJson(e as Map<String, dynamic>)).toList(),
   containerStatuses: (json['containerStatuses'] as List<dynamic>?)?.map((e) => ContainerStatus.fromJson(e as Map<String, dynamic>)).toList(),
   ephemeralContainerStatuses: (json['ephemeralContainerStatuses'] as List<dynamic>?)?.map((e) => ContainerStatus.fromJson(e as Map<String, dynamic>)).toList(),
-  extendedResourceClaimStatus: json['extendedResourceClaimStatus'] != null
-        ? PodExtendedResourceClaimStatus.fromJson(json['extendedResourceClaimStatus'] as Map<String, dynamic>)
-        : null,
+  extendedResourceClaimStatus: json['extendedResourceClaimStatus'] != null ? PodExtendedResourceClaimStatus.fromJson(json['extendedResourceClaimStatus'] as Map<String, dynamic>) : null,
   hostIp: json['hostIP'] as String?,
   hostIPs: (json['hostIPs'] as List<dynamic>?)?.map((e) => HostIp.fromJson(e as Map<String, dynamic>)).toList(),
   initContainerStatuses: (json['initContainerStatuses'] as List<dynamic>?)?.map((e) => ContainerStatus.fromJson(e as Map<String, dynamic>)).toList(),
@@ -28,9 +26,7 @@ factory PodStatus.fromJson(Map<String, dynamic> json) { return PodStatus(
   reason: json['reason'] as String?,
   resize: json['resize'] as String?,
   resourceClaimStatuses: (json['resourceClaimStatuses'] as List<dynamic>?)?.map((e) => PodResourceClaimStatus.fromJson(e as Map<String, dynamic>)).toList(),
-  resources: json['resources'] != null
-        ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>)
-        : null,
+  resources: json['resources'] != null ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
   startTime: json['startTime'] != null ? Time.fromJson(json['startTime'] as String) : null,
 ); }
 

@@ -35,12 +35,8 @@ factory GetCreditNotesPreviewLines.fromJson(Map<String, dynamic> json) { return 
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null
-        ? GetCreditNotesPreviewLinesTaxAmounts.fromJson(json['tax_amounts'] as Map<String, dynamic>)
-        : null,
-  taxRates: json['tax_rates'] != null
-        ? GetCreditNotesPreviewLinesTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxAmounts: json['tax_amounts'] != null ? GetCreditNotesPreviewLinesTaxAmounts.fromJson(json['tax_amounts'] as Map<String, dynamic>) : null,
+  taxRates: json['tax_rates'] != null ? GetCreditNotesPreviewLinesTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
   type: GetCreditNotesPreviewLinesType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

@@ -79,34 +79,22 @@ bool get isUnknown { return !values.contains(this); }
 final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({this.adjustedForOverdraft, this.appliedToPayment, required this.created, required this.currency, required this.customer, this.customerAccount, required this.endingBalance, this.funded, required this.id, required this.livemode, required this.netAmount, required this.object, this.refundedFromPayment, this.transferredToBalance, required this.type, this.unappliedFromPayment, });
 
 factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerCashBalanceTransaction(
-  adjustedForOverdraft: json['adjusted_for_overdraft'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>)
-        : null,
-  appliedToPayment: json['applied_to_payment'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(json['applied_to_payment'] as Map<String, dynamic>)
-        : null,
+  adjustedForOverdraft: json['adjusted_for_overdraft'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>) : null,
+  appliedToPayment: json['applied_to_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(json['applied_to_payment'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customer: CustomerCashBalanceTransactionCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
   endingBalance: (json['ending_balance'] as num).toInt(),
-  funded: json['funded'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction.fromJson(json['funded'] as Map<String, dynamic>)
-        : null,
+  funded: json['funded'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction.fromJson(json['funded'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   netAmount: (json['net_amount'] as num).toInt(),
   object: CustomerCashBalanceTransactionObject.fromJson(json['object'] as String),
-  refundedFromPayment: json['refunded_from_payment'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(json['refunded_from_payment'] as Map<String, dynamic>)
-        : null,
-  transferredToBalance: json['transferred_to_balance'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance.fromJson(json['transferred_to_balance'] as Map<String, dynamic>)
-        : null,
+  refundedFromPayment: json['refunded_from_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(json['refunded_from_payment'] as Map<String, dynamic>) : null,
+  transferredToBalance: json['transferred_to_balance'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance.fromJson(json['transferred_to_balance'] as Map<String, dynamic>) : null,
   type: CustomerCashBalanceTransactionType.fromJson(json['type'] as String),
-  unappliedFromPayment: json['unapplied_from_payment'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(json['unapplied_from_payment'] as Map<String, dynamic>)
-        : null,
+  unappliedFromPayment: json['unapplied_from_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(json['unapplied_from_payment'] as Map<String, dynamic>) : null,
 ); }
 
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? adjustedForOverdraft;

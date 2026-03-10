@@ -9,9 +9,7 @@ final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomati
 
 factory PaymentLinksResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PaymentLinksResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PaymentLinksResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 /// If `true`, tax will be calculated automatically using the customer's location.

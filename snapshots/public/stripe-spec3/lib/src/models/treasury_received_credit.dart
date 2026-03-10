@@ -130,13 +130,9 @@ factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return Trea
   livemode: json['livemode'] as bool,
   network: TreasuryReceivedCreditNetwork.fromJson(json['network'] as String),
   object: TreasuryReceivedCreditObject.fromJson(json['object'] as String),
-  reversalDetails: json['reversal_details'] != null
-        ? TreasuryReceivedCreditReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>)
-        : null,
+  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedCreditReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
   status: TreasuryReceivedCreditStatus.fromJson(json['status'] as String),
-  transaction: json['transaction'] != null
-        ? TreasuryReceivedCreditTransaction.fromJson(json['transaction'] as Map<String, dynamic>)
-        : null,
+  transaction: json['transaction'] != null ? TreasuryReceivedCreditTransaction.fromJson(json['transaction'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount (in cents) transferred.

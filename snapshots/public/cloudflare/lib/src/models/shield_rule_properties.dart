@@ -11,9 +11,7 @@ factory ShieldRuleProperties.fromJson(Map<String, dynamic> json) { return Shield
   description: json['description'] != null ? ShieldSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? ShieldEnabled.fromJson(json['enabled'] as bool) : null,
   expression: json['expression'] != null ? ShieldExpression.fromJson(json['expression'] as String) : null,
-  selector: json['selector'] != null
-        ? ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>)
-        : null,
+  selector: json['selector'] != null ? ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>) : null,
   title: json['title'] != null ? ShieldSchemasTitle.fromJson(json['title'] as String) : null,
 ); }
 

@@ -7,9 +7,7 @@
 import 'inline_object684_three_d_secure_network_options_cartes_bancaires.dart';final class InlineObject684ThreeDSecureNetworkOptions {const InlineObject684ThreeDSecureNetworkOptions({this.cartesBancaires});
 
 factory InlineObject684ThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) { return InlineObject684ThreeDSecureNetworkOptions(
-  cartesBancaires: json['cartes_bancaires'] != null
-        ? InlineObject684ThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>)
-        : null,
+  cartesBancaires: json['cartes_bancaires'] != null ? InlineObject684ThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject684ThreeDSecureNetworkOptionsCartesBancaires? cartesBancaires;

@@ -8,9 +8,7 @@ import 'deployment_reviewer_type.dart';import 'pending_deployment_reviewers_revi
 
 factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) { return PendingDeploymentReviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
-  reviewer: json['reviewer'] != null
-        ? PendingDeploymentReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>)
-        : null,
+  reviewer: json['reviewer'] != null ? PendingDeploymentReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
 ); }
 
 final DeploymentReviewerType? type;

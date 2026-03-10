@@ -8,9 +8,7 @@ import 'issuing_dispute_service_not_as_described_evidence_additional_documentati
 final class IssuingDisputeServiceNotAsDescribedEvidence {const IssuingDisputeServiceNotAsDescribedEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeServiceNotAsDescribedEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeServiceNotAsDescribedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeServiceNotAsDescribedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   cancellationReason: json['cancellation_reason'] as String?,
   explanation: json['explanation'] as String?,

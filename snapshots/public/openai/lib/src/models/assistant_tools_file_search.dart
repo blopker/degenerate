@@ -30,9 +30,7 @@ final class AssistantToolsFileSearch {const AssistantToolsFileSearch({required t
 
 factory AssistantToolsFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearch(
   type: AssistantToolsFileSearchType.fromJson(json['type'] as String),
-  fileSearch: json['file_search'] != null
-        ? AssistantToolsFileSearchFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  fileSearch: json['file_search'] != null ? AssistantToolsFileSearchFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of tool being defined: `file_search`

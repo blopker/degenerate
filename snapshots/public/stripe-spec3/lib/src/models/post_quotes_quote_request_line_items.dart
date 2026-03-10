@@ -7,18 +7,12 @@
 import 'post_quotes_quote_request_line_items_discounts.dart';import 'post_quotes_quote_request_line_items_price_data.dart';import 'post_quotes_quote_request_line_items_tax_rates.dart';final class PostQuotesQuoteRequestLineItems {const PostQuotesQuoteRequestLineItems({this.discounts, this.id, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostQuotesQuoteRequestLineItems.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestLineItems(
-  discounts: json['discounts'] != null
-        ? PostQuotesQuoteRequestLineItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostQuotesQuoteRequestLineItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostQuotesQuoteRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostQuotesQuoteRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostQuotesQuoteRequestLineItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostQuotesQuoteRequestLineItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostQuotesQuoteRequestLineItemsDiscounts? discounts;

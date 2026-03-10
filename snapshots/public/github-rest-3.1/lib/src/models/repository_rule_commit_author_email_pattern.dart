@@ -30,9 +30,7 @@ final class RepositoryRuleCommitAuthorEmailPattern {const RepositoryRuleCommitAu
 
 factory RepositoryRuleCommitAuthorEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitAuthorEmailPattern(
   type: RepositoryRuleCommitAuthorEmailPatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleCommitAuthorEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleCommitAuthorEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitAuthorEmailPatternType type;

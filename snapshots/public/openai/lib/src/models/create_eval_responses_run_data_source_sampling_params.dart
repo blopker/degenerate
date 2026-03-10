@@ -13,9 +13,7 @@ factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dyna
   topP: json.containsKey('top_p') ? (json['top_p'] as num).toDouble() : 1.0,
   seed: json.containsKey('seed') ? (json['seed'] as num).toInt() : 42,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
-  text: json['text'] != null
-        ? CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(json['text'] as Map<String, dynamic>) : null,
 ); }
 
 final ReasoningEffort? reasoningEffort;

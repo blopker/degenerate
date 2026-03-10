@@ -8,18 +8,10 @@ import 'post_payment_links_payment_link_request_custom_text_after_submit.dart';i
 final class PostPaymentLinksPaymentLinkRequestCustomText {const PostPaymentLinksPaymentLinkRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PostPaymentLinksPaymentLinkRequestCustomText.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestCustomText(
-  afterSubmit: json['after_submit'] != null
-        ? PostPaymentLinksPaymentLinkRequestCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>)
-        : null,
-  shippingAddress: json['shipping_address'] != null
-        ? PostPaymentLinksPaymentLinkRequestCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
-  submit: json['submit'] != null
-        ? PostPaymentLinksPaymentLinkRequestCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>)
-        : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null
-        ? PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>)
-        : null,
+  afterSubmit: json['after_submit'] != null ? PostPaymentLinksPaymentLinkRequestCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PostPaymentLinksPaymentLinkRequestCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PostPaymentLinksPaymentLinkRequestCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestCustomTextAfterSubmit? afterSubmit;

@@ -97,15 +97,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1088 {const InlineObject1088({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
 factory InlineObject1088.fromJson(Map<String, dynamic> json) { return InlineObject1088(
-  financialConnections: json['financial_connections'] != null
-        ? InlineObject1088FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject1088MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
-  networks: json['networks'] != null
-        ? InlineObject1088Networks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? InlineObject1088FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject1088MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? InlineObject1088Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject1088SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   transactionPurpose: json['transaction_purpose'] != null ? InlineObject1088TransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,

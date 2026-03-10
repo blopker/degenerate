@@ -57,27 +57,15 @@ final class PostSubscriptionSchedulesScheduleRequestDefaultSettings {const PostS
 
 factory PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestDefaultSettings(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod.fromJson(json['collection_method'] as String) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  description: json['description'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
-  onBehalfOf: json['on_behalf_of'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 final double? applicationFeePercent;

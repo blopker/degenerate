@@ -30,19 +30,11 @@ final class WebhookIssueDependenciesBlockedByAdded {const WebhookIssueDependenci
 factory WebhookIssueDependenciesBlockedByAdded.fromJson(Map<String, dynamic> json) { return WebhookIssueDependenciesBlockedByAdded(
   action: WebhookIssueDependenciesBlockedByAddedAction.fromJson(json['action'] as String),
   blockedIssueId: json['blocked_issue_id'] != null ? (json['blocked_issue_id'] as num).toDouble() : null,
-  blockedIssue: json['blocked_issue'] != null
-        ? Issue.fromJson(json['blocked_issue'] as Map<String, dynamic>)
-        : null,
+  blockedIssue: json['blocked_issue'] != null ? Issue.fromJson(json['blocked_issue'] as Map<String, dynamic>) : null,
   blockingIssueId: json['blocking_issue_id'] != null ? (json['blocking_issue_id'] as num).toDouble() : null,
-  blockingIssue: json['blocking_issue'] != null
-        ? Issue.fromJson(json['blocking_issue'] as Map<String, dynamic>)
-        : null,
-  blockingIssueRepo: json['blocking_issue_repo'] != null
-        ? Repository.fromJson(json['blocking_issue_repo'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  blockingIssue: json['blocking_issue'] != null ? Issue.fromJson(json['blocking_issue'] as Map<String, dynamic>) : null,
+  blockingIssueRepo: json['blocking_issue_repo'] != null ? Repository.fromJson(json['blocking_issue_repo'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

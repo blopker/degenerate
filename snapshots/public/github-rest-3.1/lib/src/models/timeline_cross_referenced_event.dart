@@ -9,9 +9,7 @@ final class TimelineCrossReferencedEvent {const TimelineCrossReferencedEvent({re
 
 factory TimelineCrossReferencedEvent.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEvent(
   event: json['event'] as String,
-  actor: json['actor'] != null
-        ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
-        : null,
+  actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   source: TimelineCrossReferencedEventSource.fromJson(json['source'] as Map<String, dynamic>),

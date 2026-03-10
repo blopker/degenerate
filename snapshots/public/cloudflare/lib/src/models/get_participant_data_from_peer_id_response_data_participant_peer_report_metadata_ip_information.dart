@@ -7,9 +7,7 @@
 import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_ip_information_asn.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation({this.asn, this.city, this.country, this.ipv4, this.region, this.timezone, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation(
-  asn: json['asn'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn.fromJson(json['asn'] as Map<String, dynamic>)
-        : null,
+  asn: json['asn'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn.fromJson(json['asn'] as Map<String, dynamic>) : null,
   city: json['city'] as String?,
   country: json['country'] as String?,
   ipv4: json['ipv4'] as String?,

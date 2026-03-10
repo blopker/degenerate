@@ -29,19 +29,11 @@ final class WebhookDiscussionEdited {const WebhookDiscussionEdited({required thi
 
 factory WebhookDiscussionEdited.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEdited(
   action: WebhookDiscussionEditedAction.fromJson(json['action'] as String),
-  changes: json['changes'] != null
-        ? WebhookDiscussionEditedChanges.fromJson(json['changes'] as Map<String, dynamic>)
-        : null,
+  changes: json['changes'] != null ? WebhookDiscussionEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }

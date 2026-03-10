@@ -41,12 +41,8 @@ factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { retu
   category: json['category'] != null ? CodeScanningAnalysisCategory.fromJson(json['category'] as String) : null,
   state: json['state'] != null ? CodeScanningAlertInstanceState.fromJson(json['state'] as String) : null,
   commitSha: json['commit_sha'] as String?,
-  message: json['message'] != null
-        ? CodeScanningAlertInstanceListMessage.fromJson(json['message'] as Map<String, dynamic>)
-        : null,
-  location: json['location'] != null
-        ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  message: json['message'] != null ? CodeScanningAlertInstanceListMessage.fromJson(json['message'] as Map<String, dynamic>) : null,
+  location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => CodeScanningAlertClassification.fromJson(e as String)).toList(),
 ); }

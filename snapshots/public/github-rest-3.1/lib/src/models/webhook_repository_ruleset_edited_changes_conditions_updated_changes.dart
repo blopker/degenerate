@@ -7,18 +7,10 @@
 import 'webhook_repository_ruleset_edited_changes_conditions_updated_changes_condition_type.dart';import 'webhook_repository_ruleset_edited_changes_conditions_updated_changes_exclude.dart';import 'webhook_repository_ruleset_edited_changes_conditions_updated_changes_include.dart';import 'webhook_repository_ruleset_edited_changes_conditions_updated_changes_target.dart';final class WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges {const WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges({this.conditionType, this.target, this.include, this.exclude, });
 
 factory WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges(
-  conditionType: json['condition_type'] != null
-        ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType.fromJson(json['condition_type'] as Map<String, dynamic>)
-        : null,
-  target: json['target'] != null
-        ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget.fromJson(json['target'] as Map<String, dynamic>)
-        : null,
-  include: json['include'] != null
-        ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude.fromJson(json['include'] as Map<String, dynamic>)
-        : null,
-  exclude: json['exclude'] != null
-        ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude.fromJson(json['exclude'] as Map<String, dynamic>)
-        : null,
+  conditionType: json['condition_type'] != null ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType.fromJson(json['condition_type'] as Map<String, dynamic>) : null,
+  target: json['target'] != null ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget.fromJson(json['target'] as Map<String, dynamic>) : null,
+  include: json['include'] != null ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude.fromJson(json['include'] as Map<String, dynamic>) : null,
+  exclude: json['exclude'] != null ? WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude.fromJson(json['exclude'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType? conditionType;

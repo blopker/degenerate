@@ -33,12 +33,8 @@ bool get isUnknown { return !values.contains(this); }
 final class BankConnectionsResourceAccountholder {const BankConnectionsResourceAccountholder({this.account, this.customer, this.customerAccount, required this.type, });
 
 factory BankConnectionsResourceAccountholder.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountholder(
-  account: json['account'] != null
-        ? BankConnectionsResourceAccountholderAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
-  customer: json['customer'] != null
-        ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? BankConnectionsResourceAccountholderAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
+  customer: json['customer'] != null ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   type: BankConnectionsResourceAccountholderType.fromJson(json['type'] as String),
 ); }

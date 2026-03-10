@@ -30,9 +30,7 @@ final class RepositoryRuleTagNamePattern {const RepositoryRuleTagNamePattern({re
 
 factory RepositoryRuleTagNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleTagNamePattern(
   type: RepositoryRuleTagNamePatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleTagNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleTagNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleTagNamePatternType type;

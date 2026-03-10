@@ -17,9 +17,7 @@ factory AccessGroups.fromJson(Map<String, dynamic> json) { return AccessGroups(
   displayName: json['displayName'] as String?,
   externalId: json['externalId'] != null ? AccessExternalId.fromJson(json['externalId'] as String) : null,
   id: json['id'] != null ? AccessId.fromJson(json['id'] as String) : null,
-  meta: json['meta'] != null
-        ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

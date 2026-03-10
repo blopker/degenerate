@@ -11,9 +11,7 @@ factory PostCustomersCustomerBalanceTransactionsRequest.fromJson(Map<String, dyn
   currency: json['currency'] as String,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostCustomersCustomerBalanceTransactionsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCustomersCustomerBalanceTransactionsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// The integer amount in **cents (or local equivalent)** to apply to the customer's credit balance.

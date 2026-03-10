@@ -31,25 +31,15 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTokensRequestAccountIndividual {const PostTokensRequestAccountIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
 
 factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountIndividual(
-  address: json['address'] != null
-        ? PostTokensRequestAccountIndividualAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PostTokensRequestAccountIndividualAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PostTokensRequestAccountIndividualAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? PostTokensRequestAccountIndividualDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTokensRequestAccountIndividualAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PostTokensRequestAccountIndividualAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PostTokensRequestAccountIndividualAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? PostTokensRequestAccountIndividualDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
-  fullNameAliases: json['full_name_aliases'] != null
-        ? PostTokensRequestAccountIndividualFullNameAliases.fromJson(json['full_name_aliases'] as Map<String, dynamic>)
-        : null,
+  fullNameAliases: json['full_name_aliases'] != null ? PostTokensRequestAccountIndividualFullNameAliases.fromJson(json['full_name_aliases'] as Map<String, dynamic>) : null,
   gender: json['gender'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberSecondary: json['id_number_secondary'] as String?,
@@ -57,21 +47,13 @@ factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) {
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null
-        ? PostTokensRequestAccountIndividualMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTokensRequestAccountIndividualMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   phone: json['phone'] as String?,
   politicalExposure: json['political_exposure'] != null ? PostTokensRequestAccountIndividualPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
-  registeredAddress: json['registered_address'] != null
-        ? PostTokensRequestAccountIndividualRegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>)
-        : null,
-  relationship: json['relationship'] != null
-        ? PostTokensRequestAccountIndividualRelationship.fromJson(json['relationship'] as Map<String, dynamic>)
-        : null,
+  registeredAddress: json['registered_address'] != null ? PostTokensRequestAccountIndividualRegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
+  relationship: json['relationship'] != null ? PostTokensRequestAccountIndividualRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   ssnLast4: json['ssn_last_4'] as String?,
-  verification: json['verification'] != null
-        ? PostTokensRequestAccountIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? PostTokensRequestAccountIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTokensRequestAccountIndividualAddress? address;

@@ -8,15 +8,9 @@ import 'post_billing_portal_configurations_configuration_request_business_profil
 final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfile {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(
-  headline: json['headline'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline.fromJson(json['headline'] as Map<String, dynamic>)
-        : null,
-  privacyPolicyUrl: json['privacy_policy_url'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrl.fromJson(json['privacy_policy_url'] as Map<String, dynamic>)
-        : null,
-  termsOfServiceUrl: json['terms_of_service_url'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrl.fromJson(json['terms_of_service_url'] as Map<String, dynamic>)
-        : null,
+  headline: json['headline'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline.fromJson(json['headline'] as Map<String, dynamic>) : null,
+  privacyPolicyUrl: json['privacy_policy_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrl.fromJson(json['privacy_policy_url'] as Map<String, dynamic>) : null,
+  termsOfServiceUrl: json['terms_of_service_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrl.fromJson(json['terms_of_service_url'] as Map<String, dynamic>) : null,
 ); }
 
 final PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline? headline;

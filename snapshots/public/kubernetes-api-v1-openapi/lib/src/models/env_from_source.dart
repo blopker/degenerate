@@ -8,13 +8,9 @@ import 'config_map_env_source.dart';import 'secret_env_source.dart';/// EnvFromS
 final class EnvFromSource {const EnvFromSource({this.configMapRef, this.prefix, this.secretRef, });
 
 factory EnvFromSource.fromJson(Map<String, dynamic> json) { return EnvFromSource(
-  configMapRef: json['configMapRef'] != null
-        ? ConfigMapEnvSource.fromJson(json['configMapRef'] as Map<String, dynamic>)
-        : null,
+  configMapRef: json['configMapRef'] != null ? ConfigMapEnvSource.fromJson(json['configMapRef'] as Map<String, dynamic>) : null,
   prefix: json['prefix'] as String?,
-  secretRef: json['secretRef'] != null
-        ? SecretEnvSource.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? SecretEnvSource.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ConfigMap to select from

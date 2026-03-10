@@ -118,14 +118,10 @@ final class PostTestHelpersIssuingAuthorizationsRequestVerificationData {const P
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
   addressLine1Check: json['address_line1_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String) : null,
   addressPostalCodeCheck: json['address_postal_code_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String) : null,
-  authenticationExemption: json['authentication_exemption'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>)
-        : null,
+  authenticationExemption: json['authentication_exemption'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
   cvcCheck: json['cvc_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck.fromJson(json['cvc_check'] as String) : null,
   expiryCheck: json['expiry_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check? addressLine1Check;

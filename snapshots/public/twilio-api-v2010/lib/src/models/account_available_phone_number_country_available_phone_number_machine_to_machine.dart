@@ -19,9 +19,7 @@ factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.f
   isoCountry: json['iso_country'] as String?,
   addressRequirements: json['address_requirements'] as String?,
   beta: json['beta'] as bool?,
-  capabilities: json['capabilities'] != null
-        ? AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachineCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
+  capabilities: json['capabilities'] != null ? AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachineCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
 ); }
 
 /// A formatted version of the phone number.

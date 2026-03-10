@@ -7,13 +7,9 @@
 import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_id.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata(
-  id: json['id'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataId.fromJson(json['id'])
-        : null,
+  id: json['id'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataId.fromJson(json['id']) : null,
   name: json['name'] as String?,
-  value: json['value'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue.fromJson(json['value'])
-        : null,
+  value: json['value'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue.fromJson(json['value']) : null,
 ); }
 
 final WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataId? id;

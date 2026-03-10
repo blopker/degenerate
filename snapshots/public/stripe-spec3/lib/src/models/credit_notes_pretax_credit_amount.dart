@@ -34,12 +34,8 @@ final class CreditNotesPretaxCreditAmount {const CreditNotesPretaxCreditAmount({
 
 factory CreditNotesPretaxCreditAmount.fromJson(Map<String, dynamic> json) { return CreditNotesPretaxCreditAmount(
   amount: (json['amount'] as num).toInt(),
-  creditBalanceTransaction: json['credit_balance_transaction'] != null
-        ? CreditNotesPretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction'] as Map<String, dynamic>)
-        : null,
-  discount: json['discount'] != null
-        ? CreditNotesPretaxCreditAmountDiscount.fromJson(json['discount'] as Map<String, dynamic>)
-        : null,
+  creditBalanceTransaction: json['credit_balance_transaction'] != null ? CreditNotesPretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction'] as Map<String, dynamic>) : null,
+  discount: json['discount'] != null ? CreditNotesPretaxCreditAmountDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
   type: CreditNotesPretaxCreditAmountType.fromJson(json['type'] as String),
 ); }
 

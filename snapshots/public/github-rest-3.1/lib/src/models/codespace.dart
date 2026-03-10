@@ -134,9 +134,7 @@ factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
   publishUrl: json['publish_url'] != null ? Uri.parse(json['publish_url'] as String) : null,
   pullsUrl: Uri.parse(json['pulls_url'] as String),
   recentFolders: (json['recent_folders'] as List<dynamic>).map((e) => e as String).toList(),
-  runtimeConstraints: json['runtime_constraints'] != null
-        ? CodespaceRuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>)
-        : null,
+  runtimeConstraints: json['runtime_constraints'] != null ? CodespaceRuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>) : null,
   pendingOperation: json['pending_operation'] as bool?,
   pendingOperationDisabledReason: json['pending_operation_disabled_reason'] as String?,
   idleTimeoutNotice: json['idle_timeout_notice'] as String?,

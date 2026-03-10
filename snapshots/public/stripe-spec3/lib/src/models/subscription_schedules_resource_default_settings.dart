@@ -59,25 +59,15 @@ final class SubscriptionSchedulesResourceDefaultSettings {const SubscriptionSche
 
 factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? SubscriptionSchedulesResourceDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? SubscriptionSchedulesResourceDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String),
-  billingThresholds: json['billing_thresholds'] != null
-        ? SubscriptionSchedulesResourceDefaultSettingsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionSchedulesResourceDefaultSettingsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(json['collection_method'] as String) : null,
-  defaultPaymentMethod: json['default_payment_method'] != null
-        ? SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>)
-        : null,
+  defaultPaymentMethod: json['default_payment_method'] != null ? SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   invoiceSettings: InvoiceSettingSubscriptionScheduleSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? SubscriptionSchedulesResourceDefaultSettingsTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? SubscriptionSchedulesResourceDefaultSettingsTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account during this phase of the schedule.

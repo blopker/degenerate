@@ -7,17 +7,11 @@
 import 'pages_project_update_project_request_build_config.dart';import 'pages_project_update_project_request_deployment_configs.dart';import 'pages_project_update_project_request_source.dart';final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
 factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(
-  buildConfig: json['build_config'] != null
-        ? PagesProjectUpdateProjectRequestBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>)
-        : null,
-  deploymentConfigs: json['deployment_configs'] != null
-        ? PagesProjectUpdateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>)
-        : null,
+  buildConfig: json['build_config'] != null ? PagesProjectUpdateProjectRequestBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
+  deploymentConfigs: json['deployment_configs'] != null ? PagesProjectUpdateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productionBranch: json['production_branch'] as String?,
-  source: json['source'] != null
-        ? PagesProjectUpdateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? PagesProjectUpdateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configs for the project build process.

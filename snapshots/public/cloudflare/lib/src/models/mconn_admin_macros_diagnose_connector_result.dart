@@ -7,15 +7,9 @@
 import 'mconn_admin_connector.dart';import 'mconn_admin_device.dart';import 'mconn_admin_site.dart';final class MconnAdminMacrosDiagnoseConnectorResult {const MconnAdminMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
 
 factory MconnAdminMacrosDiagnoseConnectorResult.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosDiagnoseConnectorResult(
-  connector: json['connector'] != null
-        ? MconnAdminConnector.fromJson(json['connector'] as Map<String, dynamic>)
-        : null,
-  device: json['device'] != null
-        ? MconnAdminDevice.fromJson(json['device'] as Map<String, dynamic>)
-        : null,
-  site: json['site'] != null
-        ? MconnAdminSite.fromJson(json['site'] as Map<String, dynamic>)
-        : null,
+  connector: json['connector'] != null ? MconnAdminConnector.fromJson(json['connector'] as Map<String, dynamic>) : null,
+  device: json['device'] != null ? MconnAdminDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
+  site: json['site'] != null ? MconnAdminSite.fromJson(json['site'] as Map<String, dynamic>) : null,
 ); }
 
 final MconnAdminConnector? connector;

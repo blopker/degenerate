@@ -8,9 +8,7 @@ import 'mq_http_consumer_request_settings.dart';import 'mq_queue_name.dart';fina
 
 factory MqHttpConsumerRequest.fromJson(Map<String, dynamic> json) { return MqHttpConsumerRequest(
   deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,
-  settings: json['settings'] != null
-        ? MqHttpConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? MqHttpConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

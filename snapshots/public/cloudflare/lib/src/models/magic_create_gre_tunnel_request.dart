@@ -8,15 +8,11 @@ import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';impo
 
 factory MagicCreateGreTunnelRequest.fromJson(Map<String, dynamic> json) { return MagicCreateGreTunnelRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
-  bgp: json['bgp'] != null
-        ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>)
-        : null,
+  bgp: json['bgp'] != null ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   cloudflareGreEndpoint: MagicCloudflareGreEndpoint.fromJson(json['cloudflare_gre_endpoint'] as String),
   customerGreEndpoint: MagicCustomerGreEndpoint.fromJson(json['customer_gre_endpoint'] as String),
   description: json['description'] != null ? MagicSchemasDescription.fromJson(json['description'] as String) : null,
-  healthCheck: json['health_check'] != null
-        ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>)
-        : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   interfaceAddress: MagicInterfaceAddress.fromJson(json['interface_address'] as String),
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
   mtu: json['mtu'] != null ? MagicMtu.fromJson(json['mtu'] as num) : null,

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_revolut_pay_dis
 final class PostPaymentMethodConfigurationsConfigurationRequestRevolutPay {const PostPaymentMethodConfigurationsConfigurationRequestRevolutPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestRevolutPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestRevolutPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference? displayPreference;

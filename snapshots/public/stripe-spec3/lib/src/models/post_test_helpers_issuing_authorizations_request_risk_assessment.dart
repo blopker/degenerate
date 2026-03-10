@@ -8,15 +8,9 @@ import 'post_test_helpers_issuing_authorizations_request_risk_assessment_card_te
 final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessment {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessment({this.cardTestingRisk, this.fraudRisk, this.merchantDisputeRisk, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(
-  cardTestingRisk: json['card_testing_risk'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(json['card_testing_risk'] as Map<String, dynamic>)
-        : null,
-  fraudRisk: json['fraud_risk'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(json['fraud_risk'] as Map<String, dynamic>)
-        : null,
-  merchantDisputeRisk: json['merchant_dispute_risk'] != null
-        ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk.fromJson(json['merchant_dispute_risk'] as Map<String, dynamic>)
-        : null,
+  cardTestingRisk: json['card_testing_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(json['card_testing_risk'] as Map<String, dynamic>) : null,
+  fraudRisk: json['fraud_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(json['fraud_risk'] as Map<String, dynamic>) : null,
+  merchantDisputeRisk: json['merchant_dispute_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk.fromJson(json['merchant_dispute_risk'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk? cardTestingRisk;

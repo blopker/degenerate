@@ -42,9 +42,7 @@ factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
   target: json.containsKey('target') ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : ReposCreateOrgRulesetRequestTarget.branch,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
-  conditions: json['conditions'] != null
-        ? OrgRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>)
-        : null,
+  conditions: json['conditions'] != null ? OrgRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => OrgRules.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

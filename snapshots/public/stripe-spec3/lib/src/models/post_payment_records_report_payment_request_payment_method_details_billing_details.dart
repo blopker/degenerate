@@ -7,9 +7,7 @@
 import 'post_payment_records_report_payment_request_payment_method_details_billing_details_address.dart';final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetails {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetails({this.address, this.email, this.name, this.phone, });
 
 factory PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetails(
-  address: json['address'] != null
-        ? PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,

@@ -9,9 +9,7 @@ final class TerminalReaderReaderResourceProcessSetupIntentAction {const Terminal
 
 factory TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupIntentAction(
   generatedCard: json['generated_card'] as String?,
-  processConfig: json['process_config'] != null
-        ? TerminalReaderReaderResourceProcessSetupConfig.fromJson(json['process_config'] as Map<String, dynamic>)
-        : null,
+  processConfig: json['process_config'] != null ? TerminalReaderReaderResourceProcessSetupConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
   setupIntent: TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>),
 ); }
 

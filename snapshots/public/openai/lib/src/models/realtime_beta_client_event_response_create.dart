@@ -56,9 +56,7 @@ final class RealtimeBetaClientEventResponseCreate {const RealtimeBetaClientEvent
 factory RealtimeBetaClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventResponseCreate(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventResponseCreateType.fromJson(json['type'] as String),
-  response: json['response'] != null
-        ? RealtimeBetaResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>)
-        : null,
+  response: json['response'] != null ? RealtimeBetaResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
 ); }
 
 /// Optional client-generated ID used to identify this event.

@@ -69,9 +69,7 @@ final class Topup {const Topup({required this.amount, this.balanceTransaction, r
 
 factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null
-        ? TopupBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? TopupBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -82,9 +80,7 @@ factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TopupObject.fromJson(json['object'] as String),
-  source: json['source'] != null
-        ? TopupSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? TopupSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: TopupStatus.fromJson(json['status'] as String),
   transferGroup: json['transfer_group'] as String?,

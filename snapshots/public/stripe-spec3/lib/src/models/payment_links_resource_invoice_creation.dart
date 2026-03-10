@@ -9,9 +9,7 @@ final class PaymentLinksResourceInvoiceCreation {const PaymentLinksResourceInvoi
 
 factory PaymentLinksResourceInvoiceCreation.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceCreation(
   enabled: json['enabled'] as bool,
-  invoiceData: json['invoice_data'] != null
-        ? PaymentLinksResourceInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>)
-        : null,
+  invoiceData: json['invoice_data'] != null ? PaymentLinksResourceInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// Enable creating an invoice on successful payment.

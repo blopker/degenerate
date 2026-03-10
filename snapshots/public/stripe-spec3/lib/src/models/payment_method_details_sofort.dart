@@ -53,12 +53,8 @@ factory PaymentMethodDetailsSofort.fromJson(Map<String, dynamic> json) { return 
   bankName: json['bank_name'] as String?,
   bic: json['bic'] as String?,
   country: json['country'] as String?,
-  generatedSepaDebit: json['generated_sepa_debit'] != null
-        ? PaymentMethodDetailsSofortGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>)
-        : null,
-  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null
-        ? PaymentMethodDetailsSofortGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>)
-        : null,
+  generatedSepaDebit: json['generated_sepa_debit'] != null ? PaymentMethodDetailsSofortGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>) : null,
+  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null ? PaymentMethodDetailsSofortGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>) : null,
   ibanLast4: json['iban_last4'] as String?,
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodDetailsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null,
   verifiedName: json['verified_name'] as String?,

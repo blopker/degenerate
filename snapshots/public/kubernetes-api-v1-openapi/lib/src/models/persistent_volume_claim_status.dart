@@ -14,9 +14,7 @@ factory PersistentVolumeClaimStatus.fromJson(Map<String, dynamic> json) { return
   capacity: (json['capacity'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => PersistentVolumeClaimCondition.fromJson(e as Map<String, dynamic>)).toList(),
   currentVolumeAttributesClassName: json['currentVolumeAttributesClassName'] as String?,
-  modifyVolumeStatus: json['modifyVolumeStatus'] != null
-        ? ModifyVolumeStatus.fromJson(json['modifyVolumeStatus'] as Map<String, dynamic>)
-        : null,
+  modifyVolumeStatus: json['modifyVolumeStatus'] != null ? ModifyVolumeStatus.fromJson(json['modifyVolumeStatus'] as Map<String, dynamic>) : null,
   phase: json['phase'] as String?,
 ); }
 

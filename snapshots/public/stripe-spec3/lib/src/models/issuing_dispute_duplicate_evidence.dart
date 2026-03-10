@@ -8,18 +8,10 @@ import 'issuing_dispute_duplicate_evidence_additional_documentation.dart';import
 final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory IssuingDisputeDuplicateEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeDuplicateEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeDuplicateEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  cardStatement: json['card_statement'] != null
-        ? IssuingDisputeDuplicateEvidenceCardStatement.fromJson(json['card_statement'] as Map<String, dynamic>)
-        : null,
-  cashReceipt: json['cash_receipt'] != null
-        ? IssuingDisputeDuplicateEvidenceCashReceipt.fromJson(json['cash_receipt'] as Map<String, dynamic>)
-        : null,
-  checkImage: json['check_image'] != null
-        ? IssuingDisputeDuplicateEvidenceCheckImage.fromJson(json['check_image'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeDuplicateEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  cardStatement: json['card_statement'] != null ? IssuingDisputeDuplicateEvidenceCardStatement.fromJson(json['card_statement'] as Map<String, dynamic>) : null,
+  cashReceipt: json['cash_receipt'] != null ? IssuingDisputeDuplicateEvidenceCashReceipt.fromJson(json['cash_receipt'] as Map<String, dynamic>) : null,
+  checkImage: json['check_image'] != null ? IssuingDisputeDuplicateEvidenceCheckImage.fromJson(json['check_image'] as Map<String, dynamic>) : null,
   explanation: json['explanation'] as String?,
   originalTransaction: json['original_transaction'] as String?,
 ); }

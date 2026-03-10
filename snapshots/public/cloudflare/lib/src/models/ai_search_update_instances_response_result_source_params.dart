@@ -11,9 +11,7 @@ factory AiSearchUpdateInstancesResponseResultSourceParams.fromJson(Map<String, d
   includeItems: (json['include_items'] as List<dynamic>?)?.map((e) => e as String).toList(),
   prefix: json['prefix'] as String?,
   r2Jurisdiction: json.containsKey('r2_jurisdiction') ? json['r2_jurisdiction'] as String : 'default',
-  webCrawler: json['web_crawler'] != null
-        ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler.fromJson(json['web_crawler'] as Map<String, dynamic>)
-        : null,
+  webCrawler: json['web_crawler'] != null ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawler.fromJson(json['web_crawler'] as Map<String, dynamic>) : null,
 ); }
 
 /// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced)

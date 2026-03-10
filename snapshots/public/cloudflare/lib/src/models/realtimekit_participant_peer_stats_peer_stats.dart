@@ -8,16 +8,10 @@ import 'package:collection/collection.dart';import 'realtimekit_participant_peer
 
 factory RealtimekitParticipantPeerStatsPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStats(
   config: json['config'] as String?,
-  deviceInfo: json['device_info'] != null
-        ? RealtimekitParticipantPeerStatsPeerStatsDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>)
-        : null,
+  deviceInfo: json['device_info'] != null ? RealtimekitParticipantPeerStatsPeerStatsDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => RealtimekitParticipantPeerStatsPeerStatsEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  ipInformation: json['ip_information'] != null
-        ? RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>)
-        : null,
-  precallNetworkInformation: json['precall_network_information'] != null
-        ? RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(json['precall_network_information'] as Map<String, dynamic>)
-        : null,
+  ipInformation: json['ip_information'] != null ? RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>) : null,
+  precallNetworkInformation: json['precall_network_information'] != null ? RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(json['precall_network_information'] as Map<String, dynamic>) : null,
   status: json['status'] as String?,
 ); }
 

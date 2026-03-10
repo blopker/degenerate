@@ -8,9 +8,7 @@ import 'account_terms_of_service.dart';///
 final class AccountTreasurySettings {const AccountTreasurySettings({this.tosAcceptance});
 
 factory AccountTreasurySettings.fromJson(Map<String, dynamic> json) { return AccountTreasurySettings(
-  tosAcceptance: json['tos_acceptance'] != null
-        ? AccountTermsOfService.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  tosAcceptance: json['tos_acceptance'] != null ? AccountTermsOfService.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final AccountTermsOfService? tosAcceptance;

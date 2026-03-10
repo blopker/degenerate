@@ -49,12 +49,8 @@ bool get isUnknown { return !values.contains(this); }
 final class Token {const Token({this.bankAccount, this.card, this.clientIp, required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.used, });
 
 factory Token.fromJson(Map<String, dynamic> json) { return Token(
-  bankAccount: json['bank_account'] != null
-        ? BankAccount.fromJson(json['bank_account'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? Card.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  bankAccount: json['bank_account'] != null ? BankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? Card.fromJson(json['card'] as Map<String, dynamic>) : null,
   clientIp: json['client_ip'] as String?,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,

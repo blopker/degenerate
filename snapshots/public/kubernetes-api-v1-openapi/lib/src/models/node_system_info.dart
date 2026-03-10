@@ -17,9 +17,7 @@ factory NodeSystemInfo.fromJson(Map<String, dynamic> json) { return NodeSystemIn
   machineId: json['machineID'] as String,
   operatingSystem: json['operatingSystem'] as String,
   osImage: json['osImage'] as String,
-  swap: json['swap'] != null
-        ? NodeSwapStatus.fromJson(json['swap'] as Map<String, dynamic>)
-        : null,
+  swap: json['swap'] != null ? NodeSwapStatus.fromJson(json['swap'] as Map<String, dynamic>) : null,
   systemUuid: json['systemUUID'] as String,
 ); }
 

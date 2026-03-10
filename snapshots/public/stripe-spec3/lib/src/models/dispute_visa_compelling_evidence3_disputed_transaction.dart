@@ -40,9 +40,7 @@ factory DisputeVisaCompellingEvidence3DisputedTransaction.fromJson(Map<String, d
   customerPurchaseIp: json['customer_purchase_ip'] as String?,
   merchandiseOrServices: json['merchandise_or_services'] != null ? DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(json['merchandise_or_services'] as String) : null,
   productDescription: json['product_description'] as String?,
-  shippingAddress: json['shipping_address'] != null
-        ? DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
+  shippingAddress: json['shipping_address'] != null ? DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// User Account ID used to log into business platform. Must be recognizable by the user.

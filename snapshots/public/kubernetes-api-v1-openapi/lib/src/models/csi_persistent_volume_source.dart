@@ -8,23 +8,13 @@ import 'secret_reference.dart';/// Represents storage that is managed by an exte
 final class CsiPersistentVolumeSource {const CsiPersistentVolumeSource({this.controllerExpandSecretRef, this.controllerPublishSecretRef, this.driver = '', this.fsType, this.nodeExpandSecretRef, this.nodePublishSecretRef, this.nodeStageSecretRef, this.readOnly, this.volumeAttributes, this.volumeHandle = '', });
 
 factory CsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CsiPersistentVolumeSource(
-  controllerExpandSecretRef: json['controllerExpandSecretRef'] != null
-        ? SecretReference.fromJson(json['controllerExpandSecretRef'] as Map<String, dynamic>)
-        : null,
-  controllerPublishSecretRef: json['controllerPublishSecretRef'] != null
-        ? SecretReference.fromJson(json['controllerPublishSecretRef'] as Map<String, dynamic>)
-        : null,
+  controllerExpandSecretRef: json['controllerExpandSecretRef'] != null ? SecretReference.fromJson(json['controllerExpandSecretRef'] as Map<String, dynamic>) : null,
+  controllerPublishSecretRef: json['controllerPublishSecretRef'] != null ? SecretReference.fromJson(json['controllerPublishSecretRef'] as Map<String, dynamic>) : null,
   driver: json['driver'] as String,
   fsType: json['fsType'] as String?,
-  nodeExpandSecretRef: json['nodeExpandSecretRef'] != null
-        ? SecretReference.fromJson(json['nodeExpandSecretRef'] as Map<String, dynamic>)
-        : null,
-  nodePublishSecretRef: json['nodePublishSecretRef'] != null
-        ? SecretReference.fromJson(json['nodePublishSecretRef'] as Map<String, dynamic>)
-        : null,
-  nodeStageSecretRef: json['nodeStageSecretRef'] != null
-        ? SecretReference.fromJson(json['nodeStageSecretRef'] as Map<String, dynamic>)
-        : null,
+  nodeExpandSecretRef: json['nodeExpandSecretRef'] != null ? SecretReference.fromJson(json['nodeExpandSecretRef'] as Map<String, dynamic>) : null,
+  nodePublishSecretRef: json['nodePublishSecretRef'] != null ? SecretReference.fromJson(json['nodePublishSecretRef'] as Map<String, dynamic>) : null,
+  nodeStageSecretRef: json['nodeStageSecretRef'] != null ? SecretReference.fromJson(json['nodeStageSecretRef'] as Map<String, dynamic>) : null,
   readOnly: json['readOnly'] as bool?,
   volumeAttributes: (json['volumeAttributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   volumeHandle: json['volumeHandle'] as String,

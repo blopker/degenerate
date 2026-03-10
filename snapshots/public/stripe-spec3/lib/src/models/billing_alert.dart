@@ -86,9 +86,7 @@ factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
   object: BillingAlertObject.fromJson(json['object'] as String),
   status: json['status'] != null ? BillingAlertStatus.fromJson(json['status'] as String) : null,
   title: json['title'] as String,
-  usageThreshold: json['usage_threshold'] != null
-        ? BillingAlertUsageThreshold.fromJson(json['usage_threshold'] as Map<String, dynamic>)
-        : null,
+  usageThreshold: json['usage_threshold'] != null ? BillingAlertUsageThreshold.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null,
 ); }
 
 /// Defines the type of the alert.

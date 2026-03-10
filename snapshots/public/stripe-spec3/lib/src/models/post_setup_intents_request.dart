@@ -222,9 +222,7 @@ final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachT
 
 factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequest(
   attachToSelf: json['attach_to_self'] as bool?,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null
-        ? PostSetupIntentsRequestAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>)
-        : null,
+  automaticPaymentMethods: json['automatic_payment_methods'] != null ? PostSetupIntentsRequestAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
   confirm: json['confirm'] as bool?,
   confirmationToken: json['confirmation_token'] as String?,
   customer: json['customer'] as String?,
@@ -233,24 +231,16 @@ factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return Pos
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestFlowDirections.fromJson(e as String)).toList(),
-  mandateData: json['mandate_data'] != null
-        ? PostSetupIntentsRequestMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>)
-        : null,
+  mandateData: json['mandate_data'] != null ? PostSetupIntentsRequestMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostSetupIntentsRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostSetupIntentsRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   returnUrl: json['return_url'] as String?,
-  singleUse: json['single_use'] != null
-        ? PostSetupIntentsRequestSingleUse.fromJson(json['single_use'] as Map<String, dynamic>)
-        : null,
+  singleUse: json['single_use'] != null ? PostSetupIntentsRequestSingleUse.fromJson(json['single_use'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? PostSetupIntentsRequestUsage.fromJson(json['usage'] as String) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
 ); }

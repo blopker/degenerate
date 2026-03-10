@@ -9,12 +9,8 @@ import 'create_thread_request_tool_resources_code_interpreter.dart';import 'crea
 final class CreateThreadRequestToolResources {const CreateThreadRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory CreateThreadRequestToolResources.fromJson(Map<String, dynamic> json) { return CreateThreadRequestToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? CreateThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? CreateThreadRequestToolResourcesFileSearch.fromJson(json['file_search'])
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? CreateThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? CreateThreadRequestToolResourcesFileSearch.fromJson(json['file_search']) : null,
 ); }
 
 final CreateThreadRequestToolResourcesCodeInterpreter? codeInterpreter;

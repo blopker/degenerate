@@ -30,9 +30,7 @@ final class RepositoryRuleCopilotCodeReview {const RepositoryRuleCopilotCodeRevi
 
 factory RepositoryRuleCopilotCodeReview.fromJson(Map<String, dynamic> json) { return RepositoryRuleCopilotCodeReview(
   type: RepositoryRuleCopilotCodeReviewType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleCopilotCodeReviewParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleCopilotCodeReviewParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCopilotCodeReviewType type;

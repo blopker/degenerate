@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_charges_charge_refunds_
 
 factory PostChargesChargeRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundsRefundRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostChargesChargeRefundsRefundRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostChargesChargeRefundsRefundRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

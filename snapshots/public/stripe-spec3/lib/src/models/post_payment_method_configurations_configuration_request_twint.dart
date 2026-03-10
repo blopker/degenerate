@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_twint_display_p
 final class PostPaymentMethodConfigurationsConfigurationRequestTwint {const PostPaymentMethodConfigurationsConfigurationRequestTwint({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestTwint.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestTwint(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestTwintDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestTwintDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestTwintDisplayPreference? displayPreference;

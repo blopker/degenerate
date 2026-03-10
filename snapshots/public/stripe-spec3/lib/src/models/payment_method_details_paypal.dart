@@ -12,9 +12,7 @@ factory PaymentMethodDetailsPaypal.fromJson(Map<String, dynamic> json) { return 
   payerEmail: json['payer_email'] as String?,
   payerId: json['payer_id'] as String?,
   payerName: json['payer_name'] as String?,
-  sellerProtection: json['seller_protection'] != null
-        ? PaymentMethodDetailsPaypalSellerProtection.fromJson(json['seller_protection'] as Map<String, dynamic>)
-        : null,
+  sellerProtection: json['seller_protection'] != null ? PaymentMethodDetailsPaypalSellerProtection.fromJson(json['seller_protection'] as Map<String, dynamic>) : null,
   transactionId: json['transaction_id'] as String?,
 ); }
 

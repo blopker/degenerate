@@ -24,13 +24,9 @@ factory DnsRecordsDnsRecordSharedFields.fromJson(Map<String, dynamic> json) { re
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
-  settings: json['settings'] != null
-        ? DnsRecordsSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? DnsRecordsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  ttl: json['ttl'] != null
-        ? DnsRecordsTtl.fromJson(json['ttl'] as Map<String, dynamic>)
-        : null,
+  ttl: json['ttl'] != null ? DnsRecordsTtl.fromJson(json['ttl'] as Map<String, dynamic>) : null,
 ); }
 
 final DnsRecordsComment? comment;

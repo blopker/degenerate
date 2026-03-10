@@ -12,9 +12,7 @@ factory SourceOrder.fromJson(Map<String, dynamic> json) { return SourceOrder(
   currency: json['currency'] as String,
   email: json['email'] as String?,
   items: (json['items'] as List<dynamic>?)?.map((e) => SourceOrderItem.fromJson(e as Map<String, dynamic>)).toList(),
-  shipping: json['shipping'] != null
-        ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
 ); }
 
 /// A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the total amount for the order.

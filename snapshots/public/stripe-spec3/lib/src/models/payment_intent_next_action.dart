@@ -8,59 +8,25 @@ import 'payment_intent_next_action_alipay_handle_redirect.dart';import 'payment_
 final class PaymentIntentNextAction {const PaymentIntentNextAction({this.alipayHandleRedirect, this.boletoDisplayDetails, this.cardAwaitNotification, this.cashappHandleRedirectOrDisplayQrCode, this.displayBankTransferInstructions, this.konbiniDisplayDetails, this.multibancoDisplayDetails, this.oxxoDisplayDetails, this.paynowDisplayQrCode, this.pixDisplayQrCode, this.promptpayDisplayQrCode, this.redirectToUrl, this.swishHandleRedirectOrDisplayQrCode, required this.type, this.useStripeSdk, this.verifyWithMicrodeposits, this.wechatPayDisplayQrCode, this.wechatPayRedirectToAndroidApp, this.wechatPayRedirectToIosApp, });
 
 factory PaymentIntentNextAction.fromJson(Map<String, dynamic> json) { return PaymentIntentNextAction(
-  alipayHandleRedirect: json['alipay_handle_redirect'] != null
-        ? PaymentIntentNextActionAlipayHandleRedirect.fromJson(json['alipay_handle_redirect'] as Map<String, dynamic>)
-        : null,
-  boletoDisplayDetails: json['boleto_display_details'] != null
-        ? PaymentIntentNextActionBoleto.fromJson(json['boleto_display_details'] as Map<String, dynamic>)
-        : null,
-  cardAwaitNotification: json['card_await_notification'] != null
-        ? PaymentIntentNextActionCardAwaitNotification.fromJson(json['card_await_notification'] as Map<String, dynamic>)
-        : null,
-  cashappHandleRedirectOrDisplayQrCode: json['cashapp_handle_redirect_or_display_qr_code'] != null
-        ? PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode.fromJson(json['cashapp_handle_redirect_or_display_qr_code'] as Map<String, dynamic>)
-        : null,
-  displayBankTransferInstructions: json['display_bank_transfer_instructions'] != null
-        ? PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(json['display_bank_transfer_instructions'] as Map<String, dynamic>)
-        : null,
-  konbiniDisplayDetails: json['konbini_display_details'] != null
-        ? PaymentIntentNextActionKonbini.fromJson(json['konbini_display_details'] as Map<String, dynamic>)
-        : null,
-  multibancoDisplayDetails: json['multibanco_display_details'] != null
-        ? PaymentIntentNextActionDisplayMultibancoDetails.fromJson(json['multibanco_display_details'] as Map<String, dynamic>)
-        : null,
-  oxxoDisplayDetails: json['oxxo_display_details'] != null
-        ? PaymentIntentNextActionDisplayOxxoDetails.fromJson(json['oxxo_display_details'] as Map<String, dynamic>)
-        : null,
-  paynowDisplayQrCode: json['paynow_display_qr_code'] != null
-        ? PaymentIntentNextActionPaynowDisplayQrCode.fromJson(json['paynow_display_qr_code'] as Map<String, dynamic>)
-        : null,
-  pixDisplayQrCode: json['pix_display_qr_code'] != null
-        ? PaymentIntentNextActionPixDisplayQrCode.fromJson(json['pix_display_qr_code'] as Map<String, dynamic>)
-        : null,
-  promptpayDisplayQrCode: json['promptpay_display_qr_code'] != null
-        ? PaymentIntentNextActionPromptpayDisplayQrCode.fromJson(json['promptpay_display_qr_code'] as Map<String, dynamic>)
-        : null,
-  redirectToUrl: json['redirect_to_url'] != null
-        ? PaymentIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>)
-        : null,
-  swishHandleRedirectOrDisplayQrCode: json['swish_handle_redirect_or_display_qr_code'] != null
-        ? PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode.fromJson(json['swish_handle_redirect_or_display_qr_code'] as Map<String, dynamic>)
-        : null,
+  alipayHandleRedirect: json['alipay_handle_redirect'] != null ? PaymentIntentNextActionAlipayHandleRedirect.fromJson(json['alipay_handle_redirect'] as Map<String, dynamic>) : null,
+  boletoDisplayDetails: json['boleto_display_details'] != null ? PaymentIntentNextActionBoleto.fromJson(json['boleto_display_details'] as Map<String, dynamic>) : null,
+  cardAwaitNotification: json['card_await_notification'] != null ? PaymentIntentNextActionCardAwaitNotification.fromJson(json['card_await_notification'] as Map<String, dynamic>) : null,
+  cashappHandleRedirectOrDisplayQrCode: json['cashapp_handle_redirect_or_display_qr_code'] != null ? PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode.fromJson(json['cashapp_handle_redirect_or_display_qr_code'] as Map<String, dynamic>) : null,
+  displayBankTransferInstructions: json['display_bank_transfer_instructions'] != null ? PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(json['display_bank_transfer_instructions'] as Map<String, dynamic>) : null,
+  konbiniDisplayDetails: json['konbini_display_details'] != null ? PaymentIntentNextActionKonbini.fromJson(json['konbini_display_details'] as Map<String, dynamic>) : null,
+  multibancoDisplayDetails: json['multibanco_display_details'] != null ? PaymentIntentNextActionDisplayMultibancoDetails.fromJson(json['multibanco_display_details'] as Map<String, dynamic>) : null,
+  oxxoDisplayDetails: json['oxxo_display_details'] != null ? PaymentIntentNextActionDisplayOxxoDetails.fromJson(json['oxxo_display_details'] as Map<String, dynamic>) : null,
+  paynowDisplayQrCode: json['paynow_display_qr_code'] != null ? PaymentIntentNextActionPaynowDisplayQrCode.fromJson(json['paynow_display_qr_code'] as Map<String, dynamic>) : null,
+  pixDisplayQrCode: json['pix_display_qr_code'] != null ? PaymentIntentNextActionPixDisplayQrCode.fromJson(json['pix_display_qr_code'] as Map<String, dynamic>) : null,
+  promptpayDisplayQrCode: json['promptpay_display_qr_code'] != null ? PaymentIntentNextActionPromptpayDisplayQrCode.fromJson(json['promptpay_display_qr_code'] as Map<String, dynamic>) : null,
+  redirectToUrl: json['redirect_to_url'] != null ? PaymentIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>) : null,
+  swishHandleRedirectOrDisplayQrCode: json['swish_handle_redirect_or_display_qr_code'] != null ? PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode.fromJson(json['swish_handle_redirect_or_display_qr_code'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
   useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  verifyWithMicrodeposits: json['verify_with_microdeposits'] != null
-        ? PaymentIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>)
-        : null,
-  wechatPayDisplayQrCode: json['wechat_pay_display_qr_code'] != null
-        ? PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(json['wechat_pay_display_qr_code'] as Map<String, dynamic>)
-        : null,
-  wechatPayRedirectToAndroidApp: json['wechat_pay_redirect_to_android_app'] != null
-        ? PaymentIntentNextActionWechatPayRedirectToAndroidApp.fromJson(json['wechat_pay_redirect_to_android_app'] as Map<String, dynamic>)
-        : null,
-  wechatPayRedirectToIosApp: json['wechat_pay_redirect_to_ios_app'] != null
-        ? PaymentIntentNextActionWechatPayRedirectToIosApp.fromJson(json['wechat_pay_redirect_to_ios_app'] as Map<String, dynamic>)
-        : null,
+  verifyWithMicrodeposits: json['verify_with_microdeposits'] != null ? PaymentIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>) : null,
+  wechatPayDisplayQrCode: json['wechat_pay_display_qr_code'] != null ? PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(json['wechat_pay_display_qr_code'] as Map<String, dynamic>) : null,
+  wechatPayRedirectToAndroidApp: json['wechat_pay_redirect_to_android_app'] != null ? PaymentIntentNextActionWechatPayRedirectToAndroidApp.fromJson(json['wechat_pay_redirect_to_android_app'] as Map<String, dynamic>) : null,
+  wechatPayRedirectToIosApp: json['wechat_pay_redirect_to_ios_app'] != null ? PaymentIntentNextActionWechatPayRedirectToIosApp.fromJson(json['wechat_pay_redirect_to_ios_app'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentIntentNextActionAlipayHandleRedirect? alipayHandleRedirect;

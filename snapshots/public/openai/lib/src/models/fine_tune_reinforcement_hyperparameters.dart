@@ -40,25 +40,13 @@ bool get isUnknown { return !values.contains(this); }
 final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
 
 factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementHyperparameters(
-  batchSize: json['batch_size'] != null
-        ? FineTuneReinforcementHyperparametersBatchSize.fromJson(json['batch_size'])
-        : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null
-        ? FineTuneReinforcementHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier'])
-        : null,
-  nEpochs: json['n_epochs'] != null
-        ? FineTuneReinforcementHyperparametersNEpochs.fromJson(json['n_epochs'])
-        : null,
+  batchSize: json['batch_size'] != null ? FineTuneReinforcementHyperparametersBatchSize.fromJson(json['batch_size']) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? FineTuneReinforcementHyperparametersLearningRateMultiplier.fromJson(json['learning_rate_multiplier']) : null,
+  nEpochs: json['n_epochs'] != null ? FineTuneReinforcementHyperparametersNEpochs.fromJson(json['n_epochs']) : null,
   reasoningEffort: json.containsKey('reasoning_effort') ? FineTuneReinforcementHyperparametersReasoningEffort.fromJson(json['reasoning_effort'] as String) : FineTuneReinforcementHyperparametersReasoningEffort.$default,
-  computeMultiplier: json['compute_multiplier'] != null
-        ? FineTuneReinforcementHyperparametersComputeMultiplier.fromJson(json['compute_multiplier'])
-        : null,
-  evalInterval: json['eval_interval'] != null
-        ? FineTuneReinforcementHyperparametersEvalInterval.fromJson(json['eval_interval'])
-        : null,
-  evalSamples: json['eval_samples'] != null
-        ? FineTuneReinforcementHyperparametersEvalSamples.fromJson(json['eval_samples'])
-        : null,
+  computeMultiplier: json['compute_multiplier'] != null ? FineTuneReinforcementHyperparametersComputeMultiplier.fromJson(json['compute_multiplier']) : null,
+  evalInterval: json['eval_interval'] != null ? FineTuneReinforcementHyperparametersEvalInterval.fromJson(json['eval_interval']) : null,
+  evalSamples: json['eval_samples'] != null ? FineTuneReinforcementHyperparametersEvalSamples.fromJson(json['eval_samples']) : null,
 ); }
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.

@@ -43,9 +43,7 @@ factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome
   reason: json['reason'] as String?,
   riskLevel: json['risk_level'] as String?,
   riskScore: json['risk_score'] != null ? (json['risk_score'] as num).toInt() : null,
-  rule: json['rule'] != null
-        ? ChargeOutcomeRule.fromJson(json['rule'] as Map<String, dynamic>)
-        : null,
+  rule: json['rule'] != null ? ChargeOutcomeRule.fromJson(json['rule'] as Map<String, dynamic>) : null,
   sellerMessage: json['seller_message'] as String?,
   type: json['type'] as String,
 ); }

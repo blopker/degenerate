@@ -74,9 +74,7 @@ factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return 
   displayName: json['display_name'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   jurisdiction: json['jurisdiction'] as String?,
-  metadata: json['metadata'] != null
-        ? PostTaxRatesTaxRateRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTaxRatesTaxRateRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? PostTaxRatesTaxRateRequestTaxType.fromJson(json['tax_type'] as String) : null,
 ); }

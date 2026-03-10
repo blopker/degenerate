@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_giropay_display_preference.da
 final class PostPaymentMethodConfigurationsRequestGiropay {const PostPaymentMethodConfigurationsRequestGiropay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestGiropay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestGiropay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestGiropayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestGiropayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestGiropayDisplayPreference? displayPreference;

@@ -8,9 +8,7 @@ import 'setup_intent_payment_method_options_mandate_options_sepa_debit.dart';///
 final class SetupIntentPaymentMethodOptionsSepaDebit {const SetupIntentPaymentMethodOptionsSepaDebit({this.mandateOptions});
 
 factory SetupIntentPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsSepaDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit? mandateOptions;

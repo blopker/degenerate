@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'timeseries_by_colo2.dart';im
 factory Datacenters2.fromJson(Map<String, dynamic> json) { return Datacenters2(
   coloId: json['colo_id'] as String?,
   timeseries: (json['timeseries'] as List<dynamic>?)?.map((e) => TimeseriesByColo2.fromJson(e as Map<String, dynamic>)).toList(),
-  totals: json['totals'] != null
-        ? TotalsByColo.fromJson(json['totals'] as Map<String, dynamic>)
-        : null,
+  totals: json['totals'] != null ? TotalsByColo.fromJson(json['totals'] as Map<String, dynamic>) : null,
 ); }
 
 /// The airport code identifer for the co-location.

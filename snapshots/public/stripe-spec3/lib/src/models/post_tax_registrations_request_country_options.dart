@@ -8,309 +8,107 @@ import 'post_tax_registrations_request_country_options_ae.dart';import 'post_tax
 final class PostTaxRegistrationsRequestCountryOptions {const PostTaxRegistrationsRequestCountryOptions({this.ae, this.al, this.am, this.ao, this.at, this.au, this.aw, this.az, this.ba, this.bb, this.bd, this.be, this.bf, this.bg, this.bh, this.bj, this.bs, this.by, this.ca, this.cd, this.ch, this.cl, this.cm, this.co, this.cr, this.cv, this.cy, this.cz, this.de, this.dk, this.ec, this.ee, this.eg, this.es, this.et, this.fi, this.fr, this.gb, this.ge, this.gn, this.gr, this.hr, this.hu, this.id, this.ie, this.$in, this.$is, this.it, this.jp, this.ke, this.kg, this.kh, this.kr, this.kz, this.la, this.lk, this.lt, this.lu, this.lv, this.ma, this.md, this.me, this.mk, this.mr, this.mt, this.mx, this.my, this.ng, this.nl, this.no, this.np, this.nz, this.om, this.pe, this.ph, this.pl, this.pt, this.ro, this.rs, this.ru, this.sa, this.se, this.sg, this.si, this.sk, this.sn, this.sr, this.th, this.tj, this.tr, this.tw, this.tz, this.ua, this.ug, this.us, this.uy, this.uz, this.vn, this.za, this.zm, this.zw, });
 
 factory PostTaxRegistrationsRequestCountryOptions.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptions(
-  ae: json['ae'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAe.fromJson(json['ae'] as Map<String, dynamic>)
-        : null,
-  al: json['al'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAl.fromJson(json['al'] as Map<String, dynamic>)
-        : null,
-  am: json['am'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAm.fromJson(json['am'] as Map<String, dynamic>)
-        : null,
-  ao: json['ao'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAo.fromJson(json['ao'] as Map<String, dynamic>)
-        : null,
-  at: json['at'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAt.fromJson(json['at'] as Map<String, dynamic>)
-        : null,
-  au: json['au'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAu.fromJson(json['au'] as Map<String, dynamic>)
-        : null,
-  aw: json['aw'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAw.fromJson(json['aw'] as Map<String, dynamic>)
-        : null,
-  az: json['az'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsAz.fromJson(json['az'] as Map<String, dynamic>)
-        : null,
-  ba: json['ba'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBa.fromJson(json['ba'] as Map<String, dynamic>)
-        : null,
-  bb: json['bb'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBb.fromJson(json['bb'] as Map<String, dynamic>)
-        : null,
-  bd: json['bd'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBd.fromJson(json['bd'] as Map<String, dynamic>)
-        : null,
-  be: json['be'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBe.fromJson(json['be'] as Map<String, dynamic>)
-        : null,
-  bf: json['bf'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBf.fromJson(json['bf'] as Map<String, dynamic>)
-        : null,
-  bg: json['bg'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBg.fromJson(json['bg'] as Map<String, dynamic>)
-        : null,
-  bh: json['bh'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBh.fromJson(json['bh'] as Map<String, dynamic>)
-        : null,
-  bj: json['bj'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBj.fromJson(json['bj'] as Map<String, dynamic>)
-        : null,
-  bs: json['bs'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBs.fromJson(json['bs'] as Map<String, dynamic>)
-        : null,
-  by: json['by'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsBy.fromJson(json['by'] as Map<String, dynamic>)
-        : null,
-  ca: json['ca'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCa.fromJson(json['ca'] as Map<String, dynamic>)
-        : null,
-  cd: json['cd'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCd.fromJson(json['cd'] as Map<String, dynamic>)
-        : null,
-  ch: json['ch'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCh.fromJson(json['ch'] as Map<String, dynamic>)
-        : null,
-  cl: json['cl'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCl.fromJson(json['cl'] as Map<String, dynamic>)
-        : null,
-  cm: json['cm'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCm.fromJson(json['cm'] as Map<String, dynamic>)
-        : null,
-  co: json['co'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCo.fromJson(json['co'] as Map<String, dynamic>)
-        : null,
-  cr: json['cr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCr.fromJson(json['cr'] as Map<String, dynamic>)
-        : null,
-  cv: json['cv'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCv.fromJson(json['cv'] as Map<String, dynamic>)
-        : null,
-  cy: json['cy'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCy.fromJson(json['cy'] as Map<String, dynamic>)
-        : null,
-  cz: json['cz'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsCz.fromJson(json['cz'] as Map<String, dynamic>)
-        : null,
-  de: json['de'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsDe.fromJson(json['de'] as Map<String, dynamic>)
-        : null,
-  dk: json['dk'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsDk.fromJson(json['dk'] as Map<String, dynamic>)
-        : null,
-  ec: json['ec'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsEc.fromJson(json['ec'] as Map<String, dynamic>)
-        : null,
-  ee: json['ee'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsEe.fromJson(json['ee'] as Map<String, dynamic>)
-        : null,
-  eg: json['eg'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsEg.fromJson(json['eg'] as Map<String, dynamic>)
-        : null,
-  es: json['es'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsEs.fromJson(json['es'] as Map<String, dynamic>)
-        : null,
-  et: json['et'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsEt.fromJson(json['et'] as Map<String, dynamic>)
-        : null,
-  fi: json['fi'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsFi.fromJson(json['fi'] as Map<String, dynamic>)
-        : null,
-  fr: json['fr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsFr.fromJson(json['fr'] as Map<String, dynamic>)
-        : null,
-  gb: json['gb'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsGb.fromJson(json['gb'] as Map<String, dynamic>)
-        : null,
-  ge: json['ge'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsGe.fromJson(json['ge'] as Map<String, dynamic>)
-        : null,
-  gn: json['gn'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsGn.fromJson(json['gn'] as Map<String, dynamic>)
-        : null,
-  gr: json['gr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsGr.fromJson(json['gr'] as Map<String, dynamic>)
-        : null,
-  hr: json['hr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsHr.fromJson(json['hr'] as Map<String, dynamic>)
-        : null,
-  hu: json['hu'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsHu.fromJson(json['hu'] as Map<String, dynamic>)
-        : null,
-  id: json['id'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsId.fromJson(json['id'] as Map<String, dynamic>)
-        : null,
-  ie: json['ie'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsIe.fromJson(json['ie'] as Map<String, dynamic>)
-        : null,
-  $in: json['in'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsIn.fromJson(json['in'] as Map<String, dynamic>)
-        : null,
-  $is: json['is'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsIs.fromJson(json['is'] as Map<String, dynamic>)
-        : null,
-  it: json['it'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsIt.fromJson(json['it'] as Map<String, dynamic>)
-        : null,
-  jp: json['jp'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsJp.fromJson(json['jp'] as Map<String, dynamic>)
-        : null,
-  ke: json['ke'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsKe.fromJson(json['ke'] as Map<String, dynamic>)
-        : null,
-  kg: json['kg'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsKg.fromJson(json['kg'] as Map<String, dynamic>)
-        : null,
-  kh: json['kh'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsKh.fromJson(json['kh'] as Map<String, dynamic>)
-        : null,
-  kr: json['kr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsKr.fromJson(json['kr'] as Map<String, dynamic>)
-        : null,
-  kz: json['kz'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsKz.fromJson(json['kz'] as Map<String, dynamic>)
-        : null,
-  la: json['la'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsLa.fromJson(json['la'] as Map<String, dynamic>)
-        : null,
-  lk: json['lk'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsLk.fromJson(json['lk'] as Map<String, dynamic>)
-        : null,
-  lt: json['lt'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsLt.fromJson(json['lt'] as Map<String, dynamic>)
-        : null,
-  lu: json['lu'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsLu.fromJson(json['lu'] as Map<String, dynamic>)
-        : null,
-  lv: json['lv'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsLv.fromJson(json['lv'] as Map<String, dynamic>)
-        : null,
-  ma: json['ma'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMa.fromJson(json['ma'] as Map<String, dynamic>)
-        : null,
-  md: json['md'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMd.fromJson(json['md'] as Map<String, dynamic>)
-        : null,
-  me: json['me'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMe.fromJson(json['me'] as Map<String, dynamic>)
-        : null,
-  mk: json['mk'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMk.fromJson(json['mk'] as Map<String, dynamic>)
-        : null,
-  mr: json['mr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMr.fromJson(json['mr'] as Map<String, dynamic>)
-        : null,
-  mt: json['mt'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMt.fromJson(json['mt'] as Map<String, dynamic>)
-        : null,
-  mx: json['mx'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMx.fromJson(json['mx'] as Map<String, dynamic>)
-        : null,
-  my: json['my'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsMy.fromJson(json['my'] as Map<String, dynamic>)
-        : null,
-  ng: json['ng'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsNg.fromJson(json['ng'] as Map<String, dynamic>)
-        : null,
-  nl: json['nl'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsNl.fromJson(json['nl'] as Map<String, dynamic>)
-        : null,
-  no: json['no'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsNo.fromJson(json['no'] as Map<String, dynamic>)
-        : null,
-  np: json['np'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsNp.fromJson(json['np'] as Map<String, dynamic>)
-        : null,
-  nz: json['nz'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsNz.fromJson(json['nz'] as Map<String, dynamic>)
-        : null,
-  om: json['om'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsOm.fromJson(json['om'] as Map<String, dynamic>)
-        : null,
-  pe: json['pe'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsPe.fromJson(json['pe'] as Map<String, dynamic>)
-        : null,
-  ph: json['ph'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsPh.fromJson(json['ph'] as Map<String, dynamic>)
-        : null,
-  pl: json['pl'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsPl.fromJson(json['pl'] as Map<String, dynamic>)
-        : null,
-  pt: json['pt'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsPt.fromJson(json['pt'] as Map<String, dynamic>)
-        : null,
-  ro: json['ro'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsRo.fromJson(json['ro'] as Map<String, dynamic>)
-        : null,
-  rs: json['rs'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsRs.fromJson(json['rs'] as Map<String, dynamic>)
-        : null,
-  ru: json['ru'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsRu.fromJson(json['ru'] as Map<String, dynamic>)
-        : null,
-  sa: json['sa'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSa.fromJson(json['sa'] as Map<String, dynamic>)
-        : null,
-  se: json['se'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSe.fromJson(json['se'] as Map<String, dynamic>)
-        : null,
-  sg: json['sg'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSg.fromJson(json['sg'] as Map<String, dynamic>)
-        : null,
-  si: json['si'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSi.fromJson(json['si'] as Map<String, dynamic>)
-        : null,
-  sk: json['sk'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSk.fromJson(json['sk'] as Map<String, dynamic>)
-        : null,
-  sn: json['sn'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSn.fromJson(json['sn'] as Map<String, dynamic>)
-        : null,
-  sr: json['sr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsSr.fromJson(json['sr'] as Map<String, dynamic>)
-        : null,
-  th: json['th'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsTh.fromJson(json['th'] as Map<String, dynamic>)
-        : null,
-  tj: json['tj'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsTj.fromJson(json['tj'] as Map<String, dynamic>)
-        : null,
-  tr: json['tr'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsTr.fromJson(json['tr'] as Map<String, dynamic>)
-        : null,
-  tw: json['tw'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsTw.fromJson(json['tw'] as Map<String, dynamic>)
-        : null,
-  tz: json['tz'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsTz.fromJson(json['tz'] as Map<String, dynamic>)
-        : null,
-  ua: json['ua'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUa.fromJson(json['ua'] as Map<String, dynamic>)
-        : null,
-  ug: json['ug'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUg.fromJson(json['ug'] as Map<String, dynamic>)
-        : null,
-  us: json['us'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUs.fromJson(json['us'] as Map<String, dynamic>)
-        : null,
-  uy: json['uy'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUy.fromJson(json['uy'] as Map<String, dynamic>)
-        : null,
-  uz: json['uz'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUz.fromJson(json['uz'] as Map<String, dynamic>)
-        : null,
-  vn: json['vn'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsVn.fromJson(json['vn'] as Map<String, dynamic>)
-        : null,
-  za: json['za'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsZa.fromJson(json['za'] as Map<String, dynamic>)
-        : null,
-  zm: json['zm'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsZm.fromJson(json['zm'] as Map<String, dynamic>)
-        : null,
-  zw: json['zw'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsZw.fromJson(json['zw'] as Map<String, dynamic>)
-        : null,
+  ae: json['ae'] != null ? PostTaxRegistrationsRequestCountryOptionsAe.fromJson(json['ae'] as Map<String, dynamic>) : null,
+  al: json['al'] != null ? PostTaxRegistrationsRequestCountryOptionsAl.fromJson(json['al'] as Map<String, dynamic>) : null,
+  am: json['am'] != null ? PostTaxRegistrationsRequestCountryOptionsAm.fromJson(json['am'] as Map<String, dynamic>) : null,
+  ao: json['ao'] != null ? PostTaxRegistrationsRequestCountryOptionsAo.fromJson(json['ao'] as Map<String, dynamic>) : null,
+  at: json['at'] != null ? PostTaxRegistrationsRequestCountryOptionsAt.fromJson(json['at'] as Map<String, dynamic>) : null,
+  au: json['au'] != null ? PostTaxRegistrationsRequestCountryOptionsAu.fromJson(json['au'] as Map<String, dynamic>) : null,
+  aw: json['aw'] != null ? PostTaxRegistrationsRequestCountryOptionsAw.fromJson(json['aw'] as Map<String, dynamic>) : null,
+  az: json['az'] != null ? PostTaxRegistrationsRequestCountryOptionsAz.fromJson(json['az'] as Map<String, dynamic>) : null,
+  ba: json['ba'] != null ? PostTaxRegistrationsRequestCountryOptionsBa.fromJson(json['ba'] as Map<String, dynamic>) : null,
+  bb: json['bb'] != null ? PostTaxRegistrationsRequestCountryOptionsBb.fromJson(json['bb'] as Map<String, dynamic>) : null,
+  bd: json['bd'] != null ? PostTaxRegistrationsRequestCountryOptionsBd.fromJson(json['bd'] as Map<String, dynamic>) : null,
+  be: json['be'] != null ? PostTaxRegistrationsRequestCountryOptionsBe.fromJson(json['be'] as Map<String, dynamic>) : null,
+  bf: json['bf'] != null ? PostTaxRegistrationsRequestCountryOptionsBf.fromJson(json['bf'] as Map<String, dynamic>) : null,
+  bg: json['bg'] != null ? PostTaxRegistrationsRequestCountryOptionsBg.fromJson(json['bg'] as Map<String, dynamic>) : null,
+  bh: json['bh'] != null ? PostTaxRegistrationsRequestCountryOptionsBh.fromJson(json['bh'] as Map<String, dynamic>) : null,
+  bj: json['bj'] != null ? PostTaxRegistrationsRequestCountryOptionsBj.fromJson(json['bj'] as Map<String, dynamic>) : null,
+  bs: json['bs'] != null ? PostTaxRegistrationsRequestCountryOptionsBs.fromJson(json['bs'] as Map<String, dynamic>) : null,
+  by: json['by'] != null ? PostTaxRegistrationsRequestCountryOptionsBy.fromJson(json['by'] as Map<String, dynamic>) : null,
+  ca: json['ca'] != null ? PostTaxRegistrationsRequestCountryOptionsCa.fromJson(json['ca'] as Map<String, dynamic>) : null,
+  cd: json['cd'] != null ? PostTaxRegistrationsRequestCountryOptionsCd.fromJson(json['cd'] as Map<String, dynamic>) : null,
+  ch: json['ch'] != null ? PostTaxRegistrationsRequestCountryOptionsCh.fromJson(json['ch'] as Map<String, dynamic>) : null,
+  cl: json['cl'] != null ? PostTaxRegistrationsRequestCountryOptionsCl.fromJson(json['cl'] as Map<String, dynamic>) : null,
+  cm: json['cm'] != null ? PostTaxRegistrationsRequestCountryOptionsCm.fromJson(json['cm'] as Map<String, dynamic>) : null,
+  co: json['co'] != null ? PostTaxRegistrationsRequestCountryOptionsCo.fromJson(json['co'] as Map<String, dynamic>) : null,
+  cr: json['cr'] != null ? PostTaxRegistrationsRequestCountryOptionsCr.fromJson(json['cr'] as Map<String, dynamic>) : null,
+  cv: json['cv'] != null ? PostTaxRegistrationsRequestCountryOptionsCv.fromJson(json['cv'] as Map<String, dynamic>) : null,
+  cy: json['cy'] != null ? PostTaxRegistrationsRequestCountryOptionsCy.fromJson(json['cy'] as Map<String, dynamic>) : null,
+  cz: json['cz'] != null ? PostTaxRegistrationsRequestCountryOptionsCz.fromJson(json['cz'] as Map<String, dynamic>) : null,
+  de: json['de'] != null ? PostTaxRegistrationsRequestCountryOptionsDe.fromJson(json['de'] as Map<String, dynamic>) : null,
+  dk: json['dk'] != null ? PostTaxRegistrationsRequestCountryOptionsDk.fromJson(json['dk'] as Map<String, dynamic>) : null,
+  ec: json['ec'] != null ? PostTaxRegistrationsRequestCountryOptionsEc.fromJson(json['ec'] as Map<String, dynamic>) : null,
+  ee: json['ee'] != null ? PostTaxRegistrationsRequestCountryOptionsEe.fromJson(json['ee'] as Map<String, dynamic>) : null,
+  eg: json['eg'] != null ? PostTaxRegistrationsRequestCountryOptionsEg.fromJson(json['eg'] as Map<String, dynamic>) : null,
+  es: json['es'] != null ? PostTaxRegistrationsRequestCountryOptionsEs.fromJson(json['es'] as Map<String, dynamic>) : null,
+  et: json['et'] != null ? PostTaxRegistrationsRequestCountryOptionsEt.fromJson(json['et'] as Map<String, dynamic>) : null,
+  fi: json['fi'] != null ? PostTaxRegistrationsRequestCountryOptionsFi.fromJson(json['fi'] as Map<String, dynamic>) : null,
+  fr: json['fr'] != null ? PostTaxRegistrationsRequestCountryOptionsFr.fromJson(json['fr'] as Map<String, dynamic>) : null,
+  gb: json['gb'] != null ? PostTaxRegistrationsRequestCountryOptionsGb.fromJson(json['gb'] as Map<String, dynamic>) : null,
+  ge: json['ge'] != null ? PostTaxRegistrationsRequestCountryOptionsGe.fromJson(json['ge'] as Map<String, dynamic>) : null,
+  gn: json['gn'] != null ? PostTaxRegistrationsRequestCountryOptionsGn.fromJson(json['gn'] as Map<String, dynamic>) : null,
+  gr: json['gr'] != null ? PostTaxRegistrationsRequestCountryOptionsGr.fromJson(json['gr'] as Map<String, dynamic>) : null,
+  hr: json['hr'] != null ? PostTaxRegistrationsRequestCountryOptionsHr.fromJson(json['hr'] as Map<String, dynamic>) : null,
+  hu: json['hu'] != null ? PostTaxRegistrationsRequestCountryOptionsHu.fromJson(json['hu'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? PostTaxRegistrationsRequestCountryOptionsId.fromJson(json['id'] as Map<String, dynamic>) : null,
+  ie: json['ie'] != null ? PostTaxRegistrationsRequestCountryOptionsIe.fromJson(json['ie'] as Map<String, dynamic>) : null,
+  $in: json['in'] != null ? PostTaxRegistrationsRequestCountryOptionsIn.fromJson(json['in'] as Map<String, dynamic>) : null,
+  $is: json['is'] != null ? PostTaxRegistrationsRequestCountryOptionsIs.fromJson(json['is'] as Map<String, dynamic>) : null,
+  it: json['it'] != null ? PostTaxRegistrationsRequestCountryOptionsIt.fromJson(json['it'] as Map<String, dynamic>) : null,
+  jp: json['jp'] != null ? PostTaxRegistrationsRequestCountryOptionsJp.fromJson(json['jp'] as Map<String, dynamic>) : null,
+  ke: json['ke'] != null ? PostTaxRegistrationsRequestCountryOptionsKe.fromJson(json['ke'] as Map<String, dynamic>) : null,
+  kg: json['kg'] != null ? PostTaxRegistrationsRequestCountryOptionsKg.fromJson(json['kg'] as Map<String, dynamic>) : null,
+  kh: json['kh'] != null ? PostTaxRegistrationsRequestCountryOptionsKh.fromJson(json['kh'] as Map<String, dynamic>) : null,
+  kr: json['kr'] != null ? PostTaxRegistrationsRequestCountryOptionsKr.fromJson(json['kr'] as Map<String, dynamic>) : null,
+  kz: json['kz'] != null ? PostTaxRegistrationsRequestCountryOptionsKz.fromJson(json['kz'] as Map<String, dynamic>) : null,
+  la: json['la'] != null ? PostTaxRegistrationsRequestCountryOptionsLa.fromJson(json['la'] as Map<String, dynamic>) : null,
+  lk: json['lk'] != null ? PostTaxRegistrationsRequestCountryOptionsLk.fromJson(json['lk'] as Map<String, dynamic>) : null,
+  lt: json['lt'] != null ? PostTaxRegistrationsRequestCountryOptionsLt.fromJson(json['lt'] as Map<String, dynamic>) : null,
+  lu: json['lu'] != null ? PostTaxRegistrationsRequestCountryOptionsLu.fromJson(json['lu'] as Map<String, dynamic>) : null,
+  lv: json['lv'] != null ? PostTaxRegistrationsRequestCountryOptionsLv.fromJson(json['lv'] as Map<String, dynamic>) : null,
+  ma: json['ma'] != null ? PostTaxRegistrationsRequestCountryOptionsMa.fromJson(json['ma'] as Map<String, dynamic>) : null,
+  md: json['md'] != null ? PostTaxRegistrationsRequestCountryOptionsMd.fromJson(json['md'] as Map<String, dynamic>) : null,
+  me: json['me'] != null ? PostTaxRegistrationsRequestCountryOptionsMe.fromJson(json['me'] as Map<String, dynamic>) : null,
+  mk: json['mk'] != null ? PostTaxRegistrationsRequestCountryOptionsMk.fromJson(json['mk'] as Map<String, dynamic>) : null,
+  mr: json['mr'] != null ? PostTaxRegistrationsRequestCountryOptionsMr.fromJson(json['mr'] as Map<String, dynamic>) : null,
+  mt: json['mt'] != null ? PostTaxRegistrationsRequestCountryOptionsMt.fromJson(json['mt'] as Map<String, dynamic>) : null,
+  mx: json['mx'] != null ? PostTaxRegistrationsRequestCountryOptionsMx.fromJson(json['mx'] as Map<String, dynamic>) : null,
+  my: json['my'] != null ? PostTaxRegistrationsRequestCountryOptionsMy.fromJson(json['my'] as Map<String, dynamic>) : null,
+  ng: json['ng'] != null ? PostTaxRegistrationsRequestCountryOptionsNg.fromJson(json['ng'] as Map<String, dynamic>) : null,
+  nl: json['nl'] != null ? PostTaxRegistrationsRequestCountryOptionsNl.fromJson(json['nl'] as Map<String, dynamic>) : null,
+  no: json['no'] != null ? PostTaxRegistrationsRequestCountryOptionsNo.fromJson(json['no'] as Map<String, dynamic>) : null,
+  np: json['np'] != null ? PostTaxRegistrationsRequestCountryOptionsNp.fromJson(json['np'] as Map<String, dynamic>) : null,
+  nz: json['nz'] != null ? PostTaxRegistrationsRequestCountryOptionsNz.fromJson(json['nz'] as Map<String, dynamic>) : null,
+  om: json['om'] != null ? PostTaxRegistrationsRequestCountryOptionsOm.fromJson(json['om'] as Map<String, dynamic>) : null,
+  pe: json['pe'] != null ? PostTaxRegistrationsRequestCountryOptionsPe.fromJson(json['pe'] as Map<String, dynamic>) : null,
+  ph: json['ph'] != null ? PostTaxRegistrationsRequestCountryOptionsPh.fromJson(json['ph'] as Map<String, dynamic>) : null,
+  pl: json['pl'] != null ? PostTaxRegistrationsRequestCountryOptionsPl.fromJson(json['pl'] as Map<String, dynamic>) : null,
+  pt: json['pt'] != null ? PostTaxRegistrationsRequestCountryOptionsPt.fromJson(json['pt'] as Map<String, dynamic>) : null,
+  ro: json['ro'] != null ? PostTaxRegistrationsRequestCountryOptionsRo.fromJson(json['ro'] as Map<String, dynamic>) : null,
+  rs: json['rs'] != null ? PostTaxRegistrationsRequestCountryOptionsRs.fromJson(json['rs'] as Map<String, dynamic>) : null,
+  ru: json['ru'] != null ? PostTaxRegistrationsRequestCountryOptionsRu.fromJson(json['ru'] as Map<String, dynamic>) : null,
+  sa: json['sa'] != null ? PostTaxRegistrationsRequestCountryOptionsSa.fromJson(json['sa'] as Map<String, dynamic>) : null,
+  se: json['se'] != null ? PostTaxRegistrationsRequestCountryOptionsSe.fromJson(json['se'] as Map<String, dynamic>) : null,
+  sg: json['sg'] != null ? PostTaxRegistrationsRequestCountryOptionsSg.fromJson(json['sg'] as Map<String, dynamic>) : null,
+  si: json['si'] != null ? PostTaxRegistrationsRequestCountryOptionsSi.fromJson(json['si'] as Map<String, dynamic>) : null,
+  sk: json['sk'] != null ? PostTaxRegistrationsRequestCountryOptionsSk.fromJson(json['sk'] as Map<String, dynamic>) : null,
+  sn: json['sn'] != null ? PostTaxRegistrationsRequestCountryOptionsSn.fromJson(json['sn'] as Map<String, dynamic>) : null,
+  sr: json['sr'] != null ? PostTaxRegistrationsRequestCountryOptionsSr.fromJson(json['sr'] as Map<String, dynamic>) : null,
+  th: json['th'] != null ? PostTaxRegistrationsRequestCountryOptionsTh.fromJson(json['th'] as Map<String, dynamic>) : null,
+  tj: json['tj'] != null ? PostTaxRegistrationsRequestCountryOptionsTj.fromJson(json['tj'] as Map<String, dynamic>) : null,
+  tr: json['tr'] != null ? PostTaxRegistrationsRequestCountryOptionsTr.fromJson(json['tr'] as Map<String, dynamic>) : null,
+  tw: json['tw'] != null ? PostTaxRegistrationsRequestCountryOptionsTw.fromJson(json['tw'] as Map<String, dynamic>) : null,
+  tz: json['tz'] != null ? PostTaxRegistrationsRequestCountryOptionsTz.fromJson(json['tz'] as Map<String, dynamic>) : null,
+  ua: json['ua'] != null ? PostTaxRegistrationsRequestCountryOptionsUa.fromJson(json['ua'] as Map<String, dynamic>) : null,
+  ug: json['ug'] != null ? PostTaxRegistrationsRequestCountryOptionsUg.fromJson(json['ug'] as Map<String, dynamic>) : null,
+  us: json['us'] != null ? PostTaxRegistrationsRequestCountryOptionsUs.fromJson(json['us'] as Map<String, dynamic>) : null,
+  uy: json['uy'] != null ? PostTaxRegistrationsRequestCountryOptionsUy.fromJson(json['uy'] as Map<String, dynamic>) : null,
+  uz: json['uz'] != null ? PostTaxRegistrationsRequestCountryOptionsUz.fromJson(json['uz'] as Map<String, dynamic>) : null,
+  vn: json['vn'] != null ? PostTaxRegistrationsRequestCountryOptionsVn.fromJson(json['vn'] as Map<String, dynamic>) : null,
+  za: json['za'] != null ? PostTaxRegistrationsRequestCountryOptionsZa.fromJson(json['za'] as Map<String, dynamic>) : null,
+  zm: json['zm'] != null ? PostTaxRegistrationsRequestCountryOptionsZm.fromJson(json['zm'] as Map<String, dynamic>) : null,
+  zw: json['zw'] != null ? PostTaxRegistrationsRequestCountryOptionsZw.fromJson(json['zw'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTaxRegistrationsRequestCountryOptionsAe? ae;

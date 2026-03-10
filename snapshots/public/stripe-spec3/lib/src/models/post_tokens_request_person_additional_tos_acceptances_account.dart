@@ -9,9 +9,7 @@ import 'post_tokens_request_person_additional_tos_acceptances_account_user_agent
 factory PostTokensRequestPersonAdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonAdditionalTosAcceptancesAccount(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null
-        ? PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>)
-        : null,
+  userAgent: json['user_agent'] != null ? PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>) : null,
 ); }
 
 final int? date;

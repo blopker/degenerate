@@ -9,9 +9,7 @@ final class AuditLogProjectUpdated {const AuditLogProjectUpdated({this.id, this.
 
 factory AuditLogProjectUpdated.fromJson(Map<String, dynamic> json) { return AuditLogProjectUpdated(
   id: json['id'] as String?,
-  changesRequested: json['changes_requested'] != null
-        ? AuditLogProjectUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>)
-        : null,
+  changesRequested: json['changes_requested'] != null ? AuditLogProjectUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
 ); }
 
 /// The project ID.

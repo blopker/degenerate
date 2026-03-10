@@ -9,9 +9,7 @@ final class PostInvoicesCreatePreviewRequestAutomaticTax {const PostInvoicesCrea
 
 factory PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostInvoicesCreatePreviewRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostInvoicesCreatePreviewRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

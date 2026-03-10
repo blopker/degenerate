@@ -17,9 +17,7 @@ factory RemovedFromProjectIssueEvent.fromJson(Map<String, dynamic> json) { retur
   commitUrl: json['commit_url'] as String,
   createdAt: json['created_at'] as String,
   performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
-  projectCard: json['project_card'] != null
-        ? RemovedFromProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>)
-        : null,
+  projectCard: json['project_card'] != null ? RemovedFromProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

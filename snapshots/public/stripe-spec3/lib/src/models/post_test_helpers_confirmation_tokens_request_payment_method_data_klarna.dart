@@ -7,9 +7,7 @@
 import 'post_test_helpers_confirmation_tokens_request_payment_method_data_klarna_dob.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna({this.dob});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna(
-  dob: json['dob'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarnaDob? dob;

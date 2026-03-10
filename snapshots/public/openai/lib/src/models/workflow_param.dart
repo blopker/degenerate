@@ -11,9 +11,7 @@ factory WorkflowParam.fromJson(Map<String, dynamic> json) { return WorkflowParam
   id: json['id'] as String,
   version: json['version'] as String?,
   stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject117.fromJson(v))),
-  tracing: json['tracing'] != null
-        ? WorkflowTracingParam.fromJson(json['tracing'] as Map<String, dynamic>)
-        : null,
+  tracing: json['tracing'] != null ? WorkflowTracingParam.fromJson(json['tracing'] as Map<String, dynamic>) : null,
 ); }
 
 /// Identifier for the workflow invoked by the session.

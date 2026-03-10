@@ -34,9 +34,7 @@ factory GraderScoreModel.fromJson(Map<String, dynamic> json) { return GraderScor
   type: GraderScoreModelType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
-  samplingParams: json['sampling_params'] != null
-        ? GraderScoreModelSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>)
-        : null,
+  samplingParams: json['sampling_params'] != null ? GraderScoreModelSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>).map((e) => EvalItem.fromJson(e as Map<String, dynamic>)).toList(),
   range: (json['range'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }

@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'inline_object117_visa_compelling_evidence3_disputed_transaction.dart';import 'inline_object117_visa_compelling_evidence3_prior_undisputed_transactions.dart';final class InlineObject117VisaCompellingEvidence3 {const InlineObject117VisaCompellingEvidence3({this.disputedTransaction, this.priorUndisputedTransactions, });
 
 factory InlineObject117VisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return InlineObject117VisaCompellingEvidence3(
-  disputedTransaction: json['disputed_transaction'] != null
-        ? InlineObject117VisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>)
-        : null,
+  disputedTransaction: json['disputed_transaction'] != null ? InlineObject117VisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>) : null,
   priorUndisputedTransactions: (json['prior_undisputed_transactions'] as List<dynamic>?)?.map((e) => InlineObject117VisaCompellingEvidence3PriorUndisputedTransactions.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

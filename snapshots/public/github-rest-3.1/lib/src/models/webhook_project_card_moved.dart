@@ -29,22 +29,12 @@ final class WebhookProjectCardMoved {const WebhookProjectCardMoved({required thi
 
 factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMoved(
   action: WebhookProjectCardMovedAction.fromJson(json['action'] as String),
-  changes: json['changes'] != null
-        ? WebhookProjectCardMovedChanges.fromJson(json['changes'] as Map<String, dynamic>)
-        : null,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  changes: json['changes'] != null ? WebhookProjectCardMovedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   projectCard: WebhookProjectCardMovedProjectCard.fromJson(json['project_card'] as Map<String, dynamic>),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 

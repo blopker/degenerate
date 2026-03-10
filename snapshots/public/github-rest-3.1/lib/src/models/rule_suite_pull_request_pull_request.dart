@@ -10,9 +10,7 @@ final class RuleSuitePullRequestPullRequest {const RuleSuitePullRequestPullReque
 factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequest(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   number: json['number'] != null ? (json['number'] as num).toInt() : null,
-  user: json['user'] != null
-        ? RuleSuitePullRequestPullRequestUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? RuleSuitePullRequestPullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   reviews: (json['reviews'] as List<dynamic>?)?.map((e) => RuleSuitePullRequestPullRequestReviews.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

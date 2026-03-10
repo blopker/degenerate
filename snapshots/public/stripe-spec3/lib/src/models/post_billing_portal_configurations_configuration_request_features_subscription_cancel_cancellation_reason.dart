@@ -8,9 +8,7 @@ import 'post_billing_portal_configurations_configuration_request_features_subscr
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: json['enabled'] as bool,
-  options: json['options'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReasonOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReasonOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

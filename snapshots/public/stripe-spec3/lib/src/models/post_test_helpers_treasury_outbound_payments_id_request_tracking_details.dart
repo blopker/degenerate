@@ -32,13 +32,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
-  ach: json['ach'] != null
-        ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
   type: PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType.fromJson(json['type'] as String),
-  usDomesticWire: json['us_domestic_wire'] != null
-        ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>)
-        : null,
+  usDomesticWire: json['us_domestic_wire'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch? ach;

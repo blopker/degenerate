@@ -26,9 +26,7 @@ final class Endpoints {const Endpoints({this.apiVersion, this.kind, this.metadat
 factory Endpoints.fromJson(Map<String, dynamic> json) { return Endpoints(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   subsets: (json['subsets'] as List<dynamic>?)?.map((e) => EndpointSubset.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

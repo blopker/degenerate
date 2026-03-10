@@ -8,39 +8,17 @@ import 'post_setup_intents_request_payment_method_options_acss_debit.dart';impor
 final class PostSetupIntentsRequestPaymentMethodOptions {const PostSetupIntentsRequestPaymentMethodOptions({this.acssDebit, this.amazonPay, this.bacsDebit, this.card, this.cardPresent, this.klarna, this.link, this.paypal, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory PostSetupIntentsRequestPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? PostSetupIntentsRequestPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostSetupIntentsRequestPaymentMethodOptionsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostSetupIntentsRequestPaymentMethodOptionsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostSetupIntentsRequestPaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostSetupIntentsRequestPaymentMethodOptionsLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsAcssDebit? acssDebit;

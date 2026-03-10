@@ -11,13 +11,9 @@ factory PostRadarPaymentEvaluationsRequestPaymentDetails.fromJson(Map<String, dy
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  moneyMovementDetails: json['money_movement_details'] != null
-        ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>)
-        : null,
+  moneyMovementDetails: json['money_movement_details'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>) : null,
   paymentMethodDetails: PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  shippingDetails: json['shipping_details'] != null
-        ? PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  shippingDetails: json['shipping_details'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
 ); }
 

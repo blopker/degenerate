@@ -7,9 +7,7 @@
 import 'repository_rule_violation_error_metadata_secret_scanning.dart';final class RepositoryRuleViolationErrorMetadata {const RepositoryRuleViolationErrorMetadata({this.secretScanning});
 
 factory RepositoryRuleViolationErrorMetadata.fromJson(Map<String, dynamic> json) { return RepositoryRuleViolationErrorMetadata(
-  secretScanning: json['secret_scanning'] != null
-        ? RepositoryRuleViolationErrorMetadataSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>)
-        : null,
+  secretScanning: json['secret_scanning'] != null ? RepositoryRuleViolationErrorMetadataSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleViolationErrorMetadataSecretScanning? secretScanning;

@@ -8,9 +8,7 @@ import 'post_identity_verification_sessions_session_request_options_document.dar
 final class PostIdentityVerificationSessionsSessionRequestOptions {const PostIdentityVerificationSessionsSessionRequestOptions({this.document});
 
 factory PostIdentityVerificationSessionsSessionRequestOptions.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsSessionRequestOptions(
-  document: json['document'] != null
-        ? PostIdentityVerificationSessionsSessionRequestOptionsDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? PostIdentityVerificationSessionsSessionRequestOptionsDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIdentityVerificationSessionsSessionRequestOptionsDocument? document;

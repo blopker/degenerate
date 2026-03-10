@@ -95,9 +95,7 @@ factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return Reposito
   submission: RepositoryAdvisorySubmission.fromJson(json['submission'] as Map<String, dynamic>),
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => RepositoryAdvisoryVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   cvss: RepositoryAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null
-        ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>)
-        : null,
+  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
   cwes: (json['cwes'] as List<dynamic>).map((e) => RepositoryAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   cweIds: (json['cwe_ids'] as List<dynamic>).map((e) => e as String).toList(),
   credits: (json['credits'] as List<dynamic>).map((e) => RepositoryAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),

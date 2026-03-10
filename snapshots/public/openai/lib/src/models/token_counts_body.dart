@@ -32,25 +32,15 @@ final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this
 
 factory TokenCountsBody.fromJson(Map<String, dynamic> json) { return TokenCountsBody(
   model: json['model'] as String?,
-  input: json['input'] != null
-        ? TokenCountsBodyInput.fromJson(json['input'])
-        : null,
+  input: json['input'] != null ? TokenCountsBodyInput.fromJson(json['input']) : null,
   previousResponseId: json['previous_response_id'] as String?,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
-  text: json['text'] != null
-        ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
-  reasoning: json['reasoning'] != null
-        ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
+  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
   truncation: json['truncation'] != null ? TruncationEnum.fromJson(json['truncation'] as String) : null,
   instructions: json['instructions'] as String?,
-  conversation: json['conversation'] != null
-        ? ConversationParam.fromJson(json['conversation'] as Map<String, dynamic>)
-        : null,
-  toolChoice: json['tool_choice'] != null
-        ? ToolChoiceParam.fromJson(json['tool_choice'] as Map<String, dynamic>)
-        : null,
+  conversation: json['conversation'] != null ? ConversationParam.fromJson(json['conversation'] as Map<String, dynamic>) : null,
+  toolChoice: json['tool_choice'] != null ? ToolChoiceParam.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] as bool?,
 ); }
 

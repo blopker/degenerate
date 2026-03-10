@@ -71,9 +71,7 @@ factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) { return Workers
   redirects: json['_redirects'] as String?,
   htmlHandling: json['html_handling'] != null ? WorkersAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : null,
   notFoundHandling: json['not_found_handling'] != null ? WorkersAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : null,
-  runWorkerFirst: json['run_worker_first'] != null
-        ? WorkersAssetsConfigRunWorkerFirst.fromJson(json['run_worker_first'])
-        : null,
+  runWorkerFirst: json['run_worker_first'] != null ? WorkersAssetsConfigRunWorkerFirst.fromJson(json['run_worker_first']) : null,
   serveDirectly: json['serve_directly'] as bool?,
 ); }
 

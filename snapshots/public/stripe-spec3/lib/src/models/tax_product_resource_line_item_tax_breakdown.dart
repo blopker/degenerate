@@ -100,9 +100,7 @@ factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> jso
   amount: (json['amount'] as num).toInt(),
   jurisdiction: TaxProductResourceJurisdiction.fromJson(json['jurisdiction'] as Map<String, dynamic>),
   sourcing: TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(json['sourcing'] as String),
-  taxRateDetails: json['tax_rate_details'] != null
-        ? TaxProductResourceLineItemTaxBreakdownTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>)
-        : null,
+  taxRateDetails: json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxBreakdownTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
   taxabilityReason: TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: (json['taxable_amount'] as num).toInt(),
 ); }

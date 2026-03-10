@@ -39,18 +39,10 @@ bool get isUnknown { return !values.contains(this); }
 final class DisputePaymentMethodDetails {const DisputePaymentMethodDetails({this.amazonPay, this.card, this.klarna, this.paypal, required this.type, });
 
 factory DisputePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetails(
-  amazonPay: json['amazon_pay'] != null
-        ? DisputePaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? DisputePaymentMethodDetailsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? DisputePaymentMethodDetailsKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? DisputePaymentMethodDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
+  amazonPay: json['amazon_pay'] != null ? DisputePaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? DisputePaymentMethodDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? DisputePaymentMethodDetailsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? DisputePaymentMethodDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
   type: DisputePaymentMethodDetailsType.fromJson(json['type'] as String),
 ); }
 

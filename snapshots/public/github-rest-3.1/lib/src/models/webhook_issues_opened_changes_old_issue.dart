@@ -110,9 +110,7 @@ final class WebhookIssuesOpenedChangesOldIssue {const WebhookIssuesOpenedChanges
 
 factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChangesOldIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
-  assignee: json['assignee'] != null
-        ? WebhookIssuesOpenedChangesOldIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
+  assignee: json['assignee'] != null ? WebhookIssuesOpenedChangesOldIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => WebhookIssuesOpenedChangesOldIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: json['author_association'] != null ? WebhookIssuesOpenedChangesOldIssueAuthorAssociation.fromJson(json['author_association'] as String) : null,
   body: json['body'] as String?,
@@ -127,27 +125,15 @@ factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) {
   labels: (json['labels'] as List<dynamic>?)?.map((e) => WebhookIssuesOpenedChangesOldIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String?,
   locked: json['locked'] as bool?,
-  milestone: json['milestone'] != null
-        ? WebhookIssuesOpenedChangesOldIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>)
-        : null,
+  milestone: json['milestone'] != null ? WebhookIssuesOpenedChangesOldIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String?,
   number: (json['number'] as num).toInt(),
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
-  pullRequest: json['pull_request'] != null
-        ? WebhookIssuesOpenedChangesOldIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
-  reactions: json['reactions'] != null
-        ? WebhookIssuesOpenedChangesOldIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  pullRequest: json['pull_request'] != null ? WebhookIssuesOpenedChangesOldIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
+  reactions: json['reactions'] != null ? WebhookIssuesOpenedChangesOldIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] != null ? Uri.parse(json['repository_url'] as String) : null,
-  subIssuesSummary: json['sub_issues_summary'] != null
-        ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>)
-        : null,
-  issueDependenciesSummary: json['issue_dependencies_summary'] != null
-        ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>)
-        : null,
+  subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
+  issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
   state: json['state'] != null ? WebhookIssuesOpenedChangesOldIssueState.fromJson(json['state'] as String) : null,
   stateReason: json['state_reason'] as String?,
@@ -155,15 +141,9 @@ factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) {
   title: json['title'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  pinnedComment: json['pinned_comment'] != null
-        ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>)
-        : null,
-  user: json['user'] != null
-        ? WebhookIssuesOpenedChangesOldIssueUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
-  type: json['type'] != null
-        ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
+  pinnedComment: json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? WebhookIssuesOpenedChangesOldIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookIssuesOpenedChangesOldIssueActiveLockReason? activeLockReason;

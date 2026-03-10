@@ -8,27 +8,13 @@ import 'post_treasury_financial_accounts_financial_account_request_features_card
 final class PostTreasuryFinancialAccountsFinancialAccountRequestFeatures {const PostTreasuryFinancialAccountsFinancialAccountRequestFeatures({this.cardIssuing, this.depositInsurance, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, this.outboundPayments, this.outboundTransfers, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeatures(
-  cardIssuing: json['card_issuing'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  depositInsurance: json['deposit_insurance'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesDepositInsurance.fromJson(json['deposit_insurance'] as Map<String, dynamic>)
-        : null,
-  financialAddresses: json['financial_addresses'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses.fromJson(json['financial_addresses'] as Map<String, dynamic>)
-        : null,
-  inboundTransfers: json['inbound_transfers'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers.fromJson(json['inbound_transfers'] as Map<String, dynamic>)
-        : null,
-  intraStripeFlows: json['intra_stripe_flows'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>)
-        : null,
-  outboundPayments: json['outbound_payments'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>)
-        : null,
-  outboundTransfers: json['outbound_transfers'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>)
-        : null,
+  cardIssuing: json['card_issuing'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  depositInsurance: json['deposit_insurance'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesDepositInsurance.fromJson(json['deposit_insurance'] as Map<String, dynamic>) : null,
+  financialAddresses: json['financial_addresses'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses.fromJson(json['financial_addresses'] as Map<String, dynamic>) : null,
+  inboundTransfers: json['inbound_transfers'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfers.fromJson(json['inbound_transfers'] as Map<String, dynamic>) : null,
+  intraStripeFlows: json['intra_stripe_flows'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>) : null,
+  outboundPayments: json['outbound_payments'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>) : null,
+  outboundTransfers: json['outbound_transfers'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesCardIssuing? cardIssuing;

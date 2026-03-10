@@ -7,18 +7,10 @@
 import 'audio_transcription.dart';import 'realtime_audio_formats.dart';import 'realtime_session_create_response_audio_input_noise_reduction.dart';import 'realtime_session_create_response_audio_input_turn_detection.dart';final class RealtimeSessionCreateResponseAudioInput {const RealtimeSessionCreateResponseAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
 
 factory RealtimeSessionCreateResponseAudioInput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioInput(
-  format: json['format'] != null
-        ? RealtimeAudioFormats.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
-  transcription: json['transcription'] != null
-        ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>)
-        : null,
-  noiseReduction: json['noise_reduction'] != null
-        ? RealtimeSessionCreateResponseAudioInputNoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>)
-        : null,
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeSessionCreateResponseAudioInputTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format'] as Map<String, dynamic>) : null,
+  transcription: json['transcription'] != null ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>) : null,
+  noiseReduction: json['noise_reduction'] != null ? RealtimeSessionCreateResponseAudioInputNoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateResponseAudioInputTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimeAudioFormats? format;

@@ -11,9 +11,7 @@ factory RepositoryRuleViolationError.fromJson(Map<String, dynamic> json) { retur
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
   status: json['status'] as String?,
-  metadata: json['metadata'] != null
-        ? RepositoryRuleViolationErrorMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? RepositoryRuleViolationErrorMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 final String? message;

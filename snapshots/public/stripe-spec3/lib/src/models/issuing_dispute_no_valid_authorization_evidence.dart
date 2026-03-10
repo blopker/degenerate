@@ -8,9 +8,7 @@ import 'issuing_dispute_no_valid_authorization_evidence_additional_documentation
 final class IssuingDisputeNoValidAuthorizationEvidence {const IssuingDisputeNoValidAuthorizationEvidence({this.additionalDocumentation, this.explanation, });
 
 factory IssuingDisputeNoValidAuthorizationEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeNoValidAuthorizationEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   explanation: json['explanation'] as String?,
 ); }
 

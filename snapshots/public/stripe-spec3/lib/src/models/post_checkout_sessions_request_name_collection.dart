@@ -14,12 +14,8 @@ import 'post_checkout_sessions_request_name_collection_business.dart';import 'po
 final class PostCheckoutSessionsRequestNameCollection {const PostCheckoutSessionsRequestNameCollection({this.business, this.individual, });
 
 factory PostCheckoutSessionsRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestNameCollection(
-  business: json['business'] != null
-        ? PostCheckoutSessionsRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PostCheckoutSessionsRequestNameCollectionIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  business: json['business'] != null ? PostCheckoutSessionsRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostCheckoutSessionsRequestNameCollectionIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestNameCollectionBusiness? business;

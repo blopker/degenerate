@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PortalFlowsRetention {const PortalFlowsRetention({this.couponOffer, required this.type, });
 
 factory PortalFlowsRetention.fromJson(Map<String, dynamic> json) { return PortalFlowsRetention(
-  couponOffer: json['coupon_offer'] != null
-        ? PortalFlowsRetentionCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>)
-        : null,
+  couponOffer: json['coupon_offer'] != null ? PortalFlowsRetentionCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>) : null,
   type: PortalFlowsRetentionType.fromJson(json['type'] as String),
 ); }
 

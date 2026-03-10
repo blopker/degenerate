@@ -10,9 +10,7 @@ factory MagicSitesAddSingleRequest.fromJson(Map<String, dynamic> json) { return 
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,
   description: json['description'] as String?,
   haMode: json['ha_mode'] as bool?,
-  location: json['location'] != null
-        ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   name: MagicSiteName.fromJson(json['name'] as String),
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
 ); }

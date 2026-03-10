@@ -7,9 +7,7 @@
 import 'inline_object94_bundle.dart';final class InlineObject94 {const InlineObject94({this.bundle, this.repositoryId, this.bundleUrl, });
 
 factory InlineObject94.fromJson(Map<String, dynamic> json) { return InlineObject94(
-  bundle: json['bundle'] != null
-        ? InlineObject94Bundle.fromJson(json['bundle'] as Map<String, dynamic>)
-        : null,
+  bundle: json['bundle'] != null ? InlineObject94Bundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
 ); }

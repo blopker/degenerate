@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'workers_observability_perfor
 factory WorkersObservabilityQueryResults.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResults(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryResultsCalculations.fromJson(e as Map<String, dynamic>)).toList(),
   compare: (json['compare'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryResultsCompare.fromJson(e as Map<String, dynamic>)).toList(),
-  events: json['events'] != null
-        ? WorkersObservabilityQueryResultsEvents.fromJson(json['events'] as Map<String, dynamic>)
-        : null,
+  events: json['events'] != null ? WorkersObservabilityQueryResultsEvents.fromJson(json['events'] as Map<String, dynamic>) : null,
   invocations: (json['invocations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => WorkersObservabilityTelemetryEvent.fromJson(e as Map<String, dynamic>)).toList())),
   patterns: (json['patterns'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryResultsPatterns.fromJson(e as Map<String, dynamic>)).toList(),
   run: WorkersObservabilityQueryRun.fromJson(json['run'] as Map<String, dynamic>),

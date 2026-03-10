@@ -37,9 +37,7 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   name: json['name'] as String?,
   fullName: json['full_name'] as String?,
   private: json['private'] as bool?,
-  owner: json['owner'] != null
-        ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
   description: json['description'] as String?,
   fork: json['fork'] as bool?,
@@ -105,9 +103,7 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   archived: json['archived'] as bool?,
   disabled: json['disabled'] as bool?,
   openIssuesCount: json['open_issues_count'] != null ? (json['open_issues_count'] as num).toInt() : null,
-  license: json['license'] != null
-        ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>)
-        : null,
+  license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
   allowForking: json['allow_forking'] as bool?,
   isTemplate: json['is_template'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,

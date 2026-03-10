@@ -10,9 +10,7 @@ factory ListIpProfilesResponse.fromJson(Map<String, dynamic> json) { return List
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => TeamsDevicesIpProfile.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: json['result_info'] != null
-        ? TeamsDevicesPaginationInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? TeamsDevicesPaginationInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

@@ -7,9 +7,7 @@
 import 'post_setup_intents_intent_confirm_request_payment_method_options_bacs_debit_mandate_options.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebit {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebit({this.mandateOptions});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptions? mandateOptions;

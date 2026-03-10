@@ -34,9 +34,7 @@ final class GelatoEmailReport {const GelatoEmailReport({this.email, this.error, 
 
 factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
   email: json['email'] as String?,
-  error: json['error'] != null
-        ? GelatoEmailReportError2.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? GelatoEmailReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
   status: GelatoEmailReportStatus.fromJson(json['status'] as String),
 ); }
 

@@ -88,9 +88,7 @@ factory InlineObject36.fromJson(Map<String, dynamic> json) { return InlineObject
   accountType: json['account_type'] != null ? InlineObject36AccountType.fromJson(json['account_type'] as String) : null,
   country: json['country'] as String,
   currency: json['currency'] as String?,
-  documents: json['documents'] != null
-        ? InlineObject36Documents.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
+  documents: json['documents'] != null ? InlineObject36Documents.fromJson(json['documents'] as Map<String, dynamic>) : null,
   object: json['object'] != null ? InlineObject36Object.fromJson(json['object'] as String) : null,
   routingNumber: json['routing_number'] as String?,
 ); }

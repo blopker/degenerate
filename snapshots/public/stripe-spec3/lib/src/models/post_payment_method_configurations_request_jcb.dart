@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_jcb_display_preference.dart';
 final class PostPaymentMethodConfigurationsRequestJcb {const PostPaymentMethodConfigurationsRequestJcb({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestJcb.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestJcb(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestJcbDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestJcbDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestJcbDisplayPreference? displayPreference;

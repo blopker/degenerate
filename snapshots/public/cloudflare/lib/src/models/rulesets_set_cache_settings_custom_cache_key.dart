@@ -8,21 +8,11 @@ import 'rulesets_set_cache_settings_custom_cache_key_cookie.dart';import 'rulese
 final class RulesetsSetCacheSettingsCustomCacheKey {const RulesetsSetCacheSettingsCustomCacheKey({this.cookie, this.header, this.host, this.queryString, this.user, });
 
 factory RulesetsSetCacheSettingsCustomCacheKey.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKey(
-  cookie: json['cookie'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyCookie.fromJson(json['cookie'] as Map<String, dynamic>)
-        : null,
-  header: json['header'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(json['header'] as Map<String, dynamic>)
-        : null,
-  host: json['host'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(json['host'] as Map<String, dynamic>)
-        : null,
-  queryString: json['query_string'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyQueryString.fromJson(json['query_string'] as Map<String, dynamic>)
-        : null,
-  user: json['user'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKeyUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  cookie: json['cookie'] != null ? RulesetsSetCacheSettingsCustomCacheKeyCookie.fromJson(json['cookie'] as Map<String, dynamic>) : null,
+  header: json['header'] != null ? RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(json['header'] as Map<String, dynamic>) : null,
+  host: json['host'] != null ? RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(json['host'] as Map<String, dynamic>) : null,
+  queryString: json['query_string'] != null ? RulesetsSetCacheSettingsCustomCacheKeyQueryString.fromJson(json['query_string'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? RulesetsSetCacheSettingsCustomCacheKeyUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final RulesetsSetCacheSettingsCustomCacheKeyCookie? cookie;

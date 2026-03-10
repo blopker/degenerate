@@ -10,9 +10,7 @@ factory DlpPredefinedProfile.fromJson(Map<String, dynamic> json) { return DlpPre
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json.containsKey('confidence_threshold') ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : DlpConfidence.low,
-  contextAwareness: json['context_awareness'] != null
-        ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>)
-        : null,
+  contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
   entries: (json['entries'] as List<dynamic>).map((e) => DlpEntry.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,

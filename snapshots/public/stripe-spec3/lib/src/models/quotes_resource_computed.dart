@@ -8,9 +8,7 @@ import 'quotes_resource_computed_recurring.dart';import 'quotes_resource_upfront
 final class QuotesResourceComputed {const QuotesResourceComputed({this.recurring, required this.upfront, });
 
 factory QuotesResourceComputed.fromJson(Map<String, dynamic> json) { return QuotesResourceComputed(
-  recurring: json['recurring'] != null
-        ? QuotesResourceComputedRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  recurring: json['recurring'] != null ? QuotesResourceComputedRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   upfront: QuotesResourceUpfront.fromJson(json['upfront'] as Map<String, dynamic>),
 ); }
 

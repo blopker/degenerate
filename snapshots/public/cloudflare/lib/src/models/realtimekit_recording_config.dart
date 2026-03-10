@@ -9,23 +9,13 @@ import 'realtimekit_audio_config.dart';import 'realtimekit_livestreaming_config.
 final class RealtimekitRecordingConfig {const RealtimekitRecordingConfig({this.audioConfig, this.fileNamePrefix, this.liveStreamingConfig, this.maxSeconds, this.realtimekitBucketConfig, this.storageConfig, this.videoConfig, });
 
 factory RealtimekitRecordingConfig.fromJson(Map<String, dynamic> json) { return RealtimekitRecordingConfig(
-  audioConfig: json['audio_config'] != null
-        ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>)
-        : null,
+  audioConfig: json['audio_config'] != null ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>) : null,
   fileNamePrefix: json['file_name_prefix'] as String?,
-  liveStreamingConfig: json['live_streaming_config'] != null
-        ? RealtimekitLivestreamingConfig.fromJson(json['live_streaming_config'] as Map<String, dynamic>)
-        : null,
+  liveStreamingConfig: json['live_streaming_config'] != null ? RealtimekitLivestreamingConfig.fromJson(json['live_streaming_config'] as Map<String, dynamic>) : null,
   maxSeconds: json['max_seconds'] != null ? (json['max_seconds'] as num).toDouble() : null,
-  realtimekitBucketConfig: json['realtimekit_bucket_config'] != null
-        ? RealtimekitRealtimekitBucketConfig.fromJson(json['realtimekit_bucket_config'] as Map<String, dynamic>)
-        : null,
-  storageConfig: json['storage_config'] != null
-        ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>)
-        : null,
-  videoConfig: json['video_config'] != null
-        ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>)
-        : null,
+  realtimekitBucketConfig: json['realtimekit_bucket_config'] != null ? RealtimekitRealtimekitBucketConfig.fromJson(json['realtimekit_bucket_config'] as Map<String, dynamic>) : null,
+  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
+  videoConfig: json['video_config'] != null ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitAudioConfig? audioConfig;

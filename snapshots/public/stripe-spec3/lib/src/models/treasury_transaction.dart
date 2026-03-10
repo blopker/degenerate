@@ -109,14 +109,10 @@ factory TreasuryTransaction.fromJson(Map<String, dynamic> json) { return Treasur
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String,
-  entries: json['entries'] != null
-        ? TreasuryTransactionEntries.fromJson(json['entries'] as Map<String, dynamic>)
-        : null,
+  entries: json['entries'] != null ? TreasuryTransactionEntries.fromJson(json['entries'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String,
   flow: json['flow'] as String?,
-  flowDetails: json['flow_details'] != null
-        ? TreasuryTransactionFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>)
-        : null,
+  flowDetails: json['flow_details'] != null ? TreasuryTransactionFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
   flowType: TreasuryTransactionFlowType.fromJson(json['flow_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,

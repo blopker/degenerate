@@ -30,9 +30,7 @@ final class PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodD
 
 factory PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails(
   type: PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsType type;

@@ -31,9 +31,7 @@ final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipel
 
 factory CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSource(
   authentication: json['authentication'] as bool?,
-  cors: json['cors'] != null
-        ? CloudflarePipelinesWorkersPipelinesHttpSourceCors.fromJson(json['cors'] as Map<String, dynamic>)
-        : null,
+  cors: json['cors'] != null ? CloudflarePipelinesWorkersPipelinesHttpSourceCors.fromJson(json['cors'] as Map<String, dynamic>) : null,
   format: CloudflarePipelinesWorkersPipelinesHttpSourceFormat.fromJson(json['format'] as String),
   type: json['type'] as String,
 ); }

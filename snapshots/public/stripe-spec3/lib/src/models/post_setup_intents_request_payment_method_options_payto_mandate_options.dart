@@ -133,21 +133,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions(
-  amount: json['amount'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   amountType: json['amount_type'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>)
-        : null,
+  endDate: json['end_date'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>) : null,
   paymentSchedule: json['payment_schedule'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>)
-        : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>) : null,
   purpose: json['purpose'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
-  startDate: json['start_date'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date'] as Map<String, dynamic>)
-        : null,
+  startDate: json['start_date'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? amount;

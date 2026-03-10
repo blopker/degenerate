@@ -8,12 +8,8 @@ import 'post_shipping_rates_request_delivery_estimate_maximum.dart';import 'post
 final class PostShippingRatesRequestDeliveryEstimate {const PostShippingRatesRequestDeliveryEstimate({this.maximum, this.minimum, });
 
 factory PostShippingRatesRequestDeliveryEstimate.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestDeliveryEstimate(
-  maximum: json['maximum'] != null
-        ? PostShippingRatesRequestDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>)
-        : null,
-  minimum: json['minimum'] != null
-        ? PostShippingRatesRequestDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>)
-        : null,
+  maximum: json['maximum'] != null ? PostShippingRatesRequestDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,
+  minimum: json['minimum'] != null ? PostShippingRatesRequestDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>) : null,
 ); }
 
 final PostShippingRatesRequestDeliveryEstimateMaximum? maximum;

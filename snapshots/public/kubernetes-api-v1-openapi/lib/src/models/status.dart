@@ -10,14 +10,10 @@ final class Status {const Status({this.apiVersion, this.code, this.details, this
 factory Status.fromJson(Map<String, dynamic> json) { return Status(
   apiVersion: json['apiVersion'] as String?,
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
-  details: json['details'] != null
-        ? StatusDetails.fromJson(json['details'] as Map<String, dynamic>)
-        : null,
+  details: json['details'] != null ? StatusDetails.fromJson(json['details'] as Map<String, dynamic>) : null,
   kind: json['kind'] as String?,
   message: json['message'] as String?,
-  metadata: json['metadata'] != null
-        ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String?,
   status: json['status'] as String?,
 ); }

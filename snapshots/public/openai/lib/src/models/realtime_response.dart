@@ -93,22 +93,14 @@ factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeRe
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeResponseStatus.fromJson(json['status'] as String) : null,
-  statusDetails: json['status_details'] != null
-        ? RealtimeResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>)
-        : null,
+  statusDetails: json['status_details'] != null ? RealtimeResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  audio: json['audio'] != null
-        ? RealtimeResponseAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
-  usage: json['usage'] != null
-        ? RealtimeResponseUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  usage: json['usage'] != null ? RealtimeResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseOutputModalities.fromJson(e as String)).toList(),
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeResponseMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeResponseMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
 ); }
 
 /// The unique ID of the response, will look like `resp_1234`.

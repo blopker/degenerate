@@ -72,51 +72,29 @@ final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentReque
 
 factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountDetails: json['amount_details'] != null
-        ? PostPaymentIntentsIntentRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
-  applicationFeeAmount: json['application_fee_amount'] != null
-        ? PostPaymentIntentsIntentRequestApplicationFeeAmount.fromJson(json['application_fee_amount'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  applicationFeeAmount: json['application_fee_amount'] != null ? PostPaymentIntentsIntentRequestApplicationFeeAmount.fromJson(json['application_fee_amount'] as Map<String, dynamic>) : null,
   captureMethod: json['capture_method'] != null ? PostPaymentIntentsIntentRequestCaptureMethod.fromJson(json['capture_method'] as String) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null
-        ? PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>)
-        : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  hooks: json['hooks'] != null
-        ? PostPaymentIntentsIntentRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostPaymentIntentsIntentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  paymentDetails: json['payment_details'] != null
-        ? PostPaymentIntentsIntentRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
+  hooks: json['hooks'] != null ? PostPaymentIntentsIntentRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostPaymentIntentsIntentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostPaymentIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostPaymentIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  receiptEmail: json['receipt_email'] != null
-        ? PostPaymentIntentsIntentRequestReceiptEmail.fromJson(json['receipt_email'] as Map<String, dynamic>)
-        : null,
+  receiptEmail: json['receipt_email'] != null ? PostPaymentIntentsIntentRequestReceiptEmail.fromJson(json['receipt_email'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null
-        ? PostPaymentIntentsIntentRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostPaymentIntentsIntentRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

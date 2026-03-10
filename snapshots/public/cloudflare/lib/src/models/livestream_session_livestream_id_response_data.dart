@@ -7,15 +7,9 @@
 import 'livestream_session_livestream_id_response_data_livestream.dart';import 'livestream_session_livestream_id_response_data_paging.dart';import 'livestream_session_livestream_id_response_data_session.dart';final class LivestreamSessionLivestreamIdResponseData {const LivestreamSessionLivestreamIdResponseData({this.livestream, this.paging, this.session, });
 
 factory LivestreamSessionLivestreamIdResponseData.fromJson(Map<String, dynamic> json) { return LivestreamSessionLivestreamIdResponseData(
-  livestream: json['livestream'] != null
-        ? LivestreamSessionLivestreamIdResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>)
-        : null,
-  paging: json['paging'] != null
-        ? LivestreamSessionLivestreamIdResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>)
-        : null,
-  session: json['session'] != null
-        ? LivestreamSessionLivestreamIdResponseDataSession.fromJson(json['session'] as Map<String, dynamic>)
-        : null,
+  livestream: json['livestream'] != null ? LivestreamSessionLivestreamIdResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>) : null,
+  paging: json['paging'] != null ? LivestreamSessionLivestreamIdResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
+  session: json['session'] != null ? LivestreamSessionLivestreamIdResponseDataSession.fromJson(json['session'] as Map<String, dynamic>) : null,
 ); }
 
 final LivestreamSessionLivestreamIdResponseDataLivestream? livestream;

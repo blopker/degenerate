@@ -63,9 +63,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>),
-  pin: json['pin'] != null
-        ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>)
-        : null,
+  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.

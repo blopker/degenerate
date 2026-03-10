@@ -7,9 +7,7 @@
 import 'dns_records_for_a_zone_delete_dns_record_response_result.dart';final class DnsRecordsForAZoneDeleteDnsRecordResponse {const DnsRecordsForAZoneDeleteDnsRecordResponse({this.result});
 
 factory DnsRecordsForAZoneDeleteDnsRecordResponse.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneDeleteDnsRecordResponse(
-  result: json['result'] != null
-        ? DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final DnsRecordsForAZoneDeleteDnsRecordResponseResult? result;

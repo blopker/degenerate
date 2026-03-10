@@ -77,9 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({this.cancel, required this.eventName, required this.livemode, required this.object, required this.status, required this.type, });
 
 factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return BillingMeterEventAdjustment(
-  cancel: json['cancel'] != null
-        ? BillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>)
-        : null,
+  cancel: json['cancel'] != null ? BillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
   eventName: json['event_name'] as String,
   livemode: json['livemode'] as bool,
   object: BillingMeterEventAdjustmentObject.fromJson(json['object'] as String),

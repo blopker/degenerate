@@ -11,9 +11,7 @@ factory ComponentStatus.fromJson(Map<String, dynamic> json) { return ComponentSt
   apiVersion: json['apiVersion'] as String?,
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => ComponentCondition.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources

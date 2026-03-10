@@ -8,15 +8,9 @@ import 'webhook_label_edited_changes_color.dart';import 'webhook_label_edited_ch
 final class WebhookLabelEditedChanges {const WebhookLabelEditedChanges({this.color, this.description, this.name, });
 
 factory WebhookLabelEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookLabelEditedChanges(
-  color: json['color'] != null
-        ? WebhookLabelEditedChangesColor.fromJson(json['color'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? WebhookLabelEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? WebhookLabelEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
+  color: json['color'] != null ? WebhookLabelEditedChangesColor.fromJson(json['color'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? WebhookLabelEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? WebhookLabelEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookLabelEditedChangesColor? color;

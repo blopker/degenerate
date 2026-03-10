@@ -8,9 +8,7 @@ import 'observatory_plan_properties_info.dart';/// The number of schedules avail
 final class ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan {const ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan({this.value});
 
 factory ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan(
-  value: json['value'] != null
-        ? ObservatoryPlanPropertiesInfo.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? ObservatoryPlanPropertiesInfo.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final ObservatoryPlanPropertiesInfo? value;

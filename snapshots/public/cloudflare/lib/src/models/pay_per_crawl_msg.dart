@@ -12,9 +12,7 @@ factory PayPerCrawlMsg.fromJson(Map<String, dynamic> json) { return PayPerCrawlM
   errorChain: (json['error_chain'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String?,
   meta: json['meta'],
-  source: json['source'] != null
-        ? PayPerCrawlSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? PayPerCrawlSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int? code;

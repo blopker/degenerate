@@ -39,16 +39,10 @@ bool get isUnknown { return !values.contains(this); }
 final class InsightsResourcesPaymentEvaluationOutcome {const InsightsResourcesPaymentEvaluationOutcome({this.merchantBlocked, this.paymentIntentId, this.rejected, this.succeeded, required this.type, });
 
 factory InsightsResourcesPaymentEvaluationOutcome.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationOutcome(
-  merchantBlocked: json['merchant_blocked'] != null
-        ? InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(json['merchant_blocked'] as Map<String, dynamic>)
-        : null,
+  merchantBlocked: json['merchant_blocked'] != null ? InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(json['merchant_blocked'] as Map<String, dynamic>) : null,
   paymentIntentId: json['payment_intent_id'] as String?,
-  rejected: json['rejected'] != null
-        ? InsightsResourcesPaymentEvaluationRejected.fromJson(json['rejected'] as Map<String, dynamic>)
-        : null,
-  succeeded: json['succeeded'] != null
-        ? InsightsResourcesPaymentEvaluationSucceeded.fromJson(json['succeeded'] as Map<String, dynamic>)
-        : null,
+  rejected: json['rejected'] != null ? InsightsResourcesPaymentEvaluationRejected.fromJson(json['rejected'] as Map<String, dynamic>) : null,
+  succeeded: json['succeeded'] != null ? InsightsResourcesPaymentEvaluationSucceeded.fromJson(json['succeeded'] as Map<String, dynamic>) : null,
   type: InsightsResourcesPaymentEvaluationOutcomeType.fromJson(json['type'] as String),
 ); }
 

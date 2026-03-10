@@ -8,21 +8,11 @@ import 'bandwidth_by_colo.dart';import 'requests_by_colo.dart';import 'since.dar
 final class TotalsByColo {const TotalsByColo({this.bandwidth, this.requests, this.since, this.threats, this.until, });
 
 factory TotalsByColo.fromJson(Map<String, dynamic> json) { return TotalsByColo(
-  bandwidth: json['bandwidth'] != null
-        ? BandwidthByColo.fromJson(json['bandwidth'] as Map<String, dynamic>)
-        : null,
-  requests: json['requests'] != null
-        ? RequestsByColo.fromJson(json['requests'] as Map<String, dynamic>)
-        : null,
-  since: json['since'] != null
-        ? Since.fromJson(json['since'] as Map<String, dynamic>)
-        : null,
-  threats: json['threats'] != null
-        ? Threats.fromJson(json['threats'] as Map<String, dynamic>)
-        : null,
-  until: json['until'] != null
-        ? Until.fromJson(json['until'] as Map<String, dynamic>)
-        : null,
+  bandwidth: json['bandwidth'] != null ? BandwidthByColo.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,
+  requests: json['requests'] != null ? RequestsByColo.fromJson(json['requests'] as Map<String, dynamic>) : null,
+  since: json['since'] != null ? Since.fromJson(json['since'] as Map<String, dynamic>) : null,
+  threats: json['threats'] != null ? Threats.fromJson(json['threats'] as Map<String, dynamic>) : null,
+  until: json['until'] != null ? Until.fromJson(json['until'] as Map<String, dynamic>) : null,
 ); }
 
 final BandwidthByColo? bandwidth;

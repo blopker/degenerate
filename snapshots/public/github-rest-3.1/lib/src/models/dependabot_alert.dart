@@ -91,9 +91,7 @@ factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotA
   dismissedComment: json['dismissed_comment'] as String,
   fixedAt: AlertFixedAt.fromJson(json['fixed_at'] as String),
   autoDismissedAt: json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null,
-  dismissalRequest: json['dismissal_request'] != null
-        ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>)
-        : null,
+  dismissalRequest: json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

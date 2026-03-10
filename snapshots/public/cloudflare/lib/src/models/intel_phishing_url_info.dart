@@ -10,9 +10,7 @@ factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelP
   categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoCategorizations.fromJson(e as Map<String, dynamic>)).toList(),
   modelResults: (json['model_results'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoModelResults.fromJson(e as Map<String, dynamic>)).toList(),
   ruleMatches: (json['rule_matches'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoRuleMatches.fromJson(e as Map<String, dynamic>)).toList(),
-  scanStatus: json['scan_status'] != null
-        ? IntelPhishingUrlInfoScanStatus.fromJson(json['scan_status'] as Map<String, dynamic>)
-        : null,
+  scanStatus: json['scan_status'] != null ? IntelPhishingUrlInfoScanStatus.fromJson(json['scan_status'] as Map<String, dynamic>) : null,
   screenshotDownloadSignature: json['screenshot_download_signature'] as String?,
   screenshotPath: json['screenshot_path'] as String?,
   url: json['url'] as String?,

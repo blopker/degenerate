@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods({this.standard, required this.type, });
 
 factory TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods(
-  standard: json['standard'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultStandard.fromJson(json['standard'] as Map<String, dynamic>)
-        : null,
+  standard: json['standard'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,
   type: TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType.fromJson(json['type'] as String),
 ); }
 

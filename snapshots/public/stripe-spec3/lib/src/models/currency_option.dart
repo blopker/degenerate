@@ -36,9 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class CurrencyOption {const CurrencyOption({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory CurrencyOption.fromJson(Map<String, dynamic> json) { return CurrencyOption(
-  customUnitAmount: json['custom_unit_amount'] != null
-        ? CurrencyOptionCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>)
-        : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? CurrencyOptionCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,

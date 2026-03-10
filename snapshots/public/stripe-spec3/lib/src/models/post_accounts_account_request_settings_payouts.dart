@@ -8,9 +8,7 @@ import 'post_accounts_account_request_settings_payouts_schedule.dart';final clas
 
 factory PostAccountsAccountRequestSettingsPayouts.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsPayouts(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,
-  schedule: json['schedule'] != null
-        ? PostAccountsAccountRequestSettingsPayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>)
-        : null,
+  schedule: json['schedule'] != null ? PostAccountsAccountRequestSettingsPayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
 ); }
 

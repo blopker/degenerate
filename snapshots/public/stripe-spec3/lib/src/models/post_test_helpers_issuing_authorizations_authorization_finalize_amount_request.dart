@@ -9,12 +9,8 @@ import 'package:collection/collection.dart';import 'post_test_helpers_issuing_au
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   finalAmount: (json['final_amount'] as num).toInt(),
-  fleet: json['fleet'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

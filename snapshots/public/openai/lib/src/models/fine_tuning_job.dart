@@ -85,9 +85,7 @@ factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob
   integrations: (json['integrations'] as List<dynamic>?)?.map((e) => FineTuningJobIntegrations2.fromJson(e)).toList(),
   seed: (json['seed'] as num).toInt(),
   estimatedFinish: json['estimated_finish'] != null ? (json['estimated_finish'] as num).toInt() : null,
-  method: json['method'] != null
-        ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>)
-        : null,
+  method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

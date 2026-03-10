@@ -40,12 +40,8 @@ factory WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance.fromJso
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => e as String).toList(),
   commitSha: json['commit_sha'] as String?,
   environment: json['environment'] as String,
-  location: json['location'] != null
-        ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
-  message: json['message'] != null
-        ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceMessage.fromJson(json['message'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
+  message: json['message'] != null ? WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceMessage.fromJson(json['message'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String,
   state: WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState.fromJson(json['state'] as String),
 ); }

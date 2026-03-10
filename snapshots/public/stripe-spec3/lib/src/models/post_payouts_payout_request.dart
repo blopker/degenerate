@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_payouts_payout_request_
 
 factory PostPayoutsPayoutRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsPayoutRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPayoutsPayoutRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPayoutsPayoutRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

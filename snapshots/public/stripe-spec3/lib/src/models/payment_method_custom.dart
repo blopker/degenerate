@@ -9,9 +9,7 @@ final class PaymentMethodCustom {const PaymentMethodCustom({this.displayName, th
 
 factory PaymentMethodCustom.fromJson(Map<String, dynamic> json) { return PaymentMethodCustom(
   displayName: json['display_name'] as String?,
-  logo: json['logo'] != null
-        ? PaymentMethodCustomLogo.fromJson(json['logo'] as Map<String, dynamic>)
-        : null,
+  logo: json['logo'] != null ? PaymentMethodCustomLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

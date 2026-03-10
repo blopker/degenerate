@@ -40,9 +40,7 @@ factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.f
   asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,
   aso: json['aso'] as String?,
   ipAddress: json['ipAddress'] as String?,
-  location: json['location'] != null
-        ? DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   mile: json['mile'] != null ? DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile.fromJson(json['mile'] as String) : null,
   name: json['name'] as String?,
   packetLossPct: json['packetLossPct'] != null ? (json['packetLossPct'] as num).toDouble() : null,

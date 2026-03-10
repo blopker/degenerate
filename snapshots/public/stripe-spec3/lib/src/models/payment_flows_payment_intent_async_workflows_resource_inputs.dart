@@ -8,9 +8,7 @@ import 'payment_flows_payment_intent_async_workflows_resource_inputs_resource_ta
 final class PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs {const PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs({this.tax});
 
 factory PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs.fromJson(Map<String, dynamic> json) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
-  tax: json['tax'] != null
-        ? PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? tax;

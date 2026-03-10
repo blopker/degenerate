@@ -8,9 +8,7 @@ import 'post_terminal_configurations_request_verifone_p400_splashscreen.dart';//
 final class PostTerminalConfigurationsRequestVerifoneP400 {const PostTerminalConfigurationsRequestVerifoneP400({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestVerifoneP400.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestVerifoneP400(
-  splashscreen: json['splashscreen'] != null
-        ? PostTerminalConfigurationsRequestVerifoneP400Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>)
-        : null,
+  splashscreen: json['splashscreen'] != null ? PostTerminalConfigurationsRequestVerifoneP400Splashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalConfigurationsRequestVerifoneP400Splashscreen? splashscreen;

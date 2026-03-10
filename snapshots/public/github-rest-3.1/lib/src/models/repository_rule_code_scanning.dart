@@ -30,9 +30,7 @@ final class RepositoryRuleCodeScanning {const RepositoryRuleCodeScanning({requir
 
 factory RepositoryRuleCodeScanning.fromJson(Map<String, dynamic> json) { return RepositoryRuleCodeScanning(
   type: RepositoryRuleCodeScanningType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleCodeScanningParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleCodeScanningParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCodeScanningType type;

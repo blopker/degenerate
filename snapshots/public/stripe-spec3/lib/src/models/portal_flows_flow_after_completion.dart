@@ -36,12 +36,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
 
 factory PortalFlowsFlowAfterCompletion.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowAfterCompletion(
-  hostedConfirmation: json['hosted_confirmation'] != null
-        ? PortalFlowsFlowAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? PortalFlowsFlowAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
+  hostedConfirmation: json['hosted_confirmation'] != null ? PortalFlowsFlowAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PortalFlowsFlowAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   type: PortalFlowsFlowAfterCompletionType.fromJson(json['type'] as String),
 ); }
 

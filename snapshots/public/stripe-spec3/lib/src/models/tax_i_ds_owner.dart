@@ -39,15 +39,9 @@ bool get isUnknown { return !values.contains(this); }
 final class TaxIDsOwner {const TaxIDsOwner({this.account, this.application, this.customer, this.customerAccount, required this.type, });
 
 factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
-  account: json['account'] != null
-        ? TaxIDsOwnerAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
-  application: json['application'] != null
-        ? TaxIDsOwnerApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
-  customer: json['customer'] != null
-        ? TaxIDsOwnerCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? TaxIDsOwnerAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
+  application: json['application'] != null ? TaxIDsOwnerApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
+  customer: json['customer'] != null ? TaxIDsOwnerCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   type: TaxIDsOwnerType.fromJson(json['type'] as String),
 ); }

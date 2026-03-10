@@ -12,9 +12,7 @@ factory AppsScopeTokenRequest.fromJson(Map<String, dynamic> json) { return AppsS
   targetId: json['target_id'] != null ? (json['target_id'] as num).toInt() : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-  permissions: json['permissions'] != null
-        ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
 ); }
 
 /// The access token used to authenticate to the GitHub API.

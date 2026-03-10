@@ -28,12 +28,8 @@ factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  actor: json['actor'] != null
-        ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
-        : null,
-  triggeringActor: json['triggering_actor'] != null
-        ? SimpleUser.fromJson(json['triggering_actor'] as Map<String, dynamic>)
-        : null,
+  actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
+  triggeringActor: json['triggering_actor'] != null ? SimpleUser.fromJson(json['triggering_actor'] as Map<String, dynamic>) : null,
   runStartedAt: json['run_started_at'] != null ? DateTime.parse(json['run_started_at'] as String) : null,
   jobsUrl: json['jobs_url'] as String,
   logsUrl: json['logs_url'] as String,

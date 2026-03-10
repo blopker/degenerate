@@ -12,9 +12,7 @@ factory RealtimeBetaResponseUsageInputTokenDetails.fromJson(Map<String, dynamic>
   textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,
   imageTokens: json['image_tokens'] != null ? (json['image_tokens'] as num).toInt() : null,
   audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
-  cachedTokensDetails: json['cached_tokens_details'] != null
-        ? RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails.fromJson(json['cached_tokens_details'] as Map<String, dynamic>)
-        : null,
+  cachedTokensDetails: json['cached_tokens_details'] != null ? RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails.fromJson(json['cached_tokens_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The number of cached tokens used as input for the Response.

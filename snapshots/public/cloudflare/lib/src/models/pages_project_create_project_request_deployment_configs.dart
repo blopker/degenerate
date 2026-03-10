@@ -8,12 +8,8 @@ import 'pages_deployment_config_values_request.dart';/// Configs for deployments
 final class PagesProjectCreateProjectRequestDeploymentConfigs {const PagesProjectCreateProjectRequestDeploymentConfigs({this.preview, this.production, });
 
 factory PagesProjectCreateProjectRequestDeploymentConfigs.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequestDeploymentConfigs(
-  preview: json['preview'] != null
-        ? PagesDeploymentConfigValuesRequest.fromJson(json['preview'] as Map<String, dynamic>)
-        : null,
-  production: json['production'] != null
-        ? PagesDeploymentConfigValuesRequest.fromJson(json['production'] as Map<String, dynamic>)
-        : null,
+  preview: json['preview'] != null ? PagesDeploymentConfigValuesRequest.fromJson(json['preview'] as Map<String, dynamic>) : null,
+  production: json['production'] != null ? PagesDeploymentConfigValuesRequest.fromJson(json['production'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configs for preview deploys.

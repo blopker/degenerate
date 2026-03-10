@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_climate_orders_request_
 
 factory PostClimateOrdersRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  beneficiary: json['beneficiary'] != null
-        ? PostClimateOrdersRequestBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>)
-        : null,
+  beneficiary: json['beneficiary'] != null ? PostClimateOrdersRequestBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

@@ -86,44 +86,28 @@ final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest
 
 factory AiSearchCreateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequest(
   aiGatewayId: json['ai_gateway_id'] as String?,
-  aiSearchModel: json['ai_search_model'] != null
-        ? AiSearchCreateInstancesRequestAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>)
-        : null,
+  aiSearchModel: json['ai_search_model'] != null ? AiSearchCreateInstancesRequestAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
   cacheThreshold: json.containsKey('cache_threshold') ? AiSearchCreateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchCreateInstancesRequestCacheThreshold.closeEnough,
   chunk: json.containsKey('chunk') ? json['chunk'] as bool : true,
   chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
   chunkSize: json.containsKey('chunk_size') ? (json['chunk_size'] as num).toInt() : 256,
   customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchCreateInstancesRequestCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-  embeddingModel: json['embedding_model'] != null
-        ? AiSearchCreateInstancesRequestEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>)
-        : null,
+  embeddingModel: json['embedding_model'] != null ? AiSearchCreateInstancesRequestEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>) : null,
   fusionMethod: json.containsKey('fusion_method') ? AiSearchCreateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchCreateInstancesRequestFusionMethod.rrf,
   hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
   id: json['id'] as String,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  metadata: json['metadata'] != null
-        ? AiSearchCreateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  publicEndpointParams: json['public_endpoint_params'] != null
-        ? AiSearchCreateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? AiSearchCreateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchCreateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
-  rerankingModel: json['reranking_model'] != null
-        ? AiSearchCreateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>)
-        : null,
-  retrievalOptions: json['retrieval_options'] != null
-        ? AiSearchCreateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>)
-        : null,
-  rewriteModel: json['rewrite_model'] != null
-        ? AiSearchCreateInstancesRequestRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>)
-        : null,
+  rerankingModel: json['reranking_model'] != null ? AiSearchCreateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>) : null,
+  retrievalOptions: json['retrieval_options'] != null ? AiSearchCreateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  rewriteModel: json['rewrite_model'] != null ? AiSearchCreateInstancesRequestRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
   source: json['source'] as String?,
-  sourceParams: json['source_params'] != null
-        ? AiSearchCreateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>)
-        : null,
+  sourceParams: json['source_params'] != null ? AiSearchCreateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
   tokenId: json['token_id'] as String?,
   type: json['type'] != null ? AiSearchCreateInstancesRequestType.fromJson(json['type'] as String) : null,
 ); }

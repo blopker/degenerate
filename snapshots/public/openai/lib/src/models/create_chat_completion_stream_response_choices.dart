@@ -46,9 +46,7 @@ final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletio
 
 factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponseChoices(
   delta: ChatCompletionStreamResponseDelta.fromJson(json['delta'] as Map<String, dynamic>),
-  logprobs: json['logprobs'] != null
-        ? CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>)
-        : null,
+  logprobs: json['logprobs'] != null ? CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
   finishReason: CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
 ); }

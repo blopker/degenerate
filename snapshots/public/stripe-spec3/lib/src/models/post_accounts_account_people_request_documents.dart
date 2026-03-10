@@ -8,15 +8,9 @@ import 'post_accounts_account_people_request_documents_company_authorization.dar
 final class PostAccountsAccountPeopleRequestDocuments {const PostAccountsAccountPeopleRequestDocuments({this.companyAuthorization, this.passport, this.visa, });
 
 factory PostAccountsAccountPeopleRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestDocuments(
-  companyAuthorization: json['company_authorization'] != null
-        ? PostAccountsAccountPeopleRequestDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>)
-        : null,
-  passport: json['passport'] != null
-        ? PostAccountsAccountPeopleRequestDocumentsPassport.fromJson(json['passport'] as Map<String, dynamic>)
-        : null,
-  visa: json['visa'] != null
-        ? PostAccountsAccountPeopleRequestDocumentsVisa.fromJson(json['visa'] as Map<String, dynamic>)
-        : null,
+  companyAuthorization: json['company_authorization'] != null ? PostAccountsAccountPeopleRequestDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>) : null,
+  passport: json['passport'] != null ? PostAccountsAccountPeopleRequestDocumentsPassport.fromJson(json['passport'] as Map<String, dynamic>) : null,
+  visa: json['visa'] != null ? PostAccountsAccountPeopleRequestDocumentsVisa.fromJson(json['visa'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountPeopleRequestDocumentsCompanyAuthorization? companyAuthorization;

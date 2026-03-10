@@ -8,9 +8,7 @@ import 'payment_method_details_payment_record_konbini_store.dart';///
 final class PaymentMethodDetailsPaymentRecordKonbini {const PaymentMethodDetailsPaymentRecordKonbini({this.store});
 
 factory PaymentMethodDetailsPaymentRecordKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordKonbini(
-  store: json['store'] != null
-        ? PaymentMethodDetailsPaymentRecordKonbiniStore.fromJson(json['store'] as Map<String, dynamic>)
-        : null,
+  store: json['store'] != null ? PaymentMethodDetailsPaymentRecordKonbiniStore.fromJson(json['store'] as Map<String, dynamic>) : null,
 ); }
 
 /// If the payment succeeded, this contains the details of the convenience store where the payment was completed.

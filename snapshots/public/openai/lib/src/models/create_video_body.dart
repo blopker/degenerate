@@ -35,14 +35,10 @@ bool get isUnknown { return !values.contains(this); }
 final class CreateVideoBody {const CreateVideoBody({this.model, required this.prompt, this.inputReference, this.imageReference, this.seconds, this.size, });
 
 factory CreateVideoBody.fromJson(Map<String, dynamic> json) { return CreateVideoBody(
-  model: json['model'] != null
-        ? VideoModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? VideoModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   prompt: json['prompt'] as String,
   inputReference: json['input_reference'] != null ? base64Decode(json['input_reference'] as String) : null,
-  imageReference: json['image_reference'] != null
-        ? ImageRefParam2.fromJson(json['image_reference'] as Map<String, dynamic>)
-        : null,
+  imageReference: json['image_reference'] != null ? ImageRefParam2.fromJson(json['image_reference'] as Map<String, dynamic>) : null,
   seconds: json['seconds'] != null ? VideoSeconds.fromJson(json['seconds'] as String) : null,
   size: json['size'] != null ? VideoSize.fromJson(json['size'] as String) : null,
 ); }

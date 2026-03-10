@@ -11,9 +11,7 @@ factory MarketplacePurchaseMarketplacePendingChange.fromJson(Map<String, dynamic
   effectiveDate: json['effective_date'] as String?,
   unitCount: json['unit_count'] != null ? (json['unit_count'] as num).toInt() : null,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  plan: json['plan'] != null
-        ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? isInstalled;

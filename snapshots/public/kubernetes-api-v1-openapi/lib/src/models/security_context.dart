@@ -9,27 +9,17 @@ final class SecurityContext {const SecurityContext({this.allowPrivilegeEscalatio
 
 factory SecurityContext.fromJson(Map<String, dynamic> json) { return SecurityContext(
   allowPrivilegeEscalation: json['allowPrivilegeEscalation'] as bool?,
-  appArmorProfile: json['appArmorProfile'] != null
-        ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>)
-        : null,
-  capabilities: json['capabilities'] != null
-        ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
+  appArmorProfile: json['appArmorProfile'] != null ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>) : null,
+  capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
   privileged: json['privileged'] as bool?,
   procMount: json['procMount'] as String?,
   readOnlyRootFilesystem: json['readOnlyRootFilesystem'] as bool?,
   runAsGroup: json['runAsGroup'] != null ? (json['runAsGroup'] as num).toInt() : null,
   runAsNonRoot: json['runAsNonRoot'] as bool?,
   runAsUser: json['runAsUser'] != null ? (json['runAsUser'] as num).toInt() : null,
-  seLinuxOptions: json['seLinuxOptions'] != null
-        ? SeLinuxOptions.fromJson(json['seLinuxOptions'] as Map<String, dynamic>)
-        : null,
-  seccompProfile: json['seccompProfile'] != null
-        ? SeccompProfile.fromJson(json['seccompProfile'] as Map<String, dynamic>)
-        : null,
-  windowsOptions: json['windowsOptions'] != null
-        ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>)
-        : null,
+  seLinuxOptions: json['seLinuxOptions'] != null ? SeLinuxOptions.fromJson(json['seLinuxOptions'] as Map<String, dynamic>) : null,
+  seccompProfile: json['seccompProfile'] != null ? SeccompProfile.fromJson(json['seccompProfile'] as Map<String, dynamic>) : null,
+  windowsOptions: json['windowsOptions'] != null ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>) : null,
 ); }
 
 /// AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.

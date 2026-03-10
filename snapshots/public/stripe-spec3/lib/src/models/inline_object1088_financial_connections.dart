@@ -64,9 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1088FinancialConnections {const InlineObject1088FinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory InlineObject1088FinancialConnections.fromJson(Map<String, dynamic> json) { return InlineObject1088FinancialConnections(
-  filters: json['filters'] != null
-        ? InlineObject1088FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? InlineObject1088FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => InlineObject1088FinancialConnectionsPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => InlineObject1088FinancialConnectionsPrefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,

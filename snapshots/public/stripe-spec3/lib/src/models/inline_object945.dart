@@ -7,19 +7,11 @@
 import 'inline_object945_discount_amount.dart';import 'inline_object945_line_items.dart';import 'inline_object945_shipping.dart';import 'inline_object945_tax.dart';final class InlineObject945 {const InlineObject945({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory InlineObject945.fromJson(Map<String, dynamic> json) { return InlineObject945(
-  discountAmount: json['discount_amount'] != null
-        ? InlineObject945DiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>)
-        : null,
+  discountAmount: json['discount_amount'] != null ? InlineObject945DiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null
-        ? InlineObject945LineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? InlineObject945Shipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? InlineObject945Tax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? InlineObject945LineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? InlineObject945Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? InlineObject945Tax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject945DiscountAmount? discountAmount;

@@ -23,12 +23,8 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
   labels: (json['labels'] as List<dynamic>).map((e) => IssueSearchResultItemLabels.fromJson(e as Map<String, dynamic>)).toList(),
-  subIssuesSummary: json['sub_issues_summary'] != null
-        ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>)
-        : null,
-  issueDependenciesSummary: json['issue_dependencies_summary'] != null
-        ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>)
-        : null,
+  subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
+  issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
   state: json['state'] as String,
   stateReason: json['state_reason'] as String?,
@@ -39,31 +35,19 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: DateTime.parse(json['closed_at'] as String),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-  pullRequest: json['pull_request'] != null
-        ? IssueSearchResultItemPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
+  pullRequest: json['pull_request'] != null ? IssueSearchResultItemPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,
   score: (json['score'] as num).toDouble(),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   draft: json['draft'] as bool?,
-  repository: json['repository'] != null
-        ? Repository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? Repository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
-  type: json['type'] != null
-        ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
-  pinnedComment: json['pinned_comment'] != null
-        ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>)
-        : null,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  pinnedComment: json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

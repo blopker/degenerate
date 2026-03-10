@@ -8,12 +8,8 @@ import 'treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';
 final class TreasuryFinancialAccountsResourceOutboundPayments {const TreasuryFinancialAccountsResourceOutboundPayments({this.ach, this.usDomesticWire, });
 
 factory TreasuryFinancialAccountsResourceOutboundPayments.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundPayments(
-  ach: json['ach'] != null
-        ? TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
-  usDomesticWire: json['us_domestic_wire'] != null
-        ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['us_domestic_wire'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>) : null,
+  usDomesticWire: json['us_domestic_wire'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasuryFinancialAccountsResourceOutboundAchToggleSettings? ach;

@@ -143,9 +143,7 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CurrencyOption.fromJson(v as Map<String, dynamic>))),
-  customUnitAmount: json['custom_unit_amount'] != null
-        ? PriceCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>)
-        : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? PriceCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   lookupKey: json['lookup_key'] as String?,
@@ -153,15 +151,11 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   nickname: json['nickname'] as String?,
   object: PriceObject.fromJson(json['object'] as String),
   product: PriceProduct.fromJson(json['product'] as Map<String, dynamic>),
-  recurring: json['recurring'] != null
-        ? PriceRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  recurring: json['recurring'] != null ? PriceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PriceTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PriceTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformQuantity: json['transform_quantity'] != null
-        ? PriceTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>)
-        : null,
+  transformQuantity: json['transform_quantity'] != null ? PriceTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   type: PriceType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

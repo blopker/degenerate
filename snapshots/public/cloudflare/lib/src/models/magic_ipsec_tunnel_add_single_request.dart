@@ -15,18 +15,12 @@ final class MagicIpsecTunnelAddSingleRequest {const MagicIpsecTunnelAddSingleReq
 
 factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnelAddSingleRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
-  bgp: json['bgp'] != null
-        ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>)
-        : null,
+  bgp: json['bgp'] != null ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   cloudflareEndpoint: MagicCloudflareIpsecEndpoint.fromJson(json['cloudflare_endpoint'] as String),
-  customRemoteIdentities: json['custom_remote_identities'] != null
-        ? MagicCustomRemoteIdentities.fromJson(json['custom_remote_identities'] as Map<String, dynamic>)
-        : null,
+  customRemoteIdentities: json['custom_remote_identities'] != null ? MagicCustomRemoteIdentities.fromJson(json['custom_remote_identities'] as Map<String, dynamic>) : null,
   customerEndpoint: json['customer_endpoint'] != null ? MagicCustomerIpsecEndpoint.fromJson(json['customer_endpoint'] as String) : null,
   description: json['description'] != null ? MagicComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  healthCheck: json['health_check'] != null
-        ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>)
-        : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   interfaceAddress: MagicInterfaceAddress.fromJson(json['interface_address'] as String),
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
   name: MagicIpsecTunnelName.fromJson(json['name'] as String),

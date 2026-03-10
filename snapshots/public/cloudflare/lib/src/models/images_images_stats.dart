@@ -7,9 +7,7 @@
 import 'images_images_stats_count.dart';final class ImagesImagesStats {const ImagesImagesStats({this.count});
 
 factory ImagesImagesStats.fromJson(Map<String, dynamic> json) { return ImagesImagesStats(
-  count: json['count'] != null
-        ? ImagesImagesStatsCount.fromJson(json['count'] as Map<String, dynamic>)
-        : null,
+  count: json['count'] != null ? ImagesImagesStatsCount.fromJson(json['count'] as Map<String, dynamic>) : null,
 ); }
 
 final ImagesImagesStatsCount? count;

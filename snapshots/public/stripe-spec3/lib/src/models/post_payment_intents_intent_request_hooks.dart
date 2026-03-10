@@ -8,9 +8,7 @@ import 'post_payment_intents_intent_request_hooks_inputs.dart';/// Automations t
 final class PostPaymentIntentsIntentRequestHooks {const PostPaymentIntentsIntentRequestHooks({this.inputs});
 
 factory PostPaymentIntentsIntentRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestHooks(
-  inputs: json['inputs'] != null
-        ? PostPaymentIntentsIntentRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>)
-        : null,
+  inputs: json['inputs'] != null ? PostPaymentIntentsIntentRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentRequestHooksInputs? inputs;

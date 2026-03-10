@@ -9,9 +9,7 @@ import 'shield_schema_issue_notification_source.dart';final class ShieldSchemaIs
 factory ShieldSchemaIssueNotification.fromJson(Map<String, dynamic> json) { return ShieldSchemaIssueNotification(
   code: (json['code'] as num).toInt(),
   message: json['message'] as String,
-  source: json['source'] != null
-        ? ShieldSchemaIssueNotificationSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? ShieldSchemaIssueNotificationSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// A unique error code that describes the kind of issue with the schema

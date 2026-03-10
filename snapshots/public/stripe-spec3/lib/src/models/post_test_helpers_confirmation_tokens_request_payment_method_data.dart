@@ -200,165 +200,61 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTestHelpersConfirmationTokensRequestPaymentMethodData {const PostTestHelpersConfirmationTokensRequestPaymentMethodData({this.acssDebit, this.affirm, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.cashapp, this.crypto, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, required this.type, this.usBankAccount, this.wechatPay, this.zip, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodData(
-  acssDebit: json['acss_debit'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  affirm: json['affirm'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>)
-        : null,
-  afterpayClearpay: json['afterpay_clearpay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>)
-        : null,
-  alipay: json['alipay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAlipay.fromJson(json['alipay'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  affirm: json['affirm'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
   allowRedisplay: json['allow_redisplay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-  alma: json['alma'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAlma.fromJson(json['alma'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  auBecsDebit: json['au_becs_debit'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  billie: json['billie'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillie.fromJson(json['billie'] as Map<String, dynamic>)
-        : null,
-  billingDetails: json['billing_details'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
-  blik: json['blik'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik.fromJson(json['blik'] as Map<String, dynamic>)
-        : null,
-  boleto: json['boleto'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto.fromJson(json['boleto'] as Map<String, dynamic>)
-        : null,
-  cashapp: json['cashapp'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCashapp.fromJson(json['cashapp'] as Map<String, dynamic>)
-        : null,
-  crypto: json['crypto'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCrypto.fromJson(json['crypto'] as Map<String, dynamic>)
-        : null,
-  customerBalance: json['customer_balance'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>)
-        : null,
-  eps: json['eps'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps.fromJson(json['eps'] as Map<String, dynamic>)
-        : null,
-  fpx: json['fpx'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataFpx.fromJson(json['fpx'] as Map<String, dynamic>)
-        : null,
-  giropay: json['giropay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataGiropay.fromJson(json['giropay'] as Map<String, dynamic>)
-        : null,
-  grabpay: json['grabpay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>)
-        : null,
-  ideal: json['ideal'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataIdeal.fromJson(json['ideal'] as Map<String, dynamic>)
-        : null,
-  interacPresent: json['interac_present'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>)
-        : null,
-  kakaoPay: json['kakao_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  konbini: json['konbini'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKonbini.fromJson(json['konbini'] as Map<String, dynamic>)
-        : null,
-  krCard: json['kr_card'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard.fromJson(json['kr_card'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  mbWay: json['mb_way'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMbWay.fromJson(json['mb_way'] as Map<String, dynamic>)
-        : null,
+  alma: json['alma'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  billie: json['billie'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillie.fromJson(json['billie'] as Map<String, dynamic>) : null,
+  billingDetails: json['billing_details'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  boleto: json['boleto'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  fpx: json['fpx'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  ideal: json['ideal'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  interacPresent: json['interac_present'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  mobilepay: json['mobilepay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>)
-        : null,
-  multibanco: json['multibanco'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>)
-        : null,
-  naverPay: json['naver_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>)
-        : null,
-  nzBankAccount: json['nz_bank_account'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>)
-        : null,
-  oxxo: json['oxxo'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(json['oxxo'] as Map<String, dynamic>)
-        : null,
-  p24: json['p24'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24.fromJson(json['p24'] as Map<String, dynamic>)
-        : null,
-  payByBank: json['pay_by_bank'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>)
-        : null,
-  payco: json['payco'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayco.fromJson(json['payco'] as Map<String, dynamic>)
-        : null,
-  paynow: json['paynow'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaynow.fromJson(json['paynow'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  pix: json['pix'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPix.fromJson(json['pix'] as Map<String, dynamic>)
-        : null,
-  promptpay: json['promptpay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>)
-        : null,
-  radarOptions: json['radar_options'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>)
-        : null,
-  revolutPay: json['revolut_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>)
-        : null,
-  samsungPay: json['samsung_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>)
-        : null,
-  satispay: json['satispay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSatispay.fromJson(json['satispay'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  sofort: json['sofort'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort.fromJson(json['sofort'] as Map<String, dynamic>)
-        : null,
-  swish: json['swish'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish.fromJson(json['swish'] as Map<String, dynamic>)
-        : null,
-  twint: json['twint'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint.fromJson(json['twint'] as Map<String, dynamic>)
-        : null,
+  mobilepay: json['mobilepay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  oxxo: json['oxxo'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(json['oxxo'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  payByBank: json['pay_by_bank'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>) : null,
+  payco: json['payco'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayco.fromJson(json['payco'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaynow.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPix.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  promptpay: json['promptpay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>) : null,
+  radarOptions: json['radar_options'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  samsungPay: json['samsung_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
+  satispay: json['satispay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSatispay.fromJson(json['satispay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
   type: PostTestHelpersConfirmationTokensRequestPaymentMethodDataType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
-  wechatPay: json['wechat_pay'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>)
-        : null,
-  zip: json['zip'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodDataAcssDebit? acssDebit;

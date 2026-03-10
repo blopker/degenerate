@@ -11,12 +11,8 @@ factory FileSearchTool.fromJson(Map<String, dynamic> json) { return FileSearchTo
   type: json['type'] as String,
   vectorStoreIds: (json['vector_store_ids'] as List<dynamic>).map((e) => e as String).toList(),
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
-  rankingOptions: json['ranking_options'] != null
-        ? RankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
-  filters: json['filters'] != null
-        ? Filters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  rankingOptions: json['ranking_options'] != null ? RankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
+  filters: json['filters'] != null ? Filters.fromJson(json['filters'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of the file search tool. Always `file_search`.

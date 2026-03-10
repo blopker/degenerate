@@ -16,9 +16,7 @@ factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return P
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   promotion: PostPromotionCodesRequestPromotion.fromJson(json['promotion'] as Map<String, dynamic>),
-  restrictions: json['restrictions'] != null
-        ? PostPromotionCodesRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
+  restrictions: json['restrictions'] != null ? PostPromotionCodesRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the promotion code is currently active.

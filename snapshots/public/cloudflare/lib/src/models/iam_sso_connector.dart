@@ -13,9 +13,7 @@ factory IamSsoConnector.fromJson(Map<String, dynamic> json) { return IamSsoConne
   id: json['id'] != null ? IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   updatedOn: json['updated_on'] != null ? DateTime.parse(json['updated_on'] as String) : null,
   useFedrampLanguage: json['use_fedramp_language'] != null ? IamUseFedrampLanguage.fromJson(json['use_fedramp_language'] as bool) : null,
-  verification: json['verification'] != null
-        ? IamSsoConnectorVerificationInfo.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? IamSsoConnectorVerificationInfo.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Timestamp for the creation of the SSO connector

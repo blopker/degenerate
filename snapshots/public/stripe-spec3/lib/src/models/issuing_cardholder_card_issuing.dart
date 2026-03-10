@@ -8,9 +8,7 @@ import 'issuing_cardholder_card_issuing_user_terms_acceptance.dart';///
 final class IssuingCardholderCardIssuing {const IssuingCardholderCardIssuing({this.userTermsAcceptance});
 
 factory IssuingCardholderCardIssuing.fromJson(Map<String, dynamic> json) { return IssuingCardholderCardIssuing(
-  userTermsAcceptance: json['user_terms_acceptance'] != null
-        ? IssuingCardholderCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>)
-        : null,
+  userTermsAcceptance: json['user_terms_acceptance'] != null ? IssuingCardholderCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// Information about cardholder acceptance of Celtic [Authorized User Terms](https://stripe.com/docs/issuing/cards#accept-authorized-user-terms). Required for cards backed by a Celtic program.

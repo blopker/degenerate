@@ -13,9 +13,7 @@ factory CommitSearchResultItemCommit.fromJson(Map<String, dynamic> json) { retur
   message: json['message'] as String,
   tree: CommitSearchResultItemCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-  verification: json['verification'] != null
-        ? Verification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final CommitSearchResultItemCommitAuthor author;

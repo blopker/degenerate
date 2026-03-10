@@ -29,28 +29,16 @@ final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated
 
 factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreated(
   action: WebhookDeploymentStatusCreatedAction.fromJson(json['action'] as String),
-  checkRun: json['check_run'] != null
-        ? WebhookDeploymentStatusCreatedCheckRun.fromJson(json['check_run'] as Map<String, dynamic>)
-        : null,
+  checkRun: json['check_run'] != null ? WebhookDeploymentStatusCreatedCheckRun.fromJson(json['check_run'] as Map<String, dynamic>) : null,
   deployment: WebhookDeploymentStatusCreatedDeployment.fromJson(json['deployment'] as Map<String, dynamic>),
   deploymentStatus: WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(json['deployment_status'] as Map<String, dynamic>),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  workflow: json['workflow'] != null
-        ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>)
-        : null,
-  workflowRun: json['workflow_run'] != null
-        ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>)
-        : null,
+  workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
+  workflowRun: json['workflow_run'] != null ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDeploymentStatusCreatedAction action;

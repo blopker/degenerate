@@ -42,9 +42,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
   collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
   billingEmail: json['billing_email'] as String?,
-  plan: json['plan'] != null
-        ? TeamOrganizationPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? TeamOrganizationPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   defaultRepositoryPermission: json['default_repository_permission'] as String?,
   membersCanCreateRepositories: json['members_can_create_repositories'] as bool?,
   twoFactorRequirementEnabled: json['two_factor_requirement_enabled'] as bool?,

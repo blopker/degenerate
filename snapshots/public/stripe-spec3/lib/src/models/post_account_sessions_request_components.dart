@@ -8,63 +8,25 @@ import 'post_account_sessions_request_components_account_management.dart';import
 final class PostAccountSessionsRequestComponents {const PostAccountSessionsRequestComponents({this.accountManagement, this.accountOnboarding, this.balances, this.disputesList, this.documents, this.financialAccount, this.financialAccountTransactions, this.instantPayoutsPromotion, this.issuingCard, this.issuingCardsList, this.notificationBanner, this.paymentDetails, this.paymentDisputes, this.payments, this.payoutDetails, this.payouts, this.payoutsList, this.taxRegistrations, this.taxSettings, });
 
 factory PostAccountSessionsRequestComponents.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponents(
-  accountManagement: json['account_management'] != null
-        ? PostAccountSessionsRequestComponentsAccountManagement.fromJson(json['account_management'] as Map<String, dynamic>)
-        : null,
-  accountOnboarding: json['account_onboarding'] != null
-        ? PostAccountSessionsRequestComponentsAccountOnboarding.fromJson(json['account_onboarding'] as Map<String, dynamic>)
-        : null,
-  balances: json['balances'] != null
-        ? PostAccountSessionsRequestComponentsBalances.fromJson(json['balances'] as Map<String, dynamic>)
-        : null,
-  disputesList: json['disputes_list'] != null
-        ? PostAccountSessionsRequestComponentsDisputesList.fromJson(json['disputes_list'] as Map<String, dynamic>)
-        : null,
-  documents: json['documents'] != null
-        ? PostAccountSessionsRequestComponentsDocuments.fromJson(json['documents'] as Map<String, dynamic>)
-        : null,
-  financialAccount: json['financial_account'] != null
-        ? PostAccountSessionsRequestComponentsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>)
-        : null,
-  financialAccountTransactions: json['financial_account_transactions'] != null
-        ? PostAccountSessionsRequestComponentsFinancialAccountTransactions.fromJson(json['financial_account_transactions'] as Map<String, dynamic>)
-        : null,
-  instantPayoutsPromotion: json['instant_payouts_promotion'] != null
-        ? PostAccountSessionsRequestComponentsInstantPayoutsPromotion.fromJson(json['instant_payouts_promotion'] as Map<String, dynamic>)
-        : null,
-  issuingCard: json['issuing_card'] != null
-        ? PostAccountSessionsRequestComponentsIssuingCard.fromJson(json['issuing_card'] as Map<String, dynamic>)
-        : null,
-  issuingCardsList: json['issuing_cards_list'] != null
-        ? PostAccountSessionsRequestComponentsIssuingCardsList.fromJson(json['issuing_cards_list'] as Map<String, dynamic>)
-        : null,
-  notificationBanner: json['notification_banner'] != null
-        ? PostAccountSessionsRequestComponentsNotificationBanner.fromJson(json['notification_banner'] as Map<String, dynamic>)
-        : null,
-  paymentDetails: json['payment_details'] != null
-        ? PostAccountSessionsRequestComponentsPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
-  paymentDisputes: json['payment_disputes'] != null
-        ? PostAccountSessionsRequestComponentsPaymentDisputes.fromJson(json['payment_disputes'] as Map<String, dynamic>)
-        : null,
-  payments: json['payments'] != null
-        ? PostAccountSessionsRequestComponentsPayments.fromJson(json['payments'] as Map<String, dynamic>)
-        : null,
-  payoutDetails: json['payout_details'] != null
-        ? PostAccountSessionsRequestComponentsPayoutDetails.fromJson(json['payout_details'] as Map<String, dynamic>)
-        : null,
-  payouts: json['payouts'] != null
-        ? PostAccountSessionsRequestComponentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>)
-        : null,
-  payoutsList: json['payouts_list'] != null
-        ? PostAccountSessionsRequestComponentsPayoutsList.fromJson(json['payouts_list'] as Map<String, dynamic>)
-        : null,
-  taxRegistrations: json['tax_registrations'] != null
-        ? PostAccountSessionsRequestComponentsTaxRegistrations.fromJson(json['tax_registrations'] as Map<String, dynamic>)
-        : null,
-  taxSettings: json['tax_settings'] != null
-        ? PostAccountSessionsRequestComponentsTaxSettings.fromJson(json['tax_settings'] as Map<String, dynamic>)
-        : null,
+  accountManagement: json['account_management'] != null ? PostAccountSessionsRequestComponentsAccountManagement.fromJson(json['account_management'] as Map<String, dynamic>) : null,
+  accountOnboarding: json['account_onboarding'] != null ? PostAccountSessionsRequestComponentsAccountOnboarding.fromJson(json['account_onboarding'] as Map<String, dynamic>) : null,
+  balances: json['balances'] != null ? PostAccountSessionsRequestComponentsBalances.fromJson(json['balances'] as Map<String, dynamic>) : null,
+  disputesList: json['disputes_list'] != null ? PostAccountSessionsRequestComponentsDisputesList.fromJson(json['disputes_list'] as Map<String, dynamic>) : null,
+  documents: json['documents'] != null ? PostAccountSessionsRequestComponentsDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  financialAccount: json['financial_account'] != null ? PostAccountSessionsRequestComponentsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>) : null,
+  financialAccountTransactions: json['financial_account_transactions'] != null ? PostAccountSessionsRequestComponentsFinancialAccountTransactions.fromJson(json['financial_account_transactions'] as Map<String, dynamic>) : null,
+  instantPayoutsPromotion: json['instant_payouts_promotion'] != null ? PostAccountSessionsRequestComponentsInstantPayoutsPromotion.fromJson(json['instant_payouts_promotion'] as Map<String, dynamic>) : null,
+  issuingCard: json['issuing_card'] != null ? PostAccountSessionsRequestComponentsIssuingCard.fromJson(json['issuing_card'] as Map<String, dynamic>) : null,
+  issuingCardsList: json['issuing_cards_list'] != null ? PostAccountSessionsRequestComponentsIssuingCardsList.fromJson(json['issuing_cards_list'] as Map<String, dynamic>) : null,
+  notificationBanner: json['notification_banner'] != null ? PostAccountSessionsRequestComponentsNotificationBanner.fromJson(json['notification_banner'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? PostAccountSessionsRequestComponentsPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
+  paymentDisputes: json['payment_disputes'] != null ? PostAccountSessionsRequestComponentsPaymentDisputes.fromJson(json['payment_disputes'] as Map<String, dynamic>) : null,
+  payments: json['payments'] != null ? PostAccountSessionsRequestComponentsPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
+  payoutDetails: json['payout_details'] != null ? PostAccountSessionsRequestComponentsPayoutDetails.fromJson(json['payout_details'] as Map<String, dynamic>) : null,
+  payouts: json['payouts'] != null ? PostAccountSessionsRequestComponentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
+  payoutsList: json['payouts_list'] != null ? PostAccountSessionsRequestComponentsPayoutsList.fromJson(json['payouts_list'] as Map<String, dynamic>) : null,
+  taxRegistrations: json['tax_registrations'] != null ? PostAccountSessionsRequestComponentsTaxRegistrations.fromJson(json['tax_registrations'] as Map<String, dynamic>) : null,
+  taxSettings: json['tax_settings'] != null ? PostAccountSessionsRequestComponentsTaxSettings.fromJson(json['tax_settings'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountSessionsRequestComponentsAccountManagement? accountManagement;

@@ -54,9 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TreasuryFinancialAccountsResourceFinancialAddress {const TreasuryFinancialAccountsResourceFinancialAddress({this.aba, this.supportedNetworks, required this.type, });
 
 factory TreasuryFinancialAccountsResourceFinancialAddress.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceFinancialAddress(
-  aba: json['aba'] != null
-        ? TreasuryFinancialAccountsResourceAbaRecord.fromJson(json['aba'] as Map<String, dynamic>)
-        : null,
+  aba: json['aba'] != null ? TreasuryFinancialAccountsResourceAbaRecord.fromJson(json['aba'] as Map<String, dynamic>) : null,
   supportedNetworks: (json['supported_networks'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks.fromJson(e as String)).toList(),
   type: TreasuryFinancialAccountsResourceFinancialAddressType.fromJson(json['type'] as String),
 ); }

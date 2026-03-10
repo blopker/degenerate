@@ -8,12 +8,8 @@ import 'package:collection/collection.dart';import 'post_file_links_link_request
 
 factory PostFileLinksLinkRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksLinkRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null
-        ? PostFileLinksLinkRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostFileLinksLinkRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  expiresAt: json['expires_at'] != null ? PostFileLinksLinkRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostFileLinksLinkRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

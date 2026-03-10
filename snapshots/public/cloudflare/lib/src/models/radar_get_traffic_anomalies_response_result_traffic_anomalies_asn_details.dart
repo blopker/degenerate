@@ -8,9 +8,7 @@ import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_asn_detail
 
 factory RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails(
   asn: json['asn'] as String,
-  locations: json['locations'] != null
-        ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>)
-        : null,
+  locations: json['locations'] != null ? RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
 ); }
 

@@ -8,13 +8,9 @@ import 'ai_search_instance_search_response_result_chunks_item.dart';import 'ai_s
 
 factory AiSearchInstanceSearchResponseResultChunks.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponseResultChunks(
   id: json['id'] as String,
-  item: json['item'] != null
-        ? AiSearchInstanceSearchResponseResultChunksItem.fromJson(json['item'] as Map<String, dynamic>)
-        : null,
+  item: json['item'] != null ? AiSearchInstanceSearchResponseResultChunksItem.fromJson(json['item'] as Map<String, dynamic>) : null,
   score: (json['score'] as num).toDouble(),
-  scoringDetails: json['scoring_details'] != null
-        ? AiSearchInstanceSearchResponseResultChunksScoringDetails.fromJson(json['scoring_details'] as Map<String, dynamic>)
-        : null,
+  scoringDetails: json['scoring_details'] != null ? AiSearchInstanceSearchResponseResultChunksScoringDetails.fromJson(json['scoring_details'] as Map<String, dynamic>) : null,
   text: json['text'] as String,
   type: json['type'] as String,
 ); }

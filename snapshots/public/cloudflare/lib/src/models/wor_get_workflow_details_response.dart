@@ -10,9 +10,7 @@ factory WorGetWorkflowDetailsResponse.fromJson(Map<String, dynamic> json) { retu
   errors: (json['errors'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-  resultInfo: json['result_info'] != null
-        ? WorGetWorkflowDetailsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? WorGetWorkflowDetailsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

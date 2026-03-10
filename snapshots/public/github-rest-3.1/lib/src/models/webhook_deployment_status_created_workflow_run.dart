@@ -100,9 +100,7 @@ factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> 
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
   headCommit: json['head_commit'],
-  headRepository: json['head_repository'] != null
-        ? WebhookDeploymentStatusCreatedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>)
-        : null,
+  headRepository: json['head_repository'] != null ? WebhookDeploymentStatusCreatedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null,
   headSha: json['head_sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -114,9 +112,7 @@ factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> 
   previousAttemptUrl: json['previous_attempt_url'],
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookDeploymentStatusCreatedWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
   referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? WebhookDeploymentStatusCreatedWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? WebhookDeploymentStatusCreatedWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   rerunUrl: json['rerun_url'] as String?,
   runAttempt: (json['run_attempt'] as num).toInt(),
   runNumber: (json['run_number'] as num).toInt(),

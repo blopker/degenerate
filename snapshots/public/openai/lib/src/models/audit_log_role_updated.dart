@@ -9,9 +9,7 @@ final class AuditLogRoleUpdated {const AuditLogRoleUpdated({this.id, this.change
 
 factory AuditLogRoleUpdated.fromJson(Map<String, dynamic> json) { return AuditLogRoleUpdated(
   id: json['id'] as String?,
-  changesRequested: json['changes_requested'] != null
-        ? AuditLogRoleUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>)
-        : null,
+  changesRequested: json['changes_requested'] != null ? AuditLogRoleUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
 ); }
 
 /// The role ID.

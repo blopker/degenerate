@@ -7,12 +7,8 @@
 import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({this.body, this.context, this.cookies, this.headers, required this.method, this.protocol, this.skipResponse, required this.url, });
 
 factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequest(
-  body: json['body'] != null
-        ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  context: json['context'] != null
-        ? AccountRequestTracerRequestTraceRequestContext.fromJson(json['context'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  context: json['context'] != null ? AccountRequestTracerRequestTraceRequestContext.fromJson(json['context'] as Map<String, dynamic>) : null,
   cookies: (json['cookies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   method: json['method'] as String,

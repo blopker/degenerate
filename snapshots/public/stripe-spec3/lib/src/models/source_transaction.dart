@@ -100,27 +100,17 @@ bool get isUnknown { return !values.contains(this); }
 final class SourceTransaction {const SourceTransaction({this.achCreditTransfer, required this.amount, this.chfCreditTransfer, required this.created, required this.currency, this.gbpCreditTransfer, required this.id, required this.livemode, required this.object, this.paperCheck, this.sepaCreditTransfer, required this.source, required this.status, required this.type, });
 
 factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTransaction(
-  achCreditTransfer: json['ach_credit_transfer'] != null
-        ? SourceTransactionAchCreditTransferData.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>)
-        : null,
+  achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTransactionAchCreditTransferData.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
   amount: (json['amount'] as num).toInt(),
-  chfCreditTransfer: json['chf_credit_transfer'] != null
-        ? SourceTransactionChfCreditTransferData.fromJson(json['chf_credit_transfer'] as Map<String, dynamic>)
-        : null,
+  chfCreditTransfer: json['chf_credit_transfer'] != null ? SourceTransactionChfCreditTransferData.fromJson(json['chf_credit_transfer'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  gbpCreditTransfer: json['gbp_credit_transfer'] != null
-        ? SourceTransactionGbpCreditTransferData.fromJson(json['gbp_credit_transfer'] as Map<String, dynamic>)
-        : null,
+  gbpCreditTransfer: json['gbp_credit_transfer'] != null ? SourceTransactionGbpCreditTransferData.fromJson(json['gbp_credit_transfer'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: SourceTransactionObject.fromJson(json['object'] as String),
-  paperCheck: json['paper_check'] != null
-        ? SourceTransactionPaperCheckData.fromJson(json['paper_check'] as Map<String, dynamic>)
-        : null,
-  sepaCreditTransfer: json['sepa_credit_transfer'] != null
-        ? SourceTransactionSepaCreditTransferData.fromJson(json['sepa_credit_transfer'] as Map<String, dynamic>)
-        : null,
+  paperCheck: json['paper_check'] != null ? SourceTransactionPaperCheckData.fromJson(json['paper_check'] as Map<String, dynamic>) : null,
+  sepaCreditTransfer: json['sepa_credit_transfer'] != null ? SourceTransactionSepaCreditTransferData.fromJson(json['sepa_credit_transfer'] as Map<String, dynamic>) : null,
   source: json['source'] as String,
   status: json['status'] as String,
   type: SourceTransactionType.fromJson(json['type'] as String),

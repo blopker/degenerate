@@ -8,9 +8,7 @@ import 'inline_object128.dart';import 'users_list_attestations_bulk_response_pag
 
 factory UsersListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponse(
   attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => InlineObject128.fromJson(e as Map<String, dynamic>)).toList())),
-  pageInfo: json['page_info'] != null
-        ? UsersListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>)
-        : null,
+  pageInfo: json['page_info'] != null ? UsersListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
 ); }
 
 /// Mapping of subject digest to bundles.

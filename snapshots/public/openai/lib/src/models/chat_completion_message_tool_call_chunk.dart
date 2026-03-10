@@ -32,9 +32,7 @@ factory ChatCompletionMessageToolCallChunk.fromJson(Map<String, dynamic> json) {
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
   type: json['type'] != null ? ChatCompletionMessageToolCallChunkType.fromJson(json['type'] as String) : null,
-  function: json['function'] != null
-        ? ChatCompletionMessageToolCallChunkFunction.fromJson(json['function'] as Map<String, dynamic>)
-        : null,
+  function: json['function'] != null ? ChatCompletionMessageToolCallChunkFunction.fromJson(json['function'] as Map<String, dynamic>) : null,
 ); }
 
 final int index;

@@ -19,17 +19,11 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   message: json['message'] as String?,
   metadata: ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>),
   reason: json['reason'] as String?,
-  related: json['related'] != null
-        ? ObjectReference.fromJson(json['related'] as Map<String, dynamic>)
-        : null,
+  related: json['related'] != null ? ObjectReference.fromJson(json['related'] as Map<String, dynamic>) : null,
   reportingComponent: json.containsKey('reportingComponent') ? json['reportingComponent'] as String : '',
   reportingInstance: json.containsKey('reportingInstance') ? json['reportingInstance'] as String : '',
-  series: json['series'] != null
-        ? EventSeries.fromJson(json['series'] as Map<String, dynamic>)
-        : null,
-  source: json['source'] != null
-        ? EventSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  series: json['series'] != null ? EventSeries.fromJson(json['series'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? EventSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
 ); }
 

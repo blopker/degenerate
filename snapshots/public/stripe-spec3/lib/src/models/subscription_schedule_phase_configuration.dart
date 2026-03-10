@@ -88,35 +88,23 @@ final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePh
 factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>).map((e) => SubscriptionScheduleAddInvoiceItem.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? SchedulesPhaseAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? SchedulesPhaseAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null
-        ? SubscriptionSchedulePhaseConfigurationBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionSchedulePhaseConfigurationBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String,
-  defaultPaymentMethod: json['default_payment_method'] != null
-        ? SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>)
-        : null,
+  defaultPaymentMethod: json['default_payment_method'] != null ? SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>) : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => StackableDiscountWithDiscountSettingsAndDiscountEnd.fromJson(e as Map<String, dynamic>)).toList(),
   endDate: (json['end_date'] as num).toInt(),
-  invoiceSettings: json['invoice_settings'] != null
-        ? SubscriptionSchedulePhaseConfigurationInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? SubscriptionSchedulePhaseConfigurationInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>).map((e) => SubscriptionScheduleConfigurationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? SubscriptionSchedulePhaseConfigurationOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? SubscriptionSchedulePhaseConfigurationOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
   prorationBehavior: SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(json['proration_behavior'] as String),
   startDate: (json['start_date'] as num).toInt(),
-  transferData: json['transfer_data'] != null
-        ? SubscriptionSchedulePhaseConfigurationTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? SubscriptionSchedulePhaseConfigurationTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
 ); }
 

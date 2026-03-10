@@ -10,9 +10,7 @@ final class CinderPersistentVolumeSource {const CinderPersistentVolumeSource({th
 factory CinderPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CinderPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeId: json['volumeID'] as String,
 ); }
 

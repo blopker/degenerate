@@ -7,9 +7,7 @@
 import 'load_balancing_search.dart';final class LoadBalancingSearchResult {const LoadBalancingSearchResult({this.result});
 
 factory LoadBalancingSearchResult.fromJson(Map<String, dynamic> json) { return LoadBalancingSearchResult(
-  result: json['result'] != null
-        ? LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final LoadBalancingSearch? result;

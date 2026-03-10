@@ -8,9 +8,7 @@ import 'post_payment_methods_request_klarna_dob.dart';/// If this is a `klarna` 
 final class PostPaymentMethodsRequestKlarna {const PostPaymentMethodsRequestKlarna({this.dob});
 
 factory PostPaymentMethodsRequestKlarna.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestKlarna(
-  dob: json['dob'] != null
-        ? PostPaymentMethodsRequestKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? PostPaymentMethodsRequestKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodsRequestKlarnaDob? dob;

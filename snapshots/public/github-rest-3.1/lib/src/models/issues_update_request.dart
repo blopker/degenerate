@@ -66,16 +66,12 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
-  title: json['title'] != null
-        ? IssuesUpdateRequestTitle.fromJson(json['title'])
-        : null,
+  title: json['title'] != null ? IssuesUpdateRequestTitle.fromJson(json['title']) : null,
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
   state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
   stateReason: json['state_reason'] != null ? IssuesUpdateRequestStateReason.fromJson(json['state_reason'] as String) : null,
-  milestone: json['milestone'] != null
-        ? IssuesUpdateRequestMilestone.fromJson(json['milestone'])
-        : null,
+  milestone: json['milestone'] != null ? IssuesUpdateRequestMilestone.fromJson(json['milestone']) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => IssuesUpdateRequestLabels.fromJson(e)).toList(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] as String?,

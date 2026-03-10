@@ -66,14 +66,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
 
 factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequest(
-  defaultSettings: json['default_settings'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>)
-        : null,
+  defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostSubscriptionSchedulesScheduleRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostSubscriptionSchedulesScheduleRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
 ); }

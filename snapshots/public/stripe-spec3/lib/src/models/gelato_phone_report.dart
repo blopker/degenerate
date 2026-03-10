@@ -33,9 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoPhoneReport {const GelatoPhoneReport({this.error, this.phone, required this.status, });
 
 factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
-  error: json['error'] != null
-        ? GelatoPhoneReportError2.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? GelatoPhoneReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
   phone: json['phone'] as String?,
   status: GelatoPhoneReportStatus.fromJson(json['status'] as String),
 ); }

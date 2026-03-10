@@ -7,9 +7,7 @@
 import 'post_issuing_cardholders_cardholder_request_individual_card_issuing_user_terms_acceptance.dart';final class PostIssuingCardholdersCardholderRequestIndividualCardIssuing {const PostIssuingCardholdersCardholderRequestIndividualCardIssuing({this.userTermsAcceptance});
 
 factory PostIssuingCardholdersCardholderRequestIndividualCardIssuing.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividualCardIssuing(
-  userTermsAcceptance: json['user_terms_acceptance'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>)
-        : null,
+  userTermsAcceptance: json['user_terms_acceptance'] != null ? PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance? userTermsAcceptance;

@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_payment_records_id_repo
 factory PostPaymentRecordsIdReportPaymentAttemptCanceledRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptCanceledRequest(
   canceledAt: (json['canceled_at'] as num).toInt(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// When the reported payment was canceled. Measured in seconds since the Unix epoch.

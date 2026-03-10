@@ -78,9 +78,7 @@ factory Field.fromJson(Map<String, dynamic> json) { return Field(
   name: json['name'] as String,
   dataType: FieldDataType.fromJson(json['data_type'] as String),
   options: (json['options'] as List<dynamic>?)?.map((e) => SingleSelectOptions.fromJson(e as Map<String, dynamic>)).toList(),
-  configuration: json['configuration'] != null
-        ? FieldConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? FieldConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

@@ -34,9 +34,7 @@ final class InstallationToken {const InstallationToken({required this.token, req
 factory InstallationToken.fromJson(Map<String, dynamic> json) { return InstallationToken(
   token: json['token'] as String,
   expiresAt: json['expires_at'] as String,
-  permissions: json['permissions'] != null
-        ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   repositorySelection: json['repository_selection'] != null ? InstallationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
   singleFile: json['single_file'] as String?,

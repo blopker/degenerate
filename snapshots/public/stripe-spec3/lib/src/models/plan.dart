@@ -157,14 +157,10 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
   object: PlanObject.fromJson(json['object'] as String),
-  product: json['product'] != null
-        ? PlanProduct.fromJson(json['product'] as Map<String, dynamic>)
-        : null,
+  product: json['product'] != null ? PlanProduct.fromJson(json['product'] as Map<String, dynamic>) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PlanTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformUsage: json['transform_usage'] != null
-        ? PlanTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>)
-        : null,
+  transformUsage: json['transform_usage'] != null ? PlanTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   usageType: PlanUsageType.fromJson(json['usage_type'] as String),
 ); }

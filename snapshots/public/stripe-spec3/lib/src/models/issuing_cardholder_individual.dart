@@ -8,17 +8,11 @@ import 'issuing_cardholder_individual_card_issuing.dart';import 'issuing_cardhol
 final class IssuingCardholderIndividual {const IssuingCardholderIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory IssuingCardholderIndividual.fromJson(Map<String, dynamic> json) { return IssuingCardholderIndividual(
-  cardIssuing: json['card_issuing'] != null
-        ? IssuingCardholderIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? IssuingCardholderIndividualDob2.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  cardIssuing: json['card_issuing'] != null ? IssuingCardholderIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? IssuingCardholderIndividualDob2.fromJson(json['dob'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   lastName: json['last_name'] as String?,
-  verification: json['verification'] != null
-        ? IssuingCardholderIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? IssuingCardholderIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Information related to the card_issuing program for this cardholder.

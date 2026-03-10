@@ -8,9 +8,7 @@ import 'node_selector.dart';/// VolumeNodeAffinity defines constraints that limi
 final class VolumeNodeAffinity {const VolumeNodeAffinity({this.$required});
 
 factory VolumeNodeAffinity.fromJson(Map<String, dynamic> json) { return VolumeNodeAffinity(
-  $required: json['required'] != null
-        ? NodeSelector.fromJson(json['required'] as Map<String, dynamic>)
-        : null,
+  $required: json['required'] != null ? NodeSelector.fromJson(json['required'] as Map<String, dynamic>) : null,
 ); }
 
 /// required specifies hard node constraints that must be met.

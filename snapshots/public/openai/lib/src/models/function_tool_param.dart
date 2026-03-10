@@ -30,9 +30,7 @@ final class FunctionToolParam {const FunctionToolParam({required this.name, this
 factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
   name: json['name'] as String,
   description: json['description'] as String?,
-  parameters: json['parameters'] != null
-        ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   strict: json['strict'] as bool?,
   type: FunctionToolParamType.fromJson(json['type'] as String),
 ); }

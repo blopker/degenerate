@@ -8,97 +8,37 @@ import 'aws_elastic_block_store_volume_source.dart';import 'azure_disk_volume_so
 final class Volume {const Volume({this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.cephfs, this.cinder, this.configMap, this.csi, this.downwardApi, this.emptyDir, this.ephemeral, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.gitRepo, this.glusterfs, this.hostPath, this.image, this.iscsi, this.name = '', this.nfs, this.persistentVolumeClaim, this.photonPersistentDisk, this.portworxVolume, this.projected, this.quobyte, this.rbd, this.scaleIo, this.secret, this.storageos, this.vsphereVolume, });
 
 factory Volume.fromJson(Map<String, dynamic> json) { return Volume(
-  awsElasticBlockStore: json['awsElasticBlockStore'] != null
-        ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>)
-        : null,
-  azureDisk: json['azureDisk'] != null
-        ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>)
-        : null,
-  azureFile: json['azureFile'] != null
-        ? AzureFileVolumeSource.fromJson(json['azureFile'] as Map<String, dynamic>)
-        : null,
-  cephfs: json['cephfs'] != null
-        ? CephFsVolumeSource.fromJson(json['cephfs'] as Map<String, dynamic>)
-        : null,
-  cinder: json['cinder'] != null
-        ? CinderVolumeSource.fromJson(json['cinder'] as Map<String, dynamic>)
-        : null,
-  configMap: json['configMap'] != null
-        ? ConfigMapVolumeSource.fromJson(json['configMap'] as Map<String, dynamic>)
-        : null,
-  csi: json['csi'] != null
-        ? CsiVolumeSource.fromJson(json['csi'] as Map<String, dynamic>)
-        : null,
-  downwardApi: json['downwardAPI'] != null
-        ? VolumeSource.fromJson(json['downwardAPI'] as Map<String, dynamic>)
-        : null,
-  emptyDir: json['emptyDir'] != null
-        ? EmptyDirVolumeSource.fromJson(json['emptyDir'] as Map<String, dynamic>)
-        : null,
-  ephemeral: json['ephemeral'] != null
-        ? EphemeralVolumeSource.fromJson(json['ephemeral'] as Map<String, dynamic>)
-        : null,
-  fc: json['fc'] != null
-        ? FcVolumeSource.fromJson(json['fc'] as Map<String, dynamic>)
-        : null,
-  flexVolume: json['flexVolume'] != null
-        ? FlexVolumeSource.fromJson(json['flexVolume'] as Map<String, dynamic>)
-        : null,
-  flocker: json['flocker'] != null
-        ? FlockerVolumeSource.fromJson(json['flocker'] as Map<String, dynamic>)
-        : null,
-  gcePersistentDisk: json['gcePersistentDisk'] != null
-        ? GcePersistentDiskVolumeSource.fromJson(json['gcePersistentDisk'] as Map<String, dynamic>)
-        : null,
-  gitRepo: json['gitRepo'] != null
-        ? GitRepoVolumeSource.fromJson(json['gitRepo'] as Map<String, dynamic>)
-        : null,
-  glusterfs: json['glusterfs'] != null
-        ? GlusterfsVolumeSource.fromJson(json['glusterfs'] as Map<String, dynamic>)
-        : null,
-  hostPath: json['hostPath'] != null
-        ? HostPathVolumeSource.fromJson(json['hostPath'] as Map<String, dynamic>)
-        : null,
-  image: json['image'] != null
-        ? ImageVolumeSource.fromJson(json['image'] as Map<String, dynamic>)
-        : null,
-  iscsi: json['iscsi'] != null
-        ? IscsiVolumeSource.fromJson(json['iscsi'] as Map<String, dynamic>)
-        : null,
+  awsElasticBlockStore: json['awsElasticBlockStore'] != null ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>) : null,
+  azureDisk: json['azureDisk'] != null ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>) : null,
+  azureFile: json['azureFile'] != null ? AzureFileVolumeSource.fromJson(json['azureFile'] as Map<String, dynamic>) : null,
+  cephfs: json['cephfs'] != null ? CephFsVolumeSource.fromJson(json['cephfs'] as Map<String, dynamic>) : null,
+  cinder: json['cinder'] != null ? CinderVolumeSource.fromJson(json['cinder'] as Map<String, dynamic>) : null,
+  configMap: json['configMap'] != null ? ConfigMapVolumeSource.fromJson(json['configMap'] as Map<String, dynamic>) : null,
+  csi: json['csi'] != null ? CsiVolumeSource.fromJson(json['csi'] as Map<String, dynamic>) : null,
+  downwardApi: json['downwardAPI'] != null ? VolumeSource.fromJson(json['downwardAPI'] as Map<String, dynamic>) : null,
+  emptyDir: json['emptyDir'] != null ? EmptyDirVolumeSource.fromJson(json['emptyDir'] as Map<String, dynamic>) : null,
+  ephemeral: json['ephemeral'] != null ? EphemeralVolumeSource.fromJson(json['ephemeral'] as Map<String, dynamic>) : null,
+  fc: json['fc'] != null ? FcVolumeSource.fromJson(json['fc'] as Map<String, dynamic>) : null,
+  flexVolume: json['flexVolume'] != null ? FlexVolumeSource.fromJson(json['flexVolume'] as Map<String, dynamic>) : null,
+  flocker: json['flocker'] != null ? FlockerVolumeSource.fromJson(json['flocker'] as Map<String, dynamic>) : null,
+  gcePersistentDisk: json['gcePersistentDisk'] != null ? GcePersistentDiskVolumeSource.fromJson(json['gcePersistentDisk'] as Map<String, dynamic>) : null,
+  gitRepo: json['gitRepo'] != null ? GitRepoVolumeSource.fromJson(json['gitRepo'] as Map<String, dynamic>) : null,
+  glusterfs: json['glusterfs'] != null ? GlusterfsVolumeSource.fromJson(json['glusterfs'] as Map<String, dynamic>) : null,
+  hostPath: json['hostPath'] != null ? HostPathVolumeSource.fromJson(json['hostPath'] as Map<String, dynamic>) : null,
+  image: json['image'] != null ? ImageVolumeSource.fromJson(json['image'] as Map<String, dynamic>) : null,
+  iscsi: json['iscsi'] != null ? IscsiVolumeSource.fromJson(json['iscsi'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-  nfs: json['nfs'] != null
-        ? NfsVolumeSource.fromJson(json['nfs'] as Map<String, dynamic>)
-        : null,
-  persistentVolumeClaim: json['persistentVolumeClaim'] != null
-        ? PersistentVolumeClaimVolumeSource.fromJson(json['persistentVolumeClaim'] as Map<String, dynamic>)
-        : null,
-  photonPersistentDisk: json['photonPersistentDisk'] != null
-        ? PhotonPersistentDiskVolumeSource.fromJson(json['photonPersistentDisk'] as Map<String, dynamic>)
-        : null,
-  portworxVolume: json['portworxVolume'] != null
-        ? PortworxVolumeSource.fromJson(json['portworxVolume'] as Map<String, dynamic>)
-        : null,
-  projected: json['projected'] != null
-        ? ProjectedVolumeSource.fromJson(json['projected'] as Map<String, dynamic>)
-        : null,
-  quobyte: json['quobyte'] != null
-        ? QuobyteVolumeSource.fromJson(json['quobyte'] as Map<String, dynamic>)
-        : null,
-  rbd: json['rbd'] != null
-        ? RbdVolumeSource.fromJson(json['rbd'] as Map<String, dynamic>)
-        : null,
-  scaleIo: json['scaleIO'] != null
-        ? ScaleIoVolumeSource.fromJson(json['scaleIO'] as Map<String, dynamic>)
-        : null,
-  secret: json['secret'] != null
-        ? SecretVolumeSource.fromJson(json['secret'] as Map<String, dynamic>)
-        : null,
-  storageos: json['storageos'] != null
-        ? StorageOsVolumeSource.fromJson(json['storageos'] as Map<String, dynamic>)
-        : null,
-  vsphereVolume: json['vsphereVolume'] != null
-        ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>)
-        : null,
+  nfs: json['nfs'] != null ? NfsVolumeSource.fromJson(json['nfs'] as Map<String, dynamic>) : null,
+  persistentVolumeClaim: json['persistentVolumeClaim'] != null ? PersistentVolumeClaimVolumeSource.fromJson(json['persistentVolumeClaim'] as Map<String, dynamic>) : null,
+  photonPersistentDisk: json['photonPersistentDisk'] != null ? PhotonPersistentDiskVolumeSource.fromJson(json['photonPersistentDisk'] as Map<String, dynamic>) : null,
+  portworxVolume: json['portworxVolume'] != null ? PortworxVolumeSource.fromJson(json['portworxVolume'] as Map<String, dynamic>) : null,
+  projected: json['projected'] != null ? ProjectedVolumeSource.fromJson(json['projected'] as Map<String, dynamic>) : null,
+  quobyte: json['quobyte'] != null ? QuobyteVolumeSource.fromJson(json['quobyte'] as Map<String, dynamic>) : null,
+  rbd: json['rbd'] != null ? RbdVolumeSource.fromJson(json['rbd'] as Map<String, dynamic>) : null,
+  scaleIo: json['scaleIO'] != null ? ScaleIoVolumeSource.fromJson(json['scaleIO'] as Map<String, dynamic>) : null,
+  secret: json['secret'] != null ? SecretVolumeSource.fromJson(json['secret'] as Map<String, dynamic>) : null,
+  storageos: json['storageos'] != null ? StorageOsVolumeSource.fromJson(json['storageos'] as Map<String, dynamic>) : null,
+  vsphereVolume: json['vsphereVolume'] != null ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>) : null,
 ); }
 
 /// awsElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. Deprecated: AWSElasticBlockStore is deprecated. All operations for the in-tree awsElasticBlockStore type are redirected to the ebs.csi.aws.com CSI driver. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore

@@ -34,9 +34,7 @@ final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts
 
 factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayouts(
   minimumBalanceByCurrency: (json['minimum_balance_by_currency'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
-  schedule: json['schedule'] != null
-        ? BalanceSettingsResourcePayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>)
-        : null,
+  schedule: json['schedule'] != null ? BalanceSettingsResourcePayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: BalanceSettingsResourcePayoutsStatus.fromJson(json['status'] as String),
 ); }

@@ -78,30 +78,16 @@ final class RealtimeSessionCreateRequestGa {const RealtimeSessionCreateRequestGa
 factory RealtimeSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGa(
   type: RealtimeSessionCreateRequestGaType.fromJson(json['type'] as String),
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestGaOutputModalities.fromJson(e as String)).toList(),
-  model: json['model'] != null
-        ? RealtimeSessionCreateRequestGaModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? RealtimeSessionCreateRequestGaModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   instructions: json['instructions'] as String?,
-  audio: json['audio'] != null
-        ? RealtimeSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestGaInclude.fromJson(e as String)).toList(),
-  tracing: json['tracing'] != null
-        ? RealtimeSessionCreateRequestGaTracing.fromJson(json['tracing'])
-        : null,
+  tracing: json['tracing'] != null ? RealtimeSessionCreateRequestGaTracing.fromJson(json['tracing']) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestGaTools.fromJson(e)).toList(),
-  toolChoice: json['tool_choice'] != null
-        ? RealtimeSessionCreateRequestGaToolChoice.fromJson(json['tool_choice'])
-        : null,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeSessionCreateRequestGaMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
-  truncation: json['truncation'] != null
-        ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>)
-        : null,
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  toolChoice: json['tool_choice'] != null ? RealtimeSessionCreateRequestGaToolChoice.fromJson(json['tool_choice']) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeSessionCreateRequestGaMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
+  truncation: json['truncation'] != null ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of session to create. Always `realtime` for the Realtime API.

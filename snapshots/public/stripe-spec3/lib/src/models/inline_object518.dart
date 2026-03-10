@@ -61,32 +61,16 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject518 {const InlineObject518({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory InlineObject518.fromJson(Map<String, dynamic> json) { return InlineObject518(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject518AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  canceledAt: json['canceled_at'] != null
-        ? InlineObject518CanceledAt.fromJson(json['canceled_at'] as Map<String, dynamic>)
-        : null,
-  cancellationPolicyProvided: json['cancellation_policy_provided'] != null
-        ? InlineObject518CancellationPolicyProvided.fromJson(json['cancellation_policy_provided'] as Map<String, dynamic>)
-        : null,
-  cancellationReason: json['cancellation_reason'] != null
-        ? InlineObject518CancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>)
-        : null,
-  expectedAt: json['expected_at'] != null
-        ? InlineObject518ExpectedAt.fromJson(json['expected_at'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject518Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
-  productDescription: json['product_description'] != null
-        ? InlineObject518ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject518AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  canceledAt: json['canceled_at'] != null ? InlineObject518CanceledAt.fromJson(json['canceled_at'] as Map<String, dynamic>) : null,
+  cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? InlineObject518CancellationPolicyProvided.fromJson(json['cancellation_policy_provided'] as Map<String, dynamic>) : null,
+  cancellationReason: json['cancellation_reason'] != null ? InlineObject518CancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>) : null,
+  expectedAt: json['expected_at'] != null ? InlineObject518ExpectedAt.fromJson(json['expected_at'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject518Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
+  productDescription: json['product_description'] != null ? InlineObject518ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>) : null,
   productType: json['product_type'] != null ? InlineObject518ProductType.fromJson(json['product_type'] as String) : null,
   returnStatus: json['return_status'] != null ? InlineObject518ReturnStatus.fromJson(json['return_status'] as String) : null,
-  returnedAt: json['returned_at'] != null
-        ? InlineObject518ReturnedAt.fromJson(json['returned_at'] as Map<String, dynamic>)
-        : null,
+  returnedAt: json['returned_at'] != null ? InlineObject518ReturnedAt.fromJson(json['returned_at'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject518AdditionalDocumentation? additionalDocumentation;

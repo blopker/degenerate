@@ -7,9 +7,7 @@
 import 'modify_thread_request_tool_resources.dart';final class ModifyThreadRequest {const ModifyThreadRequest({this.toolResources, this.metadata, });
 
 factory ModifyThreadRequest.fromJson(Map<String, dynamic> json) { return ModifyThreadRequest(
-  toolResources: json['tool_resources'] != null
-        ? ModifyThreadRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>)
-        : null,
+  toolResources: json['tool_resources'] != null ? ModifyThreadRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

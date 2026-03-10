@@ -7,9 +7,7 @@
 import 'get_session_participants_response_data.dart';final class GetSessionParticipantsResponse {const GetSessionParticipantsResponse({this.data, this.success, });
 
 factory GetSessionParticipantsResponse.fromJson(Map<String, dynamic> json) { return GetSessionParticipantsResponse(
-  data: json['data'] != null
-        ? GetSessionParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? GetSessionParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

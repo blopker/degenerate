@@ -72,17 +72,13 @@ factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(Map<String, dynamic> 
   dismissedReason: WebhookCodeScanningAlertClosedByUserAlertDismissedReason.fromJson(json['dismissed_reason'] as String),
   fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
-  mostRecentInstance: json['most_recent_instance'] != null
-        ? WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>)
-        : null,
+  mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertClosedByUserAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: WebhookCodeScanningAlertClosedByUserAlertState.fromJson(json['state'] as String),
   tool: WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-  dismissalApprovedBy: json['dismissal_approved_by'] != null
-        ? WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>)
-        : null,
+  dismissalApprovedBy: json['dismissal_approved_by'] != null ? WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SimpleUser>? assignees;

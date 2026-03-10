@@ -7,18 +7,10 @@
 import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_address.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_email.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_name.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_phone.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails(
-  address: json['address'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

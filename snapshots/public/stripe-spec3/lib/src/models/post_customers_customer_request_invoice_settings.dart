@@ -8,14 +8,10 @@ import 'post_customers_customer_request_invoice_settings_custom_fields.dart';imp
 final class PostCustomersCustomerRequestInvoiceSettings {const PostCustomersCustomerRequestInvoiceSettings({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
 factory PostCustomersCustomerRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestInvoiceSettings(
-  customFields: json['custom_fields'] != null
-        ? PostCustomersCustomerRequestInvoiceSettingsCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>)
-        : null,
+  customFields: json['custom_fields'] != null ? PostCustomersCustomerRequestInvoiceSettingsCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
   footer: json['footer'] as String?,
-  renderingOptions: json['rendering_options'] != null
-        ? PostCustomersCustomerRequestInvoiceSettingsRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>)
-        : null,
+  renderingOptions: json['rendering_options'] != null ? PostCustomersCustomerRequestInvoiceSettingsRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerRequestInvoiceSettingsCustomFields? customFields;

@@ -9,9 +9,7 @@ import 'ai_search_instance_chat_completion_request_ai_search_options_reranking_m
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: json['enabled'] as bool?,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
-  model: json['model'] != null
-        ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? enabled;

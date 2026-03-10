@@ -9,9 +9,7 @@ import 'workers_binding_kind_dispatch_namespace_outbound.dart';import 'workers_b
 factory WorkersBindingKindDispatchNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespace(
   name: WorkersBindingName.fromJson(json['name'] as String),
   namespace: json['namespace'] as String,
-  outbound: json['outbound'] != null
-        ? WorkersBindingKindDispatchNamespaceOutbound.fromJson(json['outbound'] as Map<String, dynamic>)
-        : null,
+  outbound: json['outbound'] != null ? WorkersBindingKindDispatchNamespaceOutbound.fromJson(json['outbound'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

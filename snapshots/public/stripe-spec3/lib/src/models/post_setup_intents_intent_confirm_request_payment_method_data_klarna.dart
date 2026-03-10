@@ -7,9 +7,7 @@
 import 'post_setup_intents_intent_confirm_request_payment_method_data_klarna_dob.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna({this.dob});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna(
-  dob: json['dob'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarnaDob? dob;

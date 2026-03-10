@@ -164,13 +164,9 @@ final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {cons
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,
-  onDemand: json['on_demand'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
-  subscriptions: json['subscriptions'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
+  subscriptions: json['subscriptions'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
 ); }
 
 final String? currency;

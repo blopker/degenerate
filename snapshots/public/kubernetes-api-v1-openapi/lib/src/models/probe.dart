@@ -8,22 +8,14 @@ import 'exec_action.dart';import 'grpc_action.dart';import 'http_get_action.dart
 final class Probe {const Probe({this.exec, this.failureThreshold, this.grpc, this.httpGet, this.initialDelaySeconds, this.periodSeconds, this.successThreshold, this.tcpSocket, this.terminationGracePeriodSeconds, this.timeoutSeconds, });
 
 factory Probe.fromJson(Map<String, dynamic> json) { return Probe(
-  exec: json['exec'] != null
-        ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>)
-        : null,
+  exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,
   failureThreshold: json['failureThreshold'] != null ? (json['failureThreshold'] as num).toInt() : null,
-  grpc: json['grpc'] != null
-        ? GrpcAction.fromJson(json['grpc'] as Map<String, dynamic>)
-        : null,
-  httpGet: json['httpGet'] != null
-        ? HttpGetAction.fromJson(json['httpGet'] as Map<String, dynamic>)
-        : null,
+  grpc: json['grpc'] != null ? GrpcAction.fromJson(json['grpc'] as Map<String, dynamic>) : null,
+  httpGet: json['httpGet'] != null ? HttpGetAction.fromJson(json['httpGet'] as Map<String, dynamic>) : null,
   initialDelaySeconds: json['initialDelaySeconds'] != null ? (json['initialDelaySeconds'] as num).toInt() : null,
   periodSeconds: json['periodSeconds'] != null ? (json['periodSeconds'] as num).toInt() : null,
   successThreshold: json['successThreshold'] != null ? (json['successThreshold'] as num).toInt() : null,
-  tcpSocket: json['tcpSocket'] != null
-        ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>)
-        : null,
+  tcpSocket: json['tcpSocket'] != null ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>) : null,
   terminationGracePeriodSeconds: json['terminationGracePeriodSeconds'] != null ? (json['terminationGracePeriodSeconds'] as num).toInt() : null,
   timeoutSeconds: json['timeoutSeconds'] != null ? (json['timeoutSeconds'] as num).toInt() : null,
 ); }

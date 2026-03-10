@@ -10,9 +10,7 @@ final class PostFilesRequestFileLinkData {const PostFilesRequestFileLinkData({re
 factory PostFilesRequestFileLinkData.fromJson(Map<String, dynamic> json) { return PostFilesRequestFileLinkData(
   create: json['create'] as bool,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  metadata: json['metadata'] != null
-        ? PostFilesRequestFileLinkDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostFilesRequestFileLinkDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 final bool create;

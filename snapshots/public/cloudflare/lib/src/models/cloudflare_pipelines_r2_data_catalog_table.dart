@@ -11,9 +11,7 @@ factory CloudflarePipelinesR2DataCatalogTable.fromJson(Map<String, dynamic> json
   accountId: Uri.parse(json['account_id'] as String),
   bucket: json['bucket'] as String,
   namespace: json['namespace'] as String?,
-  rollingPolicy: json['rolling_policy'] != null
-        ? CloudflarePipelinesR2DataCatalogTableRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>)
-        : null,
+  rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2DataCatalogTableRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
   tableName: json['table_name'] as String,
   token: json['token'] as String,
 ); }

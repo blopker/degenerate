@@ -9,28 +9,14 @@ import 'package:collection/collection.dart';import 'link_with_type.dart';final c
 factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
   timeline: LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>),
   user: LinkWithType.fromJson(json['user'] as Map<String, dynamic>),
-  securityAdvisories: json['security_advisories'] != null
-        ? LinkWithType.fromJson(json['security_advisories'] as Map<String, dynamic>)
-        : null,
-  currentUser: json['current_user'] != null
-        ? LinkWithType.fromJson(json['current_user'] as Map<String, dynamic>)
-        : null,
-  currentUserPublic: json['current_user_public'] != null
-        ? LinkWithType.fromJson(json['current_user_public'] as Map<String, dynamic>)
-        : null,
-  currentUserActor: json['current_user_actor'] != null
-        ? LinkWithType.fromJson(json['current_user_actor'] as Map<String, dynamic>)
-        : null,
-  currentUserOrganization: json['current_user_organization'] != null
-        ? LinkWithType.fromJson(json['current_user_organization'] as Map<String, dynamic>)
-        : null,
+  securityAdvisories: json['security_advisories'] != null ? LinkWithType.fromJson(json['security_advisories'] as Map<String, dynamic>) : null,
+  currentUser: json['current_user'] != null ? LinkWithType.fromJson(json['current_user'] as Map<String, dynamic>) : null,
+  currentUserPublic: json['current_user_public'] != null ? LinkWithType.fromJson(json['current_user_public'] as Map<String, dynamic>) : null,
+  currentUserActor: json['current_user_actor'] != null ? LinkWithType.fromJson(json['current_user_actor'] as Map<String, dynamic>) : null,
+  currentUserOrganization: json['current_user_organization'] != null ? LinkWithType.fromJson(json['current_user_organization'] as Map<String, dynamic>) : null,
   currentUserOrganizations: (json['current_user_organizations'] as List<dynamic>?)?.map((e) => LinkWithType.fromJson(e as Map<String, dynamic>)).toList(),
-  repositoryDiscussions: json['repository_discussions'] != null
-        ? LinkWithType.fromJson(json['repository_discussions'] as Map<String, dynamic>)
-        : null,
-  repositoryDiscussionsCategory: json['repository_discussions_category'] != null
-        ? LinkWithType.fromJson(json['repository_discussions_category'] as Map<String, dynamic>)
-        : null,
+  repositoryDiscussions: json['repository_discussions'] != null ? LinkWithType.fromJson(json['repository_discussions'] as Map<String, dynamic>) : null,
+  repositoryDiscussionsCategory: json['repository_discussions_category'] != null ? LinkWithType.fromJson(json['repository_discussions_category'] as Map<String, dynamic>) : null,
 ); }
 
 final LinkWithType timeline;

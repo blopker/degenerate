@@ -8,9 +8,7 @@ import 'issuing_dispute_fraudulent_evidence_additional_documentation.dart';///
 final class IssuingDisputeFraudulentEvidence {const IssuingDisputeFraudulentEvidence({this.additionalDocumentation, this.explanation, });
 
 factory IssuingDisputeFraudulentEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeFraudulentEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeFraudulentEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeFraudulentEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   explanation: json['explanation'] as String?,
 ); }
 

@@ -39,12 +39,8 @@ final class PostTokensRequestAccount {const PostTokensRequestAccount({this.busin
 
 factory PostTokensRequestAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccount(
   businessType: json['business_type'] != null ? PostTokensRequestAccountBusinessType.fromJson(json['business_type'] as String) : null,
-  company: json['company'] != null
-        ? PostTokensRequestAccountCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PostTokensRequestAccountIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  company: json['company'] != null ? PostTokensRequestAccountCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostTokensRequestAccountIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   tosShownAndAccepted: json['tos_shown_and_accepted'] as bool?,
 ); }
 

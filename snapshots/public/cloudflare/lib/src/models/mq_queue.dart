@@ -15,9 +15,7 @@ factory MqQueue.fromJson(Map<String, dynamic> json) { return MqQueue(
   producersTotalCount: json['producers_total_count'] != null ? (json['producers_total_count'] as num).toDouble() : null,
   queueId: json['queue_id'] as String?,
   queueName: json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null,
-  settings: json['settings'] != null
-        ? MqQueueSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? MqQueueSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 final List<MqConsumerResponse>? consumers;

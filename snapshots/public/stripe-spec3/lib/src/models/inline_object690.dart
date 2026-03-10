@@ -34,9 +34,7 @@ factory InlineObject690.fromJson(Map<String, dynamic> json) { return InlineObjec
   captureMethod: json['capture_method'] != null ? InlineObject690CaptureMethod.fromJson(json['capture_method'] as String) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] as bool?,
   requestIncrementalAuthorizationSupport: json['request_incremental_authorization_support'] as bool?,
-  routing: json['routing'] != null
-        ? InlineObject690Routing.fromJson(json['routing'] as Map<String, dynamic>)
-        : null,
+  routing: json['routing'] != null ? InlineObject690Routing.fromJson(json['routing'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject690CaptureMethod? captureMethod;

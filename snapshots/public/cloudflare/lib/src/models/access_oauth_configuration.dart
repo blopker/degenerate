@@ -9,13 +9,9 @@ import 'access_oauth_configuration_dynamic_client_registration.dart';import 'acc
 final class AccessOauthConfiguration {const AccessOauthConfiguration({this.dynamicClientRegistration, this.enabled = true, this.grant, });
 
 factory AccessOauthConfiguration.fromJson(Map<String, dynamic> json) { return AccessOauthConfiguration(
-  dynamicClientRegistration: json['dynamic_client_registration'] != null
-        ? AccessOauthConfigurationDynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>)
-        : null,
+  dynamicClientRegistration: json['dynamic_client_registration'] != null ? AccessOauthConfigurationDynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>) : null,
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  grant: json['grant'] != null
-        ? AccessOauthConfigurationGrant.fromJson(json['grant'] as Map<String, dynamic>)
-        : null,
+  grant: json['grant'] != null ? AccessOauthConfigurationGrant.fromJson(json['grant'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for OAuth dynamic client registration.

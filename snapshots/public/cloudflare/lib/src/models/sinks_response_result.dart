@@ -32,19 +32,13 @@ bool get isUnknown { return !values.contains(this); }
 final class SinksResponseResult {const SinksResponseResult({this.config, required this.createdAt, this.format, required this.id, required this.modifiedAt, required this.name, this.schema, required this.type, });
 
 factory SinksResponseResult.fromJson(Map<String, dynamic> json) { return SinksResponseResult(
-  config: json['config'] != null
-        ? SinksResponseResultConfig.fromJson(json['config'])
-        : null,
+  config: json['config'] != null ? SinksResponseResultConfig.fromJson(json['config']) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-  schema: json['schema'] != null
-        ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>)
-        : null,
+  schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksResponseResultType.fromJson(json['type'] as String),
 ); }
 

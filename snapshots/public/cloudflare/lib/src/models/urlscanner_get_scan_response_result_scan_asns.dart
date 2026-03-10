@@ -8,9 +8,7 @@ import 'urlscanner_get_scan_response_result_scan_asns_asn.dart';/// Dictionary o
 final class UrlscannerGetScanResponseResultScanAsns {const UrlscannerGetScanResponseResultScanAsns({this.asn});
 
 factory UrlscannerGetScanResponseResultScanAsns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanAsns(
-  asn: json['asn'] != null
-        ? UrlscannerGetScanResponseResultScanAsnsAsn.fromJson(json['asn'] as Map<String, dynamic>)
-        : null,
+  asn: json['asn'] != null ? UrlscannerGetScanResponseResultScanAsnsAsn.fromJson(json['asn'] as Map<String, dynamic>) : null,
 ); }
 
 /// ASN's contacted

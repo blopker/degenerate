@@ -249,9 +249,7 @@ factory WebhookPullRequestDequeuedPullRequestHeadRepo.fromJson(Map<String, dynam
   openIssuesCount: (json['open_issues_count'] as num).toInt(),
   organization: json['organization'] as String?,
   owner: WebhookPullRequestDequeuedPullRequestHeadRepoOwner.fromJson(json['owner'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? WebhookPullRequestDequeuedPullRequestHeadRepoPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? WebhookPullRequestDequeuedPullRequestHeadRepoPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   private: json['private'] as bool,
   public: json['public'] as bool?,
   pullsUrl: json['pulls_url'] as String,

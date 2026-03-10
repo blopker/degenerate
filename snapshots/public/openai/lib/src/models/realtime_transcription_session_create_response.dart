@@ -16,12 +16,8 @@ factory RealtimeTranscriptionSessionCreateResponse.fromJson(Map<String, dynamic>
   clientSecret: RealtimeTranscriptionSessionCreateResponseClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   modalities: json['modalities'],
   inputAudioFormat: json['input_audio_format'] as String?,
-  inputAudioTranscription: json['input_audio_transcription'] != null
-        ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>)
-        : null,
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeTranscriptionSessionCreateResponseTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
+  inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateResponseTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
 ); }
 
 /// Ephemeral key returned by the API. Only present when the session is

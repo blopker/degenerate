@@ -61,12 +61,8 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({this.cardLogo, this.carrierText, required this.created, required this.id, required this.livemode, this.lookupKey, required this.metadata, this.name, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, });
 
 factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
-  cardLogo: json['card_logo'] != null
-        ? IssuingPersonalizationDesignCardLogo.fromJson(json['card_logo'] as Map<String, dynamic>)
-        : null,
-  carrierText: json['carrier_text'] != null
-        ? IssuingPersonalizationDesignCarrierText2.fromJson(json['carrier_text'] as Map<String, dynamic>)
-        : null,
+  cardLogo: json['card_logo'] != null ? IssuingPersonalizationDesignCardLogo.fromJson(json['card_logo'] as Map<String, dynamic>) : null,
+  carrierText: json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText2.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,

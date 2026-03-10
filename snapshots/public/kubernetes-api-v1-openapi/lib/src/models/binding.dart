@@ -10,9 +10,7 @@ final class Binding {const Binding({this.apiVersion, this.kind, this.metadata, r
 factory Binding.fromJson(Map<String, dynamic> json) { return Binding(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   target: ObjectReference.fromJson(json['target'] as Map<String, dynamic>),
 ); }
 

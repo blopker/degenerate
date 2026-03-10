@@ -11,12 +11,8 @@ import 'mcp_tool_filter.dart';/// Specify which of the MCP server's tools requir
 final class InlineObject52 {const InlineObject52({this.always, this.never, });
 
 factory InlineObject52.fromJson(Map<String, dynamic> json) { return InlineObject52(
-  always: json['always'] != null
-        ? McpToolFilter.fromJson(json['always'] as Map<String, dynamic>)
-        : null,
-  never: json['never'] != null
-        ? McpToolFilter.fromJson(json['never'] as Map<String, dynamic>)
-        : null,
+  always: json['always'] != null ? McpToolFilter.fromJson(json['always'] as Map<String, dynamic>) : null,
+  never: json['never'] != null ? McpToolFilter.fromJson(json['never'] as Map<String, dynamic>) : null,
 ); }
 
 final McpToolFilter? always;

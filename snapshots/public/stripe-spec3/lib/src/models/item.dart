@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Item {const Item({this.adjustableQuantity, required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, this.description, this.discounts, required this.id, this.metadata, required this.object, this.price, this.quantity, this.taxes, });
 
 factory Item.fromJson(Map<String, dynamic> json) { return Item(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? ItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? ItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
@@ -43,9 +41,7 @@ factory Item.fromJson(Map<String, dynamic> json) { return Item(
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: ItemObject.fromJson(json['object'] as String),
-  price: json['price'] != null
-        ? ItemPrice.fromJson(json['price'] as Map<String, dynamic>)
-        : null,
+  price: json['price'] != null ? ItemPrice.fromJson(json['price'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

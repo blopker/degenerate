@@ -35,9 +35,7 @@ factory CustomSslForAZoneCreateSslConfigurationRequest.fromJson(Map<String, dyna
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificate: TlsCertificatesAndHostnamesCertificate.fromJson(json['certificate'] as String),
   deploy: json['deploy'] != null ? TlsCertificatesAndHostnamesDeploy.fromJson(json['deploy'] as String) : null,
-  geoRestrictions: json['geo_restrictions'] != null
-        ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>)
-        : null,
+  geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
   policy: json['policy'] != null ? TlsCertificatesAndHostnamesPolicy.fromJson(json['policy'] as String) : null,
   privateKey: TlsCertificatesAndHostnamesPrivateKey.fromJson(json['private_key'] as String),
   type: json['type'] != null ? TlsCertificatesAndHostnamesType.fromJson(json['type'] as String) : null,

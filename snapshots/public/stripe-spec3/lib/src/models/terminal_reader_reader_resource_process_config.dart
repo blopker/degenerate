@@ -11,9 +11,7 @@ factory TerminalReaderReaderResourceProcessConfig.fromJson(Map<String, dynamic> 
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   returnUrl: json['return_url'] as String?,
   skipTipping: json['skip_tipping'] as bool?,
-  tipping: json['tipping'] != null
-        ? TerminalReaderReaderResourceTippingConfig.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
+  tipping: json['tipping'] != null ? TerminalReaderReaderResourceTippingConfig.fromJson(json['tipping'] as Map<String, dynamic>) : null,
 ); }
 
 /// Enable customer-initiated cancellation when processing this payment.

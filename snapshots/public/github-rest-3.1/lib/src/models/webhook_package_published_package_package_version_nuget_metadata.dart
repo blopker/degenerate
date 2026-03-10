@@ -7,13 +7,9 @@
 import 'webhook_package_published_package_package_version_nuget_metadata_id.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value.dart';final class WebhookPackagePublishedPackagePackageVersionNugetMetadata {const WebhookPackagePublishedPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 
 factory WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
-  id: json['id'] != null
-        ? WebhookPackagePublishedPackagePackageVersionNugetMetadataId.fromJson(json['id'])
-        : null,
+  id: json['id'] != null ? WebhookPackagePublishedPackagePackageVersionNugetMetadataId.fromJson(json['id']) : null,
   name: json['name'] as String?,
-  value: json['value'] != null
-        ? WebhookPackagePublishedPackagePackageVersionNugetMetadataValue.fromJson(json['value'])
-        : null,
+  value: json['value'] != null ? WebhookPackagePublishedPackagePackageVersionNugetMetadataValue.fromJson(json['value']) : null,
 ); }
 
 final WebhookPackagePublishedPackagePackageVersionNugetMetadataId? id;

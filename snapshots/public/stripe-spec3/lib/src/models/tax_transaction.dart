@@ -62,23 +62,15 @@ factory TaxTransaction.fromJson(Map<String, dynamic> json) { return TaxTransacti
   customer: json['customer'] as String?,
   customerDetails: TaxProductResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>),
   id: json['id'] as String,
-  lineItems: json['line_items'] != null
-        ? TaxTransactionLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? TaxTransactionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: TaxTransactionObject.fromJson(json['object'] as String),
   postedAt: (json['posted_at'] as num).toInt(),
   reference: json['reference'] as String,
-  reversal: json['reversal'] != null
-        ? TaxTransactionReversal.fromJson(json['reversal'] as Map<String, dynamic>)
-        : null,
-  shipFromDetails: json['ship_from_details'] != null
-        ? TaxTransactionShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>)
-        : null,
-  shippingCost: json['shipping_cost'] != null
-        ? TaxTransactionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  reversal: json['reversal'] != null ? TaxTransactionReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
+  shipFromDetails: json['ship_from_details'] != null ? TaxTransactionShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? TaxTransactionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   taxDate: (json['tax_date'] as num).toInt(),
   type: TaxTransactionType.fromJson(json['type'] as String),
 ); }

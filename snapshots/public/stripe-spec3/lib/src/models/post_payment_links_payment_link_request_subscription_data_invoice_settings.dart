@@ -7,9 +7,7 @@
 import 'post_payment_links_payment_link_request_subscription_data_invoice_settings_issuer.dart';final class PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings {const PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings({this.issuer});
 
 factory PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings(
-  issuer: json['issuer'] != null
-        ? PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettingsIssuer? issuer;

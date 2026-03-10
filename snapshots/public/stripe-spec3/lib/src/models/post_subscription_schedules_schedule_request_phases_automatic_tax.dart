@@ -8,9 +8,7 @@ import 'post_subscription_schedules_schedule_request_phases_automatic_tax_liabil
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

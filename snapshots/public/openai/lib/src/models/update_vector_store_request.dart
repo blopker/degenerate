@@ -8,9 +8,7 @@ import 'vector_store_expiration_after.dart';final class UpdateVectorStoreRequest
 
 factory UpdateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreRequest(
   name: json['name'] as String?,
-  expiresAfter: json['expires_after'] != null
-        ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

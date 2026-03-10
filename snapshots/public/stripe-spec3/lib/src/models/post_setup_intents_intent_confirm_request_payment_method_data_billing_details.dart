@@ -7,18 +7,10 @@
 import 'post_setup_intents_intent_confirm_request_payment_method_data_billing_details_address.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data_billing_details_email.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data_billing_details_name.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data_billing_details_phone.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetails {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetails(
-  address: json['address'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

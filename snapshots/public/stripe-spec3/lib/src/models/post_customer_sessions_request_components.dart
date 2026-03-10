@@ -8,21 +8,11 @@ import 'post_customer_sessions_request_components_buy_button.dart';import 'post_
 final class PostCustomerSessionsRequestComponents {const PostCustomerSessionsRequestComponents({this.buyButton, this.customerSheet, this.mobilePaymentElement, this.paymentElement, this.pricingTable, });
 
 factory PostCustomerSessionsRequestComponents.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponents(
-  buyButton: json['buy_button'] != null
-        ? PostCustomerSessionsRequestComponentsBuyButton.fromJson(json['buy_button'] as Map<String, dynamic>)
-        : null,
-  customerSheet: json['customer_sheet'] != null
-        ? PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(json['customer_sheet'] as Map<String, dynamic>)
-        : null,
-  mobilePaymentElement: json['mobile_payment_element'] != null
-        ? PostCustomerSessionsRequestComponentsMobilePaymentElement.fromJson(json['mobile_payment_element'] as Map<String, dynamic>)
-        : null,
-  paymentElement: json['payment_element'] != null
-        ? PostCustomerSessionsRequestComponentsPaymentElement.fromJson(json['payment_element'] as Map<String, dynamic>)
-        : null,
-  pricingTable: json['pricing_table'] != null
-        ? PostCustomerSessionsRequestComponentsPricingTable.fromJson(json['pricing_table'] as Map<String, dynamic>)
-        : null,
+  buyButton: json['buy_button'] != null ? PostCustomerSessionsRequestComponentsBuyButton.fromJson(json['buy_button'] as Map<String, dynamic>) : null,
+  customerSheet: json['customer_sheet'] != null ? PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(json['customer_sheet'] as Map<String, dynamic>) : null,
+  mobilePaymentElement: json['mobile_payment_element'] != null ? PostCustomerSessionsRequestComponentsMobilePaymentElement.fromJson(json['mobile_payment_element'] as Map<String, dynamic>) : null,
+  paymentElement: json['payment_element'] != null ? PostCustomerSessionsRequestComponentsPaymentElement.fromJson(json['payment_element'] as Map<String, dynamic>) : null,
+  pricingTable: json['pricing_table'] != null ? PostCustomerSessionsRequestComponentsPricingTable.fromJson(json['pricing_table'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomerSessionsRequestComponentsBuyButton? buyButton;

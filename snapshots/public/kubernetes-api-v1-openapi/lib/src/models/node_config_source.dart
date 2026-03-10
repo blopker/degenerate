@@ -8,9 +8,7 @@ import 'config_map_node_config_source.dart';/// NodeConfigSource specifies a sou
 final class NodeConfigSource {const NodeConfigSource({this.configMap});
 
 factory NodeConfigSource.fromJson(Map<String, dynamic> json) { return NodeConfigSource(
-  configMap: json['configMap'] != null
-        ? ConfigMapNodeConfigSource.fromJson(json['configMap'] as Map<String, dynamic>)
-        : null,
+  configMap: json['configMap'] != null ? ConfigMapNodeConfigSource.fromJson(json['configMap'] as Map<String, dynamic>) : null,
 ); }
 
 /// ConfigMap is a reference to a Node's ConfigMap

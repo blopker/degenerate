@@ -9,9 +9,7 @@ final class PaymentFlowsInstallmentOptions {const PaymentFlowsInstallmentOptions
 
 factory PaymentFlowsInstallmentOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsInstallmentOptions(
   enabled: json['enabled'] as bool,
-  plan: json['plan'] != null
-        ? PaymentMethodDetailsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PaymentMethodDetailsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

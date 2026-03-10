@@ -8,9 +8,7 @@ import 'email_dns_record.dart';final class EmailEmailRoutingGetResponseDnsError 
 
 factory EmailEmailRoutingGetResponseDnsError.fromJson(Map<String, dynamic> json) { return EmailEmailRoutingGetResponseDnsError(
   code: json['code'] as String?,
-  missing: json['missing'] != null
-        ? EmailDnsRecord.fromJson(json['missing'] as Map<String, dynamic>)
-        : null,
+  missing: json['missing'] != null ? EmailDnsRecord.fromJson(json['missing'] as Map<String, dynamic>) : null,
 ); }
 
 final String? code;

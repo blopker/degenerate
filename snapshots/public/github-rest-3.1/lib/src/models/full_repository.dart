@@ -228,13 +228,9 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   pushedAt: DateTime.parse(json['pushed_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  permissions: json['permissions'] != null
-        ? FullRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? FullRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   allowRebaseMerge: json['allow_rebase_merge'] as bool?,
-  templateRepository: json['template_repository'] != null
-        ? Repository.fromJson(json['template_repository'] as Map<String, dynamic>)
-        : null,
+  templateRepository: json['template_repository'] != null ? Repository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
   tempCloneToken: json['temp_clone_token'] as String?,
   allowSquashMerge: json['allow_squash_merge'] as bool?,
   allowAutoMerge: json['allow_auto_merge'] as bool?,
@@ -251,26 +247,16 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   subscribersCount: (json['subscribers_count'] as num).toInt(),
   networkCount: (json['network_count'] as num).toInt(),
   license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  parent: json['parent'] != null
-        ? Repository.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
-  source: json['source'] != null
-        ? Repository.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? Repository.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? Repository.fromJson(json['source'] as Map<String, dynamic>) : null,
   forks: (json['forks'] as num).toInt(),
   masterBranch: json['master_branch'] as String?,
   openIssues: (json['open_issues'] as num).toInt(),
   watchers: (json['watchers'] as num).toInt(),
   anonymousAccessEnabled: json.containsKey('anonymous_access_enabled') ? json['anonymous_access_enabled'] as bool : true,
-  codeOfConduct: json['code_of_conduct'] != null
-        ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>)
-        : null,
-  securityAndAnalysis: json['security_and_analysis'] != null
-        ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>)
-        : null,
+  codeOfConduct: json['code_of_conduct'] != null ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
+  securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
   customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 

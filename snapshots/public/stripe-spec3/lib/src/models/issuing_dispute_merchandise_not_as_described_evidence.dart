@@ -33,9 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingDisputeMerchandiseNotAsDescribedEvidence {const IssuingDisputeMerchandiseNotAsDescribedEvidence({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
 factory IssuingDisputeMerchandiseNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeMerchandiseNotAsDescribedEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeMerchandiseNotAsDescribedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeMerchandiseNotAsDescribedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   explanation: json['explanation'] as String?,
   receivedAt: json['received_at'] != null ? (json['received_at'] as num).toInt() : null,
   returnDescription: json['return_description'] as String?,

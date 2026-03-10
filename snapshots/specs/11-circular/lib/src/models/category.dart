@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';final class Category {const Category
 factory Category.fromJson(Map<String, dynamic> json) { return Category(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  parent: json['parent'] != null
-        ? Category.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? Category.fromJson(json['parent'] as Map<String, dynamic>) : null,
   children: (json['children'] as List<dynamic>?)?.map((e) => Category.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

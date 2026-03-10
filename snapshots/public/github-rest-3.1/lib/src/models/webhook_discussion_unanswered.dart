@@ -31,13 +31,9 @@ factory WebhookDiscussionUnanswered.fromJson(Map<String, dynamic> json) { return
   action: WebhookDiscussionUnansweredAction.fromJson(json['action'] as String),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   oldAnswer: WebhooksAnswer.fromJson(json['old_answer'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDiscussionUnansweredAction action;

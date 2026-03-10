@@ -7,9 +7,7 @@
 import 'post_accounts_account_request_settings_treasury_tos_acceptance.dart';final class PostAccountsAccountRequestSettingsTreasury {const PostAccountsAccountRequestSettingsTreasury({this.tosAcceptance});
 
 factory PostAccountsAccountRequestSettingsTreasury.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsTreasury(
-  tosAcceptance: json['tos_acceptance'] != null
-        ? PostAccountsAccountRequestSettingsTreasuryTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestSettingsTreasuryTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountRequestSettingsTreasuryTosAcceptance? tosAcceptance;

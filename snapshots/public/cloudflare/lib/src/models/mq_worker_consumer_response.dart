@@ -12,9 +12,7 @@ factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return Mq
   deadLetterQueue: json['dead_letter_queue'] as String?,
   queueName: json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null,
   scriptName: json['script_name'] != null ? MqScriptName.fromJson(json['script_name'] as String) : null,
-  settings: json['settings'] != null
-        ? MqWorkerConsumerResponseSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? MqWorkerConsumerResponseSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
 ); }
 

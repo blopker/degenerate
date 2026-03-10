@@ -9,9 +9,7 @@ final class AuditLogKeyCreated {const AuditLogKeyCreated({this.id, this.data, })
 
 factory AuditLogKeyCreated.fromJson(Map<String, dynamic> json) { return AuditLogKeyCreated(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogKeyCreatedData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogKeyCreatedData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The tracking ID of the API key.

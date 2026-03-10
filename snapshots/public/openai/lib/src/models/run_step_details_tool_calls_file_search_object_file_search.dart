@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'run_step_details_tool_calls_
 final class RunStepDetailsToolCallsFileSearchObjectFileSearch {const RunStepDetailsToolCallsFileSearchObjectFileSearch({this.rankingOptions, this.results, });
 
 factory RunStepDetailsToolCallsFileSearchObjectFileSearch.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchObjectFileSearch(
-  rankingOptions: json['ranking_options'] != null
-        ? RunStepDetailsToolCallsFileSearchRankingOptionsObject.fromJson(json['ranking_options'] as Map<String, dynamic>)
-        : null,
+  rankingOptions: json['ranking_options'] != null ? RunStepDetailsToolCallsFileSearchRankingOptionsObject.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
   results: (json['results'] as List<dynamic>?)?.map((e) => RunStepDetailsToolCallsFileSearchResultObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

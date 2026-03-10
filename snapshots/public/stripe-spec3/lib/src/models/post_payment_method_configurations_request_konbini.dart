@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_konbini_display_preference.da
 final class PostPaymentMethodConfigurationsRequestKonbini {const PostPaymentMethodConfigurationsRequestKonbini({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestKonbini.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestKonbini(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference? displayPreference;

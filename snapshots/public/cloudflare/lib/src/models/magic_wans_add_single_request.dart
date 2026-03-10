@@ -10,9 +10,7 @@ factory MagicWansAddSingleRequest.fromJson(Map<String, dynamic> json) { return M
   name: json['name'] as String?,
   physport: MagicPort.fromJson(json['physport'] as num),
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
-  staticAddressing: json['static_addressing'] != null
-        ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>)
-        : null,
+  staticAddressing: json['static_addressing'] != null ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
   vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
 ); }
 

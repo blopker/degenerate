@@ -13,9 +13,7 @@ factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
   message: json['message'] as String,
   commentCount: (json['comment_count'] as num).toInt(),
   tree: CommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
-  verification: json['verification'] != null
-        ? Verification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

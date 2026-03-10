@@ -43,9 +43,7 @@ factory FetchAllLivestreamsResponseData.fromJson(Map<String, dynamic> json) { re
   ingestServer: json['ingest_server'] as String?,
   meetingId: json['meeting_id'] as String?,
   name: json['name'] as String?,
-  paging: json['paging'] != null
-        ? FetchAllLivestreamsResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>)
-        : null,
+  paging: json['paging'] != null ? FetchAllLivestreamsResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
   playbackUrl: json['playback_url'] as String?,
   status: json['status'] != null ? FetchAllLivestreamsResponseDataStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,

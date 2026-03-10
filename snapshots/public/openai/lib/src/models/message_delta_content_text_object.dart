@@ -32,9 +32,7 @@ final class MessageDeltaContentTextObject {const MessageDeltaContentTextObject({
 factory MessageDeltaContentTextObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObject(
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentTextObjectType.fromJson(json['type'] as String),
-  text: json['text'] != null
-        ? MessageDeltaContentTextObjectText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? MessageDeltaContentTextObjectText.fromJson(json['text'] as Map<String, dynamic>) : null,
 ); }
 
 /// The index of the content part in the message.

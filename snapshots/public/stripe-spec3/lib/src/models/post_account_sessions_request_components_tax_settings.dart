@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_tax_settings_features.dart';fin
 
 factory PostAccountSessionsRequestComponentsTaxSettings.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxSettings(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsTaxSettingsFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsTaxSettingsFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

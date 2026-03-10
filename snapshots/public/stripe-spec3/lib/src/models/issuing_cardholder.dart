@@ -119,15 +119,11 @@ final class IssuingCardholder {const IssuingCardholder({required this.billing, t
 
 factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),
-  company: json['company'] != null
-        ? IssuingCardholderCompany2.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
+  company: json['company'] != null ? IssuingCardholderCompany2.fromJson(json['company'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   email: json['email'] as String?,
   id: json['id'] as String,
-  individual: json['individual'] != null
-        ? IssuingCardholderIndividual2.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  individual: json['individual'] != null ? IssuingCardholderIndividual2.fromJson(json['individual'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
@@ -135,9 +131,7 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
   phoneNumber: json['phone_number'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => IssuingCardholderPreferredLocales.fromJson(e as String)).toList(),
   requirements: IssuingCardholderRequirements.fromJson(json['requirements'] as Map<String, dynamic>),
-  spendingControls: json['spending_controls'] != null
-        ? IssuingCardholderSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>)
-        : null,
+  spendingControls: json['spending_controls'] != null ? IssuingCardholderSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
   type: IssuingCardholderType.fromJson(json['type'] as String),
 ); }

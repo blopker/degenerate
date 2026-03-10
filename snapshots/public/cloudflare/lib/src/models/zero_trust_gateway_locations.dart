@@ -41,9 +41,7 @@ factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return Z
   dnsDestinationIpv6BlockId: json['dns_destination_ipv6_block_id'] != null ? ZeroTrustGatewayDnsDestinationIpv6BlockId.fromJson(json['dns_destination_ipv6_block_id'] as String) : null,
   dohSubdomain: json['doh_subdomain'] != null ? ZeroTrustGatewaySubdomain.fromJson(json['doh_subdomain'] as String) : null,
   ecsSupport: json['ecs_support'] != null ? ZeroTrustGatewayEcsSupport.fromJson(json['ecs_support'] as bool) : null,
-  endpoints: json['endpoints'] != null
-        ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>)
-        : null,
+  endpoints: json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
   ip: json['ip'] != null ? ZeroTrustGatewayIp.fromJson(json['ip'] as String) : null,
   ipv4Destination: json['ipv4_destination'] as String?,

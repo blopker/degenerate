@@ -9,12 +9,8 @@ final class InlineObject128Bundle {const InlineObject128Bundle({this.mediaType, 
 
 factory InlineObject128Bundle.fromJson(Map<String, dynamic> json) { return InlineObject128Bundle(
   mediaType: json['mediaType'] as String?,
-  verificationMaterial: json['verificationMaterial'] != null
-        ? InlineObject128BundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>)
-        : null,
-  dsseEnvelope: json['dsseEnvelope'] != null
-        ? InlineObject128BundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>)
-        : null,
+  verificationMaterial: json['verificationMaterial'] != null ? InlineObject128BundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>) : null,
+  dsseEnvelope: json['dsseEnvelope'] != null ? InlineObject128BundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>) : null,
 ); }
 
 final String? mediaType;

@@ -7,9 +7,7 @@
 import 'inline_object34_documents_bank_account_ownership_verification.dart';final class InlineObject34Documents {const InlineObject34Documents({this.bankAccountOwnershipVerification});
 
 factory InlineObject34Documents.fromJson(Map<String, dynamic> json) { return InlineObject34Documents(
-  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null
-        ? InlineObject34DocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>)
-        : null,
+  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? InlineObject34DocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject34DocumentsBankAccountOwnershipVerification? bankAccountOwnershipVerification;

@@ -9,12 +9,8 @@ final class TunnelConfig {const TunnelConfig({this.ingress, this.originRequest, 
 
 factory TunnelConfig.fromJson(Map<String, dynamic> json) { return TunnelConfig(
   ingress: (json['ingress'] as List<dynamic>?)?.map((e) => TunnelIngressRule.fromJson(e as Map<String, dynamic>)).toList(),
-  originRequest: json['originRequest'] != null
-        ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>)
-        : null,
-  warpRouting: json['warp-routing'] != null
-        ? TunnelConfigWarpRouting.fromJson(json['warp-routing'] as Map<String, dynamic>)
-        : null,
+  originRequest: json['originRequest'] != null ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>) : null,
+  warpRouting: json['warp-routing'] != null ? TunnelConfigWarpRouting.fromJson(json['warp-routing'] as Map<String, dynamic>) : null,
 ); }
 
 /// List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.

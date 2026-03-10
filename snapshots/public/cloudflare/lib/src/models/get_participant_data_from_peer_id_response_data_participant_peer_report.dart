@@ -7,12 +7,8 @@
 import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReport {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReport({this.metadata, this.quality, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReport.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReport(
-  metadata: json['metadata'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  quality: json['quality'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality.fromJson(json['quality'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  quality: json['quality'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality.fromJson(json['quality'] as Map<String, dynamic>) : null,
 ); }
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata? metadata;

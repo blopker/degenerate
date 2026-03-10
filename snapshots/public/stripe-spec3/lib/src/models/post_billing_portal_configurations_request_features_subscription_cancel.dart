@@ -58,9 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel({this.cancellationReason, required this.enabled, this.mode, this.prorationBehavior, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel(
-  cancellationReason: json['cancellation_reason'] != null
-        ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>)
-        : null,
+  cancellationReason: json['cancellation_reason'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool,
   mode: json['mode'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode.fromJson(json['mode'] as String) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior.fromJson(json['proration_behavior'] as String) : null,

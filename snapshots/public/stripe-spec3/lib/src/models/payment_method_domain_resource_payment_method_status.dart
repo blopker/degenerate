@@ -34,9 +34,7 @@ final class PaymentMethodDomainResourcePaymentMethodStatus {const PaymentMethodD
 
 factory PaymentMethodDomainResourcePaymentMethodStatus.fromJson(Map<String, dynamic> json) { return PaymentMethodDomainResourcePaymentMethodStatus(
   status: PaymentMethodDomainResourcePaymentMethodStatusStatus.fromJson(json['status'] as String),
-  statusDetails: json['status_details'] != null
-        ? PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>)
-        : null,
+  statusDetails: json['status_details'] != null ? PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The status of the payment method on the domain.

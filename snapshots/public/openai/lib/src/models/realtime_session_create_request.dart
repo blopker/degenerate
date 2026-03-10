@@ -13,33 +13,19 @@ factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { retur
   clientSecret: RealtimeSessionCreateRequestClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   modalities: json['modalities'],
   instructions: json['instructions'] as String?,
-  voice: json['voice'] != null
-        ? VoiceIdsOrCustomVoice.fromJson(json['voice'] as Map<String, dynamic>)
-        : null,
+  voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice'] as Map<String, dynamic>) : null,
   inputAudioFormat: json['input_audio_format'] as String?,
   outputAudioFormat: json['output_audio_format'] as String?,
-  inputAudioTranscription: json['input_audio_transcription'] != null
-        ? RealtimeSessionCreateRequestInputAudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>)
-        : null,
+  inputAudioTranscription: json['input_audio_transcription'] != null ? RealtimeSessionCreateRequestInputAudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  tracing: json['tracing'] != null
-        ? RealtimeSessionCreateRequestTracing.fromJson(json['tracing'])
-        : null,
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
+  tracing: json['tracing'] != null ? RealtimeSessionCreateRequestTracing.fromJson(json['tracing']) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestTools.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] as String?,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxResponseOutputTokens: json['max_response_output_tokens'] != null
-        ? RealtimeSessionCreateRequestMaxResponseOutputTokens.fromJson(json['max_response_output_tokens'])
-        : null,
-  truncation: json['truncation'] != null
-        ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>)
-        : null,
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  maxResponseOutputTokens: json['max_response_output_tokens'] != null ? RealtimeSessionCreateRequestMaxResponseOutputTokens.fromJson(json['max_response_output_tokens']) : null,
+  truncation: json['truncation'] != null ? RealtimeTruncation.fromJson(json['truncation'] as Map<String, dynamic>) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
 ); }
 
 /// Ephemeral key returned by the API.

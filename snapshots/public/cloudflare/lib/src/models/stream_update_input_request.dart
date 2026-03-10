@@ -11,9 +11,7 @@ factory StreamUpdateInputRequest.fromJson(Map<String, dynamic> json) { return St
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
   meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  recording: json['recording'] != null
-        ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>)
-        : null,
+  recording: json['recording'] != null ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>) : null,
 ); }
 
 final StreamLiveInputDefaultCreator? defaultCreator;

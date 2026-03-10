@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestSubscriptionDataBillingMode {const PostCheckoutSessionsRequestSubscriptionDataBillingMode({this.flexible, required this.type, });
 
 factory PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataBillingMode(
-  flexible: json['flexible'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>)
-        : null,
+  flexible: json['flexible'] != null ? PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: PostCheckoutSessionsRequestSubscriptionDataBillingModeType.fromJson(json['type'] as String),
 ); }
 

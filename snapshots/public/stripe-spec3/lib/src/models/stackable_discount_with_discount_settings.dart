@@ -8,15 +8,9 @@ import 'stackable_discount_with_discount_settings_coupon.dart';import 'stackable
 final class StackableDiscountWithDiscountSettings {const StackableDiscountWithDiscountSettings({this.coupon, this.discount, this.promotionCode, });
 
 factory StackableDiscountWithDiscountSettings.fromJson(Map<String, dynamic> json) { return StackableDiscountWithDiscountSettings(
-  coupon: json['coupon'] != null
-        ? StackableDiscountWithDiscountSettingsCoupon.fromJson(json['coupon'] as Map<String, dynamic>)
-        : null,
-  discount: json['discount'] != null
-        ? StackableDiscountWithDiscountSettingsDiscount.fromJson(json['discount'] as Map<String, dynamic>)
-        : null,
-  promotionCode: json['promotion_code'] != null
-        ? StackableDiscountWithDiscountSettingsPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>)
-        : null,
+  coupon: json['coupon'] != null ? StackableDiscountWithDiscountSettingsCoupon.fromJson(json['coupon'] as Map<String, dynamic>) : null,
+  discount: json['discount'] != null ? StackableDiscountWithDiscountSettingsDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
+  promotionCode: json['promotion_code'] != null ? StackableDiscountWithDiscountSettingsPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>) : null,
 ); }
 
 /// ID of the coupon to create a new discount for.

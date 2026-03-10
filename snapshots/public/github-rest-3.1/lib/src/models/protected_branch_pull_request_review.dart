@@ -9,12 +9,8 @@ final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestRe
 
 factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReview(
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  dismissalRestrictions: json['dismissal_restrictions'] != null
-        ? ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>)
-        : null,
-  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null
-        ? ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>)
-        : null,
+  dismissalRestrictions: json['dismissal_restrictions'] != null ? ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
+  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,

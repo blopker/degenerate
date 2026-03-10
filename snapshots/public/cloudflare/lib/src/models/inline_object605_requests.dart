@@ -8,9 +8,7 @@ import 'inline_object605_requests_input.dart';import 'inline_object605_requests_
 
 factory InlineObject605Requests.fromJson(Map<String, dynamic> json) { return InlineObject605Requests(
   input: InlineObject605RequestsInput.fromJson(json['input'] as Map<String, dynamic>),
-  reasoning: json['reasoning'] != null
-        ? InlineObject605RequestsReasoning.fromJson(json['reasoning'] as Map<String, dynamic>)
-        : null,
+  reasoning: json['reasoning'] != null ? InlineObject605RequestsReasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
 ); }
 
 /// Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types

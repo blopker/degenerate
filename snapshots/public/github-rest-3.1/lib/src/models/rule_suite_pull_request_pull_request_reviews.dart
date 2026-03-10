@@ -8,9 +8,7 @@ import 'rule_suite_pull_request_pull_request_reviews_user.dart';final class Rule
 
 factory RuleSuitePullRequestPullRequestReviews.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequestReviews(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  user: json['user'] != null
-        ? RuleSuitePullRequestPullRequestReviewsUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? RuleSuitePullRequestPullRequestReviewsUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   state: json['state'] as String?,
 ); }
 

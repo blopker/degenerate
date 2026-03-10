@@ -8,12 +8,8 @@ import 'issuing_cardholder_id_document_back.dart';import 'issuing_cardholder_id_
 final class IssuingCardholderIdDocument {const IssuingCardholderIdDocument({this.back, this.front, });
 
 factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) { return IssuingCardholderIdDocument(
-  back: json['back'] != null
-        ? IssuingCardholderIdDocumentBack.fromJson(json['back'] as Map<String, dynamic>)
-        : null,
-  front: json['front'] != null
-        ? IssuingCardholderIdDocumentFront.fromJson(json['front'] as Map<String, dynamic>)
-        : null,
+  back: json['back'] != null ? IssuingCardholderIdDocumentBack.fromJson(json['back'] as Map<String, dynamic>) : null,
+  front: json['front'] != null ? IssuingCardholderIdDocumentFront.fromJson(json['front'] as Map<String, dynamic>) : null,
 ); }
 
 /// The back of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.

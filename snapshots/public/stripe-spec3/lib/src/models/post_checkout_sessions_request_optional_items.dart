@@ -7,9 +7,7 @@
 import 'post_checkout_sessions_request_optional_items_adjustable_quantity.dart';final class PostCheckoutSessionsRequestOptionalItems {const PostCheckoutSessionsRequestOptionalItems({this.adjustableQuantity, required this.price, required this.quantity, });
 
 factory PostCheckoutSessionsRequestOptionalItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestOptionalItems(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }

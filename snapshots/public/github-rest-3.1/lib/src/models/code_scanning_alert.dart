@@ -22,9 +22,7 @@ factory CodeScanningAlert.fromJson(Map<String, dynamic> json) { return CodeScann
   rule: CodeScanningAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   tool: CodeScanningAnalysisTool.fromJson(json['tool'] as Map<String, dynamic>),
   mostRecentInstance: CodeScanningAlertInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>),
-  dismissalApprovedBy: json['dismissal_approved_by'] != null
-        ? SimpleUser.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>)
-        : null,
+  dismissalApprovedBy: json['dismissal_approved_by'] != null ? SimpleUser.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

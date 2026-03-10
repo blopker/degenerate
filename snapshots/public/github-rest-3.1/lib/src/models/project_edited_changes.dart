@@ -7,18 +7,10 @@
 import 'project_edited_changes_description.dart';import 'project_edited_changes_public.dart';import 'project_edited_changes_short_description.dart';import 'project_edited_changes_title.dart';final class ProjectEditedChanges {const ProjectEditedChanges({this.description, this.public, this.shortDescription, this.title, });
 
 factory ProjectEditedChanges.fromJson(Map<String, dynamic> json) { return ProjectEditedChanges(
-  description: json['description'] != null
-        ? ProjectEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  public: json['public'] != null
-        ? ProjectEditedChangesPublic.fromJson(json['public'] as Map<String, dynamic>)
-        : null,
-  shortDescription: json['short_description'] != null
-        ? ProjectEditedChangesShortDescription.fromJson(json['short_description'] as Map<String, dynamic>)
-        : null,
-  title: json['title'] != null
-        ? ProjectEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? ProjectEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  public: json['public'] != null ? ProjectEditedChangesPublic.fromJson(json['public'] as Map<String, dynamic>) : null,
+  shortDescription: json['short_description'] != null ? ProjectEditedChangesShortDescription.fromJson(json['short_description'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? ProjectEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
 ); }
 
 final ProjectEditedChangesDescription? description;

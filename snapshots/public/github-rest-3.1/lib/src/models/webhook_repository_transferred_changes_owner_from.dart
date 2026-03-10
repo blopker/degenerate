@@ -7,12 +7,8 @@
 import 'webhook_repository_transferred_changes_owner_from_organization.dart';import 'webhook_repository_transferred_changes_owner_from_user.dart';final class WebhookRepositoryTransferredChangesOwnerFrom {const WebhookRepositoryTransferredChangesOwnerFrom({this.organization, this.user, });
 
 factory WebhookRepositoryTransferredChangesOwnerFrom.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwnerFrom(
-  organization: json['organization'] != null
-        ? WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  user: json['user'] != null
-        ? WebhookRepositoryTransferredChangesOwnerFromUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? WebhookRepositoryTransferredChangesOwnerFromUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookRepositoryTransferredChangesOwnerFromOrganization? organization;

@@ -65,9 +65,7 @@ factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorSto
   usageBytes: (json['usage_bytes'] as num).toInt(),
   fileCounts: VectorStoreObjectFileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
   status: VectorStoreObjectStatus.fromJson(json['status'] as String),
-  expiresAfter: json['expires_after'] != null
-        ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   lastActiveAt: (json['last_active_at'] as num).toInt(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),

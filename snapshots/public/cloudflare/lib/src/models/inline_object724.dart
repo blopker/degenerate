@@ -91,16 +91,10 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject724 {const InlineObject724({this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, required this.messages, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
 
 factory InlineObject724.fromJson(Map<String, dynamic> json) { return InlineObject724(
-  audio: json['audio'] != null
-        ? InlineObject724Audio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
-  chatTemplateKwargs: json['chat_template_kwargs'] != null
-        ? InlineObject724ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? InlineObject724Audio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  chatTemplateKwargs: json['chat_template_kwargs'] != null ? InlineObject724ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  functionCall: json['function_call'] != null
-        ? InlineObject724FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
-        : null,
+  functionCall: json['function_call'] != null ? InlineObject724FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => InlineObject724Functions.fromJson(e as Map<String, dynamic>)).toList(),
   logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logprobs: json['logprobs'] as bool?,
@@ -112,35 +106,23 @@ factory InlineObject724.fromJson(Map<String, dynamic> json) { return InlineObjec
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
   parallelToolCalls: json.containsKey('parallel_tool_calls') ? json['parallel_tool_calls'] as bool : true,
-  prediction: json['prediction'] != null
-        ? InlineObject724Prediction.fromJson(json['prediction'] as Map<String, dynamic>)
-        : null,
+  prediction: json['prediction'] != null ? InlineObject724Prediction.fromJson(json['prediction'] as Map<String, dynamic>) : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   reasoningEffort: json['reasoning_effort'] != null ? InlineObject724ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
-  responseFormat: json['response_format'] != null
-        ? InlineObject724ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? InlineObject724ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   serviceTier: json['service_tier'] != null ? InlineObject724ServiceTier.fromJson(json['service_tier'] as String) : null,
-  stop: json['stop'] != null
-        ? InlineObject724Stop.fromJson(json['stop'] as Map<String, dynamic>)
-        : null,
+  stop: json['stop'] != null ? InlineObject724Stop.fromJson(json['stop'] as Map<String, dynamic>) : null,
   store: json['store'] as bool?,
   stream: json['stream'] as bool?,
-  streamOptions: json['stream_options'] != null
-        ? InlineObject724StreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>)
-        : null,
+  streamOptions: json['stream_options'] != null ? InlineObject724StreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  toolChoice: json['tool_choice'] != null
-        ? InlineObject724ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>)
-        : null,
+  toolChoice: json['tool_choice'] != null ? InlineObject724ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => InlineObject724Tools.fromJson(e)).toList(),
   topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
   user: json['user'] as String?,
-  webSearchOptions: json['web_search_options'] != null
-        ? InlineObject724WebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>)
-        : null,
+  webSearchOptions: json['web_search_options'] != null ? InlineObject724WebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject724Audio? audio;

@@ -33,12 +33,8 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({this.quoteDetails, this.subscriptionDetails, required this.type, });
 
 factory BillingBillResourceInvoicingParentsInvoiceParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceParent(
-  quoteDetails: json['quote_details'] != null
-        ? BillingBillResourceInvoicingParentsInvoiceParentQuoteDetails.fromJson(json['quote_details'] as Map<String, dynamic>)
-        : null,
-  subscriptionDetails: json['subscription_details'] != null
-        ? BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>)
-        : null,
+  quoteDetails: json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceParentQuoteDetails.fromJson(json['quote_details'] as Map<String, dynamic>) : null,
+  subscriptionDetails: json['subscription_details'] != null ? BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(json['type'] as String),
 ); }
 

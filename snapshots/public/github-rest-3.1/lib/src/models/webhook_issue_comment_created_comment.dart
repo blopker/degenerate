@@ -62,9 +62,7 @@ factory WebhookIssueCommentCreatedComment.fromJson(Map<String, dynamic> json) { 
   reactions: WebhookIssueCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-  pin: json['pin'] != null
-        ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>)
-        : null,
+  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
   user: WebhookIssueCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>),
 ); }
 

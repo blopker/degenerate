@@ -9,9 +9,7 @@ final class AuditLogCheckpointPermissionCreated {const AuditLogCheckpointPermiss
 
 factory AuditLogCheckpointPermissionCreated.fromJson(Map<String, dynamic> json) { return AuditLogCheckpointPermissionCreated(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogCheckpointPermissionCreatedData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogCheckpointPermissionCreatedData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the checkpoint permission.

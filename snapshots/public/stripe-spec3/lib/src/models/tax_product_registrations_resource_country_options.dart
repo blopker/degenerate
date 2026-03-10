@@ -8,309 +8,107 @@ import 'tax_product_registrations_resource_country_options_canada.dart';import '
 final class TaxProductRegistrationsResourceCountryOptions {const TaxProductRegistrationsResourceCountryOptions({this.ae, this.al, this.am, this.ao, this.at, this.au, this.aw, this.az, this.ba, this.bb, this.bd, this.be, this.bf, this.bg, this.bh, this.bj, this.bs, this.by, this.ca, this.cd, this.ch, this.cl, this.cm, this.co, this.cr, this.cv, this.cy, this.cz, this.de, this.dk, this.ec, this.ee, this.eg, this.es, this.et, this.fi, this.fr, this.gb, this.ge, this.gn, this.gr, this.hr, this.hu, this.id, this.ie, this.$in, this.$is, this.it, this.jp, this.ke, this.kg, this.kh, this.kr, this.kz, this.la, this.lk, this.lt, this.lu, this.lv, this.ma, this.md, this.me, this.mk, this.mr, this.mt, this.mx, this.my, this.ng, this.nl, this.no, this.np, this.nz, this.om, this.pe, this.ph, this.pl, this.pt, this.ro, this.rs, this.ru, this.sa, this.se, this.sg, this.si, this.sk, this.sn, this.sr, this.th, this.tj, this.tr, this.tw, this.tz, this.ua, this.ug, this.us, this.uy, this.uz, this.vn, this.za, this.zm, this.zw, });
 
 factory TaxProductRegistrationsResourceCountryOptions.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptions(
-  ae: json['ae'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['ae'] as Map<String, dynamic>)
-        : null,
-  al: json['al'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['al'] as Map<String, dynamic>)
-        : null,
-  am: json['am'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['am'] as Map<String, dynamic>)
-        : null,
-  ao: json['ao'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['ao'] as Map<String, dynamic>)
-        : null,
-  at: json['at'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['at'] as Map<String, dynamic>)
-        : null,
-  au: json['au'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['au'] as Map<String, dynamic>)
-        : null,
-  aw: json['aw'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['aw'] as Map<String, dynamic>)
-        : null,
-  az: json['az'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['az'] as Map<String, dynamic>)
-        : null,
-  ba: json['ba'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['ba'] as Map<String, dynamic>)
-        : null,
-  bb: json['bb'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bb'] as Map<String, dynamic>)
-        : null,
-  bd: json['bd'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bd'] as Map<String, dynamic>)
-        : null,
-  be: json['be'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['be'] as Map<String, dynamic>)
-        : null,
-  bf: json['bf'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bf'] as Map<String, dynamic>)
-        : null,
-  bg: json['bg'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['bg'] as Map<String, dynamic>)
-        : null,
-  bh: json['bh'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bh'] as Map<String, dynamic>)
-        : null,
-  bj: json['bj'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['bj'] as Map<String, dynamic>)
-        : null,
-  bs: json['bs'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bs'] as Map<String, dynamic>)
-        : null,
-  by: json['by'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['by'] as Map<String, dynamic>)
-        : null,
-  ca: json['ca'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsCanada.fromJson(json['ca'] as Map<String, dynamic>)
-        : null,
-  cd: json['cd'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['cd'] as Map<String, dynamic>)
-        : null,
-  ch: json['ch'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['ch'] as Map<String, dynamic>)
-        : null,
-  cl: json['cl'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cl'] as Map<String, dynamic>)
-        : null,
-  cm: json['cm'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cm'] as Map<String, dynamic>)
-        : null,
-  co: json['co'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['co'] as Map<String, dynamic>)
-        : null,
-  cr: json['cr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cr'] as Map<String, dynamic>)
-        : null,
-  cv: json['cv'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cv'] as Map<String, dynamic>)
-        : null,
-  cy: json['cy'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['cy'] as Map<String, dynamic>)
-        : null,
-  cz: json['cz'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['cz'] as Map<String, dynamic>)
-        : null,
-  de: json['de'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['de'] as Map<String, dynamic>)
-        : null,
-  dk: json['dk'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['dk'] as Map<String, dynamic>)
-        : null,
-  ec: json['ec'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ec'] as Map<String, dynamic>)
-        : null,
-  ee: json['ee'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ee'] as Map<String, dynamic>)
-        : null,
-  eg: json['eg'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['eg'] as Map<String, dynamic>)
-        : null,
-  es: json['es'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['es'] as Map<String, dynamic>)
-        : null,
-  et: json['et'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['et'] as Map<String, dynamic>)
-        : null,
-  fi: json['fi'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['fi'] as Map<String, dynamic>)
-        : null,
-  fr: json['fr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['fr'] as Map<String, dynamic>)
-        : null,
-  gb: json['gb'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['gb'] as Map<String, dynamic>)
-        : null,
-  ge: json['ge'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ge'] as Map<String, dynamic>)
-        : null,
-  gn: json['gn'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['gn'] as Map<String, dynamic>)
-        : null,
-  gr: json['gr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['gr'] as Map<String, dynamic>)
-        : null,
-  hr: json['hr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['hr'] as Map<String, dynamic>)
-        : null,
-  hu: json['hu'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['hu'] as Map<String, dynamic>)
-        : null,
-  id: json['id'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['id'] as Map<String, dynamic>)
-        : null,
-  ie: json['ie'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ie'] as Map<String, dynamic>)
-        : null,
-  $in: json['in'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['in'] as Map<String, dynamic>)
-        : null,
-  $is: json['is'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['is'] as Map<String, dynamic>)
-        : null,
-  it: json['it'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['it'] as Map<String, dynamic>)
-        : null,
-  jp: json['jp'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['jp'] as Map<String, dynamic>)
-        : null,
-  ke: json['ke'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ke'] as Map<String, dynamic>)
-        : null,
-  kg: json['kg'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kg'] as Map<String, dynamic>)
-        : null,
-  kh: json['kh'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kh'] as Map<String, dynamic>)
-        : null,
-  kr: json['kr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kr'] as Map<String, dynamic>)
-        : null,
-  kz: json['kz'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kz'] as Map<String, dynamic>)
-        : null,
-  la: json['la'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['la'] as Map<String, dynamic>)
-        : null,
-  lk: json['lk'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['lk'] as Map<String, dynamic>)
-        : null,
-  lt: json['lt'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lt'] as Map<String, dynamic>)
-        : null,
-  lu: json['lu'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lu'] as Map<String, dynamic>)
-        : null,
-  lv: json['lv'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lv'] as Map<String, dynamic>)
-        : null,
-  ma: json['ma'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ma'] as Map<String, dynamic>)
-        : null,
-  md: json['md'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['md'] as Map<String, dynamic>)
-        : null,
-  me: json['me'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['me'] as Map<String, dynamic>)
-        : null,
-  mk: json['mk'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['mk'] as Map<String, dynamic>)
-        : null,
-  mr: json['mr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['mr'] as Map<String, dynamic>)
-        : null,
-  mt: json['mt'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['mt'] as Map<String, dynamic>)
-        : null,
-  mx: json['mx'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['mx'] as Map<String, dynamic>)
-        : null,
-  my: json['my'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['my'] as Map<String, dynamic>)
-        : null,
-  ng: json['ng'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ng'] as Map<String, dynamic>)
-        : null,
-  nl: json['nl'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['nl'] as Map<String, dynamic>)
-        : null,
-  no: json['no'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['no'] as Map<String, dynamic>)
-        : null,
-  np: json['np'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['np'] as Map<String, dynamic>)
-        : null,
-  nz: json['nz'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['nz'] as Map<String, dynamic>)
-        : null,
-  om: json['om'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['om'] as Map<String, dynamic>)
-        : null,
-  pe: json['pe'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['pe'] as Map<String, dynamic>)
-        : null,
-  ph: json['ph'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ph'] as Map<String, dynamic>)
-        : null,
-  pl: json['pl'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['pl'] as Map<String, dynamic>)
-        : null,
-  pt: json['pt'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['pt'] as Map<String, dynamic>)
-        : null,
-  ro: json['ro'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ro'] as Map<String, dynamic>)
-        : null,
-  rs: json['rs'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['rs'] as Map<String, dynamic>)
-        : null,
-  ru: json['ru'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ru'] as Map<String, dynamic>)
-        : null,
-  sa: json['sa'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['sa'] as Map<String, dynamic>)
-        : null,
-  se: json['se'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['se'] as Map<String, dynamic>)
-        : null,
-  sg: json['sg'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['sg'] as Map<String, dynamic>)
-        : null,
-  si: json['si'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['si'] as Map<String, dynamic>)
-        : null,
-  sk: json['sk'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['sk'] as Map<String, dynamic>)
-        : null,
-  sn: json['sn'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['sn'] as Map<String, dynamic>)
-        : null,
-  sr: json['sr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['sr'] as Map<String, dynamic>)
-        : null,
-  th: json['th'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsThailand.fromJson(json['th'] as Map<String, dynamic>)
-        : null,
-  tj: json['tj'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tj'] as Map<String, dynamic>)
-        : null,
-  tr: json['tr'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tr'] as Map<String, dynamic>)
-        : null,
-  tw: json['tw'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tw'] as Map<String, dynamic>)
-        : null,
-  tz: json['tz'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tz'] as Map<String, dynamic>)
-        : null,
-  ua: json['ua'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ua'] as Map<String, dynamic>)
-        : null,
-  ug: json['ug'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ug'] as Map<String, dynamic>)
-        : null,
-  us: json['us'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsUnitedStates.fromJson(json['us'] as Map<String, dynamic>)
-        : null,
-  uy: json['uy'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['uy'] as Map<String, dynamic>)
-        : null,
-  uz: json['uz'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['uz'] as Map<String, dynamic>)
-        : null,
-  vn: json['vn'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['vn'] as Map<String, dynamic>)
-        : null,
-  za: json['za'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['za'] as Map<String, dynamic>)
-        : null,
-  zm: json['zm'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['zm'] as Map<String, dynamic>)
-        : null,
-  zw: json['zw'] != null
-        ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['zw'] as Map<String, dynamic>)
-        : null,
+  ae: json['ae'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['ae'] as Map<String, dynamic>) : null,
+  al: json['al'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['al'] as Map<String, dynamic>) : null,
+  am: json['am'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['am'] as Map<String, dynamic>) : null,
+  ao: json['ao'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['ao'] as Map<String, dynamic>) : null,
+  at: json['at'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['at'] as Map<String, dynamic>) : null,
+  au: json['au'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['au'] as Map<String, dynamic>) : null,
+  aw: json['aw'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['aw'] as Map<String, dynamic>) : null,
+  az: json['az'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['az'] as Map<String, dynamic>) : null,
+  ba: json['ba'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['ba'] as Map<String, dynamic>) : null,
+  bb: json['bb'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bb'] as Map<String, dynamic>) : null,
+  bd: json['bd'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bd'] as Map<String, dynamic>) : null,
+  be: json['be'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['be'] as Map<String, dynamic>) : null,
+  bf: json['bf'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bf'] as Map<String, dynamic>) : null,
+  bg: json['bg'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['bg'] as Map<String, dynamic>) : null,
+  bh: json['bh'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bh'] as Map<String, dynamic>) : null,
+  bj: json['bj'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['bj'] as Map<String, dynamic>) : null,
+  bs: json['bs'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['bs'] as Map<String, dynamic>) : null,
+  by: json['by'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['by'] as Map<String, dynamic>) : null,
+  ca: json['ca'] != null ? TaxProductRegistrationsResourceCountryOptionsCanada.fromJson(json['ca'] as Map<String, dynamic>) : null,
+  cd: json['cd'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['cd'] as Map<String, dynamic>) : null,
+  ch: json['ch'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['ch'] as Map<String, dynamic>) : null,
+  cl: json['cl'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cl'] as Map<String, dynamic>) : null,
+  cm: json['cm'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cm'] as Map<String, dynamic>) : null,
+  co: json['co'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['co'] as Map<String, dynamic>) : null,
+  cr: json['cr'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cr'] as Map<String, dynamic>) : null,
+  cv: json['cv'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['cv'] as Map<String, dynamic>) : null,
+  cy: json['cy'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['cy'] as Map<String, dynamic>) : null,
+  cz: json['cz'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['cz'] as Map<String, dynamic>) : null,
+  de: json['de'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['de'] as Map<String, dynamic>) : null,
+  dk: json['dk'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['dk'] as Map<String, dynamic>) : null,
+  ec: json['ec'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ec'] as Map<String, dynamic>) : null,
+  ee: json['ee'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ee'] as Map<String, dynamic>) : null,
+  eg: json['eg'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['eg'] as Map<String, dynamic>) : null,
+  es: json['es'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['es'] as Map<String, dynamic>) : null,
+  et: json['et'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['et'] as Map<String, dynamic>) : null,
+  fi: json['fi'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['fi'] as Map<String, dynamic>) : null,
+  fr: json['fr'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['fr'] as Map<String, dynamic>) : null,
+  gb: json['gb'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['gb'] as Map<String, dynamic>) : null,
+  ge: json['ge'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ge'] as Map<String, dynamic>) : null,
+  gn: json['gn'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['gn'] as Map<String, dynamic>) : null,
+  gr: json['gr'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['gr'] as Map<String, dynamic>) : null,
+  hr: json['hr'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['hr'] as Map<String, dynamic>) : null,
+  hu: json['hu'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['hu'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['id'] as Map<String, dynamic>) : null,
+  ie: json['ie'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ie'] as Map<String, dynamic>) : null,
+  $in: json['in'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['in'] as Map<String, dynamic>) : null,
+  $is: json['is'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['is'] as Map<String, dynamic>) : null,
+  it: json['it'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['it'] as Map<String, dynamic>) : null,
+  jp: json['jp'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['jp'] as Map<String, dynamic>) : null,
+  ke: json['ke'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ke'] as Map<String, dynamic>) : null,
+  kg: json['kg'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kg'] as Map<String, dynamic>) : null,
+  kh: json['kh'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kh'] as Map<String, dynamic>) : null,
+  kr: json['kr'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kr'] as Map<String, dynamic>) : null,
+  kz: json['kz'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['kz'] as Map<String, dynamic>) : null,
+  la: json['la'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['la'] as Map<String, dynamic>) : null,
+  lk: json['lk'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['lk'] as Map<String, dynamic>) : null,
+  lt: json['lt'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lt'] as Map<String, dynamic>) : null,
+  lu: json['lu'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lu'] as Map<String, dynamic>) : null,
+  lv: json['lv'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['lv'] as Map<String, dynamic>) : null,
+  ma: json['ma'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ma'] as Map<String, dynamic>) : null,
+  md: json['md'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['md'] as Map<String, dynamic>) : null,
+  me: json['me'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['me'] as Map<String, dynamic>) : null,
+  mk: json['mk'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['mk'] as Map<String, dynamic>) : null,
+  mr: json['mr'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['mr'] as Map<String, dynamic>) : null,
+  mt: json['mt'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['mt'] as Map<String, dynamic>) : null,
+  mx: json['mx'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['mx'] as Map<String, dynamic>) : null,
+  my: json['my'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['my'] as Map<String, dynamic>) : null,
+  ng: json['ng'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ng'] as Map<String, dynamic>) : null,
+  nl: json['nl'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['nl'] as Map<String, dynamic>) : null,
+  no: json['no'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['no'] as Map<String, dynamic>) : null,
+  np: json['np'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['np'] as Map<String, dynamic>) : null,
+  nz: json['nz'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['nz'] as Map<String, dynamic>) : null,
+  om: json['om'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['om'] as Map<String, dynamic>) : null,
+  pe: json['pe'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['pe'] as Map<String, dynamic>) : null,
+  ph: json['ph'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ph'] as Map<String, dynamic>) : null,
+  pl: json['pl'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['pl'] as Map<String, dynamic>) : null,
+  pt: json['pt'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['pt'] as Map<String, dynamic>) : null,
+  ro: json['ro'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['ro'] as Map<String, dynamic>) : null,
+  rs: json['rs'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['rs'] as Map<String, dynamic>) : null,
+  ru: json['ru'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ru'] as Map<String, dynamic>) : null,
+  sa: json['sa'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['sa'] as Map<String, dynamic>) : null,
+  se: json['se'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['se'] as Map<String, dynamic>) : null,
+  sg: json['sg'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(json['sg'] as Map<String, dynamic>) : null,
+  si: json['si'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['si'] as Map<String, dynamic>) : null,
+  sk: json['sk'] != null ? TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(json['sk'] as Map<String, dynamic>) : null,
+  sn: json['sn'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['sn'] as Map<String, dynamic>) : null,
+  sr: json['sr'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['sr'] as Map<String, dynamic>) : null,
+  th: json['th'] != null ? TaxProductRegistrationsResourceCountryOptionsThailand.fromJson(json['th'] as Map<String, dynamic>) : null,
+  tj: json['tj'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tj'] as Map<String, dynamic>) : null,
+  tr: json['tr'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tr'] as Map<String, dynamic>) : null,
+  tw: json['tw'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tw'] as Map<String, dynamic>) : null,
+  tz: json['tz'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['tz'] as Map<String, dynamic>) : null,
+  ua: json['ua'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ua'] as Map<String, dynamic>) : null,
+  ug: json['ug'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['ug'] as Map<String, dynamic>) : null,
+  us: json['us'] != null ? TaxProductRegistrationsResourceCountryOptionsUnitedStates.fromJson(json['us'] as Map<String, dynamic>) : null,
+  uy: json['uy'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['uy'] as Map<String, dynamic>) : null,
+  uz: json['uz'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['uz'] as Map<String, dynamic>) : null,
+  vn: json['vn'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['vn'] as Map<String, dynamic>) : null,
+  za: json['za'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['za'] as Map<String, dynamic>) : null,
+  zm: json['zm'] != null ? TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(json['zm'] as Map<String, dynamic>) : null,
+  zw: json['zw'] != null ? TaxProductRegistrationsResourceCountryOptionsDefault.fromJson(json['zw'] as Map<String, dynamic>) : null,
 ); }
 
 final TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods? ae;

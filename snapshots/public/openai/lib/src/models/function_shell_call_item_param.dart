@@ -13,9 +13,7 @@ factory FunctionShellCallItemParam.fromJson(Map<String, dynamic> json) { return 
   type: json['type'] as String,
   action: FunctionShellActionParam.fromJson(json['action'] as Map<String, dynamic>),
   status: json['status'] != null ? FunctionShellCallItemStatus.fromJson(json['status'] as String) : null,
-  environment: json['environment'] != null
-        ? FunctionShellCallItemParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>)
-        : null,
+  environment: json['environment'] != null ? FunctionShellCallItemParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
 ); }
 
 final String? id;

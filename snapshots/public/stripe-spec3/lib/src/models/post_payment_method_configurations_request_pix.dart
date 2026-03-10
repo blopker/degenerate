@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_pix_display_preference.dart';
 final class PostPaymentMethodConfigurationsRequestPix {const PostPaymentMethodConfigurationsRequestPix({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPix.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPix(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestPixDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPixDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestPixDisplayPreference? displayPreference;

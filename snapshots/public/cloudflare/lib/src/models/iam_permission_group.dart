@@ -9,9 +9,7 @@ final class IamPermissionGroup {const IamPermissionGroup({required this.id, this
 
 factory IamPermissionGroup.fromJson(Map<String, dynamic> json) { return IamPermissionGroup(
   id: json['id'] as String,
-  meta: json['meta'] != null
-        ? IamPermissionGroupMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? IamPermissionGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
 ); }
 

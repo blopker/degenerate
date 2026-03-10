@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_grabpay_display
 final class PostPaymentMethodConfigurationsConfigurationRequestGrabpay {const PostPaymentMethodConfigurationsConfigurationRequestGrabpay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestGrabpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestGrabpay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference? displayPreference;

@@ -159,9 +159,7 @@ factory Repository.fromJson(Map<String, dynamic> json) { return Repository(
   fullName: json['full_name'] as String,
   license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
   forks: (json['forks'] as num).toInt(),
-  permissions: json['permissions'] != null
-        ? RepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   private: json['private'] as bool,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -252,9 +250,7 @@ factory Repository.fromJson(Map<String, dynamic> json) { return Repository(
   masterBranch: json['master_branch'] as String?,
   starredAt: json['starred_at'] as String?,
   anonymousAccessEnabled: json['anonymous_access_enabled'] as bool?,
-  codeSearchIndexStatus: json['code_search_index_status'] != null
-        ? RepositoryCodeSearchIndexStatus.fromJson(json['code_search_index_status'] as Map<String, dynamic>)
-        : null,
+  codeSearchIndexStatus: json['code_search_index_status'] != null ? RepositoryCodeSearchIndexStatus.fromJson(json['code_search_index_status'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier of the repository

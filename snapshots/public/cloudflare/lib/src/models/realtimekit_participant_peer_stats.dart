@@ -7,9 +7,7 @@
 import 'realtimekit_participant_peer_stats_peer_stats.dart';final class RealtimekitParticipantPeerStats {const RealtimekitParticipantPeerStats({this.peerStats});
 
 factory RealtimekitParticipantPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStats(
-  peerStats: json['peer_stats'] != null
-        ? RealtimekitParticipantPeerStatsPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>)
-        : null,
+  peerStats: json['peer_stats'] != null ? RealtimekitParticipantPeerStatsPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitParticipantPeerStatsPeerStats? peerStats;

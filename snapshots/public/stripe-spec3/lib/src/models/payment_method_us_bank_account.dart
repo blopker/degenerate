@@ -64,13 +64,9 @@ factory PaymentMethodUsBankAccount.fromJson(Map<String, dynamic> json) { return 
   financialConnectionsAccount: json['financial_connections_account'] as String?,
   fingerprint: json['fingerprint'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null
-        ? PaymentMethodUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? PaymentMethodUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   routingNumber: json['routing_number'] as String?,
-  statusDetails: json['status_details'] != null
-        ? PaymentMethodUsBankAccountStatusDetails2.fromJson(json['status_details'] as Map<String, dynamic>)
-        : null,
+  statusDetails: json['status_details'] != null ? PaymentMethodUsBankAccountStatusDetails2.fromJson(json['status_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Account holder type: individual or company.

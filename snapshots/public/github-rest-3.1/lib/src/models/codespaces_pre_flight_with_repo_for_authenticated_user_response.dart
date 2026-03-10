@@ -7,12 +7,8 @@
 import 'codespaces_pre_flight_with_repo_for_authenticated_user_response_defaults.dart';import 'simple_user.dart';final class CodespacesPreFlightWithRepoForAuthenticatedUserResponse {const CodespacesPreFlightWithRepoForAuthenticatedUserResponse({this.billableOwner, this.defaults, });
 
 factory CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
-  billableOwner: json['billable_owner'] != null
-        ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>)
-        : null,
-  defaults: json['defaults'] != null
-        ? CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(json['defaults'] as Map<String, dynamic>)
-        : null,
+  billableOwner: json['billable_owner'] != null ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>) : null,
+  defaults: json['defaults'] != null ? CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(json['defaults'] as Map<String, dynamic>) : null,
 ); }
 
 final SimpleUser? billableOwner;

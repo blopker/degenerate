@@ -7,12 +7,8 @@
 import 'streams_by_stream_id_request_http.dart';import 'streams_by_stream_id_request_worker_binding.dart';final class StreamsByStreamIdRequest {const StreamsByStreamIdRequest({this.http, this.workerBinding, });
 
 factory StreamsByStreamIdRequest.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdRequest(
-  http: json['http'] != null
-        ? StreamsByStreamIdRequestHttp.fromJson(json['http'] as Map<String, dynamic>)
-        : null,
-  workerBinding: json['worker_binding'] != null
-        ? StreamsByStreamIdRequestWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>)
-        : null,
+  http: json['http'] != null ? StreamsByStreamIdRequestHttp.fromJson(json['http'] as Map<String, dynamic>) : null,
+  workerBinding: json['worker_binding'] != null ? StreamsByStreamIdRequestWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>) : null,
 ); }
 
 final StreamsByStreamIdRequestHttp? http;

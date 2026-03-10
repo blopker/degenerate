@@ -7,16 +7,10 @@
 import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_config_patch_origin.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';final class HyperdriveHyperdriveConfigPatch {const HyperdriveHyperdriveConfigPatch({this.caching, this.mtls, this.name, this.origin, this.originConnectionLimit, });
 
 factory HyperdriveHyperdriveConfigPatch.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfigPatch(
-  caching: json['caching'] != null
-        ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>)
-        : null,
-  mtls: json['mtls'] != null
-        ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>)
-        : null,
+  caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
+  mtls: json['mtls'] != null ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? HyperdriveHyperdriveName.fromJson(json['name'] as String) : null,
-  origin: json['origin'] != null
-        ? HyperdriveHyperdriveConfigPatchOrigin.fromJson(json['origin'] as Map<String, dynamic>)
-        : null,
+  origin: json['origin'] != null ? HyperdriveHyperdriveConfigPatchOrigin.fromJson(json['origin'] as Map<String, dynamic>) : null,
   originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,
 ); }
 

@@ -36,13 +36,9 @@ final class PostInvoicesInvoiceRequestRendering {const PostInvoicesInvoiceReques
 
 factory PostInvoicesInvoiceRequestRendering.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestRendering(
   amountTaxDisplay: json['amount_tax_display'] != null ? PostInvoicesInvoiceRequestRenderingAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
-  pdf: json['pdf'] != null
-        ? PostInvoicesInvoiceRequestRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>)
-        : null,
+  pdf: json['pdf'] != null ? PostInvoicesInvoiceRequestRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
-  templateVersion: json['template_version'] != null
-        ? PostInvoicesInvoiceRequestRenderingTemplateVersion.fromJson(json['template_version'] as Map<String, dynamic>)
-        : null,
+  templateVersion: json['template_version'] != null ? PostInvoicesInvoiceRequestRenderingTemplateVersion.fromJson(json['template_version'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesInvoiceRequestRenderingAmountTaxDisplay? amountTaxDisplay;

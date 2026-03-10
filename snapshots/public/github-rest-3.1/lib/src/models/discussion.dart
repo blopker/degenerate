@@ -135,9 +135,7 @@ factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   locked: json['locked'] as bool,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  reactions: json['reactions'] != null
-        ? DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] as String,
   state: DiscussionState.fromJson(json['state'] as String),
   stateReason: DiscussionStateReason.fromJson(json['state_reason'] as String),

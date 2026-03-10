@@ -22,9 +22,7 @@ factory TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(Map<String, dynamic> js
   include: (json['include'] as List<dynamic>?)?.map((e) => TeamsDevicesSplitTunnelInclude.fromJson(e as Map<String, dynamic>)).toList(),
   registerInterfaceIpWithDns: json['register_interface_ip_with_dns'] != null ? TeamsDevicesRegisterInterfaceIpWithDns.fromJson(json['register_interface_ip_with_dns'] as bool) : null,
   sccmVpnBoundarySupport: json['sccm_vpn_boundary_support'] != null ? TeamsDevicesSccmVpnBoundarySupport.fromJson(json['sccm_vpn_boundary_support'] as bool) : null,
-  serviceModeV2: json['service_mode_v2'] != null
-        ? TeamsDevicesServiceMode.fromJson(json['service_mode_v2'] as Map<String, dynamic>)
-        : null,
+  serviceModeV2: json['service_mode_v2'] != null ? TeamsDevicesServiceMode.fromJson(json['service_mode_v2'] as Map<String, dynamic>) : null,
   supportUrl: json['support_url'] != null ? TeamsDevicesSupportUrl.fromJson(json['support_url'] as String) : null,
   switchLocked: json['switch_locked'] != null ? TeamsDevicesSwitchLocked.fromJson(json['switch_locked'] as bool) : null,
   tunnelProtocol: json['tunnel_protocol'] != null ? TeamsDevicesTunnelProtocol.fromJson(json['tunnel_protocol'] as String) : null,

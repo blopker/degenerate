@@ -7,9 +7,7 @@
 import 'inline_object1181_address.dart';final class InlineObject1181 {const InlineObject1181({this.address, this.name, this.phone, });
 
 factory InlineObject1181.fromJson(Map<String, dynamic> json) { return InlineObject1181(
-  address: json['address'] != null
-        ? InlineObject1181Address.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? InlineObject1181Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
 ); }

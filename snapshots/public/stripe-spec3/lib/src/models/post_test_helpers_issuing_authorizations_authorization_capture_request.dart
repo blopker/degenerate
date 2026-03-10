@@ -10,9 +10,7 @@ factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest.fromJson
   captureAmount: json['capture_amount'] != null ? (json['capture_amount'] as num).toInt() : null,
   closeAuthorization: json['close_authorization'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  purchaseDetails: json['purchase_details'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>)
-        : null,
+  purchaseDetails: json['purchase_details'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The amount to capture from the authorization. If not provided, the full amount of the authorization will be captured. This amount is in the authorization currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).

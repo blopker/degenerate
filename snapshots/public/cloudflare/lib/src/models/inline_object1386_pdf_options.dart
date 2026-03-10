@@ -64,13 +64,9 @@ factory InlineObject1386PdfOptions.fromJson(Map<String, dynamic> json) { return 
   footerTemplate: json['footerTemplate'] as String?,
   format: json.containsKey('format') ? InlineObject1386PdfOptionsFormat.fromJson(json['format'] as String) : InlineObject1386PdfOptionsFormat.letter,
   headerTemplate: json['headerTemplate'] as String?,
-  height: json['height'] != null
-        ? InlineObject1386PdfOptionsHeight.fromJson(json['height'] as Map<String, dynamic>)
-        : null,
+  height: json['height'] != null ? InlineObject1386PdfOptionsHeight.fromJson(json['height'] as Map<String, dynamic>) : null,
   landscape: json.containsKey('landscape') ? json['landscape'] as bool : false,
-  margin: json['margin'] != null
-        ? InlineObject1386PdfOptionsMargin.fromJson(json['margin'] as Map<String, dynamic>)
-        : null,
+  margin: json['margin'] != null ? InlineObject1386PdfOptionsMargin.fromJson(json['margin'] as Map<String, dynamic>) : null,
   omitBackground: json.containsKey('omitBackground') ? json['omitBackground'] as bool : false,
   outline: json.containsKey('outline') ? json['outline'] as bool : false,
   pageRanges: json['pageRanges'] as String?,
@@ -79,9 +75,7 @@ factory InlineObject1386PdfOptions.fromJson(Map<String, dynamic> json) { return 
   scale: json.containsKey('scale') ? (json['scale'] as num).toDouble() : 1.0,
   tagged: json.containsKey('tagged') ? json['tagged'] as bool : true,
   timeout: json.containsKey('timeout') ? (json['timeout'] as num).toDouble() : 30000.0,
-  width: json['width'] != null
-        ? InlineObject1386PdfOptionsWidth.fromJson(json['width'] as Map<String, dynamic>)
-        : null,
+  width: json['width'] != null ? InlineObject1386PdfOptionsWidth.fromJson(json['width'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether to show the header and footer.

@@ -12,9 +12,7 @@ import 'text_response_format_configuration.dart';/// Configuration options for a
 final class CreateEvalResponsesRunDataSourceSamplingParamsText {const CreateEvalResponsesRunDataSourceSamplingParamsText({this.format});
 
 factory CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
-  format: json['format'] != null
-        ? TextResponseFormatConfiguration.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? TextResponseFormatConfiguration.fromJson(json['format'] as Map<String, dynamic>) : null,
 ); }
 
 final TextResponseFormatConfiguration? format;

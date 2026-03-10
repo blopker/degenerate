@@ -7,9 +7,7 @@
 import 'post_checkout_sessions_request_subscription_data_invoice_settings_issuer.dart';final class PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings {const PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings({this.issuer});
 
 factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
-  issuer: json['issuer'] != null
-        ? PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer? issuer;

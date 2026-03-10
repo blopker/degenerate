@@ -215,14 +215,10 @@ final class InlineObject1027 {const InlineObject1027({this.captureMethod, this.o
 
 factory InlineObject1027.fromJson(Map<String, dynamic> json) { return InlineObject1027(
   captureMethod: json['capture_method'] != null ? InlineObject1027CaptureMethod.fromJson(json['capture_method'] as String) : null,
-  onDemand: json['on_demand'] != null
-        ? InlineObject1027OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? InlineObject1027OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? InlineObject1027PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject1027SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null
-        ? InlineObject1027Subscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
+  subscriptions: json['subscriptions'] != null ? InlineObject1027Subscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1027CaptureMethod? captureMethod;

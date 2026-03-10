@@ -133,17 +133,11 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject895MandateOptions {const InlineObject895MandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
 
 factory InlineObject895MandateOptions.fromJson(Map<String, dynamic> json) { return InlineObject895MandateOptions(
-  amount: json['amount'] != null
-        ? InlineObject895MandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? InlineObject895MandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   amountType: json['amount_type'] != null ? InlineObject895MandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] != null
-        ? InlineObject895MandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>)
-        : null,
+  endDate: json['end_date'] != null ? InlineObject895MandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>) : null,
   paymentSchedule: json['payment_schedule'] != null ? InlineObject895MandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null
-        ? InlineObject895MandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>)
-        : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? InlineObject895MandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>) : null,
   purpose: json['purpose'] != null ? InlineObject895MandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
 ); }
 

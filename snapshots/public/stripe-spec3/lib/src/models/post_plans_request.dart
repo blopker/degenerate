@@ -122,19 +122,13 @@ factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansR
   id: json['id'] as String?,
   interval: PostPlansRequestInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-  metadata: json['metadata'] != null
-        ? PostPlansRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPlansRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
-  product: json['product'] != null
-        ? PostPlansRequestProduct.fromJson(json['product'] as Map<String, dynamic>)
-        : null,
+  product: json['product'] != null ? PostPlansRequestProduct.fromJson(json['product'] as Map<String, dynamic>) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PostPlansRequestTiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformUsage: json['transform_usage'] != null
-        ? PostPlansRequestTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>)
-        : null,
+  transformUsage: json['transform_usage'] != null ? PostPlansRequestTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   usageType: json['usage_type'] != null ? PostPlansRequestUsageType.fromJson(json['usage_type'] as String) : null,
 ); }

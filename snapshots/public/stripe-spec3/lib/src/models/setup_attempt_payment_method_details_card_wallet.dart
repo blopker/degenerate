@@ -36,12 +36,8 @@ bool get isUnknown { return !values.contains(this); }
 final class SetupAttemptPaymentMethodDetailsCardWallet {const SetupAttemptPaymentMethodDetailsCardWallet({this.applePay, this.googlePay, required this.type, });
 
 factory SetupAttemptPaymentMethodDetailsCardWallet.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardWallet(
-  applePay: json['apple_pay'] != null
-        ? PaymentMethodDetailsCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>)
-        : null,
-  googlePay: json['google_pay'] != null
-        ? PaymentMethodDetailsCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>)
-        : null,
+  applePay: json['apple_pay'] != null ? PaymentMethodDetailsCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
+  googlePay: json['google_pay'] != null ? PaymentMethodDetailsCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
   type: SetupAttemptPaymentMethodDetailsCardWalletType.fromJson(json['type'] as String),
 ); }
 

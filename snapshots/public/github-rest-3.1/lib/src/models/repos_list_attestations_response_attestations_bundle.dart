@@ -10,12 +10,8 @@ final class ReposListAttestationsResponseAttestationsBundle {const ReposListAtte
 
 factory ReposListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestationsBundle(
   mediaType: json['mediaType'] as String?,
-  verificationMaterial: json['verificationMaterial'] != null
-        ? ReposListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>)
-        : null,
-  dsseEnvelope: json['dsseEnvelope'] != null
-        ? ReposListAttestationsResponseAttestationsBundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>)
-        : null,
+  verificationMaterial: json['verificationMaterial'] != null ? ReposListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>) : null,
+  dsseEnvelope: json['dsseEnvelope'] != null ? ReposListAttestationsResponseAttestationsBundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>) : null,
 ); }
 
 final String? mediaType;

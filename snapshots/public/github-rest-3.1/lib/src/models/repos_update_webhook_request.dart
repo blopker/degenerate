@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'webhook_config.dart';final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active = true, });
 
 factory ReposUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateWebhookRequest(
-  config: json['config'] != null
-        ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   addEvents: (json['add_events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   removeEvents: (json['remove_events'] as List<dynamic>?)?.map((e) => e as String).toList(),

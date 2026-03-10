@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
 
 factory PostAccountsAccountRequestSettingsInvoices.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsInvoices(
-  defaultAccountTaxIds: json['default_account_tax_ids'] != null
-        ? PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds.fromJson(json['default_account_tax_ids'] as Map<String, dynamic>)
-        : null,
+  defaultAccountTaxIds: json['default_account_tax_ids'] != null ? PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds.fromJson(json['default_account_tax_ids'] as Map<String, dynamic>) : null,
   hostedPaymentMethodSave: json['hosted_payment_method_save'] != null ? PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null,
 ); }
 

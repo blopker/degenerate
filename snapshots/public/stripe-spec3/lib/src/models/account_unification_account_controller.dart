@@ -58,17 +58,11 @@ bool get isUnknown { return !values.contains(this); }
 final class AccountUnificationAccountController {const AccountUnificationAccountController({this.fees, this.isController, this.losses, this.requirementCollection, this.stripeDashboard, required this.type, });
 
 factory AccountUnificationAccountController.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountController(
-  fees: json['fees'] != null
-        ? AccountUnificationAccountControllerFees.fromJson(json['fees'] as Map<String, dynamic>)
-        : null,
+  fees: json['fees'] != null ? AccountUnificationAccountControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,
   isController: json['is_controller'] as bool?,
-  losses: json['losses'] != null
-        ? AccountUnificationAccountControllerLosses.fromJson(json['losses'] as Map<String, dynamic>)
-        : null,
+  losses: json['losses'] != null ? AccountUnificationAccountControllerLosses.fromJson(json['losses'] as Map<String, dynamic>) : null,
   requirementCollection: json['requirement_collection'] != null ? AccountUnificationAccountControllerRequirementCollection.fromJson(json['requirement_collection'] as String) : null,
-  stripeDashboard: json['stripe_dashboard'] != null
-        ? AccountUnificationAccountControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>)
-        : null,
+  stripeDashboard: json['stripe_dashboard'] != null ? AccountUnificationAccountControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>) : null,
   type: AccountUnificationAccountControllerType.fromJson(json['type'] as String),
 ); }
 

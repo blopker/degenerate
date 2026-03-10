@@ -58,9 +58,7 @@ factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return He
   createdOn: json['created_on'] != null ? HealthchecksTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? HealthchecksDescription.fromJson(json['description'] as String) : null,
   failureReason: json['failure_reason'] != null ? HealthchecksFailureReason.fromJson(json['failure_reason'] as String) : null,
-  httpConfig: json['http_config'] != null
-        ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>)
-        : null,
+  httpConfig: json['http_config'] != null ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? HealthchecksIdentifier.fromJson(json['id'] as String) : null,
   interval: json['interval'] != null ? HealthchecksInterval.fromJson(json['interval'] as num) : null,
   modifiedOn: json['modified_on'] != null ? HealthchecksTimestamp.fromJson(json['modified_on'] as String) : null,
@@ -68,9 +66,7 @@ factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return He
   retries: json['retries'] != null ? HealthchecksRetries.fromJson(json['retries'] as num) : null,
   status: json['status'] != null ? HealthchecksStatus.fromJson(json['status'] as String) : null,
   suspended: json['suspended'] != null ? HealthchecksSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null
-        ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>)
-        : null,
+  tcpConfig: json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
   timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
 ); }

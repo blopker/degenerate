@@ -7,21 +7,11 @@
 import 'inline_object561_additional_documentation.dart';import 'inline_object561_canceled_at.dart';import 'inline_object561_cancellation_reason.dart';import 'inline_object561_explanation.dart';import 'inline_object561_received_at.dart';final class InlineObject561 {const InlineObject561({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory InlineObject561.fromJson(Map<String, dynamic> json) { return InlineObject561(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject561AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  canceledAt: json['canceled_at'] != null
-        ? InlineObject561CanceledAt.fromJson(json['canceled_at'] as Map<String, dynamic>)
-        : null,
-  cancellationReason: json['cancellation_reason'] != null
-        ? InlineObject561CancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject561Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
-  receivedAt: json['received_at'] != null
-        ? InlineObject561ReceivedAt.fromJson(json['received_at'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject561AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  canceledAt: json['canceled_at'] != null ? InlineObject561CanceledAt.fromJson(json['canceled_at'] as Map<String, dynamic>) : null,
+  cancellationReason: json['cancellation_reason'] != null ? InlineObject561CancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject561Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
+  receivedAt: json['received_at'] != null ? InlineObject561ReceivedAt.fromJson(json['received_at'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject561AdditionalDocumentation? additionalDocumentation;

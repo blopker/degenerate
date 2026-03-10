@@ -207,9 +207,7 @@ factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return Billin
   created: (json['created'] as num).toInt(),
   customer: json['customer'] as String,
   customerAccount: json['customer_account'] as String?,
-  flow: json['flow'] != null
-        ? BillingPortalSessionFlow.fromJson(json['flow'] as Map<String, dynamic>)
-        : null,
+  flow: json['flow'] != null ? BillingPortalSessionFlow.fromJson(json['flow'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   locale: json['locale'] != null ? BillingPortalSessionLocale.fromJson(json['locale'] as String) : null,

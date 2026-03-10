@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_entitlements_features_i
 factory PostEntitlementsFeaturesIdRequest.fromJson(Map<String, dynamic> json) { return PostEntitlementsFeaturesIdRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostEntitlementsFeaturesIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostEntitlementsFeaturesIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
 ); }
 

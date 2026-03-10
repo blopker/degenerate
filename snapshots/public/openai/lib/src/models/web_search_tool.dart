@@ -39,12 +39,8 @@ final class WebSearchTool {const WebSearchTool({this.type = 'web_search', this.f
 
 factory WebSearchTool.fromJson(Map<String, dynamic> json) { return WebSearchTool(
   type: json['type'] as String,
-  filters: json['filters'] != null
-        ? WebSearchToolFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
-  userLocation: json['user_location'] != null
-        ? WebSearchApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? WebSearchToolFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
+  userLocation: json['user_location'] != null ? WebSearchApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
   searchContextSize: json.containsKey('search_context_size') ? WebSearchToolSearchContextSize.fromJson(json['search_context_size'] as String) : WebSearchToolSearchContextSize.medium,
 ); }
 

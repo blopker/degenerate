@@ -30,9 +30,7 @@ final class RepositoryRuleMergeQueue {const RepositoryRuleMergeQueue({required t
 
 factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) { return RepositoryRuleMergeQueue(
   type: RepositoryRuleMergeQueueType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleMergeQueueParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleMergeQueueParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleMergeQueueType type;

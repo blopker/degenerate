@@ -14,15 +14,9 @@ factory GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(Map<String,
   id: json['id'] as String?,
   joinedAt: json['joined_at'] as String?,
   leftAt: json['left_at'] as String?,
-  peerReport: json['peer_report'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReport.fromJson(json['peer_report'] as Map<String, dynamic>)
-        : null,
-  peerStats: json['peer_stats'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>)
-        : null,
-  qualityStats: json['quality_stats'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson(json['quality_stats'] as Map<String, dynamic>)
-        : null,
+  peerReport: json['peer_report'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReport.fromJson(json['peer_report'] as Map<String, dynamic>) : null,
+  peerStats: json['peer_stats'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>) : null,
+  qualityStats: json['quality_stats'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson(json['quality_stats'] as Map<String, dynamic>) : null,
   role: json['role'] as String?,
   updatedAt: json['updated_at'] as String?,
   userId: json['user_id'] as String?,

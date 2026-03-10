@@ -13,9 +13,7 @@ final class DlpDlpSettingsUpdate {const DlpDlpSettingsUpdate({this.aiContextAnal
 factory DlpDlpSettingsUpdate.fromJson(Map<String, dynamic> json) { return DlpDlpSettingsUpdate(
   aiContextAnalysis: json.containsKey('ai_context_analysis') ? json['ai_context_analysis'] as bool : false,
   ocr: json.containsKey('ocr') ? json['ocr'] as bool : false,
-  payloadLogging: json['payload_logging'] != null
-        ? DlpPayloadLogSettingUpdate.fromJson(json['payload_logging'] as Map<String, dynamic>)
-        : null,
+  payloadLogging: json['payload_logging'] != null ? DlpPayloadLogSettingUpdate.fromJson(json['payload_logging'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether AI context analysis is enabled at the account level.

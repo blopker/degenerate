@@ -91,24 +91,16 @@ final class Payout {const Payout({required this.amount, this.applicationFee, thi
 
 factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   amount: (json['amount'] as num).toInt(),
-  applicationFee: json['application_fee'] != null
-        ? PayoutApplicationFee.fromJson(json['application_fee'] as Map<String, dynamic>)
-        : null,
+  applicationFee: json['application_fee'] != null ? PayoutApplicationFee.fromJson(json['application_fee'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   arrivalDate: (json['arrival_date'] as num).toInt(),
   automatic: json['automatic'] as bool,
-  balanceTransaction: json['balance_transaction'] != null
-        ? PayoutBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? PayoutBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  destination: json['destination'] != null
-        ? PayoutDestination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
-  failureBalanceTransaction: json['failure_balance_transaction'] != null
-        ? PayoutFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? PayoutDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  failureBalanceTransaction: json['failure_balance_transaction'] != null ? PayoutFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>) : null,
   failureCode: json['failure_code'] as String?,
   failureMessage: json['failure_message'] as String?,
   id: json['id'] as String,
@@ -116,20 +108,14 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   method: json['method'] as String,
   object: PayoutObject.fromJson(json['object'] as String),
-  originalPayout: json['original_payout'] != null
-        ? PayoutOriginalPayout.fromJson(json['original_payout'] as Map<String, dynamic>)
-        : null,
+  originalPayout: json['original_payout'] != null ? PayoutOriginalPayout.fromJson(json['original_payout'] as Map<String, dynamic>) : null,
   payoutMethod: json['payout_method'] as String?,
   reconciliationStatus: PayoutReconciliationStatus.fromJson(json['reconciliation_status'] as String),
-  reversedBy: json['reversed_by'] != null
-        ? PayoutReversedBy.fromJson(json['reversed_by'] as Map<String, dynamic>)
-        : null,
+  reversedBy: json['reversed_by'] != null ? PayoutReversedBy.fromJson(json['reversed_by'] as Map<String, dynamic>) : null,
   sourceType: json['source_type'] as String,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] as String,
-  traceId: json['trace_id'] != null
-        ? PayoutTraceId.fromJson(json['trace_id'] as Map<String, dynamic>)
-        : null,
+  traceId: json['trace_id'] != null ? PayoutTraceId.fromJson(json['trace_id'] as Map<String, dynamic>) : null,
   type: PayoutType.fromJson(json['type'] as String),
 ); }
 

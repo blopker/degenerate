@@ -12,12 +12,8 @@ factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> 
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool?,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
   requireLastPushApproval: json.containsKey('require_last_push_approval') ? json['require_last_push_approval'] as bool : false,
-  dismissalRestrictions: json['dismissal_restrictions'] != null
-        ? ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>)
-        : null,
-  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null
-        ? ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>)
-        : null,
+  dismissalRestrictions: json['dismissal_restrictions'] != null ? ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
+  bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

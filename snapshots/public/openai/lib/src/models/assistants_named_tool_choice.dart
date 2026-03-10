@@ -37,9 +37,7 @@ final class AssistantsNamedToolChoice {const AssistantsNamedToolChoice({required
 
 factory AssistantsNamedToolChoice.fromJson(Map<String, dynamic> json) { return AssistantsNamedToolChoice(
   type: AssistantsNamedToolChoiceType.fromJson(json['type'] as String),
-  function: json['function'] != null
-        ? AssistantsNamedToolChoiceFunction.fromJson(json['function'] as Map<String, dynamic>)
-        : null,
+  function: json['function'] != null ? AssistantsNamedToolChoiceFunction.fromJson(json['function'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of the tool. If type is `function`, the function name must be set

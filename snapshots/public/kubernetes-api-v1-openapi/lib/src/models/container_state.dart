@@ -8,15 +8,9 @@ import 'container_state_running.dart';import 'container_state_terminated.dart';i
 final class ContainerState {const ContainerState({this.running, this.terminated, this.waiting, });
 
 factory ContainerState.fromJson(Map<String, dynamic> json) { return ContainerState(
-  running: json['running'] != null
-        ? ContainerStateRunning.fromJson(json['running'] as Map<String, dynamic>)
-        : null,
-  terminated: json['terminated'] != null
-        ? ContainerStateTerminated.fromJson(json['terminated'] as Map<String, dynamic>)
-        : null,
-  waiting: json['waiting'] != null
-        ? ContainerStateWaiting.fromJson(json['waiting'] as Map<String, dynamic>)
-        : null,
+  running: json['running'] != null ? ContainerStateRunning.fromJson(json['running'] as Map<String, dynamic>) : null,
+  terminated: json['terminated'] != null ? ContainerStateTerminated.fromJson(json['terminated'] as Map<String, dynamic>) : null,
+  waiting: json['waiting'] != null ? ContainerStateWaiting.fromJson(json['waiting'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details about a running container

@@ -87,9 +87,7 @@ factory InlineObject152.fromJson(Map<String, dynamic> json) { return InlineObjec
   outcome: json['outcome'] as String?,
   requestId: json['requestId'] as String,
   scriptName: json['scriptName'] as String,
-  scriptVersion: json['scriptVersion'] != null
-        ? InlineObject152ScriptVersion.fromJson(json['scriptVersion'] as Map<String, dynamic>)
-        : null,
+  scriptVersion: json['scriptVersion'] != null ? InlineObject152ScriptVersion.fromJson(json['scriptVersion'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
 ); }
 

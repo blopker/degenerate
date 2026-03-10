@@ -8,69 +8,27 @@ import 'terminal_configuration_configuration_resource_currency_specific_config.d
 final class TerminalConfigurationConfigurationResourceTipping {const TerminalConfigurationConfigurationResourceTipping({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
 
 factory TerminalConfigurationConfigurationResourceTipping.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceTipping(
-  aed: json['aed'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['aed'] as Map<String, dynamic>)
-        : null,
-  aud: json['aud'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['aud'] as Map<String, dynamic>)
-        : null,
-  cad: json['cad'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['cad'] as Map<String, dynamic>)
-        : null,
-  chf: json['chf'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['chf'] as Map<String, dynamic>)
-        : null,
-  czk: json['czk'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['czk'] as Map<String, dynamic>)
-        : null,
-  dkk: json['dkk'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['dkk'] as Map<String, dynamic>)
-        : null,
-  eur: json['eur'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['eur'] as Map<String, dynamic>)
-        : null,
-  gbp: json['gbp'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['gbp'] as Map<String, dynamic>)
-        : null,
-  gip: json['gip'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['gip'] as Map<String, dynamic>)
-        : null,
-  hkd: json['hkd'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['hkd'] as Map<String, dynamic>)
-        : null,
-  huf: json['huf'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['huf'] as Map<String, dynamic>)
-        : null,
-  jpy: json['jpy'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['jpy'] as Map<String, dynamic>)
-        : null,
-  mxn: json['mxn'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['mxn'] as Map<String, dynamic>)
-        : null,
-  myr: json['myr'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['myr'] as Map<String, dynamic>)
-        : null,
-  nok: json['nok'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['nok'] as Map<String, dynamic>)
-        : null,
-  nzd: json['nzd'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['nzd'] as Map<String, dynamic>)
-        : null,
-  pln: json['pln'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['pln'] as Map<String, dynamic>)
-        : null,
-  ron: json['ron'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['ron'] as Map<String, dynamic>)
-        : null,
-  sek: json['sek'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['sek'] as Map<String, dynamic>)
-        : null,
-  sgd: json['sgd'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['sgd'] as Map<String, dynamic>)
-        : null,
-  usd: json['usd'] != null
-        ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['usd'] as Map<String, dynamic>)
-        : null,
+  aed: json['aed'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['aed'] as Map<String, dynamic>) : null,
+  aud: json['aud'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['aud'] as Map<String, dynamic>) : null,
+  cad: json['cad'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['cad'] as Map<String, dynamic>) : null,
+  chf: json['chf'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['chf'] as Map<String, dynamic>) : null,
+  czk: json['czk'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['czk'] as Map<String, dynamic>) : null,
+  dkk: json['dkk'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['dkk'] as Map<String, dynamic>) : null,
+  eur: json['eur'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['eur'] as Map<String, dynamic>) : null,
+  gbp: json['gbp'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['gbp'] as Map<String, dynamic>) : null,
+  gip: json['gip'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['gip'] as Map<String, dynamic>) : null,
+  hkd: json['hkd'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['hkd'] as Map<String, dynamic>) : null,
+  huf: json['huf'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['huf'] as Map<String, dynamic>) : null,
+  jpy: json['jpy'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['jpy'] as Map<String, dynamic>) : null,
+  mxn: json['mxn'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['mxn'] as Map<String, dynamic>) : null,
+  myr: json['myr'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['myr'] as Map<String, dynamic>) : null,
+  nok: json['nok'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['nok'] as Map<String, dynamic>) : null,
+  nzd: json['nzd'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['nzd'] as Map<String, dynamic>) : null,
+  pln: json['pln'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['pln'] as Map<String, dynamic>) : null,
+  ron: json['ron'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['ron'] as Map<String, dynamic>) : null,
+  sek: json['sek'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['sek'] as Map<String, dynamic>) : null,
+  sgd: json['sgd'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['sgd'] as Map<String, dynamic>) : null,
+  usd: json['usd'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['usd'] as Map<String, dynamic>) : null,
 ); }
 
 final TerminalConfigurationConfigurationResourceCurrencySpecificConfig? aed;

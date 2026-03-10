@@ -7,9 +7,7 @@
 import 'urlscanner_get_scan_response_result_scan_links_link.dart';final class UrlscannerGetScanResponseResultScanLinks {const UrlscannerGetScanResponseResultScanLinks({this.link});
 
 factory UrlscannerGetScanResponseResultScanLinks.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanLinks(
-  link: json['link'] != null
-        ? UrlscannerGetScanResponseResultScanLinksLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
+  link: json['link'] != null ? UrlscannerGetScanResponseResultScanLinksLink.fromJson(json['link'] as Map<String, dynamic>) : null,
 ); }
 
 final UrlscannerGetScanResponseResultScanLinksLink? link;

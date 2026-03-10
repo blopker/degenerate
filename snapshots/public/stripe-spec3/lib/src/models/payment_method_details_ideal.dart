@@ -171,12 +171,8 @@ final class PaymentMethodDetailsIdeal {const PaymentMethodDetailsIdeal({this.ban
 factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsIdeal(
   bank: json['bank'] != null ? PaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null,
   bic: json['bic'] != null ? PaymentMethodDetailsIdealBic.fromJson(json['bic'] as String) : null,
-  generatedSepaDebit: json['generated_sepa_debit'] != null
-        ? PaymentMethodDetailsIdealGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>)
-        : null,
-  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null
-        ? PaymentMethodDetailsIdealGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>)
-        : null,
+  generatedSepaDebit: json['generated_sepa_debit'] != null ? PaymentMethodDetailsIdealGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>) : null,
+  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null ? PaymentMethodDetailsIdealGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>) : null,
   ibanLast4: json['iban_last4'] as String?,
   transactionId: json['transaction_id'] as String?,
   verifiedName: json['verified_name'] as String?,

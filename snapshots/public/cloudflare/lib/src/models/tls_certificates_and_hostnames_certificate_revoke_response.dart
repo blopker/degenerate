@@ -7,9 +7,7 @@
 import 'tls_certificates_and_hostnames_certificate_revoke_response_result.dart';final class TlsCertificatesAndHostnamesCertificateRevokeResponse {const TlsCertificatesAndHostnamesCertificateRevokeResponse({this.result});
 
 factory TlsCertificatesAndHostnamesCertificateRevokeResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateRevokeResponse(
-  result: json['result'] != null
-        ? TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final TlsCertificatesAndHostnamesCertificateRevokeResponseResult? result;

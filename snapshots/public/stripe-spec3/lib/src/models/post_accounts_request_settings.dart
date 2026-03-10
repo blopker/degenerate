@@ -8,30 +8,14 @@ import 'post_accounts_request_settings_bacs_debit_payments.dart';import 'post_ac
 final class PostAccountsRequestSettings {const PostAccountsRequestSettings({this.bacsDebitPayments, this.branding, this.cardIssuing, this.cardPayments, this.invoices, this.payments, this.payouts, this.treasury, });
 
 factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettings(
-  bacsDebitPayments: json['bacs_debit_payments'] != null
-        ? PostAccountsRequestSettingsBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>)
-        : null,
-  branding: json['branding'] != null
-        ? PostAccountsRequestSettingsBranding.fromJson(json['branding'] as Map<String, dynamic>)
-        : null,
-  cardIssuing: json['card_issuing'] != null
-        ? PostAccountsRequestSettingsCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  cardPayments: json['card_payments'] != null
-        ? PostAccountsRequestSettingsCardPayments.fromJson(json['card_payments'] as Map<String, dynamic>)
-        : null,
-  invoices: json['invoices'] != null
-        ? PostAccountsRequestSettingsInvoices.fromJson(json['invoices'] as Map<String, dynamic>)
-        : null,
-  payments: json['payments'] != null
-        ? PostAccountsRequestSettingsPayments.fromJson(json['payments'] as Map<String, dynamic>)
-        : null,
-  payouts: json['payouts'] != null
-        ? PostAccountsRequestSettingsPayouts.fromJson(json['payouts'] as Map<String, dynamic>)
-        : null,
-  treasury: json['treasury'] != null
-        ? PostAccountsRequestSettingsTreasury.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  bacsDebitPayments: json['bacs_debit_payments'] != null ? PostAccountsRequestSettingsBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
+  branding: json['branding'] != null ? PostAccountsRequestSettingsBranding.fromJson(json['branding'] as Map<String, dynamic>) : null,
+  cardIssuing: json['card_issuing'] != null ? PostAccountsRequestSettingsCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  cardPayments: json['card_payments'] != null ? PostAccountsRequestSettingsCardPayments.fromJson(json['card_payments'] as Map<String, dynamic>) : null,
+  invoices: json['invoices'] != null ? PostAccountsRequestSettingsInvoices.fromJson(json['invoices'] as Map<String, dynamic>) : null,
+  payments: json['payments'] != null ? PostAccountsRequestSettingsPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
+  payouts: json['payouts'] != null ? PostAccountsRequestSettingsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? PostAccountsRequestSettingsTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestSettingsBacsDebitPayments? bacsDebitPayments;

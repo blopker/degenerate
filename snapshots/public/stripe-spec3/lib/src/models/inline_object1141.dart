@@ -7,12 +7,8 @@
 import 'inline_object1141_business.dart';import 'inline_object1141_individual.dart';final class InlineObject1141 {const InlineObject1141({this.business, this.individual, });
 
 factory InlineObject1141.fromJson(Map<String, dynamic> json) { return InlineObject1141(
-  business: json['business'] != null
-        ? InlineObject1141Business.fromJson(json['business'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? InlineObject1141Individual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  business: json['business'] != null ? InlineObject1141Business.fromJson(json['business'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? InlineObject1141Individual.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1141Business? business;

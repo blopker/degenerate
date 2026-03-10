@@ -34,9 +34,7 @@ final class GelatoSelfieReport {const GelatoSelfieReport({this.document, this.er
 
 factory GelatoSelfieReport.fromJson(Map<String, dynamic> json) { return GelatoSelfieReport(
   document: json['document'] as String?,
-  error: json['error'] != null
-        ? GelatoSelfieReportError2.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? GelatoSelfieReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
   selfie: json['selfie'] as String?,
   status: GelatoSelfieReportStatus.fromJson(json['status'] as String),
 ); }

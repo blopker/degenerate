@@ -35,17 +35,11 @@ factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> js
   clientReferenceId: json['client_reference_id'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  options: json['options'] != null
-        ? PostIdentityVerificationSessionsRequestOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-  providedDetails: json['provided_details'] != null
-        ? PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? PostIdentityVerificationSessionsRequestOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
+  providedDetails: json['provided_details'] != null ? PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
   relatedCustomer: json['related_customer'] as String?,
   relatedCustomerAccount: json['related_customer_account'] as String?,
-  relatedPerson: json['related_person'] != null
-        ? PostIdentityVerificationSessionsRequestRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>)
-        : null,
+  relatedPerson: json['related_person'] != null ? PostIdentityVerificationSessionsRequestRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   type: json['type'] != null ? PostIdentityVerificationSessionsRequestType.fromJson(json['type'] as String) : null,
   verificationFlow: json['verification_flow'] as String?,

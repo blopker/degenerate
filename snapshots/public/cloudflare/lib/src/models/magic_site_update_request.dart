@@ -9,9 +9,7 @@ import 'magic_connector_id.dart';import 'magic_secondary_connector_id.dart';impo
 factory MagicSiteUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicSiteUpdateRequest(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,
   description: json['description'] as String?,
-  location: json['location'] != null
-        ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? MagicSiteName.fromJson(json['name'] as String) : null,
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
 ); }

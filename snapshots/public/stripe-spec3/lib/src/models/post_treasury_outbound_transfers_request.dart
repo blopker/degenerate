@@ -11,12 +11,8 @@ factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json)
   currency: json['currency'] as String,
   description: json['description'] as String?,
   destinationPaymentMethod: json['destination_payment_method'] as String?,
-  destinationPaymentMethodData: json['destination_payment_method_data'] != null
-        ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData.fromJson(json['destination_payment_method_data'] as Map<String, dynamic>)
-        : null,
-  destinationPaymentMethodOptions: json['destination_payment_method_options'] != null
-        ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(json['destination_payment_method_options'] as Map<String, dynamic>)
-        : null,
+  destinationPaymentMethodData: json['destination_payment_method_data'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData.fromJson(json['destination_payment_method_data'] as Map<String, dynamic>) : null,
+  destinationPaymentMethodOptions: json['destination_payment_method_options'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(json['destination_payment_method_options'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   financialAccount: json['financial_account'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

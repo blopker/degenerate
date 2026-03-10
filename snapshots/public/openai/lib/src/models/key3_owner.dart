@@ -33,12 +33,8 @@ final class Key3Owner {const Key3Owner({this.type, this.user, this.serviceAccoun
 
 factory Key3Owner.fromJson(Map<String, dynamic> json) { return Key3Owner(
   type: json['type'] != null ? Key3OwnerType.fromJson(json['type'] as String) : null,
-  user: json['user'] != null
-        ? ProjectUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
-  serviceAccount: json['service_account'] != null
-        ? ProjectServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? ProjectUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  serviceAccount: json['service_account'] != null ? ProjectServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// `user` or `service_account`

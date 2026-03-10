@@ -8,12 +8,8 @@ import 'post_payment_intents_request_payment_details_customer_reference.dart';im
 final class PostPaymentIntentsRequestPaymentDetails {const PostPaymentIntentsRequestPaymentDetails({this.customerReference, this.orderReference, });
 
 factory PostPaymentIntentsRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentDetails(
-  customerReference: json['customer_reference'] != null
-        ? PostPaymentIntentsRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>)
-        : null,
-  orderReference: json['order_reference'] != null
-        ? PostPaymentIntentsRequestPaymentDetailsOrderReference.fromJson(json['order_reference'] as Map<String, dynamic>)
-        : null,
+  customerReference: json['customer_reference'] != null ? PostPaymentIntentsRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>) : null,
+  orderReference: json['order_reference'] != null ? PostPaymentIntentsRequestPaymentDetailsOrderReference.fromJson(json['order_reference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsRequestPaymentDetailsCustomerReference? customerReference;

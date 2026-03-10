@@ -10,9 +10,7 @@ factory WorBatchTerminateWorkflowInstancesResponse.fromJson(Map<String, dynamic>
   errors: (json['errors'] as List<dynamic>).map((e) => WorBatchTerminateWorkflowInstancesResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorBatchTerminateWorkflowInstancesResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorBatchTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-  resultInfo: json['result_info'] != null
-        ? WorBatchTerminateWorkflowInstancesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? WorBatchTerminateWorkflowInstancesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

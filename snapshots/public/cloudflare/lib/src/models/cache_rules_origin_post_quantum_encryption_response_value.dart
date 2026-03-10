@@ -7,9 +7,7 @@
 import 'cache_rules_base.dart';final class CacheRulesOriginPostQuantumEncryptionResponseValue {const CacheRulesOriginPostQuantumEncryptionResponseValue({this.result});
 
 factory CacheRulesOriginPostQuantumEncryptionResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesOriginPostQuantumEncryptionResponseValue(
-  result: json['result'] != null
-        ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final CacheRulesBase? result;

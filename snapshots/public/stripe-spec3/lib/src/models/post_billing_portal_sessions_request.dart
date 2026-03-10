@@ -171,9 +171,7 @@ factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { r
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  flowData: json['flow_data'] != null
-        ? PostBillingPortalSessionsRequestFlowData.fromJson(json['flow_data'] as Map<String, dynamic>)
-        : null,
+  flowData: json['flow_data'] != null ? PostBillingPortalSessionsRequestFlowData.fromJson(json['flow_data'] as Map<String, dynamic>) : null,
   locale: json['locale'] != null ? PostBillingPortalSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   returnUrl: json['return_url'] as String?,

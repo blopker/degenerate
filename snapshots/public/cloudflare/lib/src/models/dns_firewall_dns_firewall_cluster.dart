@@ -90,9 +90,7 @@ num toJson() => value;
 final class DnsFirewallDnsFirewallCluster {const DnsFirewallDnsFirewallCluster({this.attackMitigation, this.deprecateAnyRequests, this.ecsFallback, this.maximumCacheTtl, this.minimumCacheTtl, this.name, this.negativeCacheTtl, this.ratelimit, this.retries, this.upstreamIps, });
 
 factory DnsFirewallDnsFirewallCluster.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallCluster(
-  attackMitigation: json['attack_mitigation'] != null
-        ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>)
-        : null,
+  attackMitigation: json['attack_mitigation'] != null ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>) : null,
   deprecateAnyRequests: json['deprecate_any_requests'] != null ? DnsFirewallDeprecateAnyRequests.fromJson(json['deprecate_any_requests'] as bool) : null,
   ecsFallback: json['ecs_fallback'] != null ? DnsFirewallEcsFallback.fromJson(json['ecs_fallback'] as bool) : null,
   maximumCacheTtl: json['maximum_cache_ttl'] != null ? DnsFirewallMaximumCacheTtl.fromJson(json['maximum_cache_ttl'] as num) : null,

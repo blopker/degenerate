@@ -33,9 +33,7 @@ String toJson() => value;
 final class TeamsDevicesDevice {const TeamsDevicesDevice({this.account, this.created, this.deleted, this.deviceType, this.gatewayDeviceId, this.id, this.ip, this.key, this.keyType, this.lastSeen, this.macAddress, this.model, this.name, this.osVersion, this.serialNumber, this.tunnelType, this.updated, this.user, this.version, });
 
 factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevice(
-  account: json['account'] != null
-        ? TeamsDevicesAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? TeamsDevicesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,
   deleted: json['deleted'] != null ? TeamsDevicesDeleted.fromJson(json['deleted'] as bool) : null,
   deviceType: json['device_type'] != null ? TeamsDevicesDeviceType.fromJson(json['device_type'] as String) : null,
@@ -52,9 +50,7 @@ factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDev
   serialNumber: json['serial_number'] != null ? TeamsDevicesSerialNumber.fromJson(json['serial_number'] as String) : null,
   tunnelType: json['tunnel_type'] != null ? TeamsDevicesTunnelType.fromJson(json['tunnel_type'] as String) : null,
   updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
-  user: json['user'] != null
-        ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
 ); }
 

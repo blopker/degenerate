@@ -7,12 +7,8 @@
 import 'webhook_installation_target_renamed_changes_login.dart';import 'webhook_installation_target_renamed_changes_slug.dart';final class WebhookInstallationTargetRenamedChanges {const WebhookInstallationTargetRenamedChanges({this.login, this.slug, });
 
 factory WebhookInstallationTargetRenamedChanges.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamedChanges(
-  login: json['login'] != null
-        ? WebhookInstallationTargetRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>)
-        : null,
-  slug: json['slug'] != null
-        ? WebhookInstallationTargetRenamedChangesSlug.fromJson(json['slug'] as Map<String, dynamic>)
-        : null,
+  login: json['login'] != null ? WebhookInstallationTargetRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>) : null,
+  slug: json['slug'] != null ? WebhookInstallationTargetRenamedChangesSlug.fromJson(json['slug'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookInstallationTargetRenamedChangesLogin? login;

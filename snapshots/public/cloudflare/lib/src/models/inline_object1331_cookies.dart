@@ -13,18 +13,12 @@ factory InlineObject1331Cookies.fromJson(Map<String, dynamic> json) { return Inl
   name: json['name'] as String,
   partitionKey: json['partitionKey'] as String?,
   path: json['path'] as String?,
-  priority: json['priority'] != null
-        ? InlineObject1331CookiesPriority.fromJson(json['priority'] as Map<String, dynamic>)
-        : null,
+  priority: json['priority'] != null ? InlineObject1331CookiesPriority.fromJson(json['priority'] as Map<String, dynamic>) : null,
   sameParty: json['sameParty'] as bool?,
-  sameSite: json['sameSite'] != null
-        ? InlineObject1331CookiesSameSite.fromJson(json['sameSite'] as Map<String, dynamic>)
-        : null,
+  sameSite: json['sameSite'] != null ? InlineObject1331CookiesSameSite.fromJson(json['sameSite'] as Map<String, dynamic>) : null,
   secure: json['secure'] as bool?,
   sourcePort: json['sourcePort'] != null ? (json['sourcePort'] as num).toDouble() : null,
-  sourceScheme: json['sourceScheme'] != null
-        ? InlineObject1331CookiesSourceScheme.fromJson(json['sourceScheme'] as Map<String, dynamic>)
-        : null,
+  sourceScheme: json['sourceScheme'] != null ? InlineObject1331CookiesSourceScheme.fromJson(json['sourceScheme'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
   value: json['value'] as String,
 ); }

@@ -7,9 +7,7 @@
 import 'mute_participants_response_data.dart';final class MuteParticipantsResponse {const MuteParticipantsResponse({this.data, this.success, });
 
 factory MuteParticipantsResponse.fromJson(Map<String, dynamic> json) { return MuteParticipantsResponse(
-  data: json['data'] != null
-        ? MuteParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? MuteParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

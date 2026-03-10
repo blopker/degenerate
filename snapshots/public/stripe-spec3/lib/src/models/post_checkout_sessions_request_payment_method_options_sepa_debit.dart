@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }

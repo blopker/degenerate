@@ -8,12 +8,8 @@ import 'package:collection/collection.dart';import 'livestream_session_details_r
 
 factory LivestreamSessionDetailsResponseData.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponseData(
   livestreams: (json['livestreams'] as List<dynamic>?)?.map((e) => LivestreamSessionDetailsResponseDataLivestreams.fromJson(e as Map<String, dynamic>)).toList(),
-  paging: json['paging'] != null
-        ? LivestreamSessionDetailsResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>)
-        : null,
-  sessions: json['sessions'] != null
-        ? LivestreamSessionDetailsResponseDataSessions.fromJson(json['sessions'] as Map<String, dynamic>)
-        : null,
+  paging: json['paging'] != null ? LivestreamSessionDetailsResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
+  sessions: json['sessions'] != null ? LivestreamSessionDetailsResponseDataSessions.fromJson(json['sessions'] as Map<String, dynamic>) : null,
 ); }
 
 final List<LivestreamSessionDetailsResponseDataLivestreams>? livestreams;

@@ -61,19 +61,13 @@ factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { re
   location: json['location'] as String?,
   network: json['network'] as String?,
   networkTransactionId: json['network_transaction_id'] as String?,
-  offline: json['offline'] != null
-        ? PaymentMethodDetailsCardPresentOffline2.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? PaymentMethodDetailsCardPresentOffline2.fromJson(json['offline'] as Map<String, dynamic>) : null,
   overcaptureSupported: json['overcapture_supported'] as bool,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodDetailsCardPresentReadMethod.fromJson(json['read_method'] as String) : null,
   reader: json['reader'] as String?,
-  receipt: json['receipt'] != null
-        ? PaymentMethodDetailsCardPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>)
-        : null,
-  wallet: json['wallet'] != null
-        ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  receipt: json['receipt'] != null ? PaymentMethodDetailsCardPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// The authorized amount

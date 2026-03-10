@@ -9,9 +9,7 @@ final class PostQuotesRequestAutomaticTax {const PostQuotesRequestAutomaticTax({
 
 factory PostQuotesRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostQuotesRequestAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? PostQuotesRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? PostQuotesRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

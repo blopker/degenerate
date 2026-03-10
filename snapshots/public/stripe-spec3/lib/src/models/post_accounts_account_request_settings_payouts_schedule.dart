@@ -109,9 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostAccountsAccountRequestSettingsPayoutsSchedule {const PostAccountsAccountRequestSettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory PostAccountsAccountRequestSettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsPayoutsSchedule(
-  delayDays: json['delay_days'] != null
-        ? PostAccountsAccountRequestSettingsPayoutsScheduleDelayDays.fromJson(json['delay_days'] as Map<String, dynamic>)
-        : null,
+  delayDays: json['delay_days'] != null ? PostAccountsAccountRequestSettingsPayoutsScheduleDelayDays.fromJson(json['delay_days'] as Map<String, dynamic>) : null,
   interval: json['interval'] != null ? PostAccountsAccountRequestSettingsPayoutsScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

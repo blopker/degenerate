@@ -86,9 +86,7 @@ final class AiSearchUpdateInstancesResponseResult {const AiSearchUpdateInstances
 
 factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResult(
   aiGatewayId: json['ai_gateway_id'] as String?,
-  aiSearchModel: json['ai_search_model'] != null
-        ? AiSearchUpdateInstancesResponseResultAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>)
-        : null,
+  aiSearchModel: json['ai_search_model'] != null ? AiSearchUpdateInstancesResponseResultAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
   cacheThreshold: json.containsKey('cache_threshold') ? AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchUpdateInstancesResponseResultCacheThreshold.closeEnough,
   chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
@@ -96,41 +94,27 @@ factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json
   createdAt: DateTime.parse(json['created_at'] as String),
   createdBy: json['created_by'] as String?,
   customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchUpdateInstancesResponseResultCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-  embeddingModel: json['embedding_model'] != null
-        ? AiSearchUpdateInstancesResponseResultEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>)
-        : null,
+  embeddingModel: json['embedding_model'] != null ? AiSearchUpdateInstancesResponseResultEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>) : null,
   enable: json.containsKey('enable') ? json['enable'] as bool : true,
   fusionMethod: json.containsKey('fusion_method') ? AiSearchUpdateInstancesResponseResultFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchUpdateInstancesResponseResultFusionMethod.rrf,
   hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
   id: json['id'] as String,
   lastActivity: json['last_activity'] != null ? DateTime.parse(json['last_activity'] as String) : null,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  metadata: json['metadata'] != null
-        ? AiSearchUpdateInstancesResponseResultMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? AiSearchUpdateInstancesResponseResultMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   modifiedBy: json['modified_by'] as String?,
   paused: json.containsKey('paused') ? json['paused'] as bool : false,
   publicEndpointId: json['public_endpoint_id'] as String?,
-  publicEndpointParams: json['public_endpoint_params'] != null
-        ? AiSearchUpdateInstancesResponseResultPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>)
-        : null,
+  publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchUpdateInstancesResponseResultPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
-  rerankingModel: json['reranking_model'] != null
-        ? AiSearchUpdateInstancesResponseResultRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>)
-        : null,
-  retrievalOptions: json['retrieval_options'] != null
-        ? AiSearchUpdateInstancesResponseResultRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>)
-        : null,
-  rewriteModel: json['rewrite_model'] != null
-        ? AiSearchUpdateInstancesResponseResultRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>)
-        : null,
+  rerankingModel: json['reranking_model'] != null ? AiSearchUpdateInstancesResponseResultRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>) : null,
+  retrievalOptions: json['retrieval_options'] != null ? AiSearchUpdateInstancesResponseResultRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  rewriteModel: json['rewrite_model'] != null ? AiSearchUpdateInstancesResponseResultRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
   source: json['source'] as String?,
-  sourceParams: json['source_params'] != null
-        ? AiSearchUpdateInstancesResponseResultSourceParams.fromJson(json['source_params'] as Map<String, dynamic>)
-        : null,
+  sourceParams: json['source_params'] != null ? AiSearchUpdateInstancesResponseResultSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
   tokenId: json['token_id'] as String?,
   type: json['type'] != null ? AiSearchUpdateInstancesResponseResultType.fromJson(json['type'] as String) : null,

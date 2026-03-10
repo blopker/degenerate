@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_account_onboarding_features.dar
 
 factory PostAccountSessionsRequestComponentsAccountOnboarding.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountOnboarding(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsAccountOnboardingFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsAccountOnboardingFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

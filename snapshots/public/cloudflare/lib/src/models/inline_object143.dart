@@ -92,9 +92,7 @@ factory InlineObject143.fromJson(Map<String, dynamic> json) { return InlineObjec
   customCertificate: json['custom_certificate'] as String?,
   customKey: json['custom_key'] as String?,
   method: json['method'] != null ? InlineObject143Method.fromJson(json['method'] as String) : null,
-  settings: json['settings'] != null
-        ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? InlineObject143Type.fromJson(json['type'] as String) : null,
   wildcard: json['wildcard'] as bool?,
 ); }

@@ -7,9 +7,7 @@
 import 'post_billing_portal_configurations_configuration_request_features_subscription_update_schedule_at_period_end_conditions.dart';final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd({this.conditions});
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(
-  conditions: json['conditions'] != null
-        ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions.fromJson(json['conditions'] as Map<String, dynamic>)
-        : null,
+  conditions: json['conditions'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
 ); }
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions? conditions;

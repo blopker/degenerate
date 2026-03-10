@@ -12,9 +12,7 @@ factory AccessSchemasOrganizations.fromJson(Map<String, dynamic> json) { return 
   denyUnmatchedRequests: json['deny_unmatched_requests'] != null ? AccessDenyUnmatchedRequests.fromJson(json['deny_unmatched_requests'] as bool) : null,
   denyUnmatchedRequestsExemptedZoneNames: (json['deny_unmatched_requests_exempted_zone_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   isUiReadOnly: json['is_ui_read_only'] != null ? AccessSchemasIsUiReadOnly.fromJson(json['is_ui_read_only'] as bool) : null,
-  loginDesign: json['login_design'] != null
-        ? AccessSchemasLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>)
-        : null,
+  loginDesign: json['login_design'] != null ? AccessSchemasLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? AccessOrganizationsComponentsSchemasName.fromJson(json['name'] as String) : null,
   uiReadOnlyToggleReason: json['ui_read_only_toggle_reason'] != null ? AccessUiReadOnlyToggleReason.fromJson(json['ui_read_only_toggle_reason'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,

@@ -15,33 +15,15 @@ import 'repos_update_request_security_and_analysis_advanced_security.dart';impor
 final class ReposUpdateRequestSecurityAndAnalysis {const ReposUpdateRequestSecurityAndAnalysis({this.advancedSecurity, this.codeSecurity, this.secretScanning, this.secretScanningPushProtection, this.secretScanningAiDetection, this.secretScanningNonProviderPatterns, this.secretScanningDelegatedAlertDismissal, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, });
 
 factory ReposUpdateRequestSecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysis(
-  advancedSecurity: json['advanced_security'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>)
-        : null,
-  codeSecurity: json['code_security'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>)
-        : null,
-  secretScanning: json['secret_scanning'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>)
-        : null,
-  secretScanningPushProtection: json['secret_scanning_push_protection'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>)
-        : null,
-  secretScanningAiDetection: json['secret_scanning_ai_detection'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>)
-        : null,
-  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>)
-        : null,
-  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null
-        ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>)
-        : null,
+  advancedSecurity: json['advanced_security'] != null ? ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null,
+  codeSecurity: json['code_security'] != null ? ReposUpdateRequestSecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null,
+  secretScanning: json['secret_scanning'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,
+  secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>) : null,
+  secretScanningAiDetection: json['secret_scanning_ai_detection'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>) : null,
+  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Use the `status` property to enable or disable GitHub Advanced Security for this repository.

@@ -8,9 +8,7 @@ import 'confirmation_tokens_resource_mandate_data_resource_customer_acceptance_o
 final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptance {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptance({this.online, required this.type, });
 
 factory ConfirmationTokensResourceMandateDataResourceCustomerAcceptance.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceMandateDataResourceCustomerAcceptance(
-  online: json['online'] != null
-        ? ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>)
-        : null,
+  online: json['online'] != null ? ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

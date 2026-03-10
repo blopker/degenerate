@@ -177,9 +177,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   authorizationCode: json['authorization_code'] as String?,
   brand: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(json['brand'] as String),
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
-  checks: json['checks'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsChecks.fromJson(json['checks'] as Map<String, dynamic>)
-        : null,
+  checks: json['checks'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   description: json['description'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
@@ -187,25 +185,17 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   fingerprint: json['fingerprint'] as String?,
   funding: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(json['funding'] as String),
   iin: json['iin'] as String?,
-  installments: json['installments'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String,
   network: json['network'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(json['network'] as String) : null,
   networkAdviceCode: json['network_advice_code'] as String?,
   networkDeclineCode: json['network_decline_code'] as String?,
-  networkToken: json['network_token'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>)
-        : null,
+  networkToken: json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
   networkTransactionId: json['network_transaction_id'] as String?,
   storedCredentialUsage: json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
-  wallet: json['wallet'] != null
-        ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// The authorization code of the payment.

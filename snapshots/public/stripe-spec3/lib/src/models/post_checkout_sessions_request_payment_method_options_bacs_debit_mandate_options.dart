@@ -7,9 +7,7 @@
 import 'post_checkout_sessions_request_payment_method_options_bacs_debit_mandate_options_reference_prefix.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions({this.referencePrefix});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(
-  referencePrefix: json['reference_prefix'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>)
-        : null,
+  referencePrefix: json['reference_prefix'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? referencePrefix;

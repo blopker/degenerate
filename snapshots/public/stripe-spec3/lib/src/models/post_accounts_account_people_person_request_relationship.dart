@@ -13,9 +13,7 @@ factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, 
   executive: json['executive'] as bool?,
   legalGuardian: json['legal_guardian'] as bool?,
   owner: json['owner'] as bool?,
-  percentOwnership: json['percent_ownership'] != null
-        ? PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnership.fromJson(json['percent_ownership'] as Map<String, dynamic>)
-        : null,
+  percentOwnership: json['percent_ownership'] != null ? PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnership.fromJson(json['percent_ownership'] as Map<String, dynamic>) : null,
   representative: json['representative'] as bool?,
   title: json['title'] as String?,
 ); }

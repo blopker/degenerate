@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_reporting_report_runs_r
 
 factory PostReportingReportRunsRequest.fromJson(Map<String, dynamic> json) { return PostReportingReportRunsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  parameters: json['parameters'] != null
-        ? PostReportingReportRunsRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? PostReportingReportRunsRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   reportType: json['report_type'] as String,
 ); }
 

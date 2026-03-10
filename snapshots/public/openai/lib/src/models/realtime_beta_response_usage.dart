@@ -15,12 +15,8 @@ factory RealtimeBetaResponseUsage.fromJson(Map<String, dynamic> json) { return R
   totalTokens: json['total_tokens'] != null ? (json['total_tokens'] as num).toInt() : null,
   inputTokens: json['input_tokens'] != null ? (json['input_tokens'] as num).toInt() : null,
   outputTokens: json['output_tokens'] != null ? (json['output_tokens'] as num).toInt() : null,
-  inputTokenDetails: json['input_token_details'] != null
-        ? RealtimeBetaResponseUsageInputTokenDetails.fromJson(json['input_token_details'] as Map<String, dynamic>)
-        : null,
-  outputTokenDetails: json['output_token_details'] != null
-        ? RealtimeBetaResponseUsageOutputTokenDetails.fromJson(json['output_token_details'] as Map<String, dynamic>)
-        : null,
+  inputTokenDetails: json['input_token_details'] != null ? RealtimeBetaResponseUsageInputTokenDetails.fromJson(json['input_token_details'] as Map<String, dynamic>) : null,
+  outputTokenDetails: json['output_token_details'] != null ? RealtimeBetaResponseUsageOutputTokenDetails.fromJson(json['output_token_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The total number of tokens in the Response including input and output

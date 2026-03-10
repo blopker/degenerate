@@ -28,9 +28,7 @@ factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
   receivedEventsUrl: Uri.parse(json['received_events_url'] as String),
   type: json['type'] as String,
   siteAdmin: json['site_admin'] as bool,
-  permissions: json['permissions'] != null
-        ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String,
   userViewType: json['user_view_type'] as String?,
 ); }

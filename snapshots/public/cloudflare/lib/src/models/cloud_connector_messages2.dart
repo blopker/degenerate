@@ -10,9 +10,7 @@ factory CloudConnectorMessages2.fromJson(Map<String, dynamic> json) { return Clo
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  source: json['source'] != null
-        ? CloudConnectorMessages2Source.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? CloudConnectorMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;

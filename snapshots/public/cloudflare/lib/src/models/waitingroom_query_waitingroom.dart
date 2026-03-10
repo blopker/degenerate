@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'waitingroom_additional_route
 
 factory WaitingroomQueryWaitingroom.fromJson(Map<String, dynamic> json) { return WaitingroomQueryWaitingroom(
   additionalRoutes: (json['additional_routes'] as List<dynamic>?)?.map((e) => WaitingroomAdditionalRoutes2.fromJson(e as Map<String, dynamic>)).toList(),
-  cookieAttributes: json['cookie_attributes'] != null
-        ? WaitingroomCookieAttributes.fromJson(json['cookie_attributes'] as Map<String, dynamic>)
-        : null,
+  cookieAttributes: json['cookie_attributes'] != null ? WaitingroomCookieAttributes.fromJson(json['cookie_attributes'] as Map<String, dynamic>) : null,
   cookieSuffix: json['cookie_suffix'] != null ? WaitingroomCookieSuffix.fromJson(json['cookie_suffix'] as String) : null,
   customPageHtml: json['custom_page_html'] != null ? WaitingroomCustomPageHtml.fromJson(json['custom_page_html'] as String) : null,
   defaultTemplateLanguage: json['default_template_language'] != null ? WaitingroomDefaultTemplateLanguage.fromJson(json['default_template_language'] as String) : null,

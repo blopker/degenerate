@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'label_selector.dart';/// Top
 final class TopologySpreadConstraint {const TopologySpreadConstraint({this.labelSelector, this.matchLabelKeys, this.maxSkew = 0, this.minDomains, this.nodeAffinityPolicy, this.nodeTaintsPolicy, this.topologyKey = '', this.whenUnsatisfiable = '', });
 
 factory TopologySpreadConstraint.fromJson(Map<String, dynamic> json) { return TopologySpreadConstraint(
-  labelSelector: json['labelSelector'] != null
-        ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>)
-        : null,
+  labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,
   matchLabelKeys: (json['matchLabelKeys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   maxSkew: (json['maxSkew'] as num).toInt(),
   minDomains: json['minDomains'] != null ? (json['minDomains'] as num).toInt() : null,

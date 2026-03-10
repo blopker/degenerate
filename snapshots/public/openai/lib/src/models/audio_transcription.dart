@@ -7,9 +7,7 @@
 import 'audio_transcription_model.dart';final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
 
 factory AudioTranscription.fromJson(Map<String, dynamic> json) { return AudioTranscription(
-  model: json['model'] != null
-        ? AudioTranscriptionModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? AudioTranscriptionModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
 ); }

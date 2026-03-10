@@ -210,9 +210,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   amountPaid: (json['amount_paid'] as num).toInt(),
   amountRemaining: (json['amount_remaining'] as num).toInt(),
   amountShipping: (json['amount_shipping'] as num).toInt(),
-  application: json['application'] != null
-        ? InvoiceApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? InvoiceApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   attemptCount: (json['attempt_count'] as num).toInt(),
   attempted: json['attempted'] as bool,
   autoAdvance: json['auto_advance'] as bool,
@@ -220,31 +218,21 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
   billingReason: json['billing_reason'] != null ? InvoiceBillingReason.fromJson(json['billing_reason'] as String) : null,
   collectionMethod: InvoiceCollectionMethod.fromJson(json['collection_method'] as String),
-  confirmationSecret: json['confirmation_secret'] != null
-        ? InvoiceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>)
-        : null,
+  confirmationSecret: json['confirmation_secret'] != null ? InvoiceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
   customer: InvoiceCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
-  customerAddress: json['customer_address'] != null
-        ? InvoiceCustomerAddress.fromJson(json['customer_address'] as Map<String, dynamic>)
-        : null,
+  customerAddress: json['customer_address'] != null ? InvoiceCustomerAddress.fromJson(json['customer_address'] as Map<String, dynamic>) : null,
   customerEmail: json['customer_email'] as String?,
   customerName: json['customer_name'] as String?,
   customerPhone: json['customer_phone'] as String?,
-  customerShipping: json['customer_shipping'] != null
-        ? InvoiceCustomerShipping.fromJson(json['customer_shipping'] as Map<String, dynamic>)
-        : null,
+  customerShipping: json['customer_shipping'] != null ? InvoiceCustomerShipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null,
   customerTaxExempt: json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null,
   customerTaxIds: (json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
-  defaultPaymentMethod: json['default_payment_method'] != null
-        ? InvoiceDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>)
-        : null,
-  defaultSource: json['default_source'] != null
-        ? InvoiceDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>)
-        : null,
+  defaultPaymentMethod: json['default_payment_method'] != null ? InvoiceDefaultPaymentMethod.fromJson(json['default_payment_method'] as Map<String, dynamic>) : null,
+  defaultSource: json['default_source'] != null ? InvoiceDefaultSource.fromJson(json['default_source'] as Map<String, dynamic>) : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>).map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => InvoiceDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
@@ -252,61 +240,39 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
   endingBalance: json['ending_balance'] != null ? (json['ending_balance'] as num).toInt() : null,
   footer: json['footer'] as String?,
-  fromInvoice: json['from_invoice'] != null
-        ? InvoiceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>)
-        : null,
+  fromInvoice: json['from_invoice'] != null ? InvoiceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
   hostedInvoiceUrl: json['hosted_invoice_url'] as String?,
   id: json['id'] as String,
   invoicePdf: json['invoice_pdf'] as String?,
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),
-  lastFinalizationError: json['last_finalization_error'] != null
-        ? InvoiceLastFinalizationError.fromJson(json['last_finalization_error'] as Map<String, dynamic>)
-        : null,
-  latestRevision: json['latest_revision'] != null
-        ? InvoiceLatestRevision.fromJson(json['latest_revision'] as Map<String, dynamic>)
-        : null,
+  lastFinalizationError: json['last_finalization_error'] != null ? InvoiceLastFinalizationError.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null,
+  latestRevision: json['latest_revision'] != null ? InvoiceLatestRevision.fromJson(json['latest_revision'] as Map<String, dynamic>) : null,
   lines: InvoiceLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nextPaymentAttempt: json['next_payment_attempt'] != null ? (json['next_payment_attempt'] as num).toInt() : null,
   number: json['number'] as String?,
   object: InvoiceObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? InvoiceOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  parent: json['parent'] != null
-        ? InvoiceParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? InvoiceOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? InvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   paymentSettings: InvoicesPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>),
-  payments: json['payments'] != null
-        ? InvoicePayments.fromJson(json['payments'] as Map<String, dynamic>)
-        : null,
+  payments: json['payments'] != null ? InvoicePayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   periodEnd: (json['period_end'] as num).toInt(),
   periodStart: (json['period_start'] as num).toInt(),
   postPaymentCreditNotesAmount: (json['post_payment_credit_notes_amount'] as num).toInt(),
   prePaymentCreditNotesAmount: (json['pre_payment_credit_notes_amount'] as num).toInt(),
   receiptNumber: json['receipt_number'] as String?,
-  rendering: json['rendering'] != null
-        ? InvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>)
-        : null,
-  shippingCost: json['shipping_cost'] != null
-        ? InvoiceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? InvoiceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  rendering: json['rendering'] != null ? InvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? InvoiceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? InvoiceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   startingBalance: (json['starting_balance'] as num).toInt(),
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] != null ? InvoiceStatus.fromJson(json['status'] as String) : null,
   statusTransitions: InvoicesResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   subtotal: (json['subtotal'] as num).toInt(),
   subtotalExcludingTax: json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null,
-  testClock: json['test_clock'] != null
-        ? InvoiceTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
-  thresholdReason: json['threshold_reason'] != null
-        ? InvoiceThresholdReason.fromJson(json['threshold_reason'] as Map<String, dynamic>)
-        : null,
+  testClock: json['test_clock'] != null ? InvoiceTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
+  thresholdReason: json['threshold_reason'] != null ? InvoiceThresholdReason.fromJson(json['threshold_reason'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
   totalDiscountAmounts: (json['total_discount_amounts'] as List<dynamic>?)?.map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
   totalExcludingTax: json['total_excluding_tax'] != null ? (json['total_excluding_tax'] as num).toInt() : null,

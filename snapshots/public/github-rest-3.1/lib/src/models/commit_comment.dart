@@ -21,9 +21,7 @@ factory CommitComment.fromJson(Map<String, dynamic> json) { return CommitComment
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri htmlUrl;

@@ -58,9 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingDisputeCanceledEvidence {const IssuingDisputeCanceledEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory IssuingDisputeCanceledEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeCanceledEvidence(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? IssuingDisputeCanceledEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? IssuingDisputeCanceledEvidenceAdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   cancellationPolicyProvided: json['cancellation_policy_provided'] as bool?,
   cancellationReason: json['cancellation_reason'] as String?,

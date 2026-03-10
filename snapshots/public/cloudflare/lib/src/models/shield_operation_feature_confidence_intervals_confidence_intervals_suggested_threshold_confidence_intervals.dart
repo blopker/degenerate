@@ -7,15 +7,9 @@
 import 'shield_confidence_intervals_bounds.dart';final class ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals({this.p90, this.p95, this.p99, });
 
 factory ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals(
-  p90: json['p90'] != null
-        ? ShieldConfidenceIntervalsBounds.fromJson(json['p90'] as Map<String, dynamic>)
-        : null,
-  p95: json['p95'] != null
-        ? ShieldConfidenceIntervalsBounds.fromJson(json['p95'] as Map<String, dynamic>)
-        : null,
-  p99: json['p99'] != null
-        ? ShieldConfidenceIntervalsBounds.fromJson(json['p99'] as Map<String, dynamic>)
-        : null,
+  p90: json['p90'] != null ? ShieldConfidenceIntervalsBounds.fromJson(json['p90'] as Map<String, dynamic>) : null,
+  p95: json['p95'] != null ? ShieldConfidenceIntervalsBounds.fromJson(json['p95'] as Map<String, dynamic>) : null,
+  p99: json['p99'] != null ? ShieldConfidenceIntervalsBounds.fromJson(json['p99'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldConfidenceIntervalsBounds? p90;

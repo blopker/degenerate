@@ -10,9 +10,7 @@ factory PostTransfersIdReversalsRequest.fromJson(Map<String, dynamic> json) { re
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTransfersIdReversalsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTransfersIdReversalsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
 ); }
 

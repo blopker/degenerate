@@ -8,24 +8,16 @@ import 'package:collection/collection.dart';import 'load_balancing_adaptive_rout
 final class LoadBalancingRules2Overrides {const LoadBalancingRules2Overrides({this.adaptiveRouting, this.countryPools, this.defaultPools, this.fallbackPool, this.locationStrategy, this.popPools, this.randomSteering, this.regionPools, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
 
 factory LoadBalancingRules2Overrides.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2Overrides(
-  adaptiveRouting: json['adaptive_routing'] != null
-        ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>)
-        : null,
+  adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
   countryPools: (json['country_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   defaultPools: (json['default_pools'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fallbackPool: json['fallback_pool'] != null ? LoadBalancingFallbackPool.fromJson(json['fallback_pool'] as String) : null,
-  locationStrategy: json['location_strategy'] != null
-        ? LoadBalancingLocationStrategy.fromJson(json['location_strategy'] as Map<String, dynamic>)
-        : null,
+  locationStrategy: json['location_strategy'] != null ? LoadBalancingLocationStrategy.fromJson(json['location_strategy'] as Map<String, dynamic>) : null,
   popPools: (json['pop_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
-  randomSteering: json['random_steering'] != null
-        ? LoadBalancingRandomSteering.fromJson(json['random_steering'] as Map<String, dynamic>)
-        : null,
+  randomSteering: json['random_steering'] != null ? LoadBalancingRandomSteering.fromJson(json['random_steering'] as Map<String, dynamic>) : null,
   regionPools: (json['region_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   sessionAffinity: json['session_affinity'] != null ? LoadBalancingSessionAffinity.fromJson(json['session_affinity'] as String) : null,
-  sessionAffinityAttributes: json['session_affinity_attributes'] != null
-        ? LoadBalancingSessionAffinityAttributes.fromJson(json['session_affinity_attributes'] as Map<String, dynamic>)
-        : null,
+  sessionAffinityAttributes: json['session_affinity_attributes'] != null ? LoadBalancingSessionAffinityAttributes.fromJson(json['session_affinity_attributes'] as Map<String, dynamic>) : null,
   sessionAffinityTtl: json['session_affinity_ttl'] != null ? LoadBalancingSessionAffinityTtl.fromJson(json['session_affinity_ttl'] as num) : null,
   steeringPolicy: json['steering_policy'] != null ? LoadBalancingSteeringPolicy.fromJson(json['steering_policy'] as String) : null,
   ttl: json['ttl'] != null ? LoadBalancingTtl.fromJson(json['ttl'] as num) : null,

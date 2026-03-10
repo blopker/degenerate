@@ -100,47 +100,31 @@ final class IssuingAuthorization {const IssuingAuthorization({required this.amou
 
 factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return IssuingAuthorization(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null
-        ? IssuingAuthorizationAmountDetails2.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails2.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   approved: json['approved'] as bool,
   authorizationMethod: IssuingAuthorizationAuthorizationMethod.fromJson(json['authorization_method'] as String),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   card: IssuingCard.fromJson(json['card'] as Map<String, dynamic>),
-  cardholder: json['cardholder'] != null
-        ? IssuingAuthorizationCardholder.fromJson(json['cardholder'] as Map<String, dynamic>)
-        : null,
+  cardholder: json['cardholder'] != null ? IssuingAuthorizationCardholder.fromJson(json['cardholder'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  fleet: json['fleet'] != null
-        ? IssuingAuthorizationFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? IssuingAuthorizationFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
   fraudChallenges: (json['fraud_challenges'] as List<dynamic>?)?.map((e) => IssuingAuthorizationFraudChallenge.fromJson(e as Map<String, dynamic>)).toList(),
-  fuel: json['fuel'] != null
-        ? IssuingAuthorizationFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
+  fuel: json['fuel'] != null ? IssuingAuthorizationFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
   merchantData: IssuingAuthorizationMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  networkData: json['network_data'] != null
-        ? IssuingAuthorizationNetworkData2.fromJson(json['network_data'] as Map<String, dynamic>)
-        : null,
+  networkData: json['network_data'] != null ? IssuingAuthorizationNetworkData2.fromJson(json['network_data'] as Map<String, dynamic>) : null,
   object: IssuingAuthorizationObject.fromJson(json['object'] as String),
-  pendingRequest: json['pending_request'] != null
-        ? IssuingAuthorizationPendingRequest2.fromJson(json['pending_request'] as Map<String, dynamic>)
-        : null,
+  pendingRequest: json['pending_request'] != null ? IssuingAuthorizationPendingRequest2.fromJson(json['pending_request'] as Map<String, dynamic>) : null,
   requestHistory: (json['request_history'] as List<dynamic>).map((e) => IssuingAuthorizationRequest.fromJson(e as Map<String, dynamic>)).toList(),
   status: IssuingAuthorizationStatus.fromJson(json['status'] as String),
-  token: json['token'] != null
-        ? IssuingAuthorizationToken.fromJson(json['token'] as Map<String, dynamic>)
-        : null,
+  token: json['token'] != null ? IssuingAuthorizationToken.fromJson(json['token'] as Map<String, dynamic>) : null,
   transactions: (json['transactions'] as List<dynamic>).map((e) => IssuingTransaction.fromJson(e as Map<String, dynamic>)).toList(),
-  treasury: json['treasury'] != null
-        ? IssuingAuthorizationTreasury2.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  treasury: json['treasury'] != null ? IssuingAuthorizationTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
   verificationData: IssuingAuthorizationVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
   verifiedByFraudChallenge: json['verified_by_fraud_challenge'] as bool?,
   wallet: json['wallet'] as String?,

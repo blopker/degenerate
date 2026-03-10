@@ -31,9 +31,7 @@ factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
   created: json['created'] != null ? RumTimestamp.fromJson(json['created'] as String) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RumRule.fromJson(e as Map<String, dynamic>)).toList(),
-  ruleset: json['ruleset'] != null
-        ? RumRuleset.fromJson(json['ruleset'] as Map<String, dynamic>)
-        : null,
+  ruleset: json['ruleset'] != null ? RumRuleset.fromJson(json['ruleset'] as Map<String, dynamic>) : null,
   siteTag: json['site_tag'] != null ? RumSiteTag.fromJson(json['site_tag'] as String) : null,
   siteToken: json['site_token'] != null ? RumSiteToken.fromJson(json['site_token'] as String) : null,
   snippet: json['snippet'] != null ? RumSnippet.fromJson(json['snippet'] as String) : null,

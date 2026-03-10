@@ -103,50 +103,28 @@ bool get isUnknown { return !values.contains(this); }
 final class Account {const Account({this.businessProfile, this.businessType, this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email, this.externalAccounts, this.futureRequirements, this.groups, required this.id, this.individual, this.metadata, required this.object, this.payoutsEnabled, this.requirements, this.settings, this.tosAcceptance, this.type, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
-  businessProfile: json['business_profile'] != null
-        ? AccountBusinessProfile2.fromJson(json['business_profile'] as Map<String, dynamic>)
-        : null,
+  businessProfile: json['business_profile'] != null ? AccountBusinessProfile2.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? AccountBusinessType.fromJson(json['business_type'] as String) : null,
-  capabilities: json['capabilities'] != null
-        ? AccountCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
+  capabilities: json['capabilities'] != null ? AccountCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
   chargesEnabled: json['charges_enabled'] as bool?,
-  company: json['company'] != null
-        ? LegalEntityCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
-  controller: json['controller'] != null
-        ? AccountUnificationAccountController.fromJson(json['controller'] as Map<String, dynamic>)
-        : null,
+  company: json['company'] != null ? LegalEntityCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  controller: json['controller'] != null ? AccountUnificationAccountController.fromJson(json['controller'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   created: json['created'] != null ? (json['created'] as num).toInt() : null,
   defaultCurrency: json['default_currency'] as String?,
   detailsSubmitted: json['details_submitted'] as bool?,
   email: json['email'] as String?,
-  externalAccounts: json['external_accounts'] != null
-        ? AccountExternalAccounts.fromJson(json['external_accounts'] as Map<String, dynamic>)
-        : null,
-  futureRequirements: json['future_requirements'] != null
-        ? AccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>)
-        : null,
-  groups: json['groups'] != null
-        ? AccountGroups.fromJson(json['groups'] as Map<String, dynamic>)
-        : null,
+  externalAccounts: json['external_accounts'] != null ? AccountExternalAccounts.fromJson(json['external_accounts'] as Map<String, dynamic>) : null,
+  futureRequirements: json['future_requirements'] != null ? AccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
+  groups: json['groups'] != null ? AccountGroups.fromJson(json['groups'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  individual: json['individual'] != null
-        ? Person.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  individual: json['individual'] != null ? Person.fromJson(json['individual'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: AccountObject.fromJson(json['object'] as String),
   payoutsEnabled: json['payouts_enabled'] as bool?,
-  requirements: json['requirements'] != null
-        ? AccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>)
-        : null,
-  settings: json['settings'] != null
-        ? AccountSettings2.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
-  tosAcceptance: json['tos_acceptance'] != null
-        ? AccountTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>)
-        : null,
+  requirements: json['requirements'] != null ? AccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
+  settings: json['settings'] != null ? AccountSettings2.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  tosAcceptance: json['tos_acceptance'] != null ? AccountTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? AccountType.fromJson(json['type'] as String) : null,
 ); }
 

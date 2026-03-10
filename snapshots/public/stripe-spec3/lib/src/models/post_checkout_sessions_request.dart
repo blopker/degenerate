@@ -717,95 +717,55 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.adaptivePricing, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.customerUpdate, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.walletOptions, });
 
 factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequest(
-  adaptivePricing: json['adaptive_pricing'] != null
-        ? PostCheckoutSessionsRequestAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>)
-        : null,
-  afterExpiration: json['after_expiration'] != null
-        ? PostCheckoutSessionsRequestAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>)
-        : null,
+  adaptivePricing: json['adaptive_pricing'] != null ? PostCheckoutSessionsRequestAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
+  afterExpiration: json['after_expiration'] != null ? PostCheckoutSessionsRequestAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
-  automaticTax: json['automatic_tax'] != null
-        ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingAddressCollection: json['billing_address_collection'] != null ? PostCheckoutSessionsRequestBillingAddressCollection.fromJson(json['billing_address_collection'] as String) : null,
-  brandingSettings: json['branding_settings'] != null
-        ? PostCheckoutSessionsRequestBrandingSettings.fromJson(json['branding_settings'] as Map<String, dynamic>)
-        : null,
+  brandingSettings: json['branding_settings'] != null ? PostCheckoutSessionsRequestBrandingSettings.fromJson(json['branding_settings'] as Map<String, dynamic>) : null,
   cancelUrl: json['cancel_url'] as String?,
   clientReferenceId: json['client_reference_id'] as String?,
-  consentCollection: json['consent_collection'] != null
-        ? PostCheckoutSessionsRequestConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>)
-        : null,
+  consentCollection: json['consent_collection'] != null ? PostCheckoutSessionsRequestConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
-  customText: json['custom_text'] != null
-        ? PostCheckoutSessionsRequestCustomText.fromJson(json['custom_text'] as Map<String, dynamic>)
-        : null,
+  customText: json['custom_text'] != null ? PostCheckoutSessionsRequestCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   customerCreation: json['customer_creation'] != null ? PostCheckoutSessionsRequestCustomerCreation.fromJson(json['customer_creation'] as String) : null,
   customerEmail: json['customer_email'] as String?,
-  customerUpdate: json['customer_update'] != null
-        ? PostCheckoutSessionsRequestCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>)
-        : null,
+  customerUpdate: json['customer_update'] != null ? PostCheckoutSessionsRequestCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>) : null,
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  invoiceCreation: json['invoice_creation'] != null
-        ? PostCheckoutSessionsRequestInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>)
-        : null,
+  invoiceCreation: json['invoice_creation'] != null ? PostCheckoutSessionsRequestInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   locale: json['locale'] != null ? PostCheckoutSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   mode: json['mode'] != null ? PostCheckoutSessionsRequestMode.fromJson(json['mode'] as String) : null,
-  nameCollection: json['name_collection'] != null
-        ? PostCheckoutSessionsRequestNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>)
-        : null,
+  nameCollection: json['name_collection'] != null ? PostCheckoutSessionsRequestNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>) : null,
   optionalItems: (json['optional_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestOptionalItems.fromJson(e as Map<String, dynamic>)).toList(),
   originContext: json['origin_context'] != null ? PostCheckoutSessionsRequestOriginContext.fromJson(json['origin_context'] as String) : null,
-  paymentIntentData: json['payment_intent_data'] != null
-        ? PostCheckoutSessionsRequestPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>)
-        : null,
+  paymentIntentData: json['payment_intent_data'] != null ? PostCheckoutSessionsRequestPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
   paymentMethodCollection: json['payment_method_collection'] != null ? PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(json['payment_method_collection'] as String) : null,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostCheckoutSessionsRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(e as String)).toList(),
-  permissions: json['permissions'] != null
-        ? PostCheckoutSessionsRequestPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
-  phoneNumberCollection: json['phone_number_collection'] != null
-        ? PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? PostCheckoutSessionsRequestPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  phoneNumberCollection: json['phone_number_collection'] != null ? PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
   redirectOnCompletion: json['redirect_on_completion'] != null ? PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
   returnUrl: json['return_url'] as String?,
-  savedPaymentMethodOptions: json['saved_payment_method_options'] != null
-        ? PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>)
-        : null,
-  setupIntentData: json['setup_intent_data'] != null
-        ? PostCheckoutSessionsRequestSetupIntentData.fromJson(json['setup_intent_data'] as Map<String, dynamic>)
-        : null,
-  shippingAddressCollection: json['shipping_address_collection'] != null
-        ? PostCheckoutSessionsRequestShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>)
-        : null,
+  savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
+  setupIntentData: json['setup_intent_data'] != null ? PostCheckoutSessionsRequestSetupIntentData.fromJson(json['setup_intent_data'] as Map<String, dynamic>) : null,
+  shippingAddressCollection: json['shipping_address_collection'] != null ? PostCheckoutSessionsRequestShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
   shippingOptions: (json['shipping_options'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestShippingOptions.fromJson(e as Map<String, dynamic>)).toList(),
   submitType: json['submit_type'] != null ? PostCheckoutSessionsRequestSubmitType.fromJson(json['submit_type'] as String) : null,
-  subscriptionData: json['subscription_data'] != null
-        ? PostCheckoutSessionsRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>)
-        : null,
+  subscriptionData: json['subscription_data'] != null ? PostCheckoutSessionsRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   successUrl: json['success_url'] as String?,
-  taxIdCollection: json['tax_id_collection'] != null
-        ? PostCheckoutSessionsRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>)
-        : null,
+  taxIdCollection: json['tax_id_collection'] != null ? PostCheckoutSessionsRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
   uiMode: json['ui_mode'] != null ? PostCheckoutSessionsRequestUiMode.fromJson(json['ui_mode'] as String) : null,
-  walletOptions: json['wallet_options'] != null
-        ? PostCheckoutSessionsRequestWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>)
-        : null,
+  walletOptions: json['wallet_options'] != null ? PostCheckoutSessionsRequestWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).

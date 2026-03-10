@@ -9,9 +9,7 @@ final class TunnelIngressRule {const TunnelIngressRule({required this.hostname, 
 
 factory TunnelIngressRule.fromJson(Map<String, dynamic> json) { return TunnelIngressRule(
   hostname: json['hostname'] as String,
-  originRequest: json['originRequest'] != null
-        ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>)
-        : null,
+  originRequest: json['originRequest'] != null ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
   service: json['service'] as String,
 ); }

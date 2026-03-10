@@ -8,15 +8,11 @@ import 'inline_object947_payment_method_options.dart';import 'inline_object947_t
 
 factory InlineObject947.fromJson(Map<String, dynamic> json) { return InlineObject947(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? InlineObject947PaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? InlineObject947PaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   productCode: json['product_code'] as String?,
   productName: json['product_name'] as String,
   quantity: (json['quantity'] as num).toInt(),
-  tax: json['tax'] != null
-        ? InlineObject947Tax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  tax: json['tax'] != null ? InlineObject947Tax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json['unit_of_measure'] as String?,
 ); }

@@ -12,12 +12,8 @@ factory Organization.fromJson(Map<String, dynamic> json) { return Organization(
   id: OrganizationId.fromJson(json['id'] as String),
   meta: OrganizationMeta.fromJson(json['meta'] as Map<String, dynamic>),
   name: json['name'] as String,
-  parent: json['parent'] != null
-        ? OrganizationParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
-  profile: json['profile'] != null
-        ? Profile.fromJson(json['profile'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? OrganizationParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  profile: json['profile'] != null ? Profile.fromJson(json['profile'] as Map<String, dynamic>) : null,
 ); }
 
 final DateTime createTime;

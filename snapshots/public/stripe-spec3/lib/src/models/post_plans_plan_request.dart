@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_plans_plan_request_meta
 factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) { return PostPlansPlanRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPlansPlanRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPlansPlanRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   nickname: json['nickname'] as String?,
   product: json['product'] as String?,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,

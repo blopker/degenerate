@@ -9,16 +9,12 @@ import 'package:collection/collection.dart';import 'create_fine_tuning_job_reque
 factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
   model: CreateFineTuningJobRequestModel.fromJson(json['model'] as Map<String, dynamic>),
   trainingFile: json['training_file'] as String,
-  hyperparameters: json['hyperparameters'] != null
-        ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>)
-        : null,
+  hyperparameters: json['hyperparameters'] != null ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
   suffix: json['suffix'] as String?,
   validationFile: json['validation_file'] as String?,
   integrations: (json['integrations'] as List<dynamic>?)?.map((e) => CreateFineTuningJobRequestIntegrations.fromJson(e as Map<String, dynamic>)).toList(),
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  method: json['method'] != null
-        ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>)
-        : null,
+  method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

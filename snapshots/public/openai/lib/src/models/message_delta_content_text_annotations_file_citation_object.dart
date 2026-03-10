@@ -33,9 +33,7 @@ factory MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(Map<String
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
   text: json['text'] as String?,
-  fileCitation: json['file_citation'] != null
-        ? MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>)
-        : null,
+  fileCitation: json['file_citation'] != null ? MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>) : null,
   startIndex: json['start_index'] != null ? (json['start_index'] as num).toInt() : null,
   endIndex: json['end_index'] != null ? (json['end_index'] as num).toInt() : null,
 ); }

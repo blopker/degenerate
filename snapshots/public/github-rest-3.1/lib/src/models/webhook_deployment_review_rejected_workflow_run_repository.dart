@@ -41,9 +41,7 @@ factory WebhookDeploymentReviewRejectedWorkflowRunRepository.fromJson(Map<String
   name: json['name'] as String?,
   nodeId: json['node_id'] as String?,
   notificationsUrl: json['notifications_url'] as String?,
-  owner: json['owner'] != null
-        ? WebhookDeploymentReviewRejectedWorkflowRunRepositoryOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? WebhookDeploymentReviewRejectedWorkflowRunRepositoryOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   private: json['private'] as bool?,
   pullsUrl: json['pulls_url'] as String?,
   releasesUrl: json['releases_url'] as String?,

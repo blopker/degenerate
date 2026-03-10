@@ -83,21 +83,15 @@ final class ShippingRate {const ShippingRate({required this.active, required thi
 factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  deliveryEstimate: json['delivery_estimate'] != null
-        ? ShippingRateDeliveryEstimate2.fromJson(json['delivery_estimate'] as Map<String, dynamic>)
-        : null,
+  deliveryEstimate: json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate2.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String?,
-  fixedAmount: json['fixed_amount'] != null
-        ? ShippingRateFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>)
-        : null,
+  fixedAmount: json['fixed_amount'] != null ? ShippingRateFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ShippingRateObject.fromJson(json['object'] as String),
   taxBehavior: json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null
-        ? ShippingRateTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>)
-        : null,
+  taxCode: json['tax_code'] != null ? ShippingRateTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>) : null,
   type: ShippingRateType.fromJson(json['type'] as String),
 ); }
 

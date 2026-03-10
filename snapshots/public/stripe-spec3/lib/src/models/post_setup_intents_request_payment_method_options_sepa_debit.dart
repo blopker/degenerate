@@ -7,9 +7,7 @@
 import 'post_setup_intents_request_payment_method_options_sepa_debit_mandate_options.dart';final class PostSetupIntentsRequestPaymentMethodOptionsSepaDebit {const PostSetupIntentsRequestPaymentMethodOptionsSepaDebit({this.mandateOptions});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsSepaDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions? mandateOptions;

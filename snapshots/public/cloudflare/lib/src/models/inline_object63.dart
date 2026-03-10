@@ -50,9 +50,7 @@ final class InlineObject63 {const InlineObject63({this.mode, this.response, this
 
 factory InlineObject63.fromJson(Map<String, dynamic> json) { return InlineObject63(
   mode: json['mode'] != null ? FirewallMode.fromJson(json['mode'] as String) : null,
-  response: json['response'] != null
-        ? FirewallCustomResponse.fromJson(json['response'] as Map<String, dynamic>)
-        : null,
+  response: json['response'] != null ? FirewallCustomResponse.fromJson(json['response'] as Map<String, dynamic>) : null,
   timeout: json['timeout'] != null ? FirewallTimeout.fromJson(json['timeout'] as num) : null,
 ); }
 

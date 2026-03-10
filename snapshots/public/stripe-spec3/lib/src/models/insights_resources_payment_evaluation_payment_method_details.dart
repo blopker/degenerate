@@ -8,9 +8,7 @@ import 'insights_resources_payment_evaluation_payment_method_details_billing_det
 final class InsightsResourcesPaymentEvaluationPaymentMethodDetails {const InsightsResourcesPaymentEvaluationPaymentMethodDetails({this.billingDetails, required this.paymentMethod, });
 
 factory InsightsResourcesPaymentEvaluationPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentMethodDetails(
-  billingDetails: json['billing_details'] != null
-        ? InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
+  billingDetails: json['billing_details'] != null ? InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   paymentMethod: InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>),
 ); }
 

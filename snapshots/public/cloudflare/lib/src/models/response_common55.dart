@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'resource_sharing_v4error.dar
 
 factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCommon55(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null
-        ? ResponseCommon55Result.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? ResponseCommon55Result.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

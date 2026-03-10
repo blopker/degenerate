@@ -7,12 +7,8 @@
 import 'inline_object596_additional_documentation.dart';import 'inline_object596_explanation.dart';final class InlineObject596 {const InlineObject596({this.additionalDocumentation, this.explanation, });
 
 factory InlineObject596.fromJson(Map<String, dynamic> json) { return InlineObject596(
-  additionalDocumentation: json['additional_documentation'] != null
-        ? InlineObject596AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>)
-        : null,
-  explanation: json['explanation'] != null
-        ? InlineObject596Explanation.fromJson(json['explanation'] as Map<String, dynamic>)
-        : null,
+  additionalDocumentation: json['additional_documentation'] != null ? InlineObject596AdditionalDocumentation.fromJson(json['additional_documentation'] as Map<String, dynamic>) : null,
+  explanation: json['explanation'] != null ? InlineObject596Explanation.fromJson(json['explanation'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject596AdditionalDocumentation? additionalDocumentation;

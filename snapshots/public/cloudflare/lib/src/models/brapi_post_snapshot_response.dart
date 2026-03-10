@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'brapi_post_snapshot_response
 factory BrapiPostSnapshotResponse.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostSnapshotResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   meta: BrapiPostSnapshotResponseMeta.fromJson(json['meta'] as Map<String, dynamic>),
-  result: json['result'] != null
-        ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

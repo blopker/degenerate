@@ -11,9 +11,7 @@ factory EndpointAddress.fromJson(Map<String, dynamic> json) { return EndpointAdd
   hostname: json['hostname'] as String?,
   ip: json['ip'] as String,
   nodeName: json['nodeName'] as String?,
-  targetRef: json['targetRef'] != null
-        ? ObjectReference.fromJson(json['targetRef'] as Map<String, dynamic>)
-        : null,
+  targetRef: json['targetRef'] != null ? ObjectReference.fromJson(json['targetRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// The Hostname of this endpoint

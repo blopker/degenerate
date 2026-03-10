@@ -31,28 +31,14 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject317VisaCompellingEvidence3DisputedTransaction {const InlineObject317VisaCompellingEvidence3DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
 
 factory InlineObject317VisaCompellingEvidence3DisputedTransaction.fromJson(Map<String, dynamic> json) { return InlineObject317VisaCompellingEvidence3DisputedTransaction(
-  customerAccountId: json['customer_account_id'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerAccountId.fromJson(json['customer_account_id'] as Map<String, dynamic>)
-        : null,
-  customerDeviceFingerprint: json['customer_device_fingerprint'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint'] as Map<String, dynamic>)
-        : null,
-  customerDeviceId: json['customer_device_id'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerDeviceId.fromJson(json['customer_device_id'] as Map<String, dynamic>)
-        : null,
-  customerEmailAddress: json['customer_email_address'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerEmailAddress.fromJson(json['customer_email_address'] as Map<String, dynamic>)
-        : null,
-  customerPurchaseIp: json['customer_purchase_ip'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerPurchaseIp.fromJson(json['customer_purchase_ip'] as Map<String, dynamic>)
-        : null,
+  customerAccountId: json['customer_account_id'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerAccountId.fromJson(json['customer_account_id'] as Map<String, dynamic>) : null,
+  customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint'] as Map<String, dynamic>) : null,
+  customerDeviceId: json['customer_device_id'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerDeviceId.fromJson(json['customer_device_id'] as Map<String, dynamic>) : null,
+  customerEmailAddress: json['customer_email_address'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerEmailAddress.fromJson(json['customer_email_address'] as Map<String, dynamic>) : null,
+  customerPurchaseIp: json['customer_purchase_ip'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerPurchaseIp.fromJson(json['customer_purchase_ip'] as Map<String, dynamic>) : null,
   merchandiseOrServices: json['merchandise_or_services'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(json['merchandise_or_services'] as String) : null,
-  productDescription: json['product_description'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionProductDescription.fromJson(json['product_description'] as Map<String, dynamic>)
-        : null,
-  shippingAddress: json['shipping_address'] != null
-        ? InlineObject317VisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
+  productDescription: json['product_description'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionProductDescription.fromJson(json['product_description'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? InlineObject317VisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject317VisaCompellingEvidence3DisputedTransactionCustomerAccountId? customerAccountId;

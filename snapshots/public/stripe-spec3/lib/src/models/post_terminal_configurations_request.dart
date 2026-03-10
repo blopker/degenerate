@@ -7,38 +7,18 @@
 import 'package:collection/collection.dart';import 'post_terminal_configurations_request_bbpos_wisepad3.dart';import 'post_terminal_configurations_request_bbpos_wisepos_e.dart';import 'post_terminal_configurations_request_cellular.dart';import 'post_terminal_configurations_request_offline.dart';import 'post_terminal_configurations_request_reboot_window.dart';import 'post_terminal_configurations_request_stripe_s700.dart';import 'post_terminal_configurations_request_stripe_s710.dart';import 'post_terminal_configurations_request_tipping.dart';import 'post_terminal_configurations_request_verifone_p400.dart';import 'post_terminal_configurations_request_wifi.dart';final class PostTerminalConfigurationsRequest {const PostTerminalConfigurationsRequest({this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.expand, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
 factory PostTerminalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequest(
-  bbposWisepad3: json['bbpos_wisepad3'] != null
-        ? PostTerminalConfigurationsRequestBbposWisepad3.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>)
-        : null,
-  bbposWiseposE: json['bbpos_wisepos_e'] != null
-        ? PostTerminalConfigurationsRequestBbposWiseposE.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>)
-        : null,
-  cellular: json['cellular'] != null
-        ? PostTerminalConfigurationsRequestCellular.fromJson(json['cellular'] as Map<String, dynamic>)
-        : null,
+  bbposWisepad3: json['bbpos_wisepad3'] != null ? PostTerminalConfigurationsRequestBbposWisepad3.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,
+  bbposWiseposE: json['bbpos_wisepos_e'] != null ? PostTerminalConfigurationsRequestBbposWiseposE.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>) : null,
+  cellular: json['cellular'] != null ? PostTerminalConfigurationsRequestCellular.fromJson(json['cellular'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
-  offline: json['offline'] != null
-        ? PostTerminalConfigurationsRequestOffline.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
-  rebootWindow: json['reboot_window'] != null
-        ? PostTerminalConfigurationsRequestRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>)
-        : null,
-  stripeS700: json['stripe_s700'] != null
-        ? PostTerminalConfigurationsRequestStripeS700.fromJson(json['stripe_s700'] as Map<String, dynamic>)
-        : null,
-  stripeS710: json['stripe_s710'] != null
-        ? PostTerminalConfigurationsRequestStripeS710.fromJson(json['stripe_s710'] as Map<String, dynamic>)
-        : null,
-  tipping: json['tipping'] != null
-        ? PostTerminalConfigurationsRequestTipping.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
-  verifoneP400: json['verifone_p400'] != null
-        ? PostTerminalConfigurationsRequestVerifoneP400.fromJson(json['verifone_p400'] as Map<String, dynamic>)
-        : null,
-  wifi: json['wifi'] != null
-        ? PostTerminalConfigurationsRequestWifi.fromJson(json['wifi'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? PostTerminalConfigurationsRequestOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  rebootWindow: json['reboot_window'] != null ? PostTerminalConfigurationsRequestRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>) : null,
+  stripeS700: json['stripe_s700'] != null ? PostTerminalConfigurationsRequestStripeS700.fromJson(json['stripe_s700'] as Map<String, dynamic>) : null,
+  stripeS710: json['stripe_s710'] != null ? PostTerminalConfigurationsRequestStripeS710.fromJson(json['stripe_s710'] as Map<String, dynamic>) : null,
+  tipping: json['tipping'] != null ? PostTerminalConfigurationsRequestTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
+  verifoneP400: json['verifone_p400'] != null ? PostTerminalConfigurationsRequestVerifoneP400.fromJson(json['verifone_p400'] as Map<String, dynamic>) : null,
+  wifi: json['wifi'] != null ? PostTerminalConfigurationsRequestWifi.fromJson(json['wifi'] as Map<String, dynamic>) : null,
 ); }
 
 /// An object containing device type specific settings for BBPOS WisePad 3 readers.

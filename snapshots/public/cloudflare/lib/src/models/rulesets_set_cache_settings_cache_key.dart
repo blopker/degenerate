@@ -10,9 +10,7 @@ final class RulesetsSetCacheSettingsCacheKey {const RulesetsSetCacheSettingsCach
 factory RulesetsSetCacheSettingsCacheKey.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCacheKey(
   cacheByDeviceType: json['cache_by_device_type'] as bool?,
   cacheDeceptionArmor: json['cache_deception_armor'] as bool?,
-  customKey: json['custom_key'] != null
-        ? RulesetsSetCacheSettingsCustomCacheKey.fromJson(json['custom_key'] as Map<String, dynamic>)
-        : null,
+  customKey: json['custom_key'] != null ? RulesetsSetCacheSettingsCustomCacheKey.fromJson(json['custom_key'] as Map<String, dynamic>) : null,
   ignoreQueryStringsOrder: json['ignore_query_strings_order'] as bool?,
 ); }
 

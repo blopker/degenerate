@@ -125,19 +125,11 @@ bool get isUnknown { return !values.contains(this); }
 final class PostAccountsAccountRequestCompany {const PostAccountsAccountRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
 factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCompany(
-  address: json['address'] != null
-        ? PostAccountsAccountRequestCompanyAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PostAccountsAccountRequestCompanyAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PostAccountsAccountRequestCompanyAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostAccountsAccountRequestCompanyAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PostAccountsAccountRequestCompanyAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PostAccountsAccountRequestCompanyAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   directorsProvided: json['directors_provided'] as bool?,
-  directorshipDeclaration: json['directorship_declaration'] != null
-        ? PostAccountsAccountRequestCompanyDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>)
-        : null,
+  directorshipDeclaration: json['directorship_declaration'] != null ? PostAccountsAccountRequestCompanyDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null,
   executivesProvided: json['executives_provided'] as bool?,
   exportLicenseId: json['export_license_id'] as String?,
   exportPurposeCode: json['export_purpose_code'] as String?,
@@ -145,25 +137,17 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   nameKana: json['name_kana'] as String?,
   nameKanji: json['name_kanji'] as String?,
   ownersProvided: json['owners_provided'] as bool?,
-  ownershipDeclaration: json['ownership_declaration'] != null
-        ? PostAccountsAccountRequestCompanyOwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>)
-        : null,
+  ownershipDeclaration: json['ownership_declaration'] != null ? PostAccountsAccountRequestCompanyOwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? PostAccountsAccountRequestCompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null
-        ? PostAccountsAccountRequestCompanyRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>)
-        : null,
+  registrationDate: json['registration_date'] != null ? PostAccountsAccountRequestCompanyRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>) : null,
   registrationNumber: json['registration_number'] as String?,
-  representativeDeclaration: json['representative_declaration'] != null
-        ? PostAccountsAccountRequestCompanyRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>)
-        : null,
+  representativeDeclaration: json['representative_declaration'] != null ? PostAccountsAccountRequestCompanyRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? PostAccountsAccountRequestCompanyStructure.fromJson(json['structure'] as String) : null,
   taxId: json['tax_id'] as String?,
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatId: json['vat_id'] as String?,
-  verification: json['verification'] != null
-        ? PostAccountsAccountRequestCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? PostAccountsAccountRequestCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsAccountRequestCompanyAddress? address;

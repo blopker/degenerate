@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RevolutPayUnderlyingPaymentMethodFundingDetails {const RevolutPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
 
 factory RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return RevolutPayUnderlyingPaymentMethodFundingDetails(
-  card: json['card'] != null
-        ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? RevolutPayUnderlyingPaymentMethodFundingDetailsType.fromJson(json['type'] as String) : null,
 ); }
 

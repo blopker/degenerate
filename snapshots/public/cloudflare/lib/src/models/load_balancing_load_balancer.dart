@@ -13,9 +13,7 @@ String toJson() => value;
 final class LoadBalancingLoadBalancer {const LoadBalancingLoadBalancer({this.adaptiveRouting, this.countryPools, this.createdOn, this.defaultPools, this.description, this.enabled, this.fallbackPool, this.id, this.locationStrategy, this.modifiedOn, this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, this.zoneName, });
 
 factory LoadBalancingLoadBalancer.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadBalancer(
-  adaptiveRouting: json['adaptive_routing'] != null
-        ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>)
-        : null,
+  adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
   countryPools: (json['country_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   createdOn: json['created_on'] != null ? LoadBalancingTimestamp.fromJson(json['created_on'] as String) : null,
   defaultPools: (json['default_pools'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -23,23 +21,17 @@ factory LoadBalancingLoadBalancer.fromJson(Map<String, dynamic> json) { return L
   enabled: json['enabled'] != null ? LoadBalancingComponentsSchemasEnabled.fromJson(json['enabled'] as bool) : null,
   fallbackPool: json['fallback_pool'] != null ? LoadBalancingFallbackPool.fromJson(json['fallback_pool'] as String) : null,
   id: json['id'] != null ? LoadBalancingLoadBalancerComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
-  locationStrategy: json['location_strategy'] != null
-        ? LoadBalancingLocationStrategy.fromJson(json['location_strategy'] as Map<String, dynamic>)
-        : null,
+  locationStrategy: json['location_strategy'] != null ? LoadBalancingLocationStrategy.fromJson(json['location_strategy'] as Map<String, dynamic>) : null,
   modifiedOn: json['modified_on'] != null ? LoadBalancingTimestamp.fromJson(json['modified_on'] as String) : null,
   name: json['name'] != null ? LoadBalancingComponentsSchemasName.fromJson(json['name'] as String) : null,
   networks: (json['networks'] as List<dynamic>?)?.map((e) => e as String).toList(),
   popPools: (json['pop_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   proxied: json['proxied'] != null ? LoadBalancingProxied.fromJson(json['proxied'] as bool) : null,
-  randomSteering: json['random_steering'] != null
-        ? LoadBalancingRandomSteering.fromJson(json['random_steering'] as Map<String, dynamic>)
-        : null,
+  randomSteering: json['random_steering'] != null ? LoadBalancingRandomSteering.fromJson(json['random_steering'] as Map<String, dynamic>) : null,
   regionPools: (json['region_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   rules: (json['rules'] as List<dynamic>?)?.map((e) => LoadBalancingRules2.fromJson(e as Map<String, dynamic>)).toList(),
   sessionAffinity: json['session_affinity'] != null ? LoadBalancingSessionAffinity.fromJson(json['session_affinity'] as String) : null,
-  sessionAffinityAttributes: json['session_affinity_attributes'] != null
-        ? LoadBalancingSessionAffinityAttributes.fromJson(json['session_affinity_attributes'] as Map<String, dynamic>)
-        : null,
+  sessionAffinityAttributes: json['session_affinity_attributes'] != null ? LoadBalancingSessionAffinityAttributes.fromJson(json['session_affinity_attributes'] as Map<String, dynamic>) : null,
   sessionAffinityTtl: json['session_affinity_ttl'] != null ? LoadBalancingSessionAffinityTtl.fromJson(json['session_affinity_ttl'] as num) : null,
   steeringPolicy: json['steering_policy'] != null ? LoadBalancingSteeringPolicy.fromJson(json['steering_policy'] as String) : null,
   ttl: json['ttl'] != null ? LoadBalancingTtl.fromJson(json['ttl'] as num) : null,

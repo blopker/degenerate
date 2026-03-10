@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'node_config_source.dart';imp
 final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });
 
 factory NodeSpec.fromJson(Map<String, dynamic> json) { return NodeSpec(
-  configSource: json['configSource'] != null
-        ? NodeConfigSource.fromJson(json['configSource'] as Map<String, dynamic>)
-        : null,
+  configSource: json['configSource'] != null ? NodeConfigSource.fromJson(json['configSource'] as Map<String, dynamic>) : null,
   externalId: json['externalID'] as String?,
   podCidr: json['podCIDR'] as String?,
   podCidRs: (json['podCIDRs'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -8,58 +8,24 @@ import 'card_mandate_payment_method_details.dart';import 'mandate_acss_debit.dar
 final class MandatePaymentMethodDetails {const MandatePaymentMethodDetails({this.acssDebit, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.card, this.cashapp, this.kakaoPay, this.klarna, this.krCard, this.link, this.naverPay, this.nzBankAccount, this.paypal, this.payto, this.revolutPay, this.sepaDebit, required this.type, this.usBankAccount, });
 
 factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return MandatePaymentMethodDetails(
-  acssDebit: json['acss_debit'] != null
-        ? MandateAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? MandateAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  auBecsDebit: json['au_becs_debit'] != null
-        ? MandateAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? MandateBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? CardMandatePaymentMethodDetails.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cashapp: json['cashapp'] != null
-        ? MandateCashapp.fromJson(json['cashapp'] as Map<String, dynamic>)
-        : null,
-  kakaoPay: json['kakao_pay'] != null
-        ? MandateKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? MandateKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  krCard: json['kr_card'] != null
-        ? MandateKrCard.fromJson(json['kr_card'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? MandateLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  naverPay: json['naver_pay'] != null
-        ? MandateNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>)
-        : null,
-  nzBankAccount: json['nz_bank_account'] != null
-        ? MandateNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? MandatePaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? MandatePayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  revolutPay: json['revolut_pay'] != null
-        ? MandateRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? MandateSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? MandateAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? MandateAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? MandateAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? MandateBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? CardMandatePaymentMethodDetails.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? MandateCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? MandateKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? MandateKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? MandateKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? MandateLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? MandateNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? MandateNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? MandatePaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? MandatePayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? MandateRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? MandateSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-  usBankAccount: json['us_bank_account'] != null
-        ? MandateUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? MandateUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final MandateAcssDebit? acssDebit;

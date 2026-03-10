@@ -7,9 +7,7 @@
 import 'inline_object1409_mandate_options.dart';final class InlineObject1409 {const InlineObject1409({this.mandateOptions});
 
 factory InlineObject1409.fromJson(Map<String, dynamic> json) { return InlineObject1409(
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject1409MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject1409MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1409MandateOptions? mandateOptions;

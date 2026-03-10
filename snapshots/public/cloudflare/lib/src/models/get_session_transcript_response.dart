@@ -7,9 +7,7 @@
 import 'realtimekit_transcript.dart';final class GetSessionTranscriptResponse {const GetSessionTranscriptResponse({this.data, this.success, });
 
 factory GetSessionTranscriptResponse.fromJson(Map<String, dynamic> json) { return GetSessionTranscriptResponse(
-  data: json['data'] != null
-        ? RealtimekitTranscript.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? RealtimekitTranscript.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

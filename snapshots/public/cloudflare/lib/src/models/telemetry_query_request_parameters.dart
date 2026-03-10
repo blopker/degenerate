@@ -46,12 +46,8 @@ factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { re
   groupBys: (json['groupBys'] as List<dynamic>?)?.map((e) => TelemetryQueryRequestParametersGroupBys.fromJson(e as Map<String, dynamic>)).toList(),
   havings: (json['havings'] as List<dynamic>?)?.map((e) => TelemetryQueryRequestParametersHavings.fromJson(e as Map<String, dynamic>)).toList(),
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
-  needle: json['needle'] != null
-        ? TelemetryQueryRequestParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>)
-        : null,
-  orderBy: json['orderBy'] != null
-        ? TelemetryQueryRequestParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>)
-        : null,
+  needle: json['needle'] != null ? TelemetryQueryRequestParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
+  orderBy: json['orderBy'] != null ? TelemetryQueryRequestParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Create Calculations to compute as part of the query.

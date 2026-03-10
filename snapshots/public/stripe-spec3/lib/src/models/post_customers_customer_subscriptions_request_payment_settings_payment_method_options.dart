@@ -7,30 +7,14 @@
 import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_acss_debit.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_bancontact.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_card.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_customer_balance.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_konbini.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_payto.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_sepa_debit.dart';import 'post_customers_customer_subscriptions_request_payment_settings_payment_method_options_us_bank_account.dart';final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions {const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  customerBalance: json['customer_balance'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>)
-        : null,
-  konbini: json['konbini'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsAcssDebit? acssDebit;

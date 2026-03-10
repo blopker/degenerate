@@ -7,9 +7,7 @@
 import 'post_invoices_create_preview_request_customer_details_tax_ip_address.dart';final class PostInvoicesCreatePreviewRequestCustomerDetailsTax {const PostInvoicesCreatePreviewRequestCustomerDetailsTax({this.ipAddress});
 
 factory PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
-  ipAddress: json['ip_address'] != null
-        ? PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress.fromJson(json['ip_address'] as Map<String, dynamic>)
-        : null,
+  ipAddress: json['ip_address'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress.fromJson(json['ip_address'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress? ipAddress;

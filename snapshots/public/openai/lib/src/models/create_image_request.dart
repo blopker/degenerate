@@ -232,9 +232,7 @@ final class CreateImageRequest {const CreateImageRequest({required this.prompt, 
 
 factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateImageRequest(
   prompt: json['prompt'] as String,
-  model: json['model'] != null
-        ? CreateImageRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? CreateImageRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
   quality: json.containsKey('quality') ? CreateImageRequestQuality.fromJson(json['quality'] as String) : CreateImageRequestQuality.auto,
   responseFormat: json.containsKey('response_format') ? CreateImageRequestResponseFormat.fromJson(json['response_format'] as String) : CreateImageRequestResponseFormat.url,

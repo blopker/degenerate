@@ -8,9 +8,7 @@ import 'label_selector.dart';/// ClusterTrustBundleProjection describes how to s
 final class ClusterTrustBundleProjection {const ClusterTrustBundleProjection({this.labelSelector, this.name, this.optional, this.path = '', this.signerName, });
 
 factory ClusterTrustBundleProjection.fromJson(Map<String, dynamic> json) { return ClusterTrustBundleProjection(
-  labelSelector: json['labelSelector'] != null
-        ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>)
-        : null,
+  labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   optional: json['optional'] as bool?,
   path: json['path'] as String,

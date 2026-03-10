@@ -9,9 +9,7 @@ import 'post_accounts_request_settings_treasury_tos_acceptance_user_agent.dart';
 factory PostAccountsRequestSettingsTreasuryTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsTreasuryTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null
-        ? PostAccountsRequestSettingsTreasuryTosAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>)
-        : null,
+  userAgent: json['user_agent'] != null ? PostAccountsRequestSettingsTreasuryTosAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>) : null,
 ); }
 
 final int? date;

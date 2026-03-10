@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_invoices_invoice_pay_re
 factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoicePayRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   forgive: json['forgive'] as bool?,
-  mandate: json['mandate'] != null
-        ? PostInvoicesInvoicePayRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? PostInvoicesInvoicePayRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   offSession: json['off_session'] as bool?,
   paidOutOfBand: json['paid_out_of_band'] as bool?,
   paymentMethod: json['payment_method'] as String?,

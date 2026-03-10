@@ -8,13 +8,9 @@ import 'issuing_transaction_fleet_data_cardholder_prompt_data.dart';import 'issu
 final class IssuingTransactionFleetData {const IssuingTransactionFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingTransactionFleetData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetData(
-  cardholderPromptData: json['cardholder_prompt_data'] != null
-        ? IssuingTransactionFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>)
-        : null,
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingTransactionFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] as String?,
-  reportedBreakdown: json['reported_breakdown'] != null
-        ? IssuingTransactionFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>)
-        : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? IssuingTransactionFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] as String?,
 ); }
 

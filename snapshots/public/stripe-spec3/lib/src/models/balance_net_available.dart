@@ -10,9 +10,7 @@ final class BalanceNetAvailable {const BalanceNetAvailable({required this.amount
 factory BalanceNetAvailable.fromJson(Map<String, dynamic> json) { return BalanceNetAvailable(
   amount: (json['amount'] as num).toInt(),
   destination: json['destination'] as String,
-  sourceTypes: json['source_types'] != null
-        ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>)
-        : null,
+  sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
 ); }
 
 /// Net balance amount, subtracting fees from platform-set pricing.

@@ -48,9 +48,7 @@ num toJson() => value;
 final class MagicTransitColoResult {const MagicTransitColoResult({this.colo, this.error, this.hops, this.targetSummary, this.tracerouteTimeMs, });
 
 factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) { return MagicTransitColoResult(
-  colo: json['colo'] != null
-        ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>)
-        : null,
+  colo: json['colo'] != null ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>) : null,
   error: json['error'] != null ? MagicTransitError.fromJson(json['error'] as String) : null,
   hops: (json['hops'] as List<dynamic>?)?.map((e) => MagicTransitHopResult.fromJson(e as Map<String, dynamic>)).toList(),
   targetSummary: (json['target_summary'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

@@ -8,9 +8,7 @@ import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';/// Persist
 final class PersistentVolumeClaimTemplate {const PersistentVolumeClaimTemplate({this.metadata, required this.spec, });
 
 factory PersistentVolumeClaimTemplate.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimTemplate(
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: PersistentVolumeClaimSpec.fromJson(json['spec'] as Map<String, dynamic>),
 ); }
 

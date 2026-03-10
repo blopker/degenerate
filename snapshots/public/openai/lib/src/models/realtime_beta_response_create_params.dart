@@ -63,25 +63,15 @@ final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreatePa
 factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParams(
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
-  voice: json['voice'] != null
-        ? VoiceIdsOrCustomVoice.fromJson(json['voice'] as Map<String, dynamic>)
-        : null,
+  voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice'] as Map<String, dynamic>) : null,
   outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsTools.fromJson(e as Map<String, dynamic>)).toList(),
-  toolChoice: json['tool_choice'] != null
-        ? RealtimeBetaResponseCreateParamsToolChoice.fromJson(json['tool_choice'])
-        : null,
+  toolChoice: json['tool_choice'] != null ? RealtimeBetaResponseCreateParamsToolChoice.fromJson(json['tool_choice']) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeBetaResponseCreateParamsMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
-  conversation: json['conversation'] != null
-        ? RealtimeBetaResponseCreateParamsConversation.fromJson(json['conversation'])
-        : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeBetaResponseCreateParamsMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
+  conversation: json['conversation'] != null ? RealtimeBetaResponseCreateParamsConversation.fromJson(json['conversation']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

@@ -7,21 +7,11 @@
 import 'zones_cache_key_fields_value_cookie.dart';import 'zones_cache_key_fields_value_header.dart';import 'zones_cache_key_fields_value_host.dart';import 'zones_cache_key_fields_value_query_string.dart';import 'zones_cache_key_fields_value_user.dart';final class ZonesCacheKeyFieldsValue {const ZonesCacheKeyFieldsValue({this.cookie, this.header, this.host, this.queryString, this.user, });
 
 factory ZonesCacheKeyFieldsValue.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValue(
-  cookie: json['cookie'] != null
-        ? ZonesCacheKeyFieldsValueCookie.fromJson(json['cookie'] as Map<String, dynamic>)
-        : null,
-  header: json['header'] != null
-        ? ZonesCacheKeyFieldsValueHeader.fromJson(json['header'] as Map<String, dynamic>)
-        : null,
-  host: json['host'] != null
-        ? ZonesCacheKeyFieldsValueHost.fromJson(json['host'] as Map<String, dynamic>)
-        : null,
-  queryString: json['query_string'] != null
-        ? ZonesCacheKeyFieldsValueQueryString.fromJson(json['query_string'] as Map<String, dynamic>)
-        : null,
-  user: json['user'] != null
-        ? ZonesCacheKeyFieldsValueUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  cookie: json['cookie'] != null ? ZonesCacheKeyFieldsValueCookie.fromJson(json['cookie'] as Map<String, dynamic>) : null,
+  header: json['header'] != null ? ZonesCacheKeyFieldsValueHeader.fromJson(json['header'] as Map<String, dynamic>) : null,
+  host: json['host'] != null ? ZonesCacheKeyFieldsValueHost.fromJson(json['host'] as Map<String, dynamic>) : null,
+  queryString: json['query_string'] != null ? ZonesCacheKeyFieldsValueQueryString.fromJson(json['query_string'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? ZonesCacheKeyFieldsValueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// Controls which cookies appear in the Cache Key.

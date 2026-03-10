@@ -9,9 +9,7 @@ final class AccountRequestTracerRequestTraceRequestContext {const AccountRequest
 
 factory AccountRequestTracerRequestTraceRequestContext.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestContext(
   botScore: json['bot_score'] != null ? (json['bot_score'] as num).toInt() : null,
-  geoloc: json['geoloc'] != null
-        ? AccountRequestTracerRequestTraceRequestContextGeoloc.fromJson(json['geoloc'] as Map<String, dynamic>)
-        : null,
+  geoloc: json['geoloc'] != null ? AccountRequestTracerRequestTraceRequestContextGeoloc.fromJson(json['geoloc'] as Map<String, dynamic>) : null,
   skipChallenge: json['skip_challenge'] as bool?,
   threatScore: json['threat_score'] != null ? (json['threat_score'] as num).toInt() : null,
 ); }

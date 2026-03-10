@@ -34,15 +34,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1494 {const InlineObject1494({this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, required this.type, });
 
 factory InlineObject1494.fromJson(Map<String, dynamic> json) { return InlineObject1494(
-  enterpriseEapPeap: json['enterprise_eap_peap'] != null
-        ? InlineObject1494EnterpriseEapPeap.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>)
-        : null,
-  enterpriseEapTls: json['enterprise_eap_tls'] != null
-        ? InlineObject1494EnterpriseEapTls.fromJson(json['enterprise_eap_tls'] as Map<String, dynamic>)
-        : null,
-  personalPsk: json['personal_psk'] != null
-        ? InlineObject1494PersonalPsk.fromJson(json['personal_psk'] as Map<String, dynamic>)
-        : null,
+  enterpriseEapPeap: json['enterprise_eap_peap'] != null ? InlineObject1494EnterpriseEapPeap.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>) : null,
+  enterpriseEapTls: json['enterprise_eap_tls'] != null ? InlineObject1494EnterpriseEapTls.fromJson(json['enterprise_eap_tls'] as Map<String, dynamic>) : null,
+  personalPsk: json['personal_psk'] != null ? InlineObject1494PersonalPsk.fromJson(json['personal_psk'] as Map<String, dynamic>) : null,
   type: InlineObject1494Type.fromJson(json['type'] as String),
 ); }
 

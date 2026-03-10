@@ -21,16 +21,12 @@ String toJson() => value;
 final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
 
 factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallRatelimit(
-  action: json['action'] != null
-        ? FirewallAction.fromJson(json['action'] as Map<String, dynamic>)
-        : null,
+  action: json['action'] != null ? FirewallAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   bypass: (json['bypass'] as List<dynamic>?)?.map((e) => FirewallBypass2.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
   disabled: json['disabled'] != null ? FirewallDisabled.fromJson(json['disabled'] as bool) : null,
   id: json['id'] != null ? FirewallId.fromJson(json['id'] as String) : null,
-  match: json['match'] != null
-        ? FirewallMatch.fromJson(json['match'] as Map<String, dynamic>)
-        : null,
+  match: json['match'] != null ? FirewallMatch.fromJson(json['match'] as Map<String, dynamic>) : null,
   period: json['period'] != null ? FirewallPeriod.fromJson(json['period'] as num) : null,
   threshold: json['threshold'] != null ? FirewallThreshold.fromJson(json['threshold'] as num) : null,
 ); }

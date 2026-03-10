@@ -10,29 +10,15 @@ factory PostInvoicesInvoiceUpdateLinesRequestLines.fromJson(Map<String, dynamic>
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  metadata: json['metadata'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  period: json['period'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesPeriod.fromJson(json['period'] as Map<String, dynamic>)
-        : null,
-  priceData: json['price_data'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
-  pricing: json['pricing'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesPricing.fromJson(json['pricing'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  period: json['period'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
+  priceData: json['price_data'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
+  pricing: json['pricing'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmounts.fromJson(json['tax_amounts'] as Map<String, dynamic>)
-        : null,
-  taxRates: json['tax_rates'] != null
-        ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxAmounts: json['tax_amounts'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmounts.fromJson(json['tax_amounts'] as Map<String, dynamic>) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final int? amount;

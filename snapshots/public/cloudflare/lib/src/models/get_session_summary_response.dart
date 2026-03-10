@@ -7,9 +7,7 @@
 import 'realtimekit_transcript_summary.dart';final class GetSessionSummaryResponse {const GetSessionSummaryResponse({this.data, this.success, });
 
 factory GetSessionSummaryResponse.fromJson(Map<String, dynamic> json) { return GetSessionSummaryResponse(
-  data: json['data'] != null
-        ? RealtimekitTranscriptSummary.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? RealtimekitTranscriptSummary.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

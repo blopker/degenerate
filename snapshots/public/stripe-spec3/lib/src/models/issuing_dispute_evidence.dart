@@ -51,31 +51,15 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingDisputeEvidence {const IssuingDisputeEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, required this.reason, this.serviceNotAsDescribed, });
 
 factory IssuingDisputeEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeEvidence(
-  canceled: json['canceled'] != null
-        ? IssuingDisputeCanceledEvidence.fromJson(json['canceled'] as Map<String, dynamic>)
-        : null,
-  duplicate: json['duplicate'] != null
-        ? IssuingDisputeDuplicateEvidence.fromJson(json['duplicate'] as Map<String, dynamic>)
-        : null,
-  fraudulent: json['fraudulent'] != null
-        ? IssuingDisputeFraudulentEvidence.fromJson(json['fraudulent'] as Map<String, dynamic>)
-        : null,
-  merchandiseNotAsDescribed: json['merchandise_not_as_described'] != null
-        ? IssuingDisputeMerchandiseNotAsDescribedEvidence.fromJson(json['merchandise_not_as_described'] as Map<String, dynamic>)
-        : null,
-  noValidAuthorization: json['no_valid_authorization'] != null
-        ? IssuingDisputeNoValidAuthorizationEvidence.fromJson(json['no_valid_authorization'] as Map<String, dynamic>)
-        : null,
-  notReceived: json['not_received'] != null
-        ? IssuingDisputeNotReceivedEvidence.fromJson(json['not_received'] as Map<String, dynamic>)
-        : null,
-  other: json['other'] != null
-        ? IssuingDisputeOtherEvidence.fromJson(json['other'] as Map<String, dynamic>)
-        : null,
+  canceled: json['canceled'] != null ? IssuingDisputeCanceledEvidence.fromJson(json['canceled'] as Map<String, dynamic>) : null,
+  duplicate: json['duplicate'] != null ? IssuingDisputeDuplicateEvidence.fromJson(json['duplicate'] as Map<String, dynamic>) : null,
+  fraudulent: json['fraudulent'] != null ? IssuingDisputeFraudulentEvidence.fromJson(json['fraudulent'] as Map<String, dynamic>) : null,
+  merchandiseNotAsDescribed: json['merchandise_not_as_described'] != null ? IssuingDisputeMerchandiseNotAsDescribedEvidence.fromJson(json['merchandise_not_as_described'] as Map<String, dynamic>) : null,
+  noValidAuthorization: json['no_valid_authorization'] != null ? IssuingDisputeNoValidAuthorizationEvidence.fromJson(json['no_valid_authorization'] as Map<String, dynamic>) : null,
+  notReceived: json['not_received'] != null ? IssuingDisputeNotReceivedEvidence.fromJson(json['not_received'] as Map<String, dynamic>) : null,
+  other: json['other'] != null ? IssuingDisputeOtherEvidence.fromJson(json['other'] as Map<String, dynamic>) : null,
   reason: IssuingDisputeEvidenceReason.fromJson(json['reason'] as String),
-  serviceNotAsDescribed: json['service_not_as_described'] != null
-        ? IssuingDisputeServiceNotAsDescribedEvidence.fromJson(json['service_not_as_described'] as Map<String, dynamic>)
-        : null,
+  serviceNotAsDescribed: json['service_not_as_described'] != null ? IssuingDisputeServiceNotAsDescribedEvidence.fromJson(json['service_not_as_described'] as Map<String, dynamic>) : null,
 ); }
 
 final IssuingDisputeCanceledEvidence? canceled;

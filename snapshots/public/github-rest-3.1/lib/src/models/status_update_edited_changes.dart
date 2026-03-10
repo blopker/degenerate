@@ -7,18 +7,10 @@
 import 'status_update_edited_changes_body.dart';import 'status_update_edited_changes_start_date.dart';import 'status_update_edited_changes_status.dart';import 'status_update_edited_changes_target_date.dart';final class StatusUpdateEditedChanges {const StatusUpdateEditedChanges({this.body, this.status, this.startDate, this.targetDate, });
 
 factory StatusUpdateEditedChanges.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChanges(
-  body: json['body'] != null
-        ? StatusUpdateEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  status: json['status'] != null
-        ? StatusUpdateEditedChangesStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
-  startDate: json['start_date'] != null
-        ? StatusUpdateEditedChangesStartDate.fromJson(json['start_date'] as Map<String, dynamic>)
-        : null,
-  targetDate: json['target_date'] != null
-        ? StatusUpdateEditedChangesTargetDate.fromJson(json['target_date'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? StatusUpdateEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  status: json['status'] != null ? StatusUpdateEditedChangesStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
+  startDate: json['start_date'] != null ? StatusUpdateEditedChangesStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null,
+  targetDate: json['target_date'] != null ? StatusUpdateEditedChangesTargetDate.fromJson(json['target_date'] as Map<String, dynamic>) : null,
 ); }
 
 final StatusUpdateEditedChangesBody? body;

@@ -140,90 +140,44 @@ bool get isUnknown { return !values.contains(this); }
 final class Source {const Source({this.achCreditTransfer, this.achDebit, this.acssDebit, this.alipay, this.allowRedisplay, this.amount, this.auBecsDebit, this.bancontact, this.card, this.cardPresent, required this.clientSecret, this.codeVerification, required this.created, this.currency, this.customer, this.eps, required this.flow, this.giropay, required this.id, this.ideal, this.klarna, required this.livemode, this.metadata, this.multibanco, required this.object, this.owner, this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor, required this.status, this.threeDSecure, required this.type, this.usage, this.wechat, });
 
 factory Source.fromJson(Map<String, dynamic> json) { return Source(
-  achCreditTransfer: json['ach_credit_transfer'] != null
-        ? SourceTypeAchCreditTransfer.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>)
-        : null,
-  achDebit: json['ach_debit'] != null
-        ? SourceTypeAchDebit.fromJson(json['ach_debit'] as Map<String, dynamic>)
-        : null,
-  acssDebit: json['acss_debit'] != null
-        ? SourceTypeAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  alipay: json['alipay'] != null
-        ? SourceTypeAlipay.fromJson(json['alipay'] as Map<String, dynamic>)
-        : null,
+  achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTypeAchCreditTransfer.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
+  achDebit: json['ach_debit'] != null ? SourceTypeAchDebit.fromJson(json['ach_debit'] as Map<String, dynamic>) : null,
+  acssDebit: json['acss_debit'] != null ? SourceTypeAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? SourceTypeAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
   allowRedisplay: json['allow_redisplay'] != null ? SourceAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  auBecsDebit: json['au_becs_debit'] != null
-        ? SourceTypeAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? SourceTypeBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? SourceTypeCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? SourceTypeCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
+  auBecsDebit: json['au_becs_debit'] != null ? SourceTypeAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? SourceTypeBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? SourceTypeCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? SourceTypeCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
   clientSecret: json['client_secret'] as String,
-  codeVerification: json['code_verification'] != null
-        ? SourceCodeVerificationFlow.fromJson(json['code_verification'] as Map<String, dynamic>)
-        : null,
+  codeVerification: json['code_verification'] != null ? SourceCodeVerificationFlow.fromJson(json['code_verification'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
-  eps: json['eps'] != null
-        ? SourceTypeEps.fromJson(json['eps'] as Map<String, dynamic>)
-        : null,
+  eps: json['eps'] != null ? SourceTypeEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   flow: json['flow'] as String,
-  giropay: json['giropay'] != null
-        ? SourceTypeGiropay.fromJson(json['giropay'] as Map<String, dynamic>)
-        : null,
+  giropay: json['giropay'] != null ? SourceTypeGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  ideal: json['ideal'] != null
-        ? SourceTypeIdeal.fromJson(json['ideal'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? SourceTypeKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
+  ideal: json['ideal'] != null ? SourceTypeIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? SourceTypeKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  multibanco: json['multibanco'] != null
-        ? SourceTypeMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>)
-        : null,
+  multibanco: json['multibanco'] != null ? SourceTypeMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   object: SourceObject.fromJson(json['object'] as String),
-  owner: json['owner'] != null
-        ? SourceOwner2.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
-  p24: json['p24'] != null
-        ? SourceTypeP24.fromJson(json['p24'] as Map<String, dynamic>)
-        : null,
-  receiver: json['receiver'] != null
-        ? SourceReceiverFlow.fromJson(json['receiver'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? SourceRedirectFlow.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? SourceTypeSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  sofort: json['sofort'] != null
-        ? SourceTypeSofort.fromJson(json['sofort'] as Map<String, dynamic>)
-        : null,
-  sourceOrder: json['source_order'] != null
-        ? SourceOrder.fromJson(json['source_order'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? SourceOwner2.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? SourceTypeP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  receiver: json['receiver'] != null ? SourceReceiverFlow.fromJson(json['receiver'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? SourceRedirectFlow.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? SourceTypeSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? SourceTypeSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  sourceOrder: json['source_order'] != null ? SourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] as String,
-  threeDSecure: json['three_d_secure'] != null
-        ? SourceTypeThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>)
-        : null,
+  threeDSecure: json['three_d_secure'] != null ? SourceTypeThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
   type: SourceType.fromJson(json['type'] as String),
   usage: json['usage'] as String?,
-  wechat: json['wechat'] != null
-        ? SourceTypeWechat.fromJson(json['wechat'] as Map<String, dynamic>)
-        : null,
+  wechat: json['wechat'] != null ? SourceTypeWechat.fromJson(json['wechat'] as Map<String, dynamic>) : null,
 ); }
 
 final SourceTypeAchCreditTransfer? achCreditTransfer;

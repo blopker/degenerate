@@ -94,12 +94,8 @@ factory WorkersScriptResponse.fromJson(Map<String, dynamic> json) { return Worke
   migrationTag: json['migration_tag'] as String?,
   modifiedOn: json['modified_on'] != null ? WorkersModifiedOn.fromJson(json['modified_on'] as String) : null,
   namedHandlers: (json['named_handlers'] as List<dynamic>?)?.map((e) => WorkersScriptResponseNamedHandlers.fromJson(e as Map<String, dynamic>)).toList(),
-  observability: json['observability'] != null
-        ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>)
-        : null,
-  placement: json['placement'] != null
-        ? WorkersPlacementInfo.fromJson(json['placement'] as Map<String, dynamic>)
-        : null,
+  observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
+  placement: json['placement'] != null ? WorkersPlacementInfo.fromJson(json['placement'] as Map<String, dynamic>) : null,
   placementMode: json['placement_mode'] != null ? WorkersPlacementMode.fromJson(json['placement_mode'] as String) : null,
   placementStatus: json['placement_status'] != null ? WorkersPlacementStatus.fromJson(json['placement_status'] as String) : null,
   tag: json['tag'] as String?,

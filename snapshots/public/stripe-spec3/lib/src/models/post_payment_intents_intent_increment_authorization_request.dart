@@ -8,23 +8,15 @@ import 'package:collection/collection.dart';import 'post_payment_intents_intent_
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  hooks: json['hooks'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>)
-        : null,
+  hooks: json['hooks'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  paymentDetails: json['payment_details'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
+  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The updated total amount that you intend to collect from the cardholder. This amount must be greater than the currently authorized amount.

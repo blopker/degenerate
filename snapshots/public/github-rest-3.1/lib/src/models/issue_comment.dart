@@ -20,15 +20,9 @@ factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   issueUrl: Uri.parse(json['issue_url'] as String),
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
-  pin: json['pin'] != null
-        ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
+  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier of the issue comment

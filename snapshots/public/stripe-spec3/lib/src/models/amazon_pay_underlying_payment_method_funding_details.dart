@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class AmazonPayUnderlyingPaymentMethodFundingDetails {const AmazonPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
 
 factory AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return AmazonPayUnderlyingPaymentMethodFundingDetails(
-  card: json['card'] != null
-        ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(json['type'] as String) : null,
 ); }
 

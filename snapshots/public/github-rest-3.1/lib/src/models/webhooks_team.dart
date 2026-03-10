@@ -91,9 +91,7 @@ factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null
-        ? WebhooksTeamParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? WebhooksTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String?,
   privacy: json['privacy'] != null ? WebhooksTeamPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? WebhooksTeamNotificationSetting.fromJson(json['notification_setting'] as String) : null,

@@ -34,12 +34,8 @@ final class BankConnectionsResourceBalance {const BankConnectionsResourceBalance
 
 factory BankConnectionsResourceBalance.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceBalance(
   asOf: (json['as_of'] as num).toInt(),
-  cash: json['cash'] != null
-        ? ResourceCashBalance.fromJson(json['cash'] as Map<String, dynamic>)
-        : null,
-  credit: json['credit'] != null
-        ? ResourceCreditBalance.fromJson(json['credit'] as Map<String, dynamic>)
-        : null,
+  cash: json['cash'] != null ? ResourceCashBalance.fromJson(json['cash'] as Map<String, dynamic>) : null,
+  credit: json['credit'] != null ? ResourceCreditBalance.fromJson(json['credit'] as Map<String, dynamic>) : null,
   current: (json['current'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   type: BankConnectionsResourceBalanceType.fromJson(json['type'] as String),
 ); }

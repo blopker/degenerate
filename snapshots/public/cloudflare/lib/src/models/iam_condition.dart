@@ -7,9 +7,7 @@
 import 'iam_request_ip.dart';final class IamCondition {const IamCondition({this.requestIp});
 
 factory IamCondition.fromJson(Map<String, dynamic> json) { return IamCondition(
-  requestIp: json['request_ip'] != null
-        ? IamRequestIp.fromJson(json['request_ip'] as Map<String, dynamic>)
-        : null,
+  requestIp: json['request_ip'] != null ? IamRequestIp.fromJson(json['request_ip'] as Map<String, dynamic>) : null,
 ); }
 
 final IamRequestIp? requestIp;

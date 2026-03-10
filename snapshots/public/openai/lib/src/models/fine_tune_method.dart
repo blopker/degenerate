@@ -37,15 +37,9 @@ final class FineTuneMethod {const FineTuneMethod({required this.type, this.super
 
 factory FineTuneMethod.fromJson(Map<String, dynamic> json) { return FineTuneMethod(
   type: FineTuneMethodType.fromJson(json['type'] as String),
-  supervised: json['supervised'] != null
-        ? FineTuneSupervisedMethod.fromJson(json['supervised'] as Map<String, dynamic>)
-        : null,
-  dpo: json['dpo'] != null
-        ? FineTuneDpoMethod.fromJson(json['dpo'] as Map<String, dynamic>)
-        : null,
-  reinforcement: json['reinforcement'] != null
-        ? FineTuneReinforcementMethod.fromJson(json['reinforcement'] as Map<String, dynamic>)
-        : null,
+  supervised: json['supervised'] != null ? FineTuneSupervisedMethod.fromJson(json['supervised'] as Map<String, dynamic>) : null,
+  dpo: json['dpo'] != null ? FineTuneDpoMethod.fromJson(json['dpo'] as Map<String, dynamic>) : null,
+  reinforcement: json['reinforcement'] != null ? FineTuneReinforcementMethod.fromJson(json['reinforcement'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.

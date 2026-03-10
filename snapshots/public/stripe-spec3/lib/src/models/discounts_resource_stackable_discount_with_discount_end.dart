@@ -8,15 +8,9 @@ import 'discounts_resource_stackable_discount_with_discount_end_coupon.dart';imp
 final class DiscountsResourceStackableDiscountWithDiscountEnd {const DiscountsResourceStackableDiscountWithDiscountEnd({this.coupon, this.discount, this.promotionCode, });
 
 factory DiscountsResourceStackableDiscountWithDiscountEnd.fromJson(Map<String, dynamic> json) { return DiscountsResourceStackableDiscountWithDiscountEnd(
-  coupon: json['coupon'] != null
-        ? DiscountsResourceStackableDiscountWithDiscountEndCoupon.fromJson(json['coupon'] as Map<String, dynamic>)
-        : null,
-  discount: json['discount'] != null
-        ? DiscountsResourceStackableDiscountWithDiscountEndDiscount.fromJson(json['discount'] as Map<String, dynamic>)
-        : null,
-  promotionCode: json['promotion_code'] != null
-        ? DiscountsResourceStackableDiscountWithDiscountEndPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>)
-        : null,
+  coupon: json['coupon'] != null ? DiscountsResourceStackableDiscountWithDiscountEndCoupon.fromJson(json['coupon'] as Map<String, dynamic>) : null,
+  discount: json['discount'] != null ? DiscountsResourceStackableDiscountWithDiscountEndDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
+  promotionCode: json['promotion_code'] != null ? DiscountsResourceStackableDiscountWithDiscountEndPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>) : null,
 ); }
 
 /// ID of the coupon to create a new discount for.

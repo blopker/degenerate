@@ -8,9 +8,7 @@ import 'inline_object532_image.dart';final class InlineObject532 {const InlineOb
 
 factory InlineObject532.fromJson(Map<String, dynamic> json) { return InlineObject532(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  image: json['image'] != null
-        ? InlineObject532Image.fromJson(json['image'])
-        : null,
+  image: json['image'] != null ? InlineObject532Image.fromJson(json['image']) : null,
   lora: json['lora'] as String?,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,

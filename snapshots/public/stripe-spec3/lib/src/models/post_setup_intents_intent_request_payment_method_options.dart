@@ -8,39 +8,17 @@ import 'post_setup_intents_intent_request_payment_method_options_acss_debit.dart
 final class PostSetupIntentsIntentRequestPaymentMethodOptions {const PostSetupIntentsIntentRequestPaymentMethodOptions({this.acssDebit, this.amazonPay, this.bacsDebit, this.card, this.cardPresent, this.klarna, this.link, this.paypal, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit? acssDebit;

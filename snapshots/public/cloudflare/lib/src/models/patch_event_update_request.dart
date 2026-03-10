@@ -17,9 +17,7 @@ factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) { return Pat
   indicator: json['indicator'] as String?,
   indicatorType: json['indicatorType'] as String?,
   insight: json['insight'] as String?,
-  raw: json['raw'] != null
-        ? PatchEventUpdateRequestRaw.fromJson(json['raw'] as Map<String, dynamic>)
-        : null,
+  raw: json['raw'] != null ? PatchEventUpdateRequestRaw.fromJson(json['raw'] as Map<String, dynamic>) : null,
   targetCountry: json['targetCountry'] as String?,
   targetIndustry: json['targetIndustry'] as String?,
   tlp: json['tlp'] as String?,

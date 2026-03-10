@@ -10,9 +10,7 @@ factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dyn
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   customOriginServer: json['custom_origin_server'] != null ? TlsCertificatesAndHostnamesCustomOriginServer.fromJson(json['custom_origin_server'] as String) : null,
   customOriginSni: json['custom_origin_sni'] != null ? TlsCertificatesAndHostnamesCustomOriginSni.fromJson(json['custom_origin_sni'] as String) : null,
-  ssl: json['ssl'] != null
-        ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>)
-        : null,
+  ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>) : null,
 ); }
 
 final Map<String,String>? customMetadata;

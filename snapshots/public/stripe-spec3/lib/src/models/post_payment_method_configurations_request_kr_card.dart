@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_kr_card_display_preference.da
 final class PostPaymentMethodConfigurationsRequestKrCard {const PostPaymentMethodConfigurationsRequestKrCard({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestKrCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestKrCard(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestKrCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestKrCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestKrCardDisplayPreference? displayPreference;

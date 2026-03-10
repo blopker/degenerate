@@ -32,17 +32,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PostBillingMetersRequest {const PostBillingMetersRequest({this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, this.eventTimeWindow, this.expand, this.valueSettings, });
 
 factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequest(
-  customerMapping: json['customer_mapping'] != null
-        ? PostBillingMetersRequestCustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>)
-        : null,
+  customerMapping: json['customer_mapping'] != null ? PostBillingMetersRequestCustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>) : null,
   defaultAggregation: PostBillingMetersRequestDefaultAggregation.fromJson(json['default_aggregation'] as Map<String, dynamic>),
   displayName: json['display_name'] as String,
   eventName: json['event_name'] as String,
   eventTimeWindow: json['event_time_window'] != null ? PostBillingMetersRequestEventTimeWindow.fromJson(json['event_time_window'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  valueSettings: json['value_settings'] != null
-        ? PostBillingMetersRequestValueSettings.fromJson(json['value_settings'] as Map<String, dynamic>)
-        : null,
+  valueSettings: json['value_settings'] != null ? PostBillingMetersRequestValueSettings.fromJson(json['value_settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Fields that specify how to map a meter event to a customer.

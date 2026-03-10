@@ -12,9 +12,7 @@ factory DlpPredefinedEntry.fromJson(Map<String, dynamic> json) { return DlpPrede
   id: json['id'] as String,
   name: json['name'] as String,
   profileId: json['profile_id'] as String?,
-  variant: json['variant'] != null
-        ? DlpPredefinedEntryVariant.fromJson(json['variant'] as Map<String, dynamic>)
-        : null,
+  variant: json['variant'] != null ? DlpPredefinedEntryVariant.fromJson(json['variant'] as Map<String, dynamic>) : null,
 ); }
 
 final DlpEntryConfidence confidence;

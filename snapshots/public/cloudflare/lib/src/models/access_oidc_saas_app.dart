@@ -105,14 +105,10 @@ factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOid
   customClaims: (json['custom_claims'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppCustomClaims.fromJson(e as Map<String, dynamic>)).toList(),
   grantTypes: (json['grant_types'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppGrantTypes.fromJson(e as String)).toList(),
   groupFilterRegex: json['group_filter_regex'] as String?,
-  hybridAndImplicitOptions: json['hybrid_and_implicit_options'] != null
-        ? AccessOidcSaasAppHybridAndImplicitOptions.fromJson(json['hybrid_and_implicit_options'] as Map<String, dynamic>)
-        : null,
+  hybridAndImplicitOptions: json['hybrid_and_implicit_options'] != null ? AccessOidcSaasAppHybridAndImplicitOptions.fromJson(json['hybrid_and_implicit_options'] as Map<String, dynamic>) : null,
   publicKey: json['public_key'] as String?,
   redirectUris: (json['redirect_uris'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  refreshTokenOptions: json['refresh_token_options'] != null
-        ? AccessOidcSaasAppRefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>)
-        : null,
+  refreshTokenOptions: json['refresh_token_options'] != null ? AccessOidcSaasAppRefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppScopes.fromJson(e as String)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }

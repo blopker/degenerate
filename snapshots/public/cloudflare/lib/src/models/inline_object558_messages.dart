@@ -7,9 +7,7 @@
 import 'inline_object558_messages_content.dart';final class InlineObject558Messages {const InlineObject558Messages({this.content, this.role, this.toolCallId, });
 
 factory InlineObject558Messages.fromJson(Map<String, dynamic> json) { return InlineObject558Messages(
-  content: json['content'] != null
-        ? InlineObject558MessagesContent.fromJson(json['content'])
-        : null,
+  content: json['content'] != null ? InlineObject558MessagesContent.fromJson(json['content']) : null,
   role: json['role'] as String?,
   toolCallId: json['tool_call_id'] as String?,
 ); }

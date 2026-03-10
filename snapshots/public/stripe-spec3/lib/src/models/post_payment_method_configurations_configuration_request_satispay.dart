@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_satispay_displa
 final class PostPaymentMethodConfigurationsConfigurationRequestSatispay {const PostPaymentMethodConfigurationsConfigurationRequestSatispay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestSatispay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestSatispay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestSatispayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSatispayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestSatispayDisplayPreference? displayPreference;

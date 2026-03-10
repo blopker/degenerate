@@ -57,9 +57,7 @@ final class RealtimeClientEventResponseCreate {const RealtimeClientEventResponse
 factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCreate(
   eventId: json['event_id'] as String?,
   type: RealtimeClientEventResponseCreateType.fromJson(json['type'] as String),
-  response: json['response'] != null
-        ? RealtimeResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>)
-        : null,
+  response: json['response'] != null ? RealtimeResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
 ); }
 
 /// Optional client-generated ID used to identify this event.

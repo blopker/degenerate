@@ -88,9 +88,7 @@ factory OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, 
   bankName: json['bank_name'] as String?,
   fingerprint: json['fingerprint'] as String?,
   last4: json['last4'] as String?,
-  mandate: json['mandate'] != null
-        ? OutboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   network: OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
   routingNumber: json['routing_number'] as String?,
 ); }

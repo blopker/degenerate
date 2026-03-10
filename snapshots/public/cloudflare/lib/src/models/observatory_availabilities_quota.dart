@@ -8,14 +8,10 @@ import 'observatory_availabilities_quota_quotas_per_plan.dart';import 'observato
 
 factory ObservatoryAvailabilitiesQuota.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuota(
   plan: json['plan'] as String?,
-  quotasPerPlan: json['quotasPerPlan'] != null
-        ? ObservatoryAvailabilitiesQuotaQuotasPerPlan.fromJson(json['quotasPerPlan'] as Map<String, dynamic>)
-        : null,
+  quotasPerPlan: json['quotasPerPlan'] != null ? ObservatoryAvailabilitiesQuotaQuotasPerPlan.fromJson(json['quotasPerPlan'] as Map<String, dynamic>) : null,
   remainingSchedules: json['remainingSchedules'] != null ? (json['remainingSchedules'] as num).toDouble() : null,
   remainingTests: json['remainingTests'] != null ? (json['remainingTests'] as num).toDouble() : null,
-  scheduleQuotasPerPlan: json['scheduleQuotasPerPlan'] != null
-        ? ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan.fromJson(json['scheduleQuotasPerPlan'] as Map<String, dynamic>)
-        : null,
+  scheduleQuotasPerPlan: json['scheduleQuotasPerPlan'] != null ? ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan.fromJson(json['scheduleQuotasPerPlan'] as Map<String, dynamic>) : null,
 ); }
 
 /// Cloudflare plan.

@@ -55,21 +55,15 @@ factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) { return ZeroT
   description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
   devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
   enabled: ZeroTrustGatewayEnabled.fromJson(json['enabled'] as bool),
-  expiration: json['expiration'] != null
-        ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>)
-        : null,
+  expiration: json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null,
   filters: (json['filters'] as List<dynamic>).map((e) => ZeroTrustGatewayFilters2.fromJson(e as String)).toList(),
   id: json['id'] != null ? ZeroTrustGatewaySchemasUuid.fromJson(json['id'] as String) : null,
   identity: json['identity'] != null ? ZeroTrustGatewayIdentity.fromJson(json['identity'] as String) : null,
   name: ZeroTrustGatewayComponentsSchemasName.fromJson(json['name'] as String),
   precedence: ZeroTrustGatewayPrecedence.fromJson(json['precedence'] as num),
   readOnly: json['read_only'] != null ? ZeroTrustGatewayReadOnly.fromJson(json['read_only'] as bool) : null,
-  ruleSettings: json['rule_settings'] != null
-        ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>)
-        : null,
-  schedule: json['schedule'] != null
-        ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>)
-        : null,
+  ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
+  schedule: json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   sharable: json['sharable'] != null ? ZeroTrustGatewaySharable.fromJson(json['sharable'] as bool) : null,
   sourceAccount: json['source_account'] != null ? ZeroTrustGatewaySourceAccount.fromJson(json['source_account'] as String) : null,
   traffic: ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String),

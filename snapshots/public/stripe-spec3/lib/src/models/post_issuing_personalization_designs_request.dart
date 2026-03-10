@@ -8,17 +8,13 @@ import 'package:collection/collection.dart';import 'post_issuing_personalization
 
 factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: json['card_logo'] as String?,
-  carrierText: json['carrier_text'] != null
-        ? PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>)
-        : null,
+  carrierText: json['carrier_text'] != null ? PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lookupKey: json['lookup_key'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
   physicalBundle: json['physical_bundle'] as String,
-  preferences: json['preferences'] != null
-        ? PostIssuingPersonalizationDesignsRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>)
-        : null,
+  preferences: json['preferences'] != null ? PostIssuingPersonalizationDesignsRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
 ); }
 

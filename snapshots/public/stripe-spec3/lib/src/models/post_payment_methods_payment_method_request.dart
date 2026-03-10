@@ -36,22 +36,12 @@ final class PostPaymentMethodsPaymentMethodRequest {const PostPaymentMethodsPaym
 
 factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: json['allow_redisplay'] != null ? PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-  billingDetails: json['billing_details'] != null
-        ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? PostPaymentMethodsPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  billingDetails: json['billing_details'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostPaymentMethodsPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPaymentMethodsPaymentMethodRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? PostPaymentMethodsPaymentMethodRequestPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentMethodsPaymentMethodRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostPaymentMethodsPaymentMethodRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to `unspecified`.

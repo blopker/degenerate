@@ -9,12 +9,8 @@ import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'mag
 factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicInterconnectTunnelUpdateRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   description: json['description'] != null ? MagicInterconnectComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  gre: json['gre'] != null
-        ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>)
-        : null,
-  healthCheck: json['health_check'] != null
-        ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>)
-        : null,
+  gre: json['gre'] != null ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>) : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   interfaceAddress: json['interface_address'] != null ? MagicInterfaceAddress.fromJson(json['interface_address'] as String) : null,
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
   mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,

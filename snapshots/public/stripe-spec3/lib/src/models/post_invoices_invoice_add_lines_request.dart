@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_invoices_invoice_add_li
 
 factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null
-        ? PostInvoicesInvoiceAddLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata'] as Map<String, dynamic>)
-        : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? PostInvoicesInvoiceAddLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata'] as Map<String, dynamic>) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceAddLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

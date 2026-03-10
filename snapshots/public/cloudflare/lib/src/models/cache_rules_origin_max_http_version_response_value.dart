@@ -7,9 +7,7 @@
 import 'cache_rules_base.dart';final class CacheRulesOriginMaxHttpVersionResponseValue {const CacheRulesOriginMaxHttpVersionResponseValue({this.result});
 
 factory CacheRulesOriginMaxHttpVersionResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesOriginMaxHttpVersionResponseValue(
-  result: json['result'] != null
-        ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final CacheRulesBase? result;

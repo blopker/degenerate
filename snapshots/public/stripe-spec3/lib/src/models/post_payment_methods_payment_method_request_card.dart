@@ -10,9 +10,7 @@ final class PostPaymentMethodsPaymentMethodRequestCard {const PostPaymentMethods
 factory PostPaymentMethodsPaymentMethodRequestCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestCard(
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
   expYear: json['exp_year'] != null ? (json['exp_year'] as num).toInt() : null,
-  networks: json['networks'] != null
-        ? PostPaymentMethodsPaymentMethodRequestCardNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? PostPaymentMethodsPaymentMethodRequestCardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
 ); }
 
 final int? expMonth;

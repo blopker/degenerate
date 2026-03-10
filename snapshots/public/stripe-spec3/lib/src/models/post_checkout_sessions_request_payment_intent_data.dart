@@ -66,14 +66,10 @@ factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynami
   onBehalfOf: json['on_behalf_of'] as String?,
   receiptEmail: json['receipt_email'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null
-        ? PostCheckoutSessionsRequestPaymentIntentDataShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostCheckoutSessionsRequestPaymentIntentDataShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostCheckoutSessionsRequestPaymentIntentDataTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostCheckoutSessionsRequestPaymentIntentDataTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

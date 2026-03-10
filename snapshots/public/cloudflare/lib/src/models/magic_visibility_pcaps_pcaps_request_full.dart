@@ -10,9 +10,7 @@ factory MagicVisibilityPcapsPcapsRequestFull.fromJson(Map<String, dynamic> json)
   byteLimit: json['byte_limit'] != null ? MagicVisibilityPcapsPcapsByteLimit.fromJson(json['byte_limit'] as num) : null,
   coloName: MagicVisibilityPcapsPcapsColoName.fromJson(json['colo_name'] as String),
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),
-  filterV1: json['filter_v1'] != null
-        ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>)
-        : null,
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   packetLimit: json['packet_limit'] != null ? MagicVisibilityPcapsPcapsPacketLimit.fromJson(json['packet_limit'] as num) : null,
   system: MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String),
   timeLimit: MagicVisibilityPcapsPcapsTimeLimitFull.fromJson(json['time_limit'] as num),

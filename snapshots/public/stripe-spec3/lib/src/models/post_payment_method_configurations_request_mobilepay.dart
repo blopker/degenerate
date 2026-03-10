@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_mobilepay_display_preference.
 final class PostPaymentMethodConfigurationsRequestMobilepay {const PostPaymentMethodConfigurationsRequestMobilepay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestMobilepay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestMobilepay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestMobilepayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestMobilepayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestMobilepayDisplayPreference? displayPreference;

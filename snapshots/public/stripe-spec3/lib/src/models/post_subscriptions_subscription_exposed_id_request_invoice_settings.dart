@@ -8,12 +8,8 @@ import 'post_subscriptions_subscription_exposed_id_request_invoice_settings_acco
 final class PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings {const PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  issuer: json['issuer'] != null
-        ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds? accountTaxIds;

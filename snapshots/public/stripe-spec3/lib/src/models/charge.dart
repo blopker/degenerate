@@ -63,83 +63,47 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   amount: (json['amount'] as num).toInt(),
   amountCaptured: (json['amount_captured'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  application: json['application'] != null
-        ? ChargeApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
-  applicationFee: json['application_fee'] != null
-        ? ChargeApplicationFee.fromJson(json['application_fee'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? ChargeApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
+  applicationFee: json['application_fee'] != null ? ChargeApplicationFee.fromJson(json['application_fee'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
-  balanceTransaction: json['balance_transaction'] != null
-        ? ChargeBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? ChargeBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   billingDetails: BillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
   calculatedStatementDescriptor: json['calculated_statement_descriptor'] as String?,
   captured: json['captured'] as bool,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: json['customer'] != null
-        ? ChargeCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? ChargeCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   disputed: json['disputed'] as bool,
-  failureBalanceTransaction: json['failure_balance_transaction'] != null
-        ? ChargeFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>)
-        : null,
+  failureBalanceTransaction: json['failure_balance_transaction'] != null ? ChargeFailureBalanceTransaction.fromJson(json['failure_balance_transaction'] as Map<String, dynamic>) : null,
   failureCode: json['failure_code'] as String?,
   failureMessage: json['failure_message'] as String?,
-  fraudDetails: json['fraud_details'] != null
-        ? ChargeFraudDetails2.fromJson(json['fraud_details'] as Map<String, dynamic>)
-        : null,
+  fraudDetails: json['fraud_details'] != null ? ChargeFraudDetails2.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ChargeObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? ChargeOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  outcome: json['outcome'] != null
-        ? ChargeOutcome2.fromJson(json['outcome'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? ChargeOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  outcome: json['outcome'] != null ? ChargeOutcome2.fromJson(json['outcome'] as Map<String, dynamic>) : null,
   paid: json['paid'] as bool,
-  paymentIntent: json['payment_intent'] != null
-        ? ChargePaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? ChargePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
-  presentmentDetails: json['presentment_details'] != null
-        ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>)
-        : null,
-  radarOptions: json['radar_options'] != null
-        ? RadarRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? ChargePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
+  radarOptions: json['radar_options'] != null ? RadarRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
   receiptNumber: json['receipt_number'] as String?,
   receiptUrl: json['receipt_url'] as String?,
   refunded: json['refunded'] as bool,
-  refunds: json['refunds'] != null
-        ? ChargeRefunds.fromJson(json['refunds'] as Map<String, dynamic>)
-        : null,
-  review: json['review'] != null
-        ? ChargeReview.fromJson(json['review'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? ChargeShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  sourceTransfer: json['source_transfer'] != null
-        ? ChargeSourceTransfer.fromJson(json['source_transfer'] as Map<String, dynamic>)
-        : null,
+  refunds: json['refunds'] != null ? ChargeRefunds.fromJson(json['refunds'] as Map<String, dynamic>) : null,
+  review: json['review'] != null ? ChargeReview.fromJson(json['review'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? ChargeShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  sourceTransfer: json['source_transfer'] != null ? ChargeSourceTransfer.fromJson(json['source_transfer'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   status: ChargeStatus.fromJson(json['status'] as String),
-  transfer: json['transfer'] != null
-        ? ChargeTransfer.fromJson(json['transfer'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? ChargeTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transfer: json['transfer'] != null ? ChargeTransfer.fromJson(json['transfer'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? ChargeTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

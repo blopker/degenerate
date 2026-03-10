@@ -32,9 +32,7 @@ final class MessageDeltaContentImageUrlObject {const MessageDeltaContentImageUrl
 factory MessageDeltaContentImageUrlObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageUrlObject(
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentImageUrlObjectType.fromJson(json['type'] as String),
-  imageUrl: json['image_url'] != null
-        ? MessageDeltaContentImageUrlObjectImageUrl.fromJson(json['image_url'] as Map<String, dynamic>)
-        : null,
+  imageUrl: json['image_url'] != null ? MessageDeltaContentImageUrlObjectImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,
 ); }
 
 /// The index of the content part in the message.

@@ -34,18 +34,12 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1124 {const InlineObject1124({this.dropdown, required this.key, required this.label, this.numeric, this.optional, this.text, required this.type, });
 
 factory InlineObject1124.fromJson(Map<String, dynamic> json) { return InlineObject1124(
-  dropdown: json['dropdown'] != null
-        ? InlineObject1124Dropdown.fromJson(json['dropdown'] as Map<String, dynamic>)
-        : null,
+  dropdown: json['dropdown'] != null ? InlineObject1124Dropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: InlineObject1124Label.fromJson(json['label'] as Map<String, dynamic>),
-  numeric: json['numeric'] != null
-        ? InlineObject1124Numeric.fromJson(json['numeric'] as Map<String, dynamic>)
-        : null,
+  numeric: json['numeric'] != null ? InlineObject1124Numeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   optional: json['optional'] as bool?,
-  text: json['text'] != null
-        ? InlineObject1124Text.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? InlineObject1124Text.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: InlineObject1124Type.fromJson(json['type'] as String),
 ); }
 

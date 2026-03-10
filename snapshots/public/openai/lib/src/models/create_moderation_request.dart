@@ -8,9 +8,7 @@ import 'create_moderation_request_input.dart';import 'create_moderation_request_
 
 factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
   input: CreateModerationRequestInput.fromJson(json['input']),
-  model: json['model'] != null
-        ? CreateModerationRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? CreateModerationRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
 ); }
 
 /// Input (or inputs) to classify. Can be a single string, an array of strings, or

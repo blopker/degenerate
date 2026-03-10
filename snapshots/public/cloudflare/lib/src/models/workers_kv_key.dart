@@ -9,9 +9,7 @@ final class WorkersKvKey {const WorkersKvKey({this.expiration, this.metadata, re
 
 factory WorkersKvKey.fromJson(Map<String, dynamic> json) { return WorkersKvKey(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toDouble() : null,
-  metadata: json['metadata'] != null
-        ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: WorkersKvKeyName.fromJson(json['name'] as String),
 ); }
 

@@ -60,30 +60,18 @@ final class Person {const Person({required this.account, this.additionalTosAccep
 
 factory Person.fromJson(Map<String, dynamic> json) { return Person(
   account: json['account'] as String,
-  additionalTosAcceptances: json['additional_tos_acceptances'] != null
-        ? PersonAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>)
-        : null,
-  address: json['address'] != null
-        ? Address.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PersonAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PersonAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
+  additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PersonAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PersonAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PersonAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  dob: json['dob'] != null
-        ? LegalEntityDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? LegalEntityDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
   fullNameAliases: (json['full_name_aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  futureRequirements: json['future_requirements'] != null
-        ? PersonFutureRequirements2.fromJson(json['future_requirements'] as Map<String, dynamic>)
-        : null,
+  futureRequirements: json['future_requirements'] != null ? PersonFutureRequirements2.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   gender: json['gender'] as String?,
   id: json['id'] as String,
   idNumberProvided: json['id_number_provided'] as bool?,
@@ -97,22 +85,12 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   object: PersonObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
   politicalExposure: json['political_exposure'] != null ? PersonPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
-  registeredAddress: json['registered_address'] != null
-        ? Address.fromJson(json['registered_address'] as Map<String, dynamic>)
-        : null,
-  relationship: json['relationship'] != null
-        ? PersonRelationship.fromJson(json['relationship'] as Map<String, dynamic>)
-        : null,
-  requirements: json['requirements'] != null
-        ? PersonRequirements2.fromJson(json['requirements'] as Map<String, dynamic>)
-        : null,
+  registeredAddress: json['registered_address'] != null ? Address.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
+  relationship: json['relationship'] != null ? PersonRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
+  requirements: json['requirements'] != null ? PersonRequirements2.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   ssnLast4Provided: json['ssn_last_4_provided'] as bool?,
-  usCfpbData: json['us_cfpb_data'] != null
-        ? PersonUsCfpbData2.fromJson(json['us_cfpb_data'] as Map<String, dynamic>)
-        : null,
-  verification: json['verification'] != null
-        ? LegalEntityPersonVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  usCfpbData: json['us_cfpb_data'] != null ? PersonUsCfpbData2.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
+  verification: json['verification'] != null ? LegalEntityPersonVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account the person is associated with.

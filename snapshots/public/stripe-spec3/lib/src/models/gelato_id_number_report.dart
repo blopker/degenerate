@@ -61,12 +61,8 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoIdNumberReport {const GelatoIdNumberReport({this.dob, this.error, this.firstName, this.idNumber, this.idNumberType, this.lastName, required this.status, });
 
 factory GelatoIdNumberReport.fromJson(Map<String, dynamic> json) { return GelatoIdNumberReport(
-  dob: json['dob'] != null
-        ? GelatoIdNumberReportDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
-  error: json['error'] != null
-        ? GelatoIdNumberReportError2.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? GelatoIdNumberReportDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoIdNumberReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberType: json['id_number_type'] != null ? GelatoIdNumberReportIdNumberType.fromJson(json['id_number_type'] as String) : null,

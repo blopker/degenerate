@@ -9,9 +9,7 @@ final class PostQuotesRequestInvoiceSettings {const PostQuotesRequestInvoiceSett
 
 factory PostQuotesRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostQuotesRequestInvoiceSettings(
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
-  issuer: json['issuer'] != null
-        ? PostQuotesRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostQuotesRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final int? daysUntilDue;

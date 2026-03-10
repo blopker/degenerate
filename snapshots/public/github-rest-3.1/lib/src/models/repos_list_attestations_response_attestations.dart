@@ -7,9 +7,7 @@
 import 'repos_list_attestations_response_attestations_bundle.dart';final class ReposListAttestationsResponseAttestations {const ReposListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
 
 factory ReposListAttestationsResponseAttestations.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestations(
-  bundle: json['bundle'] != null
-        ? ReposListAttestationsResponseAttestationsBundle.fromJson(json['bundle'] as Map<String, dynamic>)
-        : null,
+  bundle: json['bundle'] != null ? ReposListAttestationsResponseAttestationsBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
   initiator: json['initiator'] as String?,

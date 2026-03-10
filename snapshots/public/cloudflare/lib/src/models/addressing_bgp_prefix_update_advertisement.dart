@@ -9,9 +9,7 @@ import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_wit
 factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
-  onDemand: json['on_demand'] != null
-        ? AddressingBgpPrefixUpdateAdvertisementOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? AddressingBgpPrefixUpdateAdvertisementOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
 ); }
 
 final AddressingAsnPrependCount? asnPrependCount;

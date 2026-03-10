@@ -8,12 +8,8 @@ import 'r2_class_based_metrics.dart';/// Metrics based on the class they belong 
 final class R2AccountLevelMetrics {const R2AccountLevelMetrics({this.infrequentAccess, this.standard, });
 
 factory R2AccountLevelMetrics.fromJson(Map<String, dynamic> json) { return R2AccountLevelMetrics(
-  infrequentAccess: json['infrequentAccess'] != null
-        ? R2ClassBasedMetrics.fromJson(json['infrequentAccess'] as Map<String, dynamic>)
-        : null,
-  standard: json['standard'] != null
-        ? R2ClassBasedMetrics.fromJson(json['standard'] as Map<String, dynamic>)
-        : null,
+  infrequentAccess: json['infrequentAccess'] != null ? R2ClassBasedMetrics.fromJson(json['infrequentAccess'] as Map<String, dynamic>) : null,
+  standard: json['standard'] != null ? R2ClassBasedMetrics.fromJson(json['standard'] as Map<String, dynamic>) : null,
 ); }
 
 final R2ClassBasedMetrics? infrequentAccess;

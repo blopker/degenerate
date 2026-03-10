@@ -32,12 +32,8 @@ final class InlineObject960CustomerAcceptance {const InlineObject960CustomerAcce
 
 factory InlineObject960CustomerAcceptance.fromJson(Map<String, dynamic> json) { return InlineObject960CustomerAcceptance(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
-  offline: json['offline'] != null
-        ? InlineObject960CustomerAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
-  online: json['online'] != null
-        ? InlineObject960CustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? InlineObject960CustomerAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  online: json['online'] != null ? InlineObject960CustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,
   type: InlineObject960CustomerAcceptanceType.fromJson(json['type'] as String),
 ); }
 

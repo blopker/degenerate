@@ -9,14 +9,10 @@ final class PostPaymentLinksRequestSubscriptionData {const PostPaymentLinksReque
 
 factory PostPaymentLinksRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestSubscriptionData(
   description: json['description'] as String?,
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostPaymentLinksRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostPaymentLinksRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null
-        ? PostPaymentLinksRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  trialSettings: json['trial_settings'] != null ? PostPaymentLinksRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
 ); }
 
 final String? description;

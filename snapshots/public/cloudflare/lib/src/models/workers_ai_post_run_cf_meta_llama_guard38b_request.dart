@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_run_cf_meta_
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  responseFormat: json['response_format'] != null
-        ? WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>)
-        : null,
+  responseFormat: json['response_format'] != null ? WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
 ); }
 

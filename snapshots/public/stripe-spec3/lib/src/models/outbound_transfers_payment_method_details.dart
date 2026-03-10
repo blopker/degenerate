@@ -34,13 +34,9 @@ final class OutboundTransfersPaymentMethodDetails {const OutboundTransfersPaymen
 
 factory OutboundTransfersPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return OutboundTransfersPaymentMethodDetails(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
-  financialAccount: json['financial_account'] != null
-        ? OutboundTransfersPaymentMethodDetailsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>)
-        : null,
+  financialAccount: json['financial_account'] != null ? OutboundTransfersPaymentMethodDetailsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>) : null,
   type: OutboundTransfersPaymentMethodDetailsType.fromJson(json['type'] as String),
-  usBankAccount: json['us_bank_account'] != null
-        ? OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasurySharedResourceBillingDetails billingDetails;

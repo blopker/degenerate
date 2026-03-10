@@ -8,9 +8,7 @@ import 'radar_get_annotations_response_result_annotations_asns_details_locations
 
 factory RadarGetAnnotationsResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
   asn: json['asn'] as String,
-  locations: json['locations'] != null
-        ? RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>)
-        : null,
+  locations: json['locations'] != null ? RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
 ); }
 

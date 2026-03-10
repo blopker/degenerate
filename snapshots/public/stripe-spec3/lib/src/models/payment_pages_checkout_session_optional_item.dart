@@ -8,9 +8,7 @@ import 'payment_pages_checkout_session_optional_item_adjustable_quantity2.dart';
 final class PaymentPagesCheckoutSessionOptionalItem {const PaymentPagesCheckoutSessionOptionalItem({this.adjustableQuantity, required this.price, required this.quantity, });
 
 factory PaymentPagesCheckoutSessionOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionOptionalItem(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity2.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity2.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }

@@ -36,14 +36,10 @@ final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, t
 
 factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
   active: json['active'] as bool?,
-  currencyOptions: json['currency_options'] != null
-        ? PostPricesPriceRequestCurrencyOptions.fromJson(json['currency_options'] as Map<String, dynamic>)
-        : null,
+  currencyOptions: json['currency_options'] != null ? PostPricesPriceRequestCurrencyOptions.fromJson(json['currency_options'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lookupKey: json['lookup_key'] as String?,
-  metadata: json['metadata'] != null
-        ? PostPricesPriceRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPricesPriceRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   nickname: json['nickname'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostPricesPriceRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,

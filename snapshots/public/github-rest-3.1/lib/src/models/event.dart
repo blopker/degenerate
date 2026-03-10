@@ -12,9 +12,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   type: json['type'] as String,
   actor: Actor.fromJson(json['actor'] as Map<String, dynamic>),
   repo: EventRepo.fromJson(json['repo'] as Map<String, dynamic>),
-  org: json['org'] != null
-        ? Actor.fromJson(json['org'] as Map<String, dynamic>)
-        : null,
+  org: json['org'] != null ? Actor.fromJson(json['org'] as Map<String, dynamic>) : null,
   payload: EventPayload.fromJson(json['payload']),
   public: json['public'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),

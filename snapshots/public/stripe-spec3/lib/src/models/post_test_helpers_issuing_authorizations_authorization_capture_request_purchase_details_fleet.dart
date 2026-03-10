@@ -61,13 +61,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet(
-  cardholderPromptData: json['cardholder_prompt_data'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>)
-        : null,
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetPurchaseType.fromJson(json['purchase_type'] as String) : null,
-  reportedBreakdown: json['reported_breakdown'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>)
-        : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetServiceType.fromJson(json['service_type'] as String) : null,
 ); }
 

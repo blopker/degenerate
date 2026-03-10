@@ -32,9 +32,7 @@ factory Release.fromJson(Map<String, dynamic> json) { return Release(
   bodyText: json['body_text'] as String?,
   mentionsCount: json['mentions_count'] != null ? (json['mentions_count'] as num).toInt() : null,
   discussionUrl: json['discussion_url'] != null ? Uri.parse(json['discussion_url'] as String) : null,
-  reactions: json['reactions'] != null
-        ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

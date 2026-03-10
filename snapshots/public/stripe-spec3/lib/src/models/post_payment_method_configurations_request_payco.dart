@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_payco_display_preference.dart
 final class PostPaymentMethodConfigurationsRequestPayco {const PostPaymentMethodConfigurationsRequestPayco({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPayco.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPayco(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestPaycoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPaycoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestPaycoDisplayPreference? displayPreference;

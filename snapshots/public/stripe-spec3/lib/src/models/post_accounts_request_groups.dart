@@ -8,9 +8,7 @@ import 'post_accounts_request_groups_payments_pricing.dart';/// A hash of accoun
 final class PostAccountsRequestGroups {const PostAccountsRequestGroups({this.paymentsPricing});
 
 factory PostAccountsRequestGroups.fromJson(Map<String, dynamic> json) { return PostAccountsRequestGroups(
-  paymentsPricing: json['payments_pricing'] != null
-        ? PostAccountsRequestGroupsPaymentsPricing.fromJson(json['payments_pricing'] as Map<String, dynamic>)
-        : null,
+  paymentsPricing: json['payments_pricing'] != null ? PostAccountsRequestGroupsPaymentsPricing.fromJson(json['payments_pricing'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestGroupsPaymentsPricing? paymentsPricing;

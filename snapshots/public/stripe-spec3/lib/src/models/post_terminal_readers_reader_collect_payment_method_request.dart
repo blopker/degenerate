@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config.dart';final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({this.collectConfig, this.expand, required this.paymentIntent, });
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
-  collectConfig: json['collect_config'] != null
-        ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>)
-        : null,
+  collectConfig: json['collect_config'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
 ); }

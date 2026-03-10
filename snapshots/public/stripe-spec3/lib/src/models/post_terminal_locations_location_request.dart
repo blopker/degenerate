@@ -7,34 +7,16 @@
 import 'package:collection/collection.dart';import 'post_terminal_locations_location_request_address.dart';import 'post_terminal_locations_location_request_address_kana.dart';import 'post_terminal_locations_location_request_address_kanji.dart';import 'post_terminal_locations_location_request_configuration_overrides.dart';import 'post_terminal_locations_location_request_display_name.dart';import 'post_terminal_locations_location_request_display_name_kana.dart';import 'post_terminal_locations_location_request_display_name_kanji.dart';import 'post_terminal_locations_location_request_metadata.dart';import 'post_terminal_locations_location_request_phone.dart';final class PostTerminalLocationsLocationRequest {const PostTerminalLocationsLocationRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
 
 factory PostTerminalLocationsLocationRequest.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsLocationRequest(
-  address: json['address'] != null
-        ? PostTerminalLocationsLocationRequestAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? PostTerminalLocationsLocationRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? PostTerminalLocationsLocationRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
-  configurationOverrides: json['configuration_overrides'] != null
-        ? PostTerminalLocationsLocationRequestConfigurationOverrides.fromJson(json['configuration_overrides'] as Map<String, dynamic>)
-        : null,
-  displayName: json['display_name'] != null
-        ? PostTerminalLocationsLocationRequestDisplayName.fromJson(json['display_name'] as Map<String, dynamic>)
-        : null,
-  displayNameKana: json['display_name_kana'] != null
-        ? PostTerminalLocationsLocationRequestDisplayNameKana.fromJson(json['display_name_kana'] as Map<String, dynamic>)
-        : null,
-  displayNameKanji: json['display_name_kanji'] != null
-        ? PostTerminalLocationsLocationRequestDisplayNameKanji.fromJson(json['display_name_kanji'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostTerminalLocationsLocationRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? PostTerminalLocationsLocationRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? PostTerminalLocationsLocationRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  configurationOverrides: json['configuration_overrides'] != null ? PostTerminalLocationsLocationRequestConfigurationOverrides.fromJson(json['configuration_overrides'] as Map<String, dynamic>) : null,
+  displayName: json['display_name'] != null ? PostTerminalLocationsLocationRequestDisplayName.fromJson(json['display_name'] as Map<String, dynamic>) : null,
+  displayNameKana: json['display_name_kana'] != null ? PostTerminalLocationsLocationRequestDisplayNameKana.fromJson(json['display_name_kana'] as Map<String, dynamic>) : null,
+  displayNameKanji: json['display_name_kanji'] != null ? PostTerminalLocationsLocationRequestDisplayNameKanji.fromJson(json['display_name_kanji'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTerminalLocationsLocationRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostTerminalLocationsLocationRequestPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTerminalLocationsLocationRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostTerminalLocationsLocationRequestPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 /// The full address of the location. You can't change the location's `country`. If you need to modify the `country` field, create a new `Location` object and re-register any existing readers to that location.

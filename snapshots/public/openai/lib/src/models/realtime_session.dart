@@ -115,38 +115,22 @@ factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSes
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
   modalities: json['modalities'],
-  model: json['model'] != null
-        ? RealtimeSessionModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? RealtimeSessionModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   instructions: json['instructions'] as String?,
-  voice: json['voice'] != null
-        ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>)
-        : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>) : null,
   inputAudioFormat: json.containsKey('input_audio_format') ? RealtimeSessionInputAudioFormat.fromJson(json['input_audio_format'] as String) : RealtimeSessionInputAudioFormat.pcm16,
   outputAudioFormat: json.containsKey('output_audio_format') ? RealtimeSessionOutputAudioFormat.fromJson(json['output_audio_format'] as String) : RealtimeSessionOutputAudioFormat.pcm16,
-  inputAudioTranscription: json['input_audio_transcription'] != null
-        ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>)
-        : null,
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
-  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null
-        ? RealtimeSessionInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>)
-        : null,
+  inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
+  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? RealtimeSessionInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
   speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  tracing: json['tracing'] != null
-        ? RealtimeSessionTracing.fromJson(json['tracing'])
-        : null,
+  tracing: json['tracing'] != null ? RealtimeSessionTracing.fromJson(json['tracing']) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json.containsKey('tool_choice') ? json['tool_choice'] as String : 'auto',
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.8,
-  maxResponseOutputTokens: json['max_response_output_tokens'] != null
-        ? RealtimeSessionMaxResponseOutputTokens.fromJson(json['max_response_output_tokens'])
-        : null,
+  maxResponseOutputTokens: json['max_response_output_tokens'] != null ? RealtimeSessionMaxResponseOutputTokens.fromJson(json['max_response_output_tokens']) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionInclude2.fromJson(e as String)).toList(),
 ); }
 

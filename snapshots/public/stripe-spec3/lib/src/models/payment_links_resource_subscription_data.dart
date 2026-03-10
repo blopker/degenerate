@@ -12,9 +12,7 @@ factory PaymentLinksResourceSubscriptionData.fromJson(Map<String, dynamic> json)
   invoiceSettings: PaymentLinksResourceSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null
-        ? PaymentLinksResourceSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  trialSettings: json['trial_settings'] != null ? PaymentLinksResourceSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// The subscription's description, meant to be displayable to the customer. Use this field to optionally store an explanation of the subscription for rendering in Stripe surfaces and certain local payment methods UIs.

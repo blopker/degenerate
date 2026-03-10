@@ -34,23 +34,13 @@ final class RealtimeResponseCreateParams {const RealtimeResponseCreateParams({th
 factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeResponseCreateParams(
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseCreateParamsOutputModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
-  audio: json['audio'] != null
-        ? RealtimeResponseCreateParamsAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeResponseCreateParamsAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeResponseCreateParamsTools.fromJson(e)).toList(),
-  toolChoice: json['tool_choice'] != null
-        ? RealtimeResponseCreateParamsToolChoice.fromJson(json['tool_choice'])
-        : null,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeResponseCreateParamsMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
-  conversation: json['conversation'] != null
-        ? RealtimeResponseCreateParamsConversation.fromJson(json['conversation'])
-        : null,
+  toolChoice: json['tool_choice'] != null ? RealtimeResponseCreateParamsToolChoice.fromJson(json['tool_choice']) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeResponseCreateParamsMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
+  conversation: json['conversation'] != null ? RealtimeResponseCreateParamsConversation.fromJson(json['conversation']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

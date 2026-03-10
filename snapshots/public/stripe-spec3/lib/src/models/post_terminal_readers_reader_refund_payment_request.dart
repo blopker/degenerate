@@ -13,9 +13,7 @@ factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynam
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentIntent: json['payment_intent'] as String?,
   refundApplicationFee: json['refund_application_fee'] as bool?,
-  refundPaymentConfig: json['refund_payment_config'] != null
-        ? PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>)
-        : null,
+  refundPaymentConfig: json['refund_payment_config'] != null ? PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,
 ); }
 

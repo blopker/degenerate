@@ -35,9 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 final class ShieldOperationFeatureSchemaInfoSchemaInfo {const ShieldOperationFeatureSchemaInfoSchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
 
 factory ShieldOperationFeatureSchemaInfoSchemaInfo.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
-  activeSchema: json['active_schema'] != null
-        ? ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(json['active_schema'] as Map<String, dynamic>)
-        : null,
+  activeSchema: json['active_schema'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(json['active_schema'] as Map<String, dynamic>) : null,
   learnedAvailable: json['learned_available'] as bool?,
   mitigationAction: json['mitigation_action'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction.fromJson(json['mitigation_action'] as String) : null,
 ); }

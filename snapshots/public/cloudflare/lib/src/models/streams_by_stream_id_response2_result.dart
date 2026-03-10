@@ -9,9 +9,7 @@ import 'cloudflare_pipelines_format.dart';import 'streams_by_stream_id_response2
 factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponse2Result(
   createdAt: DateTime.parse(json['created_at'] as String),
   endpoint: json['endpoint'] != null ? Uri.parse(json['endpoint'] as String) : null,
-  format: json['format'] != null
-        ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   http: StreamsByStreamIdResponse2ResultHttp.fromJson(json['http'] as Map<String, dynamic>),
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),

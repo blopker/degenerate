@@ -33,9 +33,7 @@ factory AutoCodeInterpreterToolParam.fromJson(Map<String, dynamic> json) { retur
   type: AutoCodeInterpreterToolParamType.fromJson(json['type'] as String),
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   memoryLimit: json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null,
-  networkPolicy: json['network_policy'] != null
-        ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>)
-        : null,
+  networkPolicy: json['network_policy'] != null ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Always `auto`.

@@ -18,9 +18,7 @@ factory KeylessSslForAZoneEditKeylessSslConfigurationRequest.fromJson(Map<String
   host: json['host'] != null ? TlsCertificatesAndHostnamesHost.fromJson(json['host'] as String) : null,
   name: json['name'] != null ? TlsCertificatesAndHostnamesNameWrite.fromJson(json['name'] as String) : null,
   port: json['port'] != null ? TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num) : null,
-  tunnel: json['tunnel'] != null
-        ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>)
-        : null,
+  tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
 ); }
 
 final TlsCertificatesAndHostnamesEnabledWrite? enabled;

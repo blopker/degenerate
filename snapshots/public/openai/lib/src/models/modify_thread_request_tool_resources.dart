@@ -9,12 +9,8 @@ import 'modify_thread_request_tool_resources_code_interpreter.dart';import 'modi
 final class ModifyThreadRequestToolResources {const ModifyThreadRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory ModifyThreadRequestToolResources.fromJson(Map<String, dynamic> json) { return ModifyThreadRequestToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? ModifyThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? ModifyThreadRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? ModifyThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? ModifyThreadRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 final ModifyThreadRequestToolResourcesCodeInterpreter? codeInterpreter;

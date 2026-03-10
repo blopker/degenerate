@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'mcn_error.dart';import 'mcn_
 
 factory McnResponseCollection.fromJson(Map<String, dynamic> json) { return McnResponseCollection(
   messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: json['result_info'] != null
-        ? McnResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? McnResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

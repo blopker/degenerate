@@ -7,9 +7,7 @@
 import 'realtimekit_participants_list.dart';final class GetParticipantDetailsResponseData {const GetParticipantDetailsResponseData({this.participant});
 
 factory GetParticipantDetailsResponseData.fromJson(Map<String, dynamic> json) { return GetParticipantDetailsResponseData(
-  participant: json['participant'] != null
-        ? RealtimekitParticipantsList.fromJson(json['participant'] as Map<String, dynamic>)
-        : null,
+  participant: json['participant'] != null ? RealtimekitParticipantsList.fromJson(json['participant'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitParticipantsList? participant;

@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_tax_registrations_features.dart
 
 factory PostAccountSessionsRequestComponentsTaxRegistrations.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxRegistrations(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsTaxRegistrationsFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsTaxRegistrationsFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

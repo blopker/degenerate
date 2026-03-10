@@ -34,9 +34,7 @@ final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefund
 
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  paymentRecordRefund: json['payment_record_refund'] != null
-        ? CreditNoteRefundPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>)
-        : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? CreditNoteRefundPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: CreditNoteRefundRefund.fromJson(json['refund'] as Map<String, dynamic>),
   type: json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null,
 ); }

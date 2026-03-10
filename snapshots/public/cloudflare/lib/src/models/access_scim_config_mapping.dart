@@ -35,9 +35,7 @@ final class AccessScimConfigMapping {const AccessScimConfigMapping({this.enabled
 factory AccessScimConfigMapping.fromJson(Map<String, dynamic> json) { return AccessScimConfigMapping(
   enabled: json['enabled'] as bool?,
   filter: json['filter'] as String?,
-  operations: json['operations'] != null
-        ? AccessScimConfigMappingOperations.fromJson(json['operations'] as Map<String, dynamic>)
-        : null,
+  operations: json['operations'] != null ? AccessScimConfigMappingOperations.fromJson(json['operations'] as Map<String, dynamic>) : null,
   schema: json['schema'] as String,
   strictness: json['strictness'] != null ? AccessScimConfigMappingStrictness.fromJson(json['strictness'] as String) : null,
   transformJsonata: json['transform_jsonata'] as String?,

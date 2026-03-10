@@ -115,9 +115,7 @@ factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { ret
   to: (json['to'] as List<dynamic>?)?.map((e) => e as String).toList(),
   toName: (json['to_name'] as List<dynamic>?)?.map((e) => e as String).toList(),
   ts: json['ts'] as String,
-  validation: json['validation'] != null
-        ? EmailSecurityMailsearchMessageValidation.fromJson(json['validation'] as Map<String, dynamic>)
-        : null,
+  validation: json['validation'] != null ? EmailSecurityMailsearchMessageValidation.fromJson(json['validation'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
 ); }
 

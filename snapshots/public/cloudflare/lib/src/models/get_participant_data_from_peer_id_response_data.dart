@@ -7,9 +7,7 @@
 import 'get_participant_data_from_peer_id_response_data_participant.dart';final class GetParticipantDataFromPeerIdResponseData {const GetParticipantDataFromPeerIdResponseData({this.participant});
 
 factory GetParticipantDataFromPeerIdResponseData.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseData(
-  participant: json['participant'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(json['participant'] as Map<String, dynamic>)
-        : null,
+  participant: json['participant'] != null ? GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(json['participant'] as Map<String, dynamic>) : null,
 ); }
 
 final GetParticipantDataFromPeerIdResponseDataParticipant? participant;

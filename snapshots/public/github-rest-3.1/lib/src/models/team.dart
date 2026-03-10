@@ -41,9 +41,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   privacy: json['privacy'] as String?,
   notificationSetting: json['notification_setting'] as String?,
   permission: json['permission'] as String,
-  permissions: json['permissions'] != null
-        ? TeamPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? TeamPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   membersUrl: json['members_url'] as String,

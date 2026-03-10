@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_mb_way_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestMbWay {const PostPaymentMethodConfigurationsConfigurationRequestMbWay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestMbWay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestMbWay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestMbWayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestMbWayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestMbWayDisplayPreference? displayPreference;

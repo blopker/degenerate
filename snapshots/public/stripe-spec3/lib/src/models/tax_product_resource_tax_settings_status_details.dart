@@ -8,12 +8,8 @@ import 'tax_product_resource_tax_settings_status_details_resource_active.dart';i
 final class TaxProductResourceTaxSettingsStatusDetails {const TaxProductResourceTaxSettingsStatusDetails({this.active, this.pending, });
 
 factory TaxProductResourceTaxSettingsStatusDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetails(
-  active: json['active'] != null
-        ? TaxProductResourceTaxSettingsStatusDetailsResourceActive.fromJson(json['active'] as Map<String, dynamic>)
-        : null,
-  pending: json['pending'] != null
-        ? TaxProductResourceTaxSettingsStatusDetailsResourcePending.fromJson(json['pending'] as Map<String, dynamic>)
-        : null,
+  active: json['active'] != null ? TaxProductResourceTaxSettingsStatusDetailsResourceActive.fromJson(json['active'] as Map<String, dynamic>) : null,
+  pending: json['pending'] != null ? TaxProductResourceTaxSettingsStatusDetailsResourcePending.fromJson(json['pending'] as Map<String, dynamic>) : null,
 ); }
 
 final TaxProductResourceTaxSettingsStatusDetailsResourceActive? active;

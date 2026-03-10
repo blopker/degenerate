@@ -57,27 +57,19 @@ bool get isUnknown { return !values.contains(this); }
 final class SetupAttempt {const SetupAttempt({this.application, this.attachToSelf, required this.created, this.customer, this.customerAccount, this.flowDirections, required this.id, required this.livemode, required this.object, this.onBehalfOf, required this.paymentMethod, required this.paymentMethodDetails, this.setupError, required this.setupIntent, required this.status, required this.usage, });
 
 factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
-  application: json['application'] != null
-        ? SetupAttemptApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? SetupAttemptApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   attachToSelf: json['attach_to_self'] as bool?,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null
-        ? SetupAttemptCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? SetupAttemptCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupAttemptFlowDirections.fromJson(e as String)).toList(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: SetupAttemptObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? SetupAttemptOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? SetupAttemptOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
   paymentMethod: SetupAttemptPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>),
   paymentMethodDetails: SetupAttemptPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  setupError: json['setup_error'] != null
-        ? SetupAttemptSetupError.fromJson(json['setup_error'] as Map<String, dynamic>)
-        : null,
+  setupError: json['setup_error'] != null ? SetupAttemptSetupError.fromJson(json['setup_error'] as Map<String, dynamic>) : null,
   setupIntent: SetupAttemptSetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>),
   status: json['status'] as String,
   usage: json['usage'] as String,

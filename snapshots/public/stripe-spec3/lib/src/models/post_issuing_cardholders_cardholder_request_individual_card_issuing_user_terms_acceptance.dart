@@ -9,9 +9,7 @@ import 'post_issuing_cardholders_cardholder_request_individual_card_issuing_user
 factory PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>)
-        : null,
+  userAgent: json['user_agent'] != null ? PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent.fromJson(json['user_agent'] as Map<String, dynamic>) : null,
 ); }
 
 final int? date;

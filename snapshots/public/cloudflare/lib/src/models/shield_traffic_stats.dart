@@ -7,9 +7,7 @@
 import 'shield_traffic_stats_traffic_stats.dart';final class ShieldTrafficStats {const ShieldTrafficStats({this.trafficStats});
 
 factory ShieldTrafficStats.fromJson(Map<String, dynamic> json) { return ShieldTrafficStats(
-  trafficStats: json['traffic_stats'] != null
-        ? ShieldTrafficStatsTrafficStats.fromJson(json['traffic_stats'] as Map<String, dynamic>)
-        : null,
+  trafficStats: json['traffic_stats'] != null ? ShieldTrafficStatsTrafficStats.fromJson(json['traffic_stats'] as Map<String, dynamic>) : null,
 ); }
 
 final ShieldTrafficStatsTrafficStats? trafficStats;

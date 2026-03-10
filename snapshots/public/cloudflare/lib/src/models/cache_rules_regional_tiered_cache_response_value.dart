@@ -7,9 +7,7 @@
 import 'cache_rules_base.dart';final class CacheRulesRegionalTieredCacheResponseValue {const CacheRulesRegionalTieredCacheResponseValue({this.result});
 
 factory CacheRulesRegionalTieredCacheResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesRegionalTieredCacheResponseValue(
-  result: json['result'] != null
-        ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final CacheRulesBase? result;

@@ -36,9 +36,7 @@ factory TeamsDevicesDeviceSettingsPolicy.fromJson(Map<String, dynamic> json) { r
   precedence: json['precedence'] != null ? TeamsDevicesPrecedence.fromJson(json['precedence'] as num) : null,
   registerInterfaceIpWithDns: json['register_interface_ip_with_dns'] != null ? TeamsDevicesRegisterInterfaceIpWithDns.fromJson(json['register_interface_ip_with_dns'] as bool) : null,
   sccmVpnBoundarySupport: json['sccm_vpn_boundary_support'] != null ? TeamsDevicesSccmVpnBoundarySupport.fromJson(json['sccm_vpn_boundary_support'] as bool) : null,
-  serviceModeV2: json['service_mode_v2'] != null
-        ? TeamsDevicesServiceMode.fromJson(json['service_mode_v2'] as Map<String, dynamic>)
-        : null,
+  serviceModeV2: json['service_mode_v2'] != null ? TeamsDevicesServiceMode.fromJson(json['service_mode_v2'] as Map<String, dynamic>) : null,
   supportUrl: json['support_url'] != null ? TeamsDevicesSupportUrl.fromJson(json['support_url'] as String) : null,
   switchLocked: json['switch_locked'] != null ? TeamsDevicesSwitchLocked.fromJson(json['switch_locked'] as bool) : null,
   targetTests: (json['target_tests'] as List<dynamic>?)?.map((e) => TeamsDevicesTargetDexTest.fromJson(e as Map<String, dynamic>)).toList(),

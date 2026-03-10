@@ -29,24 +29,16 @@ final class WebhookDeploymentReviewApproved {const WebhookDeploymentReviewApprov
 
 factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApproved(
   action: WebhookDeploymentReviewApprovedAction.fromJson(json['action'] as String),
-  approver: json['approver'] != null
-        ? WebhooksApprover.fromJson(json['approver'] as Map<String, dynamic>)
-        : null,
+  approver: json['approver'] != null ? WebhooksApprover.fromJson(json['approver'] as Map<String, dynamic>) : null,
   comment: json['comment'] as String?,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => WebhooksReviewers2.fromJson(e as Map<String, dynamic>)).toList(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   since: json['since'] as String,
-  workflowJobRun: json['workflow_job_run'] != null
-        ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>)
-        : null,
+  workflowJobRun: json['workflow_job_run'] != null ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>) : null,
   workflowJobRuns: (json['workflow_job_runs'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(e as Map<String, dynamic>)).toList(),
   workflowRun: WebhookDeploymentReviewApprovedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
 ); }

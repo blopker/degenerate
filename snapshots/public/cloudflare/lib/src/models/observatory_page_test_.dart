@@ -15,16 +15,10 @@ final class ObservatoryPageTest {const ObservatoryPageTest({this.date, this.desk
 
 factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) { return ObservatoryPageTest(
   date: json['date'] != null ? ObservatoryTimestamp.fromJson(json['date'] as String) : null,
-  desktopReport: json['desktopReport'] != null
-        ? ObservatoryLighthouseReport.fromJson(json['desktopReport'] as Map<String, dynamic>)
-        : null,
+  desktopReport: json['desktopReport'] != null ? ObservatoryLighthouseReport.fromJson(json['desktopReport'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? ObservatoryUuid.fromJson(json['id'] as String) : null,
-  mobileReport: json['mobileReport'] != null
-        ? ObservatoryLighthouseReport.fromJson(json['mobileReport'] as Map<String, dynamic>)
-        : null,
-  region: json['region'] != null
-        ? ObservatoryLabeledRegion.fromJson(json['region'] as Map<String, dynamic>)
-        : null,
+  mobileReport: json['mobileReport'] != null ? ObservatoryLighthouseReport.fromJson(json['mobileReport'] as Map<String, dynamic>) : null,
+  region: json['region'] != null ? ObservatoryLabeledRegion.fromJson(json['region'] as Map<String, dynamic>) : null,
   scheduleFrequency: json['scheduleFrequency'] != null ? ObservatoryScheduleFrequency.fromJson(json['scheduleFrequency'] as String) : null,
   url: json['url'] != null ? ObservatoryUrl.fromJson(json['url'] as String) : null,
 ); }

@@ -8,12 +8,8 @@ import 'lifecycle_handler.dart';/// Lifecycle describes actions that the managem
 final class Lifecycle {const Lifecycle({this.postStart, this.preStop, this.stopSignal, });
 
 factory Lifecycle.fromJson(Map<String, dynamic> json) { return Lifecycle(
-  postStart: json['postStart'] != null
-        ? LifecycleHandler.fromJson(json['postStart'] as Map<String, dynamic>)
-        : null,
-  preStop: json['preStop'] != null
-        ? LifecycleHandler.fromJson(json['preStop'] as Map<String, dynamic>)
-        : null,
+  postStart: json['postStart'] != null ? LifecycleHandler.fromJson(json['postStart'] as Map<String, dynamic>) : null,
+  preStop: json['preStop'] != null ? LifecycleHandler.fromJson(json['preStop'] as Map<String, dynamic>) : null,
   stopSignal: json['stopSignal'] as String?,
 ); }
 

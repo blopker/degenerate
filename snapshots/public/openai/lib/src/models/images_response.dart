@@ -123,9 +123,7 @@ factory ImagesResponse.fromJson(Map<String, dynamic> json) { return ImagesRespon
   outputFormat: json['output_format'] != null ? ImagesResponseOutputFormat.fromJson(json['output_format'] as String) : null,
   size: json['size'] != null ? ImagesResponseSize.fromJson(json['size'] as String) : null,
   quality: json['quality'] != null ? ImagesResponseQuality.fromJson(json['quality'] as String) : null,
-  usage: json['usage'] != null
-        ? ImageGenUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? ImageGenUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The Unix timestamp (in seconds) of when the image was created.

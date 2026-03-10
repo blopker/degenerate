@@ -7,12 +7,8 @@
 import 'd1_query_meta.dart';import 'd1_raw_result_response_results.dart';final class D1RawResultResponse {const D1RawResultResponse({this.meta, this.results, this.success, });
 
 factory D1RawResultResponse.fromJson(Map<String, dynamic> json) { return D1RawResultResponse(
-  meta: json['meta'] != null
-        ? D1QueryMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
-  results: json['results'] != null
-        ? D1RawResultResponseResults.fromJson(json['results'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? D1QueryMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
+  results: json['results'] != null ? D1RawResultResponseResults.fromJson(json['results'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

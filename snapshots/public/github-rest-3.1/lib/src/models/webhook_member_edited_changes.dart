@@ -8,12 +8,8 @@ import 'webhook_member_edited_changes_old_permission.dart';import 'webhook_membe
 final class WebhookMemberEditedChanges {const WebhookMemberEditedChanges({this.oldPermission, this.permission, });
 
 factory WebhookMemberEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChanges(
-  oldPermission: json['old_permission'] != null
-        ? WebhookMemberEditedChangesOldPermission.fromJson(json['old_permission'] as Map<String, dynamic>)
-        : null,
-  permission: json['permission'] != null
-        ? WebhookMemberEditedChangesPermission.fromJson(json['permission'] as Map<String, dynamic>)
-        : null,
+  oldPermission: json['old_permission'] != null ? WebhookMemberEditedChangesOldPermission.fromJson(json['old_permission'] as Map<String, dynamic>) : null,
+  permission: json['permission'] != null ? WebhookMemberEditedChangesPermission.fromJson(json['permission'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookMemberEditedChangesOldPermission? oldPermission;

@@ -37,9 +37,7 @@ factory PromotionCode.fromJson(Map<String, dynamic> json) { return PromotionCode
   active: json['active'] as bool,
   code: json['code'] as String,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null
-        ? PromotionCodeCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? PromotionCodeCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   id: json['id'] as String,

@@ -7,9 +7,7 @@
 import 'stop_livestreaming_response_data.dart';final class StopLivestreamingResponse {const StopLivestreamingResponse({this.data, this.success, });
 
 factory StopLivestreamingResponse.fromJson(Map<String, dynamic> json) { return StopLivestreamingResponse(
-  data: json['data'] != null
-        ? StopLivestreamingResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? StopLivestreamingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

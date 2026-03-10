@@ -9,12 +9,8 @@ import 'create_thread_and_run_request_tool_resources_code_interpreter.dart';impo
 final class CreateThreadAndRunRequestToolResources {const CreateThreadAndRunRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory CreateThreadAndRunRequestToolResources.fromJson(Map<String, dynamic> json) { return CreateThreadAndRunRequestToolResources(
-  codeInterpreter: json['code_interpreter'] != null
-        ? CreateThreadAndRunRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>)
-        : null,
-  fileSearch: json['file_search'] != null
-        ? CreateThreadAndRunRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>)
-        : null,
+  codeInterpreter: json['code_interpreter'] != null ? CreateThreadAndRunRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
+  fileSearch: json['file_search'] != null ? CreateThreadAndRunRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
 ); }
 
 final CreateThreadAndRunRequestToolResourcesCodeInterpreter? codeInterpreter;

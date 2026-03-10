@@ -8,30 +8,14 @@ import 'invoices_payment_method_options_acss_debit.dart';import 'invoices_paymen
 final class InvoicesPaymentMethodOptions {const InvoicesPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory InvoicesPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return InvoicesPaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? InvoicesPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? InvoicesPaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? InvoicesPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  customerBalance: json['customer_balance'] != null
-        ? InvoicesPaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>)
-        : null,
-  konbini: json['konbini'] != null
-        ? InvoicesPaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? InvoicesPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? InvoicesPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? InvoicesPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? InvoicesPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? InvoicesPaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? InvoicesPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? InvoicesPaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? InvoicesPaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? InvoicesPaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? InvoicesPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? InvoicesPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// If paying by `acss_debit`, this sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to the invoice’s PaymentIntent.

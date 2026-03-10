@@ -9,9 +9,7 @@ import 'gists_create_request_public.dart';import 'inline_object91.dart';final cl
 factory GistsCreateRequest.fromJson(Map<String, dynamic> json) { return GistsCreateRequest(
   description: json['description'] as String?,
   files: (json['files'] as Map<String, dynamic>).map((k, v) => MapEntry(k, InlineObject91.fromJson(v as Map<String, dynamic>))),
-  public: json['public'] != null
-        ? GistsCreateRequestPublic.fromJson(json['public'])
-        : null,
+  public: json['public'] != null ? GistsCreateRequestPublic.fromJson(json['public']) : null,
 ); }
 
 /// Description of the gist

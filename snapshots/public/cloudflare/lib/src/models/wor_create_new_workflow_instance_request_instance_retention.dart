@@ -7,12 +7,8 @@
 import 'wor_create_new_workflow_instance_request_instance_retention_error_retention.dart';import 'wor_create_new_workflow_instance_request_instance_retention_success_retention.dart';final class WorCreateNewWorkflowInstanceRequestInstanceRetention {const WorCreateNewWorkflowInstanceRequestInstanceRetention({this.errorRetention, this.successRetention, });
 
 factory WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
-  errorRetention: json['error_retention'] != null
-        ? WorCreateNewWorkflowInstanceRequestInstanceRetentionErrorRetention.fromJson(json['error_retention'])
-        : null,
-  successRetention: json['success_retention'] != null
-        ? WorCreateNewWorkflowInstanceRequestInstanceRetentionSuccessRetention.fromJson(json['success_retention'])
-        : null,
+  errorRetention: json['error_retention'] != null ? WorCreateNewWorkflowInstanceRequestInstanceRetentionErrorRetention.fromJson(json['error_retention']) : null,
+  successRetention: json['success_retention'] != null ? WorCreateNewWorkflowInstanceRequestInstanceRetentionSuccessRetention.fromJson(json['success_retention']) : null,
 ); }
 
 /// Specifies the duration in milliseconds or as a string like '5 minutes'.

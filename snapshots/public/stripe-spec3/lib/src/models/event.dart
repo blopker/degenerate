@@ -56,9 +56,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   livemode: json['livemode'] as bool,
   object: EventObject.fromJson(json['object'] as String),
   pendingWebhooks: (json['pending_webhooks'] as num).toInt(),
-  request: json['request'] != null
-        ? EventRequest.fromJson(json['request'] as Map<String, dynamic>)
-        : null,
+  request: json['request'] != null ? EventRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 

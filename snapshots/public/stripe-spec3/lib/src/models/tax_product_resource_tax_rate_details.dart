@@ -95,9 +95,7 @@ final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDet
 
 factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
   country: json['country'] as String?,
-  flatAmount: json['flat_amount'] != null
-        ? TaxProductResourceTaxRateDetailsFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>)
-        : null,
+  flatAmount: json['flat_amount'] != null ? TaxProductResourceTaxRateDetailsFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
   percentageDecimal: json['percentage_decimal'] as String,
   rateType: json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null,
   state: json['state'] as String?,

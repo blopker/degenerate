@@ -7,18 +7,10 @@
 import 'webhook_repository_ruleset_edited_changes_conditions.dart';import 'webhook_repository_ruleset_edited_changes_enforcement.dart';import 'webhook_repository_ruleset_edited_changes_name.dart';import 'webhook_repository_ruleset_edited_changes_rules.dart';final class WebhookRepositoryRulesetEditedChanges {const WebhookRepositoryRulesetEditedChanges({this.name, this.enforcement, this.conditions, this.rules, });
 
 factory WebhookRepositoryRulesetEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChanges(
-  name: json['name'] != null
-        ? WebhookRepositoryRulesetEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  enforcement: json['enforcement'] != null
-        ? WebhookRepositoryRulesetEditedChangesEnforcement.fromJson(json['enforcement'] as Map<String, dynamic>)
-        : null,
-  conditions: json['conditions'] != null
-        ? WebhookRepositoryRulesetEditedChangesConditions.fromJson(json['conditions'] as Map<String, dynamic>)
-        : null,
-  rules: json['rules'] != null
-        ? WebhookRepositoryRulesetEditedChangesRules.fromJson(json['rules'] as Map<String, dynamic>)
-        : null,
+  name: json['name'] != null ? WebhookRepositoryRulesetEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  enforcement: json['enforcement'] != null ? WebhookRepositoryRulesetEditedChangesEnforcement.fromJson(json['enforcement'] as Map<String, dynamic>) : null,
+  conditions: json['conditions'] != null ? WebhookRepositoryRulesetEditedChangesConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
+  rules: json['rules'] != null ? WebhookRepositoryRulesetEditedChangesRules.fromJson(json['rules'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookRepositoryRulesetEditedChangesName? name;

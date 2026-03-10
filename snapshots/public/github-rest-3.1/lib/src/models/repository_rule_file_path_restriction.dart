@@ -30,9 +30,7 @@ final class RepositoryRuleFilePathRestriction {const RepositoryRuleFilePathRestr
 
 factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) { return RepositoryRuleFilePathRestriction(
   type: RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleFilePathRestrictionType type;

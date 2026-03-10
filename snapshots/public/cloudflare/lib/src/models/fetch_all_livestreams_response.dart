@@ -7,9 +7,7 @@
 import 'fetch_all_livestreams_response_data.dart';final class FetchAllLivestreamsResponse {const FetchAllLivestreamsResponse({this.data, this.success, });
 
 factory FetchAllLivestreamsResponse.fromJson(Map<String, dynamic> json) { return FetchAllLivestreamsResponse(
-  data: json['data'] != null
-        ? FetchAllLivestreamsResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? FetchAllLivestreamsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

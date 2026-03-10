@@ -48,20 +48,12 @@ factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   networkAdviceCode: json['network_advice_code'] as String?,
   networkDeclineCode: json['network_decline_code'] as String?,
   param: json['param'] as String?,
-  paymentIntent: json['payment_intent'] != null
-        ? PaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>)
-        : null,
-  paymentMethod: json['payment_method'] != null
-        ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>)
-        : null,
+  paymentIntent: json['payment_intent'] != null ? PaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>) : null,
+  paymentMethod: json['payment_method'] != null ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
   paymentMethodType: json['payment_method_type'] as String?,
   requestLogUrl: json['request_log_url'] as String?,
-  setupIntent: json['setup_intent'] != null
-        ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>)
-        : null,
-  source: json['source'] != null
-        ? ErrorsSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  setupIntent: json['setup_intent'] != null ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? ErrorsSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   type: ErrorsType.fromJson(json['type'] as String),
 ); }
 

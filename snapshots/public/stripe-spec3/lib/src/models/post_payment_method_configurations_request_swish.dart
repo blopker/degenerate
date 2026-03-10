@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_swish_display_preference.dart
 final class PostPaymentMethodConfigurationsRequestSwish {const PostPaymentMethodConfigurationsRequestSwish({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestSwish.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSwish(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestSwishDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSwishDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestSwishDisplayPreference? displayPreference;

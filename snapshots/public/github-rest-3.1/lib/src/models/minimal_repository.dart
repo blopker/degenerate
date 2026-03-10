@@ -108,28 +108,20 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  permissions: json['permissions'] != null
-        ? MinimalRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? MinimalRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String?,
   tempCloneToken: json['temp_clone_token'] as String?,
   deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
   subscribersCount: json['subscribers_count'] != null ? (json['subscribers_count'] as num).toInt() : null,
   networkCount: json['network_count'] != null ? (json['network_count'] as num).toInt() : null,
-  codeOfConduct: json['code_of_conduct'] != null
-        ? CodeOfConduct.fromJson(json['code_of_conduct'] as Map<String, dynamic>)
-        : null,
-  license: json['license'] != null
-        ? MinimalRepositoryLicense.fromJson(json['license'] as Map<String, dynamic>)
-        : null,
+  codeOfConduct: json['code_of_conduct'] != null ? CodeOfConduct.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
+  license: json['license'] != null ? MinimalRepositoryLicense.fromJson(json['license'] as Map<String, dynamic>) : null,
   forks: json['forks'] != null ? (json['forks'] as num).toInt() : null,
   openIssues: json['open_issues'] != null ? (json['open_issues'] as num).toInt() : null,
   watchers: json['watchers'] != null ? (json['watchers'] as num).toInt() : null,
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
-  securityAndAnalysis: json['security_and_analysis'] != null
-        ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>)
-        : null,
+  securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
   customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 

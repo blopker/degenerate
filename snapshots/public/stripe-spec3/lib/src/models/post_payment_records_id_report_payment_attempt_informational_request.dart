@@ -7,19 +7,11 @@
 import 'package:collection/collection.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
-  customerDetails: json['customer_details'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Customer information for this payment.

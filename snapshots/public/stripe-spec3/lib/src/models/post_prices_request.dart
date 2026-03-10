@@ -89,27 +89,19 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
   billingScheme: json['billing_scheme'] != null ? PostPricesRequestBillingScheme.fromJson(json['billing_scheme'] as String) : null,
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject1193.fromJson(v as Map<String, dynamic>))),
-  customUnitAmount: json['custom_unit_amount'] != null
-        ? PostPricesRequestCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>)
-        : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? PostPricesRequestCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lookupKey: json['lookup_key'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] as String?,
   product: json['product'] as String?,
-  productData: json['product_data'] != null
-        ? PostPricesRequestProductData.fromJson(json['product_data'] as Map<String, dynamic>)
-        : null,
-  recurring: json['recurring'] != null
-        ? PostPricesRequestRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  productData: json['product_data'] != null ? PostPricesRequestProductData.fromJson(json['product_data'] as Map<String, dynamic>) : null,
+  recurring: json['recurring'] != null ? PostPricesRequestRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostPricesRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PostPricesRequestTiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPricesRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
-  transformQuantity: json['transform_quantity'] != null
-        ? PostPricesRequestTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>)
-        : null,
+  transformQuantity: json['transform_quantity'] != null ? PostPricesRequestTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

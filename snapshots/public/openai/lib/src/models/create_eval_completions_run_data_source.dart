@@ -32,12 +32,8 @@ final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDa
 
 factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSource(
   type: CreateEvalCompletionsRunDataSourceType.fromJson(json['type'] as String),
-  inputMessages: json['input_messages'] != null
-        ? CreateEvalCompletionsRunDataSourceInputMessages.fromJson(json['input_messages'])
-        : null,
-  samplingParams: json['sampling_params'] != null
-        ? CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>)
-        : null,
+  inputMessages: json['input_messages'] != null ? CreateEvalCompletionsRunDataSourceInputMessages.fromJson(json['input_messages']) : null,
+  samplingParams: json['sampling_params'] != null ? CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   model: json['model'] as String?,
   source: CreateEvalCompletionsRunDataSourceSource.fromJson(json['source']),
 ); }

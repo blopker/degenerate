@@ -14,9 +14,7 @@ factory LoadBalancingPool.fromJson(Map<String, dynamic> json) { return LoadBalan
   enabled: json['enabled'] != null ? LoadBalancingEnabled.fromJson(json['enabled'] as bool) : null,
   id: json['id'] != null ? LoadBalancingSchemasIdentifier.fromJson(json['id'] as String) : null,
   latitude: json['latitude'] != null ? LoadBalancingLatitude.fromJson(json['latitude'] as num) : null,
-  loadShedding: json['load_shedding'] != null
-        ? LoadBalancingLoadShedding.fromJson(json['load_shedding'] as Map<String, dynamic>)
-        : null,
+  loadShedding: json['load_shedding'] != null ? LoadBalancingLoadShedding.fromJson(json['load_shedding'] as Map<String, dynamic>) : null,
   longitude: json['longitude'] != null ? LoadBalancingLongitude.fromJson(json['longitude'] as num) : null,
   minimumOrigins: json['minimum_origins'] != null ? LoadBalancingMinimumOrigins.fromJson(json['minimum_origins'] as num) : null,
   modifiedOn: json['modified_on'] != null ? LoadBalancingTimestamp.fromJson(json['modified_on'] as String) : null,
@@ -25,12 +23,8 @@ factory LoadBalancingPool.fromJson(Map<String, dynamic> json) { return LoadBalan
   name: json['name'] != null ? LoadBalancingName.fromJson(json['name'] as String) : null,
   networks: (json['networks'] as List<dynamic>?)?.map((e) => e as String).toList(),
   notificationEmail: json['notification_email'] != null ? LoadBalancingNotificationEmail.fromJson(json['notification_email'] as String) : null,
-  notificationFilter: json['notification_filter'] != null
-        ? LoadBalancingNotificationFilter.fromJson(json['notification_filter'] as Map<String, dynamic>)
-        : null,
-  originSteering: json['origin_steering'] != null
-        ? LoadBalancingOriginSteering.fromJson(json['origin_steering'] as Map<String, dynamic>)
-        : null,
+  notificationFilter: json['notification_filter'] != null ? LoadBalancingNotificationFilter.fromJson(json['notification_filter'] as Map<String, dynamic>) : null,
+  originSteering: json['origin_steering'] != null ? LoadBalancingOriginSteering.fromJson(json['origin_steering'] as Map<String, dynamic>) : null,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOrigin.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

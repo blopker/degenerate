@@ -8,9 +8,7 @@ import 'workers_usage_model.dart';import 'workers_user_limits.dart';final class 
 
 factory WorkerScriptUpdateUsageModelRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptUpdateUsageModelRequest(
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-  userLimits: json['user_limits'] != null
-        ? WorkersUserLimits.fromJson(json['user_limits'] as Map<String, dynamic>)
-        : null,
+  userLimits: json['user_limits'] != null ? WorkersUserLimits.fromJson(json['user_limits'] as Map<String, dynamic>) : null,
 ); }
 
 final WorkersUsageModel? usageModel;

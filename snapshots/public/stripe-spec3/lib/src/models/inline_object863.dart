@@ -28,18 +28,10 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject863 {const InlineObject863({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory InlineObject863.fromJson(Map<String, dynamic> json) { return InlineObject863(
-  confirmationNumber: json['confirmation_number'] != null
-        ? InlineObject863ConfirmationNumber.fromJson(json['confirmation_number'] as Map<String, dynamic>)
-        : null,
-  expiresAfterDays: json['expires_after_days'] != null
-        ? InlineObject863ExpiresAfterDays.fromJson(json['expires_after_days'] as Map<String, dynamic>)
-        : null,
-  expiresAt: json['expires_at'] != null
-        ? InlineObject863ExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>)
-        : null,
-  productDescription: json['product_description'] != null
-        ? InlineObject863ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>)
-        : null,
+  confirmationNumber: json['confirmation_number'] != null ? InlineObject863ConfirmationNumber.fromJson(json['confirmation_number'] as Map<String, dynamic>) : null,
+  expiresAfterDays: json['expires_after_days'] != null ? InlineObject863ExpiresAfterDays.fromJson(json['expires_after_days'] as Map<String, dynamic>) : null,
+  expiresAt: json['expires_at'] != null ? InlineObject863ExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>) : null,
+  productDescription: json['product_description'] != null ? InlineObject863ProductDescription.fromJson(json['product_description'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject863SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

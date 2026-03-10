@@ -161,9 +161,7 @@ factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return Tr
   effectiveAt: (json['effective_at'] as num).toInt(),
   financialAccount: json['financial_account'] as String,
   flow: json['flow'] as String?,
-  flowDetails: json['flow_details'] != null
-        ? TreasuryTransactionEntryFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>)
-        : null,
+  flowDetails: json['flow_details'] != null ? TreasuryTransactionEntryFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
   flowType: TreasuryTransactionEntryFlowType.fromJson(json['flow_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,

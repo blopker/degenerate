@@ -8,39 +8,17 @@ import 'setup_intent_payment_method_options_acss_debit2.dart';import 'setup_inte
 final class SetupIntentPaymentMethodOptions {const SetupIntentPaymentMethodOptions({this.acssDebit, this.amazonPay, this.bacsDebit, this.card, this.cardPresent, this.klarna, this.link, this.paypal, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory SetupIntentPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? SetupIntentPaymentMethodOptionsAcssDebit2.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? SetupIntentPaymentMethodOptionsAmazonPay2.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? SetupIntentPaymentMethodOptionsBacsDebit2.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? SetupIntentPaymentMethodOptionsCard2.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? SetupIntentPaymentMethodOptionsCardPresent2.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? SetupIntentPaymentMethodOptionsKlarna2.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? SetupIntentPaymentMethodOptionsLink2.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? SetupIntentPaymentMethodOptionsPaypal2.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? SetupIntentPaymentMethodOptionsPayto2.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? SetupIntentPaymentMethodOptionsSepaDebit2.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? SetupIntentPaymentMethodOptionsUsBankAccount2.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? SetupIntentPaymentMethodOptionsAcssDebit2.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? SetupIntentPaymentMethodOptionsAmazonPay2.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? SetupIntentPaymentMethodOptionsBacsDebit2.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? SetupIntentPaymentMethodOptionsCard2.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? SetupIntentPaymentMethodOptionsCardPresent2.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? SetupIntentPaymentMethodOptionsKlarna2.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? SetupIntentPaymentMethodOptionsLink2.fromJson(json['link'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? SetupIntentPaymentMethodOptionsPaypal2.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? SetupIntentPaymentMethodOptionsPayto2.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? SetupIntentPaymentMethodOptionsSepaDebit2.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? SetupIntentPaymentMethodOptionsUsBankAccount2.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final SetupIntentPaymentMethodOptionsAcssDebit2? acssDebit;

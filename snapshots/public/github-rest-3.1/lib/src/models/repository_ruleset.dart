@@ -108,12 +108,8 @@ factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return Repositor
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   currentUserCanBypass: json['current_user_can_bypass'] != null ? RepositoryRulesetCurrentUserCanBypass.fromJson(json['current_user_can_bypass'] as String) : null,
   nodeId: json['node_id'] as String?,
-  links: json['_links'] != null
-        ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>)
-        : null,
-  conditions: json['conditions'] != null
-        ? RepositoryRulesetConditions2.fromJson(json['conditions'] as Map<String, dynamic>)
-        : null,
+  links: json['_links'] != null ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
+  conditions: json['conditions'] != null ? RepositoryRulesetConditions2.fromJson(json['conditions'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,

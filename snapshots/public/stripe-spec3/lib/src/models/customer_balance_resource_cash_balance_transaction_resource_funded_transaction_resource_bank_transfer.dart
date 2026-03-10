@@ -42,20 +42,12 @@ bool get isUnknown { return !values.contains(this); }
 final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer({this.euBankTransfer, this.gbBankTransfer, this.jpBankTransfer, this.reference, required this.type, this.usBankTransfer, });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
-  euBankTransfer: json['eu_bank_transfer'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  gbBankTransfer: json['gb_bank_transfer'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  jpBankTransfer: json['jp_bank_transfer'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>)
-        : null,
+  euBankTransfer: json['eu_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
+  gbBankTransfer: json['gb_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>) : null,
+  jpBankTransfer: json['jp_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>) : null,
   reference: json['reference'] as String?,
   type: CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType.fromJson(json['type'] as String),
-  usBankTransfer: json['us_bank_transfer'] != null
-        ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>)
-        : null,
+  usBankTransfer: json['us_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>) : null,
 ); }
 
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? euBankTransfer;

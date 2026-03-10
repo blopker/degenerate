@@ -41,12 +41,8 @@ factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic
   buttonColor: json['button_color'] as String,
   displayName: json['display_name'] as String,
   fontFamily: json['font_family'] as String,
-  icon: json['icon'] != null
-        ? PaymentPagesCheckoutSessionBrandingSettingsIcon2.fromJson(json['icon'] as Map<String, dynamic>)
-        : null,
-  logo: json['logo'] != null
-        ? PaymentPagesCheckoutSessionBrandingSettingsLogo2.fromJson(json['logo'] as Map<String, dynamic>)
-        : null,
+  icon: json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon2.fromJson(json['icon'] as Map<String, dynamic>) : null,
+  logo: json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo2.fromJson(json['logo'] as Map<String, dynamic>) : null,
 ); }
 
 /// A hex color value starting with `#` representing the background color for the Checkout Session.

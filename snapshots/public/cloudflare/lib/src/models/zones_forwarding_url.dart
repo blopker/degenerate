@@ -32,9 +32,7 @@ final class ZonesForwardingUrl {const ZonesForwardingUrl({this.id, this.value, }
 
 factory ZonesForwardingUrl.fromJson(Map<String, dynamic> json) { return ZonesForwardingUrl(
   id: json['id'] != null ? ZonesForwardingUrlId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null
-        ? ZonesForwardingUrlValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? ZonesForwardingUrlValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 /// Redirects one URL to another using an `HTTP 301/302` redirect. Refer

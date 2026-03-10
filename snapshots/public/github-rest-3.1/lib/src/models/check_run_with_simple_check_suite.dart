@@ -97,9 +97,7 @@ factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { retur
   checkSuite: SimpleCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   completedAt: DateTime.parse(json['completed_at'] as String),
   conclusion: CheckRunWithSimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String),
-  deployment: json['deployment'] != null
-        ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>)
-        : null,
+  deployment: json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null,
   detailsUrl: json['details_url'] as String,
   externalId: json['external_id'] as String,
   headSha: json['head_sha'] as String,

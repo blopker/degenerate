@@ -8,9 +8,7 @@ import 'terminal_configuration_configuration_resource_device_type_specific_confi
 final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
 
 factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
-  splashscreen: json['splashscreen'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>)
-        : null,
+  splashscreen: json['splashscreen'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen.fromJson(json['splashscreen'] as Map<String, dynamic>) : null,
 ); }
 
 /// A File ID representing an image to display on the reader

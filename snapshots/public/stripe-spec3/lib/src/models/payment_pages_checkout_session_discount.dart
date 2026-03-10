@@ -8,12 +8,8 @@ import 'payment_pages_checkout_session_discount_coupon.dart';import 'payment_pag
 final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon, this.promotionCode, });
 
 factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionDiscount(
-  coupon: json['coupon'] != null
-        ? PaymentPagesCheckoutSessionDiscountCoupon.fromJson(json['coupon'] as Map<String, dynamic>)
-        : null,
-  promotionCode: json['promotion_code'] != null
-        ? PaymentPagesCheckoutSessionDiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>)
-        : null,
+  coupon: json['coupon'] != null ? PaymentPagesCheckoutSessionDiscountCoupon.fromJson(json['coupon'] as Map<String, dynamic>) : null,
+  promotionCode: json['promotion_code'] != null ? PaymentPagesCheckoutSessionDiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>) : null,
 ); }
 
 /// Coupon attached to the Checkout Session.

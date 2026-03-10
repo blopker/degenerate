@@ -9,12 +9,8 @@ final class InlineObject94Bundle {const InlineObject94Bundle({this.mediaType, th
 
 factory InlineObject94Bundle.fromJson(Map<String, dynamic> json) { return InlineObject94Bundle(
   mediaType: json['mediaType'] as String?,
-  verificationMaterial: json['verificationMaterial'] != null
-        ? InlineObject94BundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>)
-        : null,
-  dsseEnvelope: json['dsseEnvelope'] != null
-        ? InlineObject94BundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>)
-        : null,
+  verificationMaterial: json['verificationMaterial'] != null ? InlineObject94BundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>) : null,
+  dsseEnvelope: json['dsseEnvelope'] != null ? InlineObject94BundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>) : null,
 ); }
 
 final String? mediaType;

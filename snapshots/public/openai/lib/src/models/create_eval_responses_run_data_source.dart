@@ -32,12 +32,8 @@ final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSo
 
 factory CreateEvalResponsesRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSource(
   type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),
-  inputMessages: json['input_messages'] != null
-        ? CreateEvalResponsesRunDataSourceInputMessages.fromJson(json['input_messages'])
-        : null,
-  samplingParams: json['sampling_params'] != null
-        ? CreateEvalResponsesRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>)
-        : null,
+  inputMessages: json['input_messages'] != null ? CreateEvalResponsesRunDataSourceInputMessages.fromJson(json['input_messages']) : null,
+  samplingParams: json['sampling_params'] != null ? CreateEvalResponsesRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   model: json['model'] as String?,
   source: CreateEvalResponsesRunDataSourceSource.fromJson(json['source']),
 ); }

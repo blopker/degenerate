@@ -11,9 +11,7 @@ factory OrgsUpdateWebhookRequestConfig.fromJson(Map<String, dynamic> json) { ret
   url: WebhookConfigUrl.fromJson(json['url'] as String),
   contentType: json['content_type'] != null ? WebhookConfigContentType.fromJson(json['content_type'] as String) : null,
   secret: json['secret'] != null ? WebhookConfigSecret.fromJson(json['secret'] as String) : null,
-  insecureSsl: json['insecure_ssl'] != null
-        ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'] as Map<String, dynamic>)
-        : null,
+  insecureSsl: json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookConfigUrl url;

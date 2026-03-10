@@ -7,12 +7,8 @@
 import 'repository_rule.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes.dart';final class WebhookRepositoryRulesetEditedChangesRulesUpdated {const WebhookRepositoryRulesetEditedChangesRulesUpdated({this.rule, this.changes, });
 
 factory WebhookRepositoryRulesetEditedChangesRulesUpdated.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRulesUpdated(
-  rule: json['rule'] != null
-        ? RepositoryRule.fromJson(json['rule'] as Map<String, dynamic>)
-        : null,
-  changes: json['changes'] != null
-        ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges.fromJson(json['changes'] as Map<String, dynamic>)
-        : null,
+  rule: json['rule'] != null ? RepositoryRule.fromJson(json['rule'] as Map<String, dynamic>) : null,
+  changes: json['changes'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRule? rule;

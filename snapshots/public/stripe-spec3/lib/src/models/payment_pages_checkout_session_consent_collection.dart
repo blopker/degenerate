@@ -60,9 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentPagesCheckoutSessionConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsentCollection(
-  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null
-        ? PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>)
-        : null,
+  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
   promotions: json['promotions'] != null ? PaymentPagesCheckoutSessionConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
   termsOfService: json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
 ); }

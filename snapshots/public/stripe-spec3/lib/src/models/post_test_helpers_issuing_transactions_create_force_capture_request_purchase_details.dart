@@ -8,18 +8,10 @@ import 'package:collection/collection.dart';import 'post_test_helpers_issuing_tr
 final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails(
-  fleet: json['fleet'] != null
-        ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
-  flight: json['flight'] != null
-        ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>)
-        : null,
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  lodging: json['lodging'] != null
-        ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  flight: json['flight'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  lodging: json['lodging'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>) : null,
   receipt: (json['receipt'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt.fromJson(e as Map<String, dynamic>)).toList(),
   reference: json['reference'] as String?,
 ); }

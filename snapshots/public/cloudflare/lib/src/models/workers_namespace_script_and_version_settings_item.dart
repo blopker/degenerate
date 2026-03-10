@@ -12,19 +12,11 @@ factory WorkersNamespaceScriptAndVersionSettingsItem.fromJson(Map<String, dynami
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
-  limits: json['limits'] != null
-        ? WorkersLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? WorkersLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   logpush: json['logpush'] != null ? WorkersLogpush.fromJson(json['logpush'] as bool) : null,
-  migrations: json['migrations'] != null
-        ? WorkersNamespaceScriptAndVersionSettingsItemMigrations.fromJson(json['migrations'])
-        : null,
-  observability: json['observability'] != null
-        ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>)
-        : null,
-  placement: json['placement'] != null
-        ? WorkersPlacementInfoNoStatus.fromJson(json['placement'] as Map<String, dynamic>)
-        : null,
+  migrations: json['migrations'] != null ? WorkersNamespaceScriptAndVersionSettingsItemMigrations.fromJson(json['migrations']) : null,
+  observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
+  placement: json['placement'] != null ? WorkersPlacementInfoNoStatus.fromJson(json['placement'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,

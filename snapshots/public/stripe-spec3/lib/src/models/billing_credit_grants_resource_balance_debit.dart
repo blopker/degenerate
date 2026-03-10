@@ -37,9 +37,7 @@ final class BillingCreditGrantsResourceBalanceDebit {const BillingCreditGrantsRe
 
 factory BillingCreditGrantsResourceBalanceDebit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceDebit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
-  creditsApplied: json['credits_applied'] != null
-        ? BillingCreditGrantsResourceBalanceDebitCreditsApplied.fromJson(json['credits_applied'] as Map<String, dynamic>)
-        : null,
+  creditsApplied: json['credits_applied'] != null ? BillingCreditGrantsResourceBalanceDebitCreditsApplied.fromJson(json['credits_applied'] as Map<String, dynamic>) : null,
   type: BillingCreditGrantsResourceBalanceDebitType.fromJson(json['type'] as String),
 ); }
 

@@ -48,13 +48,9 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
   failOpen: json['fail_open'] as bool,
   hyperdriveBindings: (json['hyperdrive_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject98.fromJson(v as Map<String, dynamic>))),
   kvNamespaces: (json['kv_namespaces'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject99.fromJson(v as Map<String, dynamic>))),
-  limits: json['limits'] != null
-        ? PagesDeploymentConfigValuesLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? PagesDeploymentConfigValuesLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   mtlsCertificates: (json['mtls_certificates'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject100.fromJson(v as Map<String, dynamic>))),
-  placement: json['placement'] != null
-        ? PagesDeploymentConfigValuesPlacement.fromJson(json['placement'] as Map<String, dynamic>)
-        : null,
+  placement: json['placement'] != null ? PagesDeploymentConfigValuesPlacement.fromJson(json['placement'] as Map<String, dynamic>) : null,
   queueProducers: (json['queue_producers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject101.fromJson(v as Map<String, dynamic>))),
   r2Buckets: (json['r2_buckets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject102.fromJson(v as Map<String, dynamic>))),
   services: (json['services'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject103.fromJson(v as Map<String, dynamic>))),

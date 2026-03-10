@@ -7,9 +7,7 @@
 import 'organization_flags.dart';final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, });
 
 factory OrganizationMeta.fromJson(Map<String, dynamic> json) { return OrganizationMeta(
-  flags: json['flags'] != null
-        ? OrganizationFlags.fromJson(json['flags'] as Map<String, dynamic>)
-        : null,
+  flags: json['flags'] != null ? OrganizationFlags.fromJson(json['flags'] as Map<String, dynamic>) : null,
   managedBy: json['managed_by'] as String?,
 ); }
 

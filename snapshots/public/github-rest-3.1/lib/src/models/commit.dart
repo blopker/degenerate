@@ -17,9 +17,7 @@ factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
   author: CommitAuthor.fromJson(json['author']),
   committer: CommitCommitter.fromJson(json['committer']),
   parents: (json['parents'] as List<dynamic>).map((e) => CommitParents.fromJson(e as Map<String, dynamic>)).toList(),
-  stats: json['stats'] != null
-        ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>)
-        : null,
+  stats: json['stats'] != null ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

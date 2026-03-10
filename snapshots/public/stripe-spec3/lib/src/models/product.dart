@@ -39,9 +39,7 @@ final class Product {const Product({required this.active, required this.created,
 factory Product.fromJson(Map<String, dynamic> json) { return Product(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  defaultPrice: json['default_price'] != null
-        ? ProductDefaultPrice.fromJson(json['default_price'] as Map<String, dynamic>)
-        : null,
+  defaultPrice: json['default_price'] != null ? ProductDefaultPrice.fromJson(json['default_price'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   id: json['id'] as String,
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
@@ -50,14 +48,10 @@ factory Product.fromJson(Map<String, dynamic> json) { return Product(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: ProductObject.fromJson(json['object'] as String),
-  packageDimensions: json['package_dimensions'] != null
-        ? ProductPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>)
-        : null,
+  packageDimensions: json['package_dimensions'] != null ? ProductPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
-  taxCode: json['tax_code'] != null
-        ? ProductTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>)
-        : null,
+  taxCode: json['tax_code'] != null ? ProductTaxCode.fromJson(json['tax_code'] as Map<String, dynamic>) : null,
   unitLabel: json['unit_label'] as String?,
   updated: (json['updated'] as num).toInt(),
   url: json['url'] as String?,

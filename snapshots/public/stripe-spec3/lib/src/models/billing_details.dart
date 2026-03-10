@@ -8,9 +8,7 @@ import 'billing_details_address.dart';///
 final class BillingDetails {const BillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory BillingDetails.fromJson(Map<String, dynamic> json) { return BillingDetails(
-  address: json['address'] != null
-        ? BillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? BillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,

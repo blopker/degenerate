@@ -76,9 +76,7 @@ factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) { return Post
   reason: json['reason'] != null ? PostCreditNotesRequestReason.fromJson(json['reason'] as String) : null,
   refundAmount: json['refund_amount'] != null ? (json['refund_amount'] as num).toInt() : null,
   refunds: (json['refunds'] as List<dynamic>?)?.map((e) => PostCreditNotesRequestRefunds.fromJson(e as Map<String, dynamic>)).toList(),
-  shippingCost: json['shipping_cost'] != null
-        ? PostCreditNotesRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  shippingCost: json['shipping_cost'] != null ? PostCreditNotesRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
 ); }
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.

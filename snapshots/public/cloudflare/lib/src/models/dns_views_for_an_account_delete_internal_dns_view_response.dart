@@ -7,9 +7,7 @@
 import 'dns_views_for_an_account_delete_internal_dns_view_response_result.dart';final class DnsViewsForAnAccountDeleteInternalDnsViewResponse {const DnsViewsForAnAccountDeleteInternalDnsViewResponse({this.result});
 
 factory DnsViewsForAnAccountDeleteInternalDnsViewResponse.fromJson(Map<String, dynamic> json) { return DnsViewsForAnAccountDeleteInternalDnsViewResponse(
-  result: json['result'] != null
-        ? DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final DnsViewsForAnAccountDeleteInternalDnsViewResponseResult? result;

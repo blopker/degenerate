@@ -42,12 +42,8 @@ factory PaymentMethodDetailsPaymentRecordBancontact.fromJson(Map<String, dynamic
   bankCode: json['bank_code'] as String?,
   bankName: json['bank_name'] as String?,
   bic: json['bic'] as String?,
-  generatedSepaDebit: json['generated_sepa_debit'] != null
-        ? PaymentMethodDetailsPaymentRecordBancontactGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>)
-        : null,
-  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null
-        ? PaymentMethodDetailsPaymentRecordBancontactGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>)
-        : null,
+  generatedSepaDebit: json['generated_sepa_debit'] != null ? PaymentMethodDetailsPaymentRecordBancontactGeneratedSepaDebit.fromJson(json['generated_sepa_debit'] as Map<String, dynamic>) : null,
+  generatedSepaDebitMandate: json['generated_sepa_debit_mandate'] != null ? PaymentMethodDetailsPaymentRecordBancontactGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate'] as Map<String, dynamic>) : null,
   ibanLast4: json['iban_last4'] as String?,
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage.fromJson(json['preferred_language'] as String) : null,
   verifiedName: json['verified_name'] as String?,

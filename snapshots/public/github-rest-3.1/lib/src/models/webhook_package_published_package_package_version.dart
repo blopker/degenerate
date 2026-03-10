@@ -7,16 +7,10 @@
 import 'package:collection/collection.dart';import 'webhook_package_published_package_package_version_author.dart';import 'webhook_package_published_package_package_version_body.dart';import 'webhook_package_published_package_package_version_container_metadata.dart';import 'webhook_package_published_package_package_version_docker_metadata.dart';import 'webhook_package_published_package_package_version_npm_metadata.dart';import 'webhook_package_published_package_package_version_nuget_metadata.dart';import 'webhook_package_published_package_package_version_package_files.dart';import 'webhook_package_published_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';final class WebhookPackagePublishedPackagePackageVersion {const WebhookPackagePublishedPackagePackageVersion({this.author, this.body, this.bodyHtml, this.containerMetadata, this.createdAt, required this.description, this.dockerMetadata, this.draft, required this.htmlUrl, required this.id, required this.installationCommand, this.manifest, required this.metadata, required this.name, this.npmMetadata, this.nugetMetadata, required this.packageFiles, this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, this.sourceUrl, required this.summary, this.tagName, this.targetCommitish, this.targetOid, this.updatedAt, required this.version, });
 
 factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersion(
-  author: json['author'] != null
-        ? WebhookPackagePublishedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
-  body: json['body'] != null
-        ? WebhookPackagePublishedPackagePackageVersionBody.fromJson(json['body'])
-        : null,
+  author: json['author'] != null ? WebhookPackagePublishedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  body: json['body'] != null ? WebhookPackagePublishedPackagePackageVersionBody.fromJson(json['body']) : null,
   bodyHtml: json['body_html'] as String?,
-  containerMetadata: json['container_metadata'] != null
-        ? WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>)
-        : null,
+  containerMetadata: json['container_metadata'] != null ? WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,
   description: json['description'] as String,
   dockerMetadata: (json['docker_metadata'] as List<dynamic>?)?.map((e) => WebhookPackagePublishedPackagePackageVersionDockerMetadata.fromJson(e as Map<String, dynamic>)).toList(),
@@ -27,16 +21,12 @@ factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynami
   manifest: json['manifest'] as String?,
   metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   name: json['name'] as String,
-  npmMetadata: json['npm_metadata'] != null
-        ? WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>)
-        : null,
+  npmMetadata: json['npm_metadata'] != null ? WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null,
   nugetMetadata: (json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookPackagePublishedPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String?,
   prerelease: json['prerelease'] as bool?,
-  release: json['release'] != null
-        ? WebhookPackagePublishedPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>)
-        : null,
+  release: json['release'] != null ? WebhookPackagePublishedPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>) : null,
   rubygemsMetadata: (json['rubygems_metadata'] as List<dynamic>?)?.map((e) => WebhookRubygemsMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   sourceUrl: json['source_url'] as String?,
   summary: json['summary'] as String,

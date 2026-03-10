@@ -29,16 +29,10 @@ final class WebhookPullRequestAutoMergeEnabled {const WebhookPullRequestAutoMerg
 
 factory WebhookPullRequestAutoMergeEnabled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeEnabled(
   action: WebhookPullRequestAutoMergeEnabledAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pullRequest: WebhookPullRequestAutoMergeEnabledPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   reason: json['reason'] as String?,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),

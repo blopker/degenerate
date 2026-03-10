@@ -53,17 +53,11 @@ factory PaymentMethodCardPresent.fromJson(Map<String, dynamic> json) { return Pa
   funding: json['funding'] as String?,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null
-        ? PaymentMethodCardPresentNetworks2.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
-  offline: json['offline'] != null
-        ? PaymentMethodCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? PaymentMethodCardPresentNetworks2.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  offline: json['offline'] != null ? PaymentMethodCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodCardPresentReadMethod.fromJson(json['read_method'] as String) : null,
-  wallet: json['wallet'] != null
-        ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>)
-        : null,
+  wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.

@@ -76,9 +76,7 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   object: BatchObject.fromJson(json['object'] as String),
   endpoint: json['endpoint'] as String,
   model: json['model'] as String?,
-  errors: json['errors'] != null
-        ? BatchErrors.fromJson(json['errors'] as Map<String, dynamic>)
-        : null,
+  errors: json['errors'] != null ? BatchErrors.fromJson(json['errors'] as Map<String, dynamic>) : null,
   inputFileId: json['input_file_id'] as String,
   completionWindow: json['completion_window'] as String,
   status: BatchStatus.fromJson(json['status'] as String),
@@ -93,12 +91,8 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   expiredAt: json['expired_at'] != null ? (json['expired_at'] as num).toInt() : null,
   cancellingAt: json['cancelling_at'] != null ? (json['cancelling_at'] as num).toInt() : null,
   cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,
-  requestCounts: json['request_counts'] != null
-        ? BatchRequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>)
-        : null,
-  usage: json['usage'] != null
-        ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  requestCounts: json['request_counts'] != null ? BatchRequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
+  usage: json['usage'] != null ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

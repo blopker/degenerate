@@ -25,9 +25,7 @@ factory ServiceSpec.fromJson(Map<String, dynamic> json) { return ServiceSpec(
   publishNotReadyAddresses: json['publishNotReadyAddresses'] as bool?,
   selector: (json['selector'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   sessionAffinity: json['sessionAffinity'] as String?,
-  sessionAffinityConfig: json['sessionAffinityConfig'] != null
-        ? SessionAffinityConfig.fromJson(json['sessionAffinityConfig'] as Map<String, dynamic>)
-        : null,
+  sessionAffinityConfig: json['sessionAffinityConfig'] != null ? SessionAffinityConfig.fromJson(json['sessionAffinityConfig'] as Map<String, dynamic>) : null,
   trafficDistribution: json['trafficDistribution'] as String?,
   type: json['type'] as String?,
 ); }

@@ -14,29 +14,17 @@ factory Container.fromJson(Map<String, dynamic> json) { return Container(
   envFrom: (json['envFrom'] as List<dynamic>?)?.map((e) => EnvFromSource.fromJson(e as Map<String, dynamic>)).toList(),
   image: json['image'] as String?,
   imagePullPolicy: json['imagePullPolicy'] as String?,
-  lifecycle: json['lifecycle'] != null
-        ? Lifecycle.fromJson(json['lifecycle'] as Map<String, dynamic>)
-        : null,
-  livenessProbe: json['livenessProbe'] != null
-        ? Probe.fromJson(json['livenessProbe'] as Map<String, dynamic>)
-        : null,
+  lifecycle: json['lifecycle'] != null ? Lifecycle.fromJson(json['lifecycle'] as Map<String, dynamic>) : null,
+  livenessProbe: json['livenessProbe'] != null ? Probe.fromJson(json['livenessProbe'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   ports: (json['ports'] as List<dynamic>?)?.map((e) => ContainerPort.fromJson(e as Map<String, dynamic>)).toList(),
-  readinessProbe: json['readinessProbe'] != null
-        ? Probe.fromJson(json['readinessProbe'] as Map<String, dynamic>)
-        : null,
+  readinessProbe: json['readinessProbe'] != null ? Probe.fromJson(json['readinessProbe'] as Map<String, dynamic>) : null,
   resizePolicy: (json['resizePolicy'] as List<dynamic>?)?.map((e) => ContainerResizePolicy.fromJson(e as Map<String, dynamic>)).toList(),
-  resources: json['resources'] != null
-        ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>)
-        : null,
+  resources: json['resources'] != null ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
   restartPolicy: json['restartPolicy'] as String?,
   restartPolicyRules: (json['restartPolicyRules'] as List<dynamic>?)?.map((e) => ContainerRestartRule.fromJson(e as Map<String, dynamic>)).toList(),
-  securityContext: json['securityContext'] != null
-        ? SecurityContext.fromJson(json['securityContext'] as Map<String, dynamic>)
-        : null,
-  startupProbe: json['startupProbe'] != null
-        ? Probe.fromJson(json['startupProbe'] as Map<String, dynamic>)
-        : null,
+  securityContext: json['securityContext'] != null ? SecurityContext.fromJson(json['securityContext'] as Map<String, dynamic>) : null,
+  startupProbe: json['startupProbe'] != null ? Probe.fromJson(json['startupProbe'] as Map<String, dynamic>) : null,
   stdin: json['stdin'] as bool?,
   stdinOnce: json['stdinOnce'] as bool?,
   terminationMessagePath: json['terminationMessagePath'] as String?,

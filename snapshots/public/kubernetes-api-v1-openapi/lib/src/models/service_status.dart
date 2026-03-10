@@ -9,9 +9,7 @@ final class ServiceStatus {const ServiceStatus({this.conditions, this.loadBalanc
 
 factory ServiceStatus.fromJson(Map<String, dynamic> json) { return ServiceStatus(
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => Condition.fromJson(e as Map<String, dynamic>)).toList(),
-  loadBalancer: json['loadBalancer'] != null
-        ? LoadBalancerStatus.fromJson(json['loadBalancer'] as Map<String, dynamic>)
-        : null,
+  loadBalancer: json['loadBalancer'] != null ? LoadBalancerStatus.fromJson(json['loadBalancer'] as Map<String, dynamic>) : null,
 ); }
 
 /// Current service state

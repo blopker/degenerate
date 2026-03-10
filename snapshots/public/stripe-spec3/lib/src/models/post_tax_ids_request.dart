@@ -363,9 +363,7 @@ final class PostTaxIdsRequest {const PostTaxIdsRequest({this.expand, this.owner,
 
 factory PostTaxIdsRequest.fromJson(Map<String, dynamic> json) { return PostTaxIdsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  owner: json['owner'] != null
-        ? PostTaxIdsRequestOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
+  owner: json['owner'] != null ? PostTaxIdsRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   type: PostTaxIdsRequestType.fromJson(json['type'] as String),
   value: json['value'] as String,
 ); }

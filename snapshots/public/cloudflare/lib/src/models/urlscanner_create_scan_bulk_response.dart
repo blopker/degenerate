@@ -33,9 +33,7 @@ final class UrlscannerCreateScanBulkResponse {const UrlscannerCreateScanBulkResp
 
 factory UrlscannerCreateScanBulkResponse.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkResponse(
   api: json['api'] as String,
-  options: json['options'] != null
-        ? UrlscannerCreateScanBulkResponseOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? UrlscannerCreateScanBulkResponseOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
   result: json['result'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,

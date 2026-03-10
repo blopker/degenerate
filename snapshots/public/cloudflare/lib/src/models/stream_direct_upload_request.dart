@@ -15,9 +15,7 @@ factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return S
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
-  watermark: json['watermark'] != null
-        ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? allowedOrigins;

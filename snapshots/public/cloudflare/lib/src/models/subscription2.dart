@@ -99,9 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Subscription2 {const Subscription2({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
 
 factory Subscription2.fromJson(Map<String, dynamic> json) { return Subscription2(
-  app: json['app'] != null
-        ? Subscription2App.fromJson(json['app'] as Map<String, dynamic>)
-        : null,
+  app: json['app'] != null ? Subscription2App.fromJson(json['app'] as Map<String, dynamic>) : null,
   componentValues: (json['component_values'] as List<dynamic>?)?.map((e) => ComponentValue2.fromJson(e as Map<String, dynamic>)).toList(),
   currency: json['currency'] != null ? Currency.fromJson(json['currency'] as String) : null,
   currentPeriodEnd: json['current_period_end'] != null ? CurrentPeriodEnd.fromJson(json['current_period_end'] as String) : null,
@@ -109,13 +107,9 @@ factory Subscription2.fromJson(Map<String, dynamic> json) { return Subscription2
   frequency: json['frequency'] != null ? Frequency.fromJson(json['frequency'] as String) : null,
   id: json['id'] != null ? SchemasIdentifier.fromJson(json['id'] as String) : null,
   price: json['price'] != null ? Price.fromJson(json['price'] as num) : null,
-  ratePlan: json['rate_plan'] != null
-        ? RatePlan2.fromJson(json['rate_plan'] as Map<String, dynamic>)
-        : null,
+  ratePlan: json['rate_plan'] != null ? RatePlan2.fromJson(json['rate_plan'] as Map<String, dynamic>) : null,
   state: json['state'] != null ? State.fromJson(json['state'] as String) : null,
-  zone: json['zone'] != null
-        ? Zone.fromJson(json['zone'] as Map<String, dynamic>)
-        : null,
+  zone: json['zone'] != null ? Zone.fromJson(json['zone'] as Map<String, dynamic>) : null,
 ); }
 
 final Subscription2App? app;

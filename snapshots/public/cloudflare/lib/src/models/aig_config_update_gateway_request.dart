@@ -84,9 +84,7 @@ factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) { retu
   cacheInvalidateOnUpdate: json['cache_invalidate_on_update'] as bool,
   cacheTtl: (json['cache_ttl'] as num).toInt(),
   collectLogs: json['collect_logs'] as bool,
-  dlp: json['dlp'] != null
-        ? AigConfigUpdateGatewayRequestDlp.fromJson(json['dlp'] as Map<String, dynamic>)
-        : null,
+  dlp: json['dlp'] != null ? AigConfigUpdateGatewayRequestDlp.fromJson(json['dlp'] as Map<String, dynamic>) : null,
   logManagement: json['log_management'] != null ? (json['log_management'] as num).toInt() : null,
   logManagementStrategy: json['log_management_strategy'] != null ? AigConfigUpdateGatewayRequestLogManagementStrategy.fromJson(json['log_management_strategy'] as String) : null,
   logpush: json['logpush'] as bool?,
@@ -96,9 +94,7 @@ factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) { retu
   rateLimitingLimit: (json['rate_limiting_limit'] as num).toInt(),
   rateLimitingTechnique: AigConfigUpdateGatewayRequestRateLimitingTechnique.fromJson(json['rate_limiting_technique'] as String),
   storeId: json['store_id'] as String?,
-  stripe: json['stripe'] != null
-        ? AigConfigUpdateGatewayRequestStripe.fromJson(json['stripe'] as Map<String, dynamic>)
-        : null,
+  stripe: json['stripe'] != null ? AigConfigUpdateGatewayRequestStripe.fromJson(json['stripe'] as Map<String, dynamic>) : null,
   workersAiBillingMode: json.containsKey('workers_ai_billing_mode') ? AigConfigUpdateGatewayRequestWorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : AigConfigUpdateGatewayRequestWorkersAiBillingMode.postpaid,
   zdr: json['zdr'] as bool?,
 ); }

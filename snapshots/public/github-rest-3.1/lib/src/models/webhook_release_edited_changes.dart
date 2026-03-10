@@ -7,18 +7,10 @@
 import 'webhook_release_edited_changes_body.dart';import 'webhook_release_edited_changes_make_latest.dart';import 'webhook_release_edited_changes_name.dart';import 'webhook_release_edited_changes_tag_name.dart';final class WebhookReleaseEditedChanges {const WebhookReleaseEditedChanges({this.body, this.name, this.tagName, this.makeLatest, });
 
 factory WebhookReleaseEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChanges(
-  body: json['body'] != null
-        ? WebhookReleaseEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? WebhookReleaseEditedChangesName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  tagName: json['tag_name'] != null
-        ? WebhookReleaseEditedChangesTagName.fromJson(json['tag_name'] as Map<String, dynamic>)
-        : null,
-  makeLatest: json['make_latest'] != null
-        ? WebhookReleaseEditedChangesMakeLatest.fromJson(json['make_latest'] as Map<String, dynamic>)
-        : null,
+  body: json['body'] != null ? WebhookReleaseEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? WebhookReleaseEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  tagName: json['tag_name'] != null ? WebhookReleaseEditedChangesTagName.fromJson(json['tag_name'] as Map<String, dynamic>) : null,
+  makeLatest: json['make_latest'] != null ? WebhookReleaseEditedChangesMakeLatest.fromJson(json['make_latest'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookReleaseEditedChangesBody? body;

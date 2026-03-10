@@ -17,9 +17,7 @@ factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dyna
   id: (json['id'] as num).toInt(),
   logUrl: json['log_url'] != null ? Uri.parse(json['log_url'] as String) : null,
   nodeId: json['node_id'] as String,
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   state: json['state'] as String,
   targetUrl: json['target_url'] as String,

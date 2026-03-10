@@ -47,9 +47,7 @@ factory McnProvider.fromJson(Map<String, dynamic> json) { return McnProvider(
   lifecycleState: McnProviderLifecycleState.fromJson(json['lifecycle_state'] as String),
   state: McnProviderDiscoveryStatus.fromJson(json['state'] as String),
   stateV2: McnProviderDiscoveryStatus.fromJson(json['state_v2'] as String),
-  status: json['status'] != null
-        ? McnProviderStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
+  status: json['status'] != null ? McnProviderStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
 ); }
 
 final String? awsArn;

@@ -8,9 +8,7 @@ import 'inline_object999_installments_plan.dart';final class InlineObject999Inst
 
 factory InlineObject999Installments.fromJson(Map<String, dynamic> json) { return InlineObject999Installments(
   enabled: json['enabled'] as bool?,
-  plan: json['plan'] != null
-        ? InlineObject999InstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? InlineObject999InstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? enabled;

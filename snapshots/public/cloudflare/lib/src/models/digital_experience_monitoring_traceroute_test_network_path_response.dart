@@ -12,9 +12,7 @@ factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(Ma
   interval: json['interval'] as String?,
   kind: json['kind'],
   name: json['name'] as String?,
-  networkPath: json['networkPath'] != null
-        ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>)
-        : null,
+  networkPath: json['networkPath'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
 ); }
 

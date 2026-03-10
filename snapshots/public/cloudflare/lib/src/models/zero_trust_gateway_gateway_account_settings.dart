@@ -8,9 +8,7 @@ import 'zero_trust_gateway_gateway_account_settings_settings.dart';/// Specify a
 final class ZeroTrustGatewayGatewayAccountSettings {const ZeroTrustGatewayGatewayAccountSettings({this.settings});
 
 factory ZeroTrustGatewayGatewayAccountSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountSettings(
-  settings: json['settings'] != null
-        ? ZeroTrustGatewayGatewayAccountSettingsSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? ZeroTrustGatewayGatewayAccountSettingsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specify account settings.

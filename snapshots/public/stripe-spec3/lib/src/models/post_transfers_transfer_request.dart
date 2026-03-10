@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_transfers_transfer_requ
 factory PostTransfersTransferRequest.fromJson(Map<String, dynamic> json) { return PostTransfersTransferRequest(
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTransfersTransferRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTransfersTransferRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.

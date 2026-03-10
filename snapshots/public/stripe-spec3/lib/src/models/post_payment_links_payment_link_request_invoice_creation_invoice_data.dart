@@ -7,23 +7,13 @@
 import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_account_tax_ids.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_custom_fields.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_issuer.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_metadata.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_rendering_options.dart';final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
-  customFields: json['custom_fields'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
+  customFields: json['custom_fields'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   footer: json['footer'] as String?,
-  issuer: json['issuer'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  renderingOptions: json['rendering_options'] != null
-        ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  renderingOptions: json['rendering_options'] != null ? PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds? accountTaxIds;

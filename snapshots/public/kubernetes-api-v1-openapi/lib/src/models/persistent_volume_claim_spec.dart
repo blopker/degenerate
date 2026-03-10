@@ -9,18 +9,10 @@ final class PersistentVolumeClaimSpec {const PersistentVolumeClaimSpec({this.acc
 
 factory PersistentVolumeClaimSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  dataSource: json['dataSource'] != null
-        ? TypedLocalObjectReference.fromJson(json['dataSource'] as Map<String, dynamic>)
-        : null,
-  dataSourceRef: json['dataSourceRef'] != null
-        ? TypedObjectReference.fromJson(json['dataSourceRef'] as Map<String, dynamic>)
-        : null,
-  resources: json['resources'] != null
-        ? VolumeResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>)
-        : null,
-  selector: json['selector'] != null
-        ? LabelSelector.fromJson(json['selector'] as Map<String, dynamic>)
-        : null,
+  dataSource: json['dataSource'] != null ? TypedLocalObjectReference.fromJson(json['dataSource'] as Map<String, dynamic>) : null,
+  dataSourceRef: json['dataSourceRef'] != null ? TypedObjectReference.fromJson(json['dataSourceRef'] as Map<String, dynamic>) : null,
+  resources: json['resources'] != null ? VolumeResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
+  selector: json['selector'] != null ? LabelSelector.fromJson(json['selector'] as Map<String, dynamic>) : null,
   storageClassName: json['storageClassName'] as String?,
   volumeAttributesClassName: json['volumeAttributesClassName'] as String?,
   volumeMode: json['volumeMode'] as String?,

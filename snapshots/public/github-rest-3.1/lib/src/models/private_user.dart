@@ -48,9 +48,7 @@ factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
   diskUsage: (json['disk_usage'] as num).toInt(),
   collaborators: (json['collaborators'] as num).toInt(),
   twoFactorAuthentication: json['two_factor_authentication'] as bool,
-  plan: json['plan'] != null
-        ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   businessPlus: json['business_plus'] as bool?,
   ldapDn: json['ldap_dn'] as String?,
 ); }

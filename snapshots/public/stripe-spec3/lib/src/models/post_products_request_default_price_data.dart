@@ -37,13 +37,9 @@ final class PostProductsRequestDefaultPriceData {const PostProductsRequestDefaul
 factory PostProductsRequestDefaultPriceData.fromJson(Map<String, dynamic> json) { return PostProductsRequestDefaultPriceData(
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject1201.fromJson(v as Map<String, dynamic>))),
-  customUnitAmount: json['custom_unit_amount'] != null
-        ? PostProductsRequestDefaultPriceDataCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>)
-        : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? PostProductsRequestDefaultPriceDataCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  recurring: json['recurring'] != null
-        ? PostProductsRequestDefaultPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>)
-        : null,
+  recurring: json['recurring'] != null ? PostProductsRequestDefaultPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostProductsRequestDefaultPriceDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

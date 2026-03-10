@@ -8,14 +8,10 @@ import 'gist_history_change_status.dart';import 'simple_user.dart';/// Gist Hist
 final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });
 
 factory GistHistory.fromJson(Map<String, dynamic> json) { return GistHistory(
-  user: json['user'] != null
-        ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] as String?,
   committedAt: json['committed_at'] != null ? DateTime.parse(json['committed_at'] as String) : null,
-  changeStatus: json['change_status'] != null
-        ? GistHistoryChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>)
-        : null,
+  changeStatus: json['change_status'] != null ? GistHistoryChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 

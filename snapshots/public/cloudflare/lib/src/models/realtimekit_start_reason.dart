@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RealtimekitStartReason {const RealtimekitStartReason({this.caller, this.reason, });
 
 factory RealtimekitStartReason.fromJson(Map<String, dynamic> json) { return RealtimekitStartReason(
-  caller: json['caller'] != null
-        ? RealtimekitStartReasonCaller.fromJson(json['caller'] as Map<String, dynamic>)
-        : null,
+  caller: json['caller'] != null ? RealtimekitStartReasonCaller.fromJson(json['caller'] as Map<String, dynamic>) : null,
   reason: json['reason'] != null ? RealtimekitStartReasonReason.fromJson(json['reason'] as String) : null,
 ); }
 

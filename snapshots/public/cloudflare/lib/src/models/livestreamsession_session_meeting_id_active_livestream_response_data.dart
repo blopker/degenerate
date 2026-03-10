@@ -43,9 +43,7 @@ factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseData.fromJson(M
   ingestSeconds: json['ingest_seconds'] != null ? (json['ingest_seconds'] as num).toDouble() : null,
   invokedTime: json['invoked_time'] as String?,
   livestreamId: json['livestream_id'] as String?,
-  paging: json['paging'] != null
-        ? LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>)
-        : null,
+  paging: json['paging'] != null ? LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   viewerSeconds: json['viewer_seconds'] != null ? (json['viewer_seconds'] as num).toDouble() : null,

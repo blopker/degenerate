@@ -8,9 +8,7 @@ import 'iam_create_scope.dart';final class IamRequestUpdateResourceGroup {const 
 
 factory IamRequestUpdateResourceGroup.fromJson(Map<String, dynamic> json) { return IamRequestUpdateResourceGroup(
   name: json['name'] as String?,
-  scope: json['scope'] != null
-        ? IamCreateScope.fromJson(json['scope'] as Map<String, dynamic>)
-        : null,
+  scope: json['scope'] != null ? IamCreateScope.fromJson(json['scope'] as Map<String, dynamic>) : null,
 ); }
 
 /// Name of the resource group

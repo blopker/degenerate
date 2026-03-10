@@ -9,9 +9,7 @@ final class BalanceSettingsResourcePayments {const BalanceSettingsResourcePaymen
 
 factory BalanceSettingsResourcePayments.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,
-  payouts: json['payouts'] != null
-        ? BalanceSettingsResourcePaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>)
-        : null,
+  payouts: json['payouts'] != null ? BalanceSettingsResourcePaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   settlementTiming: BalanceSettingsResourceSettlementTiming.fromJson(json['settlement_timing'] as Map<String, dynamic>),
 ); }
 

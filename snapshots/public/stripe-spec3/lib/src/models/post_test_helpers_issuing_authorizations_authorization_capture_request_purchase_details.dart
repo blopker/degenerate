@@ -8,18 +8,10 @@ import 'package:collection/collection.dart';import 'post_test_helpers_issuing_au
 final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails(
-  fleet: json['fleet'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
-  flight: json['flight'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>)
-        : null,
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  lodging: json['lodging'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  flight: json['flight'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  lodging: json['lodging'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>) : null,
   receipt: (json['receipt'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt.fromJson(e as Map<String, dynamic>)).toList(),
   reference: json['reference'] as String?,
 ); }

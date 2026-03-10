@@ -8,9 +8,7 @@ import 'daemon_endpoint.dart';/// NodeDaemonEndpoints lists ports opened by daem
 final class NodeDaemonEndpoints {const NodeDaemonEndpoints({this.kubeletEndpoint});
 
 factory NodeDaemonEndpoints.fromJson(Map<String, dynamic> json) { return NodeDaemonEndpoints(
-  kubeletEndpoint: json['kubeletEndpoint'] != null
-        ? DaemonEndpoint.fromJson(json['kubeletEndpoint'] as Map<String, dynamic>)
-        : null,
+  kubeletEndpoint: json['kubeletEndpoint'] != null ? DaemonEndpoint.fromJson(json['kubeletEndpoint'] as Map<String, dynamic>) : null,
 ); }
 
 /// Endpoint on which Kubelet is listening.

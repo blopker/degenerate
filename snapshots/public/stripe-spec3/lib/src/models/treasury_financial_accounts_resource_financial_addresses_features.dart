@@ -8,9 +8,7 @@ import 'treasury_financial_accounts_resource_aba_toggle_settings.dart';/// Setti
 final class TreasuryFinancialAccountsResourceFinancialAddressesFeatures {const TreasuryFinancialAccountsResourceFinancialAddressesFeatures({this.aba});
 
 factory TreasuryFinancialAccountsResourceFinancialAddressesFeatures.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceFinancialAddressesFeatures(
-  aba: json['aba'] != null
-        ? TreasuryFinancialAccountsResourceAbaToggleSettings.fromJson(json['aba'] as Map<String, dynamic>)
-        : null,
+  aba: json['aba'] != null ? TreasuryFinancialAccountsResourceAbaToggleSettings.fromJson(json['aba'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasuryFinancialAccountsResourceAbaToggleSettings? aba;

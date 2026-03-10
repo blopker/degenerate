@@ -40,14 +40,10 @@ final class CreateContainerBody {const CreateContainerBody({required this.name, 
 factory CreateContainerBody.fromJson(Map<String, dynamic> json) { return CreateContainerBody(
   name: json['name'] as String,
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAfter: json['expires_after'] != null
-        ? CreateContainerBodyExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>)
-        : null,
+  expiresAfter: json['expires_after'] != null ? CreateContainerBodyExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   skills: (json['skills'] as List<dynamic>?)?.map((e) => CreateContainerBodySkills.fromJson(e as Map<String, dynamic>)).toList(),
   memoryLimit: json['memory_limit'] != null ? CreateContainerBodyMemoryLimit.fromJson(json['memory_limit'] as String) : null,
-  networkPolicy: json['network_policy'] != null
-        ? CreateContainerBodyNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>)
-        : null,
+  networkPolicy: json['network_policy'] != null ? CreateContainerBodyNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Name of the container to create.

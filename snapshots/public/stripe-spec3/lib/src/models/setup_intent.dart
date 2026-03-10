@@ -304,55 +304,31 @@ bool get isUnknown { return !values.contains(this); }
 final class SetupIntent {const SetupIntent({this.application, this.attachToSelf, this.automaticPaymentMethods, this.cancellationReason, this.clientSecret, required this.created, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.flowDirections, required this.id, this.lastSetupError, this.latestAttempt, required this.livemode, this.mandate, this.metadata, this.nextAction, required this.object, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, required this.paymentMethodTypes, this.singleUseMandate, required this.status, required this.usage, });
 
 factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
-  application: json['application'] != null
-        ? SetupIntentApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? SetupIntentApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   attachToSelf: json['attach_to_self'] as bool?,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null
-        ? SetupIntentAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>)
-        : null,
+  automaticPaymentMethods: json['automatic_payment_methods'] != null ? SetupIntentAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
   cancellationReason: json['cancellation_reason'] != null ? SetupIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   clientSecret: json['client_secret'] as String?,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null
-        ? SetupIntentCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? SetupIntentCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList(),
   id: json['id'] as String,
-  lastSetupError: json['last_setup_error'] != null
-        ? SetupIntentLastSetupError.fromJson(json['last_setup_error'] as Map<String, dynamic>)
-        : null,
-  latestAttempt: json['latest_attempt'] != null
-        ? SetupIntentLatestAttempt.fromJson(json['latest_attempt'] as Map<String, dynamic>)
-        : null,
+  lastSetupError: json['last_setup_error'] != null ? SetupIntentLastSetupError.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null,
+  latestAttempt: json['latest_attempt'] != null ? SetupIntentLatestAttempt.fromJson(json['latest_attempt'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
-  mandate: json['mandate'] != null
-        ? SetupIntentMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? SetupIntentMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null
-        ? SetupIntentNextAction2.fromJson(json['next_action'] as Map<String, dynamic>)
-        : null,
+  nextAction: json['next_action'] != null ? SetupIntentNextAction2.fromJson(json['next_action'] as Map<String, dynamic>) : null,
   object: SetupIntentObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? SetupIntentOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  paymentMethod: json['payment_method'] != null
-        ? SetupIntentPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>)
-        : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null
-        ? SetupIntentPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? SetupIntentPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? SetupIntentOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  paymentMethod: json['payment_method'] != null ? SetupIntentPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
+  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? SetupIntentPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
-  singleUseMandate: json['single_use_mandate'] != null
-        ? SetupIntentSingleUseMandate.fromJson(json['single_use_mandate'] as Map<String, dynamic>)
-        : null,
+  singleUseMandate: json['single_use_mandate'] != null ? SetupIntentSingleUseMandate.fromJson(json['single_use_mandate'] as Map<String, dynamic>) : null,
   status: SetupIntentStatus.fromJson(json['status'] as String),
   usage: json['usage'] as String,
 ); }

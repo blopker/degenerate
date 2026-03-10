@@ -8,9 +8,7 @@ import 'chunking_strategy_request_param.dart';import 'inline_object110.dart';fin
 
 factory CreateVectorStoreFileRequest.fromJson(Map<String, dynamic> json) { return CreateVectorStoreFileRequest(
   fileId: json['file_id'] as String,
-  chunkingStrategy: json['chunking_strategy'] != null
-        ? ChunkingStrategyRequestParam.fromJson(json['chunking_strategy'] as Map<String, dynamic>)
-        : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? ChunkingStrategyRequestParam.fromJson(json['chunking_strategy'] as Map<String, dynamic>) : null,
   attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject110.fromJson(v))),
 ); }
 

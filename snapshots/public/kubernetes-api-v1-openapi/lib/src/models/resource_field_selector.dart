@@ -9,9 +9,7 @@ final class ResourceFieldSelector {const ResourceFieldSelector({this.containerNa
 
 factory ResourceFieldSelector.fromJson(Map<String, dynamic> json) { return ResourceFieldSelector(
   containerName: json['containerName'] as String?,
-  divisor: json['divisor'] != null
-        ? ResourceQuantity.fromJson(json['divisor'] as Map<String, dynamic>)
-        : null,
+  divisor: json['divisor'] != null ? ResourceQuantity.fromJson(json['divisor'] as Map<String, dynamic>) : null,
   resource: json['resource'] as String,
 ); }
 

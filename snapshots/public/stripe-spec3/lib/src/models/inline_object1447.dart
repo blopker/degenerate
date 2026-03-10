@@ -91,9 +91,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1447 {const InlineObject1447({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory InlineObject1447.fromJson(Map<String, dynamic> json) { return InlineObject1447(
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject1447MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject1447MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? InlineObject1447Network.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? InlineObject1447RequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }

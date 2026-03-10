@@ -7,9 +7,7 @@
 import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_request.dart';final class DeviceManagedNetworksUpdateDeviceManagedNetworkRequest {const DeviceManagedNetworksUpdateDeviceManagedNetworkRequest({this.config, this.name, this.type, });
 
 factory DeviceManagedNetworksUpdateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) { return DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(
-  config: json['config'] != null
-        ? TeamsDevicesSchemasConfigRequest.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? TeamsDevicesSchemasConfigRequest.fromJson(json['config'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? TeamsDevicesDeviceManagedNetworksComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] != null ? TeamsDevicesComponentsSchemasType.fromJson(json['type'] as String) : null,
 ); }

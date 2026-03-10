@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'orgs_update_webhook_request_config.dart';final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
 
 factory OrgsUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateWebhookRequest(
-  config: json['config'] != null
-        ? OrgsUpdateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>)
-        : null,
+  config: json['config'] != null ? OrgsUpdateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   active: json.containsKey('active') ? json['active'] as bool : true,
   name: json['name'] as String?,

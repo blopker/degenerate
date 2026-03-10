@@ -8,9 +8,7 @@ import 'realtimekit_preset_config_media_audio.dart';import 'realtimekit_preset_c
 final class RealtimekitPresetConfigMedia {const RealtimekitPresetConfigMedia({this.audio, required this.screenshare, required this.video, });
 
 factory RealtimekitPresetConfigMedia.fromJson(Map<String, dynamic> json) { return RealtimekitPresetConfigMedia(
-  audio: json['audio'] != null
-        ? RealtimekitPresetConfigMediaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimekitPresetConfigMediaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   screenshare: RealtimekitPresetConfigMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>),
   video: RealtimekitPresetConfigMediaVideo.fromJson(json['video'] as Map<String, dynamic>),
 ); }

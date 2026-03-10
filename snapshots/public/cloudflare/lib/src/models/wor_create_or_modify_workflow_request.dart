@@ -8,9 +8,7 @@ import 'wor_create_or_modify_workflow_request_limits.dart';final class WorCreate
 
 factory WorCreateOrModifyWorkflowRequest.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowRequest(
   className: json['class_name'] as String,
-  limits: json['limits'] != null
-        ? WorCreateOrModifyWorkflowRequestLimits.fromJson(json['limits'] as Map<String, dynamic>)
-        : null,
+  limits: json['limits'] != null ? WorCreateOrModifyWorkflowRequestLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   scriptName: json['script_name'] as String,
 ); }
 

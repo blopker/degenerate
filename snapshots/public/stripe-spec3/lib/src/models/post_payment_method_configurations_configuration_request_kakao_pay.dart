@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_kakao_pay_displ
 final class PostPaymentMethodConfigurationsConfigurationRequestKakaoPay {const PostPaymentMethodConfigurationsConfigurationRequestKakaoPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestKakaoPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference? displayPreference;

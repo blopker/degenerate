@@ -102,9 +102,7 @@ factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   permission: json['permission'] as String,
   membersUrl: json['members_url'] as String,
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
-  parent: json['parent'] != null
-        ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
   membersCount: (json['members_count'] as num).toInt(),
   reposCount: (json['repos_count'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),

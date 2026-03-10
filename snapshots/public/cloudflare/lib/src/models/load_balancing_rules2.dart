@@ -10,13 +10,9 @@ final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this
 factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2(
   condition: json['condition'] as String?,
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
-  fixedResponse: json['fixed_response'] != null
-        ? LoadBalancingRules2FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>)
-        : null,
+  fixedResponse: json['fixed_response'] != null ? LoadBalancingRules2FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  overrides: json['overrides'] != null
-        ? LoadBalancingRules2Overrides.fromJson(json['overrides'] as Map<String, dynamic>)
-        : null,
+  overrides: json['overrides'] != null ? LoadBalancingRules2Overrides.fromJson(json['overrides'] as Map<String, dynamic>) : null,
   priority: json.containsKey('priority') ? (json['priority'] as num).toInt() : 0,
   terminates: json['terminates'] as bool?,
 ); }

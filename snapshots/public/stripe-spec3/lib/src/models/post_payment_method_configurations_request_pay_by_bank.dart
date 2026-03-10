@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_pay_by_bank_display_preferenc
 final class PostPaymentMethodConfigurationsRequestPayByBank {const PostPaymentMethodConfigurationsRequestPayByBank({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPayByBank.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPayByBank(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestPayByBankDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPayByBankDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestPayByBankDisplayPreference? displayPreference;

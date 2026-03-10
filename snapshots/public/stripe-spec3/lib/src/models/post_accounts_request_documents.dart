@@ -8,33 +8,15 @@ import 'post_accounts_request_documents_bank_account_ownership_verification.dart
 final class PostAccountsRequestDocuments {const PostAccountsRequestDocuments({this.bankAccountOwnershipVerification, this.companyLicense, this.companyMemorandumOfAssociation, this.companyMinisterialDecree, this.companyRegistrationVerification, this.companyTaxIdVerification, this.proofOfAddress, this.proofOfRegistration, this.proofOfUltimateBeneficialOwnership, });
 
 factory PostAccountsRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocuments(
-  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null
-        ? PostAccountsRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>)
-        : null,
-  companyLicense: json['company_license'] != null
-        ? PostAccountsRequestDocumentsCompanyLicense.fromJson(json['company_license'] as Map<String, dynamic>)
-        : null,
-  companyMemorandumOfAssociation: json['company_memorandum_of_association'] != null
-        ? PostAccountsRequestDocumentsCompanyMemorandumOfAssociation.fromJson(json['company_memorandum_of_association'] as Map<String, dynamic>)
-        : null,
-  companyMinisterialDecree: json['company_ministerial_decree'] != null
-        ? PostAccountsRequestDocumentsCompanyMinisterialDecree.fromJson(json['company_ministerial_decree'] as Map<String, dynamic>)
-        : null,
-  companyRegistrationVerification: json['company_registration_verification'] != null
-        ? PostAccountsRequestDocumentsCompanyRegistrationVerification.fromJson(json['company_registration_verification'] as Map<String, dynamic>)
-        : null,
-  companyTaxIdVerification: json['company_tax_id_verification'] != null
-        ? PostAccountsRequestDocumentsCompanyTaxIdVerification.fromJson(json['company_tax_id_verification'] as Map<String, dynamic>)
-        : null,
-  proofOfAddress: json['proof_of_address'] != null
-        ? PostAccountsRequestDocumentsProofOfAddress.fromJson(json['proof_of_address'] as Map<String, dynamic>)
-        : null,
-  proofOfRegistration: json['proof_of_registration'] != null
-        ? PostAccountsRequestDocumentsProofOfRegistration.fromJson(json['proof_of_registration'] as Map<String, dynamic>)
-        : null,
-  proofOfUltimateBeneficialOwnership: json['proof_of_ultimate_beneficial_ownership'] != null
-        ? PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership.fromJson(json['proof_of_ultimate_beneficial_ownership'] as Map<String, dynamic>)
-        : null,
+  bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? PostAccountsRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,
+  companyLicense: json['company_license'] != null ? PostAccountsRequestDocumentsCompanyLicense.fromJson(json['company_license'] as Map<String, dynamic>) : null,
+  companyMemorandumOfAssociation: json['company_memorandum_of_association'] != null ? PostAccountsRequestDocumentsCompanyMemorandumOfAssociation.fromJson(json['company_memorandum_of_association'] as Map<String, dynamic>) : null,
+  companyMinisterialDecree: json['company_ministerial_decree'] != null ? PostAccountsRequestDocumentsCompanyMinisterialDecree.fromJson(json['company_ministerial_decree'] as Map<String, dynamic>) : null,
+  companyRegistrationVerification: json['company_registration_verification'] != null ? PostAccountsRequestDocumentsCompanyRegistrationVerification.fromJson(json['company_registration_verification'] as Map<String, dynamic>) : null,
+  companyTaxIdVerification: json['company_tax_id_verification'] != null ? PostAccountsRequestDocumentsCompanyTaxIdVerification.fromJson(json['company_tax_id_verification'] as Map<String, dynamic>) : null,
+  proofOfAddress: json['proof_of_address'] != null ? PostAccountsRequestDocumentsProofOfAddress.fromJson(json['proof_of_address'] as Map<String, dynamic>) : null,
+  proofOfRegistration: json['proof_of_registration'] != null ? PostAccountsRequestDocumentsProofOfRegistration.fromJson(json['proof_of_registration'] as Map<String, dynamic>) : null,
+  proofOfUltimateBeneficialOwnership: json['proof_of_ultimate_beneficial_ownership'] != null ? PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership.fromJson(json['proof_of_ultimate_beneficial_ownership'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestDocumentsBankAccountOwnershipVerification? bankAccountOwnershipVerification;

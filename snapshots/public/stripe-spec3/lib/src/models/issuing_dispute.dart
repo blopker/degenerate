@@ -157,9 +157,7 @@ factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispu
   object: IssuingDisputeObject.fromJson(json['object'] as String),
   status: IssuingDisputeStatus.fromJson(json['status'] as String),
   transaction: IssuingDisputeTransaction.fromJson(json['transaction'] as Map<String, dynamic>),
-  treasury: json['treasury'] != null
-        ? IssuingDisputeTreasury2.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
+  treasury: json['treasury'] != null ? IssuingDisputeTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
 ); }
 
 /// Disputed amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Usually the amount of the `transaction`, but can differ (usually because of currency fluctuation).

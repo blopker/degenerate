@@ -34,9 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject1201 {const InlineObject1201({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory InlineObject1201.fromJson(Map<String, dynamic> json) { return InlineObject1201(
-  customUnitAmount: json['custom_unit_amount'] != null
-        ? InlineObject1201CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>)
-        : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? InlineObject1201CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? InlineObject1201TaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => InlineObject1201Tiers.fromJson(e as Map<String, dynamic>)).toList(),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,

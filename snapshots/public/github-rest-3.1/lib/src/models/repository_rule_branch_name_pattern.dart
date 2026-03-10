@@ -30,9 +30,7 @@ final class RepositoryRuleBranchNamePattern {const RepositoryRuleBranchNamePatte
 
 factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleBranchNamePattern(
   type: RepositoryRuleBranchNamePatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleBranchNamePatternType type;

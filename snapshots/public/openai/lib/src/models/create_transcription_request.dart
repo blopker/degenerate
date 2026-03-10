@@ -99,9 +99,7 @@ factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return 
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
   timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => CreateTranscriptionRequestTimestampGranularities.fromJson(e as String)).toList(),
   stream: json['stream'] as bool?,
-  chunkingStrategy: json['chunking_strategy'] != null
-        ? CreateTranscriptionRequestChunkingStrategy.fromJson(json['chunking_strategy'] as Map<String, dynamic>)
-        : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? CreateTranscriptionRequestChunkingStrategy.fromJson(json['chunking_strategy'] as Map<String, dynamic>) : null,
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

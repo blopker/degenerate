@@ -112,9 +112,7 @@ factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, d
   assignee: WebhookPullRequestReviewCommentCreatedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>),
   assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookPullRequestReviewCommentCreatedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(json['author_association'] as String),
-  autoMerge: json['auto_merge'] != null
-        ? WebhookPullRequestReviewCommentCreatedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>)
-        : null,
+  autoMerge: json['auto_merge'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhookPullRequestReviewCommentCreatedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),
   body: json['body'] as String,
   closedAt: json['closed_at'] as String,

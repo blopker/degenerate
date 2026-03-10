@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({this.priceDetails, required this.type, this.unitAmountDecimal, });
 
 factory BillingBillResourceInvoicingPricingPricing.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingPricingPricing(
-  priceDetails: json['price_details'] != null
-        ? BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(json['price_details'] as Map<String, dynamic>)
-        : null,
+  priceDetails: json['price_details'] != null ? BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(json['price_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingPricingPricingType.fromJson(json['type'] as String),
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

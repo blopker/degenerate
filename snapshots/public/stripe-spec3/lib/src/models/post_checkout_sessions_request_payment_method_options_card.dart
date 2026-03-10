@@ -176,17 +176,13 @@ final class PostCheckoutSessionsRequestPaymentMethodOptionsCard {const PostCheck
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCard(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  installments: json['installments'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
   requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
   requestMulticapture: json['request_multicapture'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture.fromJson(json['request_multicapture'] as String) : null,
   requestOvercapture: json['request_overcapture'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture.fromJson(json['request_overcapture'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
-  restrictions: json['restrictions'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
+  restrictions: json['restrictions'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,

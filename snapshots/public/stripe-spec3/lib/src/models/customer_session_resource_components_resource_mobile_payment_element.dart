@@ -9,9 +9,7 @@ final class CustomerSessionResourceComponentsResourceMobilePaymentElement {const
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElement.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceMobilePaymentElement(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? CustomerSessionResourceComponentsResourceMobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? CustomerSessionResourceComponentsResourceMobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the mobile payment element is enabled.

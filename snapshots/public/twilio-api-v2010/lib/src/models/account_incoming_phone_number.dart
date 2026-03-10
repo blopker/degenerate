@@ -205,9 +205,7 @@ factory AccountIncomingPhoneNumber.fromJson(Map<String, dynamic> json) { return 
   addressRequirements: json['address_requirements'] != null ? IncomingPhoneNumberEnumAddressRequirement.fromJson(json['address_requirements'] as String) : null,
   apiVersion: json['api_version'] as String?,
   beta: json['beta'] as bool?,
-  capabilities: json['capabilities'] != null
-        ? AccountIncomingPhoneNumberCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>)
-        : null,
+  capabilities: json['capabilities'] != null ? AccountIncomingPhoneNumberCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   friendlyName: json['friendly_name'] as String?,

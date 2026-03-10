@@ -32,15 +32,9 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookDelete {const WebhookDelete({this.enterprise, this.installation, this.organization, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, });
 
 factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete(
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusherType: WebhooksDeployPusherType.fromJson(json['pusher_type'] as String),
   ref: WebhooksRef0.fromJson(json['ref'] as String),
   refType: WebhookDeleteRefType.fromJson(json['ref_type'] as String),

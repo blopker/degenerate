@@ -8,9 +8,7 @@ import 'linux_container_user.dart';/// ContainerUser represents user identity in
 final class ContainerUser {const ContainerUser({this.linux});
 
 factory ContainerUser.fromJson(Map<String, dynamic> json) { return ContainerUser(
-  linux: json['linux'] != null
-        ? LinuxContainerUser.fromJson(json['linux'] as Map<String, dynamic>)
-        : null,
+  linux: json['linux'] != null ? LinuxContainerUser.fromJson(json['linux'] as Map<String, dynamic>) : null,
 ); }
 
 /// Linux holds user identity information initially attached to the first process of the containers in Linux. Note that the actual running identity can be changed if the process has enough privilege to do so.

@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'post_radar_payment_evaluations_request_client_device_metadata_details.dart';import 'post_radar_payment_evaluations_request_customer_details.dart';import 'post_radar_payment_evaluations_request_payment_details.dart';final class PostRadarPaymentEvaluationsRequest {const PostRadarPaymentEvaluationsRequest({this.clientDeviceMetadataDetails, required this.customerDetails, this.expand, this.metadata, required this.paymentDetails, });
 
 factory PostRadarPaymentEvaluationsRequest.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequest(
-  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null
-        ? PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>)
-        : null,
+  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
   customerDetails: PostRadarPaymentEvaluationsRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

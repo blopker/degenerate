@@ -153,9 +153,7 @@ final class InvoicesPaymentSettings {const InvoicesPaymentSettings({this.default
 
 factory InvoicesPaymentSettings.fromJson(Map<String, dynamic> json) { return InvoicesPaymentSettings(
   defaultMandate: json['default_mandate'] as String?,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? InvoicesPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? InvoicesPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => InvoicesPaymentSettingsPaymentMethodTypes.fromJson(e as String)).toList(),
 ); }
 

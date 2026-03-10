@@ -97,9 +97,7 @@ factory WebhookDeploymentCreatedWorkflowRun.fromJson(Map<String, dynamic> json) 
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
   headCommit: json['head_commit'],
-  headRepository: json['head_repository'] != null
-        ? WebhookDeploymentCreatedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>)
-        : null,
+  headRepository: json['head_repository'] != null ? WebhookDeploymentCreatedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null,
   headSha: json['head_sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -111,17 +109,13 @@ factory WebhookDeploymentCreatedWorkflowRun.fromJson(Map<String, dynamic> json) 
   previousAttemptUrl: json['previous_attempt_url'],
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookDeploymentCreatedWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
   referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookDeploymentCreatedWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? WebhookDeploymentCreatedWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? WebhookDeploymentCreatedWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   rerunUrl: json['rerun_url'] as String?,
   runAttempt: (json['run_attempt'] as num).toInt(),
   runNumber: (json['run_number'] as num).toInt(),
   runStartedAt: DateTime.parse(json['run_started_at'] as String),
   status: WebhookDeploymentCreatedWorkflowRunStatus.fromJson(json['status'] as String),
-  triggeringActor: json['triggering_actor'] != null
-        ? WebhookDeploymentCreatedWorkflowRunTriggeringActor.fromJson(json['triggering_actor'] as Map<String, dynamic>)
-        : null,
+  triggeringActor: json['triggering_actor'] != null ? WebhookDeploymentCreatedWorkflowRunTriggeringActor.fromJson(json['triggering_actor'] as Map<String, dynamic>) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   workflowId: (json['workflow_id'] as num).toInt(),

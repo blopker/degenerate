@@ -10,13 +10,9 @@ factory TelemetryKeysListRequest.fromJson(Map<String, dynamic> json) { return Te
   datasets: json.containsKey('datasets') ? (json['datasets'] as List<dynamic>).map((e) => e as String).toList() : const [],
   filters: json.containsKey('filters') ? (json['filters'] as List<dynamic>).map((e) => TelemetryKeysListRequestFilters.fromJson(e as Map<String, dynamic>)).toList() : const [],
   from: json['from'] != null ? (json['from'] as num).toDouble() : null,
-  keyNeedle: json['keyNeedle'] != null
-        ? TelemetryKeysListRequestKeyNeedle.fromJson(json['keyNeedle'] as Map<String, dynamic>)
-        : null,
+  keyNeedle: json['keyNeedle'] != null ? TelemetryKeysListRequestKeyNeedle.fromJson(json['keyNeedle'] as Map<String, dynamic>) : null,
   limit: json['limit'] != null ? (json['limit'] as num).toDouble() : null,
-  needle: json['needle'] != null
-        ? TelemetryKeysListRequestNeedle.fromJson(json['needle'] as Map<String, dynamic>)
-        : null,
+  needle: json['needle'] != null ? TelemetryKeysListRequestNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   to: json['to'] != null ? (json['to'] as num).toDouble() : null,
 ); }
 

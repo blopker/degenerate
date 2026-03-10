@@ -32,16 +32,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostAccountsRequestController {const PostAccountsRequestController({this.fees, this.losses, this.requirementCollection, this.stripeDashboard, });
 
 factory PostAccountsRequestController.fromJson(Map<String, dynamic> json) { return PostAccountsRequestController(
-  fees: json['fees'] != null
-        ? PostAccountsRequestControllerFees.fromJson(json['fees'] as Map<String, dynamic>)
-        : null,
-  losses: json['losses'] != null
-        ? PostAccountsRequestControllerLosses.fromJson(json['losses'] as Map<String, dynamic>)
-        : null,
+  fees: json['fees'] != null ? PostAccountsRequestControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,
+  losses: json['losses'] != null ? PostAccountsRequestControllerLosses.fromJson(json['losses'] as Map<String, dynamic>) : null,
   requirementCollection: json['requirement_collection'] != null ? PostAccountsRequestControllerRequirementCollection.fromJson(json['requirement_collection'] as String) : null,
-  stripeDashboard: json['stripe_dashboard'] != null
-        ? PostAccountsRequestControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>)
-        : null,
+  stripeDashboard: json['stripe_dashboard'] != null ? PostAccountsRequestControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestControllerFees? fees;

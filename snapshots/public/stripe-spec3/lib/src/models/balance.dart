@@ -38,15 +38,11 @@ factory Balance.fromJson(Map<String, dynamic> json) { return Balance(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   connectReserved: (json['connect_reserved'] as List<dynamic>?)?.map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   instantAvailable: (json['instant_available'] as List<dynamic>?)?.map((e) => BalanceAmountNet.fromJson(e as Map<String, dynamic>)).toList(),
-  issuing: json['issuing'] != null
-        ? BalanceDetail.fromJson(json['issuing'] as Map<String, dynamic>)
-        : null,
+  issuing: json['issuing'] != null ? BalanceDetail.fromJson(json['issuing'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: BalanceObject.fromJson(json['object'] as String),
   pending: (json['pending'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  refundAndDisputePrefunding: json['refund_and_dispute_prefunding'] != null
-        ? BalanceDetailUngated.fromJson(json['refund_and_dispute_prefunding'] as Map<String, dynamic>)
-        : null,
+  refundAndDisputePrefunding: json['refund_and_dispute_prefunding'] != null ? BalanceDetailUngated.fromJson(json['refund_and_dispute_prefunding'] as Map<String, dynamic>) : null,
 ); }
 
 /// Available funds that you can transfer or pay out automatically by Stripe or explicitly through the [Transfers API](https://api.stripe.com#transfers) or [Payouts API](https://api.stripe.com#payouts). You can find the available balance for each currency and payment type in the `source_types` property.

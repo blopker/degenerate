@@ -26,9 +26,7 @@ factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) { return D
   jurisdiction: json['jurisdiction'] != null ? D1JurisdictionNullable.fromJson(json['jurisdiction'] as String) : null,
   name: json['name'] != null ? D1DatabaseName.fromJson(json['name'] as String) : null,
   numTables: json['num_tables'] != null ? D1TableCount.fromJson(json['num_tables'] as num) : null,
-  readReplication: json['read_replication'] != null
-        ? D1ReadReplicationDetails.fromJson(json['read_replication'] as Map<String, dynamic>)
-        : null,
+  readReplication: json['read_replication'] != null ? D1ReadReplicationDetails.fromJson(json['read_replication'] as Map<String, dynamic>) : null,
   uuid: json['uuid'] != null ? D1DatabaseIdentifier.fromJson(json['uuid'] as String) : null,
   version: json['version'] != null ? D1DatabaseVersion.fromJson(json['version'] as String) : null,
 ); }

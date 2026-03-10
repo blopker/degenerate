@@ -29,9 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({this.cart, this.expand, required this.type, });
 
 factory PostTerminalReadersReaderSetReaderDisplayRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequest(
-  cart: json['cart'] != null
-        ? PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(json['cart'] as Map<String, dynamic>)
-        : null,
+  cart: json['cart'] != null ? PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(json['type'] as String),
 ); }

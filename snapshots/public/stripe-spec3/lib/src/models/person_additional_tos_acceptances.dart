@@ -8,9 +8,7 @@ import 'person_additional_tos_acceptances_account.dart';///
 final class PersonAdditionalTosAcceptances {const PersonAdditionalTosAcceptances({this.account});
 
 factory PersonAdditionalTosAcceptances.fromJson(Map<String, dynamic> json) { return PersonAdditionalTosAcceptances(
-  account: json['account'] != null
-        ? PersonAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? PersonAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details on the legal guardian's acceptance of the main Stripe service agreement.

@@ -75,12 +75,8 @@ factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return Tre
   customer: json['customer'] as String?,
   description: json['description'] as String?,
   destinationPaymentMethod: json['destination_payment_method'] as String?,
-  destinationPaymentMethodDetails: json['destination_payment_method_details'] != null
-        ? TreasuryOutboundPaymentDestinationPaymentMethodDetails.fromJson(json['destination_payment_method_details'] as Map<String, dynamic>)
-        : null,
-  endUserDetails: json['end_user_details'] != null
-        ? TreasuryOutboundPaymentEndUserDetails.fromJson(json['end_user_details'] as Map<String, dynamic>)
-        : null,
+  destinationPaymentMethodDetails: json['destination_payment_method_details'] != null ? TreasuryOutboundPaymentDestinationPaymentMethodDetails.fromJson(json['destination_payment_method_details'] as Map<String, dynamic>) : null,
+  endUserDetails: json['end_user_details'] != null ? TreasuryOutboundPaymentEndUserDetails.fromJson(json['end_user_details'] as Map<String, dynamic>) : null,
   expectedArrivalDate: (json['expected_arrival_date'] as num).toInt(),
   financialAccount: json['financial_account'] as String,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
@@ -88,15 +84,11 @@ factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return Tre
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryOutboundPaymentObject.fromJson(json['object'] as String),
-  returnedDetails: json['returned_details'] != null
-        ? TreasuryOutboundPaymentReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>)
-        : null,
+  returnedDetails: json['returned_details'] != null ? TreasuryOutboundPaymentReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryOutboundPaymentStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  trackingDetails: json['tracking_details'] != null
-        ? TreasuryOutboundPaymentTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>)
-        : null,
+  trackingDetails: json['tracking_details'] != null ? TreasuryOutboundPaymentTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null,
   transaction: TreasuryOutboundPaymentTransaction.fromJson(json['transaction'] as Map<String, dynamic>),
 ); }
 

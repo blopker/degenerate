@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'magic_transit_options.dart';
 
 factory DiagnosticsTracerouteRequest.fromJson(Map<String, dynamic> json) { return DiagnosticsTracerouteRequest(
   colos: (json['colos'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  options: json['options'] != null
-        ? MagicTransitOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? MagicTransitOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
   targets: (json['targets'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 

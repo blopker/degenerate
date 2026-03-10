@@ -97,9 +97,7 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
   failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
   scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => CodeScanningVariantAnalysisScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
-  skippedRepositories: json['skipped_repositories'] != null
-        ? CodeScanningVariantAnalysisSkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>)
-        : null,
+  skippedRepositories: json['skipped_repositories'] != null ? CodeScanningVariantAnalysisSkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the variant analysis.

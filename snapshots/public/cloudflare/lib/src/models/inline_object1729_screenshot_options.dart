@@ -8,17 +8,13 @@ import 'inline_object1729_screenshot_options_clip.dart';import 'inline_object172
 
 factory InlineObject1729ScreenshotOptions.fromJson(Map<String, dynamic> json) { return InlineObject1729ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,
-  clip: json['clip'] != null
-        ? InlineObject1729ScreenshotOptionsClip.fromJson(json['clip'] as Map<String, dynamic>)
-        : null,
+  clip: json['clip'] != null ? InlineObject1729ScreenshotOptionsClip.fromJson(json['clip'] as Map<String, dynamic>) : null,
   fromSurface: json['fromSurface'] as bool?,
   fullPage: json['fullPage'] as bool?,
   omitBackground: json['omitBackground'] as bool?,
   optimizeForSpeed: json['optimizeForSpeed'] as bool?,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
-  type: json['type'] != null
-        ? InlineObject1729ScreenshotOptionsType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
+  type: json['type'] != null ? InlineObject1729ScreenshotOptionsType.fromJson(json['type'] as Map<String, dynamic>) : null,
 ); }
 
 final bool? captureBeyondViewport;

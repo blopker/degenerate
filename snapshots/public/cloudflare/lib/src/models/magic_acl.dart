@@ -39,12 +39,8 @@ factory MagicAcl.fromJson(Map<String, dynamic> json) { return MagicAcl(
   description: json['description'] as String?,
   forwardLocally: json['forward_locally'] != null ? MagicForwardLocally.fromJson(json['forward_locally'] as bool) : null,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
-  lan1: json['lan_1'] != null
-        ? MagicLanAclConfiguration.fromJson(json['lan_1'] as Map<String, dynamic>)
-        : null,
-  lan2: json['lan_2'] != null
-        ? MagicLanAclConfiguration.fromJson(json['lan_2'] as Map<String, dynamic>)
-        : null,
+  lan1: json['lan_1'] != null ? MagicLanAclConfiguration.fromJson(json['lan_1'] as Map<String, dynamic>) : null,
+  lan2: json['lan_2'] != null ? MagicLanAclConfiguration.fromJson(json['lan_2'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclProtocols.fromJson(e as String)).toList(),
   unidirectional: json['unidirectional'] != null ? MagicUnidirectional.fromJson(json['unidirectional'] as bool) : null,

@@ -122,9 +122,7 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   currency: json['currency'] as String,
   customer: CreditNoteCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,
-  customerBalanceTransaction: json['customer_balance_transaction'] != null
-        ? CreditNoteCustomerBalanceTransaction.fromJson(json['customer_balance_transaction'] as Map<String, dynamic>)
-        : null,
+  customerBalanceTransaction: json['customer_balance_transaction'] != null ? CreditNoteCustomerBalanceTransaction.fromJson(json['customer_balance_transaction'] as Map<String, dynamic>) : null,
   discountAmount: (json['discount_amount'] as num).toInt(),
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
@@ -143,9 +141,7 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>).map((e) => CreditNotesPretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
   reason: json['reason'] != null ? CreditNoteReason.fromJson(json['reason'] as String) : null,
   refunds: (json['refunds'] as List<dynamic>).map((e) => CreditNoteRefund.fromJson(e as Map<String, dynamic>)).toList(),
-  shippingCost: json['shipping_cost'] != null
-        ? CreditNoteShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  shippingCost: json['shipping_cost'] != null ? CreditNoteShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   status: CreditNoteStatus.fromJson(json['status'] as String),
   subtotal: (json['subtotal'] as num).toInt(),
   subtotalExcludingTax: json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null,

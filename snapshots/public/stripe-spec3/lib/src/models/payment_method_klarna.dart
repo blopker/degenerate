@@ -8,9 +8,7 @@ import 'payment_method_klarna_dob.dart';///
 final class PaymentMethodKlarna {const PaymentMethodKlarna({this.dob});
 
 factory PaymentMethodKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodKlarna(
-  dob: json['dob'] != null
-        ? PaymentMethodKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  dob: json['dob'] != null ? PaymentMethodKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
 ); }
 
 /// The customer's date of birth, if provided.

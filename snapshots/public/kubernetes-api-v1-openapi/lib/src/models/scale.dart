@@ -10,15 +10,9 @@ final class Scale {const Scale({this.apiVersion, this.kind, this.metadata, this.
 factory Scale.fromJson(Map<String, dynamic> json) { return Scale(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  spec: json['spec'] != null
-        ? ScaleSpec.fromJson(json['spec'] as Map<String, dynamic>)
-        : null,
-  status: json['status'] != null
-        ? ScaleStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  spec: json['spec'] != null ? ScaleSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
+  status: json['status'] != null ? ScaleStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
 ); }
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources

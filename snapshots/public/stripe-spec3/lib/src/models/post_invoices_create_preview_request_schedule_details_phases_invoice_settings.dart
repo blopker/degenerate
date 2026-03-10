@@ -7,13 +7,9 @@
 import 'post_invoices_create_preview_request_schedule_details_phases_invoice_settings_account_tax_ids.dart';import 'post_invoices_create_preview_request_schedule_details_phases_invoice_settings_issuer.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
-  issuer: json['issuer'] != null
-        ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsAccountTaxIds? accountTaxIds;

@@ -7,9 +7,7 @@
 import 'gists_get_response403_block.dart';final class GistsGetResponse403 {const GistsGetResponse403({this.block, this.message, this.documentationUrl, });
 
 factory GistsGetResponse403.fromJson(Map<String, dynamic> json) { return GistsGetResponse403(
-  block: json['block'] != null
-        ? GistsGetResponse403Block.fromJson(json['block'] as Map<String, dynamic>)
-        : null,
+  block: json['block'] != null ? GistsGetResponse403Block.fromJson(json['block'] as Map<String, dynamic>) : null,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
 ); }

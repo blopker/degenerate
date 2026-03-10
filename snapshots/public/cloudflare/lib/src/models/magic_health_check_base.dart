@@ -62,9 +62,7 @@ final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = tru
 factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
   rate: json.containsKey('rate') ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : MagicHealthCheckBaseRate.mid,
-  target: json['target'] != null
-        ? MagicHealthCheckBaseTarget.fromJson(json['target'])
-        : null,
+  target: json['target'] != null ? MagicHealthCheckBaseTarget.fromJson(json['target']) : null,
   type: json.containsKey('type') ? MagicHealthCheckBaseType.fromJson(json['type'] as String) : MagicHealthCheckBaseType.reply,
 ); }
 

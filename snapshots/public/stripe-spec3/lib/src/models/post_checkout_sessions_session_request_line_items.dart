@@ -7,21 +7,13 @@
 import 'post_checkout_sessions_session_request_line_items_adjustable_quantity.dart';import 'post_checkout_sessions_session_request_line_items_metadata.dart';import 'post_checkout_sessions_session_request_line_items_price_data.dart';import 'post_checkout_sessions_session_request_line_items_tax_rates.dart';final class PostCheckoutSessionsSessionRequestLineItems {const PostCheckoutSessionsSessionRequestLineItems({this.adjustableQuantity, this.id, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostCheckoutSessionsSessionRequestLineItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestLineItems(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
-  metadata: json['metadata'] != null
-        ? PostCheckoutSessionsSessionRequestLineItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCheckoutSessionsSessionRequestLineItemsMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostCheckoutSessionsSessionRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostCheckoutSessionsSessionRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostCheckoutSessionsSessionRequestLineItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostCheckoutSessionsSessionRequestLineItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity? adjustableQuantity;

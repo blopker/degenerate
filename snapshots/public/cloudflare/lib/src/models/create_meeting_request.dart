@@ -7,15 +7,11 @@
 import 'realtimekit_ai_config.dart';import 'realtimekit_recording_config.dart';final class CreateMeetingRequest {const CreateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title, });
 
 factory CreateMeetingRequest.fromJson(Map<String, dynamic> json) { return CreateMeetingRequest(
-  aiConfig: json['ai_config'] != null
-        ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>)
-        : null,
+  aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,
   liveStreamOnStart: json.containsKey('live_stream_on_start') ? json['live_stream_on_start'] as bool : false,
   persistChat: json.containsKey('persist_chat') ? json['persist_chat'] as bool : false,
   recordOnStart: json.containsKey('record_on_start') ? json['record_on_start'] as bool : false,
-  recordingConfig: json['recording_config'] != null
-        ? RealtimekitRecordingConfig.fromJson(json['recording_config'] as Map<String, dynamic>)
-        : null,
+  recordingConfig: json['recording_config'] != null ? RealtimekitRecordingConfig.fromJson(json['recording_config'] as Map<String, dynamic>) : null,
   sessionKeepAliveTimeInSecs: json.containsKey('session_keep_alive_time_in_secs') ? (json['session_keep_alive_time_in_secs'] as num).toDouble() : 60.0,
   summarizeOnEnd: json.containsKey('summarize_on_end') ? json['summarize_on_end'] as bool : false,
   title: json['title'] as String?,

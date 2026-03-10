@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'post_accounts_account_bank_accounts_request_bank_account.dart';final class PostAccountsAccountBankAccountsRequest {const PostAccountsAccountBankAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 
 factory PostAccountsAccountBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsRequest(
-  bankAccount: json['bank_account'] != null
-        ? PostAccountsAccountBankAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>)
-        : null,
+  bankAccount: json['bank_account'] != null ? PostAccountsAccountBankAccountsRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,

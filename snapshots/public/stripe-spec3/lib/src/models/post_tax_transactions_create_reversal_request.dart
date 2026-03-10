@@ -39,9 +39,7 @@ factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> j
   mode: PostTaxTransactionsCreateReversalRequestMode.fromJson(json['mode'] as String),
   originalTransaction: json['original_transaction'] as String,
   reference: json['reference'] as String,
-  shippingCost: json['shipping_cost'] != null
-        ? PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  shippingCost: json['shipping_cost'] != null ? PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

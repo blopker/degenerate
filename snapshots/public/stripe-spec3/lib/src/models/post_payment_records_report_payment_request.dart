@@ -58,30 +58,18 @@ final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsRepo
 
 factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequest(
   amountRequested: PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(json['amount_requested'] as Map<String, dynamic>),
-  customerDetails: json['customer_details'] != null
-        ? PostPaymentRecordsReportPaymentRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? PostPaymentRecordsReportPaymentRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerPresence: json['customer_presence'] != null ? PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  failed: json['failed'] != null
-        ? PostPaymentRecordsReportPaymentRequestFailed.fromJson(json['failed'] as Map<String, dynamic>)
-        : null,
-  guaranteed: json['guaranteed'] != null
-        ? PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>)
-        : null,
+  failed: json['failed'] != null ? PostPaymentRecordsReportPaymentRequestFailed.fromJson(json['failed'] as Map<String, dynamic>) : null,
+  guaranteed: json['guaranteed'] != null ? PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
   initiatedAt: (json['initiated_at'] as num).toInt(),
-  metadata: json['metadata'] != null
-        ? PostPaymentRecordsReportPaymentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsReportPaymentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   outcome: json['outcome'] != null ? PostPaymentRecordsReportPaymentRequestOutcome.fromJson(json['outcome'] as String) : null,
   paymentMethodDetails: PostPaymentRecordsReportPaymentRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  processorDetails: json['processor_details'] != null
-        ? PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  processorDetails: json['processor_details'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The amount you initially requested for this payment.

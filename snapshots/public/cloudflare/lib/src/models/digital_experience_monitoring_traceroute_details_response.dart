@@ -13,9 +13,7 @@ factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String
   name: json['name'] as String,
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
-  tracerouteStats: json['tracerouteStats'] != null
-        ? DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats.fromJson(json['tracerouteStats'] as Map<String, dynamic>)
-        : null,
+  tracerouteStats: json['tracerouteStats'] != null ? DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats.fromJson(json['tracerouteStats'] as Map<String, dynamic>) : null,
   tracerouteStatsByColo: (json['tracerouteStatsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

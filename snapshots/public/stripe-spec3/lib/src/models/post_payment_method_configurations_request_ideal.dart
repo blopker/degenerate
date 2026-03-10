@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_ideal_display_preference.dart
 final class PostPaymentMethodConfigurationsRequestIdeal {const PostPaymentMethodConfigurationsRequestIdeal({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestIdeal(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestIdealDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestIdealDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestIdealDisplayPreference? displayPreference;

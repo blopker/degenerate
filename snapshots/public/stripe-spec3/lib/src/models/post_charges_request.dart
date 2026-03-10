@@ -11,33 +11,21 @@ factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChar
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   capture: json['capture'] as bool?,
-  card: json['card'] != null
-        ? PostChargesRequestCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   description: json['description'] as String?,
-  destination: json['destination'] != null
-        ? PostChargesRequestDestination.fromJson(json['destination'] as Map<String, dynamic>)
-        : null,
+  destination: json['destination'] != null ? PostChargesRequestDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostChargesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostChargesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
-  radarOptions: json['radar_options'] != null
-        ? PostChargesRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>)
-        : null,
+  radarOptions: json['radar_options'] != null ? PostChargesRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
-  shipping: json['shipping'] != null
-        ? PostChargesRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PostChargesRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   source: json['source'] as String?,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

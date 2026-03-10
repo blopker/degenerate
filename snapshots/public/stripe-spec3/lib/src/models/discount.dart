@@ -34,18 +34,14 @@ final class Discount {const Discount({this.checkoutSession, this.customer, this.
 
 factory Discount.fromJson(Map<String, dynamic> json) { return Discount(
   checkoutSession: json['checkout_session'] as String?,
-  customer: json['customer'] != null
-        ? DiscountCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? DiscountCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   id: json['id'] as String,
   invoice: json['invoice'] as String?,
   invoiceItem: json['invoice_item'] as String?,
   object: DiscountObject.fromJson(json['object'] as String),
-  promotionCode: json['promotion_code'] != null
-        ? DiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>)
-        : null,
+  promotionCode: json['promotion_code'] != null ? DiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>) : null,
   source: DiscountSource.fromJson(json['source'] as Map<String, dynamic>),
   start: (json['start'] as num).toInt(),
   subscription: json['subscription'] as String?,

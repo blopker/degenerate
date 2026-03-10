@@ -7,12 +7,8 @@
 import 'realtime_audio_formats.dart';import 'voice_ids_shared.dart';final class RealtimeResponseAudioOutput {const RealtimeResponseAudioOutput({this.format, this.voice, });
 
 factory RealtimeResponseAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeResponseAudioOutput(
-  format: json['format'] != null
-        ? RealtimeAudioFormats.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
-  voice: json['voice'] != null
-        ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format'] as Map<String, dynamic>) : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>) : null,
 ); }
 
 /// The format of the output audio.

@@ -9,9 +9,7 @@ final class FineTuneReinforcementMethod {const FineTuneReinforcementMethod({requ
 
 factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementMethod(
   grader: FineTuneReinforcementMethodGrader.fromJson(json['grader']),
-  hyperparameters: json['hyperparameters'] != null
-        ? FineTuneReinforcementHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>)
-        : null,
+  hyperparameters: json['hyperparameters'] != null ? FineTuneReinforcementHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
 ); }
 
 /// The grader used for the fine-tuning job.

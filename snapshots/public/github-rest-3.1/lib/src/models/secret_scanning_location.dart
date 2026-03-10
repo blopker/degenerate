@@ -66,9 +66,7 @@ final class SecretScanningLocation {const SecretScanningLocation({this.type, thi
 
 factory SecretScanningLocation.fromJson(Map<String, dynamic> json) { return SecretScanningLocation(
   type: json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null,
-  details: json['details'] != null
-        ? SecretScanningLocationDetails.fromJson(json['details'])
-        : null,
+  details: json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details']) : null,
 ); }
 
 /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.

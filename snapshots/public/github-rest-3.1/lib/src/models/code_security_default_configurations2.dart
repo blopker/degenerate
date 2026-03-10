@@ -8,9 +8,7 @@ import 'code_security_configuration.dart';final class CodeSecurityDefaultConfigu
 
 factory CodeSecurityDefaultConfigurations2.fromJson(Map<String, dynamic> json) { return CodeSecurityDefaultConfigurations2(
   defaultForNewRepos: json['default_for_new_repos'],
-  configuration: json['configuration'] != null
-        ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
 ); }
 
 /// The visibility of newly created repositories for which the code security configuration will be applied to by default

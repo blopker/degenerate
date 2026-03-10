@@ -215,14 +215,10 @@ final class InlineObject712 {const InlineObject712({this.captureMethod, this.onD
 
 factory InlineObject712.fromJson(Map<String, dynamic> json) { return InlineObject712(
   captureMethod: json['capture_method'] != null ? InlineObject712CaptureMethod.fromJson(json['capture_method'] as String) : null,
-  onDemand: json['on_demand'] != null
-        ? InlineObject712OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>)
-        : null,
+  onDemand: json['on_demand'] != null ? InlineObject712OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? InlineObject712PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject712SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null
-        ? InlineObject712Subscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>)
-        : null,
+  subscriptions: json['subscriptions'] != null ? InlineObject712Subscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject712CaptureMethod? captureMethod;

@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'post_terminal_readers_reader_confirm_payment_intent_request_confirm_config.dart';final class PostTerminalReadersReaderConfirmPaymentIntentRequest {const PostTerminalReadersReaderConfirmPaymentIntentRequest({this.confirmConfig, this.expand, required this.paymentIntent, });
 
 factory PostTerminalReadersReaderConfirmPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
-  confirmConfig: json['confirm_config'] != null
-        ? PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>)
-        : null,
+  confirmConfig: json['confirm_config'] != null ? PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
 ); }

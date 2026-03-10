@@ -76,9 +76,7 @@ final class RealtimeResponseStatusDetails {const RealtimeResponseStatusDetails({
 factory RealtimeResponseStatusDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseStatusDetails(
   type: json['type'] != null ? RealtimeResponseStatusDetailsType.fromJson(json['type'] as String) : null,
   reason: json['reason'] != null ? RealtimeResponseStatusDetailsReason.fromJson(json['reason'] as String) : null,
-  error: json['error'] != null
-        ? RealtimeResponseStatusDetailsError.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? RealtimeResponseStatusDetailsError.fromJson(json['error'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of error that caused the response to fail, corresponding

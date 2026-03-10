@@ -64,16 +64,12 @@ final class Capability {const Capability({required this.account, this.futureRequ
 
 factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
   account: CapabilityAccount.fromJson(json['account'] as Map<String, dynamic>),
-  futureRequirements: json['future_requirements'] != null
-        ? AccountCapabilityFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>)
-        : null,
+  futureRequirements: json['future_requirements'] != null ? AccountCapabilityFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   object: CapabilityObject.fromJson(json['object'] as String),
   requested: json['requested'] as bool,
   requestedAt: json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null,
-  requirements: json['requirements'] != null
-        ? AccountCapabilityRequirements.fromJson(json['requirements'] as Map<String, dynamic>)
-        : null,
+  requirements: json['requirements'] != null ? AccountCapabilityRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   status: CapabilityStatus.fromJson(json['status'] as String),
 ); }
 

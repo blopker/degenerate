@@ -28,9 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject915 {const InlineObject915({this.reference, this.setupFutureUsage, });
 
 factory InlineObject915.fromJson(Map<String, dynamic> json) { return InlineObject915(
-  reference: json['reference'] != null
-        ? InlineObject915Reference.fromJson(json['reference'] as Map<String, dynamic>)
-        : null,
+  reference: json['reference'] != null ? InlineObject915Reference.fromJson(json['reference'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? InlineObject915SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

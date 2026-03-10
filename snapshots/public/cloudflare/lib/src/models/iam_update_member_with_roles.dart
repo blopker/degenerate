@@ -10,9 +10,7 @@ factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) { return Ia
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'],
-  user: json['user'] != null
-        ? IamUpdateMemberWithRolesUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? IamUpdateMemberWithRolesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final IamMembershipComponentsSchemasIdentifier? id;

@@ -7,9 +7,7 @@
 import 'post_test_helpers_confirmation_tokens_request_payment_method_options_card_installments.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard({this.installments});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard(
-  installments: json['installments'] != null
-        ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments? installments;

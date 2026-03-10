@@ -12,18 +12,12 @@ factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? json['description'] as String : '',
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
-  exposedCredentialCheck: json['exposed_credential_check'] != null
-        ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>)
-        : null,
+  exposedCredentialCheck: json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null,
   expression: json['expression'] as String?,
   id: json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null,
   lastUpdated: DateTime.parse(json['last_updated'] as String),
-  logging: json['logging'] != null
-        ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>)
-        : null,
-  ratelimit: json['ratelimit'] != null
-        ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>)
-        : null,
+  logging: json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null,
+  ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
   version: json['version'] as String,
 ); }

@@ -8,73 +8,29 @@ import 'setup_attempt_payment_method_details_acss_debit.dart';import 'setup_atte
 final class SetupAttemptPaymentMethodDetails {const SetupAttemptPaymentMethodDetails({this.acssDebit, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.boleto, this.card, this.cardPresent, this.cashapp, this.ideal, this.kakaoPay, this.klarna, this.krCard, this.link, this.naverPay, this.nzBankAccount, this.paypal, this.payto, this.revolutPay, this.sepaDebit, this.sofort, required this.type, this.usBankAccount, });
 
 factory SetupAttemptPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetails(
-  acssDebit: json['acss_debit'] != null
-        ? SetupAttemptPaymentMethodDetailsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? SetupAttemptPaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  auBecsDebit: json['au_becs_debit'] != null
-        ? SetupAttemptPaymentMethodDetailsAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>)
-        : null,
-  bacsDebit: json['bacs_debit'] != null
-        ? SetupAttemptPaymentMethodDetailsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? SetupAttemptPaymentMethodDetailsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  boleto: json['boleto'] != null
-        ? SetupAttemptPaymentMethodDetailsBoleto.fromJson(json['boleto'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? SetupAttemptPaymentMethodDetailsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? SetupAttemptPaymentMethodDetailsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  cashapp: json['cashapp'] != null
-        ? SetupAttemptPaymentMethodDetailsCashapp.fromJson(json['cashapp'] as Map<String, dynamic>)
-        : null,
-  ideal: json['ideal'] != null
-        ? SetupAttemptPaymentMethodDetailsIdeal.fromJson(json['ideal'] as Map<String, dynamic>)
-        : null,
-  kakaoPay: json['kakao_pay'] != null
-        ? SetupAttemptPaymentMethodDetailsKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? SetupAttemptPaymentMethodDetailsKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  krCard: json['kr_card'] != null
-        ? SetupAttemptPaymentMethodDetailsKrCard.fromJson(json['kr_card'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? SetupAttemptPaymentMethodDetailsLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  naverPay: json['naver_pay'] != null
-        ? SetupAttemptPaymentMethodDetailsNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>)
-        : null,
-  nzBankAccount: json['nz_bank_account'] != null
-        ? SetupAttemptPaymentMethodDetailsNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? SetupAttemptPaymentMethodDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? SetupAttemptPaymentMethodDetailsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  revolutPay: json['revolut_pay'] != null
-        ? SetupAttemptPaymentMethodDetailsRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? SetupAttemptPaymentMethodDetailsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  sofort: json['sofort'] != null
-        ? SetupAttemptPaymentMethodDetailsSofort.fromJson(json['sofort'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? SetupAttemptPaymentMethodDetailsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? SetupAttemptPaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? SetupAttemptPaymentMethodDetailsAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? SetupAttemptPaymentMethodDetailsBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? SetupAttemptPaymentMethodDetailsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  boleto: json['boleto'] != null ? SetupAttemptPaymentMethodDetailsBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? SetupAttemptPaymentMethodDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? SetupAttemptPaymentMethodDetailsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? SetupAttemptPaymentMethodDetailsCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  ideal: json['ideal'] != null ? SetupAttemptPaymentMethodDetailsIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? SetupAttemptPaymentMethodDetailsKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? SetupAttemptPaymentMethodDetailsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? SetupAttemptPaymentMethodDetailsKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? SetupAttemptPaymentMethodDetailsLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? SetupAttemptPaymentMethodDetailsNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? SetupAttemptPaymentMethodDetailsNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? SetupAttemptPaymentMethodDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? SetupAttemptPaymentMethodDetailsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? SetupAttemptPaymentMethodDetailsRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? SetupAttemptPaymentMethodDetailsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? SetupAttemptPaymentMethodDetailsSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-  usBankAccount: json['us_bank_account'] != null
-        ? SetupAttemptPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  usBankAccount: json['us_bank_account'] != null ? SetupAttemptPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 final SetupAttemptPaymentMethodDetailsAcssDebit? acssDebit;

@@ -8,9 +8,7 @@ import 'post_treasury_financial_accounts_financial_account_features_request_inbo
 final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers({this.ach});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers(
-  ach: json['ach'] != null
-        ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>)
-        : null,
+  ach: json['ach'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfersAch? ach;

@@ -15,189 +15,67 @@ import 'post_accounts_request_capabilities_acss_debit_payments.dart';import 'pos
 final class PostAccountsRequestCapabilities {const PostAccountsRequestCapabilities({this.acssDebitPayments, this.affirmPayments, this.afterpayClearpayPayments, this.almaPayments, this.amazonPayPayments, this.auBecsDebitPayments, this.bacsDebitPayments, this.bancontactPayments, this.bankTransferPayments, this.billiePayments, this.blikPayments, this.boletoPayments, this.cardIssuing, this.cardPayments, this.cartesBancairesPayments, this.cashappPayments, this.cryptoPayments, this.epsPayments, this.fpxPayments, this.gbBankTransferPayments, this.giropayPayments, this.grabpayPayments, this.idealPayments, this.indiaInternationalPayments, this.jcbPayments, this.jpBankTransferPayments, this.kakaoPayPayments, this.klarnaPayments, this.konbiniPayments, this.krCardPayments, this.legacyPayments, this.linkPayments, this.mbWayPayments, this.mobilepayPayments, this.multibancoPayments, this.mxBankTransferPayments, this.naverPayPayments, this.nzBankAccountBecsDebitPayments, this.oxxoPayments, this.p24Payments, this.payByBankPayments, this.paycoPayments, this.paynowPayments, this.paytoPayments, this.pixPayments, this.promptpayPayments, this.revolutPayPayments, this.samsungPayPayments, this.satispayPayments, this.sepaBankTransferPayments, this.sepaDebitPayments, this.sofortPayments, this.swishPayments, this.taxReportingUs1099K, this.taxReportingUs1099Misc, this.transfers, this.treasury, this.twintPayments, this.usBankAccountAchPayments, this.usBankTransferPayments, this.zipPayments, });
 
 factory PostAccountsRequestCapabilities.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilities(
-  acssDebitPayments: json['acss_debit_payments'] != null
-        ? PostAccountsRequestCapabilitiesAcssDebitPayments.fromJson(json['acss_debit_payments'] as Map<String, dynamic>)
-        : null,
-  affirmPayments: json['affirm_payments'] != null
-        ? PostAccountsRequestCapabilitiesAffirmPayments.fromJson(json['affirm_payments'] as Map<String, dynamic>)
-        : null,
-  afterpayClearpayPayments: json['afterpay_clearpay_payments'] != null
-        ? PostAccountsRequestCapabilitiesAfterpayClearpayPayments.fromJson(json['afterpay_clearpay_payments'] as Map<String, dynamic>)
-        : null,
-  almaPayments: json['alma_payments'] != null
-        ? PostAccountsRequestCapabilitiesAlmaPayments.fromJson(json['alma_payments'] as Map<String, dynamic>)
-        : null,
-  amazonPayPayments: json['amazon_pay_payments'] != null
-        ? PostAccountsRequestCapabilitiesAmazonPayPayments.fromJson(json['amazon_pay_payments'] as Map<String, dynamic>)
-        : null,
-  auBecsDebitPayments: json['au_becs_debit_payments'] != null
-        ? PostAccountsRequestCapabilitiesAuBecsDebitPayments.fromJson(json['au_becs_debit_payments'] as Map<String, dynamic>)
-        : null,
-  bacsDebitPayments: json['bacs_debit_payments'] != null
-        ? PostAccountsRequestCapabilitiesBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>)
-        : null,
-  bancontactPayments: json['bancontact_payments'] != null
-        ? PostAccountsRequestCapabilitiesBancontactPayments.fromJson(json['bancontact_payments'] as Map<String, dynamic>)
-        : null,
-  bankTransferPayments: json['bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesBankTransferPayments.fromJson(json['bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  billiePayments: json['billie_payments'] != null
-        ? PostAccountsRequestCapabilitiesBilliePayments.fromJson(json['billie_payments'] as Map<String, dynamic>)
-        : null,
-  blikPayments: json['blik_payments'] != null
-        ? PostAccountsRequestCapabilitiesBlikPayments.fromJson(json['blik_payments'] as Map<String, dynamic>)
-        : null,
-  boletoPayments: json['boleto_payments'] != null
-        ? PostAccountsRequestCapabilitiesBoletoPayments.fromJson(json['boleto_payments'] as Map<String, dynamic>)
-        : null,
-  cardIssuing: json['card_issuing'] != null
-        ? PostAccountsRequestCapabilitiesCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  cardPayments: json['card_payments'] != null
-        ? PostAccountsRequestCapabilitiesCardPayments.fromJson(json['card_payments'] as Map<String, dynamic>)
-        : null,
-  cartesBancairesPayments: json['cartes_bancaires_payments'] != null
-        ? PostAccountsRequestCapabilitiesCartesBancairesPayments.fromJson(json['cartes_bancaires_payments'] as Map<String, dynamic>)
-        : null,
-  cashappPayments: json['cashapp_payments'] != null
-        ? PostAccountsRequestCapabilitiesCashappPayments.fromJson(json['cashapp_payments'] as Map<String, dynamic>)
-        : null,
-  cryptoPayments: json['crypto_payments'] != null
-        ? PostAccountsRequestCapabilitiesCryptoPayments.fromJson(json['crypto_payments'] as Map<String, dynamic>)
-        : null,
-  epsPayments: json['eps_payments'] != null
-        ? PostAccountsRequestCapabilitiesEpsPayments.fromJson(json['eps_payments'] as Map<String, dynamic>)
-        : null,
-  fpxPayments: json['fpx_payments'] != null
-        ? PostAccountsRequestCapabilitiesFpxPayments.fromJson(json['fpx_payments'] as Map<String, dynamic>)
-        : null,
-  gbBankTransferPayments: json['gb_bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesGbBankTransferPayments.fromJson(json['gb_bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  giropayPayments: json['giropay_payments'] != null
-        ? PostAccountsRequestCapabilitiesGiropayPayments.fromJson(json['giropay_payments'] as Map<String, dynamic>)
-        : null,
-  grabpayPayments: json['grabpay_payments'] != null
-        ? PostAccountsRequestCapabilitiesGrabpayPayments.fromJson(json['grabpay_payments'] as Map<String, dynamic>)
-        : null,
-  idealPayments: json['ideal_payments'] != null
-        ? PostAccountsRequestCapabilitiesIdealPayments.fromJson(json['ideal_payments'] as Map<String, dynamic>)
-        : null,
-  indiaInternationalPayments: json['india_international_payments'] != null
-        ? PostAccountsRequestCapabilitiesIndiaInternationalPayments.fromJson(json['india_international_payments'] as Map<String, dynamic>)
-        : null,
-  jcbPayments: json['jcb_payments'] != null
-        ? PostAccountsRequestCapabilitiesJcbPayments.fromJson(json['jcb_payments'] as Map<String, dynamic>)
-        : null,
-  jpBankTransferPayments: json['jp_bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesJpBankTransferPayments.fromJson(json['jp_bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  kakaoPayPayments: json['kakao_pay_payments'] != null
-        ? PostAccountsRequestCapabilitiesKakaoPayPayments.fromJson(json['kakao_pay_payments'] as Map<String, dynamic>)
-        : null,
-  klarnaPayments: json['klarna_payments'] != null
-        ? PostAccountsRequestCapabilitiesKlarnaPayments.fromJson(json['klarna_payments'] as Map<String, dynamic>)
-        : null,
-  konbiniPayments: json['konbini_payments'] != null
-        ? PostAccountsRequestCapabilitiesKonbiniPayments.fromJson(json['konbini_payments'] as Map<String, dynamic>)
-        : null,
-  krCardPayments: json['kr_card_payments'] != null
-        ? PostAccountsRequestCapabilitiesKrCardPayments.fromJson(json['kr_card_payments'] as Map<String, dynamic>)
-        : null,
-  legacyPayments: json['legacy_payments'] != null
-        ? PostAccountsRequestCapabilitiesLegacyPayments.fromJson(json['legacy_payments'] as Map<String, dynamic>)
-        : null,
-  linkPayments: json['link_payments'] != null
-        ? PostAccountsRequestCapabilitiesLinkPayments.fromJson(json['link_payments'] as Map<String, dynamic>)
-        : null,
-  mbWayPayments: json['mb_way_payments'] != null
-        ? PostAccountsRequestCapabilitiesMbWayPayments.fromJson(json['mb_way_payments'] as Map<String, dynamic>)
-        : null,
-  mobilepayPayments: json['mobilepay_payments'] != null
-        ? PostAccountsRequestCapabilitiesMobilepayPayments.fromJson(json['mobilepay_payments'] as Map<String, dynamic>)
-        : null,
-  multibancoPayments: json['multibanco_payments'] != null
-        ? PostAccountsRequestCapabilitiesMultibancoPayments.fromJson(json['multibanco_payments'] as Map<String, dynamic>)
-        : null,
-  mxBankTransferPayments: json['mx_bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesMxBankTransferPayments.fromJson(json['mx_bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  naverPayPayments: json['naver_pay_payments'] != null
-        ? PostAccountsRequestCapabilitiesNaverPayPayments.fromJson(json['naver_pay_payments'] as Map<String, dynamic>)
-        : null,
-  nzBankAccountBecsDebitPayments: json['nz_bank_account_becs_debit_payments'] != null
-        ? PostAccountsRequestCapabilitiesNzBankAccountBecsDebitPayments.fromJson(json['nz_bank_account_becs_debit_payments'] as Map<String, dynamic>)
-        : null,
-  oxxoPayments: json['oxxo_payments'] != null
-        ? PostAccountsRequestCapabilitiesOxxoPayments.fromJson(json['oxxo_payments'] as Map<String, dynamic>)
-        : null,
-  p24Payments: json['p24_payments'] != null
-        ? PostAccountsRequestCapabilitiesP24Payments.fromJson(json['p24_payments'] as Map<String, dynamic>)
-        : null,
-  payByBankPayments: json['pay_by_bank_payments'] != null
-        ? PostAccountsRequestCapabilitiesPayByBankPayments.fromJson(json['pay_by_bank_payments'] as Map<String, dynamic>)
-        : null,
-  paycoPayments: json['payco_payments'] != null
-        ? PostAccountsRequestCapabilitiesPaycoPayments.fromJson(json['payco_payments'] as Map<String, dynamic>)
-        : null,
-  paynowPayments: json['paynow_payments'] != null
-        ? PostAccountsRequestCapabilitiesPaynowPayments.fromJson(json['paynow_payments'] as Map<String, dynamic>)
-        : null,
-  paytoPayments: json['payto_payments'] != null
-        ? PostAccountsRequestCapabilitiesPaytoPayments.fromJson(json['payto_payments'] as Map<String, dynamic>)
-        : null,
-  pixPayments: json['pix_payments'] != null
-        ? PostAccountsRequestCapabilitiesPixPayments.fromJson(json['pix_payments'] as Map<String, dynamic>)
-        : null,
-  promptpayPayments: json['promptpay_payments'] != null
-        ? PostAccountsRequestCapabilitiesPromptpayPayments.fromJson(json['promptpay_payments'] as Map<String, dynamic>)
-        : null,
-  revolutPayPayments: json['revolut_pay_payments'] != null
-        ? PostAccountsRequestCapabilitiesRevolutPayPayments.fromJson(json['revolut_pay_payments'] as Map<String, dynamic>)
-        : null,
-  samsungPayPayments: json['samsung_pay_payments'] != null
-        ? PostAccountsRequestCapabilitiesSamsungPayPayments.fromJson(json['samsung_pay_payments'] as Map<String, dynamic>)
-        : null,
-  satispayPayments: json['satispay_payments'] != null
-        ? PostAccountsRequestCapabilitiesSatispayPayments.fromJson(json['satispay_payments'] as Map<String, dynamic>)
-        : null,
-  sepaBankTransferPayments: json['sepa_bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesSepaBankTransferPayments.fromJson(json['sepa_bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  sepaDebitPayments: json['sepa_debit_payments'] != null
-        ? PostAccountsRequestCapabilitiesSepaDebitPayments.fromJson(json['sepa_debit_payments'] as Map<String, dynamic>)
-        : null,
-  sofortPayments: json['sofort_payments'] != null
-        ? PostAccountsRequestCapabilitiesSofortPayments.fromJson(json['sofort_payments'] as Map<String, dynamic>)
-        : null,
-  swishPayments: json['swish_payments'] != null
-        ? PostAccountsRequestCapabilitiesSwishPayments.fromJson(json['swish_payments'] as Map<String, dynamic>)
-        : null,
-  taxReportingUs1099K: json['tax_reporting_us_1099_k'] != null
-        ? PostAccountsRequestCapabilitiesTaxReportingUs1099K.fromJson(json['tax_reporting_us_1099_k'] as Map<String, dynamic>)
-        : null,
-  taxReportingUs1099Misc: json['tax_reporting_us_1099_misc'] != null
-        ? PostAccountsRequestCapabilitiesTaxReportingUs1099Misc.fromJson(json['tax_reporting_us_1099_misc'] as Map<String, dynamic>)
-        : null,
-  transfers: json['transfers'] != null
-        ? PostAccountsRequestCapabilitiesTransfers.fromJson(json['transfers'] as Map<String, dynamic>)
-        : null,
-  treasury: json['treasury'] != null
-        ? PostAccountsRequestCapabilitiesTreasury.fromJson(json['treasury'] as Map<String, dynamic>)
-        : null,
-  twintPayments: json['twint_payments'] != null
-        ? PostAccountsRequestCapabilitiesTwintPayments.fromJson(json['twint_payments'] as Map<String, dynamic>)
-        : null,
-  usBankAccountAchPayments: json['us_bank_account_ach_payments'] != null
-        ? PostAccountsRequestCapabilitiesUsBankAccountAchPayments.fromJson(json['us_bank_account_ach_payments'] as Map<String, dynamic>)
-        : null,
-  usBankTransferPayments: json['us_bank_transfer_payments'] != null
-        ? PostAccountsRequestCapabilitiesUsBankTransferPayments.fromJson(json['us_bank_transfer_payments'] as Map<String, dynamic>)
-        : null,
-  zipPayments: json['zip_payments'] != null
-        ? PostAccountsRequestCapabilitiesZipPayments.fromJson(json['zip_payments'] as Map<String, dynamic>)
-        : null,
+  acssDebitPayments: json['acss_debit_payments'] != null ? PostAccountsRequestCapabilitiesAcssDebitPayments.fromJson(json['acss_debit_payments'] as Map<String, dynamic>) : null,
+  affirmPayments: json['affirm_payments'] != null ? PostAccountsRequestCapabilitiesAffirmPayments.fromJson(json['affirm_payments'] as Map<String, dynamic>) : null,
+  afterpayClearpayPayments: json['afterpay_clearpay_payments'] != null ? PostAccountsRequestCapabilitiesAfterpayClearpayPayments.fromJson(json['afterpay_clearpay_payments'] as Map<String, dynamic>) : null,
+  almaPayments: json['alma_payments'] != null ? PostAccountsRequestCapabilitiesAlmaPayments.fromJson(json['alma_payments'] as Map<String, dynamic>) : null,
+  amazonPayPayments: json['amazon_pay_payments'] != null ? PostAccountsRequestCapabilitiesAmazonPayPayments.fromJson(json['amazon_pay_payments'] as Map<String, dynamic>) : null,
+  auBecsDebitPayments: json['au_becs_debit_payments'] != null ? PostAccountsRequestCapabilitiesAuBecsDebitPayments.fromJson(json['au_becs_debit_payments'] as Map<String, dynamic>) : null,
+  bacsDebitPayments: json['bacs_debit_payments'] != null ? PostAccountsRequestCapabilitiesBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
+  bancontactPayments: json['bancontact_payments'] != null ? PostAccountsRequestCapabilitiesBancontactPayments.fromJson(json['bancontact_payments'] as Map<String, dynamic>) : null,
+  bankTransferPayments: json['bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesBankTransferPayments.fromJson(json['bank_transfer_payments'] as Map<String, dynamic>) : null,
+  billiePayments: json['billie_payments'] != null ? PostAccountsRequestCapabilitiesBilliePayments.fromJson(json['billie_payments'] as Map<String, dynamic>) : null,
+  blikPayments: json['blik_payments'] != null ? PostAccountsRequestCapabilitiesBlikPayments.fromJson(json['blik_payments'] as Map<String, dynamic>) : null,
+  boletoPayments: json['boleto_payments'] != null ? PostAccountsRequestCapabilitiesBoletoPayments.fromJson(json['boleto_payments'] as Map<String, dynamic>) : null,
+  cardIssuing: json['card_issuing'] != null ? PostAccountsRequestCapabilitiesCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  cardPayments: json['card_payments'] != null ? PostAccountsRequestCapabilitiesCardPayments.fromJson(json['card_payments'] as Map<String, dynamic>) : null,
+  cartesBancairesPayments: json['cartes_bancaires_payments'] != null ? PostAccountsRequestCapabilitiesCartesBancairesPayments.fromJson(json['cartes_bancaires_payments'] as Map<String, dynamic>) : null,
+  cashappPayments: json['cashapp_payments'] != null ? PostAccountsRequestCapabilitiesCashappPayments.fromJson(json['cashapp_payments'] as Map<String, dynamic>) : null,
+  cryptoPayments: json['crypto_payments'] != null ? PostAccountsRequestCapabilitiesCryptoPayments.fromJson(json['crypto_payments'] as Map<String, dynamic>) : null,
+  epsPayments: json['eps_payments'] != null ? PostAccountsRequestCapabilitiesEpsPayments.fromJson(json['eps_payments'] as Map<String, dynamic>) : null,
+  fpxPayments: json['fpx_payments'] != null ? PostAccountsRequestCapabilitiesFpxPayments.fromJson(json['fpx_payments'] as Map<String, dynamic>) : null,
+  gbBankTransferPayments: json['gb_bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesGbBankTransferPayments.fromJson(json['gb_bank_transfer_payments'] as Map<String, dynamic>) : null,
+  giropayPayments: json['giropay_payments'] != null ? PostAccountsRequestCapabilitiesGiropayPayments.fromJson(json['giropay_payments'] as Map<String, dynamic>) : null,
+  grabpayPayments: json['grabpay_payments'] != null ? PostAccountsRequestCapabilitiesGrabpayPayments.fromJson(json['grabpay_payments'] as Map<String, dynamic>) : null,
+  idealPayments: json['ideal_payments'] != null ? PostAccountsRequestCapabilitiesIdealPayments.fromJson(json['ideal_payments'] as Map<String, dynamic>) : null,
+  indiaInternationalPayments: json['india_international_payments'] != null ? PostAccountsRequestCapabilitiesIndiaInternationalPayments.fromJson(json['india_international_payments'] as Map<String, dynamic>) : null,
+  jcbPayments: json['jcb_payments'] != null ? PostAccountsRequestCapabilitiesJcbPayments.fromJson(json['jcb_payments'] as Map<String, dynamic>) : null,
+  jpBankTransferPayments: json['jp_bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesJpBankTransferPayments.fromJson(json['jp_bank_transfer_payments'] as Map<String, dynamic>) : null,
+  kakaoPayPayments: json['kakao_pay_payments'] != null ? PostAccountsRequestCapabilitiesKakaoPayPayments.fromJson(json['kakao_pay_payments'] as Map<String, dynamic>) : null,
+  klarnaPayments: json['klarna_payments'] != null ? PostAccountsRequestCapabilitiesKlarnaPayments.fromJson(json['klarna_payments'] as Map<String, dynamic>) : null,
+  konbiniPayments: json['konbini_payments'] != null ? PostAccountsRequestCapabilitiesKonbiniPayments.fromJson(json['konbini_payments'] as Map<String, dynamic>) : null,
+  krCardPayments: json['kr_card_payments'] != null ? PostAccountsRequestCapabilitiesKrCardPayments.fromJson(json['kr_card_payments'] as Map<String, dynamic>) : null,
+  legacyPayments: json['legacy_payments'] != null ? PostAccountsRequestCapabilitiesLegacyPayments.fromJson(json['legacy_payments'] as Map<String, dynamic>) : null,
+  linkPayments: json['link_payments'] != null ? PostAccountsRequestCapabilitiesLinkPayments.fromJson(json['link_payments'] as Map<String, dynamic>) : null,
+  mbWayPayments: json['mb_way_payments'] != null ? PostAccountsRequestCapabilitiesMbWayPayments.fromJson(json['mb_way_payments'] as Map<String, dynamic>) : null,
+  mobilepayPayments: json['mobilepay_payments'] != null ? PostAccountsRequestCapabilitiesMobilepayPayments.fromJson(json['mobilepay_payments'] as Map<String, dynamic>) : null,
+  multibancoPayments: json['multibanco_payments'] != null ? PostAccountsRequestCapabilitiesMultibancoPayments.fromJson(json['multibanco_payments'] as Map<String, dynamic>) : null,
+  mxBankTransferPayments: json['mx_bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesMxBankTransferPayments.fromJson(json['mx_bank_transfer_payments'] as Map<String, dynamic>) : null,
+  naverPayPayments: json['naver_pay_payments'] != null ? PostAccountsRequestCapabilitiesNaverPayPayments.fromJson(json['naver_pay_payments'] as Map<String, dynamic>) : null,
+  nzBankAccountBecsDebitPayments: json['nz_bank_account_becs_debit_payments'] != null ? PostAccountsRequestCapabilitiesNzBankAccountBecsDebitPayments.fromJson(json['nz_bank_account_becs_debit_payments'] as Map<String, dynamic>) : null,
+  oxxoPayments: json['oxxo_payments'] != null ? PostAccountsRequestCapabilitiesOxxoPayments.fromJson(json['oxxo_payments'] as Map<String, dynamic>) : null,
+  p24Payments: json['p24_payments'] != null ? PostAccountsRequestCapabilitiesP24Payments.fromJson(json['p24_payments'] as Map<String, dynamic>) : null,
+  payByBankPayments: json['pay_by_bank_payments'] != null ? PostAccountsRequestCapabilitiesPayByBankPayments.fromJson(json['pay_by_bank_payments'] as Map<String, dynamic>) : null,
+  paycoPayments: json['payco_payments'] != null ? PostAccountsRequestCapabilitiesPaycoPayments.fromJson(json['payco_payments'] as Map<String, dynamic>) : null,
+  paynowPayments: json['paynow_payments'] != null ? PostAccountsRequestCapabilitiesPaynowPayments.fromJson(json['paynow_payments'] as Map<String, dynamic>) : null,
+  paytoPayments: json['payto_payments'] != null ? PostAccountsRequestCapabilitiesPaytoPayments.fromJson(json['payto_payments'] as Map<String, dynamic>) : null,
+  pixPayments: json['pix_payments'] != null ? PostAccountsRequestCapabilitiesPixPayments.fromJson(json['pix_payments'] as Map<String, dynamic>) : null,
+  promptpayPayments: json['promptpay_payments'] != null ? PostAccountsRequestCapabilitiesPromptpayPayments.fromJson(json['promptpay_payments'] as Map<String, dynamic>) : null,
+  revolutPayPayments: json['revolut_pay_payments'] != null ? PostAccountsRequestCapabilitiesRevolutPayPayments.fromJson(json['revolut_pay_payments'] as Map<String, dynamic>) : null,
+  samsungPayPayments: json['samsung_pay_payments'] != null ? PostAccountsRequestCapabilitiesSamsungPayPayments.fromJson(json['samsung_pay_payments'] as Map<String, dynamic>) : null,
+  satispayPayments: json['satispay_payments'] != null ? PostAccountsRequestCapabilitiesSatispayPayments.fromJson(json['satispay_payments'] as Map<String, dynamic>) : null,
+  sepaBankTransferPayments: json['sepa_bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesSepaBankTransferPayments.fromJson(json['sepa_bank_transfer_payments'] as Map<String, dynamic>) : null,
+  sepaDebitPayments: json['sepa_debit_payments'] != null ? PostAccountsRequestCapabilitiesSepaDebitPayments.fromJson(json['sepa_debit_payments'] as Map<String, dynamic>) : null,
+  sofortPayments: json['sofort_payments'] != null ? PostAccountsRequestCapabilitiesSofortPayments.fromJson(json['sofort_payments'] as Map<String, dynamic>) : null,
+  swishPayments: json['swish_payments'] != null ? PostAccountsRequestCapabilitiesSwishPayments.fromJson(json['swish_payments'] as Map<String, dynamic>) : null,
+  taxReportingUs1099K: json['tax_reporting_us_1099_k'] != null ? PostAccountsRequestCapabilitiesTaxReportingUs1099K.fromJson(json['tax_reporting_us_1099_k'] as Map<String, dynamic>) : null,
+  taxReportingUs1099Misc: json['tax_reporting_us_1099_misc'] != null ? PostAccountsRequestCapabilitiesTaxReportingUs1099Misc.fromJson(json['tax_reporting_us_1099_misc'] as Map<String, dynamic>) : null,
+  transfers: json['transfers'] != null ? PostAccountsRequestCapabilitiesTransfers.fromJson(json['transfers'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? PostAccountsRequestCapabilitiesTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  twintPayments: json['twint_payments'] != null ? PostAccountsRequestCapabilitiesTwintPayments.fromJson(json['twint_payments'] as Map<String, dynamic>) : null,
+  usBankAccountAchPayments: json['us_bank_account_ach_payments'] != null ? PostAccountsRequestCapabilitiesUsBankAccountAchPayments.fromJson(json['us_bank_account_ach_payments'] as Map<String, dynamic>) : null,
+  usBankTransferPayments: json['us_bank_transfer_payments'] != null ? PostAccountsRequestCapabilitiesUsBankTransferPayments.fromJson(json['us_bank_transfer_payments'] as Map<String, dynamic>) : null,
+  zipPayments: json['zip_payments'] != null ? PostAccountsRequestCapabilitiesZipPayments.fromJson(json['zip_payments'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestCapabilitiesAcssDebitPayments? acssDebitPayments;

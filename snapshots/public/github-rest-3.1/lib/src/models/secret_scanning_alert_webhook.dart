@@ -83,29 +83,21 @@ factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return 
   locationsUrl: json['locations_url'] != null ? Uri.parse(json['locations_url'] as String) : null,
   resolution: json['resolution'] != null ? SecretScanningAlertResolutionWebhook.fromJson(json['resolution'] as String) : null,
   resolvedAt: json['resolved_at'] != null ? DateTime.parse(json['resolved_at'] as String) : null,
-  resolvedBy: json['resolved_by'] != null
-        ? SimpleUser.fromJson(json['resolved_by'] as Map<String, dynamic>)
-        : null,
+  resolvedBy: json['resolved_by'] != null ? SimpleUser.fromJson(json['resolved_by'] as Map<String, dynamic>) : null,
   resolutionComment: json['resolution_comment'] as String?,
   secretType: json['secret_type'] as String?,
   secretTypeDisplayName: json['secret_type_display_name'] as String?,
   validity: json['validity'] != null ? SecretScanningAlertWebhookValidity.fromJson(json['validity'] as String) : null,
   pushProtectionBypassed: json['push_protection_bypassed'] as bool?,
-  pushProtectionBypassedBy: json['push_protection_bypassed_by'] != null
-        ? SimpleUser.fromJson(json['push_protection_bypassed_by'] as Map<String, dynamic>)
-        : null,
+  pushProtectionBypassedBy: json['push_protection_bypassed_by'] != null ? SimpleUser.fromJson(json['push_protection_bypassed_by'] as Map<String, dynamic>) : null,
   pushProtectionBypassedAt: json['push_protection_bypassed_at'] != null ? DateTime.parse(json['push_protection_bypassed_at'] as String) : null,
-  pushProtectionBypassRequestReviewer: json['push_protection_bypass_request_reviewer'] != null
-        ? SimpleUser.fromJson(json['push_protection_bypass_request_reviewer'] as Map<String, dynamic>)
-        : null,
+  pushProtectionBypassRequestReviewer: json['push_protection_bypass_request_reviewer'] != null ? SimpleUser.fromJson(json['push_protection_bypass_request_reviewer'] as Map<String, dynamic>) : null,
   pushProtectionBypassRequestReviewerComment: json['push_protection_bypass_request_reviewer_comment'] as String?,
   pushProtectionBypassRequestComment: json['push_protection_bypass_request_comment'] as String?,
   pushProtectionBypassRequestHtmlUrl: json['push_protection_bypass_request_html_url'] != null ? Uri.parse(json['push_protection_bypass_request_html_url'] as String) : null,
   publiclyLeaked: json['publicly_leaked'] as bool?,
   multiRepo: json['multi_repo'] as bool?,
-  assignedTo: json['assigned_to'] != null
-        ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>)
-        : null,
+  assignedTo: json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null,
 ); }
 
 final AlertNumber? number;

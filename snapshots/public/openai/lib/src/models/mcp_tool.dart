@@ -74,12 +74,8 @@ factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   authorization: json['authorization'] as String?,
   serverDescription: json['server_description'] as String?,
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  allowedTools: json['allowed_tools'] != null
-        ? McpToolAllowedTools.fromJson(json['allowed_tools'])
-        : null,
-  requireApproval: json['require_approval'] != null
-        ? McpToolRequireApproval.fromJson(json['require_approval'])
-        : null,
+  allowedTools: json['allowed_tools'] != null ? McpToolAllowedTools.fromJson(json['allowed_tools']) : null,
+  requireApproval: json['require_approval'] != null ? McpToolRequireApproval.fromJson(json['require_approval']) : null,
   deferLoading: json['defer_loading'] as bool?,
 ); }
 

@@ -8,12 +8,8 @@ import 'post_payment_intents_intent_increment_authorization_request_payment_deta
 final class PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails {const PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails({this.customerReference, this.orderReference, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails(
-  customerReference: json['customer_reference'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>)
-        : null,
-  orderReference: json['order_reference'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsOrderReference.fromJson(json['order_reference'] as Map<String, dynamic>)
-        : null,
+  customerReference: json['customer_reference'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference'] as Map<String, dynamic>) : null,
+  orderReference: json['order_reference'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsOrderReference.fromJson(json['order_reference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference? customerReference;

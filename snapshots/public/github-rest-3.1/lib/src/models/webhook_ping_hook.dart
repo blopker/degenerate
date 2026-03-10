@@ -37,9 +37,7 @@ factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPing
   deliveriesUrl: json['deliveries_url'] != null ? Uri.parse(json['deliveries_url'] as String) : null,
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
   id: (json['id'] as num).toInt(),
-  lastResponse: json['last_response'] != null
-        ? HookResponse.fromJson(json['last_response'] as Map<String, dynamic>)
-        : null,
+  lastResponse: json['last_response'] != null ? HookResponse.fromJson(json['last_response'] as Map<String, dynamic>) : null,
   name: WebhookPingHookName.fromJson(json['name'] as String),
   pingUrl: json['ping_url'] != null ? Uri.parse(json['ping_url'] as String) : null,
   testUrl: json['test_url'] != null ? Uri.parse(json['test_url'] as String) : null,

@@ -40,9 +40,7 @@ factory CreateChatCompletionStreamResponse.fromJson(Map<String, dynamic> json) {
   serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateChatCompletionStreamResponseObject.fromJson(json['object'] as String),
-  usage: json['usage'] != null
-        ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// A unique identifier for the chat completion. Each chunk has the same ID.

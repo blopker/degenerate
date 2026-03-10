@@ -8,12 +8,8 @@ import 'realtimekit_summarization_config.dart';import 'realtimekit_transcription
 final class RealtimekitAiConfig {const RealtimekitAiConfig({this.summarization, this.transcription, });
 
 factory RealtimekitAiConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAiConfig(
-  summarization: json['summarization'] != null
-        ? RealtimekitSummarizationConfig.fromJson(json['summarization'] as Map<String, dynamic>)
-        : null,
-  transcription: json['transcription'] != null
-        ? RealtimekitTranscriptionConfig.fromJson(json['transcription'] as Map<String, dynamic>)
-        : null,
+  summarization: json['summarization'] != null ? RealtimekitSummarizationConfig.fromJson(json['summarization'] as Map<String, dynamic>) : null,
+  transcription: json['transcription'] != null ? RealtimekitTranscriptionConfig.fromJson(json['transcription'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitSummarizationConfig? summarization;

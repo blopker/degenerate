@@ -33,9 +33,7 @@ factory AccessSelfHostedProps.fromJson(Map<String, dynamic> json) { return Acces
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
-  corsHeaders: json['cors_headers'] != null
-        ? AccessCorsHeaders.fromJson(json['cors_headers'] as Map<String, dynamic>)
-        : null,
+  corsHeaders: json['cors_headers'] != null ? AccessCorsHeaders.fromJson(json['cors_headers'] as Map<String, dynamic>) : null,
   customDenyMessage: json['custom_deny_message'] != null ? AccessCustomDenyMessage.fromJson(json['custom_deny_message'] as String) : null,
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
   customNonIdentityDenyUrl: json['custom_non_identity_deny_url'] != null ? AccessCustomNonIdentityDenyUrl.fromJson(json['custom_non_identity_deny_url'] as String) : null,
@@ -45,20 +43,14 @@ factory AccessSelfHostedProps.fromJson(Map<String, dynamic> json) { return Acces
   enableBindingCookie: json['enable_binding_cookie'] != null ? AccessEnableBindingCookie.fromJson(json['enable_binding_cookie'] as bool) : null,
   httpOnlyCookieAttribute: json['http_only_cookie_attribute'] != null ? AccessHttpOnlyCookieAttribute.fromJson(json['http_only_cookie_attribute'] as bool) : null,
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
-  mfaConfig: json['mfa_config'] != null
-        ? AccessMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>)
-        : null,
+  mfaConfig: json['mfa_config'] != null ? AccessMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
-  oauthConfiguration: json['oauth_configuration'] != null
-        ? AccessOauthConfiguration.fromJson(json['oauth_configuration'] as Map<String, dynamic>)
-        : null,
+  oauthConfiguration: json['oauth_configuration'] != null ? AccessOauthConfiguration.fromJson(json['oauth_configuration'] as Map<String, dynamic>) : null,
   optionsPreflightBypass: json['options_preflight_bypass'] != null ? AccessOptionsPreflightBypass.fromJson(json['options_preflight_bypass'] as bool) : null,
   pathCookieAttribute: json['path_cookie_attribute'] != null ? AccessPathCookieAttribute.fromJson(json['path_cookie_attribute'] as bool) : null,
   readServiceTokensFromHeader: json['read_service_tokens_from_header'] != null ? AccessReadServiceTokensFromHeader.fromJson(json['read_service_tokens_from_header'] as String) : null,
   sameSiteCookieAttribute: json['same_site_cookie_attribute'] != null ? AccessSameSiteCookieAttribute.fromJson(json['same_site_cookie_attribute'] as String) : null,
-  scimConfig: json['scim_config'] != null
-        ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>)
-        : null,
+  scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   selfHostedDomains: (json['self_hosted_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
   serviceAuth401Redirect: json['service_auth_401_redirect'] != null ? AccessServiceAuth401Redirect.fromJson(json['service_auth_401_redirect'] as bool) : null,
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,

@@ -193,17 +193,13 @@ final class CheckoutCardPaymentMethodOptions {const CheckoutCardPaymentMethodOpt
 
 factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCardPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  installments: json['installments'] != null
-        ? CheckoutCardInstallmentsOptions.fromJson(json['installments'] as Map<String, dynamic>)
-        : null,
+  installments: json['installments'] != null ? CheckoutCardInstallmentsOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
   requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
   requestMulticapture: json['request_multicapture'] != null ? CheckoutCardPaymentMethodOptionsRequestMulticapture.fromJson(json['request_multicapture'] as String) : null,
   requestOvercapture: json['request_overcapture'] != null ? CheckoutCardPaymentMethodOptionsRequestOvercapture.fromJson(json['request_overcapture'] as String) : null,
   requestThreeDSecure: CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String),
-  restrictions: json['restrictions'] != null
-        ? PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
+  restrictions: json['restrictions'] != null ? PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,

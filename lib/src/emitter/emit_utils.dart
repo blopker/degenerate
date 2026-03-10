@@ -117,73 +117,70 @@ String buildFromJsonCode(
   bool isOptional = false,
   bool paramIsMap = false,
 }) {
-  final nullSuffix = isOptional ? '?' : '';
-  final nullCheck = isOptional ? '$accessor != null\n        ? ' : '';
-  final nullElse = isOptional ? '\n        : null' : '';
+  // For simple cast types (String, num, bool), nullable cast syntax works directly.
+  if (isOptional) {
+    final simpleCast = _simpleCastFromJson(type, accessor);
+    if (simpleCast != null) return simpleCast;
+  }
 
+  final expr = _buildFromJsonNonNull(type, accessor, paramIsMap: paramIsMap);
+  if (!isOptional) return expr;
+  return '$accessor != null ? $expr : null';
+}
+
+/// Nullable-cast shorthand for types where `as Type?` is sufficient.
+String? _simpleCastFromJson(IrType type, String accessor) {
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
       PrimitiveKind.object => accessor,
-      PrimitiveKind.string => '$accessor as String$nullSuffix',
-      PrimitiveKind.int when isOptional =>
-        '$accessor != null ? ($accessor as num).toInt() : null',
+      PrimitiveKind.string => '$accessor as String?',
+      PrimitiveKind.num => '$accessor as num?',
+      PrimitiveKind.bool => '$accessor as bool?',
+      _ => null, // needs null-check wrapper
+    },
+    IrList(:final items) =>
+      '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e')}).toList()',
+    IrMap(:final values) =>
+      '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v')}))',
+    _ => null,
+  };
+}
+
+/// Core non-null fromJson expression for a given type.
+String _buildFromJsonNonNull(
+  IrType type,
+  String accessor, {
+  bool paramIsMap = false,
+}) {
+  return switch (type) {
+    IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.object => accessor,
+      PrimitiveKind.string => '$accessor as String',
       PrimitiveKind.int => '($accessor as num).toInt()',
-      PrimitiveKind.double when isOptional =>
-        '$accessor != null ? ($accessor as num).toDouble() : null',
       PrimitiveKind.double => '($accessor as num).toDouble()',
-      PrimitiveKind.num => '$accessor as num$nullSuffix',
-      PrimitiveKind.bool => '$accessor as bool$nullSuffix',
-      PrimitiveKind.dateTime when isOptional =>
-        '$accessor != null ? DateTime.parse($accessor as String) : null',
+      PrimitiveKind.num => '$accessor as num',
+      PrimitiveKind.bool => '$accessor as bool',
       PrimitiveKind.dateTime => 'DateTime.parse($accessor as String)',
-      PrimitiveKind.uri when isOptional =>
-        '$accessor != null ? Uri.parse($accessor as String) : null',
       PrimitiveKind.uri => 'Uri.parse($accessor as String)',
-      PrimitiveKind.bigInt when isOptional =>
-        '$accessor != null ? BigInt.parse($accessor as String) : null',
       PrimitiveKind.bigInt => 'BigInt.parse($accessor as String)',
-      PrimitiveKind.duration when isOptional =>
-        '$accessor != null ? Duration(milliseconds: ($accessor as num).toInt()) : null',
       PrimitiveKind.duration =>
         'Duration(milliseconds: ($accessor as num).toInt())',
-      PrimitiveKind.bytes when isOptional =>
-        '$accessor != null ? base64Decode($accessor as String) : null',
       PrimitiveKind.bytes => 'base64Decode($accessor as String)',
     },
-    IrEnum(:final name) when isOptional =>
-      '$accessor != null ? $name.fromJson($accessor as String) : null',
     IrEnum(:final name) => '$name.fromJson($accessor as String)',
-    IrList(:final items) when isOptional =>
-      '($accessor as List<dynamic>$nullSuffix)$nullSuffix.map((e) => ${buildFromJsonCode(items, 'e')}).toList()',
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${buildFromJsonCode(items, 'e')}).toList()',
-    IrMap(:final values) when isOptional =>
-      '($accessor as Map<String, dynamic>$nullSuffix)$nullSuffix.map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}))',
+      '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e')}).toList()',
     IrMap(:final values) =>
-      '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}))',
-    IrObject(:final name) when isOptional =>
-      '$nullCheck$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})$nullElse',
-    IrObject(:final name) =>
-      '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
-    IrTypeRef(:final name) when isOptional =>
-      '$nullCheck$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})$nullElse',
-    IrTypeRef(:final name) =>
-      '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
-    IrDiscriminatedUnion(:final name) when isOptional =>
-      '$nullCheck$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})$nullElse',
-    IrDiscriminatedUnion(:final name) =>
-      '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
-    IrUntaggedUnion(:final name) when isOptional =>
-      '$nullCheck$name.fromJson($accessor)$nullElse',
+      '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v')}))',
     IrUntaggedUnion(:final name) => '$name.fromJson($accessor)',
-    IrAnyOf(:final name) when isOptional =>
-      '$nullCheck$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})$nullElse',
-    IrAnyOf(:final name) =>
-      '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
-    IrExtensionType(:final name, :final inner) when isOptional =>
-      '$accessor != null ? $name.fromJson(${_extensionTypeJsonCast(inner, accessor)}) : null',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
+    // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
+    IrObject(:final name) ||
+    IrTypeRef(:final name) ||
+    IrDiscriminatedUnion(:final name) ||
+    IrAnyOf(:final name) =>
+      '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
   };
 }
 
@@ -196,13 +193,11 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     IrPrimitive(:final kind) => switch (kind) {
       PrimitiveKind.object => accessor,
       PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
-      PrimitiveKind.uri => '$accessor$q.toString()',
-      PrimitiveKind.bigInt => '$accessor$q.toString()',
+      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
       PrimitiveKind.duration => '$accessor$q.inMilliseconds',
       PrimitiveKind.bytes => 'base64Encode($accessor)',
       _ => accessor,
     },
-    IrEnum() => '$accessor$q.toJson()',
     IrList(:final items) =>
       listItemNeedsToJson(items)
           ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
@@ -211,11 +206,13 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
       mapValueNeedsToJson(values)
           ? '$accessor$q.map((k, v) => MapEntry(k, ${buildToJsonCode(values, 'v', nullable: values.isNullable)}))'
           : accessor,
-    IrObject() => '$accessor$q.toJson()',
-    IrTypeRef() => '$accessor$q.toJson()',
-    IrDiscriminatedUnion() => '$accessor$q.toJson()',
-    IrUntaggedUnion() => '$accessor$q.toJson()',
-    IrAnyOf() => '$accessor$q.toJson()',
+    // All named types with .toJson()
+    IrEnum() ||
+    IrObject() ||
+    IrTypeRef() ||
+    IrDiscriminatedUnion() ||
+    IrUntaggedUnion() ||
+    IrAnyOf() ||
     IrExtensionType() => '$accessor$q.toJson()',
   };
 }

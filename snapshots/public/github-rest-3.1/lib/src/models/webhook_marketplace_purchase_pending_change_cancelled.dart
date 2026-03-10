@@ -30,22 +30,12 @@ final class WebhookMarketplacePurchasePendingChangeCancelled {const WebhookMarke
 factory WebhookMarketplacePurchasePendingChangeCancelled.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangeCancelled(
   action: WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(json['action'] as String),
   effectiveDate: json['effective_date'] as String,
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   marketplacePurchase: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.fromJson(json['marketplace_purchase'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  previousMarketplacePurchase: json['previous_marketplace_purchase'] != null
-        ? WebhooksPreviousMarketplacePurchase.fromJson(json['previous_marketplace_purchase'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  previousMarketplacePurchase: json['previous_marketplace_purchase'] != null ? WebhooksPreviousMarketplacePurchase.fromJson(json['previous_marketplace_purchase'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 

@@ -16,9 +16,7 @@ final class AddressingServiceBinding {const AddressingServiceBinding({this.cidr,
 factory AddressingServiceBinding.fromJson(Map<String, dynamic> json) { return AddressingServiceBinding(
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,
   id: json['id'] != null ? AddressingServiceBindingIdentifier.fromJson(json['id'] as String) : null,
-  provisioning: json['provisioning'] != null
-        ? AddressingProvisioning.fromJson(json['provisioning'] as Map<String, dynamic>)
-        : null,
+  provisioning: json['provisioning'] != null ? AddressingProvisioning.fromJson(json['provisioning'] as Map<String, dynamic>) : null,
   serviceId: json['service_id'] != null ? AddressingServiceIdentifier.fromJson(json['service_id'] as String) : null,
   serviceName: json['service_name'] != null ? AddressingServiceName.fromJson(json['service_name'] as String) : null,
 ); }

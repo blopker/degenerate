@@ -8,9 +8,7 @@ import 'terminal_reader_reader_resource_confirm_config.dart';import 'terminal_re
 final class TerminalReaderReaderResourceConfirmPaymentIntentAction {const TerminalReaderReaderResourceConfirmPaymentIntentAction({this.confirmConfig, required this.paymentIntent, });
 
 factory TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
-  confirmConfig: json['confirm_config'] != null
-        ? TerminalReaderReaderResourceConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>)
-        : null,
+  confirmConfig: json['confirm_config'] != null ? TerminalReaderReaderResourceConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,
   paymentIntent: TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>),
 ); }
 

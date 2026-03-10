@@ -9,9 +9,7 @@ final class AuditLogRateLimitUpdated {const AuditLogRateLimitUpdated({this.id, t
 
 factory AuditLogRateLimitUpdated.fromJson(Map<String, dynamic> json) { return AuditLogRateLimitUpdated(
   id: json['id'] as String?,
-  changesRequested: json['changes_requested'] != null
-        ? AuditLogRateLimitUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>)
-        : null,
+  changesRequested: json['changes_requested'] != null ? AuditLogRateLimitUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
 ); }
 
 /// The rate limit ID

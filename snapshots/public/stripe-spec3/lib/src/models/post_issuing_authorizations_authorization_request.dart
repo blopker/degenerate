@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_issuing_authorizations_
 
 factory PostIssuingAuthorizationsAuthorizationRequest.fromJson(Map<String, dynamic> json) { return PostIssuingAuthorizationsAuthorizationRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostIssuingAuthorizationsAuthorizationRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostIssuingAuthorizationsAuthorizationRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

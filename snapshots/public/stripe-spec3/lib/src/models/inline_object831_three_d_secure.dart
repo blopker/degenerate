@@ -140,9 +140,7 @@ factory InlineObject831ThreeDSecure.fromJson(Map<String, dynamic> json) { return
   cryptogram: json['cryptogram'] as String,
   electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? InlineObject831ThreeDSecureElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
   exemptionIndicator: json['exemption_indicator'] != null ? InlineObject831ThreeDSecureExemptionIndicator.fromJson(json['exemption_indicator'] as String) : null,
-  networkOptions: json['network_options'] != null
-        ? InlineObject831ThreeDSecureNetworkOptions.fromJson(json['network_options'] as Map<String, dynamic>)
-        : null,
+  networkOptions: json['network_options'] != null ? InlineObject831ThreeDSecureNetworkOptions.fromJson(json['network_options'] as Map<String, dynamic>) : null,
   requestorChallengeIndicator: json['requestor_challenge_indicator'] as String?,
   transactionId: json['transaction_id'] as String,
   version: InlineObject831ThreeDSecureVersion.fromJson(json['version'] as String),

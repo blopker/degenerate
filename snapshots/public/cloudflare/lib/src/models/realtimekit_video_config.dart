@@ -35,9 +35,7 @@ factory RealtimekitVideoConfig.fromJson(Map<String, dynamic> json) { return Real
   codec: json.containsKey('codec') ? RealtimekitVideoConfigCodec.fromJson(json['codec'] as String) : RealtimekitVideoConfigCodec.h264,
   exportFile: json.containsKey('export_file') ? json['export_file'] as bool : true,
   height: json.containsKey('height') ? (json['height'] as num).toInt() : 720,
-  watermark: json['watermark'] != null
-        ? RealtimekitVideoConfigWatermark.fromJson(json['watermark'] as Map<String, dynamic>)
-        : null,
+  watermark: json['watermark'] != null ? RealtimekitVideoConfigWatermark.fromJson(json['watermark'] as Map<String, dynamic>) : null,
   width: json.containsKey('width') ? (json['width'] as num).toInt() : 1280,
 ); }
 

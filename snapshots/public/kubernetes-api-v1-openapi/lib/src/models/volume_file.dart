@@ -8,14 +8,10 @@ import 'object_field_selector.dart';import 'resource_field_selector.dart';/// Do
 final class VolumeFile {const VolumeFile({this.fieldRef, this.mode, this.path = '', this.resourceFieldRef, });
 
 factory VolumeFile.fromJson(Map<String, dynamic> json) { return VolumeFile(
-  fieldRef: json['fieldRef'] != null
-        ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>)
-        : null,
+  fieldRef: json['fieldRef'] != null ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>) : null,
   mode: json['mode'] != null ? (json['mode'] as num).toInt() : null,
   path: json['path'] as String,
-  resourceFieldRef: json['resourceFieldRef'] != null
-        ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>)
-        : null,
+  resourceFieldRef: json['resourceFieldRef'] != null ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// Required: Selects a field of the pod: only annotations, labels, name, namespace and uid are supported.

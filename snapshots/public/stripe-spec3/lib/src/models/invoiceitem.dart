@@ -46,29 +46,19 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   discountable: json['discountable'] as bool,
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => InvoiceitemDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
-  invoice: json['invoice'] != null
-        ? InvoiceitemInvoice.fromJson(json['invoice'] as Map<String, dynamic>)
-        : null,
+  invoice: json['invoice'] != null ? InvoiceitemInvoice.fromJson(json['invoice'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   netAmount: json['net_amount'] != null ? (json['net_amount'] as num).toInt() : null,
   object: InvoiceitemObject.fromJson(json['object'] as String),
-  parent: json['parent'] != null
-        ? InvoiceitemParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? InvoiceitemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   period: InvoiceLineItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
-  pricing: json['pricing'] != null
-        ? InvoiceitemPricing.fromJson(json['pricing'] as Map<String, dynamic>)
-        : null,
+  pricing: json['pricing'] != null ? InvoiceitemPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   proration: json['proration'] as bool,
-  prorationDetails: json['proration_details'] != null
-        ? ProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>)
-        : null,
+  prorationDetails: json['proration_details'] != null ? ProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
   quantity: (json['quantity'] as num).toInt(),
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
-  testClock: json['test_clock'] != null
-        ? InvoiceitemTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  testClock: json['test_clock'] != null ? InvoiceitemTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount (in the `currency` specified) of the invoice item. This should always be equal to `unit_amount * quantity`.

@@ -10,9 +10,7 @@ final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.am
 factory QuotesResourceUpfront.fromJson(Map<String, dynamic> json) { return QuotesResourceUpfront(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  lineItems: json['line_items'] != null
-        ? QuotesResourceUpfrontLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? QuotesResourceUpfrontLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
 ); }
 

@@ -25,9 +25,7 @@ factory AccessSchemasSelfHostedProps.fromJson(Map<String, dynamic> json) { retur
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
-  corsHeaders: json['cors_headers'] != null
-        ? AccessSchemasCorsHeaders.fromJson(json['cors_headers'] as Map<String, dynamic>)
-        : null,
+  corsHeaders: json['cors_headers'] != null ? AccessSchemasCorsHeaders.fromJson(json['cors_headers'] as Map<String, dynamic>) : null,
   customDenyMessage: json['custom_deny_message'] != null ? AccessCustomDenyMessage.fromJson(json['custom_deny_message'] as String) : null,
   customDenyUrl: json['custom_deny_url'] != null ? AccessSchemasCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
   domain: AccessComponentsSchemasDomain.fromJson(json['domain'] as String),

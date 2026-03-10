@@ -7,9 +7,7 @@
 import 'routing_routing.dart';final class Routing {const Routing({this.apiRouting});
 
 factory Routing.fromJson(Map<String, dynamic> json) { return Routing(
-  apiRouting: json['api_routing'] != null
-        ? RoutingRouting.fromJson(json['api_routing'] as Map<String, dynamic>)
-        : null,
+  apiRouting: json['api_routing'] != null ? RoutingRouting.fromJson(json['api_routing'] as Map<String, dynamic>) : null,
 ); }
 
 /// API Routing settings on endpoint.

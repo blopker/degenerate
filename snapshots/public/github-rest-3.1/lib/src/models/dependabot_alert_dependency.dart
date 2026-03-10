@@ -71,9 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope, this.relationship, });
 
 factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertDependency(
-  package: json['package'] != null
-        ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>)
-        : null,
+  package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,
   manifestPath: json['manifest_path'] as String?,
   scope: json['scope'] != null ? DependabotAlertDependencyScope.fromJson(json['scope'] as String) : null,
   relationship: json['relationship'] != null ? DependabotAlertDependencyRelationship.fromJson(json['relationship'] as String) : null,

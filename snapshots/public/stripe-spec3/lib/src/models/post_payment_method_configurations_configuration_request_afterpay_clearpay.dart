@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_afterpay_clearp
 final class PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay {const PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpayDisplayPreference? displayPreference;

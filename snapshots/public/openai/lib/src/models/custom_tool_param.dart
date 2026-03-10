@@ -11,9 +11,7 @@ factory CustomToolParam.fromJson(Map<String, dynamic> json) { return CustomToolP
   type: json['type'] as String,
   name: json['name'] as String,
   description: json['description'] as String?,
-  format: json['format'] != null
-        ? CustomToolParamFormat.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? CustomToolParamFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   deferLoading: json['defer_loading'] as bool?,
 ); }
 

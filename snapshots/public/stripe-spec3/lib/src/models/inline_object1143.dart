@@ -7,9 +7,7 @@
 import 'inline_object1143_adjustable_quantity.dart';final class InlineObject1143 {const InlineObject1143({this.adjustableQuantity, required this.price, required this.quantity, });
 
 factory InlineObject1143.fromJson(Map<String, dynamic> json) { return InlineObject1143(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? InlineObject1143AdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? InlineObject1143AdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }

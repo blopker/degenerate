@@ -102,60 +102,34 @@ final class PostCustomersCustomerSubscriptionsRequest {const PostCustomersCustom
 
 factory PostCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequest(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
-  applicationFeePercent: json['application_fee_percent'] != null
-        ? PostCustomersCustomerSubscriptionsRequestApplicationFeePercent.fromJson(json['application_fee_percent'] as Map<String, dynamic>)
-        : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  applicationFeePercent: json['application_fee_percent'] != null ? PostCustomersCustomerSubscriptionsRequestApplicationFeePercent.fromJson(json['application_fee_percent'] as Map<String, dynamic>) : null,
+  automaticTax: json['automatic_tax'] != null ? PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   backdateStartDate: json['backdate_start_date'] != null ? (json['backdate_start_date'] as num).toInt() : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostCustomersCustomerSubscriptionsRequestBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  cancelAt: json['cancel_at'] != null
-        ? PostCustomersCustomerSubscriptionsRequestCancelAt.fromJson(json['cancel_at'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostCustomersCustomerSubscriptionsRequestBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  cancelAt: json['cancel_at'] != null ? PostCustomersCustomerSubscriptionsRequestCancelAt.fromJson(json['cancel_at'] as Map<String, dynamic>) : null,
   cancelAtPeriodEnd: json['cancel_at_period_end'] as bool?,
   collectionMethod: json['collection_method'] != null ? PostCustomersCustomerSubscriptionsRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
   defaultSource: json['default_source'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null
-        ? PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(json['default_tax_rates'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceSettings: json['invoice_settings'] != null
-        ? PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>)
-        : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null
-        ? PostCustomersCustomerSubscriptionsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCustomersCustomerSubscriptionsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   offSession: json['off_session'] as bool?,
   paymentBehavior: json['payment_behavior'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
-  paymentSettings: json['payment_settings'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>)
-        : null,
-  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null
-        ? PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInterval.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>)
-        : null,
+  paymentSettings: json['payment_settings'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
+  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInterval.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostCustomersCustomerSubscriptionsRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  transferData: json['transfer_data'] != null
-        ? PostCustomersCustomerSubscriptionsRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
-  trialEnd: json['trial_end'] != null
-        ? PostCustomersCustomerSubscriptionsRequestTrialEnd.fromJson(json['trial_end'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostCustomersCustomerSubscriptionsRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  trialEnd: json['trial_end'] != null ? PostCustomersCustomerSubscriptionsRequestTrialEnd.fromJson(json['trial_end'] as Map<String, dynamic>) : null,
   trialFromPlan: json['trial_from_plan'] as bool?,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null
-        ? PostCustomersCustomerSubscriptionsRequestTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>)
-        : null,
+  trialSettings: json['trial_settings'] != null ? PostCustomersCustomerSubscriptionsRequestTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// A list of prices and quantities that will generate invoice items appended to the next invoice for this subscription. You may pass up to 20 items.

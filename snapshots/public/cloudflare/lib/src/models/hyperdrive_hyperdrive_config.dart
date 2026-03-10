@@ -7,15 +7,11 @@
 import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_config_origin.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_identifier.dart';final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({this.caching, this.createdOn, required this.id, this.modifiedOn, this.mtls, required this.name, required this.origin, this.originConnectionLimit, });
 
 factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfig(
-  caching: json['caching'] != null
-        ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>)
-        : null,
+  caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   id: HyperdriveIdentifier.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
-  mtls: json['mtls'] != null
-        ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>)
-        : null,
+  mtls: json['mtls'] != null ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>) : null,
   name: HyperdriveHyperdriveName.fromJson(json['name'] as String),
   origin: HyperdriveHyperdriveConfigOrigin.fromJson(json['origin']),
   originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,

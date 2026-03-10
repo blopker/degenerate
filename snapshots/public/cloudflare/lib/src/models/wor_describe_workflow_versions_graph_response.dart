@@ -10,9 +10,7 @@ factory WorDescribeWorkflowVersionsGraphResponse.fromJson(Map<String, dynamic> j
   errors: (json['errors'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsGraphResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsGraphResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorDescribeWorkflowVersionsGraphResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-  resultInfo: json['result_info'] != null
-        ? WorDescribeWorkflowVersionsGraphResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? WorDescribeWorkflowVersionsGraphResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

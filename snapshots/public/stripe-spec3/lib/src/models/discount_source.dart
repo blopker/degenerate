@@ -30,9 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 final class DiscountSource {const DiscountSource({this.coupon, required this.type, });
 
 factory DiscountSource.fromJson(Map<String, dynamic> json) { return DiscountSource(
-  coupon: json['coupon'] != null
-        ? DiscountSourceCoupon.fromJson(json['coupon'] as Map<String, dynamic>)
-        : null,
+  coupon: json['coupon'] != null ? DiscountSourceCoupon.fromJson(json['coupon'] as Map<String, dynamic>) : null,
   type: DiscountSourceType.fromJson(json['type'] as String),
 ); }
 

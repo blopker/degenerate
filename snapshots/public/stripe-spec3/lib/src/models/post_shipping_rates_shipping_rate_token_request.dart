@@ -37,12 +37,8 @@ final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesSh
 factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fixedAmount: json['fixed_amount'] != null
-        ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostShippingRatesShippingRateTokenRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  fixedAmount: json['fixed_amount'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostShippingRatesShippingRateTokenRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
 ); }
 

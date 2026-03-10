@@ -42,9 +42,7 @@ factory InlineObject80.fromJson(Map<String, dynamic> json) { return InlineObject
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null
-        ? InlineObject80Parent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? InlineObject80Parent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String?,
   privacy: json['privacy'] != null ? InlineObject80Privacy.fromJson(json['privacy'] as String) : null,
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,

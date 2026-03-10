@@ -88,9 +88,7 @@ factory RadarGetBgpIpsTimeseriesResponseResultMeta.fromJson(Map<String, dynamic>
   aggInterval: RadarGetBgpIpsTimeseriesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
   confidenceInfo: RadarGetBgpIpsTimeseriesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetBgpIpsTimeseriesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
-  delay: json['delay'] != null
-        ? RadarGetBgpIpsTimeseriesResponseResultMetaDelay.fromJson(json['delay'] as Map<String, dynamic>)
-        : null,
+  delay: json['delay'] != null ? RadarGetBgpIpsTimeseriesResponseResultMetaDelay.fromJson(json['delay'] as Map<String, dynamic>) : null,
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetBgpIpsTimeseriesResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetBgpIpsTimeseriesResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),

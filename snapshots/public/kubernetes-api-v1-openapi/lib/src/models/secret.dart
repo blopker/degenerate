@@ -12,9 +12,7 @@ factory Secret.fromJson(Map<String, dynamic> json) { return Secret(
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, base64Decode(v as String))),
   immutable: json['immutable'] as bool?,
   kind: json['kind'] as String?,
-  metadata: json['metadata'] != null
-        ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   stringData: (json['stringData'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   type: json['type'] as String?,
 ); }

@@ -7,9 +7,7 @@
 import 'webhook_security_and_analysis_changes_from.dart';final class WebhookSecurityAndAnalysisChanges {const WebhookSecurityAndAnalysisChanges({this.from});
 
 factory WebhookSecurityAndAnalysisChanges.fromJson(Map<String, dynamic> json) { return WebhookSecurityAndAnalysisChanges(
-  from: json['from'] != null
-        ? WebhookSecurityAndAnalysisChangesFrom.fromJson(json['from'] as Map<String, dynamic>)
-        : null,
+  from: json['from'] != null ? WebhookSecurityAndAnalysisChangesFrom.fromJson(json['from'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookSecurityAndAnalysisChangesFrom? from;

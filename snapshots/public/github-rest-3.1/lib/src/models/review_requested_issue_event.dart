@@ -18,12 +18,8 @@ factory ReviewRequestedIssueEvent.fromJson(Map<String, dynamic> json) { return R
   createdAt: json['created_at'] as String,
   performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
   reviewRequester: SimpleUser.fromJson(json['review_requester'] as Map<String, dynamic>),
-  requestedTeam: json['requested_team'] != null
-        ? Team.fromJson(json['requested_team'] as Map<String, dynamic>)
-        : null,
-  requestedReviewer: json['requested_reviewer'] != null
-        ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>)
-        : null,
+  requestedTeam: json['requested_team'] != null ? Team.fromJson(json['requested_team'] as Map<String, dynamic>) : null,
+  requestedReviewer: json['requested_reviewer'] != null ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

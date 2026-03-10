@@ -7,12 +7,8 @@
 import 'package:collection/collection.dart';import 'intel_ip.dart';import 'intel_schemas_ip_belongs_to_ref.dart';import 'intel_schemas_ip_risk_types.dart';final class IntelSchemasIp {const IntelSchemasIp({this.belongsToRef, this.ip, this.riskTypes, });
 
 factory IntelSchemasIp.fromJson(Map<String, dynamic> json) { return IntelSchemasIp(
-  belongsToRef: json['belongs_to_ref'] != null
-        ? IntelSchemasIpBelongsToRef.fromJson(json['belongs_to_ref'] as Map<String, dynamic>)
-        : null,
-  ip: json['ip'] != null
-        ? IntelIp.fromJson(json['ip'] as Map<String, dynamic>)
-        : null,
+  belongsToRef: json['belongs_to_ref'] != null ? IntelSchemasIpBelongsToRef.fromJson(json['belongs_to_ref'] as Map<String, dynamic>) : null,
+  ip: json['ip'] != null ? IntelIp.fromJson(json['ip'] as Map<String, dynamic>) : null,
   riskTypes: (json['risk_types'] as List<dynamic>?)?.map((e) => IntelSchemasIpRiskTypes.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

@@ -89,9 +89,7 @@ final class Quote {const Quote({required this.amountSubtotal, required this.amou
 factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  application: json['application'] != null
-        ? QuoteApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? QuoteApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: QuotesResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
@@ -99,50 +97,32 @@ factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   computed: QuotesResourceComputed.fromJson(json['computed'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
-  customer: json['customer'] != null
-        ? QuoteCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? QuoteCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => QuoteDefaultTaxRates.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => QuoteDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   expiresAt: (json['expires_at'] as num).toInt(),
   footer: json['footer'] as String?,
-  fromQuote: json['from_quote'] != null
-        ? QuoteFromQuote.fromJson(json['from_quote'] as Map<String, dynamic>)
-        : null,
+  fromQuote: json['from_quote'] != null ? QuoteFromQuote.fromJson(json['from_quote'] as Map<String, dynamic>) : null,
   header: json['header'] as String?,
   id: json['id'] as String,
-  invoice: json['invoice'] != null
-        ? QuoteInvoice.fromJson(json['invoice'] as Map<String, dynamic>)
-        : null,
+  invoice: json['invoice'] != null ? QuoteInvoice.fromJson(json['invoice'] as Map<String, dynamic>) : null,
   invoiceSettings: InvoiceSettingQuoteSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
-  lineItems: json['line_items'] != null
-        ? QuoteLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? QuoteLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
   object: QuoteObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? QuoteOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? QuoteOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
   status: QuoteStatus.fromJson(json['status'] as String),
   statusTransitions: QuotesResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  subscription: json['subscription'] != null
-        ? QuoteSubscription.fromJson(json['subscription'] as Map<String, dynamic>)
-        : null,
+  subscription: json['subscription'] != null ? QuoteSubscription.fromJson(json['subscription'] as Map<String, dynamic>) : null,
   subscriptionData: QuotesResourceSubscriptionDataSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>),
-  subscriptionSchedule: json['subscription_schedule'] != null
-        ? QuoteSubscriptionSchedule.fromJson(json['subscription_schedule'] as Map<String, dynamic>)
-        : null,
-  testClock: json['test_clock'] != null
-        ? QuoteTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  subscriptionSchedule: json['subscription_schedule'] != null ? QuoteSubscriptionSchedule.fromJson(json['subscription_schedule'] as Map<String, dynamic>) : null,
+  testClock: json['test_clock'] != null ? QuoteTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
-  transferData: json['transfer_data'] != null
-        ? QuoteTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? QuoteTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// Total before any discounts or taxes are applied.

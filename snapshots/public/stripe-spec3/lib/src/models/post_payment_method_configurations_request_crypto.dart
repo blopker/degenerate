@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_crypto_display_preference.dar
 final class PostPaymentMethodConfigurationsRequestCrypto {const PostPaymentMethodConfigurationsRequestCrypto({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestCrypto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCrypto(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestCryptoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestCryptoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestCryptoDisplayPreference? displayPreference;

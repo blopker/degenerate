@@ -71,9 +71,7 @@ factory BillingCreditGrant.fromJson(Map<String, dynamic> json) { return BillingC
   name: json['name'] as String?,
   object: BillingCreditGrantObject.fromJson(json['object'] as String),
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
-  testClock: json['test_clock'] != null
-        ? BillingCreditGrantTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  testClock: json['test_clock'] != null ? BillingCreditGrantTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
   updated: (json['updated'] as num).toInt(),
   voidedAt: json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null,
 ); }

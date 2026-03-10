@@ -8,14 +8,10 @@ import 'legal_entity_person_verification_additional_document.dart';import 'legal
 final class LegalEntityPersonVerification {const LegalEntityPersonVerification({this.additionalDocument, this.details, this.detailsCode, this.document, required this.status, });
 
 factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerification(
-  additionalDocument: json['additional_document'] != null
-        ? LegalEntityPersonVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>)
-        : null,
+  additionalDocument: json['additional_document'] != null ? LegalEntityPersonVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
   details: json['details'] as String?,
   detailsCode: json['details_code'] as String?,
-  document: json['document'] != null
-        ? LegalEntityPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
 ); }
 

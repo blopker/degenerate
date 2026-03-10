@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_customers_customer_cash
 
 factory PostCustomersCustomerCashBalanceRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCashBalanceRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  settings: json['settings'] != null
-        ? PostCustomersCustomerCashBalanceRequestSettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? PostCustomersCustomerCashBalanceRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

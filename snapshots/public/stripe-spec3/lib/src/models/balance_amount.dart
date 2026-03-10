@@ -10,9 +10,7 @@ final class BalanceAmount {const BalanceAmount({required this.amount, required t
 factory BalanceAmount.fromJson(Map<String, dynamic> json) { return BalanceAmount(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-  sourceTypes: json['source_types'] != null
-        ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>)
-        : null,
+  sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
 ); }
 
 /// Balance amount.

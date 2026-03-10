@@ -29,20 +29,12 @@ final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestRe
 
 factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolved(
   action: WebhookPullRequestReviewThreadUnresolvedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pullRequest: WebhookPullRequestReviewThreadUnresolvedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   thread: WebhookPullRequestReviewThreadUnresolvedThread.fromJson(json['thread'] as Map<String, dynamic>),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }

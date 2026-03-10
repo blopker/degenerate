@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'employee.dart';final class D
 factory Department.fromJson(Map<String, dynamic> json) { return Department(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  head: json['head'] != null
-        ? Employee.fromJson(json['head'] as Map<String, dynamic>)
-        : null,
+  head: json['head'] != null ? Employee.fromJson(json['head'] as Map<String, dynamic>) : null,
   members: (json['members'] as List<dynamic>?)?.map((e) => Employee.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

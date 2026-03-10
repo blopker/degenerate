@@ -7,9 +7,7 @@
 import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsPayto {const PostSetupIntentsIntentRequestPaymentMethodOptionsPayto({this.mandateOptions});
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions? mandateOptions;

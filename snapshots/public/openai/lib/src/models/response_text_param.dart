@@ -43,9 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity, });
 
 factory ResponseTextParam.fromJson(Map<String, dynamic> json) { return ResponseTextParam(
-  format: json['format'] != null
-        ? TextResponseFormatConfiguration.fromJson(json['format'] as Map<String, dynamic>)
-        : null,
+  format: json['format'] != null ? TextResponseFormatConfiguration.fromJson(json['format'] as Map<String, dynamic>) : null,
   verbosity: json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null,
 ); }
 

@@ -7,15 +7,9 @@
 import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown_fuel.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown_non_fuel.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown_tax.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown(
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  nonFuel: json['non_fuel'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  nonFuel: json['non_fuel'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdownFuel? fuel;

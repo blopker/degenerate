@@ -374,17 +374,11 @@ final class PaymentIntent {const PaymentIntent({this.amount, this.amountCapturab
 factory PaymentIntent.fromJson(Map<String, dynamic> json) { return PaymentIntent(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountCapturable: json['amount_capturable'] != null ? (json['amount_capturable'] as num).toInt() : null,
-  amountDetails: json['amount_details'] != null
-        ? PaymentIntentAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>)
-        : null,
+  amountDetails: json['amount_details'] != null ? PaymentIntentAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   amountReceived: json['amount_received'] != null ? (json['amount_received'] as num).toInt() : null,
-  application: json['application'] != null
-        ? PaymentIntentApplication.fromJson(json['application'] as Map<String, dynamic>)
-        : null,
+  application: json['application'] != null ? PaymentIntentApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null
-        ? PaymentIntentAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>)
-        : null,
+  automaticPaymentMethods: json['automatic_payment_methods'] != null ? PaymentIntentAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   cancellationReason: json['cancellation_reason'] != null ? PaymentIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   captureMethod: json['capture_method'] != null ? PaymentIntentCaptureMethod.fromJson(json['capture_method'] as String) : null,
@@ -392,64 +386,34 @@ factory PaymentIntent.fromJson(Map<String, dynamic> json) { return PaymentIntent
   confirmationMethod: json['confirmation_method'] != null ? PaymentIntentConfirmationMethod.fromJson(json['confirmation_method'] as String) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
-  customer: json['customer'] != null
-        ? PaymentIntentCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? PaymentIntentCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
-  hooks: json['hooks'] != null
-        ? PaymentFlowsPaymentIntentAsyncWorkflows.fromJson(json['hooks'] as Map<String, dynamic>)
-        : null,
+  hooks: json['hooks'] != null ? PaymentFlowsPaymentIntentAsyncWorkflows.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  lastPaymentError: json['last_payment_error'] != null
-        ? PaymentIntentLastPaymentError.fromJson(json['last_payment_error'] as Map<String, dynamic>)
-        : null,
-  latestCharge: json['latest_charge'] != null
-        ? PaymentIntentLatestCharge.fromJson(json['latest_charge'] as Map<String, dynamic>)
-        : null,
+  lastPaymentError: json['last_payment_error'] != null ? PaymentIntentLastPaymentError.fromJson(json['last_payment_error'] as Map<String, dynamic>) : null,
+  latestCharge: json['latest_charge'] != null ? PaymentIntentLatestCharge.fromJson(json['latest_charge'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null
-        ? PaymentIntentNextAction2.fromJson(json['next_action'] as Map<String, dynamic>)
-        : null,
+  nextAction: json['next_action'] != null ? PaymentIntentNextAction2.fromJson(json['next_action'] as Map<String, dynamic>) : null,
   object: PaymentIntentObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null
-        ? PaymentIntentOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>)
-        : null,
-  paymentDetails: json['payment_details'] != null
-        ? PaymentFlowsPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>)
-        : null,
-  paymentMethod: json['payment_method'] != null
-        ? PaymentIntentPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>)
-        : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null
-        ? PaymentIntentPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PaymentIntentPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PaymentIntentOnBehalfOf.fromJson(json['on_behalf_of'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? PaymentFlowsPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
+  paymentMethod: json['payment_method'] != null ? PaymentIntentPaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
+  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentIntentPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PaymentIntentPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  presentmentDetails: json['presentment_details'] != null
-        ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>)
-        : null,
-  processing: json['processing'] != null
-        ? PaymentIntentProcessing2.fromJson(json['processing'] as Map<String, dynamic>)
-        : null,
+  presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
+  processing: json['processing'] != null ? PaymentIntentProcessing2.fromJson(json['processing'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
-  review: json['review'] != null
-        ? PaymentIntentReview.fromJson(json['review'] as Map<String, dynamic>)
-        : null,
+  review: json['review'] != null ? PaymentIntentReview.fromJson(json['review'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null
-        ? PaymentIntentShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
+  shipping: json['shipping'] != null ? PaymentIntentShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   status: PaymentIntentStatus.fromJson(json['status'] as String),
-  transferData: json['transfer_data'] != null
-        ? PaymentIntentTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PaymentIntentTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 

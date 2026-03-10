@@ -9,18 +9,10 @@ import 'package:collection/collection.dart';import 'post_sources_source_request_
 factory PostSourcesSourceRequest.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  mandate: json['mandate'] != null
-        ? PostSourcesSourceRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostSourcesSourceRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  owner: json['owner'] != null
-        ? PostSourcesSourceRequestOwner.fromJson(json['owner'] as Map<String, dynamic>)
-        : null,
-  sourceOrder: json['source_order'] != null
-        ? PostSourcesSourceRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>)
-        : null,
+  mandate: json['mandate'] != null ? PostSourcesSourceRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostSourcesSourceRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  owner: json['owner'] != null ? PostSourcesSourceRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  sourceOrder: json['source_order'] != null ? PostSourcesSourceRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount associated with the source.

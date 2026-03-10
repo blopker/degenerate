@@ -10,9 +10,7 @@ factory ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest.fromJson(
   clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,
   dnsDestinationIpsId: json['dns_destination_ips_id'] != null ? ZeroTrustGatewayDnsDestinationIpsIdWrite.fromJson(json['dns_destination_ips_id'] as String) : null,
   ecsSupport: json['ecs_support'] != null ? ZeroTrustGatewayEcsSupport.fromJson(json['ecs_support'] as bool) : null,
-  endpoints: json['endpoints'] != null
-        ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>)
-        : null,
+  endpoints: json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null,
   name: ZeroTrustGatewaySchemasName.fromJson(json['name'] as String),
   networks: (json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

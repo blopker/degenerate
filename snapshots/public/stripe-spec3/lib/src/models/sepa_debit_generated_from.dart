@@ -8,12 +8,8 @@ import 'sepa_debit_generated_from_charge.dart';import 'sepa_debit_generated_from
 final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge, this.setupAttempt, });
 
 factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return SepaDebitGeneratedFrom(
-  charge: json['charge'] != null
-        ? SepaDebitGeneratedFromCharge.fromJson(json['charge'] as Map<String, dynamic>)
-        : null,
-  setupAttempt: json['setup_attempt'] != null
-        ? SepaDebitGeneratedFromSetupAttempt.fromJson(json['setup_attempt'] as Map<String, dynamic>)
-        : null,
+  charge: json['charge'] != null ? SepaDebitGeneratedFromCharge.fromJson(json['charge'] as Map<String, dynamic>) : null,
+  setupAttempt: json['setup_attempt'] != null ? SepaDebitGeneratedFromSetupAttempt.fromJson(json['setup_attempt'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the Charge that generated this PaymentMethod, if any.

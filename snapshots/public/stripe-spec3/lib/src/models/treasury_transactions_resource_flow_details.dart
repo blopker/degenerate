@@ -54,30 +54,14 @@ bool get isUnknown { return !values.contains(this); }
 final class TreasuryTransactionsResourceFlowDetails {const TreasuryTransactionsResourceFlowDetails({this.creditReversal, this.debitReversal, this.inboundTransfer, this.issuingAuthorization, this.outboundPayment, this.outboundTransfer, this.receivedCredit, this.receivedDebit, required this.type, });
 
 factory TreasuryTransactionsResourceFlowDetails.fromJson(Map<String, dynamic> json) { return TreasuryTransactionsResourceFlowDetails(
-  creditReversal: json['credit_reversal'] != null
-        ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>)
-        : null,
-  debitReversal: json['debit_reversal'] != null
-        ? TreasuryDebitReversal.fromJson(json['debit_reversal'] as Map<String, dynamic>)
-        : null,
-  inboundTransfer: json['inbound_transfer'] != null
-        ? TreasuryInboundTransfer.fromJson(json['inbound_transfer'] as Map<String, dynamic>)
-        : null,
-  issuingAuthorization: json['issuing_authorization'] != null
-        ? IssuingAuthorization.fromJson(json['issuing_authorization'] as Map<String, dynamic>)
-        : null,
-  outboundPayment: json['outbound_payment'] != null
-        ? TreasuryOutboundPayment.fromJson(json['outbound_payment'] as Map<String, dynamic>)
-        : null,
-  outboundTransfer: json['outbound_transfer'] != null
-        ? TreasuryOutboundTransfer.fromJson(json['outbound_transfer'] as Map<String, dynamic>)
-        : null,
-  receivedCredit: json['received_credit'] != null
-        ? TreasuryReceivedCredit.fromJson(json['received_credit'] as Map<String, dynamic>)
-        : null,
-  receivedDebit: json['received_debit'] != null
-        ? TreasuryReceivedDebit.fromJson(json['received_debit'] as Map<String, dynamic>)
-        : null,
+  creditReversal: json['credit_reversal'] != null ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>) : null,
+  debitReversal: json['debit_reversal'] != null ? TreasuryDebitReversal.fromJson(json['debit_reversal'] as Map<String, dynamic>) : null,
+  inboundTransfer: json['inbound_transfer'] != null ? TreasuryInboundTransfer.fromJson(json['inbound_transfer'] as Map<String, dynamic>) : null,
+  issuingAuthorization: json['issuing_authorization'] != null ? IssuingAuthorization.fromJson(json['issuing_authorization'] as Map<String, dynamic>) : null,
+  outboundPayment: json['outbound_payment'] != null ? TreasuryOutboundPayment.fromJson(json['outbound_payment'] as Map<String, dynamic>) : null,
+  outboundTransfer: json['outbound_transfer'] != null ? TreasuryOutboundTransfer.fromJson(json['outbound_transfer'] as Map<String, dynamic>) : null,
+  receivedCredit: json['received_credit'] != null ? TreasuryReceivedCredit.fromJson(json['received_credit'] as Map<String, dynamic>) : null,
+  receivedDebit: json['received_debit'] != null ? TreasuryReceivedDebit.fromJson(json['received_debit'] as Map<String, dynamic>) : null,
   type: TreasuryTransactionsResourceFlowDetailsType.fromJson(json['type'] as String),
 ); }
 

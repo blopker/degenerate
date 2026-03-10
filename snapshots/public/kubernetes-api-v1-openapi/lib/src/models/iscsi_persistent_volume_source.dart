@@ -17,9 +17,7 @@ factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return
   lun: (json['lun'] as num).toInt(),
   portals: (json['portals'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   targetPortal: json['targetPortal'] as String,
 ); }
 

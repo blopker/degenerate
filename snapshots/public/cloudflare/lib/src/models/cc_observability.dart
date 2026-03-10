@@ -8,9 +8,7 @@ import 'cc_observability_logs.dart';/// Settings for observability such as loggi
 final class CcObservability {const CcObservability({this.logs});
 
 factory CcObservability.fromJson(Map<String, dynamic> json) { return CcObservability(
-  logs: json['logs'] != null
-        ? CcObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>)
-        : null,
+  logs: json['logs'] != null ? CcObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>) : null,
 ); }
 
 final CcObservabilityLogs? logs;

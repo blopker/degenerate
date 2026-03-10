@@ -9,9 +9,7 @@ final class AuditLogInviteSent {const AuditLogInviteSent({this.id, this.data, })
 
 factory AuditLogInviteSent.fromJson(Map<String, dynamic> json) { return AuditLogInviteSent(
   id: json['id'] as String?,
-  data: json['data'] != null
-        ? AuditLogInviteSentData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? AuditLogInviteSentData.fromJson(json['data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the invite.

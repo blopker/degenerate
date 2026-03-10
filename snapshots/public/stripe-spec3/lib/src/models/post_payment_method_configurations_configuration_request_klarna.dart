@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_klarna_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestKlarna {const PostPaymentMethodConfigurationsConfigurationRequestKlarna({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestKlarna.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKlarna(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference? displayPreference;

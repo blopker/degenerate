@@ -7,15 +7,9 @@
 import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_packet_loss.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_quality_mos.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_rtt.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative({this.packetLoss, this.qualityMos, this.rtt, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(
-  packetLoss: json['packet_loss'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss.fromJson(json['packet_loss'] as Map<String, dynamic>)
-        : null,
-  qualityMos: json['quality_mos'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos.fromJson(json['quality_mos'] as Map<String, dynamic>)
-        : null,
-  rtt: json['rtt'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt.fromJson(json['rtt'] as Map<String, dynamic>)
-        : null,
+  packetLoss: json['packet_loss'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss.fromJson(json['packet_loss'] as Map<String, dynamic>) : null,
+  qualityMos: json['quality_mos'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos.fromJson(json['quality_mos'] as Map<String, dynamic>) : null,
+  rtt: json['rtt'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt.fromJson(json['rtt'] as Map<String, dynamic>) : null,
 ); }
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss? packetLoss;

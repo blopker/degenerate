@@ -8,12 +8,8 @@ import 'realtimekit_update_preset_config_media_screenshare.dart';import 'realtim
 final class RealtimekitUpdatePresetConfigMedia {const RealtimekitUpdatePresetConfigMedia({this.screenshare, this.video, });
 
 factory RealtimekitUpdatePresetConfigMedia.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMedia(
-  screenshare: json['screenshare'] != null
-        ? RealtimekitUpdatePresetConfigMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>)
-        : null,
-  video: json['video'] != null
-        ? RealtimekitUpdatePresetConfigMediaVideo.fromJson(json['video'] as Map<String, dynamic>)
-        : null,
+  screenshare: json['screenshare'] != null ? RealtimekitUpdatePresetConfigMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>) : null,
+  video: json['video'] != null ? RealtimekitUpdatePresetConfigMediaVideo.fromJson(json['video'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configuration options for participant screen shares

@@ -46,12 +46,8 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependabotAlertSecurityVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   severity: DependabotAlertSecurityAdvisorySeverity.fromJson(json['severity'] as String),
   cvss: DependabotAlertSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null
-        ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>)
-        : null,
-  epss: json['epss'] != null
-        ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>)
-        : null,
+  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
+  epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
   cwes: (json['cwes'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   identifiers: (json['identifiers'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
   references: (json['references'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryReferences.fromJson(e as Map<String, dynamic>)).toList(),

@@ -37,9 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTaxRegistrationsRequestCountryOptionsRo {const PostTaxRegistrationsRequestCountryOptionsRo({this.standard, required this.type, });
 
 factory PostTaxRegistrationsRequestCountryOptionsRo.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsRo(
-  standard: json['standard'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsRoStandard.fromJson(json['standard'] as Map<String, dynamic>)
-        : null,
+  standard: json['standard'] != null ? PostTaxRegistrationsRequestCountryOptionsRoStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,
   type: PostTaxRegistrationsRequestCountryOptionsRoType.fromJson(json['type'] as String),
 ); }
 

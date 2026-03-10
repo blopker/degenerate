@@ -62,47 +62,29 @@ final class AiSearchUpdateInstancesRequest {const AiSearchUpdateInstancesRequest
 
 factory AiSearchUpdateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequest(
   aiGatewayId: json['ai_gateway_id'] as String?,
-  aiSearchModel: json['ai_search_model'] != null
-        ? AiSearchUpdateInstancesRequestAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>)
-        : null,
+  aiSearchModel: json['ai_search_model'] != null ? AiSearchUpdateInstancesRequestAiSearchModel.fromJson(json['ai_search_model'] as Map<String, dynamic>) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
   cacheThreshold: json.containsKey('cache_threshold') ? AiSearchUpdateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchUpdateInstancesRequestCacheThreshold.closeEnough,
   chunk: json.containsKey('chunk') ? json['chunk'] as bool : true,
   chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
   chunkSize: json.containsKey('chunk_size') ? (json['chunk_size'] as num).toInt() : 256,
   customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchUpdateInstancesRequestCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-  embeddingModel: json['embedding_model'] != null
-        ? AiSearchUpdateInstancesRequestEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>)
-        : null,
+  embeddingModel: json['embedding_model'] != null ? AiSearchUpdateInstancesRequestEmbeddingModel.fromJson(json['embedding_model'] as Map<String, dynamic>) : null,
   fusionMethod: json.containsKey('fusion_method') ? AiSearchUpdateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchUpdateInstancesRequestFusionMethod.rrf,
   hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  metadata: json['metadata'] != null
-        ? AiSearchUpdateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? AiSearchUpdateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   paused: json.containsKey('paused') ? json['paused'] as bool : false,
-  publicEndpointParams: json['public_endpoint_params'] != null
-        ? AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>)
-        : null,
+  publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
-  rerankingModel: json['reranking_model'] != null
-        ? AiSearchUpdateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>)
-        : null,
-  retrievalOptions: json['retrieval_options'] != null
-        ? AiSearchUpdateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>)
-        : null,
-  rewriteModel: json['rewrite_model'] != null
-        ? AiSearchUpdateInstancesRequestRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>)
-        : null,
+  rerankingModel: json['reranking_model'] != null ? AiSearchUpdateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as Map<String, dynamic>) : null,
+  retrievalOptions: json['retrieval_options'] != null ? AiSearchUpdateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  rewriteModel: json['rewrite_model'] != null ? AiSearchUpdateInstancesRequestRewriteModel.fromJson(json['rewrite_model'] as Map<String, dynamic>) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
-  sourceParams: json['source_params'] != null
-        ? AiSearchUpdateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>)
-        : null,
+  sourceParams: json['source_params'] != null ? AiSearchUpdateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
   summarization: json.containsKey('summarization') ? json['summarization'] as bool : false,
-  summarizationModel: json['summarization_model'] != null
-        ? AiSearchUpdateInstancesRequestSummarizationModel.fromJson(json['summarization_model'] as Map<String, dynamic>)
-        : null,
+  summarizationModel: json['summarization_model'] != null ? AiSearchUpdateInstancesRequestSummarizationModel.fromJson(json['summarization_model'] as Map<String, dynamic>) : null,
   systemPromptAiSearch: json['system_prompt_ai_search'] as String?,
   systemPromptIndexSummarization: json['system_prompt_index_summarization'] as String?,
   systemPromptRewriteQuery: json['system_prompt_rewrite_query'] as String?,

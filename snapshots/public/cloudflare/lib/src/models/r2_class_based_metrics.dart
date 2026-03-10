@@ -8,12 +8,8 @@ import 'r2_object_size_metrics.dart';/// Metrics based on what state they are in
 final class R2ClassBasedMetrics {const R2ClassBasedMetrics({this.published, this.uploaded, });
 
 factory R2ClassBasedMetrics.fromJson(Map<String, dynamic> json) { return R2ClassBasedMetrics(
-  published: json['published'] != null
-        ? R2ObjectSizeMetrics.fromJson(json['published'] as Map<String, dynamic>)
-        : null,
-  uploaded: json['uploaded'] != null
-        ? R2ObjectSizeMetrics.fromJson(json['uploaded'] as Map<String, dynamic>)
-        : null,
+  published: json['published'] != null ? R2ObjectSizeMetrics.fromJson(json['published'] as Map<String, dynamic>) : null,
+  uploaded: json['uploaded'] != null ? R2ObjectSizeMetrics.fromJson(json['uploaded'] as Map<String, dynamic>) : null,
 ); }
 
 final R2ObjectSizeMetrics? published;

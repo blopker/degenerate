@@ -8,19 +8,11 @@ import 'post_payment_intents_intent_increment_authorization_request_amount_detai
 final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails(
-  discountAmount: json['discount_amount'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>)
-        : null,
+  discountAmount: json['discount_amount'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount'] as Map<String, dynamic>) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  lineItems: json['line_items'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount? discountAmount;

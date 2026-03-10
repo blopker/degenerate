@@ -34,12 +34,8 @@ final class PostIdentityVerificationSessionsSessionRequest {const PostIdentityVe
 factory PostIdentityVerificationSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsSessionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  options: json['options'] != null
-        ? PostIdentityVerificationSessionsSessionRequestOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-  providedDetails: json['provided_details'] != null
-        ? PostIdentityVerificationSessionsSessionRequestProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? PostIdentityVerificationSessionsSessionRequestOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
+  providedDetails: json['provided_details'] != null ? PostIdentityVerificationSessionsSessionRequestProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostIdentityVerificationSessionsSessionRequestType.fromJson(json['type'] as String) : null,
 ); }
 

@@ -30,9 +30,7 @@ final class RepositoryRuleRequiredStatusChecks {const RepositoryRuleRequiredStat
 
 factory RepositoryRuleRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredStatusChecks(
   type: RepositoryRuleRequiredStatusChecksType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleRequiredStatusChecksParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleRequiredStatusChecksParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleRequiredStatusChecksType type;

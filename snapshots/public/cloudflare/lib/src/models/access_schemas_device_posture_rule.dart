@@ -7,9 +7,7 @@
 import 'access_device_posture_check.dart';final class AccessSchemasDevicePostureRule {const AccessSchemasDevicePostureRule({this.check, this.data, this.description, this.error, this.id, this.ruleName, this.success, this.timestamp, this.type, });
 
 factory AccessSchemasDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessSchemasDevicePostureRule(
-  check: json['check'] != null
-        ? AccessDevicePostureCheck.fromJson(json['check'] as Map<String, dynamic>)
-        : null,
+  check: json['check'] != null ? AccessDevicePostureCheck.fromJson(json['check'] as Map<String, dynamic>) : null,
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   description: json['description'] as String?,
   error: json['error'] as String?,

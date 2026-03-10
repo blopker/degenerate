@@ -161,9 +161,7 @@ factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
   description: json['description'] as String?,
   displayName: json['display_name'] as String,
   effectivePercentage: json['effective_percentage'] != null ? (json['effective_percentage'] as num).toDouble() : null,
-  flatAmount: json['flat_amount'] != null
-        ? TaxRateFlatAmount2.fromJson(json['flat_amount'] as Map<String, dynamic>)
-        : null,
+  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount2.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   inclusive: json['inclusive'] as bool,
   jurisdiction: json['jurisdiction'] as String?,

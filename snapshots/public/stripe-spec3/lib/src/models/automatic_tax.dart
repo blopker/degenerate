@@ -63,9 +63,7 @@ final class AutomaticTax {const AutomaticTax({this.disabledReason, required this
 factory AutomaticTax.fromJson(Map<String, dynamic> json) { return AutomaticTax(
   disabledReason: json['disabled_reason'] != null ? AutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? AutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? AutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
   status: json['status'] != null ? AutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }

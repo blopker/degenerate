@@ -28,9 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails({this.card, required this.moneyMovementType, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
-  card: json['card'] != null
-        ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   moneyMovementType: PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
 ); }
 

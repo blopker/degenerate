@@ -8,13 +8,9 @@ import 'payment_method.dart';import 'terminal_reader_reader_resource_collect_con
 final class TerminalReaderReaderResourceCollectPaymentMethodAction {const TerminalReaderReaderResourceCollectPaymentMethodAction({this.collectConfig, required this.paymentIntent, this.paymentMethod, });
 
 factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
-  collectConfig: json['collect_config'] != null
-        ? TerminalReaderReaderResourceCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>)
-        : null,
+  collectConfig: json['collect_config'] != null ? TerminalReaderReaderResourceCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
   paymentIntent: TerminalReaderReaderResourceCollectPaymentMethodActionPaymentIntent.fromJson(json['payment_intent'] as Map<String, dynamic>),
-  paymentMethod: json['payment_method'] != null
-        ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>)
-        : null,
+  paymentMethod: json['payment_method'] != null ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
 ); }
 
 final TerminalReaderReaderResourceCollectConfig? collectConfig;

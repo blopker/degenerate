@@ -35,12 +35,8 @@ final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, r
 factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return ScheduledQueryRun(
   created: (json['created'] as num).toInt(),
   dataLoadTime: (json['data_load_time'] as num).toInt(),
-  error: json['error'] != null
-        ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
-  file: json['file'] != null
-        ? ScheduledQueryRunFile.fromJson(json['file'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>) : null,
+  file: json['file'] != null ? ScheduledQueryRunFile.fromJson(json['file'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ScheduledQueryRunObject.fromJson(json['object'] as String),

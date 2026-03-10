@@ -8,9 +8,7 @@ import 'rulesets_set_cache_settings_status_code_ttl2_status_code_range.dart';fin
 
 factory RulesetsSetCacheSettingsStatusCodeTtl2.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsStatusCodeTtl2(
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
-  statusCodeRange: json['status_code_range'] != null
-        ? RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange.fromJson(json['status_code_range'] as Map<String, dynamic>)
-        : null,
+  statusCodeRange: json['status_code_range'] != null ? RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange.fromJson(json['status_code_range'] as Map<String, dynamic>) : null,
   value: (json['value'] as num).toInt(),
 ); }
 

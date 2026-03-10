@@ -103,36 +103,22 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   clientSecret: json['client_secret'] as String?,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
-  lastError: json['last_error'] != null
-        ? IdentityVerificationSessionLastError.fromJson(json['last_error'] as Map<String, dynamic>)
-        : null,
-  lastVerificationReport: json['last_verification_report'] != null
-        ? IdentityVerificationSessionLastVerificationReport.fromJson(json['last_verification_report'] as Map<String, dynamic>)
-        : null,
+  lastError: json['last_error'] != null ? IdentityVerificationSessionLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
+  lastVerificationReport: json['last_verification_report'] != null ? IdentityVerificationSessionLastVerificationReport.fromJson(json['last_verification_report'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: IdentityVerificationSessionObject.fromJson(json['object'] as String),
-  options: json['options'] != null
-        ? IdentityVerificationSessionOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-  providedDetails: json['provided_details'] != null
-        ? IdentityVerificationSessionProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>)
-        : null,
-  redaction: json['redaction'] != null
-        ? IdentityVerificationSessionRedaction.fromJson(json['redaction'] as Map<String, dynamic>)
-        : null,
+  options: json['options'] != null ? IdentityVerificationSessionOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
+  providedDetails: json['provided_details'] != null ? IdentityVerificationSessionProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
+  redaction: json['redaction'] != null ? IdentityVerificationSessionRedaction.fromJson(json['redaction'] as Map<String, dynamic>) : null,
   relatedCustomer: json['related_customer'] as String?,
   relatedCustomerAccount: json['related_customer_account'] as String?,
-  relatedPerson: json['related_person'] != null
-        ? GelatoRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>)
-        : null,
+  relatedPerson: json['related_person'] != null ? GelatoRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
   status: IdentityVerificationSessionStatus.fromJson(json['status'] as String),
   type: IdentityVerificationSessionType.fromJson(json['type'] as String),
   url: json['url'] as String?,
   verificationFlow: json['verification_flow'] as String?,
-  verifiedOutputs: json['verified_outputs'] != null
-        ? IdentityVerificationSessionVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>)
-        : null,
+  verifiedOutputs: json['verified_outputs'] != null ? IdentityVerificationSessionVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>) : null,
 ); }
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.

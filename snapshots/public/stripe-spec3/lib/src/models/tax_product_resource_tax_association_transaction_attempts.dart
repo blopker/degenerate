@@ -8,12 +8,8 @@ import 'tax_product_resource_tax_association_transaction_attempts_resource_commi
 final class TaxProductResourceTaxAssociationTransactionAttempts {const TaxProductResourceTaxAssociationTransactionAttempts({this.committed, this.errored, required this.source, required this.status, });
 
 factory TaxProductResourceTaxAssociationTransactionAttempts.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxAssociationTransactionAttempts(
-  committed: json['committed'] != null
-        ? TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted.fromJson(json['committed'] as Map<String, dynamic>)
-        : null,
-  errored: json['errored'] != null
-        ? TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored.fromJson(json['errored'] as Map<String, dynamic>)
-        : null,
+  committed: json['committed'] != null ? TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted.fromJson(json['committed'] as Map<String, dynamic>) : null,
+  errored: json['errored'] != null ? TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored.fromJson(json['errored'] as Map<String, dynamic>) : null,
   source: json['source'] as String,
   status: json['status'] as String,
 ); }

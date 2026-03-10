@@ -10,9 +10,7 @@ factory WorListWorkflowVersionsResponse.fromJson(Map<String, dynamic> json) { re
   errors: (json['errors'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: json['result_info'] != null
-        ? WorListWorkflowVersionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
-        : null,
+  resultInfo: json['result_info'] != null ? WorListWorkflowVersionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

@@ -22,9 +22,7 @@ final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additiona
 
 factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return WaitingroomWaitingroom(
   additionalRoutes: (json['additional_routes'] as List<dynamic>?)?.map((e) => WaitingroomAdditionalRoutes2.fromJson(e as Map<String, dynamic>)).toList(),
-  cookieAttributes: json['cookie_attributes'] != null
-        ? WaitingroomCookieAttributes.fromJson(json['cookie_attributes'] as Map<String, dynamic>)
-        : null,
+  cookieAttributes: json['cookie_attributes'] != null ? WaitingroomCookieAttributes.fromJson(json['cookie_attributes'] as Map<String, dynamic>) : null,
   cookieSuffix: json['cookie_suffix'] != null ? WaitingroomCookieSuffix.fromJson(json['cookie_suffix'] as String) : null,
   createdOn: json['created_on'] != null ? WaitingroomTimestamp.fromJson(json['created_on'] as String) : null,
   customPageHtml: json['custom_page_html'] != null ? WaitingroomCustomPageHtml.fromJson(json['custom_page_html'] as String) : null,

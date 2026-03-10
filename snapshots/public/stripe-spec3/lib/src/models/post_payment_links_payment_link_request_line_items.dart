@@ -7,9 +7,7 @@
 import 'post_payment_links_payment_link_request_line_items_adjustable_quantity.dart';final class PostPaymentLinksPaymentLinkRequestLineItems {const PostPaymentLinksPaymentLinkRequestLineItems({this.adjustableQuantity, required this.id, this.quantity, });
 
 factory PostPaymentLinksPaymentLinkRequestLineItems.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestLineItems(
-  adjustableQuantity: json['adjustable_quantity'] != null
-        ? PostPaymentLinksPaymentLinkRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>)
-        : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PostPaymentLinksPaymentLinkRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
 ); }

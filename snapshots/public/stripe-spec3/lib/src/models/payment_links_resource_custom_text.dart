@@ -8,18 +8,10 @@ import 'payment_links_resource_custom_text_after_submit.dart';import 'payment_li
 final class PaymentLinksResourceCustomText {const PaymentLinksResourceCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentLinksResourceCustomText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomText(
-  afterSubmit: json['after_submit'] != null
-        ? PaymentLinksResourceCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>)
-        : null,
-  shippingAddress: json['shipping_address'] != null
-        ? PaymentLinksResourceCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
-  submit: json['submit'] != null
-        ? PaymentLinksResourceCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>)
-        : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null
-        ? PaymentLinksResourceCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>)
-        : null,
+  afterSubmit: json['after_submit'] != null ? PaymentLinksResourceCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PaymentLinksResourceCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PaymentLinksResourceCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentLinksResourceCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// Custom text that should be displayed after the payment confirmation button.

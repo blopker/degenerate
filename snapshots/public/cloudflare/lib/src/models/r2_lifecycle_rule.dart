@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'r2_lifecycle_rule_abort_multipart_uploads_transition.dart';import 'r2_lifecycle_rule_conditions.dart';import 'r2_lifecycle_rule_delete_objects_transition.dart';import 'r2_lifecycle_storage_transition.dart';final class R2LifecycleRule {const R2LifecycleRule({this.abortMultipartUploadsTransition, required this.conditions, this.deleteObjectsTransition, required this.enabled, required this.id, this.storageClassTransitions, });
 
 factory R2LifecycleRule.fromJson(Map<String, dynamic> json) { return R2LifecycleRule(
-  abortMultipartUploadsTransition: json['abortMultipartUploadsTransition'] != null
-        ? R2LifecycleRuleAbortMultipartUploadsTransition.fromJson(json['abortMultipartUploadsTransition'] as Map<String, dynamic>)
-        : null,
+  abortMultipartUploadsTransition: json['abortMultipartUploadsTransition'] != null ? R2LifecycleRuleAbortMultipartUploadsTransition.fromJson(json['abortMultipartUploadsTransition'] as Map<String, dynamic>) : null,
   conditions: R2LifecycleRuleConditions.fromJson(json['conditions'] as Map<String, dynamic>),
-  deleteObjectsTransition: json['deleteObjectsTransition'] != null
-        ? R2LifecycleRuleDeleteObjectsTransition.fromJson(json['deleteObjectsTransition'] as Map<String, dynamic>)
-        : null,
+  deleteObjectsTransition: json['deleteObjectsTransition'] != null ? R2LifecycleRuleDeleteObjectsTransition.fromJson(json['deleteObjectsTransition'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   storageClassTransitions: (json['storageClassTransitions'] as List<dynamic>?)?.map((e) => R2LifecycleStorageTransition.fromJson(e as Map<String, dynamic>)).toList(),

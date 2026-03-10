@@ -11,9 +11,7 @@ final class CustomToolChatCompletionsCustom {const CustomToolChatCompletionsCust
 factory CustomToolChatCompletionsCustom.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletionsCustom(
   name: json['name'] as String,
   description: json['description'] as String?,
-  format: json['format'] != null
-        ? CustomToolChatCompletionsCustomFormat.fromJson(json['format'])
-        : null,
+  format: json['format'] != null ? CustomToolChatCompletionsCustomFormat.fromJson(json['format']) : null,
 ); }
 
 /// The name of the custom tool, used to identify it in tool calls.

@@ -8,9 +8,7 @@ import 'post_terminal_onboarding_links_request_link_options_apple_terms_and_cond
 final class PostTerminalOnboardingLinksRequestLinkOptions {const PostTerminalOnboardingLinksRequestLinkOptions({this.appleTermsAndConditions});
 
 factory PostTerminalOnboardingLinksRequestLinkOptions.fromJson(Map<String, dynamic> json) { return PostTerminalOnboardingLinksRequestLinkOptions(
-  appleTermsAndConditions: json['apple_terms_and_conditions'] != null
-        ? PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions.fromJson(json['apple_terms_and_conditions'] as Map<String, dynamic>)
-        : null,
+  appleTermsAndConditions: json['apple_terms_and_conditions'] != null ? PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions.fromJson(json['apple_terms_and_conditions'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions? appleTermsAndConditions;

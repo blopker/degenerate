@@ -7,9 +7,7 @@
 import 'cache_rules_base.dart';final class CacheRulesSmartTieredCacheResponseValue {const CacheRulesSmartTieredCacheResponseValue({this.result});
 
 factory CacheRulesSmartTieredCacheResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCacheResponseValue(
-  result: json['result'] != null
-        ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final CacheRulesBase? result;

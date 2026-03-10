@@ -92,9 +92,7 @@ factory PaymentRecord.fromJson(Map<String, dynamic> json) { return PaymentRecord
   amountRequested: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_requested'] as Map<String, dynamic>),
   application: json['application'] as String?,
   created: (json['created'] as num).toInt(),
-  customerDetails: json['customer_details'] != null
-        ? PaymentRecordCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? PaymentRecordCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerPresence: json['customer_presence'] != null ? PaymentRecordCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] as String,
@@ -102,14 +100,10 @@ factory PaymentRecord.fromJson(Map<String, dynamic> json) { return PaymentRecord
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: PaymentRecordObject.fromJson(json['object'] as String),
-  paymentMethodDetails: json['payment_method_details'] != null
-        ? PaymentRecordPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>)
-        : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PaymentRecordPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   reportedBy: PaymentRecordReportedBy.fromJson(json['reported_by'] as String),
-  shippingDetails: json['shipping_details'] != null
-        ? PaymentRecordShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  shippingDetails: json['shipping_details'] != null ? PaymentRecordShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentsPrimitivesPaymentRecordsResourceAmount amount;

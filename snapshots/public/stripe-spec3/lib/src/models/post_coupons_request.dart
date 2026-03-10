@@ -36,9 +36,7 @@ final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.a
 
 factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCouponsRequest(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
-  appliesTo: json['applies_to'] != null
-        ? PostCouponsRequestAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>)
-        : null,
+  appliesTo: json['applies_to'] != null ? PostCouponsRequestAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject183.fromJson(v as Map<String, dynamic>))),
   duration: json['duration'] != null ? PostCouponsRequestDuration.fromJson(json['duration'] as String) : null,
@@ -46,9 +44,7 @@ factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCoup
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: json['metadata'] != null
-        ? PostCouponsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCouponsRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
   redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,

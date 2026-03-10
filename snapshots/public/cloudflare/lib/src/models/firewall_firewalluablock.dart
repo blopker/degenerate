@@ -21,9 +21,7 @@ String toJson() => value;
 final class FirewallFirewalluablock {const FirewallFirewalluablock({this.configuration, this.description, this.id, this.mode, this.paused, });
 
 factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablock(
-  configuration: json['configuration'] != null
-        ? FirewallSchemasConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
-        : null,
+  configuration: json['configuration'] != null ? FirewallSchemasConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
   description: json['description'] != null ? FirewallFirewalluablockComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? FirewallComponentsUaRuleId.fromJson(json['id'] as String) : null,
   mode: json['mode'] != null ? FirewallComponentsSchemasMode.fromJson(json['mode'] as Object?) : null,

@@ -10,12 +10,8 @@ factory ReposDeleteFileRequest.fromJson(Map<String, dynamic> json) { return Repo
   message: json['message'] as String,
   sha: json['sha'] as String,
   branch: json['branch'] as String?,
-  committer: json['committer'] != null
-        ? ReposDeleteFileRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>)
-        : null,
-  author: json['author'] != null
-        ? ReposDeleteFileRequestAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
+  committer: json['committer'] != null ? ReposDeleteFileRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
+  author: json['author'] != null ? ReposDeleteFileRequestAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
 ); }
 
 /// The commit message.

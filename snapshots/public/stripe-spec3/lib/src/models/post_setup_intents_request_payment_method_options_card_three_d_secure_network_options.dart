@@ -7,9 +7,7 @@
 import 'post_setup_intents_request_payment_method_options_card_three_d_secure_network_options_cartes_bancaires.dart';final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions({this.cartesBancaires});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
-  cartesBancaires: json['cartes_bancaires'] != null
-        ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>)
-        : null,
+  cartesBancaires: json['cartes_bancaires'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires? cartesBancaires;

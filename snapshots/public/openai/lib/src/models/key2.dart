@@ -35,12 +35,8 @@ final class Key2 {const Key2({this.id, this.type, this.user, this.serviceAccount
 factory Key2.fromJson(Map<String, dynamic> json) { return Key2(
   id: json['id'] as String?,
   type: json['type'] != null ? Key2Type.fromJson(json['type'] as String) : null,
-  user: json['user'] != null
-        ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>)
-        : null,
-  serviceAccount: json['service_account'] != null
-        ? AuditLogActorServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>)
-        : null,
+  user: json['user'] != null ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  serviceAccount: json['service_account'] != null ? AuditLogActorServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// The tracking id of the API key.

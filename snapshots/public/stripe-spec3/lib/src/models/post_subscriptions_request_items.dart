@@ -7,21 +7,13 @@
 import 'post_subscriptions_request_items_billing_thresholds.dart';import 'post_subscriptions_request_items_discounts.dart';import 'post_subscriptions_request_items_price_data.dart';import 'post_subscriptions_request_items_tax_rates.dart';final class PostSubscriptionsRequestItems {const PostSubscriptionsRequestItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostSubscriptionsRequestItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionsRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostSubscriptionsRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionsRequestItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionsRequestItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostSubscriptionsRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostSubscriptionsRequestItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostSubscriptionsRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionsRequestItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionsRequestItemsBillingThresholds? billingThresholds;

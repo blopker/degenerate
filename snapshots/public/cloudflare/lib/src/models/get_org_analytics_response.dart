@@ -7,9 +7,7 @@
 import 'get_org_analytics_response_data.dart';final class GetOrgAnalyticsResponse {const GetOrgAnalyticsResponse({this.data, this.success, });
 
 factory GetOrgAnalyticsResponse.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponse(
-  data: json['data'] != null
-        ? GetOrgAnalyticsResponseData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? GetOrgAnalyticsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

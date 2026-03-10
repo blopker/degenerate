@@ -8,18 +8,10 @@ import 'package:collection/collection.dart';import 'issuing_transaction_purchase
 final class IssuingTransactionPurchaseDetails {const IssuingTransactionPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory IssuingTransactionPurchaseDetails.fromJson(Map<String, dynamic> json) { return IssuingTransactionPurchaseDetails(
-  fleet: json['fleet'] != null
-        ? IssuingTransactionPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
-  flight: json['flight'] != null
-        ? IssuingTransactionPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>)
-        : null,
-  fuel: json['fuel'] != null
-        ? IssuingTransactionPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  lodging: json['lodging'] != null
-        ? IssuingTransactionPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? IssuingTransactionPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  flight: json['flight'] != null ? IssuingTransactionPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? IssuingTransactionPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  lodging: json['lodging'] != null ? IssuingTransactionPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>) : null,
   receipt: (json['receipt'] as List<dynamic>?)?.map((e) => IssuingTransactionReceiptData.fromJson(e as Map<String, dynamic>)).toList(),
   reference: json['reference'] as String?,
 ); }

@@ -32,9 +32,7 @@ final class InlineObject89 {const InlineObject89({required this.type, required t
 factory InlineObject89.fromJson(Map<String, dynamic> json) { return InlineObject89(
   type: InlineObject89Type.fromJson(json['type'] as String),
   retentionRatio: (json['retention_ratio'] as num).toDouble(),
-  tokenLimits: json['token_limits'] != null
-        ? InlineObject89TokenLimits.fromJson(json['token_limits'] as Map<String, dynamic>)
-        : null,
+  tokenLimits: json['token_limits'] != null ? InlineObject89TokenLimits.fromJson(json['token_limits'] as Map<String, dynamic>) : null,
 ); }
 
 /// Use retention ratio truncation.

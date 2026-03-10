@@ -8,112 +8,42 @@ import 'destination_details_unimplemented.dart';import 'refund_destination_detai
 final class RefundDestinationDetails {const RefundDestinationDetails({this.affirm, this.afterpayClearpay, this.alipay, this.alma, this.amazonPay, this.auBankTransfer, this.blik, this.brBankTransfer, this.card, this.cashapp, this.crypto, this.customerCashBalance, this.eps, this.euBankTransfer, this.gbBankTransfer, this.giropay, this.grabpay, this.jpBankTransfer, this.klarna, this.mbWay, this.multibanco, this.mxBankTransfer, this.nzBankTransfer, this.p24, this.paynow, this.paypal, this.pix, this.revolut, this.sofort, this.swish, this.thBankTransfer, this.twint, required this.type, this.usBankTransfer, this.wechatPay, this.zip, });
 
 factory RefundDestinationDetails.fromJson(Map<String, dynamic> json) { return RefundDestinationDetails(
-  affirm: json['affirm'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['affirm'] as Map<String, dynamic>)
-        : null,
-  afterpayClearpay: json['afterpay_clearpay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>)
-        : null,
-  alipay: json['alipay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['alipay'] as Map<String, dynamic>)
-        : null,
-  alma: json['alma'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['alma'] as Map<String, dynamic>)
-        : null,
-  amazonPay: json['amazon_pay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['amazon_pay'] as Map<String, dynamic>)
-        : null,
-  auBankTransfer: json['au_bank_transfer'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['au_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  blik: json['blik'] != null
-        ? RefundDestinationDetailsBlik.fromJson(json['blik'] as Map<String, dynamic>)
-        : null,
-  brBankTransfer: json['br_bank_transfer'] != null
-        ? RefundDestinationDetailsBrBankTransfer.fromJson(json['br_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? RefundDestinationDetailsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cashapp: json['cashapp'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['cashapp'] as Map<String, dynamic>)
-        : null,
-  crypto: json['crypto'] != null
-        ? RefundDestinationDetailsCrypto.fromJson(json['crypto'] as Map<String, dynamic>)
-        : null,
-  customerCashBalance: json['customer_cash_balance'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['customer_cash_balance'] as Map<String, dynamic>)
-        : null,
-  eps: json['eps'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['eps'] as Map<String, dynamic>)
-        : null,
-  euBankTransfer: json['eu_bank_transfer'] != null
-        ? RefundDestinationDetailsEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  gbBankTransfer: json['gb_bank_transfer'] != null
-        ? RefundDestinationDetailsGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  giropay: json['giropay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['giropay'] as Map<String, dynamic>)
-        : null,
-  grabpay: json['grabpay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['grabpay'] as Map<String, dynamic>)
-        : null,
-  jpBankTransfer: json['jp_bank_transfer'] != null
-        ? RefundDestinationDetailsJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  mbWay: json['mb_way'] != null
-        ? RefundDestinationDetailsMbWay.fromJson(json['mb_way'] as Map<String, dynamic>)
-        : null,
-  multibanco: json['multibanco'] != null
-        ? RefundDestinationDetailsMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>)
-        : null,
-  mxBankTransfer: json['mx_bank_transfer'] != null
-        ? RefundDestinationDetailsMxBankTransfer.fromJson(json['mx_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  nzBankTransfer: json['nz_bank_transfer'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['nz_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  p24: json['p24'] != null
-        ? RefundDestinationDetailsP24.fromJson(json['p24'] as Map<String, dynamic>)
-        : null,
-  paynow: json['paynow'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['paynow'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? RefundDestinationDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
-  pix: json['pix'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['pix'] as Map<String, dynamic>)
-        : null,
-  revolut: json['revolut'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['revolut'] as Map<String, dynamic>)
-        : null,
-  sofort: json['sofort'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['sofort'] as Map<String, dynamic>)
-        : null,
-  swish: json['swish'] != null
-        ? RefundDestinationDetailsSwish.fromJson(json['swish'] as Map<String, dynamic>)
-        : null,
-  thBankTransfer: json['th_bank_transfer'] != null
-        ? RefundDestinationDetailsThBankTransfer.fromJson(json['th_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  twint: json['twint'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['twint'] as Map<String, dynamic>)
-        : null,
+  affirm: json['affirm'] != null ? DestinationDetailsUnimplemented.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? DestinationDetailsUnimplemented.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? DestinationDetailsUnimplemented.fromJson(json['alipay'] as Map<String, dynamic>) : null,
+  alma: json['alma'] != null ? DestinationDetailsUnimplemented.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? DestinationDetailsUnimplemented.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBankTransfer: json['au_bank_transfer'] != null ? DestinationDetailsUnimplemented.fromJson(json['au_bank_transfer'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? RefundDestinationDetailsBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  brBankTransfer: json['br_bank_transfer'] != null ? RefundDestinationDetailsBrBankTransfer.fromJson(json['br_bank_transfer'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? RefundDestinationDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? DestinationDetailsUnimplemented.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? RefundDestinationDetailsCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerCashBalance: json['customer_cash_balance'] != null ? DestinationDetailsUnimplemented.fromJson(json['customer_cash_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? DestinationDetailsUnimplemented.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  euBankTransfer: json['eu_bank_transfer'] != null ? RefundDestinationDetailsEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
+  gbBankTransfer: json['gb_bank_transfer'] != null ? RefundDestinationDetailsGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? DestinationDetailsUnimplemented.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? DestinationDetailsUnimplemented.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  jpBankTransfer: json['jp_bank_transfer'] != null ? RefundDestinationDetailsJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? DestinationDetailsUnimplemented.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? RefundDestinationDetailsMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? RefundDestinationDetailsMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  mxBankTransfer: json['mx_bank_transfer'] != null ? RefundDestinationDetailsMxBankTransfer.fromJson(json['mx_bank_transfer'] as Map<String, dynamic>) : null,
+  nzBankTransfer: json['nz_bank_transfer'] != null ? DestinationDetailsUnimplemented.fromJson(json['nz_bank_transfer'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? RefundDestinationDetailsP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? DestinationDetailsUnimplemented.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? RefundDestinationDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? DestinationDetailsUnimplemented.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  revolut: json['revolut'] != null ? DestinationDetailsUnimplemented.fromJson(json['revolut'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? DestinationDetailsUnimplemented.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? RefundDestinationDetailsSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  thBankTransfer: json['th_bank_transfer'] != null ? RefundDestinationDetailsThBankTransfer.fromJson(json['th_bank_transfer'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? DestinationDetailsUnimplemented.fromJson(json['twint'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-  usBankTransfer: json['us_bank_transfer'] != null
-        ? RefundDestinationDetailsUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>)
-        : null,
-  wechatPay: json['wechat_pay'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['wechat_pay'] as Map<String, dynamic>)
-        : null,
-  zip: json['zip'] != null
-        ? DestinationDetailsUnimplemented.fromJson(json['zip'] as Map<String, dynamic>)
-        : null,
+  usBankTransfer: json['us_bank_transfer'] != null ? RefundDestinationDetailsUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? DestinationDetailsUnimplemented.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? DestinationDetailsUnimplemented.fromJson(json['zip'] as Map<String, dynamic>) : null,
 ); }
 
 final DestinationDetailsUnimplemented? affirm;

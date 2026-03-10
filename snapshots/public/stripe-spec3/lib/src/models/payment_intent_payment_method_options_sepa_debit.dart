@@ -42,9 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentIntentPaymentMethodOptionsSepaDebit {const PaymentIntentPaymentMethodOptionsSepaDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSepaDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }

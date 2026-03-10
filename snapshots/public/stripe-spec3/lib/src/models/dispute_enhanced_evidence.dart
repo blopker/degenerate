@@ -8,12 +8,8 @@ import 'dispute_enhanced_evidence_visa_compelling_evidence3.dart';import 'disput
 final class DisputeEnhancedEvidence {const DisputeEnhancedEvidence({this.visaCompellingEvidence3, this.visaCompliance, });
 
 factory DisputeEnhancedEvidence.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEvidence(
-  visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null
-        ? DisputeEnhancedEvidenceVisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>)
-        : null,
-  visaCompliance: json['visa_compliance'] != null
-        ? DisputeEnhancedEvidenceVisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>)
-        : null,
+  visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? DisputeEnhancedEvidenceVisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,
+  visaCompliance: json['visa_compliance'] != null ? DisputeEnhancedEvidenceVisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>) : null,
 ); }
 
 final DisputeEnhancedEvidenceVisaCompellingEvidence3? visaCompellingEvidence3;

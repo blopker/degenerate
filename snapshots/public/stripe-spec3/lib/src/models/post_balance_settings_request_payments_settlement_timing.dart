@@ -7,9 +7,7 @@
 import 'post_balance_settings_request_payments_settlement_timing_delay_days_override.dart';final class PostBalanceSettingsRequestPaymentsSettlementTiming {const PostBalanceSettingsRequestPaymentsSettlementTiming({this.delayDaysOverride});
 
 factory PostBalanceSettingsRequestPaymentsSettlementTiming.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequestPaymentsSettlementTiming(
-  delayDaysOverride: json['delay_days_override'] != null
-        ? PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverride.fromJson(json['delay_days_override'] as Map<String, dynamic>)
-        : null,
+  delayDaysOverride: json['delay_days_override'] != null ? PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverride.fromJson(json['delay_days_override'] as Map<String, dynamic>) : null,
 ); }
 
 final PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverride? delayDaysOverride;

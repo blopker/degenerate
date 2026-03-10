@@ -8,19 +8,11 @@ import 'package:collection/collection.dart';import 'ai_search_create_instances_r
 
 factory AiSearchCreateInstancesResponseResultPublicEndpointParams.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultPublicEndpointParams(
   authorizedHosts: (json['authorized_hosts'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  chatCompletionsEndpoint: json['chat_completions_endpoint'] != null
-        ? AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint.fromJson(json['chat_completions_endpoint'] as Map<String, dynamic>)
-        : null,
+  chatCompletionsEndpoint: json['chat_completions_endpoint'] != null ? AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint.fromJson(json['chat_completions_endpoint'] as Map<String, dynamic>) : null,
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
-  mcp: json['mcp'] != null
-        ? AiSearchCreateInstancesResponseResultPublicEndpointParamsMcp.fromJson(json['mcp'] as Map<String, dynamic>)
-        : null,
-  rateLimit: json['rate_limit'] != null
-        ? AiSearchCreateInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(json['rate_limit'] as Map<String, dynamic>)
-        : null,
-  searchEndpoint: json['search_endpoint'] != null
-        ? AiSearchCreateInstancesResponseResultPublicEndpointParamsSearchEndpoint.fromJson(json['search_endpoint'] as Map<String, dynamic>)
-        : null,
+  mcp: json['mcp'] != null ? AiSearchCreateInstancesResponseResultPublicEndpointParamsMcp.fromJson(json['mcp'] as Map<String, dynamic>) : null,
+  rateLimit: json['rate_limit'] != null ? AiSearchCreateInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(json['rate_limit'] as Map<String, dynamic>) : null,
+  searchEndpoint: json['search_endpoint'] != null ? AiSearchCreateInstancesResponseResultPublicEndpointParamsSearchEndpoint.fromJson(json['search_endpoint'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? authorizedHosts;

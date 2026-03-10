@@ -30,9 +30,7 @@ final class RepositoryRuleCommitMessagePattern {const RepositoryRuleCommitMessag
 
 factory RepositoryRuleCommitMessagePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitMessagePattern(
   type: RepositoryRuleCommitMessagePatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleCommitMessagePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleCommitMessagePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitMessagePatternType type;

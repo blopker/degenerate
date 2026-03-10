@@ -9,12 +9,8 @@ import 'realtime_session_create_request_ga_audio_input.dart';import 'realtime_se
 final class RealtimeSessionCreateRequestGaAudio {const RealtimeSessionCreateRequestGaAudio({this.input, this.output, });
 
 factory RealtimeSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudio(
-  input: json['input'] != null
-        ? RealtimeSessionCreateRequestGaAudioInput.fromJson(json['input'] as Map<String, dynamic>)
-        : null,
-  output: json['output'] != null
-        ? RealtimeSessionCreateRequestGaAudioOutput.fromJson(json['output'] as Map<String, dynamic>)
-        : null,
+  input: json['input'] != null ? RealtimeSessionCreateRequestGaAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,
+  output: json['output'] != null ? RealtimeSessionCreateRequestGaAudioOutput.fromJson(json['output'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimeSessionCreateRequestGaAudioInput? input;

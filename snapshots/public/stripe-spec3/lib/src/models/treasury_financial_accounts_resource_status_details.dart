@@ -8,9 +8,7 @@ import 'treasury_financial_accounts_resource_status_details_closed.dart';///
 final class TreasuryFinancialAccountsResourceStatusDetails {const TreasuryFinancialAccountsResourceStatusDetails({this.closed});
 
 factory TreasuryFinancialAccountsResourceStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceStatusDetails(
-  closed: json['closed'] != null
-        ? TreasuryFinancialAccountsResourceStatusDetailsClosed.fromJson(json['closed'] as Map<String, dynamic>)
-        : null,
+  closed: json['closed'] != null ? TreasuryFinancialAccountsResourceStatusDetailsClosed.fromJson(json['closed'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details related to the closure of this FinancialAccount

@@ -39,9 +39,7 @@ factory AccessSamlSaasAppCustomAttributes.fromJson(Map<String, dynamic> json) { 
   name: json['name'] as String?,
   nameFormat: json['name_format'] != null ? AccessSamlSaasAppCustomAttributesNameFormat.fromJson(json['name_format'] as String) : null,
   $required: json['required'] as bool?,
-  source: json['source'] != null
-        ? AccessSamlSaasAppCustomAttributesSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? AccessSamlSaasAppCustomAttributesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// The SAML FriendlyName of the attribute.

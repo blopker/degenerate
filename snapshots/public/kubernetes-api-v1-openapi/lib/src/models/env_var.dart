@@ -10,9 +10,7 @@ final class EnvVar {const EnvVar({this.name = '', this.value, this.valueFrom, })
 factory EnvVar.fromJson(Map<String, dynamic> json) { return EnvVar(
   name: json['name'] as String,
   value: json['value'] as String?,
-  valueFrom: json['valueFrom'] != null
-        ? EnvVarSource.fromJson(json['valueFrom'] as Map<String, dynamic>)
-        : null,
+  valueFrom: json['valueFrom'] != null ? EnvVarSource.fromJson(json['valueFrom'] as Map<String, dynamic>) : null,
 ); }
 
 /// Name of the environment variable. May consist of any printable ASCII characters except '='.

@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_promptpay_displ
 final class PostPaymentMethodConfigurationsConfigurationRequestPromptpay {const PostPaymentMethodConfigurationsConfigurationRequestPromptpay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestPromptpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPromptpay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference? displayPreference;

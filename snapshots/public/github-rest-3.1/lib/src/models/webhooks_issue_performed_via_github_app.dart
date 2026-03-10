@@ -176,9 +176,7 @@ factory WebhooksIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) {
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   owner: WebhooksIssuePerformedViaGithubAppOwner.fromJson(json['owner'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? WebhooksIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? WebhooksIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

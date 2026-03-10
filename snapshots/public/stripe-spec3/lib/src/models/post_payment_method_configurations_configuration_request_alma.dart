@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_alma_display_pr
 final class PostPaymentMethodConfigurationsConfigurationRequestAlma {const PostPaymentMethodConfigurationsConfigurationRequestAlma({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAlma.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlma(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestAlmaDisplayPreference? displayPreference;

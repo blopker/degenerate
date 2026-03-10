@@ -58,19 +58,11 @@ final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({requir
 factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) { return WebhookMergeGroupDestroyed(
   action: WebhookMergeGroupDestroyedAction.fromJson(json['action'] as String),
   reason: json['reason'] != null ? WebhookMergeGroupDestroyedReason.fromJson(json['reason'] as String) : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   mergeGroup: MergeGroup.fromJson(json['merge_group'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
-  sender: json['sender'] != null
-        ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookMergeGroupDestroyedAction action;

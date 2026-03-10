@@ -7,22 +7,12 @@
 import 'post_tax_calculations_request_customer_details_address_city.dart';import 'post_tax_calculations_request_customer_details_address_line1.dart';import 'post_tax_calculations_request_customer_details_address_line2.dart';import 'post_tax_calculations_request_customer_details_address_postal_code.dart';import 'post_tax_calculations_request_customer_details_address_state.dart';final class PostTaxCalculationsRequestCustomerDetailsAddress {const PostTaxCalculationsRequestCustomerDetailsAddress({this.city, required this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetailsAddress(
-  city: json['city'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddressCity.fromJson(json['city'] as Map<String, dynamic>)
-        : null,
+  city: json['city'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressCity.fromJson(json['city'] as Map<String, dynamic>) : null,
   country: json['country'] as String,
-  line1: json['line1'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddressLine1.fromJson(json['line1'] as Map<String, dynamic>)
-        : null,
-  line2: json['line2'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddressLine2.fromJson(json['line2'] as Map<String, dynamic>)
-        : null,
-  postalCode: json['postal_code'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddressPostalCode.fromJson(json['postal_code'] as Map<String, dynamic>)
-        : null,
-  state: json['state'] != null
-        ? PostTaxCalculationsRequestCustomerDetailsAddressState.fromJson(json['state'] as Map<String, dynamic>)
-        : null,
+  line1: json['line1'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressLine1.fromJson(json['line1'] as Map<String, dynamic>) : null,
+  line2: json['line2'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressLine2.fromJson(json['line2'] as Map<String, dynamic>) : null,
+  postalCode: json['postal_code'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressPostalCode.fromJson(json['postal_code'] as Map<String, dynamic>) : null,
+  state: json['state'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressState.fromJson(json['state'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTaxCalculationsRequestCustomerDetailsAddressCity? city;

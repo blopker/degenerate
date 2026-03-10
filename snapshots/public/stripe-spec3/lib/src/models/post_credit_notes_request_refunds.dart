@@ -32,9 +32,7 @@ final class PostCreditNotesRequestRefunds {const PostCreditNotesRequestRefunds({
 
 factory PostCreditNotesRequestRefunds.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,
-  paymentRecordRefund: json['payment_record_refund'] != null
-        ? PostCreditNotesRequestRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>)
-        : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? PostCreditNotesRequestRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: json['refund'] as String?,
   type: json['type'] != null ? PostCreditNotesRequestRefundsType.fromJson(json['type'] as String) : null,
 ); }

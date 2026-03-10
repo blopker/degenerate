@@ -43,9 +43,7 @@ final class ChatCompletionStreamResponseDelta {const ChatCompletionStreamRespons
 
 factory ChatCompletionStreamResponseDelta.fromJson(Map<String, dynamic> json) { return ChatCompletionStreamResponseDelta(
   content: json['content'] as String?,
-  functionCall: json['function_call'] != null
-        ? ChatCompletionStreamResponseDeltaFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
-        : null,
+  functionCall: json['function_call'] != null ? ChatCompletionStreamResponseDeltaFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCallChunk.fromJson(e as Map<String, dynamic>)).toList(),
   role: json['role'] != null ? ChatCompletionStreamResponseDeltaRole.fromJson(json['role'] as String) : null,
   refusal: json['refusal'] as String?,

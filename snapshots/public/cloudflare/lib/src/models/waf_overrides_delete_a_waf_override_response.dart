@@ -7,9 +7,7 @@
 import 'waf_overrides_delete_a_waf_override_response_result.dart';final class WafOverridesDeleteAWafOverrideResponse {const WafOverridesDeleteAWafOverrideResponse({this.result});
 
 factory WafOverridesDeleteAWafOverrideResponse.fromJson(Map<String, dynamic> json) { return WafOverridesDeleteAWafOverrideResponse(
-  result: json['result'] != null
-        ? WafOverridesDeleteAWafOverrideResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? WafOverridesDeleteAWafOverrideResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final WafOverridesDeleteAWafOverrideResponseResult? result;

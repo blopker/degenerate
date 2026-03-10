@@ -11,9 +11,7 @@ factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return Web
   description: json['description'] as String?,
   readme: json['readme'] as String?,
   homepage: json['homepage'] as String?,
-  versionInfo: json['version_info'] != null
-        ? WebhookRubygemsMetadataVersionInfo.fromJson(json['version_info'] as Map<String, dynamic>)
-        : null,
+  versionInfo: json['version_info'] != null ? WebhookRubygemsMetadataVersionInfo.fromJson(json['version_info'] as Map<String, dynamic>) : null,
   platform: json['platform'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repo: json['repo'] as String?,

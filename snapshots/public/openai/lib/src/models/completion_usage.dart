@@ -11,12 +11,8 @@ factory CompletionUsage.fromJson(Map<String, dynamic> json) { return CompletionU
   completionTokens: (json['completion_tokens'] as num).toInt(),
   promptTokens: (json['prompt_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
-  completionTokensDetails: json['completion_tokens_details'] != null
-        ? CompletionUsageCompletionTokensDetails.fromJson(json['completion_tokens_details'] as Map<String, dynamic>)
-        : null,
-  promptTokensDetails: json['prompt_tokens_details'] != null
-        ? CompletionUsagePromptTokensDetails.fromJson(json['prompt_tokens_details'] as Map<String, dynamic>)
-        : null,
+  completionTokensDetails: json['completion_tokens_details'] != null ? CompletionUsageCompletionTokensDetails.fromJson(json['completion_tokens_details'] as Map<String, dynamic>) : null,
+  promptTokensDetails: json['prompt_tokens_details'] != null ? CompletionUsagePromptTokensDetails.fromJson(json['prompt_tokens_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Number of tokens in the generated completion.

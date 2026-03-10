@@ -7,24 +7,14 @@
 import 'package:collection/collection.dart';import 'post_issuing_personalization_designs_personalization_design_request_card_logo.dart';import 'post_issuing_personalization_designs_personalization_design_request_carrier_text.dart';import 'post_issuing_personalization_designs_personalization_design_request_lookup_key.dart';import 'post_issuing_personalization_designs_personalization_design_request_name.dart';import 'post_issuing_personalization_designs_personalization_design_request_preferences.dart';final class PostIssuingPersonalizationDesignsPersonalizationDesignRequest {const PostIssuingPersonalizationDesignsPersonalizationDesignRequest({this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.physicalBundle, this.preferences, this.transferLookupKey, });
 
 factory PostIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsPersonalizationDesignRequest(
-  cardLogo: json['card_logo'] != null
-        ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo.fromJson(json['card_logo'] as Map<String, dynamic>)
-        : null,
-  carrierText: json['carrier_text'] != null
-        ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>)
-        : null,
+  cardLogo: json['card_logo'] != null ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo.fromJson(json['card_logo'] as Map<String, dynamic>) : null,
+  carrierText: json['carrier_text'] != null ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  lookupKey: json['lookup_key'] != null
-        ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKey.fromJson(json['lookup_key'] as Map<String, dynamic>)
-        : null,
+  lookupKey: json['lookup_key'] != null ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKey.fromJson(json['lookup_key'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] != null
-        ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
+  name: json['name'] != null ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestName.fromJson(json['name'] as Map<String, dynamic>) : null,
   physicalBundle: json['physical_bundle'] as String?,
-  preferences: json['preferences'] != null
-        ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>)
-        : null,
+  preferences: json['preferences'] != null ? PostIssuingPersonalizationDesignsPersonalizationDesignRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
 ); }
 

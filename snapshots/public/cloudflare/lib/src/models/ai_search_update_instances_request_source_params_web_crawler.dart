@@ -34,16 +34,10 @@ bool get isUnknown { return !values.contains(this); }
 final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
 
 factory AiSearchUpdateInstancesRequestSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
-  crawlOptions: json['crawl_options'] != null
-        ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>)
-        : null,
-  parseOptions: json['parse_options'] != null
-        ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>)
-        : null,
+  crawlOptions: json['crawl_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
+  parseOptions: json['parse_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
   parseType: json.containsKey('parse_type') ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap,
-  storeOptions: json['store_options'] != null
-        ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>)
-        : null,
+  storeOptions: json['store_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
 final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? crawlOptions;

@@ -255,62 +255,36 @@ bool get isUnknown { return !values.contains(this); }
 final class PostPaymentLinksRequest {const PostPaymentLinksRequest({this.afterCompletion, this.allowPromotionCodes, this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.billingAddressCollection, this.consentCollection, this.currency, this.customFields, this.customText, this.customerCreation, this.expand, this.inactiveMessage, this.invoiceCreation, required this.lineItems, this.metadata, this.nameCollection, this.onBehalfOf, this.optionalItems, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodTypes, this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.taxIdCollection, this.transferData, });
 
 factory PostPaymentLinksRequest.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequest(
-  afterCompletion: json['after_completion'] != null
-        ? PostPaymentLinksRequestAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>)
-        : null,
+  afterCompletion: json['after_completion'] != null ? PostPaymentLinksRequestAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
-  automaticTax: json['automatic_tax'] != null
-        ? PostPaymentLinksRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostPaymentLinksRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingAddressCollection: json['billing_address_collection'] != null ? PostPaymentLinksRequestBillingAddressCollection.fromJson(json['billing_address_collection'] as String) : null,
-  consentCollection: json['consent_collection'] != null
-        ? PostPaymentLinksRequestConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>)
-        : null,
+  consentCollection: json['consent_collection'] != null ? PostPaymentLinksRequestConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => PostPaymentLinksRequestCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
-  customText: json['custom_text'] != null
-        ? PostPaymentLinksRequestCustomText.fromJson(json['custom_text'] as Map<String, dynamic>)
-        : null,
+  customText: json['custom_text'] != null ? PostPaymentLinksRequestCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
   customerCreation: json['customer_creation'] != null ? PostPaymentLinksRequestCustomerCreation.fromJson(json['customer_creation'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   inactiveMessage: json['inactive_message'] as String?,
-  invoiceCreation: json['invoice_creation'] != null
-        ? PostPaymentLinksRequestInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>)
-        : null,
+  invoiceCreation: json['invoice_creation'] != null ? PostPaymentLinksRequestInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
   lineItems: (json['line_items'] as List<dynamic>).map((e) => PostPaymentLinksRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nameCollection: json['name_collection'] != null
-        ? PostPaymentLinksRequestNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>)
-        : null,
+  nameCollection: json['name_collection'] != null ? PostPaymentLinksRequestNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   optionalItems: (json['optional_items'] as List<dynamic>?)?.map((e) => PostPaymentLinksRequestOptionalItems.fromJson(e as Map<String, dynamic>)).toList(),
-  paymentIntentData: json['payment_intent_data'] != null
-        ? PostPaymentLinksRequestPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>)
-        : null,
+  paymentIntentData: json['payment_intent_data'] != null ? PostPaymentLinksRequestPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
   paymentMethodCollection: json['payment_method_collection'] != null ? PostPaymentLinksRequestPaymentMethodCollection.fromJson(json['payment_method_collection'] as String) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => PostPaymentLinksRequestPaymentMethodTypes.fromJson(e as String)).toList(),
-  phoneNumberCollection: json['phone_number_collection'] != null
-        ? PostPaymentLinksRequestPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>)
-        : null,
-  restrictions: json['restrictions'] != null
-        ? PostPaymentLinksRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>)
-        : null,
-  shippingAddressCollection: json['shipping_address_collection'] != null
-        ? PostPaymentLinksRequestShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>)
-        : null,
+  phoneNumberCollection: json['phone_number_collection'] != null ? PostPaymentLinksRequestPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? PostPaymentLinksRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
+  shippingAddressCollection: json['shipping_address_collection'] != null ? PostPaymentLinksRequestShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
   shippingOptions: (json['shipping_options'] as List<dynamic>?)?.map((e) => PostPaymentLinksRequestShippingOptions.fromJson(e as Map<String, dynamic>)).toList(),
   submitType: json['submit_type'] != null ? PostPaymentLinksRequestSubmitType.fromJson(json['submit_type'] as String) : null,
-  subscriptionData: json['subscription_data'] != null
-        ? PostPaymentLinksRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>)
-        : null,
-  taxIdCollection: json['tax_id_collection'] != null
-        ? PostPaymentLinksRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>)
-        : null,
-  transferData: json['transfer_data'] != null
-        ? PostPaymentLinksRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  subscriptionData: json['subscription_data'] != null ? PostPaymentLinksRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
+  taxIdCollection: json['tax_id_collection'] != null ? PostPaymentLinksRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostPaymentLinksRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// Behavior after the purchase is complete.

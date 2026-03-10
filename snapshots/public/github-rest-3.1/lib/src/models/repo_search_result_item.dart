@@ -113,9 +113,7 @@ factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) { return RepoSe
   disabled: json['disabled'] as bool,
   visibility: json['visibility'] as String?,
   license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? RepoSearchResultItemPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? RepoSearchResultItemPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
   tempCloneToken: json['temp_clone_token'] as String?,
   allowMergeCommit: json['allow_merge_commit'] as bool?,

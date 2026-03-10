@@ -30,9 +30,7 @@ final class RepositoryRuleUpdate {const RepositoryRuleUpdate({required this.type
 
 factory RepositoryRuleUpdate.fromJson(Map<String, dynamic> json) { return RepositoryRuleUpdate(
   type: RepositoryRuleUpdateType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null
-        ? RepositoryRuleUpdateParameters.fromJson(json['parameters'] as Map<String, dynamic>)
-        : null,
+  parameters: json['parameters'] != null ? RepositoryRuleUpdateParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleUpdateType type;

@@ -64,13 +64,9 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingAuthorizationFleetData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetData(
-  cardholderPromptData: json['cardholder_prompt_data'] != null
-        ? IssuingAuthorizationFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>)
-        : null,
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] != null ? IssuingAuthorizationFleetDataPurchaseType.fromJson(json['purchase_type'] as String) : null,
-  reportedBreakdown: json['reported_breakdown'] != null
-        ? IssuingAuthorizationFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>)
-        : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? IssuingAuthorizationFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] != null ? IssuingAuthorizationFleetDataServiceType.fromJson(json['service_type'] as String) : null,
 ); }
 

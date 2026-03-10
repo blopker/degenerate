@@ -9,21 +9,11 @@ final class PaymentFlowsAmountDetails {const PaymentFlowsAmountDetails({this.dis
 
 factory PaymentFlowsAmountDetails.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetails(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
-  error: json['error'] != null
-        ? PaymentFlowsAmountDetailsResourceError.fromJson(json['error'] as Map<String, dynamic>)
-        : null,
-  lineItems: json['line_items'] != null
-        ? PaymentFlowsAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>)
-        : null,
-  shipping: json['shipping'] != null
-        ? PaymentFlowsAmountDetailsResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PaymentFlowsAmountDetailsResourceTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
-  tip: json['tip'] != null
-        ? PaymentFlowsAmountDetailsClientResourceTip.fromJson(json['tip'] as Map<String, dynamic>)
-        : null,
+  error: json['error'] != null ? PaymentFlowsAmountDetailsResourceError.fromJson(json['error'] as Map<String, dynamic>) : null,
+  lineItems: json['line_items'] != null ? PaymentFlowsAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PaymentFlowsAmountDetailsResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PaymentFlowsAmountDetailsResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
+  tip: json['tip'] != null ? PaymentFlowsAmountDetailsClientResourceTip.fromJson(json['tip'] as Map<String, dynamic>) : null,
 ); }
 
 /// The total discount applied on the transaction represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). An integer greater than 0.

@@ -8,9 +8,7 @@ import 'account_decline_charge_on.dart';///
 final class AccountCardPaymentsSettings {const AccountCardPaymentsSettings({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 
 factory AccountCardPaymentsSettings.fromJson(Map<String, dynamic> json) { return AccountCardPaymentsSettings(
-  declineOn: json['decline_on'] != null
-        ? AccountDeclineChargeOn.fromJson(json['decline_on'] as Map<String, dynamic>)
-        : null,
+  declineOn: json['decline_on'] != null ? AccountDeclineChargeOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,
   statementDescriptorPrefix: json['statement_descriptor_prefix'] as String?,
   statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] as String?,
   statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] as String?,

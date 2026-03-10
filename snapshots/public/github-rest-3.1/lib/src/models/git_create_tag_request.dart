@@ -39,9 +39,7 @@ factory GitCreateTagRequest.fromJson(Map<String, dynamic> json) { return GitCrea
   message: json['message'] as String,
   object: json['object'] as String,
   type: GitCreateTagRequestType.fromJson(json['type'] as String),
-  tagger: json['tagger'] != null
-        ? GitCreateTagRequestTagger.fromJson(json['tagger'] as Map<String, dynamic>)
-        : null,
+  tagger: json['tagger'] != null ? GitCreateTagRequestTagger.fromJson(json['tagger'] as Map<String, dynamic>) : null,
 ); }
 
 /// The tag's name. This is typically a version (e.g., "v0.0.1").

@@ -8,18 +8,10 @@ import 'inline_object1386_pdf_options_margin_bottom.dart';import 'inline_object1
 final class InlineObject1386PdfOptionsMargin {const InlineObject1386PdfOptionsMargin({this.bottom, this.left, this.right, this.top, });
 
 factory InlineObject1386PdfOptionsMargin.fromJson(Map<String, dynamic> json) { return InlineObject1386PdfOptionsMargin(
-  bottom: json['bottom'] != null
-        ? InlineObject1386PdfOptionsMarginBottom.fromJson(json['bottom'] as Map<String, dynamic>)
-        : null,
-  left: json['left'] != null
-        ? InlineObject1386PdfOptionsMarginLeft.fromJson(json['left'] as Map<String, dynamic>)
-        : null,
-  right: json['right'] != null
-        ? InlineObject1386PdfOptionsMarginRight.fromJson(json['right'] as Map<String, dynamic>)
-        : null,
-  top: json['top'] != null
-        ? InlineObject1386PdfOptionsMarginTop.fromJson(json['top'] as Map<String, dynamic>)
-        : null,
+  bottom: json['bottom'] != null ? InlineObject1386PdfOptionsMarginBottom.fromJson(json['bottom'] as Map<String, dynamic>) : null,
+  left: json['left'] != null ? InlineObject1386PdfOptionsMarginLeft.fromJson(json['left'] as Map<String, dynamic>) : null,
+  right: json['right'] != null ? InlineObject1386PdfOptionsMarginRight.fromJson(json['right'] as Map<String, dynamic>) : null,
+  top: json['top'] != null ? InlineObject1386PdfOptionsMarginTop.fromJson(json['top'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject1386PdfOptionsMarginBottom? bottom;

@@ -121,19 +121,11 @@ bool get isUnknown { return !values.contains(this); }
 final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
 
 factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEntityCompany(
-  address: json['address'] != null
-        ? Address.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  addressKana: json['address_kana'] != null
-        ? LegalEntityCompanyAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>)
-        : null,
-  addressKanji: json['address_kanji'] != null
-        ? LegalEntityCompanyAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? LegalEntityCompanyAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? LegalEntityCompanyAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   directorsProvided: json['directors_provided'] as bool?,
-  directorshipDeclaration: json['directorship_declaration'] != null
-        ? LegalEntityCompanyDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>)
-        : null,
+  directorshipDeclaration: json['directorship_declaration'] != null ? LegalEntityCompanyDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null,
   executivesProvided: json['executives_provided'] as bool?,
   exportLicenseId: json['export_license_id'] as String?,
   exportPurposeCode: json['export_purpose_code'] as String?,
@@ -141,24 +133,16 @@ factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEnt
   nameKana: json['name_kana'] as String?,
   nameKanji: json['name_kanji'] as String?,
   ownersProvided: json['owners_provided'] as bool?,
-  ownershipDeclaration: json['ownership_declaration'] != null
-        ? LegalEntityCompanyOwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>)
-        : null,
+  ownershipDeclaration: json['ownership_declaration'] != null ? LegalEntityCompanyOwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? LegalEntityCompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null
-        ? LegalEntityRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>)
-        : null,
-  representativeDeclaration: json['representative_declaration'] != null
-        ? LegalEntityCompanyRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>)
-        : null,
+  registrationDate: json['registration_date'] != null ? LegalEntityRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>) : null,
+  representativeDeclaration: json['representative_declaration'] != null ? LegalEntityCompanyRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? LegalEntityCompanyStructure.fromJson(json['structure'] as String) : null,
   taxIdProvided: json['tax_id_provided'] as bool?,
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatIdProvided: json['vat_id_provided'] as bool?,
-  verification: json['verification'] != null
-        ? LegalEntityCompanyVerification2.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? LegalEntityCompanyVerification2.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final Address? address;

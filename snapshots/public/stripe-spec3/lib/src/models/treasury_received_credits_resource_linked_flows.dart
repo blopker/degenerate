@@ -12,9 +12,7 @@ factory TreasuryReceivedCreditsResourceLinkedFlows.fromJson(Map<String, dynamic>
   issuingAuthorization: json['issuing_authorization'] as String?,
   issuingTransaction: json['issuing_transaction'] as String?,
   sourceFlow: json['source_flow'] as String?,
-  sourceFlowDetails: json['source_flow_details'] != null
-        ? TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails.fromJson(json['source_flow_details'] as Map<String, dynamic>)
-        : null,
+  sourceFlowDetails: json['source_flow_details'] != null ? TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails.fromJson(json['source_flow_details'] as Map<String, dynamic>) : null,
   sourceFlowType: json['source_flow_type'] as String?,
 ); }
 

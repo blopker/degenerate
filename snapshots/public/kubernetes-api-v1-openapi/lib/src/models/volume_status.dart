@@ -8,9 +8,7 @@ import 'image_volume_status.dart';/// VolumeStatus represents the status of a mo
 final class VolumeStatus {const VolumeStatus({this.image});
 
 factory VolumeStatus.fromJson(Map<String, dynamic> json) { return VolumeStatus(
-  image: json['image'] != null
-        ? ImageVolumeStatus.fromJson(json['image'] as Map<String, dynamic>)
-        : null,
+  image: json['image'] != null ? ImageVolumeStatus.fromJson(json['image'] as Map<String, dynamic>) : null,
 ); }
 
 /// image represents an OCI object (a container image or artifact) pulled and mounted on the kubelet's host machine.

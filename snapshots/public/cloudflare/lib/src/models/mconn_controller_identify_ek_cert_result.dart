@@ -7,12 +7,8 @@
 import 'mconn_controller_connector_identity.dart';import 'mconn_controller_device_identity.dart';final class MconnControllerIdentifyEkCertResult {const MconnControllerIdentifyEkCertResult({this.connector, this.device, });
 
 factory MconnControllerIdentifyEkCertResult.fromJson(Map<String, dynamic> json) { return MconnControllerIdentifyEkCertResult(
-  connector: json['connector'] != null
-        ? MconnControllerConnectorIdentity.fromJson(json['connector'] as Map<String, dynamic>)
-        : null,
-  device: json['device'] != null
-        ? MconnControllerDeviceIdentity.fromJson(json['device'] as Map<String, dynamic>)
-        : null,
+  connector: json['connector'] != null ? MconnControllerConnectorIdentity.fromJson(json['connector'] as Map<String, dynamic>) : null,
+  device: json['device'] != null ? MconnControllerDeviceIdentity.fromJson(json['device'] as Map<String, dynamic>) : null,
 ); }
 
 final MconnControllerConnectorIdentity? connector;

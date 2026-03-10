@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_swish_display_p
 final class PostPaymentMethodConfigurationsConfigurationRequestSwish {const PostPaymentMethodConfigurationsConfigurationRequestSwish({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestSwish.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestSwish(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestSwishDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSwishDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestSwishDisplayPreference? displayPreference;

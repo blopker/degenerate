@@ -8,9 +8,7 @@ import 'payment_method_details_card_installments_plan2.dart';///
 final class PaymentMethodDetailsCardInstallments {const PaymentMethodDetailsCardInstallments({this.plan});
 
 factory PaymentMethodDetailsCardInstallments.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallments(
-  plan: json['plan'] != null
-        ? PaymentMethodDetailsCardInstallmentsPlan2.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PaymentMethodDetailsCardInstallmentsPlan2.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 /// Installment plan selected for the payment.

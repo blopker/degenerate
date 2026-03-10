@@ -109,9 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReader {const TerminalReader({this.action, this.deviceSwVersion, required this.deviceType, required this.id, this.ipAddress, required this.label, this.lastSeenAt, required this.livemode, this.location, required this.metadata, required this.object, required this.serialNumber, this.status, });
 
 factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
-  action: json['action'] != null
-        ? TerminalReaderAction.fromJson(json['action'] as Map<String, dynamic>)
-        : null,
+  action: json['action'] != null ? TerminalReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   deviceSwVersion: json['device_sw_version'] as String?,
   deviceType: TerminalReaderDeviceType.fromJson(json['device_type'] as String),
   id: json['id'] as String,
@@ -119,9 +117,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   label: json['label'] as String,
   lastSeenAt: json['last_seen_at'] != null ? (json['last_seen_at'] as num).toInt() : null,
   livemode: json['livemode'] as bool,
-  location: json['location'] != null
-        ? TerminalReaderLocation.fromJson(json['location'] as Map<String, dynamic>)
-        : null,
+  location: json['location'] != null ? TerminalReaderLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,

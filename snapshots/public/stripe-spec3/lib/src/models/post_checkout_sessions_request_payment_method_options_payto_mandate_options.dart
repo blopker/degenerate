@@ -133,21 +133,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
-  amount: json['amount'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   amountType: json['amount_type'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>)
-        : null,
+  endDate: json['end_date'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date'] as Map<String, dynamic>) : null,
   paymentSchedule: json['payment_schedule'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>)
-        : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period'] as Map<String, dynamic>) : null,
   purpose: json['purpose'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
-  startDate: json['start_date'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date'] as Map<String, dynamic>)
-        : null,
+  startDate: json['start_date'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? amount;

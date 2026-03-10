@@ -9,84 +9,36 @@ final class PersistentVolumeSpec {const PersistentVolumeSpec({this.accessModes, 
 
 factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  awsElasticBlockStore: json['awsElasticBlockStore'] != null
-        ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>)
-        : null,
-  azureDisk: json['azureDisk'] != null
-        ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>)
-        : null,
-  azureFile: json['azureFile'] != null
-        ? AzureFilePersistentVolumeSource.fromJson(json['azureFile'] as Map<String, dynamic>)
-        : null,
+  awsElasticBlockStore: json['awsElasticBlockStore'] != null ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>) : null,
+  azureDisk: json['azureDisk'] != null ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>) : null,
+  azureFile: json['azureFile'] != null ? AzureFilePersistentVolumeSource.fromJson(json['azureFile'] as Map<String, dynamic>) : null,
   capacity: (json['capacity'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ResourceQuantity.fromJson(v as Map<String, dynamic>))),
-  cephfs: json['cephfs'] != null
-        ? CephFsPersistentVolumeSource.fromJson(json['cephfs'] as Map<String, dynamic>)
-        : null,
-  cinder: json['cinder'] != null
-        ? CinderPersistentVolumeSource.fromJson(json['cinder'] as Map<String, dynamic>)
-        : null,
-  claimRef: json['claimRef'] != null
-        ? ObjectReference.fromJson(json['claimRef'] as Map<String, dynamic>)
-        : null,
-  csi: json['csi'] != null
-        ? CsiPersistentVolumeSource.fromJson(json['csi'] as Map<String, dynamic>)
-        : null,
-  fc: json['fc'] != null
-        ? FcVolumeSource.fromJson(json['fc'] as Map<String, dynamic>)
-        : null,
-  flexVolume: json['flexVolume'] != null
-        ? FlexPersistentVolumeSource.fromJson(json['flexVolume'] as Map<String, dynamic>)
-        : null,
-  flocker: json['flocker'] != null
-        ? FlockerVolumeSource.fromJson(json['flocker'] as Map<String, dynamic>)
-        : null,
-  gcePersistentDisk: json['gcePersistentDisk'] != null
-        ? GcePersistentDiskVolumeSource.fromJson(json['gcePersistentDisk'] as Map<String, dynamic>)
-        : null,
-  glusterfs: json['glusterfs'] != null
-        ? GlusterfsPersistentVolumeSource.fromJson(json['glusterfs'] as Map<String, dynamic>)
-        : null,
-  hostPath: json['hostPath'] != null
-        ? HostPathVolumeSource.fromJson(json['hostPath'] as Map<String, dynamic>)
-        : null,
-  iscsi: json['iscsi'] != null
-        ? IscsiPersistentVolumeSource.fromJson(json['iscsi'] as Map<String, dynamic>)
-        : null,
-  local: json['local'] != null
-        ? LocalVolumeSource.fromJson(json['local'] as Map<String, dynamic>)
-        : null,
+  cephfs: json['cephfs'] != null ? CephFsPersistentVolumeSource.fromJson(json['cephfs'] as Map<String, dynamic>) : null,
+  cinder: json['cinder'] != null ? CinderPersistentVolumeSource.fromJson(json['cinder'] as Map<String, dynamic>) : null,
+  claimRef: json['claimRef'] != null ? ObjectReference.fromJson(json['claimRef'] as Map<String, dynamic>) : null,
+  csi: json['csi'] != null ? CsiPersistentVolumeSource.fromJson(json['csi'] as Map<String, dynamic>) : null,
+  fc: json['fc'] != null ? FcVolumeSource.fromJson(json['fc'] as Map<String, dynamic>) : null,
+  flexVolume: json['flexVolume'] != null ? FlexPersistentVolumeSource.fromJson(json['flexVolume'] as Map<String, dynamic>) : null,
+  flocker: json['flocker'] != null ? FlockerVolumeSource.fromJson(json['flocker'] as Map<String, dynamic>) : null,
+  gcePersistentDisk: json['gcePersistentDisk'] != null ? GcePersistentDiskVolumeSource.fromJson(json['gcePersistentDisk'] as Map<String, dynamic>) : null,
+  glusterfs: json['glusterfs'] != null ? GlusterfsPersistentVolumeSource.fromJson(json['glusterfs'] as Map<String, dynamic>) : null,
+  hostPath: json['hostPath'] != null ? HostPathVolumeSource.fromJson(json['hostPath'] as Map<String, dynamic>) : null,
+  iscsi: json['iscsi'] != null ? IscsiPersistentVolumeSource.fromJson(json['iscsi'] as Map<String, dynamic>) : null,
+  local: json['local'] != null ? LocalVolumeSource.fromJson(json['local'] as Map<String, dynamic>) : null,
   mountOptions: (json['mountOptions'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  nfs: json['nfs'] != null
-        ? NfsVolumeSource.fromJson(json['nfs'] as Map<String, dynamic>)
-        : null,
-  nodeAffinity: json['nodeAffinity'] != null
-        ? VolumeNodeAffinity.fromJson(json['nodeAffinity'] as Map<String, dynamic>)
-        : null,
+  nfs: json['nfs'] != null ? NfsVolumeSource.fromJson(json['nfs'] as Map<String, dynamic>) : null,
+  nodeAffinity: json['nodeAffinity'] != null ? VolumeNodeAffinity.fromJson(json['nodeAffinity'] as Map<String, dynamic>) : null,
   persistentVolumeReclaimPolicy: json['persistentVolumeReclaimPolicy'] as String?,
-  photonPersistentDisk: json['photonPersistentDisk'] != null
-        ? PhotonPersistentDiskVolumeSource.fromJson(json['photonPersistentDisk'] as Map<String, dynamic>)
-        : null,
-  portworxVolume: json['portworxVolume'] != null
-        ? PortworxVolumeSource.fromJson(json['portworxVolume'] as Map<String, dynamic>)
-        : null,
-  quobyte: json['quobyte'] != null
-        ? QuobyteVolumeSource.fromJson(json['quobyte'] as Map<String, dynamic>)
-        : null,
-  rbd: json['rbd'] != null
-        ? RbdPersistentVolumeSource.fromJson(json['rbd'] as Map<String, dynamic>)
-        : null,
-  scaleIo: json['scaleIO'] != null
-        ? ScaleIoPersistentVolumeSource.fromJson(json['scaleIO'] as Map<String, dynamic>)
-        : null,
+  photonPersistentDisk: json['photonPersistentDisk'] != null ? PhotonPersistentDiskVolumeSource.fromJson(json['photonPersistentDisk'] as Map<String, dynamic>) : null,
+  portworxVolume: json['portworxVolume'] != null ? PortworxVolumeSource.fromJson(json['portworxVolume'] as Map<String, dynamic>) : null,
+  quobyte: json['quobyte'] != null ? QuobyteVolumeSource.fromJson(json['quobyte'] as Map<String, dynamic>) : null,
+  rbd: json['rbd'] != null ? RbdPersistentVolumeSource.fromJson(json['rbd'] as Map<String, dynamic>) : null,
+  scaleIo: json['scaleIO'] != null ? ScaleIoPersistentVolumeSource.fromJson(json['scaleIO'] as Map<String, dynamic>) : null,
   storageClassName: json['storageClassName'] as String?,
-  storageos: json['storageos'] != null
-        ? StorageOsPersistentVolumeSource.fromJson(json['storageos'] as Map<String, dynamic>)
-        : null,
+  storageos: json['storageos'] != null ? StorageOsPersistentVolumeSource.fromJson(json['storageos'] as Map<String, dynamic>) : null,
   volumeAttributesClassName: json['volumeAttributesClassName'] as String?,
   volumeMode: json['volumeMode'] as String?,
-  vsphereVolume: json['vsphereVolume'] != null
-        ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>)
-        : null,
+  vsphereVolume: json['vsphereVolume'] != null ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>) : null,
 ); }
 
 /// accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes

@@ -7,12 +7,8 @@
 import 'inline_object317_visa_compelling_evidence3.dart';import 'inline_object317_visa_compliance.dart';final class InlineObject317 {const InlineObject317({this.visaCompellingEvidence3, this.visaCompliance, });
 
 factory InlineObject317.fromJson(Map<String, dynamic> json) { return InlineObject317(
-  visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null
-        ? InlineObject317VisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>)
-        : null,
-  visaCompliance: json['visa_compliance'] != null
-        ? InlineObject317VisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>)
-        : null,
+  visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? InlineObject317VisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,
+  visaCompliance: json['visa_compliance'] != null ? InlineObject317VisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject317VisaCompellingEvidence3? visaCompellingEvidence3;

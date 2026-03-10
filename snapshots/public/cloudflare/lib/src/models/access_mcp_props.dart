@@ -18,14 +18,10 @@ factory AccessMcpProps.fromJson(Map<String, dynamic> json) { return AccessMcpPro
   httpOnlyCookieAttribute: json['http_only_cookie_attribute'] != null ? AccessHttpOnlyCookieAttribute.fromJson(json['http_only_cookie_attribute'] as bool) : null,
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
-  oauthConfiguration: json['oauth_configuration'] != null
-        ? AccessOauthConfiguration.fromJson(json['oauth_configuration'] as Map<String, dynamic>)
-        : null,
+  oauthConfiguration: json['oauth_configuration'] != null ? AccessOauthConfiguration.fromJson(json['oauth_configuration'] as Map<String, dynamic>) : null,
   optionsPreflightBypass: json['options_preflight_bypass'] != null ? AccessOptionsPreflightBypass.fromJson(json['options_preflight_bypass'] as bool) : null,
   sameSiteCookieAttribute: json['same_site_cookie_attribute'] != null ? AccessSameSiteCookieAttribute.fromJson(json['same_site_cookie_attribute'] as String) : null,
-  scimConfig: json['scim_config'] != null
-        ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>)
-        : null,
+  scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: AccessType.fromJson(json['type'] as String),

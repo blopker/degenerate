@@ -31,18 +31,14 @@ final class DeletedDiscount {const DeletedDiscount({this.checkoutSession, this.c
 
 factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
   checkoutSession: json['checkout_session'] as String?,
-  customer: json['customer'] != null
-        ? DeletedDiscountCustomer.fromJson(json['customer'] as Map<String, dynamic>)
-        : null,
+  customer: json['customer'] != null ? DeletedDiscountCustomer.fromJson(json['customer'] as Map<String, dynamic>) : null,
   customerAccount: json['customer_account'] as String?,
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   invoice: json['invoice'] as String?,
   invoiceItem: json['invoice_item'] as String?,
   object: DeletedDiscountObject.fromJson(json['object'] as String),
-  promotionCode: json['promotion_code'] != null
-        ? DeletedDiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>)
-        : null,
+  promotionCode: json['promotion_code'] != null ? DeletedDiscountPromotionCode.fromJson(json['promotion_code'] as Map<String, dynamic>) : null,
   source: DiscountSource.fromJson(json['source'] as Map<String, dynamic>),
   start: (json['start'] as num).toInt(),
   subscription: json['subscription'] as String?,

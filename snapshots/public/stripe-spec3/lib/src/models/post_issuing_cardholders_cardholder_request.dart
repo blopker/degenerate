@@ -65,23 +65,15 @@ bool get isUnknown { return !values.contains(this); }
 final class PostIssuingCardholdersCardholderRequest {const PostIssuingCardholdersCardholderRequest({this.billing, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, });
 
 factory PostIssuingCardholdersCardholderRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequest(
-  billing: json['billing'] != null
-        ? PostIssuingCardholdersCardholderRequestBilling.fromJson(json['billing'] as Map<String, dynamic>)
-        : null,
-  company: json['company'] != null
-        ? PostIssuingCardholdersCardholderRequestCompany.fromJson(json['company'] as Map<String, dynamic>)
-        : null,
+  billing: json['billing'] != null ? PostIssuingCardholdersCardholderRequestBilling.fromJson(json['billing'] as Map<String, dynamic>) : null,
+  company: json['company'] != null ? PostIssuingCardholdersCardholderRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individual: json['individual'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  individual: json['individual'] != null ? PostIssuingCardholdersCardholderRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   phoneNumber: json['phone_number'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(e as String)).toList(),
-  spendingControls: json['spending_controls'] != null
-        ? PostIssuingCardholdersCardholderRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>)
-        : null,
+  spendingControls: json['spending_controls'] != null ? PostIssuingCardholdersCardholderRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardholdersCardholderRequestStatus.fromJson(json['status'] as String) : null,
 ); }
 

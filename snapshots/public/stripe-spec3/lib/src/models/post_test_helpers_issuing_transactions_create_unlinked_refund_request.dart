@@ -11,12 +11,8 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest.fromJson(M
   card: json['card'] as String,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  merchantData: json['merchant_data'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>)
-        : null,
-  purchaseDetails: json['purchase_details'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>)
-        : null,
+  merchantData: json['merchant_data'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
+  purchaseDetails: json['purchase_details'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The total amount to attempt to refund. This amount is in the provided currency, or defaults to the cards currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).

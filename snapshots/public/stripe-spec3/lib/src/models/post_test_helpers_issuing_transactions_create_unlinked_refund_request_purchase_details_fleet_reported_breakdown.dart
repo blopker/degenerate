@@ -7,15 +7,9 @@
 import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_fuel.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_non_fuel.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_tax.dart';final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  nonFuel: json['non_fuel'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>)
-        : null,
-  tax: json['tax'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>)
-        : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  nonFuel: json['non_fuel'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel? fuel;

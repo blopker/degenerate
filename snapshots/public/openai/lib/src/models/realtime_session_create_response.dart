@@ -37,20 +37,12 @@ factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { retu
   model: json['model'] as String?,
   outputModalities: json['output_modalities'],
   instructions: json['instructions'] as String?,
-  audio: json['audio'] != null
-        ? RealtimeSessionCreateResponseAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
-  tracing: json['tracing'] != null
-        ? RealtimeSessionCreateResponseTracing.fromJson(json['tracing'])
-        : null,
-  turnDetection: json['turn_detection'] != null
-        ? RealtimeSessionCreateResponseTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeSessionCreateResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  tracing: json['tracing'] != null ? RealtimeSessionCreateResponseTracing.fromJson(json['tracing']) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateResponseTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] as String?,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeSessionCreateResponseMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeSessionCreateResponseMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
 ); }
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.

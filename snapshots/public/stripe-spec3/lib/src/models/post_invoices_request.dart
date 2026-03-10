@@ -57,20 +57,14 @@ bool get isUnknown { return !values.contains(this); }
 final class PostInvoicesRequest {const PostInvoicesRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.currency, this.customFields, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.fromInvoice, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.pendingInvoiceItemsBehavior, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.subscription, this.transferData, });
 
 factory PostInvoicesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesRequest(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostInvoicesRequestAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesRequestAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   autoAdvance: json['auto_advance'] as bool?,
-  automaticTax: json['automatic_tax'] != null
-        ? PostInvoicesRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>)
-        : null,
+  automaticTax: json['automatic_tax'] != null ? PostInvoicesRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
   collectionMethod: json['collection_method'] != null ? PostInvoicesRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
-  customFields: json['custom_fields'] != null
-        ? PostInvoicesRequestCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>)
-        : null,
+  customFields: json['custom_fields'] != null ? PostInvoicesRequestCustomFields.fromJson(json['custom_fields'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
@@ -78,42 +72,24 @@ factory PostInvoicesRequest.fromJson(Map<String, dynamic> json) { return PostInv
   defaultSource: json['default_source'] as String?,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  discounts: json['discounts'] != null
-        ? PostInvoicesRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  discounts: json['discounts'] != null ? PostInvoicesRequestDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   dueDate: json['due_date'] != null ? (json['due_date'] as num).toInt() : null,
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   footer: json['footer'] as String?,
-  fromInvoice: json['from_invoice'] != null
-        ? PostInvoicesRequestFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>)
-        : null,
-  issuer: json['issuer'] != null
-        ? PostInvoicesRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostInvoicesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  fromInvoice: json['from_invoice'] != null ? PostInvoicesRequestFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? PostInvoicesRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostInvoicesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] as String?,
   onBehalfOf: json['on_behalf_of'] as String?,
-  paymentSettings: json['payment_settings'] != null
-        ? PostInvoicesRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>)
-        : null,
+  paymentSettings: json['payment_settings'] != null ? PostInvoicesRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
   pendingInvoiceItemsBehavior: json['pending_invoice_items_behavior'] != null ? PostInvoicesRequestPendingInvoiceItemsBehavior.fromJson(json['pending_invoice_items_behavior'] as String) : null,
-  rendering: json['rendering'] != null
-        ? PostInvoicesRequestRendering.fromJson(json['rendering'] as Map<String, dynamic>)
-        : null,
-  shippingCost: json['shipping_cost'] != null
-        ? PostInvoicesRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
-  shippingDetails: json['shipping_details'] != null
-        ? PostInvoicesRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>)
-        : null,
+  rendering: json['rendering'] != null ? PostInvoicesRequestRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? PostInvoicesRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostInvoicesRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   subscription: json['subscription'] as String?,
-  transferData: json['transfer_data'] != null
-        ? PostInvoicesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>)
-        : null,
+  transferData: json['transfer_data'] != null ? PostInvoicesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.

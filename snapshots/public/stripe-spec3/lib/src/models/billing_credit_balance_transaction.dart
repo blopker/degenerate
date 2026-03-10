@@ -56,20 +56,14 @@ final class BillingCreditBalanceTransaction {const BillingCreditBalanceTransacti
 
 factory BillingCreditBalanceTransaction.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceTransaction(
   created: (json['created'] as num).toInt(),
-  credit: json['credit'] != null
-        ? BillingCreditBalanceTransactionCredit.fromJson(json['credit'] as Map<String, dynamic>)
-        : null,
+  credit: json['credit'] != null ? BillingCreditBalanceTransactionCredit.fromJson(json['credit'] as Map<String, dynamic>) : null,
   creditGrant: BillingCreditBalanceTransactionCreditGrant.fromJson(json['credit_grant'] as Map<String, dynamic>),
-  debit: json['debit'] != null
-        ? BillingCreditBalanceTransactionDebit.fromJson(json['debit'] as Map<String, dynamic>)
-        : null,
+  debit: json['debit'] != null ? BillingCreditBalanceTransactionDebit.fromJson(json['debit'] as Map<String, dynamic>) : null,
   effectiveAt: (json['effective_at'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceTransactionObject.fromJson(json['object'] as String),
-  testClock: json['test_clock'] != null
-        ? BillingCreditBalanceTransactionTestClock.fromJson(json['test_clock'] as Map<String, dynamic>)
-        : null,
+  testClock: json['test_clock'] != null ? BillingCreditBalanceTransactionTestClock.fromJson(json['test_clock'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? BillingCreditBalanceTransactionType.fromJson(json['type'] as String) : null,
 ); }
 

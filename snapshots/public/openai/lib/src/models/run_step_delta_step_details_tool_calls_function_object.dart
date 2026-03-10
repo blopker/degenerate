@@ -32,9 +32,7 @@ factory RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(Map<String, dyna
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
   type: RunStepDeltaStepDetailsToolCallsFunctionObjectType.fromJson(json['type'] as String),
-  function: json['function'] != null
-        ? RunStepDeltaStepDetailsToolCallsFunctionObjectFunction.fromJson(json['function'] as Map<String, dynamic>)
-        : null,
+  function: json['function'] != null ? RunStepDeltaStepDetailsToolCallsFunctionObjectFunction.fromJson(json['function'] as Map<String, dynamic>) : null,
 ); }
 
 /// The index of the tool call in the tool calls array.

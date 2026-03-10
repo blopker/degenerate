@@ -39,25 +39,15 @@ final class ResponseProperties {const ResponseProperties({this.previousResponseI
 
 factory ResponseProperties.fromJson(Map<String, dynamic> json) { return ResponseProperties(
   previousResponseId: json['previous_response_id'] as String?,
-  model: json['model'] != null
-        ? ModelIdsResponses.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
-  reasoning: json['reasoning'] != null
-        ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? ModelIdsResponses.fromJson(json['model'] as Map<String, dynamic>) : null,
+  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
   background: json['background'] as bool?,
   maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
   maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
-  text: json['text'] != null
-        ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
-  toolChoice: json['tool_choice'] != null
-        ? ToolChoiceParam.fromJson(json['tool_choice'] as Map<String, dynamic>)
-        : null,
-  prompt: json['prompt'] != null
-        ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>)
-        : null,
+  toolChoice: json['tool_choice'] != null ? ToolChoiceParam.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   truncation: json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null,
 ); }
 

@@ -22,9 +22,7 @@ factory WebhooksRelease1.fromJson(Map<String, dynamic> json) { return WebhooksRe
   nodeId: json['node_id'] as String,
   prerelease: json['prerelease'] as bool,
   publishedAt: DateTime.parse(json['published_at'] as String),
-  reactions: json['reactions'] != null
-        ? WebhooksRelease1Reactions.fromJson(json['reactions'] as Map<String, dynamic>)
-        : null,
+  reactions: json['reactions'] != null ? WebhooksRelease1Reactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   tagName: json['tag_name'] as String,
   tarballUrl: Uri.parse(json['tarball_url'] as String),
   targetCommitish: json['target_commitish'] as String,

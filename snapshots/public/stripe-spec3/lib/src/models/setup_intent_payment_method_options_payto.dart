@@ -8,9 +8,7 @@ import 'setup_intent_payment_method_options_mandate_options_payto.dart';///
 final class SetupIntentPaymentMethodOptionsPayto {const SetupIntentPaymentMethodOptionsPayto({this.mandateOptions});
 
 factory SetupIntentPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsPayto(
-  mandateOptions: json['mandate_options'] != null
-        ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final SetupIntentPaymentMethodOptionsMandateOptionsPayto? mandateOptions;

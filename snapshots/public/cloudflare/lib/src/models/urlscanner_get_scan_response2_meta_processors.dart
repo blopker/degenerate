@@ -13,12 +13,8 @@ factory UrlscannerGetScanResponse2MetaProcessors.fromJson(Map<String, dynamic> j
   geoip: UrlscannerGetScanResponse2MetaProcessorsGeoip.fromJson(json['geoip'] as Map<String, dynamic>),
   phishing: UrlscannerGetScanResponse2MetaProcessorsPhishing.fromJson(json['phishing'] as Map<String, dynamic>),
   radarRank: UrlscannerGetScanResponse2MetaProcessorsRadarRank.fromJson(json['radarRank'] as Map<String, dynamic>),
-  robotsTxt: json['robotsTxt'] != null
-        ? UrlscannerGetScanResponse2MetaProcessorsRobotsTxt.fromJson(json['robotsTxt'] as Map<String, dynamic>)
-        : null,
-  urlCategories: json['urlCategories'] != null
-        ? UrlscannerGetScanResponse2MetaProcessorsUrlCategories.fromJson(json['urlCategories'] as Map<String, dynamic>)
-        : null,
+  robotsTxt: json['robotsTxt'] != null ? UrlscannerGetScanResponse2MetaProcessorsRobotsTxt.fromJson(json['robotsTxt'] as Map<String, dynamic>) : null,
+  urlCategories: json['urlCategories'] != null ? UrlscannerGetScanResponse2MetaProcessorsUrlCategories.fromJson(json['urlCategories'] as Map<String, dynamic>) : null,
   wappa: UrlscannerGetScanResponse2MetaProcessorsWappa.fromJson(json['wappa'] as Map<String, dynamic>),
 ); }
 

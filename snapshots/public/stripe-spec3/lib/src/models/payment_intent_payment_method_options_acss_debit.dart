@@ -70,9 +70,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentIntentPaymentMethodOptionsAcssDebit {const PaymentIntentPaymentMethodOptionsAcssDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsAcssDebit(
-  mandateOptions: json['mandate_options'] != null
-        ? PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,

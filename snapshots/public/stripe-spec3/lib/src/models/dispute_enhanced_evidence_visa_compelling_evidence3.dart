@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'dispute_enhanced_evidence_vi
 final class DisputeEnhancedEvidenceVisaCompellingEvidence3 {const DisputeEnhancedEvidenceVisaCompellingEvidence3({this.disputedTransaction, required this.priorUndisputedTransactions, });
 
 factory DisputeEnhancedEvidenceVisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEvidenceVisaCompellingEvidence3(
-  disputedTransaction: json['disputed_transaction'] != null
-        ? DisputeEnhancedEvidenceVisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>)
-        : null,
+  disputedTransaction: json['disputed_transaction'] != null ? DisputeEnhancedEvidenceVisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>) : null,
   priorUndisputedTransactions: (json['prior_undisputed_transactions'] as List<dynamic>).map((e) => DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

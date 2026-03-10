@@ -31,9 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestPaymentMethodOptionsPayto {const PostCheckoutSessionsRequestPaymentMethodOptionsPayto({this.mandateOptions, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPayto(
-  mandateOptions: json['mandate_options'] != null
-        ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

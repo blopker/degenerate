@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_eps_display_pre
 final class PostPaymentMethodConfigurationsConfigurationRequestEps {const PostPaymentMethodConfigurationsConfigurationRequestEps({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestEps.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestEps(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestEpsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestEpsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestEpsDisplayPreference? displayPreference;

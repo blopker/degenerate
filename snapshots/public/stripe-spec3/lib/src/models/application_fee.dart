@@ -34,21 +34,15 @@ factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationF
   amount: (json['amount'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
   application: ApplicationFeeApplication.fromJson(json['application'] as Map<String, dynamic>),
-  balanceTransaction: json['balance_transaction'] != null
-        ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   charge: ApplicationFeeCharge.fromJson(json['charge'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  feeSource: json['fee_source'] != null
-        ? ApplicationFeeFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>)
-        : null,
+  feeSource: json['fee_source'] != null ? ApplicationFeeFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplicationFeeObject.fromJson(json['object'] as String),
-  originatingTransaction: json['originating_transaction'] != null
-        ? ApplicationFeeOriginatingTransaction.fromJson(json['originating_transaction'] as Map<String, dynamic>)
-        : null,
+  originatingTransaction: json['originating_transaction'] != null ? ApplicationFeeOriginatingTransaction.fromJson(json['originating_transaction'] as Map<String, dynamic>) : null,
   refunded: json['refunded'] as bool,
   refunds: ApplicationFeeRefunds.fromJson(json['refunds'] as Map<String, dynamic>),
 ); }

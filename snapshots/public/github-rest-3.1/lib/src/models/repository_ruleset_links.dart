@@ -7,12 +7,8 @@
 import 'repository_ruleset_links_html.dart';import 'repository_ruleset_links_self.dart';final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html, });
 
 factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) { return RepositoryRulesetLinks(
-  self: json['self'] != null
-        ? RepositoryRulesetLinksSelf.fromJson(json['self'] as Map<String, dynamic>)
-        : null,
-  html: json['html'] != null
-        ? RepositoryRulesetLinksHtml.fromJson(json['html'] as Map<String, dynamic>)
-        : null,
+  self: json['self'] != null ? RepositoryRulesetLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null,
+  html: json['html'] != null ? RepositoryRulesetLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRulesetLinksSelf? self;

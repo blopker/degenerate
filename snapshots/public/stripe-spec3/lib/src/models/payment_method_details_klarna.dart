@@ -8,9 +8,7 @@ import 'payment_method_details_klarna_payer_details.dart';///
 final class PaymentMethodDetailsKlarna {const PaymentMethodDetailsKlarna({this.payerDetails, this.paymentMethodCategory, this.preferredLocale, });
 
 factory PaymentMethodDetailsKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKlarna(
-  payerDetails: json['payer_details'] != null
-        ? PaymentMethodDetailsKlarnaPayerDetails.fromJson(json['payer_details'] as Map<String, dynamic>)
-        : null,
+  payerDetails: json['payer_details'] != null ? PaymentMethodDetailsKlarnaPayerDetails.fromJson(json['payer_details'] as Map<String, dynamic>) : null,
   paymentMethodCategory: json['payment_method_category'] as String?,
   preferredLocale: json['preferred_locale'] as String?,
 ); }

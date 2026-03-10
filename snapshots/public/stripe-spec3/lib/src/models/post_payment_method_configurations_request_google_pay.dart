@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_google_pay_display_preference
 final class PostPaymentMethodConfigurationsRequestGooglePay {const PostPaymentMethodConfigurationsRequestGooglePay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestGooglePay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestGooglePay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestGooglePayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestGooglePayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestGooglePayDisplayPreference? displayPreference;

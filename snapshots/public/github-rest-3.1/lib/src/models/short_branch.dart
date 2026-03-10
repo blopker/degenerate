@@ -11,9 +11,7 @@ factory ShortBranch.fromJson(Map<String, dynamic> json) { return ShortBranch(
   name: json['name'] as String,
   commit: ShortBranchCommit.fromJson(json['commit'] as Map<String, dynamic>),
   protected: json['protected'] as bool,
-  protection: json['protection'] != null
-        ? BranchProtection.fromJson(json['protection'] as Map<String, dynamic>)
-        : null,
+  protection: json['protection'] != null ? BranchProtection.fromJson(json['protection'] as Map<String, dynamic>) : null,
   protectionUrl: json['protection_url'] != null ? Uri.parse(json['protection_url'] as String) : null,
 ); }
 

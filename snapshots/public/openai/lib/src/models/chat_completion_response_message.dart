@@ -35,12 +35,8 @@ factory ChatCompletionResponseMessage.fromJson(Map<String, dynamic> json) { retu
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCalls2.fromJson(e as Map<String, dynamic>)).toList(),
   annotations: (json['annotations'] as List<dynamic>?)?.map((e) => ChatCompletionResponseMessageAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
-  functionCall: json['function_call'] != null
-        ? ChatCompletionResponseMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
-        : null,
-  audio: json['audio'] != null
-        ? ChatCompletionResponseMessageAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  functionCall: json['function_call'] != null ? ChatCompletionResponseMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
+  audio: json['audio'] != null ? ChatCompletionResponseMessageAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
 ); }
 
 final String? content;

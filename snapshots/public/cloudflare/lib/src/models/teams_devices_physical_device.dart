@@ -16,12 +16,8 @@ factory TeamsDevicesPhysicalDevice.fromJson(Map<String, dynamic> json) { return 
   hardwareId: json['hardware_id'] as String?,
   id: json['id'] as String,
   lastSeenAt: json['last_seen_at'] as String,
-  lastSeenRegistration: json['last_seen_registration'] != null
-        ? TeamsDevicesRegistrationDetails.fromJson(json['last_seen_registration'] as Map<String, dynamic>)
-        : null,
-  lastSeenUser: json['last_seen_user'] != null
-        ? TeamsDevicesUser.fromJson(json['last_seen_user'] as Map<String, dynamic>)
-        : null,
+  lastSeenRegistration: json['last_seen_registration'] != null ? TeamsDevicesRegistrationDetails.fromJson(json['last_seen_registration'] as Map<String, dynamic>) : null,
+  lastSeenUser: json['last_seen_user'] != null ? TeamsDevicesUser.fromJson(json['last_seen_user'] as Map<String, dynamic>) : null,
   macAddress: json['mac_address'] as String?,
   manufacturer: json['manufacturer'] as String?,
   model: json['model'] as String?,

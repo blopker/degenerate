@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'inline_object533_functions.d
 factory InlineObject533.fromJson(Map<String, dynamic> json) { return InlineObject533(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => InlineObject533Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  image: json['image'] != null
-        ? InlineObject533Image.fromJson(json['image'])
-        : null,
+  image: json['image'] != null ? InlineObject533Image.fromJson(json['image']) : null,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => InlineObject533Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,

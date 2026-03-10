@@ -9,9 +9,7 @@ final class FunctionShellToolParam {const FunctionShellToolParam({this.type = 's
 
 factory FunctionShellToolParam.fromJson(Map<String, dynamic> json) { return FunctionShellToolParam(
   type: json['type'] as String,
-  environment: json['environment'] != null
-        ? FunctionShellToolParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>)
-        : null,
+  environment: json['environment'] != null ? FunctionShellToolParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of the shell tool. Always `shell`.

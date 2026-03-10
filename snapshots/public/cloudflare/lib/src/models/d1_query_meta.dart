@@ -61,9 +61,7 @@ factory D1QueryMeta.fromJson(Map<String, dynamic> json) { return D1QueryMeta(
   servedByPrimary: json['served_by_primary'] as bool?,
   servedByRegion: json['served_by_region'] != null ? D1ServedByRegion.fromJson(json['served_by_region'] as String) : null,
   sizeAfter: json['size_after'] != null ? (json['size_after'] as num).toDouble() : null,
-  timings: json['timings'] != null
-        ? D1QueryMetaTimings.fromJson(json['timings'] as Map<String, dynamic>)
-        : null,
+  timings: json['timings'] != null ? D1QueryMetaTimings.fromJson(json['timings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Denotes if the database has been altered in some way, like deleting rows.

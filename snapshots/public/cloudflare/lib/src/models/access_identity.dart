@@ -14,19 +14,13 @@ factory AccessIdentity.fromJson(Map<String, dynamic> json) { return AccessIdenti
   deviceSessions: (json['device_sessions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, AccessDeviceSession.fromJson(v as Map<String, dynamic>))),
   devicePosture: (json['devicePosture'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, AccessSchemasDevicePostureRule.fromJson(v as Map<String, dynamic>))),
   email: json['email'] as String?,
-  geo: json['geo'] != null
-        ? AccessGeo.fromJson(json['geo'] as Map<String, dynamic>)
-        : null,
+  geo: json['geo'] != null ? AccessGeo.fromJson(json['geo'] as Map<String, dynamic>) : null,
   iat: json['iat'] != null ? (json['iat'] as num).toDouble() : null,
-  idp: json['idp'] != null
-        ? AccessIdentityIdp.fromJson(json['idp'] as Map<String, dynamic>)
-        : null,
+  idp: json['idp'] != null ? AccessIdentityIdp.fromJson(json['idp'] as Map<String, dynamic>) : null,
   ip: json['ip'] as String?,
   isGateway: json['is_gateway'] as bool?,
   isWarp: json['is_warp'] as bool?,
-  mtlsAuth: json['mtls_auth'] != null
-        ? AccessIdentityMtlsAuth.fromJson(json['mtls_auth'] as Map<String, dynamic>)
-        : null,
+  mtlsAuth: json['mtls_auth'] != null ? AccessIdentityMtlsAuth.fromJson(json['mtls_auth'] as Map<String, dynamic>) : null,
   serviceTokenId: json['service_token_id'] as String?,
   serviceTokenStatus: json['service_token_status'] as bool?,
   userUuid: json['user_uuid'] as String?,

@@ -137,21 +137,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestBrandingSettings {const PostCheckoutSessionsRequestBrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
 
 factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettings(
-  backgroundColor: json['background_color'] != null
-        ? PostCheckoutSessionsRequestBrandingSettingsBackgroundColor.fromJson(json['background_color'] as Map<String, dynamic>)
-        : null,
+  backgroundColor: json['background_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsBackgroundColor.fromJson(json['background_color'] as Map<String, dynamic>) : null,
   borderStyle: json['border_style'] != null ? PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(json['border_style'] as String) : null,
-  buttonColor: json['button_color'] != null
-        ? PostCheckoutSessionsRequestBrandingSettingsButtonColor.fromJson(json['button_color'] as Map<String, dynamic>)
-        : null,
+  buttonColor: json['button_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsButtonColor.fromJson(json['button_color'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String?,
   fontFamily: json['font_family'] != null ? PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(json['font_family'] as String) : null,
-  icon: json['icon'] != null
-        ? PostCheckoutSessionsRequestBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>)
-        : null,
-  logo: json['logo'] != null
-        ? PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>)
-        : null,
+  icon: json['icon'] != null ? PostCheckoutSessionsRequestBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,
+  logo: json['logo'] != null ? PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestBrandingSettingsBackgroundColor? backgroundColor;

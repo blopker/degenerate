@@ -7,21 +7,13 @@
 import 'post_subscription_schedules_schedule_request_phases_items_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_phases_items_discounts.dart';import 'post_subscription_schedules_schedule_request_phases_items_price_data.dart';import 'post_subscription_schedules_schedule_request_phases_items_tax_rates.dart';final class PostSubscriptionSchedulesScheduleRequestPhasesItems {const PostSubscriptionSchedulesScheduleRequestPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesItems(
-  billingThresholds: json['billing_thresholds'] != null
-        ? PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>)
-        : null,
-  discounts: json['discounts'] != null
-        ? PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>)
-        : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscounts.fromJson(json['discounts'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
-  priceData: json['price_data'] != null
-        ? PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>)
-        : null,
+  priceData: json['price_data'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null
-        ? PostSubscriptionSchedulesScheduleRequestPhasesItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>)
-        : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesItemsTaxRates.fromJson(json['tax_rates'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds? billingThresholds;

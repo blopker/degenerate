@@ -122,24 +122,16 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeBetaResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
-  statusDetails: json['status_details'] != null
-        ? RealtimeBetaResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>)
-        : null,
+  statusDetails: json['status_details'] != null ? RealtimeBetaResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  usage: json['usage'] != null
-        ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
-  voice: json['voice'] != null
-        ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>)
-        : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice'] as Map<String, dynamic>) : null,
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseModalities.fromJson(e as String)).toList(),
   outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxOutputTokens: json['max_output_tokens'] != null
-        ? RealtimeBetaResponseMaxOutputTokens.fromJson(json['max_output_tokens'])
-        : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? RealtimeBetaResponseMaxOutputTokens.fromJson(json['max_output_tokens']) : null,
 ); }
 
 /// The unique ID of the response.

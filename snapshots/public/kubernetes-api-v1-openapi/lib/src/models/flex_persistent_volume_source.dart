@@ -12,9 +12,7 @@ factory FlexPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return 
   fsType: json['fsType'] as String?,
   options: (json['options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// driver is the name of the driver to use for this volume.

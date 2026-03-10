@@ -10,9 +10,7 @@ final class PostTestHelpersConfirmationTokensRequestShipping {const PostTestHelp
 factory PostTestHelpersConfirmationTokensRequestShipping.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestShipping(
   address: PostTestHelpersConfirmationTokensRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null
-        ? PostTestHelpersConfirmationTokensRequestShippingPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  phone: json['phone'] != null ? PostTestHelpersConfirmationTokensRequestShippingPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTestHelpersConfirmationTokensRequestShippingAddress address;

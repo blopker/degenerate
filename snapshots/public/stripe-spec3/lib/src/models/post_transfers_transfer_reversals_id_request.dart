@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_transfers_transfer_reve
 
 factory PostTransfersTransferReversalsIdRequest.fromJson(Map<String, dynamic> json) { return PostTransfersTransferReversalsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTransfersTransferReversalsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTransfersTransferReversalsIdRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

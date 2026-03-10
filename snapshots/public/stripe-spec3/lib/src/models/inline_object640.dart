@@ -7,15 +7,9 @@
 import 'inline_object640_amount.dart';import 'inline_object640_from_postal_code.dart';import 'inline_object640_to_postal_code.dart';final class InlineObject640 {const InlineObject640({this.amount, this.fromPostalCode, this.toPostalCode, });
 
 factory InlineObject640.fromJson(Map<String, dynamic> json) { return InlineObject640(
-  amount: json['amount'] != null
-        ? InlineObject640Amount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
-  fromPostalCode: json['from_postal_code'] != null
-        ? InlineObject640FromPostalCode.fromJson(json['from_postal_code'] as Map<String, dynamic>)
-        : null,
-  toPostalCode: json['to_postal_code'] != null
-        ? InlineObject640ToPostalCode.fromJson(json['to_postal_code'] as Map<String, dynamic>)
-        : null,
+  amount: json['amount'] != null ? InlineObject640Amount.fromJson(json['amount'] as Map<String, dynamic>) : null,
+  fromPostalCode: json['from_postal_code'] != null ? InlineObject640FromPostalCode.fromJson(json['from_postal_code'] as Map<String, dynamic>) : null,
+  toPostalCode: json['to_postal_code'] != null ? InlineObject640ToPostalCode.fromJson(json['to_postal_code'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject640Amount? amount;

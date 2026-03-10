@@ -38,9 +38,7 @@ factory TelemetryValuesListRequest.fromJson(Map<String, dynamic> json) { return 
   filters: json.containsKey('filters') ? (json['filters'] as List<dynamic>).map((e) => TelemetryValuesListRequestFilters.fromJson(e as Map<String, dynamic>)).toList() : const [],
   key: json['key'] as String,
   limit: json.containsKey('limit') ? (json['limit'] as num).toDouble() : 50.0,
-  needle: json['needle'] != null
-        ? TelemetryValuesListRequestNeedle.fromJson(json['needle'] as Map<String, dynamic>)
-        : null,
+  needle: json['needle'] != null ? TelemetryValuesListRequestNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   timeframe: TelemetryValuesListRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   type: TelemetryValuesListRequestType.fromJson(json['type'] as String),
 ); }

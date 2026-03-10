@@ -8,9 +8,7 @@ import 'wor_create_new_workflow_instance_request_instance_retention.dart';final 
 
 factory WorCreateNewWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceRequest(
   instanceId: json['instance_id'] as String?,
-  instanceRetention: json['instance_retention'] != null
-        ? WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>)
-        : null,
+  instanceRetention: json['instance_retention'] != null ? WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>) : null,
   params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 

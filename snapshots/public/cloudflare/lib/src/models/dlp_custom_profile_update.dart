@@ -10,9 +10,7 @@ factory DlpCustomProfileUpdate.fromJson(Map<String, dynamic> json) { return DlpC
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
   allowedMatchCount: json['allowed_match_count'] != null ? (json['allowed_match_count'] as num).toInt() : null,
   confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String : 'low',
-  contextAwareness: json['context_awareness'] != null
-        ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>)
-        : null,
+  contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataTags: (json['data_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,

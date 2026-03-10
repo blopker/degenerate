@@ -42,9 +42,7 @@ factory PublicUser.fromJson(Map<String, dynamic> json) { return PublicUser(
   following: (json['following'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  plan: json['plan'] != null
-        ? PublicUserPlan.fromJson(json['plan'] as Map<String, dynamic>)
-        : null,
+  plan: json['plan'] != null ? PublicUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   privateGists: json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null,
   totalPrivateRepos: json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null,
   ownedPrivateRepos: json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null,

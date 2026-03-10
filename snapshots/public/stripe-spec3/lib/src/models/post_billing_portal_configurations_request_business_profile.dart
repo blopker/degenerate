@@ -8,9 +8,7 @@ import 'post_billing_portal_configurations_request_business_profile_headline.dar
 final class PostBillingPortalConfigurationsRequestBusinessProfile {const PostBillingPortalConfigurationsRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestBusinessProfile(
-  headline: json['headline'] != null
-        ? PostBillingPortalConfigurationsRequestBusinessProfileHeadline.fromJson(json['headline'] as Map<String, dynamic>)
-        : null,
+  headline: json['headline'] != null ? PostBillingPortalConfigurationsRequestBusinessProfileHeadline.fromJson(json['headline'] as Map<String, dynamic>) : null,
   privacyPolicyUrl: json['privacy_policy_url'] as String?,
   termsOfServiceUrl: json['terms_of_service_url'] as String?,
 ); }

@@ -73,9 +73,7 @@ factory CreateBatchRequest.fromJson(Map<String, dynamic> json) { return CreateBa
   endpoint: CreateBatchRequestEndpoint.fromJson(json['endpoint'] as String),
   completionWindow: CreateBatchRequestCompletionWindow.fromJson(json['completion_window'] as String),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  outputExpiresAfter: json['output_expires_after'] != null
-        ? BatchFileExpirationAfter.fromJson(json['output_expires_after'] as Map<String, dynamic>)
-        : null,
+  outputExpiresAfter: json['output_expires_after'] != null ? BatchFileExpirationAfter.fromJson(json['output_expires_after'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of an uploaded file that contains requests for the new batch.

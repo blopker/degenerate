@@ -29,18 +29,12 @@ final class WebhookInstallationRepositoriesAdded {const WebhookInstallationRepos
 
 factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAdded(
   action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),
-  enterprise: json['enterprise'] != null
-        ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
-        : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
-  organization: json['organization'] != null
-        ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>)
-        : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repositoriesAdded: (json['repositories_added'] as List<dynamic>).map((e) => WebhooksRepositoriesAdded2.fromJson(e as Map<String, dynamic>)).toList(),
   repositoriesRemoved: (json['repositories_removed'] as List<dynamic>).map((e) => WebhookInstallationRepositoriesAddedRepositoriesRemoved.fromJson(e as Map<String, dynamic>)).toList(),
-  repository: json['repository'] != null
-        ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
-        : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   repositorySelection: WebhooksRepositorySelection.fromJson(json['repository_selection'] as String),
   requester: WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

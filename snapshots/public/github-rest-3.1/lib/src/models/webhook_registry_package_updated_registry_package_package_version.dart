@@ -23,9 +23,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String,
   prerelease: json['prerelease'] as bool?,
-  release: json['release'] != null
-        ? WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>)
-        : null,
+  release: json['release'] != null ? WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>) : null,
   rubygemsMetadata: (json['rubygems_metadata'] as List<dynamic>?)?.map((e) => WebhookRubygemsMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   summary: json['summary'] as String,
   tagName: json['tag_name'] as String?,

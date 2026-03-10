@@ -8,9 +8,7 @@ import 'post_checkout_sessions_request_wallet_options_link.dart';/// Wallet-spec
 final class PostCheckoutSessionsRequestWalletOptions {const PostCheckoutSessionsRequestWalletOptions({this.link});
 
 factory PostCheckoutSessionsRequestWalletOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestWalletOptions(
-  link: json['link'] != null
-        ? PostCheckoutSessionsRequestWalletOptionsLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
+  link: json['link'] != null ? PostCheckoutSessionsRequestWalletOptionsLink.fromJson(json['link'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestWalletOptionsLink? link;

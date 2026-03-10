@@ -7,9 +7,7 @@
 import 'realtimekit_active_session.dart';final class GetSessionDetailsResponseData {const GetSessionDetailsResponseData({this.session});
 
 factory GetSessionDetailsResponseData.fromJson(Map<String, dynamic> json) { return GetSessionDetailsResponseData(
-  session: json['session'] != null
-        ? RealtimekitActiveSession.fromJson(json['session'] as Map<String, dynamic>)
-        : null,
+  session: json['session'] != null ? RealtimekitActiveSession.fromJson(json['session'] as Map<String, dynamic>) : null,
 ); }
 
 final RealtimekitActiveSession? session;

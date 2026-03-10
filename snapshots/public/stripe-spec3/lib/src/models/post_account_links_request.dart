@@ -61,9 +61,7 @@ final class PostAccountLinksRequest {const PostAccountLinksRequest({required thi
 factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) { return PostAccountLinksRequest(
   account: json['account'] as String,
   collect: json['collect'] != null ? PostAccountLinksRequestCollect.fromJson(json['collect'] as String) : null,
-  collectionOptions: json['collection_options'] != null
-        ? PostAccountLinksRequestCollectionOptions.fromJson(json['collection_options'] as Map<String, dynamic>)
-        : null,
+  collectionOptions: json['collection_options'] != null ? PostAccountLinksRequestCollectionOptions.fromJson(json['collection_options'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   refreshUrl: json['refresh_url'] as String?,
   returnUrl: json['return_url'] as String?,

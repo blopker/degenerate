@@ -8,12 +8,8 @@ import 'load_balancing_filter_options.dart';/// Filter pool and origin health no
 final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin, this.pool, });
 
 factory LoadBalancingNotificationFilter.fromJson(Map<String, dynamic> json) { return LoadBalancingNotificationFilter(
-  origin: json['origin'] != null
-        ? LoadBalancingFilterOptions.fromJson(json['origin'] as Map<String, dynamic>)
-        : null,
-  pool: json['pool'] != null
-        ? LoadBalancingFilterOptions.fromJson(json['pool'] as Map<String, dynamic>)
-        : null,
+  origin: json['origin'] != null ? LoadBalancingFilterOptions.fromJson(json['origin'] as Map<String, dynamic>) : null,
+  pool: json['pool'] != null ? LoadBalancingFilterOptions.fromJson(json['pool'] as Map<String, dynamic>) : null,
 ); }
 
 final LoadBalancingFilterOptions? origin;

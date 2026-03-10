@@ -8,21 +8,11 @@ import 'config_map_key_selector.dart';import 'file_key_selector.dart';import 'ob
 final class EnvVarSource {const EnvVarSource({this.configMapKeyRef, this.fieldRef, this.fileKeyRef, this.resourceFieldRef, this.secretKeyRef, });
 
 factory EnvVarSource.fromJson(Map<String, dynamic> json) { return EnvVarSource(
-  configMapKeyRef: json['configMapKeyRef'] != null
-        ? ConfigMapKeySelector.fromJson(json['configMapKeyRef'] as Map<String, dynamic>)
-        : null,
-  fieldRef: json['fieldRef'] != null
-        ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>)
-        : null,
-  fileKeyRef: json['fileKeyRef'] != null
-        ? FileKeySelector.fromJson(json['fileKeyRef'] as Map<String, dynamic>)
-        : null,
-  resourceFieldRef: json['resourceFieldRef'] != null
-        ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>)
-        : null,
-  secretKeyRef: json['secretKeyRef'] != null
-        ? SecretKeySelector.fromJson(json['secretKeyRef'] as Map<String, dynamic>)
-        : null,
+  configMapKeyRef: json['configMapKeyRef'] != null ? ConfigMapKeySelector.fromJson(json['configMapKeyRef'] as Map<String, dynamic>) : null,
+  fieldRef: json['fieldRef'] != null ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>) : null,
+  fileKeyRef: json['fileKeyRef'] != null ? FileKeySelector.fromJson(json['fileKeyRef'] as Map<String, dynamic>) : null,
+  resourceFieldRef: json['resourceFieldRef'] != null ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>) : null,
+  secretKeyRef: json['secretKeyRef'] != null ? SecretKeySelector.fromJson(json['secretKeyRef'] as Map<String, dynamic>) : null,
 ); }
 
 /// Selects a key of a ConfigMap.

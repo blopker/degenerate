@@ -9,9 +9,7 @@ final class TokenRequestSpec {const TokenRequestSpec({this.audiences, this.bound
 
 factory TokenRequestSpec.fromJson(Map<String, dynamic> json) { return TokenRequestSpec(
   audiences: (json['audiences'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  boundObjectRef: json['boundObjectRef'] != null
-        ? BoundObjectReference.fromJson(json['boundObjectRef'] as Map<String, dynamic>)
-        : null,
+  boundObjectRef: json['boundObjectRef'] != null ? BoundObjectReference.fromJson(json['boundObjectRef'] as Map<String, dynamic>) : null,
   expirationSeconds: json['expirationSeconds'] != null ? (json['expirationSeconds'] as num).toInt() : null,
 ); }
 

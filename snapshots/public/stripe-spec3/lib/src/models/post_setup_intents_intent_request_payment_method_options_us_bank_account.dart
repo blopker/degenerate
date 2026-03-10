@@ -34,15 +34,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount(
-  financialConnections: json['financial_connections'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>)
-        : null,
-  mandateOptions: json['mandate_options'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
-  networks: json['networks'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  financialConnections: json['financial_connections'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 

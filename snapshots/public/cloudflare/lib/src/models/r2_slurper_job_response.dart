@@ -11,13 +11,9 @@ factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2Slur
   finishedAt: json['finishedAt'] as String?,
   id: json['id'] as String?,
   overwrite: json['overwrite'] as bool?,
-  source: json['source'] != null
-        ? R2SlurperJobResponseSource.fromJson(json['source'])
-        : null,
+  source: json['source'] != null ? R2SlurperJobResponseSource.fromJson(json['source']) : null,
   status: json['status'] != null ? R2SlurperJobStatus.fromJson(json['status'] as String) : null,
-  target: json['target'] != null
-        ? R2SlurperJobResponseTarget.fromJson(json['target'] as Map<String, dynamic>)
-        : null,
+  target: json['target'] != null ? R2SlurperJobResponseTarget.fromJson(json['target'] as Map<String, dynamic>) : null,
 ); }
 
 final String? createdAt;

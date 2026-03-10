@@ -48,29 +48,15 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentMethodCardWallet {const PaymentMethodCardWallet({this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, required this.type, this.visaCheckout, });
 
 factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWallet(
-  amexExpressCheckout: json['amex_express_checkout'] != null
-        ? PaymentMethodCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>)
-        : null,
-  applePay: json['apple_pay'] != null
-        ? PaymentMethodCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>)
-        : null,
+  amexExpressCheckout: json['amex_express_checkout'] != null ? PaymentMethodCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>) : null,
+  applePay: json['apple_pay'] != null ? PaymentMethodCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
   dynamicLast4: json['dynamic_last4'] as String?,
-  googlePay: json['google_pay'] != null
-        ? PaymentMethodCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>)
-        : null,
-  link: json['link'] != null
-        ? PaymentMethodCardWalletLink.fromJson(json['link'] as Map<String, dynamic>)
-        : null,
-  masterpass: json['masterpass'] != null
-        ? PaymentMethodCardWalletMasterpass.fromJson(json['masterpass'] as Map<String, dynamic>)
-        : null,
-  samsungPay: json['samsung_pay'] != null
-        ? PaymentMethodCardWalletSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>)
-        : null,
+  googlePay: json['google_pay'] != null ? PaymentMethodCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PaymentMethodCardWalletLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  masterpass: json['masterpass'] != null ? PaymentMethodCardWalletMasterpass.fromJson(json['masterpass'] as Map<String, dynamic>) : null,
+  samsungPay: json['samsung_pay'] != null ? PaymentMethodCardWalletSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
   type: PaymentMethodCardWalletType.fromJson(json['type'] as String),
-  visaCheckout: json['visa_checkout'] != null
-        ? PaymentMethodCardWalletVisaCheckout.fromJson(json['visa_checkout'] as Map<String, dynamic>)
-        : null,
+  visaCheckout: json['visa_checkout'] != null ? PaymentMethodCardWalletVisaCheckout.fromJson(json['visa_checkout'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentMethodCardWalletAmexExpressCheckout? amexExpressCheckout;

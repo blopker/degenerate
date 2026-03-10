@@ -30,9 +30,7 @@ final class ItemConverted {const ItemConverted({required this.action, required t
 factory ItemConverted.fromJson(Map<String, dynamic> json) { return ItemConverted(
   action: ItemConvertedAction.fromJson(json['action'] as String),
   changes: ItemConvertedChanges.fromJson(json['changes'] as Map<String, dynamic>),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

@@ -63,9 +63,7 @@ final class GetEventListGetSearch {const GetEventListGetSearch({this.field, this
 factory GetEventListGetSearch.fromJson(Map<String, dynamic> json) { return GetEventListGetSearch(
   field: json['field'] as String?,
   op: json['op'] != null ? GetEventListGetSearchOp.fromJson(json['op'] as String) : null,
-  value: json['value'] != null
-        ? GetEventListGetSearchValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? GetEventListGetSearchValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final String? field;

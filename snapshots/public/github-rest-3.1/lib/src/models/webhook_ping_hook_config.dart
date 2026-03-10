@@ -8,9 +8,7 @@ import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.da
 
 factory WebhookPingHookConfig.fromJson(Map<String, dynamic> json) { return WebhookPingHookConfig(
   contentType: json['content_type'] != null ? WebhookConfigContentType.fromJson(json['content_type'] as String) : null,
-  insecureSsl: json['insecure_ssl'] != null
-        ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'] as Map<String, dynamic>)
-        : null,
+  insecureSsl: json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'] as Map<String, dynamic>) : null,
   secret: json['secret'] != null ? WebhookConfigSecret.fromJson(json['secret'] as String) : null,
   url: json['url'] != null ? WebhookConfigUrl.fromJson(json['url'] as String) : null,
 ); }

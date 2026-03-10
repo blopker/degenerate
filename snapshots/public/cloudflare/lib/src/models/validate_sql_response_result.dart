@@ -7,9 +7,7 @@
 import 'cloudflare_pipelines_pipeline_graph.dart';import 'inline_object1796.dart';final class ValidateSqlResponseResult {const ValidateSqlResponseResult({this.graph, required this.tables, });
 
 factory ValidateSqlResponseResult.fromJson(Map<String, dynamic> json) { return ValidateSqlResponseResult(
-  graph: json['graph'] != null
-        ? CloudflarePipelinesPipelineGraph.fromJson(json['graph'] as Map<String, dynamic>)
-        : null,
+  graph: json['graph'] != null ? CloudflarePipelinesPipelineGraph.fromJson(json['graph'] as Map<String, dynamic>) : null,
   tables: (json['tables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, InlineObject1796.fromJson(v as Map<String, dynamic>))),
 ); }
 

@@ -8,9 +8,7 @@ import 'r2_lifecycle_rule_delete_objects_transition_condition.dart';/// Transiti
 final class R2LifecycleRuleDeleteObjectsTransition {const R2LifecycleRuleDeleteObjectsTransition({this.condition});
 
 factory R2LifecycleRuleDeleteObjectsTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleDeleteObjectsTransition(
-  condition: json['condition'] != null
-        ? R2LifecycleRuleDeleteObjectsTransitionCondition.fromJson(json['condition'])
-        : null,
+  condition: json['condition'] != null ? R2LifecycleRuleDeleteObjectsTransitionCondition.fromJson(json['condition']) : null,
 ); }
 
 final R2LifecycleRuleDeleteObjectsTransitionCondition? condition;

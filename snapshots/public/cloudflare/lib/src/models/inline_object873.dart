@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'inline_object873_tool_calls.
 factory InlineObject873.fromJson(Map<String, dynamic> json) { return InlineObject873(
   response: json['response'] as String,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => InlineObject873ToolCalls.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null
-        ? InlineObject873Usage.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
+  usage: json['usage'] != null ? InlineObject873Usage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The generated text response from the model

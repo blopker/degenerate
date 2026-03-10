@@ -8,15 +8,9 @@ import 'webhook_milestone_edited_changes_description.dart';import 'webhook_miles
 final class WebhookMilestoneEditedChanges {const WebhookMilestoneEditedChanges({this.description, this.dueOn, this.title, });
 
 factory WebhookMilestoneEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEditedChanges(
-  description: json['description'] != null
-        ? WebhookMilestoneEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  dueOn: json['due_on'] != null
-        ? WebhookMilestoneEditedChangesDueOn.fromJson(json['due_on'] as Map<String, dynamic>)
-        : null,
-  title: json['title'] != null
-        ? WebhookMilestoneEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? WebhookMilestoneEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  dueOn: json['due_on'] != null ? WebhookMilestoneEditedChangesDueOn.fromJson(json['due_on'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? WebhookMilestoneEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookMilestoneEditedChangesDescription? description;

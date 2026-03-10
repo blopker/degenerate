@@ -7,9 +7,7 @@
 import 'package:collection/collection.dart';import 'pages_build_config.dart';import 'pages_deployment.dart';import 'pages_project_deployment_configs.dart';import 'pages_project_name.dart';import 'pages_source.dart';final class PagesProject {const PagesProject({this.buildConfig, required this.canonicalDeployment, required this.createdOn, required this.deploymentConfigs, this.domains, required this.framework, required this.frameworkVersion, required this.id, required this.latestDeployment, required this.name, required this.previewScriptName, required this.productionBranch, required this.productionScriptName, this.source, this.subdomain, required this.usesFunctions, });
 
 factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
-  buildConfig: json['build_config'] != null
-        ? PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>)
-        : null,
+  buildConfig: json['build_config'] != null ? PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
   canonicalDeployment: PagesDeployment.fromJson(json['canonical_deployment'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
   deploymentConfigs: PagesProjectDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>),
@@ -22,9 +20,7 @@ factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
   previewScriptName: json['preview_script_name'] as String,
   productionBranch: json['production_branch'] as String,
   productionScriptName: json['production_script_name'] as String,
-  source: json['source'] != null
-        ? PagesSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? PagesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   subdomain: json['subdomain'] as String?,
   usesFunctions: json['uses_functions'] as bool,
 ); }

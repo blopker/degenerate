@@ -68,9 +68,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  failureDetails: json['failure_details'] != null
-        ? TreasuryInboundTransferFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>)
-        : null,
+  failureDetails: json['failure_details'] != null ? TreasuryInboundTransferFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
   id: json['id'] as String,
@@ -79,16 +77,12 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryInboundTransferObject.fromJson(json['object'] as String),
   originPaymentMethod: json['origin_payment_method'] as String?,
-  originPaymentMethodDetails: json['origin_payment_method_details'] != null
-        ? TreasuryInboundTransferOriginPaymentMethodDetails.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>)
-        : null,
+  originPaymentMethodDetails: json['origin_payment_method_details'] != null ? TreasuryInboundTransferOriginPaymentMethodDetails.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>) : null,
   returned: json['returned'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null
-        ? TreasuryInboundTransferTransaction.fromJson(json['transaction'] as Map<String, dynamic>)
-        : null,
+  transaction: json['transaction'] != null ? TreasuryInboundTransferTransaction.fromJson(json['transaction'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount (in cents) transferred.

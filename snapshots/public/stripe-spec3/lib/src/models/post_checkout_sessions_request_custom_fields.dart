@@ -34,18 +34,12 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCheckoutSessionsRequestCustomFields {const PostCheckoutSessionsRequestCustomFields({this.dropdown, required this.key, required this.label, this.numeric, this.optional, this.text, required this.type, });
 
 factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFields(
-  dropdown: json['dropdown'] != null
-        ? PostCheckoutSessionsRequestCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>)
-        : null,
+  dropdown: json['dropdown'] != null ? PostCheckoutSessionsRequestCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PostCheckoutSessionsRequestCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
-  numeric: json['numeric'] != null
-        ? PostCheckoutSessionsRequestCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>)
-        : null,
+  numeric: json['numeric'] != null ? PostCheckoutSessionsRequestCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   optional: json['optional'] as bool?,
-  text: json['text'] != null
-        ? PostCheckoutSessionsRequestCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>)
-        : null,
+  text: json['text'] != null ? PostCheckoutSessionsRequestCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PostCheckoutSessionsRequestCustomFieldsType.fromJson(json['type'] as String),
 ); }
 

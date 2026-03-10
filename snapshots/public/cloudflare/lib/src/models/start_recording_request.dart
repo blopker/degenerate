@@ -8,28 +8,16 @@ import 'realtimekit_audio_config.dart';import 'realtimekit_interactive_config.da
 
 factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return StartRecordingRequest(
   allowMultipleRecordings: json.containsKey('allow_multiple_recordings') ? json['allow_multiple_recordings'] as bool : false,
-  audioConfig: json['audio_config'] != null
-        ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>)
-        : null,
+  audioConfig: json['audio_config'] != null ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>) : null,
   fileNamePrefix: json['file_name_prefix'] as String?,
-  interactiveConfig: json['interactive_config'] != null
-        ? RealtimekitInteractiveConfig.fromJson(json['interactive_config'] as Map<String, dynamic>)
-        : null,
+  interactiveConfig: json['interactive_config'] != null ? RealtimekitInteractiveConfig.fromJson(json['interactive_config'] as Map<String, dynamic>) : null,
   maxSeconds: json['max_seconds'] != null ? (json['max_seconds'] as num).toInt() : null,
   meetingId: json['meeting_id'] as String?,
-  realtimekitBucketConfig: json['realtimekit_bucket_config'] != null
-        ? RealtimekitRealtimekitBucketConfig.fromJson(json['realtimekit_bucket_config'] as Map<String, dynamic>)
-        : null,
-  rtmpOutConfig: json['rtmp_out_config'] != null
-        ? RealtimekitLivestreamingConfig.fromJson(json['rtmp_out_config'] as Map<String, dynamic>)
-        : null,
-  storageConfig: json['storage_config'] != null
-        ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>)
-        : null,
+  realtimekitBucketConfig: json['realtimekit_bucket_config'] != null ? RealtimekitRealtimekitBucketConfig.fromJson(json['realtimekit_bucket_config'] as Map<String, dynamic>) : null,
+  rtmpOutConfig: json['rtmp_out_config'] != null ? RealtimekitLivestreamingConfig.fromJson(json['rtmp_out_config'] as Map<String, dynamic>) : null,
+  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  videoConfig: json['video_config'] != null
-        ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>)
-        : null,
+  videoConfig: json['video_config'] != null ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
 /// By default, a meeting allows only one recording to run at a time. Enabling the `allow_multiple_recordings` parameter to true allows you to initiate multiple recordings concurrently in the same meeting. This allows you to record separate videos of the same meeting with different configurations, such as portrait mode or landscape mode.

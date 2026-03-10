@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_boleto_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestBoleto {const PostPaymentMethodConfigurationsConfigurationRequestBoleto({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestBoleto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestBoleto(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestBoletoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBoletoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestBoletoDisplayPreference? displayPreference;

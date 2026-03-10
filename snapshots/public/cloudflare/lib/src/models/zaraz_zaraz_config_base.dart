@@ -8,12 +8,8 @@ import 'inline_object181.dart';import 'inline_object182.dart';import 'zaraz_zara
 final class ZarazZarazConfigBase {const ZarazZarazConfigBase({this.analytics, this.consent, required this.dataLayer, required this.debugKey, this.historyChange, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, });
 
 factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
-  analytics: json['analytics'] != null
-        ? ZarazZarazConfigBaseAnalytics.fromJson(json['analytics'] as Map<String, dynamic>)
-        : null,
-  consent: json['consent'] != null
-        ? ZarazZarazConfigBaseConsent.fromJson(json['consent'] as Map<String, dynamic>)
-        : null,
+  analytics: json['analytics'] != null ? ZarazZarazConfigBaseAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
+  consent: json['consent'] != null ? ZarazZarazConfigBaseConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
   dataLayer: json['dataLayer'] as bool,
   debugKey: json['debugKey'] as String,
   historyChange: json['historyChange'] as bool?,

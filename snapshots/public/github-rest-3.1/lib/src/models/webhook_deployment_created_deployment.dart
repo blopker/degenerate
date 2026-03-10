@@ -16,9 +16,7 @@ factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
   payload: WebhookDeploymentCreatedDeploymentPayload.fromJson(json['payload']),
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,
   repositoryUrl: Uri.parse(json['repository_url'] as String),

@@ -36,12 +36,8 @@ final class RealtimekitUpdatePresetConfig {const RealtimekitUpdatePresetConfig({
 
 factory RealtimekitUpdatePresetConfig.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfig(
   maxScreenshareCount: json['max_screenshare_count'] != null ? (json['max_screenshare_count'] as num).toInt() : null,
-  maxVideoStreams: json['max_video_streams'] != null
-        ? RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(json['max_video_streams'] as Map<String, dynamic>)
-        : null,
-  media: json['media'] != null
-        ? RealtimekitUpdatePresetConfigMedia.fromJson(json['media'] as Map<String, dynamic>)
-        : null,
+  maxVideoStreams: json['max_video_streams'] != null ? RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(json['max_video_streams'] as Map<String, dynamic>) : null,
+  media: json['media'] != null ? RealtimekitUpdatePresetConfigMedia.fromJson(json['media'] as Map<String, dynamic>) : null,
   viewType: json['view_type'] != null ? RealtimekitUpdatePresetConfigViewType.fromJson(json['view_type'] as String) : null,
 ); }
 

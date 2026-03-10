@@ -249,9 +249,7 @@ factory WebhooksPullRequest5BaseRepo.fromJson(Map<String, dynamic> json) { retur
   openIssuesCount: (json['open_issues_count'] as num).toInt(),
   organization: json['organization'] as String?,
   owner: WebhooksPullRequest5BaseRepoOwner.fromJson(json['owner'] as Map<String, dynamic>),
-  permissions: json['permissions'] != null
-        ? WebhooksPullRequest5BaseRepoPermissions.fromJson(json['permissions'] as Map<String, dynamic>)
-        : null,
+  permissions: json['permissions'] != null ? WebhooksPullRequest5BaseRepoPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   private: json['private'] as bool,
   public: json['public'] as bool?,
   pullsUrl: json['pulls_url'] as String,

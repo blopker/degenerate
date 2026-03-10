@@ -7,9 +7,7 @@
 import 'post_treasury_financial_accounts_request_features_financial_addresses_aba.dart';final class PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses {const PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses({this.aba});
 
 factory PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses(
-  aba: json['aba'] != null
-        ? PostTreasuryFinancialAccountsRequestFeaturesFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>)
-        : null,
+  aba: json['aba'] != null ? PostTreasuryFinancialAccountsRequestFeaturesFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTreasuryFinancialAccountsRequestFeaturesFinancialAddressesAba? aba;

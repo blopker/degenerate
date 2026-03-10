@@ -7,13 +7,9 @@
 import 'post_subscription_schedules_schedule_request_default_settings_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_schedule_request_default_settings_invoice_settings_issuer.dart';final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings {const PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 
 factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>)
-        : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids'] as Map<String, dynamic>) : null,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
-  issuer: json['issuer'] != null
-        ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>)
-        : null,
+  issuer: json['issuer'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 
 final PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettingsAccountTaxIds? accountTaxIds;

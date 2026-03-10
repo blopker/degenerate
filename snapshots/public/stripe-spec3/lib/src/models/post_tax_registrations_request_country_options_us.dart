@@ -40,16 +40,10 @@ bool get isUnknown { return !values.contains(this); }
 final class PostTaxRegistrationsRequestCountryOptionsUs {const PostTaxRegistrationsRequestCountryOptionsUs({this.localAmusementTax, this.localLeaseTax, required this.state, this.stateSalesTax, required this.type, });
 
 factory PostTaxRegistrationsRequestCountryOptionsUs.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUs(
-  localAmusementTax: json['local_amusement_tax'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax.fromJson(json['local_amusement_tax'] as Map<String, dynamic>)
-        : null,
-  localLeaseTax: json['local_lease_tax'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUsLocalLeaseTax.fromJson(json['local_lease_tax'] as Map<String, dynamic>)
-        : null,
+  localAmusementTax: json['local_amusement_tax'] != null ? PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax.fromJson(json['local_amusement_tax'] as Map<String, dynamic>) : null,
+  localLeaseTax: json['local_lease_tax'] != null ? PostTaxRegistrationsRequestCountryOptionsUsLocalLeaseTax.fromJson(json['local_lease_tax'] as Map<String, dynamic>) : null,
   state: json['state'] as String,
-  stateSalesTax: json['state_sales_tax'] != null
-        ? PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax.fromJson(json['state_sales_tax'] as Map<String, dynamic>)
-        : null,
+  stateSalesTax: json['state_sales_tax'] != null ? PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax.fromJson(json['state_sales_tax'] as Map<String, dynamic>) : null,
   type: PostTaxRegistrationsRequestCountryOptionsUsType.fromJson(json['type'] as String),
 ); }
 

@@ -7,9 +7,7 @@
 import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events_metadata_connection_info.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata({this.connectionInfo});
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata(
-  connectionInfo: json['connection_info'] != null
-        ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo.fromJson(json['connection_info'] as Map<String, dynamic>)
-        : null,
+  connectionInfo: json['connection_info'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo.fromJson(json['connection_info'] as Map<String, dynamic>) : null,
 ); }
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo? connectionInfo;

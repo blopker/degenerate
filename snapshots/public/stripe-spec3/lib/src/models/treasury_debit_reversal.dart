@@ -89,9 +89,7 @@ factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return Treas
   financialAccount: json['financial_account'] as String?,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
   id: json['id'] as String,
-  linkedFlows: json['linked_flows'] != null
-        ? TreasuryDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>)
-        : null,
+  linkedFlows: json['linked_flows'] != null ? TreasuryDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   network: TreasuryDebitReversalNetwork.fromJson(json['network'] as String),
@@ -99,9 +97,7 @@ factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return Treas
   receivedDebit: json['received_debit'] as String,
   status: TreasuryDebitReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedDebitsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null
-        ? TreasuryDebitReversalTransaction.fromJson(json['transaction'] as Map<String, dynamic>)
-        : null,
+  transaction: json['transaction'] != null ? TreasuryDebitReversalTransaction.fromJson(json['transaction'] as Map<String, dynamic>) : null,
 ); }
 
 /// Amount (in cents) transferred.

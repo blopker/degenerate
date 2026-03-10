@@ -7,9 +7,7 @@
 import 'zone_lockdown_delete_a_zone_lockdown_rule_response_result.dart';final class ZoneLockdownDeleteAZoneLockdownRuleResponse {const ZoneLockdownDeleteAZoneLockdownRuleResponse({this.result});
 
 factory ZoneLockdownDeleteAZoneLockdownRuleResponse.fromJson(Map<String, dynamic> json) { return ZoneLockdownDeleteAZoneLockdownRuleResponse(
-  result: json['result'] != null
-        ? ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final ZoneLockdownDeleteAZoneLockdownRuleResponseResult? result;

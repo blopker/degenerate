@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'abuse_reports_abuse_report.d
 factory GetAbuseReportResponse500.fromJson(Map<String, dynamic> json) { return GetAbuseReportResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => AbuseReportsErrorMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null
-        ? AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

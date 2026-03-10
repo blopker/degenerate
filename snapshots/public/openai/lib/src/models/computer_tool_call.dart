@@ -43,9 +43,7 @@ factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerTo
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
-  action: json['action'] != null
-        ? ComputerAction.fromJson(json['action'] as Map<String, dynamic>)
-        : null,
+  action: json['action'] != null ? ComputerAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   actions: (json['actions'] as List<dynamic>?)?.map((e) => ComputerAction.fromJson(e as Map<String, dynamic>)).toList(),
   pendingSafetyChecks: (json['pending_safety_checks'] as List<dynamic>).map((e) => ComputerCallSafetyCheckParam.fromJson(e as Map<String, dynamic>)).toList(),
   status: ComputerToolCallStatus.fromJson(json['status'] as String),

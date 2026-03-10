@@ -87,14 +87,10 @@ bool get isUnknown { return !values.contains(this); }
 final class FinancialConnectionsSession {const FinancialConnectionsSession({this.accountHolder, required this.accounts, this.clientSecret, this.filters, required this.id, required this.livemode, required this.object, required this.permissions, this.prefetch, this.returnUrl, });
 
 factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return FinancialConnectionsSession(
-  accountHolder: json['account_holder'] != null
-        ? FinancialConnectionsSessionAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>)
-        : null,
+  accountHolder: json['account_holder'] != null ? FinancialConnectionsSessionAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
   accounts: FinancialConnectionsSessionAccounts.fromJson(json['accounts'] as Map<String, dynamic>),
   clientSecret: json['client_secret'] as String?,
-  filters: json['filters'] != null
-        ? BankConnectionsResourceLinkAccountSessionFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? BankConnectionsResourceLinkAccountSessionFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsSessionObject.fromJson(json['object'] as String),

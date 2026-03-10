@@ -7,12 +7,8 @@
 import 'post_tokens_request_person_verification_additional_document.dart';import 'post_tokens_request_person_verification_document.dart';final class PostTokensRequestPersonVerification {const PostTokensRequestPersonVerification({this.additionalDocument, this.document, });
 
 factory PostTokensRequestPersonVerification.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonVerification(
-  additionalDocument: json['additional_document'] != null
-        ? PostTokensRequestPersonVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>)
-        : null,
-  document: json['document'] != null
-        ? PostTokensRequestPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  additionalDocument: json['additional_document'] != null ? PostTokensRequestPersonVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
+  document: json['document'] != null ? PostTokensRequestPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTokensRequestPersonVerificationAdditionalDocument? additionalDocument;

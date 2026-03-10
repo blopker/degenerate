@@ -68,12 +68,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
 
 factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
-  acceptance: json['acceptance'] != null
-        ? PostSourcesRequestMandateAcceptance.fromJson(json['acceptance'] as Map<String, dynamic>)
-        : null,
-  amount: json['amount'] != null
-        ? PostSourcesRequestMandateAmount.fromJson(json['amount'] as Map<String, dynamic>)
-        : null,
+  acceptance: json['acceptance'] != null ? PostSourcesRequestMandateAcceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,
+  amount: json['amount'] != null ? PostSourcesRequestMandateAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   interval: json['interval'] != null ? PostSourcesRequestMandateInterval.fromJson(json['interval'] as String) : null,
   notificationMethod: json['notification_method'] != null ? PostSourcesRequestMandateNotificationMethod.fromJson(json['notification_method'] as String) : null,

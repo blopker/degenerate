@@ -34,12 +34,8 @@ final class InvoicesResourcePretaxCreditAmount {const InvoicesResourcePretaxCred
 
 factory InvoicesResourcePretaxCreditAmount.fromJson(Map<String, dynamic> json) { return InvoicesResourcePretaxCreditAmount(
   amount: (json['amount'] as num).toInt(),
-  creditBalanceTransaction: json['credit_balance_transaction'] != null
-        ? InvoicesResourcePretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction'] as Map<String, dynamic>)
-        : null,
-  discount: json['discount'] != null
-        ? InvoicesResourcePretaxCreditAmountDiscount.fromJson(json['discount'] as Map<String, dynamic>)
-        : null,
+  creditBalanceTransaction: json['credit_balance_transaction'] != null ? InvoicesResourcePretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction'] as Map<String, dynamic>) : null,
+  discount: json['discount'] != null ? InvoicesResourcePretaxCreditAmountDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
   type: InvoicesResourcePretaxCreditAmountType.fromJson(json['type'] as String),
 ); }
 

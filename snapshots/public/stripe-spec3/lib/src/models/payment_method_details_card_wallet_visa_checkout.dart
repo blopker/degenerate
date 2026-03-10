@@ -8,14 +8,10 @@ import 'payment_method_details_card_wallet_visa_checkout_billing_address.dart';i
 final class PaymentMethodDetailsCardWalletVisaCheckout {const PaymentMethodDetailsCardWalletVisaCheckout({this.billingAddress, this.email, this.name, this.shippingAddress, });
 
 factory PaymentMethodDetailsCardWalletVisaCheckout.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWalletVisaCheckout(
-  billingAddress: json['billing_address'] != null
-        ? PaymentMethodDetailsCardWalletVisaCheckoutBillingAddress.fromJson(json['billing_address'] as Map<String, dynamic>)
-        : null,
+  billingAddress: json['billing_address'] != null ? PaymentMethodDetailsCardWalletVisaCheckoutBillingAddress.fromJson(json['billing_address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
-  shippingAddress: json['shipping_address'] != null
-        ? PaymentMethodDetailsCardWalletVisaCheckoutShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
+  shippingAddress: json['shipping_address'] != null ? PaymentMethodDetailsCardWalletVisaCheckoutShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// Owner's verified billing address. Values are verified or provided by the wallet directly (if supported) at the time of authorization or settlement. They cannot be set or mutated.

@@ -10,9 +10,7 @@ final class StorageOsVolumeSource {const StorageOsVolumeSource({this.fsType, thi
 factory StorageOsVolumeSource.fromJson(Map<String, dynamic> json) { return StorageOsVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
-  secretRef: json['secretRef'] != null
-        ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeName: json['volumeName'] as String?,
   volumeNamespace: json['volumeNamespace'] as String?,
 ); }

@@ -7,18 +7,10 @@
 import 'inline_object947_payment_method_options_card.dart';import 'inline_object947_payment_method_options_card_present.dart';import 'inline_object947_payment_method_options_klarna.dart';import 'inline_object947_payment_method_options_paypal.dart';final class InlineObject947PaymentMethodOptions {const InlineObject947PaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
 
 factory InlineObject947PaymentMethodOptions.fromJson(Map<String, dynamic> json) { return InlineObject947PaymentMethodOptions(
-  card: json['card'] != null
-        ? InlineObject947PaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  cardPresent: json['card_present'] != null
-        ? InlineObject947PaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>)
-        : null,
-  klarna: json['klarna'] != null
-        ? InlineObject947PaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>)
-        : null,
-  paypal: json['paypal'] != null
-        ? InlineObject947PaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>)
-        : null,
+  card: json['card'] != null ? InlineObject947PaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? InlineObject947PaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? InlineObject947PaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? InlineObject947PaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject947PaymentMethodOptionsCard? card;

@@ -55,13 +55,9 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject477ShippingRateData {const InlineObject477ShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory InlineObject477ShippingRateData.fromJson(Map<String, dynamic> json) { return InlineObject477ShippingRateData(
-  deliveryEstimate: json['delivery_estimate'] != null
-        ? InlineObject477ShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>)
-        : null,
+  deliveryEstimate: json['delivery_estimate'] != null ? InlineObject477ShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String,
-  fixedAmount: json['fixed_amount'] != null
-        ? InlineObject477ShippingRateDataFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>)
-        : null,
+  fixedAmount: json['fixed_amount'] != null ? InlineObject477ShippingRateDataFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   taxBehavior: json['tax_behavior'] != null ? InlineObject477ShippingRateDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] as String?,

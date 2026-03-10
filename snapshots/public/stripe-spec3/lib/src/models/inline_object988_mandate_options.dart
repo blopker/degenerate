@@ -7,9 +7,7 @@
 import 'inline_object988_mandate_options_reference_prefix.dart';final class InlineObject988MandateOptions {const InlineObject988MandateOptions({this.referencePrefix});
 
 factory InlineObject988MandateOptions.fromJson(Map<String, dynamic> json) { return InlineObject988MandateOptions(
-  referencePrefix: json['reference_prefix'] != null
-        ? InlineObject988MandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>)
-        : null,
+  referencePrefix: json['reference_prefix'] != null ? InlineObject988MandateOptionsReferencePrefix.fromJson(json['reference_prefix'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject988MandateOptionsReferencePrefix? referencePrefix;

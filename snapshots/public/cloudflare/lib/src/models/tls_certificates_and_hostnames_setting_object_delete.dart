@@ -11,9 +11,7 @@ factory TlsCertificatesAndHostnamesSettingObjectDelete.fromJson(Map<String, dyna
   hostname: json['hostname'] != null ? TlsCertificatesAndHostnamesComponentsSchemasHostname.fromJson(json['hostname'] as String) : null,
   status: json['status'] != null ? TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasStatus.fromJson(json['status'] as String) : null,
   updatedAt: json['updated_at'] != null ? TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt.fromJson(json['updated_at'] as String) : null,
-  value: json['value'] != null
-        ? TlsCertificatesAndHostnamesValue.fromJson(json['value'] as Map<String, dynamic>)
-        : null,
+  value: json['value'] != null ? TlsCertificatesAndHostnamesValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt? createdAt;

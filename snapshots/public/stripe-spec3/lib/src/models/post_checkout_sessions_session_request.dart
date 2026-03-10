@@ -7,17 +7,11 @@
 import 'package:collection/collection.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
 factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
-  collectedInformation: json['collected_information'] != null
-        ? PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>)
-        : null,
+  collectedInformation: json['collected_information'] != null ? PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null
-        ? PostCheckoutSessionsSessionRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  shippingOptions: json['shipping_options'] != null
-        ? PostCheckoutSessionsSessionRequestShippingOptions.fromJson(json['shipping_options'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostCheckoutSessionsSessionRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  shippingOptions: json['shipping_options'] != null ? PostCheckoutSessionsSessionRequestShippingOptions.fromJson(json['shipping_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.

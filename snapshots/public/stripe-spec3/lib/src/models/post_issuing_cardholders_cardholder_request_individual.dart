@@ -8,17 +8,11 @@ import 'post_issuing_cardholders_cardholder_request_individual_card_issuing.dart
 final class PostIssuingCardholdersCardholderRequestIndividual {const PostIssuingCardholdersCardholderRequestIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory PostIssuingCardholdersCardholderRequestIndividual.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividual(
-  cardIssuing: json['card_issuing'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>)
-        : null,
-  dob: json['dob'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividualDob.fromJson(json['dob'] as Map<String, dynamic>)
-        : null,
+  cardIssuing: json['card_issuing'] != null ? PostIssuingCardholdersCardholderRequestIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? PostIssuingCardholdersCardholderRequestIndividualDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   lastName: json['last_name'] as String?,
-  verification: json['verification'] != null
-        ? PostIssuingCardholdersCardholderRequestIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>)
-        : null,
+  verification: json['verification'] != null ? PostIssuingCardholdersCardholderRequestIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final PostIssuingCardholdersCardholderRequestIndividualCardIssuing? cardIssuing;

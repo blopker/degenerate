@@ -8,12 +8,8 @@ import 'payment_pages_checkout_session_business_name.dart';import 'payment_pages
 final class PaymentPagesCheckoutSessionNameCollection {const PaymentPagesCheckoutSessionNameCollection({this.business, this.individual, });
 
 factory PaymentPagesCheckoutSessionNameCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionNameCollection(
-  business: json['business'] != null
-        ? PaymentPagesCheckoutSessionBusinessName.fromJson(json['business'] as Map<String, dynamic>)
-        : null,
-  individual: json['individual'] != null
-        ? PaymentPagesCheckoutSessionIndividualName.fromJson(json['individual'] as Map<String, dynamic>)
-        : null,
+  business: json['business'] != null ? PaymentPagesCheckoutSessionBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PaymentPagesCheckoutSessionIndividualName.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentPagesCheckoutSessionBusinessName? business;

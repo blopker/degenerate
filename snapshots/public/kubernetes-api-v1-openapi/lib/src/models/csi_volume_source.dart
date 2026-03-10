@@ -10,9 +10,7 @@ final class CsiVolumeSource {const CsiVolumeSource({this.driver = '', this.fsTyp
 factory CsiVolumeSource.fromJson(Map<String, dynamic> json) { return CsiVolumeSource(
   driver: json['driver'] as String,
   fsType: json['fsType'] as String?,
-  nodePublishSecretRef: json['nodePublishSecretRef'] != null
-        ? LocalObjectReference.fromJson(json['nodePublishSecretRef'] as Map<String, dynamic>)
-        : null,
+  nodePublishSecretRef: json['nodePublishSecretRef'] != null ? LocalObjectReference.fromJson(json['nodePublishSecretRef'] as Map<String, dynamic>) : null,
   readOnly: json['readOnly'] as bool?,
   volumeAttributes: (json['volumeAttributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

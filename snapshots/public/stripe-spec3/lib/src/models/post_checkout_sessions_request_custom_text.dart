@@ -8,18 +8,10 @@ import 'post_checkout_sessions_request_custom_text_after_submit.dart';import 'po
 final class PostCheckoutSessionsRequestCustomText {const PostCheckoutSessionsRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PostCheckoutSessionsRequestCustomText.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomText(
-  afterSubmit: json['after_submit'] != null
-        ? PostCheckoutSessionsRequestCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>)
-        : null,
-  shippingAddress: json['shipping_address'] != null
-        ? PostCheckoutSessionsRequestCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>)
-        : null,
-  submit: json['submit'] != null
-        ? PostCheckoutSessionsRequestCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>)
-        : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null
-        ? PostCheckoutSessionsRequestCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>)
-        : null,
+  afterSubmit: json['after_submit'] != null ? PostCheckoutSessionsRequestCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PostCheckoutSessionsRequestCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PostCheckoutSessionsRequestCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PostCheckoutSessionsRequestCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestCustomTextAfterSubmit? afterSubmit;

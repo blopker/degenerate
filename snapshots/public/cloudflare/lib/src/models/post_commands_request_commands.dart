@@ -32,9 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PostCommandsRequestCommands {const PostCommandsRequestCommands({this.commandArgs, required this.commandType, required this.deviceId, this.registrationId, required this.userEmail, });
 
 factory PostCommandsRequestCommands.fromJson(Map<String, dynamic> json) { return PostCommandsRequestCommands(
-  commandArgs: json['command_args'] != null
-        ? PostCommandsRequestCommandsCommandArgs.fromJson(json['command_args'] as Map<String, dynamic>)
-        : null,
+  commandArgs: json['command_args'] != null ? PostCommandsRequestCommandsCommandArgs.fromJson(json['command_args'] as Map<String, dynamic>) : null,
   commandType: PostCommandsRequestCommandsCommandType.fromJson(json['command_type'] as String),
   deviceId: json['device_id'] as String,
   registrationId: json['registration_id'] as String?,

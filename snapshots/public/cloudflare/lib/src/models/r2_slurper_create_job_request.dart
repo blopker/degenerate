@@ -8,12 +8,8 @@ import 'r2_slurper_r2_target_schema.dart';import 'r2_slurper_source_job_schema.d
 
 factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) { return R2SlurperCreateJobRequest(
   overwrite: json.containsKey('overwrite') ? json['overwrite'] as bool : true,
-  source: json['source'] != null
-        ? R2SlurperSourceJobSchema.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
-  target: json['target'] != null
-        ? R2SlurperR2TargetSchema.fromJson(json['target'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? R2SlurperSourceJobSchema.fromJson(json['source'] as Map<String, dynamic>) : null,
+  target: json['target'] != null ? R2SlurperR2TargetSchema.fromJson(json['target'] as Map<String, dynamic>) : null,
 ); }
 
 final bool overwrite;

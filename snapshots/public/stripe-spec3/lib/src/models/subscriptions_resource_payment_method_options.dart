@@ -8,30 +8,14 @@ import 'subscriptions_resource_payment_method_options_acss_debit.dart';import 's
 final class SubscriptionsResourcePaymentMethodOptions {const SubscriptionsResourcePaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory SubscriptionsResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePaymentMethodOptions(
-  acssDebit: json['acss_debit'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>)
-        : null,
-  bancontact: json['bancontact'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>)
-        : null,
-  card: json['card'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>)
-        : null,
-  customerBalance: json['customer_balance'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>)
-        : null,
-  konbini: json['konbini'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>)
-        : null,
-  payto: json['payto'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>)
-        : null,
-  sepaDebit: json['sepa_debit'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>)
-        : null,
-  usBankAccount: json['us_bank_account'] != null
-        ? SubscriptionsResourcePaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>)
-        : null,
+  acssDebit: json['acss_debit'] != null ? SubscriptionsResourcePaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? SubscriptionsResourcePaymentMethodOptionsBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? SubscriptionsResourcePaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? SubscriptionsResourcePaymentMethodOptionsCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? SubscriptionsResourcePaymentMethodOptionsKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? SubscriptionsResourcePaymentMethodOptionsPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? SubscriptionsResourcePaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? SubscriptionsResourcePaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }
 
 /// This sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to invoices created by the subscription.

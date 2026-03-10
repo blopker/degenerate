@@ -7,9 +7,7 @@
 import 'inline_object468_mandate_options.dart';final class InlineObject468 {const InlineObject468({this.mandateOptions});
 
 factory InlineObject468.fromJson(Map<String, dynamic> json) { return InlineObject468(
-  mandateOptions: json['mandate_options'] != null
-        ? InlineObject468MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>)
-        : null,
+  mandateOptions: json['mandate_options'] != null ? InlineObject468MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
 ); }
 
 final InlineObject468MandateOptions? mandateOptions;

@@ -7,9 +7,7 @@
 import 'inline_object128_bundle.dart';final class InlineObject128 {const InlineObject128({this.bundle, this.repositoryId, this.bundleUrl, });
 
 factory InlineObject128.fromJson(Map<String, dynamic> json) { return InlineObject128(
-  bundle: json['bundle'] != null
-        ? InlineObject128Bundle.fromJson(json['bundle'] as Map<String, dynamic>)
-        : null,
+  bundle: json['bundle'] != null ? InlineObject128Bundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
 ); }

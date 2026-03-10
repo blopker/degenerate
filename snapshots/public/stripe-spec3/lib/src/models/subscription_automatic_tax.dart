@@ -32,9 +32,7 @@ final class SubscriptionAutomaticTax {const SubscriptionAutomaticTax({this.disab
 factory SubscriptionAutomaticTax.fromJson(Map<String, dynamic> json) { return SubscriptionAutomaticTax(
   disabledReason: json['disabled_reason'] != null ? SubscriptionAutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null
-        ? SubscriptionAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>)
-        : null,
+  liability: json['liability'] != null ? SubscriptionAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 /// If Stripe disabled automatic tax, this enum describes why.

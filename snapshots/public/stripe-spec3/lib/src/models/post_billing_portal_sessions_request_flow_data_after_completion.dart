@@ -34,12 +34,8 @@ bool get isUnknown { return !values.contains(this); }
 final class PostBillingPortalSessionsRequestFlowDataAfterCompletion {const PostBillingPortalSessionsRequestFlowDataAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
 
 factory PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataAfterCompletion(
-  hostedConfirmation: json['hosted_confirmation'] != null
-        ? PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>)
-        : null,
-  redirect: json['redirect'] != null
-        ? PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>)
-        : null,
+  hostedConfirmation: json['hosted_confirmation'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   type: PostBillingPortalSessionsRequestFlowDataAfterCompletionType.fromJson(json['type'] as String),
 ); }
 

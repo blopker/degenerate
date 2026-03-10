@@ -10,12 +10,8 @@ import 'zones_cache_key_fields_value_query_string_exclude.dart';import 'zones_ca
 final class ZonesCacheKeyFieldsValueQueryString {const ZonesCacheKeyFieldsValueQueryString({this.exclude, this.include, });
 
 factory ZonesCacheKeyFieldsValueQueryString.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueQueryString(
-  exclude: json['exclude'] != null
-        ? ZonesCacheKeyFieldsValueQueryStringExclude.fromJson(json['exclude'])
-        : null,
-  include: json['include'] != null
-        ? ZonesCacheKeyFieldsValueQueryStringInclude.fromJson(json['include'])
-        : null,
+  exclude: json['exclude'] != null ? ZonesCacheKeyFieldsValueQueryStringExclude.fromJson(json['exclude']) : null,
+  include: json['include'] != null ? ZonesCacheKeyFieldsValueQueryStringInclude.fromJson(json['include']) : null,
 ); }
 
 final ZonesCacheKeyFieldsValueQueryStringExclude? exclude;

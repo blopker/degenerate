@@ -29,9 +29,7 @@ final class ItemCreated {const ItemCreated({required this.action, this.installat
 
 factory ItemCreated.fromJson(Map<String, dynamic> json) { return ItemCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

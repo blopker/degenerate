@@ -8,12 +8,8 @@ import 'infra_ip_info_ipv4.dart';import 'infra_ip_info_ipv6.dart';/// The IPv4/I
 final class InfraIpInfo {const InfraIpInfo({this.ipv4, this.ipv6, });
 
 factory InfraIpInfo.fromJson(Map<String, dynamic> json) { return InfraIpInfo(
-  ipv4: json['ipv4'] != null
-        ? InfraIpInfoIpv4.fromJson(json['ipv4'] as Map<String, dynamic>)
-        : null,
-  ipv6: json['ipv6'] != null
-        ? InfraIpInfoIpv6.fromJson(json['ipv6'] as Map<String, dynamic>)
-        : null,
+  ipv4: json['ipv4'] != null ? InfraIpInfoIpv4.fromJson(json['ipv4'] as Map<String, dynamic>) : null,
+  ipv6: json['ipv6'] != null ? InfraIpInfoIpv6.fromJson(json['ipv6'] as Map<String, dynamic>) : null,
 ); }
 
 /// The target's IPv4 address

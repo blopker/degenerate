@@ -56,9 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
 
 factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
-  condition: json['condition'] != null
-        ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>)
-        : null,
+  condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
   expiresOn: json['expires_on'] != null ? IamExpiresOn.fromJson(json['expires_on'] as String) : null,
   id: json['id'] != null ? IamTokenIdentifier.fromJson(json['id'] as String) : null,
   issuedOn: json['issued_on'] != null ? IamIssuedOn.fromJson(json['issued_on'] as String) : null,

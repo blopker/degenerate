@@ -7,9 +7,7 @@
 import 'item_reordered_changes_item_node_id.dart';final class ItemReorderedChanges {const ItemReorderedChanges({this.previousProjectsV2ItemNodeId});
 
 factory ItemReorderedChanges.fromJson(Map<String, dynamic> json) { return ItemReorderedChanges(
-  previousProjectsV2ItemNodeId: json['previous_projects_v2_item_node_id'] != null
-        ? ItemReorderedChangesItemNodeId.fromJson(json['previous_projects_v2_item_node_id'] as Map<String, dynamic>)
-        : null,
+  previousProjectsV2ItemNodeId: json['previous_projects_v2_item_node_id'] != null ? ItemReorderedChangesItemNodeId.fromJson(json['previous_projects_v2_item_node_id'] as Map<String, dynamic>) : null,
 ); }
 
 final ItemReorderedChangesItemNodeId? previousProjectsV2ItemNodeId;

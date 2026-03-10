@@ -31,9 +31,7 @@ final class RunStepDeltaStepDetailsMessageCreationObject {const RunStepDeltaStep
 
 factory RunStepDeltaStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsMessageCreationObject(
   type: RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(json['type'] as String),
-  messageCreation: json['message_creation'] != null
-        ? RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(json['message_creation'] as Map<String, dynamic>)
-        : null,
+  messageCreation: json['message_creation'] != null ? RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(json['message_creation'] as Map<String, dynamic>) : null,
 ); }
 
 /// Always `message_creation`.

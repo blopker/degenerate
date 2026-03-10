@@ -8,15 +8,9 @@ import 'post_invoices_request_payment_settings_default_mandate.dart';import 'pos
 final class PostInvoicesRequestPaymentSettings {const PostInvoicesRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory PostInvoicesRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestPaymentSettings(
-  defaultMandate: json['default_mandate'] != null
-        ? PostInvoicesRequestPaymentSettingsDefaultMandate.fromJson(json['default_mandate'] as Map<String, dynamic>)
-        : null,
-  paymentMethodOptions: json['payment_method_options'] != null
-        ? PostInvoicesRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>)
-        : null,
-  paymentMethodTypes: json['payment_method_types'] != null
-        ? PostInvoicesRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types'] as Map<String, dynamic>)
-        : null,
+  defaultMandate: json['default_mandate'] != null ? PostInvoicesRequestPaymentSettingsDefaultMandate.fromJson(json['default_mandate'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostInvoicesRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodTypes: json['payment_method_types'] != null ? PostInvoicesRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types'] as Map<String, dynamic>) : null,
 ); }
 
 final PostInvoicesRequestPaymentSettingsDefaultMandate? defaultMandate;

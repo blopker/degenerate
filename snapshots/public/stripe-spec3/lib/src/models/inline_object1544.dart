@@ -18,9 +18,7 @@ factory InlineObject1544.fromJson(Map<String, dynamic> json) { return InlineObje
   expMonth: json['exp_month'] as String,
   expYear: json['exp_year'] as String,
   name: json['name'] as String?,
-  networks: json['networks'] != null
-        ? InlineObject1544Networks.fromJson(json['networks'] as Map<String, dynamic>)
-        : null,
+  networks: json['networks'] != null ? InlineObject1544Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   number: json['number'] as String,
 ); }
 

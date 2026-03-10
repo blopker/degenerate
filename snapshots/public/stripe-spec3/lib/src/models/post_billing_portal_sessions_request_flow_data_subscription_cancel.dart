@@ -7,9 +7,7 @@
 import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention.dart';final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancel {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancel({this.retention, required this.subscription, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancel(
-  retention: json['retention'] != null
-        ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>)
-        : null,
+  retention: json['retention'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String,
 ); }
 

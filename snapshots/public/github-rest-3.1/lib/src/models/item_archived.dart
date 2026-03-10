@@ -30,9 +30,7 @@ final class ItemArchived {const ItemArchived({required this.action, required thi
 factory ItemArchived.fromJson(Map<String, dynamic> json) { return ItemArchived(
   action: ItemArchivedAction.fromJson(json['action'] as String),
   changes: WebhooksProjectChanges.fromJson(json['changes'] as Map<String, dynamic>),
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

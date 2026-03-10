@@ -32,9 +32,7 @@ factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json
   coloName: json['colo_name'] != null ? MagicVisibilityPcapsPcapsColoName.fromJson(json['colo_name'] as String) : null,
   destinationConf: json['destination_conf'] != null ? MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String) : null,
   errorMessage: json['error_message'] != null ? MagicVisibilityPcapsPcapsErrorMessage.fromJson(json['error_message'] as String) : null,
-  filterV1: json['filter_v1'] != null
-        ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>)
-        : null,
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? MagicVisibilityPcapsPcapsId.fromJson(json['id'] as String) : null,
   packetsCaptured: json['packets_captured'] != null ? MagicVisibilityPcapsPcapsPacketsCaptured.fromJson(json['packets_captured'] as num) : null,
   status: json['status'] != null ? MagicVisibilityPcapsPcapsStatus.fromJson(json['status'] as String) : null,

@@ -8,9 +8,7 @@ import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of r
 final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });
 
 factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
-  features: json['features'] != null
-        ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   name: json.containsKey('name') ? json['name'] as String : '',
 ); }
 

@@ -103,9 +103,7 @@ factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
   checkSuite: CheckRunCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   app: Integration.fromJson(json['app'] as Map<String, dynamic>),
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
-  deployment: json['deployment'] != null
-        ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>)
-        : null,
+  deployment: json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null,
 ); }
 
 /// The id of the check.

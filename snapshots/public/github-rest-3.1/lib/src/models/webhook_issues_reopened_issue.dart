@@ -110,9 +110,7 @@ final class WebhookIssuesReopenedIssue {const WebhookIssuesReopenedIssue({requir
 
 factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesReopenedIssue(
   activeLockReason: WebhookIssuesReopenedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String),
-  assignee: json['assignee'] != null
-        ? WebhookIssuesReopenedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>)
-        : null,
+  assignee: json['assignee'] != null ? WebhookIssuesReopenedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookIssuesReopenedIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookIssuesReopenedIssueAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
@@ -130,23 +128,13 @@ factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return 
   milestone: WebhookIssuesReopenedIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  performedViaGithubApp: json['performed_via_github_app'] != null
-        ? WebhookIssuesReopenedIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>)
-        : null,
-  pullRequest: json['pull_request'] != null
-        ? WebhookIssuesReopenedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
-        : null,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookIssuesReopenedIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  pullRequest: json['pull_request'] != null ? WebhookIssuesReopenedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   reactions: WebhookIssuesReopenedIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   repositoryUrl: Uri.parse(json['repository_url'] as String),
-  pinnedComment: json['pinned_comment'] != null
-        ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>)
-        : null,
-  subIssuesSummary: json['sub_issues_summary'] != null
-        ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>)
-        : null,
-  issueDependenciesSummary: json['issue_dependencies_summary'] != null
-        ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>)
-        : null,
+  pinnedComment: json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null,
+  subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
+  issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
   state: WebhookIssuesReopenedIssueState.fromJson(json['state'] as String),
   stateReason: json['state_reason'] as String?,
@@ -155,9 +143,7 @@ factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return 
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: WebhookIssuesReopenedIssueUser.fromJson(json['user'] as Map<String, dynamic>),
-  type: json['type'] != null
-        ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-        : null,
+  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookIssuesReopenedIssueActiveLockReason? activeLockReason;

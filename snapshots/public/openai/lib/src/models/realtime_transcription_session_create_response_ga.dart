@@ -58,9 +58,7 @@ factory RealtimeTranscriptionSessionCreateResponseGa.fromJson(Map<String, dynami
   object: json['object'] as String,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateResponseGaInclude.fromJson(e as String)).toList(),
-  audio: json['audio'] != null
-        ? RealtimeTranscriptionSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>)
-        : null,
+  audio: json['audio'] != null ? RealtimeTranscriptionSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
 ); }
 
 /// The type of session. Always `transcription` for transcription sessions.

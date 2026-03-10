@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_topups_topup_request_me
 factory PostTopupsTopupRequest.fromJson(Map<String, dynamic> json) { return PostTopupsTopupRequest(
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null
-        ? PostTopupsTopupRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
+  metadata: json['metadata'] != null ? PostTopupsTopupRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
 ); }
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.

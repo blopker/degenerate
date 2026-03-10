@@ -43,18 +43,12 @@ factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: LineItemObject.fromJson(json['object'] as String),
-  parent: json['parent'] != null
-        ? LineItemParent.fromJson(json['parent'] as Map<String, dynamic>)
-        : null,
+  parent: json['parent'] != null ? LineItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   period: InvoiceLineItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  pricing: json['pricing'] != null
-        ? LineItemPricing.fromJson(json['pricing'] as Map<String, dynamic>)
-        : null,
+  pricing: json['pricing'] != null ? LineItemPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  subscription: json['subscription'] != null
-        ? LineItemSubscription.fromJson(json['subscription'] as Map<String, dynamic>)
-        : null,
+  subscription: json['subscription'] != null ? LineItemSubscription.fromJson(json['subscription'] as Map<String, dynamic>) : null,
   subtotal: (json['subtotal'] as num).toInt(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

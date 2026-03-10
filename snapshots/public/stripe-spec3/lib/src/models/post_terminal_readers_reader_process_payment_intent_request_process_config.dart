@@ -39,9 +39,7 @@ factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJs
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   returnUrl: json['return_url'] as String?,
   skipTipping: json['skip_tipping'] as bool?,
-  tipping: json['tipping'] != null
-        ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
+  tipping: json['tipping'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
 ); }
 
 final PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay? allowRedisplay;

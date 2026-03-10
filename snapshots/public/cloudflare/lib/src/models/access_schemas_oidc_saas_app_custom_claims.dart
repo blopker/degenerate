@@ -41,9 +41,7 @@ factory AccessSchemasOidcSaasAppCustomClaims.fromJson(Map<String, dynamic> json)
   name: json['name'] as String?,
   $required: json['required'] as bool?,
   scope: json['scope'] != null ? AccessSchemasOidcSaasAppCustomClaimsScope.fromJson(json['scope'] as String) : null,
-  source: json['source'] != null
-        ? AccessSchemasOidcSaasAppCustomClaimsSource.fromJson(json['source'] as Map<String, dynamic>)
-        : null,
+  source: json['source'] != null ? AccessSchemasOidcSaasAppCustomClaimsSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// The name of the claim.

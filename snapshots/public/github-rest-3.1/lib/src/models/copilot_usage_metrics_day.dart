@@ -11,18 +11,10 @@ factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return Copi
   date: json['date'] as String,
   totalActiveUsers: json['total_active_users'] != null ? (json['total_active_users'] as num).toInt() : null,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
-  copilotIdeCodeCompletions: json['copilot_ide_code_completions'] != null
-        ? CopilotIdeCodeCompletions.fromJson(json['copilot_ide_code_completions'] as Map<String, dynamic>)
-        : null,
-  copilotIdeChat: json['copilot_ide_chat'] != null
-        ? CopilotIdeChat.fromJson(json['copilot_ide_chat'] as Map<String, dynamic>)
-        : null,
-  copilotDotcomChat: json['copilot_dotcom_chat'] != null
-        ? CopilotDotcomChat.fromJson(json['copilot_dotcom_chat'] as Map<String, dynamic>)
-        : null,
-  copilotDotcomPullRequests: json['copilot_dotcom_pull_requests'] != null
-        ? CopilotDotcomPullRequests.fromJson(json['copilot_dotcom_pull_requests'] as Map<String, dynamic>)
-        : null,
+  copilotIdeCodeCompletions: json['copilot_ide_code_completions'] != null ? CopilotIdeCodeCompletions.fromJson(json['copilot_ide_code_completions'] as Map<String, dynamic>) : null,
+  copilotIdeChat: json['copilot_ide_chat'] != null ? CopilotIdeChat.fromJson(json['copilot_ide_chat'] as Map<String, dynamic>) : null,
+  copilotDotcomChat: json['copilot_dotcom_chat'] != null ? CopilotDotcomChat.fromJson(json['copilot_dotcom_chat'] as Map<String, dynamic>) : null,
+  copilotDotcomPullRequests: json['copilot_dotcom_pull_requests'] != null ? CopilotDotcomPullRequests.fromJson(json['copilot_dotcom_pull_requests'] as Map<String, dynamic>) : null,
 ); }
 
 /// The date for which the usage metrics are aggregated, in `YYYY-MM-DD` format.

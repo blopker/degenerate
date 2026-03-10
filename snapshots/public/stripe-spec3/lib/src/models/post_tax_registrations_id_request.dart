@@ -7,13 +7,9 @@
 import 'package:collection/collection.dart';import 'post_tax_registrations_id_request_active_from.dart';import 'post_tax_registrations_id_request_expires_at.dart';final class PostTaxRegistrationsIdRequest {const PostTaxRegistrationsIdRequest({this.activeFrom, this.expand, this.expiresAt, });
 
 factory PostTaxRegistrationsIdRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsIdRequest(
-  activeFrom: json['active_from'] != null
-        ? PostTaxRegistrationsIdRequestActiveFrom.fromJson(json['active_from'] as Map<String, dynamic>)
-        : null,
+  activeFrom: json['active_from'] != null ? PostTaxRegistrationsIdRequestActiveFrom.fromJson(json['active_from'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null
-        ? PostTaxRegistrationsIdRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>)
-        : null,
+  expiresAt: json['expires_at'] != null ? PostTaxRegistrationsIdRequestExpiresAt.fromJson(json['expires_at'] as Map<String, dynamic>) : null,
 ); }
 
 /// Time at which the registration becomes active. It can be either `now` to indicate the current time, or a timestamp measured in seconds since the Unix epoch.

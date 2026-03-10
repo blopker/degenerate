@@ -9,15 +9,11 @@ import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience
 factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
   deviceId: json['device_id'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_id'] as String) : null,
   deviceRegistration: json['device_registration'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_registration'] as String) : null,
-  from: json['from'] != null
-        ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['from'] as Map<String, dynamic>)
-        : null,
+  from: json['from'] != null ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['from'] as Map<String, dynamic>) : null,
   hostname: json['hostname'] as String?,
   serialNumber: json['serial_number'] as String?,
   timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,
-  to: json['to'] != null
-        ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['to'] as Map<String, dynamic>)
-        : null,
+  to: json['to'] != null ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['to'] as Map<String, dynamic>) : null,
   userEmail: json['user_email'] as String?,
 ); }
 

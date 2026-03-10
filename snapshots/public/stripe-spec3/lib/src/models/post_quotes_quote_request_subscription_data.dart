@@ -8,16 +8,10 @@ import 'post_quotes_quote_request_subscription_data_description.dart';import 'po
 final class PostQuotesQuoteRequestSubscriptionData {const PostQuotesQuoteRequestSubscriptionData({this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
 factory PostQuotesQuoteRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestSubscriptionData(
-  description: json['description'] != null
-        ? PostQuotesQuoteRequestSubscriptionDataDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  effectiveDate: json['effective_date'] != null
-        ? PostQuotesQuoteRequestSubscriptionDataEffectiveDate.fromJson(json['effective_date'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostQuotesQuoteRequestSubscriptionDataDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  effectiveDate: json['effective_date'] != null ? PostQuotesQuoteRequestSubscriptionDataEffectiveDate.fromJson(json['effective_date'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  trialPeriodDays: json['trial_period_days'] != null
-        ? PostQuotesQuoteRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days'] as Map<String, dynamic>)
-        : null,
+  trialPeriodDays: json['trial_period_days'] != null ? PostQuotesQuoteRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days'] as Map<String, dynamic>) : null,
 ); }
 
 final PostQuotesQuoteRequestSubscriptionDataDescription? description;

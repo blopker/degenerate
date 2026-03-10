@@ -9,17 +9,11 @@ import 'package:collection/collection.dart';import 'post_tax_calculations_reques
 factory PostTaxCalculationsRequest.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequest(
   currency: json['currency'] as String,
   customer: json['customer'] as String?,
-  customerDetails: json['customer_details'] != null
-        ? PostTaxCalculationsRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>)
-        : null,
+  customerDetails: json['customer_details'] != null ? PostTaxCalculationsRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>).map((e) => PostTaxCalculationsRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  shipFromDetails: json['ship_from_details'] != null
-        ? PostTaxCalculationsRequestShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>)
-        : null,
-  shippingCost: json['shipping_cost'] != null
-        ? PostTaxCalculationsRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>)
-        : null,
+  shipFromDetails: json['ship_from_details'] != null ? PostTaxCalculationsRequestShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? PostTaxCalculationsRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   taxDate: json['tax_date'] != null ? (json['tax_date'] as num).toInt() : null,
 ); }
 

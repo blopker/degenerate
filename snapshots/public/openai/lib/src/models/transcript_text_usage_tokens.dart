@@ -32,9 +32,7 @@ final class TranscriptTextUsageTokens {const TranscriptTextUsageTokens({required
 factory TranscriptTextUsageTokens.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageTokens(
   type: TranscriptTextUsageTokensType.fromJson(json['type'] as String),
   inputTokens: (json['input_tokens'] as num).toInt(),
-  inputTokenDetails: json['input_token_details'] != null
-        ? TranscriptTextUsageTokensInputTokenDetails.fromJson(json['input_token_details'] as Map<String, dynamic>)
-        : null,
+  inputTokenDetails: json['input_token_details'] != null ? TranscriptTextUsageTokensInputTokenDetails.fromJson(json['input_token_details'] as Map<String, dynamic>) : null,
   outputTokens: (json['output_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
 ); }

@@ -12,12 +12,8 @@ factory OverviewDomains.fromJson(Map<String, dynamic> json) { return OverviewDom
   copilot: (json['copilot'] as List<dynamic>?)?.map((e) => e as String).toList(),
   packages: (json['packages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   actions: (json['actions'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  actionsInbound: json['actions_inbound'] != null
-        ? OverviewDomainsActionsInbound.fromJson(json['actions_inbound'] as Map<String, dynamic>)
-        : null,
-  artifactAttestations: json['artifact_attestations'] != null
-        ? OverviewDomainsArtifactAttestations.fromJson(json['artifact_attestations'] as Map<String, dynamic>)
-        : null,
+  actionsInbound: json['actions_inbound'] != null ? OverviewDomainsActionsInbound.fromJson(json['actions_inbound'] as Map<String, dynamic>) : null,
+  artifactAttestations: json['artifact_attestations'] != null ? OverviewDomainsArtifactAttestations.fromJson(json['artifact_attestations'] as Map<String, dynamic>) : null,
 ); }
 
 final List<String>? website;

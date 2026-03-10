@@ -36,9 +36,7 @@ final class CustomerSession {const CustomerSession({required this.clientSecret, 
 
 factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSession(
   clientSecret: json['client_secret'] as String,
-  components: json['components'] != null
-        ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>)
-        : null,
+  components: json['components'] != null ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   customer: CustomerSessionCustomer.fromJson(json['customer'] as Map<String, dynamic>),
   customerAccount: json['customer_account'] as String?,

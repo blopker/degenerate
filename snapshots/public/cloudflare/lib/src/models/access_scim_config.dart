@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'access_scim_config_authentic
 final class AccessScimConfig {const AccessScimConfig({this.authentication, this.deactivateOnDelete, this.enabled, required this.idpUid, this.mappings, required this.remoteUri, });
 
 factory AccessScimConfig.fromJson(Map<String, dynamic> json) { return AccessScimConfig(
-  authentication: json['authentication'] != null
-        ? AccessScimConfigAuthentication.fromJson(json['authentication'])
-        : null,
+  authentication: json['authentication'] != null ? AccessScimConfigAuthentication.fromJson(json['authentication']) : null,
   deactivateOnDelete: json['deactivate_on_delete'] as bool?,
   enabled: json['enabled'] as bool?,
   idpUid: json['idp_uid'] as String,

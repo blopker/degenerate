@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_sepa_debit_display_preference
 final class PostPaymentMethodConfigurationsRequestSepaDebit {const PostPaymentMethodConfigurationsRequestSepaDebit({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestSepaDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSepaDebit(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference? displayPreference;

@@ -33,9 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({this.flexible, required this.type, this.updatedAt, });
 
 factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
-  flexible: json['flexible'] != null
-        ? SubscriptionsResourceBillingModeFlexible2.fromJson(json['flexible'] as Map<String, dynamic>)
-        : null,
+  flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible2.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: SubscriptionsResourceBillingModeType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
 ); }

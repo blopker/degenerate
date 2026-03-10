@@ -7,9 +7,7 @@
 import 'post_sessions_session_id_summary_response2_xx_data.dart';final class PostSessionsSessionIdSummaryResponse2Xx {const PostSessionsSessionIdSummaryResponse2Xx({this.data, this.success, });
 
 factory PostSessionsSessionIdSummaryResponse2Xx.fromJson(Map<String, dynamic> json) { return PostSessionsSessionIdSummaryResponse2Xx(
-  data: json['data'] != null
-        ? PostSessionsSessionIdSummaryResponse2XxData.fromJson(json['data'] as Map<String, dynamic>)
-        : null,
+  data: json['data'] != null ? PostSessionsSessionIdSummaryResponse2XxData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
 ); }
 

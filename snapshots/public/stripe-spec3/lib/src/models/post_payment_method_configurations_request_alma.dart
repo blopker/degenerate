@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_alma_display_preference.dart'
 final class PostPaymentMethodConfigurationsRequestAlma {const PostPaymentMethodConfigurationsRequestAlma({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestAlma.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAlma(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestAlmaDisplayPreference? displayPreference;

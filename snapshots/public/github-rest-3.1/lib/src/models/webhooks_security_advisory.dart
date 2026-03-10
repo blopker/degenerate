@@ -9,9 +9,7 @@ final class WebhooksSecurityAdvisory {const WebhooksSecurityAdvisory({required t
 
 factory WebhooksSecurityAdvisory.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisory(
   cvss: WebhooksSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null
-        ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>)
-        : null,
+  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
   cwes: (json['cwes'] as List<dynamic>).map((e) => WebhooksSecurityAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String,
   ghsaId: json['ghsa_id'] as String,

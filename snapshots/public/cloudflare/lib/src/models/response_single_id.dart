@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'cache_purge_messages2.dart';
 factory ResponseSingleId.fromJson(Map<String, dynamic> json) { return ResponseSingleId(
   errors: (json['errors'] as List<dynamic>).map((e) => CachePurgeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CachePurgeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null
-        ? ResponseSingleIdResult.fromJson(json['result'] as Map<String, dynamic>)
-        : null,
+  result: json['result'] != null ? ResponseSingleIdResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 

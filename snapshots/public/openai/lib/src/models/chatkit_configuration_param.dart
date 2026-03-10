@@ -8,15 +8,9 @@ import 'automatic_thread_titling_param.dart';import 'file_upload_param.dart';imp
 final class ChatkitConfigurationParam {const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history, });
 
 factory ChatkitConfigurationParam.fromJson(Map<String, dynamic> json) { return ChatkitConfigurationParam(
-  automaticThreadTitling: json['automatic_thread_titling'] != null
-        ? AutomaticThreadTitlingParam.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>)
-        : null,
-  fileUpload: json['file_upload'] != null
-        ? FileUploadParam.fromJson(json['file_upload'] as Map<String, dynamic>)
-        : null,
-  history: json['history'] != null
-        ? HistoryParam.fromJson(json['history'] as Map<String, dynamic>)
-        : null,
+  automaticThreadTitling: json['automatic_thread_titling'] != null ? AutomaticThreadTitlingParam.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>) : null,
+  fileUpload: json['file_upload'] != null ? FileUploadParam.fromJson(json['file_upload'] as Map<String, dynamic>) : null,
+  history: json['history'] != null ? HistoryParam.fromJson(json['history'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configuration for automatic thread titling. When omitted, automatic thread titling is enabled by default.

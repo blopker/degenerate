@@ -18,13 +18,9 @@ factory AaaPolicies.fromJson(Map<String, dynamic> json) { return AaaPolicies(
   created: json['created'] != null ? AaaTimestamp.fromJson(json['created'] as String) : null,
   description: json['description'] != null ? AaaSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? AaaEnabled.fromJson(json['enabled'] as bool) : null,
-  filters: json['filters'] != null
-        ? AaaFilters.fromJson(json['filters'] as Map<String, dynamic>)
-        : null,
+  filters: json['filters'] != null ? AaaFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? AaaPolicyId.fromJson(json['id'] as String) : null,
-  mechanisms: json['mechanisms'] != null
-        ? AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>)
-        : null,
+  mechanisms: json['mechanisms'] != null ? AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>) : null,
   modified: json['modified'] != null ? AaaTimestamp.fromJson(json['modified'] as String) : null,
   name: json['name'] != null ? AaaSchemasName.fromJson(json['name'] as String) : null,
 ); }

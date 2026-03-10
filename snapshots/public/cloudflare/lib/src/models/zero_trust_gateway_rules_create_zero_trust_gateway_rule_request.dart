@@ -11,19 +11,13 @@ factory ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest.fromJson(Map<Stri
   description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
   devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
   enabled: json['enabled'] != null ? ZeroTrustGatewayEnabled.fromJson(json['enabled'] as bool) : null,
-  expiration: json['expiration'] != null
-        ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>)
-        : null,
+  expiration: json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null,
   filters: (json['filters'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayFilters2.fromJson(e as String)).toList(),
   identity: json['identity'] != null ? ZeroTrustGatewayIdentity.fromJson(json['identity'] as String) : null,
   name: ZeroTrustGatewayComponentsSchemasName.fromJson(json['name'] as String),
   precedence: json['precedence'] != null ? ZeroTrustGatewayPrecedence.fromJson(json['precedence'] as num) : null,
-  ruleSettings: json['rule_settings'] != null
-        ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>)
-        : null,
-  schedule: json['schedule'] != null
-        ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>)
-        : null,
+  ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
+  schedule: json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   traffic: json['traffic'] != null ? ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String) : null,
 ); }
 

@@ -14,25 +14,13 @@ String toJson() => value;
 final class AaaAuditLogs2 {const AaaAuditLogs2({this.account, this.action, this.actor, this.id, this.raw, this.resource, this.zone, });
 
 factory AaaAuditLogs2.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2(
-  account: json['account'] != null
-        ? AaaAuditLogs2Account.fromJson(json['account'] as Map<String, dynamic>)
-        : null,
-  action: json['action'] != null
-        ? AaaAuditLogs2Action.fromJson(json['action'] as Map<String, dynamic>)
-        : null,
-  actor: json['actor'] != null
-        ? AaaAuditLogs2Actor.fromJson(json['actor'] as Map<String, dynamic>)
-        : null,
+  account: json['account'] != null ? AaaAuditLogs2Account.fromJson(json['account'] as Map<String, dynamic>) : null,
+  action: json['action'] != null ? AaaAuditLogs2Action.fromJson(json['action'] as Map<String, dynamic>) : null,
+  actor: json['actor'] != null ? AaaAuditLogs2Actor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? AaaSchemasIdentifier.fromJson(json['id'] as String) : null,
-  raw: json['raw'] != null
-        ? AaaAuditLogs2Raw.fromJson(json['raw'] as Map<String, dynamic>)
-        : null,
-  resource: json['resource'] != null
-        ? AaaAuditLogs2Resource.fromJson(json['resource'] as Map<String, dynamic>)
-        : null,
-  zone: json['zone'] != null
-        ? AaaAuditLogs2Zone.fromJson(json['zone'] as Map<String, dynamic>)
-        : null,
+  raw: json['raw'] != null ? AaaAuditLogs2Raw.fromJson(json['raw'] as Map<String, dynamic>) : null,
+  resource: json['resource'] != null ? AaaAuditLogs2Resource.fromJson(json['resource'] as Map<String, dynamic>) : null,
+  zone: json['zone'] != null ? AaaAuditLogs2Zone.fromJson(json['zone'] as Map<String, dynamic>) : null,
 ); }
 
 /// Contains account related information.

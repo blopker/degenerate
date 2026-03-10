@@ -8,9 +8,7 @@ import 'post_checkout_sessions_request_after_expiration_recovery.dart';/// Confi
 final class PostCheckoutSessionsRequestAfterExpiration {const PostCheckoutSessionsRequestAfterExpiration({this.recovery});
 
 factory PostCheckoutSessionsRequestAfterExpiration.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestAfterExpiration(
-  recovery: json['recovery'] != null
-        ? PostCheckoutSessionsRequestAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>)
-        : null,
+  recovery: json['recovery'] != null ? PostCheckoutSessionsRequestAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>) : null,
 ); }
 
 final PostCheckoutSessionsRequestAfterExpirationRecovery? recovery;

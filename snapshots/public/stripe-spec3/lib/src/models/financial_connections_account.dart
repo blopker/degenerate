@@ -214,16 +214,10 @@ bool get isUnknown { return !values.contains(this); }
 final class FinancialConnectionsAccount {const FinancialConnectionsAccount({this.accountHolder, this.accountNumbers, this.balance, this.balanceRefresh, required this.category, required this.created, this.displayName, required this.id, required this.institutionName, this.last4, required this.livemode, required this.object, this.ownership, this.ownershipRefresh, this.permissions, required this.status, required this.subcategory, this.subscriptions, required this.supportedPaymentMethodTypes, this.transactionRefresh, });
 
 factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
-  accountHolder: json['account_holder'] != null
-        ? FinancialConnectionsAccountAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>)
-        : null,
+  accountHolder: json['account_holder'] != null ? FinancialConnectionsAccountAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
   accountNumbers: (json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList(),
-  balance: json['balance'] != null
-        ? FinancialConnectionsAccountBalance.fromJson(json['balance'] as Map<String, dynamic>)
-        : null,
-  balanceRefresh: json['balance_refresh'] != null
-        ? FinancialConnectionsAccountBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>)
-        : null,
+  balance: json['balance'] != null ? FinancialConnectionsAccountBalance.fromJson(json['balance'] as Map<String, dynamic>) : null,
+  balanceRefresh: json['balance_refresh'] != null ? FinancialConnectionsAccountBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>) : null,
   category: FinancialConnectionsAccountCategory.fromJson(json['category'] as String),
   created: (json['created'] as num).toInt(),
   displayName: json['display_name'] as String?,
@@ -232,20 +226,14 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   last4: json['last4'] as String?,
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsAccountObject.fromJson(json['object'] as String),
-  ownership: json['ownership'] != null
-        ? FinancialConnectionsAccountOwnership2.fromJson(json['ownership'] as Map<String, dynamic>)
-        : null,
-  ownershipRefresh: json['ownership_refresh'] != null
-        ? FinancialConnectionsAccountOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>)
-        : null,
+  ownership: json['ownership'] != null ? FinancialConnectionsAccountOwnership2.fromJson(json['ownership'] as Map<String, dynamic>) : null,
+  ownershipRefresh: json['ownership_refresh'] != null ? FinancialConnectionsAccountOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
   status: FinancialConnectionsAccountStatus.fromJson(json['status'] as String),
   subcategory: FinancialConnectionsAccountSubcategory.fromJson(json['subcategory'] as String),
   subscriptions: (json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList(),
   supportedPaymentMethodTypes: (json['supported_payment_method_types'] as List<dynamic>).map((e) => FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(e as String)).toList(),
-  transactionRefresh: json['transaction_refresh'] != null
-        ? FinancialConnectionsAccountTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>)
-        : null,
+  transactionRefresh: json['transaction_refresh'] != null ? FinancialConnectionsAccountTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account holder that this account belongs to.

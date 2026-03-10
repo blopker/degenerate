@@ -29,12 +29,8 @@ final class StatusUpdateEdited {const StatusUpdateEdited({required this.action, 
 
 factory StatusUpdateEdited.fromJson(Map<String, dynamic> json) { return StatusUpdateEdited(
   action: StatusUpdateEditedAction.fromJson(json['action'] as String),
-  changes: json['changes'] != null
-        ? StatusUpdateEditedChanges.fromJson(json['changes'] as Map<String, dynamic>)
-        : null,
-  installation: json['installation'] != null
-        ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
-        : null,
+  changes: json['changes'] != null ? StatusUpdateEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2StatusUpdate: StatusUpdate.fromJson(json['projects_v2_status_update'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),

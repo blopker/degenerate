@@ -37,9 +37,7 @@ final class PostTerminalReadersReaderProcessSetupIntentRequest {const PostTermin
 factory PostTerminalReadersReaderProcessSetupIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessSetupIntentRequest(
   allowRedisplay: PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay.fromJson(json['allow_redisplay'] as String),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  processConfig: json['process_config'] != null
-        ? PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>)
-        : null,
+  processConfig: json['process_config'] != null ? PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
   setupIntent: json['setup_intent'] as String,
 ); }
 

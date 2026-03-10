@@ -8,9 +8,7 @@ import 'package:collection/collection.dart';import 'post_invoices_invoice_remove
 
 factory PostInvoicesInvoiceRemoveLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null
-        ? PostInvoicesInvoiceRemoveLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata'] as Map<String, dynamic>)
-        : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? PostInvoicesInvoiceRemoveLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata'] as Map<String, dynamic>) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

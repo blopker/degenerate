@@ -23,20 +23,14 @@ factory McnOnramp.fromJson(Map<String, dynamic> json) { return McnOnramp(
   manageHubToHubAttachments: json['manage_hub_to_hub_attachments'] as bool?,
   manageVpcToHubAttachments: json['manage_vpc_to_hub_attachments'] as bool?,
   name: json['name'] as String,
-  plannedMonthlyCostEstimate: json['planned_monthly_cost_estimate'] != null
-        ? McnCostDiff.fromJson(json['planned_monthly_cost_estimate'] as Map<String, dynamic>)
-        : null,
+  plannedMonthlyCostEstimate: json['planned_monthly_cost_estimate'] != null ? McnCostDiff.fromJson(json['planned_monthly_cost_estimate'] as Map<String, dynamic>) : null,
   plannedResources: (json['planned_resources'] as List<dynamic>?)?.map((e) => McnResourceDiff.fromJson(e as Map<String, dynamic>)).toList(),
   plannedResourcesUnavailable: json['planned_resources_unavailable'] as bool?,
-  postApplyMonthlyCostEstimate: json['post_apply_monthly_cost_estimate'] != null
-        ? McnCost.fromJson(json['post_apply_monthly_cost_estimate'] as Map<String, dynamic>)
-        : null,
+  postApplyMonthlyCostEstimate: json['post_apply_monthly_cost_estimate'] != null ? McnCost.fromJson(json['post_apply_monthly_cost_estimate'] as Map<String, dynamic>) : null,
   postApplyResources: (json['post_apply_resources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, McnResourceDetails.fromJson(v as Map<String, dynamic>))),
   postApplyResourcesUnavailable: json['post_apply_resources_unavailable'] as bool?,
   region: json['region'] as String?,
-  status: json['status'] != null
-        ? McnOnrampStatus.fromJson(json['status'] as Map<String, dynamic>)
-        : null,
+  status: json['status'] != null ? McnOnrampStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
   type: McnOnrampType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] as String,
   vpc: json['vpc'] != null ? McnResourceId.fromJson(json['vpc'] as String) : null,

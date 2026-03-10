@@ -7,18 +7,10 @@
 import 'webhook_repository_edited_changes_default_branch.dart';import 'webhook_repository_edited_changes_description.dart';import 'webhook_repository_edited_changes_homepage.dart';import 'webhook_repository_edited_changes_topics.dart';final class WebhookRepositoryEditedChanges {const WebhookRepositoryEditedChanges({this.defaultBranch, this.description, this.homepage, this.topics, });
 
 factory WebhookRepositoryEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChanges(
-  defaultBranch: json['default_branch'] != null
-        ? WebhookRepositoryEditedChangesDefaultBranch.fromJson(json['default_branch'] as Map<String, dynamic>)
-        : null,
-  description: json['description'] != null
-        ? WebhookRepositoryEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  homepage: json['homepage'] != null
-        ? WebhookRepositoryEditedChangesHomepage.fromJson(json['homepage'] as Map<String, dynamic>)
-        : null,
-  topics: json['topics'] != null
-        ? WebhookRepositoryEditedChangesTopics.fromJson(json['topics'] as Map<String, dynamic>)
-        : null,
+  defaultBranch: json['default_branch'] != null ? WebhookRepositoryEditedChangesDefaultBranch.fromJson(json['default_branch'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? WebhookRepositoryEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  homepage: json['homepage'] != null ? WebhookRepositoryEditedChangesHomepage.fromJson(json['homepage'] as Map<String, dynamic>) : null,
+  topics: json['topics'] != null ? WebhookRepositoryEditedChangesTopics.fromJson(json['topics'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookRepositoryEditedChangesDefaultBranch? defaultBranch;

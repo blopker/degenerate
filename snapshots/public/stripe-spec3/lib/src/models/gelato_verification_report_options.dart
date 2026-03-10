@@ -8,12 +8,8 @@ import 'gelato_report_document_options.dart';import 'gelato_report_id_number_opt
 final class GelatoVerificationReportOptions {const GelatoVerificationReportOptions({this.document, this.idNumber, });
 
 factory GelatoVerificationReportOptions.fromJson(Map<String, dynamic> json) { return GelatoVerificationReportOptions(
-  document: json['document'] != null
-        ? GelatoReportDocumentOptions.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
-  idNumber: json['id_number'] != null
-        ? GelatoReportIdNumberOptions.fromJson(json['id_number'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? GelatoReportDocumentOptions.fromJson(json['document'] as Map<String, dynamic>) : null,
+  idNumber: json['id_number'] != null ? GelatoReportIdNumberOptions.fromJson(json['id_number'] as Map<String, dynamic>) : null,
 ); }
 
 final GelatoReportDocumentOptions? document;

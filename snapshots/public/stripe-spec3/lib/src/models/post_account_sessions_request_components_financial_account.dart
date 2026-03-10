@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_financial_account_features.dart
 
 factory PostAccountSessionsRequestComponentsFinancialAccount.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsFinancialAccount(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsFinancialAccountFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsFinancialAccountFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

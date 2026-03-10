@@ -8,18 +8,10 @@ import 'package:collection/collection.dart';import 'post_test_helpers_issuing_tr
 final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails(
-  fleet: json['fleet'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>)
-        : null,
-  flight: json['flight'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>)
-        : null,
-  fuel: json['fuel'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>)
-        : null,
-  lodging: json['lodging'] != null
-        ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>)
-        : null,
+  fleet: json['fleet'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  flight: json['flight'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  lodging: json['lodging'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>) : null,
   receipt: (json['receipt'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsReceipt.fromJson(e as Map<String, dynamic>)).toList(),
   reference: json['reference'] as String?,
 ); }

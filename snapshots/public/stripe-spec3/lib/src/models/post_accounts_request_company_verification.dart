@@ -7,9 +7,7 @@
 import 'post_accounts_request_company_verification_document.dart';final class PostAccountsRequestCompanyVerification {const PostAccountsRequestCompanyVerification({this.document});
 
 factory PostAccountsRequestCompanyVerification.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCompanyVerification(
-  document: json['document'] != null
-        ? PostAccountsRequestCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>)
-        : null,
+  document: json['document'] != null ? PostAccountsRequestCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 final PostAccountsRequestCompanyVerificationDocument? document;

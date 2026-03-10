@@ -174,9 +174,7 @@ factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return Crea
   prompt: json['prompt'] as String,
   mask: json['mask'] != null ? base64Decode(json['mask'] as String) : null,
   background: json.containsKey('background') ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : CreateImageEditRequestBackground.auto,
-  model: json['model'] != null
-        ? CreateImageEditRequestModel.fromJson(json['model'] as Map<String, dynamic>)
-        : null,
+  model: json['model'] != null ? CreateImageEditRequestModel.fromJson(json['model'] as Map<String, dynamic>) : null,
   n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
   size: json.containsKey('size') ? CreateImageEditRequestSize.fromJson(json['size'] as String) : CreateImageEditRequestSize.$1024x1024,
   responseFormat: json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null,

@@ -9,9 +9,7 @@ final class IamResourceGroup {const IamResourceGroup({required this.id, this.met
 
 factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourceGroup(
   id: json['id'] as String,
-  meta: json['meta'] != null
-        ? IamResourceGroupMeta.fromJson(json['meta'] as Map<String, dynamic>)
-        : null,
+  meta: json['meta'] != null ? IamResourceGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   scope: (json['scope'] as List<dynamic>).map((e) => IamScope.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

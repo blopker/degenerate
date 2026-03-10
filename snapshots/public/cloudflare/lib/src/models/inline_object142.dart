@@ -179,9 +179,7 @@ factory InlineObject142.fromJson(Map<String, dynamic> json) { return InlineObjec
   issuer: json['issuer'] as String?,
   method: json['method'] != null ? InlineObject142Method.fromJson(json['method'] as String) : null,
   serialNumber: json['serial_number'] as String?,
-  settings: json['settings'] != null
-        ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>)
-        : null,
+  settings: json['settings'] != null ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   signature: json['signature'] as String?,
   status: json['status'] != null ? InlineObject142Status.fromJson(json['status'] as String) : null,
   type: json['type'] != null ? InlineObject142Type.fromJson(json['type'] as String) : null,

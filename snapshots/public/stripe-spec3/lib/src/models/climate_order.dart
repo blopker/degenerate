@@ -96,9 +96,7 @@ factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   amountFees: (json['amount_fees'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  beneficiary: json['beneficiary'] != null
-        ? ClimateRemovalsBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>)
-        : null,
+  beneficiary: json['beneficiary'] != null ? ClimateRemovalsBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>) : null,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   cancellationReason: json['cancellation_reason'] != null ? ClimateOrderCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   certificate: json['certificate'] as String?,

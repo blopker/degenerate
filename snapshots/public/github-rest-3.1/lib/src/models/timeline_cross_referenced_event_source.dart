@@ -8,9 +8,7 @@ import 'issue.dart';final class TimelineCrossReferencedEventSource {const Timeli
 
 factory TimelineCrossReferencedEventSource.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEventSource(
   type: json['type'] as String?,
-  issue: json['issue'] != null
-        ? Issue.fromJson(json['issue'] as Map<String, dynamic>)
-        : null,
+  issue: json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null,
 ); }
 
 final String? type;

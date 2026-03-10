@@ -9,9 +9,7 @@ final class CustomerSessionResourceComponentsResourceCustomerSheet {const Custom
 
 factory CustomerSessionResourceComponentsResourceCustomerSheet.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceCustomerSheet(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? CustomerSessionResourceComponentsResourceCustomerSheetFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? CustomerSessionResourceComponentsResourceCustomerSheetFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the customer sheet is enabled.

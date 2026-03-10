@@ -12,9 +12,7 @@ factory CephFsVolumeSource.fromJson(Map<String, dynamic> json) { return CephFsVo
   path: json['path'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretFile: json['secretFile'] as String?,
-  secretRef: json['secretRef'] != null
-        ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>)
-        : null,
+  secretRef: json['secretRef'] != null ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   user: json['user'] as String?,
 ); }
 

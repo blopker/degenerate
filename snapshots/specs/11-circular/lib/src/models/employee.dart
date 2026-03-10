@@ -9,12 +9,8 @@ import 'department.dart';final class Employee {const Employee({required this.id,
 factory Employee.fromJson(Map<String, dynamic> json) { return Employee(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  department: json['department'] != null
-        ? Department.fromJson(json['department'] as Map<String, dynamic>)
-        : null,
-  manager: json['manager'] != null
-        ? Employee.fromJson(json['manager'] as Map<String, dynamic>)
-        : null,
+  department: json['department'] != null ? Department.fromJson(json['department'] as Map<String, dynamic>) : null,
+  manager: json['manager'] != null ? Employee.fromJson(json['manager'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

@@ -8,21 +8,11 @@ import 'post_payment_links_payment_link_request_payment_intent_data_description.
 final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PostPaymentLinksPaymentLinkRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
-  description: json['description'] != null
-        ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription.fromJson(json['description'] as Map<String, dynamic>)
-        : null,
-  metadata: json['metadata'] != null
-        ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
-        : null,
-  statementDescriptor: json['statement_descriptor'] != null
-        ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor.fromJson(json['statement_descriptor'] as Map<String, dynamic>)
-        : null,
-  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null
-        ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix.fromJson(json['statement_descriptor_suffix'] as Map<String, dynamic>)
-        : null,
-  transferGroup: json['transfer_group'] != null
-        ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup.fromJson(json['transfer_group'] as Map<String, dynamic>)
-        : null,
+  description: json['description'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  statementDescriptor: json['statement_descriptor'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor.fromJson(json['statement_descriptor'] as Map<String, dynamic>) : null,
+  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix.fromJson(json['statement_descriptor_suffix'] as Map<String, dynamic>) : null,
+  transferGroup: json['transfer_group'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup.fromJson(json['transfer_group'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription? description;

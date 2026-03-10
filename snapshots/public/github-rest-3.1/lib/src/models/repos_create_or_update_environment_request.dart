@@ -17,9 +17,7 @@ factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json
   waitTimer: json['wait_timer'] != null ? WaitTimer.fromJson(json['wait_timer'] as num) : null,
   preventSelfReview: json['prevent_self_review'] != null ? PreventSelfReview.fromJson(json['prevent_self_review'] as bool) : null,
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(e as Map<String, dynamic>)).toList(),
-  deploymentBranchPolicy: json['deployment_branch_policy'] != null
-        ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>)
-        : null,
+  deploymentBranchPolicy: json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null,
 ); }
 
 final WaitTimer? waitTimer;

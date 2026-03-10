@@ -43,20 +43,14 @@ final class TransferReversal {const TransferReversal({required this.amount, this
 
 factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferReversal(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null
-        ? TransferReversalBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>)
-        : null,
+  balanceTransaction: json['balance_transaction'] != null ? TransferReversalBalanceTransaction.fromJson(json['balance_transaction'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  destinationPaymentRefund: json['destination_payment_refund'] != null
-        ? TransferReversalDestinationPaymentRefund.fromJson(json['destination_payment_refund'] as Map<String, dynamic>)
-        : null,
+  destinationPaymentRefund: json['destination_payment_refund'] != null ? TransferReversalDestinationPaymentRefund.fromJson(json['destination_payment_refund'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: TransferReversalObject.fromJson(json['object'] as String),
-  sourceRefund: json['source_refund'] != null
-        ? TransferReversalSourceRefund.fromJson(json['source_refund'] as Map<String, dynamic>)
-        : null,
+  sourceRefund: json['source_refund'] != null ? TransferReversalSourceRefund.fromJson(json['source_refund'] as Map<String, dynamic>) : null,
   transfer: TransferReversalTransfer.fromJson(json['transfer'] as Map<String, dynamic>),
 ); }
 

@@ -70,28 +70,18 @@ factory RealtimekitUpdatePresetPermissions.fromJson(Map<String, dynamic> json) {
   canLivestream: json['can_livestream'] as bool?,
   canRecord: json['can_record'] as bool?,
   canSpotlight: json['can_spotlight'] as bool?,
-  chat: json['chat'] != null
-        ? RealtimekitUpdatePresetPermissionsChat.fromJson(json['chat'] as Map<String, dynamic>)
-        : null,
-  connectedMeetings: json['connected_meetings'] != null
-        ? RealtimekitUpdatePresetPermissionsConnectedMeetings.fromJson(json['connected_meetings'] as Map<String, dynamic>)
-        : null,
+  chat: json['chat'] != null ? RealtimekitUpdatePresetPermissionsChat.fromJson(json['chat'] as Map<String, dynamic>) : null,
+  connectedMeetings: json['connected_meetings'] != null ? RealtimekitUpdatePresetPermissionsConnectedMeetings.fromJson(json['connected_meetings'] as Map<String, dynamic>) : null,
   disableParticipantAudio: json['disable_participant_audio'] as bool?,
   disableParticipantScreensharing: json['disable_participant_screensharing'] as bool?,
   disableParticipantVideo: json['disable_participant_video'] as bool?,
   hiddenParticipant: json['hidden_participant'] as bool?,
   isRecorder: json.containsKey('is_recorder') ? json['is_recorder'] as bool : false,
   kickParticipant: json['kick_participant'] as bool?,
-  media: json['media'] != null
-        ? RealtimekitUpdatePresetPermissionsMedia.fromJson(json['media'] as Map<String, dynamic>)
-        : null,
+  media: json['media'] != null ? RealtimekitUpdatePresetPermissionsMedia.fromJson(json['media'] as Map<String, dynamic>) : null,
   pinParticipant: json['pin_participant'] as bool?,
-  plugins: json['plugins'] != null
-        ? RealtimekitUpdatePresetPermissionsPlugins.fromJson(json['plugins'] as Map<String, dynamic>)
-        : null,
-  polls: json['polls'] != null
-        ? RealtimekitUpdatePresetPermissionsPolls.fromJson(json['polls'] as Map<String, dynamic>)
-        : null,
+  plugins: json['plugins'] != null ? RealtimekitUpdatePresetPermissionsPlugins.fromJson(json['plugins'] as Map<String, dynamic>) : null,
+  polls: json['polls'] != null ? RealtimekitUpdatePresetPermissionsPolls.fromJson(json['polls'] as Map<String, dynamic>) : null,
   recorderType: json.containsKey('recorder_type') ? RealtimekitUpdatePresetPermissionsRecorderType.fromJson(json['recorder_type'] as String) : RealtimekitUpdatePresetPermissionsRecorderType.none,
   showParticipantList: json['show_participant_list'] as bool?,
   waitingRoomType: json['waiting_room_type'] != null ? RealtimekitUpdatePresetPermissionsWaitingRoomType.fromJson(json['waiting_room_type'] as String) : null,

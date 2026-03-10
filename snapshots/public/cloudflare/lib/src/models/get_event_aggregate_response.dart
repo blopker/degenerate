@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'get_event_aggregate_response
 factory GetEventAggregateResponse.fromJson(Map<String, dynamic> json) { return GetEventAggregateResponse(
   aggregateBy: json['aggregateBy'] as String,
   aggregations: (json['aggregations'] as List<dynamic>).map((e) => GetEventAggregateResponseAggregations.fromJson(e as Map<String, dynamic>)).toList(),
-  dateRange: json['dateRange'] != null
-        ? GetEventAggregateResponseDateRange.fromJson(json['dateRange'] as Map<String, dynamic>)
-        : null,
+  dateRange: json['dateRange'] != null ? GetEventAggregateResponseDateRange.fromJson(json['dateRange'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toDouble(),
 ); }
 

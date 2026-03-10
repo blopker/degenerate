@@ -31,41 +31,21 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalConfiguration {const TerminalConfiguration({this.bbposWisepad3, this.bbposWiseposE, this.cellular, required this.id, this.isAccountDefault, required this.livemode, this.name, required this.object, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
 factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return TerminalConfiguration(
-  bbposWisepad3: json['bbpos_wisepad3'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>)
-        : null,
-  bbposWiseposE: json['bbpos_wisepos_e'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>)
-        : null,
-  cellular: json['cellular'] != null
-        ? TerminalConfigurationConfigurationResourceCellularConfig.fromJson(json['cellular'] as Map<String, dynamic>)
-        : null,
+  bbposWisepad3: json['bbpos_wisepad3'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,
+  bbposWiseposE: json['bbpos_wisepos_e'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>) : null,
+  cellular: json['cellular'] != null ? TerminalConfigurationConfigurationResourceCellularConfig.fromJson(json['cellular'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   isAccountDefault: json['is_account_default'] as bool?,
   livemode: json['livemode'] as bool,
   name: json['name'] as String?,
   object: TerminalConfigurationObject.fromJson(json['object'] as String),
-  offline: json['offline'] != null
-        ? TerminalConfigurationConfigurationResourceOfflineConfig.fromJson(json['offline'] as Map<String, dynamic>)
-        : null,
-  rebootWindow: json['reboot_window'] != null
-        ? TerminalConfigurationConfigurationResourceRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>)
-        : null,
-  stripeS700: json['stripe_s700'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['stripe_s700'] as Map<String, dynamic>)
-        : null,
-  stripeS710: json['stripe_s710'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['stripe_s710'] as Map<String, dynamic>)
-        : null,
-  tipping: json['tipping'] != null
-        ? TerminalConfigurationConfigurationResourceTipping.fromJson(json['tipping'] as Map<String, dynamic>)
-        : null,
-  verifoneP400: json['verifone_p400'] != null
-        ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['verifone_p400'] as Map<String, dynamic>)
-        : null,
-  wifi: json['wifi'] != null
-        ? TerminalConfigurationConfigurationResourceWifiConfig.fromJson(json['wifi'] as Map<String, dynamic>)
-        : null,
+  offline: json['offline'] != null ? TerminalConfigurationConfigurationResourceOfflineConfig.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  rebootWindow: json['reboot_window'] != null ? TerminalConfigurationConfigurationResourceRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>) : null,
+  stripeS700: json['stripe_s700'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['stripe_s700'] as Map<String, dynamic>) : null,
+  stripeS710: json['stripe_s710'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['stripe_s710'] as Map<String, dynamic>) : null,
+  tipping: json['tipping'] != null ? TerminalConfigurationConfigurationResourceTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
+  verifoneP400: json['verifone_p400'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['verifone_p400'] as Map<String, dynamic>) : null,
+  wifi: json['wifi'] != null ? TerminalConfigurationConfigurationResourceWifiConfig.fromJson(json['wifi'] as Map<String, dynamic>) : null,
 ); }
 
 final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? bbposWisepad3;

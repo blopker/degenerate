@@ -9,9 +9,7 @@ import 'package:collection/collection.dart';import 'post_terminal_readers_reader
 factory PostTerminalReadersReaderProcessPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
-  processConfig: json['process_config'] != null
-        ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>)
-        : null,
+  processConfig: json['process_config'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

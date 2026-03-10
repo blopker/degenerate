@@ -8,9 +8,7 @@ import 'post_account_sessions_request_components_notification_banner_features.da
 
 factory PostAccountSessionsRequestComponentsNotificationBanner.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsNotificationBanner(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null
-        ? PostAccountSessionsRequestComponentsNotificationBannerFeatures.fromJson(json['features'] as Map<String, dynamic>)
-        : null,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsNotificationBannerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 final bool enabled;

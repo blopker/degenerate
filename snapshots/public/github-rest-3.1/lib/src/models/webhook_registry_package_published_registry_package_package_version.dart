@@ -7,16 +7,10 @@
 import 'package:collection/collection.dart';import 'webhook_registry_package_published_registry_package_package_version_author.dart';import 'webhook_registry_package_published_registry_package_package_version_body.dart';import 'webhook_registry_package_published_registry_package_package_version_container_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_docker_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_package_files.dart';import 'webhook_registry_package_published_registry_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersion {const WebhookRegistryPackagePublishedRegistryPackagePackageVersion({this.author, this.body, this.bodyHtml, this.containerMetadata, this.createdAt, required this.description, this.dockerMetadata, this.draft, required this.htmlUrl, required this.id, required this.installationCommand, this.manifest, required this.metadata, required this.name, this.npmMetadata, this.nugetMetadata, required this.packageFiles, required this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, required this.summary, this.tagName, this.targetCommitish, this.targetOid, this.updatedAt, required this.version, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
-  author: json['author'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>)
-        : null,
-  body: json['body'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody.fromJson(json['body'])
-        : null,
+  author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  body: json['body'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody.fromJson(json['body']) : null,
   bodyHtml: json['body_html'] as String?,
-  containerMetadata: json['container_metadata'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>)
-        : null,
+  containerMetadata: json['container_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,
   description: json['description'] as String,
   dockerMetadata: (json['docker_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata.fromJson(e as Map<String, dynamic>)).toList(),
@@ -27,16 +21,12 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Ma
   manifest: json['manifest'] as String?,
   metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   name: json['name'] as String,
-  npmMetadata: json['npm_metadata'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>)
-        : null,
+  npmMetadata: json['npm_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null,
   nugetMetadata: (json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String,
   prerelease: json['prerelease'] as bool?,
-  release: json['release'] != null
-        ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>)
-        : null,
+  release: json['release'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>) : null,
   rubygemsMetadata: (json['rubygems_metadata'] as List<dynamic>?)?.map((e) => WebhookRubygemsMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   summary: json['summary'] as String,
   tagName: json['tag_name'] as String?,

@@ -9,9 +9,7 @@ final class ContainerRestartRule {const ContainerRestartRule({required this.acti
 
 factory ContainerRestartRule.fromJson(Map<String, dynamic> json) { return ContainerRestartRule(
   action: json['action'] as String,
-  exitCodes: json['exitCodes'] != null
-        ? ContainerRestartRuleOnExitCodes.fromJson(json['exitCodes'] as Map<String, dynamic>)
-        : null,
+  exitCodes: json['exitCodes'] != null ? ContainerRestartRuleOnExitCodes.fromJson(json['exitCodes'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies the action taken on a container exit if the requirements are satisfied. The only possible value is "Restart" to restart the container.

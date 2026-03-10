@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_request_paypal_display_preference.dar
 final class PostPaymentMethodConfigurationsRequestPaypal {const PostPaymentMethodConfigurationsRequestPaypal({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPaypal(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsRequestPaypalDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPaypalDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsRequestPaypalDisplayPreference? displayPreference;

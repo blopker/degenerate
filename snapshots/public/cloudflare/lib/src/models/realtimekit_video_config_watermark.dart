@@ -40,9 +40,7 @@ final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWaterma
 
 factory RealtimekitVideoConfigWatermark.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfigWatermark(
   position: json.containsKey('position') ? RealtimekitVideoConfigWatermarkPosition.fromJson(json['position'] as String) : RealtimekitVideoConfigWatermarkPosition.leftTop,
-  size: json['size'] != null
-        ? RealtimekitVideoConfigWatermarkSize.fromJson(json['size'] as Map<String, dynamic>)
-        : null,
+  size: json['size'] != null ? RealtimekitVideoConfigWatermarkSize.fromJson(json['size'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 

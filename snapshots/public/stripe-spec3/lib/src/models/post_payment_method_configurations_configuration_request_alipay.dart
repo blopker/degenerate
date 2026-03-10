@@ -8,9 +8,7 @@ import 'post_payment_method_configurations_configuration_request_alipay_display_
 final class PostPaymentMethodConfigurationsConfigurationRequestAlipay {const PostPaymentMethodConfigurationsConfigurationRequestAlipay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAlipay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
-  displayPreference: json['display_preference'] != null
-        ? PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>)
-        : null,
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
 ); }
 
 final PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference? displayPreference;

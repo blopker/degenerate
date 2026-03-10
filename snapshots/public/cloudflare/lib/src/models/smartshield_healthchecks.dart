@@ -58,9 +58,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   createdOn: json['created_on'] != null ? SmartshieldTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
   failureReason: json['failure_reason'] != null ? SmartshieldFailureReason.fromJson(json['failure_reason'] as String) : null,
-  httpConfig: json['http_config'] != null
-        ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>)
-        : null,
+  httpConfig: json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? SmartshieldIdentifier.fromJson(json['id'] as String) : null,
   interval: json['interval'] != null ? SmartshieldInterval.fromJson(json['interval'] as num) : null,
   modifiedOn: json['modified_on'] != null ? SmartshieldTimestamp.fromJson(json['modified_on'] as String) : null,
@@ -68,9 +66,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   retries: json['retries'] != null ? SmartshieldRetries.fromJson(json['retries'] as num) : null,
   status: json['status'] != null ? SmartshieldStatus.fromJson(json['status'] as String) : null,
   suspended: json['suspended'] != null ? SmartshieldSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null
-        ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>)
-        : null,
+  tcpConfig: json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
 ); }

@@ -7,18 +7,10 @@
 import 'post_setup_intents_intent_request_payment_method_data_billing_details_address.dart';import 'post_setup_intents_intent_request_payment_method_data_billing_details_email.dart';import 'post_setup_intents_intent_request_payment_method_data_billing_details_name.dart';import 'post_setup_intents_intent_request_payment_method_data_billing_details_phone.dart';final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails {const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails(
-  address: json['address'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>)
-        : null,
-  email: json['email'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>)
-        : null,
-  name: json['name'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>)
-        : null,
-  phone: json['phone'] != null
-        ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>)
-        : null,
+  address: json['address'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  email: json['email'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsName.fromJson(json['name'] as Map<String, dynamic>) : null,
+  phone: json['phone'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
   taxId: json['tax_id'] as String?,
 ); }
 
