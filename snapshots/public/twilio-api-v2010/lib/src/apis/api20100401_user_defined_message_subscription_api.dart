@@ -22,7 +22,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateUserDefinedMessageSubscriptionRequest');,
+  body: [
+    'Callback=${Uri.encodeQueryComponent(body.callback.toString())}',
+    if (body.idempotencyKey case final _idempotencyKey?)
+      'IdempotencyKey=${Uri.encodeQueryComponent(_idempotencyKey)}',
+    if (body.method case final _method?)
+      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
+  ].join('&'),
 );
 
 return _execute(

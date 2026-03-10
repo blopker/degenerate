@@ -1368,6 +1368,59 @@ void main() {
       expect(source, contains("contentType: 'multipart/form-data'"));
     });
 
+    test('emits form-urlencoded body from object schema', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'createToken',
+          'createToken',
+          HttpMethod.post,
+          '/token',
+          requestBody: IrRequestBody({
+            'application/x-www-form-urlencoded': IrMediaType(
+              IrObject(
+                'TokenRequest',
+                [
+                  IrField(
+                    'grantType',
+                    'grant_type',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                  IrField(
+                    'scope',
+                    'scope',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: false,
+                  ),
+                ],
+                requiredFields: ['grant_type'],
+              ),
+            ),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      // Should NOT throw UnsupportedError
+      expect(source, isNot(contains('UnsupportedError')));
+      // Content-Type set via headers
+      expect(source,
+          contains("'Content-Type'] = 'application/x-www-form-urlencoded'"));
+      // Should build key=value pairs joined by &
+      expect(source, contains('grant_type'));
+      expect(source, contains('Uri.encodeQueryComponent'));
+      expect(source, contains(".join('&')"));
+      // Optional field uses null guard
+      expect(source, contains('if (body.scope case final _scope?)'));
+    });
+
     test('throws for unsupported text request object bodies', () {
       final api = IrApi('TestApi', [
         IrOperation(

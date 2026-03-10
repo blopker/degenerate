@@ -123,7 +123,10 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from ImageFile');,
+  body: [
+    if (body.image case final _image?)
+      'image=${Uri.encodeQueryComponent(_image)}',
+  ].join('&'),
 );
 
 return _execute(

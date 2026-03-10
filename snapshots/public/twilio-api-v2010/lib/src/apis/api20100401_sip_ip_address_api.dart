@@ -48,7 +48,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid)}/IpAddresses.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipIpAddressRequest');,
+  body: [
+    'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
+    'IpAddress=${Uri.encodeQueryComponent(body.ipAddress)}',
+    if (body.cidrPrefixLength case final _cidrPrefixLength?)
+      'CidrPrefixLength=${Uri.encodeQueryComponent(_cidrPrefixLength.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -86,7 +91,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid)}/IpAddresses/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipIpAddressRequest');,
+  body: [
+    if (body.ipAddress case final _ipAddress?)
+      'IpAddress=${Uri.encodeQueryComponent(_ipAddress)}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.cidrPrefixLength case final _cidrPrefixLength?)
+      'CidrPrefixLength=${Uri.encodeQueryComponent(_cidrPrefixLength.toString())}',
+  ].join('&'),
 );
 
 return _execute(

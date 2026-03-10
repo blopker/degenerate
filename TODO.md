@@ -4,7 +4,7 @@
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **230+ unit tests** all passing, **19 wire tests** passing, `dart analyze` clean on all source directories
+- **260+ unit tests** all passing, **19 wire tests** passing, `dart analyze` clean on all source directories
 - **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
@@ -120,7 +120,8 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - Retry interceptor improvements: jittered exponential backoff, `Retry-After` header parsing (seconds + HTTP-date), idempotency-based method gating, deterministic test hooks
 - Reduced string duplication in `buildFromJsonCode` (extracted `_buildFromJsonNonNull` + `_simpleCastFromJson`) and `buildToJsonCode` (consolidated identical arms)
 - Consolidated duplicated `_toHeaderString`/`_toQueryString` into `_toStringExpr` in api_emitter
-- Runtime multipart tests, emitter multipart tests, all snapshots updated
+- `application/x-www-form-urlencoded` support: emitter generates `Uri.encodeQueryComponent` key=value pairs joined by `&` as string body from object schema fields; Twilio snapshot now fully generates with zero `UnsupportedError`
+- Runtime multipart tests, emitter multipart/form-urlencoded tests, all snapshots updated
 - Removed `--client` CLI flag (now handled by adapter packages)
 
 ### Session 9 (2026-03-10) — Non-JSON media types, binary responses, query serialization

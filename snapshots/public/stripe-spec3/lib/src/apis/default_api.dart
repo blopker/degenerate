@@ -55,7 +55,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_links',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountLinksRequest');,
+  body: [
+    'account=${Uri.encodeQueryComponent(body.account)}',
+    if (body.collect case final _collect?)
+      'collect=${Uri.encodeQueryComponent(_collect.toJson())}',
+    if (body.collectionOptions case final _collectionOptions?)
+      'collection_options=${Uri.encodeQueryComponent(_collectionOptions.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.refreshUrl case final _refreshUrl?)
+      'refresh_url=${Uri.encodeQueryComponent(_refreshUrl)}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -80,7 +93,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountSessionsRequest');,
+  body: [
+    'account=${Uri.encodeQueryComponent(body.account)}',
+    'components=${Uri.encodeQueryComponent(body.components.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -146,7 +164,46 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsRequest');,
+  body: [
+    if (body.accountToken case final _accountToken?)
+      'account_token=${Uri.encodeQueryComponent(_accountToken)}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.businessProfile case final _businessProfile?)
+      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
+    if (body.businessType case final _businessType?)
+      'business_type=${Uri.encodeQueryComponent(_businessType.toJson())}',
+    if (body.capabilities case final _capabilities?)
+      'capabilities=${Uri.encodeQueryComponent(_capabilities.toString())}',
+    if (body.company case final _company?)
+      'company=${Uri.encodeQueryComponent(_company.toString())}',
+    if (body.controller case final _controller?)
+      'controller=${Uri.encodeQueryComponent(_controller.toString())}',
+    if (body.country case final _country?)
+      'country=${Uri.encodeQueryComponent(_country)}',
+    if (body.defaultCurrency case final _defaultCurrency?)
+      'default_currency=${Uri.encodeQueryComponent(_defaultCurrency)}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.externalAccount case final _externalAccount?)
+      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
+    if (body.groups case final _groups?)
+      'groups=${Uri.encodeQueryComponent(_groups.toString())}',
+    if (body.individual case final _individual?)
+      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.settings case final _settings?)
+      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
+    if (body.tosAcceptance case final _tosAcceptance?)
+      'tos_acceptance=${Uri.encodeQueryComponent(_tosAcceptance.toString())}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -214,7 +271,38 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountRequest');,
+  body: [
+    if (body.accountToken case final _accountToken?)
+      'account_token=${Uri.encodeQueryComponent(_accountToken)}',
+    if (body.businessProfile case final _businessProfile?)
+      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
+    if (body.businessType case final _businessType?)
+      'business_type=${Uri.encodeQueryComponent(_businessType.toJson())}',
+    if (body.capabilities case final _capabilities?)
+      'capabilities=${Uri.encodeQueryComponent(_capabilities.toString())}',
+    if (body.company case final _company?)
+      'company=${Uri.encodeQueryComponent(_company.toString())}',
+    if (body.defaultCurrency case final _defaultCurrency?)
+      'default_currency=${Uri.encodeQueryComponent(_defaultCurrency)}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.externalAccount case final _externalAccount?)
+      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
+    if (body.groups case final _groups?)
+      'groups=${Uri.encodeQueryComponent(_groups.toString())}',
+    if (body.individual case final _individual?)
+      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.settings case final _settings?)
+      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
+    if (body.tosAcceptance case final _tosAcceptance?)
+      'tos_acceptance=${Uri.encodeQueryComponent(_tosAcceptance.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -245,7 +333,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -270,7 +359,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountBankAccountsRequest');,
+  body: [
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.defaultForCurrency case final _defaultForCurrency?)
+      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.externalAccount case final _externalAccount?)
+      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -332,7 +432,40 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountBankAccountsIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.accountType case final _accountType?)
+      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.defaultForCurrency case final _defaultForCurrency?)
+      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -357,7 +490,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountBankAccountsIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -444,7 +578,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountCapabilitiesCapabilityRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.requested case final _requested?)
+      'requested=${Uri.encodeQueryComponent(_requested.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -504,7 +643,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountExternalAccountsRequest');,
+  body: [
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.defaultForCurrency case final _defaultForCurrency?)
+      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.externalAccount case final _externalAccount?)
+      'external_account=${Uri.encodeQueryComponent(_externalAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -566,7 +716,40 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountExternalAccountsIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.accountType case final _accountType?)
+      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.defaultForCurrency case final _defaultForCurrency?)
+      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -591,7 +774,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountExternalAccountsIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -618,7 +802,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/login_links',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountLoginLinksRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -685,7 +872,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPeopleRequest');,
+  body: [
+    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.dob case final _dob?)
+      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.firstName case final _firstName?)
+      'first_name=${Uri.encodeQueryComponent(_firstName)}',
+    if (body.firstNameKana case final _firstNameKana?)
+      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
+    if (body.firstNameKanji case final _firstNameKanji?)
+      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
+    if (body.fullNameAliases case final _fullNameAliases?)
+      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
+    if (body.gender case final _gender?)
+      'gender=${Uri.encodeQueryComponent(_gender)}',
+    if (body.idNumber case final _idNumber?)
+      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
+    if (body.idNumberSecondary case final _idNumberSecondary?)
+      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
+    if (body.lastName case final _lastName?)
+      'last_name=${Uri.encodeQueryComponent(_lastName)}',
+    if (body.lastNameKana case final _lastNameKana?)
+      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
+    if (body.lastNameKanji case final _lastNameKanji?)
+      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
+    if (body.maidenName case final _maidenName?)
+      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nationality case final _nationality?)
+      'nationality=${Uri.encodeQueryComponent(_nationality)}',
+    if (body.personToken case final _personToken?)
+      'person_token=${Uri.encodeQueryComponent(_personToken)}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.politicalExposure case final _politicalExposure?)
+      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
+    if (body.registeredAddress case final _registeredAddress?)
+      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
+    if (body.relationship case final _relationship?)
+      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
+    if (body.ssnLast4 case final _ssnLast4?)
+      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
+    if (body.usCfpbData case final _usCfpbData?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
+    if (body.verification case final _verification?)
+      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -741,7 +987,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPeoplePersonRequest');,
+  body: [
+    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.dob case final _dob?)
+      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.firstName case final _firstName?)
+      'first_name=${Uri.encodeQueryComponent(_firstName)}',
+    if (body.firstNameKana case final _firstNameKana?)
+      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
+    if (body.firstNameKanji case final _firstNameKanji?)
+      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
+    if (body.fullNameAliases case final _fullNameAliases?)
+      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
+    if (body.gender case final _gender?)
+      'gender=${Uri.encodeQueryComponent(_gender)}',
+    if (body.idNumber case final _idNumber?)
+      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
+    if (body.idNumberSecondary case final _idNumberSecondary?)
+      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
+    if (body.lastName case final _lastName?)
+      'last_name=${Uri.encodeQueryComponent(_lastName)}',
+    if (body.lastNameKana case final _lastNameKana?)
+      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
+    if (body.lastNameKanji case final _lastNameKanji?)
+      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
+    if (body.maidenName case final _maidenName?)
+      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nationality case final _nationality?)
+      'nationality=${Uri.encodeQueryComponent(_nationality)}',
+    if (body.personToken case final _personToken?)
+      'person_token=${Uri.encodeQueryComponent(_personToken)}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.politicalExposure case final _politicalExposure?)
+      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
+    if (body.registeredAddress case final _registeredAddress?)
+      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
+    if (body.relationship case final _relationship?)
+      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
+    if (body.ssnLast4 case final _ssnLast4?)
+      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
+    if (body.usCfpbData case final _usCfpbData?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
+    if (body.verification case final _verification?)
+      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -766,7 +1071,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountPeoplePersonRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -833,7 +1139,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPersonsRequest');,
+  body: [
+    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.dob case final _dob?)
+      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.firstName case final _firstName?)
+      'first_name=${Uri.encodeQueryComponent(_firstName)}',
+    if (body.firstNameKana case final _firstNameKana?)
+      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
+    if (body.firstNameKanji case final _firstNameKanji?)
+      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
+    if (body.fullNameAliases case final _fullNameAliases?)
+      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
+    if (body.gender case final _gender?)
+      'gender=${Uri.encodeQueryComponent(_gender)}',
+    if (body.idNumber case final _idNumber?)
+      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
+    if (body.idNumberSecondary case final _idNumberSecondary?)
+      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
+    if (body.lastName case final _lastName?)
+      'last_name=${Uri.encodeQueryComponent(_lastName)}',
+    if (body.lastNameKana case final _lastNameKana?)
+      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
+    if (body.lastNameKanji case final _lastNameKanji?)
+      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
+    if (body.maidenName case final _maidenName?)
+      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nationality case final _nationality?)
+      'nationality=${Uri.encodeQueryComponent(_nationality)}',
+    if (body.personToken case final _personToken?)
+      'person_token=${Uri.encodeQueryComponent(_personToken)}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.politicalExposure case final _politicalExposure?)
+      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
+    if (body.registeredAddress case final _registeredAddress?)
+      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
+    if (body.relationship case final _relationship?)
+      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
+    if (body.ssnLast4 case final _ssnLast4?)
+      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
+    if (body.usCfpbData case final _usCfpbData?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
+    if (body.verification case final _verification?)
+      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -889,7 +1254,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountPersonsPersonRequest');,
+  body: [
+    if (body.additionalTosAcceptances case final _additionalTosAcceptances?)
+      'additional_tos_acceptances=${Uri.encodeQueryComponent(_additionalTosAcceptances.toString())}',
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.dob case final _dob?)
+      'dob=${Uri.encodeQueryComponent(_dob.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.firstName case final _firstName?)
+      'first_name=${Uri.encodeQueryComponent(_firstName)}',
+    if (body.firstNameKana case final _firstNameKana?)
+      'first_name_kana=${Uri.encodeQueryComponent(_firstNameKana)}',
+    if (body.firstNameKanji case final _firstNameKanji?)
+      'first_name_kanji=${Uri.encodeQueryComponent(_firstNameKanji)}',
+    if (body.fullNameAliases case final _fullNameAliases?)
+      'full_name_aliases=${Uri.encodeQueryComponent(_fullNameAliases.toString())}',
+    if (body.gender case final _gender?)
+      'gender=${Uri.encodeQueryComponent(_gender)}',
+    if (body.idNumber case final _idNumber?)
+      'id_number=${Uri.encodeQueryComponent(_idNumber)}',
+    if (body.idNumberSecondary case final _idNumberSecondary?)
+      'id_number_secondary=${Uri.encodeQueryComponent(_idNumberSecondary)}',
+    if (body.lastName case final _lastName?)
+      'last_name=${Uri.encodeQueryComponent(_lastName)}',
+    if (body.lastNameKana case final _lastNameKana?)
+      'last_name_kana=${Uri.encodeQueryComponent(_lastNameKana)}',
+    if (body.lastNameKanji case final _lastNameKanji?)
+      'last_name_kanji=${Uri.encodeQueryComponent(_lastNameKanji)}',
+    if (body.maidenName case final _maidenName?)
+      'maiden_name=${Uri.encodeQueryComponent(_maidenName)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nationality case final _nationality?)
+      'nationality=${Uri.encodeQueryComponent(_nationality)}',
+    if (body.personToken case final _personToken?)
+      'person_token=${Uri.encodeQueryComponent(_personToken)}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.politicalExposure case final _politicalExposure?)
+      'political_exposure=${Uri.encodeQueryComponent(_politicalExposure.toJson())}',
+    if (body.registeredAddress case final _registeredAddress?)
+      'registered_address=${Uri.encodeQueryComponent(_registeredAddress.toString())}',
+    if (body.relationship case final _relationship?)
+      'relationship=${Uri.encodeQueryComponent(_relationship.toString())}',
+    if (body.ssnLast4 case final _ssnLast4?)
+      'ssn_last_4=${Uri.encodeQueryComponent(_ssnLast4)}',
+    if (body.usCfpbData case final _usCfpbData?)
+      'us_cfpb_data=${Uri.encodeQueryComponent(_usCfpbData.toString())}',
+    if (body.verification case final _verification?)
+      'verification=${Uri.encodeQueryComponent(_verification.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -914,7 +1338,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteAccountsAccountPersonsPersonRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -941,7 +1366,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/reject',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAccountsAccountRejectRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'reason=${Uri.encodeQueryComponent(body.reason)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -999,7 +1428,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apple_pay/domains',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplePayDomainsRequest');,
+  body: [
+    'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1053,7 +1486,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/apple_pay/domains/${Uri.encodeComponent(domain)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteApplePayDomainsDomainRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -1149,7 +1583,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesFeeRefundsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1204,7 +1643,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refund',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesIdRefundRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.directive case final _directive?)
+      'directive=${Uri.encodeQueryComponent(_directive)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1271,7 +1717,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostApplicationFeesIdRefundsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1332,7 +1785,15 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAppsSecretsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+    'payload=${Uri.encodeQueryComponent(body.payload)}',
+    'scope=${Uri.encodeQueryComponent(body.scope.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1357,7 +1818,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets/delete',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostAppsSecretsDeleteRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+    'scope=${Uri.encodeQueryComponent(body.scope.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1557,7 +2023,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/balance_settings',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBalanceSettingsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.payments case final _payments?)
+      'payments=${Uri.encodeQueryComponent(_payments.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1694,7 +2165,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsRequest');,
+  body: [
+    'alert_type=${Uri.encodeQueryComponent(body.alertType.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'title=${Uri.encodeQueryComponent(body.title)}',
+    if (body.usageThreshold case final _usageThreshold?)
+      'usage_threshold=${Uri.encodeQueryComponent(_usageThreshold.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1750,7 +2228,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/activate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdActivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1775,7 +2256,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/archive',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdArchiveRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1800,7 +2284,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingAlertsIdDeactivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -1965,7 +2452,28 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'applicability_config=${Uri.encodeQueryComponent(body.applicabilityConfig.toString())}',
+    if (body.category case final _category?)
+      'category=${Uri.encodeQueryComponent(_category.toJson())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.effectiveAt case final _effectiveAt?)
+      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.priority case final _priority?)
+      'priority=${Uri.encodeQueryComponent(_priority.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2021,7 +2529,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2046,7 +2561,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/expire',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdExpireRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2071,7 +2589,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingCreditGrantsIdVoidRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2096,7 +2617,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_event_adjustments',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMeterEventAdjustmentsRequest');,
+  body: [
+    if (body.cancel case final _cancel?)
+      'cancel=${Uri.encodeQueryComponent(_cancel.toString())}',
+    'event_name=${Uri.encodeQueryComponent(body.eventName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2121,7 +2649,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_events',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMeterEventsRequest');,
+  body: [
+    'event_name=${Uri.encodeQueryComponent(body.eventName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.identifier case final _identifier?)
+      'identifier=${Uri.encodeQueryComponent(_identifier)}',
+    'payload=${Uri.encodeQueryComponent(body.payload.toString())}',
+    if (body.timestamp case final _timestamp?)
+      'timestamp=${Uri.encodeQueryComponent(_timestamp.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2181,7 +2718,19 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersRequest');,
+  body: [
+    if (body.customerMapping case final _customerMapping?)
+      'customer_mapping=${Uri.encodeQueryComponent(_customerMapping.toString())}',
+    'default_aggregation=${Uri.encodeQueryComponent(body.defaultAggregation.toString())}',
+    'display_name=${Uri.encodeQueryComponent(body.displayName)}',
+    'event_name=${Uri.encodeQueryComponent(body.eventName)}',
+    if (body.eventTimeWindow case final _eventTimeWindow?)
+      'event_time_window=${Uri.encodeQueryComponent(_eventTimeWindow.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.valueSettings case final _valueSettings?)
+      'value_settings=${Uri.encodeQueryComponent(_valueSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2237,7 +2786,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdRequest');,
+  body: [
+    if (body.displayName case final _displayName?)
+      'display_name=${Uri.encodeQueryComponent(_displayName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2262,7 +2816,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdDeactivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2325,7 +2882,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/reactivate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingMetersIdReactivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2386,7 +2946,21 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalConfigurationsRequest');,
+  body: [
+    if (body.businessProfile case final _businessProfile?)
+      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
+    if (body.defaultReturnUrl case final _defaultReturnUrl?)
+      'default_return_url=${Uri.encodeQueryComponent(_defaultReturnUrl.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'features=${Uri.encodeQueryComponent(body.features.toString())}',
+    if (body.loginPage case final _loginPage?)
+      'login_page=${Uri.encodeQueryComponent(_loginPage.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2442,7 +3016,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalConfigurationsConfigurationRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.businessProfile case final _businessProfile?)
+      'business_profile=${Uri.encodeQueryComponent(_businessProfile.toString())}',
+    if (body.defaultReturnUrl case final _defaultReturnUrl?)
+      'default_return_url=${Uri.encodeQueryComponent(_defaultReturnUrl.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.features case final _features?)
+      'features=${Uri.encodeQueryComponent(_features.toString())}',
+    if (body.loginPage case final _loginPage?)
+      'login_page=${Uri.encodeQueryComponent(_loginPage.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2467,7 +3058,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostBillingPortalSessionsRequest');,
+  body: [
+    if (body.configuration case final _configuration?)
+      'configuration=${Uri.encodeQueryComponent(_configuration)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.flowData case final _flowData?)
+      'flow_data=${Uri.encodeQueryComponent(_flowData.toString())}',
+    if (body.locale case final _locale?)
+      'locale=${Uri.encodeQueryComponent(_locale.toJson())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2533,7 +3141,48 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.applicationFee case final _applicationFee?)
+      'application_fee=${Uri.encodeQueryComponent(_applicationFee.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.capture case final _capture?)
+      'capture=${Uri.encodeQueryComponent(_capture.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.destination case final _destination?)
+      'destination=${Uri.encodeQueryComponent(_destination.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.radarOptions case final _radarOptions?)
+      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2626,7 +3275,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRequest');,
+  body: [
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fraudDetails case final _fraudDetails?)
+      'fraud_details=${Uri.encodeQueryComponent(_fraudDetails.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2655,7 +3321,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/capture',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeCaptureRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.applicationFee case final _applicationFee?)
+      'application_fee=${Uri.encodeQueryComponent(_applicationFee.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2709,7 +3394,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeDisputeRequest');,
+  body: [
+    if (body.evidence case final _evidence?)
+      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.submit case final _submit?)
+      'submit=${Uri.encodeQueryComponent(_submit.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2733,7 +3427,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute/close',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeDisputeCloseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2768,7 +3465,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refund',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.instructionsEmail case final _instructionsEmail?)
+      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.reason case final _reason?)
+      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.reverseTransfer case final _reverseTransfer?)
+      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2837,7 +3551,30 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.instructionsEmail case final _instructionsEmail?)
+      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.origin case final _origin?)
+      'origin=${Uri.encodeQueryComponent(_origin.toJson())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.reason case final _reason?)
+      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.reverseTransfer case final _reverseTransfer?)
+      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2891,7 +3628,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostChargesChargeRefundsRefundRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -2962,7 +3704,106 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsRequest');,
+  body: [
+    if (body.adaptivePricing case final _adaptivePricing?)
+      'adaptive_pricing=${Uri.encodeQueryComponent(_adaptivePricing.toString())}',
+    if (body.afterExpiration case final _afterExpiration?)
+      'after_expiration=${Uri.encodeQueryComponent(_afterExpiration.toString())}',
+    if (body.allowPromotionCodes case final _allowPromotionCodes?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.billingAddressCollection case final _billingAddressCollection?)
+      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
+    if (body.brandingSettings case final _brandingSettings?)
+      'branding_settings=${Uri.encodeQueryComponent(_brandingSettings.toString())}',
+    if (body.cancelUrl case final _cancelUrl?)
+      'cancel_url=${Uri.encodeQueryComponent(_cancelUrl)}',
+    if (body.clientReferenceId case final _clientReferenceId?)
+      'client_reference_id=${Uri.encodeQueryComponent(_clientReferenceId)}',
+    if (body.consentCollection case final _consentCollection?)
+      'consent_collection=${Uri.encodeQueryComponent(_consentCollection.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customFields case final _customFields?)
+      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
+    if (body.customText case final _customText?)
+      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.customerCreation case final _customerCreation?)
+      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
+    if (body.customerEmail case final _customerEmail?)
+      'customer_email=${Uri.encodeQueryComponent(_customerEmail)}',
+    if (body.customerUpdate case final _customerUpdate?)
+      'customer_update=${Uri.encodeQueryComponent(_customerUpdate.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.invoiceCreation case final _invoiceCreation?)
+      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.locale case final _locale?)
+      'locale=${Uri.encodeQueryComponent(_locale.toJson())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.mode case final _mode?)
+      'mode=${Uri.encodeQueryComponent(_mode.toJson())}',
+    if (body.nameCollection case final _nameCollection?)
+      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
+    if (body.optionalItems case final _optionalItems?)
+      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
+    if (body.originContext case final _originContext?)
+      'origin_context=${Uri.encodeQueryComponent(_originContext.toJson())}',
+    if (body.paymentIntentData case final _paymentIntentData?)
+      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
+    if (body.paymentMethodCollection case final _paymentMethodCollection?)
+      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
+    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.permissions case final _permissions?)
+      'permissions=${Uri.encodeQueryComponent(_permissions.toString())}',
+    if (body.phoneNumberCollection case final _phoneNumberCollection?)
+      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
+    if (body.redirectOnCompletion case final _redirectOnCompletion?)
+      'redirect_on_completion=${Uri.encodeQueryComponent(_redirectOnCompletion.toJson())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.savedPaymentMethodOptions case final _savedPaymentMethodOptions?)
+      'saved_payment_method_options=${Uri.encodeQueryComponent(_savedPaymentMethodOptions.toString())}',
+    if (body.setupIntentData case final _setupIntentData?)
+      'setup_intent_data=${Uri.encodeQueryComponent(_setupIntentData.toString())}',
+    if (body.shippingAddressCollection case final _shippingAddressCollection?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
+    if (body.shippingOptions case final _shippingOptions?)
+      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
+    if (body.submitType case final _submitType?)
+      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
+    if (body.subscriptionData case final _subscriptionData?)
+      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
+    if (body.successUrl case final _successUrl?)
+      'success_url=${Uri.encodeQueryComponent(_successUrl)}',
+    if (body.taxIdCollection case final _taxIdCollection?)
+      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
+    if (body.uiMode case final _uiMode?)
+      'ui_mode=${Uri.encodeQueryComponent(_uiMode.toJson())}',
+    if (body.walletOptions case final _walletOptions?)
+      'wallet_options=${Uri.encodeQueryComponent(_walletOptions.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3020,7 +3861,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsSessionRequest');,
+  body: [
+    if (body.collectedInformation case final _collectedInformation?)
+      'collected_information=${Uri.encodeQueryComponent(_collectedInformation.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.shippingOptions case final _shippingOptions?)
+      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3047,7 +3899,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/expire',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCheckoutSessionsSessionExpireRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3142,7 +3997,21 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.beneficiary case final _beneficiary?)
+      'beneficiary=${Uri.encodeQueryComponent(_beneficiary.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.metricTons case final _metricTons?)
+      'metric_tons=${Uri.encodeQueryComponent(_metricTons)}',
+    'product=${Uri.encodeQueryComponent(body.product)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3198,7 +4067,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersOrderRequest');,
+  body: [
+    if (body.beneficiary case final _beneficiary?)
+      'beneficiary=${Uri.encodeQueryComponent(_beneficiary.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3226,7 +4102,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostClimateOrdersOrderCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3516,7 +4395,34 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCouponsRequest');,
+  body: [
+    if (body.amountOff case final _amountOff?)
+      'amount_off=${Uri.encodeQueryComponent(_amountOff.toString())}',
+    if (body.appliesTo case final _appliesTo?)
+      'applies_to=${Uri.encodeQueryComponent(_appliesTo.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.currencyOptions case final _currencyOptions?)
+      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
+    if (body.duration case final _duration?)
+      'duration=${Uri.encodeQueryComponent(_duration.toJson())}',
+    if (body.durationInMonths case final _durationInMonths?)
+      'duration_in_months=${Uri.encodeQueryComponent(_durationInMonths.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.id case final _id?)
+      'id=${Uri.encodeQueryComponent(_id)}',
+    if (body.maxRedemptions case final _maxRedemptions?)
+      'max_redemptions=${Uri.encodeQueryComponent(_maxRedemptions.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.percentOff case final _percentOff?)
+      'percent_off=${Uri.encodeQueryComponent(_percentOff.toString())}',
+    if (body.redeemBy case final _redeemBy?)
+      'redeem_by=${Uri.encodeQueryComponent(_redeemBy.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3572,7 +4478,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCouponsCouponRequest');,
+  body: [
+    if (body.currencyOptions case final _currencyOptions?)
+      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3597,7 +4512,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCouponsCouponRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -3674,7 +4590,35 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.creditAmount case final _creditAmount?)
+      'credit_amount=${Uri.encodeQueryComponent(_creditAmount.toString())}',
+    if (body.effectiveAt case final _effectiveAt?)
+      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
+    if (body.emailType case final _emailType?)
+      'email_type=${Uri.encodeQueryComponent(_emailType.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'invoice=${Uri.encodeQueryComponent(body.invoice)}',
+    if (body.lines case final _lines?)
+      'lines=${Uri.encodeQueryComponent(_lines.toString())}',
+    if (body.memo case final _memo?)
+      'memo=${Uri.encodeQueryComponent(_memo)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.outOfBandAmount case final _outOfBandAmount?)
+      'out_of_band_amount=${Uri.encodeQueryComponent(_outOfBandAmount.toString())}',
+    if (body.reason case final _reason?)
+      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
+    if (body.refundAmount case final _refundAmount?)
+      'refund_amount=${Uri.encodeQueryComponent(_refundAmount.toString())}',
+    if (body.refunds case final _refunds?)
+      'refunds=${Uri.encodeQueryComponent(_refunds.toString())}',
+    if (body.shippingCost case final _shippingCost?)
+      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3875,7 +4819,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.memo case final _memo?)
+      'memo=${Uri.encodeQueryComponent(_memo)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3900,7 +4851,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCreditNotesIdVoidRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3925,7 +4879,15 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customer_sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomerSessionsRequest');,
+  body: [
+    'components=${Uri.encodeQueryComponent(body.components.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -3989,7 +4951,52 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersRequest');,
+  body: [
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.balance case final _balance?)
+      'balance=${Uri.encodeQueryComponent(_balance.toString())}',
+    if (body.businessName case final _businessName?)
+      'business_name=${Uri.encodeQueryComponent(_businessName.toString())}',
+    if (body.cashBalance case final _cashBalance?)
+      'cash_balance=${Uri.encodeQueryComponent(_cashBalance.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.individualName case final _individualName?)
+      'individual_name=${Uri.encodeQueryComponent(_individualName.toString())}',
+    if (body.invoicePrefix case final _invoicePrefix?)
+      'invoice_prefix=${Uri.encodeQueryComponent(_invoicePrefix)}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.nextInvoiceSequence case final _nextInvoiceSequence?)
+      'next_invoice_sequence=${Uri.encodeQueryComponent(_nextInvoiceSequence.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.preferredLocales case final _preferredLocales?)
+      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.tax case final _tax?)
+      'tax=${Uri.encodeQueryComponent(_tax.toString())}',
+    if (body.taxExempt case final _taxExempt?)
+      'tax_exempt=${Uri.encodeQueryComponent(_taxExempt.toJson())}',
+    if (body.taxIdData case final _taxIdData?)
+      'tax_id_data=${Uri.encodeQueryComponent(_taxIdData.toString())}',
+    if (body.testClock case final _testClock?)
+      'test_clock=${Uri.encodeQueryComponent(_testClock)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4084,7 +5091,58 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerRequest');,
+  body: [
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.balance case final _balance?)
+      'balance=${Uri.encodeQueryComponent(_balance.toString())}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.businessName case final _businessName?)
+      'business_name=${Uri.encodeQueryComponent(_businessName.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.cashBalance case final _cashBalance?)
+      'cash_balance=${Uri.encodeQueryComponent(_cashBalance.toString())}',
+    if (body.defaultAlipayAccount case final _defaultAlipayAccount?)
+      'default_alipay_account=${Uri.encodeQueryComponent(_defaultAlipayAccount)}',
+    if (body.defaultBankAccount case final _defaultBankAccount?)
+      'default_bank_account=${Uri.encodeQueryComponent(_defaultBankAccount)}',
+    if (body.defaultCard case final _defaultCard?)
+      'default_card=${Uri.encodeQueryComponent(_defaultCard)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.individualName case final _individualName?)
+      'individual_name=${Uri.encodeQueryComponent(_individualName.toString())}',
+    if (body.invoicePrefix case final _invoicePrefix?)
+      'invoice_prefix=${Uri.encodeQueryComponent(_invoicePrefix)}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.nextInvoiceSequence case final _nextInvoiceSequence?)
+      'next_invoice_sequence=${Uri.encodeQueryComponent(_nextInvoiceSequence.toString())}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+    if (body.preferredLocales case final _preferredLocales?)
+      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.tax case final _tax?)
+      'tax=${Uri.encodeQueryComponent(_tax.toString())}',
+    if (body.taxExempt case final _taxExempt?)
+      'tax_exempt=${Uri.encodeQueryComponent(_taxExempt.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4109,7 +5167,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -4172,7 +5231,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBalanceTransactionsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4228,7 +5296,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBalanceTransactionsTransactionRequest');,
+  body: [
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4257,7 +5332,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsRequest');,
+  body: [
+    if (body.alipayAccount case final _alipayAccount?)
+      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4281,7 +5369,36 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4306,7 +5423,10 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerBankAccountsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4331,7 +5451,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerBankAccountsIdVerifyRequest');,
+  body: [
+    if (body.amounts case final _amounts?)
+      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4360,7 +5485,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCardsRequest');,
+  body: [
+    if (body.alipayAccount case final _alipayAccount?)
+      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4384,7 +5522,36 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCardsIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4409,7 +5576,10 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerCardsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4465,7 +5635,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerCashBalanceRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.settings case final _settings?)
+      'settings=${Uri.encodeQueryComponent(_settings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4585,7 +5760,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/discount',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerDiscountRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -4612,7 +5788,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/funding_instructions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerFundingInstructionsRequest');,
+  body: [
+    'bank_transfer=${Uri.encodeQueryComponent(body.bankTransfer.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'funding_type=${Uri.encodeQueryComponent(body.fundingType.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4742,7 +5924,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesRequest');,
+  body: [
+    if (body.alipayAccount case final _alipayAccount?)
+      'alipay_account=${Uri.encodeQueryComponent(_alipayAccount)}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4796,7 +5991,36 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4821,7 +6045,10 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSourcesIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4846,7 +6073,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSourcesIdVerifyRequest');,
+  body: [
+    if (body.amounts case final _amounts?)
+      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4905,7 +6137,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSubscriptionsRequest');,
+  body: [
+    if (body.addInvoiceItems case final _addInvoiceItems?)
+      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.backdateStartDate case final _backdateStartDate?)
+      'backdate_start_date=${Uri.encodeQueryComponent(_backdateStartDate.toString())}',
+    if (body.billingCycleAnchor case final _billingCycleAnchor?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toString())}',
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.cancelAt case final _cancelAt?)
+      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
+    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.items case final _items?)
+      'items=${Uri.encodeQueryComponent(_items.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.trialEnd case final _trialEnd?)
+      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
+    if (body.trialFromPlan case final _trialFromPlan?)
+      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
+    if (body.trialPeriodDays case final _trialPeriodDays?)
+      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
+    if (body.trialSettings case final _trialSettings?)
+      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4961,7 +6252,66 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest');,
+  body: [
+    if (body.addInvoiceItems case final _addInvoiceItems?)
+      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.billingCycleAnchor case final _billingCycleAnchor?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.cancelAt case final _cancelAt?)
+      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
+    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
+    if (body.cancellationDetails case final _cancellationDetails?)
+      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.items case final _items?)
+      'items=${Uri.encodeQueryComponent(_items.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.pauseCollection case final _pauseCollection?)
+      'pause_collection=${Uri.encodeQueryComponent(_pauseCollection.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.trialEnd case final _trialEnd?)
+      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
+    if (body.trialFromPlan case final _trialFromPlan?)
+      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
+    if (body.trialSettings case final _trialSettings?)
+      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -4990,7 +6340,14 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceNow case final _invoiceNow?)
+      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
+    if (body.prorate case final _prorate?)
+      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5045,7 +6402,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -5104,7 +6462,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostCustomersCustomerTaxIdsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+    'value=${Uri.encodeQueryComponent(body.value)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5160,7 +6523,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteCustomersCustomerTaxIdsIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -5257,7 +6621,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostDisputesDisputeRequest');,
+  body: [
+    if (body.evidence case final _evidence?)
+      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.submit case final _submit?)
+      'submit=${Uri.encodeQueryComponent(_submit.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5284,7 +6657,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}/close',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostDisputesDisputeCloseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5411,7 +6787,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEntitlementsFeaturesRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'lookup_key=${Uri.encodeQueryComponent(body.lookupKey)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5467,7 +6850,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEntitlementsFeaturesIdRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5492,7 +6884,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/ephemeral_keys',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostEphemeralKeysRequest');,
+  body: [
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.issuingCard case final _issuingCard?)
+      'issuing_card=${Uri.encodeQueryComponent(_issuingCard)}',
+    if (body.nonce case final _nonce?)
+      'nonce=${Uri.encodeQueryComponent(_nonce)}',
+    if (body.verificationSession case final _verificationSession?)
+      'verification_session=${Uri.encodeQueryComponent(_verificationSession)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5517,7 +6920,10 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/ephemeral_keys/${Uri.encodeComponent(key)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteEphemeralKeysKeyRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5690,7 +7096,40 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostExternalAccountsIdRequest');,
+  body: [
+    if (body.accountHolderName case final _accountHolderName?)
+      'account_holder_name=${Uri.encodeQueryComponent(_accountHolderName)}',
+    if (body.accountHolderType case final _accountHolderType?)
+      'account_holder_type=${Uri.encodeQueryComponent(_accountHolderType.toJson())}',
+    if (body.accountType case final _accountType?)
+      'account_type=${Uri.encodeQueryComponent(_accountType.toJson())}',
+    if (body.addressCity case final _addressCity?)
+      'address_city=${Uri.encodeQueryComponent(_addressCity)}',
+    if (body.addressCountry case final _addressCountry?)
+      'address_country=${Uri.encodeQueryComponent(_addressCountry)}',
+    if (body.addressLine1 case final _addressLine1?)
+      'address_line1=${Uri.encodeQueryComponent(_addressLine1)}',
+    if (body.addressLine2 case final _addressLine2?)
+      'address_line2=${Uri.encodeQueryComponent(_addressLine2)}',
+    if (body.addressState case final _addressState?)
+      'address_state=${Uri.encodeQueryComponent(_addressState)}',
+    if (body.addressZip case final _addressZip?)
+      'address_zip=${Uri.encodeQueryComponent(_addressZip)}',
+    if (body.defaultForCurrency case final _defaultForCurrency?)
+      'default_for_currency=${Uri.encodeQueryComponent(_defaultForCurrency.toString())}',
+    if (body.documents case final _documents?)
+      'documents=${Uri.encodeQueryComponent(_documents.toString())}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth)}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5754,7 +7193,15 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFileLinksRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    'file=${Uri.encodeQueryComponent(body.file)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -5810,7 +7257,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFileLinksLinkRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6009,7 +7463,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountDisconnectRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6069,7 +7526,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountRefreshRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'features=${Uri.encodeQueryComponent(body.features.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6094,7 +7555,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/subscribe',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountSubscribeRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'features=${Uri.encodeQueryComponent(body.features.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6119,7 +7584,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/unsubscribe',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsAccountsAccountUnsubscribeRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'features=${Uri.encodeQueryComponent(body.features.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6144,7 +7613,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostFinancialConnectionsSessionsRequest');,
+  body: [
+    'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.filters case final _filters?)
+      'filters=${Uri.encodeQueryComponent(_filters.toString())}',
+    'permissions=${Uri.encodeQueryComponent(body.permissions.toString())}',
+    if (body.prefetch case final _prefetch?)
+      'prefetch=${Uri.encodeQueryComponent(_prefetch.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6312,7 +7792,17 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/forwarding/requests',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostForwardingRequestsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'payment_method=${Uri.encodeQueryComponent(body.paymentMethod)}',
+    'replacements=${Uri.encodeQueryComponent(body.replacements.toString())}',
+    if (body.request case final _request?)
+      'request=${Uri.encodeQueryComponent(_request.toString())}',
+    'url=${Uri.encodeQueryComponent(body.url)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6486,7 +7976,30 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsRequest');,
+  body: [
+    if (body.clientReferenceId case final _clientReferenceId?)
+      'client_reference_id=${Uri.encodeQueryComponent(_clientReferenceId)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.options case final _options?)
+      'options=${Uri.encodeQueryComponent(_options.toString())}',
+    if (body.providedDetails case final _providedDetails?)
+      'provided_details=${Uri.encodeQueryComponent(_providedDetails.toString())}',
+    if (body.relatedCustomer case final _relatedCustomer?)
+      'related_customer=${Uri.encodeQueryComponent(_relatedCustomer)}',
+    if (body.relatedCustomerAccount case final _relatedCustomerAccount?)
+      'related_customer_account=${Uri.encodeQueryComponent(_relatedCustomerAccount)}',
+    if (body.relatedPerson case final _relatedPerson?)
+      'related_person=${Uri.encodeQueryComponent(_relatedPerson.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.verificationFlow case final _verificationFlow?)
+      'verification_flow=${Uri.encodeQueryComponent(_verificationFlow)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6548,7 +8061,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.options case final _options?)
+      'options=${Uri.encodeQueryComponent(_options.toString())}',
+    if (body.providedDetails case final _providedDetails?)
+      'provided_details=${Uri.encodeQueryComponent(_providedDetails.toString())}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6575,7 +8099,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6618,7 +8145,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/redact',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIdentityVerificationSessionsSessionRedactRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6785,7 +8315,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/archive',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceRenderingTemplatesTemplateArchiveRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6810,7 +8343,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/unarchive',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceRenderingTemplatesTemplateUnarchiveRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6876,7 +8412,46 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceitemsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discountable case final _discountable?)
+      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoice case final _invoice?)
+      'invoice=${Uri.encodeQueryComponent(_invoice)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.period case final _period?)
+      'period=${Uri.encodeQueryComponent(_period.toString())}',
+    if (body.priceData case final _priceData?)
+      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
+    if (body.pricing case final _pricing?)
+      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
+    if (body.quantity case final _quantity?)
+      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    if (body.subscription case final _subscription?)
+      'subscription=${Uri.encodeQueryComponent(_subscription)}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.taxCode case final _taxCode?)
+      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
+    if (body.taxRates case final _taxRates?)
+      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+    if (body.unitAmountDecimal case final _unitAmountDecimal?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6932,7 +8507,36 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoiceitemsInvoiceitemRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discountable case final _discountable?)
+      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.period case final _period?)
+      'period=${Uri.encodeQueryComponent(_period.toString())}',
+    if (body.priceData case final _priceData?)
+      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
+    if (body.pricing case final _pricing?)
+      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
+    if (body.quantity case final _quantity?)
+      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.taxCode case final _taxCode?)
+      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
+    if (body.taxRates case final _taxRates?)
+      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+    if (body.unitAmountDecimal case final _unitAmountDecimal?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -6957,7 +8561,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteInvoiceitemsInvoiceitemRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -7027,7 +8632,74 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesRequest');,
+  body: [
+    if (body.accountTaxIds case final _accountTaxIds?)
+      'account_tax_ids=${Uri.encodeQueryComponent(_accountTaxIds.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.autoAdvance case final _autoAdvance?)
+      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.automaticallyFinalizesAt case final _automaticallyFinalizesAt?)
+      'automatically_finalizes_at=${Uri.encodeQueryComponent(_automaticallyFinalizesAt.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customFields case final _customFields?)
+      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.dueDate case final _dueDate?)
+      'due_date=${Uri.encodeQueryComponent(_dueDate.toString())}',
+    if (body.effectiveAt case final _effectiveAt?)
+      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.footer case final _footer?)
+      'footer=${Uri.encodeQueryComponent(_footer)}',
+    if (body.fromInvoice case final _fromInvoice?)
+      'from_invoice=${Uri.encodeQueryComponent(_fromInvoice.toString())}',
+    if (body.issuer case final _issuer?)
+      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.number case final _number?)
+      'number=${Uri.encodeQueryComponent(_number)}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.pendingInvoiceItemsBehavior case final _pendingInvoiceItemsBehavior?)
+      'pending_invoice_items_behavior=${Uri.encodeQueryComponent(_pendingInvoiceItemsBehavior.toJson())}',
+    if (body.rendering case final _rendering?)
+      'rendering=${Uri.encodeQueryComponent(_rendering.toString())}',
+    if (body.shippingCost case final _shippingCost?)
+      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+    if (body.shippingDetails case final _shippingDetails?)
+      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.subscription case final _subscription?)
+      'subscription=${Uri.encodeQueryComponent(_subscription)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7060,7 +8732,38 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/create_preview',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesCreatePreviewRequest');,
+  body: [
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.customerDetails case final _customerDetails?)
+      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceItems case final _invoiceItems?)
+      'invoice_items=${Uri.encodeQueryComponent(_invoiceItems.toString())}',
+    if (body.issuer case final _issuer?)
+      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.previewMode case final _previewMode?)
+      'preview_mode=${Uri.encodeQueryComponent(_previewMode.toJson())}',
+    if (body.schedule case final _schedule?)
+      'schedule=${Uri.encodeQueryComponent(_schedule)}',
+    if (body.scheduleDetails case final _scheduleDetails?)
+      'schedule_details=${Uri.encodeQueryComponent(_scheduleDetails.toString())}',
+    if (body.subscription case final _subscription?)
+      'subscription=${Uri.encodeQueryComponent(_subscription)}',
+    if (body.subscriptionDetails case final _subscriptionDetails?)
+      'subscription_details=${Uri.encodeQueryComponent(_subscriptionDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7158,7 +8861,62 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceRequest');,
+  body: [
+    if (body.accountTaxIds case final _accountTaxIds?)
+      'account_tax_ids=${Uri.encodeQueryComponent(_accountTaxIds.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.autoAdvance case final _autoAdvance?)
+      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.automaticallyFinalizesAt case final _automaticallyFinalizesAt?)
+      'automatically_finalizes_at=${Uri.encodeQueryComponent(_automaticallyFinalizesAt.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.customFields case final _customFields?)
+      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.dueDate case final _dueDate?)
+      'due_date=${Uri.encodeQueryComponent(_dueDate.toString())}',
+    if (body.effectiveAt case final _effectiveAt?)
+      'effective_at=${Uri.encodeQueryComponent(_effectiveAt.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.footer case final _footer?)
+      'footer=${Uri.encodeQueryComponent(_footer)}',
+    if (body.issuer case final _issuer?)
+      'issuer=${Uri.encodeQueryComponent(_issuer.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.number case final _number?)
+      'number=${Uri.encodeQueryComponent(_number.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.rendering case final _rendering?)
+      'rendering=${Uri.encodeQueryComponent(_rendering.toString())}',
+    if (body.shippingCost case final _shippingCost?)
+      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+    if (body.shippingDetails case final _shippingDetails?)
+      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7183,7 +8941,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteInvoicesInvoiceRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -7208,7 +8967,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/add_lines',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceAddLinesRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceMetadata case final _invoiceMetadata?)
+      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7242,7 +9007,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/attach_payment',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceAttachPaymentRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.paymentRecord case final _paymentRecord?)
+      'payment_record=${Uri.encodeQueryComponent(_paymentRecord)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7267,7 +9039,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/finalize',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceFinalizeRequest');,
+  body: [
+    if (body.autoAdvance case final _autoAdvance?)
+      'auto_advance=${Uri.encodeQueryComponent(_autoAdvance.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7329,7 +9106,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines/${Uri.encodeComponent(lineItemId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceLinesLineItemIdRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discountable case final _discountable?)
+      'discountable=${Uri.encodeQueryComponent(_discountable.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.period case final _period?)
+      'period=${Uri.encodeQueryComponent(_period.toString())}',
+    if (body.priceData case final _priceData?)
+      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
+    if (body.pricing case final _pricing?)
+      'pricing=${Uri.encodeQueryComponent(_pricing.toString())}',
+    if (body.quantity case final _quantity?)
+      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    if (body.taxAmounts case final _taxAmounts?)
+      'tax_amounts=${Uri.encodeQueryComponent(_taxAmounts.toString())}',
+    if (body.taxRates case final _taxRates?)
+      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7354,7 +9156,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/mark_uncollectible',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceMarkUncollectibleRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7379,7 +9184,22 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/pay',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoicePayRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.forgive case final _forgive?)
+      'forgive=${Uri.encodeQueryComponent(_forgive.toString())}',
+    if (body.mandate case final _mandate?)
+      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.paidOutOfBand case final _paidOutOfBand?)
+      'paid_out_of_band=${Uri.encodeQueryComponent(_paidOutOfBand.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7404,7 +9224,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/remove_lines',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceRemoveLinesRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceMetadata case final _invoiceMetadata?)
+      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7431,7 +9257,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/send',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceSendRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7456,7 +9285,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/update_lines',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceUpdateLinesRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceMetadata case final _invoiceMetadata?)
+      'invoice_metadata=${Uri.encodeQueryComponent(_invoiceMetadata.toString())}',
+    'lines=${Uri.encodeQueryComponent(body.lines.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7483,7 +9318,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/void',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostInvoicesInvoiceVoidRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7579,7 +9417,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingAuthorizationsAuthorizationRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7645,7 +9488,30 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardholdersRequest');,
+  body: [
+    'billing=${Uri.encodeQueryComponent(body.billing.toString())}',
+    if (body.company case final _company?)
+      'company=${Uri.encodeQueryComponent(_company.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.individual case final _individual?)
+      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+    if (body.phoneNumber case final _phoneNumber?)
+      'phone_number=${Uri.encodeQueryComponent(_phoneNumber)}',
+    if (body.preferredLocales case final _preferredLocales?)
+      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
+    if (body.spendingControls case final _spendingControls?)
+      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
+    if (body.status case final _status?)
+      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7701,7 +9567,28 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardholdersCardholderRequest');,
+  body: [
+    if (body.billing case final _billing?)
+      'billing=${Uri.encodeQueryComponent(_billing.toString())}',
+    if (body.company case final _company?)
+      'company=${Uri.encodeQueryComponent(_company.toString())}',
+    if (body.email case final _email?)
+      'email=${Uri.encodeQueryComponent(_email)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.individual case final _individual?)
+      'individual=${Uri.encodeQueryComponent(_individual.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.phoneNumber case final _phoneNumber?)
+      'phone_number=${Uri.encodeQueryComponent(_phoneNumber)}',
+    if (body.preferredLocales case final _preferredLocales?)
+      'preferred_locales=${Uri.encodeQueryComponent(_preferredLocales.toString())}',
+    if (body.spendingControls case final _spendingControls?)
+      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
+    if (body.status case final _status?)
+      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7770,7 +9657,38 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardsRequest');,
+  body: [
+    if (body.cardholder case final _cardholder?)
+      'cardholder=${Uri.encodeQueryComponent(_cardholder)}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.expMonth case final _expMonth?)
+      'exp_month=${Uri.encodeQueryComponent(_expMonth.toString())}',
+    if (body.expYear case final _expYear?)
+      'exp_year=${Uri.encodeQueryComponent(_expYear.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.financialAccount case final _financialAccount?)
+      'financial_account=${Uri.encodeQueryComponent(_financialAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.personalizationDesign case final _personalizationDesign?)
+      'personalization_design=${Uri.encodeQueryComponent(_personalizationDesign)}',
+    if (body.pin case final _pin?)
+      'pin=${Uri.encodeQueryComponent(_pin.toString())}',
+    if (body.replacementFor case final _replacementFor?)
+      'replacement_for=${Uri.encodeQueryComponent(_replacementFor)}',
+    if (body.replacementReason case final _replacementReason?)
+      'replacement_reason=${Uri.encodeQueryComponent(_replacementReason.toJson())}',
+    if (body.secondLine case final _secondLine?)
+      'second_line=${Uri.encodeQueryComponent(_secondLine.toString())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.spendingControls case final _spendingControls?)
+      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
+    if (body.status case final _status?)
+      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7826,7 +9744,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingCardsCardRequest');,
+  body: [
+    if (body.cancellationReason case final _cancellationReason?)
+      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.personalizationDesign case final _personalizationDesign?)
+      'personalization_design=${Uri.encodeQueryComponent(_personalizationDesign)}',
+    if (body.pin case final _pin?)
+      'pin=${Uri.encodeQueryComponent(_pin.toString())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.spendingControls case final _spendingControls?)
+      'spending_controls=${Uri.encodeQueryComponent(_spendingControls.toString())}',
+    if (body.status case final _status?)
+      'status=${Uri.encodeQueryComponent(_status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7890,7 +9825,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.evidence case final _evidence?)
+      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.transaction case final _transaction?)
+      'transaction=${Uri.encodeQueryComponent(_transaction)}',
+    if (body.treasury case final _treasury?)
+      'treasury=${Uri.encodeQueryComponent(_treasury.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7946,7 +9894,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesDisputeRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.evidence case final _evidence?)
+      'evidence=${Uri.encodeQueryComponent(_evidence.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -7971,7 +9928,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}/submit',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingDisputesDisputeSubmitRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8038,7 +10000,25 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingPersonalizationDesignsRequest');,
+  body: [
+    if (body.cardLogo case final _cardLogo?)
+      'card_logo=${Uri.encodeQueryComponent(_cardLogo)}',
+    if (body.carrierText case final _carrierText?)
+      'carrier_text=${Uri.encodeQueryComponent(_carrierText.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.lookupKey case final _lookupKey?)
+      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    'physical_bundle=${Uri.encodeQueryComponent(body.physicalBundle)}',
+    if (body.preferences case final _preferences?)
+      'preferences=${Uri.encodeQueryComponent(_preferences.toString())}',
+    if (body.transferLookupKey case final _transferLookupKey?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8094,7 +10074,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingPersonalizationDesignsPersonalizationDesignRequest');,
+  body: [
+    if (body.cardLogo case final _cardLogo?)
+      'card_logo=${Uri.encodeQueryComponent(_cardLogo.toString())}',
+    if (body.carrierText case final _carrierText?)
+      'carrier_text=${Uri.encodeQueryComponent(_carrierText.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.lookupKey case final _lookupKey?)
+      'lookup_key=${Uri.encodeQueryComponent(_lookupKey.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name.toString())}',
+    if (body.physicalBundle case final _physicalBundle?)
+      'physical_bundle=${Uri.encodeQueryComponent(_physicalBundle)}',
+    if (body.preferences case final _preferences?)
+      'preferences=${Uri.encodeQueryComponent(_preferences.toString())}',
+    if (body.transferLookupKey case final _transferLookupKey?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8217,7 +10216,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingSettlementsSettlementRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8312,7 +10316,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/tokens/${Uri.encodeComponent(token)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingTokensTokenRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'status=${Uri.encodeQueryComponent(body.status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8408,7 +10416,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostIssuingTransactionsTransactionRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8433,7 +10446,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/link_account_sessions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkAccountSessionsRequest');,
+  body: [
+    'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.filters case final _filters?)
+      'filters=${Uri.encodeQueryComponent(_filters.toString())}',
+    'permissions=${Uri.encodeQueryComponent(body.permissions.toString())}',
+    if (body.prefetch case final _prefetch?)
+      'prefetch=${Uri.encodeQueryComponent(_prefetch.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8560,7 +10584,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkedAccountsAccountDisconnectRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8620,7 +10647,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostLinkedAccountsAccountRefreshRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'features=${Uri.encodeQueryComponent(body.features.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8789,7 +10820,80 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.automaticPaymentMethods case final _automaticPaymentMethods?)
+      'automatic_payment_methods=${Uri.encodeQueryComponent(_automaticPaymentMethods.toString())}',
+    if (body.captureMethod case final _captureMethod?)
+      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
+    if (body.confirm case final _confirm?)
+      'confirm=${Uri.encodeQueryComponent(_confirm.toString())}',
+    if (body.confirmationMethod case final _confirmationMethod?)
+      'confirmation_method=${Uri.encodeQueryComponent(_confirmationMethod.toJson())}',
+    if (body.confirmationToken case final _confirmationToken?)
+      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.errorOnRequiresAction case final _errorOnRequiresAction?)
+      'error_on_requires_action=${Uri.encodeQueryComponent(_errorOnRequiresAction.toString())}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.hooks case final _hooks?)
+      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
+    if (body.mandate case final _mandate?)
+      'mandate=${Uri.encodeQueryComponent(_mandate)}',
+    if (body.mandateData case final _mandateData?)
+      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.paymentDetails case final _paymentDetails?)
+      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.radarOptions case final _radarOptions?)
+      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail)}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.setupFutureUsage case final _setupFutureUsage?)
+      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+    if (body.useStripeSdk case final _useStripeSdk?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8893,7 +10997,58 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.captureMethod case final _captureMethod?)
+      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.hooks case final _hooks?)
+      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentDetails case final _paymentDetails?)
+      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail.toString())}',
+    if (body.setupFutureUsage case final _setupFutureUsage?)
+      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8952,7 +11107,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/apply_customer_balance',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentApplyCustomerBalanceRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -8981,7 +11143,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentCancelRequest');,
+  body: [
+    if (body.cancellationReason case final _cancellationReason?)
+      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9010,7 +11177,30 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/capture',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentCaptureRequest');,
+  body: [
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.amountToCapture case final _amountToCapture?)
+      'amount_to_capture=${Uri.encodeQueryComponent(_amountToCapture.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.finalCapture case final _finalCapture?)
+      'final_capture=${Uri.encodeQueryComponent(_finalCapture.toString())}',
+    if (body.hooks case final _hooks?)
+      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentDetails case final _paymentDetails?)
+      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.statementDescriptorSuffix case final _statementDescriptorSuffix?)
+      'statement_descriptor_suffix=${Uri.encodeQueryComponent(_statementDescriptorSuffix)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9064,7 +11254,52 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentConfirmRequest');,
+  body: [
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.captureMethod case final _captureMethod?)
+      'capture_method=${Uri.encodeQueryComponent(_captureMethod.toJson())}',
+    if (body.clientSecret case final _clientSecret?)
+      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
+    if (body.confirmationToken case final _confirmationToken?)
+      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
+    if (body.errorOnRequiresAction case final _errorOnRequiresAction?)
+      'error_on_requires_action=${Uri.encodeQueryComponent(_errorOnRequiresAction.toString())}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.hooks case final _hooks?)
+      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
+    if (body.mandate case final _mandate?)
+      'mandate=${Uri.encodeQueryComponent(_mandate)}',
+    if (body.mandateData case final _mandateData?)
+      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.paymentDetails case final _paymentDetails?)
+      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.radarOptions case final _radarOptions?)
+      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
+    if (body.receiptEmail case final _receiptEmail?)
+      'receipt_email=${Uri.encodeQueryComponent(_receiptEmail.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.setupFutureUsage case final _setupFutureUsage?)
+      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+    if (body.useStripeSdk case final _useStripeSdk?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9112,7 +11347,27 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/increment_authorization',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentIncrementAuthorizationRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.hooks case final _hooks?)
+      'hooks=${Uri.encodeQueryComponent(_hooks.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentDetails case final _paymentDetails?)
+      'payment_details=${Uri.encodeQueryComponent(_paymentDetails.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9137,7 +11392,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentIntentsIntentVerifyMicrodepositsRequest');,
+  body: [
+    if (body.amounts case final _amounts?)
+      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
+    if (body.clientSecret case final _clientSecret?)
+      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
+    if (body.descriptorCode case final _descriptorCode?)
+      'descriptor_code=${Uri.encodeQueryComponent(_descriptorCode)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9197,7 +11461,67 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentLinksRequest');,
+  body: [
+    if (body.afterCompletion case final _afterCompletion?)
+      'after_completion=${Uri.encodeQueryComponent(_afterCompletion.toString())}',
+    if (body.allowPromotionCodes case final _allowPromotionCodes?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.billingAddressCollection case final _billingAddressCollection?)
+      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
+    if (body.consentCollection case final _consentCollection?)
+      'consent_collection=${Uri.encodeQueryComponent(_consentCollection.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customFields case final _customFields?)
+      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
+    if (body.customText case final _customText?)
+      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
+    if (body.customerCreation case final _customerCreation?)
+      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.inactiveMessage case final _inactiveMessage?)
+      'inactive_message=${Uri.encodeQueryComponent(_inactiveMessage)}',
+    if (body.invoiceCreation case final _invoiceCreation?)
+      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
+    'line_items=${Uri.encodeQueryComponent(body.lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nameCollection case final _nameCollection?)
+      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.optionalItems case final _optionalItems?)
+      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
+    if (body.paymentIntentData case final _paymentIntentData?)
+      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
+    if (body.paymentMethodCollection case final _paymentMethodCollection?)
+      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.phoneNumberCollection case final _phoneNumberCollection?)
+      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
+    if (body.restrictions case final _restrictions?)
+      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+    if (body.shippingAddressCollection case final _shippingAddressCollection?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
+    if (body.shippingOptions case final _shippingOptions?)
+      'shipping_options=${Uri.encodeQueryComponent(_shippingOptions.toString())}',
+    if (body.submitType case final _submitType?)
+      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
+    if (body.subscriptionData case final _subscriptionData?)
+      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
+    if (body.taxIdCollection case final _taxIdCollection?)
+      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9253,7 +11577,56 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentLinksPaymentLinkRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.afterCompletion case final _afterCompletion?)
+      'after_completion=${Uri.encodeQueryComponent(_afterCompletion.toString())}',
+    if (body.allowPromotionCodes case final _allowPromotionCodes?)
+      'allow_promotion_codes=${Uri.encodeQueryComponent(_allowPromotionCodes.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.billingAddressCollection case final _billingAddressCollection?)
+      'billing_address_collection=${Uri.encodeQueryComponent(_billingAddressCollection.toJson())}',
+    if (body.customFields case final _customFields?)
+      'custom_fields=${Uri.encodeQueryComponent(_customFields.toString())}',
+    if (body.customText case final _customText?)
+      'custom_text=${Uri.encodeQueryComponent(_customText.toString())}',
+    if (body.customerCreation case final _customerCreation?)
+      'customer_creation=${Uri.encodeQueryComponent(_customerCreation.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.inactiveMessage case final _inactiveMessage?)
+      'inactive_message=${Uri.encodeQueryComponent(_inactiveMessage.toString())}',
+    if (body.invoiceCreation case final _invoiceCreation?)
+      'invoice_creation=${Uri.encodeQueryComponent(_invoiceCreation.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nameCollection case final _nameCollection?)
+      'name_collection=${Uri.encodeQueryComponent(_nameCollection.toString())}',
+    if (body.optionalItems case final _optionalItems?)
+      'optional_items=${Uri.encodeQueryComponent(_optionalItems.toString())}',
+    if (body.paymentIntentData case final _paymentIntentData?)
+      'payment_intent_data=${Uri.encodeQueryComponent(_paymentIntentData.toString())}',
+    if (body.paymentMethodCollection case final _paymentMethodCollection?)
+      'payment_method_collection=${Uri.encodeQueryComponent(_paymentMethodCollection.toJson())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.phoneNumberCollection case final _phoneNumberCollection?)
+      'phone_number_collection=${Uri.encodeQueryComponent(_phoneNumberCollection.toString())}',
+    if (body.restrictions case final _restrictions?)
+      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+    if (body.shippingAddressCollection case final _shippingAddressCollection?)
+      'shipping_address_collection=${Uri.encodeQueryComponent(_shippingAddressCollection.toString())}',
+    if (body.submitType case final _submitType?)
+      'submit_type=${Uri.encodeQueryComponent(_submitType.toJson())}',
+    if (body.subscriptionData case final _subscriptionData?)
+      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
+    if (body.taxIdCollection case final _taxIdCollection?)
+      'tax_id_collection=${Uri.encodeQueryComponent(_taxIdCollection.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9349,7 +11722,126 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodConfigurationsRequest');,
+  body: [
+    if (body.acssDebit case final _acssDebit?)
+      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
+    if (body.affirm case final _affirm?)
+      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
+    if (body.afterpayClearpay case final _afterpayClearpay?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
+    if (body.alipay case final _alipay?)
+      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
+    if (body.alma case final _alma?)
+      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
+    if (body.amazonPay case final _amazonPay?)
+      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
+    if (body.applePay case final _applePay?)
+      'apple_pay=${Uri.encodeQueryComponent(_applePay.toString())}',
+    if (body.applePayLater case final _applePayLater?)
+      'apple_pay_later=${Uri.encodeQueryComponent(_applePayLater.toString())}',
+    if (body.auBecsDebit case final _auBecsDebit?)
+      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
+    if (body.bacsDebit case final _bacsDebit?)
+      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
+    if (body.bancontact case final _bancontact?)
+      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
+    if (body.billie case final _billie?)
+      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
+    if (body.blik case final _blik?)
+      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
+    if (body.boleto case final _boleto?)
+      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.cartesBancaires case final _cartesBancaires?)
+      'cartes_bancaires=${Uri.encodeQueryComponent(_cartesBancaires.toString())}',
+    if (body.cashapp case final _cashapp?)
+      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
+    if (body.crypto case final _crypto?)
+      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
+    if (body.customerBalance case final _customerBalance?)
+      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
+    if (body.eps case final _eps?)
+      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fpx case final _fpx?)
+      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
+    if (body.frMealVoucherConecs case final _frMealVoucherConecs?)
+      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(_frMealVoucherConecs.toString())}',
+    if (body.giropay case final _giropay?)
+      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
+    if (body.googlePay case final _googlePay?)
+      'google_pay=${Uri.encodeQueryComponent(_googlePay.toString())}',
+    if (body.grabpay case final _grabpay?)
+      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
+    if (body.ideal case final _ideal?)
+      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
+    if (body.jcb case final _jcb?)
+      'jcb=${Uri.encodeQueryComponent(_jcb.toString())}',
+    if (body.kakaoPay case final _kakaoPay?)
+      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
+    if (body.klarna case final _klarna?)
+      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
+    if (body.konbini case final _konbini?)
+      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
+    if (body.krCard case final _krCard?)
+      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
+    if (body.link case final _link?)
+      'link=${Uri.encodeQueryComponent(_link.toString())}',
+    if (body.mbWay case final _mbWay?)
+      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
+    if (body.mobilepay case final _mobilepay?)
+      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
+    if (body.multibanco case final _multibanco?)
+      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.naverPay case final _naverPay?)
+      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
+    if (body.nzBankAccount case final _nzBankAccount?)
+      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
+    if (body.oxxo case final _oxxo?)
+      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
+    if (body.p24 case final _p24?)
+      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
+    if (body.parent case final _parent?)
+      'parent=${Uri.encodeQueryComponent(_parent)}',
+    if (body.payByBank case final _payByBank?)
+      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
+    if (body.payco case final _payco?)
+      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
+    if (body.paynow case final _paynow?)
+      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
+    if (body.paypal case final _paypal?)
+      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
+    if (body.payto case final _payto?)
+      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
+    if (body.pix case final _pix?)
+      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
+    if (body.promptpay case final _promptpay?)
+      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
+    if (body.revolutPay case final _revolutPay?)
+      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
+    if (body.samsungPay case final _samsungPay?)
+      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
+    if (body.satispay case final _satispay?)
+      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
+    if (body.sepaDebit case final _sepaDebit?)
+      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
+    if (body.sofort case final _sofort?)
+      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
+    if (body.swish case final _swish?)
+      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
+    if (body.twint case final _twint?)
+      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
+    if (body.usBankAccount case final _usBankAccount?)
+      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
+    if (body.wechatPay case final _wechatPay?)
+      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
+    if (body.zip case final _zip?)
+      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9405,7 +11897,126 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodConfigurationsConfigurationRequest');,
+  body: [
+    if (body.acssDebit case final _acssDebit?)
+      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.affirm case final _affirm?)
+      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
+    if (body.afterpayClearpay case final _afterpayClearpay?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
+    if (body.alipay case final _alipay?)
+      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
+    if (body.alma case final _alma?)
+      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
+    if (body.amazonPay case final _amazonPay?)
+      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
+    if (body.applePay case final _applePay?)
+      'apple_pay=${Uri.encodeQueryComponent(_applePay.toString())}',
+    if (body.applePayLater case final _applePayLater?)
+      'apple_pay_later=${Uri.encodeQueryComponent(_applePayLater.toString())}',
+    if (body.auBecsDebit case final _auBecsDebit?)
+      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
+    if (body.bacsDebit case final _bacsDebit?)
+      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
+    if (body.bancontact case final _bancontact?)
+      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
+    if (body.billie case final _billie?)
+      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
+    if (body.blik case final _blik?)
+      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
+    if (body.boleto case final _boleto?)
+      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.cartesBancaires case final _cartesBancaires?)
+      'cartes_bancaires=${Uri.encodeQueryComponent(_cartesBancaires.toString())}',
+    if (body.cashapp case final _cashapp?)
+      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
+    if (body.crypto case final _crypto?)
+      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
+    if (body.customerBalance case final _customerBalance?)
+      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
+    if (body.eps case final _eps?)
+      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fpx case final _fpx?)
+      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
+    if (body.frMealVoucherConecs case final _frMealVoucherConecs?)
+      'fr_meal_voucher_conecs=${Uri.encodeQueryComponent(_frMealVoucherConecs.toString())}',
+    if (body.giropay case final _giropay?)
+      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
+    if (body.googlePay case final _googlePay?)
+      'google_pay=${Uri.encodeQueryComponent(_googlePay.toString())}',
+    if (body.grabpay case final _grabpay?)
+      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
+    if (body.ideal case final _ideal?)
+      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
+    if (body.jcb case final _jcb?)
+      'jcb=${Uri.encodeQueryComponent(_jcb.toString())}',
+    if (body.kakaoPay case final _kakaoPay?)
+      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
+    if (body.klarna case final _klarna?)
+      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
+    if (body.konbini case final _konbini?)
+      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
+    if (body.krCard case final _krCard?)
+      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
+    if (body.link case final _link?)
+      'link=${Uri.encodeQueryComponent(_link.toString())}',
+    if (body.mbWay case final _mbWay?)
+      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
+    if (body.mobilepay case final _mobilepay?)
+      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
+    if (body.multibanco case final _multibanco?)
+      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.naverPay case final _naverPay?)
+      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
+    if (body.nzBankAccount case final _nzBankAccount?)
+      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
+    if (body.oxxo case final _oxxo?)
+      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
+    if (body.p24 case final _p24?)
+      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
+    if (body.payByBank case final _payByBank?)
+      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
+    if (body.payco case final _payco?)
+      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
+    if (body.paynow case final _paynow?)
+      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
+    if (body.paypal case final _paypal?)
+      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
+    if (body.payto case final _payto?)
+      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
+    if (body.pix case final _pix?)
+      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
+    if (body.promptpay case final _promptpay?)
+      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
+    if (body.revolutPay case final _revolutPay?)
+      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
+    if (body.samsungPay case final _samsungPay?)
+      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
+    if (body.satispay case final _satispay?)
+      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
+    if (body.sepaDebit case final _sepaDebit?)
+      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
+    if (body.sofort case final _sofort?)
+      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
+    if (body.swish case final _swish?)
+      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
+    if (body.twint case final _twint?)
+      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
+    if (body.usBankAccount case final _usBankAccount?)
+      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
+    if (body.wechatPay case final _wechatPay?)
+      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
+    if (body.zip case final _zip?)
+      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9466,7 +12077,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsRequest');,
+  body: [
+    'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
+    if (body.enabled case final _enabled?)
+      'enabled=${Uri.encodeQueryComponent(_enabled.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9522,7 +12139,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsPaymentMethodDomainRequest');,
+  body: [
+    if (body.enabled case final _enabled?)
+      'enabled=${Uri.encodeQueryComponent(_enabled.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9552,7 +12174,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}/validate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodDomainsPaymentMethodDomainValidateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9617,7 +12242,128 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsRequest');,
+  body: [
+    if (body.acssDebit case final _acssDebit?)
+      'acss_debit=${Uri.encodeQueryComponent(_acssDebit.toString())}',
+    if (body.affirm case final _affirm?)
+      'affirm=${Uri.encodeQueryComponent(_affirm.toString())}',
+    if (body.afterpayClearpay case final _afterpayClearpay?)
+      'afterpay_clearpay=${Uri.encodeQueryComponent(_afterpayClearpay.toString())}',
+    if (body.alipay case final _alipay?)
+      'alipay=${Uri.encodeQueryComponent(_alipay.toString())}',
+    if (body.allowRedisplay case final _allowRedisplay?)
+      'allow_redisplay=${Uri.encodeQueryComponent(_allowRedisplay.toJson())}',
+    if (body.alma case final _alma?)
+      'alma=${Uri.encodeQueryComponent(_alma.toString())}',
+    if (body.amazonPay case final _amazonPay?)
+      'amazon_pay=${Uri.encodeQueryComponent(_amazonPay.toString())}',
+    if (body.auBecsDebit case final _auBecsDebit?)
+      'au_becs_debit=${Uri.encodeQueryComponent(_auBecsDebit.toString())}',
+    if (body.bacsDebit case final _bacsDebit?)
+      'bacs_debit=${Uri.encodeQueryComponent(_bacsDebit.toString())}',
+    if (body.bancontact case final _bancontact?)
+      'bancontact=${Uri.encodeQueryComponent(_bancontact.toString())}',
+    if (body.billie case final _billie?)
+      'billie=${Uri.encodeQueryComponent(_billie.toString())}',
+    if (body.billingDetails case final _billingDetails?)
+      'billing_details=${Uri.encodeQueryComponent(_billingDetails.toString())}',
+    if (body.blik case final _blik?)
+      'blik=${Uri.encodeQueryComponent(_blik.toString())}',
+    if (body.boleto case final _boleto?)
+      'boleto=${Uri.encodeQueryComponent(_boleto.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.cashapp case final _cashapp?)
+      'cashapp=${Uri.encodeQueryComponent(_cashapp.toString())}',
+    if (body.crypto case final _crypto?)
+      'crypto=${Uri.encodeQueryComponent(_crypto.toString())}',
+    if (body.custom case final _custom?)
+      'custom=${Uri.encodeQueryComponent(_custom.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerBalance case final _customerBalance?)
+      'customer_balance=${Uri.encodeQueryComponent(_customerBalance.toString())}',
+    if (body.eps case final _eps?)
+      'eps=${Uri.encodeQueryComponent(_eps.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fpx case final _fpx?)
+      'fpx=${Uri.encodeQueryComponent(_fpx.toString())}',
+    if (body.giropay case final _giropay?)
+      'giropay=${Uri.encodeQueryComponent(_giropay.toString())}',
+    if (body.grabpay case final _grabpay?)
+      'grabpay=${Uri.encodeQueryComponent(_grabpay.toString())}',
+    if (body.ideal case final _ideal?)
+      'ideal=${Uri.encodeQueryComponent(_ideal.toString())}',
+    if (body.interacPresent case final _interacPresent?)
+      'interac_present=${Uri.encodeQueryComponent(_interacPresent.toString())}',
+    if (body.kakaoPay case final _kakaoPay?)
+      'kakao_pay=${Uri.encodeQueryComponent(_kakaoPay.toString())}',
+    if (body.klarna case final _klarna?)
+      'klarna=${Uri.encodeQueryComponent(_klarna.toString())}',
+    if (body.konbini case final _konbini?)
+      'konbini=${Uri.encodeQueryComponent(_konbini.toString())}',
+    if (body.krCard case final _krCard?)
+      'kr_card=${Uri.encodeQueryComponent(_krCard.toString())}',
+    if (body.link case final _link?)
+      'link=${Uri.encodeQueryComponent(_link.toString())}',
+    if (body.mbWay case final _mbWay?)
+      'mb_way=${Uri.encodeQueryComponent(_mbWay.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.mobilepay case final _mobilepay?)
+      'mobilepay=${Uri.encodeQueryComponent(_mobilepay.toString())}',
+    if (body.multibanco case final _multibanco?)
+      'multibanco=${Uri.encodeQueryComponent(_multibanco.toString())}',
+    if (body.naverPay case final _naverPay?)
+      'naver_pay=${Uri.encodeQueryComponent(_naverPay.toString())}',
+    if (body.nzBankAccount case final _nzBankAccount?)
+      'nz_bank_account=${Uri.encodeQueryComponent(_nzBankAccount.toString())}',
+    if (body.oxxo case final _oxxo?)
+      'oxxo=${Uri.encodeQueryComponent(_oxxo.toString())}',
+    if (body.p24 case final _p24?)
+      'p24=${Uri.encodeQueryComponent(_p24.toString())}',
+    if (body.payByBank case final _payByBank?)
+      'pay_by_bank=${Uri.encodeQueryComponent(_payByBank.toString())}',
+    if (body.payco case final _payco?)
+      'payco=${Uri.encodeQueryComponent(_payco.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paynow case final _paynow?)
+      'paynow=${Uri.encodeQueryComponent(_paynow.toString())}',
+    if (body.paypal case final _paypal?)
+      'paypal=${Uri.encodeQueryComponent(_paypal.toString())}',
+    if (body.payto case final _payto?)
+      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
+    if (body.pix case final _pix?)
+      'pix=${Uri.encodeQueryComponent(_pix.toString())}',
+    if (body.promptpay case final _promptpay?)
+      'promptpay=${Uri.encodeQueryComponent(_promptpay.toString())}',
+    if (body.radarOptions case final _radarOptions?)
+      'radar_options=${Uri.encodeQueryComponent(_radarOptions.toString())}',
+    if (body.revolutPay case final _revolutPay?)
+      'revolut_pay=${Uri.encodeQueryComponent(_revolutPay.toString())}',
+    if (body.samsungPay case final _samsungPay?)
+      'samsung_pay=${Uri.encodeQueryComponent(_samsungPay.toString())}',
+    if (body.satispay case final _satispay?)
+      'satispay=${Uri.encodeQueryComponent(_satispay.toString())}',
+    if (body.sepaDebit case final _sepaDebit?)
+      'sepa_debit=${Uri.encodeQueryComponent(_sepaDebit.toString())}',
+    if (body.sofort case final _sofort?)
+      'sofort=${Uri.encodeQueryComponent(_sofort.toString())}',
+    if (body.swish case final _swish?)
+      'swish=${Uri.encodeQueryComponent(_swish.toString())}',
+    if (body.twint case final _twint?)
+      'twint=${Uri.encodeQueryComponent(_twint.toString())}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+    if (body.usBankAccount case final _usBankAccount?)
+      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
+    if (body.wechatPay case final _wechatPay?)
+      'wechat_pay=${Uri.encodeQueryComponent(_wechatPay.toString())}',
+    if (body.zip case final _zip?)
+      'zip=${Uri.encodeQueryComponent(_zip.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9673,7 +12419,22 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodRequest');,
+  body: [
+    if (body.allowRedisplay case final _allowRedisplay?)
+      'allow_redisplay=${Uri.encodeQueryComponent(_allowRedisplay.toJson())}',
+    if (body.billingDetails case final _billingDetails?)
+      'billing_details=${Uri.encodeQueryComponent(_billingDetails.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.payto case final _payto?)
+      'payto=${Uri.encodeQueryComponent(_payto.toString())}',
+    if (body.usBankAccount case final _usBankAccount?)
+      'us_bank_account=${Uri.encodeQueryComponent(_usBankAccount.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9710,7 +12471,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/attach',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodAttachRequest');,
+  body: [
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9735,7 +12503,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/detach',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentMethodsPaymentMethodDetachRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9762,7 +12533,31 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/report_payment',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsReportPaymentRequest');,
+  body: [
+    'amount_requested=${Uri.encodeQueryComponent(body.amountRequested.toString())}',
+    if (body.customerDetails case final _customerDetails?)
+      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
+    if (body.customerPresence case final _customerPresence?)
+      'customer_presence=${Uri.encodeQueryComponent(_customerPresence.toJson())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.failed case final _failed?)
+      'failed=${Uri.encodeQueryComponent(_failed.toString())}',
+    if (body.guaranteed case final _guaranteed?)
+      'guaranteed=${Uri.encodeQueryComponent(_guaranteed.toString())}',
+    'initiated_at=${Uri.encodeQueryComponent(body.initiatedAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.outcome case final _outcome?)
+      'outcome=${Uri.encodeQueryComponent(_outcome.toJson())}',
+    'payment_method_details=${Uri.encodeQueryComponent(body.paymentMethodDetails.toString())}',
+    if (body.processorDetails case final _processorDetails?)
+      'processor_details=${Uri.encodeQueryComponent(_processorDetails.toString())}',
+    if (body.shippingDetails case final _shippingDetails?)
+      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9819,7 +12614,25 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptRequest');,
+  body: [
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.failed case final _failed?)
+      'failed=${Uri.encodeQueryComponent(_failed.toString())}',
+    if (body.guaranteed case final _guaranteed?)
+      'guaranteed=${Uri.encodeQueryComponent(_guaranteed.toString())}',
+    'initiated_at=${Uri.encodeQueryComponent(body.initiatedAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.outcome case final _outcome?)
+      'outcome=${Uri.encodeQueryComponent(_outcome.toJson())}',
+    if (body.paymentMethodDetails case final _paymentMethodDetails?)
+      'payment_method_details=${Uri.encodeQueryComponent(_paymentMethodDetails.toString())}',
+    if (body.shippingDetails case final _shippingDetails?)
+      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9845,7 +12658,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_canceled',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptCanceledRequest');,
+  body: [
+    'canceled_at=${Uri.encodeQueryComponent(body.canceledAt.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9871,7 +12690,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_failed',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptFailedRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'failed_at=${Uri.encodeQueryComponent(body.failedAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9897,7 +12722,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_guaranteed',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'guaranteed_at=${Uri.encodeQueryComponent(body.guaranteedAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9922,7 +12753,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_informational',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportPaymentAttemptInformationalRequest');,
+  body: [
+    if (body.customerDetails case final _customerDetails?)
+      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.shippingDetails case final _shippingDetails?)
+      'shipping_details=${Uri.encodeQueryComponent(_shippingDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -9948,7 +12790,19 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_refund',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPaymentRecordsIdReportRefundRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.initiatedAt case final _initiatedAt?)
+      'initiated_at=${Uri.encodeQueryComponent(_initiatedAt.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'outcome=${Uri.encodeQueryComponent(body.outcome.toJson())}',
+    'processor_details=${Uri.encodeQueryComponent(body.processorDetails.toString())}',
+    'refunded=${Uri.encodeQueryComponent(body.refunded.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10019,7 +12873,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.destination case final _destination?)
+      'destination=${Uri.encodeQueryComponent(_destination)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.method case final _method?)
+      'method=${Uri.encodeQueryComponent(_method.toJson())}',
+    if (body.payoutMethod case final _payoutMethod?)
+      'payout_method=${Uri.encodeQueryComponent(_payoutMethod)}',
+    if (body.sourceType case final _sourceType?)
+      'source_type=${Uri.encodeQueryComponent(_sourceType.toJson())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10075,7 +12948,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10100,7 +12978,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10127,7 +13008,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/reverse',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPayoutsPayoutReverseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10191,7 +13077,42 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPlansRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.amountDecimal case final _amountDecimal?)
+      'amount_decimal=${Uri.encodeQueryComponent(_amountDecimal)}',
+    if (body.billingScheme case final _billingScheme?)
+      'billing_scheme=${Uri.encodeQueryComponent(_billingScheme.toJson())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.id case final _id?)
+      'id=${Uri.encodeQueryComponent(_id)}',
+    'interval=${Uri.encodeQueryComponent(body.interval.toJson())}',
+    if (body.intervalCount case final _intervalCount?)
+      'interval_count=${Uri.encodeQueryComponent(_intervalCount.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.meter case final _meter?)
+      'meter=${Uri.encodeQueryComponent(_meter)}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname)}',
+    if (body.product case final _product?)
+      'product=${Uri.encodeQueryComponent(_product.toString())}',
+    if (body.tiers case final _tiers?)
+      'tiers=${Uri.encodeQueryComponent(_tiers.toString())}',
+    if (body.tiersMode case final _tiersMode?)
+      'tiers_mode=${Uri.encodeQueryComponent(_tiersMode.toJson())}',
+    if (body.transformUsage case final _transformUsage?)
+      'transform_usage=${Uri.encodeQueryComponent(_transformUsage.toString())}',
+    if (body.trialPeriodDays case final _trialPeriodDays?)
+      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
+    if (body.usageType case final _usageType?)
+      'usage_type=${Uri.encodeQueryComponent(_usageType.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10247,7 +13168,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPlansPlanRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname)}',
+    if (body.product case final _product?)
+      'product=${Uri.encodeQueryComponent(_product)}',
+    if (body.trialPeriodDays case final _trialPeriodDays?)
+      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10272,7 +13206,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeletePlansPlanRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -10346,7 +13281,45 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPricesRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.billingScheme case final _billingScheme?)
+      'billing_scheme=${Uri.encodeQueryComponent(_billingScheme.toJson())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.currencyOptions case final _currencyOptions?)
+      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
+    if (body.customUnitAmount case final _customUnitAmount?)
+      'custom_unit_amount=${Uri.encodeQueryComponent(_customUnitAmount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.lookupKey case final _lookupKey?)
+      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname)}',
+    if (body.product case final _product?)
+      'product=${Uri.encodeQueryComponent(_product)}',
+    if (body.productData case final _productData?)
+      'product_data=${Uri.encodeQueryComponent(_productData.toString())}',
+    if (body.recurring case final _recurring?)
+      'recurring=${Uri.encodeQueryComponent(_recurring.toString())}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.tiers case final _tiers?)
+      'tiers=${Uri.encodeQueryComponent(_tiers.toString())}',
+    if (body.tiersMode case final _tiersMode?)
+      'tiers_mode=${Uri.encodeQueryComponent(_tiersMode.toJson())}',
+    if (body.transferLookupKey case final _transferLookupKey?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+    if (body.transformQuantity case final _transformQuantity?)
+      'transform_quantity=${Uri.encodeQueryComponent(_transformQuantity.toString())}',
+    if (body.unitAmount case final _unitAmount?)
+      'unit_amount=${Uri.encodeQueryComponent(_unitAmount.toString())}',
+    if (body.unitAmountDecimal case final _unitAmountDecimal?)
+      'unit_amount_decimal=${Uri.encodeQueryComponent(_unitAmountDecimal)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10439,7 +13412,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices/${Uri.encodeComponent(price)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPricesPriceRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.currencyOptions case final _currencyOptions?)
+      'currency_options=${Uri.encodeQueryComponent(_currencyOptions.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.lookupKey case final _lookupKey?)
+      'lookup_key=${Uri.encodeQueryComponent(_lookupKey)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname)}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.transferLookupKey case final _transferLookupKey?)
+      'transfer_lookup_key=${Uri.encodeQueryComponent(_transferLookupKey.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10507,7 +13497,37 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.defaultPriceData case final _defaultPriceData?)
+      'default_price_data=${Uri.encodeQueryComponent(_defaultPriceData.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.id case final _id?)
+      'id=${Uri.encodeQueryComponent(_id)}',
+    if (body.images case final _images?)
+      'images=${Uri.encodeQueryComponent(_images.toString())}',
+    if (body.marketingFeatures case final _marketingFeatures?)
+      'marketing_features=${Uri.encodeQueryComponent(_marketingFeatures.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+    if (body.packageDimensions case final _packageDimensions?)
+      'package_dimensions=${Uri.encodeQueryComponent(_packageDimensions.toString())}',
+    if (body.shippable case final _shippable?)
+      'shippable=${Uri.encodeQueryComponent(_shippable.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.taxCode case final _taxCode?)
+      'tax_code=${Uri.encodeQueryComponent(_taxCode)}',
+    if (body.unitLabel case final _unitLabel?)
+      'unit_label=${Uri.encodeQueryComponent(_unitLabel)}',
+    if (body.url case final _url?)
+      'url=${Uri.encodeQueryComponent(_url)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10600,7 +13620,36 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsIdRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.defaultPrice case final _defaultPrice?)
+      'default_price=${Uri.encodeQueryComponent(_defaultPrice)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.images case final _images?)
+      'images=${Uri.encodeQueryComponent(_images.toString())}',
+    if (body.marketingFeatures case final _marketingFeatures?)
+      'marketing_features=${Uri.encodeQueryComponent(_marketingFeatures.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.packageDimensions case final _packageDimensions?)
+      'package_dimensions=${Uri.encodeQueryComponent(_packageDimensions.toString())}',
+    if (body.shippable case final _shippable?)
+      'shippable=${Uri.encodeQueryComponent(_shippable.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.taxCode case final _taxCode?)
+      'tax_code=${Uri.encodeQueryComponent(_taxCode.toString())}',
+    if (body.unitLabel case final _unitLabel?)
+      'unit_label=${Uri.encodeQueryComponent(_unitLabel.toString())}',
+    if (body.url case final _url?)
+      'url=${Uri.encodeQueryComponent(_url.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10625,7 +13674,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteProductsIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -10684,7 +13734,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(product)}/features',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostProductsProductFeaturesRequest');,
+  body: [
+    'entitlement_feature=${Uri.encodeQueryComponent(body.entitlementFeature)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10740,7 +13794,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(product)}/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteProductsProductFeaturesIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -10807,7 +13862,27 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPromotionCodesRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.code case final _code?)
+      'code=${Uri.encodeQueryComponent(_code)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.maxRedemptions case final _maxRedemptions?)
+      'max_redemptions=${Uri.encodeQueryComponent(_maxRedemptions.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'promotion=${Uri.encodeQueryComponent(body.promotion.toString())}',
+    if (body.restrictions case final _restrictions?)
+      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10863,7 +13938,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostPromotionCodesPromotionCodeRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.restrictions case final _restrictions?)
+      'restrictions=${Uri.encodeQueryComponent(_restrictions.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10926,7 +14010,50 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesRequest');,
+  body: [
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.footer case final _footer?)
+      'footer=${Uri.encodeQueryComponent(_footer.toString())}',
+    if (body.fromQuote case final _fromQuote?)
+      'from_quote=${Uri.encodeQueryComponent(_fromQuote.toString())}',
+    if (body.header case final _header?)
+      'header=${Uri.encodeQueryComponent(_header.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.subscriptionData case final _subscriptionData?)
+      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
+    if (body.testClock case final _testClock?)
+      'test_clock=${Uri.encodeQueryComponent(_testClock)}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -10982,7 +14109,46 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteRequest');,
+  body: [
+    if (body.applicationFeeAmount case final _applicationFeeAmount?)
+      'application_fee_amount=${Uri.encodeQueryComponent(_applicationFeeAmount.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+    if (body.footer case final _footer?)
+      'footer=${Uri.encodeQueryComponent(_footer.toString())}',
+    if (body.header case final _header?)
+      'header=${Uri.encodeQueryComponent(_header.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.subscriptionData case final _subscriptionData?)
+      'subscription_data=${Uri.encodeQueryComponent(_subscriptionData.toString())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11007,7 +14173,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/accept',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteAcceptRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11032,7 +14201,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11091,7 +14263,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/finalize',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostQuotesQuoteFinalizeRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11253,7 +14430,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/payment_evaluations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarPaymentEvaluationsRequest');,
+  body: [
+    if (body.clientDeviceMetadataDetails case final _clientDeviceMetadataDetails?)
+      'client_device_metadata_details=${Uri.encodeQueryComponent(_clientDeviceMetadataDetails.toString())}',
+    'customer_details=${Uri.encodeQueryComponent(body.customerDetails.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'payment_details=${Uri.encodeQueryComponent(body.paymentDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11317,7 +14503,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_list_items',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListItemsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'value=${Uri.encodeQueryComponent(body.value)}',
+    'value_list=${Uri.encodeQueryComponent(body.valueList)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11373,7 +14564,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_list_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteRadarValueListItemsItemRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -11437,7 +14629,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListsRequest');,
+  body: [
+    'alias=${Uri.encodeQueryComponent(body.alias)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.itemType case final _itemType?)
+      'item_type=${Uri.encodeQueryComponent(_itemType.toJson())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'name=${Uri.encodeQueryComponent(body.name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11493,7 +14694,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRadarValueListsValueListRequest');,
+  body: [
+    if (body.alias case final _alias?)
+      'alias=${Uri.encodeQueryComponent(_alias)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11518,7 +14728,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteRadarValueListsValueListRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -11592,7 +14803,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.charge case final _charge?)
+      'charge=${Uri.encodeQueryComponent(_charge)}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.instructionsEmail case final _instructionsEmail?)
+      'instructions_email=${Uri.encodeQueryComponent(_instructionsEmail)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.origin case final _origin?)
+      'origin=${Uri.encodeQueryComponent(_origin.toJson())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.reason case final _reason?)
+      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.reverseTransfer case final _reverseTransfer?)
+      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11650,7 +14886,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRefundRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11677,7 +14918,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostRefundsRefundCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11739,7 +14983,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/reporting/report_runs',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostReportingReportRunsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.parameters case final _parameters?)
+      'parameters=${Uri.encodeQueryComponent(_parameters.toString())}',
+    'report_type=${Uri.encodeQueryComponent(body.reportType)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -11925,7 +15175,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/reviews/${Uri.encodeComponent(review)}/approve',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostReviewsReviewApproveRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12032,7 +15285,52 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsRequest');,
+  body: [
+    if (body.attachToSelf case final _attachToSelf?)
+      'attach_to_self=${Uri.encodeQueryComponent(_attachToSelf.toString())}',
+    if (body.automaticPaymentMethods case final _automaticPaymentMethods?)
+      'automatic_payment_methods=${Uri.encodeQueryComponent(_automaticPaymentMethods.toString())}',
+    if (body.confirm case final _confirm?)
+      'confirm=${Uri.encodeQueryComponent(_confirm.toString())}',
+    if (body.confirmationToken case final _confirmationToken?)
+      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.flowDirections case final _flowDirections?)
+      'flow_directions=${Uri.encodeQueryComponent(_flowDirections.toString())}',
+    if (body.mandateData case final _mandateData?)
+      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.singleUse case final _singleUse?)
+      'single_use=${Uri.encodeQueryComponent(_singleUse.toString())}',
+    if (body.usage case final _usage?)
+      'usage=${Uri.encodeQueryComponent(_usage.toJson())}',
+    if (body.useStripeSdk case final _useStripeSdk?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12093,7 +15391,34 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentRequest');,
+  body: [
+    if (body.attachToSelf case final _attachToSelf?)
+      'attach_to_self=${Uri.encodeQueryComponent(_attachToSelf.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.excludedPaymentMethodTypes case final _excludedPaymentMethodTypes?)
+      'excluded_payment_method_types=${Uri.encodeQueryComponent(_excludedPaymentMethodTypes.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.flowDirections case final _flowDirections?)
+      'flow_directions=${Uri.encodeQueryComponent(_flowDirections.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodConfiguration case final _paymentMethodConfiguration?)
+      'payment_method_configuration=${Uri.encodeQueryComponent(_paymentMethodConfiguration)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.paymentMethodTypes case final _paymentMethodTypes?)
+      'payment_method_types=${Uri.encodeQueryComponent(_paymentMethodTypes.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12120,7 +15445,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentCancelRequest');,
+  body: [
+    if (body.cancellationReason case final _cancellationReason?)
+      'cancellation_reason=${Uri.encodeQueryComponent(_cancellationReason.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12158,7 +15488,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentConfirmRequest');,
+  body: [
+    if (body.clientSecret case final _clientSecret?)
+      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
+    if (body.confirmationToken case final _confirmationToken?)
+      'confirmation_token=${Uri.encodeQueryComponent(_confirmationToken)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.mandateData case final _mandateData?)
+      'mandate_data=${Uri.encodeQueryComponent(_mandateData.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.useStripeSdk case final _useStripeSdk?)
+      'use_stripe_sdk=${Uri.encodeQueryComponent(_useStripeSdk.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12183,7 +15532,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSetupIntentsIntentVerifyMicrodepositsRequest');,
+  body: [
+    if (body.amounts case final _amounts?)
+      'amounts=${Uri.encodeQueryComponent(_amounts.toString())}',
+    if (body.clientSecret case final _clientSecret?)
+      'client_secret=${Uri.encodeQueryComponent(_clientSecret)}',
+    if (body.descriptorCode case final _descriptorCode?)
+      'descriptor_code=${Uri.encodeQueryComponent(_descriptorCode)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12247,7 +15605,23 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostShippingRatesRequest');,
+  body: [
+    if (body.deliveryEstimate case final _deliveryEstimate?)
+      'delivery_estimate=${Uri.encodeQueryComponent(_deliveryEstimate.toString())}',
+    'display_name=${Uri.encodeQueryComponent(body.displayName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fixedAmount case final _fixedAmount?)
+      'fixed_amount=${Uri.encodeQueryComponent(_fixedAmount.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+    if (body.taxCode case final _taxCode?)
+      'tax_code=${Uri.encodeQueryComponent(_taxCode)}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12303,7 +15677,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostShippingRatesShippingRateTokenRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fixedAmount case final _fixedAmount?)
+      'fixed_amount=${Uri.encodeQueryComponent(_fixedAmount.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.taxBehavior case final _taxBehavior?)
+      'tax_behavior=${Uri.encodeQueryComponent(_taxBehavior.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12328,7 +15713,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sigma/saved_queries/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSigmaSavedQueriesIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.sql case final _sql?)
+      'sql=${Uri.encodeQueryComponent(_sql)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12418,7 +15810,40 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.flow case final _flow?)
+      'flow=${Uri.encodeQueryComponent(_flow.toJson())}',
+    if (body.mandate case final _mandate?)
+      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.originalSource case final _originalSource?)
+      'original_source=${Uri.encodeQueryComponent(_originalSource)}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.receiver case final _receiver?)
+      'receiver=${Uri.encodeQueryComponent(_receiver.toString())}',
+    if (body.redirect case final _redirect?)
+      'redirect=${Uri.encodeQueryComponent(_redirect.toString())}',
+    if (body.sourceOrder case final _sourceOrder?)
+      'source_order=${Uri.encodeQueryComponent(_sourceOrder.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.token case final _token?)
+      'token=${Uri.encodeQueryComponent(_token)}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type)}',
+    if (body.usage case final _usage?)
+      'usage=${Uri.encodeQueryComponent(_usage.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12477,7 +15902,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesSourceRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.mandate case final _mandate?)
+      'mandate=${Uri.encodeQueryComponent(_mandate.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    if (body.sourceOrder case final _sourceOrder?)
+      'source_order=${Uri.encodeQueryComponent(_sourceOrder.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12596,7 +16034,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}/verify',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSourcesSourceVerifyRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'values=${Uri.encodeQueryComponent(body.values.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12656,7 +16098,31 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionItemsRequest');,
+  body: [
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.price case final _price?)
+      'price=${Uri.encodeQueryComponent(_price)}',
+    if (body.priceData case final _priceData?)
+      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.quantity case final _quantity?)
+      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    'subscription=${Uri.encodeQueryComponent(body.subscription)}',
+    if (body.taxRates case final _taxRates?)
+      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12712,7 +16178,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionItemsItemRequest');,
+  body: [
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.price case final _price?)
+      'price=${Uri.encodeQueryComponent(_price)}',
+    if (body.priceData case final _priceData?)
+      'price_data=${Uri.encodeQueryComponent(_priceData.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.quantity case final _quantity?)
+      'quantity=${Uri.encodeQueryComponent(_quantity.toString())}',
+    if (body.taxRates case final _taxRates?)
+      'tax_rates=${Uri.encodeQueryComponent(_taxRates.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12737,7 +16228,16 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionItemsItemRequest');,
+  body: [
+    if (body.clearUsage case final _clearUsage?)
+      'clear_usage=${Uri.encodeQueryComponent(_clearUsage.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12811,7 +16311,28 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesRequest');,
+  body: [
+    if (body.billingMode case final _billingMode?)
+      'billing_mode=${Uri.encodeQueryComponent(_billingMode.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.defaultSettings case final _defaultSettings?)
+      'default_settings=${Uri.encodeQueryComponent(_defaultSettings.toString())}',
+    if (body.endBehavior case final _endBehavior?)
+      'end_behavior=${Uri.encodeQueryComponent(_endBehavior.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fromSubscription case final _fromSubscription?)
+      'from_subscription=${Uri.encodeQueryComponent(_fromSubscription)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.phases case final _phases?)
+      'phases=${Uri.encodeQueryComponent(_phases.toString())}',
+    if (body.startDate case final _startDate?)
+      'start_date=${Uri.encodeQueryComponent(_startDate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12867,7 +16388,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleRequest');,
+  body: [
+    if (body.defaultSettings case final _defaultSettings?)
+      'default_settings=${Uri.encodeQueryComponent(_defaultSettings.toString())}',
+    if (body.endBehavior case final _endBehavior?)
+      'end_behavior=${Uri.encodeQueryComponent(_endBehavior.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.phases case final _phases?)
+      'phases=${Uri.encodeQueryComponent(_phases.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12892,7 +16426,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceNow case final _invoiceNow?)
+      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
+    if (body.prorate case final _prorate?)
+      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -12917,7 +16458,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/release',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionSchedulesScheduleReleaseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.preserveCancelDate case final _preserveCancelDate?)
+      'preserve_cancel_date=${Uri.encodeQueryComponent(_preserveCancelDate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13000,7 +16546,78 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsRequest');,
+  body: [
+    if (body.addInvoiceItems case final _addInvoiceItems?)
+      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.backdateStartDate case final _backdateStartDate?)
+      'backdate_start_date=${Uri.encodeQueryComponent(_backdateStartDate.toString())}',
+    if (body.billingCycleAnchor case final _billingCycleAnchor?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toString())}',
+    if (body.billingCycleAnchorConfig case final _billingCycleAnchorConfig?)
+      'billing_cycle_anchor_config=${Uri.encodeQueryComponent(_billingCycleAnchorConfig.toString())}',
+    if (body.billingMode case final _billingMode?)
+      'billing_mode=${Uri.encodeQueryComponent(_billingMode.toString())}',
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.cancelAt case final _cancelAt?)
+      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
+    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerAccount case final _customerAccount?)
+      'customer_account=${Uri.encodeQueryComponent(_customerAccount)}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource)}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.items case final _items?)
+      'items=${Uri.encodeQueryComponent(_items.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.trialEnd case final _trialEnd?)
+      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
+    if (body.trialFromPlan case final _trialFromPlan?)
+      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
+    if (body.trialPeriodDays case final _trialPeriodDays?)
+      'trial_period_days=${Uri.encodeQueryComponent(_trialPeriodDays.toString())}',
+    if (body.trialSettings case final _trialSettings?)
+      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13113,7 +16730,70 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionExposedIdRequest');,
+  body: [
+    if (body.addInvoiceItems case final _addInvoiceItems?)
+      'add_invoice_items=${Uri.encodeQueryComponent(_addInvoiceItems.toString())}',
+    if (body.applicationFeePercent case final _applicationFeePercent?)
+      'application_fee_percent=${Uri.encodeQueryComponent(_applicationFeePercent.toString())}',
+    if (body.automaticTax case final _automaticTax?)
+      'automatic_tax=${Uri.encodeQueryComponent(_automaticTax.toString())}',
+    if (body.billingCycleAnchor case final _billingCycleAnchor?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
+    if (body.billingThresholds case final _billingThresholds?)
+      'billing_thresholds=${Uri.encodeQueryComponent(_billingThresholds.toString())}',
+    if (body.cancelAt case final _cancelAt?)
+      'cancel_at=${Uri.encodeQueryComponent(_cancelAt.toString())}',
+    if (body.cancelAtPeriodEnd case final _cancelAtPeriodEnd?)
+      'cancel_at_period_end=${Uri.encodeQueryComponent(_cancelAtPeriodEnd.toString())}',
+    if (body.cancellationDetails case final _cancellationDetails?)
+      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
+    if (body.collectionMethod case final _collectionMethod?)
+      'collection_method=${Uri.encodeQueryComponent(_collectionMethod.toJson())}',
+    if (body.daysUntilDue case final _daysUntilDue?)
+      'days_until_due=${Uri.encodeQueryComponent(_daysUntilDue.toString())}',
+    if (body.defaultPaymentMethod case final _defaultPaymentMethod?)
+      'default_payment_method=${Uri.encodeQueryComponent(_defaultPaymentMethod)}',
+    if (body.defaultSource case final _defaultSource?)
+      'default_source=${Uri.encodeQueryComponent(_defaultSource.toString())}',
+    if (body.defaultTaxRates case final _defaultTaxRates?)
+      'default_tax_rates=${Uri.encodeQueryComponent(_defaultTaxRates.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.discounts case final _discounts?)
+      'discounts=${Uri.encodeQueryComponent(_discounts.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceSettings case final _invoiceSettings?)
+      'invoice_settings=${Uri.encodeQueryComponent(_invoiceSettings.toString())}',
+    if (body.items case final _items?)
+      'items=${Uri.encodeQueryComponent(_items.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.offSession case final _offSession?)
+      'off_session=${Uri.encodeQueryComponent(_offSession.toString())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf.toString())}',
+    if (body.pauseCollection case final _pauseCollection?)
+      'pause_collection=${Uri.encodeQueryComponent(_pauseCollection.toString())}',
+    if (body.paymentBehavior case final _paymentBehavior?)
+      'payment_behavior=${Uri.encodeQueryComponent(_paymentBehavior.toJson())}',
+    if (body.paymentSettings case final _paymentSettings?)
+      'payment_settings=${Uri.encodeQueryComponent(_paymentSettings.toString())}',
+    if (body.pendingInvoiceItemInterval case final _pendingInvoiceItemInterval?)
+      'pending_invoice_item_interval=${Uri.encodeQueryComponent(_pendingInvoiceItemInterval.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+    if (body.transferData case final _transferData?)
+      'transfer_data=${Uri.encodeQueryComponent(_transferData.toString())}',
+    if (body.trialEnd case final _trialEnd?)
+      'trial_end=${Uri.encodeQueryComponent(_trialEnd.toString())}',
+    if (body.trialFromPlan case final _trialFromPlan?)
+      'trial_from_plan=${Uri.encodeQueryComponent(_trialFromPlan.toString())}',
+    if (body.trialSettings case final _trialSettings?)
+      'trial_settings=${Uri.encodeQueryComponent(_trialSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13142,7 +16822,16 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionsSubscriptionExposedIdRequest');,
+  body: [
+    if (body.cancellationDetails case final _cancellationDetails?)
+      'cancellation_details=${Uri.encodeQueryComponent(_cancellationDetails.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.invoiceNow case final _invoiceNow?)
+      'invoice_now=${Uri.encodeQueryComponent(_invoiceNow.toString())}',
+    if (body.prorate case final _prorate?)
+      'prorate=${Uri.encodeQueryComponent(_prorate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13167,7 +16856,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteSubscriptionsSubscriptionExposedIdDiscountRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -13192,7 +16882,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/migrate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionMigrateRequest');,
+  body: [
+    'billing_mode=${Uri.encodeQueryComponent(body.billingMode.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13217,7 +16911,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/resume',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostSubscriptionsSubscriptionResumeRequest');,
+  body: [
+    if (body.billingCycleAnchor case final _billingCycleAnchor?)
+      'billing_cycle_anchor=${Uri.encodeQueryComponent(_billingCycleAnchor.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.prorationBehavior case final _prorationBehavior?)
+      'proration_behavior=${Uri.encodeQueryComponent(_prorationBehavior.toJson())}',
+    if (body.prorationDate case final _prorationDate?)
+      'proration_date=${Uri.encodeQueryComponent(_prorationDate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13274,7 +16977,22 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/calculations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxCalculationsRequest');,
+  body: [
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.customerDetails case final _customerDetails?)
+      'customer_details=${Uri.encodeQueryComponent(_customerDetails.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'line_items=${Uri.encodeQueryComponent(body.lineItems.toString())}',
+    if (body.shipFromDetails case final _shipFromDetails?)
+      'ship_from_details=${Uri.encodeQueryComponent(_shipFromDetails.toString())}',
+    if (body.shippingCost case final _shippingCost?)
+      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+    if (body.taxDate case final _taxDate?)
+      'tax_date=${Uri.encodeQueryComponent(_taxDate.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13399,7 +17117,15 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRegistrationsRequest');,
+  body: [
+    'active_from=${Uri.encodeQueryComponent(body.activeFrom.toString())}',
+    'country=${Uri.encodeQueryComponent(body.country)}',
+    'country_options=${Uri.encodeQueryComponent(body.countryOptions.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13457,7 +17183,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRegistrationsIdRequest');,
+  body: [
+    if (body.activeFrom case final _activeFrom?)
+      'active_from=${Uri.encodeQueryComponent(_activeFrom.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.expiresAt case final _expiresAt?)
+      'expires_at=${Uri.encodeQueryComponent(_expiresAt.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13513,7 +17246,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/settings',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxSettingsRequest');,
+  body: [
+    if (body.defaults case final _defaults?)
+      'defaults=${Uri.encodeQueryComponent(_defaults.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.headOffice case final _headOffice?)
+      'head_office=${Uri.encodeQueryComponent(_headOffice.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13538,7 +17278,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_from_calculation',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxTransactionsCreateFromCalculationRequest');,
+  body: [
+    'calculation=${Uri.encodeQueryComponent(body.calculation)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.postedAt case final _postedAt?)
+      'posted_at=${Uri.encodeQueryComponent(_postedAt.toString())}',
+    'reference=${Uri.encodeQueryComponent(body.reference)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13563,7 +17312,21 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_reversal',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxTransactionsCreateReversalRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.flatAmount case final _flatAmount?)
+      'flat_amount=${Uri.encodeQueryComponent(_flatAmount.toString())}',
+    if (body.lineItems case final _lineItems?)
+      'line_items=${Uri.encodeQueryComponent(_lineItems.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'mode=${Uri.encodeQueryComponent(body.mode.toJson())}',
+    'original_transaction=${Uri.encodeQueryComponent(body.originalTransaction)}',
+    'reference=${Uri.encodeQueryComponent(body.reference)}',
+    if (body.shippingCost case final _shippingCost?)
+      'shipping_cost=${Uri.encodeQueryComponent(_shippingCost.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13758,7 +17521,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_ids',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxIdsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.owner case final _owner?)
+      'owner=${Uri.encodeQueryComponent(_owner.toString())}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+    'value=${Uri.encodeQueryComponent(body.value)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13814,7 +17584,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTaxIdsIdRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -13878,7 +17649,27 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRatesRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.country case final _country?)
+      'country=${Uri.encodeQueryComponent(_country)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    'display_name=${Uri.encodeQueryComponent(body.displayName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'inclusive=${Uri.encodeQueryComponent(body.inclusive.toString())}',
+    if (body.jurisdiction case final _jurisdiction?)
+      'jurisdiction=${Uri.encodeQueryComponent(_jurisdiction)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'percentage=${Uri.encodeQueryComponent(body.percentage.toString())}',
+    if (body.state case final _state?)
+      'state=${Uri.encodeQueryComponent(_state)}',
+    if (body.taxType case final _taxType?)
+      'tax_type=${Uri.encodeQueryComponent(_taxType.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13934,7 +17725,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTaxRatesTaxRateRequest');,
+  body: [
+    if (body.active case final _active?)
+      'active=${Uri.encodeQueryComponent(_active.toString())}',
+    if (body.country case final _country?)
+      'country=${Uri.encodeQueryComponent(_country)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.displayName case final _displayName?)
+      'display_name=${Uri.encodeQueryComponent(_displayName)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.jurisdiction case final _jurisdiction?)
+      'jurisdiction=${Uri.encodeQueryComponent(_jurisdiction)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.state case final _state?)
+      'state=${Uri.encodeQueryComponent(_state)}',
+    if (body.taxType case final _taxType?)
+      'tax_type=${Uri.encodeQueryComponent(_taxType.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -13994,7 +17804,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConfigurationsRequest');,
+  body: [
+    if (body.bbposWisepad3 case final _bbposWisepad3?)
+      'bbpos_wisepad3=${Uri.encodeQueryComponent(_bbposWisepad3.toString())}',
+    if (body.bbposWiseposE case final _bbposWiseposE?)
+      'bbpos_wisepos_e=${Uri.encodeQueryComponent(_bbposWiseposE.toString())}',
+    if (body.cellular case final _cellular?)
+      'cellular=${Uri.encodeQueryComponent(_cellular.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.offline case final _offline?)
+      'offline=${Uri.encodeQueryComponent(_offline.toString())}',
+    if (body.rebootWindow case final _rebootWindow?)
+      'reboot_window=${Uri.encodeQueryComponent(_rebootWindow.toString())}',
+    if (body.stripeS700 case final _stripeS700?)
+      'stripe_s700=${Uri.encodeQueryComponent(_stripeS700.toString())}',
+    if (body.stripeS710 case final _stripeS710?)
+      'stripe_s710=${Uri.encodeQueryComponent(_stripeS710.toString())}',
+    if (body.tipping case final _tipping?)
+      'tipping=${Uri.encodeQueryComponent(_tipping.toString())}',
+    if (body.verifoneP400 case final _verifoneP400?)
+      'verifone_p400=${Uri.encodeQueryComponent(_verifoneP400.toString())}',
+    if (body.wifi case final _wifi?)
+      'wifi=${Uri.encodeQueryComponent(_wifi.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14050,7 +17885,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConfigurationsConfigurationRequest');,
+  body: [
+    if (body.bbposWisepad3 case final _bbposWisepad3?)
+      'bbpos_wisepad3=${Uri.encodeQueryComponent(_bbposWisepad3.toString())}',
+    if (body.bbposWiseposE case final _bbposWiseposE?)
+      'bbpos_wisepos_e=${Uri.encodeQueryComponent(_bbposWiseposE.toString())}',
+    if (body.cellular case final _cellular?)
+      'cellular=${Uri.encodeQueryComponent(_cellular.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+    if (body.offline case final _offline?)
+      'offline=${Uri.encodeQueryComponent(_offline.toString())}',
+    if (body.rebootWindow case final _rebootWindow?)
+      'reboot_window=${Uri.encodeQueryComponent(_rebootWindow.toString())}',
+    if (body.stripeS700 case final _stripeS700?)
+      'stripe_s700=${Uri.encodeQueryComponent(_stripeS700.toString())}',
+    if (body.stripeS710 case final _stripeS710?)
+      'stripe_s710=${Uri.encodeQueryComponent(_stripeS710.toString())}',
+    if (body.tipping case final _tipping?)
+      'tipping=${Uri.encodeQueryComponent(_tipping.toString())}',
+    if (body.verifoneP400 case final _verifoneP400?)
+      'verifone_p400=${Uri.encodeQueryComponent(_verifoneP400.toString())}',
+    if (body.wifi case final _wifi?)
+      'wifi=${Uri.encodeQueryComponent(_wifi.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14075,7 +17935,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalConfigurationsConfigurationRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -14100,7 +17961,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/connection_tokens',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalConnectionTokensRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.location case final _location?)
+      'location=${Uri.encodeQueryComponent(_location)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14160,7 +18026,28 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalLocationsRequest');,
+  body: [
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.configurationOverrides case final _configurationOverrides?)
+      'configuration_overrides=${Uri.encodeQueryComponent(_configurationOverrides)}',
+    if (body.displayName case final _displayName?)
+      'display_name=${Uri.encodeQueryComponent(_displayName)}',
+    if (body.displayNameKana case final _displayNameKana?)
+      'display_name_kana=${Uri.encodeQueryComponent(_displayNameKana)}',
+    if (body.displayNameKanji case final _displayNameKanji?)
+      'display_name_kanji=${Uri.encodeQueryComponent(_displayNameKanji)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14216,7 +18103,28 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalLocationsLocationRequest');,
+  body: [
+    if (body.address case final _address?)
+      'address=${Uri.encodeQueryComponent(_address.toString())}',
+    if (body.addressKana case final _addressKana?)
+      'address_kana=${Uri.encodeQueryComponent(_addressKana.toString())}',
+    if (body.addressKanji case final _addressKanji?)
+      'address_kanji=${Uri.encodeQueryComponent(_addressKanji.toString())}',
+    if (body.configurationOverrides case final _configurationOverrides?)
+      'configuration_overrides=${Uri.encodeQueryComponent(_configurationOverrides.toString())}',
+    if (body.displayName case final _displayName?)
+      'display_name=${Uri.encodeQueryComponent(_displayName.toString())}',
+    if (body.displayNameKana case final _displayNameKana?)
+      'display_name_kana=${Uri.encodeQueryComponent(_displayNameKana.toString())}',
+    if (body.displayNameKanji case final _displayNameKanji?)
+      'display_name_kanji=${Uri.encodeQueryComponent(_displayNameKanji.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.phone case final _phone?)
+      'phone=${Uri.encodeQueryComponent(_phone.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14241,7 +18149,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalLocationsLocationRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -14266,7 +18175,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/onboarding_links',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalOnboardingLinksRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'link_options=${Uri.encodeQueryComponent(body.linkOptions.toString())}',
+    'link_type=${Uri.encodeQueryComponent(body.linkType.toJson())}',
+    if (body.onBehalfOf case final _onBehalfOf?)
+      'on_behalf_of=${Uri.encodeQueryComponent(_onBehalfOf)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14329,7 +18245,17 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.label case final _label?)
+      'label=${Uri.encodeQueryComponent(_label)}',
+    if (body.location case final _location?)
+      'location=${Uri.encodeQueryComponent(_location)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'registration_code=${Uri.encodeQueryComponent(body.registrationCode)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14385,7 +18311,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.label case final _label?)
+      'label=${Uri.encodeQueryComponent(_label.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14410,7 +18343,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTerminalReadersReaderRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -14435,7 +18369,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/cancel_action',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCancelActionRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14460,7 +18397,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_inputs',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCollectInputsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'inputs=${Uri.encodeQueryComponent(body.inputs.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14485,7 +18428,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_payment_method',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderCollectPaymentMethodRequest');,
+  body: [
+    if (body.collectConfig case final _collectConfig?)
+      'collect_config=${Uri.encodeQueryComponent(_collectConfig.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14510,7 +18459,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/confirm_payment_intent',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderConfirmPaymentIntentRequest');,
+  body: [
+    if (body.confirmConfig case final _confirmConfig?)
+      'confirm_config=${Uri.encodeQueryComponent(_confirmConfig.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14535,7 +18490,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_payment_intent',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderProcessPaymentIntentRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
+    if (body.processConfig case final _processConfig?)
+      'process_config=${Uri.encodeQueryComponent(_processConfig.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14560,7 +18521,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_setup_intent',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderProcessSetupIntentRequest');,
+  body: [
+    'allow_redisplay=${Uri.encodeQueryComponent(body.allowRedisplay.toJson())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.processConfig case final _processConfig?)
+      'process_config=${Uri.encodeQueryComponent(_processConfig.toString())}',
+    'setup_intent=${Uri.encodeQueryComponent(body.setupIntent)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14585,7 +18553,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/refund_payment',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderRefundPaymentRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.charge case final _charge?)
+      'charge=${Uri.encodeQueryComponent(_charge)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.refundPaymentConfig case final _refundPaymentConfig?)
+      'refund_payment_config=${Uri.encodeQueryComponent(_refundPaymentConfig.toString())}',
+    if (body.reverseTransfer case final _reverseTransfer?)
+      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14610,7 +18595,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/set_reader_display',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalReadersReaderSetReaderDisplayRequest');,
+  body: [
+    if (body.cart case final _cart?)
+      'cart=${Uri.encodeQueryComponent(_cart.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'type=${Uri.encodeQueryComponent(body.type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14638,7 +18629,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/refunds',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTerminalRefundsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.charge case final _charge?)
+      'charge=${Uri.encodeQueryComponent(_charge)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.paymentIntent case final _paymentIntent?)
+      'payment_intent=${Uri.encodeQueryComponent(_paymentIntent)}',
+    if (body.reason case final _reason?)
+      'reason=${Uri.encodeQueryComponent(_reason.toJson())}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+    if (body.reverseTransfer case final _reverseTransfer?)
+      'reverse_transfer=${Uri.encodeQueryComponent(_reverseTransfer.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14663,7 +18671,22 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/confirmation_tokens',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersConfirmationTokensRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.paymentMethod case final _paymentMethod?)
+      'payment_method=${Uri.encodeQueryComponent(_paymentMethod)}',
+    if (body.paymentMethodData case final _paymentMethodData?)
+      'payment_method_data=${Uri.encodeQueryComponent(_paymentMethodData.toString())}',
+    if (body.paymentMethodOptions case final _paymentMethodOptions?)
+      'payment_method_options=${Uri.encodeQueryComponent(_paymentMethodOptions.toString())}',
+    if (body.returnUrl case final _returnUrl?)
+      'return_url=${Uri.encodeQueryComponent(_returnUrl)}',
+    if (body.setupFutureUsage case final _setupFutureUsage?)
+      'setup_future_usage=${Uri.encodeQueryComponent(_setupFutureUsage.toJson())}',
+    if (body.shipping case final _shipping?)
+      'shipping=${Uri.encodeQueryComponent(_shipping.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14688,7 +18711,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/customers/${Uri.encodeComponent(customer)}/fund_cash_balance',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersCustomersCustomerFundCashBalanceRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.reference case final _reference?)
+      'reference=${Uri.encodeQueryComponent(_reference)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14713,7 +18743,41 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.amountDetails case final _amountDetails?)
+      'amount_details=${Uri.encodeQueryComponent(_amountDetails.toString())}',
+    if (body.authorizationMethod case final _authorizationMethod?)
+      'authorization_method=${Uri.encodeQueryComponent(_authorizationMethod.toJson())}',
+    'card=${Uri.encodeQueryComponent(body.card)}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.fleet case final _fleet?)
+      'fleet=${Uri.encodeQueryComponent(_fleet.toString())}',
+    if (body.fraudDisputabilityLikelihood case final _fraudDisputabilityLikelihood?)
+      'fraud_disputability_likelihood=${Uri.encodeQueryComponent(_fraudDisputabilityLikelihood.toJson())}',
+    if (body.fuel case final _fuel?)
+      'fuel=${Uri.encodeQueryComponent(_fuel.toString())}',
+    if (body.isAmountControllable case final _isAmountControllable?)
+      'is_amount_controllable=${Uri.encodeQueryComponent(_isAmountControllable.toString())}',
+    if (body.merchantAmount case final _merchantAmount?)
+      'merchant_amount=${Uri.encodeQueryComponent(_merchantAmount.toString())}',
+    if (body.merchantCurrency case final _merchantCurrency?)
+      'merchant_currency=${Uri.encodeQueryComponent(_merchantCurrency)}',
+    if (body.merchantData case final _merchantData?)
+      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
+    if (body.networkData case final _networkData?)
+      'network_data=${Uri.encodeQueryComponent(_networkData.toString())}',
+    if (body.riskAssessment case final _riskAssessment?)
+      'risk_assessment=${Uri.encodeQueryComponent(_riskAssessment.toString())}',
+    if (body.verificationData case final _verificationData?)
+      'verification_data=${Uri.encodeQueryComponent(_verificationData.toString())}',
+    if (body.wallet case final _wallet?)
+      'wallet=${Uri.encodeQueryComponent(_wallet.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14738,7 +18802,16 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/capture',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest');,
+  body: [
+    if (body.captureAmount case final _captureAmount?)
+      'capture_amount=${Uri.encodeQueryComponent(_captureAmount.toString())}',
+    if (body.closeAuthorization case final _closeAuthorization?)
+      'close_authorization=${Uri.encodeQueryComponent(_closeAuthorization.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.purchaseDetails case final _purchaseDetails?)
+      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14763,7 +18836,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/expire',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14788,7 +18864,15 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/finalize_amount',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'final_amount=${Uri.encodeQueryComponent(body.finalAmount.toString())}',
+    if (body.fleet case final _fleet?)
+      'fleet=${Uri.encodeQueryComponent(_fleet.toString())}',
+    if (body.fuel case final _fuel?)
+      'fuel=${Uri.encodeQueryComponent(_fuel.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14813,7 +18897,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/fraud_challenges/respond',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest');,
+  body: [
+    'confirmed=${Uri.encodeQueryComponent(body.confirmed.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14838,7 +18926,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/increment',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'increment_amount=${Uri.encodeQueryComponent(body.incrementAmount.toString())}',
+    if (body.isAmountControllable case final _isAmountControllable?)
+      'is_amount_controllable=${Uri.encodeQueryComponent(_isAmountControllable.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14863,7 +18957,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/reverse',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.reverseAmount case final _reverseAmount?)
+      'reverse_amount=${Uri.encodeQueryComponent(_reverseAmount.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14888,7 +18987,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/deliver',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingDeliverRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14913,7 +19015,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/fail',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingFailRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14938,7 +19043,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/return',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingReturnRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14963,7 +19071,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/ship',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingShipRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -14988,7 +19099,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/submit',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingCardsCardShippingSubmitRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15013,7 +19127,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/activate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15038,7 +19155,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/deactivate',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15063,7 +19183,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/reject',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'rejection_reasons=${Uri.encodeQueryComponent(body.rejectionReasons.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15088,7 +19212,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingSettlementsRequest');,
+  body: [
+    'bin=${Uri.encodeQueryComponent(body.bin)}',
+    'clearing_date=${Uri.encodeQueryComponent(body.clearingDate.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.interchangeFeesAmount case final _interchangeFeesAmount?)
+      'interchange_fees_amount=${Uri.encodeQueryComponent(_interchangeFeesAmount.toString())}',
+    'net_total_amount=${Uri.encodeQueryComponent(body.netTotalAmount.toString())}',
+    if (body.network case final _network?)
+      'network=${Uri.encodeQueryComponent(_network.toJson())}',
+    if (body.networkSettlementIdentifier case final _networkSettlementIdentifier?)
+      'network_settlement_identifier=${Uri.encodeQueryComponent(_networkSettlementIdentifier)}',
+    if (body.transactionAmount case final _transactionAmount?)
+      'transaction_amount=${Uri.encodeQueryComponent(_transactionAmount.toString())}',
+    if (body.transactionCount case final _transactionCount?)
+      'transaction_count=${Uri.encodeQueryComponent(_transactionCount.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15113,7 +19254,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements/${Uri.encodeComponent(settlement)}/complete',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingSettlementsSettlementCompleteRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15138,7 +19282,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_force_capture',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsCreateForceCaptureRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'card=${Uri.encodeQueryComponent(body.card)}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.merchantData case final _merchantData?)
+      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
+    if (body.purchaseDetails case final _purchaseDetails?)
+      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15163,7 +19318,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_unlinked_refund',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'card=${Uri.encodeQueryComponent(body.card)}',
+    if (body.currency case final _currency?)
+      'currency=${Uri.encodeQueryComponent(_currency)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.merchantData case final _merchantData?)
+      'merchant_data=${Uri.encodeQueryComponent(_merchantData.toString())}',
+    if (body.purchaseDetails case final _purchaseDetails?)
+      'purchase_details=${Uri.encodeQueryComponent(_purchaseDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15188,7 +19354,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/${Uri.encodeComponent(transaction)}/refund',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersIssuingTransactionsTransactionRefundRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.refundAmount case final _refundAmount?)
+      'refund_amount=${Uri.encodeQueryComponent(_refundAmount.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15213,7 +19384,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/refunds/${Uri.encodeComponent(refund)}/expire',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersRefundsRefundExpireRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15238,7 +19412,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/present_payment_method',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest');,
+  body: [
+    if (body.amountTip case final _amountTip?)
+      'amount_tip=${Uri.encodeQueryComponent(_amountTip.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.cardPresent case final _cardPresent?)
+      'card_present=${Uri.encodeQueryComponent(_cardPresent.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.interacPresent case final _interacPresent?)
+      'interac_present=${Uri.encodeQueryComponent(_interacPresent.toString())}',
+    if (body.type case final _type?)
+      'type=${Uri.encodeQueryComponent(_type.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15263,7 +19450,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/succeed_input_collection',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.skipNonRequiredInputs case final _skipNonRequiredInputs?)
+      'skip_non_required_inputs=${Uri.encodeQueryComponent(_skipNonRequiredInputs.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15288,7 +19480,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/timeout_input_collection',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15347,7 +19542,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTestClocksRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
+    if (body.name case final _name?)
+      'name=${Uri.encodeQueryComponent(_name)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15403,7 +19604,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteTestHelpersTestClocksTestClockRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(
@@ -15428,7 +19630,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}/advance',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTestClocksTestClockAdvanceRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15453,7 +19659,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdFailRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.failureDetails case final _failureDetails?)
+      'failure_details=${Uri.encodeQueryComponent(_failureDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15478,7 +19689,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdReturnRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15503,7 +19717,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/succeed',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryInboundTransfersIdSucceedRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15528,7 +19745,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15553,7 +19774,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdFailRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15578,7 +19802,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/post',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdPostRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15603,7 +19830,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.returnedDetails case final _returnedDetails?)
+      'returned_details=${Uri.encodeQueryComponent(_returnedDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15628,7 +19860,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15653,7 +19889,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/fail',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15678,7 +19917,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/post',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15703,7 +19945,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/return',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.returnedDetails case final _returnedDetails?)
+      'returned_details=${Uri.encodeQueryComponent(_returnedDetails.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15728,7 +19975,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_credits',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryReceivedCreditsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
+    if (body.initiatingPaymentMethodDetails case final _initiatingPaymentMethodDetails?)
+      'initiating_payment_method_details=${Uri.encodeQueryComponent(_initiatingPaymentMethodDetails.toString())}',
+    'network=${Uri.encodeQueryComponent(body.network.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15753,7 +20011,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_debits',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTestHelpersTreasuryReceivedDebitsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
+    if (body.initiatingPaymentMethodDetails case final _initiatingPaymentMethodDetails?)
+      'initiating_payment_method_details=${Uri.encodeQueryComponent(_initiatingPaymentMethodDetails.toString())}',
+    'network=${Uri.encodeQueryComponent(body.network.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15779,7 +20048,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tokens',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTokensRequest');,
+  body: [
+    if (body.account case final _account?)
+      'account=${Uri.encodeQueryComponent(_account.toString())}',
+    if (body.bankAccount case final _bankAccount?)
+      'bank_account=${Uri.encodeQueryComponent(_bankAccount.toString())}',
+    if (body.card case final _card?)
+      'card=${Uri.encodeQueryComponent(_card.toString())}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.cvcUpdate case final _cvcUpdate?)
+      'cvc_update=${Uri.encodeQueryComponent(_cvcUpdate.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.person case final _person?)
+      'person=${Uri.encodeQueryComponent(_person.toString())}',
+    if (body.pii case final _pii?)
+      'pii=${Uri.encodeQueryComponent(_pii.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15876,7 +20162,22 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.source case final _source?)
+      'source=${Uri.encodeQueryComponent(_source)}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15932,7 +20233,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsTopupRequest');,
+  body: [
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -15957,7 +20265,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTopupsTopupCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16021,7 +20332,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    'destination=${Uri.encodeQueryComponent(body.destination)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.sourceTransaction case final _sourceTransaction?)
+      'source_transaction=${Uri.encodeQueryComponent(_sourceTransaction)}',
+    if (body.sourceType case final _sourceType?)
+      'source_type=${Uri.encodeQueryComponent(_sourceType.toJson())}',
+    if (body.transferGroup case final _transferGroup?)
+      'transfer_group=${Uri.encodeQueryComponent(_transferGroup)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16084,7 +20412,18 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersIdReversalsRequest');,
+  body: [
+    if (body.amount case final _amount?)
+      'amount=${Uri.encodeQueryComponent(_amount.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.refundApplicationFee case final _refundApplicationFee?)
+      'refund_application_fee=${Uri.encodeQueryComponent(_refundApplicationFee.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16142,7 +20481,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersTransferRequest');,
+  body: [
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16200,7 +20546,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTransfersTransferReversalsIdRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16262,7 +20613,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/credit_reversals',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryCreditReversalsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'received_credit=${Uri.encodeQueryComponent(body.receivedCredit)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16356,7 +20713,13 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/debit_reversals',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryDebitReversalsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'received_debit=${Uri.encodeQueryComponent(body.receivedDebit)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16450,7 +20813,19 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.features case final _features?)
+      'features=${Uri.encodeQueryComponent(_features.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname.toString())}',
+    if (body.platformRestrictions case final _platformRestrictions?)
+      'platform_restrictions=${Uri.encodeQueryComponent(_platformRestrictions.toString())}',
+    'supported_currencies=${Uri.encodeQueryComponent(body.supportedCurrencies.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16506,7 +20881,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.features case final _features?)
+      'features=${Uri.encodeQueryComponent(_features.toString())}',
+    if (body.forwardingSettings case final _forwardingSettings?)
+      'forwarding_settings=${Uri.encodeQueryComponent(_forwardingSettings.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.nickname case final _nickname?)
+      'nickname=${Uri.encodeQueryComponent(_nickname.toString())}',
+    if (body.platformRestrictions case final _platformRestrictions?)
+      'platform_restrictions=${Uri.encodeQueryComponent(_platformRestrictions.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16531,7 +20919,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/close',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountCloseRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.forwardingSettings case final _forwardingSettings?)
+      'forwarding_settings=${Uri.encodeQueryComponent(_forwardingSettings.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16587,7 +20980,24 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest');,
+  body: [
+    if (body.cardIssuing case final _cardIssuing?)
+      'card_issuing=${Uri.encodeQueryComponent(_cardIssuing.toString())}',
+    if (body.depositInsurance case final _depositInsurance?)
+      'deposit_insurance=${Uri.encodeQueryComponent(_depositInsurance.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.financialAddresses case final _financialAddresses?)
+      'financial_addresses=${Uri.encodeQueryComponent(_financialAddresses.toString())}',
+    if (body.inboundTransfers case final _inboundTransfers?)
+      'inbound_transfers=${Uri.encodeQueryComponent(_inboundTransfers.toString())}',
+    if (body.intraStripeFlows case final _intraStripeFlows?)
+      'intra_stripe_flows=${Uri.encodeQueryComponent(_intraStripeFlows.toString())}',
+    if (body.outboundPayments case final _outboundPayments?)
+      'outbound_payments=${Uri.encodeQueryComponent(_outboundPayments.toString())}',
+    if (body.outboundTransfers case final _outboundTransfers?)
+      'outbound_transfers=${Uri.encodeQueryComponent(_outboundTransfers.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16648,7 +21058,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryInboundTransfersRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'origin_payment_method=${Uri.encodeQueryComponent(body.originPaymentMethod)}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16704,7 +21127,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(inboundTransfer)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryInboundTransfersInboundTransferCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16769,7 +21195,29 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundPaymentsRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.customer case final _customer?)
+      'customer=${Uri.encodeQueryComponent(_customer)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.destinationPaymentMethod case final _destinationPaymentMethod?)
+      'destination_payment_method=${Uri.encodeQueryComponent(_destinationPaymentMethod)}',
+    if (body.destinationPaymentMethodData case final _destinationPaymentMethodData?)
+      'destination_payment_method_data=${Uri.encodeQueryComponent(_destinationPaymentMethodData.toString())}',
+    if (body.destinationPaymentMethodOptions case final _destinationPaymentMethodOptions?)
+      'destination_payment_method_options=${Uri.encodeQueryComponent(_destinationPaymentMethodOptions.toString())}',
+    if (body.endUserDetails case final _endUserDetails?)
+      'end_user_details=${Uri.encodeQueryComponent(_endUserDetails.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16825,7 +21273,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundPaymentsIdCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16886,7 +21337,25 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundTransfersRequest');,
+  body: [
+    'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
+    'currency=${Uri.encodeQueryComponent(body.currency)}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description)}',
+    if (body.destinationPaymentMethod case final _destinationPaymentMethod?)
+      'destination_payment_method=${Uri.encodeQueryComponent(_destinationPaymentMethod)}',
+    if (body.destinationPaymentMethodData case final _destinationPaymentMethodData?)
+      'destination_payment_method_data=${Uri.encodeQueryComponent(_destinationPaymentMethodData.toString())}',
+    if (body.destinationPaymentMethodOptions case final _destinationPaymentMethodOptions?)
+      'destination_payment_method_options=${Uri.encodeQueryComponent(_destinationPaymentMethodOptions.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    'financial_account=${Uri.encodeQueryComponent(body.financialAccount)}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.statementDescriptor case final _statementDescriptor?)
+      'statement_descriptor=${Uri.encodeQueryComponent(_statementDescriptor)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -16942,7 +21411,10 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/cancel',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostTreasuryOutboundTransfersOutboundTransferCancelRequest');,
+  body: [
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -17286,7 +21758,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostWebhookEndpointsRequest');,
+  body: [
+    if (body.apiVersion case final _apiVersion?)
+      'api_version=${Uri.encodeQueryComponent(_apiVersion.toJson())}',
+    if (body.connect case final _connect?)
+      'connect=${Uri.encodeQueryComponent(_connect.toString())}',
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    'enabled_events=${Uri.encodeQueryComponent(body.enabledEvents.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    'url=${Uri.encodeQueryComponent(body.url)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -17342,7 +21827,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from PostWebhookEndpointsWebhookEndpointRequest');,
+  body: [
+    if (body.description case final _description?)
+      'description=${Uri.encodeQueryComponent(_description.toString())}',
+    if (body.disabled case final _disabled?)
+      'disabled=${Uri.encodeQueryComponent(_disabled.toString())}',
+    if (body.enabledEvents case final _enabledEvents?)
+      'enabled_events=${Uri.encodeQueryComponent(_enabledEvents.toString())}',
+    if (body.expand case final _expand?)
+      'expand=${Uri.encodeQueryComponent(_expand.toString())}',
+    if (body.metadata case final _metadata?)
+      'metadata=${Uri.encodeQueryComponent(_metadata.toString())}',
+    if (body.url case final _url?)
+      'url=${Uri.encodeQueryComponent(_url)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -17367,7 +21865,8 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from DeleteWebhookEndpointsWebhookEndpointRequest');,
+  body: [
+  ].join('&'),
 );
 
 return _execute(

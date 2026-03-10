@@ -52,7 +52,53 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/Local.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateIncomingPhoneNumberLocalRequest');,
+  body: [
+    'PhoneNumber=${Uri.encodeQueryComponent(body.phoneNumber)}',
+    if (body.apiVersion case final _apiVersion?)
+      'ApiVersion=${Uri.encodeQueryComponent(_apiVersion)}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.smsApplicationSid case final _smsApplicationSid?)
+      'SmsApplicationSid=${Uri.encodeQueryComponent(_smsApplicationSid)}',
+    if (body.smsFallbackMethod case final _smsFallbackMethod?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(_smsFallbackMethod.toJson())}',
+    if (body.smsFallbackUrl case final _smsFallbackUrl?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(_smsFallbackUrl.toString())}',
+    if (body.smsMethod case final _smsMethod?)
+      'SmsMethod=${Uri.encodeQueryComponent(_smsMethod.toJson())}',
+    if (body.smsUrl case final _smsUrl?)
+      'SmsUrl=${Uri.encodeQueryComponent(_smsUrl.toString())}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.voiceApplicationSid case final _voiceApplicationSid?)
+      'VoiceApplicationSid=${Uri.encodeQueryComponent(_voiceApplicationSid)}',
+    if (body.voiceCallerIdLookup case final _voiceCallerIdLookup?)
+      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(_voiceCallerIdLookup.toString())}',
+    if (body.voiceFallbackMethod case final _voiceFallbackMethod?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(_voiceFallbackMethod.toJson())}',
+    if (body.voiceFallbackUrl case final _voiceFallbackUrl?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(_voiceFallbackUrl.toString())}',
+    if (body.voiceMethod case final _voiceMethod?)
+      'VoiceMethod=${Uri.encodeQueryComponent(_voiceMethod.toJson())}',
+    if (body.voiceUrl case final _voiceUrl?)
+      'VoiceUrl=${Uri.encodeQueryComponent(_voiceUrl.toString())}',
+    if (body.identitySid case final _identitySid?)
+      'IdentitySid=${Uri.encodeQueryComponent(_identitySid)}',
+    if (body.addressSid case final _addressSid?)
+      'AddressSid=${Uri.encodeQueryComponent(_addressSid)}',
+    if (body.emergencyStatus case final _emergencyStatus?)
+      'EmergencyStatus=${Uri.encodeQueryComponent(_emergencyStatus.toJson())}',
+    if (body.emergencyAddressSid case final _emergencyAddressSid?)
+      'EmergencyAddressSid=${Uri.encodeQueryComponent(_emergencyAddressSid)}',
+    if (body.trunkSid case final _trunkSid?)
+      'TrunkSid=${Uri.encodeQueryComponent(_trunkSid)}',
+    if (body.voiceReceiveMode case final _voiceReceiveMode?)
+      'VoiceReceiveMode=${Uri.encodeQueryComponent(_voiceReceiveMode.toJson())}',
+    if (body.bundleSid case final _bundleSid?)
+      'BundleSid=${Uri.encodeQueryComponent(_bundleSid)}',
+  ].join('&'),
 );
 
 return _execute(

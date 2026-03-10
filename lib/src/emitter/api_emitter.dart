@@ -62,6 +62,8 @@ class ApiEmitter {
           !isJsonLikeMediaType(requestBodyContent.$1) &&
           !(isMultipartMediaType(requestBodyContent.$1) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
+          !(isFormUrlencodedMediaType(requestBodyContent.$1) &&
+              _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
           !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
         warnings.add(
           'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1} with type ${irTypeName(requestBodyContent.$2.schema)}.',
@@ -341,9 +343,16 @@ class ApiEmitter {
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
+    final formUrlencodedFields = bodyType != null &&
+            isFormUrlencodedMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
     if (multipartFields != null) {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
+    } else if (formUrlencodedFields != null) {
+      _writeFormUrlencodedBody(buf, formUrlencodedFields);
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
       buf.writeln(
@@ -950,6 +959,42 @@ try {
       }
     }
     buf.writeln('  ],');
+  }
+
+  /// Write form-urlencoded body construction code.
+  ///
+  /// Generates a `String` body from object fields encoded as
+  /// `key=Uri.encodeQueryComponent(value)` pairs joined by `&`.
+  void _writeFormUrlencodedBody(
+    StringBuffer buf,
+    List<IrField> fields,
+  ) {
+    buf.writeln('  body: [');
+    for (final f in fields) {
+      final fieldAccessor = 'body.${f.name}';
+      final isNullable =
+          (!f.isRequired && f.defaultValue == null) || f.type.isNullable;
+      final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
+      final encoded =
+          "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
+
+      if (isNullable) {
+        final localVar = '_${f.name}';
+        final localValueExpr = _formFieldValueExpr(f.type, localVar);
+        final localEncoded =
+            "'${f.originalName}=\${Uri.encodeQueryComponent($localValueExpr)}'";
+        buf.writeln('    if ($fieldAccessor case final $localVar?)');
+        buf.writeln('      $localEncoded,');
+      } else {
+        buf.writeln('    $encoded,');
+      }
+    }
+    buf.writeln("  ].join('&'),");
+  }
+
+  /// Get the string expression for a form-urlencoded field value.
+  String _formFieldValueExpr(IrType type, String accessor) {
+    return _multipartFieldValueExpr(type, accessor);
   }
 
   void _writeMultipartFieldExpr(

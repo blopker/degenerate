@@ -82,7 +82,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid)}/AssignedAddOns.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateIncomingPhoneNumberAssignedAddOnRequest');,
+  body: [
+    'InstalledAddOnSid=${Uri.encodeQueryComponent(body.installedAddOnSid)}',
+  ].join('&'),
 );
 
 return _execute(

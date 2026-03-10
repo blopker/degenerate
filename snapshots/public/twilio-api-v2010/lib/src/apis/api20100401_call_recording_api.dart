@@ -51,7 +51,20 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateCallRecordingRequest');,
+  body: [
+    if (body.recordingStatusCallbackEvent case final _recordingStatusCallbackEvent?)
+      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_recordingStatusCallbackEvent.toString())}',
+    if (body.recordingStatusCallback case final _recordingStatusCallback?)
+      'RecordingStatusCallback=${Uri.encodeQueryComponent(_recordingStatusCallback.toString())}',
+    if (body.recordingStatusCallbackMethod case final _recordingStatusCallbackMethod?)
+      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_recordingStatusCallbackMethod.toJson())}',
+    if (body.trim case final _trim?)
+      'Trim=${Uri.encodeQueryComponent(_trim)}',
+    if (body.recordingChannels case final _recordingChannels?)
+      'RecordingChannels=${Uri.encodeQueryComponent(_recordingChannels)}',
+    if (body.recordingTrack case final _recordingTrack?)
+      'RecordingTrack=${Uri.encodeQueryComponent(_recordingTrack)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -89,7 +102,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateCallRecordingRequest');,
+  body: [
+    'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
+    if (body.pauseBehavior case final _pauseBehavior?)
+      'PauseBehavior=${Uri.encodeQueryComponent(_pauseBehavior)}',
+  ].join('&'),
 );
 
 return _execute(

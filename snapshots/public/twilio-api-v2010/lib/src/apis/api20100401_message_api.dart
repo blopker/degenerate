@@ -53,7 +53,55 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateMessageRequest');,
+  body: [
+    'To=${Uri.encodeQueryComponent(body.to)}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.applicationSid case final _applicationSid?)
+      'ApplicationSid=${Uri.encodeQueryComponent(_applicationSid)}',
+    if (body.maxPrice case final _maxPrice?)
+      'MaxPrice=${Uri.encodeQueryComponent(_maxPrice.toString())}',
+    if (body.provideFeedback case final _provideFeedback?)
+      'ProvideFeedback=${Uri.encodeQueryComponent(_provideFeedback.toString())}',
+    if (body.attempt case final _attempt?)
+      'Attempt=${Uri.encodeQueryComponent(_attempt.toString())}',
+    if (body.validityPeriod case final _validityPeriod?)
+      'ValidityPeriod=${Uri.encodeQueryComponent(_validityPeriod.toString())}',
+    if (body.forceDelivery case final _forceDelivery?)
+      'ForceDelivery=${Uri.encodeQueryComponent(_forceDelivery.toString())}',
+    if (body.contentRetention case final _contentRetention?)
+      'ContentRetention=${Uri.encodeQueryComponent(_contentRetention.toJson())}',
+    if (body.addressRetention case final _addressRetention?)
+      'AddressRetention=${Uri.encodeQueryComponent(_addressRetention.toJson())}',
+    if (body.smartEncoded case final _smartEncoded?)
+      'SmartEncoded=${Uri.encodeQueryComponent(_smartEncoded.toString())}',
+    if (body.persistentAction case final _persistentAction?)
+      'PersistentAction=${Uri.encodeQueryComponent(_persistentAction.toString())}',
+    if (body.trafficType case final _trafficType?)
+      'TrafficType=${Uri.encodeQueryComponent(_trafficType.toJson())}',
+    if (body.shortenUrls case final _shortenUrls?)
+      'ShortenUrls=${Uri.encodeQueryComponent(_shortenUrls.toString())}',
+    if (body.scheduleType case final _scheduleType?)
+      'ScheduleType=${Uri.encodeQueryComponent(_scheduleType.toJson())}',
+    if (body.sendAt case final _sendAt?)
+      'SendAt=${Uri.encodeQueryComponent(_sendAt.toIso8601String())}',
+    if (body.sendAsMms case final _sendAsMms?)
+      'SendAsMms=${Uri.encodeQueryComponent(_sendAsMms.toString())}',
+    if (body.contentVariables case final _contentVariables?)
+      'ContentVariables=${Uri.encodeQueryComponent(_contentVariables)}',
+    if (body.riskCheck case final _riskCheck?)
+      'RiskCheck=${Uri.encodeQueryComponent(_riskCheck.toJson())}',
+    if (body.from case final _from?)
+      'From=${Uri.encodeQueryComponent(_from)}',
+    if (body.messagingServiceSid case final _messagingServiceSid?)
+      'MessagingServiceSid=${Uri.encodeQueryComponent(_messagingServiceSid)}',
+    if (body.body case final _body?)
+      'Body=${Uri.encodeQueryComponent(_body)}',
+    if (body.mediaUrl case final _mediaUrl?)
+      'MediaUrl=${Uri.encodeQueryComponent(_mediaUrl.toString())}',
+    if (body.contentSid case final _contentSid?)
+      'ContentSid=${Uri.encodeQueryComponent(_contentSid)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -91,7 +139,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateMessageRequest');,
+  body: [
+    if (body.body case final _body?)
+      'Body=${Uri.encodeQueryComponent(_body)}',
+    if (body.status case final _status?)
+      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(

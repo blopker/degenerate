@@ -40,7 +40,12 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateQueueRequest');,
+  body: [
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.maxSize case final _maxSize?)
+      'MaxSize=${Uri.encodeQueryComponent(_maxSize.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -102,7 +107,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateQueueRequest');,
+  body: [
+    'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
+    if (body.maxSize case final _maxSize?)
+      'MaxSize=${Uri.encodeQueryComponent(_maxSize.toString())}',
+  ].join('&'),
 );
 
 return _execute(

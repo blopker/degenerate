@@ -22,7 +22,38 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateRealtimeTranscriptionRequest');,
+  body: [
+    if (body.name case final _name?)
+      'Name=${Uri.encodeQueryComponent(_name)}',
+    if (body.track case final _track?)
+      'Track=${Uri.encodeQueryComponent(_track.toJson())}',
+    if (body.statusCallbackUrl case final _statusCallbackUrl?)
+      'StatusCallbackUrl=${Uri.encodeQueryComponent(_statusCallbackUrl.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.inboundTrackLabel case final _inboundTrackLabel?)
+      'InboundTrackLabel=${Uri.encodeQueryComponent(_inboundTrackLabel)}',
+    if (body.outboundTrackLabel case final _outboundTrackLabel?)
+      'OutboundTrackLabel=${Uri.encodeQueryComponent(_outboundTrackLabel)}',
+    if (body.partialResults case final _partialResults?)
+      'PartialResults=${Uri.encodeQueryComponent(_partialResults.toString())}',
+    if (body.languageCode case final _languageCode?)
+      'LanguageCode=${Uri.encodeQueryComponent(_languageCode)}',
+    if (body.transcriptionEngine case final _transcriptionEngine?)
+      'TranscriptionEngine=${Uri.encodeQueryComponent(_transcriptionEngine)}',
+    if (body.profanityFilter case final _profanityFilter?)
+      'ProfanityFilter=${Uri.encodeQueryComponent(_profanityFilter.toString())}',
+    if (body.speechModel case final _speechModel?)
+      'SpeechModel=${Uri.encodeQueryComponent(_speechModel)}',
+    if (body.hints case final _hints?)
+      'Hints=${Uri.encodeQueryComponent(_hints)}',
+    if (body.enableAutomaticPunctuation case final _enableAutomaticPunctuation?)
+      'EnableAutomaticPunctuation=${Uri.encodeQueryComponent(_enableAutomaticPunctuation.toString())}',
+    if (body.intelligenceService case final _intelligenceService?)
+      'IntelligenceService=${Uri.encodeQueryComponent(_intelligenceService)}',
+    if (body.enableProviderData case final _enableProviderData?)
+      'EnableProviderData=${Uri.encodeQueryComponent(_enableProviderData.toString())}',
+  ].join('&'),
 );
 
 return _execute(
@@ -42,7 +73,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateRealtimeTranscriptionRequest');,
+  body: [
+    'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(

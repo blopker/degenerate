@@ -40,7 +40,32 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateParticipantRequest');,
+  body: [
+    if (body.muted case final _muted?)
+      'Muted=${Uri.encodeQueryComponent(_muted.toString())}',
+    if (body.hold case final _hold?)
+      'Hold=${Uri.encodeQueryComponent(_hold.toString())}',
+    if (body.holdUrl case final _holdUrl?)
+      'HoldUrl=${Uri.encodeQueryComponent(_holdUrl.toString())}',
+    if (body.holdMethod case final _holdMethod?)
+      'HoldMethod=${Uri.encodeQueryComponent(_holdMethod.toJson())}',
+    if (body.announceUrl case final _announceUrl?)
+      'AnnounceUrl=${Uri.encodeQueryComponent(_announceUrl.toString())}',
+    if (body.announceMethod case final _announceMethod?)
+      'AnnounceMethod=${Uri.encodeQueryComponent(_announceMethod.toJson())}',
+    if (body.waitUrl case final _waitUrl?)
+      'WaitUrl=${Uri.encodeQueryComponent(_waitUrl.toString())}',
+    if (body.waitMethod case final _waitMethod?)
+      'WaitMethod=${Uri.encodeQueryComponent(_waitMethod.toJson())}',
+    if (body.beepOnExit case final _beepOnExit?)
+      'BeepOnExit=${Uri.encodeQueryComponent(_beepOnExit.toString())}',
+    if (body.endConferenceOnExit case final _endConferenceOnExit?)
+      'EndConferenceOnExit=${Uri.encodeQueryComponent(_endConferenceOnExit.toString())}',
+    if (body.coaching case final _coaching?)
+      'Coaching=${Uri.encodeQueryComponent(_coaching.toString())}',
+    if (body.callSidToCoach case final _callSidToCoach?)
+      'CallSidToCoach=${Uri.encodeQueryComponent(_callSidToCoach)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -105,7 +130,106 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateParticipantRequest');,
+  body: [
+    'From=${Uri.encodeQueryComponent(body.from)}',
+    'To=${Uri.encodeQueryComponent(body.to)}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.statusCallbackEvent case final _statusCallbackEvent?)
+      'StatusCallbackEvent=${Uri.encodeQueryComponent(_statusCallbackEvent.toString())}',
+    if (body.label case final _label?)
+      'Label=${Uri.encodeQueryComponent(_label)}',
+    if (body.timeout case final _timeout?)
+      'Timeout=${Uri.encodeQueryComponent(_timeout.toString())}',
+    if (body.record case final _record?)
+      'Record=${Uri.encodeQueryComponent(_record.toString())}',
+    if (body.muted case final _muted?)
+      'Muted=${Uri.encodeQueryComponent(_muted.toString())}',
+    if (body.beep case final _beep?)
+      'Beep=${Uri.encodeQueryComponent(_beep)}',
+    if (body.startConferenceOnEnter case final _startConferenceOnEnter?)
+      'StartConferenceOnEnter=${Uri.encodeQueryComponent(_startConferenceOnEnter.toString())}',
+    if (body.endConferenceOnExit case final _endConferenceOnExit?)
+      'EndConferenceOnExit=${Uri.encodeQueryComponent(_endConferenceOnExit.toString())}',
+    if (body.waitUrl case final _waitUrl?)
+      'WaitUrl=${Uri.encodeQueryComponent(_waitUrl.toString())}',
+    if (body.waitMethod case final _waitMethod?)
+      'WaitMethod=${Uri.encodeQueryComponent(_waitMethod.toJson())}',
+    if (body.earlyMedia case final _earlyMedia?)
+      'EarlyMedia=${Uri.encodeQueryComponent(_earlyMedia.toString())}',
+    if (body.maxParticipants case final _maxParticipants?)
+      'MaxParticipants=${Uri.encodeQueryComponent(_maxParticipants.toString())}',
+    if (body.conferenceRecord case final _conferenceRecord?)
+      'ConferenceRecord=${Uri.encodeQueryComponent(_conferenceRecord)}',
+    if (body.conferenceTrim case final _conferenceTrim?)
+      'ConferenceTrim=${Uri.encodeQueryComponent(_conferenceTrim)}',
+    if (body.conferenceStatusCallback case final _conferenceStatusCallback?)
+      'ConferenceStatusCallback=${Uri.encodeQueryComponent(_conferenceStatusCallback.toString())}',
+    if (body.conferenceStatusCallbackMethod case final _conferenceStatusCallbackMethod?)
+      'ConferenceStatusCallbackMethod=${Uri.encodeQueryComponent(_conferenceStatusCallbackMethod.toJson())}',
+    if (body.conferenceStatusCallbackEvent case final _conferenceStatusCallbackEvent?)
+      'ConferenceStatusCallbackEvent=${Uri.encodeQueryComponent(_conferenceStatusCallbackEvent.toString())}',
+    if (body.recordingChannels case final _recordingChannels?)
+      'RecordingChannels=${Uri.encodeQueryComponent(_recordingChannels)}',
+    if (body.recordingStatusCallback case final _recordingStatusCallback?)
+      'RecordingStatusCallback=${Uri.encodeQueryComponent(_recordingStatusCallback.toString())}',
+    if (body.recordingStatusCallbackMethod case final _recordingStatusCallbackMethod?)
+      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_recordingStatusCallbackMethod.toJson())}',
+    if (body.sipAuthUsername case final _sipAuthUsername?)
+      'SipAuthUsername=${Uri.encodeQueryComponent(_sipAuthUsername)}',
+    if (body.sipAuthPassword case final _sipAuthPassword?)
+      'SipAuthPassword=${Uri.encodeQueryComponent(_sipAuthPassword)}',
+    if (body.region case final _region?)
+      'Region=${Uri.encodeQueryComponent(_region)}',
+    if (body.conferenceRecordingStatusCallback case final _conferenceRecordingStatusCallback?)
+      'ConferenceRecordingStatusCallback=${Uri.encodeQueryComponent(_conferenceRecordingStatusCallback.toString())}',
+    if (body.conferenceRecordingStatusCallbackMethod case final _conferenceRecordingStatusCallbackMethod?)
+      'ConferenceRecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_conferenceRecordingStatusCallbackMethod.toJson())}',
+    if (body.recordingStatusCallbackEvent case final _recordingStatusCallbackEvent?)
+      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_recordingStatusCallbackEvent.toString())}',
+    if (body.conferenceRecordingStatusCallbackEvent case final _conferenceRecordingStatusCallbackEvent?)
+      'ConferenceRecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_conferenceRecordingStatusCallbackEvent.toString())}',
+    if (body.coaching case final _coaching?)
+      'Coaching=${Uri.encodeQueryComponent(_coaching.toString())}',
+    if (body.callSidToCoach case final _callSidToCoach?)
+      'CallSidToCoach=${Uri.encodeQueryComponent(_callSidToCoach)}',
+    if (body.jitterBufferSize case final _jitterBufferSize?)
+      'JitterBufferSize=${Uri.encodeQueryComponent(_jitterBufferSize)}',
+    if (body.byoc case final _byoc?)
+      'Byoc=${Uri.encodeQueryComponent(_byoc)}',
+    if (body.callerId case final _callerId?)
+      'CallerId=${Uri.encodeQueryComponent(_callerId)}',
+    if (body.callReason case final _callReason?)
+      'CallReason=${Uri.encodeQueryComponent(_callReason)}',
+    if (body.recordingTrack case final _recordingTrack?)
+      'RecordingTrack=${Uri.encodeQueryComponent(_recordingTrack)}',
+    if (body.timeLimit case final _timeLimit?)
+      'TimeLimit=${Uri.encodeQueryComponent(_timeLimit.toString())}',
+    if (body.machineDetection case final _machineDetection?)
+      'MachineDetection=${Uri.encodeQueryComponent(_machineDetection)}',
+    if (body.machineDetectionTimeout case final _machineDetectionTimeout?)
+      'MachineDetectionTimeout=${Uri.encodeQueryComponent(_machineDetectionTimeout.toString())}',
+    if (body.machineDetectionSpeechThreshold case final _machineDetectionSpeechThreshold?)
+      'MachineDetectionSpeechThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechThreshold.toString())}',
+    if (body.machineDetectionSpeechEndThreshold case final _machineDetectionSpeechEndThreshold?)
+      'MachineDetectionSpeechEndThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechEndThreshold.toString())}',
+    if (body.machineDetectionSilenceTimeout case final _machineDetectionSilenceTimeout?)
+      'MachineDetectionSilenceTimeout=${Uri.encodeQueryComponent(_machineDetectionSilenceTimeout.toString())}',
+    if (body.amdStatusCallback case final _amdStatusCallback?)
+      'AmdStatusCallback=${Uri.encodeQueryComponent(_amdStatusCallback.toString())}',
+    if (body.amdStatusCallbackMethod case final _amdStatusCallbackMethod?)
+      'AmdStatusCallbackMethod=${Uri.encodeQueryComponent(_amdStatusCallbackMethod.toJson())}',
+    if (body.trim case final _trim?)
+      'Trim=${Uri.encodeQueryComponent(_trim)}',
+    if (body.callToken case final _callToken?)
+      'CallToken=${Uri.encodeQueryComponent(_callToken)}',
+    if (body.clientNotificationUrl case final _clientNotificationUrl?)
+      'ClientNotificationUrl=${Uri.encodeQueryComponent(_clientNotificationUrl.toString())}',
+    if (body.callerDisplayName case final _callerDisplayName?)
+      'CallerDisplayName=${Uri.encodeQueryComponent(_callerDisplayName)}',
+  ].join('&'),
 );
 
 return _execute(

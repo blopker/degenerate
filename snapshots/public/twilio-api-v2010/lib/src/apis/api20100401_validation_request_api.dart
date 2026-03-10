@@ -22,7 +22,19 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/OutgoingCallerIds.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateValidationRequestRequest');,
+  body: [
+    'PhoneNumber=${Uri.encodeQueryComponent(body.phoneNumber)}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.callDelay case final _callDelay?)
+      'CallDelay=${Uri.encodeQueryComponent(_callDelay.toString())}',
+    if (body.$extension case final _$extension?)
+      'Extension=${Uri.encodeQueryComponent(_$extension)}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+  ].join('&'),
 );
 
 return _execute(

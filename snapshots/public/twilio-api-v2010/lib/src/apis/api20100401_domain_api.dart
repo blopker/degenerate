@@ -48,7 +48,33 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipDomainRequest');,
+  body: [
+    'DomainName=${Uri.encodeQueryComponent(body.domainName)}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.voiceUrl case final _voiceUrl?)
+      'VoiceUrl=${Uri.encodeQueryComponent(_voiceUrl.toString())}',
+    if (body.voiceMethod case final _voiceMethod?)
+      'VoiceMethod=${Uri.encodeQueryComponent(_voiceMethod.toJson())}',
+    if (body.voiceFallbackUrl case final _voiceFallbackUrl?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(_voiceFallbackUrl.toString())}',
+    if (body.voiceFallbackMethod case final _voiceFallbackMethod?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(_voiceFallbackMethod.toJson())}',
+    if (body.voiceStatusCallbackUrl case final _voiceStatusCallbackUrl?)
+      'VoiceStatusCallbackUrl=${Uri.encodeQueryComponent(_voiceStatusCallbackUrl.toString())}',
+    if (body.voiceStatusCallbackMethod case final _voiceStatusCallbackMethod?)
+      'VoiceStatusCallbackMethod=${Uri.encodeQueryComponent(_voiceStatusCallbackMethod.toJson())}',
+    if (body.sipRegistration case final _sipRegistration?)
+      'SipRegistration=${Uri.encodeQueryComponent(_sipRegistration.toString())}',
+    if (body.emergencyCallingEnabled case final _emergencyCallingEnabled?)
+      'EmergencyCallingEnabled=${Uri.encodeQueryComponent(_emergencyCallingEnabled.toString())}',
+    if (body.secure case final _secure?)
+      'Secure=${Uri.encodeQueryComponent(_secure.toString())}',
+    if (body.byocTrunkSid case final _byocTrunkSid?)
+      'ByocTrunkSid=${Uri.encodeQueryComponent(_byocTrunkSid)}',
+    if (body.emergencyCallerSid case final _emergencyCallerSid?)
+      'EmergencyCallerSid=${Uri.encodeQueryComponent(_emergencyCallerSid)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -86,7 +112,34 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipDomainRequest');,
+  body: [
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.voiceFallbackMethod case final _voiceFallbackMethod?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(_voiceFallbackMethod.toJson())}',
+    if (body.voiceFallbackUrl case final _voiceFallbackUrl?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(_voiceFallbackUrl.toString())}',
+    if (body.voiceMethod case final _voiceMethod?)
+      'VoiceMethod=${Uri.encodeQueryComponent(_voiceMethod.toJson())}',
+    if (body.voiceStatusCallbackMethod case final _voiceStatusCallbackMethod?)
+      'VoiceStatusCallbackMethod=${Uri.encodeQueryComponent(_voiceStatusCallbackMethod.toJson())}',
+    if (body.voiceStatusCallbackUrl case final _voiceStatusCallbackUrl?)
+      'VoiceStatusCallbackUrl=${Uri.encodeQueryComponent(_voiceStatusCallbackUrl.toString())}',
+    if (body.voiceUrl case final _voiceUrl?)
+      'VoiceUrl=${Uri.encodeQueryComponent(_voiceUrl.toString())}',
+    if (body.sipRegistration case final _sipRegistration?)
+      'SipRegistration=${Uri.encodeQueryComponent(_sipRegistration.toString())}',
+    if (body.domainName case final _domainName?)
+      'DomainName=${Uri.encodeQueryComponent(_domainName)}',
+    if (body.emergencyCallingEnabled case final _emergencyCallingEnabled?)
+      'EmergencyCallingEnabled=${Uri.encodeQueryComponent(_emergencyCallingEnabled.toString())}',
+    if (body.secure case final _secure?)
+      'Secure=${Uri.encodeQueryComponent(_secure.toString())}',
+    if (body.byocTrunkSid case final _byocTrunkSid?)
+      'ByocTrunkSid=${Uri.encodeQueryComponent(_byocTrunkSid)}',
+    if (body.emergencyCallerSid case final _emergencyCallerSid?)
+      'EmergencyCallerSid=${Uri.encodeQueryComponent(_emergencyCallerSid)}',
+  ].join('&'),
 );
 
 return _execute(

@@ -69,7 +69,11 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateConferenceRecordingRequest');,
+  body: [
+    'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
+    if (body.pauseBehavior case final _pauseBehavior?)
+      'PauseBehavior=${Uri.encodeQueryComponent(_pauseBehavior)}',
+  ].join('&'),
 );
 
 return _execute(

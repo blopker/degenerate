@@ -58,7 +58,78 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateCallRequest');,
+  body: [
+    'To=${Uri.encodeQueryComponent(body.to)}',
+    'From=${Uri.encodeQueryComponent(body.from)}',
+    if (body.method case final _method?)
+      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
+    if (body.fallbackUrl case final _fallbackUrl?)
+      'FallbackUrl=${Uri.encodeQueryComponent(_fallbackUrl.toString())}',
+    if (body.fallbackMethod case final _fallbackMethod?)
+      'FallbackMethod=${Uri.encodeQueryComponent(_fallbackMethod.toJson())}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackEvent case final _statusCallbackEvent?)
+      'StatusCallbackEvent=${Uri.encodeQueryComponent(_statusCallbackEvent.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.sendDigits case final _sendDigits?)
+      'SendDigits=${Uri.encodeQueryComponent(_sendDigits)}',
+    if (body.timeout case final _timeout?)
+      'Timeout=${Uri.encodeQueryComponent(_timeout.toString())}',
+    if (body.record case final _record?)
+      'Record=${Uri.encodeQueryComponent(_record.toString())}',
+    if (body.recordingChannels case final _recordingChannels?)
+      'RecordingChannels=${Uri.encodeQueryComponent(_recordingChannels)}',
+    if (body.recordingStatusCallback case final _recordingStatusCallback?)
+      'RecordingStatusCallback=${Uri.encodeQueryComponent(_recordingStatusCallback)}',
+    if (body.recordingStatusCallbackMethod case final _recordingStatusCallbackMethod?)
+      'RecordingStatusCallbackMethod=${Uri.encodeQueryComponent(_recordingStatusCallbackMethod.toJson())}',
+    if (body.sipAuthUsername case final _sipAuthUsername?)
+      'SipAuthUsername=${Uri.encodeQueryComponent(_sipAuthUsername)}',
+    if (body.sipAuthPassword case final _sipAuthPassword?)
+      'SipAuthPassword=${Uri.encodeQueryComponent(_sipAuthPassword)}',
+    if (body.machineDetection case final _machineDetection?)
+      'MachineDetection=${Uri.encodeQueryComponent(_machineDetection)}',
+    if (body.machineDetectionTimeout case final _machineDetectionTimeout?)
+      'MachineDetectionTimeout=${Uri.encodeQueryComponent(_machineDetectionTimeout.toString())}',
+    if (body.recordingStatusCallbackEvent case final _recordingStatusCallbackEvent?)
+      'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(_recordingStatusCallbackEvent.toString())}',
+    if (body.trim case final _trim?)
+      'Trim=${Uri.encodeQueryComponent(_trim)}',
+    if (body.callerId case final _callerId?)
+      'CallerId=${Uri.encodeQueryComponent(_callerId)}',
+    if (body.machineDetectionSpeechThreshold case final _machineDetectionSpeechThreshold?)
+      'MachineDetectionSpeechThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechThreshold.toString())}',
+    if (body.machineDetectionSpeechEndThreshold case final _machineDetectionSpeechEndThreshold?)
+      'MachineDetectionSpeechEndThreshold=${Uri.encodeQueryComponent(_machineDetectionSpeechEndThreshold.toString())}',
+    if (body.machineDetectionSilenceTimeout case final _machineDetectionSilenceTimeout?)
+      'MachineDetectionSilenceTimeout=${Uri.encodeQueryComponent(_machineDetectionSilenceTimeout.toString())}',
+    if (body.asyncAmd case final _asyncAmd?)
+      'AsyncAmd=${Uri.encodeQueryComponent(_asyncAmd)}',
+    if (body.asyncAmdStatusCallback case final _asyncAmdStatusCallback?)
+      'AsyncAmdStatusCallback=${Uri.encodeQueryComponent(_asyncAmdStatusCallback.toString())}',
+    if (body.asyncAmdStatusCallbackMethod case final _asyncAmdStatusCallbackMethod?)
+      'AsyncAmdStatusCallbackMethod=${Uri.encodeQueryComponent(_asyncAmdStatusCallbackMethod.toJson())}',
+    if (body.byoc case final _byoc?)
+      'Byoc=${Uri.encodeQueryComponent(_byoc)}',
+    if (body.callReason case final _callReason?)
+      'CallReason=${Uri.encodeQueryComponent(_callReason)}',
+    if (body.callToken case final _callToken?)
+      'CallToken=${Uri.encodeQueryComponent(_callToken)}',
+    if (body.recordingTrack case final _recordingTrack?)
+      'RecordingTrack=${Uri.encodeQueryComponent(_recordingTrack)}',
+    if (body.timeLimit case final _timeLimit?)
+      'TimeLimit=${Uri.encodeQueryComponent(_timeLimit.toString())}',
+    if (body.clientNotificationUrl case final _clientNotificationUrl?)
+      'ClientNotificationUrl=${Uri.encodeQueryComponent(_clientNotificationUrl.toString())}',
+    if (body.url case final _url?)
+      'Url=${Uri.encodeQueryComponent(_url.toString())}',
+    if (body.twiml case final _twiml?)
+      'Twiml=${Uri.encodeQueryComponent(_twiml)}',
+    if (body.applicationSid case final _applicationSid?)
+      'ApplicationSid=${Uri.encodeQueryComponent(_applicationSid)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -96,7 +167,26 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateCallRequest');,
+  body: [
+    if (body.url case final _url?)
+      'Url=${Uri.encodeQueryComponent(_url.toString())}',
+    if (body.method case final _method?)
+      'Method=${Uri.encodeQueryComponent(_method.toJson())}',
+    if (body.status case final _status?)
+      'Status=${Uri.encodeQueryComponent(_status.toJson())}',
+    if (body.fallbackUrl case final _fallbackUrl?)
+      'FallbackUrl=${Uri.encodeQueryComponent(_fallbackUrl.toString())}',
+    if (body.fallbackMethod case final _fallbackMethod?)
+      'FallbackMethod=${Uri.encodeQueryComponent(_fallbackMethod.toJson())}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.twiml case final _twiml?)
+      'Twiml=${Uri.encodeQueryComponent(_twiml)}',
+    if (body.timeLimit case final _timeLimit?)
+      'TimeLimit=${Uri.encodeQueryComponent(_timeLimit.toString())}',
+  ].join('&'),
 );
 
 return _execute(

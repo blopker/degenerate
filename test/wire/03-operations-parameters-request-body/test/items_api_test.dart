@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:degenerate_runtime/testing.dart';
 import 'package:spec_03_operations_parameters_request_body/spec_03_operations_parameters_request_body.dart';
 import 'package:test/test.dart';
@@ -153,6 +155,144 @@ void main() {
       final error = result as ApiError;
       expect(error.statusCode, equals(404));
       expect(error.rawBody, equals('not found'));
+    });
+  });
+
+  group('uploadFile (multipart/form-data)', () {
+    test('sends POST with multipart body fields', () async {
+      final bytes = Uint8List.fromList([0x89, 0x50, 0x4E, 0x47]);
+      await api.uploadFile(
+        body: UploadFileRequest(file: bytes, description: 'A photo'),
+      );
+
+      expect(client.lastRequest!.method, equals('POST'));
+      expect(client.lastRequest!.path, equals('/upload'));
+      expect(client.lastRequest!.body, isA<List<ApiMultipartField>>());
+
+      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      expect(fields, hasLength(2));
+
+      // File field
+      expect(fields[0], isA<ApiMultipartFileField>());
+      final file = fields[0] as ApiMultipartFileField;
+      expect(file.name, equals('file'));
+      expect(file.bytes, equals(bytes));
+
+      // Text field
+      expect(fields[1], isA<ApiMultipartTextField>());
+      final desc = fields[1] as ApiMultipartTextField;
+      expect(desc.name, equals('description'));
+      expect(desc.value, equals('A photo'));
+    });
+
+    test('includes optional text field when provided', () async {
+      await api.uploadFile(
+        body: UploadFileRequest(
+          file: Uint8List(0),
+          description: 'test',
+          tags: 'a,b',
+        ),
+      );
+
+      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      expect(fields, hasLength(3));
+      final tags = fields[2] as ApiMultipartTextField;
+      expect(tags.name, equals('tags'));
+      expect(tags.value, equals('a,b'));
+    });
+
+    test('omits optional text field when null', () async {
+      await api.uploadFile(
+        body: UploadFileRequest(
+          file: Uint8List(0),
+          description: 'test',
+        ),
+      );
+
+      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      expect(fields, hasLength(2));
+    });
+
+    test('sets contentType to multipart/form-data', () async {
+      await api.uploadFile(
+        body: UploadFileRequest(file: Uint8List(0), description: 'test'),
+      );
+
+      expect(client.lastRequest!.contentType, equals('multipart/form-data'));
+    });
+  });
+
+  group('createToken (application/x-www-form-urlencoded)', () {
+    test('sends POST with form-urlencoded body', () async {
+      await api.createToken(
+        body: const CreateTokenRequest(grantType: 'client_credentials'),
+      );
+
+      expect(client.lastRequest!.method, equals('POST'));
+      expect(client.lastRequest!.path, equals('/token'));
+      expect(client.lastRequest!.body, isA<String>());
+      expect(
+        client.lastRequest!.body as String,
+        equals('grant_type=client_credentials'),
+      );
+    });
+
+    test('includes optional fields when provided', () async {
+      await api.createToken(
+        body: const CreateTokenRequest(
+          grantType: 'client_credentials',
+          scope: 'read write',
+          timeout: 3600,
+        ),
+      );
+
+      final body = client.lastRequest!.body as String;
+      expect(body, contains('grant_type=client_credentials'));
+      expect(body, contains('scope=read+write'));
+      expect(body, contains('timeout=3600'));
+      // Fields joined by &
+      expect(body.split('&'), hasLength(3));
+    });
+
+    test('omits optional fields when null', () async {
+      await api.createToken(
+        body: const CreateTokenRequest(grantType: 'password'),
+      );
+
+      final body = client.lastRequest!.body as String;
+      expect(body, equals('grant_type=password'));
+    });
+
+    test('URL-encodes special characters in values', () async {
+      await api.createToken(
+        body: const CreateTokenRequest(
+          grantType: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+          scope: 'a&b=c',
+        ),
+      );
+
+      final body = client.lastRequest!.body as String;
+      final parts = body.split('&');
+      // grant_type value should be encoded
+      expect(
+        parts[0],
+        equals(
+          'grant_type=${Uri.encodeQueryComponent('urn:ietf:params:oauth:grant-type:jwt-bearer')}',
+        ),
+      );
+      // scope value with & and = should be encoded
+      expect(parts[1], equals('scope=a%26b%3Dc'));
+    });
+
+    test('sets Content-Type header', () async {
+      await api.createToken(
+        body: const CreateTokenRequest(grantType: 'test'),
+      );
+
+      expect(
+        client.lastRequest!.headers['Content-Type'],
+        equals('application/x-www-form-urlencoded'),
+      );
     });
   });
 }

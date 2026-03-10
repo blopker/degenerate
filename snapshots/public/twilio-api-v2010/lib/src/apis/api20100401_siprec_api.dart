@@ -22,7 +22,414 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSiprecRequest');,
+  body: [
+    if (body.name case final _name?)
+      'Name=${Uri.encodeQueryComponent(_name)}',
+    if (body.connectorName case final _connectorName?)
+      'ConnectorName=${Uri.encodeQueryComponent(_connectorName)}',
+    if (body.track case final _track?)
+      'Track=${Uri.encodeQueryComponent(_track.toJson())}',
+    if (body.statusCallback case final _statusCallback?)
+      'StatusCallback=${Uri.encodeQueryComponent(_statusCallback.toString())}',
+    if (body.statusCallbackMethod case final _statusCallbackMethod?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(_statusCallbackMethod.toJson())}',
+    if (body.parameter1Name case final _parameter1Name?)
+      'Parameter1.Name=${Uri.encodeQueryComponent(_parameter1Name)}',
+    if (body.parameter1Value case final _parameter1Value?)
+      'Parameter1.Value=${Uri.encodeQueryComponent(_parameter1Value)}',
+    if (body.parameter2Name case final _parameter2Name?)
+      'Parameter2.Name=${Uri.encodeQueryComponent(_parameter2Name)}',
+    if (body.parameter2Value case final _parameter2Value?)
+      'Parameter2.Value=${Uri.encodeQueryComponent(_parameter2Value)}',
+    if (body.parameter3Name case final _parameter3Name?)
+      'Parameter3.Name=${Uri.encodeQueryComponent(_parameter3Name)}',
+    if (body.parameter3Value case final _parameter3Value?)
+      'Parameter3.Value=${Uri.encodeQueryComponent(_parameter3Value)}',
+    if (body.parameter4Name case final _parameter4Name?)
+      'Parameter4.Name=${Uri.encodeQueryComponent(_parameter4Name)}',
+    if (body.parameter4Value case final _parameter4Value?)
+      'Parameter4.Value=${Uri.encodeQueryComponent(_parameter4Value)}',
+    if (body.parameter5Name case final _parameter5Name?)
+      'Parameter5.Name=${Uri.encodeQueryComponent(_parameter5Name)}',
+    if (body.parameter5Value case final _parameter5Value?)
+      'Parameter5.Value=${Uri.encodeQueryComponent(_parameter5Value)}',
+    if (body.parameter6Name case final _parameter6Name?)
+      'Parameter6.Name=${Uri.encodeQueryComponent(_parameter6Name)}',
+    if (body.parameter6Value case final _parameter6Value?)
+      'Parameter6.Value=${Uri.encodeQueryComponent(_parameter6Value)}',
+    if (body.parameter7Name case final _parameter7Name?)
+      'Parameter7.Name=${Uri.encodeQueryComponent(_parameter7Name)}',
+    if (body.parameter7Value case final _parameter7Value?)
+      'Parameter7.Value=${Uri.encodeQueryComponent(_parameter7Value)}',
+    if (body.parameter8Name case final _parameter8Name?)
+      'Parameter8.Name=${Uri.encodeQueryComponent(_parameter8Name)}',
+    if (body.parameter8Value case final _parameter8Value?)
+      'Parameter8.Value=${Uri.encodeQueryComponent(_parameter8Value)}',
+    if (body.parameter9Name case final _parameter9Name?)
+      'Parameter9.Name=${Uri.encodeQueryComponent(_parameter9Name)}',
+    if (body.parameter9Value case final _parameter9Value?)
+      'Parameter9.Value=${Uri.encodeQueryComponent(_parameter9Value)}',
+    if (body.parameter10Name case final _parameter10Name?)
+      'Parameter10.Name=${Uri.encodeQueryComponent(_parameter10Name)}',
+    if (body.parameter10Value case final _parameter10Value?)
+      'Parameter10.Value=${Uri.encodeQueryComponent(_parameter10Value)}',
+    if (body.parameter11Name case final _parameter11Name?)
+      'Parameter11.Name=${Uri.encodeQueryComponent(_parameter11Name)}',
+    if (body.parameter11Value case final _parameter11Value?)
+      'Parameter11.Value=${Uri.encodeQueryComponent(_parameter11Value)}',
+    if (body.parameter12Name case final _parameter12Name?)
+      'Parameter12.Name=${Uri.encodeQueryComponent(_parameter12Name)}',
+    if (body.parameter12Value case final _parameter12Value?)
+      'Parameter12.Value=${Uri.encodeQueryComponent(_parameter12Value)}',
+    if (body.parameter13Name case final _parameter13Name?)
+      'Parameter13.Name=${Uri.encodeQueryComponent(_parameter13Name)}',
+    if (body.parameter13Value case final _parameter13Value?)
+      'Parameter13.Value=${Uri.encodeQueryComponent(_parameter13Value)}',
+    if (body.parameter14Name case final _parameter14Name?)
+      'Parameter14.Name=${Uri.encodeQueryComponent(_parameter14Name)}',
+    if (body.parameter14Value case final _parameter14Value?)
+      'Parameter14.Value=${Uri.encodeQueryComponent(_parameter14Value)}',
+    if (body.parameter15Name case final _parameter15Name?)
+      'Parameter15.Name=${Uri.encodeQueryComponent(_parameter15Name)}',
+    if (body.parameter15Value case final _parameter15Value?)
+      'Parameter15.Value=${Uri.encodeQueryComponent(_parameter15Value)}',
+    if (body.parameter16Name case final _parameter16Name?)
+      'Parameter16.Name=${Uri.encodeQueryComponent(_parameter16Name)}',
+    if (body.parameter16Value case final _parameter16Value?)
+      'Parameter16.Value=${Uri.encodeQueryComponent(_parameter16Value)}',
+    if (body.parameter17Name case final _parameter17Name?)
+      'Parameter17.Name=${Uri.encodeQueryComponent(_parameter17Name)}',
+    if (body.parameter17Value case final _parameter17Value?)
+      'Parameter17.Value=${Uri.encodeQueryComponent(_parameter17Value)}',
+    if (body.parameter18Name case final _parameter18Name?)
+      'Parameter18.Name=${Uri.encodeQueryComponent(_parameter18Name)}',
+    if (body.parameter18Value case final _parameter18Value?)
+      'Parameter18.Value=${Uri.encodeQueryComponent(_parameter18Value)}',
+    if (body.parameter19Name case final _parameter19Name?)
+      'Parameter19.Name=${Uri.encodeQueryComponent(_parameter19Name)}',
+    if (body.parameter19Value case final _parameter19Value?)
+      'Parameter19.Value=${Uri.encodeQueryComponent(_parameter19Value)}',
+    if (body.parameter20Name case final _parameter20Name?)
+      'Parameter20.Name=${Uri.encodeQueryComponent(_parameter20Name)}',
+    if (body.parameter20Value case final _parameter20Value?)
+      'Parameter20.Value=${Uri.encodeQueryComponent(_parameter20Value)}',
+    if (body.parameter21Name case final _parameter21Name?)
+      'Parameter21.Name=${Uri.encodeQueryComponent(_parameter21Name)}',
+    if (body.parameter21Value case final _parameter21Value?)
+      'Parameter21.Value=${Uri.encodeQueryComponent(_parameter21Value)}',
+    if (body.parameter22Name case final _parameter22Name?)
+      'Parameter22.Name=${Uri.encodeQueryComponent(_parameter22Name)}',
+    if (body.parameter22Value case final _parameter22Value?)
+      'Parameter22.Value=${Uri.encodeQueryComponent(_parameter22Value)}',
+    if (body.parameter23Name case final _parameter23Name?)
+      'Parameter23.Name=${Uri.encodeQueryComponent(_parameter23Name)}',
+    if (body.parameter23Value case final _parameter23Value?)
+      'Parameter23.Value=${Uri.encodeQueryComponent(_parameter23Value)}',
+    if (body.parameter24Name case final _parameter24Name?)
+      'Parameter24.Name=${Uri.encodeQueryComponent(_parameter24Name)}',
+    if (body.parameter24Value case final _parameter24Value?)
+      'Parameter24.Value=${Uri.encodeQueryComponent(_parameter24Value)}',
+    if (body.parameter25Name case final _parameter25Name?)
+      'Parameter25.Name=${Uri.encodeQueryComponent(_parameter25Name)}',
+    if (body.parameter25Value case final _parameter25Value?)
+      'Parameter25.Value=${Uri.encodeQueryComponent(_parameter25Value)}',
+    if (body.parameter26Name case final _parameter26Name?)
+      'Parameter26.Name=${Uri.encodeQueryComponent(_parameter26Name)}',
+    if (body.parameter26Value case final _parameter26Value?)
+      'Parameter26.Value=${Uri.encodeQueryComponent(_parameter26Value)}',
+    if (body.parameter27Name case final _parameter27Name?)
+      'Parameter27.Name=${Uri.encodeQueryComponent(_parameter27Name)}',
+    if (body.parameter27Value case final _parameter27Value?)
+      'Parameter27.Value=${Uri.encodeQueryComponent(_parameter27Value)}',
+    if (body.parameter28Name case final _parameter28Name?)
+      'Parameter28.Name=${Uri.encodeQueryComponent(_parameter28Name)}',
+    if (body.parameter28Value case final _parameter28Value?)
+      'Parameter28.Value=${Uri.encodeQueryComponent(_parameter28Value)}',
+    if (body.parameter29Name case final _parameter29Name?)
+      'Parameter29.Name=${Uri.encodeQueryComponent(_parameter29Name)}',
+    if (body.parameter29Value case final _parameter29Value?)
+      'Parameter29.Value=${Uri.encodeQueryComponent(_parameter29Value)}',
+    if (body.parameter30Name case final _parameter30Name?)
+      'Parameter30.Name=${Uri.encodeQueryComponent(_parameter30Name)}',
+    if (body.parameter30Value case final _parameter30Value?)
+      'Parameter30.Value=${Uri.encodeQueryComponent(_parameter30Value)}',
+    if (body.parameter31Name case final _parameter31Name?)
+      'Parameter31.Name=${Uri.encodeQueryComponent(_parameter31Name)}',
+    if (body.parameter31Value case final _parameter31Value?)
+      'Parameter31.Value=${Uri.encodeQueryComponent(_parameter31Value)}',
+    if (body.parameter32Name case final _parameter32Name?)
+      'Parameter32.Name=${Uri.encodeQueryComponent(_parameter32Name)}',
+    if (body.parameter32Value case final _parameter32Value?)
+      'Parameter32.Value=${Uri.encodeQueryComponent(_parameter32Value)}',
+    if (body.parameter33Name case final _parameter33Name?)
+      'Parameter33.Name=${Uri.encodeQueryComponent(_parameter33Name)}',
+    if (body.parameter33Value case final _parameter33Value?)
+      'Parameter33.Value=${Uri.encodeQueryComponent(_parameter33Value)}',
+    if (body.parameter34Name case final _parameter34Name?)
+      'Parameter34.Name=${Uri.encodeQueryComponent(_parameter34Name)}',
+    if (body.parameter34Value case final _parameter34Value?)
+      'Parameter34.Value=${Uri.encodeQueryComponent(_parameter34Value)}',
+    if (body.parameter35Name case final _parameter35Name?)
+      'Parameter35.Name=${Uri.encodeQueryComponent(_parameter35Name)}',
+    if (body.parameter35Value case final _parameter35Value?)
+      'Parameter35.Value=${Uri.encodeQueryComponent(_parameter35Value)}',
+    if (body.parameter36Name case final _parameter36Name?)
+      'Parameter36.Name=${Uri.encodeQueryComponent(_parameter36Name)}',
+    if (body.parameter36Value case final _parameter36Value?)
+      'Parameter36.Value=${Uri.encodeQueryComponent(_parameter36Value)}',
+    if (body.parameter37Name case final _parameter37Name?)
+      'Parameter37.Name=${Uri.encodeQueryComponent(_parameter37Name)}',
+    if (body.parameter37Value case final _parameter37Value?)
+      'Parameter37.Value=${Uri.encodeQueryComponent(_parameter37Value)}',
+    if (body.parameter38Name case final _parameter38Name?)
+      'Parameter38.Name=${Uri.encodeQueryComponent(_parameter38Name)}',
+    if (body.parameter38Value case final _parameter38Value?)
+      'Parameter38.Value=${Uri.encodeQueryComponent(_parameter38Value)}',
+    if (body.parameter39Name case final _parameter39Name?)
+      'Parameter39.Name=${Uri.encodeQueryComponent(_parameter39Name)}',
+    if (body.parameter39Value case final _parameter39Value?)
+      'Parameter39.Value=${Uri.encodeQueryComponent(_parameter39Value)}',
+    if (body.parameter40Name case final _parameter40Name?)
+      'Parameter40.Name=${Uri.encodeQueryComponent(_parameter40Name)}',
+    if (body.parameter40Value case final _parameter40Value?)
+      'Parameter40.Value=${Uri.encodeQueryComponent(_parameter40Value)}',
+    if (body.parameter41Name case final _parameter41Name?)
+      'Parameter41.Name=${Uri.encodeQueryComponent(_parameter41Name)}',
+    if (body.parameter41Value case final _parameter41Value?)
+      'Parameter41.Value=${Uri.encodeQueryComponent(_parameter41Value)}',
+    if (body.parameter42Name case final _parameter42Name?)
+      'Parameter42.Name=${Uri.encodeQueryComponent(_parameter42Name)}',
+    if (body.parameter42Value case final _parameter42Value?)
+      'Parameter42.Value=${Uri.encodeQueryComponent(_parameter42Value)}',
+    if (body.parameter43Name case final _parameter43Name?)
+      'Parameter43.Name=${Uri.encodeQueryComponent(_parameter43Name)}',
+    if (body.parameter43Value case final _parameter43Value?)
+      'Parameter43.Value=${Uri.encodeQueryComponent(_parameter43Value)}',
+    if (body.parameter44Name case final _parameter44Name?)
+      'Parameter44.Name=${Uri.encodeQueryComponent(_parameter44Name)}',
+    if (body.parameter44Value case final _parameter44Value?)
+      'Parameter44.Value=${Uri.encodeQueryComponent(_parameter44Value)}',
+    if (body.parameter45Name case final _parameter45Name?)
+      'Parameter45.Name=${Uri.encodeQueryComponent(_parameter45Name)}',
+    if (body.parameter45Value case final _parameter45Value?)
+      'Parameter45.Value=${Uri.encodeQueryComponent(_parameter45Value)}',
+    if (body.parameter46Name case final _parameter46Name?)
+      'Parameter46.Name=${Uri.encodeQueryComponent(_parameter46Name)}',
+    if (body.parameter46Value case final _parameter46Value?)
+      'Parameter46.Value=${Uri.encodeQueryComponent(_parameter46Value)}',
+    if (body.parameter47Name case final _parameter47Name?)
+      'Parameter47.Name=${Uri.encodeQueryComponent(_parameter47Name)}',
+    if (body.parameter47Value case final _parameter47Value?)
+      'Parameter47.Value=${Uri.encodeQueryComponent(_parameter47Value)}',
+    if (body.parameter48Name case final _parameter48Name?)
+      'Parameter48.Name=${Uri.encodeQueryComponent(_parameter48Name)}',
+    if (body.parameter48Value case final _parameter48Value?)
+      'Parameter48.Value=${Uri.encodeQueryComponent(_parameter48Value)}',
+    if (body.parameter49Name case final _parameter49Name?)
+      'Parameter49.Name=${Uri.encodeQueryComponent(_parameter49Name)}',
+    if (body.parameter49Value case final _parameter49Value?)
+      'Parameter49.Value=${Uri.encodeQueryComponent(_parameter49Value)}',
+    if (body.parameter50Name case final _parameter50Name?)
+      'Parameter50.Name=${Uri.encodeQueryComponent(_parameter50Name)}',
+    if (body.parameter50Value case final _parameter50Value?)
+      'Parameter50.Value=${Uri.encodeQueryComponent(_parameter50Value)}',
+    if (body.parameter51Name case final _parameter51Name?)
+      'Parameter51.Name=${Uri.encodeQueryComponent(_parameter51Name)}',
+    if (body.parameter51Value case final _parameter51Value?)
+      'Parameter51.Value=${Uri.encodeQueryComponent(_parameter51Value)}',
+    if (body.parameter52Name case final _parameter52Name?)
+      'Parameter52.Name=${Uri.encodeQueryComponent(_parameter52Name)}',
+    if (body.parameter52Value case final _parameter52Value?)
+      'Parameter52.Value=${Uri.encodeQueryComponent(_parameter52Value)}',
+    if (body.parameter53Name case final _parameter53Name?)
+      'Parameter53.Name=${Uri.encodeQueryComponent(_parameter53Name)}',
+    if (body.parameter53Value case final _parameter53Value?)
+      'Parameter53.Value=${Uri.encodeQueryComponent(_parameter53Value)}',
+    if (body.parameter54Name case final _parameter54Name?)
+      'Parameter54.Name=${Uri.encodeQueryComponent(_parameter54Name)}',
+    if (body.parameter54Value case final _parameter54Value?)
+      'Parameter54.Value=${Uri.encodeQueryComponent(_parameter54Value)}',
+    if (body.parameter55Name case final _parameter55Name?)
+      'Parameter55.Name=${Uri.encodeQueryComponent(_parameter55Name)}',
+    if (body.parameter55Value case final _parameter55Value?)
+      'Parameter55.Value=${Uri.encodeQueryComponent(_parameter55Value)}',
+    if (body.parameter56Name case final _parameter56Name?)
+      'Parameter56.Name=${Uri.encodeQueryComponent(_parameter56Name)}',
+    if (body.parameter56Value case final _parameter56Value?)
+      'Parameter56.Value=${Uri.encodeQueryComponent(_parameter56Value)}',
+    if (body.parameter57Name case final _parameter57Name?)
+      'Parameter57.Name=${Uri.encodeQueryComponent(_parameter57Name)}',
+    if (body.parameter57Value case final _parameter57Value?)
+      'Parameter57.Value=${Uri.encodeQueryComponent(_parameter57Value)}',
+    if (body.parameter58Name case final _parameter58Name?)
+      'Parameter58.Name=${Uri.encodeQueryComponent(_parameter58Name)}',
+    if (body.parameter58Value case final _parameter58Value?)
+      'Parameter58.Value=${Uri.encodeQueryComponent(_parameter58Value)}',
+    if (body.parameter59Name case final _parameter59Name?)
+      'Parameter59.Name=${Uri.encodeQueryComponent(_parameter59Name)}',
+    if (body.parameter59Value case final _parameter59Value?)
+      'Parameter59.Value=${Uri.encodeQueryComponent(_parameter59Value)}',
+    if (body.parameter60Name case final _parameter60Name?)
+      'Parameter60.Name=${Uri.encodeQueryComponent(_parameter60Name)}',
+    if (body.parameter60Value case final _parameter60Value?)
+      'Parameter60.Value=${Uri.encodeQueryComponent(_parameter60Value)}',
+    if (body.parameter61Name case final _parameter61Name?)
+      'Parameter61.Name=${Uri.encodeQueryComponent(_parameter61Name)}',
+    if (body.parameter61Value case final _parameter61Value?)
+      'Parameter61.Value=${Uri.encodeQueryComponent(_parameter61Value)}',
+    if (body.parameter62Name case final _parameter62Name?)
+      'Parameter62.Name=${Uri.encodeQueryComponent(_parameter62Name)}',
+    if (body.parameter62Value case final _parameter62Value?)
+      'Parameter62.Value=${Uri.encodeQueryComponent(_parameter62Value)}',
+    if (body.parameter63Name case final _parameter63Name?)
+      'Parameter63.Name=${Uri.encodeQueryComponent(_parameter63Name)}',
+    if (body.parameter63Value case final _parameter63Value?)
+      'Parameter63.Value=${Uri.encodeQueryComponent(_parameter63Value)}',
+    if (body.parameter64Name case final _parameter64Name?)
+      'Parameter64.Name=${Uri.encodeQueryComponent(_parameter64Name)}',
+    if (body.parameter64Value case final _parameter64Value?)
+      'Parameter64.Value=${Uri.encodeQueryComponent(_parameter64Value)}',
+    if (body.parameter65Name case final _parameter65Name?)
+      'Parameter65.Name=${Uri.encodeQueryComponent(_parameter65Name)}',
+    if (body.parameter65Value case final _parameter65Value?)
+      'Parameter65.Value=${Uri.encodeQueryComponent(_parameter65Value)}',
+    if (body.parameter66Name case final _parameter66Name?)
+      'Parameter66.Name=${Uri.encodeQueryComponent(_parameter66Name)}',
+    if (body.parameter66Value case final _parameter66Value?)
+      'Parameter66.Value=${Uri.encodeQueryComponent(_parameter66Value)}',
+    if (body.parameter67Name case final _parameter67Name?)
+      'Parameter67.Name=${Uri.encodeQueryComponent(_parameter67Name)}',
+    if (body.parameter67Value case final _parameter67Value?)
+      'Parameter67.Value=${Uri.encodeQueryComponent(_parameter67Value)}',
+    if (body.parameter68Name case final _parameter68Name?)
+      'Parameter68.Name=${Uri.encodeQueryComponent(_parameter68Name)}',
+    if (body.parameter68Value case final _parameter68Value?)
+      'Parameter68.Value=${Uri.encodeQueryComponent(_parameter68Value)}',
+    if (body.parameter69Name case final _parameter69Name?)
+      'Parameter69.Name=${Uri.encodeQueryComponent(_parameter69Name)}',
+    if (body.parameter69Value case final _parameter69Value?)
+      'Parameter69.Value=${Uri.encodeQueryComponent(_parameter69Value)}',
+    if (body.parameter70Name case final _parameter70Name?)
+      'Parameter70.Name=${Uri.encodeQueryComponent(_parameter70Name)}',
+    if (body.parameter70Value case final _parameter70Value?)
+      'Parameter70.Value=${Uri.encodeQueryComponent(_parameter70Value)}',
+    if (body.parameter71Name case final _parameter71Name?)
+      'Parameter71.Name=${Uri.encodeQueryComponent(_parameter71Name)}',
+    if (body.parameter71Value case final _parameter71Value?)
+      'Parameter71.Value=${Uri.encodeQueryComponent(_parameter71Value)}',
+    if (body.parameter72Name case final _parameter72Name?)
+      'Parameter72.Name=${Uri.encodeQueryComponent(_parameter72Name)}',
+    if (body.parameter72Value case final _parameter72Value?)
+      'Parameter72.Value=${Uri.encodeQueryComponent(_parameter72Value)}',
+    if (body.parameter73Name case final _parameter73Name?)
+      'Parameter73.Name=${Uri.encodeQueryComponent(_parameter73Name)}',
+    if (body.parameter73Value case final _parameter73Value?)
+      'Parameter73.Value=${Uri.encodeQueryComponent(_parameter73Value)}',
+    if (body.parameter74Name case final _parameter74Name?)
+      'Parameter74.Name=${Uri.encodeQueryComponent(_parameter74Name)}',
+    if (body.parameter74Value case final _parameter74Value?)
+      'Parameter74.Value=${Uri.encodeQueryComponent(_parameter74Value)}',
+    if (body.parameter75Name case final _parameter75Name?)
+      'Parameter75.Name=${Uri.encodeQueryComponent(_parameter75Name)}',
+    if (body.parameter75Value case final _parameter75Value?)
+      'Parameter75.Value=${Uri.encodeQueryComponent(_parameter75Value)}',
+    if (body.parameter76Name case final _parameter76Name?)
+      'Parameter76.Name=${Uri.encodeQueryComponent(_parameter76Name)}',
+    if (body.parameter76Value case final _parameter76Value?)
+      'Parameter76.Value=${Uri.encodeQueryComponent(_parameter76Value)}',
+    if (body.parameter77Name case final _parameter77Name?)
+      'Parameter77.Name=${Uri.encodeQueryComponent(_parameter77Name)}',
+    if (body.parameter77Value case final _parameter77Value?)
+      'Parameter77.Value=${Uri.encodeQueryComponent(_parameter77Value)}',
+    if (body.parameter78Name case final _parameter78Name?)
+      'Parameter78.Name=${Uri.encodeQueryComponent(_parameter78Name)}',
+    if (body.parameter78Value case final _parameter78Value?)
+      'Parameter78.Value=${Uri.encodeQueryComponent(_parameter78Value)}',
+    if (body.parameter79Name case final _parameter79Name?)
+      'Parameter79.Name=${Uri.encodeQueryComponent(_parameter79Name)}',
+    if (body.parameter79Value case final _parameter79Value?)
+      'Parameter79.Value=${Uri.encodeQueryComponent(_parameter79Value)}',
+    if (body.parameter80Name case final _parameter80Name?)
+      'Parameter80.Name=${Uri.encodeQueryComponent(_parameter80Name)}',
+    if (body.parameter80Value case final _parameter80Value?)
+      'Parameter80.Value=${Uri.encodeQueryComponent(_parameter80Value)}',
+    if (body.parameter81Name case final _parameter81Name?)
+      'Parameter81.Name=${Uri.encodeQueryComponent(_parameter81Name)}',
+    if (body.parameter81Value case final _parameter81Value?)
+      'Parameter81.Value=${Uri.encodeQueryComponent(_parameter81Value)}',
+    if (body.parameter82Name case final _parameter82Name?)
+      'Parameter82.Name=${Uri.encodeQueryComponent(_parameter82Name)}',
+    if (body.parameter82Value case final _parameter82Value?)
+      'Parameter82.Value=${Uri.encodeQueryComponent(_parameter82Value)}',
+    if (body.parameter83Name case final _parameter83Name?)
+      'Parameter83.Name=${Uri.encodeQueryComponent(_parameter83Name)}',
+    if (body.parameter83Value case final _parameter83Value?)
+      'Parameter83.Value=${Uri.encodeQueryComponent(_parameter83Value)}',
+    if (body.parameter84Name case final _parameter84Name?)
+      'Parameter84.Name=${Uri.encodeQueryComponent(_parameter84Name)}',
+    if (body.parameter84Value case final _parameter84Value?)
+      'Parameter84.Value=${Uri.encodeQueryComponent(_parameter84Value)}',
+    if (body.parameter85Name case final _parameter85Name?)
+      'Parameter85.Name=${Uri.encodeQueryComponent(_parameter85Name)}',
+    if (body.parameter85Value case final _parameter85Value?)
+      'Parameter85.Value=${Uri.encodeQueryComponent(_parameter85Value)}',
+    if (body.parameter86Name case final _parameter86Name?)
+      'Parameter86.Name=${Uri.encodeQueryComponent(_parameter86Name)}',
+    if (body.parameter86Value case final _parameter86Value?)
+      'Parameter86.Value=${Uri.encodeQueryComponent(_parameter86Value)}',
+    if (body.parameter87Name case final _parameter87Name?)
+      'Parameter87.Name=${Uri.encodeQueryComponent(_parameter87Name)}',
+    if (body.parameter87Value case final _parameter87Value?)
+      'Parameter87.Value=${Uri.encodeQueryComponent(_parameter87Value)}',
+    if (body.parameter88Name case final _parameter88Name?)
+      'Parameter88.Name=${Uri.encodeQueryComponent(_parameter88Name)}',
+    if (body.parameter88Value case final _parameter88Value?)
+      'Parameter88.Value=${Uri.encodeQueryComponent(_parameter88Value)}',
+    if (body.parameter89Name case final _parameter89Name?)
+      'Parameter89.Name=${Uri.encodeQueryComponent(_parameter89Name)}',
+    if (body.parameter89Value case final _parameter89Value?)
+      'Parameter89.Value=${Uri.encodeQueryComponent(_parameter89Value)}',
+    if (body.parameter90Name case final _parameter90Name?)
+      'Parameter90.Name=${Uri.encodeQueryComponent(_parameter90Name)}',
+    if (body.parameter90Value case final _parameter90Value?)
+      'Parameter90.Value=${Uri.encodeQueryComponent(_parameter90Value)}',
+    if (body.parameter91Name case final _parameter91Name?)
+      'Parameter91.Name=${Uri.encodeQueryComponent(_parameter91Name)}',
+    if (body.parameter91Value case final _parameter91Value?)
+      'Parameter91.Value=${Uri.encodeQueryComponent(_parameter91Value)}',
+    if (body.parameter92Name case final _parameter92Name?)
+      'Parameter92.Name=${Uri.encodeQueryComponent(_parameter92Name)}',
+    if (body.parameter92Value case final _parameter92Value?)
+      'Parameter92.Value=${Uri.encodeQueryComponent(_parameter92Value)}',
+    if (body.parameter93Name case final _parameter93Name?)
+      'Parameter93.Name=${Uri.encodeQueryComponent(_parameter93Name)}',
+    if (body.parameter93Value case final _parameter93Value?)
+      'Parameter93.Value=${Uri.encodeQueryComponent(_parameter93Value)}',
+    if (body.parameter94Name case final _parameter94Name?)
+      'Parameter94.Name=${Uri.encodeQueryComponent(_parameter94Name)}',
+    if (body.parameter94Value case final _parameter94Value?)
+      'Parameter94.Value=${Uri.encodeQueryComponent(_parameter94Value)}',
+    if (body.parameter95Name case final _parameter95Name?)
+      'Parameter95.Name=${Uri.encodeQueryComponent(_parameter95Name)}',
+    if (body.parameter95Value case final _parameter95Value?)
+      'Parameter95.Value=${Uri.encodeQueryComponent(_parameter95Value)}',
+    if (body.parameter96Name case final _parameter96Name?)
+      'Parameter96.Name=${Uri.encodeQueryComponent(_parameter96Name)}',
+    if (body.parameter96Value case final _parameter96Value?)
+      'Parameter96.Value=${Uri.encodeQueryComponent(_parameter96Value)}',
+    if (body.parameter97Name case final _parameter97Name?)
+      'Parameter97.Name=${Uri.encodeQueryComponent(_parameter97Name)}',
+    if (body.parameter97Value case final _parameter97Value?)
+      'Parameter97.Value=${Uri.encodeQueryComponent(_parameter97Value)}',
+    if (body.parameter98Name case final _parameter98Name?)
+      'Parameter98.Name=${Uri.encodeQueryComponent(_parameter98Name)}',
+    if (body.parameter98Value case final _parameter98Value?)
+      'Parameter98.Value=${Uri.encodeQueryComponent(_parameter98Value)}',
+    if (body.parameter99Name case final _parameter99Name?)
+      'Parameter99.Name=${Uri.encodeQueryComponent(_parameter99Name)}',
+    if (body.parameter99Value case final _parameter99Value?)
+      'Parameter99.Value=${Uri.encodeQueryComponent(_parameter99Value)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -42,7 +449,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSiprecRequest');,
+  body: [
+    'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
+  ].join('&'),
 );
 
 return _execute(

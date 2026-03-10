@@ -48,7 +48,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/CredentialListMappings.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipCredentialListMappingRequest');,
+  body: [
+    'CredentialListSid=${Uri.encodeQueryComponent(body.credentialListSid)}',
+  ].join('&'),
 );
 
 return _execute(

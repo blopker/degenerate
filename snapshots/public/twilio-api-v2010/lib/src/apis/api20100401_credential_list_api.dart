@@ -48,7 +48,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateSipCredentialListRequest');,
+  body: [
+    'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -86,7 +88,9 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateSipCredentialListRequest');,
+  body: [
+    'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
+  ].join('&'),
 );
 
 return _execute(

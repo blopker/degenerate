@@ -40,7 +40,14 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from UpdateUsageTriggerRequest');,
+  body: [
+    if (body.callbackMethod case final _callbackMethod?)
+      'CallbackMethod=${Uri.encodeQueryComponent(_callbackMethod.toJson())}',
+    if (body.callbackUrl case final _callbackUrl?)
+      'CallbackUrl=${Uri.encodeQueryComponent(_callbackUrl.toString())}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+  ].join('&'),
 );
 
 return _execute(
@@ -105,7 +112,19 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
   headers: headers,
-  body: throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from CreateUsageTriggerRequest');,
+  body: [
+    'CallbackUrl=${Uri.encodeQueryComponent(body.callbackUrl.toString())}',
+    'TriggerValue=${Uri.encodeQueryComponent(body.triggerValue)}',
+    'UsageCategory=${Uri.encodeQueryComponent(body.usageCategory)}',
+    if (body.callbackMethod case final _callbackMethod?)
+      'CallbackMethod=${Uri.encodeQueryComponent(_callbackMethod.toJson())}',
+    if (body.friendlyName case final _friendlyName?)
+      'FriendlyName=${Uri.encodeQueryComponent(_friendlyName)}',
+    if (body.recurring case final _recurring?)
+      'Recurring=${Uri.encodeQueryComponent(_recurring.toJson())}',
+    if (body.triggerBy case final _triggerBy?)
+      'TriggerBy=${Uri.encodeQueryComponent(_triggerBy.toJson())}',
+  ].join('&'),
 );
 
 return _execute(
