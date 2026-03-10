@@ -17,15 +17,20 @@ final ApiConfig _config;
 /// Returns one item
 ///
 /// `GET /items/{itemId}`
-Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, String? xTraceId, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, String? xTraceId, }) async  { final queryParameters = <String, String>{};
+final queryParametersList = <ApiQueryParameter>[];
+if (fields != null) {
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.join(','), allowReserved: true));
+}
+
+final request = ApiRequest(
   method: 'GET',
   path: '/items/${Uri.encodeComponent(itemId)}',
   headers: {..._config.defaultHeaders
     , if (xTraceId != null) 'X-Trace-Id': xTraceId
   },
-  queryParameters: {
-    if (fields != null) 'fields': fields.toString(),
-  },
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(

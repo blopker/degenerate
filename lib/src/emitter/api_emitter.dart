@@ -279,9 +279,6 @@ class ApiEmitter {
       final headerValue = _toHeaderString(p);
       if (p.isRequired) {
         buf.writeln("    , '$sanitizedName': $headerValue");
-      } else if (headerValue == p.dartName) {
-        // Value is the nullable variable itself; use null-aware element.
-        buf.writeln("    , ?'$sanitizedName': $headerValue");
       } else {
         buf.writeln(
           "    , if (${p.dartName} != null) '$sanitizedName': $headerValue",
@@ -417,7 +414,7 @@ class ApiEmitter {
 
     final guardStart = p.isRequired ? null : 'if (${p.dartName} != null) {';
     if (guardStart != null) buf.writeln(guardStart);
-    final accessor = p.isRequired ? p.dartName : '${p.dartName}!';
+    final accessor = p.dartName;
 
     switch (p.type) {
       case IrList(:final items):

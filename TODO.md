@@ -129,6 +129,9 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - Emitter generates style-aware query serialization: form-exploded arrays (repeated params), pipeDelimited/spaceDelimited (joined), deepObject objects/maps (bracketed keys), form-exploded objects (per-field params)
 - Identity map elision: string arrays emit `tag.join('|')` instead of `tag.map((item) => item).join('|')`
 - New tests: exploded form arrays, pipeDelimited arrays, spaceDelimited arrays, deepObject objects, non-exploded form objects, allowReserved passthrough, duplicate query param URI building
+- Wire tests for spec-03: repeated/reserved query serialization validated through generated code, allowReserved reserved-char passthrough verified at URI level
+- Fixed optional headers to always use `if (x != null)` guard instead of broken `?` null-aware element syntax
+- Fixed redundant `!` null-assert in guarded query serialization — generated code now uses Dart type promotion
 - All tests passing, analyzer clean on all touched files
 
 ### Session 8 (2026-03-09) — Review-driven bug fixes + wire tests

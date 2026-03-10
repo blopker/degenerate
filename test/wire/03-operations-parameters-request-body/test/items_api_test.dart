@@ -31,13 +31,39 @@ void main() {
     test('sends query parameters when provided', () async {
       await api.getItem(itemId: 'x', fields: ['name', 'status']);
 
-      expect(client.lastRequest!.queryParameters, contains('fields'));
+      expect(client.lastRequest!.queryParametersList, hasLength(1));
+      expect(
+        client.lastRequest!.queryParametersList.single.name,
+        equals('fields'),
+      );
+      expect(
+        client.lastRequest!.queryParametersList.single.value,
+        equals('name,status'),
+      );
+      expect(
+        client.lastRequest!.queryParametersList.single.allowReserved,
+        isTrue,
+      );
     });
+
+    test(
+      'preserves reserved characters for allowReserved query params',
+      () async {
+        await api.getItem(itemId: 'x', fields: ['name', 'status/owner']);
+
+        final uri = client.lastRequest!.resolveUri(client.baseUrl);
+        expect(
+          uri.toString(),
+          equals('http://localhost/items/x?fields=name,status/owner'),
+        );
+      },
+    );
 
     test('omits query parameters when not provided', () async {
       await api.getItem(itemId: 'x');
 
       expect(client.lastRequest!.queryParameters, isEmpty);
+      expect(client.lastRequest!.queryParametersList, isEmpty);
     });
 
     test('sends header parameter when provided', () async {
